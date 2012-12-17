@@ -1,4 +1,4 @@
-package eu.excitement.tl.application;
+package application;
 
 public class EntailmentGraphBuilder {
 
