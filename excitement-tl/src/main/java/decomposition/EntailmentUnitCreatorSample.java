@@ -6,7 +6,6 @@ import org.apache.uima.jcas.JCas;
 
 import decomposition.entities.*;
 
-
 /** 
  * This class is a sample implementation of the EntailmentUnitCreator interface. Using a simple example, 
  * it illustrates how to create entailment units from an input CAS (using linguistic annotation). 

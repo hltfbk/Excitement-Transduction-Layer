@@ -11,6 +11,12 @@ import decomposition.entities.EntailmentUnit;
  * This class represents the data structure that holds a raw entailment graph. 
  * In the raw entailment graph, a node corresponds to an entailment unit, 
  * an edge corresponds to an entailment decision. 
+ * 
+ * OPEN ISSUES: 
+ * - How do we deal with "known" entailment relations (fragment --> subfragment)?
+ * - Do we need a separate graph for each scenario?
+ * 
+ *  TO BE IMPLEMENTED BY ???
  *  
  * @author Kathrin
  */
@@ -77,6 +83,7 @@ public class EntailmentGraphRaw {
 	
 	public boolean process(EntailmentUnit entailmentUnit) {
 		boolean success = false;
+		//compare incoming entailmentUnit to all existing nodes; create nodes and edges accordingly
 		return success;
 	}
 	

@@ -11,6 +11,12 @@ import decomposition.entities.EntailmentUnit;
  * This class represents the data structure that holds a collapsed entailment graph. 
  * In the collapsed entailment graph, a node corresponds to an equivalence class, 
  * an edge corresponds to a positive entailment relation between two nodes. 
+ * 
+ *  * OPEN ISSUES: 
+ * - How do we deal with "known" entailment relations (fragment --> subfragment)?
+ * - Do we need a separate graph for each scenario?
+
+ *  TO BE IMPLEMENTED BY ???
  *  
  * @author Kathrin
  */
