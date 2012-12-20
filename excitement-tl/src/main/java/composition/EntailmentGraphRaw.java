@@ -2,9 +2,7 @@ package composition;
 
 import java.util.List;
 import java.util.Map;
-
 import composition.entities.EntailmentRelation;
-
 import decomposition.entities.EntailmentUnit;
 
 /**

@@ -25,12 +25,6 @@ public class EntailmentUnitCreatorSample implements EntailmentUnitCreator {
 		//for example: one fragment per sentence
 		return null;
 	}
-	public List<EntailmentUnit> createEntailmentUnits(JCas in) {
-		// TODO Auto-generated method stub
-		//for example: remove all modifiers
-		//create a recursive method List<EntailmentUnit> removeModifiers(EntailmentUnit eu) {foreach eu: removeModifiers; if not change: break loop}
-		return null;
-	}
 
 }
 

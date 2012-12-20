@@ -2,6 +2,7 @@ package decomposition;
 
 import java.util.List;
 
+
 import org.apache.uima.jcas.JCas;
 
 import decomposition.entities.EntailmentUnit;
@@ -33,7 +34,5 @@ public class DecompositonSample {
 		EntailmentUnitCreator euc = new EntailmentUnitCreatorSample();
 		JCas fragmentCAS = euc.addFragmentAnnotation(annotatedCAS);	
 		
-		//create entailment units
-		List<EntailmentUnit> units = euc.createEntailmentUnits(fragmentCAS);
 	}
 }
