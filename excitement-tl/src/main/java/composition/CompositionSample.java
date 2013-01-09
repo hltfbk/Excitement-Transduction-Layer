@@ -29,12 +29,8 @@ public class CompositionSample {
 		List<EntailmentUnit> eunits = null;	
 		
 		//generate entailment pairs
-		List<EXCITEMENT.Entailment.Pair> generateEntailmentPairs(List<EntailmentUnit> entailmentUnits): 
 		
-		//for each entailment unit (fragment or subfragment): extend graph
-		for (EntailmentUnit eunit : eunits) {
-			egr.process(eunit);
-		}
+		//process pairs and extend the graph
 	}
 
 }
