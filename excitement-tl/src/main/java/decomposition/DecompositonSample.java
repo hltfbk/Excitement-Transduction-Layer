@@ -28,11 +28,16 @@ public class DecompositonSample {
 		
 		//process textual input: transform it into CAS and annotate it using LAP
 		TextualInputProcessor tip = new TextualInputProcessor();
-		JCas annotatedCAS = tip.addLinguisticAnnotation(in);
+		JCas cas = tip.createTextualInputCAS(in);
+		JCas annotatedCAS = tip.addLinguisticAnnotation(cas);
 		
 		//add fragment annotation
+		FragmentAnnotator fa = new FragmentAnnotatorSample();
+		JCas fragmentCAS = fa.addFragmentAnnotation(annotatedCAS);	
+		
+		//create entailment units (subfragments and fragments) and store subfragment-fragment relation information
 		EntailmentUnitCreator euc = new EntailmentUnitCreatorSample();
-		JCas fragmentCAS = euc.addFragmentAnnotation(annotatedCAS);	
+		List<EntailmentUnit> entailmentUnits = euc.generateEntailmentUnits(fragmentCAS);
 		
 	}
 }

@@ -12,7 +12,7 @@ import org.apache.uima.jcas.JCas;
 
 import decomposition.entities.EntailmentUnit;
 
-public class EntailmentUnitCreatorOMQ implements EntailmentUnitCreator {
+public class FragmentAnnotatorOMQ implements FragmentAnnotator {
 
 	public JCas addFragmentAnnotation(JCas in) {
 		// TODO Auto-generated method stub

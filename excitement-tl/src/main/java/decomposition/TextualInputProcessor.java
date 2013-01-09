@@ -19,11 +19,14 @@ import decomposition.entities.TextualInput;
 public class TextualInputProcessor {
 				
 	//add linguistic annotation --> LAP-specific, but general
-	public JCas addLinguisticAnnotation(TextualInput in) {
+	public JCas createTextualInputCAS(TextualInput in) {
 		//create Textual Input CAS
+		return null;
+	}
+
+	public JCas addLinguisticAnnotation(JCas in) {
 		//add linguistic annotation
 		//OPEN QUESTION: How to specify LAP? config file? input parameter?
 		return null;
 	}
-
 }

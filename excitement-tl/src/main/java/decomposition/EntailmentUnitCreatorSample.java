@@ -1,30 +1,27 @@
 package decomposition;
 
 import java.util.List;
-
 import org.apache.uima.jcas.JCas;
 
-import decomposition.entities.*;
+import decomposition.entities.EntailmentUnit;
+import decomposition.entities.TextualInput;
 
-/** 
- * This class is a sample implementation of the EntailmentUnitCreator interface. Using a simple example, 
- * it illustrates how to create entailment units from an input CAS (using linguistic annotation). 
- * This serves as a starting point for implementing the scenario-specific EntailmentUnitCreator
- * implementations.
+/**
+ * This class shows a sample of the entailment unit creation.
  * 
  * TO BE IMPLEMENTED BY DFKI
  * 
  * @author Kathrin
  *
  */
+
 public class EntailmentUnitCreatorSample implements EntailmentUnitCreator {
 	
-	public JCas addFragmentAnnotation(JCas in) {
-		// TODO Auto-generated method stub
-		
-		//for example: one fragment per sentence
+	//read annotated fragments on TextualInputCAS and extract subfragments; store both fragments and subfragments and their relations
+	public List<EntailmentUnit> generateEntailmentUnits(JCas in) {
+		//for example: remove all modifiers
+		//create a recursive method List<EntailmentUnit> removeModifiers(EntailmentUnit eu) {foreach eu: removeModifiers; if not change: break loop}
 		return null;
 	}
-
+	
 }
-
