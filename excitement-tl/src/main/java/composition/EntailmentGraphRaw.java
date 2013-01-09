@@ -3,6 +3,7 @@ package composition;
 import java.util.List;
 import java.util.Map;
 import composition.entities.EntailmentRelation;
+import decomposition.entities.ClassifiedEntailmentUnit;
 import decomposition.entities.EntailmentUnit;
 
 /**
@@ -111,6 +112,13 @@ public class EntailmentGraphRaw {
 
 	public List<EntailmentRelation> getOutgoingEntailmentRelations(int nodeId) {
 		return null;
+	}
+	
+	/** This method computes confidence scores for the association of an entailment unit to problem cases 
+	based on the frequency of occurrence of this entailment unit (and equivalent, entailing or entailed 
+	entailment unit) with the respective problem case in the existing entailment graph.*/
+	public ClassifiedEntailmentUnit computeCategorizations(EntailmentUnit entailmentUnit) {
+		return null;	
 	}
 
 	public String toXML() {
