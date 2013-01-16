@@ -9,7 +9,7 @@ import decomposition.entities.TextualInput;
 /**
  * This class shows a sample of the entailment unit creation.
  * 
- * TO BE IMPLEMENTED BY DFKI
+ * TO BE IMPLEMENTED BY ???
  * 
  * @author Kathrin
  *

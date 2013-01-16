@@ -9,7 +9,7 @@ import decomposition.entities.TextualInput;
  * This includes transforming the input into a CAS representation and adding linguistic 
  * annotation by calling an LAP.
  * 
- * TO BE IMPLEMENTED BY DFKI
+ * TO BE IMPLEMENTED BY ???
  * 
  * @author Kathrin
  *

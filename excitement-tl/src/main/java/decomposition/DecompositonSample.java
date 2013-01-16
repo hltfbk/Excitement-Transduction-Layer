@@ -12,7 +12,7 @@ import decomposition.entities.TextualInput;
  * This class shows the usage of the decomposition code. It provides a simple example showing 
  * how to use the decomposition code to create entailment units from a textual input.
  * 
- * TO BE IMPLEMENTED BY DFKI
+ * TO BE IMPLEMENTED BY ???
  * 
  * @author Kathrin
  *

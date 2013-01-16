@@ -13,7 +13,7 @@ import decomposition.entities.EntailmentUnit;
  * This class shows the usage of the composition code. It provides a simple example showing 
  * how to use the composition code to build an entailment graph from a set of entailment units.
  * 
- * TO BE IMPLEMENTED BY DFKI
+ * TO BE IMPLEMENTED BY ???
  * 
  * @author Kathrin
  *
@@ -31,6 +31,8 @@ public class CompositionSample {
 		//generate entailment pairs
 		
 		//process pairs and extend the graph
+		
+		//collapse the graph
 	}
 
 }

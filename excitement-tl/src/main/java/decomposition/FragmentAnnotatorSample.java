@@ -12,7 +12,7 @@ import decomposition.entities.*;
  * This serves as a starting point for implementing the scenario-specific EntailmentUnitCreator
  * implementations.
  * 
- * TO BE IMPLEMENTED BY DFKI
+ * TO BE IMPLEMENTED BY ???
  * 
  * @author Kathrin
  *

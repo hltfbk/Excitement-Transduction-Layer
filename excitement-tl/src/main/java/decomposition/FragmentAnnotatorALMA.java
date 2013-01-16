@@ -1,7 +1,8 @@
 package decomposition;
 
 /**
- * This class generates fragment annotations for the ALMA use case based on a CAS containing a textual input that was annotated using an LAP. 
+ * This class generates fragment annotations for the ALMA use case based on a CAS containing a textual input 
+that was annotated using an LAP. 
  * 
  *  TO BE IMPLEMENTED BY FBK/ALMA
  */

@@ -1,7 +1,7 @@
 package application;
 
 /**
- * This class shows an example of how to annotate an incoming email interaction using an entailment graph. 
+ * This class shows an example of how to annotate an incoming email interaction using an entailment graph (use case 2). 
  * 
  * TO BE IMPLEMENTED BY DFKI.
  * 
