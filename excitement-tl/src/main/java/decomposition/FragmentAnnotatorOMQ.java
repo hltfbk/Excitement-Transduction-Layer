@@ -16,7 +16,8 @@ import decomposition.entities.EntailmentUnit;
 public class FragmentAnnotatorOMQ implements FragmentAnnotator {
 
 	public JCas addFragmentAnnotation(JCas in) {
-		// TODO Auto-generated method stub
+		//for example: one fragment per sentence
+
 		return null;
 	}
 

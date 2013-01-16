@@ -20,6 +20,8 @@ public class EntailmentUnitCreatorGerman implements EntailmentUnitCreator {
 	
 	//read annotated fragments on TextualInputCAS and extract subfragments; store both fragments and subfragments and their relations
 	public List<EntailmentUnit> generateEntailmentUnits(JCas in) {
+		//for example: remove all modifiers
+		//create a recursive method List<EntailmentUnit> removeModifiers(EntailmentUnit eu) {foreach eu: removeModifiers; if not change: break loop}
 		return null;
 	}
 	

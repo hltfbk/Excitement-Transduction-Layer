@@ -32,11 +32,11 @@ public class DecompositonSample {
 		JCas annotatedCAS = tip.addLinguisticAnnotation(cas);
 		
 		//add fragment annotation
-		FragmentAnnotator fa = new FragmentAnnotatorSample();
+		FragmentAnnotator fa = new FragmentAnnotatorOMQ();
 		JCas fragmentCAS = fa.addFragmentAnnotation(annotatedCAS);	
 		
 		//create entailment units (subfragments and fragments) and store subfragment-fragment relation information
-		EntailmentUnitCreator euc = new EntailmentUnitCreatorSample();
+		EntailmentUnitCreator euc = new EntailmentUnitCreatorGerman();
 		List<EntailmentUnit> entailmentUnits = euc.generateEntailmentUnits(fragmentCAS);
 		
 	}

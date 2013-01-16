@@ -2,10 +2,6 @@ package composition;
 
 import java.util.List;
 
-import org.apache.uima.jcas.JCas;
-
-import decomposition.EntailmentUnitCreator;
-import decomposition.EntailmentUnitCreatorSample;
 import decomposition.entities.EntailmentUnit;
 
 
