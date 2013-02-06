@@ -1,0 +1,45 @@
+<document>
+<input>
+<id id="example.txt_1"></id>
+<fragment F="security check in Moonport always takes forever"></fragment>
+<focus FCindex="0" FC="security check"></focus>
+<basePredicate BP="0 1 5 6"></basePredicate>
+<modl modList="always;in Moonport"></modl>
+<modc before=""></modc>
+<modr entailment=""></modr>
+<numberNodes nr="4"></numberNodes>
+</input>
+<node id="example.txt_1_0">
+<label lbl="security check in Moonport always takes forever"></label>
+<modifiers mod="alwayspoz=4;in Moonportpoz=2 3"></modifiers>
+<parents direct="" closure=""></parents>
+<daughters direct="example.txt_1_2;example.txt_1_1" closure="example.txt_1_3;example.txt_1_2;example.txt_1_1"></daughters>
+</node>
+<node id="example.txt_1_1">
+<label lbl="security check in Moonport takes forever"></label>
+<modifiers mod="in Moonportpoz=2 3"></modifiers>
+<parents direct="example.txt_1_0" closure="example.txt_1_0"></parents>
+<daughters direct="example.txt_1_3" closure="example.txt_1_3"></daughters>
+</node>
+<node id="example.txt_1_2">
+<label lbl="security check always takes forever"></label>
+<modifiers mod="alwayspoz=4"></modifiers>
+<parents direct="example.txt_1_0" closure="example.txt_1_0"></parents>
+<daughters direct="example.txt_1_3" closure="example.txt_1_3"></daughters>
+</node>
+<node id="example.txt_1_3">
+<label lbl="security check takes forever"></label>
+<modifiers mod=""></modifiers>
+<parents direct="example.txt_1_2;example.txt_1_1" closure="example.txt_1_1;example.txt_1_2;example.txt_1_0"></parents>
+<daughters direct="null" closure="null"></daughters>
+</node>
+<edge source="example.txt_1_0" target="example.txt_1_1" type="direct"></edge>
+<edge source="example.txt_1_0" target="example.txt_1_1" type="clousure"></edge>
+<edge source="example.txt_1_0" target="example.txt_1_2" type="direct"></edge>
+<edge source="example.txt_1_0" target="example.txt_1_2" type="clousure"></edge>
+<edge source="example.txt_1_2" target="example.txt_1_3" type="direct"></edge>
+<edge source="example.txt_1_1" target="example.txt_1_3" type="direct"></edge>
+<edge source="example.txt_1_1" target="example.txt_1_3" type="clousure"></edge>
+<edge source="example.txt_1_2" target="example.txt_1_3" type="clousure"></edge>
+<edge source="example.txt_1_0" target="example.txt_1_3" type="clousure"></edge>
+</document>
