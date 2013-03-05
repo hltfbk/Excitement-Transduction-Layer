@@ -1,12 +1,17 @@
-package decomposition;
+package decomposition.sample;
 
 import java.util.List;
 
 
 import org.apache.uima.jcas.JCas;
 
+import decomposition.TextualInputProcessor;
 import decomposition.entities.EntailmentUnit;
 import decomposition.entities.TextualInput;
+import decomposition.fragments.FragmentAnnotator;
+import decomposition.fragments.FragmentAnnotatorOMQ;
+import decomposition.modifiers.ModifierExtractor;
+import decomposition.modifiers.ModifierExtractorGerman;
 
 /**
  * This class shows the usage of the decomposition code. It provides a simple example showing 
@@ -17,7 +22,7 @@ import decomposition.entities.TextualInput;
  * @author Kathrin
  *
  */
-public class DecompositonSample {
+public class DecompositionSample {
 
 	public static void main(String[] args) {
 		
@@ -36,8 +41,8 @@ public class DecompositonSample {
 		JCas fragmentCAS = fa.addFragmentAnnotation(annotatedCAS);	
 		
 		//create entailment units (subfragments and fragments) and store subfragment-fragment relation information
-		EntailmentUnitCreator euc = new EntailmentUnitCreatorGerman();
-		List<EntailmentUnit> entailmentUnits = euc.generateEntailmentUnits(fragmentCAS);
+		ModifierExtractor euc = new ModifierExtractorGerman();
+		euc.createInputToBuildGraph(fragmentCAS);
 		
 	}
 }

@@ -1,4 +1,4 @@
-package decomposition;
+package decomposition.fragments;
 
 import java.util.List;
 

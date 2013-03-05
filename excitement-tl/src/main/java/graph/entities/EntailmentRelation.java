@@ -1,4 +1,4 @@
-package composition.entities;
+package graph.entities;
 
 import java.util.Map;
 
@@ -11,11 +11,14 @@ import java.util.Map;
 
 public class EntailmentRelation {
 
-	private int ID;
-	private int from;
-	private int to;
-	private Map<String, Double> confidenceScores;
+//	private int ID;
+//	private int from;
+//	private int to;
+	private Map<String, Float> confidenceScores; //should be a map, because we want to be able to store different scores for different EDAs
 	
+	public DecisionLabel label;	// the type: entailment, non-entailment, ... -- DecisionLabel will be imported from the EOP 
+
+	/*
 	public int getID() {
 		return ID;
 	}
@@ -23,7 +26,7 @@ public class EntailmentRelation {
 	public void setID(int iD) {
 		ID = iD;
 	}
-	
+
 	public int getFrom() {
 		return from;
 	}
@@ -39,7 +42,7 @@ public class EntailmentRelation {
 	public void setTo(int to) {
 		this.to = to;
 	}
-	
+	*/
 	public Map<String, Double> getConfidenceScores() {
 		return confidenceScores;
 	}

@@ -1,6 +1,8 @@
-package composition;
+package composition.sample;
 
 import java.util.List;
+
+import composition.EntailmentGraphRaw;
 
 import decomposition.entities.EntailmentUnit;
 

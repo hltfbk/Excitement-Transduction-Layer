@@ -1,4 +1,4 @@
-package decomposition;
+package decomposition.modifiers;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import decomposition.entities.EntailmentUnit;
 import decomposition.entities.TextualInput;
 
 /**
- * This interface needs to be implemented for each scenario to create entailment units from an annotated CAS. 
+ * This interface needs to be implemented for each scenario / language to create entailment units from an annotated CAS. 
  * Entailment units refer to fragments and subfragments. 
  * Creating entailment units involves the following steps: 
  * - reading a CAS (textual input annotated with linguistic analysis and fragments)
@@ -19,9 +19,9 @@ import decomposition.entities.TextualInput;
  *
  */
 
-public interface EntailmentUnitCreator {
+public interface ModifierExtractor {
 	
 	//read annotated fragments on TextualInputCAS and extract subfragments; store both fragments and subfragments and their relations
-	public List<EntailmentUnit> generateEntailmentUnits(JCas in);
+	public void createInputToBuildGraph(JCas in);
 	
 }

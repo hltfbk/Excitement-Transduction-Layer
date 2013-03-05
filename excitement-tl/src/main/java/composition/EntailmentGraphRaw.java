@@ -1,8 +1,10 @@
 package composition;
 
+import graph.entities.EntailmentRelation;
+
 import java.util.List;
+
 import java.util.Map;
-import composition.entities.EntailmentRelation;
 import decomposition.entities.ClassifiedEntailmentUnit;
 import decomposition.entities.EntailmentUnit;
 

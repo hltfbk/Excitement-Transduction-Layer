@@ -8,7 +8,7 @@ import decomposition.entities.TextualInput;
 
 /**
  * This class implements the annotation of categories on a Textual Input CAS, based on entailment relations extracted from 
- * an existing entailment graph. This is a major part of the OMQ scenario.
+ * an existing entailment graph. This is a major part of use case 2.
  * 
  * TO BE IMPLEMENTED BY DFKI
  * 

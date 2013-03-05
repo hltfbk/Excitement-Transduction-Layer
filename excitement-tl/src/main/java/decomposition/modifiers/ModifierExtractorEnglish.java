@@ -1,4 +1,4 @@
-package decomposition;
+package decomposition.modifiers;
 
 import java.util.List;
 
@@ -16,11 +16,10 @@ import decomposition.entities.TextualInput;
  *
  */
 
-public class EntailmentUnitCreatorEnglish implements EntailmentUnitCreator {
+public class ModifierExtractorEnglish implements ModifierExtractor {
 	
 	//read annotated fragments on TextualInputCAS and extract subfragments; store both fragments and subfragments and their relations
-	public List<EntailmentUnit> generateEntailmentUnits(JCas in) {
-		return null;
+	public void createInputToBuildGraph(JCas in) {
 	}
 	
 }

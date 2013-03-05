@@ -1,4 +1,4 @@
-package decomposition;
+package decomposition.fragments;
 
 /**
  * This class generates fragment annotations for the ALMA use case based on a CAS containing a textual input 
