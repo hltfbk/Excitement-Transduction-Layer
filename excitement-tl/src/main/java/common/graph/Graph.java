@@ -1,4 +1,4 @@
-package graph;
+package common.graph;
 
 import java.util.Set;
 

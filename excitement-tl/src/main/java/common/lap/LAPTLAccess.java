@@ -1,4 +1,4 @@
-package lap;
+package common.lap;
 
 public class LAPTLAccess extends LAPAccess{
 

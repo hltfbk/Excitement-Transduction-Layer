@@ -1,4 +1,4 @@
-package graph.entities;
+package common.graph.entities;
 
 import java.util.HashMap;
 import java.util.HashSet;
