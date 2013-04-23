@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>TLtypesystem</name>
+  <description>This type description file imports all known TL layer specific types.</description>
+  <version>1.0</version>
+  <vendor/>
+  <imports>
+    <import name="desc.type.TLfragment"/>
+    <import name="desc.type.TLmodifier"/>
+    <import name="desc.type.TLcategory"/>
+  </imports>
+</typeSystemDescription>
