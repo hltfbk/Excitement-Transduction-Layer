@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>fragment</name>
+  <description>This type definition file defines types related to fragment annotations: FragmentAnnotation (base fragment), assumed fragment and effective fragment.</description>
+  <version>1.0</version>
+  <vendor/>
+  <types>
+    <typeDescription>
+      <name>eu.excitement.type.tl.FragmentAnnotation</name>
+      <description>This type annotates a "fragment", as defined in EXCITEMENT WP6 (and WP2). This is the base type of two different fragments: AssumedFragment type and DeterminedFragment type.
+
+Example.
+"The connection was slow. I was on vacation. GPRS was specially slow."
+
+-begin:0
+-end:67
+
+-text: The connection was slow. GPRS was specially slow.
+
+-fragParts(0): FragmentParts -begin:0  -end:23
+-fragParts(1): FragmentParts -begin:44 -end:67</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>text</name>
+          <description>this holds the text that this fragmentation represents.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>fragParts</name>
+          <description>this holds one or more FragmentsParts type in an array. Thus, it can actually map non-continous regions. If the fragmentation is continous, this array will only have one item.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>eu.excitement.type.tl.FragmentPart</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>eu.excitement.type.tl.FragmentPart</name>
+      <description>This is a type that is designed to represent one of non-continous region of a fragment. Only used for that purpose, and does not have any additional feature.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>eu.excitement.type.tl.AssumedFragment</name>
+      <description>This is a fragmentation annotation that is used to note the "assumed" fragment. WP7 application layer will use this annotation to mark what WP7 application thinks possible fragment. This might be not really accurate, and WP6 may / may not trust this annotation.</description>
+      <supertypeName>eu.excitement.type.tl.FragmentAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>eu.excitement.type.tl.DeterminedFragment</name>
+      <description>This is a fragmentation annotation that is "determined" by WP6 internal modules. Unlike "assumed fragment", this is actual fragment that will be treated as the real fragment.</description>
+      <supertypeName>eu.excitement.type.tl.FragmentAnnotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
