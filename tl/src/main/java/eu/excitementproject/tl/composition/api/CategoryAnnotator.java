@@ -2,6 +2,7 @@ package eu.excitementproject.tl.composition.api;
 
 import java.util.Set;
 
+
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
