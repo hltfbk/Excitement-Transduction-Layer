@@ -6,11 +6,14 @@ import java.io.InputStream;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.InvalidXMLException;
 import org.apache.uima.util.XMLInputSource;
 
+import eu.excitement.type.tl.AssumedFragment;
+import eu.excitement.type.tl.FragmentPart;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.PlatformCASProber;
 
@@ -22,8 +25,9 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
  * @author Gil 
  */
 
-// TODO: set typepath convention for UIMAFit based CAS generation. 
-// TODO: Check UIMAFit CASUtil, and wrap some needed things.  
+
+// TODO: [#C] set typepath convention for UIMAFit based CAS generation. 
+// TODO: [#C] Check UIMAFit CASUtil, and wrap some needed things.  
 
 public final class CASUtils {
 	/**
@@ -100,4 +104,68 @@ public final class CASUtils {
 		
 	}
 	
+	/**
+	 * This static method gets one JCAS, and an array of (begin, end) tuple (in forms of CASUtils.Region) 
+	 * and annotate those regions with "AssumedFragment"
+	 * The method is provided to easily annotate and generate some CAS without really concerning about CAS internals. 
+	 * 
+	 * <P> 
+	 * Note that this method annotates only "one" fragment, that may have multiple (maybe non continuous) sub areas.
+	 * This means that Region[] r is treated as "FragmentPart". See Fragment Annotation Type definition (TLFragment.xml) for more detail. 
+	 * 
+	 * @param aJCas
+	 * @param r
+	 */
+	static public void annotateOneAssumedFragment(JCas aJCas, Region[] r ) throws LAPException
+	{
+		// we will blindly follow the given region and add annotation. 
+		
+		int leftmost = r[0].getBegin(); 
+		int rightmost = r[(r.length -1)].getEnd(); 
+
+		AssumedFragment af = new AssumedFragment(aJCas); 
+		af.setBegin(leftmost);
+		af.setEnd(rightmost); 
+		FSArray v = new FSArray(aJCas, r.length); 
+		af.setFragParts(v); 
+
+		String fragText=""; 
+		// Generate fragment parts 
+		for (int i=0; i < r.length; i++)
+		{		
+			FragmentPart p = new FragmentPart(aJCas); 
+			p.setBegin(r[i].getBegin()); 
+			p.setEnd(r[i].getEnd());
+			af.setFragParts(i, p); 
+			fragText = fragText + p.getCoveredText() + " ";  
+		}
+		// get covered texts from those parts 
+		af.setText(fragText); 
+		af.addToIndexes(); 
+		
+		// TODO log output the fragText. 		
+	}
+	/**
+	 * An inner class that simply holds "begin" and "end" as int. 
+	 * The class is used as an argument on some of the methods. 
+	 */
+	public static class Region 
+	{
+		public Region(int begin, int end)
+		{
+			this.begin = begin; 
+			this.end = end; 
+		}
+		public int getBegin()
+		{
+			return begin; 
+		}
+		public int getEnd()
+		{
+			return end; 
+		}
+		
+		private final int begin; 
+		private final int end; 
+	}
 }

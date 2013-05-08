@@ -89,12 +89,37 @@ public class CASUtilsTest {
 		assertEquals(7, af.getFragParts(0).getEnd());
 		assertEquals(16, af.getFragParts(1).getBegin()); 
 		assertEquals(26, af.getFragParts(1).getEnd());
+
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
 		
+		// testing for CASUtils.annotateOneAssumedFragment 
+		try {
+			JCas aJCas = CASUtils.createNewInputCas();
+			//                0123456789012345678901234567890123456
+			String docText = "abcd this is, actually, fragment. zzz"; 
+			aJCas.setDocumentLanguage("EN");
+			aJCas.setDocumentText(docText); 
+			CASUtils.Region[] r = new CASUtils.Region[2]; 
+			r[0] = new CASUtils.Region(5,12);
+			r[1] = new CASUtils.Region(24,33);
+			CASUtils.annotateOneAssumedFragment(aJCas, r); 
+			
+			// Okay. now aJCas has one assumed fragment annotated. check this 
+			AnnotationIndex<Annotation> fragIndex = aJCas.getAnnotationIndex(AssumedFragment.type);
+			Iterator<Annotation> fragIter = fragIndex.iterator(); 		
+			
+			AssumedFragment af = (AssumedFragment) fragIter.next(); 
+			System.out.println(af.getText());
+			System.out.println(af.getFragParts(0).getBegin()); 
+			System.out.println(af.getFragParts(1).getEnd()); 
 		}
 		catch (Exception e)
 		{
 			fail(e.getMessage()); 
 		}
 	}
-
 }
