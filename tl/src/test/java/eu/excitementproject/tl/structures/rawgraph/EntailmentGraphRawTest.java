@@ -11,8 +11,8 @@ public class EntailmentGraphRawTest {
 		System.out.println("********************************\n Non-random graph:\n"+rawGraph.toString());
 
 		
-//		rawGraph = EntailmentGraphRaw.getSampleOuput(true);
-//		System.out.println("********************************\n Random graph:\n"+rawGraph.toString());
+		rawGraph = EntailmentGraphRaw.getSampleOuput(true);
+		System.out.println("********************************\n Random graph:\n"+rawGraph.toString());
 		
 	}
 
