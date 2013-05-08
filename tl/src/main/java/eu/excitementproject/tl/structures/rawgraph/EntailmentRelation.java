@@ -12,7 +12,7 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & LiliKotlerman
  *
  * Edge type for the work graph (EntailmentGraphRaw)
  * The edge "value" is a textual entailment decision (TEdecision) obtained from
@@ -29,8 +29,10 @@ public class EntailmentRelation extends DefaultEdge {
 	 * 
 	 */
 	private static final long serialVersionUID = 8223382210505322995L;
+	
 	EntailmentUnit source;
 	EntailmentUnit target;
+	
 	
 	/**
 	 * The TEdecision object is produced by the EDA, and contains the label, confidence score, ...
@@ -48,15 +50,38 @@ public class EntailmentRelation extends DefaultEdge {
 	 */
 //	LAPAccess lap;
 	
-	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target) {
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda) {
 		this.source = source;
-		this.target = target;
+		this.target = target;	
+		this.eda = eda;
 		
 		computeTEdecision();
+		
 	}
 	
+	/**
+	 * Create an entailment relation in cases when TEDecision is known (don't specify the EDA)
+	 * This might also be needed to encode the edges coming from fragment graphs and induced by transitivity
+	 * ToDo: find out what to put into the eda when copying edges from a fragment graph or inducing  by transitivity
+	 * @param source
+	 * @param target
+	 * @param edge
+	 */
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, TEDecision edge) {
+		this.source = source;
+		this.target = target;			
+		this.edge = edge;	
+	}
+	
+	/**
+	 * Generates a dummy random entailment decision for this EntailmentReation 
+	 */
+
+	
 	protected void computeTEdecision() {
-//		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
+	
+	// Vivi's code below 
+ //		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
 		JCas pairCAS = generateTHPairCAS();
 		try {
 			edge = eda.process(pairCAS);
@@ -91,6 +116,14 @@ public class EntailmentRelation extends DefaultEdge {
 		return edge.getConfidence();
 	}
 	
+	public EntailmentUnit getSource() {
+		return source;
+	}
+
+	public EntailmentUnit getTarget() {
+		return target;
+	}
+
 	/**
 	 * 
 	 * @return -- the decision label from the TEdecision object

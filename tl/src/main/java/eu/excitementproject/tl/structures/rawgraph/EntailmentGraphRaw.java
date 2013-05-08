@@ -6,13 +6,16 @@ import java.util.Set;
 import org.jgrapht.EdgeFactory;
 import org.jgrapht.graph.DirectedMultigraph;
 
+import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
+import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
 
 
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & LiliKotlerman
  * 
  * The graph structure for the work graph. We call it EntailmentGraphRaw.
  * This graph grows by adding to it FragmentGraph-s by "merging"
@@ -28,7 +31,8 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
  */
 public class EntailmentGraphRaw extends
 		DirectedMultigraph<EntailmentUnit,EntailmentRelation> {
-
+	
+	
 	/**
 	 * 
 	 */
@@ -37,20 +41,18 @@ public class EntailmentGraphRaw extends
 	 * To build the work graph we need to know the configuration,
 	 * and in particular the EDA and LAP to use (and possibly other stuff)
 	 */
-
-	/**
-	 * The EDA used to produce TE decisions for building new edges
-	 */
-	EDABasic<?> eda;
 	
-		
+	
+	/******************************************************************************************
+	 * CONSTRUCTORS
+	 * ****************************************************************************************/
+
 	/**
 	 * 
 	 * @param arg0 -- the class for the edges (in our case this would be FragmentGraphEdge.class)
 	 */
-	public EntailmentGraphRaw(Class<? extends EntailmentRelation> arg0) {
+	public EntailmentGraphRaw(Class<? extends EntailmentRelation> arg0) {		
 		super(arg0);
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**
@@ -59,7 +61,6 @@ public class EntailmentGraphRaw extends
 	 */
 	public EntailmentGraphRaw(EdgeFactory<EntailmentUnit,EntailmentRelation> arg0) {
 		super(arg0);
-		// TODO Auto-generated constructor stub
 	}
 
 	/*
@@ -83,6 +84,20 @@ public class EntailmentGraphRaw extends
 		super(EntailmentRelation.class);
 	}
 	
+	
+	/**
+	 * Initialize an empty work graph
+	 */
+	public EntailmentGraphRaw(){
+		super(EntailmentRelation.class);
+	}
+	
+
+	/******************************************************************************************
+	 * SETTERS/GERRETS
+	 * ****************************************************************************************/
+
+	
 	/**
 	 * Get the base statements of a work graph for the merging procedure (according to
 	 * the process used in WP2, where pairs of base statements are compared first, and
@@ -94,4 +109,156 @@ public class EntailmentGraphRaw extends
 //		return baseStatements;
 		return null;
 	}
+	
+	
+
+	/******************************************************************************************
+	 * OTHER METHODS TO WORK WITH THE GRAPH
+	 * ****************************************************************************************/
+
+	/**
+	 * Create an edge from sourceVertex to targetVertex using the specified eda 
+	 * @param sourceVertex
+	 * @param targetVertex
+	 * @param eda
+	 */
+	public void addEdge(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
+		this.addEdge(sourceVertex, targetVertex, edge);
+	}
+	
+	
+	/******************************************************************************************
+	 * PRINT GRAPH
+	 * ****************************************************************************************/
+	public String toString(){
+		String s = "";
+		s+="\nNODES:";
+		for (EntailmentUnit v: this.vertexSet()){
+			s+="\n\t\""+v.getText()+"\"";
+		}
+		
+		s+="\n\nENTAILMENTS";
+		for (EntailmentRelation e: this.edgeSet()){
+			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
+				s+="\n\t"+e.getSource().getText()+" --> "+e.getTarget().getText() +" ("+e.getLabel().toString()+", "+e.getConfidence()+") ";
+			}
+		}
+
+		s+="\n\nALL EDGES:";
+		for (EntailmentRelation e: this.edgeSet()){
+			s+="\n\t"+e.getSource().getText()+" --> "+e.getTarget().getText() +" ("+e.getLabel().toString()+", "+e.getConfidence()+") ";
+		}
+		
+		return s;
+	}
+	
+	/******************************************************************************************
+	 * DUMMY FUNCTIONALITY
+	 * ****************************************************************************************/
+	
+	/**
+	 * Get a sample EntailmentGraphRaw
+	 * @param randomEdges - True for random edges, False for 'correct' edges
+	 * Nodes:
+	 * 		A "Food was really bad." (modifier: really)
+			B "Food was bad."
+			C "I didn't like the food."
+			D "a little more leg room would have been perfect" (modifier: "a little")
+			E "more leg room would have been perfect"
+			F "Disappointed with the amount of legroom compared with other trains" (modifiers: "the amount of", "compared with other trains")
+			G "Disappointed with legroom compared with other trains" (modifier: "compared with other trains")
+			H "Disappointed with the amount of legroom" (modifier: "the amount of")
+			I "Disappointed with legroom"
+			
+	 */
+		
+	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges){
+		
+		// create the to-be graph nodes
+		EntailmentUnit A = new EntailmentUnit("Food was really bad.");
+		EntailmentUnit B = new EntailmentUnit("Food was bad.");
+		EntailmentUnit C = new EntailmentUnit("I didn't like the food.");
+		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect");
+		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect");
+		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains");
+		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains");
+		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom");
+		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom");
+
+		// create an empty graph
+		EntailmentGraphRaw sampleRawGraph = new EntailmentGraphRaw();
+		
+		// add nodes
+		sampleRawGraph.addVertex(A); sampleRawGraph.addVertex(B); sampleRawGraph.addVertex(C);
+		sampleRawGraph.addVertex(D); sampleRawGraph.addVertex(E); sampleRawGraph.addVertex(F);
+		sampleRawGraph.addVertex(G); sampleRawGraph.addVertex(H); sampleRawGraph.addVertex(I);
+
+		if (randomEdges){ // add random edges
+			EDABasic<?> eda = new RandomEDA();
+				
+			// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
+			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
+				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
+					if (!v1.getText().equals(v2.getText())) { //don't calculate for a node with itself  //ToDo: use node matcher when ready (currently just compare nodes' text) 
+						sampleRawGraph.addEdge(v1, v2, eda);
+						sampleRawGraph.addEdge(v2, v1, eda);
+					}
+				}
+			}
+		}
+		else{ // add 'correct' edges
+			
+	/*		Edges(Entailment relations in raw graph):
+				A --> B (from fragment)
+				B <--> C
+				D --> E (from fragment)
+				F --> G, H (from fragment)
+				G --> I (from fragment)
+				H --> I (from fragment)
+				E <--> I			
+	*/
+
+			// add fragment graph edges
+			sampleRawGraph.addEdge(A, B, new EntailmentRelation(A, B, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(B, A, new EntailmentRelation(B, A, new TEDecisionByScore(0.0)));
+						
+			sampleRawGraph.addEdge(D, E, new EntailmentRelation(D, E, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(E, D, new EntailmentRelation(E, D, new TEDecisionByScore(0.0)));
+			
+			sampleRawGraph.addEdge(F, G, new EntailmentRelation(F, G, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(G, F, new EntailmentRelation(G, F, new TEDecisionByScore(0.0)));
+			sampleRawGraph.addEdge(F, H, new EntailmentRelation(F, H, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(H, F, new EntailmentRelation(H, F, new TEDecisionByScore(0.0)));
+	
+			sampleRawGraph.addEdge(G, I, new EntailmentRelation(G, I, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(I, G, new EntailmentRelation(I, G, new TEDecisionByScore(0.0)));
+
+			sampleRawGraph.addEdge(H, I, new EntailmentRelation(H, I, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(I, H, new EntailmentRelation(I, H, new TEDecisionByScore(0.0)));
+
+			
+			// add edges "obtained" from eda
+
+			sampleRawGraph.addEdge(B, C, new EntailmentRelation(B, C, new TEDecisionByScore(0.72)));
+			sampleRawGraph.addEdge(C, B, new EntailmentRelation(C, B, new TEDecisionByScore(0.77)));
+
+			sampleRawGraph.addEdge(B, E, new EntailmentRelation(B, E, new TEDecisionByScore(0.05)));
+			sampleRawGraph.addEdge(E, B, new EntailmentRelation(E, B, new TEDecisionByScore(0.08)));
+			sampleRawGraph.addEdge(C, E, new EntailmentRelation(C, E, new TEDecisionByScore(0.07)));
+			sampleRawGraph.addEdge(E, C, new EntailmentRelation(E, C, new TEDecisionByScore(0.11)));
+			
+			sampleRawGraph.addEdge(E, I, new EntailmentRelation(E, I, new TEDecisionByScore(0.82)));
+			sampleRawGraph.addEdge(I, E, new EntailmentRelation(I, E, new TEDecisionByScore(0.74)));
+
+			sampleRawGraph.addEdge(B, I, new EntailmentRelation(B, I, new TEDecisionByScore(0.06)));
+			sampleRawGraph.addEdge(I, B, new EntailmentRelation(I, B, new TEDecisionByScore(0.03)));
+			sampleRawGraph.addEdge(C, I, new EntailmentRelation(C, I, new TEDecisionByScore(0.09)));
+			sampleRawGraph.addEdge(I, C, new EntailmentRelation(I, C, new TEDecisionByScore(0.04)));
+								
+		}
+
+		return sampleRawGraph;
+	}
+	
 }
