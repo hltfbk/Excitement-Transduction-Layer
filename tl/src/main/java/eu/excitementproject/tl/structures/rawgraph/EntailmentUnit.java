@@ -25,7 +25,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
  */
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & LiliKotlerman
  * 
  * The node for the work graph is an EntailmentUnit
  *
@@ -34,7 +34,7 @@ public class EntailmentUnit{
 
 	String text;
 	
-	Set<EntailmentUnitMention> node = null;
+	Set<EntailmentUnitMention> mentions = null;
 	
 	/**
 	 * initialize the JCas attribute -- make the first fragment added to the 
@@ -47,8 +47,8 @@ public class EntailmentUnit{
 	EntailmentUnit(JCas textCAS, int start, int end) {
 		EntailmentUnitMention n = new EntailmentUnitMention(textCAS, start, end);
 		
-		node = new HashSet<EntailmentUnitMention>();
-		node.add(n);
+		mentions = new HashSet<EntailmentUnitMention>();
+		mentions.add(n);
 		text = textCAS.getDocumentText();
 		
 		// TODO Auto-generated constructor stub
@@ -62,8 +62,8 @@ public class EntailmentUnit{
 	EntailmentUnit(String textFragment) {
 		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
 		
-		node = new HashSet<EntailmentUnitMention>();
-		node.add(n);		
+		mentions = new HashSet<EntailmentUnitMention>();
+		mentions.add(n);		
 		text = textFragment;
 	}
 		
@@ -72,17 +72,17 @@ public class EntailmentUnit{
 	 * 
 	 * @param n -- the node to be added
 	 */
-	public void addNode(EntailmentUnitMention n) {
-		node.add(n);
+	public void addMention(EntailmentUnitMention n) {
+		mentions.add(n);
 	}
 	
 	/**
 	 * @return -- a set of text fragments corresponding to all the entailment unit mentions covered by this node
 	 */
-	public Set<String> getTextSet() {
+	public Set<String> getMentionTexts() {
 		Set<String> texts = new HashSet<String>();
 		
-		for(EntailmentUnitMention n : node) {
+		for(EntailmentUnitMention n : mentions) {
 			texts.add(n.getText());
 		}
 		

@@ -1,7 +1,5 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
-import java.util.Random;
-
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.graph.DefaultEdge;
 
@@ -14,7 +12,7 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & LiliKotlerman
  *
  * Edge type for the work graph (EntailmentGraphRaw)
  * The edge "value" is a textual entailment decision (TEdecision) obtained from
@@ -68,7 +66,6 @@ public class EntailmentRelation extends DefaultEdge {
 	
 	protected void computeTEdecision() {
 	
-		
 	// Vivi's code below 
  //		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
 		JCas pairCAS = generateTHPairCAS();
@@ -105,6 +102,14 @@ public class EntailmentRelation extends DefaultEdge {
 		return edge.getConfidence();
 	}
 	
+	public EntailmentUnit getSource() {
+		return source;
+	}
+
+	public EntailmentUnit getTarget() {
+		return target;
+	}
+
 	/**
 	 * 
 	 * @return -- the decision label from the TEdecision object

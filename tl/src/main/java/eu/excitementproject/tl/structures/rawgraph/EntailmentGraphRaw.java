@@ -6,13 +6,15 @@ import java.util.Set;
 import org.jgrapht.EdgeFactory;
 import org.jgrapht.graph.DirectedMultigraph;
 
+import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & LiliKotlerman
  * 
  * The graph structure for the work graph. We call it EntailmentGraphRaw.
  * This graph grows by adding to it FragmentGraph-s by "merging"
@@ -38,20 +40,18 @@ public class EntailmentGraphRaw extends
 	 * To build the work graph we need to know the configuration,
 	 * and in particular the EDA and LAP to use (and possibly other stuff)
 	 */
-
-	/**
-	 * The EDA used to produce TE decisions for building new edges
-	 */
-	EDABasic<?> eda;
 	
-		
+	
+	/******************************************************************************************
+	 * CONSTRUCTORS
+	 * ****************************************************************************************/
+
 	/**
 	 * 
 	 * @param arg0 -- the class for the edges (in our case this would be FragmentGraphEdge.class)
 	 */
-	public EntailmentGraphRaw(Class<? extends EntailmentRelation> arg0) {
+	public EntailmentGraphRaw(Class<? extends EntailmentRelation> arg0) {		
 		super(arg0);
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**
@@ -60,7 +60,6 @@ public class EntailmentGraphRaw extends
 	 */
 	public EntailmentGraphRaw(EdgeFactory<EntailmentUnit,EntailmentRelation> arg0) {
 		super(arg0);
-		// TODO Auto-generated constructor stub
 	}
 
 	/*
@@ -92,6 +91,11 @@ public class EntailmentGraphRaw extends
 		super(EntailmentRelation.class);
 	}
 	
+
+	/******************************************************************************************
+	 * SETTERS/GERRETS
+	 * ****************************************************************************************/
+
 	
 	/**
 	 * Get the base statements of a work graph for the merging procedure (according to
@@ -105,6 +109,48 @@ public class EntailmentGraphRaw extends
 		return null;
 	}
 	
+	
+
+	/******************************************************************************************
+	 * OTHER METHODS TO WORK WITH THE GRAPH
+	 * ****************************************************************************************/
+
+	/**
+	 * Create an edge from sourceVertex to targetVertex using the specified eda 
+	 * @param sourceVertex
+	 * @param targetVertex
+	 * @param eda
+	 */
+	public void addEdge(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
+		this.addEdge(sourceVertex, targetVertex, edge);
+	}
+	
+	
+	/******************************************************************************************
+	 * PRINT GRAPH
+	 * ****************************************************************************************/
+	public String toString(){
+		String s = "";
+		s+="\nNODES:";
+		for (EntailmentUnit v: this.vertexSet()){
+			s+="\n\t\""+v.getText()+"\"";
+		}
+		
+		s+="\n\nENTAILMENTS";
+		for (EntailmentRelation e: this.edgeSet()){
+			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
+				s+="\n\t"+e.getSource().getText()+" --> "+e.getTarget().getText() +" ("+e.getLabel().toString()+", "+e.getConfidence()+") ";
+			}
+		}
+
+		s+="\n\nALL EDGES:";
+		for (EntailmentRelation e: this.edgeSet()){
+			s+="\n\t"+e.getSource().getText()+" --> "+e.getTarget().getText() +" ("+e.getLabel().toString()+", "+e.getConfidence()+") ";
+		}
+		
+		return s;
+	}
 	
 	/******************************************************************************************
 	 * DUMMY FUNCTIONALITY
@@ -132,8 +178,8 @@ public class EntailmentGraphRaw extends
 			H --> I
 			E <--> I
 	 */
-	
-	public EntailmentGraphRaw getSampleOuput(){
+		
+	public static EntailmentGraphRaw getSampleOuput(){
 		
 		// create the to-be graph nodes
 		EntailmentUnit A = new EntailmentUnit("Food was really bad.");
@@ -154,11 +200,14 @@ public class EntailmentGraphRaw extends
 		sampleRawGraph.addVertex(D); sampleRawGraph.addVertex(E); sampleRawGraph.addVertex(F);
 		sampleRawGraph.addVertex(G); sampleRawGraph.addVertex(H); sampleRawGraph.addVertex(I);
 
-		// add edges - calculate TEDecision between all pairs of different node
+		EDABasic<?> eda = new RandomEDA();
+				
+		// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
 		for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 			for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
-				if (!v1.getText().equals(v2.getText())) { // don't calculate for a node with itself //ToDo: use node matcher when ready (currently just compare nodes' text) 
-					sampleRawGraph.addEdge(v1, v2);
+				if (!v1.getText().equals(v2.getText())) { //don't calculate for a node with itself  //ToDo: use node matcher when ready (currently just compare nodes' text) 
+					sampleRawGraph.addEdge(v1, v2, eda);
+					sampleRawGraph.addEdge(v2, v1, eda);
 				}
 			}
 		}
