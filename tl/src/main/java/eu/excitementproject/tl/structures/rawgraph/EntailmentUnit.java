@@ -59,7 +59,7 @@ public class EntailmentUnit{
 	 * 
 	 * @param textFragment -- generate node directly from the text fragment
 	 */
-	EntailmentUnit(String textFragment) {
+	public EntailmentUnit(String textFragment) {
 		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
 		
 		mentions = new HashSet<EntailmentUnitMention>();

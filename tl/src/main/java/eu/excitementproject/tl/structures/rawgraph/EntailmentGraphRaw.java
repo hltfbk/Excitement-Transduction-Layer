@@ -10,6 +10,7 @@ import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
+import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
 
 
 /**
@@ -158,6 +159,7 @@ public class EntailmentGraphRaw extends
 	
 	/**
 	 * Get a sample EntailmentGraphRaw
+	 * @param randomEdges - True for random edges, False for 'correct' edges
 	 * Nodes:
 	 * 		A "Food was really bad." (modifier: really)
 			B "Food was bad."
@@ -169,17 +171,9 @@ public class EntailmentGraphRaw extends
 			H "Disappointed with the amount of legroom" (modifier: "the amount of")
 			I "Disappointed with legroom"
 			
-		Edges(Entailment relations in raw graph):
-			A --> B
-			B <--> C
-			D --> E
-			F --> G, H
-			G --> I
-			H --> I
-			E <--> I
 	 */
 		
-	public static EntailmentGraphRaw getSampleOuput(){
+	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges){
 		
 		// create the to-be graph nodes
 		EntailmentUnit A = new EntailmentUnit("Food was really bad.");
@@ -200,16 +194,68 @@ public class EntailmentGraphRaw extends
 		sampleRawGraph.addVertex(D); sampleRawGraph.addVertex(E); sampleRawGraph.addVertex(F);
 		sampleRawGraph.addVertex(G); sampleRawGraph.addVertex(H); sampleRawGraph.addVertex(I);
 
-		EDABasic<?> eda = new RandomEDA();
+		if (randomEdges){ // add random edges
+			EDABasic<?> eda = new RandomEDA();
 				
-		// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
-		for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
-			for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
-				if (!v1.getText().equals(v2.getText())) { //don't calculate for a node with itself  //ToDo: use node matcher when ready (currently just compare nodes' text) 
-					sampleRawGraph.addEdge(v1, v2, eda);
-					sampleRawGraph.addEdge(v2, v1, eda);
+			// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
+			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
+				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
+					if (!v1.getText().equals(v2.getText())) { //don't calculate for a node with itself  //ToDo: use node matcher when ready (currently just compare nodes' text) 
+						sampleRawGraph.addEdge(v1, v2, eda);
+						sampleRawGraph.addEdge(v2, v1, eda);
+					}
 				}
 			}
+		}
+		else{ // add 'correct' edges
+			
+	/*		Edges(Entailment relations in raw graph):
+				A --> B (from fragment)
+				B <--> C
+				D --> E (from fragment)
+				F --> G, H (from fragment)
+				G --> I (from fragment)
+				H --> I (from fragment)
+				E <--> I			
+	*/
+
+			// add fragment graph edges
+			sampleRawGraph.addEdge(A, B, new EntailmentRelation(A, B, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(B, A, new EntailmentRelation(B, A, new TEDecisionByScore(0.0)));
+						
+			sampleRawGraph.addEdge(D, E, new EntailmentRelation(D, E, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(E, D, new EntailmentRelation(E, D, new TEDecisionByScore(0.0)));
+			
+			sampleRawGraph.addEdge(F, G, new EntailmentRelation(F, G, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(G, F, new EntailmentRelation(G, F, new TEDecisionByScore(0.0)));
+			sampleRawGraph.addEdge(F, H, new EntailmentRelation(F, H, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(H, F, new EntailmentRelation(H, F, new TEDecisionByScore(0.0)));
+	
+			sampleRawGraph.addEdge(G, I, new EntailmentRelation(G, I, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(I, G, new EntailmentRelation(I, G, new TEDecisionByScore(0.0)));
+
+			sampleRawGraph.addEdge(H, I, new EntailmentRelation(H, I, new TEDecisionByScore(1.0)));
+			sampleRawGraph.addEdge(I, H, new EntailmentRelation(I, H, new TEDecisionByScore(0.0)));
+
+			
+			// add edges "obtained" from eda
+
+			sampleRawGraph.addEdge(B, C, new EntailmentRelation(B, C, new TEDecisionByScore(0.72)));
+			sampleRawGraph.addEdge(C, B, new EntailmentRelation(C, B, new TEDecisionByScore(0.77)));
+
+			sampleRawGraph.addEdge(B, E, new EntailmentRelation(B, E, new TEDecisionByScore(0.05)));
+			sampleRawGraph.addEdge(E, B, new EntailmentRelation(E, B, new TEDecisionByScore(0.08)));
+			sampleRawGraph.addEdge(C, E, new EntailmentRelation(C, E, new TEDecisionByScore(0.07)));
+			sampleRawGraph.addEdge(E, C, new EntailmentRelation(E, C, new TEDecisionByScore(0.11)));
+			
+			sampleRawGraph.addEdge(E, I, new EntailmentRelation(E, I, new TEDecisionByScore(0.82)));
+			sampleRawGraph.addEdge(I, E, new EntailmentRelation(I, E, new TEDecisionByScore(0.74)));
+
+			sampleRawGraph.addEdge(B, I, new EntailmentRelation(B, I, new TEDecisionByScore(0.06)));
+			sampleRawGraph.addEdge(I, B, new EntailmentRelation(I, B, new TEDecisionByScore(0.03)));
+			sampleRawGraph.addEdge(C, I, new EntailmentRelation(C, I, new TEDecisionByScore(0.09)));
+			sampleRawGraph.addEdge(I, C, new EntailmentRelation(I, C, new TEDecisionByScore(0.04)));
+								
 		}
 
 		return sampleRawGraph;

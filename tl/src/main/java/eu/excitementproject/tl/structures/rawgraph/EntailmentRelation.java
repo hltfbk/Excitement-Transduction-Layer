@@ -60,6 +60,20 @@ public class EntailmentRelation extends DefaultEdge {
 	}
 	
 	/**
+	 * Create an entailment relation in cases when TEDecision is known (don't specify the EDA)
+	 * This might also be needed to encode the edges coming from fragment graphs and induced by transitivity
+	 * ToDo: find out what to put into the eda when copying edges from a fragment graph or inducing  by transitivity
+	 * @param source
+	 * @param target
+	 * @param edge
+	 */
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, TEDecision edge) {
+		this.source = source;
+		this.target = target;			
+		this.edge = edge;	
+	}
+	
+	/**
 	 * Generates a dummy random entailment decision for this EntailmentReation 
 	 */
 
