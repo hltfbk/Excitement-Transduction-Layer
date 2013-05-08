@@ -83,6 +83,15 @@ public class EntailmentGraphRaw extends
 		super(EntailmentRelation.class);
 	}
 	
+	
+	/**
+	 * Initialize an empty work graph
+	 */
+	public EntailmentGraphRaw(){
+		super(EntailmentRelation.class);
+	}
+	
+	
 	/**
 	 * Get the base statements of a work graph for the merging procedure (according to
 	 * the process used in WP2, where pairs of base statements are compared first, and
@@ -94,4 +103,66 @@ public class EntailmentGraphRaw extends
 //		return baseStatements;
 		return null;
 	}
+	
+	
+	/******************************************************************************************
+	 * DUMMY FUNCTIONALITY
+	 * ****************************************************************************************/
+	
+	/**
+	 * Get a sample EntailmentGraphRaw
+	 * Nodes:
+	 * 		A "Food was really bad." (modifier: really)
+			B "Food was bad."
+			C "I didn't like the food."
+			D "a little more leg room would have been perfect" (modifier: "a little")
+			E "more leg room would have been perfect"
+			F "Disappointed with the amount of legroom compared with other trains" (modifiers: "the amount of", "compared with other trains")
+			G "Disappointed with legroom compared with other trains" (modifier: "compared with other trains")
+			H "Disappointed with the amount of legroom" (modifier: "the amount of")
+			I "Disappointed with legroom"
+			
+		Edges(Entailment relations in raw graph):
+			A --> B
+			B <--> C
+			D --> E
+			F --> G, H
+			G --> I
+			H --> I
+			E <--> I
+	 */
+	
+	public EntailmentGraphRaw getSampleOuput(){
+		
+		// create the to-be graph nodes
+		EntailmentUnit A = new EntailmentUnit("Food was really bad.");
+		EntailmentUnit B = new EntailmentUnit("Food was bad.");
+		EntailmentUnit C = new EntailmentUnit("I didn't like the food.");
+		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect");
+		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect");
+		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains");
+		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains");
+		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom");
+		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom");
+
+		// create an empty graph
+		EntailmentGraphRaw sampleRawGraph = new EntailmentGraphRaw();
+		
+		// add nodes
+		sampleRawGraph.addVertex(A); sampleRawGraph.addVertex(B); sampleRawGraph.addVertex(C);
+		sampleRawGraph.addVertex(D); sampleRawGraph.addVertex(E); sampleRawGraph.addVertex(F);
+		sampleRawGraph.addVertex(G); sampleRawGraph.addVertex(H); sampleRawGraph.addVertex(I);
+
+		// add edges
+		sampleRawGraph.addEdge(A, B);
+		sampleRawGraph.addEdge(B, C);  		sampleRawGraph.addEdge(C, B);
+		sampleRawGraph.addEdge(D, E);
+		sampleRawGraph.addEdge(F, G); 		sampleRawGraph.addEdge(F, H);
+		sampleRawGraph.addEdge(G, I);
+		sampleRawGraph.addEdge(H, I);
+		sampleRawGraph.addEdge(E, I);		sampleRawGraph.addEdge(I, E);
+
+		return sampleRawGraph;
+	}
+	
 }

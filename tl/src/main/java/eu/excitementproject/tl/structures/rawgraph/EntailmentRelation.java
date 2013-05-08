@@ -1,5 +1,7 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
+import java.util.Random;
+
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.graph.DefaultEdge;
 
@@ -29,8 +31,10 @@ public class EntailmentRelation extends DefaultEdge {
 	 * 
 	 */
 	private static final long serialVersionUID = 8223382210505322995L;
+	
 	EntailmentUnit source;
 	EntailmentUnit target;
+	
 	
 	/**
 	 * The TEdecision object is produced by the EDA, and contains the label, confidence score, ...
@@ -50,13 +54,22 @@ public class EntailmentRelation extends DefaultEdge {
 	
 	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target) {
 		this.source = source;
-		this.target = target;
+		this.target = target;	
 		
 		computeTEdecision();
+		
 	}
 	
+	/**
+	 * Generates a dummy random entailment decision for this EntailmentReation 
+	 */
+
+	
 	protected void computeTEdecision() {
-//		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
+	
+	// Vivi's code below
+ 
+  //		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
 		JCas pairCAS = generateTHPairCAS();
 		try {
 			edge = eda.process(pairCAS);
