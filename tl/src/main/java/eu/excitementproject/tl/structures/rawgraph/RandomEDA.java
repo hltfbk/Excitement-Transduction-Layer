@@ -1,5 +1,7 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
+import java.util.Random;
+
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.EDABasic;
@@ -10,16 +12,19 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 
 public class RandomEDA implements EDABasic<RandomTEDecision>{
 
+	private Random generator;
+	
 	public void initialize(CommonConfig config) throws ConfigurationException,
 			EDAException, ComponentException {
-		// TODO Auto-generated method stub
+		
+		generator = new Random(); 
 		
 	}
 
 	public RandomTEDecision process(JCas aCas) throws EDAException,
 			ComponentException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new RandomTEDecision(generator.nextDouble());
 	}
 
 	public void shutdown() {
@@ -33,4 +38,5 @@ public class RandomEDA implements EDABasic<RandomTEDecision>{
 		
 	}
 
+	
 }

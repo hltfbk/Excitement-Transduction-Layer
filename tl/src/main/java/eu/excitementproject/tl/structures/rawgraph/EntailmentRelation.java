@@ -52,9 +52,10 @@ public class EntailmentRelation extends DefaultEdge {
 	 */
 //	LAPAccess lap;
 	
-	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target) {
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda) {
 		this.source = source;
 		this.target = target;	
+		this.eda = eda;
 		
 		computeTEdecision();
 		
@@ -67,9 +68,9 @@ public class EntailmentRelation extends DefaultEdge {
 	
 	protected void computeTEdecision() {
 	
-	// Vivi's code below
- 
-  //		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
+		
+	// Vivi's code below 
+ //		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
 		JCas pairCAS = generateTHPairCAS();
 		try {
 			edge = eda.process(pairCAS);

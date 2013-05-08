@@ -1,16 +1,14 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
-import java.util.Random;
-
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.TEDecision;
 
 public class RandomTEDecision implements TEDecision{
-	Random generator = new Random(); 
+	
 	final Double randomConfidence;
 	
-	public RandomTEDecision(){
-		randomConfidence = generator.nextDouble();
+	public RandomTEDecision(Double randomConfidence){
+		this.randomConfidence = randomConfidence; 
 	}
 	
 	public DecisionLabel getDecision() {
@@ -25,7 +23,9 @@ public class RandomTEDecision implements TEDecision{
 	}
 
 	public String getPairID() {
+		// ToDo: understand how to extract this from the CAS (this method returns the entailment.Pair id as described in the CAS.)
+		// meanwhile return null
 		return null;
 	}
-
+	
 }

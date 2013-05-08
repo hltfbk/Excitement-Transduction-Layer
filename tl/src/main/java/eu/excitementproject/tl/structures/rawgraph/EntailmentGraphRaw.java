@@ -28,7 +28,8 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
  */
 public class EntailmentGraphRaw extends
 		DirectedMultigraph<EntailmentUnit,EntailmentRelation> {
-
+	
+	
 	/**
 	 * 
 	 */
@@ -153,14 +154,14 @@ public class EntailmentGraphRaw extends
 		sampleRawGraph.addVertex(D); sampleRawGraph.addVertex(E); sampleRawGraph.addVertex(F);
 		sampleRawGraph.addVertex(G); sampleRawGraph.addVertex(H); sampleRawGraph.addVertex(I);
 
-		// add edges
-		sampleRawGraph.addEdge(A, B);
-		sampleRawGraph.addEdge(B, C);  		sampleRawGraph.addEdge(C, B);
-		sampleRawGraph.addEdge(D, E);
-		sampleRawGraph.addEdge(F, G); 		sampleRawGraph.addEdge(F, H);
-		sampleRawGraph.addEdge(G, I);
-		sampleRawGraph.addEdge(H, I);
-		sampleRawGraph.addEdge(E, I);		sampleRawGraph.addEdge(I, E);
+		// add edges - calculate TEDecision between all pairs of different node
+		for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
+			for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
+				if (!v1.getText().equals(v2.getText())) { // don't calculate for a node with itself //ToDo: use node matcher when ready (currently just compare nodes' text) 
+					sampleRawGraph.addEdge(v1, v2);
+				}
+			}
+		}
 
 		return sampleRawGraph;
 	}
