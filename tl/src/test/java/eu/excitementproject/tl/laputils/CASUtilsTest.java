@@ -13,10 +13,10 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import eu.excitement.type.tl.AssumedFragment;
+import eu.excitement.type.tl.FragmentPart;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-import eu.excitementproject.tl.types.AssumedFragment;
-import eu.excitementproject.tl.types.FragmentPart;
 
 public class CASUtilsTest {
 
