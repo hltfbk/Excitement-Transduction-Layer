@@ -97,4 +97,12 @@ public class EntailmentUnit{
 		return text;
 	}
 	
+	/**
+	 * 
+	 * @return -- the set of entailment unit mentions associated to this node
+	 */
+	public Set<EntailmentUnitMention> getMentions() {
+		return node;
+	}
+
 }

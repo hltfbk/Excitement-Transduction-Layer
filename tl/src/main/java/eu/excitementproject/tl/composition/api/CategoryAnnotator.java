@@ -6,7 +6,7 @@ import java.util.Set;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
-import eu.excitementproject.tl.structures.search.MatchingNode;
+import eu.excitementproject.tl.structures.search.NodeMatch;
 
 /**
  * ** OMQ usecase composition-flow "CategoryAnnotator" 
@@ -34,7 +34,7 @@ public interface CategoryAnnotator {
 	 * @return input CAS annotated with category information ({@link JCas})
 	 * @throws CategoryAnnotatorException if category annotation fails
 	 */
-	public JCas addCategoryAnnotation(JCas cas, Set<MatchingNode> matches) 
+	public JCas addCategoryAnnotation(JCas cas, Set<NodeMatch> matches) 
 			throws CategoryAnnotatorException;
 
 }

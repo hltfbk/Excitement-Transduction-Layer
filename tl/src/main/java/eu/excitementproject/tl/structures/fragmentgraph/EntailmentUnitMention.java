@@ -58,6 +58,14 @@ public class EntailmentUnitMention {
 	}
 	
 	/**
+	 * 
+	 * @return -- the category id
+	 */
+	public int getCategory() {
+		return categoryId;
+	}
+	
+	/**
 	 * we could probably use methods to obtain various annotation layers of the object
 	 * This depends on what information we keep in the node. 
 	 */

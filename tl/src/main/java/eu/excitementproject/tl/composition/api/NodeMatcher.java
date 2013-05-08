@@ -6,7 +6,7 @@ import java.util.Set;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.search.MatchingNode;
+import eu.excitementproject.tl.structures.search.NodeMatch;
 
 /**
  * ** OMQ usecase composition-flow "NodeMatcher"
@@ -28,12 +28,12 @@ like matching) to produce results in near-real-time.
 public interface NodeMatcher {
 
 	/**
-	 * @param fragmentGraphs - list of fragments graphs ({@link FragmentGraph})
+	 * @param fragmentGraphs - set of fragment graphs ({@link FragmentGraph})
 	 * @param entailmentGraph - one entailment graph (raw) ({@link EntailmentGraphRaw})
-	 * @return set of matchings nodes ({@link MatchingNode})
+	 * @return set of node matches ({@link NodeMatch})
 	 * @throws NodeMatcherException if node matching fails
 	 */
-	public Set<MatchingNode> findMatchingNodesInGraph(List<FragmentGraph> fragmentGraphs, EntailmentGraphRaw entailmentGraph) 
+	public Set<NodeMatch> findMatchingNodesInGraph(Set<FragmentGraph> fragmentGraphs, EntailmentGraphRaw entailmentGraph) 
 			throws NodeMatcherException;
 
 
