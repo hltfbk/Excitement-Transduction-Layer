@@ -3,6 +3,11 @@ package eu.excitementproject.tl.structures.rawgraph;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.TEDecision;
 
+/**
+ * A TEDecision with a random confidence score and a corresponding DecisionLabel, based on a simple score heuristic
+ * @author LiliKotlerman
+ *
+ */
 public class RandomTEDecision implements TEDecision{
 	
 	final Double randomConfidence;
