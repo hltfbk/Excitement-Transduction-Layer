@@ -9,8 +9,9 @@ package  eu.excitementproject.tl.decomposition.exceptions;
  *
  */
 public class FragmentGraphGeneratorException extends Exception {
-
 	
+	private static final long serialVersionUID = 2565175967769513901L;
+
 	/** Exception thrown by FragmentGraphGenerator if any of the needed data is missing in the input CAS or if the implementation can't generate the graphs for some
   reason
 	 * @param message
