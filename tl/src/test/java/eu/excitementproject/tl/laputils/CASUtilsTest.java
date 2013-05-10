@@ -6,6 +6,10 @@ import static org.junit.Assert.fail;
 
 import java.util.Iterator;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger; 
+import org.apache.log4j.BasicConfigurator; 
+
 import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
@@ -17,12 +21,14 @@ import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-
 public class CASUtilsTest {
 
 	@Test
 	public void test() {
-
+		BasicConfigurator.resetConfiguration(); 
+		BasicConfigurator.configure(); 
+		Logger.getRootLogger().setLevel(Level.INFO);  // for UIMA (hiding < INFO) 
+		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 		try {
 		// generate CAS from CASutils 
 		// (testing createNewInputCas()) 
@@ -113,9 +119,9 @@ public class CASUtilsTest {
 			Iterator<Annotation> fragIter = fragIndex.iterator(); 		
 			
 			AssumedFragment af = (AssumedFragment) fragIter.next(); 
-			System.out.println(af.getText());
-			System.out.println(af.getFragParts(0).getBegin()); 
-			System.out.println(af.getFragParts(1).getEnd()); 
+			testlogger.info(af.getText()); 
+			testlogger.info(af.getFragParts(0).getBegin()); 
+			testlogger.info(af.getFragParts(1).getEnd()); 
 		}
 		catch (Exception e)
 		{
