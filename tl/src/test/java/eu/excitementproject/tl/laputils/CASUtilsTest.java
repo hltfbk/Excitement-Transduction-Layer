@@ -4,7 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
+import java.io.File;
 import java.util.Iterator;
+
+import junit.framework.Assert;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger; 
@@ -122,10 +125,19 @@ public class CASUtilsTest {
 			testlogger.info(af.getText()); 
 			testlogger.info(af.getFragParts(0).getBegin()); 
 			testlogger.info(af.getFragParts(1).getEnd()); 
+		
+			// 
+			// testing for serialization / deserialization 
+			File xmiOut = new File("./target/testout.xmi"); 
+			CASUtils.serializeToXmi(aJCas, xmiOut); 
+			JCas jcas2 = CASUtils.createNewInputCas(); 
+			CASUtils.deserializeFromXmi(jcas2, xmiOut); 
+			Assert.assertEquals(jcas2.getDocumentText(),aJCas.getDocumentText()); 
 		}
 		catch (Exception e)
 		{
 			fail(e.getMessage()); 
 		}
+		
 	}
 }

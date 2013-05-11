@@ -1,19 +1,30 @@
 package  eu.excitementproject.tl.laputils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
+import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
+import org.apache.uima.cas.impl.XmiCasDeserializer;
+import org.apache.uima.cas.impl.XmiCasSerializer;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.InvalidXMLException;
 import org.apache.uima.util.XMLInputSource;
+import org.apache.uima.util.XMLSerializer;
+import org.xml.sax.SAXException;
 
 import eu.excitement.type.tl.AssumedFragment;
+import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentPart;
+import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.PlatformCASProber;
 
@@ -26,6 +37,7 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
  */
 
 
+// Things to be considered as future improvements 
 // TODO: [#C] set typepath convention for UIMAFit based CAS generation. 
 // TODO: [#C] Check UIMAFit CASUtil, and wrap some needed things.  
 
@@ -77,18 +89,37 @@ public final class CASUtils {
 	static public void dumpCAS(JCas aJCas)
 	{
 		PlatformCASProber.printAnnotations(aJCas.getCas(), System.out); 
-		// TODO, dump to log, instead of console. 
 	}
 
 	/**
-	 * This static method serializes the given JCAS into an XMI file . 
+	 * This static method serializes the given JCAS into an XMI file. 
 	 * 
 	 * @param JCas aJCas: the JCas to be serialized 
 	 * @param File f: file path, where XMI file will be written 
 	 */
-	static public void serializeCAS(JCas aJCas, File f)
+	static public void serializeToXmi(JCas aJCas, File f) throws LAPException 
 	{
-		// TODO write body
+		// Serializing formula.
+		try {
+			FileOutputStream out; 
+			out = new FileOutputStream(f);
+			XmiCasSerializer ser = new XmiCasSerializer(aJCas.getTypeSystem());
+			XMLSerializer xmlSer = new XMLSerializer(out, false);
+			ser.serialize(aJCas.getCas(), xmlSer.getContentHandler());
+			out.close();
+		}
+		catch (FileNotFoundException e) 
+		{
+			throw new LAPException("Unable to open the file for the serialization", e); 
+		}
+		catch(IOException e)
+		{
+			throw new LAPException("IOException while closing the serialization file ", e);
+		}
+		catch(SAXException e)
+		{
+			throw new LAPException("Failed in generating XML for the serialization", e);
+		}
 	}
 	
 	/**
@@ -98,9 +129,27 @@ public final class CASUtils {
 	 * @param aJCas
 	 * @param f
 	 */
-	static public void loadXmi(JCas aJCas, File f)
+	static public void deserializeFromXmi(JCas aJCas, File f) throws LAPException
 	{
-		// TODO write body 
+		aJCas.reset(); 
+		
+		try {
+			FileInputStream inputStream = new FileInputStream(f);
+			XmiCasDeserializer.deserialize(inputStream, aJCas.getCas());
+			inputStream.close();
+		}
+		catch(FileNotFoundException e)
+		{
+			throw new LAPException("Unable to open file for deserialization", e); 
+		}
+		catch(IOException e)
+		{
+			throw new LAPException("IOException happenes while accessing XMI file",e); 
+		}
+		catch(SAXException e)
+		{
+			throw new LAPException("XML parsing failed while reading XMI file", e); 
+		}
 		
 	}
 	
@@ -143,8 +192,67 @@ public final class CASUtils {
 		af.setText(fragText); 
 		af.addToIndexes(); 
 		
-		// TODO log output the fragText. 		
+		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+		l.info("Generated an AssummedFragment annotation. Fragment text is: " + fragText); 
+		
 	}
+	
+	/**
+	 * This static method gets one JCAS, and an array of (begin, end) tuple (in forms of CASUtils.Region) 
+	 * and annotate those regions with "DeterminedFragment"
+	 * The method is provided to easily annotate and generate some CAS without really concerning about CAS internals. 
+	 * 
+	 * <P> 
+	 * Note that this method annotates only "one" fragment, that may have multiple (maybe non continuous) sub areas.
+	 * This means that Region[] r is treated as "FragmentPart". See Fragment Annotation Type definition (TLFragment.xml) for more detail. 
+	 * 
+	 * @param aJCas
+	 * @param r
+	 */
+	static public void annotateOneDeterminedFragment(JCas aJCas, Region[] r ) throws LAPException
+	{
+		// we will blindly follow the given region and add annotation. 
+		
+		int leftmost = r[0].getBegin(); 
+		int rightmost = r[(r.length -1)].getEnd(); 
+
+		DeterminedFragment df = new DeterminedFragment(aJCas); 
+		df.setBegin(leftmost);
+		df.setEnd(rightmost); 
+		FSArray v = new FSArray(aJCas, r.length); 
+		df.setFragParts(v); 
+
+		String fragText=""; 
+		// Generate fragment parts 
+		for (int i=0; i < r.length; i++)
+		{		
+			FragmentPart p = new FragmentPart(aJCas); 
+			p.setBegin(r[i].getBegin()); 
+			p.setEnd(r[i].getEnd());
+			df.setFragParts(i, p); 
+			fragText = fragText + p.getCoveredText() + " ";  
+		}
+		// get covered texts from those parts 
+		df.setText(fragText); 
+		df.addToIndexes(); 
+		
+		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+		l.info("Generated a DeterminedFragment annotation. Fragment text is: " + fragText); 
+		
+	}
+
+	static public void annotateOneModifier(JCas aJCas, Region[] r, ModifierAnnotation dependOn) throws LAPException 
+	{
+		// TODO write the code 
+	}
+	
+	static public void annotateOneModifier(JCas aJCas, Region[] r) throws LAPException
+	{
+		annotateOneModifier(aJCas, r, null); 
+	}
+	
+	
+	
 	/**
 	 * An inner class that simply holds "begin" and "end" as int. 
 	 * The class is used as an argument on some of the methods. 
