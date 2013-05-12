@@ -116,6 +116,7 @@ public class CASUtilsTest {
 			r[0] = new CASUtils.Region(5,12);
 			r[1] = new CASUtils.Region(24,33);
 			CASUtils.annotateOneAssumedFragment(aJCas, r); 
+			//CASUtils.dumpCAS(aJCas); 
 			
 			// Okay. now aJCas has one assumed fragment annotated. check this 
 			AnnotationIndex<Annotation> fragIndex = aJCas.getAnnotationIndex(AssumedFragment.type);
@@ -132,6 +133,7 @@ public class CASUtilsTest {
 			CASUtils.serializeToXmi(aJCas, xmiOut); 
 			JCas jcas2 = CASUtils.createNewInputCas(); 
 			CASUtils.deserializeFromXmi(jcas2, xmiOut); 
+			//CASUtils.dumpCAS(jcas2); 
 			Assert.assertEquals(jcas2.getDocumentText(),aJCas.getDocumentText()); 
 		}
 		catch (Exception e)
@@ -139,5 +141,19 @@ public class CASUtilsTest {
 			fail(e.getMessage()); 
 		}
 		
+		// testing for generate examples 
+		try {
+			CASUtils.generateExamples(); 
+			// load one of the example? 
+			File xmiIn = new File("./target/CASInput_example_4.xmi"); 
+			JCas anotherJCas = CASUtils.createNewInputCas(); 
+			CASUtils.deserializeFromXmi(anotherJCas, xmiIn); 
+			//CASUtils.dumpCAS(anotherJCas);
+			System.out.println(anotherJCas.getDocumentText()); 
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
 	}
 }

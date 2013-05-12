@@ -25,6 +25,7 @@ import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.ModifierAnnotation;
+import eu.excitement.type.tl.ModifierPart;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.PlatformCASProber;
 
@@ -82,7 +83,7 @@ public final class CASUtils {
 	}
 	
 	/**
-	 *  This method dumps the content of CAS to Console (or log, if available) 
+	 *  This method dumps the content of CAS to Console  
 	 *  
 	 */
 	static public void dumpCAS(JCas aJCas)
@@ -131,6 +132,10 @@ public final class CASUtils {
 	static public void deserializeFromXmi(JCas aJCas, File f) throws LAPException
 	{
 		aJCas.reset(); 
+//		if (!f.canRead())
+//		{
+//			throw new LAPException("Unable to open the file for deserialization" + f.toString()); 
+//		}
 		
 		try {
 			FileInputStream inputStream = new FileInputStream(f);
@@ -210,8 +215,7 @@ public final class CASUtils {
 	 */
 	static public void annotateOneDeterminedFragment(JCas aJCas, Region[] r ) throws LAPException
 	{
-		// we will blindly follow the given region and add annotation. 
-		
+		// we will blindly follow the given region and add annotation. 		
 		int leftmost = r[0].getBegin(); 
 		int rightmost = r[(r.length -1)].getEnd(); 
 
@@ -240,21 +244,68 @@ public final class CASUtils {
 		
 	}
 
-	static public void annotateOneModifier(JCas aJCas, Region[] r, ModifierAnnotation dependOn) throws LAPException 
-	{
-		// TODO write the code 
-		
-		// annotate them, just like frgs. 
-		
+	/**
+	 * This method adds one modifier annotation to the given CAS with given Region. Note that this method 
+	 * only annotates one modifier, where the given array of Region is treated as non-continuous region if more than one region is given.  
+	 * 
+	 * <P> 
+	 * It gets one additional argument "dependOn". If this is given, the newly generated modifier will dependOn this given one. (See UIMA type definition for what dependOn pointer does/means with an example). This value can be null 
+	 * 
+	 *
+	 * @param aJCas JCAS that would be annotated 
+	 * @param r 	the region[] 
+	 * @param dependOn	Another (previous) Modifier Annotation that this modifier depends on. can be null, and null means none. 
+	 * @return ModifierAnnotation Returns current (newly generated) modifier annotation for future use (e.g. dependOn). Be careful not to be used in other JCAS. 
+	 * @throws LAPException
+	 */
+	static public ModifierAnnotation annotateOneModifier(JCas aJCas, Region[] r, ModifierAnnotation dependOn) throws LAPException 
+	{		
+		// annotate them, just like frags. 
+		// we will blindly follow the given region and add annotation. 		
+		int leftmost = r[0].getBegin(); 
+		int rightmost = r[(r.length -1)].getEnd(); 
+
+		ModifierAnnotation ma = new ModifierAnnotation(aJCas); 
+		ma.setBegin(leftmost);
+		ma.setEnd(rightmost); 
+		FSArray v = new FSArray(aJCas, r.length); 
+		ma.setModifierParts(v); 
+
+		String modText=""; 		
+		// Generate modifier parts 
+		for (int i=0; i < r.length; i++)
+		{		
+			ModifierPart p = new ModifierPart(aJCas); 
+			p.setBegin(r[i].getBegin()); 
+			p.setEnd(r[i].getEnd());
+			ma.setModifierParts(i,p); 
+			modText = modText + p.getCoveredText() + " ";  
+		}
+
 		// set "depending on", if given. 
+		if (dependOn != null)
+		{
+			ma.setDependsOn(dependOn); 
+		}
+		ma.addToIndexes(); 
+
+		// return Modifier Annotation itself, so the caller can easily make next 
+		// modifier that depends on this modifier annotation
+		return ma; 
 	}
 	
-	static public void annotateOneModifier(JCas aJCas, Region[] r) throws LAPException
+	/**
+	 * An overriden version for annotateOneModifer, without dependOn 
+	 * 
+	 * @param aJCas
+	 * @param r
+	 * @return
+	 * @throws LAPException
+	 */
+	static public ModifierAnnotation annotateOneModifier(JCas aJCas, Region[] r) throws LAPException
 	{
-		annotateOneModifier(aJCas, r, null); 
+		return annotateOneModifier(aJCas, r, null); 
 	}
-	
-	
 	
 	/**
 	 * An inner class that simply holds "begin" and "end" as int. 
@@ -279,4 +330,111 @@ public final class CASUtils {
 		private final int begin; 
 		private final int end; 
 	}
+	
+	/**
+	 * A temporary code: This will generate some XMI files in the /target dir.  
+	 * Those XMI files holds inputCASes agreed previously within WP6 for development phase. 
+	 * The files generated can be loaded by deserealizeFromXmi(). 
+	 * 
+	 * <P> The code will be called as normal build procedure, within CASUtilsTest class.
+	 */
+	public static void generateExamples() throws LAPException 
+	{
+		try {
+			
+		JCas aJCas = createNewInputCas(); 
+
+		// input CAS 1: Example A & B  
+		//    0         1         2
+		//    012345678901234567890
+		// A: Food was really bad. 
+		// B: Food was bad. 
+		aJCas.setDocumentText("Food was really bad."); 
+		aJCas.setDocumentLanguage("EN"); 
+		
+		CASUtils.Region[] rf = new CASUtils.Region[1]; 
+		rf[0] = new CASUtils.Region(0, 20); 
+		annotateOneDeterminedFragment(aJCas, rf); 
+		
+		CASUtils.Region[] rm = new CASUtils.Region[1]; 
+		rm[0] = new CASUtils.Region(9, 15); // "really" 
+		annotateOneModifier(aJCas, rm);
+		
+		serializeToXmi(aJCas, new File("./target/CASInput_example_1.xmi")); 
+		
+		// input CAS 2: Example C 
+		//     0         1         2 
+		//     01234567890123456789012345
+		// C: "I didn't like the food."
+		aJCas.reset(); 
+		aJCas.setDocumentText("I didn't like the food."); 
+		aJCas.setDocumentLanguage("EN"); 
+
+		rf = new CASUtils.Region[1]; 
+		rf[0] = new CASUtils.Region(0, 23); 
+		annotateOneDeterminedFragment(aJCas, rf); 
+
+		// no modifier for sentence C 
+		serializeToXmi(aJCas, new File("./target/CASInput_example_2.xmi")); 
+
+		// input CAS 3: Example D, E
+		//     0         1         2         3         4 
+		//     01234567890123456789012345678901234567890123456
+		// D: "a little more leg room would have been perfect" (modifier: "a little")
+		// E: "more leg room would have been perfect"
+		aJCas.reset(); 
+		aJCas.setDocumentText("a little more leg room would have been perfect"); 
+		aJCas.setDocumentLanguage("EN"); 
+
+		// fragment annotation as whole. 
+		rf = new CASUtils.Region[1]; 
+		rf[0] = new CASUtils.Region(0, 46); 
+		annotateOneDeterminedFragment(aJCas, rf); 
+		
+		// one modifier annotation 
+		rm = new CASUtils.Region[1]; 
+		rm[0] = new CASUtils.Region(0, 8); // "a little"  
+		annotateOneModifier(aJCas, rm);
+
+		serializeToXmi(aJCas, new File("./target/CASInput_example_3.xmi")); 
+
+		// input CAS 4: Example F, G, H, I 
+		//    0         1         2         3         4         5         6 
+		//    0123456789012345678901234567890123456789012345678901234567890123456
+		// F "Disappointed with the amount of legroom compared with other trains" (modifiers: "the amount of", "compared with other trains")
+		// G "Disappointed with legroom compared with other trains" (modifier: "compared with other trains")
+		// H "Disappointed with the amount of legroom" (modifier: "the amount of")
+		// I "Disappointed with legroom"
+		aJCas.reset(); 
+		aJCas.setDocumentText("Disappointed with the amount of legroom compared with other trains"); 
+		aJCas.setDocumentLanguage("EN"); 
+		
+		// fragment annotation as whole. 
+		rf = new CASUtils.Region[1]; 
+		rf[0] = new CASUtils.Region(0, 66); 
+		annotateOneDeterminedFragment(aJCas, rf); 
+
+		// two modifiers: "the amount of", "compared with other trains"
+		rm = new CASUtils.Region[1]; 
+		rm[0] = new CASUtils.Region(18, 28); // "the amount of"  
+		annotateOneModifier(aJCas, rm);
+		
+		rm = new CASUtils.Region[1]; 
+		rm[0] = new CASUtils.Region(40, 66); // "compared with other trains"   
+		annotateOneModifier(aJCas, rm);
+		
+		serializeToXmi(aJCas, new File("./target/CASInput_example_4.xmi")); 
+
+		// TODO: consider, adding something not whole is a fragment 
+		// TODO: consider, non continuous fragment & non continous modifier 
+		// TODO: consider, example with modifier dependOn. 
+		
+		}
+		catch (LAPException e)
+		{
+			throw e; 
+		}
+
+	}
+	
 }
