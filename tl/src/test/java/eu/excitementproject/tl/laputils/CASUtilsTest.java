@@ -4,7 +4,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
+import java.io.File;
 import java.util.Iterator;
+
+import junit.framework.Assert;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger; 
+import org.apache.log4j.BasicConfigurator; 
 
 import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
@@ -17,12 +24,14 @@ import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-
 public class CASUtilsTest {
 
 	@Test
 	public void test() {
-
+		BasicConfigurator.resetConfiguration(); 
+		BasicConfigurator.configure(); 
+		Logger.getRootLogger().setLevel(Level.INFO);  // for UIMA (hiding < INFO) 
+		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 		try {
 		// generate CAS from CASutils 
 		// (testing createNewInputCas()) 
@@ -89,12 +98,62 @@ public class CASUtilsTest {
 		assertEquals(7, af.getFragParts(0).getEnd());
 		assertEquals(16, af.getFragParts(1).getBegin()); 
 		assertEquals(26, af.getFragParts(1).getEnd());
+
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
 		
+		// testing for CASUtils.annotateOneAssumedFragment 
+		try {
+			JCas aJCas = CASUtils.createNewInputCas();
+			//                0123456789012345678901234567890123456
+			String docText = "abcd this is, actually, fragment. zzz"; 
+			aJCas.setDocumentLanguage("EN");
+			aJCas.setDocumentText(docText); 
+			CASUtils.Region[] r = new CASUtils.Region[2]; 
+			r[0] = new CASUtils.Region(5,12);
+			r[1] = new CASUtils.Region(24,33);
+			CASUtils.annotateOneAssumedFragment(aJCas, r); 
+			//CASUtils.dumpCAS(aJCas); 
+			
+			// Okay. now aJCas has one assumed fragment annotated. check this 
+			AnnotationIndex<Annotation> fragIndex = aJCas.getAnnotationIndex(AssumedFragment.type);
+			Iterator<Annotation> fragIter = fragIndex.iterator(); 		
+			
+			AssumedFragment af = (AssumedFragment) fragIter.next(); 
+			testlogger.info(af.getText()); 
+			testlogger.info(af.getFragParts(0).getBegin()); 
+			testlogger.info(af.getFragParts(1).getEnd()); 
+		
+			// 
+			// testing for serialization / deserialization 
+			File xmiOut = new File("./target/testout.xmi"); 
+			CASUtils.serializeToXmi(aJCas, xmiOut); 
+			JCas jcas2 = CASUtils.createNewInputCas(); 
+			CASUtils.deserializeFromXmi(jcas2, xmiOut); 
+			//CASUtils.dumpCAS(jcas2); 
+			Assert.assertEquals(jcas2.getDocumentText(),aJCas.getDocumentText()); 
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+		
+		// testing for generate examples 
+		try {
+			CASUtils.generateExamples(); 
+			// load one of the example? 
+			File xmiIn = new File("./target/CASInput_example_4.xmi"); 
+			JCas anotherJCas = CASUtils.createNewInputCas(); 
+			CASUtils.deserializeFromXmi(anotherJCas, xmiIn); 
+			//CASUtils.dumpCAS(anotherJCas);
+			System.out.println(anotherJCas.getDocumentText()); 
 		}
 		catch (Exception e)
 		{
 			fail(e.getMessage()); 
 		}
 	}
-
 }

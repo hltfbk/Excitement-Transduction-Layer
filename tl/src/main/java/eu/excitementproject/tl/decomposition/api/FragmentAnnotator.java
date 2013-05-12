@@ -38,7 +38,7 @@ public interface FragmentAnnotator {
 	 * @throws FragmentAnnotatorException if any needed data is missing in the input JCas or if couldn't successfully annotate the real_fragment
   annotations.
 	 */
-	public JCas annotateFragments(JCas text) throws FragmentAnnotatorException;
+	public void annotateFragments(JCas text) throws FragmentAnnotatorException;
 	
 }
 

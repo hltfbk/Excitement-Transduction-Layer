@@ -9,8 +9,9 @@ package eu.excitementproject.tl.composition.exceptions;
  *
  */
 public class CollapsedGraphGeneratorException extends Exception {
-
 	
+	private static final long serialVersionUID = -2023803901835429501L;
+
 	/** Exception thrown by CollapsedGraphGenerator if the implementation can't convert the graph for some
   reason
 	 * @param message
