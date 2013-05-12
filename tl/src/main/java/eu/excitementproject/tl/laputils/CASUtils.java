@@ -30,12 +30,11 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
 
 /**
  * The class holds various small utility static methods that might be 
- * useful in handling CASes: Like getting a new CAS, generate a new 
- * CAS by copying the provided CAS, etc. 
+ * useful in handling CASes: Like getting a new CAS, serialize, deserialize, 
+ * adding some annotations of TL inputCAS, etc. 
  * 
  * @author Gil 
  */
-
 
 // Things to be considered as future improvements 
 // TODO: [#C] set typepath convention for UIMAFit based CAS generation. 
@@ -244,6 +243,10 @@ public final class CASUtils {
 	static public void annotateOneModifier(JCas aJCas, Region[] r, ModifierAnnotation dependOn) throws LAPException 
 	{
 		// TODO write the code 
+		
+		// annotate them, just like frgs. 
+		
+		// set "depending on", if given. 
 	}
 	
 	static public void annotateOneModifier(JCas aJCas, Region[] r) throws LAPException
