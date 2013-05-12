@@ -25,7 +25,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
  */
 /**
  * 
- * @author vivi@fbk & LiliKotlerman
+ * @author vivi@fbk & LiliKotlerman & Kathrin
  * 
  * The node for the work graph is an EntailmentUnit
  *
@@ -97,4 +97,12 @@ public class EntailmentUnit{
 		return text;
 	}
 	
+	/**
+	 * 
+	 * @return -- the set of entailment unit mentions associated to this node
+	 */
+	public Set<EntailmentUnitMention> getMentions() {
+		return mentions;
+	}
+
 }
