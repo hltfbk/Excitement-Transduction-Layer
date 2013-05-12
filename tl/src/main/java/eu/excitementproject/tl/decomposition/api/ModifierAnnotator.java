@@ -34,6 +34,6 @@ public interface ModifierAnnotator {
 	 * @return the input CAS enriched with modifier annotations
 	 * @throws ModifierAnnotatorException if any of the needed data is missing in the input CAS or if couldn't annotate the modifiers
 	 */
-	public JCas annotateModifiers(JCas text) throws ModifierAnnotatorException;
+	public void annotateModifiers(JCas text) throws ModifierAnnotatorException;
 		
 }
