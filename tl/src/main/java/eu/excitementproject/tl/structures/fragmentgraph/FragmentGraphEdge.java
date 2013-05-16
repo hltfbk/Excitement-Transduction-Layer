@@ -26,20 +26,8 @@ public class FragmentGraphEdge extends DefaultEdge{
 	double weight = 1;
 	
 	/**
-	 * Default constructor
-	 * @param v1 -- source vertex
-	 * @param v2 -- target vertex
-	 * @param w -- edge weight
-	 */
-	FragmentGraphEdge(EntailmentUnitMention v1, EntailmentUnitMention v2, double w) {
-		source = v1;
-		target = v2;
-		weight = w;
-	}
-	
-	/**
 	 * 
-	 * @return
+	 * @return -- edge's weight
 	 */
 	public double getWeight(){
 		return weight;

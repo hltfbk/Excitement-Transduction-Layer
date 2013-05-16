@@ -8,6 +8,12 @@ import org.jgrapht.EdgeFactory;
 import org.jgrapht.graph.ClassBasedEdgeFactory;
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 
+import org.uimafit.util.JCasUtil;
+
+import eu.excitement.type.tl.FragmentAnnotation;
+import eu.excitement.type.tl.FragmentPart;
+import eu.excitement.type.tl.ModifierAnnotation;
+
 /**
  * 
  * @author vivi@fbk
@@ -49,7 +55,10 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * 
 	 * Structural information covers tokenization, POS, NEs, parse tree if available, etc.
 	 */
-	JCas fragmentCAS;
+	JCas document = null;
+	FragmentAnnotation fragment = null;
+
+	int depth = -1;
 	
 	/**
 	 * Default constructor
@@ -67,15 +76,163 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * @param edgeClass -- class of the graph's edges (FragmentGraphEdge)
 	 */
 	public FragmentGraph(Class<? extends FragmentGraphEdge> edgeClass) {
-		this(new ClassBasedEdgeFactory<EntailmentUnitMention, FragmentGraphEdge>(edgeClass));
-		// TODO Auto-generated constructor stub
+		super(edgeClass);
 	}
 	
-/*	
-	public void addNode(V v) {
-		this.addNode(v);
+	public FragmentGraph(String text, Set<String> modifiers) {
+		this(FragmentGraphEdge.class);
+		baseStatement = new EntailmentUnitMention(text,new HashSet<String>(), modifiers);
+		buildGraph(text, modifiers, modifiers, null);
 	}
-*/	
+	
+
+	/**
+	 * Build a fragment graph from a (determined) fragment in a CAS object corresponding to a document,
+	 * based on the modifier annotations in the fragment.
+	 * 
+	 * This will build a graph where:
+	 * -- each node is the fragment text, minus a subset of modifiers
+	 * (NOTE: the modifier combinations kept should be valid! i.e., we cannot have a modifier A
+	 *  that depends on another modifier B, but not B)
+	 * -- there is an edge between two nodes A and B (direction: A->B), where the set of modifiers in node B M_B = M_A \cup {M_i} 
+	 * 
+	 * @param aJCas
+	 * @param f
+	 */
+	public FragmentGraph(JCas aJCas, FragmentAnnotation frag) {
+		this(new ClassBasedEdgeFactory<EntailmentUnitMention, FragmentGraphEdge>(FragmentGraphEdge.class));
+		
+		document = aJCas;
+		fragment = frag;
+		baseStatement = new EntailmentUnitMention(aJCas, frag, new HashSet<ModifierAnnotation>());
+		
+		Set<ModifierAnnotation> mods = getFragmentModifiers(aJCas,frag);		
+		buildGraph(aJCas, frag, mods, null);		
+	}
+	
+	
+	/**
+	 * 
+	 * @param text -- a text fragment
+	 * @param modifiers -- set of string modifiers in the text
+	 * @param parent -- the parent node for the one that is built in the first step 
+	 * 					(has one extra modifier compared to the node that is being built)
+	 */
+	private void buildGraph(String text, Set<String> modifiers, Set<String> allModifiers, EntailmentUnitMention parent) {
+		EntailmentUnitMention eum = new EntailmentUnitMention(text, modifiers, allModifiers);
+		
+		if (! this.containsVertex(eum)) { // double check that this test does what it should
+			addVertex(eum);			
+		} else {
+			eum = this.getVertex(eum);
+		}
+
+		if (parent != null) {
+			this.addEdge(parent, eum); // double check the direction of the added edges
+		}
+
+		Set<String> sma;
+		for(String m: modifiers) {
+			sma = new HashSet<String>(modifiers);
+			sma.remove(m);
+			buildGraph(text, sma, allModifiers, eum);
+		}
+	}
+	
+
+
+	/**
+	 * start with the top node that has all modifiers, remove them one by one 
+	 * and recursively build the graph
+	 * 
+	 * @param aJCas -- document CAS object
+	 * @param frag -- (determined) fragment
+	 * @param mods -- set of modifiers
+	 * @param parent -- parent node (that has one extra modifier compared to the current node)
+	 */
+	private void buildGraph(JCas aJCas, FragmentAnnotation frag, Set<ModifierAnnotation> modifiers, EntailmentUnitMention parent) {
+		
+		EntailmentUnitMention eum = new EntailmentUnitMention(aJCas, frag, modifiers);
+		
+		if (! this.containsVertex(eum)) { // double check that this test does what it should
+			addVertex(eum);
+		} else {
+			eum = getVertex(eum);
+		}
+
+		if (parent != null) {
+			this.addEdge(parent, eum); // double check the direction of the added edges
+		}
+
+		Set<ModifierAnnotation> sma;
+		for(ModifierAnnotation m: modifiers) {
+			sma = new HashSet<ModifierAnnotation>(modifiers);
+			sma.remove(m);
+			if (consistentModifiers(sma)) {
+				buildGraph(aJCas, frag, sma, eum);
+			}
+		}
+	}
+	
+	/**
+	 * Checks if a set of modifiers is consistent, i.e. -- it doesn't miss a modifier that another depends on
+	 * (example: Seats are uncomfortable as too old. 
+	 * 				=> Seats are uncomfortable as old (OK)
+	 * 				=> Seats are uncomfortable as too (not OK)	
+	 * 
+	 * @param sma
+	 * @return
+	 */
+	private boolean consistentModifiers(Set<ModifierAnnotation> sma) {
+		
+		for(ModifierAnnotation m: sma) {
+			ModifierAnnotation m_dp = m.getDependsOn();
+			if (m_dp != null && ! sma.contains(m_dp)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Gather a (determined) fragment's modifiers
+	 * 
+	 * @param aJCas
+	 * @param f
+	 * @return
+	 */
+	public static Set<ModifierAnnotation> getFragmentModifiers(JCas aJCas,
+			FragmentAnnotation f) {
+		Set<ModifierAnnotation> mas = new HashSet<ModifierAnnotation>();
+		FragmentPart fp;
+		for(int i = 0; i < f.getFragParts().size(); i++) {
+			fp = f.getFragParts(i);
+			mas.addAll(JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, fp.getBegin(), fp.getEnd()));
+		}
+		return mas;
+	}
+
+	
+	private EntailmentUnitMention getVertex(EntailmentUnitMention eum) {
+		for(EntailmentUnitMention e: this.vertexSet()) {
+			if (eum.equals(e)) {
+				return e;
+			}
+		}
+		return null;
+	}
+	
+	@SuppressWarnings("unused")
+	private EntailmentUnitMention getVertex(String eumText) {
+		for(EntailmentUnitMention e: this.vertexSet()) {
+			if (e.getText().matches(eumText)) {
+				return e;
+			}
+		}
+		return null;
+	}
+	
+	
 	/**
 	 * 
 	 * @return the base statements of the fragment graph (useful for merging methods) -- for compatibility upwards (with WorkGraph)
@@ -84,33 +241,34 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return baseStatement;
 	}
 
-	/**
-	 * This might be a useful method for the graph merging part, if we follow the
-	 * implementation ideas from WP2
-	 * 
-	 * @param level -- the number of modifiers on top of the base statement
-	 * @return -- the set of nodes with "level" number of modifiers 
-	 */
-/*	public Set<V> getNodes(int level) {
-		Set<V> nodes = new HashSet<V>();
-		nodes.add(baseStatement);
-		return getNodes(level, nodes);
+	public EntailmentUnitMention getCompleteStatement(){
+		return (EntailmentUnitMention) getNodes(getMaxLevel()).toArray()[0];
 	}
 	
-	public Set<V> getNodes(int level, Set<V> nodes){
-		if (level == 0)
-			return nodes;
+	public int getMaxLevel() {
 		
-		Set<V> newNodes = new HashSet<V>();
-		for(V n: nodes) {
-			for(E e: this.edgesOf(n)) {
-				newNodes.add(this.getEdgeTarget(e));
+		if (depth < 0) {
+			for(EntailmentUnitMention eum: this.vertexSet()) {
+				if (eum.getLevel() > depth) {
+					depth = eum.getLevel();
+				}
+			}
+		}	
+				
+		return depth;
+	}
+
+	@Override
+	public boolean containsVertex(EntailmentUnitMention eum) {
+		for(EntailmentUnitMention e: this.vertexSet()) {
+			if (eum.equals(e)) {
+				return true;
 			}
 		}
-		return getNodes(level-1,newNodes);
+		return false;
 	}
-*/
-
+	
+	
 	/**
 	 * 
 	 * @param level -- the number of modifiers desired
@@ -135,10 +293,22 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 			str += "vertex: " + v.toString() + "\n";
 			for(EntailmentUnitMention x: this.vertexSet()) {
 				if (this.containsEdge(v, x))
-				str += "\tedge to: " + x.toString() + "\n";
+				str += "\t--entails-->   vertex: " + x.toString() + "\n";
 			}
 		}
 		return str;
 	}	
 
+	
+	public static void main(String [] argv) {
+			String text = "The hard old seats were very uncomfortable";
+			Set<String> modifiers = new HashSet<String>();
+			modifiers.add("hard");
+			modifiers.add("old");
+			modifiers.add("very");
+			FragmentGraph g = new FragmentGraph(text,modifiers);
+					
+			System.out.println("Graph: \\" + g.toString());
+	}
+	
 }
