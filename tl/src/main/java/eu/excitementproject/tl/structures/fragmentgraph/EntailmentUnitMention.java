@@ -1,6 +1,14 @@
 package  eu.excitementproject.tl.structures.fragmentgraph;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import org.apache.commons.lang.StringUtils;
 import org.apache.uima.jcas.JCas;
+
+import eu.excitement.type.tl.FragmentAnnotation;
+import eu.excitement.type.tl.ModifierAnnotation;
+import eu.excitement.type.tl.ModifierPart;
 
 
 /**
@@ -14,17 +22,21 @@ import org.apache.uima.jcas.JCas;
  */
 public class EntailmentUnitMention {
 	
-	protected int documentId;
-	protected int categoryId;
+	Set<ModifierAnnotation> modifiers = null;
+
 	protected String text;
+	protected Set<SimpleModifier> modifiersText;
 	protected int level;
-		
+	
+	protected String categoryId = "";
+	
 	/**
-	 * textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
+	 * @param textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
 	 */
 	public EntailmentUnitMention(String textFragment) {
 		text = textFragment;
 		level = 0;
+		modifiersText = new HashSet<SimpleModifier>();
 	}
 	
 	/**
@@ -32,13 +44,58 @@ public class EntailmentUnitMention {
 	 * @param textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
 	 * @param level
 	 */
-	public EntailmentUnitMention(String textFragment, int level) {
+	public EntailmentUnitMention(String textFragment, Set<String> modifiers, Set<String> allModifiers) {
 		text = textFragment;
-		this.level = level;
+		modifiersText = addModifiers(textFragment, modifiers); 		
+		this.level = modifiersText.size();
+		
+		String chars = textFragment;
+		for(String ma: allModifiers) {
+			if (! modifiers.contains(ma)) {
+				chars = removeModifier(chars,ma);
+			}
+		}
+		text = chars;
+//		text.trim().replaceAll(" +", " ");
 	}
 
-	public EntailmentUnitMention(JCas textCAS, int start, int end) {
-		// TODO Auto-generated constructor stub
+	private Set<SimpleModifier> addModifiers(String textFragment,
+			Set<String> mods) {
+		Set<SimpleModifier> sms = new HashSet<SimpleModifier>();
+		for(String s: mods) {	
+			if (textFragment.contains(s)) {
+				sms.add(new SimpleModifier(s,textFragment.indexOf(s),textFragment.indexOf(s)+s.length()));
+			}
+		}
+		return sms;
+	}
+
+	/**
+	 * 
+	 * Build an entailmentUnit based on the (determined) fragment annotation in a document CAS object, 
+	 * and the set of modifiers it should contain 
+	 * 
+	 * @param aJCas -- the document CAS object with all annotations
+	 * @param frag -- the (determined) fragment to which this object will correspond
+	 * @param mods -- the modifiers included in this object 
+	 */
+	public EntailmentUnitMention(JCas aJCas, FragmentAnnotation frag, Set<ModifierAnnotation> mods) {
+		
+		modifiers = mods;
+		Set<String> modsText = new HashSet<String>();
+		level = mods.size();
+		
+		CharSequence chars = frag.getText();
+		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
+			if (! mods.contains(ma)) {
+				chars = removeModifier(chars,ma);
+			} else {
+				modsText.add(ma.getCoveredText());
+			}
+		}
+		text = chars.toString();
+//		text.trim().replaceAll(" +", " ");
+		modifiersText = addModifiers(text,modsText);
 	}
 
 	/**
@@ -57,20 +114,56 @@ public class EntailmentUnitMention {
 		return level;
 	}
 	
-	/**
-	 * 
-	 * @return -- the category id
-	 */
-	public int getCategory() {
-		return categoryId;
+	public Set<SimpleModifier> getModifiers() {
+		return modifiersText;
 	}
+	
+	public Set<ModifierAnnotation> getModifierAnnotations() {
+		return modifiers;
+	}
+	
+	/**
+	 * Replaces modifiers that should not appear in this fragment with spaces
+	 * 
+	 * @param chars
+	 * @param ma
+	 * @return
+	 */
+	private CharSequence removeModifier(CharSequence chars, ModifierAnnotation ma) {
+		CharSequence chs = chars;
+		ModifierPart mp;
+		for (int i = 0; i < ma.getModifierParts().size(); i++) {
+			mp = ma.getModifierParts(i);
+			chs = chs.subSequence(0, mp.getBegin()) + StringUtils.repeat(" ",mp.getEnd()-mp.getBegin()) + chs.subSequence(mp.getEnd(),chs.length());
+		}
+		return chs;
+	}
+
+	/**
+	 * Replaces modifiers that should not appear in this fragment with spaces
+	 * 
+	 * @param chars
+	 * @param ma
+	 * @return
+	 */
+	private String removeModifier(String chars, String ma) {
+		int start = chars.indexOf(ma);
+		return chars.subSequence(0, start)  
+						+ StringUtils.repeat(" ",ma.length()) 
+						+ chars.subSequence(start + ma.length(),chars.length());
+	}
+
 	
 	/**
 	 * we could probably use methods to obtain various annotation layers of the object
 	 * This depends on what information we keep in the node. 
-	 */
-	
+	 */	
 	public String toString() {
 		return getText();
 	}
+	
+	public boolean equals(EntailmentUnitMention eum) {
+		return eum.text.matches(text);
+	}
+	
 }

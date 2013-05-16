@@ -3,8 +3,6 @@ package eu.excitementproject.tl.structures.rawgraph;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.uima.jcas.JCas;
-
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
 /*
@@ -44,12 +42,11 @@ public class EntailmentUnit{
 	 * @param start	-- start index of the fragment
 	 * @param end -- end index of the fragment
 	 */
-	EntailmentUnit(JCas textCAS, int start, int end) {
-		EntailmentUnitMention n = new EntailmentUnitMention(textCAS, start, end);
+	EntailmentUnit(EntailmentUnitMention eum) {
 		
 		mentions = new HashSet<EntailmentUnitMention>();
-		mentions.add(n);
-		text = textCAS.getDocumentText();
+		mentions.add(eum);
+		text = eum.getText();
 		
 		// TODO Auto-generated constructor stub
 	}
