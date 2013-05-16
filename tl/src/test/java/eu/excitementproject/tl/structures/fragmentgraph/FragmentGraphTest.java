@@ -1,37 +1,32 @@
 package eu.excitementproject.tl.structures.fragmentgraph;
 
-import org.junit.Ignore;
+import java.util.HashSet;
+import java.util.Set;
+
+//import org.junit.Ignore;
 import org.junit.Test;
 
 public class FragmentGraphTest {
 
-	@Ignore @Test
-	// DELETEME LATER: currently the test fails, so I added @ignore temporaly. 
-	// See [FAILS HERE] location where it fails I couldn't figure out what is failing. 
-	// please fix it and delete this comment :-) - Gil 
+	@Test
 	public void test() {
-		FragmentGraph g = new FragmentGraph(FragmentGraphEdge.class);
+		String text = "The hard old seats were very uncomfortable";
+		Set<String> modifiers = new HashSet<String>();
+		modifiers.add("hard");
+		modifiers.add("old");
+		modifiers.add("very");
+		FragmentGraph g = new FragmentGraph(text,modifiers);
+				
+		System.out.println("Graph: \n" + g.toString());
 		
-		// make nodes
-		EntailmentUnitMention v1 = new EntailmentUnitMention("base statement");
-		EntailmentUnitMention v2 = new EntailmentUnitMention("base statement + M1",1);
-		EntailmentUnitMention v3 = new EntailmentUnitMention("base statement + M2",1);
-		EntailmentUnitMention v4 = new EntailmentUnitMention("base statement + M1 + M2",2);
+		System.out.println("Base statement: \n" + g.getBaseStatement().getText());
+		System.out.println("Top statement: \n" + g.getCompleteStatement().getText());
 		
-		// add nodes to graph
-		g.addVertex(v1);
-		g.addVertex(v2);
-		g.addVertex(v3);
-		g.addVertex(v4);
-		
-		// add an edge with explicit edge object
-		g.addEdge(v1, v2, new FragmentGraphEdge(v1, v2, 3.0));
-		
-		// add an edge using the default method
-		g.addEdge(v1, v3); // [FAILS HERE] 
-		g.addEdge(v2, v4);
-		g.addEdge(v3, v4);
-		
-		System.out.println("Graph: \\" + g.toString());
+		for(EntailmentUnitMention eum: g.vertexSet()) {
+			System.out.println("text: " + eum.getText() + " (level " + eum.getLevel() + ")" );
+			for(SimpleModifier sm: eum.getModifiers()) {
+				System.out.println("\t" + sm.getText() + " (" + sm.getStart() + " -- " + sm.getEnd() + ")");
+			}
+		}
 	}
 }
