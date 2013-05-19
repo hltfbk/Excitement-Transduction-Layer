@@ -7,17 +7,19 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
 
 /**
  * This class implements a simple "modifier annotator" implementation solely based on 
- * POS tags. It will simply annotate any continuous tokens that are ADJ and/or ADV as modifiers. 
+ * POS tags. It will simply annotate any continuous tokens that are ADV as modifiers. 
  * 
  * <P> 
- * This simple implementation does not care about dependOn, or non-continuous regions 
+ * Note that, to really do the Modifier annotation, we will need dependency parsing + some more knowledge.  
+ * Finding so called "Modifier", is not that easy task: it is actually picking out non-essential components in terms of predicate structure. (or something like that) 
+ * Anyway, this simple implementation does not care about dependOn, or non-continuous regions. 
  * 
  * @author Gil
  * 
  */
-public class AdvAdjAsModifierAnnotator extends AbstractModifierAnnotator {
+public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
 
-	public AdvAdjAsModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
+	public AdvAsModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
 	{
 		super(lap); 
 	}
