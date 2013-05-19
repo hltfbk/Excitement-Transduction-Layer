@@ -289,6 +289,9 @@ public final class CASUtils {
 		}
 		ma.addToIndexes(); 
 
+		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+		l.debug("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
+
 		// return Modifier Annotation itself, so the caller can easily make next 
 		// modifier that depends on this modifier annotation
 		return ma; 
