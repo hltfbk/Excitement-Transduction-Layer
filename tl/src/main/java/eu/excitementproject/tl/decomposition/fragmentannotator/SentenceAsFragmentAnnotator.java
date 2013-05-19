@@ -61,7 +61,7 @@ public class SentenceAsFragmentAnnotator extends AbstractFragmentAnnotator {
 
 		}
 
-		fragLogger.info("Annotating determined fragments"); 
+		fragLogger.info("Annotating determined fragments on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
 		int num_frag = 0; 
 		while(sentItr.hasNext())
 		{
@@ -82,7 +82,7 @@ public class SentenceAsFragmentAnnotator extends AbstractFragmentAnnotator {
 			}
 			num_frag++; 
 		}
-		fragLogger.info("Annotated" + num_frag + " determined fragments"); 
+		fragLogger.info("Annotated " + num_frag + " determined fragments"); 
 	}
 
 }

@@ -197,7 +197,7 @@ public final class CASUtils {
 		af.addToIndexes(); 
 		
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
-		l.info("Generated an AssummedFragment annotation. Fragment text is: " + fragText); 
+		l.debug("Generated an AssummedFragment annotation. Fragment text is: " + fragText); 
 		
 	}
 	
@@ -240,7 +240,7 @@ public final class CASUtils {
 		df.addToIndexes(); 
 		
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
-		l.info("Generated a DeterminedFragment annotation. Fragment text is: " + fragText); 
+		l.debug("Generated a DeterminedFragment annotation. Fragment text is: " + fragText); 
 		
 	}
 
