@@ -83,8 +83,10 @@ public class EntailmentGraphRaw extends
 	 * @param fg -- a fragment graph object
 	 */
 	public EntailmentGraphRaw(FragmentGraph fg) {
-		// to do
 		super(EntailmentRelation.class);
+		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
+			this.addEdgeFromFrahmentGraph(fragmentGraphEdge);
+		}
 	}
 	
 	
@@ -171,13 +173,21 @@ public class EntailmentGraphRaw extends
 	/******************************************************************************************
 	 * PRINT GRAPH
 	 * ****************************************************************************************/
+	
+	@Override
 	public String toString(){
 		String s = "";
 		s+="\nNODES:";
 		for (EntailmentUnit v: this.vertexSet()){
 			s+="\n\t\""+v.getText()+"\"";
+			if(v.isBaseStatement) s+=" (base statement)";
 		}
 		
+		s+="\n\nBASE STATEMENT NODES:";
+		for (EntailmentUnit v: this.getBaseStatements()){
+			s+="\n\t\""+v.getText()+"\"";
+		}
+
 		s+="\n\nENTAILMENTS";
 		for (EntailmentRelation e: this.edgeSet()){
 			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
@@ -200,16 +210,16 @@ public class EntailmentGraphRaw extends
 	/**
 	 * Get a sample EntailmentGraphRaw
 	 * @param randomEdges - True for random edges, False for 'correct' edges
-	 * Nodes:
+	 * Nodes: (bs - base statement)
 	 * 		A "Food was really bad." (modifier: really)
-			B "Food was bad."
-			C "I didn't like the food."
+		bs	B "Food was bad."
+		bs	C "I didn't like the food."
 			D "a little more leg room would have been perfect" (modifier: "a little")
-			E "more leg room would have been perfect"
+		bs	E "more leg room would have been perfect"
 			F "Disappointed with the amount of legroom compared with other trains" (modifiers: "the amount of", "compared with other trains")
 			G "Disappointed with legroom compared with other trains" (modifier: "compared with other trains")
 			H "Disappointed with the amount of legroom" (modifier: "the amount of")
-			I "Disappointed with legroom"
+		bs	I "Disappointed with legroom"
 			
 	 */
 		
@@ -217,14 +227,14 @@ public class EntailmentGraphRaw extends
 		
 		// create the to-be graph nodes
 		EntailmentUnit A = new EntailmentUnit("Food was really bad.");
-		EntailmentUnit B = new EntailmentUnit("Food was bad.");
-		EntailmentUnit C = new EntailmentUnit("I didn't like the food.");
+		EntailmentUnit B = new EntailmentUnit("Food was bad."); B.setBaseStatement(true);
+		EntailmentUnit C = new EntailmentUnit("I didn't like the food."); C.setBaseStatement(true);
 		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect");
-		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect");
+		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect"); E.setBaseStatement(true);
 		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains");
 		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains");
 		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom");
-		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom");
+		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom"); I.setBaseStatement(true);
 
 		// create an empty graph
 		EntailmentGraphRaw sampleRawGraph = new EntailmentGraphRaw();
@@ -233,6 +243,7 @@ public class EntailmentGraphRaw extends
 		sampleRawGraph.addVertex(A); sampleRawGraph.addVertex(B); sampleRawGraph.addVertex(C);
 		sampleRawGraph.addVertex(D); sampleRawGraph.addVertex(E); sampleRawGraph.addVertex(F);
 		sampleRawGraph.addVertex(G); sampleRawGraph.addVertex(H); sampleRawGraph.addVertex(I);
+		
 
 		if (randomEdges){ // add random edges
 			EDABasic<?> eda = new RandomEDA();
