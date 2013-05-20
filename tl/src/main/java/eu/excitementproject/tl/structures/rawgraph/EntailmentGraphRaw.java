@@ -9,6 +9,8 @@ import org.jgrapht.graph.DirectedMultigraph;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
 
@@ -60,8 +62,7 @@ public class EntailmentGraphRaw extends
 	 * @param arg0 -- edge factory
 	 */
 	public EntailmentGraphRaw(EdgeFactory<EntailmentUnit,EntailmentRelation> arg0) {
-		super(arg0);
-		// 122324343
+		super(arg0);		
 	}
 
 	/*
@@ -123,11 +124,45 @@ public class EntailmentGraphRaw extends
 	 * @param targetVertex
 	 * @param eda
 	 */
-	public void addEdge(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
+	public void addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
 		this.addEdge(sourceVertex, targetVertex, edge);
 	}
 	
+	/**
+	 * Copy an edge from a FragmentGraph - if vertices do not exist, add them
+	 * ToDo: check whether can rely on containsVertex() to find a vertex - I guess we'll need Kathrin's node matcher
+	 * @param fragmentGraphEdge -- the edge to copy into the graph
+	 * ToDo: how to deal with the original confidence? Currently copied as is.
+	 */
+	public void addEdgeFromFrahmentGraph(FragmentGraphEdge fragmentGraphEdge){
+		EntailmentUnit sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource());
+		EntailmentUnit targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget());
+		
+		// if vertices do not exist, add them
+		if(!this.containsVertex(sourceVertex)) this.addVertex(sourceVertex);
+		if(!this.containsVertex(targetVertex)) this.addVertex(targetVertex);
+		
+		// now create and add the edge
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, 
+				new TEDecisionByScore(fragmentGraphEdge.getWeight()), //TEDesision with the confidence from the original edge? //
+				EdgeType.CopiedFromFragmentGraph);
+		this.addEdge(sourceVertex, targetVertex, edge);
+	}
+	
+	/**
+	 * Create an edge induced by transitivity. Confidence is to be given as parameter.
+	 * @param sourceVertex
+	 * @param targetVertex
+	 * @param confidence
+	 */
+	public void addEdgeByTransitivity(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, Double confidence){
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, 
+				new TEDecisionByScore(confidence), //TEDesision with the given confidence 
+				EdgeType.InducedByTransitivity);
+		this.addEdge(sourceVertex, targetVertex, edge);
+	}
+		
 	
 	/******************************************************************************************
 	 * PRINT GRAPH
@@ -202,8 +237,8 @@ public class EntailmentGraphRaw extends
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.getText().equals(v2.getText())) { //don't calculate for a node with itself  //ToDo: use node matcher when ready (currently just compare nodes' text) 
-						sampleRawGraph.addEdge(v1, v2, eda);
-						sampleRawGraph.addEdge(v2, v1, eda);
+						sampleRawGraph.addEdgeFromEDA(v1, v2, eda);
+						sampleRawGraph.addEdgeFromEDA(v2, v1, eda);
 					}
 				}
 			}
@@ -239,23 +274,23 @@ public class EntailmentGraphRaw extends
 			sampleRawGraph.addEdge(I, H, new EntailmentRelation(I, H, new TEDecisionByScore(0.0)));
 
 			
-			// add edges "obtained" from eda
+			// add edges "obtained" from eda (EdgeType.GeneratedByEDA)
 
-			sampleRawGraph.addEdge(B, C, new EntailmentRelation(B, C, new TEDecisionByScore(0.72)));
-			sampleRawGraph.addEdge(C, B, new EntailmentRelation(C, B, new TEDecisionByScore(0.77)));
+			sampleRawGraph.addEdge(B, C, new EntailmentRelation(B, C, new TEDecisionByScore(0.72), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(C, B, new EntailmentRelation(C, B, new TEDecisionByScore(0.77), EdgeType.GeneratedByEDA));
 
-			sampleRawGraph.addEdge(B, E, new EntailmentRelation(B, E, new TEDecisionByScore(0.05)));
-			sampleRawGraph.addEdge(E, B, new EntailmentRelation(E, B, new TEDecisionByScore(0.08)));
-			sampleRawGraph.addEdge(C, E, new EntailmentRelation(C, E, new TEDecisionByScore(0.07)));
-			sampleRawGraph.addEdge(E, C, new EntailmentRelation(E, C, new TEDecisionByScore(0.11)));
+			sampleRawGraph.addEdge(B, E, new EntailmentRelation(B, E, new TEDecisionByScore(0.05), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(E, B, new EntailmentRelation(E, B, new TEDecisionByScore(0.08), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(C, E, new EntailmentRelation(C, E, new TEDecisionByScore(0.07), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(E, C, new EntailmentRelation(E, C, new TEDecisionByScore(0.11), EdgeType.GeneratedByEDA));
 			
-			sampleRawGraph.addEdge(E, I, new EntailmentRelation(E, I, new TEDecisionByScore(0.82)));
-			sampleRawGraph.addEdge(I, E, new EntailmentRelation(I, E, new TEDecisionByScore(0.74)));
+			sampleRawGraph.addEdge(E, I, new EntailmentRelation(E, I, new TEDecisionByScore(0.82), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(I, E, new EntailmentRelation(I, E, new TEDecisionByScore(0.74), EdgeType.GeneratedByEDA));
 
-			sampleRawGraph.addEdge(B, I, new EntailmentRelation(B, I, new TEDecisionByScore(0.06)));
-			sampleRawGraph.addEdge(I, B, new EntailmentRelation(I, B, new TEDecisionByScore(0.03)));
-			sampleRawGraph.addEdge(C, I, new EntailmentRelation(C, I, new TEDecisionByScore(0.09)));
-			sampleRawGraph.addEdge(I, C, new EntailmentRelation(I, C, new TEDecisionByScore(0.04)));
+			sampleRawGraph.addEdge(B, I, new EntailmentRelation(B, I, new TEDecisionByScore(0.06), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(I, B, new EntailmentRelation(I, B, new TEDecisionByScore(0.03), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(C, I, new EntailmentRelation(C, I, new TEDecisionByScore(0.09), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(I, C, new EntailmentRelation(I, C, new TEDecisionByScore(0.04), EdgeType.GeneratedByEDA));
 								
 		}
 
