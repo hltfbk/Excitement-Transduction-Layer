@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.jgrapht.EdgeFactory;
@@ -108,8 +109,11 @@ public class EntailmentGraphRaw extends
 	 * @return -- the base statements (the roots) of the graph
 	 */
 	public Set<EntailmentUnit> getBaseStatements(){
-//		return baseStatements;
-		return null;
+		Set<EntailmentUnit> baseStatements = new HashSet<EntailmentUnit>();
+		for (EntailmentUnit node : this.vertexSet()){
+			if (node.isBaseStatement) baseStatements.add(node);
+		}
+		return baseStatements;
 	}
 	
 	
