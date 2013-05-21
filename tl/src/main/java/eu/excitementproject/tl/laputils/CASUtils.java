@@ -197,7 +197,7 @@ public final class CASUtils {
 		af.addToIndexes(); 
 		
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
-		l.info("Generated an AssummedFragment annotation. Fragment text is: " + fragText); 
+		l.debug("Generated an AssummedFragment annotation. Fragment text is: " + fragText); 
 		
 	}
 	
@@ -240,7 +240,7 @@ public final class CASUtils {
 		df.addToIndexes(); 
 		
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
-		l.info("Generated a DeterminedFragment annotation. Fragment text is: " + fragText); 
+		l.debug("Generated a DeterminedFragment annotation. Fragment text is: " + fragText); 
 		
 	}
 
@@ -288,6 +288,9 @@ public final class CASUtils {
 			ma.setDependsOn(dependOn); 
 		}
 		ma.addToIndexes(); 
+
+		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+		l.debug("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
 
 		// return Modifier Annotation itself, so the caller can easily make next 
 		// modifier that depends on this modifier annotation

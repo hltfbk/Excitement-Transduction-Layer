@@ -12,9 +12,11 @@ public class FragmentAnnotatorException extends Exception {
 	 * Exception thrown by FragmentAnnotator if any needed data is missing in the input JCas or if couldn't successfully annotate the real_fragment annotations.
 	 * @param message
 	 */
-	FragmentAnnotatorException(String message) {
+	public FragmentAnnotatorException(String message) {
 			super(message);
-			// TODO Auto-generated constructor stub
+	}
+	public FragmentAnnotatorException(String message, Throwable cause) {
+		super(message, cause);
 	}
 }
 
