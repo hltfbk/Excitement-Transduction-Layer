@@ -28,7 +28,7 @@ public class RandomTEDecision implements TEDecision{
 	}
 
 	public String getPairID() {
-		// ToDo: understand how to extract this from the CAS (this method returns the entailment.Pair id as described in the CAS.)
+		// TODO: understand how to extract this from the CAS (this method returns the entailment.Pair id as described in the CAS.)
 		// meanwhile return null
 		return null;
 	}

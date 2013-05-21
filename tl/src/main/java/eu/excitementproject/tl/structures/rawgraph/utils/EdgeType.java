@@ -5,7 +5,7 @@ public enum EdgeType {
 	GeneratedByEDA,
 	CopiedFromFragmentGraph,
 	InducedByTransitivity,
-	Unknown, //ToDo: do we need Unknown type? Are there other types?
+	Unknown, //TODO: do we need Unknown type? Are there other types?
 	;
 	
 	public boolean is(EdgeType edgeType){
