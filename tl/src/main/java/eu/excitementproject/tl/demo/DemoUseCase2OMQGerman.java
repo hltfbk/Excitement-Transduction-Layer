@@ -51,7 +51,7 @@ public class DemoUseCase2OMQGerman {
 		CASUtils.deserializeFromXmi(cas, new File("target/CASInput_example_4.xmi")); //TODO: replace with OMQ example
 		
 		//add fragment annotation
-		FragmentAnnotator fa = null; //TODO: replace with implemementation
+		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(); //TODO: replace with implemementation
 		//fa = new SentenceAsFragmentAnnotator(lapAccess);
 		fa.annotateFragments(cas);
 		
