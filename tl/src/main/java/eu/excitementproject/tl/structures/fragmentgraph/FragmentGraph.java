@@ -299,6 +299,32 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	}	
 
 	
+	public static Set<FragmentGraph> getSampleOutput() {
+		Set<FragmentGraph> fgs  = new HashSet<FragmentGraph>();
+		
+		String text = "Food was really bad";
+		Set<String> modifs = new HashSet<String>();
+		modifs.add("really");
+		fgs.add(new FragmentGraph(text,modifs));
+		
+		text = "I didn't like the food";
+		modifs.clear();
+		fgs.add(new FragmentGraph(text,modifs));
+		
+		text = "a little more leg room would have been perfect";
+		modifs.clear();
+		modifs.add("a little");
+		fgs.add(new FragmentGraph(text,modifs));
+
+		text = "Disappointed with the amount of legroom compared with other trains";
+		modifs.clear();
+		modifs.add("amount of");
+		modifs.add("compared with other trains");
+		fgs.add(new FragmentGraph(text,modifs));
+		
+		return fgs;
+	}
+	
 	public static void main(String [] argv) {
 			String text = "The hard old seats were very uncomfortable";
 			Set<String> modifiers = new HashSet<String>();
