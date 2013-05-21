@@ -28,12 +28,12 @@ like matching) to produce results in near-real-time.
 public interface NodeMatcher {
 
 	/**
-	 * @param fragmentGraphs - set of fragment graphs ({@link FragmentGraph})
+	 * @param fragmentGraphs - fragment graph ({@link FragmentGraph})
 	 * @param entailmentGraph - one entailment graph (raw) ({@link EntailmentGraphRaw})
 	 * @return set of node matches ({@link NodeMatch})
 	 * @throws NodeMatcherException if node matching fails
 	 */
-	public Set<NodeMatch> findMatchingNodesInGraph(Set<FragmentGraph> fragmentGraphs, EntailmentGraphRaw entailmentGraph) 
+	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph, EntailmentGraphRaw entailmentGraph) 
 			throws NodeMatcherException;
 
 
