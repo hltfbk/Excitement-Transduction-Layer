@@ -140,7 +140,6 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	}
 	
 
-
 	/**
 	 * start with the top node that has all modifiers, remove them one by one 
 	 * and recursively build the graph
@@ -311,4 +310,13 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 			System.out.println("Graph: \\" + g.toString());
 	}
 	
+	/* This method was added by Lili on May, 20 
+	 * to allow retrieving the source and the target of an edge using its corresponding getters)*/
+	@Override
+	public FragmentGraphEdge addEdge(EntailmentUnitMention parent, EntailmentUnitMention eum){
+		FragmentGraphEdge edge = new FragmentGraphEdge(parent, eum);
+		this.addEdge(parent, eum, edge);
+		return edge;
+	}
+
 }
