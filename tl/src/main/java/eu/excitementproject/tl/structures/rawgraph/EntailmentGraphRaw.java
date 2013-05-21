@@ -171,17 +171,6 @@ public class EntailmentGraphRaw extends
 		this.addEdge(sourceVertex, targetVertex, edge);
 	}
 	
-	@Override
-	public boolean containsVertex(EntailmentUnit vertex){
-		
-		for (EntailmentUnit eu : this.vertexSet()){
-			if (eu.getText().equals(vertex.getText())) return true;
-		}
-		
-		return false;
-	}
-	
-
 	/**
 	 * Return the vertex (EntailmentUnit) with the corresponding text, if it is found in the graph. 
 	 * Otherwise return null.
@@ -205,25 +194,24 @@ public class EntailmentGraphRaw extends
 		String s = "";
 		s+="\nNODES:";
 		for (EntailmentUnit v: this.vertexSet()){
-			s+="\n\t\""+v.getText()+"\"";
-			if(v.isBaseStatement) s+=" (base statement)";
+			s+="\n\t\""+v.toString();
 		}
 		
 		s+="\n\nBASE STATEMENT NODES:";
 		for (EntailmentUnit v: this.getBaseStatements()){
-			s+="\n\t\""+v.getText()+"\"";
+			s+="\n\t\""+v.toString();
 		}
 
 		s+="\n\nENTAILMENTS";
 		for (EntailmentRelation e: this.edgeSet()){
 			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
-				s+="\n\t"+e.getSource().getText()+" --> "+e.getTarget().getText() +" ("+e.getLabel().toString()+", "+e.getConfidence()+") ";
+				s+="\n\t"+e.toString();
 			}
 		}
 
 		s+="\n\nALL EDGES:";
 		for (EntailmentRelation e: this.edgeSet()){
-			s+="\n\t"+e.getSource().getText()+" --> "+e.getTarget().getText() +" ("+e.getLabel().toString()+", "+e.getConfidence()+") ";
+			s+="\n\t"+e.toString();
 		}
 		
 		return s;
