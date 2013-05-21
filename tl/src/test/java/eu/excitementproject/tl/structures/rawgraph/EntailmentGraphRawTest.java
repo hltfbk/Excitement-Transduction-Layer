@@ -6,6 +6,7 @@ import java.util.Set;
 import org.junit.Test;
 
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 
 
 public class EntailmentGraphRawTest {
@@ -35,6 +36,7 @@ public class EntailmentGraphRawTest {
 		modifiers.add("old");
 		modifiers.add("very");
 		FragmentGraph g = new FragmentGraph(text,modifiers);
+		
 		rawGraph = new EntailmentGraphRaw(g);
 		System.out.println("********************************\n Copy of a Fragment graph:\n"+rawGraph.toString());		
 	}

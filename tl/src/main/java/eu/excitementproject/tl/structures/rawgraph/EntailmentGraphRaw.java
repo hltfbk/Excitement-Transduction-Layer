@@ -142,17 +142,21 @@ public class EntailmentGraphRaw extends
 	 * ToDo: how to deal with the original confidence? Currently copied as is.
 	 */
 	public void addEdgeFromFrahmentGraph(FragmentGraphEdge fragmentGraphEdge){
-		EntailmentUnit sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource());
-		EntailmentUnit targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget());
-		
+		EntailmentUnit sourceVertex = getVertex(fragmentGraphEdge.getSource().getText());
+		EntailmentUnit targetVertex = getVertex(fragmentGraphEdge.getTarget().getText());
+
 		// if vertices do not exist, add them
-		if(!this.containsVertex(sourceVertex)) this.addVertex(sourceVertex);
-		if(!this.containsVertex(targetVertex)) this.addVertex(targetVertex);
+		if(sourceVertex==null){
+			sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource());
+			this.addVertex(sourceVertex);
+		}
+		if(targetVertex==null){
+			targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget());
+			this.addVertex(targetVertex);
+		}
 		
 		// now create and add the edge
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, 
-				new TEDecisionByScore(fragmentGraphEdge.getWeight()), //TEDesision with the confidence from the original edge? //
-				EdgeType.CopiedFromFragmentGraph);
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.CopiedFromFragmentGraph);
 		this.addEdge(sourceVertex, targetVertex, edge);
 	}
 	
@@ -163,10 +167,32 @@ public class EntailmentGraphRaw extends
 	 * @param confidence
 	 */
 	public void addEdgeByTransitivity(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, Double confidence){
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, 
-				new TEDecisionByScore(confidence), //TEDesision with the given confidence 
-				EdgeType.InducedByTransitivity);
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(confidence), EdgeType.InducedByTransitivity);
 		this.addEdge(sourceVertex, targetVertex, edge);
+	}
+	
+	@Override
+	public boolean containsVertex(EntailmentUnit vertex){
+		
+		for (EntailmentUnit eu : this.vertexSet()){
+			if (eu.getText().equals(vertex.getText())) return true;
+		}
+		
+		return false;
+	}
+	
+
+	/**
+	 * Return the vertex (EntailmentUnit) with the corresponding text, if it is found in the graph. 
+	 * Otherwise return null.
+	 * @param text the text of the EntailmentUnit to be found
+	 * @return
+	 */
+	public EntailmentUnit getVertex(String text){
+		for (EntailmentUnit eu : this.vertexSet()){
+			if (eu.getText().equals(text)) return eu;
+		}
+		return null;
 	}
 		
 	
