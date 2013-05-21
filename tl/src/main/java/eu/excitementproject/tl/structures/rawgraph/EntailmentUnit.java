@@ -111,6 +111,44 @@ public class EntailmentUnit{
 	public void setBaseStatement(boolean isBaseStatement) {
 		this.isBaseStatement = isBaseStatement;
 	}
+
+
+	@Override
+	public String toString(){
+		String s=this.getText();
+		if(this.isBaseStatement) s+=" (base statement)";
+		return s;
+	}
+	
+	/******************************************************************************************
+	 * Override hashCode() and equals(). 
+	 * ****************************************************************************************/
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((text == null) ? 0 : text.hashCode());
+		return result;
+	}
+
+	/* Will return true if both EntailmentUnits have the same text */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EntailmentUnit other = (EntailmentUnit) obj;
+		if (text == null) {
+			if (other.text != null)
+				return false;
+		} else if (!text.equals(other.text))
+			return false;
+		return true;
+	}
 	
 	
 
