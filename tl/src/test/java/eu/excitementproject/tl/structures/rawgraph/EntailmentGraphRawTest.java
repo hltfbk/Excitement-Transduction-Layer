@@ -6,8 +6,6 @@ import java.util.Set;
 import org.junit.Test;
 
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
-import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
-
 
 public class EntailmentGraphRawTest {
 	
