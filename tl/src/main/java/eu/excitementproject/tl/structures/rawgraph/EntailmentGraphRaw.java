@@ -113,7 +113,7 @@ public class EntailmentGraphRaw extends
 	public Set<EntailmentUnit> getBaseStatements(){
 		Set<EntailmentUnit> baseStatements = new HashSet<EntailmentUnit>();
 		for (EntailmentUnit node : this.vertexSet()){
-			if (node.isBaseStatement) baseStatements.add(node);
+			if (node.isBaseStatement()) baseStatements.add(node);
 		}
 		return baseStatements;
 	}
@@ -137,9 +137,9 @@ public class EntailmentGraphRaw extends
 	
 	/**
 	 * Copy an edge from a FragmentGraph - if vertices do not exist, add them
-	 * ToDo: check whether can rely on containsVertex() to find a vertex - I guess we'll need Kathrin's node matcher
+	 * TODO: Use Kathrin's node matcher when ready?
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
-	 * ToDo: how to deal with the original confidence? Currently copied as is.
+	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
 	 */
 	public void addEdgeFromFrahmentGraph(FragmentGraphEdge fragmentGraphEdge){
 		EntailmentUnit sourceVertex = getVertex(fragmentGraphEdge.getSource().getText());
@@ -171,17 +171,6 @@ public class EntailmentGraphRaw extends
 		this.addEdge(sourceVertex, targetVertex, edge);
 	}
 	
-	@Override
-	public boolean containsVertex(EntailmentUnit vertex){
-		
-		for (EntailmentUnit eu : this.vertexSet()){
-			if (eu.getText().equals(vertex.getText())) return true;
-		}
-		
-		return false;
-	}
-	
-
 	/**
 	 * Return the vertex (EntailmentUnit) with the corresponding text, if it is found in the graph. 
 	 * Otherwise return null.
@@ -194,7 +183,15 @@ public class EntailmentGraphRaw extends
 		}
 		return null;
 	}
-		
+	
+	/**
+	 * @return true if the graph has no vertices (i.e. the graph is empty) 
+	 */
+	public boolean isEmpty(){
+		if(this.vertexSet().isEmpty()) return true;
+		return false;
+	}
+
 	
 	/******************************************************************************************
 	 * PRINT GRAPH
@@ -205,25 +202,24 @@ public class EntailmentGraphRaw extends
 		String s = "";
 		s+="\nNODES:";
 		for (EntailmentUnit v: this.vertexSet()){
-			s+="\n\t\""+v.getText()+"\"";
-			if(v.isBaseStatement) s+=" (base statement)";
+			s+="\n\t\""+v.toString();
 		}
 		
 		s+="\n\nBASE STATEMENT NODES:";
 		for (EntailmentUnit v: this.getBaseStatements()){
-			s+="\n\t\""+v.getText()+"\"";
+			s+="\n\t\""+v.toString();
 		}
 
 		s+="\n\nENTAILMENTS";
 		for (EntailmentRelation e: this.edgeSet()){
 			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
-				s+="\n\t"+e.getSource().getText()+" --> "+e.getTarget().getText() +" ("+e.getLabel().toString()+", "+e.getConfidence()+") ";
+				s+="\n\t"+e.toString();
 			}
 		}
 
 		s+="\n\nALL EDGES:";
 		for (EntailmentRelation e: this.edgeSet()){
-			s+="\n\t"+e.getSource().getText()+" --> "+e.getTarget().getText() +" ("+e.getLabel().toString()+", "+e.getConfidence()+") ";
+			s+="\n\t"+e.toString();
 		}
 		
 		return s;
@@ -277,7 +273,7 @@ public class EntailmentGraphRaw extends
 			// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
-					if (!v1.getText().equals(v2.getText())) { //don't calculate for a node with itself  //ToDo: use node matcher when ready (currently just compare nodes' text) 
+					if (!v1.equals(v2)) { //don't calculate for a node with itself  
 						sampleRawGraph.addEdgeFromEDA(v1, v2, eda);
 						sampleRawGraph.addEdgeFromEDA(v2, v1, eda);
 					}
