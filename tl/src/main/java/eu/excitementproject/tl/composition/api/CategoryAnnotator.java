@@ -31,10 +31,9 @@ public interface CategoryAnnotator {
 	/**
 	 * @param cas - input CAS ({@link JCas})
 	 * @param matches - set of matching nodes ({@link MatchingNode})
-	 * @return input CAS annotated with category information ({@link JCas})
 	 * @throws CategoryAnnotatorException if category annotation fails
 	 */
-	public JCas addCategoryAnnotation(JCas cas, Set<NodeMatch> matches) 
+	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches) 
 			throws CategoryAnnotatorException;
 
 }
