@@ -32,5 +32,25 @@ public class FragmentGraphEdge extends DefaultEdge{
 	public double getWeight(){
 		return weight;
 	}
+
+	/* =========== The two getters are added by Lili on May, 20.*/ 
+	
+	@Override
+	public EntailmentUnitMention getSource() {
+		return source;
+	}
+
+	@Override
+	public EntailmentUnitMention getTarget() {
+		return target;
+	}
+
+	public FragmentGraphEdge(EntailmentUnitMention source,
+			EntailmentUnitMention target) {
+		super();
+		this.source = source;
+		this.target = target;
+	}
+	
 	
 }

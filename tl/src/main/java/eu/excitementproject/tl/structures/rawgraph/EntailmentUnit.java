@@ -34,6 +34,8 @@ public class EntailmentUnit{
 	
 	Set<EntailmentUnitMention> mentions = null;
 	
+	boolean isBaseStatement = false;
+	
 	/**
 	 * initialize the JCas attribute -- make the first fragment added to the 
 	 * EntailmentUnit object the "canonical" element
@@ -47,8 +49,8 @@ public class EntailmentUnit{
 		mentions = new HashSet<EntailmentUnitMention>();
 		mentions.add(eum);
 		text = eum.getText();
-		
-		// TODO Auto-generated constructor stub
+		if(eum.getLevel()==0) setBaseStatement(true);
+				
 	}
 
 	/**
@@ -101,5 +103,15 @@ public class EntailmentUnit{
 	public Set<EntailmentUnitMention> getMentions() {
 		return mentions;
 	}
+
+	public boolean isBaseStatement() {
+		return isBaseStatement;
+	}
+
+	public void setBaseStatement(boolean isBaseStatement) {
+		this.isBaseStatement = isBaseStatement;
+	}
+	
+	
 
 }
