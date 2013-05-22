@@ -1,13 +1,13 @@
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
-
 import java.util.Set;
 
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.NodeMatcher;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
@@ -50,8 +50,8 @@ public class DemoUseCase2OMQGerman {
 		CASUtils.deserializeFromXmi(cas, new File("target/CASInput_example_4.xmi")); //TODO: replace with OMQ example
 		
 		//add fragment annotation
-		FragmentAnnotator fa = null; //TODO: replace with implemementation
-		//fa = new SentenceAsFragmentAnnotator(lapAccess);
+		LAPAccess lap = new TreeTaggerEN(); 			
+		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 
 		fa.annotateFragments(cas);
 		
 		//add modifier annotation
