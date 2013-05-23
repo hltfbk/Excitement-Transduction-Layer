@@ -287,7 +287,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	
 	@Override
 	public String toString() {
-		String str = "";
+		String str = "\nFragment graph: \n";
 		for(EntailmentUnitMention v : this.vertexSet()) {
 			str += "vertex: " + v.toString() + " ( level = " + v.getLevel() + ")\n";
 			for(EntailmentUnitMention x: this.vertexSet()) {
