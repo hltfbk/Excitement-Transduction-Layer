@@ -22,7 +22,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
  */
 public class SentenceAsFragmentAnnotator extends AbstractFragmentAnnotator {
 
-	SentenceAsFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
+	public SentenceAsFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
 	{
 		super(l); 
 	}
