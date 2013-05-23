@@ -289,7 +289,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	public String toString() {
 		String str = "";
 		for(EntailmentUnitMention v : this.vertexSet()) {
-			str += "vertex: " + v.toString() + "\n";
+			str += "vertex: " + v.toString() + " ( level = " + v.getLevel() + ")\n";
 			for(EntailmentUnitMention x: this.vertexSet()) {
 				if (this.containsEdge(v, x))
 				str += "\t--entails-->   vertex: " + x.toString() + "\n";
@@ -325,6 +325,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return fgs;
 	}
 	
+	
 	public static void main(String [] argv) {
 			String text = "The hard old seats were very uncomfortable";
 			Set<String> modifiers = new HashSet<String>();
@@ -340,6 +341,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * to allow retrieving the source and the target of an edge using its corresponding getters)*/
 	@Override
 	public FragmentGraphEdge addEdge(EntailmentUnitMention parent, EntailmentUnitMention eum){
+//		return super.addEdge(parent, eum );
 		FragmentGraphEdge edge = new FragmentGraphEdge(parent, eum);
 		this.addEdge(parent, eum, edge);
 		return edge;
