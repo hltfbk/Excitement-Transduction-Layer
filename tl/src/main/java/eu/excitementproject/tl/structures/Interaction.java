@@ -2,6 +2,9 @@ package eu.excitementproject.tl.structures;
 
 import org.apache.uima.jcas.JCas;
 
+import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.laputils.CASUtils;
+
 /**
  * This class defines a simple data structure that reflects WP2 data on
  * "one interaction". Note that this class is to be used just as a simple data holder without much functionality.  
@@ -12,8 +15,53 @@ import org.apache.uima.jcas.JCas;
  *
  */
 
+/**
+ * @author tailblues
+ *
+ */
 public class Interaction {
 
+	/**
+	 * Constructor for the data type. This constructor is "full" one. 
+	 * 
+	 * @param interactionString Whole interaction as one string. 
+	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
+	 * @param channel channel of the interaction, free string, and depends on the application 
+	 * @param provider
+	 * @param category 
+	 */
+	
+	public Interaction(String interactionString, String langID, String category, String channel, String provider)
+	{
+		this.lang = langID; 
+		this.channel = channel; 
+		this.provider= provider; 
+		this.interactionString = interactionString; 	
+		this.category = category; 
+	}
+	
+	/**
+	 * Minimal Constructor for Usecase 1. The constructor will only fill interaction and Language ID. channel, provider and category will be set as null.  If you need to set those metadata, use the full constructor.
+	 * 
+	 * @param interactionString Whole interaction as one string
+	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
+	 */
+	public Interaction(String interactionString, String langID)
+	{
+		this(interactionString, langID, null, null, null); 
+	}
+	
+	/**
+	 * Minimal Constructor for Usecase 2. The constructor will only fill interaction, language ID and cateogry. Channel and category will be null. If you need to set those metadata, use full constructor. 
+	 * 
+	 * @param interactionString Whole interaction as one string
+	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
+	 * @param category channel of the interaction, free string, and depends on the application
+	 */
+	public Interaction(String interactionString, String langID, String category)
+	{
+		this(interactionString, langID, category, null, null); 
+	}
 	
 	/**
 	 * This method first generates a new CAS and set language ID and CAS text by the information of this Interaction. 
@@ -22,10 +70,11 @@ public class Interaction {
 	 * 
 	 * @return JCas a newly created JCAS that holds this Interaction. No annotations in it. No linguistic annotations in it. 
 	 */
-	public JCas createAndFillInputCAS()
+	public JCas createAndFillInputCAS() throws LAPException
 	{
-		// TODO fill in the code 
-		return null; 
+		JCas aJCas = CASUtils.createNewInputCas(); 
+		this.fillInputCAS(aJCas);
+		return aJCas; 
 	}
 	
 	/**
@@ -35,9 +84,74 @@ public class Interaction {
 	 */
 	public void fillInputCAS(JCas aJCas)
 	{
-		// TODO fill in the code 
+		aJCas.reset(); 
+		aJCas.setDocumentLanguage(this.lang); 
+		aJCas.setDocumentText(this.interactionString); 
 		
+		// TODO (when we define metadata type), fill metadata. 
+		// "cahnnel", "provider", "category" 
+	}
+		
+	/**
+	 * public getter for interaction string 
+	 * @return the interaction string. 
+	 * 
+	 */
+	public final String getInteractionString()
+	{
+		return interactionString; 
+	}
+	/**
+	 * public getter for language ID 
+	 * @return language ID 
+	 */
+	public final String getLang()
+	{
+		return lang; 
+	}
+	
+	/**
+	 * public getter for the channel
+	 * @return channel 
+	 */
+	public final String getChannel()
+	{
+		return channel; 
+	}
+	
+	/** public getter for the provider 
+	 * @return provider
+	 */
+	public final String getProvider()
+	{
+		return provider; 
+	}
+	
+	/** public getter for the category value 
+	 * @return category 
+	 */
+	public final String getCategory()
+	{
+		return category; 
 	}
 	
 	
+	/**
+	 *  Interaction as String: Obligatory value, main data of this data type. cannot be null. 
+	 */
+	private final String interactionString; 
+	
+	/**
+	 * language ID: Obligatory metadata. cannot be null.  
+	 */
+	private final String lang; 
+	
+	
+	/**
+	 * channel, provider, and category is additional metadata 
+	 * that are optional. (can be null) 
+	 */
+	private final String channel; 
+	private final String provider; 
+	private final String category; 
 }
