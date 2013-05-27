@@ -30,11 +30,13 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
  */
 public class EntailmentUnit{
 
-	String text;
+	protected String text;
 	
-	Set<EntailmentUnitMention> mentions = null;
+	protected Set<EntailmentUnitMention> mentions = null;
 	
-	boolean isBaseStatement = false;
+	protected boolean isBaseStatement = false;
+	
+	protected Integer level = null; 
 	
 	/**
 	 * initialize the JCas attribute -- make the first fragment added to the 
@@ -50,7 +52,7 @@ public class EntailmentUnit{
 		mentions.add(eum);
 		text = eum.getText();
 		if(eum.getLevel()==0) setBaseStatement(true);
-				
+		level = eum.getLevel();		
 	}
 
 	/**
@@ -66,6 +68,14 @@ public class EntailmentUnit{
 		text = textFragment;
 	}
 		
+	/**
+	 * @return the level
+	 */
+	public Integer getLevel() {
+		return level;
+	}
+
+
 	/**
 	 * Add a new node to the equivalence class
 	 * 
@@ -112,18 +122,23 @@ public class EntailmentUnit{
 		this.isBaseStatement = isBaseStatement;
 	}
 
-
 	@Override
 	public String toString(){
 		String s=this.getText();
 		if(this.isBaseStatement) s+=" (base statement)";
+		else s+= " ("+this.level.toString()+"modifiers )";
 		return s;
 	}
+
 	
 	/******************************************************************************************
 	 * Override hashCode() and equals(). 
 	 * ****************************************************************************************/
 
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -132,7 +147,9 @@ public class EntailmentUnit{
 		return result;
 	}
 
-	/* Will return true if both EntailmentUnits have the same text */
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
