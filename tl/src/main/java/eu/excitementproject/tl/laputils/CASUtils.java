@@ -419,7 +419,7 @@ public final class CASUtils {
 
 		// two modifiers: "the amount of", "compared with other trains"
 		rm = new CASUtils.Region[1]; 
-		rm[0] = new CASUtils.Region(18, 28); // "the amount of"  
+		rm[0] = new CASUtils.Region(18, 31); // "the amount of"  
 		annotateOneModifier(aJCas, rm);
 		
 		rm = new CASUtils.Region[1]; 
