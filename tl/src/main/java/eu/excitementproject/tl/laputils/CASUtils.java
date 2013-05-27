@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
@@ -22,6 +24,8 @@ import org.apache.uima.util.XMLSerializer;
 import org.xml.sax.SAXException;
 
 import eu.excitement.type.tl.AssumedFragment;
+import eu.excitement.type.tl.CategoryAnnotation;
+import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.ModifierAnnotation;
@@ -310,6 +314,41 @@ public final class CASUtils {
 		return annotateOneModifier(aJCas, r, null); 
 	}
 	
+	/**
+	 * This static method gets one JCAS, a (begin, end) tuple (in form of CASUtils.Region), 
+	 * and a set of category decisions (category ID and confidence), and adds category annotation 
+	 * to the region.  
+	 * 
+	 * @param aJCas
+	 * @param r
+	 * @param categoryId
+	 * @param score
+	 */
+	static public void annotateCategories(JCas aJCas, Region r, Map<String, Double> decisions) throws LAPException
+	{
+		CategoryAnnotation ca = new CategoryAnnotation(aJCas); 
+		ca.setBegin(r.getBegin());
+		ca.setEnd(r.getEnd()); 
+		FSArray v = new FSArray(aJCas, decisions.size()); 
+		ca.setCategories(v);
+	
+		int i=0; 
+		for (String decision : decisions.keySet()) {
+			CategoryDecision cd = new CategoryDecision(aJCas);
+			cd.setCategoryId(decision);
+			System.out.println("decision: " + decision);
+			cd.setConfidence(decisions.get(decision));
+			System.out.println("confidence: " + decisions.get(decision));
+			ca.setCategories(i, cd);
+			i++;
+		}
+		ca.addToIndexes(); 
+		
+		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+		l.debug("Generated Category annotation."); 
+		
+	}
+
 	/**
 	 * An inner class that simply holds "begin" and "end" as int. 
 	 * The class is used as an argument on some of the methods. 
