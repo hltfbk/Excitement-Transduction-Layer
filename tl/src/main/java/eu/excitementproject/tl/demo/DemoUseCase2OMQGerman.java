@@ -37,6 +37,7 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
  */
 public class DemoUseCase2OMQGerman {
 	
+	@SuppressWarnings("null") // DELETEME LATER: Remove this when the code is complete - Gil 
 	public static void main(String[] args) throws FragmentAnnotatorException, ModifierAnnotatorException, 
 		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, LAPException {
 
