@@ -124,6 +124,43 @@ public class EntailmentGraphRaw extends
 	 * OTHER METHODS TO WORK WITH THE GRAPH
 	 * ****************************************************************************************/
 
+	/** Returns the set of nodes, which entail the given node
+	 * @param node whose entailing nodes are returned
+	 * @return Set<EntailmentUnit> with all the entailing nodes of the given node
+	 */
+	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node){
+		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
+		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
+			entailingNodes.add(edge.getSource());
+		}
+		return entailingNodes;
+	}
+	
+	/** Returns the set of nodes, which entail the given node and have the specified level (number of modifiers)
+	 * @param node whose entailing nodes are returned
+	 * @return Set<EntailmentUnit> with the entailing nodes of the given node
+	 */
+	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node, int level){
+		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
+		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
+			EntailmentUnit entailingNode = edge.getSource();
+			if (entailingNode.getLevel()==level) entailingNodes.add(entailingNode);
+		}
+		return entailingNodes;
+	}
+	
+	/** Returns the set of nodes, entailed by the given node
+	 * @param node whose entailed nodes are returned
+	 * @return Set<EntailmentUnit> with all the entailed nodes of the given node
+	 */
+	public Set<EntailmentUnit> getEntailedNodes(EntailmentUnit node){
+		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
+		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
+			entailedNodes.add(edge.getTarget());
+		}
+		return entailedNodes;
+	}
+	
 	/**
 	 * Create an edge from sourceVertex to targetVertex using the specified eda 
 	 * @param sourceVertex

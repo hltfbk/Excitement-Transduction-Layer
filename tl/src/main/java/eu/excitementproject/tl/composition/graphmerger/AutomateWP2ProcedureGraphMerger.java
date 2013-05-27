@@ -46,12 +46,10 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 			for (FragmentGraphEdge fragmentGraphEdge : fragmentGraph.edgeSet()){
 				workGraph.addEdgeFromFrahmentGraph(fragmentGraphEdge);
 			}
-				// find the work graph node
+				// find the node corresponding to the fragment graph's base statement in the work graph
 			EntailmentUnit newBaseStatement = workGraph.getVertex(fragmentGraph.getBaseStatement().getText());
 			
-			// 2. For each base statement in the work graph perform merge with the fragment graph?
-			// TODO find out how exactly :) 
-			
+			// 2. For each base statement in the work graph perform merge with the fragment graph's base statement		
 			for (EntailmentUnit workGraphBaseStatement : workGraph.getBaseStatements()){
 					// find the set of edges to add
 				Set<EntailmentRelation> edgesToAdd = mergeOneBaseStatement(workGraph, workGraphBaseStatement, newBaseStatement);
@@ -76,43 +74,35 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	 * @throws GraphMergerException
 	 */
 	private Set<EntailmentRelation> mergeOneBaseStatement(EntailmentGraphRaw workGraph, EntailmentUnit workGraphBaseStatement, EntailmentUnit newBaseStatement) throws GraphMergerException {
-		
-		Set<EntailmentRelation> edgesToAdd = new HashSet<EntailmentRelation>(); 
-		
+				 	
 		//Check if there is entailment between the two base statements
 		// If there's no entailment between the base statements - done, nothing else to merge
-		boolean isEntailment = false;
-			// check one direction: workGraphBaseStatement -> newBaseStatement
-		EntailmentRelation r = new EntailmentRelation(workGraphBaseStatement, newBaseStatement, this.getEda());
-		if (r.getLabel().equals(DecisionLabel.Entailment)) {
-			isEntailment=true;
-			// add the edge to the output only if observed entailing, according to the WP2 algo
-			// we don't need to store all the knowledge we have for WP2 graph merger
-			edgesToAdd.add(r); 
-		}
-
-			// check the other direction: newBaseStatement -> workGraphBaseStatement
-		r = new EntailmentRelation(newBaseStatement, workGraphBaseStatement, this.getEda());
-		if (r.getLabel().equals(DecisionLabel.Entailment)) {
-			isEntailment=true;
-			edgesToAdd.add(r); 
-		}
+		Set<EntailmentRelation> edgesToAdd = getEntailmentRelations(workGraph, workGraphBaseStatement, newBaseStatement);
+		if (edgesToAdd.isEmpty()) return edgesToAdd; // empty set = no entailment, i.e. we are done (return the empty edge set)
 		
-		if (!isEntailment) return edgesToAdd; // no entailment - we are done (return the empty edge set)
-		
-		// If there is entailment between the two statements
-
+		// add the entailment relations between the 2 base statements
+		for (EntailmentRelation edge : edgesToAdd){
+			workGraph.addEdge(edge.getSource(), edge.getTarget(), edge);
+		}
 		// TODO: need to memorize the direction of the entailment and check in this direction for 1st-level nodes 
 		// then propagate automatically
-			
-		
-		
+					
 		return edgesToAdd;
 		
 	}
 	
+	private Set<EntailmentRelation> mergeFirstLevelInOneDirection(EntailmentGraphRaw workGraph, EntailmentUnit entailedBaseStatement, EntailmentUnit entailingBaseStatement){
+		Set<EntailmentRelation> entailmentRelations = new HashSet<EntailmentRelation>();
+		
+		for (EntailmentUnit candidateEntailingtNode : workGraph.getEntailingNodes(entailingBaseStatement, 1)){
+			for (EntailmentUnit candidateEntailedNode : workGraph.getEntailingNodes(entailedBaseStatement, 1 )){
+				//TODO: define entailments
+			}
+		}
+		return entailmentRelations;
+	}
+	
 
-	
-	
+		
 
 }
