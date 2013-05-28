@@ -8,6 +8,8 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
+import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+
 public class GraphSee extends JFrame {
 
 
@@ -19,22 +21,28 @@ public class GraphSee extends JFrame {
     private static final Dimension DEFAULT_SIZE = new Dimension( 1000, 700 );
 
     // 
-
+    
     public GraphSee() {
     	super("Graph visualization");
-    	equipMe();
+    	FragmentGraph fg = FragmentGraph.getSampleGraph();
+    	equipMe(new FragmentGraphPanel(fg));
     }
     
+    public GraphSee(TLGraphPanel<?,?> tlgp) {
+    	super("Graph visualization");
+    	equipMe(tlgp);
+    }
 
     
 	/**
 	 * Creates visual elements.
+	 * @param <E>
+	 * @param <V>
 	 */
-	private void equipMe(String... param) {
+	private void equipMe(TLGraphPanel<?,?> tlgp) {
 		JTabbedPane main_pane = new JTabbedPane();
-		FragmentGraphPanel fgPane = new FragmentGraphPanel();
 
-		main_pane.addTab("Fragment graph", fgPane);
+		main_pane.addTab("Fragment graph", tlgp);
 		main_pane.setBounds(0, 0, DEFAULT_SIZE.width, DEFAULT_SIZE.height);
 		
 		this.add(main_pane);

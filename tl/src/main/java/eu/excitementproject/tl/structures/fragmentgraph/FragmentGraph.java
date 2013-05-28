@@ -326,6 +326,20 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	}
 	
 	
+    public static FragmentGraph getSampleGraph() {
+
+		String text = "The hard old seats were very uncomfortable";
+		Set<String> modifiers = new HashSet<String>();
+		modifiers.add("hard");
+		modifiers.add("old");
+		modifiers.add("very");
+		FragmentGraph g = new FragmentGraph(text,modifiers);
+		
+		System.out.println("fragment graph: " + g.toString());
+		
+		return g;
+    }
+	
 	public static void main(String [] argv) {
 			String text = "The hard old seats were very uncomfortable";
 			Set<String> modifiers = new HashSet<String>();

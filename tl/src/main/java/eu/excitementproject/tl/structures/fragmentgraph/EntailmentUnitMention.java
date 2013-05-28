@@ -6,6 +6,7 @@ import java.util.Set;
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.jcas.JCas;
 
+import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitement.type.tl.ModifierPart;
@@ -28,7 +29,10 @@ public class EntailmentUnitMention {
 	protected Set<SimpleModifier> modifiersText;
 	protected int level;
 	
-	protected String categoryId = "";
+	protected int begin;
+	protected int end;
+	
+	protected String categoryId = null;
 	
 	/**
 	 * @param textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
@@ -37,6 +41,8 @@ public class EntailmentUnitMention {
 		text = textFragment;
 		level = 0;
 		modifiersText = new HashSet<SimpleModifier>();
+		begin = 0;
+		end = text.length();
 	}
 	
 	/**
@@ -57,18 +63,10 @@ public class EntailmentUnitMention {
 		}
 		text = chars;
 //		text.trim().replaceAll(" +", " ");
+		begin = 0;
+		end = text.length();
 	}
 
-	private Set<SimpleModifier> addModifiers(String textFragment,
-			Set<String> mods) {
-		Set<SimpleModifier> sms = new HashSet<SimpleModifier>();
-		for(String s: mods) {	
-			if (textFragment.contains(s)) {
-				sms.add(new SimpleModifier(s,textFragment.indexOf(s),textFragment.indexOf(s)+s.length()));
-			}
-		}
-		return sms;
-	}
 
 	/**
 	 * 
@@ -84,6 +82,8 @@ public class EntailmentUnitMention {
 		modifiers = mods;
 		Set<String> modsText = new HashSet<String>();
 		level = mods.size();
+		begin = frag.getBegin();
+		end = frag.getEnd();
 		
 		CharSequence chars = frag.getText();
 		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
@@ -96,8 +96,25 @@ public class EntailmentUnitMention {
 		text = chars.toString();
 //		text.trim().replaceAll(" +", " ");
 		modifiersText = addModifiers(text,modsText);
+		categoryId = getCategoryId(aJCas);
 	}
 
+	
+	private Set<SimpleModifier> addModifiers(String textFragment,
+			Set<String> mods) {
+		Set<SimpleModifier> sms = new HashSet<SimpleModifier>();
+		for(String s: mods) {	
+			if (textFragment.contains(s)) {
+				sms.add(new SimpleModifier(s,textFragment.indexOf(s),textFragment.indexOf(s)+s.length()));
+			}
+		}
+		return sms;
+	}
+	
+	private String getCategoryId(JCas aJCas) {		
+		return ((CategoryDecision)aJCas.getDocumentAnnotationFs()).getCategoryId();
+	}
+	
 	/**
 	 * 
 	 * @return -- the text of the current node object
@@ -160,6 +177,14 @@ public class EntailmentUnitMention {
 	 */	
 	public String toString() {
 		return getText();
+	}
+	
+	public int getBegin() {
+		return begin;
+	}
+	
+	public int getEnd() {
+		return end;
 	}
 	
 	public boolean equals(EntailmentUnitMention eum) {
