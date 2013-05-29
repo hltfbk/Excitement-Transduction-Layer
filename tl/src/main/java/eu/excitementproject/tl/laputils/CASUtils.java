@@ -38,6 +38,7 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
  */
 
 // Things to be considered as future improvements 
+// TODO: [#B] define CASUtils Exception and replace/wrap LAPException 
 // TODO: [#C] set typepath convention for UIMAFit based CAS generation. 
 // TODO: [#C] Check UIMAFit CASUtil, and wrap some needed things.  
 

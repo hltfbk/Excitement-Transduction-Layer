@@ -203,7 +203,7 @@ public final class InteractionReader {
 		}
 		if (modifiers_node == null) 
 		{
-			throw new DataIntegrityFail("XML file does not have modifiers in top node"); 
+			throw new DataIntegrityFail("XML file does not have modifier element in top node; ill formed: at least <modifiers/> should be there."); 
 		}
 
 		String original_text = original_text_node.getFirstChild().getNodeValue(); 
@@ -227,13 +227,15 @@ public final class InteractionReader {
 			// The interaction raw text does not have this fragment 
 			// original text. Something is a missing (e.g. wrong XML, or wrong raw interaction) 
 
-			testlogger.info("Integrity fail: throwing an exception. The interaction raw text does not contain fragment original text.");
+			testlogger.info("Integrity fail: throwing an exception. The interaction raw text does not contain fragment text.");
 			testlogger.info("Content of the fragment <original_text>:");
 			testlogger.info(original_text); 			
 			testlogger.info("Content of the interaction raw file:");
 			testlogger.info(interactionString); 			
-
-			throw new DataIntegrityFail("Something is wrong. The interaction raw text does not contain fragment original text"); 			
+			throw new DataIntegrityFail("The interaction raw text does not contain fragment original text -- can be caused by non-continous fragment. Currently the reader does not non-continuous fragments yet."); 
+			
+			// TODO [#A] Code for non-continuous fragment matching :-( Non-trivial. 
+			
 		}
 		// it contains, so the following will always be meaningful. 
 		int frag_start = interactionString.indexOf(original_text); 
