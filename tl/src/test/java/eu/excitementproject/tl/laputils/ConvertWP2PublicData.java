@@ -35,14 +35,42 @@ public class ConvertWP2PublicData {
 		BasicConfigurator.configure(); 
 		Logger.getRootLogger().setLevel(Level.WARN);  
 
-		// TODO: when adding more data, move the following to a method 
-		// (e.g: processWP2DataInDir(Path) ) 
-		Path dir = Paths.get("./src/test/resources/WP2_public_data/NICE_email_data1/");
-		Path outputdir = Paths.get("./target/WP2_public_data_XMI/"); 
+		Path dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_1/");
+		Path outputdir = Paths.get("./target/WP2_public_data_XMI/nice_email_1"); 
+
+		int totalcount = 0; 
+		totalcount += processWP2Data(dir, outputdir, "EN"); 
+		
+		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_2/");
+		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_email_2"); 
+		totalcount += processWP2Data(dir, outputdir, "EN"); 
+
+		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_3/");
+		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_email_3"); 
+		totalcount += processWP2Data(dir, outputdir, "EN"); 
+
+		dir = Paths.get("./src/test/resources/WP2_public_data/nice_speech/");
+		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_speech"); 
+		totalcount += processWP2Data(dir, outputdir, "EN"); 		
+		
+		System.out.println("In total: " + totalcount + " XMI files generated, over four directories"); 
+	}
+	
+	/**
+	 * @param from Directory Path, that holds WP2 public data .txt and XML (They have to be in one directory) 
+	 * @param to Directory Path, where the new XMI files will be generated. 
+	 * @param langID language ID. WP2 frag-dump data does not have language ID. Thus we need this. 
+	 */
+	public static int processWP2Data(Path from, Path to, String languageID)
+	{
+		
+		Path dir = from; 
+		Path outputdir = to; 
+		
 		try {
 			if (Files.notExists(outputdir))
 			{
-				Files.createDirectory(outputdir); 
+				Files.createDirectories(outputdir); 
 			}
 		}
 		catch (IOException e){
@@ -75,7 +103,7 @@ public class ConvertWP2PublicData {
 			        	{			
 			        		// call the reader. Note that it loads multiple XML files (multiple fragments) with same interaction  
 			        		System.out.println("\t" + xmlfile.getFileName()) ;
-			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas); 			        		
+			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas, languageID); 			        		
 			        	}			        	
 			        	// Now the JCAS has one or more fragment annotations, and associated modifier annotations.  
 			        	// (each XML = one fragment)
@@ -102,6 +130,8 @@ public class ConvertWP2PublicData {
 		    System.err.println(x);
 		}		
 		
-		System.out.println("In total: " + generated + " XMI files generated"); 
+		System.out.println("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
+		return generated; 
 	}
+	
 }

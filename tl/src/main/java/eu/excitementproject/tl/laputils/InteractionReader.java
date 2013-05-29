@@ -139,11 +139,12 @@ public final class InteractionReader {
 	 * @param interactionRawText A raw text file that holds the interaction string. 
 	 * @param graphsInXML The graphs dump, as defined in WP2 public data (the XML holds one <F_entailment_graph>) 
 	 * @param JCas a JCas object: This JCAS will be filled in with interaction text, fragment annotation and modifier annotation. Note that if the interaction text is "different" from the already existing SOFA text (CAS document text), the JCAS object will be reset. Otherwise, the reader method will only "add" annotations.  
+	 * @param languageID Note that WP2 dump data does not have language ID, while CAS must have the language ID. thus, you have to supply a language ID. (e.g. "EN", "DE","IT" ...) 
 	 * @return
 	 * @throws DataReaderException Generic errors (file not found, XML malformed, etc) will be thrown with this one. 
-	 * @throws DataIntegrityFail If something is logically wrong in the files --- this exception is thrown: for example, fragemnt original text is given, but not found in interaction text, etc. 
+	 * @throws DataIntegrityFail If something is logically wrong in the files --- this exception is thrown: for example, fragment original text is given, but not found in interaction text, etc. 
 	 */
-	public static void readWP2FragGraphDump(File interactionText, File graphsInXML, JCas aJCas) throws DataReaderException, DataIntegrityFail
+	public static void readWP2FragGraphDump(File interactionText, File graphsInXML, JCas aJCas, String languageID) throws DataReaderException, DataIntegrityFail
 	{
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 		
@@ -253,16 +254,18 @@ public final class InteractionReader {
 			testlogger.debug("Cleaning CAS and set interaction text."); 
 			aJCas.reset(); 
 			aJCas.setDocumentText(interactionString); 
+			aJCas.setDocumentLanguage(languageID); 
 		}
 		else if (!SOFAText.equals(interactionString))  
 		{
 			testlogger.debug("Cleaning CAS and set interaction text."); 
 			aJCas.reset(); 
 			aJCas.setDocumentText(interactionString); 
+			aJCas.setDocumentLanguage(languageID); 
 		}
 		else
 		{
-			testlogger.debug("Same interaction text already in the CAS. Only adding annotations."); 			
+			testlogger.debug("The same interaction text already in the CAS. Only adding annotations."); 			
 		}
 
 		// annotate Fragment 
