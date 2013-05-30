@@ -10,6 +10,7 @@ import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 
 import org.uimafit.util.JCasUtil;
 
+import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.ModifierAnnotation;
@@ -96,8 +97,8 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 *  that depends on another modifier B, but not B)
 	 * -- there is an edge between two nodes A and B (direction: A->B), where the set of modifiers in node B M_B = M_A \cup {M_i} 
 	 * 
-	 * @param aJCas
-	 * @param f
+	 * @param aJCas -- CAS object containing annotations for a document
+	 * @param f -- the fragment annotation from which to produce a {@link} FragmentGraph 
 	 */
 	public FragmentGraph(JCas aJCas, FragmentAnnotation frag) {
 		this(new ClassBasedEdgeFactory<EntailmentUnitMention, FragmentGraphEdge>(FragmentGraphEdge.class));
@@ -179,8 +180,8 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * 				=> Seats are uncomfortable as old (OK)
 	 * 				=> Seats are uncomfortable as too (not OK)	
 	 * 
-	 * @param sma
-	 * @return
+	 * @param sma -- a set of modifier annotations from the document CAS
+	 * @return -- true if the set of modifiers given is consistent
 	 */
 	private boolean consistentModifiers(Set<ModifierAnnotation> sma) {
 		
@@ -196,9 +197,9 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	/**
 	 * Gather a (determined) fragment's modifiers
 	 * 
-	 * @param aJCas
-	 * @param f
-	 * @return
+	 * @param aJCas -- a CAS object
+	 * @param f -- a fragment annotation 
+	 * @return -- the set of modifiers (as a set of modifier annotations from the CAS) contained in the fragment f
 	 */
 	public static Set<ModifierAnnotation> getFragmentModifiers(JCas aJCas,
 			FragmentAnnotation f) {
@@ -211,7 +212,28 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return mas;
 	}
 
+	/**
+	 * Gather a (determined) fragment's category annotations
+	 * 
+	 * @param aJCas -- a CAS object
+	 * @param f -- a fragment annotation
+	 * @return the set of category annotations that cover fragment f
+	 */
+	public static Set<CategoryAnnotation> getFragmentCategories(JCas aJCas, FragmentAnnotation f) {
+		Set<CategoryAnnotation> cas = new HashSet<CategoryAnnotation>();
+		cas.addAll(JCasUtil.selectCovering(aJCas, CategoryAnnotation.class, f.getBegin(), f.getEnd()));
+		return cas;
+	}
 	
+	
+	/**
+	 * Return the FragmentGraph node that corresponds to the given argument, 
+	 * or this argument if no such node exists in the graph (to avoid adding duplicate nodes)
+	 * 
+	 * @param eum -- an entailment unit mention
+	 * @return -- the node in this fragment graph that equals the given entailment unit mention,
+	 *            or the given entailment unit mention if no equal node exists
+	 */
 	private EntailmentUnitMention getVertex(EntailmentUnitMention eum) {
 		for(EntailmentUnitMention e: this.vertexSet()) {
 			if (eum.equals(e)) {
@@ -240,10 +262,18 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return baseStatement;
 	}
 
+	/**
+	 * 
+	 * @return the text fragment for which this fragment graph was built
+	 */
 	public EntailmentUnitMention getCompleteStatement(){
 		return (EntailmentUnitMention) getNodes(getMaxLevel()).toArray()[0];
 	}
 	
+	/**
+	 * 
+	 * @return the maximum depth of the graph (equivalent to the number of modifiers in the fragment
+	 */
 	public int getMaxLevel() {
 		
 		if (depth < 0) {
@@ -298,7 +328,10 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return str;
 	}	
 
-	
+	/**
+	 * 
+	 * @return a sample set of fragment graphs, for testing purposes
+	 */
 	public static Set<FragmentGraph> getSampleOutput() {
 		Set<FragmentGraph> fgs  = new HashSet<FragmentGraph>();
 		
@@ -326,6 +359,10 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	}
 	
 	
+	/**
+	 * 
+	 * @return one sample fragment graph, for testing purposes
+	 */
     public static FragmentGraph getSampleGraph() {
 
 		String text = "The hard old seats were very uncomfortable";
