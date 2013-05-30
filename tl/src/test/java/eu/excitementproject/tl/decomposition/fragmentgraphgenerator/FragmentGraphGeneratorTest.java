@@ -88,6 +88,7 @@ public class FragmentGraphGeneratorTest {
 		}
 		catch (Exception e)
 		{
+			e.printStackTrace();
 			fail(e.getMessage()); 
 		}
 	}
