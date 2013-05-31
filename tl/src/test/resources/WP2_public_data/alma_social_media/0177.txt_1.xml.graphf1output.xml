@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="Internet" implicit_context="" explicit_context="0177.txt" modality="FALSE" implicit_statement="FALSE" id="0177.txt_1_0">
+        <original_text>continuo ad aver pagato 20 euro e a stare senza Internet</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ad aver pagato 20 euro epoz=1 2 3 4 5 6</modifiers>
+    </node>
+    <node implicit_focus="" focus="Internet" implicit_context="" explicit_context="0177.txt" modality="FALSE" implicit_statement="FALSE" id="0177.txt_1_1">
+        <original_text>continuo a stare senza Internet</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0177.txt_1_1" source="0177.txt_1_0" id="0177.txt_1_0-0177.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0177.txt_1_1" source="0177.txt_1_0" id="0177.txt_1_0-0177.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

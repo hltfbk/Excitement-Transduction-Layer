@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="" focus="rinnovo automatico" implicit_context="" explicit_context="0081.txt" modality="TRUE" implicit_statement="FALSE" id="0081.txt_1_0">
+        <original_text>Non riesco a disattivare il rinnovo automatico 200X+ dalla mia area servizi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>200X+poz=7;dalla mia area servizipoz=8 9 10 11</modifiers>
+    </node>
+    <node implicit_focus="" focus="rinnovo automatico" implicit_context="" explicit_context="0081.txt" modality="TRUE" implicit_statement="FALSE" id="0081.txt_1_1">
+        <original_text>Non riesco a disattivare il rinnovo automatico dalla mia area servizi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>dalla mia area servizipoz=8 9 10 11</modifiers>
+    </node>
+    <node implicit_focus="" focus="rinnovo automatico" implicit_context="" explicit_context="0081.txt" modality="TRUE" implicit_statement="FALSE" id="0081.txt_1_2">
+        <original_text>Non riesco a disattivare il rinnovo automatico 200X+</original_text>
+        <correct_text> </correct_text>
+        <modifiers>200X+poz=7</modifiers>
+    </node>
+    <node implicit_focus="" focus="rinnovo automatico" implicit_context="" explicit_context="0081.txt" modality="TRUE" implicit_statement="FALSE" id="0081.txt_1_3">
+        <original_text>Non riesco a disattivare il rinnovo automatico</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0081.txt_1_1" source="0081.txt_1_0" id="0081.txt_1_0-0081.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0081.txt_1_1" source="0081.txt_1_0" id="0081.txt_1_0-0081.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0081.txt_1_2" source="0081.txt_1_0" id="0081.txt_1_0-0081.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0081.txt_1_2" source="0081.txt_1_0" id="0081.txt_1_0-0081.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0081.txt_1_3" source="0081.txt_1_2" id="0081.txt_1_2-0081.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0081.txt_1_3" source="0081.txt_1_1" id="0081.txt_1_1-0081.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0081.txt_1_3" source="0081.txt_1_1" id="0081.txt_1_1-0081.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0081.txt_1_3" source="0081.txt_1_2" id="0081.txt_1_2-0081.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0081.txt_1_3" source="0081.txt_1_0" id="0081.txt_1_0-0081.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

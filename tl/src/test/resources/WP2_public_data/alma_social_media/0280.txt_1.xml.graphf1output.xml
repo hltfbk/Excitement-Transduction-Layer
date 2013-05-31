@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="telefoo" implicit_context="" explicit_context="0280.txt" modality="FALSE" implicit_statement="FALSE" id="0280.txt_1_0">
+        <original_text>anke oggi niente telefoo</original_text>
+        <correct_text>anche oggi niente telefono</correct_text>
+        <modifiers>anke oggipoz=0 1</modifiers>
+    </node>
+    <node implicit_focus="" focus="telefoo" implicit_context="" explicit_context="0280.txt" modality="FALSE" implicit_statement="FALSE" id="0280.txt_1_1">
+        <original_text>niente telefoo</original_text>
+        <correct_text>niente telefono</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0280.txt_1_1" source="0280.txt_1_0" id="0280.txt_1_0-0280.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0280.txt_1_1" source="0280.txt_1_0" id="0280.txt_1_0-0280.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node implicit_focus="" focus="MOBILEA" implicit_context="" explicit_context="Speech5.5.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.004.txt_1_0">
+        <original_text>L ’ anno scorso ho comprato un MOBILEA offerto dalla TELEFONIAX che non ha mai funzionato</original_text>
+        <correct_text> </correct_text>
+        <modifiers>L ’ anno scorsopoz=0 1 2 3;maipoz=14;offerto dalla TELEFONIAXpoz=8 9 10</modifiers>
+    </node>
+    <node implicit_focus="" focus="MOBILEA" implicit_context="" explicit_context="Speech5.5.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.004.txt_1_1">
+        <original_text>ho comprato un MOBILEA offerto dalla TELEFONIAX che non ha mai funzionato</original_text>
+        <correct_text> </correct_text>
+        <modifiers>maipoz=14;offerto dalla TELEFONIAXpoz=8 9 10</modifiers>
+    </node>
+    <node implicit_focus="" focus="MOBILEA" implicit_context="" explicit_context="Speech5.5.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.004.txt_1_2">
+        <original_text>L ’ anno scorso ho comprato un MOBILEA offerto dalla TELEFONIAX che non ha funzionato</original_text>
+        <correct_text> </correct_text>
+        <modifiers>L ’ anno scorsopoz=0 1 2 3;offerto dalla TELEFONIAXpoz=8 9 10</modifiers>
+    </node>
+    <node implicit_focus="" focus="MOBILEA" implicit_context="" explicit_context="Speech5.5.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.004.txt_1_3">
+        <original_text>L ’ anno scorso ho comprato un MOBILEA che non ha mai funzionato</original_text>
+        <correct_text> </correct_text>
+        <modifiers>L ’ anno scorsopoz=0 1 2 3;maipoz=14</modifiers>
+    </node>
+    <node implicit_focus="" focus="MOBILEA" implicit_context="" explicit_context="Speech5.5.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.004.txt_1_4">
+        <original_text>ho comprato un MOBILEA offerto dalla TELEFONIAX che non ha funzionato</original_text>
+        <correct_text> </correct_text>
+        <modifiers>offerto dalla TELEFONIAXpoz=8 9 10</modifiers>
+    </node>
+    <node implicit_focus="" focus="MOBILEA" implicit_context="" explicit_context="Speech5.5.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.004.txt_1_5">
+        <original_text>ho comprato un MOBILEA che non ha mai funzionato</original_text>
+        <correct_text> </correct_text>
+        <modifiers>maipoz=14</modifiers>
+    </node>
+    <node implicit_focus="" focus="MOBILEA" implicit_context="" explicit_context="Speech5.5.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.004.txt_1_6">
+        <original_text>L ’ anno scorso ho comprato un MOBILEA che non ha funzionato</original_text>
+        <correct_text> </correct_text>
+        <modifiers>L ’ anno scorsopoz=0 1 2 3</modifiers>
+    </node>
+    <node implicit_focus="" focus="MOBILEA" implicit_context="" explicit_context="Speech5.5.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.004.txt_1_7">
+        <original_text>ho comprato un MOBILEA che non ha funzionato</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="Speech5.5.004.txt_1_1" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_1" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_2" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_2" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_3" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_3" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_4" source="Speech5.5.004.txt_1_2" id="Speech5.5.004.txt_1_2-Speech5.5.004.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_4" source="Speech5.5.004.txt_1_1" id="Speech5.5.004.txt_1_1-Speech5.5.004.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_4" source="Speech5.5.004.txt_1_1" id="Speech5.5.004.txt_1_1-Speech5.5.004.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_4" source="Speech5.5.004.txt_1_2" id="Speech5.5.004.txt_1_2-Speech5.5.004.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_4" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_5" source="Speech5.5.004.txt_1_3" id="Speech5.5.004.txt_1_3-Speech5.5.004.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_5" source="Speech5.5.004.txt_1_1" id="Speech5.5.004.txt_1_1-Speech5.5.004.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_5" source="Speech5.5.004.txt_1_1" id="Speech5.5.004.txt_1_1-Speech5.5.004.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_5" source="Speech5.5.004.txt_1_3" id="Speech5.5.004.txt_1_3-Speech5.5.004.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_5" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_6" source="Speech5.5.004.txt_1_3" id="Speech5.5.004.txt_1_3-Speech5.5.004.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_6" source="Speech5.5.004.txt_1_2" id="Speech5.5.004.txt_1_2-Speech5.5.004.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_6" source="Speech5.5.004.txt_1_2" id="Speech5.5.004.txt_1_2-Speech5.5.004.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_6" source="Speech5.5.004.txt_1_3" id="Speech5.5.004.txt_1_3-Speech5.5.004.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_6" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_6" id="Speech5.5.004.txt_1_6-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_5" id="Speech5.5.004.txt_1_5-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_4" id="Speech5.5.004.txt_1_4-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_4" id="Speech5.5.004.txt_1_4-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_5" id="Speech5.5.004.txt_1_5-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_6" id="Speech5.5.004.txt_1_6-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_2" id="Speech5.5.004.txt_1_2-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_3" id="Speech5.5.004.txt_1_3-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_0" id="Speech5.5.004.txt_1_0-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.004.txt_1_7" source="Speech5.5.004.txt_1_1" id="Speech5.5.004.txt_1_1-Speech5.5.004.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

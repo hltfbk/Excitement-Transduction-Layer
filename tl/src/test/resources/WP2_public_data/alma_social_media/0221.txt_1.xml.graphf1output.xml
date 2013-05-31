@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="linee" implicit_context="" explicit_context="0221.txt" modality="TRUE" implicit_statement="TRUE" id="0221.txt_1_0">
+        <original_text>sistemate le linee telefoniche</original_text>
+        <correct_text> </correct_text>
+        <modifiers>telefonichepoz=3</modifiers>
+    </node>
+    <node implicit_focus="" focus="linee" implicit_context="" explicit_context="0221.txt" modality="TRUE" implicit_statement="TRUE" id="0221.txt_1_1">
+        <original_text>sistemate le linee</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0221.txt_1_1" source="0221.txt_1_0" id="0221.txt_1_0-0221.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0221.txt_1_1" source="0221.txt_1_0" id="0221.txt_1_0-0221.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="risposta" implicit_context="" explicit_context="0152.txt" modality="FALSE" implicit_statement="FALSE" id="0152.txt_1_0">
+        <original_text>la risposta ke mi è stata fornita è generica sul recesso anticipato dal mio contratto</original_text>
+        <correct_text>la risposta che mi è stata fornita è generica sul recesso anticipato dal mio contratto</correct_text>
+        <modifiers>sul recesso anticipato dal mio contrattopoz=9 10 11 12 13 14</modifiers>
+    </node>
+    <node implicit_focus="" focus="risposta" implicit_context="" explicit_context="0152.txt" modality="FALSE" implicit_statement="FALSE" id="0152.txt_1_1">
+        <original_text>la risposta ke mi è stata fornita è generica</original_text>
+        <correct_text>la risposta che mi è stata fornita è generica</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0152.txt_1_1" source="0152.txt_1_0" id="0152.txt_1_0-0152.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0152.txt_1_1" source="0152.txt_1_0" id="0152.txt_1_0-0152.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

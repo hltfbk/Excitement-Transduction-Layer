@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0265.txt" modality="FALSE" implicit_statement="FALSE" id="0265.txt_1_0">
+        <original_text>A me non rispondono nemmeno qui su fb</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nemmeno qui su fbpoz=4 5 6 7</modifiers>
+    </node>
+    <node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0265.txt" modality="FALSE" implicit_statement="FALSE" id="0265.txt_1_1">
+        <original_text>A me non rispondono</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0265.txt_1_1" source="0265.txt_1_0" id="0265.txt_1_0-0265.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0265.txt_1_1" source="0265.txt_1_0" id="0265.txt_1_0-0265.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
