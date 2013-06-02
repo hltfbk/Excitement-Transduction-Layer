@@ -67,7 +67,23 @@ public class EntailmentUnit{
 		mentions.add(n);		
 		text = textFragment;
 	}
+	
+	
+	/**
+	 * Same as before -- this will be the "canonical" element
+	 * 
+	 * @param textFragment -- generate node directly from the text fragment
+	 * @param level -- the number of modifiers in the textFragment
+	 */
+	public EntailmentUnit(String textFragment, int level) {
+		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
 		
+		mentions = new HashSet<EntailmentUnitMention>();
+		mentions.add(n);		
+		text = textFragment;
+		this.level =level; 
+	}
+	
 	/**
 	 * @return the level
 	 */
@@ -119,14 +135,15 @@ public class EntailmentUnit{
 	}
 
 	public void setBaseStatement(boolean isBaseStatement) {
-		this.isBaseStatement = isBaseStatement;
+		this.isBaseStatement = isBaseStatement; //TODO: remove isBaseStatement attribute, use level instead
+		this.level=0;
 	}
 
 	@Override
 	public String toString(){
-		String s=this.getText();
+		String s="\""+this.getText()+"\"";
 		if(this.isBaseStatement) s+=" (base statement)";
-	//	else s+= " ("+this.level.toString()+"modifiers )";
+		else if(this.level!=null) s+= " ("+this.level.toString()+" mod.)";
 		return s;
 	}
 

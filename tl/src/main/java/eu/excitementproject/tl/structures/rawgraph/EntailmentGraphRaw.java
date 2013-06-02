@@ -239,12 +239,12 @@ public class EntailmentGraphRaw extends
 		String s = "";
 		s+="\nNODES:";
 		for (EntailmentUnit v: this.vertexSet()){
-			s+="\n\t\""+v.toString();
+			s+="\n\t"+v.toString();
 		}
 		
 		s+="\n\nBASE STATEMENT NODES:";
 		for (EntailmentUnit v: this.getBaseStatements()){
-			s+="\n\t\""+v.toString();
+			s+="\n\t"+v.toString();
 		}
 
 		s+="\n\nENTAILMENTS";
@@ -285,14 +285,14 @@ public class EntailmentGraphRaw extends
 	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges){
 		
 		// create the to-be graph nodes
-		EntailmentUnit A = new EntailmentUnit("Food was really bad.");
+		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1);
 		EntailmentUnit B = new EntailmentUnit("Food was bad."); B.setBaseStatement(true);
 		EntailmentUnit C = new EntailmentUnit("I didn't like the food."); C.setBaseStatement(true);
-		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect");
+		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect",1);
 		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect"); E.setBaseStatement(true);
-		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains");
-		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains");
-		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom");
+		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains",2);
+		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains",1);
+		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom",1);
 		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom"); I.setBaseStatement(true);
 
 		// create an empty graph
