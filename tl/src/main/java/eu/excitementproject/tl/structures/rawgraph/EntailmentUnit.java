@@ -34,9 +34,9 @@ public class EntailmentUnit{
 	
 	protected Set<EntailmentUnitMention> mentions = null;
 	
-	protected boolean isBaseStatement = false;
+//	protected boolean isBaseStatement = false;
 	
-	protected Integer level = null; 
+	protected int level = -1; // negative value means "unknown"
 	
 	/**
 	 * initialize the JCas attribute -- make the first fragment added to the 
@@ -87,7 +87,7 @@ public class EntailmentUnit{
 	/**
 	 * @return the level
 	 */
-	public Integer getLevel() {
+	public int getLevel() {
 		return level;
 	}
 
@@ -131,19 +131,20 @@ public class EntailmentUnit{
 	}
 
 	public boolean isBaseStatement() {
-		return isBaseStatement;
+		if (level==0) return true;
+		return false;
 	}
 
 	public void setBaseStatement(boolean isBaseStatement) {
-		this.isBaseStatement = isBaseStatement; //TODO: remove isBaseStatement attribute, use level instead
 		this.level=0;
 	}
 
 	@Override
 	public String toString(){
 		String s="\""+this.getText()+"\"";
-		if(this.isBaseStatement) s+=" (base statement)";
-		else if(this.level!=null) s+= " ("+this.level.toString()+" mod.)";
+		if(isBaseStatement()) s+=" (base statement)";
+		else if(this.level>0) s+= " ("+this.level+" mod.)";
+		else s+= " (level unknown)";
 		return s;
 	}
 
