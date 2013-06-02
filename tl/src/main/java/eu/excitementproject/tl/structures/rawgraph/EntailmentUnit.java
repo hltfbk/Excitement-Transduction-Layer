@@ -32,10 +32,30 @@ public class EntailmentUnit{
 
 	protected String text;
 	
+	protected Set<String> completeStatementTexts;
+	
 	protected Set<EntailmentUnitMention> mentions = null;
 	
-//	protected boolean isBaseStatement = false;
+	/*	protected Set<Long> fragmentGraphIds;
 	
+	
+	*//**
+	 * @return the fragmentGraphIds
+	 *//*
+	public Set<Long> getFragmentGraphIds() {
+		return fragmentGraphIds;
+	}
+
+	public boolean isFromFragmentGraph(long id) {
+		if (fragmentGraphIds.contains(id)) return true;
+		return false;
+	}
+
+	public void addFragmentGraphId(long id) {
+		if (fragmentGraphIds.isEmpty()) fragmentGraphIds = new HashSet<Long>(); 
+		if (!fragmentGraphIds.contains(id)) fragmentGraphIds.add(id);
+	}
+*/
 	protected int level = -1; // negative value means "unknown"
 	
 	protected int frequency;
@@ -48,38 +68,24 @@ public class EntailmentUnit{
 	 * @param start	-- start index of the fragment
 	 * @param end -- end index of the fragment
 	 */
-	EntailmentUnit(EntailmentUnitMention eum) {
+	EntailmentUnit(EntailmentUnitMention eum, String completeStatementText) {
 		
 		mentions = new HashSet<EntailmentUnitMention>();
 		mentions.add(eum);
 		text = eum.getText();
-		if(eum.getLevel()==0) setBaseStatement(true);
 		level = eum.getLevel();	
-		frequency=1; // this is the first time this EntailmentUnit is seen 
+		frequency=1; // this is the first time this EntailmentUnit is seen
+		completeStatementTexts = new HashSet<String>();
+		completeStatementTexts.add(completeStatementText);
 	}
 
 	/**
 	 * Same as before -- this will be the "canonical" element
 	 * 
 	 * @param textFragment -- generate node directly from the text fragment
-	 */
-	public EntailmentUnit(String textFragment) {
-		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
-		
-		mentions = new HashSet<EntailmentUnitMention>();
-		mentions.add(n);		
-		text = textFragment;
-		frequency=1; // this is the first time this EntailmentUnit is seen
-	}
-	
-	
-	/**
-	 * Same as before -- this will be the "canonical" element
-	 * 
-	 * @param textFragment -- generate node directly from the text fragment
 	 * @param level -- the number of modifiers in the textFragment
 	 */
-	public EntailmentUnit(String textFragment, int level) {
+	public EntailmentUnit(String textFragment, int level, String completeStatementText) {
 		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
 		
 		mentions = new HashSet<EntailmentUnitMention>();
@@ -87,6 +93,12 @@ public class EntailmentUnit{
 		text = textFragment;
 		this.level =level; 
 		frequency=1; // this is the first time this EntailmentUnit is seen
+		completeStatementTexts = new HashSet<String>();
+		completeStatementTexts.add(completeStatementText);
+	}
+	
+	public void addCompleteStatement(String completeStatementText){
+		if (!completeStatementTexts.contains(completeStatementText)) completeStatementTexts.add(completeStatementText);
 	}
 	
 	/**
@@ -208,6 +220,8 @@ public class EntailmentUnit{
 			return false;
 		return true;
 	}
+
+
 	
 }	
 
