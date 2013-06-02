@@ -173,8 +173,7 @@ public class EntailmentGraphRaw extends
 	}
 	
 	/**
-	 * Copy an edge from a FragmentGraph - if vertices do not exist, add them
-	 * TODO: Use Kathrin's node matcher when ready?
+	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If they do - increment the frequency counter
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
 	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
 	 */
@@ -182,15 +181,18 @@ public class EntailmentGraphRaw extends
 		EntailmentUnit sourceVertex = getVertex(fragmentGraphEdge.getSource().getText());
 		EntailmentUnit targetVertex = getVertex(fragmentGraphEdge.getTarget().getText());
 
-		// if vertices do not exist, add them
+		// if vertices do not exist - add them, otherwise - update their frequency
 		if(sourceVertex==null){
 			sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource());
 			this.addVertex(sourceVertex);
 		}
+		else sourceVertex.incrementFrequency();
+		
 		if(targetVertex==null){
 			targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget());
 			this.addVertex(targetVertex);
 		}
+		else targetVertex.incrementFrequency();
 		
 		// now create and add the edge
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.CopiedFromFragmentGraph);

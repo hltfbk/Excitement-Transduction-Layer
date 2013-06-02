@@ -38,6 +38,8 @@ public class EntailmentUnit{
 	
 	protected int level = -1; // negative value means "unknown"
 	
+	protected int frequency;
+	
 	/**
 	 * initialize the JCas attribute -- make the first fragment added to the 
 	 * EntailmentUnit object the "canonical" element
@@ -52,7 +54,8 @@ public class EntailmentUnit{
 		mentions.add(eum);
 		text = eum.getText();
 		if(eum.getLevel()==0) setBaseStatement(true);
-		level = eum.getLevel();		
+		level = eum.getLevel();	
+		frequency=1; // this is the first time this EntailmentUnit is seen 
 	}
 
 	/**
@@ -66,6 +69,7 @@ public class EntailmentUnit{
 		mentions = new HashSet<EntailmentUnitMention>();
 		mentions.add(n);		
 		text = textFragment;
+		frequency=1; // this is the first time this EntailmentUnit is seen
 	}
 	
 	
@@ -82,6 +86,7 @@ public class EntailmentUnit{
 		mentions.add(n);		
 		text = textFragment;
 		this.level =level; 
+		frequency=1; // this is the first time this EntailmentUnit is seen
 	}
 	
 	/**
@@ -90,8 +95,7 @@ public class EntailmentUnit{
 	public int getLevel() {
 		return level;
 	}
-
-
+	
 	/**
 	 * Add a new node to the equivalence class
 	 * 
@@ -101,6 +105,28 @@ public class EntailmentUnit{
 		mentions.add(n);
 	}
 	
+	/**
+	 * @return the frequency
+	 */
+	public int getFrequency() {
+		return frequency;
+	}
+
+	/**
+	 * @param frequency the frequency to set
+	 */
+	public void setFrequency(int frequency) {
+		this.frequency = frequency;
+	}
+	
+	
+	/**
+	 * Increase the value of frequency by 1 
+	 */
+	public void incrementFrequency(){
+		this.frequency++;
+	}
+
 	/**
 	 * @return -- a set of text fragments corresponding to all the entailment unit mentions covered by this node
 	 */
@@ -148,11 +174,9 @@ public class EntailmentUnit{
 		return s;
 	}
 
-	
 	/******************************************************************************************
 	 * Override hashCode() and equals(). 
 	 * ****************************************************************************************/
-
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
@@ -185,6 +209,5 @@ public class EntailmentUnit{
 		return true;
 	}
 	
-	
+}	
 
-}
