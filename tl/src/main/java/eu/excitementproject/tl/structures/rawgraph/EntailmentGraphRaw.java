@@ -85,7 +85,7 @@ public class EntailmentGraphRaw extends
 	public EntailmentGraphRaw(FragmentGraph fg) {
 		super(EntailmentRelation.class);
 		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
-			this.addEdgeFromFrahmentGraph(fragmentGraphEdge);
+			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
 		}
 	}
 	
@@ -97,6 +97,10 @@ public class EntailmentGraphRaw extends
 		super(EntailmentRelation.class);
 	}
 	
+	public boolean isEntailment(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
+		if (getEdge(entailingNode, entailedNode)!=null) return true;
+		return false;
+	}
 
 	/******************************************************************************************
 	 * SETTERS/GERRETS
@@ -138,6 +142,7 @@ public class EntailmentGraphRaw extends
 	
 	/** Returns the set of nodes, which entail the given node and have the specified level (number of modifiers)
 	 * @param node whose entailing nodes are returned
+	 * @param level - number of modifiers
 	 * @return Set<EntailmentUnit> with the entailing nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node, int level){
@@ -161,51 +166,80 @@ public class EntailmentGraphRaw extends
 		return entailedNodes;
 	}
 	
+	/** Returns the set of nodes, which are entailed by the given node and have the specified level (number of modifiers)
+	 * @param node whose entailed nodes are returned
+	 * @param level - number of modifiers
+	 * @return Set<EntailmentUnit> with all the entailed nodes of the given node
+	 */
+	public Set<EntailmentUnit> getEntailedNodes(EntailmentUnit node, int level){
+		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
+		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
+			EntailmentUnit entailedNode = edge.getTarget();
+			if (entailedNode.getLevel()==level) entailedNodes.add(entailedNode);
+		}
+		return entailedNodes;
+	}
 	/**
 	 * Create an edge from sourceVertex to targetVertex using the specified eda 
 	 * @param sourceVertex
 	 * @param targetVertex
 	 * @param eda
+	 * @return the edge, which was added to the graph
 	 */
-	public void addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
+	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
 		this.addEdge(sourceVertex, targetVertex, edge);
+		return edge;
 	}
 	
 	/**
-	 * Copy an edge from a FragmentGraph - if vertices do not exist, add them
-	 * TODO: Use Kathrin's node matcher when ready?
+	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If they do - increment the frequency counter
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
+	 * @return the edge, which was added to the graph
 	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
 	 */
-	public void addEdgeFromFrahmentGraph(FragmentGraphEdge fragmentGraphEdge){
+	public EntailmentRelation addEdgeFromFragmentGraph(FragmentGraphEdge fragmentGraphEdge, FragmentGraph fg){
 		EntailmentUnit sourceVertex = getVertex(fragmentGraphEdge.getSource().getText());
 		EntailmentUnit targetVertex = getVertex(fragmentGraphEdge.getTarget().getText());
 
-		// if vertices do not exist, add them
+		// if vertices do not exist - add them, otherwise - update their frequency and completeStatementTexts
 		if(sourceVertex==null){
-			sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource());
+			sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText());
 			this.addVertex(sourceVertex);
 		}
-		if(targetVertex==null){
-			targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget());
-			this.addVertex(targetVertex);
+		else {
+			sourceVertex.incrementFrequency();
+			sourceVertex.addCompleteStatement(fg.getCompleteStatement().getText());
 		}
 		
+		if(targetVertex==null){
+			targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget(),fg.getCompleteStatement().getText());
+			this.addVertex(targetVertex);
+		}
+		else {
+			targetVertex.incrementFrequency();
+			targetVertex.addCompleteStatement(fg.getCompleteStatement().getText());
+		}
+					
 		// now create and add the edge
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.CopiedFromFragmentGraph);
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.FRAGMENT_GRAPH);
 		this.addEdge(sourceVertex, targetVertex, edge);
+		return edge;
 	}
+	
+	
 	
 	/**
 	 * Create an edge induced by transitivity. Confidence is to be given as parameter.
 	 * @param sourceVertex
 	 * @param targetVertex
 	 * @param confidence
+	 * @return the edge, which was added to the graph
 	 */
-	public void addEdgeByTransitivity(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, Double confidence){
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(confidence), EdgeType.InducedByTransitivity);
+	public EntailmentRelation addEdgeByInduction(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, Double confidence){
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(confidence), EdgeType.INDUCED);
 		this.addEdge(sourceVertex, targetVertex, edge);
+		return edge;
 	}
 	
 	/**
@@ -239,12 +273,12 @@ public class EntailmentGraphRaw extends
 		String s = "";
 		s+="\nNODES:";
 		for (EntailmentUnit v: this.vertexSet()){
-			s+="\n\t\""+v.toString();
+			s+="\n\t"+v.toString();
 		}
 		
 		s+="\n\nBASE STATEMENT NODES:";
 		for (EntailmentUnit v: this.getBaseStatements()){
-			s+="\n\t\""+v.toString();
+			s+="\n\t"+v.toString();
 		}
 
 		s+="\n\nENTAILMENTS";
@@ -285,15 +319,15 @@ public class EntailmentGraphRaw extends
 	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges){
 		
 		// create the to-be graph nodes
-		EntailmentUnit A = new EntailmentUnit("Food was really bad.");
-		EntailmentUnit B = new EntailmentUnit("Food was bad."); B.setBaseStatement(true);
-		EntailmentUnit C = new EntailmentUnit("I didn't like the food."); C.setBaseStatement(true);
-		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect");
-		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect"); E.setBaseStatement(true);
-		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains");
-		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains");
-		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom");
-		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom"); I.setBaseStatement(true);
+		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.");
+		EntailmentUnit B = new EntailmentUnit("Food was bad.",0,"Food was really bad.");
+		EntailmentUnit C = new EntailmentUnit("I didn't like the food.",0,"I didn't like the food.");
+		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect",1,"a little more leg room would have been perfect");
+		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect",0,"a little more leg room would have been perfect"); 
+		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains",2,"Disappointed with the amount of legroom compared with other trains");
+		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains",1,"Disappointed with the amount of legroom compared with other trains");
+		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom",1,"Disappointed with the amount of legroom compared with other trains");
+		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom",0,"Disappointed with the amount of legroom compared with other trains");
 
 		// create an empty graph
 		EntailmentGraphRaw sampleRawGraph = new EntailmentGraphRaw();
@@ -350,21 +384,21 @@ public class EntailmentGraphRaw extends
 			
 			// add edges "obtained" from eda (EdgeType.GeneratedByEDA)
 
-			sampleRawGraph.addEdge(B, C, new EntailmentRelation(B, C, new TEDecisionByScore(0.72), EdgeType.GeneratedByEDA));
-			sampleRawGraph.addEdge(C, B, new EntailmentRelation(C, B, new TEDecisionByScore(0.77), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(B, C, new EntailmentRelation(B, C, new TEDecisionByScore(0.72), EdgeType.EDA));
+			sampleRawGraph.addEdge(C, B, new EntailmentRelation(C, B, new TEDecisionByScore(0.77), EdgeType.EDA));
 
-			sampleRawGraph.addEdge(B, E, new EntailmentRelation(B, E, new TEDecisionByScore(0.05), EdgeType.GeneratedByEDA));
-			sampleRawGraph.addEdge(E, B, new EntailmentRelation(E, B, new TEDecisionByScore(0.08), EdgeType.GeneratedByEDA));
-			sampleRawGraph.addEdge(C, E, new EntailmentRelation(C, E, new TEDecisionByScore(0.07), EdgeType.GeneratedByEDA));
-			sampleRawGraph.addEdge(E, C, new EntailmentRelation(E, C, new TEDecisionByScore(0.11), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(B, E, new EntailmentRelation(B, E, new TEDecisionByScore(0.05), EdgeType.EDA));
+			sampleRawGraph.addEdge(E, B, new EntailmentRelation(E, B, new TEDecisionByScore(0.08), EdgeType.EDA));
+			sampleRawGraph.addEdge(C, E, new EntailmentRelation(C, E, new TEDecisionByScore(0.07), EdgeType.EDA));
+			sampleRawGraph.addEdge(E, C, new EntailmentRelation(E, C, new TEDecisionByScore(0.11), EdgeType.EDA));
 			
-			sampleRawGraph.addEdge(E, I, new EntailmentRelation(E, I, new TEDecisionByScore(0.82), EdgeType.GeneratedByEDA));
-			sampleRawGraph.addEdge(I, E, new EntailmentRelation(I, E, new TEDecisionByScore(0.74), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(E, I, new EntailmentRelation(E, I, new TEDecisionByScore(0.82), EdgeType.EDA));
+			sampleRawGraph.addEdge(I, E, new EntailmentRelation(I, E, new TEDecisionByScore(0.74), EdgeType.EDA));
 
-			sampleRawGraph.addEdge(B, I, new EntailmentRelation(B, I, new TEDecisionByScore(0.06), EdgeType.GeneratedByEDA));
-			sampleRawGraph.addEdge(I, B, new EntailmentRelation(I, B, new TEDecisionByScore(0.03), EdgeType.GeneratedByEDA));
-			sampleRawGraph.addEdge(C, I, new EntailmentRelation(C, I, new TEDecisionByScore(0.09), EdgeType.GeneratedByEDA));
-			sampleRawGraph.addEdge(I, C, new EntailmentRelation(I, C, new TEDecisionByScore(0.04), EdgeType.GeneratedByEDA));
+			sampleRawGraph.addEdge(B, I, new EntailmentRelation(B, I, new TEDecisionByScore(0.06), EdgeType.EDA));
+			sampleRawGraph.addEdge(I, B, new EntailmentRelation(I, B, new TEDecisionByScore(0.03), EdgeType.EDA));
+			sampleRawGraph.addEdge(C, I, new EntailmentRelation(C, I, new TEDecisionByScore(0.09), EdgeType.EDA));
+			sampleRawGraph.addEdge(I, C, new EntailmentRelation(I, C, new TEDecisionByScore(0.04), EdgeType.EDA));
 								
 		}
 
