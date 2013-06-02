@@ -126,7 +126,7 @@ public class EntailmentUnit{
 	public String toString(){
 		String s=this.getText();
 		if(this.isBaseStatement) s+=" (base statement)";
-		else s+= " ("+this.level.toString()+"modifiers )";
+	//	else s+= " ("+this.level.toString()+"modifiers )";
 		return s;
 	}
 
