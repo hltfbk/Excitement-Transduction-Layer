@@ -25,6 +25,8 @@ public class ConvertWP2PublicData {
 	 * <P> The stored XMI files can be read into InputCAS (a JCAS) by calling 
 	 * CASUtils.deserializeFromXmi() 
 	 * 
+	 * <P> TODO: (update accordingly) Note that, the reader (InteractionReader.readWP2FragGraphDump()) for the moment only reads and generates continuous fragments. It will skip all non-continuous fragment annotations. New versions will be able to read such, after prototype. 
+	 * 
 	 * @param args no arguments will be processed 
 	 * 
 	 * @author Gil 
@@ -35,10 +37,15 @@ public class ConvertWP2PublicData {
 		BasicConfigurator.configure(); 
 		Logger.getRootLogger().setLevel(Level.WARN);  
 
-		Path dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_1/");
-		Path outputdir = Paths.get("./target/WP2_public_data_XMI/nice_email_1"); 
-
 		int totalcount = 0; 
+		Path dir = null; 
+		Path outputdir = null; 
+
+		// Let's build NICE e-mail data. 
+		{
+		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_1/");
+		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_email_1"); 
+
 		totalcount += processWP2Data(dir, outputdir, "EN"); 
 		
 		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_2/");
@@ -51,9 +58,21 @@ public class ConvertWP2PublicData {
 
 		dir = Paths.get("./src/test/resources/WP2_public_data/nice_speech/");
 		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_speech"); 
-		totalcount += processWP2Data(dir, outputdir, "EN"); 		
-		
-		System.out.println("In total: " + totalcount + " XMI files generated, over four directories"); 
+		totalcount += processWP2Data(dir, outputdir, "EN"); 	
+		}
+
+		// and for ALMAwave 
+		{
+		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
+		outputdir = Paths.get("./target/WP2_public_data_XMI/alma_social_media"); 
+		totalcount += processWP2Data(dir, outputdir, "IT"); 		
+
+		dir = Paths.get("./src/test/resources/WP2_public_data/alma_speech/");
+		outputdir = Paths.get("./target/WP2_public_data_XMI/alma_speech"); 
+		totalcount += processWP2Data(dir, outputdir, "IT"); 		
+		}
+
+		System.out.println("In total: " + totalcount + " XMI files generated, over /target/ directories"); 
 	}
 	
 	/**
