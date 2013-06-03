@@ -40,6 +40,7 @@ public class EntailmentGraphRawTest {
 		rawGraph = new EntailmentGraphRaw(g);
 		System.out.println("********************************\n Copy of a Fragment graph:\n"+rawGraph.toString());
 		
+		System.out.println("********************************\n Restore fragment graph from the raw graph:\n"+rawGraph.toString());
 		Set<EntailmentUnit> bs = rawGraph.getBaseStatements();
 		for (EntailmentUnit eu : bs){
 			System.out.println(eu.getText());	

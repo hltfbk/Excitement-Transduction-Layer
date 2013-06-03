@@ -34,6 +34,13 @@ public class EntailmentUnit{
 	
 	protected Set<String> completeStatementTexts;
 	
+	/**
+	 * @return the completeStatementTexts
+	 */
+	public Set<String> getCompleteStatementTexts() {
+		return completeStatementTexts;
+	}
+
 	protected Set<EntailmentUnitMention> mentions = null;
 	
 	/*	protected Set<Long> fragmentGraphIds;

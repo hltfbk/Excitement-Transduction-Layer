@@ -104,6 +104,11 @@ public class EntailmentGraphRaw extends
 		return false;
 	}
 
+	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
+		if (isEntailment(nodeA, nodeB)||(isEntailment(nodeB, nodeA))) return true;
+		return false;
+	}
+
 	/******************************************************************************************
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
@@ -228,6 +233,29 @@ public class EntailmentGraphRaw extends
 		}
 		return entailedNodes;
 	}
+	
+
+	/** get entailed nodes what belong to the same fragment graph and have the specified nummber of modifiers (level)
+	 * @param node
+	 * @return
+	 */
+	public Set<EntailmentUnit> getEntailedNodesFromSameFragmentGraph(EntailmentUnit node, int level){
+		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
+		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
+			EntailmentUnit entailedNode = edge.getTarget();
+			if (entailedNode.getLevel()==level){ // first check the level condition
+				for (String completeStatement : entailedNode.getCompleteStatementTexts()){ // now check if have a common completeStatement (came from the same gragment graph)
+					if (node.getCompleteStatementTexts().contains(completeStatement)){
+						entailedNodes.add(entailedNode); // if yes - add
+						break; // and go to the next edge
+					}
+				}
+				
+			}
+		}
+		return entailedNodes;
+	}	
+
 	/**
 	 * Create an edge from sourceVertex to targetVertex using the specified eda 
 	 * @param sourceVertex
