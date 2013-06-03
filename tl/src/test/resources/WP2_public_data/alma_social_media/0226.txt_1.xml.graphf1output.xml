@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="ricarica" implicit_context="" explicit_context="0226.txt" modality="FALSE" implicit_statement="FALSE" id="0226.txt_1_0">
+        <original_text>dei 10 € di ricarica vinti non li ho mai visti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>dei 10 € dipoz=0 1 2 3</modifiers>
+    </node>
+    <node implicit_focus="" focus="ricarica" implicit_context="" explicit_context="0226.txt" modality="FALSE" implicit_statement="FALSE" id="0226.txt_1_1">
+        <original_text>ricarica vinti non li ho mai visti</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0226.txt_1_1" source="0226.txt_1_0" id="0226.txt_1_0-0226.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0226.txt_1_1" source="0226.txt_1_0" id="0226.txt_1_0-0226.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

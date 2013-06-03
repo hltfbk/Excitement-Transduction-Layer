@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node implicit_focus="" focus="l'offerta" implicit_context="" explicit_context="0011.txt" modality="FALSE" implicit_statement="FALSE" id="0011.txt_1_0">
+        <original_text>Problema con l'offerta PROMOSMART SENZA CONFINI + . . . mi addebita i costi degli sms a numeri TELEFONIAX</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a numeri TELEFONIAXpoz=16 17 18;PROMOSMART SENZA CONFINI +poz=3 4 5 6;Problema conpoz=0 1</modifiers>
+    </node>
+    <node implicit_focus="" focus="l'offerta" implicit_context="" explicit_context="0011.txt" modality="FALSE" implicit_statement="FALSE" id="0011.txt_1_1">
+        <original_text>Problema con l'offerta PROMOSMART SENZA CONFINI + . . . mi addebita i costi degli sms</original_text>
+        <correct_text> </correct_text>
+        <modifiers>PROMOSMART SENZA CONFINI +poz=3 4 5 6;Problema conpoz=0 1</modifiers>
+    </node>
+    <node implicit_focus="" focus="l'offerta" implicit_context="" explicit_context="0011.txt" modality="FALSE" implicit_statement="FALSE" id="0011.txt_1_2">
+        <original_text>Problema con l'offerta . . . mi addebita i costi degli sms a numeri TELEFONIAX</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a numeri TELEFONIAXpoz=16 17 18;Problema conpoz=0 1</modifiers>
+    </node>
+    <node implicit_focus="" focus="l'offerta" implicit_context="" explicit_context="0011.txt" modality="FALSE" implicit_statement="FALSE" id="0011.txt_1_3">
+        <original_text>l'offerta PROMOSMART SENZA CONFINI + . . . mi addebita i costi degli sms a numeri TELEFONIAX</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a numeri TELEFONIAXpoz=16 17 18;PROMOSMART SENZA CONFINI +poz=3 4 5 6</modifiers>
+    </node>
+    <node implicit_focus="" focus="l'offerta" implicit_context="" explicit_context="0011.txt" modality="FALSE" implicit_statement="FALSE" id="0011.txt_1_4">
+        <original_text>Problema con l'offerta . . . mi addebita i costi degli sms</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Problema conpoz=0 1</modifiers>
+    </node>
+    <node implicit_focus="" focus="l'offerta" implicit_context="" explicit_context="0011.txt" modality="FALSE" implicit_statement="FALSE" id="0011.txt_1_5">
+        <original_text>l'offerta PROMOSMART SENZA CONFINI + . . . mi addebita i costi degli sms</original_text>
+        <correct_text> </correct_text>
+        <modifiers>PROMOSMART SENZA CONFINI +poz=3 4 5 6</modifiers>
+    </node>
+    <node implicit_focus="" focus="l'offerta" implicit_context="" explicit_context="0011.txt" modality="FALSE" implicit_statement="FALSE" id="0011.txt_1_6">
+        <original_text>l'offerta . . . mi addebita i costi degli sms a numeri TELEFONIAX</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a numeri TELEFONIAXpoz=16 17 18</modifiers>
+    </node>
+    <node implicit_focus="" focus="l'offerta" implicit_context="" explicit_context="0011.txt" modality="FALSE" implicit_statement="FALSE" id="0011.txt_1_7">
+        <original_text>l'offerta . . . mi addebita i costi degli sms</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0011.txt_1_1" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_1" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_2" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_2" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_3" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_3" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_4" source="0011.txt_1_2" id="0011.txt_1_2-0011.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_4" source="0011.txt_1_1" id="0011.txt_1_1-0011.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_4" source="0011.txt_1_1" id="0011.txt_1_1-0011.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_4" source="0011.txt_1_2" id="0011.txt_1_2-0011.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_4" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_5" source="0011.txt_1_3" id="0011.txt_1_3-0011.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_5" source="0011.txt_1_1" id="0011.txt_1_1-0011.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_5" source="0011.txt_1_1" id="0011.txt_1_1-0011.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_5" source="0011.txt_1_3" id="0011.txt_1_3-0011.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_5" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_6" source="0011.txt_1_3" id="0011.txt_1_3-0011.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_6" source="0011.txt_1_2" id="0011.txt_1_2-0011.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_6" source="0011.txt_1_2" id="0011.txt_1_2-0011.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_6" source="0011.txt_1_3" id="0011.txt_1_3-0011.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_6" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_6" id="0011.txt_1_6-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_5" id="0011.txt_1_5-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_4" id="0011.txt_1_4-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_4" id="0011.txt_1_4-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_5" id="0011.txt_1_5-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_6" id="0011.txt_1_6-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_2" id="0011.txt_1_2-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_3" id="0011.txt_1_3-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_0" id="0011.txt_1_0-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0011.txt_1_7" source="0011.txt_1_1" id="0011.txt_1_1-0011.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

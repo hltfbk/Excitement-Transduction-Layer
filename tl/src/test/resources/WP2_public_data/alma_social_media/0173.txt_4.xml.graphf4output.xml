@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="applicazione" focus="" implicit_context="" explicit_context="0173.txt" modality="FALSE" implicit_statement="FALSE" id="0173.txt_4_0">
+        <original_text>Da oltre un mese non funziona</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Da oltre un mesepoz=0 1 2 3</modifiers>
+    </node>
+    <node implicit_focus="applicazione" focus="" implicit_context="" explicit_context="0173.txt" modality="FALSE" implicit_statement="FALSE" id="0173.txt_4_1">
+        <original_text>non funziona</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0173.txt_4_1" source="0173.txt_4_0" id="0173.txt_4_0-0173.txt_4_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0173.txt_4_1" source="0173.txt_4_0" id="0173.txt_4_0-0173.txt_4_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

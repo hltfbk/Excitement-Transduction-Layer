@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="3">
+    <node implicit_focus="" focus="rete" implicit_context="" explicit_context="0027.txt" modality="FALSE" implicit_statement="FALSE" id="0027.txt_1_0">
+        <original_text>Sono alcuni giorni che la rete non va</original_text>
+        <correct_text> </correct_text>
+        <modifiers>alcunipoz=1;Sono giorni chepoz=0 2 3</modifiers>
+    </node>
+    <node implicit_focus="" focus="rete" implicit_context="" explicit_context="0027.txt" modality="FALSE" implicit_statement="FALSE" id="0027.txt_1_1">
+        <original_text>Sono giorni che la rete non va</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Sono giorni chepoz=0 2 3</modifiers>
+    </node>
+    <node implicit_focus="" focus="rete" implicit_context="" explicit_context="0027.txt" modality="FALSE" implicit_statement="FALSE" id="0027.txt_1_2">
+        <original_text>la rete non va</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0027.txt_1_1" source="0027.txt_1_0" id="0027.txt_1_0-0027.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0027.txt_1_1" source="0027.txt_1_0" id="0027.txt_1_0-0027.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0027.txt_1_2" source="0027.txt_1_1" id="0027.txt_1_1-0027.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0027.txt_1_2" source="0027.txt_1_1" id="0027.txt_1_1-0027.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0027.txt_1_2" source="0027.txt_1_0" id="0027.txt_1_0-0027.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

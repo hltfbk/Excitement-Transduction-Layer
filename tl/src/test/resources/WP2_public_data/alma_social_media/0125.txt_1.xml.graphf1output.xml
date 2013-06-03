@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="6">
+    <node implicit_focus="" focus="registrazione" implicit_context="" explicit_context="0125.txt" modality="FALSE" implicit_statement="FALSE" id="0125.txt_1_0">
+        <original_text>il servizio di registrazione al sito ? mi dà sempre errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>il servizio di ?poz=0 1 2 6;semprepoz=9;al sitopoz=4 5</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrazione" implicit_context="" explicit_context="0125.txt" modality="FALSE" implicit_statement="FALSE" id="0125.txt_1_1">
+        <original_text>il servizio di registrazione al sito ? mi dà errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>il servizio di ?poz=0 1 2 6;al sitopoz=4 5</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrazione" implicit_context="" explicit_context="0125.txt" modality="FALSE" implicit_statement="FALSE" id="0125.txt_1_2">
+        <original_text>il servizio di registrazione ? mi dà sempre errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>il servizio di ?poz=0 1 2 6;semprepoz=9</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrazione" implicit_context="" explicit_context="0125.txt" modality="FALSE" implicit_statement="FALSE" id="0125.txt_1_3">
+        <original_text>il servizio di registrazione ? mi dà errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>il servizio di ?poz=0 1 2 6</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrazione" implicit_context="" explicit_context="0125.txt" modality="FALSE" implicit_statement="FALSE" id="0125.txt_1_4">
+        <original_text>registrazione mi dà sempre errore</original_text>
+        <correct_text>la registrazione mi dà sempre errore</correct_text>
+        <modifiers>semprepoz=9</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrazione" implicit_context="" explicit_context="0125.txt" modality="FALSE" implicit_statement="FALSE" id="0125.txt_1_5">
+        <original_text>registrazione mi dà errore</original_text>
+        <correct_text>la registrazione mi dà errore</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0125.txt_1_1" source="0125.txt_1_0" id="0125.txt_1_0-0125.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_1" source="0125.txt_1_0" id="0125.txt_1_0-0125.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_2" source="0125.txt_1_0" id="0125.txt_1_0-0125.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_2" source="0125.txt_1_0" id="0125.txt_1_0-0125.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_3" source="0125.txt_1_2" id="0125.txt_1_2-0125.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_3" source="0125.txt_1_1" id="0125.txt_1_1-0125.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_3" source="0125.txt_1_1" id="0125.txt_1_1-0125.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_3" source="0125.txt_1_2" id="0125.txt_1_2-0125.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_3" source="0125.txt_1_0" id="0125.txt_1_0-0125.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_4" source="0125.txt_1_2" id="0125.txt_1_2-0125.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_4" source="0125.txt_1_2" id="0125.txt_1_2-0125.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_4" source="0125.txt_1_0" id="0125.txt_1_0-0125.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_5" source="0125.txt_1_4" id="0125.txt_1_4-0125.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_5" source="0125.txt_1_3" id="0125.txt_1_3-0125.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_5" source="0125.txt_1_3" id="0125.txt_1_3-0125.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_5" source="0125.txt_1_4" id="0125.txt_1_4-0125.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_5" source="0125.txt_1_2" id="0125.txt_1_2-0125.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_5" source="0125.txt_1_0" id="0125.txt_1_0-0125.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0125.txt_1_5" source="0125.txt_1_1" id="0125.txt_1_1-0125.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="operatori" focus="" implicit_context="" explicit_context="0135.txt" modality="FALSE" implicit_statement="FALSE" id="0135.txt_3_0">
+        <original_text>ti trannano anche male</original_text>
+        <correct_text>ti trattano anche male</correct_text>
+        <modifiers>anchepoz=2</modifiers>
+    </node>
+    <node implicit_focus="operatori" focus="" implicit_context="" explicit_context="0135.txt" modality="FALSE" implicit_statement="FALSE" id="0135.txt_3_1">
+        <original_text>ti trannano male</original_text>
+        <correct_text>ti trattano male</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0135.txt_3_1" source="0135.txt_3_0" id="0135.txt_3_0-0135.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0135.txt_3_1" source="0135.txt_3_0" id="0135.txt_3_0-0135.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

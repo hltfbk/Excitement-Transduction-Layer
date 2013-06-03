@@ -8,6 +8,7 @@ import java.util.Set;
 import junit.framework.Assert;
 
 import org.apache.uima.jcas.JCas;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitementproject.tl.laputils.CASUtils;
@@ -18,6 +19,7 @@ public class FragmentGraphGeneratorTest {
 	/**
 	 *  The test class tests FragmentGraphGenerator 
 	 */
+	@Ignore 
 	@Test
 	public void test() {
 		

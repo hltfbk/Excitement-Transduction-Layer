@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="MOBILEA MODELLOA1" implicit_context="" explicit_context="Speech5.5.003.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.003.txt_1_0">
+        <original_text>Il mio MOBILEA MODELLOA1 che ho comprato da TELEFONIAX non funziona bene</original_text>
+        <correct_text> </correct_text>
+        <modifiers>che ho comprato da TELEFONIAXpoz=4 5 6 7 8</modifiers>
+    </node>
+    <node implicit_focus="" focus="MOBILEA MODELLOA1" implicit_context="" explicit_context="Speech5.5.003.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.5.003.txt_1_1">
+        <original_text>Il mio MOBILEA MODELLOA1 non funziona bene</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="Speech5.5.003.txt_1_1" source="Speech5.5.003.txt_1_0" id="Speech5.5.003.txt_1_0-Speech5.5.003.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.5.003.txt_1_1" source="Speech5.5.003.txt_1_0" id="Speech5.5.003.txt_1_0-Speech5.5.003.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

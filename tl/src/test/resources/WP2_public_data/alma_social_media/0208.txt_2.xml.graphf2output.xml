@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="6">
+    <node implicit_focus="" focus="navigo" implicit_context="" explicit_context="0208.txt" modality="FALSE" implicit_statement="FALSE" id="0208.txt_2_0">
+        <original_text>navigo MALE per sei mesi con la chiavetta da voi fornita</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per sei mesipoz=2 3 4;da voi fornitapoz=8 9 10;con la chiavettapoz=5 6 7</modifiers>
+    </node>
+    <node implicit_focus="" focus="navigo" implicit_context="" explicit_context="0208.txt" modality="FALSE" implicit_statement="FALSE" id="0208.txt_2_1">
+        <original_text>navigo MALE con la chiavetta da voi fornita</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da voi fornitapoz=8 9 10;con la chiavettapoz=5 6 7</modifiers>
+    </node>
+    <node implicit_focus="" focus="navigo" implicit_context="" explicit_context="0208.txt" modality="FALSE" implicit_statement="FALSE" id="0208.txt_2_2">
+        <original_text>navigo MALE per sei mesi con la chiavetta</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per sei mesipoz=2 3 4;con la chiavettapoz=5 6 7</modifiers>
+    </node>
+    <node implicit_focus="" focus="navigo" implicit_context="" explicit_context="0208.txt" modality="FALSE" implicit_statement="FALSE" id="0208.txt_2_3">
+        <original_text>navigo MALE con la chiavetta</original_text>
+        <correct_text> </correct_text>
+        <modifiers>con la chiavettapoz=5 6 7</modifiers>
+    </node>
+    <node implicit_focus="" focus="navigo" implicit_context="" explicit_context="0208.txt" modality="FALSE" implicit_statement="FALSE" id="0208.txt_2_4">
+        <original_text>navigo MALE per sei mesi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per sei mesipoz=2 3 4</modifiers>
+    </node>
+    <node implicit_focus="" focus="navigo" implicit_context="" explicit_context="0208.txt" modality="FALSE" implicit_statement="FALSE" id="0208.txt_2_5">
+        <original_text>navigo MALE</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0208.txt_2_1" source="0208.txt_2_0" id="0208.txt_2_0-0208.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_1" source="0208.txt_2_0" id="0208.txt_2_0-0208.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_2" source="0208.txt_2_0" id="0208.txt_2_0-0208.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_2" source="0208.txt_2_0" id="0208.txt_2_0-0208.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_3" source="0208.txt_2_2" id="0208.txt_2_2-0208.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_3" source="0208.txt_2_1" id="0208.txt_2_1-0208.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_3" source="0208.txt_2_1" id="0208.txt_2_1-0208.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_3" source="0208.txt_2_2" id="0208.txt_2_2-0208.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_3" source="0208.txt_2_0" id="0208.txt_2_0-0208.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_4" source="0208.txt_2_2" id="0208.txt_2_2-0208.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_4" source="0208.txt_2_2" id="0208.txt_2_2-0208.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_4" source="0208.txt_2_0" id="0208.txt_2_0-0208.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_5" source="0208.txt_2_4" id="0208.txt_2_4-0208.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_5" source="0208.txt_2_3" id="0208.txt_2_3-0208.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_5" source="0208.txt_2_3" id="0208.txt_2_3-0208.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_5" source="0208.txt_2_4" id="0208.txt_2_4-0208.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_5" source="0208.txt_2_2" id="0208.txt_2_2-0208.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_5" source="0208.txt_2_0" id="0208.txt_2_0-0208.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0208.txt_2_5" source="0208.txt_2_1" id="0208.txt_2_1-0208.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

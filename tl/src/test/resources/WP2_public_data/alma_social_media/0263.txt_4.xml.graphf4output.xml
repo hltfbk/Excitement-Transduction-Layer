@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="1">
+    <node implicit_focus="" focus="navigare" implicit_context="" explicit_context="0263.txt" modality="FALSE" implicit_statement="FALSE" id="0263.txt_4_0">
+        <original_text>il computer è lento a navigare</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+</F_entailment_graph>
