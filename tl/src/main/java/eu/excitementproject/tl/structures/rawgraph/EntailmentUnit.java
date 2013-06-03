@@ -183,6 +183,7 @@ public class EntailmentUnit{
 		if(isBaseStatement()) s+=" (base statement)";
 		else if(this.level>0) s+= " ("+this.level+" mod.)";
 		else s+= " (level unknown)";
+		if (!this.completeStatementTexts.isEmpty()) s+=" " + this.completeStatementTexts.size()+ " complete statements";
 		return s;
 	}
 
