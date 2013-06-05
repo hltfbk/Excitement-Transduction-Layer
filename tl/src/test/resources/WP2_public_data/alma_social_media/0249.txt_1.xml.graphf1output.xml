@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="" focus="rimborso" implicit_context="" explicit_context="0249.txt" modality="FALSE" implicit_statement="FALSE" id="0249.txt_1_0">
+        <original_text>aspetto ancora il rimborso del credito</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=1;del creditopoz=4 5</modifiers>
+    </node>
+    <node implicit_focus="" focus="rimborso" implicit_context="" explicit_context="0249.txt" modality="FALSE" implicit_statement="FALSE" id="0249.txt_1_1">
+        <original_text>aspetto il rimborso del credito</original_text>
+        <correct_text> </correct_text>
+        <modifiers>del creditopoz=4 5</modifiers>
+    </node>
+    <node implicit_focus="" focus="rimborso" implicit_context="" explicit_context="0249.txt" modality="FALSE" implicit_statement="FALSE" id="0249.txt_1_2">
+        <original_text>aspetto ancora il rimborso</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=1</modifiers>
+    </node>
+    <node implicit_focus="" focus="rimborso" implicit_context="" explicit_context="0249.txt" modality="FALSE" implicit_statement="FALSE" id="0249.txt_1_3">
+        <original_text>aspetto il rimborso</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0249.txt_1_1" source="0249.txt_1_0" id="0249.txt_1_0-0249.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0249.txt_1_1" source="0249.txt_1_0" id="0249.txt_1_0-0249.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0249.txt_1_2" source="0249.txt_1_0" id="0249.txt_1_0-0249.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0249.txt_1_2" source="0249.txt_1_0" id="0249.txt_1_0-0249.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0249.txt_1_3" source="0249.txt_1_2" id="0249.txt_1_2-0249.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0249.txt_1_3" source="0249.txt_1_1" id="0249.txt_1_1-0249.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0249.txt_1_3" source="0249.txt_1_1" id="0249.txt_1_1-0249.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0249.txt_1_3" source="0249.txt_1_2" id="0249.txt_1_2-0249.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0249.txt_1_3" source="0249.txt_1_0" id="0249.txt_1_0-0249.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

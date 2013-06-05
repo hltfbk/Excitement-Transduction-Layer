@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node implicit_focus="" focus="registrarmi" implicit_context="" explicit_context="0106.txt" modality="FALSE" implicit_statement="FALSE" id="0106.txt_1_0">
+        <original_text>Sono tre giorni che provo ad registrarmi sul sito ma mi da errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>trepoz=1;provo ad mapoz=4 5 9;Sono giorni chepoz=0 2 3;sul sitopoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrarmi" implicit_context="" explicit_context="0106.txt" modality="FALSE" implicit_statement="FALSE" id="0106.txt_1_1">
+        <original_text>Sono giorni che provo ad registrarmi sul sito ma mi da errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>provo ad mapoz=4 5 9;Sono giorni chepoz=0 2 3;sul sitopoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrarmi" implicit_context="" explicit_context="0106.txt" modality="FALSE" implicit_statement="FALSE" id="0106.txt_1_2">
+        <original_text>Sono tre giorni che provo ad registrarmi ma mi da errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>trepoz=1;provo ad mapoz=4 5 9;Sono giorni chepoz=0 2 3</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrarmi" implicit_context="" explicit_context="0106.txt" modality="FALSE" implicit_statement="FALSE" id="0106.txt_1_3">
+        <original_text>provo ad registrarmi sul sito ma mi da errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>provo ad mapoz=4 5 9;sul sitopoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrarmi" implicit_context="" explicit_context="0106.txt" modality="FALSE" implicit_statement="FALSE" id="0106.txt_1_4">
+        <original_text>Sono giorni che provo ad registrarmi ma mi da errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>provo ad mapoz=4 5 9;Sono giorni chepoz=0 2 3</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrarmi" implicit_context="" explicit_context="0106.txt" modality="FALSE" implicit_statement="FALSE" id="0106.txt_1_5">
+        <original_text>registrarmi sul sito mi da errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>sul sitopoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrarmi" implicit_context="" explicit_context="0106.txt" modality="FALSE" implicit_statement="FALSE" id="0106.txt_1_6">
+        <original_text>provo ad registrarmi ma mi da errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>provo ad mapoz=4 5 9</modifiers>
+    </node>
+    <node implicit_focus="" focus="registrarmi" implicit_context="" explicit_context="0106.txt" modality="FALSE" implicit_statement="FALSE" id="0106.txt_1_7">
+        <original_text>registrarmi mi da errore</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0106.txt_1_1" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_1" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_2" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_2" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_3" source="0106.txt_1_1" id="0106.txt_1_1-0106.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_3" source="0106.txt_1_1" id="0106.txt_1_1-0106.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_3" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_4" source="0106.txt_1_2" id="0106.txt_1_2-0106.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_4" source="0106.txt_1_1" id="0106.txt_1_1-0106.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_4" source="0106.txt_1_1" id="0106.txt_1_1-0106.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_4" source="0106.txt_1_2" id="0106.txt_1_2-0106.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_4" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_5" source="0106.txt_1_3" id="0106.txt_1_3-0106.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_5" source="0106.txt_1_3" id="0106.txt_1_3-0106.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_5" source="0106.txt_1_1" id="0106.txt_1_1-0106.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_5" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_6" source="0106.txt_1_4" id="0106.txt_1_4-0106.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_6" source="0106.txt_1_3" id="0106.txt_1_3-0106.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_6" source="0106.txt_1_3" id="0106.txt_1_3-0106.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_6" source="0106.txt_1_4" id="0106.txt_1_4-0106.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_6" source="0106.txt_1_1" id="0106.txt_1_1-0106.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_6" source="0106.txt_1_2" id="0106.txt_1_2-0106.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_6" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_6" id="0106.txt_1_6-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_5" id="0106.txt_1_5-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_5" id="0106.txt_1_5-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_6" id="0106.txt_1_6-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_3" id="0106.txt_1_3-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_4" id="0106.txt_1_4-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_1" id="0106.txt_1_1-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_2" id="0106.txt_1_2-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0106.txt_1_7" source="0106.txt_1_0" id="0106.txt_1_0-0106.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

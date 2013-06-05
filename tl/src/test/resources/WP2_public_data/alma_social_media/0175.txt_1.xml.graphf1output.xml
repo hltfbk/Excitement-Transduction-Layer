@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="linea" implicit_context="" explicit_context="0175.txt" modality="FALSE" implicit_statement="FALSE" id="0175.txt_1_0">
+        <original_text>mi hanno tagliato la linea prima de la fine del contrato</original_text>
+        <correct_text>mi hanno tagliato la linea prima della fine del contratto</correct_text>
+        <modifiers>prima de la fine del contratopoz=5 6 7 8 9 10</modifiers>
+    </node>
+    <node implicit_focus="" focus="linea" implicit_context="" explicit_context="0175.txt" modality="FALSE" implicit_statement="FALSE" id="0175.txt_1_1">
+        <original_text>mi hanno tagliato la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0175.txt_1_1" source="0175.txt_1_0" id="0175.txt_1_0-0175.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0175.txt_1_1" source="0175.txt_1_0" id="0175.txt_1_0-0175.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

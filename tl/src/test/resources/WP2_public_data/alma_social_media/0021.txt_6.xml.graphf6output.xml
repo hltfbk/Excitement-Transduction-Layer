@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="telefonate" implicit_context="" explicit_context="0021.txt" modality="FALSE" implicit_statement="FALSE" id="0021.txt_6_0">
+        <original_text>E' da 15 giorni che non si ricevono telefonate</original_text>
+        <correct_text> </correct_text>
+        <modifiers>E' da 15 giorni chepoz=0 1 2 3 4</modifiers>
+    </node>
+    <node implicit_focus="" focus="telefonate" implicit_context="" explicit_context="0021.txt" modality="FALSE" implicit_statement="FALSE" id="0021.txt_6_1">
+        <original_text>non si ricevono telefonate</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0021.txt_6_1" source="0021.txt_6_0" id="0021.txt_6_0-0021.txt_6_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0021.txt_6_1" source="0021.txt_6_0" id="0021.txt_6_0-0021.txt_6_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

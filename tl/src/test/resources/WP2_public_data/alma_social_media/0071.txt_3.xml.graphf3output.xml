@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="smart pass" focus="" implicit_context="" explicit_context="0071.txt" modality="FALSE" implicit_statement="FALSE" id="0071.txt_3_0">
+        <original_text>non viene lettada nessun pos</original_text>
+        <correct_text>non viene letta da nessun pos</correct_text>
+        <modifiers>nessun pospoz=3 4</modifiers>
+    </node>
+    <node implicit_focus="smart pass" focus="" implicit_context="" explicit_context="0071.txt" modality="FALSE" implicit_statement="FALSE" id="0071.txt_3_1">
+        <original_text>non viene lettada</original_text>
+        <correct_text>non viene letta</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0071.txt_3_1" source="0071.txt_3_0" id="0071.txt_3_0-0071.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0071.txt_3_1" source="0071.txt_3_0" id="0071.txt_3_0-0071.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

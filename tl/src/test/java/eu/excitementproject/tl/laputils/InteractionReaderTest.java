@@ -8,14 +8,89 @@ import java.util.List;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.uima.jcas.JCas;
+//import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitementproject.tl.structures.Interaction;
 
 public class InteractionReaderTest {
+	
+	@Test 
+	public void test_reader2() {
+		
+		BasicConfigurator.resetConfiguration(); 
+		BasicConfigurator.configure(); 
+		Logger.getRootLogger().setLevel(Level.INFO);   
+		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 
-	@Test
-	public void test() {
+		testlogger.info("Reading interaction & fragment with single modifier"); 
+		try {
+			File f1 = new File("./src/test/resources/WP2_public_data/nice_email_1/100771.txt"); 
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_email_1/100771.txt_1.xml.graphf1output.xml"); 
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			
+			InteractionReader.readWP2FragGraphDump(f1,  f2,  aJCas, "EN"); 
+			//CASUtils.dumpCAS(aJCas); 
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+
+		testlogger.info("Reading interaction & fragment with two modifiers"); 
+
+		try {
+			File f1 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt"); 
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt_1.xml.graphf1output.xml"); 
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			
+			InteractionReader.readWP2FragGraphDump(f1,  f2,  aJCas, "EN"); 
+			//CASUtils.dumpCAS(aJCas); 
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+
+		testlogger.info("Reading multiple fragments, with one interaction, by calling the reader method multiple times"); 
+		
+		try {
+			File i = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt"); 
+			File g1 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt_1.xml.graphf1output.xml"); 
+			File g3 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt_3.xml.graphf3output.xml"); 
+			File g5 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt_5.xml.graphf5output.xml"); 
+
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			
+			InteractionReader.readWP2FragGraphDump(i,  g1,  aJCas, "EN"); 
+			InteractionReader.readWP2FragGraphDump(i,  g3,  aJCas, "EN"); 
+			InteractionReader.readWP2FragGraphDump(i,  g5,  aJCas, "EN"); 
+			//CASUtils.dumpCAS(aJCas); 
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+
+		testlogger.info("Reading a fragment, with no modifiers"); 
+		try {
+			File f1 = new File("./src/test/resources/WP2_public_data/nice_email_1/450618.txt"); 
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_email_1/450618.txt_1.xml.graphf1output.xml"); 
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			
+			InteractionReader.readWP2FragGraphDump(f1,  f2,  aJCas, "EN"); 
+			//CASUtils.dumpCAS(aJCas); 
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+				
+	}
+
+    @Test
+	public void test_reader1() {
 		// This method tests InteractionReader.readInteractionXML(File) 
 		
 		BasicConfigurator.resetConfiguration(); 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="collegarmi" implicit_context="" explicit_context="0118.txt" modality="TRUE" implicit_statement="FALSE" id="0118.txt_9_0">
+        <original_text>nn riesco a collegarmi cn la chiavetta</original_text>
+        <correct_text>non riesco a collegarmi con la chiavetta</correct_text>
+        <modifiers>cn la chiavettapoz=4 5 6</modifiers>
+    </node>
+    <node implicit_focus="" focus="collegarmi" implicit_context="" explicit_context="0118.txt" modality="TRUE" implicit_statement="FALSE" id="0118.txt_9_1">
+        <original_text>nn riesco a collegarmi</original_text>
+        <correct_text>non riesco a collegarmi</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0118.txt_9_1" source="0118.txt_9_0" id="0118.txt_9_0-0118.txt_9_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0118.txt_9_1" source="0118.txt_9_0" id="0118.txt_9_0-0118.txt_9_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

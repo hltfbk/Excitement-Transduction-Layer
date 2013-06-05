@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="" focus="offerte" implicit_context="" explicit_context="0101.txt" modality="FALSE" implicit_statement="FALSE" id="0101.txt_1_0">
+        <original_text>le offerte per navigare ad internet da cellulare sono PENOSE</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da cellularepoz=6 7;ad internetpoz=4 5</modifiers>
+    </node>
+    <node implicit_focus="" focus="offerte" implicit_context="" explicit_context="0101.txt" modality="FALSE" implicit_statement="FALSE" id="0101.txt_1_1">
+        <original_text>le offerte per navigare ad internet sono PENOSE</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ad internetpoz=4 5</modifiers>
+    </node>
+    <node implicit_focus="" focus="offerte" implicit_context="" explicit_context="0101.txt" modality="FALSE" implicit_statement="FALSE" id="0101.txt_1_2">
+        <original_text>le offerte per navigare da cellulare sono PENOSE</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da cellularepoz=6 7</modifiers>
+    </node>
+    <node implicit_focus="" focus="offerte" implicit_context="" explicit_context="0101.txt" modality="FALSE" implicit_statement="FALSE" id="0101.txt_1_3">
+        <original_text>le offerte per navigare sono PENOSE</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0101.txt_1_1" source="0101.txt_1_0" id="0101.txt_1_0-0101.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0101.txt_1_1" source="0101.txt_1_0" id="0101.txt_1_0-0101.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0101.txt_1_2" source="0101.txt_1_0" id="0101.txt_1_0-0101.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0101.txt_1_2" source="0101.txt_1_0" id="0101.txt_1_0-0101.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0101.txt_1_3" source="0101.txt_1_2" id="0101.txt_1_2-0101.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0101.txt_1_3" source="0101.txt_1_1" id="0101.txt_1_1-0101.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0101.txt_1_3" source="0101.txt_1_1" id="0101.txt_1_1-0101.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0101.txt_1_3" source="0101.txt_1_2" id="0101.txt_1_2-0101.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0101.txt_1_3" source="0101.txt_1_0" id="0101.txt_1_0-0101.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

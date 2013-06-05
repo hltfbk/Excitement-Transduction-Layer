@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="contratto" implicit_context="" explicit_context="0050.txt" modality="FALSE" implicit_statement="FALSE" id="0050.txt_1_0">
+        <original_text>mi avete fatto un contratto senza che io avessi copertura di rete</original_text>
+        <correct_text> </correct_text>
+        <modifiers>che io avessipoz=6 7 8</modifiers>
+    </node>
+    <node implicit_focus="" focus="contratto" implicit_context="" explicit_context="0050.txt" modality="FALSE" implicit_statement="FALSE" id="0050.txt_1_1">
+        <original_text>mi avete fatto un contratto senza copertura di rete</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0050.txt_1_1" source="0050.txt_1_0" id="0050.txt_1_0-0050.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0050.txt_1_1" source="0050.txt_1_0" id="0050.txt_1_0-0050.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

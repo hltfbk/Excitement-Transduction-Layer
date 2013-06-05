@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" implicit_statement="FALSE" id="0091.txt_2_0">
+        <original_text>sto ancora aspettando che il servizio tecnico , o chi per lui , mi contatti per verificare l'incongruenza</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=1;per verificare l'incongruenzapoz=15 16 17;, o chi per lui ,poz=7 8 9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" implicit_statement="FALSE" id="0091.txt_2_1">
+        <original_text>sto aspettando che il servizio tecnico , o chi per lui , mi contatti per verificare l'incongruenza</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per verificare l'incongruenzapoz=15 16 17;, o chi per lui ,poz=7 8 9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" implicit_statement="FALSE" id="0091.txt_2_2">
+        <original_text>sto ancora aspettando che il servizio tecnico , o chi per lui , mi contatti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=1;, o chi per lui ,poz=7 8 9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" implicit_statement="FALSE" id="0091.txt_2_3">
+        <original_text>sto ancora aspettando che il servizio tecnico mi contatti per verificare l'incongruenza</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=1;per verificare l'incongruenzapoz=15 16 17</modifiers>
+    </node>
+    <node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" implicit_statement="FALSE" id="0091.txt_2_4">
+        <original_text>sto aspettando che il servizio tecnico , o chi per lui , mi contatti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>, o chi per lui ,poz=7 8 9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" implicit_statement="FALSE" id="0091.txt_2_5">
+        <original_text>sto aspettando che il servizio tecnico mi contatti per verificare l'incongruenza</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per verificare l'incongruenzapoz=15 16 17</modifiers>
+    </node>
+    <node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" implicit_statement="FALSE" id="0091.txt_2_6">
+        <original_text>sto ancora aspettando che il servizio tecnico mi contatti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=1</modifiers>
+    </node>
+    <node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" implicit_statement="FALSE" id="0091.txt_2_7">
+        <original_text>sto aspettando che il servizio tecnico mi contatti</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0091.txt_2_1" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_1" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_2" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_2" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_3" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_3" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_4" source="0091.txt_2_2" id="0091.txt_2_2-0091.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_4" source="0091.txt_2_1" id="0091.txt_2_1-0091.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_4" source="0091.txt_2_1" id="0091.txt_2_1-0091.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_4" source="0091.txt_2_2" id="0091.txt_2_2-0091.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_4" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_5" source="0091.txt_2_3" id="0091.txt_2_3-0091.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_5" source="0091.txt_2_1" id="0091.txt_2_1-0091.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_5" source="0091.txt_2_1" id="0091.txt_2_1-0091.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_5" source="0091.txt_2_3" id="0091.txt_2_3-0091.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_5" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_6" source="0091.txt_2_3" id="0091.txt_2_3-0091.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_6" source="0091.txt_2_2" id="0091.txt_2_2-0091.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_6" source="0091.txt_2_2" id="0091.txt_2_2-0091.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_6" source="0091.txt_2_3" id="0091.txt_2_3-0091.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_6" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_6" id="0091.txt_2_6-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_5" id="0091.txt_2_5-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_4" id="0091.txt_2_4-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_4" id="0091.txt_2_4-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_5" id="0091.txt_2_5-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_6" id="0091.txt_2_6-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_2" id="0091.txt_2_2-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_3" id="0091.txt_2_3-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_0" id="0091.txt_2_0-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0091.txt_2_7" source="0091.txt_2_1" id="0091.txt_2_1-0091.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

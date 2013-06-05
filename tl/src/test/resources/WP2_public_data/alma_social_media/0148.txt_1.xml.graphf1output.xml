@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="" focus="promozione" implicit_context="" explicit_context="0148.txt" modality="FALSE" implicit_statement="FALSE" id="0148.txt_1_0">
+        <original_text>La promozione mi e' stata attivata il 17 maggio ma non funziona</original_text>
+        <correct_text> </correct_text>
+        <modifiers>il 17 maggiopoz=6 7 8;mi e' stata attivata mapoz=2 3 4 5 9</modifiers>
+    </node>
+    <node implicit_focus="" focus="promozione" implicit_context="" explicit_context="0148.txt" modality="FALSE" implicit_statement="FALSE" id="0148.txt_1_1">
+        <original_text>La promozione mi e' stata attivata ma non funziona</original_text>
+        <correct_text> </correct_text>
+        <modifiers>mi e' stata attivata mapoz=2 3 4 5 9</modifiers>
+    </node>
+    <node implicit_focus="" focus="promozione" implicit_context="" explicit_context="0148.txt" modality="FALSE" implicit_statement="FALSE" id="0148.txt_1_2">
+        <original_text>La promozione il 17 maggio non funziona</original_text>
+        <correct_text> </correct_text>
+        <modifiers>il 17 maggiopoz=6 7 8</modifiers>
+    </node>
+    <node implicit_focus="" focus="promozione" implicit_context="" explicit_context="0148.txt" modality="FALSE" implicit_statement="FALSE" id="0148.txt_1_3">
+        <original_text>La promozione non funziona</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0148.txt_1_1" source="0148.txt_1_0" id="0148.txt_1_0-0148.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0148.txt_1_1" source="0148.txt_1_0" id="0148.txt_1_0-0148.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0148.txt_1_2" source="0148.txt_1_0" id="0148.txt_1_0-0148.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0148.txt_1_2" source="0148.txt_1_0" id="0148.txt_1_0-0148.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0148.txt_1_3" source="0148.txt_1_2" id="0148.txt_1_2-0148.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0148.txt_1_3" source="0148.txt_1_1" id="0148.txt_1_1-0148.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0148.txt_1_3" source="0148.txt_1_1" id="0148.txt_1_1-0148.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0148.txt_1_3" source="0148.txt_1_2" id="0148.txt_1_2-0148.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0148.txt_1_3" source="0148.txt_1_0" id="0148.txt_1_0-0148.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

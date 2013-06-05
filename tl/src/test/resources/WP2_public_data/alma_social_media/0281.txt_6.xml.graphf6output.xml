@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0281.txt" modality="FALSE" implicit_statement="FALSE" id="0281.txt_6_0">
+        <original_text>la TELEFONIAX ha grossi problemi nella zona di cogorno in provincia di genova da tempo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nella zona di cogorno in provincia di genovapoz=5 6 7 8 9 10 11 12;da tempopoz=13 14</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0281.txt" modality="FALSE" implicit_statement="FALSE" id="0281.txt_6_1">
+        <original_text>la TELEFONIAX ha grossi problemi da tempo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da tempopoz=13 14</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0281.txt" modality="FALSE" implicit_statement="FALSE" id="0281.txt_6_2">
+        <original_text>la TELEFONIAX ha grossi problemi nella zona di cogorno in provincia di genova</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nella zona di cogorno in provincia di genovapoz=5 6 7 8 9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0281.txt" modality="FALSE" implicit_statement="FALSE" id="0281.txt_6_3">
+        <original_text>la TELEFONIAX ha grossi problemi</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0281.txt_6_1" source="0281.txt_6_0" id="0281.txt_6_0-0281.txt_6_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0281.txt_6_1" source="0281.txt_6_0" id="0281.txt_6_0-0281.txt_6_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0281.txt_6_2" source="0281.txt_6_0" id="0281.txt_6_0-0281.txt_6_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0281.txt_6_2" source="0281.txt_6_0" id="0281.txt_6_0-0281.txt_6_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0281.txt_6_3" source="0281.txt_6_2" id="0281.txt_6_2-0281.txt_6_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0281.txt_6_3" source="0281.txt_6_1" id="0281.txt_6_1-0281.txt_6_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0281.txt_6_3" source="0281.txt_6_1" id="0281.txt_6_1-0281.txt_6_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0281.txt_6_3" source="0281.txt_6_2" id="0281.txt_6_2-0281.txt_6_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0281.txt_6_3" source="0281.txt_6_0" id="0281.txt_6_0-0281.txt_6_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

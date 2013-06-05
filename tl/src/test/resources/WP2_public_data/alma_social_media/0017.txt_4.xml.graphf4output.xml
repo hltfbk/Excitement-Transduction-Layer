@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="32">
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_0">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;materialmentepoz=15;a fine novembre 2011poz=9 10 11 12;ancorapoz=29;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_1">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>materialmentepoz=15;a fine novembre 2011poz=9 10 11 12;ancorapoz=29;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_2">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;a fine novembre 2011poz=9 10 11 12;ancorapoz=29;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_3">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;materialmentepoz=15;ancorapoz=29;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_4">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;materialmentepoz=15;a fine novembre 2011poz=9 10 11 12;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_5">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;materialmentepoz=15;a fine novembre 2011poz=9 10 11 12;ancorapoz=29</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_6">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi ordinato e pagato . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a fine novembre 2011poz=9 10 11 12;ancorapoz=29;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_7">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>materialmentepoz=15;ancorapoz=29;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_8">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>materialmentepoz=15;a fine novembre 2011poz=9 10 11 12;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_9">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>materialmentepoz=15;a fine novembre 2011poz=9 10 11 12;ancorapoz=29</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_10">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;ancorapoz=29;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_11">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi ordinato e pagato 20 giorni fa . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;a fine novembre 2011poz=9 10 11 12;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_12">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX a fine novembre 2011 e poi ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;a fine novembre 2011poz=9 10 11 12;ancorapoz=29</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_13">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;materialmentepoz=15;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_14">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;materialmentepoz=15;ancorapoz=29</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_15">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;materialmentepoz=15;a fine novembre 2011poz=9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_16">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi ordinato e pagato . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=29;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_17">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi ordinato e pagato . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a fine novembre 2011poz=9 10 11 12;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_18">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX a fine novembre 2011 e poi ordinato e pagato . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a fine novembre 2011poz=9 10 11 12;ancorapoz=29</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_19">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>materialmentepoz=15;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_20">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>materialmentepoz=15;ancorapoz=29</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_21">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>materialmentepoz=15;a fine novembre 2011poz=9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_22">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi ordinato e pagato 20 giorni fa . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_23">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX e poi ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;ancorapoz=29</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_24">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX a fine novembre 2011 e poi ordinato e pagato 20 giorni fa . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;a fine novembre 2011poz=9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_25">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21;materialmentepoz=15</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_26">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi ordinato e pagato . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>di Veneziapoz=7 8</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_27">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX e poi ordinato e pagato . . . . e non ho ancora notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=29</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_28">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX a fine novembre 2011 e poi ordinato e pagato . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a fine novembre 2011poz=9 10 11 12</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_29">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX e poi materialmente ordinato e pagato . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>materialmentepoz=15</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_30">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX e poi ordinato e pagato 20 giorni fa . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers>20 giorni fapoz=19 20 21</modifiers>
+    </node>
+    <node implicit_focus="tablet" focus="lo" implicit_context="" explicit_context="0017.txt" modality="FALSE" implicit_statement="FALSE" id="0017.txt_4_31">
+        <original_text>Io lo avevo prenotato nel negozio TELEFONIAX e poi ordinato e pagato . . . . e non ho notizie !</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0017.txt_4_1" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_1" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_2" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_2" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_3" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_3" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_4" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_4" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_5" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_5" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_6" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_6" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_6" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_6" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_6" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_7" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_7" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_7" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_7" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_7" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_8" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_8" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_8" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_8" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_8" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_9" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_9" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_9" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_9" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_9" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_10" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_10" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_10" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_10" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_10" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_11" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_11" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_11" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_11" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_11" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_12" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_12" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_12" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_12" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_12" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_13" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_13" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_13" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_13" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_13" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_14" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_14" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_14" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_14" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_14" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_15" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_15" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_15" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_15" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_15" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_16" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_16">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_17" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_17">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_18" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_18">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_19" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_19">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_20" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_20">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_21" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_21">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_22" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_22">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_23" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_23">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_24" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_24">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_25" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_25">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_22" id="0017.txt_4_22-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_19" id="0017.txt_4_19-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_17" id="0017.txt_4_17-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_16" id="0017.txt_4_16-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_16" id="0017.txt_4_16-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_17" id="0017.txt_4_17-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_19" id="0017.txt_4_19-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_22" id="0017.txt_4_22-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_26" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_26">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_23" id="0017.txt_4_23-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_20" id="0017.txt_4_20-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_18" id="0017.txt_4_18-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_16" id="0017.txt_4_16-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_16" id="0017.txt_4_16-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_18" id="0017.txt_4_18-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_20" id="0017.txt_4_20-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_23" id="0017.txt_4_23-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_27" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_27">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_24" id="0017.txt_4_24-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_21" id="0017.txt_4_21-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_18" id="0017.txt_4_18-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_17" id="0017.txt_4_17-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_17" id="0017.txt_4_17-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_18" id="0017.txt_4_18-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_21" id="0017.txt_4_21-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_24" id="0017.txt_4_24-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_28" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_28">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_25" id="0017.txt_4_25-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_21" id="0017.txt_4_21-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_20" id="0017.txt_4_20-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_19" id="0017.txt_4_19-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_19" id="0017.txt_4_19-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_20" id="0017.txt_4_20-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_21" id="0017.txt_4_21-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_25" id="0017.txt_4_25-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_29" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_29">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_25" id="0017.txt_4_25-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_24" id="0017.txt_4_24-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_23" id="0017.txt_4_23-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_22" id="0017.txt_4_22-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_22" id="0017.txt_4_22-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_23" id="0017.txt_4_23-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_24" id="0017.txt_4_24-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_25" id="0017.txt_4_25-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_30" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_30">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_30" id="0017.txt_4_30-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_29" id="0017.txt_4_29-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_28" id="0017.txt_4_28-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_27" id="0017.txt_4_27-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_26" id="0017.txt_4_26-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_26" id="0017.txt_4_26-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_27" id="0017.txt_4_27-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_28" id="0017.txt_4_28-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_29" id="0017.txt_4_29-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_30" id="0017.txt_4_30-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_22" id="0017.txt_4_22-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_23" id="0017.txt_4_23-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_24" id="0017.txt_4_24-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_25" id="0017.txt_4_25-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_13" id="0017.txt_4_13-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_14" id="0017.txt_4_14-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_15" id="0017.txt_4_15-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_4" id="0017.txt_4_4-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_5" id="0017.txt_4_5-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_0" id="0017.txt_4_0-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_3" id="0017.txt_4_3-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_11" id="0017.txt_4_11-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_12" id="0017.txt_4_12-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_2" id="0017.txt_4_2-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_10" id="0017.txt_4_10-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_19" id="0017.txt_4_19-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_20" id="0017.txt_4_20-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_21" id="0017.txt_4_21-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_8" id="0017.txt_4_8-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_9" id="0017.txt_4_9-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_1" id="0017.txt_4_1-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_7" id="0017.txt_4_7-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_17" id="0017.txt_4_17-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_18" id="0017.txt_4_18-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_6" id="0017.txt_4_6-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0017.txt_4_31" source="0017.txt_4_16" id="0017.txt_4_16-0017.txt_4_31">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

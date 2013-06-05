@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="6">
+    <node implicit_focus="" focus="messaggi" implicit_context="" explicit_context="0004.txt" modality="FALSE" implicit_statement="FALSE" id="0004.txt_3_0">
+        <original_text>oggi ho problemi a inviare messaggi solo verso alcuni numeri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>oggipoz=0;solopoz=6;verso alcuni numeripoz=7 8 9</modifiers>
+    </node>
+    <node implicit_focus="" focus="messaggi" implicit_context="" explicit_context="0004.txt" modality="FALSE" implicit_statement="FALSE" id="0004.txt_3_1">
+        <original_text>ho problemi a inviare messaggi solo verso alcuni numeri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>solopoz=6;verso alcuni numeripoz=7 8 9</modifiers>
+    </node>
+    <node implicit_focus="" focus="messaggi" implicit_context="" explicit_context="0004.txt" modality="FALSE" implicit_statement="FALSE" id="0004.txt_3_2">
+        <original_text>oggi ho problemi a inviare messaggi verso alcuni numeri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>oggipoz=0;verso alcuni numeripoz=7 8 9</modifiers>
+    </node>
+    <node implicit_focus="" focus="messaggi" implicit_context="" explicit_context="0004.txt" modality="FALSE" implicit_statement="FALSE" id="0004.txt_3_3">
+        <original_text>ho problemi a inviare messaggi verso alcuni numeri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>verso alcuni numeripoz=7 8 9</modifiers>
+    </node>
+    <node implicit_focus="" focus="messaggi" implicit_context="" explicit_context="0004.txt" modality="FALSE" implicit_statement="FALSE" id="0004.txt_3_4">
+        <original_text>oggi ho problemi a inviare messaggi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>oggipoz=0</modifiers>
+    </node>
+    <node implicit_focus="" focus="messaggi" implicit_context="" explicit_context="0004.txt" modality="FALSE" implicit_statement="FALSE" id="0004.txt_3_5">
+        <original_text>ho problemi a inviare messaggi</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0004.txt_3_1" source="0004.txt_3_0" id="0004.txt_3_0-0004.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_1" source="0004.txt_3_0" id="0004.txt_3_0-0004.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_2" source="0004.txt_3_0" id="0004.txt_3_0-0004.txt_3_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_2" source="0004.txt_3_0" id="0004.txt_3_0-0004.txt_3_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_3" source="0004.txt_3_2" id="0004.txt_3_2-0004.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_3" source="0004.txt_3_1" id="0004.txt_3_1-0004.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_3" source="0004.txt_3_1" id="0004.txt_3_1-0004.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_3" source="0004.txt_3_2" id="0004.txt_3_2-0004.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_3" source="0004.txt_3_0" id="0004.txt_3_0-0004.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_4" source="0004.txt_3_2" id="0004.txt_3_2-0004.txt_3_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_4" source="0004.txt_3_2" id="0004.txt_3_2-0004.txt_3_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_4" source="0004.txt_3_0" id="0004.txt_3_0-0004.txt_3_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_5" source="0004.txt_3_4" id="0004.txt_3_4-0004.txt_3_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_5" source="0004.txt_3_3" id="0004.txt_3_3-0004.txt_3_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_5" source="0004.txt_3_3" id="0004.txt_3_3-0004.txt_3_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_5" source="0004.txt_3_4" id="0004.txt_3_4-0004.txt_3_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_5" source="0004.txt_3_2" id="0004.txt_3_2-0004.txt_3_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_5" source="0004.txt_3_0" id="0004.txt_3_0-0004.txt_3_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0004.txt_3_5" source="0004.txt_3_1" id="0004.txt_3_1-0004.txt_3_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
