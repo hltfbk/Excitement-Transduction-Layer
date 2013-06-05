@@ -99,6 +99,12 @@ should be clearly exposed in the Constructor.
 		return new EntailmentRelation(candidateEntailingNode, candidateEntailedNode, this.getEda());
 	}
 
+	/** Return the corresponding EntailmentRelation if there is entailment (DecisionLabel.Entailment) candidateEntailingNode -> candidateEntailedNode
+	 * Return null otherwise 
+	 * @param candidateEntailingNode
+	 * @param candidateEntailedNode
+	 * @return
+	 */
 	protected EntailmentRelation getEntailmentRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode){	
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
 		EntailmentRelation r = getRelation(candidateEntailingNode, candidateEntailedNode);
