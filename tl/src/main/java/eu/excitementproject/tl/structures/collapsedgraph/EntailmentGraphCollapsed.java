@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 
-import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
