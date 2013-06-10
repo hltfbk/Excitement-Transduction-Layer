@@ -1,12 +1,12 @@
 package eu.excitementproject.tl.structures.collapsedgraph;
 
-import java.util.HashMap;
-import java.util.Map;
 
-import org.jgrapht.EdgeFactory;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 
-import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
@@ -32,14 +32,13 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 */
 	private static final long serialVersionUID = 5957243707939421299L;
 		
-	/**
-	 * Default graph constructor
-	 * @param arg0 -- edge factory
-	 */
-	public EntailmentGraphCollapsed(EdgeFactory<EquivalenceClass, EntailmentRelationCollapsed> arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
+	int numberOfTextualInputs; //the number of textual inputs, on which the entailment graph was built.
+	int numberOfEntailmentUnits; //the number of entailment units contained in the graph. This number is not necessarily the same as the number of nodes in the graph, since each equivalence class node corresponds to one or more entailment unit(s).
+
+	
+	/******************************************************************************************
+	 * CONSTRUCTORS
+	 * ****************************************************************************************/
 
 	/**
 	 * Default constructor
@@ -52,6 +51,222 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	}
 
 	/**
+	 * Initialize an empty collapsed graph
+	 */
+	public EntailmentGraphCollapsed(){
+		super(EntailmentRelationCollapsed.class);
+	}
+
+	
+	
+	/******************************************************************************************
+	 * SETTERS/GERRETS
+	 * ****************************************************************************************/
+
+	/**
+	 * @return the numberOfTextualInputs
+	 */
+	public int getNumberOfTextualInputs() {
+		return numberOfTextualInputs;
+	}
+
+	/**
+	 * @return the numberOfEntailmentUnits
+	 */
+	public int getNumberOfEntailmentUnits() {
+		return numberOfEntailmentUnits;
+	}	
+
+	/**
+	 * @return the number of equivalence classes (number of nodes in the graph)
+	 */
+	public int getNumberOfEquivalenceClasses() {
+		return this.vertexSet().size();
+	}	
+	
+	
+	/******************************************************************************************
+	 * OTHER METHODS TO WORK WITH THE GRAPH
+	 * ****************************************************************************************/
+	
+		
+	/**This method returns equivalent entailment units for a given input entailment unit text, 
+	 * i.e. entailment units, which are in the same equivalence class
+	 * @param entailmentUnitText - the canonical text of the entailment unit whose paraphrases are to be found
+	 * @return the set of entailment units. If there is no such entailment unit as given in the method’s parameter, the method will return null.
+	 */
+	public Set<EntailmentUnit> getEquivalentEntailmentUnits(String entailmentUnitText){
+		EquivalenceClass vertex = getVertex(entailmentUnitText);
+		if (vertex!=null) return vertex.getEntailmentUnits();
+		return null;
+	}
+	
+	/**This method returns equivalent entailment units for a given input entailment unit, 
+	 * i.e. entailment units, which are in the same equivalence class
+	 * @param entailmentUnit - the entailment unit whose paraphrases are to be found
+	 * @return the set of entailment units. If there is no such entailment unit as given in the method’s parameter, the method will return null.
+	 */	public Set<EntailmentUnit> getEquivalentEntailmentUnits(EntailmentUnit entailmentUnit){		
+		return getEquivalentEntailmentUnits(entailmentUnit.getText());
+	}
+	
+	/** Return equivalence class, which includes the input text
+	 * @param text
+	 * @return the node which has the input text as its label or as the canonical text as any of its entailment units
+	 * If such node could not be found - returns null
+	 */
+	public EquivalenceClass getVertex (String text){
+		for (EquivalenceClass vertex : this.vertexSet()){
+			if (vertex.getLabel().equals(text)) return vertex;
+			for (EntailmentUnit eu : vertex.getEntailmentUnits()){
+				if (eu.getText().equals(text)) return vertex;
+			}
+		}
+		return null;
+	}
+	
+	
+	/** Returns the set of nodes, which entail the given node
+	 * @param node whose entailing nodes are returned
+	 * @return Set<EquivalenceClass> with all the entailing nodes of the given node
+	 */
+	public Set<EquivalenceClass> getEntailingNodes(EquivalenceClass node){
+		if (!this.containsVertex(node)) return null;
+		
+		Set<EquivalenceClass> entailingNodes = new HashSet<EquivalenceClass>();
+		for (EntailmentRelationCollapsed edge : this.incomingEdgesOf(node)){
+			entailingNodes.add(edge.getSource());
+		}
+		return entailingNodes;
+	}
+		
+	/** Returns the set of nodes, entailed by the given node
+	 * @param node whose entailed nodes are returned
+	 * @return Set<EquivalenceClass> with all the entailed nodes of the given node
+	 */
+	public Set<EquivalenceClass> getEntailedNodes(EquivalenceClass node){
+		if (!this.containsVertex(node)) return null;
+
+		Set<EquivalenceClass> entailedNodes = new HashSet<EquivalenceClass>();
+		for (EntailmentRelationCollapsed edge : this.outgoingEdgesOf(node)){
+			entailedNodes.add(edge.getTarget());
+		}
+		return entailedNodes;
+	}
+	
+	
+	/** This method returns equivalence classes containing entailment units entailing the input entailment unit,
+	 *  i.e. equivalence classes, for which there is an edge going from this equivalence class 
+	 *  to the equivalence class of the input entailment unit. 
+	 * @param entailmentUnitText - -- the canonical text of the entailment unit whose entailing equivalence classes are to be found
+	 * @return the set of equivalence class nodes. If there are no equivalence classes answering this search, an empty set will be returned. 
+	 * If there is no such entailment unit as given in the method’s parameter, the method will return null.
+	 */
+	public Set<EquivalenceClass> getEntailingEquivalenceClasses(String entailmentUnitText){
+		EquivalenceClass vertex = getVertex(entailmentUnitText);
+		if (vertex!=null) return this.getEntailingNodes(vertex);
+		return null;
+	}
+	
+	/** This method returns equivalence classes containing entailment units entailing the input entailment unit,
+	 *  i.e. equivalence classes, for which there is an edge going from this equivalence class 
+	 *  to the equivalence class of the input entailment unit. 
+	 * @param entailmentUnitText - -- the entailment unit whose entailing equivalence classes are to be found
+	 * @return the set of equivalence class nodes. If there are no equivalence classes answering this search, an empty set will be returned. 
+	 * If there is no such entailment unit as given in the method’s parameter, the method will return null.
+	 */
+	public Set<EquivalenceClass> getEntailingEquivalenceClasses(EntailmentUnit entailmentUnit){
+		return getEntailingEquivalenceClasses(entailmentUnit.getText());
+	}
+
+
+	/** This method returns equivalence classes containing entailment units entailed by the input entailment unit,
+	 * i.e. equivalence classes for which there is an edge going to this equivalence class
+	 * from the equivalence class of the input entailment unit.    
+	 * @param entailmentUnitText - the canonical text of the entailment unit whose entailed equivalence classes are to be found
+	 * @return the set of equivalence class nodes. If there are no equivalence classes answering this search, an empty set will be returned. 
+	 * If there is no such entailment unit as given in the method’s parameter, the method will return null.
+	 */
+	public Set<EquivalenceClass> getEntailedEquivalenceClasses(String entailmentUnitText){
+		EquivalenceClass vertex = getVertex(entailmentUnitText);
+		if (vertex!=null) return this.getEntailingNodes(vertex);
+		return null;		
+	}
+	
+	/** This method returns equivalence classes containing entailment units entailed by the input entailment unit,
+	 * i.e. equivalence classes for which there is an edge going to this equivalence class
+	 * from the equivalence class of the input entailment unit.    
+	 * @param entailmentUnitText - the entailment unit whose entailed equivalence classes are to be found
+	 * @return the set of equivalence class nodes. If there are no equivalence classes answering this search, an empty set will be returned. 
+	 * If there is no such entailment unit as given in the method’s parameter, the method will return null.
+	 */	public Set<EquivalenceClass> getEntailedEquivalenceClasses(EntailmentUnit entailmentUnit){
+		return getEntailedEquivalenceClasses(entailmentUnit.getText());
+	}
+	 
+	 
+	 /** the method and returns a subgraph with all nodes containing the input entailment unit, 
+	  * as well as all nodes directly connected to one of these nodes,
+	  * i.e., all equivalent, entailed or entailing entailment units.
+	 * @param entailmentUnitText - canonical text of the entailment unit whose subgraph should be returned
+	 * @return the required subgraph. 
+	 * If there are no nodes connected to the given node, empty graph will be returned (graph with no nodes and no edges).
+	 * If there is no such entailment unit as given in the method’s parameter, the method will return null.
+	 */
+	public EntailmentGraphCollapsed getSubgraphFor(String entailmentUnitText){
+		 // find the vertex with the given entailmentUnitText
+		 EquivalenceClass vertex = getVertex(entailmentUnitText);
+		 if (vertex == null) return null;
+		 
+		 EntailmentGraphCollapsed subgraph = new EntailmentGraphCollapsed();
+		 // copy to subgraph all the edges (with their nodes), which touch the vertex we found
+		 for (EntailmentRelationCollapsed edge : this.edgesOf(vertex)){
+			 subgraph.addEdgeWithNodes(edge.getSource(), edge.getTarget(), edge);
+		 }
+		 return subgraph;
+	 }
+	 
+	 /** the method and returns a subgraph with all nodes containing the input entailment unit, 
+	  * as well as all nodes directly connected to one of these nodes,
+	  * i.e., all equivalent, entailed or entailing entailment units.
+	 * @param entailmentUnitText - the entailment unit whose subgraph should be returned
+	 * @return the required subgraph. 
+	 * If there are no nodes connected to the given node, empty graph will be returned (graph with no nodes and no edges).
+	 * If there is no such entailment unit as given in the method’s parameter, the method will return null.
+	 */public EntailmentGraphCollapsed getSubgraphFor(EntailmentUnit  entailmentUnit){
+		 return getSubgraphFor(entailmentUnit.getText());
+	 }
+
+	 /** Adds the given edge (and if needed - its nodes) to the graph. 
+	  * If source or target node are not present in the graph - they will be added.
+	  * If an edge source -> target is already present in the graph, the edge will not be added (collapsed graph is not a multi-graph).
+	 * @param source
+	 * @param target
+	 * @param edge
+	 */
+	public void addEdgeWithNodes(EquivalenceClass source, EquivalenceClass target, EntailmentRelationCollapsed edge){
+		 if(!this.containsVertex(source)) this.addVertex(source);
+		 if(!this.containsVertex(target)) this.addVertex(target);
+
+		 if (!this.containsEdge(source,target)){ // if already contains an edge - don't add, since this is not a multi-graph!
+			 this.addEdge(source, target, edge);
+		 }
+		 	 
+	 }
+
+	
+	public List<EquivalenceClass> sortNodesByNumberOfInteractions(int X){
+		//TODO: implement
+		return null;
+	}
+	
+	public Set<String> getRelevantInteractionIDs(String entailmentUnitText){
+		//TODO: implement
+		return null;
+	}
+	public Set<String> getRelevantInteractionIDs(EntailmentUnit entailmentUnit){
+		return getRelevantInteractionIDs(entailmentUnit.getText());
+	}
+
+/*	*//**
 	 * Converts an input work graph to a format that would be useful to the end users
 	 * This might mean changing the nodes from complex annotated objects to sets of strings
 	 * and compressing multiple edges into one
@@ -59,7 +274,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 * @param <WE>
 	 * 
 	 * @param wg
-	 */
+	 *//*
 	public void convertGraph(EntailmentGraphRaw wg) {
 		// iterate over wg's vertices and build the corresponding EntailmentGraphCollapsed nodes,
 		// and over all edges starting from the current vertex, and either choose
@@ -89,5 +304,5 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}	
+	}*/	
 }

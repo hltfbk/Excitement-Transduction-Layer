@@ -9,7 +9,6 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
-import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;

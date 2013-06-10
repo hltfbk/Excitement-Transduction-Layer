@@ -212,6 +212,8 @@ public class EntailmentGraphRaw extends
 	 * @return Set<EntailmentUnit> with all the entailing nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
 			entailingNodes.add(edge.getSource());
@@ -225,6 +227,8 @@ public class EntailmentGraphRaw extends
 	 * @return Set<EntailmentUnit> with the entailing nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node, int level){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
 			EntailmentUnit entailingNode = edge.getSource();
@@ -238,6 +242,8 @@ public class EntailmentGraphRaw extends
 	 * @return Set<EntailmentUnit> with all the entailed nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailedNodes(EntailmentUnit node){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
 			entailedNodes.add(edge.getTarget());
@@ -251,6 +257,8 @@ public class EntailmentGraphRaw extends
 	 * @return Set<EntailmentUnit> with all the entailed nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailedNodes(EntailmentUnit node, int level){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
 			EntailmentUnit entailedNode = edge.getTarget();
@@ -265,6 +273,8 @@ public class EntailmentGraphRaw extends
 	 * @return
 	 */
 	public Set<EntailmentUnit> getEntailedNodesFromSameFragmentGraph(EntailmentUnit node, int level){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
 			EntailmentUnit entailedNode = edge.getTarget();

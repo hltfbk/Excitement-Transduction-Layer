@@ -40,5 +40,23 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 		this.target = target;
 		this.confidence = c;
 	}
+
+	/**
+	 * @return the source
+	 */
+	@Override
+	public EquivalenceClass getSource() {
+		return source;
+	}
+
+	/**
+	 * @return the target
+	 */
+	@Override
+	public EquivalenceClass getTarget() {
+		return target;
+	}
+	
+	
 	
 }
