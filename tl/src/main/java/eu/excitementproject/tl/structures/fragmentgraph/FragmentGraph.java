@@ -47,6 +47,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * so I renamed them to what we called them in our meeting)
 	 */
 	EntailmentUnitMention baseStatement;
+	EntailmentUnitMention topStatement = null;
 
 	/**
 	 * a CAS object that holds contextual (and structural) information for the text fragment
@@ -82,7 +83,8 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	
 	public FragmentGraph(String text, Set<String> modifiers) {
 		this(FragmentGraphEdge.class);
-		baseStatement = new EntailmentUnitMention(text,new HashSet<String>(), modifiers);
+		baseStatement = new EntailmentUnitMention(text, new HashSet<String>(), modifiers);
+		topStatement = new EntailmentUnitMention(text, null, null);
 		buildGraph(text, modifiers, modifiers, null);
 	}
 	
@@ -106,9 +108,11 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		document = aJCas;
 		fragment = frag;
 		baseStatement = new EntailmentUnitMention(aJCas, frag, new HashSet<ModifierAnnotation>());
+		topStatement = new EntailmentUnitMention(aJCas, frag, FragmentGraph.getFragmentModifiers(aJCas, frag));
 		
 		Set<ModifierAnnotation> mods = getFragmentModifiers(aJCas,frag);		
-		buildGraph(aJCas, frag, mods, null);		
+		buildGraph(aJCas, frag, mods, null);
+		
 	}
 	
 	
@@ -267,7 +271,10 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * @return the text fragment for which this fragment graph was built
 	 */
 	public EntailmentUnitMention getCompleteStatement(){
-		return (EntailmentUnitMention) getNodes(getMaxLevel()).toArray()[0];
+		if (topStatement == null) {
+		   topStatement = (EntailmentUnitMention) getNodes(getMaxLevel()).toArray()[0];
+		}
+		return topStatement;
 	}
 	
 	/**
