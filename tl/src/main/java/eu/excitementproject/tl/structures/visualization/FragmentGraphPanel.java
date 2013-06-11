@@ -42,6 +42,8 @@ public class FragmentGraphPanel extends TLGraphPanel<EntailmentUnitMention,Fragm
     	graphPane.setSize(DEFAULT_SIZE);
     	graphPane.setBounds(0, 0, DEFAULT_SIZE.width, DEFAULT_SIZE.height);
 	
+    	removeEdgeLabels(g.edgeSet());
+    	
     	int skip = 350;
     	for (int i = ((FragmentGraph) g).getMaxLevel(); i >= 0; i--) {
     		int x = 10;

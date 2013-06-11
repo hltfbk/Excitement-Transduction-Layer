@@ -9,7 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
+@SuppressWarnings("unused")
 public class GraphSee extends JFrame {
 
 
@@ -26,6 +28,9 @@ public class GraphSee extends JFrame {
     	super("Graph visualization");
     	FragmentGraph fg = FragmentGraph.getSampleGraph();
     	equipMe(new FragmentGraphPanel(fg));
+    	
+//    	EntailmentGraphRaw egr = EntailmentGraphRaw.getSampleOuput(true);
+//    	equipMe(new RawGraphPanel(egr));    	
     }
     
     public GraphSee(TLGraphPanel<?,?> tlgp) {
