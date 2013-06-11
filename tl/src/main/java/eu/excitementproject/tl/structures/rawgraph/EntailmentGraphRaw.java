@@ -2,6 +2,7 @@ package eu.excitementproject.tl.structures.rawgraph;
 
 import java.io.File;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.Set;
 
 import org.jgrapht.EdgeFactory;
@@ -9,6 +10,7 @@ import org.jgrapht.graph.DirectedMultigraph;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
@@ -102,6 +104,11 @@ public class EntailmentGraphRaw extends
 		return false;
 	}
 
+	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
+		if (isEntailment(nodeA, nodeB)||(isEntailment(nodeB, nodeA))) return true;
+		return false;
+	}
+
 	/******************************************************************************************
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
@@ -128,6 +135,53 @@ public class EntailmentGraphRaw extends
 	 * OTHER METHODS TO WORK WITH THE GRAPH
 	 * ****************************************************************************************/
 
+	public Hashtable<Integer, Set<EntailmentUnit>> getFragmentGraphNodes(EntailmentUnit baseStatementNode, String completeStatementText) throws EntailmentGraphRawException {
+		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
+
+		if (!baseStatementNode.completeStatementTexts.contains(completeStatementText)) throw new EntailmentGraphRawException("Base statement node \""+baseStatementNode.getText()+"\" does not correspond to the complete statement \""+ completeStatementText+"\"\n");
+		
+		EntailmentUnit completeStatementNode = getVertex(completeStatementText);
+		if (completeStatementNode==null) throw new EntailmentGraphRawException("The raw graph does not contain a node \""+completeStatementText+"\"\n");
+		
+		Set<EntailmentUnit> nodes = getAllNodes(completeStatementNode, baseStatementNode, new HashSet<EntailmentUnit>());
+		for(EntailmentUnit node: nodes){
+			if (belongsToFragmentGraph(node,completeStatementText)){
+				Integer level = node.getLevel();
+				if (!nodesByLevel.containsKey(level)) nodesByLevel.put(level, new HashSet<EntailmentUnit>());
+				if (!nodesByLevel.get(level).contains(node)) nodesByLevel.get(level).add(node);
+			}
+		}		
+		return nodesByLevel;
+	}
+	
+	/** Returns the set of all nodes, which form the possible paths from sourceNode to targetNode (including the sourceNode and the targetNode).
+	 * If targetNode is the same as sourceNode, the method will return a set with a single EntailmentUnit. 
+	 * The method recursively updates the set nodesToReturn, which it obtains as its parameter.
+	 * @param sourceNode
+	 * @param targetNode
+	 * @param nodesToReturn
+	 * @return
+	 */
+	public Set<EntailmentUnit> getAllNodes(EntailmentUnit sourceNode, EntailmentUnit targetNode, Set<EntailmentUnit> nodesToReturn){
+		if (nodesToReturn==null) nodesToReturn = new HashSet<EntailmentUnit>();
+		
+		nodesToReturn.add(sourceNode);
+		if (targetNode.equals(sourceNode)) return nodesToReturn;
+		
+		Set<EntailmentUnit> newNodes = this.getEntailedNodes(sourceNode);
+		for (EntailmentUnit newNode : newNodes){
+			if (!nodesToReturn.contains(newNode)) {
+				nodesToReturn=getAllNodes(newNode,targetNode,nodesToReturn);
+			}
+		}
+		return nodesToReturn;
+	}
+	
+	private boolean belongsToFragmentGraph(EntailmentUnit node, String completeStatementText){
+		if (node.completeStatementTexts.contains(completeStatementText)) return true;
+		return false;
+	}
+	
 	/** Returns the set of nodes, which entail the given node
 	 * @param node whose entailing nodes are returned
 	 * @return Set<EntailmentUnit> with all the entailing nodes of the given node
@@ -179,6 +233,29 @@ public class EntailmentGraphRaw extends
 		}
 		return entailedNodes;
 	}
+	
+
+	/** get entailed nodes what belong to the same fragment graph and have the specified nummber of modifiers (level)
+	 * @param node
+	 * @return
+	 */
+	public Set<EntailmentUnit> getEntailedNodesFromSameFragmentGraph(EntailmentUnit node, int level){
+		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
+		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
+			EntailmentUnit entailedNode = edge.getTarget();
+			if (entailedNode.getLevel()==level){ // first check the level condition
+				for (String completeStatement : entailedNode.getCompleteStatementTexts()){ // now check if have a common completeStatement (came from the same gragment graph)
+					if (node.getCompleteStatementTexts().contains(completeStatement)){
+						entailedNodes.add(entailedNode); // if yes - add
+						break; // and go to the next edge
+					}
+				}
+				
+			}
+		}
+		return entailedNodes;
+	}	
+
 	/**
 	 * Create an edge from sourceVertex to targetVertex using the specified eda 
 	 * @param sourceVertex
