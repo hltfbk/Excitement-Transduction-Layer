@@ -37,6 +37,8 @@ public final class InteractionReader {
 	/**
 	 * This static utility method gets one File, and read in the interactions written in the file as a list of {@link Interaction} object. 
 	 *  
+	 *  <P> Note that if there is any "not-well-escaped sequence (as in ALMA social)", the XML parser will fail. Make sure the XML has no bad escapes. 
+	 *  
 	 * @param f XML file (WP2-defined XML file) for Interaction. 
 	 * @return List<Interaction> - A list of interaction objects.  
 	 */
