@@ -16,7 +16,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
  */
 
 /**
- * @author tailblues
+ * @author Gil 
  *
  */
 public class Interaction {
@@ -31,9 +31,10 @@ public class Interaction {
 	 * @param category 
 	 */
 	
-	public Interaction(String interactionString, String langID, String category, String channel, String provider)
+	public Interaction(String interactionString, String langID, String interactionId, String category, String channel, String provider)
 	{
 		this.lang = langID; 
+		this.interactionId = interactionId; 
 		this.channel = channel; 
 		this.provider= provider; 
 		this.interactionString = interactionString; 	
@@ -48,7 +49,7 @@ public class Interaction {
 	 */
 	public Interaction(String interactionString, String langID)
 	{
-		this(interactionString, langID, null, null, null); 
+		this(interactionString, langID, null, null, null, null); 
 	}
 	
 	/**
@@ -58,9 +59,9 @@ public class Interaction {
 	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
 	 * @param category channel of the interaction, free string, and depends on the application
 	 */
-	public Interaction(String interactionString, String langID, String category)
+	public Interaction(String interactionString, String langID, String interactionId, String category)
 	{
-		this(interactionString, langID, category, null, null); 
+		this(interactionString, langID, interactionId, category, null, null); 
 	}
 	
 	/**
@@ -135,6 +136,10 @@ public class Interaction {
 		return category; 
 	}
 	
+	public final String getInteractionId()
+	{
+		return interactionId; 
+	}
 	
 	/**
 	 *  Interaction as String: Obligatory value, main data of this data type. cannot be null. 
@@ -151,6 +156,7 @@ public class Interaction {
 	 * channel, provider, and category is additional metadata 
 	 * that are optional. (can be null) 
 	 */
+	private final String interactionId; 
 	private final String channel; 
 	private final String provider; 
 	private final String category; 

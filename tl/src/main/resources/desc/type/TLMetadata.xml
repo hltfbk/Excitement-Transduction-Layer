@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>TLMetadata</name>
+  <description>This type description file defines InputCasMetadata type, which records various metadata related to the Interaction and the input CAS. Note that one CAS should have only one metadata (only the first one should be considered, if more than one), and each CAS should have one metadata, even if all of its fields are null. 
+
+Note that language ID is not recorded in this metadata type. It is directly recorded in CAS. Also note that all of the metadata are simply strings, and can be null if that metadata is missing. 
+
+The type  includes: (all strings) 
+- interactionId 
+- channel 
+- provider 
+- date (string as YYYY-MM-DD)  
+- businessScenario 
+- author</description>
+  <version>1.0</version>
+  <vendor/>
+  <types>
+    <typeDescription>
+      <name>eu.excitement.type.tl.metadata</name>
+      <description>This type description file defines InputCasMetadata type, which records various metadata related to the Interaction and the input CAS. 
+Note that one CAS should have only one metadata (only the first one should be considered, if more than one), and each CAS should have one metadata, even if all of its fields are null. 
+
+Note that language ID is not recorded in this metadata type. It is directly recorded in CAS. Also note that all of the metadata are simply strings, and can be null if that metadata is missing. 
+
+The type  includes: (all strings) 
+- interactionId 
+- channel 
+- provider 
+- date (string as YYYY-MM-DD)  
+- businessScenario 
+- author</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>interactionId</name>
+          <description>interaction ID of the interaction, contained in the CAS.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>channel</name>
+          <description>channel of the interaction (e.g. e-mail, web forum, speech, telephone transcript, etc)</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>provider</name>
+          <description>This value holds the provider as string (ALMA, OMQ or NICE, etc)</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>date</name>
+          <description>The date of the interaction: as ISO format of Year-Month-Day (YYYY-MM-DD)</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>businessScenario</name>
+          <description>This string holds the business scenario of the interaction (like coffeeshop, internet shopping, train claims, etc)</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>author</name>
+          <description>this field holds the name of the author, if it is applicable (e.g. web forums)</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

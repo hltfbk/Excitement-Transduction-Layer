@@ -108,17 +108,18 @@ public class InteractionReaderTest {
 
 			// check first interaction. 
 			Interaction one = iList.get(0); 
-			testlogger.info("The first interaction string is:" + one.getInteractionString());
+			testlogger.info("The first interaction (id: " + one.getInteractionId() + ") text is:" + one.getInteractionString());
 			assertEquals(one.getLang(), "IT"); 
 			assertEquals(one.getChannel(), "social"); 
 			assertEquals(one.getProvider(), "ALMA"); 
+			assertNotNull(one.getInteractionId()); 
 			// and just to be safe, 45th interaction 
 			Interaction fortyfifth = iList.get(44); 
-			testlogger.info("The fortyfifth interaction string is:" + fortyfifth.getInteractionString());
+			testlogger.info("The fortyfifth interaction (id: "+ fortyfifth.getInteractionId() +") text is:" + fortyfifth.getInteractionString());
 			assertEquals(fortyfifth.getLang(), "IT"); 
 			assertEquals(fortyfifth.getChannel(), "social"); 
 			assertEquals(fortyfifth.getProvider(), "ALMA"); 
-			testlogger.info("testing of readInteractionXML(): Okay"); 			
+			assertNotNull(one.getInteractionId()); 
 		}
 		catch (Exception e)
 		{
@@ -133,10 +134,12 @@ public class InteractionReaderTest {
 
 			// check first interaction. 
 			Interaction one = iList.get(0); 
-			testlogger.info("The first interaction string is:" + one.getInteractionString());
+			testlogger.info("The first interaction of speech (id: " + one.getInteractionId() +") text is:" + one.getInteractionString());
 			assertEquals(one.getLang(), "IT"); 
 			assertEquals(one.getChannel(), "speech"); 
 			assertEquals(one.getProvider(), "ALMA"); 
+			testlogger.info("testing of readInteractionXML(): Okay"); 			
+			
 		}
 		catch (Exception e)
 		{

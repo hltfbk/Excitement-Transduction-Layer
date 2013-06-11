@@ -109,18 +109,24 @@ public final class InteractionReader {
 			// TODO: check we will use metadata like the followings: 
 			// businessScenario (e.g. train, coffeehouse, etc) , 
 			// dataSource (company name, prolly confidential), 
-			// id (meaningless in our setup? - all 1 in the data) 
 			// date (meaningless in our setup? - all 0001-01-01 in the data) 
 		
 			Element meta = (Element) oneInteraction.getElementsByTagName("metadata").item(0); 
 			Node c = meta.getElementsByTagName("category").item(0).getFirstChild(); 
-			String category = null; 
+			String category = null;
+			String interactionId = null; 
 			if (c != null)
 			{
 				category = c.getNodeValue(); 
 			}
 			
-			Interaction interaction = new Interaction(interactionText, lang, category, channel, provider); 
+			Node idval = meta.getElementsByTagName("id").item(0).getFirstChild(); 
+			if (idval != null)
+			{
+				interactionId = idval.getNodeValue(); 
+			}
+			
+			Interaction interaction = new Interaction(interactionText, lang, interactionId, category, channel, provider); 
 			interactionList.add(interaction); 			
 		}
 		

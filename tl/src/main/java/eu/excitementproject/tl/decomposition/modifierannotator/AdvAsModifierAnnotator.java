@@ -10,6 +10,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADV;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 
+import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -39,6 +40,17 @@ public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
 		
 		Logger fragLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator"); 
 
+		// check if it already has modifier annotations. If it is so, 
+		// we don't process this CAS and pass. 
+		AnnotationIndex<Annotation> modIndex = aJCas.getAnnotationIndex(ModifierAnnotation.type);
+		if (modIndex.size() > 0)
+		{
+			fragLogger.info("The CAS already has " + modIndex.size() + " modifier annotations. Won't process this CAS."); 
+			return; 
+		}
+
+
+		
 		// check POS annotation is there or not 
 		AnnotationIndex<Annotation> posIndex = aJCas.getAnnotationIndex(POS.type);
 		Iterator<Annotation> posItr = posIndex.iterator(); 		
