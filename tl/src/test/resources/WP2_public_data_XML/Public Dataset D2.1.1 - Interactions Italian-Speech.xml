@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset 	xmlns="http://www.excitement-project.eu"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.excitement-project.eu dataset.xsd">
+	<provider>ALMA</provider>
+	<channel>speech</channel>
+	<language>IT</language>
+	<interactions>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.1.004</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Telefono per segnalare che a mio parere le tariffe non sono convenienti. Addirittura le tariffe sul roaming europeo sono più convenienti delle tariffe italiane. Vergognatevi!!! Mi dispiace la pensi cosi’, in ogni caso provvederò ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.1.005</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ritengo inutile avere un telefono a poco prezzo quando poi ti spremono sulle tariffe. Trovo che le tariffe TELEFONIAX siano molto alte rispetto al servizio effettivamente offerto. Guardi che ci sono tante buone offerte per l’acquisto di un telefono. La prego di consultare la nostra pagina dedicata e sicuramente trovera’ un piano tariffario adatto alle sue esigenze.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.1.006</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Vorrei sapere come posso disattivare l'internet mobile che avevo attivato con i punti, ora si é riattivata automaticamente! Lo possiamo fare insieme oppure autonomamente dal sito. Dal sito non riesco disattivare l'internet mobile!! ma chi mi rimborsa dei soldi spesi inutilmente, sono all’estero e questa cosa mi ha fatto perdere un bel po’ di tempo e soldi. Gradirei inoltre essere rimborsato in qualche modo del disagio ricevuto. Verificheremo, in ogni caso provvederò ad inoltrare la sua segnalazione al gruppo tecnico competente. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.1.007</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Io sono cliente TELEFONIAX da 12 anni. Mi sono sempre trovato bene ma ho una lamentela da fare. Non capisco perché TELEFONIAX ha tolto le opzioni INTERMINABILE e le SENZACONFINI. In più l’opzione degli sms verso tutti lascia molto a desiderare. Se non cambiate le opzioni e i piani telefonici perderete molti molti clienti. Le smart poi sono troppo care e ricordatevi non tutti hanno lo smart phone. Mi dispiace che lei ci segnali questo, farò presente la questione al gruppo di lavoro competente.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.012</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?TELEFONIAX mi ha davvero deluso, voi non pensate alla felicita’ del cliente ma avete paura di perdere i soldi. Io sono un cliente TELEFONIAX ma mi sono ricreduto quindi al più presto passero’ il mio numero TELEFONIAX a un altro fornitore. Le vostre promozioni costano troppo rispetto agli altri operatori. Mi dispiace che lei ci segnali questo, faro’ presente la questione agli uffici competenti.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.013</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ma perche’ da alcuni numeri TELEFONIAX non riesco a ricevere messaggi e chiamate pur non essendo attivo alcun blocco? Ha provato a cambiare la sim? No perché una nuova Sim costa 8 euro. Sono stufa, e’ una storia che va avanti da mesi! e poi chi me lo dice che senza alcuna garanzia, anche se cambio la sim, il problema si possa risolvere! Ma scherziamo? Sono molto infastidita, davvero! Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.014</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ho riscontrato numerosi problemi con l’attivazione della TELEFONIAX ACCESSOSEMPLICE, volevo sapere se farete una proroga della promozione. Al momento non ci sono estensioni del periodo. Ma come? con tutti i problemi che ho incontrato per l’attivazione, voi non date nemmeno la possibilita’ di una proroga di tempo? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.015</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Al negozio TELEFONIAX di porta di Roma mi hanno detto che chi e’ LUI20 e non ha potuto attivare la carta entro il 31 gennaio ne daranno un'altra, e’ vero? Al momento non abbiamo comunicazioni ufficiali in merito. Non e’ possibile che non avete informazioni sulle vostre stesse promozioni? io ho detto che solo se e’ gratis l’attivo. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.016</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Buongiorno, chiamo per un reclamo. Ho attivato TUO444 ma non riesco a collegarmi perche’ dice sempre di riprovare, sia di giorno che di notte. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.017</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Salve, da giorni TELEFONIAX non riesce a riattivarmi la scheda sim. Sulla scheda sim avevo molto credito e devo aspettare, spero che il problema si risolva a breve. Purtroppo e’ cosi’ ci vogliono i tempi tecnici. Purtroppo gli unici problemi in campo telefonia sono stati sempre con TELEFONIAX. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.018</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Telefono per comunicare che da giorni il TUO444 non funziona piu’! Mi dice che la connessione non e’ disponibile ma in realta’ io sono sempre connesso a internet! Che faccio? Provi a spegnere e ricollegarsi. Gia’ fatto. Credo che sia un vostro problema. Potete controllare? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.019</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Mi arrivano troppi sms di pubblicita’ sgradita di TELEFONIAX con negozi che mi invitano a comprare cose che non mi interessano minimamente come posso cancellare il servizio? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.020</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Voi di TELEFONIAX siete scandalosi! da giorni aspetto che mi venga attribuito il credito di una ricarica che ho effettuato tempo fa. Ho fatto un sacco di reclami al servizio clienti ma ancora non mi avete fatto saper niente, che vergogna! Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.2.021</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Vorrei reclamare sul fatto che TELEFONIAX attiva servizi a pagamento quali "TELEFONIAX DIRETTA" e "LINEASPENTA" senza nessuna richiesta da parte dell'utente. Il cliente si accorge di tali servizi solo alla ricevuta della fattura bimestrale. Vorrei poi sapere perché non venga perlomeno facilitata la disattivazione di questi servizi. Credo di essere soggetto ad un truffa bella e buona. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.3.005</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ora ho chiamato il call center per sapere dove sono finiti i miei punti, l’operatrice non ha saputo rispondere con precisione alla mia domanda. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.3.006</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Il trasferimento dei punti di TELEFONIAX ABC ancora non e’ avvenuto. Posso sollecitare il passaggio? Si certo come no, ma tenga presente che ci vogliono anche 60 giorni prima del passaggio. In ogni caso provvedero’ a sollecitare la cosa presso gli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.3.007</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Volevo comunicare che e’ da giorni che non riesco a richiedere il premio per i punti TELEFONIAX ABC sul sito. Visto che oggi i punti scadono e il premio che vorrei si puo’ richiedere solo online, o decidete di far funzionare il sito o mi rivolgero’ all’associazione consumatori! Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.3.008</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?La app TUO444 per pc non funziona, ho provato  su due diversi pc ma niente da fare! Dice sempre che non e’ stato possibile inviare il messaggio e di riprovare. Che succede? potete dirmi se ci sono aggiornamenti in corso? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.4.001</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Sto perdendo tanto  tempo, e’ da ieri che tento il PROMOCONTEGGIO e mi dice che non sono iscritto, ma non e’ vero. Bella presa in giro, complimenti. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.4.002</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Quanti disservizi , da mesi non riesco piu’ ha contattare il 444 per parlare con un operatore. Nonostante abbia fatto la segnalazione son sempre di punto a capo,non ricevo piu’ offerte , e neanche piu’ vengo contattato! Mi dispiace, provvedero’ a farla contattare dagli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.4.003</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?A volte mi si blocca il 444 e non riesco piu’ a parlare con gli operatori, quindi sono costretto a chiamare da altri numeri per fargli le segnalazioni. Mi dispiace, provvedero’ a farla contattare dagli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.8.001</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Volevo comunicare che continuano ad arrivarmi telefonate promozionali che non gradisco dal vostro servizio clienti, potete cancellarmi dagli elenchi visto che queste telefonate sono per me particolarmente scoccianti? Provvedo subito, ma dovrebbe togliere l’autorizzazione al trattamento dei suoi dati personali a fini commerciali.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech3.8.002</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Mi arrivano troppi messaggi promozionali di vostre offerte a cui non sono interessato, potete evitarlo? Ma e’ un modo per far conoscere ai nostri clienti le promozioni in anteprima. Si ma preferirei non essere importunato per questo tipo di promozioni perché mi sta bene il piano tariffario che ho scelto. Mi dispiace, prendo nota. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.010</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Bella fregatura. La TELEFONIAX CONSOLLE ha una velocita’ di connessione ridicola, viaggia a 600 kbps  anziché a 7 mega ! Invece io continuo a pagare la bolletta appieno!! Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.011</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?La gestione del contratto adsl e’ vergognosa. Il mio contratto e' attivo da mesi e ancora non funziona l’adsl. Le bollette invece sono puntualissime, pessimo servizio. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.012</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ho aderito alla vostra offerta TELEFONIAX CONSOLLE dove si paga un tot al mese. Prego mi dica. E’ una grande beffa perché con TELEFONIAX CONSOLLE non funziona proprio il telefono né per ricevere né per chiamare. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.013</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Anche oggi manca la rete TELEFONIAX nella mia citta’. Ci siamo stufati, credo proprio che cambiero’ operatore. Basta! Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.014</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?TELEFONIAX mi ha bloccato il telefono senza alcun motivo da ben 10 giorni. Dopo vari solleciti nessun risultato. Cambiero’ operatore a breve. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.015</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Mi sono stancato, ogni 3 o 4 giorni internet non funziona. Ogni volta mi dite di seguire la stessa procedura che non serve a niente. Volete risolvere la cosa? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.016</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ho deciso che cambio operatore. Io con TELEFONIAX ho speso inutilmente soldi e la mia adsl non funzionava mai. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.017</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Chiamo perché TELEFONIAX CONSOLLE e’ una fregatura . I miei nonni hanno sottoscritto, a dicembre, un contratto con la TELEFONIAX per avere la TELEFONIAX CONSOLLE ma siamo rimasti per un mese senza la linea del telefono fisso. Quindi vorrei il rimborso dei danni. Come devo fare? Ma come mai un mese senza telefono? Ci hanno staccato la linea precedente e ci sono stati un sacco di problemi per attaccare la linea TELEFONIAX. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.1.018</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Da due giorni che nella mia zona non abbiamo campo per la linea ADSL, mi sono stancato di  fare continue segnalazioni. Mettetevi nei panni chi ci lavora con il telefono. Si certo, la capisco. Provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.2.005</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?La vostra assistenza clienti lascia a desiderare, non si riesce mai a trovare qualcuno competente. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti del gradimento del servizio . Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.2.006</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Volevo segnalare che ci sono problemi di copertura di rete. Mi puo’ dire da dove chiama? Dalla provincia di Latina. Vi pregherei di provvedere, altrimenti chiedo il rimborso del servizio. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.2.007</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ho acquistato la vostra chiavetta TELEFONIAX, con la promozione di tre mesi di navigazione illimitata'. Tuttavia la ricezione del segnale e' sempre scarsa e per aprire una pagina si rischia l'esasperazione totale. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.2.008</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Sono un vostro cliente con due numeri e ho un reclamo da fare. Si prego, mi dica. Anche questo mese vi ho telefonato per segnalare la mancanza di adeguate informazioni sui consumi effettuati con il cellulare. Ricarico una certa somma e mi ritrovo inspiegabilmente meno euro a disposizione, come mai? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.4.009</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ero un vostro cliente TELEFONIAX HOME, al termine dei due anni l'offerta commerciale non era piu’ conveniente ed ho cambiato operatore. La mia linea e’ disattivata dallo scorso luglio ma continuate a mandarmi fatture. Vi sembra normale? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.4.010</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Voglio solo dirvi che voi di TELEFONIAX siete una vergogna perché sono due anni che aspetto una vostra chiamata per dei chiarimenti sulla linea telefonica fissa. Quanto tempo devo ancora aspettare? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.4.011</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Buongiorno, sono due mesi che aspetto e dopo tante segnalazioni, email, segnalazioni su facebook della TELEFONIAX nessuno ancora si e’ degnato di chiamare. I tecnici non vengono quando mi danno l'appuntamento per installare la linea telefonica, vergogna. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.4.012</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Ma quante segnalazioni devo fare ancora? Sono oltre sessanta giorni che attendo che venga un tecnico ad attivarmi la linea telefonica. Purtroppo noi non abbiamo la visibilita’ dell’agenda dei tecnici. Ma che servizio clienti e’ allora il vostro, che non sa queste cose? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.4.013</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Anche oggi non posso usare il telefono fisso! Ci sono problemi di linea? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech4.4.014</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Sono cliente da piu’ di 10 anni e sto ricevendo da TELEFONIAX il peggior trattamento possibile. Sono due mesi che aspetto il tecnico per avere la linea fissa di cui ho fatto la richiesta, e’ incredibile. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech5.1.004</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Guardi sono due giorni che giro x negozi TELEFONIAX e mi sono davvero stufata. Lanciate promozioni per cellulari che poi non rendete disponibili nei negozi. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech5.1.005</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Sinceramente non mi sembrate un azienda seria, perché ho stipulato un contratto a dicembre con adsl e tablet ma il tablet tuttora non e’ arrivato. Ci saranno stati sicuramente disguidi postali. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech5.1.006</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Avete un ritardo nelle consegne dei premi TELEFONIAX. Aspetto ancora l'iphone prenotato, vi sembra possibile? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech5.3.005</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Si ma io sto ancora aspettando che qualcuno mi comunichi quando arrivera’ il mio MODELLOA2, dopo aver fatto continue segnalazioni e reclami. Purtroppo non siamo in possesso dei tracciati di spedizione delle poste. Bella organizzazione! Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech5.3.006</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?A giugno ho prenotato un MOBILEA con TELEFONIAX da regalare a mia figlia oggi devo dire ancora a mia figlia che TELEFONIAX non puo’ prevedere se e quando mi arrivera’ il telefono. Purtroppo c’e’ stata l’estate in mezzo. Sono convinto che siate in un problema non previsto; ma datemi una risposta: posso averlo a breve o devo provvedere diversamente? TELEFONIAX molte volte e’ una delusione per la consegna dei cellulari richiesti. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech5.3.007</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Salve, ho ricevuto una vostra lettera in cui mi si veniva detto che se avessi effettuato una ricarica da 10 euro entro il 22 marzo mi sarebbe stata attivata la promozione LIBERO300. Ho fatto la ricarica ma la promozione non mi e’ stata attivata. Quanto tempo devo aspettare? Ma e’ possibile che per ogni cosa che faccio con TELEFONIAX devo procedere sempre con i solleciti? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech5.5.003</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?Il mio MOBILEA MODELLOA1 che ho comprato da TELEFONIAX non funziona bene, si sente l'eco della voce. Mi hanno detto che e un problema di software. L'ho aggiornato ma il risultato é lo stesso, quindi e’ il telefono che non va bene. Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>Speech5.5.004</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>?L’anno scorso ho comprato un MOBILEA offerto dalla TELEFONIAX che non ha mai funzionato. Secondo vuoi e giusto? Mi dispiace, provvedero’ ad inoltrare la sua segnalazione agli uffici competenti. Grazie, arrivederci.</text>
+		</interaction>
+
+	</interactions>
+</dataset>
