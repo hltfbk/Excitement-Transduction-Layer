@@ -16,7 +16,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  */
 public class EquivalenceClass {
 	
-	int id;
+	// int id;
 	
 	/** 
 	 * the "canonical" text of the class 
@@ -59,5 +59,21 @@ public class EquivalenceClass {
 		entailmentUnits.addAll(s_eu);
 		label = text;
 	}
+
+	/**
+	 * @return the label
+	 */
+	public String getLabel() {
+		return label;
+	}
+
+	/**
+	 * @return the entailmentUnits
+	 */
+	public Set<EntailmentUnit> getEntailmentUnits() {
+		return entailmentUnits;
+	}
+	
+	
 	
 }
