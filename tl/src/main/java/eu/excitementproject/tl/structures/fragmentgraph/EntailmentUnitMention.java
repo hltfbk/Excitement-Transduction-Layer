@@ -60,9 +60,11 @@ public class EntailmentUnitMention {
 		this.level = modifiersText.size();
 		
 		String chars = textFragment;
-		for(String ma: allModifiers) {
-			if (! modifiers.contains(ma)) {
-				chars = removeModifier(chars,ma);
+		if (allModifiers != null) {
+			for(String ma: allModifiers) {
+				if (! modifiers.contains(ma)) {
+					chars = removeModifier(chars,ma);
+				}
 			}
 		}
 		text = chars;
@@ -107,9 +109,11 @@ public class EntailmentUnitMention {
 	private Set<SimpleModifier> addModifiers(String textFragment,
 			Set<String> mods) {
 		Set<SimpleModifier> sms = new HashSet<SimpleModifier>();
-		for(String s: mods) {	
-			if (textFragment.contains(s)) {
-				sms.add(new SimpleModifier(s,textFragment.indexOf(s),textFragment.indexOf(s)+s.length()));
+		if (mods != null) { 
+			for(String s: mods) {	
+				if (textFragment.contains(s)) {
+					sms.add(new SimpleModifier(s,textFragment.indexOf(s),textFragment.indexOf(s)+s.length()));
+				}
 			}
 		}
 		return sms;
