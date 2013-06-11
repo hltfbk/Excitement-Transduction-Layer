@@ -99,33 +99,49 @@ public class InteractionReaderTest {
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 
 		
-		File f = new File("./src/test/resources/WP2_confidential_data_partial/nice_email_partial.xml"); 		
+		//File f = new File("./src/test/resources/WP2_public_data_XML/nice_email_partial.xml"); 		
+		File f = new File("./src/test/resources/WP2_public_data_XML/Public Dataset D2.1.1 - Interactions Italian-Social media.xml"); 		
 		try {
 			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
 			testlogger.info("The test file `" + f.getPath() + "'has " + iList.size() + " interactions in it."); 
-			assertEquals(iList.size(), 76); 
+			assertEquals(iList.size(), 323); 
 
 			// check first interaction. 
 			Interaction one = iList.get(0); 
 			testlogger.info("The first interaction string is:" + one.getInteractionString());
-			assertEquals(one.getInteractionString(), "We just love the atmosphere in this store !"); 
-			assertEquals(one.getLang(), "EN"); 
-			assertEquals(one.getChannel(), "mail"); 
-			assertEquals(one.getProvider(), "NICE"); 
-			assertNull(one.getCategory()); 
+			assertEquals(one.getLang(), "IT"); 
+			assertEquals(one.getChannel(), "social"); 
+			assertEquals(one.getProvider(), "ALMA"); 
 			// and just to be safe, 45th interaction 
 			Interaction fortyfifth = iList.get(44); 
 			testlogger.info("The fortyfifth interaction string is:" + fortyfifth.getInteractionString());
-			assertEquals(fortyfifth.getInteractionString(), "I would have rated higher but on my visit I was only able to pay with cash as the machine was not working . Based upon the card machine not working I was limited to only buying a coffee , if it had been working my I would have made a bigger purchase ."); 
-			assertEquals(fortyfifth.getLang(), "EN"); 
-			assertEquals(fortyfifth.getChannel(), "mail"); 
-			assertEquals(fortyfifth.getProvider(), "NICE"); 
+			assertEquals(fortyfifth.getLang(), "IT"); 
+			assertEquals(fortyfifth.getChannel(), "social"); 
+			assertEquals(fortyfifth.getProvider(), "ALMA"); 
 			testlogger.info("testing of readInteractionXML(): Okay"); 			
 		}
 		catch (Exception e)
 		{
 			fail(e.getMessage()); 
 		}
+		// Lets read another file 
+		f = new File("./src/test/resources/WP2_public_data_XML/Public Dataset D2.1.1 - Interactions Italian-Speech.xml"); 		
+		try {
+			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
+			testlogger.info("The test file `" + f.getPath() + "'has " + iList.size() + " interactions in it."); 
+			assertEquals(iList.size(), 50); 
+
+			// check first interaction. 
+			Interaction one = iList.get(0); 
+			testlogger.info("The first interaction string is:" + one.getInteractionString());
+			assertEquals(one.getLang(), "IT"); 
+			assertEquals(one.getChannel(), "speech"); 
+			assertEquals(one.getProvider(), "ALMA"); 
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}	
 	}
 
 }
