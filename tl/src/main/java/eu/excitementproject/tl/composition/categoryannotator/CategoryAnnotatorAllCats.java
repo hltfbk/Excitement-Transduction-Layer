@@ -99,7 +99,7 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 				decisions.put(category, confidence);
 			}
 			//add annotation to CAS (per matching mention)
-			CASUtils.annotateCategories(cas, region, decisions);
+			CASUtils.annotateCategories(cas, region, mentionInCAS.getText(), decisions);
 		}	
 	}
 }

@@ -247,5 +247,9 @@ public class EntailmentUnitMention {
 	public boolean equals(EntailmentUnitMention eum) {
 		return eum.text.matches(text);
 	}
+
+	public void setCategoryId(String category) {
+		this.categoryId = category;		
+	}
 	
 }

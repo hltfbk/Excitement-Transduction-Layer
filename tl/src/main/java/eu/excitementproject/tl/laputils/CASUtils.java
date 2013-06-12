@@ -326,14 +326,16 @@ public final class CASUtils {
 	 * 
 	 * @param aJCas
 	 * @param r
+	 * @param text 
 	 * @param categoryId
 	 * @param score
 	 */
-	static public void annotateCategories(JCas aJCas, Region r, Map<String, Double> decisions) throws LAPException
+	static public void annotateCategories(JCas aJCas, Region r, String text, Map<String, Double> decisions) throws LAPException
 	{
 		CategoryAnnotation ca = new CategoryAnnotation(aJCas); 
 		ca.setBegin(r.getBegin());
 		ca.setEnd(r.getEnd()); 
+		ca.setText(text);
 		FSArray v = new FSArray(aJCas, decisions.size()); 
 		ca.setCategories(v);
 	
