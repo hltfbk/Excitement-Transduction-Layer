@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.structures.fragmentgraph;
 
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,6 +15,7 @@ import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.ModifierAnnotation;
+import eu.excitementproject.tl.laputils.CASUtils;
 
 /**
  * 
@@ -59,7 +61,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 */
 	JCas document = null;
 	FragmentAnnotation fragment = null;
-
+	
 	int depth = -1;
 	
 	/**
@@ -112,7 +114,6 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		
 		Set<ModifierAnnotation> mods = getFragmentModifiers(aJCas,frag);		
 		buildGraph(aJCas, frag, mods, null);
-		
 	}
 	
 	
@@ -320,11 +321,25 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		}
 		return nodes;
 	}
+
 	
+	public String getInteractionId(){
+		if (document == null) {
+			return "N/A" + getTimestamp();
+		}
+		
+		return CASUtils.getTLMetaData(document).getInteractionId();// + getTimestamp();
+	}
+	
+	
+	private String getTimestamp(){
+		java.util.Date date= new java.util.Date();
+		 return new Timestamp(date.getTime()).toString();
+	}
 	
 	@Override
 	public String toString() {
-		String str = "\nFragment graph: \n";
+		String str = "\nFragment graph: \n Interaction id = " + getInteractionId() + "\n";
 		for(EntailmentUnitMention v : this.vertexSet()) {
 			str += "vertex: " + v.toString() + " ( level = " + v.getLevel() + ")\n";
 			for(EntailmentUnitMention x: this.vertexSet()) {
