@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.apache.uima.jcas.JCas;
 
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 
@@ -32,8 +33,9 @@ public interface CategoryAnnotator {
 	 * @param cas - input CAS ({@link JCas})
 	 * @param matches - set of matching nodes ({@link MatchingNode})
 	 * @throws CategoryAnnotatorException if category annotation fails
+	 * @throws LAPException 
 	 */
 	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches) 
-			throws CategoryAnnotatorException;
+			throws CategoryAnnotatorException, LAPException;
 
 }
