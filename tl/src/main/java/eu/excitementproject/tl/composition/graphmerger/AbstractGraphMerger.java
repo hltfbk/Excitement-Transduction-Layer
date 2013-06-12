@@ -11,6 +11,8 @@ import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
@@ -43,6 +45,13 @@ should be clearly exposed in the Constructor.
 		this.lap=lap;
 		this.eda=eda;
 	}
+
+	@Override
+	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs)
+			throws GraphMergerException {
+		
+		return mergeGraphs(fragmentGraphs, null);
+	}	
 	
 	/**
 	 * @return the LAP passed in the constructor to the GraphMerger implementation

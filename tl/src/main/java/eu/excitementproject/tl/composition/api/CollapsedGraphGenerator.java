@@ -44,4 +44,6 @@ public interface CollapsedGraphGenerator {
 	public EntailmentGraphCollapsed generateCollapsedGraph(EntailmentGraphRaw workGraph) 
 			throws CollapsedGraphGeneratorException;
 
+	public EntailmentGraphCollapsed generateCollapsedGraph(EntailmentGraphRaw workGraph, Double confidenceThreshold) 
+			throws CollapsedGraphGeneratorException;
 }
