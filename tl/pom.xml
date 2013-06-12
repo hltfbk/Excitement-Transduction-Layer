@@ -7,12 +7,12 @@
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>lap</artifactId>
-  		<version>0.1-SNAPSHOT</version>
+  		<version>0.8.3</version>
   	</dependency>
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>core</artifactId>
-  		<version>0.1-SNAPSHOT</version>
+  		<version>0.8.3</version>
   	</dependency>
   	<dependency>
   		<groupId>net.sf.jgrapht</groupId>
@@ -25,6 +25,24 @@
   		<version>5.13.0.0</version>
   	</dependency>
   </dependencies>
+  
+    <repositories>
+	<repository>
+ 		<id>FBK</id>
+     	<url>http://hlt-services4.fbk.eu:8080/artifactory/repo</url>
+     	<snapshots>
+       		<enabled>false</enabled>
+     	</snapshots>
+ 	</repository>
+   	<repository>
+   		<id>FBKsnapshots</id>
+     	<url>http://hlt-services4.fbk.eu:8080/artifactory/repo</url>
+      	<releases>
+       		<enabled>false</enabled>
+   		</releases>
+  	</repository>
+  </repositories>  
+  
   <build>
   	<plugins>
     	<plugin>
