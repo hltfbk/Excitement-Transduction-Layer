@@ -89,8 +89,10 @@ public class Interaction {
 		aJCas.setDocumentLanguage(this.lang); 
 		aJCas.setDocumentText(this.interactionString); 
 		
-		// TODO (when we define metadata type), fill metadata. 
-		// "cahnnel", "provider", "category" 
+		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null);
+		
+		// TODO : do we need to add category metadata information 
+		// as category annotation? Check this with Kathrin 
 	}
 		
 	/**

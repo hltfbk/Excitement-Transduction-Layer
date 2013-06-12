@@ -12,6 +12,7 @@ import org.apache.uima.jcas.JCas;
 //import org.junit.Ignore;
 import org.junit.Test;
 
+import eu.excitement.type.tl.Metadata;
 import eu.excitementproject.tl.structures.Interaction;
 
 public class InteractionReaderTest {
@@ -119,7 +120,16 @@ public class InteractionReaderTest {
 			assertEquals(fortyfifth.getLang(), "IT"); 
 			assertEquals(fortyfifth.getChannel(), "social"); 
 			assertEquals(fortyfifth.getProvider(), "ALMA"); 
-			assertNotNull(one.getInteractionId()); 
+			assertNotNull(fortyfifth.getInteractionId()); 
+			
+			// okay this one has interaction id set from XML. 
+			// make sure if we convert this to CAS, will holds the same id in 
+			// metadata annotation. 
+			
+			JCas a = fortyfifth.createAndFillInputCAS(); 
+			Metadata m = CASUtils.getTLMetaData(a); 
+			assertEquals(fortyfifth.getInteractionId(), m.getInteractionId()); 
+			
 		}
 		catch (Exception e)
 		{
@@ -138,7 +148,9 @@ public class InteractionReaderTest {
 			assertEquals(one.getLang(), "IT"); 
 			assertEquals(one.getChannel(), "speech"); 
 			assertEquals(one.getProvider(), "ALMA"); 
-			testlogger.info("testing of readInteractionXML(): Okay"); 			
+			
+			testlogger.info("testing of readInteractionXML(): Okay"); 	
+			
 			
 		}
 		catch (Exception e)
