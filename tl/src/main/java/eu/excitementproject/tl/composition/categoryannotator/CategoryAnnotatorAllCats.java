@@ -1,14 +1,12 @@
 package eu.excitementproject.tl.composition.categoryannotator;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.uima.jcas.JCas;
 
-import eu.excitement.type.tl.CategoryDecision;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
@@ -53,8 +51,8 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 		
 		for (NodeMatch match : matches) { //for each matching mention
 			EntailmentUnitMention mentionInCAS = match.getMention(); 
-			int startPosition = 1; //TODO: replace by mentionInCAS.getStartPositionInCAS();
-			int endPosition = 10; //TODO: replace by mentionInCAS.getEndPositionInCAS();
+			int startPosition = mentionInCAS.getBegin();
+			int endPosition = mentionInCAS.getEnd();
 			CASUtils.Region region = new CASUtils.Region(startPosition, endPosition);
 			List<PerNodeScore> scores = match.getScores();
 			HashMap<String, Double> categorySum = new HashMap<String, Double>();
@@ -70,7 +68,7 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 				int sumMentions = 0;
 				for (EntailmentUnitMention mentionOnNode : eu.getMentions()) { //for each mention associated to the node
 					sumMentions++;
-					String categoryMention = "1"; //TODO: replace by mentionOnNode.getCategory(); 
+					String categoryMention = mentionOnNode.getCategoryId();
 					int count = 0;
 					if (categoryDistributionOnNode.containsKey(categoryMention)) {
 						count = categoryDistributionOnNode.get(categoryMention);
