@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
 import static org.junit.Assert.*;
+
 import junit.framework.Assert;
 
 import org.apache.log4j.BasicConfigurator;

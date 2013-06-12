@@ -17,6 +17,34 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 
+/**
+ * The CategoryAnnotator adds category annotation to an input CAS, based on an input set of 
+ * NodeMatch-es. This requires the combination of category information in the NodeMatch-es
+ * to category confidence scores. 
+ * 
+ * Each NodeMatch in the input set of NodeMatch-es holds exactly one EntailmentUnitMention M
+ * (found in the input CAS), which is associated to a list of PerNodeScore-s P. 
+ * PerNodeScore-s refer to tuples of an EntailmentUnit E (a node in a raw entailment graph) and
+ * a confidence score C denoting the confidence of M matching E. 
+ * 
+ * In this implementation of the CategoryAnnotator module, category confidence scores are 
+ * computed in the following way:
+ * 
+ * For each P, we first collect the category distribution on the node by retrieving the category
+ * of each of the m mentions associated to P and storing the sum of occurrences of this category. 
+ * Let's refer to the category as c, the sum as sum(c).  
+ * 
+ * In a second step, we now compute a score s(c) for each category occurring on the node using
+ * the following formula: 
+ * 
+ * s(c) = C * sum(c) / m
+ * 
+ * To compute the final category confidence, all scores for a particular category are summed up 
+ * and, in the end, divided by the total number of NodeMatch-es.
+ * 
+ * @author Kathrin Eichler
+ *
+ */
 public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 
 	@Override
@@ -30,12 +58,15 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 			CASUtils.Region region = new CASUtils.Region(startPosition, endPosition);
 			List<PerNodeScore> scores = match.getScores();
 			HashMap<String, Double> categorySum = new HashMap<String, Double>();
+			//map storing a sum of scores for each category, needs to be divided by the total number 
+			//of nodes (sumNodeScores):
 			int sumNodeScores = scores.size();
 			for (PerNodeScore score : scores) { //for each matching EG node for this mention
 				EntailmentUnit eu = score.getNode();
 				double nodeScore = score.getScore(); //score telling us how well this node matches the mentionInCAS
 				//compute category distribution on node: how often does each category occur on this node?
 				HashMap<String, Integer> categoryDistributionOnNode = new HashMap<String, Integer>();
+				//this map collects the different categories and how often their occur on this node
 				int sumMentions = 0;
 				for (EntailmentUnitMention mentionOnNode : eu.getMentions()) { //for each mention associated to the node
 					sumMentions++;
@@ -51,7 +82,7 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 				for (String category : categoryDistributionOnNode.keySet()) {	
 					double sum = 0.0;
 					if (categorySum.containsKey(category)) {
-						sum = categorySum.get(category);
+						sum = categorySum.get(category); //read sum in case we've stored a sum from a previous node
 					}
 					/* Calculation of score: node score * category occurrence / number of mentions
 					 * node score: how well does the node match the mention? 

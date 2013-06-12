@@ -51,7 +51,7 @@ public class DemoUseCase2OMQGerman {
 		
 		//add fragment annotation
 		LAPAccess lap = new TreeTaggerEN(); 			
-		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 
+		FragmentAnnotator fa = null; //new SentenceAsFragmentAnnotator(lap); 
 		fa.annotateFragments(cas);
 		
 		//add modifier annotation
