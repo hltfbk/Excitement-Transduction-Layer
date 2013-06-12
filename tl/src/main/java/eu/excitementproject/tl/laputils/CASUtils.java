@@ -6,14 +6,17 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.cas.impl.XmiCasDeserializer;
 import org.apache.uima.cas.impl.XmiCasSerializer;
+import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.InvalidXMLException;
@@ -24,6 +27,7 @@ import org.xml.sax.SAXException;
 import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentPart;
+import eu.excitement.type.tl.Metadata;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitement.type.tl.ModifierPart;
 import eu.excitementproject.eop.lap.LAPException;
@@ -439,6 +443,77 @@ public final class CASUtils {
 			throw e; 
 		}
 
+	}
+	
+	/**
+	 * This static method annotates the given JCas with one TL metadata ( type.tl.metadata, as defined in TLMetadata.xml). 
+	 * Note that all metadata are strings, and null values are also acceptable --- null values won't be set, and if not set, those values will 
+	 * stay null in CAS.  
+	 * 
+	 * <P> The method adds one metadata annotation on span [0 - end] with the given fields. It does so blindly (does not check content of those fields. only treat them as string). Also it does not check the existence of (already annotated) metadata.  
+	 * 
+	 * @param aJCas The JCas that will be annotated with 
+	 * @param interactionId interaction ID of the interaction, contained in the CAS.
+	 * @param channel channel of the interaction (e.g. e-mail, web forum, speech, telephone transcript, etc)
+	 * @param provider This value holds the provider as string (ALMA, OMQ or NICE, etc)
+	 * @param date The date of the interaction: as ISO format of Year-Month-Day (YYYY-MM-DD)
+	 * @param businessScenario This string holds the business scenario of the interaction (like coffeeshop, internet shopping, train claims, etc)
+	 * @param author this field holds the name of the author, if it is applicable (e.g. web forums)
+	 */
+	public static void addTLMetaData(JCas aJCas, String interactionId, String channel, String provider, String date, String businessScenario, String author) 
+	{
+		// Generate a new type, fill in  
+		Metadata meta = new Metadata(aJCas);
+		if (interactionId != null)
+			meta.setInteractionId(interactionId); 
+			
+		if (channel != null)
+			meta.setChannel(channel); 
+		
+		if (provider != null)
+			meta.setProvider(provider); 
+		
+		if (date != null)
+			meta.setDate(date); 
+
+		if (businessScenario != null)
+			meta.setBusinessScenario(businessScenario); 
+		
+		if (author != null)
+			meta.setAuthor(author); 
+		
+		// get length of the document and annotate over the whole SOFA 
+		int begin = 0; 
+		int end = 1; 
+		if (aJCas.getDocumentText() != null) 
+		{
+			end = aJCas.getDocumentText().length()-1; 
+		}
+		
+		meta.setBegin(begin); 
+		meta.setEnd(end); 
+		
+		meta.addToIndexes(); 
+		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+		l.debug("Generated one metadata annotation with interaction id: " + interactionId ); 
+		
+	}
+	
+	/**
+	 * 
+	 * This static method reads in one Metadata annotation given on the input JCAS. You can use the getters within this returned Metadata type to access actual metadata string fields. (- interactionId, - channel, - provider, - date (string as YYYY-MM-DD), - businessScenario, - author) 
+	 * 
+	 * @param aJCas the JCas with metadata. 
+	 * @return the Metadata annotation type. you can use "get methods" to get various values. will return null, if no metadata is annotated. If there is more than one metadata annotation, this method will return blindly the first one.   
+	 */
+	public static Metadata getTLMetaData(JCas aJCas)
+	{
+		AnnotationIndex<Annotation> metaIndex = aJCas.getAnnotationIndex(Metadata.type);
+		Iterator<Annotation> mIter = metaIndex.iterator(); 		
+		
+		Metadata meta = (Metadata) mIter.next(); 
+		
+		return meta; 
 	}
 	
 }
