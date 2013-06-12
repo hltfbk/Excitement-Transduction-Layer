@@ -23,6 +23,7 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.FragmentPart;
+import eu.excitement.type.tl.Metadata;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 public class CASUtilsTest {
@@ -150,11 +151,53 @@ public class CASUtilsTest {
 			JCas anotherJCas = CASUtils.createNewInputCas(); 
 			CASUtils.deserializeFromXmi(anotherJCas, xmiIn); 
 			//CASUtils.dumpCAS(anotherJCas);
-			System.out.println(anotherJCas.getDocumentText()); 
+			//System.out.println(anotherJCas.getDocumentText()); 
+			//testlogger.info(anotherJCas.getDocumentText()); 
 		}
 		catch (Exception e)
 		{
 			fail(e.getMessage()); 
 		}
+		
+		// testing for metadata annotation 
+		try {
+//			- interactionId 
+//			- channel 
+//			- provider 
+//			- date (string as YYYY-MM-DD)  
+//			- businessScenario 
+//			- author
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			aJCas.setDocumentLanguage("EN"); 
+			String interactionId = "Heidelberg.1"; 
+			String channel = "e-mail"; 
+			String provider = "HEICL"; 
+			String date = "2013-06-12"; 
+			String businessScenario = null; 
+			String author = null; 
+		
+			CASUtils.addTLMetaData(aJCas, interactionId, channel, provider, date, businessScenario, author); 
+			File f = new File("./target/metatest.xmi"); 
+			CASUtils.serializeToXmi(aJCas, f);
+			
+			// reread and run getMetadata 
+			aJCas.reset(); 
+			CASUtils.deserializeFromXmi(aJCas, f); 
+			Metadata m = CASUtils.getTLMetaData(aJCas); 
+			
+			Assert.assertEquals(m.getInteractionId(), interactionId); 
+			Assert.assertEquals(m.getChannel(), channel); 
+			Assert.assertEquals(m.getProvider(), provider); 
+			Assert.assertEquals(date, m.getDate());  
+			Assert.assertEquals(businessScenario, m.getBusinessScenario());
+			Assert.assertEquals(author,  m.getAuthor()); 
+						
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+		
+		
 	}
 }

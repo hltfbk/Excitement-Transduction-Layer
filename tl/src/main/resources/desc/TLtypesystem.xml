@@ -7,5 +7,6 @@
     <import name="desc.type.TLfragment"/>
     <import name="desc.type.TLmodifier"/>
     <import name="desc.type.TLcategory"/>
+    <import name="desc.type.TLMetadata"/>
   </imports>
 </typeSystemDescription>

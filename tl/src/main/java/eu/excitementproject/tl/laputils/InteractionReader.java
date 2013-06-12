@@ -109,18 +109,24 @@ public final class InteractionReader {
 			// TODO: check we will use metadata like the followings: 
 			// businessScenario (e.g. train, coffeehouse, etc) , 
 			// dataSource (company name, prolly confidential), 
-			// id (meaningless in our setup? - all 1 in the data) 
 			// date (meaningless in our setup? - all 0001-01-01 in the data) 
 		
 			Element meta = (Element) oneInteraction.getElementsByTagName("metadata").item(0); 
 			Node c = meta.getElementsByTagName("category").item(0).getFirstChild(); 
-			String category = null; 
+			String category = null;
+			String interactionId = null; 
 			if (c != null)
 			{
 				category = c.getNodeValue(); 
 			}
 			
-			Interaction interaction = new Interaction(interactionText, lang, category, channel, provider); 
+			Node idval = meta.getElementsByTagName("id").item(0).getFirstChild(); 
+			if (idval != null)
+			{
+				interactionId = idval.getNodeValue(); 
+			}
+			
+			Interaction interaction = new Interaction(interactionText, lang, interactionId, category, channel, provider); 
 			interactionList.add(interaction); 			
 		}
 		
@@ -166,6 +172,10 @@ public final class InteractionReader {
 		}
 		testlogger.debug("Content of the interaction raw file:");
 		testlogger.debug(interactionString); 			
+		
+		// store the file name as ID - this will be annotated within tl.Metadata 
+		// (with setting document text) 
+		String interactionId = interactionText.getName(); 
 		
 		// read XML, fetch:
 		// first node. 
@@ -257,6 +267,9 @@ public final class InteractionReader {
 			aJCas.reset(); 
 			aJCas.setDocumentText(interactionString); 
 			aJCas.setDocumentLanguage(languageID); 
+			// annotate the metadata (among fraggraph dumpdata, only interactionID is available from interaction file name) 
+			CASUtils.addTLMetaData(aJCas, interactionId, null, null, null, null, null); 
+
 		}
 		else if (!SOFAText.equals(interactionString))  
 		{
@@ -264,6 +277,8 @@ public final class InteractionReader {
 			aJCas.reset(); 
 			aJCas.setDocumentText(interactionString); 
 			aJCas.setDocumentLanguage(languageID); 
+			// annotate the metadata (among fraggraph dumpdata, only interactionID is available from interaction file name) 
+			CASUtils.addTLMetaData(aJCas, interactionId, null, null, null, null, null); 
 		}
 		else
 		{
@@ -338,6 +353,7 @@ public final class InteractionReader {
 		{
 			testlogger.debug("This fragment node has no modifiers."); 
 		}
+		
 	}
 	
 }
