@@ -75,7 +75,7 @@ public class EntailmentUnit{
 	 * @param start	-- start index of the fragment
 	 * @param end -- end index of the fragment
 	 */
-	EntailmentUnit(EntailmentUnitMention eum, String completeStatementText) {
+	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText) {
 		
 		mentions = new HashSet<EntailmentUnitMention>();
 		mentions.add(eum);

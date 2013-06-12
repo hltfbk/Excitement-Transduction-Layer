@@ -35,7 +35,7 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	 * @param c -- confidence of the entailment relation, obtained by combining the edges of the work graph (EntailmentGraphRaw)
 	 *  (corresponding to decisions from various EDAs) 
 	 */
-	EntailmentRelationCollapsed(EquivalenceClass source, EquivalenceClass target, double c) {
+	public EntailmentRelationCollapsed(EquivalenceClass source, EquivalenceClass target, double c) {
 		this.source = source;
 		this.target = target;
 		this.confidence = c;
@@ -55,6 +55,10 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	@Override
 	public EquivalenceClass getTarget() {
 		return target;
+	}
+	
+	public double getConfidence(){
+		return confidence;
 	}
 	
 	
