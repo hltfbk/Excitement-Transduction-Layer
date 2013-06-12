@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Tue Jun 11 17:22:03 CEST 2013 */
+/* First created by JCasGen Wed Jun 12 11:06:43 CEST 2013 */
 package eu.excitement.type.tl;
 
 import org.apache.uima.jcas.JCas;
@@ -25,9 +25,9 @@ The type  includes: (all strings)
 - date (string as YYYY-MM-DD)  
 - businessScenario 
 - author
- * Updated by JCasGen Tue Jun 11 17:25:43 CEST 2013
+ * Updated by JCasGen Wed Jun 12 11:06:43 CEST 2013
  * @generated */
-public class metadata_Type extends Annotation_Type {
+public class Metadata_Type extends Annotation_Type {
   /** @generated */
   @Override
   protected FSGenerator getFSGenerator() {return fsGenerator;}
@@ -35,23 +35,23 @@ public class metadata_Type extends Annotation_Type {
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (metadata_Type.this.useExistingInstance) {
+  			 if (Metadata_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = metadata_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = Metadata_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new metadata(addr, metadata_Type.this);
-  			   metadata_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new Metadata(addr, Metadata_Type.this);
+  			   Metadata_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new metadata(addr, metadata_Type.this);
+        } else return new Metadata(addr, Metadata_Type.this);
   	  }
     };
   /** @generated */
-  public final static int typeIndexID = metadata.typeIndexID;
+  public final static int typeIndexID = Metadata.typeIndexID;
   /** @generated 
      @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("eu.excitement.type.tl.metadata");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("eu.excitement.type.tl.Metadata");
  
   /** @generated */
   final Feature casFeat_interactionId;
@@ -60,13 +60,13 @@ public class metadata_Type extends Annotation_Type {
   /** @generated */ 
   public String getInteractionId(int addr) {
         if (featOkTst && casFeat_interactionId == null)
-      jcas.throwFeatMissing("interactionId", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("interactionId", "eu.excitement.type.tl.Metadata");
     return ll_cas.ll_getStringValue(addr, casFeatCode_interactionId);
   }
   /** @generated */    
   public void setInteractionId(int addr, String v) {
         if (featOkTst && casFeat_interactionId == null)
-      jcas.throwFeatMissing("interactionId", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("interactionId", "eu.excitement.type.tl.Metadata");
     ll_cas.ll_setStringValue(addr, casFeatCode_interactionId, v);}
     
   
@@ -78,13 +78,13 @@ public class metadata_Type extends Annotation_Type {
   /** @generated */ 
   public String getChannel(int addr) {
         if (featOkTst && casFeat_channel == null)
-      jcas.throwFeatMissing("channel", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("channel", "eu.excitement.type.tl.Metadata");
     return ll_cas.ll_getStringValue(addr, casFeatCode_channel);
   }
   /** @generated */    
   public void setChannel(int addr, String v) {
         if (featOkTst && casFeat_channel == null)
-      jcas.throwFeatMissing("channel", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("channel", "eu.excitement.type.tl.Metadata");
     ll_cas.ll_setStringValue(addr, casFeatCode_channel, v);}
     
   
@@ -96,13 +96,13 @@ public class metadata_Type extends Annotation_Type {
   /** @generated */ 
   public String getProvider(int addr) {
         if (featOkTst && casFeat_provider == null)
-      jcas.throwFeatMissing("provider", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("provider", "eu.excitement.type.tl.Metadata");
     return ll_cas.ll_getStringValue(addr, casFeatCode_provider);
   }
   /** @generated */    
   public void setProvider(int addr, String v) {
         if (featOkTst && casFeat_provider == null)
-      jcas.throwFeatMissing("provider", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("provider", "eu.excitement.type.tl.Metadata");
     ll_cas.ll_setStringValue(addr, casFeatCode_provider, v);}
     
   
@@ -114,13 +114,13 @@ public class metadata_Type extends Annotation_Type {
   /** @generated */ 
   public String getDate(int addr) {
         if (featOkTst && casFeat_date == null)
-      jcas.throwFeatMissing("date", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("date", "eu.excitement.type.tl.Metadata");
     return ll_cas.ll_getStringValue(addr, casFeatCode_date);
   }
   /** @generated */    
   public void setDate(int addr, String v) {
         if (featOkTst && casFeat_date == null)
-      jcas.throwFeatMissing("date", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("date", "eu.excitement.type.tl.Metadata");
     ll_cas.ll_setStringValue(addr, casFeatCode_date, v);}
     
   
@@ -132,13 +132,13 @@ public class metadata_Type extends Annotation_Type {
   /** @generated */ 
   public String getBusinessScenario(int addr) {
         if (featOkTst && casFeat_businessScenario == null)
-      jcas.throwFeatMissing("businessScenario", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("businessScenario", "eu.excitement.type.tl.Metadata");
     return ll_cas.ll_getStringValue(addr, casFeatCode_businessScenario);
   }
   /** @generated */    
   public void setBusinessScenario(int addr, String v) {
         if (featOkTst && casFeat_businessScenario == null)
-      jcas.throwFeatMissing("businessScenario", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("businessScenario", "eu.excitement.type.tl.Metadata");
     ll_cas.ll_setStringValue(addr, casFeatCode_businessScenario, v);}
     
   
@@ -150,13 +150,13 @@ public class metadata_Type extends Annotation_Type {
   /** @generated */ 
   public String getAuthor(int addr) {
         if (featOkTst && casFeat_author == null)
-      jcas.throwFeatMissing("author", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("author", "eu.excitement.type.tl.Metadata");
     return ll_cas.ll_getStringValue(addr, casFeatCode_author);
   }
   /** @generated */    
   public void setAuthor(int addr, String v) {
         if (featOkTst && casFeat_author == null)
-      jcas.throwFeatMissing("author", "eu.excitement.type.tl.metadata");
+      jcas.throwFeatMissing("author", "eu.excitement.type.tl.Metadata");
     ll_cas.ll_setStringValue(addr, casFeatCode_author, v);}
     
   
@@ -165,7 +165,7 @@ public class metadata_Type extends Annotation_Type {
 
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
-  public metadata_Type(JCas jcas, Type casType) {
+  public Metadata_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 

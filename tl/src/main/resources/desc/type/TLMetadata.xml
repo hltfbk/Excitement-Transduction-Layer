@@ -15,7 +15,7 @@ The type  includes: (all strings)
   <vendor/>
   <types>
     <typeDescription>
-      <name>eu.excitement.type.tl.metadata</name>
+      <name>eu.excitement.type.tl.Metadata</name>
       <description>This type description file defines InputCasMetadata type, which records various metadata related to the Interaction and the input CAS. 
 Note that one CAS should have only one metadata (only the first one should be considered, if more than one), and each CAS should have one metadata, even if all of its fields are null. 
 
