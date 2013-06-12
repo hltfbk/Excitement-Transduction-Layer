@@ -173,6 +173,10 @@ public final class InteractionReader {
 		testlogger.debug("Content of the interaction raw file:");
 		testlogger.debug(interactionString); 			
 		
+		// store the file name as ID - this will be annotated within tl.Metadata 
+		// (with setting document text) 
+		String interactionId = interactionText.getName(); 
+		
 		// read XML, fetch:
 		// first node. 
 		//     - original text 
@@ -263,6 +267,9 @@ public final class InteractionReader {
 			aJCas.reset(); 
 			aJCas.setDocumentText(interactionString); 
 			aJCas.setDocumentLanguage(languageID); 
+			// annotate the metadata (among fraggraph dumpdata, only interactionID is available from interaction file name) 
+			CASUtils.addTLMetaData(aJCas, interactionId, null, null, null, null, null); 
+
 		}
 		else if (!SOFAText.equals(interactionString))  
 		{
@@ -270,6 +277,8 @@ public final class InteractionReader {
 			aJCas.reset(); 
 			aJCas.setDocumentText(interactionString); 
 			aJCas.setDocumentLanguage(languageID); 
+			// annotate the metadata (among fraggraph dumpdata, only interactionID is available from interaction file name) 
+			CASUtils.addTLMetaData(aJCas, interactionId, null, null, null, null, null); 
 		}
 		else
 		{
@@ -344,6 +353,7 @@ public final class InteractionReader {
 		{
 			testlogger.debug("This fragment node has no modifiers."); 
 		}
+		
 	}
 	
 }
