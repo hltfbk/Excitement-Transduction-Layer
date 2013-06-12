@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0315.txt" modality="FALSE" implicit_statement="FALSE" id="0315.txt_2_0">
+        <original_text>la TELEFONIAX e solo prezzi alle stelle</original_text>
+        <correct_text>la TELEFONIAX è solo prezzi alle stelle</correct_text>
+        <modifiers>solopoz=3</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0315.txt" modality="FALSE" implicit_statement="FALSE" id="0315.txt_2_1">
+        <original_text>la TELEFONIAX e prezzi alle stelle</original_text>
+        <correct_text>la TELEFONIAX è prezzi alle stelle</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0315.txt_2_1" source="0315.txt_2_0" id="0315.txt_2_0-0315.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0315.txt_2_1" source="0315.txt_2_0" id="0315.txt_2_0-0315.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

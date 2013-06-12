@@ -3,10 +3,16 @@
  */
 package eu.excitementproject.tl.composition.graphmerger;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 
 /**
@@ -51,5 +57,60 @@ should be clearly exposed in the Constructor.
 	public EDABasic<?> getEda() {
 		return this.eda;
 	}
+
 	
+	/** Checks for entailment (in both directions) between nodeA and nodeB. If there is entailment in any direction, corresponding EntailmentRelation(s) will be returned. 
+	 * @param workGraph
+	 * @param nodeA
+	 * @param nodeB
+	 * @return set of entailment relations found between the nodes. The set can contain 0 (no entailment), 1 (entailment in one direction) or 2 (bi-directional entailment, paraphrase) elements.
+	 */
+	protected Set<EntailmentRelation> getEntailmentRelations(EntailmentUnit nodeA, EntailmentUnit nodeB){
+		Set<EntailmentRelation> entailmentRelations = new HashSet<EntailmentRelation>();
+		
+		// check one direction: nodeA -> nodeB
+		EntailmentRelation r = getEntailmentRelation(nodeA, nodeB);
+		// add the edge to the output only if observed entailment
+		if (r!=null) entailmentRelations.add(r); 
+		
+	
+		// check the other direction: nodeB -> nodeA
+		r = getEntailmentRelation(nodeB, nodeA);
+		if (r!=null) entailmentRelations.add(r); 
+				
+		return entailmentRelations;
+	}
+
+
+	protected Set<EntailmentRelation> getRelations(EntailmentUnit nodeA, EntailmentUnit nodeB){
+		Set<EntailmentRelation> entailmentRelations = new HashSet<EntailmentRelation>();
+		
+		// check one direction: nodeA -> nodeB
+			entailmentRelations.add(getRelation(nodeA, nodeB)); 
+		// check the other direction: nodeB -> nodeA
+			entailmentRelations.add(getRelation(nodeB, nodeA)); 
+				
+		return entailmentRelations;
+	}
+
+	
+	protected EntailmentRelation getRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode){	
+		// check only one direction: candidateEntailingNode -> candidateEntailedNode
+		return new EntailmentRelation(candidateEntailingNode, candidateEntailedNode, this.getEda());
+	}
+
+	/** Return the corresponding EntailmentRelation if there is entailment (DecisionLabel.Entailment) candidateEntailingNode -> candidateEntailedNode
+	 * Return null otherwise 
+	 * @param candidateEntailingNode
+	 * @param candidateEntailedNode
+	 * @return
+	 */
+	protected EntailmentRelation getEntailmentRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode){	
+		// check only one direction: candidateEntailingNode -> candidateEntailedNode
+		EntailmentRelation r = getRelation(candidateEntailingNode, candidateEntailedNode);
+		if (r.getLabel().equals(DecisionLabel.Entailment)) return r;
+		return null;
+	}
+
+
 }

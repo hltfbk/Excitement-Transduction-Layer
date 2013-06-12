@@ -1,11 +1,16 @@
 package  eu.excitementproject.tl.structures.fragmentgraph;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 
+import eu.excitement.type.tl.CategoryAnnotation;
+import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitement.type.tl.ModifierPart;
@@ -28,7 +33,10 @@ public class EntailmentUnitMention {
 	protected Set<SimpleModifier> modifiersText;
 	protected int level;
 	
-	protected String categoryId = "";
+	protected int begin;
+	protected int end;
+	
+	protected String categoryId = null;
 	
 	/**
 	 * @param textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
@@ -37,6 +45,8 @@ public class EntailmentUnitMention {
 		text = textFragment;
 		level = 0;
 		modifiersText = new HashSet<SimpleModifier>();
+		begin = 0;
+		end = text.length();
 	}
 	
 	/**
@@ -50,25 +60,19 @@ public class EntailmentUnitMention {
 		this.level = modifiersText.size();
 		
 		String chars = textFragment;
-		for(String ma: allModifiers) {
-			if (! modifiers.contains(ma)) {
-				chars = removeModifier(chars,ma);
+		if (allModifiers != null) {
+			for(String ma: allModifiers) {
+				if (! modifiers.contains(ma)) {
+					chars = removeModifier(chars,ma);
+				}
 			}
 		}
 		text = chars;
 //		text.trim().replaceAll(" +", " ");
+		begin = 0;
+		end = text.length();
 	}
 
-	private Set<SimpleModifier> addModifiers(String textFragment,
-			Set<String> mods) {
-		Set<SimpleModifier> sms = new HashSet<SimpleModifier>();
-		for(String s: mods) {	
-			if (textFragment.contains(s)) {
-				sms.add(new SimpleModifier(s,textFragment.indexOf(s),textFragment.indexOf(s)+s.length()));
-			}
-		}
-		return sms;
-	}
 
 	/**
 	 * 
@@ -84,6 +88,8 @@ public class EntailmentUnitMention {
 		modifiers = mods;
 		Set<String> modsText = new HashSet<String>();
 		level = mods.size();
+		begin = frag.getBegin();
+		end = frag.getEnd();
 		
 		CharSequence chars = frag.getText();
 		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
@@ -96,8 +102,60 @@ public class EntailmentUnitMention {
 		text = chars.toString();
 //		text.trim().replaceAll(" +", " ");
 		modifiersText = addModifiers(text,modsText);
+		categoryId = getCategoryId(aJCas,frag);
 	}
 
+	
+	private Set<SimpleModifier> addModifiers(String textFragment,
+			Set<String> mods) {
+		Set<SimpleModifier> sms = new HashSet<SimpleModifier>();
+		if (mods != null) { 
+			for(String s: mods) {	
+				if (textFragment.contains(s)) {
+					sms.add(new SimpleModifier(s,textFragment.indexOf(s),textFragment.indexOf(s)+s.length()));
+				}
+			}
+		}
+		return sms;
+	}
+	
+	
+	@SuppressWarnings("unused")
+	private String getCategoryId(JCas aJCas) {		
+		AnnotationIndex<Annotation> catIndex = aJCas.getAnnotationIndex(CategoryAnnotation.type);
+
+		if (catIndex != null && catIndex.size() > 0) {
+			Iterator<Annotation> catIt = catIndex.iterator(); 
+		
+			CategoryAnnotation cat = (CategoryAnnotation) catIt.next(); 
+
+			// do a loop over all category decision, in real case. 
+			CategoryDecision d = cat.getCategories(0);
+			return d.getCategoryId();
+		}
+		return "N/A";
+	}
+	
+	
+	private String getCategoryId(JCas aJCas, FragmentAnnotation frag) {
+		Set<CategoryAnnotation> cas = FragmentGraph.getFragmentCategories(aJCas, frag);
+		if (cas != null && !cas.isEmpty()) {
+			for (CategoryAnnotation cat: cas) {
+				// assume one category annotation per fragment (or document, makes no difference here)
+				if (cat != null && cat.getCategories().size() > 0) {
+					return cat.getCategories(0).getCategoryId();
+				}
+			}
+		}
+		return "N/A";
+	}
+	
+	
+	public String getCategoryId(){
+		return categoryId;
+	}
+	
+	
 	/**
 	 * 
 	 * @return -- the text of the current node object
@@ -114,10 +172,18 @@ public class EntailmentUnitMention {
 		return level;
 	}
 	
+	/**
+	 * 
+	 * @return the set of modifiers in a simplified representation (text and span)
+	 */
 	public Set<SimpleModifier> getModifiers() {
 		return modifiersText;
 	}
 	
+	/**
+	 * 
+	 * @return the set of modifier annotations 
+	 */
 	public Set<ModifierAnnotation> getModifierAnnotations() {
 		return modifiers;
 	}
@@ -125,9 +191,9 @@ public class EntailmentUnitMention {
 	/**
 	 * Replaces modifiers that should not appear in this fragment with spaces
 	 * 
-	 * @param chars
-	 * @param ma
-	 * @return
+	 * @param chars -- a sequence of characters
+	 * @param ma -- a modifier annotation from the CAS
+	 * @return the sequence of characters without the text corresponding to the given modifier annotation 
 	 */
 	private CharSequence removeModifier(CharSequence chars, ModifierAnnotation ma) {
 		CharSequence chs = chars;
@@ -142,9 +208,9 @@ public class EntailmentUnitMention {
 	/**
 	 * Replaces modifiers that should not appear in this fragment with spaces
 	 * 
-	 * @param chars
-	 * @param ma
-	 * @return
+	 * @param chars -- a string
+	 * @param ma -- a string corresponding to a modifier in chars
+	 * @return the string (chars) without the modifier (ma)
 	 */
 	private String removeModifier(String chars, String ma) {
 		int start = chars.indexOf(ma);
@@ -159,7 +225,23 @@ public class EntailmentUnitMention {
 	 * This depends on what information we keep in the node. 
 	 */	
 	public String toString() {
-		return getText();
+		return getText() + " ( category: " + categoryId + ", span: " + begin + " -- " + end + ") ";
+	}
+	
+	/**
+	 * 
+	 * @return the starting position of the text corresponding to this node, relative to the "parent" document  
+	 */
+	public int getBegin() {
+		return begin;
+	}
+	
+	/**
+	 * 
+	 * @return the end position of the text corresponding to this node, relative to the "parent" document
+	 */
+	public int getEnd() {
+		return end;
 	}
 	
 	public boolean equals(EntailmentUnitMention eum) {

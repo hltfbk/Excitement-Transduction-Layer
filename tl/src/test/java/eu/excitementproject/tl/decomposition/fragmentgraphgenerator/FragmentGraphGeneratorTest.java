@@ -8,6 +8,7 @@ import java.util.Set;
 import junit.framework.Assert;
 
 import org.apache.uima.jcas.JCas;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitementproject.tl.laputils.CASUtils;
@@ -18,6 +19,7 @@ public class FragmentGraphGeneratorTest {
 	/**
 	 *  The test class tests FragmentGraphGenerator 
 	 */
+	@Ignore 
 	@Test
 	public void test() {
 		
@@ -53,23 +55,40 @@ public class FragmentGraphGeneratorTest {
 			
 			// Test for example #1: Food was really bad 
 			Assert.assertNotNull(fgs_example1); 
-			Assert.assertTrue(fgs_example1.size() > 0); 
+			Assert.assertTrue(fgs_example1.size() > 0);
+			System.out.println("\n________________\nFragment graphs for example 1: ");
+			for(FragmentGraph f: fgs_example1) {
+				System.out.println(f.toString());
+			}
 			
 			// Test for example #2: I didn't like the food 
 			Assert.assertNotNull(fgs_example2); 
-			Assert.assertTrue(fgs_example2.size() > 0); 
+			Assert.assertTrue(fgs_example2.size() > 0);
+			System.out.println("\n________________\nFragment graphs for example 2: ");
+			for(FragmentGraph f: fgs_example2) {
+				System.out.println(f.toString());
+			}
 
 			// Test for example #3: a little more leg room would have been perfect
 			Assert.assertNotNull(fgs_example3); 
 			Assert.assertTrue(fgs_example3.size() > 0); 
+			System.out.println("\n________________\nFragment graphs for example 3: ");
+			for(FragmentGraph f: fgs_example3) {
+				System.out.println(f.toString());
+			}
 			
 			// Test for example #4: Disappointed with the amount of legroom compared with other trains 
 			Assert.assertNotNull(fgs_example4); 
 			Assert.assertTrue(fgs_example4.size() > 0); 
+			System.out.println("\n________________\nFragment graphs for example 4: ");
+			for(FragmentGraph f: fgs_example4) {
+				System.out.println(f.toString());
+			}
 			
 		}
 		catch (Exception e)
 		{
+			e.printStackTrace();
 			fail(e.getMessage()); 
 		}
 	}

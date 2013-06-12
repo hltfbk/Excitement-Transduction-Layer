@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node implicit_focus="" focus="contatare" implicit_context="" explicit_context="0258.txt" modality="TRUE" implicit_statement="FALSE" id="0258.txt_1_0">
+        <original_text>da quasi un mese non riesco piu a contatare il 444</original_text>
+        <correct_text>da quasi un mese non riesco più a contattare il 444</correct_text>
+        <modifiers>da quasi un mesepoz=0 1 2 3</modifiers>
+    </node>
+    <node implicit_focus="" focus="contatare" implicit_context="" explicit_context="0258.txt" modality="TRUE" implicit_statement="FALSE" id="0258.txt_1_1">
+        <original_text>non riesco piu a contatare il 444</original_text>
+        <correct_text>non riesco più a contattare il 444</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0258.txt_1_1" source="0258.txt_1_0" id="0258.txt_1_0-0258.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0258.txt_1_1" source="0258.txt_1_0" id="0258.txt_1_0-0258.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

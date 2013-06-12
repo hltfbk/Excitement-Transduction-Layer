@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset	xmlns="http://www.excitement-project.eu"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.excitement-project.eu dataset.xsd">
+	<provider>UHEI</provider>
+	<channel>social</channel>
+	<language>DE</language>
+	<interactions>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>09</id>
+				<author>ICEROX</author>
+				<date>2008-06-14</date>
+				<category></category>
+			</metadata>
+			<text>CPU:Intel Q6600 Board:ASUS maximus extreme Ram:1gb osx Fp:Westerndigital 160gb s-ata Gk:Geforce 8800GTX Windows XP PS3 Ich habe heute alles zusammengebaut, aber aheb folgende probleme... 1.Der PC brauch ca 5-10min zum booten. 2.Nach dem Starten hängt der pc sich ständig auf. 3.Bei dem Prog Pobre2 wird angezeigt der die Dram &amp; Dram ref zu niedrig sind 4.beim booten wird ''Pri Master Hard Disk : S.M.A.R.T. Status BAD, Backup and Replace Press F1 to Resume.'' wenn ich denn F1 drücke fährt der pc weiter hoch. MFG (bitte um schnelle antwort</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>13</id>
+				<author>eislecker</author>
+				<date>2008-06-25</date>
+				<category></category>
+			</metadata>
+			<text>Es gibt bei m ir zwei Probleme bei der Ausführung des Tools unter Vista. 1) Vista blockiert die Ausführung mit dem Kommentar '' ...Sie verfügen eventuell nicht über ausreichende Berechtigungen... '' und 2) F-Secure gibt eine Malware-Warnung aus '' W32/Suspicious_U.gen '' Virus. Ist die Viruswarnung nur ein Fehlalarm? Wie umgehe ich die Blockierung durch Vista? Kann da jemand helfen? (URL)</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>04</id>
+				<author>Pedro.Sar.</author>
+				<date>2008-03-18</date>
+				<category></category>
+			</metadata>
+			<text>Hallo all e zusammen. Mein Virenprogramm AntiVir hat ein Trojanisches Pferd in meinem System entdeckt. Es fragt mich was ich damit machen will und wenn ich auf löschen klicke erscheint es das nächste Mal wieder. Auch wenn ich andere kostenlose Virenprogramme benutze, finde ich den Trojaner zwar, aber in diesem Moment kommt wieder dieses Fenster von AntiVir und fragt mich was ich damit machen will. Dann drücke ich löschen und das Virenprgramm sucht normal weiter, ohne den Trojaner zu beachten. Wer kann mir sagen wie ich diesen Trojaner löschen kann? Wo er ist weiß ich ja schon. Vielen Dank im Voraus Pedro</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>21</id>
+				<author>crischawo</author>
+				<date>2008-07-11</date>
+				<category></category>
+			</metadata>
+			<text>Hallo , da mein Pc (4200+ x², 4 Gb Ram) mit dem Catalyst 8.6 beim Starten oft Bluescreens verursachte, wollte ich mit dem @bios tool das f5 bios aufspielen. dabei brach das programm mit '' alloc kernel memory failure '' ab. ich habe darauf nod32 vollständig runtergeschmissen. (soll wohl das flashen nicht erlauben) nun lief das programm einmal langsam bis auf 100%, er hat also etwas geflasht. nach erreichen der 100% kommt nun selbiger fehler wie oben, sodass ich im moment etwas angst habe, den rechner neu zustarten. könnt ihr mir einen tip geben, was ich nun tun soll? mfg</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>17</id>
+				<author>Cord</author>
+				<date>2008-09-23</date>
+				<category></category>
+			</metadata>
+			<text>Hallo, folgende Frage: Kann es passieren, dass ein Trojaner/Virus oder ähnliches Schadprogramm sich heimlich aufs Mainboard flasht (also eine veränderte Firmware), und selbst nach OS-Neuinstallation dann wieder das System infiziert ? Und falls das passieren kann: Ist es nur von Windows aus möglich (also ein Schadprogramm, dass von Windows aus agiert), oder könnte es auch über Ubuntu passieren (falls das Schadprogramm root-Rechte erlangt) ? Wenn man zu 100% sicher sein will, muss man dann sein das Mainboard austauschen ?</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>06</id>
+				<author>collie745</author>
+				<date>2008-03-19</date>
+				<category></category>
+			</metadata>
+			<text>Hallo Folgendes Problem, der CPU ist bei 100%. Wo die Auslastung liegt, lässt sich nicht erkennen im Task. Spy und Virenprogramm AV lässt sich nicht starten. AVcenter ist keine zulässige win32 anwendung u.s.w. Soundkarte gibt keine Musik mehr von sich. Nur die Windows Töne. Treiber lässt sich auch nicht mehr installieren. Online Virenscan, wie hier beschrieben, geht nur in Zeitlupe, wegen des CPU. Bisher wurde der Beagle Virus gefunden. Tool installiert. Abgesicherter Modus geht aber nicht , trotz mehrerer Versuche. Was nun? Vielen Dank für die Antwort schon jetzt!</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>19</id>
+				<author>187nitro</author>
+				<date>2008-07-31</date>
+				<category></category>
+			</metadata>
+			<text>Hallo, habe mir ein Asus P5Q geholt und am Anfang lief alles prima. Hab mir direkt ausm Netz von der Asus Seite die neusten Chipsatztreiber geholt und installiert. Nach dem reboot sind die USB-Ports wie tot Beim hochfahren gehen sie, sprich Hardwaredefekt liegt keiner vor. Sobald der Windowsladebildschirm kommt. Geht die Maus aus und nichts geht mehr. Hab dann mit der Tastatur mal im Hardwaremanager geguckt und siehe da bei USB-Port-Hub sind überall Ausrufungszeichen. Wenn ich dann von dann die USB Treiber manuell installieren will steht nur da. Sie haben WinXP SP2 sie brauchen diese Treiber nicht. System: Asus P5Q E8400 Ati 3850 2 GB G-Data Vitesta Ram Hoffe jemand kann mir da helfen. Vielen Dank im vorarus!</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>23</id>
+				<author>wurst_Hugo</author>
+				<date>2008-05-30</date>
+				<category></category>
+			</metadata>
+			<text>Hallo Ich habe folgendes Problem. Wenn ich Daten von einer USB Festplatte auf die Interne Platte kopiere hängt der ganze PC. Die Interne Platte hängt am Asus EZ Backup Controller und ist gespiegelt. Als Betriebsystem kommt Windows 2003 zum einsatz. Kennt jemand das Problem Und kann ich die Platten einfach umstecken auf den Intel Kontroller.???? Oder verliere ich alle Daten??</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>02</id>
+				<author>derknueppel</author>
+				<date>2008-03-18</date>
+				<category></category>
+			</metadata>
+			<text>Hallo, ich habe Probleme mit dem Trojaner '' TR/Virtumod.WS '' . Antivir gibt mir circa alle 5 Minuten eine Trojanerwarnung, in der besagt wird, dass die Datei '' jkkjjgd.dll '' im System32-Ordner der besagte Trojaner ist. Löschen etc. hilft nicht. Der Trojaner bewirkt, dass sich ständig PopUps mit dem Internet Explorer öffnen, auch wenn die Seiten geblockt werden. Ich hoffe auf baldige Hilfe! MfG derknueppel</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>16</id>
+				<author>wiesenpieper</author>
+				<date>2008-06-18</date>
+				<category></category>
+			</metadata>
+			<text>Hallo Leute! Ein Bekannter von mir hat folgendes Problem: Immer wenn er mit Kaspersky seine Festplatte auf Viren überprüft bekommt er einen Blue Screen mit Error 77 bzw. 77a angezeigt. Er hat gehört das dieses auf eine defekte Festplatte hinweist. Allerdings erreicht sein Prozessor unter Last 67°C und das Problem tritt auch sporadisch bei Spielen und im Sommer wenn das Dachgeschoss ohnehin schon warm ist auf. Habt Ihr dort eine Idee bzw. Lösungsvorschlag um den Fehler zu beheben? Mfg wiesenpieper</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>10</id>
+				<author>Sylar7814</author>
+				<date>2008-05-31</date>
+				<category></category>
+			</metadata>
+			<text>Hallo Leute! Ich habe mir vor ein paar Tagen einen neuen PC gekauft. Hier einmal die Daten: Intel Core 2 Quad Q6600 4* 2,40 GhZ ASUS P5N-D Motherboard Geforce 9600 GT SLI 4 GB Ram Windows Vista 64 Bit und falls auch relevant: Kasoersky Internet Security 7.0 So und jetzt zu meinem Problem. Ich bin am Desktop und schau auf die Prozessorauslastung und bei allen 4 Kernen sind 2 Stellige Prozentbereiche obwohl ich nichts mache, ich bin nur am Desktop. Im Moment waren es gerade bei allen 4 Kernen mehr als 30% Egal was ich mache es ist nur am Stocken, selbst wenn ich nen Ordner öffne. So ich bitte um eure Hilfe und zahlreiche Antworten. MFG Sylar</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>20</id>
+				<author>Tanatos</author>
+				<date>2008-07-17</date>
+				<category></category>
+			</metadata>
+			<text>hallo liebe mods, ich schreibe diesen beitrag extra in die mainboard kategorie, weil heute schon 4 mal beim aufrufen des p5q deluxe-sammelthreads mein trendmicro virenscanner angeschlagen hat! er meldete folgen virus: TSPY_ONLINEG.FXG laut trendmicro wird versucht, den virus über '' gehackte '' webseiten einzuschleusen... nachzulesen hier: (URL) könnt ihr mal der sache auf den grund gehen? viele grüsse t.</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>08</id>
+				<author>Mitschy</author>
+				<date>2008-01-14</date>
+				<category></category>
+			</metadata>
+			<text>Hallo PC-Freunde, ich habe letzte Woche XP neu installiert. Heute ist mir aufgefallen das die CPU-Auslastung immer zwischen 60% und 80% liegt obwohl im Taskmanager der Lerlaufprozess mit 90-99% angezeigt wird. Kann es vieleicht sein das im Taskmanager nicht alle Programme erfasst werden(währe mir neu) oder könnte vieleicht ein Virus, Trojaner sein der diese ununterbrochen hohe Auslastung bewirkt? Vobei mein Antivirusprogramm (Awast) keinen Virus oder ähnliches erkennt. Kann mir da vieleicht jemand helfen voran das liegen kann. Gruß Micha</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>03</id>
+				<author>Crusader</author>
+				<date>2008-03-19</date>
+				<category></category>
+			</metadata>
+			<text>Hallo zusammen, Ich habe mir gestern ein paar Programme(OpenOffice, TuneUp,....) heruntergeladen, dann schalte ich den Computer aus. Heute am Morgen sehe ich eine Datei auf meinem Desktop, mit Namen dfljsdjfldjsfsdf.dll.exe , ich wollte sie löschen, aber ging nicht. So nach 3 Stunden sagte Avira plötzlich es sei ein TR/Dldr.Zlob.gzy Nun kann ich die Datei weder mit Avira noch selbständig löschen..... Nun brauche ich wieder mal eure Hilfe LG Crusader</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>22</id>
+				<author>opa.oi</author>
+				<date>2008-05-30</date>
+				<category></category>
+			</metadata>
+			<text>hi folgendes problem: Hab im windows mit der nvidia software versucht ein bios update durchzuführen. Hab vorher natürlich ein bios backup gemacht. beim aufspieln des neuen bios kam dann eine fehlermeldung. Bios konnte nicht initalisiert werden. Ich hab dann noch 2 andere versionen versucht zu installieren jedoch ohne erfolg. Dann wollte ich das backup wieder aufspielen, doch auch das wurde verweigert. Dann hab ich neustart gemacht, ohne erfolg. cmos jumper... ohne erfolg ..,. batterie raus hilft auch nix... was nun ???????? Hilfe!!!!!!!!!!!!!!!!!!!!!!!!!! danke schonmal opa.oi</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>07</id>
+				<author>Pasi123456789</author>
+				<date>2008-05-31</date>
+				<category></category>
+			</metadata>
+			<text>Hi Leute, Also wenn ich mein Pc starte kommt ganz normal alles wie es komme muss aufeinmal steht dann da. American Megatrends (das steht als überschrift da) 3rd Master Hard Disk: S.M.A.R.T. Status Bad, Backup and Replace Press F1 to Resume wenn ich dann F1 drücke fährt er sich wie gewohnt rauf zur auswahl der Benutzerkonten .. Was bedeutet das ? habe dieses Problem seit ein paar Tagen, liegt es vl dran da ich ein bischen an meine Pc gerüttelt habe ? denn irgend ein Kabel streifte irgend einen Ventilator ..</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>15</id>
+				<author>kleine_maus2001</author>
+				<date>2008-07-09</date>
+				<category></category>
+			</metadata>
+			<text>hi, Mein pc ist eigentlich ganz in ordung funkioniert ganz gut auser das wenn ich defragmentieren moechte, er immer obstuerzt, und von alleine wider hoch faehrt. Was kann ich tun damit ich defragmentieren kann ohne das es bei der haelfte ab stuertzt? und warum stuerzt er immer ab . habe auch schon einene wirenscan durchgenomen und er sagt das ich keinen virus oder so was habe. vielen lieben dank schon mal im vorraus</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>18</id>
+				<author>blondy</author>
+				<date>2008-08-04</date>
+				<category></category>
+			</metadata>
+			<text>Hi, mich macht das EZ Backup und Raid Zeug ganz wirr ;-) Hab Sata 1, 3 und 4 belegt. Kann ich da nun noch eine 4. Sata Platte anklemmen? Der Brenner auf Sata 4 läuft auf Slave, für ein Firmwareupdate sollte er aber auf (Secondary) Master laufen, was macht man da? Danke Gruß Blondy</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>01</id>
+				<author>xasthur</author>
+				<date>2008-03-19</date>
+				<category></category>
+			</metadata>
+			<text>hi, wie mir counter spy sagt, habe ich mir anscheinend den virtumonde-virus eingefangen, bringe ihn aber damit nicht weg. mein problem äussert sich insofern, dass sich bei allen anwendungen der explorer alle paar sekunden aufhängt, alles verschwindet, einen schwarzen bildschirm zurücklässt und ich nur noch in dem fenster arbeiten kann, in dem ich mich gerade befinde. auch wenn ich den explorer im taskmanager starte, bleibt es nicht lang so.</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>14</id>
+				<author>yokoono</author>
+				<date>2008-05-30</date>
+				<category></category>
+			</metadata>
+			<text>Kann mir mal jemand erklären, wie das gehen soll z.B. Computer (RAM-Speicher) max EUR 6,00 Software (Virenschutz &amp; Datensicherheit) max EUR 5,00 Audio &amp; Hi-Fi (Kopfhörer) max EUR 6,00 wenn aber bei der Post der Versand per DHL (versichert) schon EUR 7,- kostet? Da zahlt also der Verkäufer allein an Portokosten an DHL mehr als der Käufer an ihn bezahlen muss? Von Kosten für den Weg zur Post (bei den heutigen Spritpreisen ja vernachlässigbar), Kosten für die Verpackung (Kartonage, Polstermaterial, Kleber) + Kosten, Zeit und Mühen für die Verpackerei ganz zu schweigen</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>05</id>
+				<author>Flecki</author>
+				<date>2008-03-18</date>
+				<category></category>
+			</metadata>
+			<text>System Error Fixer bietet ein Spywareprogramm an, es öffnen sich unerwünschte Seiten auf dem Mozilla Firefox Browser, z.B. QUELLE.de , aber auch Handy- und sogar Sex-Seiten. Habe diese Probleme seit ca. 2 Wochen; gestern große Reinigungsaktion gestartet: 1. Ad-Aware, 2. SpyBot-S &amp; D, 3. Bit-Defender, 4. Stinger, und jetzt bin ich beim HiJackThis angekommen. Kann mit den Log-Files nichts anfangen , werde sie versuchen zu posten und hoffe sehr auf Hilfe. Danke schon mal im Voraus! Logfile of Trend Micro HijackThis v2.0.2 [edit] bitte editiere zukünftig deine links, wie es dir u.a. hier angezeigt wird: Aktive Links und persönliche Informationen in HJT Log-Files danke GUA [LinkImg:(URL) [/edit]</text>  
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>computer problem diagnosis</businessScenario>
+				<dataSource>internet forum</dataSource>
+				<id>25</id>
+				<author>Drachentoeter</author>
+				<date>2008-04-24</date>
+				<category></category>
+			</metadata>
+			<text>Wie stelle ich es an dass das Board dauerhaft auf GB Lan schaltet? Ich brauche es zwar nur wenn das NAS läuft aber einmal am Tag mache ich das Backup und wenn ich das NAS nach dem PC einschalte,wird max. 100mps aktiviert. Unter Eigenschaften der Netzwerkkarte ist '' Auto Negotiation '' eingeschaltet. Oder muß ich da im Bios noch was einstellen? Gruß</text>  
+		</interaction>
+	</interactions>
+</dataset>

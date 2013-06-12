@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0119.txt" modality="TRUE" implicit_statement="FALSE" id="0119.txt_4_0">
+        <original_text>e' da 4 gg che cerco di mettermi in cottatto con un vostro operatore</original_text>
+        <correct_text>e' da 4 giorni che cerco di mettermi in contatto con un vostro operatore</correct_text>
+        <modifiers>e' da 4 gg chepoz=0 1 2 3 4;con un vostro operatorepoz=10 11 12 13</modifiers>
+    </node>
+    <node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0119.txt" modality="TRUE" implicit_statement="FALSE" id="0119.txt_4_1">
+        <original_text>cerco di mettermi in cottatto con un vostro operatore</original_text>
+        <correct_text>cerco di mettermi in contatto con un vostro operatore</correct_text>
+        <modifiers>con un vostro operatorepoz=10 11 12 13</modifiers>
+    </node>
+    <node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0119.txt" modality="TRUE" implicit_statement="FALSE" id="0119.txt_4_2">
+        <original_text>e' da 4 gg che cerco di mettermi in cottatto</original_text>
+        <correct_text>e' da 4 giorni che cerco di mettermi in contatto</correct_text>
+        <modifiers>e' da 4 gg chepoz=0 1 2 3 4</modifiers>
+    </node>
+    <node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0119.txt" modality="TRUE" implicit_statement="FALSE" id="0119.txt_4_3">
+        <original_text>cerco di mettermi in cottatto</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0119.txt_4_1" source="0119.txt_4_0" id="0119.txt_4_0-0119.txt_4_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0119.txt_4_1" source="0119.txt_4_0" id="0119.txt_4_0-0119.txt_4_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0119.txt_4_2" source="0119.txt_4_0" id="0119.txt_4_0-0119.txt_4_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0119.txt_4_2" source="0119.txt_4_0" id="0119.txt_4_0-0119.txt_4_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0119.txt_4_3" source="0119.txt_4_2" id="0119.txt_4_2-0119.txt_4_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0119.txt_4_3" source="0119.txt_4_1" id="0119.txt_4_1-0119.txt_4_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0119.txt_4_3" source="0119.txt_4_1" id="0119.txt_4_1-0119.txt_4_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0119.txt_4_3" source="0119.txt_4_2" id="0119.txt_4_2-0119.txt_4_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0119.txt_4_3" source="0119.txt_4_0" id="0119.txt_4_0-0119.txt_4_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

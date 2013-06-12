@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="" focus="promozione" implicit_context="" explicit_context="0229.txt" modality="FALSE" implicit_statement="FALSE" id="0229.txt_3_0">
+        <original_text>la promozione E' ANCORA ATTIVA nonostante averla disattivata ieri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ANCORApoz=3;ieripoz=8</modifiers>
+    </node>
+    <node implicit_focus="" focus="promozione" implicit_context="" explicit_context="0229.txt" modality="FALSE" implicit_statement="FALSE" id="0229.txt_3_1">
+        <original_text>la promozione E' ATTIVA nonostante averla disattivata ieri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ieripoz=8</modifiers>
+    </node>
+    <node implicit_focus="" focus="promozione" implicit_context="" explicit_context="0229.txt" modality="FALSE" implicit_statement="FALSE" id="0229.txt_3_2">
+        <original_text>la promozione E' ANCORA ATTIVA nonostante averla disattivata</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ANCORApoz=3</modifiers>
+    </node>
+    <node implicit_focus="" focus="promozione" implicit_context="" explicit_context="0229.txt" modality="FALSE" implicit_statement="FALSE" id="0229.txt_3_3">
+        <original_text>la promozione E' ATTIVA nonostante averla disattivata</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0229.txt_3_1" source="0229.txt_3_0" id="0229.txt_3_0-0229.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0229.txt_3_1" source="0229.txt_3_0" id="0229.txt_3_0-0229.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0229.txt_3_2" source="0229.txt_3_0" id="0229.txt_3_0-0229.txt_3_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0229.txt_3_2" source="0229.txt_3_0" id="0229.txt_3_0-0229.txt_3_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0229.txt_3_3" source="0229.txt_3_2" id="0229.txt_3_2-0229.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0229.txt_3_3" source="0229.txt_3_1" id="0229.txt_3_1-0229.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0229.txt_3_3" source="0229.txt_3_1" id="0229.txt_3_1-0229.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0229.txt_3_3" source="0229.txt_3_2" id="0229.txt_3_2-0229.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0229.txt_3_3" source="0229.txt_3_0" id="0229.txt_3_0-0229.txt_3_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

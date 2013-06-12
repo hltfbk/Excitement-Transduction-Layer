@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="" focus="ricezione" implicit_context="" explicit_context="0021.txt" modality="FALSE" implicit_statement="TRUE" id="0021.txt_1_0">
+        <original_text>cosa aspettiamo a sistemare i problemi di ricezione nelcomune di Noventa padovana</original_text>
+        <correct_text>cosa aspettiamo a sistemare i problemi di ricezione nel comune di Noventa padovana</correct_text>
+        <modifiers>di Noventa padovanapoz=9 10 11;nelcomunepoz=8</modifiers>
+    </node>
+    <node implicit_focus="" focus="ricezione" implicit_context="" explicit_context="0021.txt" modality="FALSE" implicit_statement="TRUE" id="0021.txt_1_1">
+        <original_text>cosa aspettiamo a sistemare i problemi di ricezione nelcomune</original_text>
+        <correct_text>cosa aspettiamo a sistemare i problemi di ricezione nel comune</correct_text>
+        <modifiers>nelcomunepoz=8</modifiers>
+    </node>
+    <node implicit_focus="" focus="ricezione" implicit_context="" explicit_context="0021.txt" modality="FALSE" implicit_statement="TRUE" id="0021.txt_1_2">
+        <original_text>cosa aspettiamo a sistemare i problemi di ricezione di Noventa padovana</original_text>
+        <correct_text> </correct_text>
+        <modifiers>di Noventa padovanapoz=9 10 11</modifiers>
+    </node>
+    <node implicit_focus="" focus="ricezione" implicit_context="" explicit_context="0021.txt" modality="FALSE" implicit_statement="TRUE" id="0021.txt_1_3">
+        <original_text>cosa aspettiamo a sistemare i problemi di ricezione</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="0021.txt_1_1" source="0021.txt_1_0" id="0021.txt_1_0-0021.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0021.txt_1_1" source="0021.txt_1_0" id="0021.txt_1_0-0021.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0021.txt_1_2" source="0021.txt_1_0" id="0021.txt_1_0-0021.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0021.txt_1_2" source="0021.txt_1_0" id="0021.txt_1_0-0021.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0021.txt_1_3" source="0021.txt_1_2" id="0021.txt_1_2-0021.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0021.txt_1_3" source="0021.txt_1_1" id="0021.txt_1_1-0021.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="0021.txt_1_3" source="0021.txt_1_1" id="0021.txt_1_1-0021.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0021.txt_1_3" source="0021.txt_1_2" id="0021.txt_1_2-0021.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="0021.txt_1_3" source="0021.txt_1_0" id="0021.txt_1_0-0021.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
