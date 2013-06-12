@@ -32,8 +32,7 @@ import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 
 public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
-
-
+	
 	LAPAccess lap = null;
 	EDABasic<?> eda = null;
 	
@@ -42,7 +41,6 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	FragmentGraphGenerator fragGen;
 	GraphMerger graphMerger;
 	CollapsedGraphGenerator collapseGraph;
-	
 	
 	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException{
 		this.lap = lap;
@@ -75,6 +73,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @throws ModifierAnnotatorException 
 	 * @throws FragmentAnnotatorException 
 	 */
+	@Override
 	public EntailmentGraphRaw buildRawGraph(Set<Interaction> docs) 
 			throws GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException{
 		
@@ -99,6 +98,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @throws FragmentAnnotatorException 
 	 * @throws ModifierAnnotatorException 
 	 */
+	@Override
 	public EntailmentGraphRaw buildRawGraph(List<JCas> docs) 
 			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException{
 		
@@ -118,7 +118,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * 
 	 * @return the collapsed entailment graph corresponding to the raw graph in the input file
 	 */
-	public EntailmentGraphCollapsed buildGraph(File f) 
+	@Override
+	public EntailmentGraphCollapsed buildCollapsedGraph(File f) 
 			throws CollapsedGraphGeneratorException{
 		
 		return collapseGraph.generateCollapsedGraph(new EntailmentGraphRaw(f));
@@ -149,7 +150,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @throws FragmentAnnotatorException 
 	 * @throws LAPException 
 	 */
-	public EntailmentGraphCollapsed buildGraph(Set<Interaction> docs) 
+	@Override
+	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs) 
 				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException {
 		
 		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
@@ -165,7 +167,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @throws ModifierAnnotatorException 
 	 * @throws FragmentAnnotatorException 
 	 */
-	public EntailmentGraphCollapsed buildGraph(List<JCas> docs) 
+	@Override
+	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs) 
 				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException {
 		
 		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
@@ -181,7 +184,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @return a collapsed entailment graph
 	 */
 /*	
-	public EntailmentGraphCollapsed buildGraph(Set<Interaction> docs, double confidence) 
+	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs, double confidence) 
 			throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException{
 
 		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs),confidence);		
@@ -201,17 +204,15 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @throws ModifierAnnotatorException 
 	 */
 /*	
-	public EntailmentGraphCollapsed buildGraph(List<JCas> docs, double confidence) 
+	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs, double confidence) 
 			throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException{
 			
 		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs),confidence);		
 	}
 */
 
-
-	private void annotateCAS(JCas aJCas) throws FragmentAnnotatorException, ModifierAnnotatorException {
+	protected void annotateCAS(JCas aJCas) throws FragmentAnnotatorException, ModifierAnnotatorException {
 		fragAnot.annotateFragments(aJCas);
 		modAnot.annotateModifiers(aJCas);
 	}
-
 }
