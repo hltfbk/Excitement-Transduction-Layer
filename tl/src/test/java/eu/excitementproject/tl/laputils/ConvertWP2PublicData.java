@@ -44,31 +44,31 @@ public class ConvertWP2PublicData {
 		// Let's build NICE e-mail data. 
 		{
 		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_1/");
-		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_email_1"); 
+		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_1"); 
 
 		totalcount += processWP2Data(dir, outputdir, "EN"); 
 		
 		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_2/");
-		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_email_2"); 
+		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_2"); 
 		totalcount += processWP2Data(dir, outputdir, "EN"); 
 
 		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_3/");
-		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_email_3"); 
+		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_3"); 
 		totalcount += processWP2Data(dir, outputdir, "EN"); 
 
 		dir = Paths.get("./src/test/resources/WP2_public_data/nice_speech/");
-		outputdir = Paths.get("./target/WP2_public_data_XMI/nice_speech"); 
+		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_speech"); 
 		totalcount += processWP2Data(dir, outputdir, "EN"); 	
 		}
 
 		// and for ALMAwave 
 		{
 		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
-		outputdir = Paths.get("./target/WP2_public_data_XMI/alma_social_media"); 
+		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/alma_social_media"); 
 		totalcount += processWP2Data(dir, outputdir, "IT"); 		
 
 		dir = Paths.get("./src/test/resources/WP2_public_data/alma_speech/");
-		outputdir = Paths.get("./target/WP2_public_data_XMI/alma_speech"); 
+		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/alma_speech"); 
 		totalcount += processWP2Data(dir, outputdir, "IT"); 		
 		}
 

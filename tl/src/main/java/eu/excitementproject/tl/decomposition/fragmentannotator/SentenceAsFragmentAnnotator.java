@@ -8,6 +8,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -32,6 +33,16 @@ public class SentenceAsFragmentAnnotator extends AbstractFragmentAnnotator {
 
 		Logger fragLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.fragmentannotator"); 
 
+		// first of all, check determined fragmentation is there or not. 
+		// If it is there, we don't run and pass 
+		// check the annotated data
+		AnnotationIndex<Annotation> frgIndex = aJCas.getAnnotationIndex(DeterminedFragment.type);
+		if (frgIndex.size() > 0)
+		{
+			fragLogger.info("The CAS already has " + frgIndex.size() + " determined fragment annotation. Won't process this CAS."); 
+			return; 
+		}
+		
 		// check sentence annotation is there or not 
 		AnnotationIndex<Annotation> sentIndex = aJCas.getAnnotationIndex(Sentence.type);
 		Iterator<Annotation> sentItr = sentIndex.iterator(); 		
