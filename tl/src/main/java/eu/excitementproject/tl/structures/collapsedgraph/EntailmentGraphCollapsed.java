@@ -123,7 +123,19 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		return null;
 	}
 	
-	
+
+	/** Return equivalence class, which includes the input entailment unit
+	 * @param eu - the entailment unit
+	 * @return the node which includes the input entailment unit
+	 * If such node could not be found - returns null
+	 */
+	public EquivalenceClass getVertex (EntailmentUnit eu){
+		for (EquivalenceClass vertex : this.vertexSet()){
+			if (vertex.containsEntailmentUnit(eu)) return vertex;
+		}
+		return null;
+	}	
+
 	/** Returns the set of nodes, which entail the given node
 	 * @param node whose entailing nodes are returned
 	 * @return Set<EquivalenceClass> with all the entailing nodes of the given node

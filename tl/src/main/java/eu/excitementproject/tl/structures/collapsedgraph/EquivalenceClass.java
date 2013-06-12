@@ -44,8 +44,20 @@ public class EquivalenceClass {
 	public EquivalenceClass(Set<EntailmentUnit> s_eu) {
 		entailmentUnits = new HashSet<EntailmentUnit>();
 		entailmentUnits.addAll(s_eu);
-// pick one element of the set and initialize the label associated with this node		
-//		label = ... 
+		// Pick one element of the set and initialize the label associated with this node
+		// We pick entailment unit with max frequency (if there are several entailment units with such frequency, sorter text is favored) 
+		int frequency = 0;
+		for (EntailmentUnit candidateEntailmentUnit : entailmentUnits){
+			if (candidateEntailmentUnit.getFrequency()>frequency){
+				label = candidateEntailmentUnit.getText();
+				frequency = candidateEntailmentUnit.getFrequency();
+			}
+			else if (candidateEntailmentUnit.getFrequency()==frequency){ // if current label has the same frequency as the candidate entailment unit
+				if (candidateEntailmentUnit.getText().length() < label.length()) { // if the candidate text is shorter - make it the new label 
+					label =  candidateEntailmentUnit.getText();
+				}
+			}
+		}
 	}
 	
 	/**
@@ -74,6 +86,17 @@ public class EquivalenceClass {
 		return entailmentUnits;
 	}
 	
+	public boolean containsEntailmentUnit(EntailmentUnit eu){
+		return entailmentUnits.contains(eu);
+	}
+	
+	public void add(EntailmentUnit eu){
+		entailmentUnits.add(eu);
+	}
+	
+	public void add(Set<EntailmentUnit> s_eu){
+		entailmentUnits.addAll(s_eu);
+	}
 	
 	
 }
