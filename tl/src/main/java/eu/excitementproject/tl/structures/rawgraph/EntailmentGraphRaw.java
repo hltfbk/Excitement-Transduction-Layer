@@ -11,6 +11,7 @@ import org.jgrapht.graph.DirectedMultigraph;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
@@ -86,11 +87,34 @@ public class EntailmentGraphRaw extends
 	 */
 	public EntailmentGraphRaw(FragmentGraph fg) {
 		super(EntailmentRelation.class);
+		copyFragmentGraphNodesAndEdges(fg);
+		/*		// copy edges (with nodes)
 		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
 			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
 		}
+		// copy nodes, which have no edges (must happen only if base statement = complete statement => graph has a single node and no edges) 
+		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
+			if (this.getVertex(fragmentGraphNode.getText())==null) {
+				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText());
+				this.addVertex(newNode);
+			}
+		}
+*/	}
+
+	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
+		// copy edges (with nodes)
+		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
+			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
+		}
+		// copy nodes, which have no edges (must happen only if base statement = complete statement => graph has a single node and no edges) 
+		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
+			if (this.getVertex(fragmentGraphNode.getText())==null) {
+				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText());
+				this.addVertex(newNode);
+			}
+		}
+
 	}
-	
 	
 	/**
 	 * Initialize an empty work graph
@@ -138,6 +162,7 @@ public class EntailmentGraphRaw extends
 	public Hashtable<Integer, Set<EntailmentUnit>> getFragmentGraphNodes(EntailmentUnit baseStatementNode, String completeStatementText) throws EntailmentGraphRawException {
 		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
 
+		System.out.println(baseStatementNode.toString());
 		if (!baseStatementNode.completeStatementTexts.contains(completeStatementText)) throw new EntailmentGraphRawException("Base statement node \""+baseStatementNode.getText()+"\" does not correspond to the complete statement \""+ completeStatementText+"\"\n");
 		
 		EntailmentUnit completeStatementNode = getVertex(completeStatementText);
@@ -187,6 +212,8 @@ public class EntailmentGraphRaw extends
 	 * @return Set<EntailmentUnit> with all the entailing nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
 			entailingNodes.add(edge.getSource());
@@ -200,6 +227,8 @@ public class EntailmentGraphRaw extends
 	 * @return Set<EntailmentUnit> with the entailing nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node, int level){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
 			EntailmentUnit entailingNode = edge.getSource();
@@ -213,6 +242,8 @@ public class EntailmentGraphRaw extends
 	 * @return Set<EntailmentUnit> with all the entailed nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailedNodes(EntailmentUnit node){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
 			entailedNodes.add(edge.getTarget());
@@ -226,6 +257,8 @@ public class EntailmentGraphRaw extends
 	 * @return Set<EntailmentUnit> with all the entailed nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailedNodes(EntailmentUnit node, int level){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
 			EntailmentUnit entailedNode = edge.getTarget();
@@ -240,6 +273,8 @@ public class EntailmentGraphRaw extends
 	 * @return
 	 */
 	public Set<EntailmentUnit> getEntailedNodesFromSameFragmentGraph(EntailmentUnit node, int level){
+		if (!this.containsVertex(node)) return null;
+
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
 			EntailmentUnit entailedNode = edge.getTarget();

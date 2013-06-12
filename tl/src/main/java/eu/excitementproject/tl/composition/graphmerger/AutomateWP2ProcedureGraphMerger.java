@@ -9,7 +9,6 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
-import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
@@ -28,7 +27,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 
 		// Iterate over the list of fragment graphs and merge them one by one
 		for (FragmentGraph fragmentGraph : fragmentGraphs){
-			mergeGraphs(fragmentGraph, workGraph);
+			workGraph=mergeGraphs(fragmentGraph, workGraph);
 		}
 		return workGraph;
 	}
@@ -38,15 +37,13 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
-		if(workGraph.isEmpty() || workGraph==null) return new EntailmentGraphRaw(fragmentGraph);
+		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph);
+		if (workGraph.isEmpty()) return new EntailmentGraphRaw(fragmentGraph);
 		
 		 
-		// else - Implement the WP2 flow
-		
+		// else - Implement the WP2 flow		
 		// 1. Add the nodes and edges from the fragment graph into the work graph
-		for (FragmentGraphEdge fragmentGraphEdge : fragmentGraph.edgeSet()){
-			workGraph.addEdgeFromFragmentGraph(fragmentGraphEdge, fragmentGraph);
-		}
+		workGraph.copyFragmentGraphNodesAndEdges(fragmentGraph);
 		
 		// find the node corresponding to the fragment graph's base statement in the work graph
 		EntailmentUnit newBaseStatement = workGraph.getVertex(fragmentGraph.getBaseStatement().getText());
@@ -103,6 +100,10 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		// Now we need to look at the direction of the entailment and check in this direction for 1st-level nodes
 		// And then propagate for the upper-level nodes
 		
+		// check if both graph have 1-level nodes (maybe one of the 2 fragment graphs only has one node (base statement = complete statement))
+		if (!oldFragmentGraphNodes.keySet().contains(1)) return workGraph; // no 1-level in "old fr.graph" => no need to continue merging
+		if (!newFragmentGraphNodes.keySet().contains(1)) return workGraph; // no 1-level in "new fr.graph" => no need to continue merging
+		
 		// check the direction workGraphBaseStatement -> newBaseStatement
 		if (workGraph.isEntailment(workGraphBaseStatement, newBaseStatement)) {
 			// merge 1st-level nodes
@@ -111,7 +112,15 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 			workGraph = mergeUpperLevels(workGraph, oldFragmentGraphNodes, newFragmentGraphNodes);			
 		}
 		
-					
+
+		// check the direction newBaseStatement -> workGraphBaseStatement
+		if (workGraph.isEntailment(newBaseStatement, workGraphBaseStatement)) {
+			// merge 1st-level nodes
+			workGraph= mergeFirstLevel(workGraph, newFragmentGraphNodes.get(1), oldFragmentGraphNodes.get(1));
+			// propagate to the upper levels
+			workGraph = mergeUpperLevels(workGraph, newFragmentGraphNodes, oldFragmentGraphNodes);			
+		}
+
 		return workGraph;
 	}
 	
