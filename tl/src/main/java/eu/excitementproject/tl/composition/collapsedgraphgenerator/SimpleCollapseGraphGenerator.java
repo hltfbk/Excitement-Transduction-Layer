@@ -14,4 +14,12 @@ public class SimpleCollapseGraphGenerator extends AbstractCollapsedGraphGenerato
 		return null;
 	}
 
+	@Override
+	public EntailmentGraphCollapsed generateCollapsedGraph(
+			EntailmentGraphRaw workGraph, Double confidenceThreshold)
+			throws CollapsedGraphGeneratorException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
