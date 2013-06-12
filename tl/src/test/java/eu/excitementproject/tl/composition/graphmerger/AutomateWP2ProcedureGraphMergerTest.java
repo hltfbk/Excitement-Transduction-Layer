@@ -31,7 +31,7 @@ public class AutomateWP2ProcedureGraphMergerTest {
 			}
 			
 			System.out.println("Merged raw graph:");			
-			EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs, null);
+			EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
 			System.out.println(rawGraph.isEmpty());
 			System.out.println(rawGraph.toString());
 		} catch (LAPException e) {

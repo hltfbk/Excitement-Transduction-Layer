@@ -75,7 +75,7 @@ public class EntailmentUnit{
 	 * @param start	-- start index of the fragment
 	 * @param end -- end index of the fragment
 	 */
-	EntailmentUnit(EntailmentUnitMention eum, String completeStatementText) {
+	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText) {
 		
 		mentions = new HashSet<EntailmentUnitMention>();
 		mentions.add(eum);
@@ -96,7 +96,7 @@ public class EntailmentUnit{
 		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
 		
 		mentions = new HashSet<EntailmentUnitMention>();
-		mentions.add(n);		
+		mentions.add(n);
 		text = textFragment;
 		this.level =level; 
 		frequency=1; // this is the first time this EntailmentUnit is seen
@@ -104,6 +104,18 @@ public class EntailmentUnit{
 		completeStatementTexts.add(completeStatementText);
 	}
 	
+	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category) {
+		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
+		n.setCategoryId(category);
+		mentions = new HashSet<EntailmentUnitMention>();
+		mentions.add(n);
+		text = textFragment;
+		this.level =level; 
+		frequency=1; // this is the first time this EntailmentUnit is seen
+		completeStatementTexts = new HashSet<String>();
+		completeStatementTexts.add(completeStatementText);
+	}
+
 	public void addCompleteStatement(String completeStatementText){
 		if (!completeStatementTexts.contains(completeStatementText)) completeStatementTexts.add(completeStatementText);
 	}

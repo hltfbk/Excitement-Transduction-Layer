@@ -42,6 +42,16 @@ should be clearly exposed in the Constructor.
  */
 public interface GraphMerger {
 	
+	/** input-case0: a set of FragmentGraphs ({@link FragmentGraph})
+		 * @param fragmentGraphs
+		 * @return a work graph (EntailmentGraphRaw) is created and enriched by the given set of fragments
+		 * @throws GraphMergerException if the implementation can't merge the graphs for some
+	  reason
+		 */
+		public EntailmentGraphRaw mergeGraphs(
+			Set<FragmentGraph> fragmentGraphs) throws GraphMergerException;
+
+	
 	/** input-case1: a set of FragmentGraphs ({@link FragmentGraph}), and one work
   graph ({@link EntailmentGraphRaw}).
 	 * @param fragmentGraphs
