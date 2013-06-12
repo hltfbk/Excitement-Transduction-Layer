@@ -24,6 +24,8 @@ public class FragmentGraphGeneratorTest {
 	public void test() {
 		
 		try {
+			System.out.println("Testing the FragmentGraphGenerator");
+			
 			// first, call CASUtils to generate InputCAS examples. 		
 			CASUtils.generateExamples(); // the examples are stored in /target. 
 			
@@ -83,8 +85,7 @@ public class FragmentGraphGeneratorTest {
 			System.out.println("\n________________\nFragment graphs for example 4: ");
 			for(FragmentGraph f: fgs_example4) {
 				System.out.println(f.toString());
-			}
-			
+			}	
 		}
 		catch (Exception e)
 		{
