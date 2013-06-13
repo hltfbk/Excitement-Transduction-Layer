@@ -46,7 +46,7 @@ public class SimpleCollapseGraphGeneratorTest {
 				System.out.println(rawGraph.toString());
 				
 				System.out.println("**** Collapsing the the raw graph ****");
-				finalGraph = collapser.generateCollapsedGraph(rawGraph);
+				finalGraph = collapser.generateCollapsedGraph(rawGraph, 0.2);
 				System.out.println("Done:\n"+finalGraph.toString());
 			} catch (LAPException e) {
 				// TODO Auto-generated catch block

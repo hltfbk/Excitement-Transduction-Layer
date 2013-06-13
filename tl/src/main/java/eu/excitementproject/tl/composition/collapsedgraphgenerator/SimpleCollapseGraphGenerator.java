@@ -73,6 +73,8 @@ public class SimpleCollapseGraphGenerator extends AbstractCollapsedGraphGenerato
 			EquivalenceClass target = collapsedGraph.getVertex(workGraphEdge.getTarget());
 			if (target==null) throw new CollapsedGraphGeneratorException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getTarget());
 			
+			if (source.equals(target)) continue; // if source and target of the work graph edge are both mapped to the same equivalence class - don't add this edge (this will be a loop)  
+			
 			double maxConfidence =0.0; 
 			for (EntailmentRelationCollapsed existingEdge : collapsedGraph.getAllEdges(source, target)){
 				// actually, if this set of existing edges is not empty, there should be a single edge in this set, since we do not allow multiple edges between the same pair of (source,target) for the collapsed graph
