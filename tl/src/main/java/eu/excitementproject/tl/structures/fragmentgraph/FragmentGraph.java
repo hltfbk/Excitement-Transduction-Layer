@@ -1,6 +1,6 @@
 package eu.excitementproject.tl.structures.fragmentgraph;
 
-import java.sql.Timestamp;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -325,17 +325,12 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	
 	public String getInteractionId(){
 		if (document == null) {
-			return "N/A" + getTimestamp();
+			return "N/A";
 		}
 		
-		return CASUtils.getTLMetaData(document).getInteractionId();// + getTimestamp();
+		return CASUtils.getTLMetaData(document).getInteractionId();
 	}
 	
-	
-	private String getTimestamp(){
-		java.util.Date date= new java.util.Date();
-		 return new Timestamp(date.getTime()).toString();
-	}
 	
 	@Override
 	public String toString() {
