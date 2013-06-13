@@ -276,7 +276,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	public Set<String> getRelevantInteractionIDs(EntailmentUnit entailmentUnit){
 		return getRelevantInteractionIDs(entailmentUnit.getText());
 	}
-
+	
 /*	*//**
 	 * Converts an input work graph to a format that would be useful to the end users
 	 * This might mean changing the nodes from complex annotated objects to sets of strings
@@ -316,4 +316,23 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			e.printStackTrace();
 		}
 	}*/	
+
+	/******************************************************************************************
+	 * PRINT GRAPH
+	 * ****************************************************************************************/
+	
+	@Override
+	public String toString(){
+		String s = "";
+		s+="\nNODES:";
+		for (EquivalenceClass v: this.vertexSet()){
+			s+="\n"+v.toString();
+		}
+		
+		s+="\n\nEDGES:";
+		for (EntailmentRelationCollapsed e: this.edgeSet()){
+			s+="\n\t"+e.toString();
+		}		
+		return s;
+	}
 }

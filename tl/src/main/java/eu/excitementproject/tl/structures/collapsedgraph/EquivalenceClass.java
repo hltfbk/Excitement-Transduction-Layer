@@ -98,5 +98,17 @@ public class EquivalenceClass {
 		entailmentUnits.addAll(s_eu);
 	}
 	
+	@Override
+	public String toString(){
+		String s = "\""+label+"\":\n";
+		int i=1;
+		for (EntailmentUnit eu : entailmentUnits){
+			s+="\t"+i+")\""+eu.getText()+"\"\n";
+			i++;
+		}
+		s+="\n";
+		return s;
+	}
+	
 	
 }

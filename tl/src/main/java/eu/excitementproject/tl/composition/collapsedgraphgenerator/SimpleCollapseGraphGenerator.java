@@ -35,16 +35,18 @@ public class SimpleCollapseGraphGenerator extends AbstractCollapsedGraphGenerato
 		//   (note: AutomateWP2ProcedureGraphMerger only generates "entailment" edges)		
 		// - Remove all "entailment" edges with confidence < confidenceThreshold
 		
+		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
 		for (EntailmentRelation workEdge : workGraph.edgeSet()){
 			if (!workEdge.getLabel().equals(DecisionLabel.Entailment)){
-				workGraph.removeEdge(workEdge);
+				workEdgesToRemove.add(workEdge);
 			}
 			else{ // if this is an "entailment" edge
 				if(workEdge.getConfidence()<confidenceThreshold) {
-					workGraph.removeEdge(workEdge);
+					workEdgesToRemove.add(workEdge);
 				}
 			}
 		}
+		workGraph.removeAllEdges(workEdgesToRemove);
 		
 		// Step 2 - create collapsed graph from the cleaned-up work graph (copy nodes and edges)
 
