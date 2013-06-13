@@ -61,6 +61,9 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 		return confidence;
 	}
 	
-	
+	@Override 
+	public String toString(){
+		return this.getSource().getLabel()+" --> "+this.getTarget().getLabel() +" ("+this.getConfidence()+") ";
+	}	
 	
 }
