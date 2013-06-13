@@ -17,12 +17,11 @@ public class FragmentGraphGeneratorFromCAS extends
 	public Set<FragmentGraph> generateFragmentGraphs(JCas text)
 			throws FragmentGraphGeneratorException {
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();
-		
+				
 		for(Annotation a : text.getAnnotationIndex(DeterminedFragment.type)) {
 			fgs.add(new FragmentGraph(text,(DeterminedFragment) a));
 		}
 		
 		return fgs;
 	}
-
 }

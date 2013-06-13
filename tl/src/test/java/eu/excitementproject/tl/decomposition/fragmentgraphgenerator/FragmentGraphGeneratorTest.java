@@ -14,25 +14,27 @@ import org.junit.Test;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 
+@SuppressWarnings("unused")
 public class FragmentGraphGeneratorTest {
 
 	/**
 	 *  The test class tests FragmentGraphGenerator 
 	 */
-	@Ignore 
 	@Test
 	public void test() {
 		
 		try {
+			System.out.println("Testing the FragmentGraphGenerator");
+			
 			// first, call CASUtils to generate InputCAS examples. 		
 			CASUtils.generateExamples(); // the examples are stored in /target. 
 			
 			// generate fragment graphs from each of the inputCAS examples.  
 			JCas aJCas = CASUtils.createNewInputCas(); 
-			File f1 = new File("./target/CASInput_example_1.xmi"); 
-			File f2 = new File("./target/CASInput_example_2.xmi");
-			File f3 = new File("./target/CASInput_example_3.xmi"); 
-			File f4 = new File("./target/CASInput_example_4.xmi"); 
+			File f1 = new File("./src/test/resources/WP2_public_data_CAS_XMI/alma_speech/Speech3.1.004.txt.xmi");
+			File f2 = new File("./src/test/resources/WP2_public_data_CAS_XMI/alma_social_media/0004.txt.xmi"); 
+			File f3 = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/100771.txt.xmi"); 
+			File f4 = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_speech/13764618_75839896.txt.xmi"); 
 
 			// initiate the FragGraphGenerator... 
 			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
@@ -83,8 +85,7 @@ public class FragmentGraphGeneratorTest {
 			System.out.println("\n________________\nFragment graphs for example 4: ");
 			for(FragmentGraph f: fgs_example4) {
 				System.out.println(f.toString());
-			}
-			
+			}	
 		}
 		catch (Exception e)
 		{

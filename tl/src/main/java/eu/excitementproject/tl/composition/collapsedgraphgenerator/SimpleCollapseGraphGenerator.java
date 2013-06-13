@@ -35,16 +35,18 @@ public class SimpleCollapseGraphGenerator extends AbstractCollapsedGraphGenerato
 		//   (note: AutomateWP2ProcedureGraphMerger only generates "entailment" edges)		
 		// - Remove all "entailment" edges with confidence < confidenceThreshold
 		
+		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
 		for (EntailmentRelation workEdge : workGraph.edgeSet()){
 			if (!workEdge.getLabel().equals(DecisionLabel.Entailment)){
-				workGraph.removeEdge(workEdge);
+				workEdgesToRemove.add(workEdge);
 			}
 			else{ // if this is an "entailment" edge
 				if(workEdge.getConfidence()<confidenceThreshold) {
-					workGraph.removeEdge(workEdge);
+					workEdgesToRemove.add(workEdge);
 				}
 			}
 		}
+		workGraph.removeAllEdges(workEdgesToRemove);
 		
 		// Step 2 - create collapsed graph from the cleaned-up work graph (copy nodes and edges)
 
@@ -70,6 +72,8 @@ public class SimpleCollapseGraphGenerator extends AbstractCollapsedGraphGenerato
 			if (source==null) throw new CollapsedGraphGeneratorException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getSource());
 			EquivalenceClass target = collapsedGraph.getVertex(workGraphEdge.getTarget());
 			if (target==null) throw new CollapsedGraphGeneratorException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getTarget());
+			
+			if (source.equals(target)) continue; // if source and target of the work graph edge are both mapped to the same equivalence class - don't add this edge (this will be a loop)  
 			
 			double maxConfidence =0.0; 
 			for (EntailmentRelationCollapsed existingEdge : collapsedGraph.getAllEdges(source, target)){
