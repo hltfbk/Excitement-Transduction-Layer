@@ -3,6 +3,7 @@ package  eu.excitementproject.tl.structures.fragmentgraph;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.cas.text.AnnotationIndex;
@@ -37,6 +38,8 @@ public class EntailmentUnitMention {
 	protected int end;
 	
 	protected String categoryId = null;
+
+	public final static Logger logger = Logger.getLogger(EntailmentUnitMention.class.toString()) ;
 	
 	/**
 	 * @param textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
@@ -198,9 +201,13 @@ public class EntailmentUnitMention {
 	private CharSequence removeModifier(CharSequence chars, ModifierAnnotation ma) {
 		CharSequence chs = chars;
 		ModifierPart mp;
+		
+		logger.info("Removing modifiers from string " + chars);
+		
 		for (int i = 0; i < ma.getModifierParts().size(); i++) {
 			mp = ma.getModifierParts(i);
-			chs = chs.subSequence(0, mp.getBegin()) + StringUtils.repeat(" ",mp.getEnd()-mp.getBegin()) + chs.subSequence(mp.getEnd(),chs.length());
+			logger.info("\t" + i + " : " + mp.getCoveredText() + "\t span: " + mp.getBegin() + "/" + mp.getEnd());
+			chs = chs.subSequence(0, mp.getBegin()-begin) + StringUtils.repeat(" ",mp.getEnd()-mp.getBegin()) + chs.subSequence(mp.getEnd()-begin,chs.length());
 		}
 		return chs;
 	}
