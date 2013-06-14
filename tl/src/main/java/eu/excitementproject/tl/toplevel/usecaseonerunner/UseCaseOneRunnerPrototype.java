@@ -97,10 +97,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @return an raw entailment graph (the multigraph with all edges and nodes)
 	 * @throws FragmentAnnotatorException 
 	 * @throws ModifierAnnotatorException 
+	 * @throws LAPException 
 	 */
 	@Override
 	public EntailmentGraphRaw buildRawGraph(List<JCas> docs) 
-			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException{
+			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException{
 		
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>(); 
 
@@ -166,10 +167,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @return a collapsed entailment graph
 	 * @throws ModifierAnnotatorException 
 	 * @throws FragmentAnnotatorException 
+	 * @throws LAPException 
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs) 
-				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException {
+				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException {
 		
 		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
 	}

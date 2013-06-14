@@ -42,7 +42,6 @@ public class FragmentGraphTest {
 		
 		try{
 			
-		CASUtils.generateExamples(); // the examples are stored in /target. 
 		
 		// generate fragment graphs from each of the inputCAS examples.  
 		JCas aJCas = CASUtils.createNewInputCas(); 

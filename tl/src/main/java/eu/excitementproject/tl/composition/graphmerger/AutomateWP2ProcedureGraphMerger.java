@@ -6,6 +6,7 @@ import java.util.Set;
 
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
@@ -23,7 +24,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs,
-			EntailmentGraphRaw workGraph) throws GraphMergerException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
 
 		// Iterate over the list of fragment graphs and merge them one by one
 		for (FragmentGraph fragmentGraph : fragmentGraphs){
@@ -34,7 +35,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
-			EntailmentGraphRaw workGraph) throws GraphMergerException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
 		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph);
@@ -81,7 +82,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	}
 	
 	
-	private EntailmentGraphRaw mergeFragmentGraphs(EntailmentGraphRaw workGraph, Hashtable<Integer, Set<EntailmentUnit>> newFragmentGraphNodes, Hashtable<Integer, Set<EntailmentUnit>> oldFragmentGraphNodes, EntailmentUnit newBaseStatement,  EntailmentUnit workGraphBaseStatement){
+	private EntailmentGraphRaw mergeFragmentGraphs(EntailmentGraphRaw workGraph, Hashtable<Integer, Set<EntailmentUnit>> newFragmentGraphNodes, Hashtable<Integer, Set<EntailmentUnit>> oldFragmentGraphNodes, EntailmentUnit newBaseStatement,  EntailmentUnit workGraphBaseStatement) throws LAPException{
 		//Check if there is entailment between the two base statements
 		// There might be an existing entailment edge because the two base statements were present in the work graph before
 		if (!workGraph.isEntailmentInAnyDirection(newBaseStatement, workGraphBaseStatement)){
@@ -136,8 +137,9 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	 * @param entailingBaseStatement - the base statement A, which entails the other base statement B (A->B)
 	 * @param entailedBaseStatement - the base statement B, which is entailed by A
 	 * @return set of EntailmentRelation-s that were detected 
+	 * @throws LAPException 
 	 */
-	private EntailmentGraphRaw mergeFirstLevel(EntailmentGraphRaw workGraph, Set<EntailmentUnit> candidateEntailingtNodes, Set<EntailmentUnit> candidateEntailedNodes){
+	private EntailmentGraphRaw mergeFirstLevel(EntailmentGraphRaw workGraph, Set<EntailmentUnit> candidateEntailingtNodes, Set<EntailmentUnit> candidateEntailedNodes) throws LAPException{
 		// get the candidates (1-modidier nodes, which entail each of the base statements) 
 		for (EntailmentUnit candidateEntailingtNode : candidateEntailingtNodes){
 			for (EntailmentUnit candidateEntailedNode : candidateEntailedNodes){

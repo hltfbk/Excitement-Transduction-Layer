@@ -9,6 +9,7 @@ import java.util.Set;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
@@ -48,7 +49,7 @@ should be clearly exposed in the Constructor.
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs)
-			throws GraphMergerException {
+			throws GraphMergerException, LAPException {
 		
 		return mergeGraphs(fragmentGraphs, null);
 	}	
@@ -73,8 +74,9 @@ should be clearly exposed in the Constructor.
 	 * @param nodeA
 	 * @param nodeB
 	 * @return set of entailment relations found between the nodes. The set can contain 0 (no entailment), 1 (entailment in one direction) or 2 (bi-directional entailment, paraphrase) elements.
+	 * @throws LAPException 
 	 */
-	protected Set<EntailmentRelation> getEntailmentRelations(EntailmentUnit nodeA, EntailmentUnit nodeB){
+	protected Set<EntailmentRelation> getEntailmentRelations(EntailmentUnit nodeA, EntailmentUnit nodeB) throws LAPException{
 		Set<EntailmentRelation> entailmentRelations = new HashSet<EntailmentRelation>();
 		
 		// check one direction: nodeA -> nodeB
@@ -91,7 +93,7 @@ should be clearly exposed in the Constructor.
 	}
 
 
-	protected Set<EntailmentRelation> getRelations(EntailmentUnit nodeA, EntailmentUnit nodeB){
+	protected Set<EntailmentRelation> getRelations(EntailmentUnit nodeA, EntailmentUnit nodeB) throws LAPException{
 		Set<EntailmentRelation> entailmentRelations = new HashSet<EntailmentRelation>();
 		
 		// check one direction: nodeA -> nodeB
@@ -103,9 +105,12 @@ should be clearly exposed in the Constructor.
 	}
 
 	
-	protected EntailmentRelation getRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode){	
+	/*
+	 * viv@fbk: added lap parameter
+	 */			
+	protected EntailmentRelation getRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode) throws LAPException{	
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
-		return new EntailmentRelation(candidateEntailingNode, candidateEntailedNode, this.getEda());
+		return new EntailmentRelation(candidateEntailingNode, candidateEntailedNode, this.getEda(), this.lap);
 	}
 
 	/** Return the corresponding EntailmentRelation if there is entailment (DecisionLabel.Entailment) candidateEntailingNode -> candidateEntailedNode
@@ -113,8 +118,9 @@ should be clearly exposed in the Constructor.
 	 * @param candidateEntailingNode
 	 * @param candidateEntailedNode
 	 * @return
+	 * @throws LAPException 
 	 */
-	protected EntailmentRelation getEntailmentRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode){	
+	protected EntailmentRelation getEntailmentRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode) throws LAPException{	
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
 		EntailmentRelation r = getRelation(candidateEntailingNode, candidateEntailedNode);
 		if (r.getLabel().equals(DecisionLabel.Entailment)) return r;

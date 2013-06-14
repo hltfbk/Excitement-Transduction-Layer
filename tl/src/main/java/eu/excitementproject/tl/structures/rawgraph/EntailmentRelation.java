@@ -1,5 +1,7 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
+import java.util.logging.Logger;
+
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.graph.DefaultEdge;
 
@@ -8,6 +10,8 @@ import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.common.exception.ComponentException;
+import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 
@@ -26,10 +30,9 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  */
 public class EntailmentRelation extends DefaultEdge {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8223382210505322995L;
+
+	private static final Logger logger = Logger.getLogger(EntailmentRelation.class.toString());
 	
 	EntailmentUnit source;
 	EntailmentUnit target;
@@ -50,17 +53,29 @@ public class EntailmentRelation extends DefaultEdge {
 	/*
 	 * EOP lap
 	 */
-//	LAPAccess lap;
+	LAPAccess lap;
+	
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda, LAPAccess lap) throws LAPException {
+		this.source = source;
+		this.target = target;	
+		this.eda = eda;
+		this.edgeType = EdgeType.EDA;
+		this.lap = lap;
+		
+		computeTEdecision();
+		
+	}
 	
 	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda) {
 		this.source = source;
 		this.target = target;	
 		this.eda = eda;
 		this.edgeType = EdgeType.EDA;
+		this.lap = null;
 		
-		computeTEdecision();
-		
+		edge = null;
 	}
+	
 	
 	/**
 	 * Create an entailment relation in cases when TEDecision is known (don't specify the EDA)
@@ -93,10 +108,11 @@ public class EntailmentRelation extends DefaultEdge {
 	
 	/**
 	 * Generates a dummy random entailment decision for this EntailmentReation 
+	 * @throws LAPException 
 	 */
 
 	
-	protected void computeTEdecision() {
+	protected void computeTEdecision() throws LAPException {
 	
 	// Vivi's code below 
  //		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
@@ -116,10 +132,12 @@ public class EntailmentRelation extends DefaultEdge {
 	 * 
 	 * @return -- a JCas object representing the text and hypothesis pair, 
 	 *            obtained by extracting the necessary annotations from "from" and "to"
+	 * @throws LAPException 
 	 */
-	protected JCas generateTHPairCAS(){
+	protected JCas generateTHPairCAS() throws LAPException{
 		// extract annotations from "from" and "to" to form the JCas object that is used as input to the EDA
-		return null;
+		logger.info("Generating a cass for the pair: \n \tTEXT: " + source.getText() + "\n \tHYPOTHESIS: " + target.getText());
+		return lap.generateSingleTHPairCAS(source.getText(), target.getText());
 	}
 	
 	public TEDecision getTEdecision() {
@@ -149,7 +167,9 @@ public class EntailmentRelation extends DefaultEdge {
 	 * @return -- the decision label from the TEdecision object
 	 */
 	public DecisionLabel getLabel() {
-		return edge.getDecision();
+		if (edge != null)
+			return edge.getDecision();
+		return null;
 	}
 
 	
