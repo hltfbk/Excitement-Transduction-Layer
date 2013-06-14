@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.apache.uima.jcas.JCas;
 
@@ -41,6 +42,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	FragmentGraphGenerator fragGen;
 	GraphMerger graphMerger;
 	CollapsedGraphGenerator collapseGraph;
+	
+	private final static Logger logger = Logger.getLogger(UseCaseOneRunnerPrototype.class.getName());
 	
 	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException{
 		this.lap = lap;
@@ -85,6 +88,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			fgs.addAll(fragGen.generateFragmentGraphs(i.createAndFillInputCAS()));
 		}
 		
+		inspectGraph(fgs);
+		
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}
 	
@@ -110,6 +115,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			annotateCAS(aJCas);
 			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
 		}
+		
+		inspectGraph(fgs);
 		
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}
@@ -155,7 +162,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs) 
 				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException {
 		
-		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
+		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
+		inspectGraph(rawGraph);
+		
+//		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
+		return collapseGraph.generateCollapsedGraph(rawGraph);
 	}
 	
 	
@@ -173,7 +184,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs) 
 				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException {
 		
-		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
+		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
+		inspectGraph(rawGraph);
+		
+//		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
+		return collapseGraph.generateCollapsedGraph(rawGraph);
 	}
 	
 	/**
@@ -192,8 +207,42 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs),confidence);		
 	}
 */
+
+	
+	public static void inspectGraph(EntailmentGraphCollapsed graph) {
+
+		if (graph != null) { 
+			logger.info(graph.toString());
+		} else {
+			logger.info("The graph is null");
+		}
+	}
+
+	
+	public static void inspectGraph(EntailmentGraphRaw graph) {
+
+		if (graph != null) { 
+			logger.info(graph.toString());
+		} else {
+			logger.info("The graph is null");
+		}		
+	}
 	
 	
+	public static void inspectGraph(Set<FragmentGraph> fgs) {
+		if (fgs != null) {
+			for(FragmentGraph fg : fgs) {
+				if ( fg != null ) {
+					logger.info(fg.toString());
+				} else {
+					logger.info("Fragment graph is null");
+				}
+			}
+		} else {
+			logger.info("The set of fragment graphs is null");
+		}
+	}
+
 	/**
 	 * Builds a collapsed entailment graph from a set of user interactions 
 	 * and filtering the edges using the given confidence score 
