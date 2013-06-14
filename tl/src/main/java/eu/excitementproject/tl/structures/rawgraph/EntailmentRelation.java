@@ -42,7 +42,7 @@ public class EntailmentRelation extends DefaultEdge {
 	/**
 	 * The TEdecision object is produced by the EDA, and contains the label, confidence score, ...
 	 */
-	TEDecision edge;
+	TEDecision edge = null;
 	
 	/*
 	 * we might decide to have on each edge information about the configuration 
