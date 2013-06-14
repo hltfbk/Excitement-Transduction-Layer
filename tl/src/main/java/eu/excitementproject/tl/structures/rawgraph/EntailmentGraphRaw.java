@@ -10,6 +10,8 @@ import org.jgrapht.graph.DirectedMultigraph;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
+import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
@@ -292,11 +294,29 @@ public class EntailmentGraphRaw extends
 	}	
 
 	/**
+	 * (vivi@fbk: added the lap parameter)
+	 * 
 	 * Create an edge from sourceVertex to targetVertex using the specified eda 
 	 * @param sourceVertex
 	 * @param targetVertex
 	 * @param eda
 	 * @return the edge, which was added to the graph
+	 * @throws LAPException 
+	 */
+	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda, LAPAccess lap) throws LAPException{
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda, lap);
+		this.addEdge(sourceVertex, targetVertex, edge);
+		return edge;
+	}
+	
+	
+	/**
+	 * Create an edge from sourceVertex to targetVertex using the specified eda 
+	 * @param sourceVertex
+	 * @param targetVertex
+	 * @param eda
+	 * @return the edge, which was added to the graph
+	 * @throws LAPException 
 	 */
 	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
@@ -541,7 +561,7 @@ public class EntailmentGraphRaw extends
 
 		if (randomEdges){ // add random edges
 			EDABasic<?> eda = new RandomEDA();
-				
+			
 			// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){

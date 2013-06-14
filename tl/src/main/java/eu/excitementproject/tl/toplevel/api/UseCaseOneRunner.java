@@ -27,7 +27,7 @@ public abstract interface UseCaseOneRunner {
 
 	EntailmentGraphRaw buildRawGraph(List<JCas> docs)
 			throws GraphMergerException, FragmentGraphGeneratorException,
-			FragmentAnnotatorException, ModifierAnnotatorException;
+			FragmentAnnotatorException, ModifierAnnotatorException, LAPException;
 
 
 	EntailmentGraphCollapsed buildCollapsedGraph(File f)
@@ -43,6 +43,6 @@ public abstract interface UseCaseOneRunner {
 	EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs)
 			throws CollapsedGraphGeneratorException, GraphMergerException,
 			FragmentGraphGeneratorException, FragmentAnnotatorException,
-			ModifierAnnotatorException;
+			ModifierAnnotatorException, LAPException;
 
 }

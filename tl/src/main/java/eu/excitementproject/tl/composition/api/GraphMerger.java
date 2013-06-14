@@ -2,6 +2,7 @@ package eu.excitementproject.tl.composition.api;
 
 import java.util.Set;
 
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -47,9 +48,10 @@ public interface GraphMerger {
 		 * @return a work graph (EntailmentGraphRaw) is created and enriched by the given set of fragments
 		 * @throws GraphMergerException if the implementation can't merge the graphs for some
 	  reason
+	 * @throws LAPException 
 		 */
 		public EntailmentGraphRaw mergeGraphs(
-			Set<FragmentGraph> fragmentGraphs) throws GraphMergerException;
+			Set<FragmentGraph> fragmentGraphs) throws GraphMergerException, LAPException;
 
 	
 	/** input-case1: a set of FragmentGraphs ({@link FragmentGraph}), and one work
@@ -59,10 +61,11 @@ public interface GraphMerger {
 	 * @return the work graph (EntailmentGraphRaw) enriched by the given set of fragments
 	 * @throws GraphMergerException if the implementation can't merge the graphs for some
   reason
+	 * @throws LAPException 
 	 */
 	public EntailmentGraphRaw mergeGraphs(
 		Set<FragmentGraph> fragmentGraphs,
-		EntailmentGraphRaw workGraph) throws GraphMergerException;
+		EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException;
 
 	/** input-case2: a single FragmentGraph ({@link FragmentGraph}), and a work
 	  graph ({@link EntailmentGraphRaw}).
@@ -71,9 +74,10 @@ public interface GraphMerger {
 		 * @return the work graph (EntailmentGraphRaw) enriched by the given fragment
 		 * @throws GraphMergerException if the implementation can't merge the graphs for some
 	  reason
+	 * @throws LAPException 
 		 */
 	public EntailmentGraphRaw mergeGraphs(
 			FragmentGraph fragmentGraph,
-			EntailmentGraphRaw workGraph) throws GraphMergerException;
+			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException;
 	
 }
