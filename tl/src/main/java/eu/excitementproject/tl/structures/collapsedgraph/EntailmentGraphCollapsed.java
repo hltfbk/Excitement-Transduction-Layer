@@ -273,6 +273,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		//TODO: implement
 		return null;
 	}
+	
 	public Set<String> getRelevantInteractionIDs(EntailmentUnit entailmentUnit){
 		return getRelevantInteractionIDs(entailmentUnit.getText());
 	}

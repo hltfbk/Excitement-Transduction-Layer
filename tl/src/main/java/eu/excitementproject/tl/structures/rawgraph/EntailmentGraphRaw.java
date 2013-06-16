@@ -111,7 +111,7 @@ public class EntailmentGraphRaw extends
 		// copy nodes, which have no edges (must happen only if base statement = complete statement => graph has a single node and no edges) 
 		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
 			if (this.getVertex(fragmentGraphNode.getText())==null) {
-				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText());
+				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText(), fg.getInteractionId());
 				this.addVertex(newNode);
 			}
 		}
@@ -337,7 +337,7 @@ public class EntailmentGraphRaw extends
 
 		// if vertices do not exist - add them, otherwise - update their frequency and completeStatementTexts
 		if(sourceVertex==null){
-			sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText());
+			sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText(), fg.getInteractionId());
 			this.addVertex(sourceVertex);
 		}
 		else {
@@ -346,7 +346,7 @@ public class EntailmentGraphRaw extends
 		}
 		
 		if(targetVertex==null){
-			targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget(),fg.getCompleteStatement().getText());
+			targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget(),fg.getCompleteStatement().getText(), fg.getInteractionId());
 			this.addVertex(targetVertex);
 		}
 		else {
@@ -452,15 +452,15 @@ public class EntailmentGraphRaw extends
 	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges){
 		
 		// create the to-be graph nodes
-		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.");
-		EntailmentUnit B = new EntailmentUnit("Food was bad.",0,"Food was really bad.");
-		EntailmentUnit C = new EntailmentUnit("I didn't like the food.",0,"I didn't like the food.");
-		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect",1,"a little more leg room would have been perfect");
-		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect",0,"a little more leg room would have been perfect"); 
-		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains",2,"Disappointed with the amount of legroom compared with other trains");
-		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains",1,"Disappointed with the amount of legroom compared with other trains");
-		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom",1,"Disappointed with the amount of legroom compared with other trains");
-		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom",0,"Disappointed with the amount of legroom compared with other trains");
+		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.","interaction1");
+		EntailmentUnit B = new EntailmentUnit("Food was bad.",0,"Food was really bad.","interaction1");
+		EntailmentUnit C = new EntailmentUnit("I didn't like the food.",0,"I didn't like the food.","interaction2");
+		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect",1,"a little more leg room would have been perfect","interaction3");
+		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect",0,"a little more leg room would have been perfect","interaction3"); 
+		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains",2,"Disappointed with the amount of legroom compared with other trains","interaction4");
+		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains",1,"Disappointed with the amount of legroom compared with other trains","interaction4");
+		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom",1,"Disappointed with the amount of legroom compared with other trains","interaction4");
+		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom",0,"Disappointed with the amount of legroom compared with other trains","interaction4");
 
 		// create an empty graph
 		EntailmentGraphRaw sampleRawGraph = new EntailmentGraphRaw();
@@ -541,15 +541,15 @@ public class EntailmentGraphRaw extends
 	public static EntailmentGraphRaw getSampleOuputWithCategories(boolean randomEdges){
 		
 		// create the to-be graph nodes
-		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.", "1");
-		EntailmentUnit B = new EntailmentUnit("Food was bad.",0,"Food was really bad.", "1");
-		EntailmentUnit C = new EntailmentUnit("I didn't like the food.",0,"I didn't like the food.", "2");
-		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect",1,"a little more leg room would have been perfect", "3");
-		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect",0,"a little more leg room would have been perfect", "3"); 
-		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains",2,"Disappointed with the amount of legroom compared with other trains", "3");
-		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains",1,"Disappointed with the amount of legroom compared with other trains", "3");
-		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom",1,"Disappointed with the amount of legroom compared with other trains", "4");
-		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom",0,"Disappointed with the amount of legroom compared with other trains", "3");
+		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.", "1","interaction1");
+		EntailmentUnit B = new EntailmentUnit("Food was bad.",0,"Food was really bad.", "1","interaction1");
+		EntailmentUnit C = new EntailmentUnit("I didn't like the food.",0,"I didn't like the food.", "2","interaction2");
+		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect",1,"a little more leg room would have been perfect", "3","interaction3");
+		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect",0,"a little more leg room would have been perfect", "3","interaction3"); 
+		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains",2,"Disappointed with the amount of legroom compared with other trains", "3","interaction4");
+		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains",1,"Disappointed with the amount of legroom compared with other trains", "3","interaction4");
+		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom",1,"Disappointed with the amount of legroom compared with other trains", "4","interaction4");
+		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom",0,"Disappointed with the amount of legroom compared with other trains", "3","interaction4");
 
 		// create an empty graph
 		EntailmentGraphRaw sampleRawGraph = new EntailmentGraphRaw();

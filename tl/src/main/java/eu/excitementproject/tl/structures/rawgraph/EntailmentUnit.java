@@ -34,14 +34,9 @@ public class EntailmentUnit{
 	
 	protected Set<String> completeStatementTexts;
 	
-	/**
-	 * @return the completeStatementTexts
-	 */
-	public Set<String> getCompleteStatementTexts() {
-		return completeStatementTexts;
-	}
-
 	protected Set<EntailmentUnitMention> mentions = null;
+	
+	protected Set<String> interactionIds = null;
 	
 	/*	protected Set<Long> fragmentGraphIds;
 	
@@ -68,6 +63,21 @@ public class EntailmentUnit{
 	protected int frequency;
 	
 	/**
+	 * @return the completeStatementTexts
+	 */
+	public Set<String> getCompleteStatementTexts() {
+		return completeStatementTexts;
+	}
+	
+	/**
+	 * @return the interactionIds
+	 */
+	public Set<String> getInteractionIds() {
+		return interactionIds;
+	}
+
+
+	/**
 	 * initialize the JCas attribute -- make the first fragment added to the 
 	 * EntailmentUnit object the "canonical" element
 	 * 
@@ -75,7 +85,7 @@ public class EntailmentUnit{
 	 * @param start	-- start index of the fragment
 	 * @param end -- end index of the fragment
 	 */
-	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText) {
+	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText, String interactionId) {
 		
 		mentions = new HashSet<EntailmentUnitMention>();
 		mentions.add(eum);
@@ -84,15 +94,18 @@ public class EntailmentUnit{
 		frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
+		interactionIds = new HashSet<String>();
+		interactionIds.add(interactionId);
 	}
 
 	/**
-	 * Same as before -- this will be the "canonical" element
+	 * This constructor is only used for internal testing purposes (generate sample output)
 	 * 
 	 * @param textFragment -- generate node directly from the text fragment
 	 * @param level -- the number of modifiers in the textFragment
+	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
 	 */
-	public EntailmentUnit(String textFragment, int level, String completeStatementText) {
+	public EntailmentUnit(String textFragment, int level, String completeStatementText, String interactionId) {
 		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
 		
 		mentions = new HashSet<EntailmentUnitMention>();
@@ -102,9 +115,20 @@ public class EntailmentUnit{
 		frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
+		interactionIds = new HashSet<String>();
+		interactionIds.add(interactionId);
+
 	}
 	
-	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category) {
+	/**
+	 * This constructor is only used for internal testing purposes (generate sample output with category id)
+	 * 
+	 * @param textFragment -- generate node directly from the text fragment
+	 * @param level -- the number of modifiers in the textFragment
+	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
+	 * @param category - category id 
+	 */
+	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category, String interactionId) {
 		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
 		n.setCategoryId(category);
 		mentions = new HashSet<EntailmentUnitMention>();
@@ -114,6 +138,9 @@ public class EntailmentUnit{
 		frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
+		interactionIds = new HashSet<String>();
+		interactionIds.add(interactionId);
+
 	}
 
 	public void addCompleteStatement(String completeStatementText){
