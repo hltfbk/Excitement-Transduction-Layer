@@ -71,8 +71,7 @@ public class EntailmentRelation extends DefaultEdge {
 		this.target = target;	
 		this.eda = eda;
 		this.edgeType = EdgeType.EDA;
-		this.lap = null;
-		
+		this.lap = null;		
 		edge = null;
 	}
 	
@@ -137,7 +136,7 @@ public class EntailmentRelation extends DefaultEdge {
 	protected JCas generateTHPairCAS() throws LAPException{
 		// extract annotations from "from" and "to" to form the JCas object that is used as input to the EDA
 		logger.info("Generating a cass for the pair: \n \tTEXT: " + source.getText() + "\n \tHYPOTHESIS: " + target.getText());
-		return lap.generateSingleTHPairCAS(source.getText(), target.getText());
+		return lap.generateSingleTHPairCAS(source.getTextWithoutDoulbeSpaces(), target.getTextWithoutDoulbeSpaces());
 	}
 	
 	public TEDecision getTEdecision() {

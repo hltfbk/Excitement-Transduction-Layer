@@ -241,6 +241,9 @@ public class EntailmentUnit{
 		return true;
 	}
 
+	public String getTextWithoutDoulbeSpaces(){
+		return this.getText().trim().replaceAll(" +", " ");
+	}
 
 	
 }	

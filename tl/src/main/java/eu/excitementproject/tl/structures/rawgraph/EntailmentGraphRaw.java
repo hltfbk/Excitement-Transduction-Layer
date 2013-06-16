@@ -131,6 +131,7 @@ public class EntailmentGraphRaw extends
 	}
 
 	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
+		if (nodeA.equals(nodeB)) return true; // if both nodes are the same
 		if (isEntailment(nodeA, nodeB)||(isEntailment(nodeB, nodeA))) return true;
 		return false;
 	}

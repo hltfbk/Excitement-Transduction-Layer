@@ -100,10 +100,10 @@ public class EquivalenceClass {
 	
 	@Override
 	public String toString(){
-		String s = "\""+label+"\":\n";
+		String s = "\""+label.trim().replaceAll(" +", " ")+"\":\n";
 		int i=1;
 		for (EntailmentUnit eu : entailmentUnits){
-			s+="\t"+i+")\""+eu.getText()+"\"\n";
+			s+="\t"+i+")\""+eu.getTextWithoutDoulbeSpaces()+"\"\n";
 			i++;
 		}
 		s+="\n";

@@ -63,7 +63,7 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	
 	@Override 
 	public String toString(){
-		return this.getSource().getLabel()+" --> "+this.getTarget().getLabel() +" ("+this.getConfidence()+") ";
+		return this.getSource().getLabel().trim().replaceAll(" +", " ")+" --> "+this.getTarget().getLabel().trim().replaceAll(" +", " ") +" ("+this.getConfidence()+") ";
 	}	
 	
 }
