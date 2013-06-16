@@ -1,8 +1,5 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.apache.uima.jcas.JCas;
@@ -15,7 +12,6 @@ import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 
