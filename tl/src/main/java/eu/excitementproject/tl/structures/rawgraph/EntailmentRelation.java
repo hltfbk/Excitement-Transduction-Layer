@@ -71,8 +71,7 @@ public class EntailmentRelation extends DefaultEdge {
 		this.target = target;	
 		this.eda = eda;
 		this.edgeType = EdgeType.EDA;
-		this.lap = null;
-		
+		this.lap = null;		
 		edge = null;
 	}
 	
@@ -137,7 +136,7 @@ public class EntailmentRelation extends DefaultEdge {
 	protected JCas generateTHPairCAS() throws LAPException{
 		// extract annotations from "from" and "to" to form the JCas object that is used as input to the EDA
 		logger.info("Generating a cass for the pair: \n \tTEXT: " + source.getText() + "\n \tHYPOTHESIS: " + target.getText());
-		return lap.generateSingleTHPairCAS(source.getText(), target.getText());
+		return lap.generateSingleTHPairCAS(source.getTextWithoutDoulbeSpaces(), target.getTextWithoutDoulbeSpaces());
 	}
 	
 	public TEDecision getTEdecision() {
@@ -186,4 +185,14 @@ public class EntailmentRelation extends DefaultEdge {
 		return this.getSource().getText()+" --> "+this.getTarget().getText() +" ("+this.getLabel().toString()+", "+this.getConfidence()+") ";
 	}
 	
+	public String toDOT(){
+		String s = "\""+this.getSource().getTextWithoutDoulbeSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoulbeSpaces()+"\"";
+		s+= " [label="+this.getConfidence()+"]";
+		String color = "red";
+		if (this.getLabel().is(DecisionLabel.Entailment)) color="blue";
+		if (this.edgeType.is(EdgeType.FRAGMENT_GRAPH)) color = "green";		
+		s+= " [color="+color+"]";
+		return s+"\n";
+	}
+			
 }
