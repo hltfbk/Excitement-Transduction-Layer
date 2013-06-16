@@ -5,7 +5,9 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import eu.excitementproject.eop.common.EDABasic;
+//import eu.excitementproject.eop.common.EDABasic;
+//import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
+
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
@@ -24,7 +26,6 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 public class SimpleCollapseGraphGeneratorTest {
 

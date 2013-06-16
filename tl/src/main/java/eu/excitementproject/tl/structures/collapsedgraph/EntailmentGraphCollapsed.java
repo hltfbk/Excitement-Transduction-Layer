@@ -1,8 +1,5 @@
 package eu.excitementproject.tl.structures.collapsedgraph;
 
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -36,7 +33,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 */
 	private static final long serialVersionUID = 5957243707939421299L;
 		
-	int numberOfTextualInputs; //the number of textual inputs, on which the entailment graph was built.
+	Set<String> textualInputs = null; //the textual inputs (complete statements), on which the entailment graph was built.
 	int numberOfEntailmentUnits; //the number of entailment units contained in the graph. This number is not necessarily the same as the number of nodes in the graph, since each equivalence class node corresponds to one or more entailment unit(s).
 
 	
@@ -48,17 +45,21 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 * Default constructor
 	 * 
 	 * @param arg0 -- edge class
-	 */
+	 *//*
 	public EntailmentGraphCollapsed(Class<? extends EntailmentRelationCollapsed> arg0) {
 		super(arg0);
 		// TODO Auto-generated constructor stub
 	}
-
+*/
+	
+	
 	/**
 	 * Initialize an empty collapsed graph
 	 */
 	public EntailmentGraphCollapsed(){
 		super(EntailmentRelationCollapsed.class);
+		numberOfEntailmentUnits = 0;
+		textualInputs = new HashSet<String>();
 	}
 
 	
@@ -71,7 +72,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 * @return the numberOfTextualInputs
 	 */
 	public int getNumberOfTextualInputs() {
-		return numberOfTextualInputs;
+		return this.textualInputs.size();
 	}
 
 	/**
@@ -343,7 +344,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	
 	@Override
 	public String toString(){
-		String s = "";
+		String s = "The graph is built based on "+ textualInputs.size()+" textual inputs (complete statements) and contains "+numberOfEntailmentUnits+" entailment units";
 		s+="\nNODES:";
 		for (EquivalenceClass v: this.vertexSet()){
 			s+="\n"+v.toString();
@@ -357,18 +358,21 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	}
 	
 	
-	public class NumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
-	    @Override
-	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
-	        return Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
-	    }
-	}
-
 	public class DescendingNumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
 	    @Override
 	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
 	        return -1*Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
 	    }
 	}
-
+	
+	public boolean addVertex(EquivalenceClass v){
+		boolean added = super.addVertex(v);
+		if (added){
+			for (EntailmentUnit eu : v.getEntailmentUnits()){
+				numberOfEntailmentUnits++;
+				textualInputs.addAll(eu.getCompleteStatementTexts());
+			}						
+		}
+		return added;
+	}
 }
