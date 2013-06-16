@@ -3,7 +3,9 @@ package  eu.excitementproject.tl.structures.collapsedgraph;
 import java.util.HashSet;
 import java.util.Set;
 
+import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
  * 
@@ -115,6 +117,16 @@ public class EquivalenceClass {
 			i++;
 		}
 		s+="\n";
+		return s;
+	}
+	
+	public String toDOT(){
+		String s = "\""+label.trim().replaceAll(" +", " ")+" ("+this.getInteractionIds().size()+" interactions) :";
+		for (EntailmentUnit eu : entailmentUnits){
+			if (eu.getText().equals(label)) continue;
+			s+="\\n"+eu.getTextWithoutDoulbeSpaces();			
+		}
+		s+="\"";
 		return s;
 	}
 	

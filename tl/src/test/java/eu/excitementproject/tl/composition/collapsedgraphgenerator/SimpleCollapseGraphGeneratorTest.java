@@ -20,6 +20,7 @@ import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -51,6 +52,12 @@ public class SimpleCollapseGraphGeneratorTest {
 					System.out.println("Merged raw graph:");			
 					EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
 					System.out.println(rawGraph.toString());
+					try {
+						rawGraph.toDOT("./src/test/outputs/rawGraph.txt");
+					} catch (EntailmentGraphRawException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					
 					System.out.println("**** Collapsing the the raw graph ****");
 					CollapsedGraphGenerator collapser = new SimpleCollapseGraphGenerator();
@@ -63,9 +70,16 @@ public class SimpleCollapseGraphGeneratorTest {
 					rawGraph = EntailmentGraphRaw.getSampleOuput(false);
 					System.out.println(rawGraph.toString());
 					
+					
 					System.out.println("**** Collapsing the the raw graph ****");
 					finalGraph = collapser.generateCollapsedGraph(rawGraph, 0.2);
 					System.out.println("Done:\n"+finalGraph.toString());
+					try {
+						finalGraph.toDOT("./src/test/outputs/collapsedGraph.txt");
+					} catch (EntailmentGraphRawException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					
 					for (EquivalenceClass node : finalGraph.sortNodesByNumberOfInteractions(5)){
 						System.out.println(node.toString());

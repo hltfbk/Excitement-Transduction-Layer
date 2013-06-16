@@ -1,5 +1,8 @@
 package eu.excitementproject.tl.structures.collapsedgraph;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -9,6 +12,8 @@ import java.util.Set;
 
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
@@ -365,6 +370,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	    }
 	}
 	
+	@Override
 	public boolean addVertex(EquivalenceClass v){
 		boolean added = super.addVertex(v);
 		if (added){
@@ -375,4 +381,22 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		}
 		return added;
 	}
+	public String toDOT(){
+		String s = "digraph rawGraph {\n";
+		for (EntailmentRelationCollapsed edge : this.edgeSet()){
+			s+=edge.toDOT();
+		}
+		s+="}";	
+		return s;
+	}
+	
+	public void toDOT(String filename) throws EntailmentGraphRawException{
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+			out.write(this.toDOT());
+			out.close();
+		} catch (IOException e) {
+			throw new EntailmentGraphRawException(e.getMessage());
+		}		
+	}	
 }

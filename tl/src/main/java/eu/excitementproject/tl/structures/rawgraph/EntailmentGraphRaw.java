@@ -1,6 +1,9 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Set;
@@ -626,4 +629,24 @@ public class EntailmentGraphRaw extends
 
 		return sampleRawGraph;
 	}
+	
+	public String toDOT(){
+		String s = "digraph rawGraph {\n";
+		for (EntailmentRelation edge : this.edgeSet()){
+			s+=edge.toDOT();
+		}
+		s+="}";	
+		return s;
+	}
+	
+	public void toDOT(String filename) throws EntailmentGraphRawException{
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+			out.write(this.toDOT());
+			out.close();
+		} catch (IOException e) {
+			throw new EntailmentGraphRawException(e.getMessage());
+		}		
+	}
+	
 }
