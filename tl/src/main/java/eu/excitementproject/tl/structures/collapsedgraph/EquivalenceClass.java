@@ -98,9 +98,17 @@ public class EquivalenceClass {
 		entailmentUnits.addAll(s_eu);
 	}
 	
+	public Set<String> getInteractionIds(){
+		Set<String> interactionIds = new HashSet<String>();
+		for (EntailmentUnit eu : this.entailmentUnits){
+			interactionIds.addAll(eu.getInteractionIds());
+		}
+		return interactionIds;		
+	}
+	
 	@Override
 	public String toString(){
-		String s = "\""+label.trim().replaceAll(" +", " ")+"\":\n";
+		String s = "\""+label.trim().replaceAll(" +", " ")+"\" ("+this.getInteractionIds().size()+" interactions) :\n";
 		int i=1;
 		for (EntailmentUnit eu : entailmentUnits){
 			s+="\t"+i+")\""+eu.getTextWithoutDoulbeSpaces()+"\"\n";

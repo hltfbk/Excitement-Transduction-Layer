@@ -21,6 +21,7 @@ import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorExc
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
@@ -31,12 +32,20 @@ public class SimpleCollapseGraphGeneratorTest {
 	public void test() {
 
 				try {
-					System.out.println("**** Test collapsed graph generator (random EDA): merged graph ****");
+					System.out.println("**** Test collapsed graph generator: merged graph ****");
 
 					LAPAccess lap = new TreeTaggerEN();
-					EDABasic<?> eda = new RandomEDA();
+//					EDABasic<?> eda = new RandomEDA();
+					File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");				
+					CommonConfig config = null;
+					config = new ImplCommonConfig(configFile);
+					MaxEntClassificationEDA meceda = new MaxEntClassificationEDA();	
+					meceda.initialize(config);  
+
 					
-					GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,eda); 
+//					GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,eda); 
+					GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,meceda); 
+					
 					Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
 					System.out.println("Merged raw graph:");			
 					EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
@@ -56,23 +65,10 @@ public class SimpleCollapseGraphGeneratorTest {
 					System.out.println("**** Collapsing the the raw graph ****");
 					finalGraph = collapser.generateCollapsedGraph(rawGraph, 0.2);
 					System.out.println("Done:\n"+finalGraph.toString());
-
-
-					System.out.println("**** Test collapsed graph generator (MaxEntClassificationEDA): merged graph ****");
 					
-					File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");				
-					CommonConfig config = null;
-					config = new ImplCommonConfig(configFile);
-					MaxEntClassificationEDA meceda = new MaxEntClassificationEDA();	
-					meceda.initialize(config);  
-					
-					merger = new AutomateWP2ProcedureGraphMerger(lap,meceda); 
-					rawGraph = merger.mergeGraphs(fragmentGraphs);
-					System.out.println(rawGraph.toString());
-					
-					System.out.println("**** Collapsing the the raw graph ****");
-					finalGraph = collapser.generateCollapsedGraph(rawGraph);
-					System.out.println("Done:\n"+finalGraph.toString());
+					for (EquivalenceClass node : finalGraph.sortNodesByNumberOfInteractions(5)){
+						System.out.println(node.toString());
+					}
 				} catch (LAPException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

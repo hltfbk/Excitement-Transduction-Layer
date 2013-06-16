@@ -1,7 +1,12 @@
 package eu.excitementproject.tl.structures.collapsedgraph;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -264,19 +269,33 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 }
 
 	
+	/** Returns top-X nodes sorted by number of interactions
+	 * @param X
+	 * @return
+	 */
 	public List<EquivalenceClass> sortNodesByNumberOfInteractions(int X){
-		//TODO: implement
-		return null;
+		if (X > this.vertexSet().size()) X = this.vertexSet().size(); // cannot return more nodes than we have in the graph
+				
+		List<EquivalenceClass> sortedNodes = new LinkedList<EquivalenceClass>();
+		sortedNodes.addAll(this.vertexSet());
+		Collections.sort(sortedNodes, new DescendingNumberOfInteractionsComparator());
+		sortedNodes.subList(X, sortedNodes.size()).clear(); //remove all the elements with index starting at X (incusive)
+		return sortedNodes;
 	}
 	
 	public Set<String> getRelevantInteractionIDs(String entailmentUnitText){
-		//TODO: implement
-		return null;
+		return getRelevantInteractionIDs(this.getVertex(entailmentUnitText));		
 	}
 	
 	public Set<String> getRelevantInteractionIDs(EntailmentUnit entailmentUnit){
-		return getRelevantInteractionIDs(entailmentUnit.getText());
+		return getRelevantInteractionIDs(this.getVertex(entailmentUnit));
 	}
+	
+	public Set<String> getRelevantInteractionIDs(EquivalenceClass node){
+		if (!this.containsVertex(node)) return null;
+		return node.getInteractionIds();
+	}
+	
 	
 /*	*//**
 	 * Converts an input work graph to a format that would be useful to the end users
@@ -336,4 +355,20 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		}		
 		return s;
 	}
+	
+	
+	public class NumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
+	    @Override
+	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
+	        return Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
+	    }
+	}
+
+	public class DescendingNumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
+	    @Override
+	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
+	        return -1*Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
+	    }
+	}
+
 }
