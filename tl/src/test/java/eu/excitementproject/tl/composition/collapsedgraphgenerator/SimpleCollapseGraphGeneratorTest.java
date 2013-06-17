@@ -52,24 +52,22 @@ public class SimpleCollapseGraphGeneratorTest {
 						System.out.println("Merged raw graph:");			
 						EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
 						System.out.println(rawGraph.toString());
-							rawGraph.toDOT("./src/test/outputs/rawGraph.txt");
+						rawGraph.toDOT("./src/test/outputs/rawGraph.txt");
 						
 						System.out.println("**** Collapsing the the raw graph ****");
 						CollapsedGraphGenerator collapser = new SimpleCollapseGraphGenerator();
 						EntailmentGraphCollapsed finalGraph = collapser.generateCollapsedGraph(rawGraph);
 						System.out.println("Done:\n"+finalGraph.toString());
+						finalGraph.toDOT("./src/test/outputs/collapsedGraph.txt");
 						
 						System.out.println("**** Test collapsed graph generator: sample graph ****");
-
-						
 						rawGraph = EntailmentGraphRaw.getSampleOuput(false);
 						System.out.println(rawGraph.toString());
-						
-						
+						rawGraph.toDOT("./src/test/outputs/sampleRawGraph.txt");
 						System.out.println("**** Collapsing the the raw graph ****");
 						finalGraph = collapser.generateCollapsedGraph(rawGraph, 0.2);
 						System.out.println("Done:\n"+finalGraph.toString());
-							finalGraph.toDOT("./src/test/outputs/collapsedGraph.txt");
+						finalGraph.toDOT("./src/test/outputs/collapsedGraphFromSample.txt");
 						
 						for (EquivalenceClass node : finalGraph.sortNodesByNumberOfInteractions(5)){
 							System.out.println(node.toString());

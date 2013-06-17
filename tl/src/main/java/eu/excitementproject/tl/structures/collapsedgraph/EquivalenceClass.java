@@ -157,10 +157,10 @@ public class EquivalenceClass {
 	 * @return the generated string
 	 */
 	public String toDOT(){
-		String s = "\""+label.trim().replaceAll(" +", " ")+" ("+this.getInteractionIds().size()+" interactions) :";
+		String s = "\""+label.trim().replaceAll(" +", " ")+" (Total: "+this.getInteractionIds().size()+" interaction(s)):";
 		for (EntailmentUnit eu : entailmentUnits){
-			if (eu.getText().equals(label)) continue;
-			s+="\\n"+eu.getTextWithoutDoulbeSpaces();			
+			//if (eu.getText().equals(label)) continue;
+			s+="\\n"+eu.getTextWithoutDoulbeSpaces()+" ("+eu.getInteractionIds().size()+" interaction(s))";;			
 		}
 		s+="\"";
 		return s;
