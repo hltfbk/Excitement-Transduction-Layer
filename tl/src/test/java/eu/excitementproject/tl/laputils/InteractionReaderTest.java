@@ -156,7 +156,31 @@ public class InteractionReaderTest {
 		catch (Exception e)
 		{
 			fail(e.getMessage()); 
+		}
+		
+		// Lets read another file 
+		f = new File("./src/test/resources/WP2_public_data_XML/D2.1.1 English-Email.xml"); 		
+		try {
+			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
+			testlogger.info("The test file `" + f.getPath() + "'has " + iList.size() + " interactions in it."); 
+			assertEquals(iList.size(), 224); 
+
+			// check first interaction. 
+			Interaction one = iList.get(0); 
+			testlogger.info("The first interaction of speech (id: " + one.getInteractionId() +") text is:" + one.getInteractionString());
+			assertEquals(one.getLang(), "EN"); 
+			assertEquals(one.getChannel(), "email"); 
+			assertEquals(one.getProvider(), "NICE"); 
+			
+			testlogger.info("testing of readInteractionXML(): Okay"); 	
+			
+			
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
 		}	
+
 	}
 
 }
