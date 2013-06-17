@@ -41,7 +41,6 @@ public class EntailmentUnit{
 
 	protected int level = -1; // negative value means "unknown"
 	
-	// protected int frequency;
 	
 	
 	/******************************************************************************************
@@ -61,7 +60,6 @@ public class EntailmentUnit{
 		mentions.add(eum);
 		text = eum.getText();
 		level = eum.getLevel();	
-	//	frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
 		interactionIds = new HashSet<String>();
@@ -82,7 +80,6 @@ public class EntailmentUnit{
 		mentions.add(n);
 		text = textFragment;
 		this.level =level; 
-	//	frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
 		interactionIds = new HashSet<String>();
@@ -105,7 +102,6 @@ public class EntailmentUnit{
 		mentions.add(n);
 		text = textFragment;
 		this.level =level; 
-	//	frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
 		interactionIds = new HashSet<String>();
@@ -138,10 +134,58 @@ public class EntailmentUnit{
 		return level;
 	}
 
+	/**
+	 * 
+	 * @return -- the "canonical" text fragment of the node
+	 */
+	public String getText() {
+		return text;
+	}
+	
+	/**
+	 * 
+	 * @return -- the set of entailment unit mentions associated to this node
+	 */
+	public Set<EntailmentUnitMention> getMentions() {
+		return mentions;
+	}
+
+	
+	/**
+	 * @return -- a set of text fragments corresponding to all the entailment unit mentions covered by this node
+	 */
+	public Set<String> getMentionTexts() {
+		Set<String> texts = new HashSet<String>();
+		
+		for(EntailmentUnitMention n : mentions) {
+			texts.add(n.getText());
+		}
+		
+		return texts;
+	}
+
+	/** The method returns the size of the set of completeStatementTexts,
+	 * i.e. the number of fragment graphs, in which the entailmet unit was seen.
+	 * @return the number of fragment graphs, in which the entailmet unit was seen.
+	 */
+	public int getNumberOfTextualInputs() {
+		//return frequency;
+		return this.completeStatementTexts.size();
+	}
+
 
 	/******************************************************************************************
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
+
+	/** Returns true if the entailment unit is a base statement (has no modifiers, level = 0).
+	 * Otherwise returns false.
+	 * @return true/false
+	 */
+	public boolean isBaseStatement() {
+		if (level==0) return true;
+		return false;
+	}
 
 	/**
 	 * Adds a new entailment unit mention to the entailment unit.
@@ -167,67 +211,11 @@ public class EntailmentUnit{
 	
 	
 	
-	/** The method returns the size of the set of completeStatementTexts,
-	 * i.e. the number of fragment graphs, in which the entailmet unit was seen.
-	 * @return the number of fragment graphs, in which the entailmet unit was seen.
-	 */
-	public int getNumberOfTextualInputs() {
-		//return frequency;
-		return this.completeStatementTexts.size();
-	}
 
-/*	*//**
-	 * @param frequency the frequency to set
-	 *//*
-	public void setFrequency(int frequency) {
-		this.frequency = frequency;
-	}
-*/	
-	
-/*	*//**
-	 * Increase the value of frequency by 1 
-	 *//*
-	public void incrementFrequency(){
-		this.frequency++;
-	}
-*/
-	/**
-	 * @return -- a set of text fragments corresponding to all the entailment unit mentions covered by this node
-	 */
-	public Set<String> getMentionTexts() {
-		Set<String> texts = new HashSet<String>();
-		
-		for(EntailmentUnitMention n : mentions) {
-			texts.add(n.getText());
-		}
-		
-		return texts;
-	}
-	
-	/**
-	 * 
-	 * @return -- the "canonical" text fragment of the node
-	 */
-	public String getText() {
-		return text;
-	}
-	
-	/**
-	 * 
-	 * @return -- the set of entailment unit mentions associated to this node
-	 */
-	public Set<EntailmentUnitMention> getMentions() {
-		return mentions;
-	}
 
-	public boolean isBaseStatement() {
-		if (level==0) return true;
-		return false;
-	}
+	
 
-	public void setBaseStatement(boolean isBaseStatement) {
-		this.level=0;
-	}
+
 
 	@Override
 	public String toString(){
@@ -313,5 +301,26 @@ public class EntailmentUnit{
 		if (!fragmentGraphIds.contains(id)) fragmentGraphIds.add(id);
 	}
 */
+	
+	/*	*//**
+	 * @param frequency the frequency to set
+	 *//*
+	public void setFrequency(int frequency) {
+		this.frequency = frequency;
+	}
+*/	
+	
+/*	*//**
+	 * Increase the value of frequency by 1 
+	 *//*
+	public void incrementFrequency(){
+		this.frequency++;
+	}
+*/
+	
+/*	public void setBaseStatement(boolean isBaseStatement) {
+		this.level=0;
+	}
+*/	
 }	
 
