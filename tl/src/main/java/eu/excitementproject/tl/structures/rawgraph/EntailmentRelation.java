@@ -60,6 +60,14 @@ public class EntailmentRelation extends DefaultEdge {
 	/******************************************************************************************
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
+	
+	/** Create an entailment relation by computing TEdecision from the input EDA
+	 * @param source
+	 * @param target
+	 * @param eda
+	 * @param lap
+	 * @throws EntailmentGraphRawException
+	 */
 	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda, LAPAccess lap) throws EntailmentGraphRawException {
 		setAttributes(source, target, EdgeType.EDA, eda, lap);
 		try {
@@ -69,37 +77,20 @@ public class EntailmentRelation extends DefaultEdge {
 		}
 		
 	}
-	
-	
-	
+		
 	/**
-	 * Create an entailment relation in cases when TEDecision is known (don't specify the EDA)
-	 * TODO: find out what to put into the eda when copying edges from a fragment graph or inducing  by transitivity
+	 * Create an entailment relation in cases when TEDecision is known (don't specify the EDA).
+	 * This constructor is used when copying edges from a fragment graph or inducing from prior knowledge
+	 * Assigns null to the eda and lap attributes 
 	 * @param source
 	 * @param target
-	 * @param edge
+	 * @param edge - the TEDecision
 	 */
 	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, TEDecision edge, EdgeType edgeType) {
-		this.source = source;
-		this.target = target;			
+		setAttributes(source, target, edgeType, null, null);
 		this.edge = edge;
-		this.edgeType = edgeType;
 	}
 	
-	/**
-	 * Create an entailment relation in cases when TEDecision is known (don't specify the EDA) but edge type is not known
-	 * TODO: find out what to put into the eda when copying edges from a fragment graph or inducing  by transitivity
-	 * @param source
-	 * @param target
-	 * @param edge
-	 */
-	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, TEDecision edge) {
-		this.source = source;
-		this.target = target;			
-		this.edge = edge;
-		this.edgeType = EdgeType.UNKNOWN;
-	}	
-
 	
 	/******************************************************************************************
 	 * SETTERS/GERRETS
@@ -110,9 +101,10 @@ public class EntailmentRelation extends DefaultEdge {
 		this.target = target;	
 		this.edgeType = EdgeType.EDA;
 		this.eda = eda;
-		this.lap = lap;
-		
+		this.lap = lap;	
 	}
+	
+	
 	
 	/******************************************************************************************
 	 * OTHER AUXILIARY METHODS
@@ -131,6 +123,19 @@ public class EntailmentRelation extends DefaultEdge {
 		EntailmentRelation edge = new EntailmentRelation(source, target, computeRandomTEdecision(eda), EdgeType.EDA);
 		return edge;
 	}
+	
+	/**
+	 * This constructor is only used for internal testing purposes
+	 * Create an entailment relation in cases when TEDecision is known (don't specify the EDA) but edge type is not known
+	 * @param source
+	 * @param target
+	 * @param edge
+	 */
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, TEDecision edge) {
+		setAttributes(source, target, EdgeType.UNKNOWN, null, null);
+		this.edge = edge;
+	}	
+
 
 	/**
 	 * Generates a dummy random entailment decision for this EntailmentReation 
