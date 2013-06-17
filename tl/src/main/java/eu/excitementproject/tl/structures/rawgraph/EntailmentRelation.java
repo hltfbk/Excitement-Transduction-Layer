@@ -12,7 +12,9 @@ import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
+import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 
 /**
@@ -39,7 +41,7 @@ public class EntailmentRelation extends DefaultEdge {
 	
 	EdgeType edgeType; 	
 	
-	/**
+	/*
 	 * The TEdecision object is produced by the EDA, and contains the label, confidence score, ...
 	 */
 	TEDecision edge = null;
@@ -58,19 +60,6 @@ public class EntailmentRelation extends DefaultEdge {
 	/******************************************************************************************
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
-
-	/******************************************************************************************
-	 * SETTERS/GERRETS
-	 * ****************************************************************************************/
-
-	/******************************************************************************************
-	 * OTHER AUXILIARY METHODS
-	 * ****************************************************************************************/
-
-	/******************************************************************************************
-	 * PRINT
-	 * ****************************************************************************************/
-
 	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda, LAPAccess lap) throws LAPException {
 		this.source = source;
 		this.target = target;	
@@ -82,13 +71,13 @@ public class EntailmentRelation extends DefaultEdge {
 		
 	}
 	
-	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda) {
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda) throws EntailmentGraphRawException{
 		this.source = source;
 		this.target = target;	
 		this.eda = eda;
 		this.edgeType = EdgeType.EDA;
 		this.lap = null;		
-		edge = null;
+		computeRandomTEdecision();
 	}
 	
 	
@@ -119,7 +108,24 @@ public class EntailmentRelation extends DefaultEdge {
 		this.edge = edge;
 		this.edgeType = EdgeType.UNKNOWN;
 	}	
+
 	
+	/******************************************************************************************
+	 * SETTERS/GERRETS
+	 * ****************************************************************************************/
+
+	/******************************************************************************************
+	 * OTHER AUXILIARY METHODS
+	 * ****************************************************************************************/
+
+	/******************************************************************************************
+	 * PRINT
+	 * ****************************************************************************************/
+
+	/******************************************************************************************
+	 * METHODS FOR INTERNAL TESTING PURPOSES
+	 * ****************************************************************************************/
+
 	
 	/**
 	 * Generates a dummy random entailment decision for this EntailmentReation 
@@ -129,8 +135,6 @@ public class EntailmentRelation extends DefaultEdge {
 	
 	protected void computeTEdecision() throws LAPException {
 	
-	// Vivi's code below 
- //		JCas pairCAS = lap.generateSingleTHPairCAS(from.getText(), to.getText());
 		JCas pairCAS = generateTHPairCAS();
 		try {
 			edge = eda.process(pairCAS);
@@ -142,6 +146,26 @@ public class EntailmentRelation extends DefaultEdge {
 			e.printStackTrace();
 		}
 	}
+	
+
+	/**
+	 * Generates a dummy random entailment decision for this EntailmentReation 
+	 * @throws LAPException 
+	 */
+	
+	protected void computeRandomTEdecision() throws EntailmentGraphRawException {
+		try {
+			RandomEDA eda = new RandomEDA();
+			edge = eda.process(null);
+		} catch (EDAException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ComponentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	
 	/**
 	 * 

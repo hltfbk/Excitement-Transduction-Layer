@@ -314,22 +314,9 @@ public class EntailmentGraphRaw extends
 	}
 	
 	
-	/**
-	 * Create an edge from sourceVertex to targetVertex using the specified eda 
-	 * @param sourceVertex
-	 * @param targetVertex
-	 * @param eda
-	 * @return the edge, which was added to the graph
-	 * @throws LAPException 
-	 */
-	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
-		this.addEdge(sourceVertex, targetVertex, edge);
-		return edge;
-	}
 	
 	/**
-	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If a vertex exists - add the corresponding new entailment unit mention to it
+	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If a vertex exists - add the corresponding new entailment unit mention
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
 	 * @return the edge, which was added to the graph
 	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
@@ -431,8 +418,22 @@ public class EntailmentGraphRaw extends
 	}
 	
 	/******************************************************************************************
-	 * DUMMY FUNCTIONALITY
+	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
+	
+	/** Create an edge from sourceVertex to targetVertex using the specified EDA 
+	 * No LAP is specified, which is not the case is real settings when EDA is always paired with its required LAP 
+	 * @param sourceVertex
+	 * @param targetVertex
+	 * @param eda
+	 * @return the edge, which was added to the graph
+	 * @throws LAPException 
+	 */
+	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda) throws EntailmentGraphRawException{
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
+		this.addEdge(sourceVertex, targetVertex, edge);
+		return edge;
+	}
 	
 	/**
 	 * Get a sample EntailmentGraphRaw
@@ -450,7 +451,7 @@ public class EntailmentGraphRaw extends
 			
 	 */
 		
-	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges){
+	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges) throws EntailmentGraphRawException{
 		
 		// create the to-be graph nodes
 		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.","interaction1");
@@ -539,7 +540,7 @@ public class EntailmentGraphRaw extends
 		return sampleRawGraph;
 	}
 	
-	public static EntailmentGraphRaw getSampleOuputWithCategories(boolean randomEdges){
+	public static EntailmentGraphRaw getSampleOuputWithCategories(boolean randomEdges) throws EntailmentGraphRawException{
 		
 		// create the to-be graph nodes
 		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.", "1","interaction1");
@@ -645,6 +646,6 @@ public class EntailmentGraphRaw extends
 		} catch (IOException e) {
 			throw new EntailmentGraphRawException(e.getMessage());
 		}		
-	}
+	}	
 	
 }

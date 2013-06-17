@@ -58,32 +58,6 @@ public class EntailmentUnit{
 		setAttributes(eum, completeStatementText, interactionId);
 	}
 
-	/**
-	 * This constructor is only used for internal testing purposes (generate sample output)
-	 * 
-	 * @param textFragment -- generate node directly from the text fragment
-	 * @param level -- the number of modifiers in the textFragment
-	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
-	 */
-	public EntailmentUnit(String textFragment, int level, String completeStatementText, String interactionId) {
-		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment);
-		setAttributes(eum, completeStatementText, interactionId);
-	}
-	
-	/**
-	 * This constructor is only used for internal testing purposes (generate sample output with category id)
-	 * 
-	 * @param textFragment -- generate node directly from the text fragment
-	 * @param level -- the number of modifiers in the textFragment
-	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
-	 * @param category - category id 
-	 */
-	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category, String interactionId) {
-		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment);
-		eum.setCategoryId(category);
-		setAttributes(eum, completeStatementText, interactionId);
-	}
-	
 
 	/******************************************************************************************
 	 * SETTERS/GERRETS
@@ -247,7 +221,38 @@ public class EntailmentUnit{
 		return s;
 	}
 
+	/******************************************************************************************
+	 * METHODS FOR INTERNAL TESTING PURPOSES
+	 * ****************************************************************************************/
 
+	/**
+	 * This constructor is only used for internal testing purposes (generate sample output)
+	 * 
+	 * @param textFragment -- generate node directly from the text fragment
+	 * @param level -- the number of modifiers in the textFragment
+	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
+	 */
+	public EntailmentUnit(String textFragment, int level, String completeStatementText, String interactionId) {
+		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment);
+		setAttributes(eum, completeStatementText, interactionId);
+	}
+	
+	/**
+	 * This constructor is only used for internal testing purposes (generate sample output with category id)
+	 * 
+	 * @param textFragment -- generate node directly from the text fragment
+	 * @param level -- the number of modifiers in the textFragment
+	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
+	 * @param category - category id 
+	 */
+	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category, String interactionId) {
+		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment);
+		eum.setCategoryId(category);
+		setAttributes(eum, completeStatementText, interactionId);
+	}
+	
+
+	
 	/******************************************************************************************
 	 * LEGACY 
 	 * ****************************************************************************************/
