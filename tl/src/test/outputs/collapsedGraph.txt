@@ -1,4 +1,4 @@
-digraph rawGraph {
+digraph collapsedGraph {
 "Food was really bad. (1 interactions) :" -> "Food was bad. (2 interactions) :\nI didn't like the food." [label=1.0] [color=blue]
 "a little more leg room would have been perfect (1 interactions) :" -> "Disappointed with legroom (2 interactions) :\nmore leg room would have been perfect" [label=1.0] [color=blue]
 "Disappointed with the amount of legroom compared with other trains (1 interactions) :" -> "Disappointed with legroom compared with other trains (1 interactions) :" [label=1.0] [color=blue]

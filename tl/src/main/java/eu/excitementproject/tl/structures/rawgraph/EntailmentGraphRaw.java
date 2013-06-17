@@ -26,7 +26,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
 
 /**
  * 
- * @author vivi@fbk & LiliKotlerman
+ * @author vivi@fbk & Lili Kotlerman
  * 
  * The graph structure for the work graph. We call it EntailmentGraphRaw.
  * This graph grows by adding to it FragmentGraph-s by "merging"

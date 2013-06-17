@@ -3,13 +3,11 @@ package  eu.excitementproject.tl.structures.collapsedgraph;
 import java.util.HashSet;
 import java.util.Set;
 
-import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
-import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & Lili Kotlerman
  * 
  * The node of the collapsed entailment graph is an equivalence class. 
  * This type of node will contain all text fragments that are equivalent from
@@ -17,19 +15,21 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  *
  */
 public class EquivalenceClass {
-	
-	// int id;
-	
+		
 	/** 
-	 * the "canonical" text of the class 
+	 * The "canonical" (representative) text of the class
+	 * This attribute is final - once it's set it cannot be changed 
 	 */
-	String label;
+	final String label;
 	
 	Set<EntailmentUnit> entailmentUnits = null;
 	
+	/******************************************************************************************
+	 * CONSTRUCTORS
+	 * ****************************************************************************************/
+
 	/**
-	 * Constructor for the EquivalenceClass 
-	 * 
+	 * Generates a new equivalence class from the input entailment unit
 	 * @param eu -- an EntailmentUnit
 	 */
 	public EquivalenceClass(EntailmentUnit eu) {
@@ -39,9 +39,8 @@ public class EquivalenceClass {
 	}	
 	
 	/**
-	 * Constructor for the EquivalenceClass
-	 * 
-	 * @param s_eu -- a set of EntailmentUnits
+	 * Generates a new equivalence class from the input set of entailment units
+	 * @param s_eu -- the set of EntailmentUnits
 	 */
 	public EquivalenceClass(Set<EntailmentUnit> s_eu) {
 		entailmentUnits = new HashSet<EntailmentUnit>();
@@ -49,30 +48,37 @@ public class EquivalenceClass {
 		// Pick one element of the set and initialize the label associated with this node
 		// We pick entailment unit with max frequency (if there are several entailment units with such frequency, sorter text is favored) 
 		int frequency = 0;
+		String labelCandidate=""; 
 		for (EntailmentUnit candidateEntailmentUnit : entailmentUnits){
 			if (candidateEntailmentUnit.getFrequency()>frequency){
-				label = candidateEntailmentUnit.getText();
+				labelCandidate = candidateEntailmentUnit.getText();
 				frequency = candidateEntailmentUnit.getFrequency();
 			}
 			else if (candidateEntailmentUnit.getFrequency()==frequency){ // if current label has the same frequency as the candidate entailment unit
-				if (candidateEntailmentUnit.getText().length() < label.length()) { // if the candidate text is shorter - make it the new label 
-					label =  candidateEntailmentUnit.getText();
+				if (candidateEntailmentUnit.getText().length() < labelCandidate.length()) { // if the candidate text is shorter - make it the new label 
+					labelCandidate =  candidateEntailmentUnit.getText();
 				}
 			}
 		}
+		label = labelCandidate; // assign the winner-candidate to be the label 
 	}
 	
 	/**
-	 * Constructor for the EquivalenceClass
+	 * Generates a new equivalence class from the input set of entailment units, 
+	 * and assigns the input text as the equivalence class's label
 	 * 
-	 * @param text -- "canonical" text representing this equivalence class
-	 * @param s_eu -- a set of entailment units
+	 * @param text -- the label ("canonical" text representing this equivalence class)
+	 * @param s_eu -- the set of entailment units
 	 */
 	public EquivalenceClass(String text, Set<EntailmentUnit> s_eu) {
 		entailmentUnits = new HashSet<EntailmentUnit>();
 		entailmentUnits.addAll(s_eu);
 		label = text;
 	}
+
+	/******************************************************************************************
+	 * SETTERS/GERRETS
+	 * ****************************************************************************************/
 
 	/**
 	 * @return the label
@@ -108,6 +114,10 @@ public class EquivalenceClass {
 		return interactionIds;		
 	}
 	
+	/******************************************************************************************
+	 * PRINT
+	 * ****************************************************************************************/
+
 	@Override
 	public String toString(){
 		String s = "\""+label.trim().replaceAll(" +", " ")+"\" ("+this.getInteractionIds().size()+" interactions) :\n";
@@ -120,6 +130,9 @@ public class EquivalenceClass {
 		return s;
 	}
 	
+	/** Returns a string with the node in DOT format for outputting the graph
+	 * @return the generated string
+	 */
 	public String toDOT(){
 		String s = "\""+label.trim().replaceAll(" +", " ")+" ("+this.getInteractionIds().size()+" interactions) :";
 		for (EntailmentUnit eu : entailmentUnits){

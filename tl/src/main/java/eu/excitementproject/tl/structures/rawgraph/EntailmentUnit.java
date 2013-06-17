@@ -38,26 +38,7 @@ public class EntailmentUnit{
 	
 	protected Set<String> interactionIds = null;
 	
-	/*	protected Set<Long> fragmentGraphIds;
-	
-	
-	*//**
-	 * @return the fragmentGraphIds
-	 *//*
-	public Set<Long> getFragmentGraphIds() {
-		return fragmentGraphIds;
-	}
 
-	public boolean isFromFragmentGraph(long id) {
-		if (fragmentGraphIds.contains(id)) return true;
-		return false;
-	}
-
-	public void addFragmentGraphId(long id) {
-		if (fragmentGraphIds.isEmpty()) fragmentGraphIds = new HashSet<Long>(); 
-		if (!fragmentGraphIds.contains(id)) fragmentGraphIds.add(id);
-	}
-*/
 	protected int level = -1; // negative value means "unknown"
 	
 	protected int frequency;
@@ -272,6 +253,31 @@ public class EntailmentUnit{
 		return this.getText().trim().replaceAll(" +", " ");
 	}
 
+
+	/******************************************************************************************
+	 * LEGACY 
+	 * ****************************************************************************************/
+
 	
+	/*	protected Set<Long> fragmentGraphIds;
+	
+	
+	*//**
+	 * @return the fragmentGraphIds
+	 *//*
+	public Set<Long> getFragmentGraphIds() {
+		return fragmentGraphIds;
+	}
+
+	public boolean isFromFragmentGraph(long id) {
+		if (fragmentGraphIds.contains(id)) return true;
+		return false;
+	}
+
+	public void addFragmentGraphId(long id) {
+		if (fragmentGraphIds.isEmpty()) fragmentGraphIds = new HashSet<Long>(); 
+		if (!fragmentGraphIds.contains(id)) fragmentGraphIds.add(id);
+	}
+*/
 }	
 
