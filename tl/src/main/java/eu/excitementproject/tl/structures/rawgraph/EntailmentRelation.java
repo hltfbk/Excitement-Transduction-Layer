@@ -185,7 +185,9 @@ public class EntailmentRelation extends DefaultEdge {
 		return this.getSource().getText()+" --> "+this.getTarget().getText() +" ("+this.getLabel().toString()+", "+this.getConfidence()+") ";
 	}
 	
-	public String toDOT(){
+	/** Returns a string with the edge in DOT format for outputting the graph
+	 * @return the generated string
+	 */	public String toDOT(){
 		String s = "\""+this.getSource().getTextWithoutDoulbeSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoulbeSpaces()+"\"";
 		s+= " [label="+this.getConfidence()+"]";
 		String color = "red";
