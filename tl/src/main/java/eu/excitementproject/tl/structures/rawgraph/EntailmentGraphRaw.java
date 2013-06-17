@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Set;
 
-import org.jgrapht.EdgeFactory;
 import org.jgrapht.graph.DirectedMultigraph;
 
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -26,7 +25,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
 
 /**
  * 
- * @author vivi@fbk & LiliKotlerman
+ * @author vivi@fbk & Lili Kotlerman
  * 
  * The graph structure for the work graph. We call it EntailmentGraphRaw.
  * This graph grows by adding to it FragmentGraph-s by "merging"
@@ -58,22 +57,6 @@ public class EntailmentGraphRaw extends
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
 
-	/**
-	 * 
-	 * @param arg0 -- the class for the edges (in our case this would be FragmentGraphEdge.class)
-	 */
-	public EntailmentGraphRaw(Class<? extends EntailmentRelation> arg0) {		
-		super(arg0);
-	}
-	
-	/**
-	 * 
-	 * @param arg0 -- edge factory
-	 */
-	public EntailmentGraphRaw(EdgeFactory<EntailmentUnit,EntailmentRelation> arg0) {
-		super(arg0);		
-	}
-
 	/*
 	 * a constructor for initializing a graph from a (xml) file
 	 */
@@ -83,7 +66,7 @@ public class EntailmentGraphRaw extends
 	 */
 	public EntailmentGraphRaw(File file){
 		super(EntailmentRelation.class);
-//		loadGraphFromFile(file);
+		//TODO: implement 
 	}
 	
 	/**
@@ -105,21 +88,6 @@ public class EntailmentGraphRaw extends
 			}
 		}
 */	}
-
-	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
-		// copy edges (with nodes)
-		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
-			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
-		}
-		// copy nodes, which have no edges (must happen only if base statement = complete statement => graph has a single node and no edges) 
-		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
-			if (this.getVertex(fragmentGraphNode.getText())==null) {
-				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText(), fg.getInteractionId());
-				this.addVertex(newNode);
-			}
-		}
-
-	}
 	
 	/**
 	 * Initialize an empty work graph
@@ -162,9 +130,34 @@ public class EntailmentGraphRaw extends
 	
 
 	/******************************************************************************************
-	 * OTHER METHODS TO WORK WITH THE GRAPH
+	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
 
+	/** Copied all nodes and edges from the input fragment graph to the raw entailment graph
+	 * @param fg - the inout fragment graph
+	 */
+	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
+		// copy edges (with nodes)
+		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
+			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
+		}
+		// copy nodes, which have no edges (must happen only if base statement = complete statement => graph has a single node and no edges) 
+		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
+			if (this.getVertex(fragmentGraphNode.getText())==null) {
+				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText(), fg.getInteractionId());
+				this.addVertex(newNode);
+			}
+		}
+	}
+	
+	/** Given a base statement node and a complete statement text, the method finds and returns all the nodes from the corresponding fragment graph
+	 * (fragment graph can be defined by its complete statement, while the same base statement can be part of different fragment graphs)  
+	 * @param baseStatementNode
+	 * @param completeStatementText
+	 * @return Hashtable where keys (int) are levels and values (Set<EntailmentUnit>) are sets of entailment unit nodes found at the corresponding level.
+	 * If the input base statement was not produced from the input complete statement, empty Hashtable will be returned  
+	 * @throws EntailmentGraphRawException
+	 */
 	public Hashtable<Integer, Set<EntailmentUnit>> getFragmentGraphNodes(EntailmentUnit baseStatementNode, String completeStatementText) throws EntailmentGraphRawException {
 		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
 
@@ -184,6 +177,7 @@ public class EntailmentGraphRaw extends
 		}		
 		return nodesByLevel;
 	}
+	
 	
 	/** Returns the set of all nodes, which form the possible paths from sourceNode to targetNode (including the sourceNode and the targetNode).
 	 * If targetNode is the same as sourceNode, the method will return a set with a single EntailmentUnit. 
@@ -208,6 +202,12 @@ public class EntailmentGraphRaw extends
 		return nodesToReturn;
 	}
 	
+	/** Returns true if the given node was seen within the fragment graph defined by the input completeStatementText
+	 * Otherwise returns false
+	 * @param node
+	 * @param completeStatementText
+	 * @return
+	 */
 	private boolean belongsToFragmentGraph(EntailmentUnit node, String completeStatementText){
 		if (node.completeStatementTexts.contains(completeStatementText)) return true;
 		return false;
@@ -307,29 +307,14 @@ public class EntailmentGraphRaw extends
 	 * @return the edge, which was added to the graph
 	 * @throws LAPException 
 	 */
-	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda, LAPAccess lap) throws LAPException{
+	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda, LAPAccess lap) throws EntailmentGraphRawException{
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda, lap);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;
 	}
 	
-	
 	/**
-	 * Create an edge from sourceVertex to targetVertex using the specified eda 
-	 * @param sourceVertex
-	 * @param targetVertex
-	 * @param eda
-	 * @return the edge, which was added to the graph
-	 * @throws LAPException 
-	 */
-	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda){
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
-		this.addEdge(sourceVertex, targetVertex, edge);
-		return edge;
-	}
-	
-	/**
-	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If they do - increment the frequency counter
+	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If a vertex exists - add the corresponding new entailment unit mention
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
 	 * @return the edge, which was added to the graph
 	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
@@ -344,8 +329,7 @@ public class EntailmentGraphRaw extends
 			this.addVertex(sourceVertex);
 		}
 		else {
-			sourceVertex.incrementFrequency();
-			sourceVertex.addCompleteStatement(fg.getCompleteStatement().getText());
+			sourceVertex.addMention(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText());
 		}
 		
 		if(targetVertex==null){
@@ -353,8 +337,7 @@ public class EntailmentGraphRaw extends
 			this.addVertex(targetVertex);
 		}
 		else {
-			targetVertex.incrementFrequency();
-			targetVertex.addCompleteStatement(fg.getCompleteStatement().getText());
+			targetVertex.addMention(fragmentGraphEdge.getTarget(), fg.getCompleteStatement().getText());
 		}
 					
 		// now create and add the edge
@@ -366,7 +349,7 @@ public class EntailmentGraphRaw extends
 	
 	
 	/**
-	 * Create an edge induced by transitivity. Confidence is to be given as parameter.
+	 * Create an edge induced from prior knowledge. Confidence is to be given as parameter.
 	 * @param sourceVertex
 	 * @param targetVertex
 	 * @param confidence
@@ -432,9 +415,50 @@ public class EntailmentGraphRaw extends
 		return s;
 	}
 	
+	/** Generates a single string, which contains the graph in DOT format for visualization
+	 * @return the generated string
+	 */
+	public String toDOT(){
+		String s = "digraph rawGraph {\n";
+		for (EntailmentRelation edge : this.edgeSet()){
+			s+=edge.toDOT();
+		}
+		s+="}";	
+		return s;
+	}
+	
+	/** Saves the graph in DOT format to the given file. If such file already exists, it will be overwritten.
+	 * @param filename - the name of the file to save the graph
+	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
+	 */
+	public void toDOT(String filename) throws EntailmentGraphRawException{
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+			out.write(this.toDOT());
+			out.close();
+		} catch (IOException e) {
+			throw new EntailmentGraphRawException(e.getMessage());
+		}		
+	}	
+	
+	
 	/******************************************************************************************
-	 * DUMMY FUNCTIONALITY
+	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
+	
+	/** Create an edge from sourceVertex to targetVertex using the random EDA 
+	 * No LAP is specified, which is not the case is real settings when EDA is always paired with its required LAP 
+	 * @param sourceVertex
+	 * @param targetVertex
+	 * @param eda
+	 * @return the edge, which was added to the graph
+	 * @throws LAPException 
+	 */
+	public EntailmentRelation addEdgeFromRandomEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda) {
+		EntailmentRelation edge = EntailmentRelation.GenerateRandomEntailmentRelation(sourceVertex, targetVertex);
+		this.addEdge(sourceVertex, targetVertex, edge);
+		return edge;
+	}
 	
 	/**
 	 * Get a sample EntailmentGraphRaw
@@ -452,7 +476,7 @@ public class EntailmentGraphRaw extends
 			
 	 */
 		
-	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges){
+	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges) {
 		
 		// create the to-be graph nodes
 		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.","interaction1");
@@ -481,8 +505,8 @@ public class EntailmentGraphRaw extends
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.equals(v2)) { //don't calculate for a node with itself  
-						sampleRawGraph.addEdgeFromEDA(v1, v2, eda);
-						sampleRawGraph.addEdgeFromEDA(v2, v1, eda);
+						sampleRawGraph.addEdgeFromRandomEDA(v1, v2, eda);
+						sampleRawGraph.addEdgeFromRandomEDA(v2, v1, eda);
 					}
 				}
 			}
@@ -570,8 +594,8 @@ public class EntailmentGraphRaw extends
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.equals(v2)) { //don't calculate for a node with itself  
-						sampleRawGraph.addEdgeFromEDA(v1, v2, eda);
-						sampleRawGraph.addEdgeFromEDA(v2, v1, eda);
+						sampleRawGraph.addEdgeFromRandomEDA(v1, v2, eda);
+						sampleRawGraph.addEdgeFromRandomEDA(v2, v1, eda);
 					}
 				}
 			}
@@ -629,24 +653,25 @@ public class EntailmentGraphRaw extends
 
 		return sampleRawGraph;
 	}
-	
-	public String toDOT(){
-		String s = "digraph rawGraph {\n";
-		for (EntailmentRelation edge : this.edgeSet()){
-			s+=edge.toDOT();
-		}
-		s+="}";	
-		return s;
+
+	/******************************************************************************************
+	 * LEGACY
+	 * ****************************************************************************************/
+	/*	*//**
+	 * 
+	 * @param arg0 -- the class for the edges (in our case this would be FragmentGraphEdge.class)
+	 *//*
+	public EntailmentGraphRaw(Class<? extends EntailmentRelation> arg0) {		
+		super(arg0);
 	}
 	
-	public void toDOT(String filename) throws EntailmentGraphRawException{
-		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
-			out.write(this.toDOT());
-			out.close();
-		} catch (IOException e) {
-			throw new EntailmentGraphRawException(e.getMessage());
-		}		
+	*//**
+	 * 
+	 * @param arg0 -- edge factory
+	 *//*
+	public EntailmentGraphRaw(EdgeFactory<EntailmentUnit,EntailmentRelation> arg0) {
+		super(arg0);		
 	}
+*/
 	
 }

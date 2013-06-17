@@ -33,76 +33,67 @@ public class SimpleCollapseGraphGeneratorTest {
 	@Test
 	public void test() {
 
-				try {
-					System.out.println("**** Test collapsed graph generator: merged graph ****");
+					try {
+						System.out.println("**** Test collapsed graph generator: merged graph ****");
 
-					LAPAccess lap = new TreeTaggerEN();
+						LAPAccess lap = new TreeTaggerEN();
 //					EDABasic<?> eda = new RandomEDA();
-					File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");				
-					CommonConfig config = null;
-					config = new ImplCommonConfig(configFile);
-					MaxEntClassificationEDA meceda = new MaxEntClassificationEDA();	
-					meceda.initialize(config);  
+						File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");				
+						CommonConfig config = null;
+						config = new ImplCommonConfig(configFile);
+						MaxEntClassificationEDA meceda = new MaxEntClassificationEDA();	
+						meceda.initialize(config);  
 
-					
+						
 //					GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,eda); 
-					GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,meceda); 
-					
-					Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
-					System.out.println("Merged raw graph:");			
-					EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
-					System.out.println(rawGraph.toString());
-					try {
+						GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,meceda); 
+						
+						Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
+						System.out.println("Merged raw graph:");			
+						EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
+						System.out.println(rawGraph.toString());
 						rawGraph.toDOT("./src/test/outputs/rawGraph.txt");
-					} catch (EntailmentGraphRawException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					
-					System.out.println("**** Collapsing the the raw graph ****");
-					CollapsedGraphGenerator collapser = new SimpleCollapseGraphGenerator();
-					EntailmentGraphCollapsed finalGraph = collapser.generateCollapsedGraph(rawGraph);
-					System.out.println("Done:\n"+finalGraph.toString());
-					
-					System.out.println("**** Test collapsed graph generator: sample graph ****");
-
-					
-					rawGraph = EntailmentGraphRaw.getSampleOuput(false);
-					System.out.println(rawGraph.toString());
-					
-					
-					System.out.println("**** Collapsing the the raw graph ****");
-					finalGraph = collapser.generateCollapsedGraph(rawGraph, 0.2);
-					System.out.println("Done:\n"+finalGraph.toString());
-					try {
+						
+						System.out.println("**** Collapsing the the raw graph ****");
+						CollapsedGraphGenerator collapser = new SimpleCollapseGraphGenerator();
+						EntailmentGraphCollapsed finalGraph = collapser.generateCollapsedGraph(rawGraph);
+						System.out.println("Done:\n"+finalGraph.toString());
 						finalGraph.toDOT("./src/test/outputs/collapsedGraph.txt");
+						
+						System.out.println("**** Test collapsed graph generator: sample graph ****");
+						rawGraph = EntailmentGraphRaw.getSampleOuput(false);
+						System.out.println(rawGraph.toString());
+						rawGraph.toDOT("./src/test/outputs/sampleRawGraph.txt");
+						System.out.println("**** Collapsing the the raw graph ****");
+						finalGraph = collapser.generateCollapsedGraph(rawGraph, 0.2);
+						System.out.println("Done:\n"+finalGraph.toString());
+						finalGraph.toDOT("./src/test/outputs/collapsedGraphFromSample.txt");
+						
+						for (EquivalenceClass node : finalGraph.sortNodesByNumberOfInteractions(5)){
+							System.out.println(node.toString());
+						}
+					} catch (LAPException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ConfigurationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (EDAException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ComponentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (GraphMergerException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					} catch (EntailmentGraphRawException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+					} catch (CollapsedGraphGeneratorException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
-					
-					for (EquivalenceClass node : finalGraph.sortNodesByNumberOfInteractions(5)){
-						System.out.println(node.toString());
-					}
-				} catch (LAPException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (ConfigurationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (EDAException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (ComponentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (GraphMergerException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (CollapsedGraphGeneratorException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 				
 			
 			

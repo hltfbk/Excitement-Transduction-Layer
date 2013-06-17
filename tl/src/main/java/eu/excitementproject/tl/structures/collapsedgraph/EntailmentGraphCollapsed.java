@@ -13,12 +13,11 @@ import java.util.Set;
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & Lili Kotlerman
  *
  * The structure of the collapsed graph (cleaned up edges, clustered nodes in equivalence classes)
  * 
@@ -45,18 +44,6 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	/******************************************************************************************
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
-
-	/**
-	 * Default constructor
-	 * 
-	 * @param arg0 -- edge class
-	 *//*
-	public EntailmentGraphCollapsed(Class<? extends EntailmentRelationCollapsed> arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-*/
-	
 	
 	/**
 	 * Initialize an empty collapsed graph
@@ -70,7 +57,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	
 	
 	/******************************************************************************************
-	 * SETTERS/GERRETS
+	 * METHODS REQUIRED BY INDUSTRIAL SCENARIOS
 	 * ****************************************************************************************/
 
 	/**
@@ -79,6 +66,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	public int getNumberOfTextualInputs() {
 		return this.textualInputs.size();
 	}
+	
 
 	/**
 	 * @return the numberOfEntailmentUnits
@@ -93,12 +81,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	public int getNumberOfEquivalenceClasses() {
 		return this.vertexSet().size();
 	}	
-	
-	
-	/******************************************************************************************
-	 * OTHER METHODS TO WORK WITH THE GRAPH
-	 * ****************************************************************************************/
-	
+		
 		
 	/**This method returns equivalent entailment units for a given input entailment unit text, 
 	 * i.e. entailment units, which are in the same equivalence class
@@ -118,35 +101,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 */	public Set<EntailmentUnit> getEquivalentEntailmentUnits(EntailmentUnit entailmentUnit){		
 		return getEquivalentEntailmentUnits(entailmentUnit.getText());
 	}
-	
-	/** Return equivalence class, which includes the input text
-	 * @param text
-	 * @return the node which has the input text as its label or as the canonical text as any of its entailment units
-	 * If such node could not be found - returns null
-	 */
-	public EquivalenceClass getVertex (String text){
-		for (EquivalenceClass vertex : this.vertexSet()){
-			if (vertex.getLabel().equals(text)) return vertex;
-			for (EntailmentUnit eu : vertex.getEntailmentUnits()){
-				if (eu.getText().equals(text)) return vertex;
-			}
-		}
-		return null;
-	}
-	
-
-	/** Return equivalence class, which includes the input entailment unit
-	 * @param eu - the entailment unit
-	 * @return the node which includes the input entailment unit
-	 * If such node could not be found - returns null
-	 */
-	public EquivalenceClass getVertex (EntailmentUnit eu){
-		for (EquivalenceClass vertex : this.vertexSet()){
-			if (vertex.containsEntailmentUnit(eu)) return vertex;
-		}
-		return null;
-	}	
-
+		
 	/** Returns the set of nodes, which entail the given node
 	 * @param node whose entailing nodes are returned
 	 * @return Set<EquivalenceClass> with all the entailing nodes of the given node
@@ -225,7 +180,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	}
 	 
 	 
-	 /** the method and returns a subgraph with all nodes containing the input entailment unit, 
+	 /** The method returns a subgraph with all nodes containing the input entailment unit, 
 	  * as well as all nodes directly connected to one of these nodes,
 	  * i.e., all equivalent, entailed or entailing entailment units.
 	 * @param entailmentUnitText - canonical text of the entailment unit whose subgraph should be returned
@@ -246,7 +201,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		 return subgraph;
 	 }
 	 
-	 /** the method and returns a subgraph with all nodes containing the input entailment unit, 
+	 /** The method returns a subgraph with all nodes containing the input entailment unit, 
 	  * as well as all nodes directly connected to one of these nodes,
 	  * i.e., all equivalent, entailed or entailing entailment units.
 	 * @param entailmentUnitText - the entailment unit whose subgraph should be returned
@@ -256,7 +211,155 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 */public EntailmentGraphCollapsed getSubgraphFor(EntailmentUnit  entailmentUnit){
 		 return getSubgraphFor(entailmentUnit.getText());
 	 }
+	
+	/** Returns top-X nodes sorted by number of interactions
+	 * @param X
+	 * @return
+	 */
+	public List<EquivalenceClass> sortNodesByNumberOfInteractions(int X){
+		if (X > this.vertexSet().size()) X = this.vertexSet().size(); // cannot return more nodes than we have in the graph
+				
+		List<EquivalenceClass> sortedNodes = new LinkedList<EquivalenceClass>();
+		sortedNodes.addAll(this.vertexSet());
+		Collections.sort(sortedNodes, new DescendingNumberOfInteractionsComparator());
+		sortedNodes.subList(X, sortedNodes.size()).clear(); //remove all the elements with index starting at X (incusive)
+		return sortedNodes;
+	}
+	
+	/** The  method  returns the ids of interactions that contain entailment units equivalent to the input  
+	 * entailment unit based on the entailment graph.
+	 * If the input entailment unit is not found under any of the nodes in the graph, the method will return null.
+	 * @param entailmentUnitText - the canonical text of the input entailment unit
+	 * @return set of interaction ids
+	 */
+	public Set<String> getRelevantInteractionIDs(String entailmentUnitText){
+		return getRelevantInteractionIDs(this.getVertex(entailmentUnitText));		
+	}
+	
+	/** The  method  returns the ids of interactions that contain entailment units equivalent to the input  
+	 * entailment unit based on the entailment graph.
+	 * If the input entailment unit is not found under any of the nodes in the graph, the method will return null.
+	 * @param entailmentUnit - the input entailment unit
+	 * @return set of interaction ids
+	 */
+	public Set<String> getRelevantInteractionIDs(EntailmentUnit entailmentUnit){
+		return getRelevantInteractionIDs(this.getVertex(entailmentUnit));
+	}
+	
+	/** The  method  returns the ids of interactions that contain entailment units covered by the input equivalence class
+	 * If such equivalence class node is not found in the graph, the method will return null.
+	 * @param node - the input equivalence class node 
+	 * @return set of interaction ids
+	 */
+	public Set<String> getRelevantInteractionIDs(EquivalenceClass node){
+		if (!this.containsVertex(node)) return null;
+		return node.getInteractionIds();
+	}
+		
 
+	/******************************************************************************************
+	 * PRINT GRAPH
+	 * ****************************************************************************************/
+	
+	@Override
+	public String toString(){
+		String s = "The graph is built based on "+ textualInputs.size()+" textual inputs (complete statements) and contains "+numberOfEntailmentUnits+" entailment units";
+		s+="\nNODES:";
+		for (EquivalenceClass v: this.vertexSet()){
+			s+="\n"+v.toString();
+		}
+		
+		s+="\n\nEDGES:";
+		for (EntailmentRelationCollapsed e: this.edgeSet()){
+			s+="\n\t"+e.toString();
+		}		
+		return s;
+	}
+			
+	/** Generates a single string, which contains the graph in DOT format for visualization
+	 * @return the generated string
+	 */
+	public String toDOT(){
+		String s = "digraph collapsedGraph {\n";
+		for (EntailmentRelationCollapsed edge : this.edgeSet()){
+			s+=edge.toDOT();
+		}
+		s+="}";	
+		return s;
+	}
+	
+	/** Saves the graph in DOT format to the given file. If such file already exists, it will be overwritten.
+	 * @param filename - the name of the file to save the graph
+	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
+	 */
+	public void toDOT(String filename) throws EntailmentGraphRawException{
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+			out.write(this.toDOT());
+			out.close();
+		} catch (IOException e) {
+			throw new EntailmentGraphRawException(e.getMessage());
+		}		
+	}	
+
+	/******************************************************************************************
+	 * OTHER AUXILIARY METHODS
+	 * ****************************************************************************************/
+	
+	/** Return equivalence class, which includes the input entailment unit
+	 * @param eu - the entailment unit
+	 * @return the node which includes the input entailment unit
+	 * If such node could not be found - returns null
+	 */
+	public EquivalenceClass getVertex (EntailmentUnit eu){
+		for (EquivalenceClass vertex : this.vertexSet()){
+			if (vertex.containsEntailmentUnit(eu)) return vertex;
+		}
+		return null;
+	}	
+
+	/** Return equivalence class, which includes the input text
+	 * @param text
+	 * @return the node which has the input text as its label or as the canonical text as any of its entailment units
+	 * If such node could not be found - returns null
+	 */
+	public EquivalenceClass getVertex (String text){
+		for (EquivalenceClass vertex : this.vertexSet()){
+			if (vertex.getLabel().equals(text)) return vertex;
+			for (EntailmentUnit eu : vertex.getEntailmentUnits()){
+				if (eu.getText().equals(text)) return vertex;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Comparator to sort equivalence classes in descending order by their number of interactions
+	 */
+	public class DescendingNumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
+	    @Override
+	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
+	        return -1*Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
+	    }
+	}
+	
+	/* (non-Javadoc)
+	 * @see org.jgrapht.graph.AbstractBaseGraph#addVertex(java.lang.Object)
+	 * Overrides the addVertex method of AbstractBaseGraph. The method adds the given vertex and updates the  
+	 * numberOfEntailmentUnits and textualInputs attributes. 
+	 */
+	@Override
+	public boolean addVertex(EquivalenceClass v){
+		boolean added = super.addVertex(v);
+		if (added){
+			for (EntailmentUnit eu : v.getEntailmentUnits()){
+				numberOfEntailmentUnits++;
+				textualInputs.addAll(eu.getCompleteStatementTexts());
+			}						
+		}
+		return added;
+	}
+	
 	 /** Adds the given edge (and if needed - its nodes) to the graph. 
 	  * If source or target node are not present in the graph - they will be added.
 	  * If an edge source -> target is already present in the graph, the edge will not be added (collapsed graph is not a multi-graph).
@@ -274,36 +377,11 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		 	 
 	 }
 
-	
-	/** Returns top-X nodes sorted by number of interactions
-	 * @param X
-	 * @return
-	 */
-	public List<EquivalenceClass> sortNodesByNumberOfInteractions(int X){
-		if (X > this.vertexSet().size()) X = this.vertexSet().size(); // cannot return more nodes than we have in the graph
-				
-		List<EquivalenceClass> sortedNodes = new LinkedList<EquivalenceClass>();
-		sortedNodes.addAll(this.vertexSet());
-		Collections.sort(sortedNodes, new DescendingNumberOfInteractionsComparator());
-		sortedNodes.subList(X, sortedNodes.size()).clear(); //remove all the elements with index starting at X (incusive)
-		return sortedNodes;
-	}
-	
-	public Set<String> getRelevantInteractionIDs(String entailmentUnitText){
-		return getRelevantInteractionIDs(this.getVertex(entailmentUnitText));		
-	}
-	
-	public Set<String> getRelevantInteractionIDs(EntailmentUnit entailmentUnit){
-		return getRelevantInteractionIDs(this.getVertex(entailmentUnit));
-	}
-	
-	public Set<String> getRelevantInteractionIDs(EquivalenceClass node){
-		if (!this.containsVertex(node)) return null;
-		return node.getInteractionIds();
-	}
-	
-	
-/*	*//**
+	/******************************************************************************************
+	 * LEGACY
+	 * ****************************************************************************************/
+
+	/*	*//**
 	 * Converts an input work graph to a format that would be useful to the end users
 	 * This might mean changing the nodes from complex annotated objects to sets of strings
 	 * and compressing multiple edges into one
@@ -343,60 +421,5 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		}
 	}*/	
 
-	/******************************************************************************************
-	 * PRINT GRAPH
-	 * ****************************************************************************************/
-	
-	@Override
-	public String toString(){
-		String s = "The graph is built based on "+ textualInputs.size()+" textual inputs (complete statements) and contains "+numberOfEntailmentUnits+" entailment units";
-		s+="\nNODES:";
-		for (EquivalenceClass v: this.vertexSet()){
-			s+="\n"+v.toString();
-		}
-		
-		s+="\n\nEDGES:";
-		for (EntailmentRelationCollapsed e: this.edgeSet()){
-			s+="\n\t"+e.toString();
-		}		
-		return s;
-	}
-	
-	
-	public class DescendingNumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
-	    @Override
-	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
-	        return -1*Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
-	    }
-	}
-	
-	@Override
-	public boolean addVertex(EquivalenceClass v){
-		boolean added = super.addVertex(v);
-		if (added){
-			for (EntailmentUnit eu : v.getEntailmentUnits()){
-				numberOfEntailmentUnits++;
-				textualInputs.addAll(eu.getCompleteStatementTexts());
-			}						
-		}
-		return added;
-	}
-	public String toDOT(){
-		String s = "digraph collapsedGraph {\n";
-		for (EntailmentRelationCollapsed edge : this.edgeSet()){
-			s+=edge.toDOT();
-		}
-		s+="}";	
-		return s;
-	}
-	
-	public void toDOT(String filename) throws EntailmentGraphRawException{
-		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
-			out.write(this.toDOT());
-			out.close();
-		} catch (IOException e) {
-			throw new EntailmentGraphRawException(e.getMessage());
-		}		
-	}	
+
 }

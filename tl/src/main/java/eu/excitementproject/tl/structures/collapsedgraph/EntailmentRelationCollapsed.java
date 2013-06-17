@@ -2,14 +2,11 @@ package  eu.excitementproject.tl.structures.collapsedgraph;
 
 import org.jgrapht.graph.DefaultEdge;
 
-import eu.excitementproject.eop.common.DecisionLabel;
-import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-
 
 
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & Lili Kotlerman
  * 
  * The edge is obtained by collapsing multiple edges (aka decisions from different EDAs)
  * into one edge
@@ -31,6 +28,10 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	
 	double confidence;
 	
+	/******************************************************************************************
+	 * CONSTRUCTORS
+	 * ****************************************************************************************/
+	
 	/**
 	 * 
 	 * @param source -- source vertex
@@ -43,6 +44,10 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 		this.target = target;
 		this.confidence = c;
 	}
+
+	/******************************************************************************************
+	 * SETTERS/GERRETS
+	 * ****************************************************************************************/
 
 	/**
 	 * @return the source
@@ -60,15 +65,25 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 		return target;
 	}
 	
+	/**
+	 * @return the confidence
+	 */
 	public double getConfidence(){
 		return confidence;
 	}
 	
+	/******************************************************************************************
+	 * PRINT
+	 * ****************************************************************************************/
+
 	@Override 
 	public String toString(){
 		return this.getSource().getLabel().trim().replaceAll(" +", " ")+" --> "+this.getTarget().getLabel().trim().replaceAll(" +", " ") +" ("+this.getConfidence()+") ";
 	}	
 	
+	/** Returns a string with the edge in DOT format for outputting the graph
+	 * @return the generated string
+	 */
 	public String toDOT(){
 		String s = this.getSource().toDOT()+ " -> "+this.getTarget().toDOT();
 		s+= " [label="+this.getConfidence()+"]";

@@ -82,7 +82,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	}
 	
 	
-	private EntailmentGraphRaw mergeFragmentGraphs(EntailmentGraphRaw workGraph, Hashtable<Integer, Set<EntailmentUnit>> newFragmentGraphNodes, Hashtable<Integer, Set<EntailmentUnit>> oldFragmentGraphNodes, EntailmentUnit newBaseStatement,  EntailmentUnit workGraphBaseStatement) throws LAPException{
+	private EntailmentGraphRaw mergeFragmentGraphs(EntailmentGraphRaw workGraph, Hashtable<Integer, Set<EntailmentUnit>> newFragmentGraphNodes, Hashtable<Integer, Set<EntailmentUnit>> oldFragmentGraphNodes, EntailmentUnit newBaseStatement,  EntailmentUnit workGraphBaseStatement) throws GraphMergerException{
 		//Check if there is entailment between the two base statements
 		// There might be an existing entailment edge because the two base statements were present in the work graph before
 		if (!workGraph.isEntailmentInAnyDirection(newBaseStatement, workGraphBaseStatement)){
@@ -139,7 +139,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	 * @return set of EntailmentRelation-s that were detected 
 	 * @throws LAPException 
 	 */
-	private EntailmentGraphRaw mergeFirstLevel(EntailmentGraphRaw workGraph, Set<EntailmentUnit> candidateEntailingtNodes, Set<EntailmentUnit> candidateEntailedNodes) throws LAPException{
+	private EntailmentGraphRaw mergeFirstLevel(EntailmentGraphRaw workGraph, Set<EntailmentUnit> candidateEntailingtNodes, Set<EntailmentUnit> candidateEntailedNodes) throws GraphMergerException{
 		// get the candidates (1-modidier nodes, which entail each of the base statements) 
 		for (EntailmentUnit candidateEntailingtNode : candidateEntailingtNodes){
 			for (EntailmentUnit candidateEntailedNode : candidateEntailedNodes){
