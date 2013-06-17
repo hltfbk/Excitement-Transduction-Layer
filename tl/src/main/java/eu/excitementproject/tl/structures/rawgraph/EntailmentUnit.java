@@ -130,11 +130,32 @@ public class EntailmentUnit{
 	public Set<String> getInteractionIds() {
 		return interactionIds;
 	}
+	
+	/**
+	 * @return the level
+	 */
+	public int getLevel() {
+		return level;
+	}
+
 
 	/******************************************************************************************
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
 
+	/**
+	 * Adds a new entailment unit mention to the entailment unit.
+	 * In addition, adds the input completeStatementText to the set of completeStatementTexts of the fragment graphs in which the entailment unit was seen
+	 * If such completeStatementText is already present in the set, it will not be added.
+	 * @param entailmentUnitMention -- the node to be added
+	 * @param completeStatementText - the completeStatementText of the fragment graph, from which the input entailmentUnitMention originated 
+	 */
+	public void addMention(EntailmentUnitMention entailmentUnitMention, String completeStatementText) {
+		mentions.add(entailmentUnitMention);
+		completeStatementTexts.add(completeStatementText);
+	}
+
+	
 	/******************************************************************************************
 	 * PRINT
 	 * ****************************************************************************************/
@@ -143,28 +164,12 @@ public class EntailmentUnit{
 
 
 
-	public void addCompleteStatement(String completeStatementText){
-		if (!completeStatementTexts.contains(completeStatementText)) completeStatementTexts.add(completeStatementText);
-	}
 	
-	/**
-	 * @return the level
-	 */
-	public int getLevel() {
-		return level;
-	}
 	
-	/**
-	 * Add a new node to the equivalence class
-	 * 
-	 * @param n -- the node to be added
-	 */
-	public void addMention(EntailmentUnitMention n) {
-		mentions.add(n);
-	}
 	
-	/**
-	 * @return the frequency
+	/** The method returns the size of the set of completeStatementTexts,
+	 * i.e. the number of fragment graphs, in which the entailmet unit was seen.
+	 * @return the number of fragment graphs, in which the entailmet unit was seen.
 	 */
 	public int getNumberOfTextualInputs() {
 		//return frequency;
@@ -278,6 +283,15 @@ public class EntailmentUnit{
 	 * LEGACY 
 	 * ****************************************************************************************/
 
+	
+/*	*//** Adds the input completeStatementText to the set of completeStatementTexts of the fragment graphs in which the entailment unit was seen
+	 * If such completeStatementText is already present in the set, it will not be added.
+	 * @param completeStatementText - the input completeStatementText 
+	 *//*
+	public void addCompleteStatement(String completeStatementText){
+		completeStatementTexts.add(completeStatementText);
+	}
+*/
 	
 	/*	protected Set<Long> fragmentGraphIds;
 	

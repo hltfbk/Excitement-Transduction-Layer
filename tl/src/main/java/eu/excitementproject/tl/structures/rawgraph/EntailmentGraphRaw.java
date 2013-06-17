@@ -329,7 +329,7 @@ public class EntailmentGraphRaw extends
 	}
 	
 	/**
-	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If they do - increment the frequency counter
+	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If a vertex exists - add the corresponding new entailment unit mention to it
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
 	 * @return the edge, which was added to the graph
 	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
@@ -344,7 +344,7 @@ public class EntailmentGraphRaw extends
 			this.addVertex(sourceVertex);
 		}
 		else {
-			sourceVertex.addCompleteStatement(fg.getCompleteStatement().getText());
+			sourceVertex.addMention(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText());
 		}
 		
 		if(targetVertex==null){
@@ -352,7 +352,7 @@ public class EntailmentGraphRaw extends
 			this.addVertex(targetVertex);
 		}
 		else {
-			targetVertex.addCompleteStatement(fg.getCompleteStatement().getText());
+			targetVertex.addMention(fragmentGraphEdge.getTarget(), fg.getCompleteStatement().getText());
 		}
 					
 		// now create and add the edge
