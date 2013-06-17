@@ -307,7 +307,7 @@ public class EntailmentGraphRaw extends
 	 * @return the edge, which was added to the graph
 	 * @throws LAPException 
 	 */
-	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda, LAPAccess lap) throws LAPException{
+	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda, LAPAccess lap) throws EntailmentGraphRawException{
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda, lap);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;
@@ -421,7 +421,7 @@ public class EntailmentGraphRaw extends
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
 	
-	/** Create an edge from sourceVertex to targetVertex using the specified EDA 
+	/** Create an edge from sourceVertex to targetVertex using the random EDA 
 	 * No LAP is specified, which is not the case is real settings when EDA is always paired with its required LAP 
 	 * @param sourceVertex
 	 * @param targetVertex
@@ -429,8 +429,8 @@ public class EntailmentGraphRaw extends
 	 * @return the edge, which was added to the graph
 	 * @throws LAPException 
 	 */
-	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda) {
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
+	public EntailmentRelation addEdgeFromRandomEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda) {
+		EntailmentRelation edge = EntailmentRelation.GenerateRandomEntailmentRelation(sourceVertex, targetVertex);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;
 	}
@@ -480,8 +480,8 @@ public class EntailmentGraphRaw extends
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.equals(v2)) { //don't calculate for a node with itself  
-						sampleRawGraph.addEdgeFromEDA(v1, v2, eda);
-						sampleRawGraph.addEdgeFromEDA(v2, v1, eda);
+						sampleRawGraph.addEdgeFromRandomEDA(v1, v2, eda);
+						sampleRawGraph.addEdgeFromRandomEDA(v2, v1, eda);
 					}
 				}
 			}
@@ -569,8 +569,8 @@ public class EntailmentGraphRaw extends
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.equals(v2)) { //don't calculate for a node with itself  
-						sampleRawGraph.addEdgeFromEDA(v1, v2, eda);
-						sampleRawGraph.addEdgeFromEDA(v2, v1, eda);
+						sampleRawGraph.addEdgeFromRandomEDA(v1, v2, eda);
+						sampleRawGraph.addEdgeFromRandomEDA(v2, v1, eda);
 					}
 				}
 			}

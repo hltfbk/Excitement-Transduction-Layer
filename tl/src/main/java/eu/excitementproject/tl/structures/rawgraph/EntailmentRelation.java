@@ -60,25 +60,16 @@ public class EntailmentRelation extends DefaultEdge {
 	/******************************************************************************************
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
-	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda, LAPAccess lap) throws LAPException {
-		this.source = source;
-		this.target = target;	
-		this.eda = eda;
-		this.edgeType = EdgeType.EDA;
-		this.lap = lap;
-		
-		computeTEdecision();
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda, LAPAccess lap) throws EntailmentGraphRawException {
+		setAttributes(source, target, EdgeType.EDA, eda, lap);
+		try {
+			computeTEdecision();
+		} catch (LAPException e) {
+			throw new EntailmentGraphRawException(e.getMessage()); 
+		}
 		
 	}
 	
-	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda) {
-		this.source = source;
-		this.target = target;	
-		this.eda = eda;
-		this.edgeType = EdgeType.EDA;
-		this.lap = null;		
-		computeRandomTEdecision();
-	}
 	
 	
 	/**
@@ -114,6 +105,15 @@ public class EntailmentRelation extends DefaultEdge {
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
 
+	private void setAttributes(EntailmentUnit source, EntailmentUnit target, EdgeType edgeType, EDABasic<?> eda, LAPAccess lap){
+		this.source = source;
+		this.target = target;	
+		this.edgeType = EdgeType.EDA;
+		this.eda = eda;
+		this.lap = lap;
+		
+	}
+	
 	/******************************************************************************************
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
@@ -126,6 +126,21 @@ public class EntailmentRelation extends DefaultEdge {
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
 
+	public static EntailmentRelation GenerateRandomEntailmentRelation(EntailmentUnit source, EntailmentUnit target) {		
+		RandomEDA eda = new RandomEDA();
+		EntailmentRelation edge = new EntailmentRelation(source, target, computeRandomTEdecision(eda), EdgeType.EDA);
+		return edge;
+	}
+
+	/**
+	 * Generates a dummy random entailment decision for this EntailmentReation 
+	 * @throws LAPException 
+	 */
+	
+	protected static TEDecision computeRandomTEdecision(RandomEDA eda){		
+		TEDecision edge = eda.process(null);
+		return edge;
+	}
 	
 	/**
 	 * Generates a dummy random entailment decision for this EntailmentReation 
@@ -148,15 +163,6 @@ public class EntailmentRelation extends DefaultEdge {
 	}
 	
 
-	/**
-	 * Generates a dummy random entailment decision for this EntailmentReation 
-	 * @throws LAPException 
-	 */
-	
-	protected void computeRandomTEdecision(){
-		RandomEDA eda = new RandomEDA();
-		edge = eda.process(null);
-	}
 
 	
 	/**
