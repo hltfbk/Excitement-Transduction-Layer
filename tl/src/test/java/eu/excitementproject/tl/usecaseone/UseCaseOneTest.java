@@ -37,20 +37,42 @@ public class UseCaseOneTest {
 		EntailmentGraphCollapsed graph;
 		
 		List<JCas> docs = new ArrayList<JCas>();
-		String[] files = {"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/100771.txt.xmi",
+/*		String[] files = {"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/100771.txt.xmi",
 						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/183009.txt.xmi",
-						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/213033.txt.xmi"
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/213033.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/218023.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/228632.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/327999.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/334406.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/415044.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/427082.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/427784.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/431092.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/443092.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/44805.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/450618.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/469143.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/470062.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/475555.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/478371.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/483394.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/512034.txt.xmi",
+						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/72187.txt.xmi"
 		};
+*/		
 		
-		File f;
+		File dir = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1");
+		
+//		File f;
 		JCas aJCas;
 
 		try {
 
 		
-			for (String name: files) {
+//			for (String name: files) {
+			for (File f : dir.listFiles()) {
 		
-				f = new File(name); 
+//				f = new File(name); 
 				aJCas = CASUtils.createNewInputCas(); 
 				CASUtils.deserializeFromXmi(aJCas, f); 
 
