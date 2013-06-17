@@ -429,7 +429,7 @@ public class EntailmentGraphRaw extends
 	 * @return the edge, which was added to the graph
 	 * @throws LAPException 
 	 */
-	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda) throws EntailmentGraphRawException{
+	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda) {
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;
@@ -451,7 +451,7 @@ public class EntailmentGraphRaw extends
 			
 	 */
 		
-	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges) throws EntailmentGraphRawException{
+	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges) {
 		
 		// create the to-be graph nodes
 		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.","interaction1");
@@ -540,7 +540,7 @@ public class EntailmentGraphRaw extends
 		return sampleRawGraph;
 	}
 	
-	public static EntailmentGraphRaw getSampleOuputWithCategories(boolean randomEdges) throws EntailmentGraphRawException{
+	public static EntailmentGraphRaw getSampleOuputWithCategories(boolean randomEdges){
 		
 		// create the to-be graph nodes
 		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.", "1","interaction1");

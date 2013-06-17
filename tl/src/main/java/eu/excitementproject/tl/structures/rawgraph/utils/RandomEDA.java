@@ -41,8 +41,7 @@ public class RandomEDA implements EDABasic<RandomTEDecision>{
 		
 	}
 
-	public RandomTEDecision process(JCas aCas) throws EDAException,
-			ComponentException {
+	public RandomTEDecision process(JCas aCas) {
 		
 		return new RandomTEDecision(generator.nextDouble());
 	}

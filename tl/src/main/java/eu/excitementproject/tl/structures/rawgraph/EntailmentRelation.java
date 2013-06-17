@@ -71,7 +71,7 @@ public class EntailmentRelation extends DefaultEdge {
 		
 	}
 	
-	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda) throws EntailmentGraphRawException{
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda) {
 		this.source = source;
 		this.target = target;	
 		this.eda = eda;
@@ -153,17 +153,9 @@ public class EntailmentRelation extends DefaultEdge {
 	 * @throws LAPException 
 	 */
 	
-	protected void computeRandomTEdecision() throws EntailmentGraphRawException {
-		try {
-			RandomEDA eda = new RandomEDA();
-			edge = eda.process(null);
-		} catch (EDAException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ComponentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	protected void computeRandomTEdecision(){
+		RandomEDA eda = new RandomEDA();
+		edge = eda.process(null);
 	}
 
 	
