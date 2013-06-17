@@ -23,7 +23,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
  */
 /**
  * 
- * @author vivi@fbk & LiliKotlerman & Kathrin
+ * @author vivi@fbk & Lili Kotlerman & Kathrin
  * 
  * The node for the work graph is an EntailmentUnit
  *
@@ -41,30 +41,19 @@ public class EntailmentUnit{
 
 	protected int level = -1; // negative value means "unknown"
 	
-	protected int frequency;
+	// protected int frequency;
 	
-	/**
-	 * @return the completeStatementTexts
-	 */
-	public Set<String> getCompleteStatementTexts() {
-		return completeStatementTexts;
-	}
 	
+	/******************************************************************************************
+	 * CONSTRUCTORS
+	 * ****************************************************************************************/
 	/**
-	 * @return the interactionIds
-	 */
-	public Set<String> getInteractionIds() {
-		return interactionIds;
-	}
-
-
-	/**
-	 * initialize the JCas attribute -- make the first fragment added to the 
-	 * EntailmentUnit object the "canonical" element
+	 * Create a new entailment unit based on a single entailment unit mention
+	 * The entailment unit mention is assumed to originate from a fragment graph
 	 * 
-	 * @param textCAS -- JCas object of the type defined for the TL
-	 * @param start	-- start index of the fragment
-	 * @param end -- end index of the fragment
+	 * @param eum -- the entailment unit mention
+	 * @param completeStatementText	-- String holding the completeStatementText of the fragment graph, from which the current entailment unit mention is taken
+	 * @param interactionId -- String holding the interactionId of the fragment graph, from which the current entailment unit mention is taken
 	 */
 	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText, String interactionId) {
 		
@@ -72,7 +61,7 @@ public class EntailmentUnit{
 		mentions.add(eum);
 		text = eum.getText();
 		level = eum.getLevel();	
-		frequency=1; // this is the first time this EntailmentUnit is seen
+	//	frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
 		interactionIds = new HashSet<String>();
@@ -93,7 +82,7 @@ public class EntailmentUnit{
 		mentions.add(n);
 		text = textFragment;
 		this.level =level; 
-		frequency=1; // this is the first time this EntailmentUnit is seen
+	//	frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
 		interactionIds = new HashSet<String>();
@@ -116,13 +105,43 @@ public class EntailmentUnit{
 		mentions.add(n);
 		text = textFragment;
 		this.level =level; 
-		frequency=1; // this is the first time this EntailmentUnit is seen
+	//	frequency=1; // this is the first time this EntailmentUnit is seen
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);
 		interactionIds = new HashSet<String>();
 		interactionIds.add(interactionId);
 
 	}
+
+	/******************************************************************************************
+	 * SETTERS/GERRETS
+	 * ****************************************************************************************/
+
+	/**
+	 * @return the completeStatementTexts
+	 */
+	public Set<String> getCompleteStatementTexts() {
+		return completeStatementTexts;
+	}
+	
+	/**
+	 * @return the interactionIds
+	 */
+	public Set<String> getInteractionIds() {
+		return interactionIds;
+	}
+
+	/******************************************************************************************
+	 * OTHER AUXILIARY METHODS
+	 * ****************************************************************************************/
+
+	/******************************************************************************************
+	 * PRINT
+	 * ****************************************************************************************/
+
+	
+
+
 
 	public void addCompleteStatement(String completeStatementText){
 		if (!completeStatementTexts.contains(completeStatementText)) completeStatementTexts.add(completeStatementText);
@@ -147,25 +166,26 @@ public class EntailmentUnit{
 	/**
 	 * @return the frequency
 	 */
-	public int getFrequency() {
-		return frequency;
+	public int getNumberOfTextualInputs() {
+		//return frequency;
+		return this.completeStatementTexts.size();
 	}
 
-	/**
+/*	*//**
 	 * @param frequency the frequency to set
-	 */
+	 *//*
 	public void setFrequency(int frequency) {
 		this.frequency = frequency;
 	}
+*/	
 	
-	
-	/**
+/*	*//**
 	 * Increase the value of frequency by 1 
-	 */
+	 *//*
 	public void incrementFrequency(){
 		this.frequency++;
 	}
-
+*/
 	/**
 	 * @return -- a set of text fragments corresponding to all the entailment unit mentions covered by this node
 	 */

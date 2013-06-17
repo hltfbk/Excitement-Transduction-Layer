@@ -50,11 +50,11 @@ public class EquivalenceClass {
 		int frequency = 0;
 		String labelCandidate=""; 
 		for (EntailmentUnit candidateEntailmentUnit : entailmentUnits){
-			if (candidateEntailmentUnit.getFrequency()>frequency){
+			if (candidateEntailmentUnit.getNumberOfTextualInputs()>frequency){
 				labelCandidate = candidateEntailmentUnit.getText();
-				frequency = candidateEntailmentUnit.getFrequency();
+				frequency = candidateEntailmentUnit.getNumberOfTextualInputs();
 			}
-			else if (candidateEntailmentUnit.getFrequency()==frequency){ // if current label has the same frequency as the candidate entailment unit
+			else if (candidateEntailmentUnit.getNumberOfTextualInputs()==frequency){ // if current label has the same frequency as the candidate entailment unit
 				if (candidateEntailmentUnit.getText().length() < labelCandidate.length()) { // if the candidate text is shorter - make it the new label 
 					labelCandidate =  candidateEntailmentUnit.getText();
 				}
@@ -94,24 +94,47 @@ public class EquivalenceClass {
 		return entailmentUnits;
 	}
 	
-	public boolean containsEntailmentUnit(EntailmentUnit eu){
-		return entailmentUnits.contains(eu);
-	}
-	
-	public void add(EntailmentUnit eu){
-		entailmentUnits.add(eu);
-	}
-	
-	public void add(Set<EntailmentUnit> s_eu){
-		entailmentUnits.addAll(s_eu);
-	}
-	
+	/** The  method  returns the ids of interactions that contain entailment units covered by the equivalence class
+	 * @return the set of interaction ids
+	 */
 	public Set<String> getInteractionIds(){
 		Set<String> interactionIds = new HashSet<String>();
 		for (EntailmentUnit eu : this.entailmentUnits){
 			interactionIds.addAll(eu.getInteractionIds());
 		}
 		return interactionIds;		
+	}
+	
+
+	/******************************************************************************************
+	 * OTHER AUXILIARY METHODS
+	 * ****************************************************************************************/
+
+	/** Returns true if the input entailment unit is contained in the equivalence class.
+	 * Otherwise returns false
+	 * @param eu - the input entailment unit
+	 * @return true/false
+	 */
+	public boolean containsEntailmentUnit(EntailmentUnit eu){
+		return entailmentUnits.contains(eu);
+	}
+	
+	/** Adds the input entailment unit to the set of entailment units contained in the equivalence class.
+	 * If the set already contains this entailment unit, it will not be added.
+	 * The method DOES NOT re-select the representative text (label) of the equivalence class. 
+	 * @param eu - the input entailment unit
+	 */
+	public void add(EntailmentUnit eu){
+		entailmentUnits.add(eu);
+	}
+	
+	/** Adds the input entailment units to the set of entailment units contained in the equivalence class.
+	 * If the set already contains any of the input entailment units, it will not be added.
+	 * The method DOES NOT re-select the representative text (label) of the equivalence class. 
+	 * @param s_eu - the set of input entailment units
+	 */
+	public void add(Set<EntailmentUnit> s_eu){
+		entailmentUnits.addAll(s_eu);
 	}
 	
 	/******************************************************************************************

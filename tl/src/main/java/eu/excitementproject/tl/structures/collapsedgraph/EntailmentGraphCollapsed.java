@@ -228,6 +228,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	
 	/** The  method  returns the ids of interactions that contain entailment units equivalent to the input  
 	 * entailment unit based on the entailment graph.
+	 * If the input entailment unit is not found under any of the nodes in the graph, the method will return null.
 	 * @param entailmentUnitText - the canonical text of the input entailment unit
 	 * @return set of interaction ids
 	 */
@@ -237,6 +238,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	
 	/** The  method  returns the ids of interactions that contain entailment units equivalent to the input  
 	 * entailment unit based on the entailment graph.
+	 * If the input entailment unit is not found under any of the nodes in the graph, the method will return null.
 	 * @param entailmentUnit - the input entailment unit
 	 * @return set of interaction ids
 	 */
@@ -245,6 +247,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	}
 	
 	/** The  method  returns the ids of interactions that contain entailment units covered by the input equivalence class
+	 * If such equivalence class node is not found in the graph, the method will return null.
 	 * @param node - the input equivalence class node 
 	 * @return set of interaction ids
 	 */

@@ -17,7 +17,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
  * 
- * @author vivi@fbk & LiliKotlerman
+ * @author vivi@fbk & Lili Kotlerman
  *
  * Edge type for the work graph (EntailmentGraphRaw)
  * The edge "value" is a textual entailment decision (TEdecision) obtained from
@@ -55,6 +55,22 @@ public class EntailmentRelation extends DefaultEdge {
 	 */
 	LAPAccess lap;
 	
+	/******************************************************************************************
+	 * CONSTRUCTORS
+	 * ****************************************************************************************/
+
+	/******************************************************************************************
+	 * SETTERS/GERRETS
+	 * ****************************************************************************************/
+
+	/******************************************************************************************
+	 * OTHER AUXILIARY METHODS
+	 * ****************************************************************************************/
+
+	/******************************************************************************************
+	 * PRINT
+	 * ****************************************************************************************/
+
 	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda, LAPAccess lap) throws LAPException {
 		this.source = source;
 		this.target = target;	

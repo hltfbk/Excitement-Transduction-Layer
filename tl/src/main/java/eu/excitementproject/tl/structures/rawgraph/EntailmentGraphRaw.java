@@ -344,7 +344,6 @@ public class EntailmentGraphRaw extends
 			this.addVertex(sourceVertex);
 		}
 		else {
-			sourceVertex.incrementFrequency();
 			sourceVertex.addCompleteStatement(fg.getCompleteStatement().getText());
 		}
 		
@@ -353,7 +352,6 @@ public class EntailmentGraphRaw extends
 			this.addVertex(targetVertex);
 		}
 		else {
-			targetVertex.incrementFrequency();
 			targetVertex.addCompleteStatement(fg.getCompleteStatement().getText());
 		}
 					
