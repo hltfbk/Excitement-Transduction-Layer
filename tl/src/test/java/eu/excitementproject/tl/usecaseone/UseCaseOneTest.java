@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.uima.jcas.JCas;
-import org.junit.Test;
 
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
@@ -27,8 +26,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 
 public class UseCaseOneTest {
 
-	@Test
-	public void test(){
+	public static void main(String[] argv){
 		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");		
 		CommonConfig config = null;
 		LAPAccess lap;
