@@ -95,7 +95,7 @@ public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
 			CASUtils.Region[] r = new CASUtils.Region[1]; 
 			r[0] = new CASUtils.Region(begin,  end); 
 			
-			fragLogger.debug("Annotating the following as a modifier: " + adv.getCoveredText()); 
+			fragLogger.info("Annotating the following as a modifier: " + adv.getCoveredText()); 
 			try {
 				CASUtils.annotateOneModifier(aJCas, r); 
 			}
