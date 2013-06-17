@@ -1,10 +1,9 @@
 package eu.excitementproject.tl.usecaseone;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
 import eu.excitementproject.eop.common.EDABasic;
@@ -18,14 +17,16 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.InteractionReader;
+import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
-public class UseCaseOneTest {
+public class UseCaseOneFromXMLTest {
 
 	@Test
 	public void test(){
@@ -36,14 +37,13 @@ public class UseCaseOneTest {
 		UseCaseOneRunnerPrototype use1;
 		EntailmentGraphCollapsed graph;
 		
-		List<JCas> docs = new ArrayList<JCas>();
-		String[] files = {"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/100771.txt.xmi",
-						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/183009.txt.xmi",
-						  "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/213033.txt.xmi"
+		Set<Interaction> docs = new HashSet<Interaction>();
+		String[] files = {"./src/test/resources/WP2_public_data_XML/D2.1.1 English-Email.xml"
+						//	,
+						// "./src/test/resources/WP2_public_data_XML/D2.1.1 English-Speech.xml"
 		};
 		
 		File f;
-		JCas aJCas;
 
 		try {
 
@@ -51,10 +51,7 @@ public class UseCaseOneTest {
 			for (String name: files) {
 		
 				f = new File(name); 
-				aJCas = CASUtils.createNewInputCas(); 
-				CASUtils.deserializeFromXmi(aJCas, f); 
-
-				docs.add(aJCas);
+				docs.addAll(InteractionReader.readInteractionXML(f));
 			}
 						
 			// initialize the lap			
@@ -76,7 +73,7 @@ public class UseCaseOneTest {
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
 				ModifierAnnotatorException | 
-				GraphMergerException | CollapsedGraphGeneratorException e) {
+				GraphMergerException | CollapsedGraphGeneratorException | DataReaderException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
