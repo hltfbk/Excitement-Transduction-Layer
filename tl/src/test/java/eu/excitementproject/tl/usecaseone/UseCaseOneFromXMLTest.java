@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Test;
 
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
@@ -28,8 +27,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 
 public class UseCaseOneFromXMLTest {
 
-	@Test
-	public void test(){
+	public static void main(String[] argv){
 		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");		
 		CommonConfig config = null;
 		LAPAccess lap;
