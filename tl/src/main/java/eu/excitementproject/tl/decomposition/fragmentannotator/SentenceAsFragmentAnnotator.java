@@ -83,7 +83,7 @@ public class SentenceAsFragmentAnnotator extends AbstractFragmentAnnotator {
 			CASUtils.Region[] r = new CASUtils.Region[1]; 
 			r[0] = new CASUtils.Region(begin,  end); 
 			
-			fragLogger.debug("Annotating the following as a fragment: " + st.getCoveredText()); 
+			fragLogger.info("Annotating the following as a fragment: " + st.getCoveredText()); 
 			try {
 				CASUtils.annotateOneDeterminedFragment(aJCas, r); 
 			}
