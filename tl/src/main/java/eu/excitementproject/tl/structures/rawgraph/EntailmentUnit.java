@@ -55,15 +55,7 @@ public class EntailmentUnit{
 	 * @param interactionId -- String holding the interactionId of the fragment graph, from which the current entailment unit mention is taken
 	 */
 	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText, String interactionId) {
-		
-		mentions = new HashSet<EntailmentUnitMention>();
-		mentions.add(eum);
-		text = eum.getText();
-		level = eum.getLevel();	
-		completeStatementTexts = new HashSet<String>();
-		completeStatementTexts.add(completeStatementText);
-		interactionIds = new HashSet<String>();
-		interactionIds.add(interactionId);
+		setAttributes(eum, completeStatementText, interactionId);
 	}
 
 	/**
@@ -74,17 +66,8 @@ public class EntailmentUnit{
 	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
 	 */
 	public EntailmentUnit(String textFragment, int level, String completeStatementText, String interactionId) {
-		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
-		
-		mentions = new HashSet<EntailmentUnitMention>();
-		mentions.add(n);
-		text = textFragment;
-		this.level =level; 
-		completeStatementTexts = new HashSet<String>();
-		completeStatementTexts.add(completeStatementText);
-		interactionIds = new HashSet<String>();
-		interactionIds.add(interactionId);
-
+		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment);
+		setAttributes(eum, completeStatementText, interactionId);
 	}
 	
 	/**
@@ -96,22 +79,32 @@ public class EntailmentUnit{
 	 * @param category - category id 
 	 */
 	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category, String interactionId) {
-		EntailmentUnitMention n = new EntailmentUnitMention(textFragment);
-		n.setCategoryId(category);
-		mentions = new HashSet<EntailmentUnitMention>();
-		mentions.add(n);
-		text = textFragment;
-		this.level =level; 
-		completeStatementTexts = new HashSet<String>();
-		completeStatementTexts.add(completeStatementText);
-		interactionIds = new HashSet<String>();
-		interactionIds.add(interactionId);
-
+		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment);
+		eum.setCategoryId(category);
+		setAttributes(eum, completeStatementText, interactionId);
 	}
+	
 
 	/******************************************************************************************
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
+
+	/** Setter for all the attributes  
+	 * @param eum - entailment unit mention
+	 * @param completeStatementText - the text of the complete statement of the fragment graph from which the input entailment unit mention originated  
+	 * @param interactionId - the interaction id of the fragment graph from which the input entailment unit mention originated
+	 */
+	private void setAttributes(EntailmentUnitMention eum, String completeStatementText, String interactionId){
+		mentions = new HashSet<EntailmentUnitMention>();
+		mentions.add(eum);
+		text = eum.getText();
+		level = eum.getLevel();	
+		completeStatementTexts = new HashSet<String>();
+		completeStatementTexts.add(completeStatementText);
+		interactionIds = new HashSet<String>();
+		interactionIds.add(interactionId);
+		
+	}
 
 	/**
 	 * @return the completeStatementTexts
@@ -201,33 +194,6 @@ public class EntailmentUnit{
 
 	
 	/******************************************************************************************
-	 * PRINT
-	 * ****************************************************************************************/
-
-	
-
-
-
-	
-	
-	
-
-
-	
-
-
-
-	@Override
-	public String toString(){
-		String s="\""+this.getText()+"\"";
-		if(isBaseStatement()) s+=" (base statement)";
-		else if(this.level>0) s+= " ("+this.level+" mod.)";
-		else s+= " (level unknown)";
-		if (!this.completeStatementTexts.isEmpty()) s+=" " + this.completeStatementTexts.size()+ " complete statements";
-		return s;
-	}
-
-	/******************************************************************************************
 	 * Override hashCode() and equals(). 
 	 * ****************************************************************************************/
 
@@ -244,6 +210,7 @@ public class EntailmentUnit{
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
+	 * Two entailment units are equal if and only if their canonical texts are equal
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -264,6 +231,20 @@ public class EntailmentUnit{
 
 	public String getTextWithoutDoulbeSpaces(){
 		return this.getText().trim().replaceAll(" +", " ");
+	}
+
+	/******************************************************************************************
+	 * PRINT
+	 * ****************************************************************************************/
+
+	@Override
+	public String toString(){
+		String s="\""+this.getText()+"\"";
+		if(isBaseStatement()) s+=" (base statement)";
+		else if(this.level>0) s+= " ("+this.level+" mod.)";
+		else s+= " (level unknown)";
+		if (!this.completeStatementTexts.isEmpty()) s+=" " + this.completeStatementTexts.size()+ " complete statements";
+		return s;
 	}
 
 
