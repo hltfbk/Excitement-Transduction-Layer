@@ -3,6 +3,7 @@ package eu.excitementproject.tl.structures.fragmentgraph;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.EdgeFactory;
@@ -16,6 +17,7 @@ import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
 /**
  * 
@@ -42,6 +44,8 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * 
 	 */
 	private static final long serialVersionUID = -4631493969220124299L;
+	
+	private final static Logger logger = Logger.getLogger(FragmentGraph.class.getName());
 	
 	/*
 	 * apart from the graph's structure, we might benefit from keeping track 
@@ -159,12 +163,16 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		
 		EntailmentUnitMention eum = new EntailmentUnitMention(aJCas, frag, modifiers);
 		
+		logger.info("Generated node (EUM) for string: " + eum.getText());
+//		eum = addNode(eum);
 		if (! this.containsVertex(eum)) { // double check that this test does what it should
 			addVertex(eum);
+			logger.info("Vertex added: " + eum.text);
 		} else {
 			eum = getVertex(eum);
+			logger.info("Matching vertex retrieved from graph: " + eum.text);
 		}
-
+		
 		if (parent != null) {
 			this.addEdge(parent, eum); // double check the direction of the added edges
 		}
@@ -393,7 +401,9 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		
 		return g;
     }
-	
+
+    
+    
 	public static void main(String [] argv) {
 			String text = "The hard old seats were very uncomfortable";
 			Set<String> modifiers = new HashSet<String>();
@@ -411,8 +421,31 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	public FragmentGraphEdge addEdge(EntailmentUnitMention parent, EntailmentUnitMention eum){
 //		return super.addEdge(parent, eum );
 		FragmentGraphEdge edge = new FragmentGraphEdge(parent, eum);
+		
+		checkVertex(eum);
+		checkVertex(parent);
+		
 		this.addEdge(parent, eum, edge);
+		logger.info("Added edge between: \n\t" + eum.getText() + "\n\t" + parent.getText());
 		return edge;
+	}
+
+	private void checkVertex(EntailmentUnitMention eum) {
+		if (! this.containsVertex(eum)) {
+			logger.info("vertex does not exist in the graph: " + eum.text);
+//			eum = addNode(eum);
+		}
+	}
+	
+	public EntailmentUnitMention addNode(EntailmentUnitMention eum) {
+		if (! this.containsVertex(eum)) { // double check that this test does what it should
+			addVertex(eum);
+			logger.info("Vertex added: " + eum.text);
+		} else {
+			eum = getVertex(eum);
+			logger.info("Matching vertex retrieved from graph: " + eum.text);
+		}
+		return eum;
 	}
 
 }
