@@ -97,6 +97,7 @@ public class EntailmentUnitMention {
 		CharSequence chars = frag.getText();
 		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
 			if (! mods.contains(ma)) {
+				logger.info("\t removing " + ma.getCoveredText());
 				chars = removeModifier(chars,ma);
 			} else {
 				modsText.add(ma.getCoveredText());
@@ -106,6 +107,8 @@ public class EntailmentUnitMention {
 //		text.trim().replaceAll(" +", " ");
 		modifiersText = addModifiers(text,modsText);
 		categoryId = getCategoryId(aJCas,frag);
+		
+		logger.info("Generated node with text: " + text);
 	}
 
 	
@@ -202,13 +205,16 @@ public class EntailmentUnitMention {
 		CharSequence chs = chars;
 		ModifierPart mp;
 		
-		logger.info("Removing modifiers from string " + chars);
+//		logger.info("Removing modifiers from string : " + chars);
 		
 		for (int i = 0; i < ma.getModifierParts().size(); i++) {
 			mp = ma.getModifierParts(i);
 			logger.info("\t" + i + " : " + mp.getCoveredText() + "\t span: " + mp.getBegin() + "/" + mp.getEnd());
 			chs = chs.subSequence(0, mp.getBegin()-begin) + StringUtils.repeat(" ",mp.getEnd()-mp.getBegin()) + chs.subSequence(mp.getEnd()-begin,chs.length());
 		}
+		
+		logger.info("\n\tBEFORE: " + chars + "\n\tAFTER: " + chs);
+		
 		return chs;
 	}
 
@@ -252,7 +258,8 @@ public class EntailmentUnitMention {
 	}
 	
 	public boolean equals(EntailmentUnitMention eum) {
-		return eum.text.matches(text);
+//		return eum.getText().matches(text);
+		return eum.getText().equals(text);
 	}
 
 	public void setCategoryId(String category) {
