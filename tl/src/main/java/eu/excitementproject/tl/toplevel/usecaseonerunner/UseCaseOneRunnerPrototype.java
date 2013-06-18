@@ -85,7 +85,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		for(Interaction i: docs) {
 			JCas aJCas = i.createAndFillInputCAS();
 			annotateCAS(aJCas);
-			fgs.addAll(fragGen.generateFragmentGraphs(i.createAndFillInputCAS()));
+			logger.info("Adding fragment graphs for text: " + aJCas.getDocumentText());
+			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
 		}
 		
 		inspectGraph(fgs);
@@ -230,7 +231,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	
 	
 	public static void inspectGraph(Set<FragmentGraph> fgs) {
+		
+		logger.info("Inspecting the fragmentGraphs:");
+		
 		if (fgs != null) {
+			logger.info("\t" + fgs.size() + " graphs to check");
 			for(FragmentGraph fg : fgs) {
 				if ( fg != null ) {
 					logger.info(fg.toString());
