@@ -46,10 +46,13 @@ public class UseCaseOneFromXMLTest {
 		EntailmentGraphCollapsed graph;
 		
 		Set<Interaction> docs = new HashSet<Interaction>();
-		String[] files = {"./src/test/resources/WP2_public_data_XML/D2.1.1 English-Email.xml"
-						//	,
-						// "./src/test/resources/WP2_public_data_XML/D2.1.1 English-Speech.xml"
-		};
+//		String[] files = {"./src/test/resources/WP2_public_data_XML/D2.1.1 English-Email.xml"
+//						//	,
+//						// "./src/test/resources/WP2_public_data_XML/D2.1.1 English-Speech.xml"
+//		};
+		
+		// with small example - Gil
+		String[] files = {"./src/test/resources/WP2_public_data_XML/nice_email1_first_10.xml",};
 		
 		File f;
 
