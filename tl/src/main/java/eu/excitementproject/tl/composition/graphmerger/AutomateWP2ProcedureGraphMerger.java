@@ -43,7 +43,6 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		
 		 
 		// else - Implement the WP2 flow		
-		// 1. Add the nodes and edges from the fragment graph into the work graph
 		workGraph.copyFragmentGraphNodesAndEdges(fragmentGraph);
 		
 		// find the node corresponding to the fragment graph's base statement in the work graph
@@ -193,13 +192,15 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 			for (EntailmentUnit entailedChildNode : entailedChildNodes){
 				if (workGraph.isEntailment(entailingChildNode, entailedChildNode)){
 					double localConfidence = workGraph.getEdge(entailingChildNode, entailedChildNode).getConfidence();
-					if (confidence<localConfidence) confidence=localConfidence; // at the end the confidence will be equal to the smallest local confidence 
+					if (confidence > localConfidence) confidence=localConfidence; // at the end the confidence will be equal to the smallest local confidence 
 					matchedPairs++;
 					break; // don't need to check other entailedChildNodes, go to the next entailingChildNode
 				}
 			}
 		}
-		if (matchedPairs==entailingChildNodes.size()) return confidence; // if each of the entailingChildNodes found its pair among the entailedChildNodes - then can induce there is entailment between the parents 
+		if (matchedPairs==entailingChildNodes.size()) {
+			return confidence; // if each of the entailingChildNodes found its pair among the entailedChildNodes - then can induce there is entailment between the parents 
+		}
 		return 0.0; // otherwise - return 0
 	}
 
