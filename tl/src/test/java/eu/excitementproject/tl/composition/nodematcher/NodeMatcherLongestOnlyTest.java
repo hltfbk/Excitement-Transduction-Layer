@@ -10,9 +10,14 @@ import junit.framework.Assert;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
 import eu.excitementproject.tl.composition.api.NodeMatcher;
+import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
+import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.CASUtils.Region;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
@@ -33,15 +38,23 @@ public class NodeMatcherLongestOnlyTest {
 			
 			/************* TEST 1 ***************/
 			testlogger.info("Creating fragment graph for sentence 'Disappointed with the amount of legroom compared with other trains'."); 			
+			JCas jcas = CASUtils.createNewInputCas();			
 			String text = "Disappointed with the amount of legroom compared with other trains";
-			Set<String> modifiers = new HashSet<String>();
+			jcas.setDocumentText(text);
+			Region[] fragmentRegions = new Region[1];
+			fragmentRegions[0] = new Region(0,text.length());
+			CASUtils.annotateOneDeterminedFragment(jcas, fragmentRegions);
 			testlogger.info("Adding two modifiers: 'the amount of' and 'compared with other trains'."); 			
-			modifiers.add("the amount of");
-			modifiers.add("compared with other trains");
-			FragmentGraph fragmentGraph = new FragmentGraph(text, modifiers);
+			Region[] modifierRegions = new Region[2];
+			modifierRegions[0] = new Region(18,31);
+			modifierRegions[1] = new Region(40,text.length());
+			CASUtils.annotateOneModifier(jcas, modifierRegions);
+			testlogger.info("Creating fragment graph from CAS."); 			
+			FragmentGraphGenerator fgg = new FragmentGraphGeneratorFromCAS();
+			Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(jcas);
 			testlogger.info("Calling node matcher on the fragment graph."); 			
 			NodeMatcher nm = new NodeMatcherLongestOnly(); 
-			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph, entailmentGraph);
+			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next(), entailmentGraph);
 			Assert.assertEquals(1, matches.size()); //should return a single match
 			for (NodeMatch nodeMatch : matches) {
 				Assert.assertEquals("Disappointed with the amount of legroom compared with other trains", nodeMatch.getMention().getText().trim());
@@ -55,14 +68,21 @@ public class NodeMatcherLongestOnlyTest {
 
 			/************* TEST 2 ***************/
 			testlogger.info("Creating fragment graph for sentence 'Disappointed with the limited legroom'."); 			
+			JCas jcas2 = CASUtils.createNewInputCas();			
 			text = "Disappointed with the limited legroom";
-			testlogger.info("Adding on modifier: 'the limited'."); 			
-			modifiers = new HashSet<String>();
-			modifiers.add("the limited");
-			fragmentGraph = new FragmentGraph(text, modifiers);
+			jcas2.setDocumentText(text);
+			fragmentRegions = new Region[1];
+			fragmentRegions[0] = new Region(0,text.length());
+			CASUtils.annotateOneDeterminedFragment(jcas2, fragmentRegions);
+			testlogger.info("Adding one modifier: 'the limited'."); 			
+			modifierRegions = new Region[1];
+			modifierRegions[0] = new Region(18,29);
+			CASUtils.annotateOneModifier(jcas2, modifierRegions);
+			testlogger.info("Creating fragment graph from CAS."); 			
+			fragmentGraphs = fgg.generateFragmentGraphs(jcas2);
 			testlogger.info("Calling node matcher on the fragment graph."); 			
 			nm = new NodeMatcherLongestOnly(); 
-			matches = nm.findMatchingNodesInGraph(fragmentGraph, entailmentGraph);
+			matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next(), entailmentGraph);
 			Assert.assertEquals(1, matches.size()); 
 			testlogger.info("NodeMatcher matches a single node."); 			
 			for (NodeMatch nodeMatch : matches) {
@@ -77,12 +97,17 @@ public class NodeMatcherLongestOnlyTest {
 
 			/************* TEST 3 ***************/
 			testlogger.info("Creating fragment graph for sentence 'Limited legroom'."); 			
+			JCas jcas3 = CASUtils.createNewInputCas();			
 			text = "Limited legroom";
-			modifiers = new HashSet<String>();
-			fragmentGraph = new FragmentGraph(text, modifiers);
+			jcas3.setDocumentText(text);
+			fragmentRegions = new Region[1];
+			fragmentRegions[0] = new Region(0,text.length());
+			CASUtils.annotateOneDeterminedFragment(jcas3, fragmentRegions);
+			fragmentGraphs = fgg.generateFragmentGraphs(jcas3);
 			testlogger.info("Calling node matcher on the fragment graph."); 			
 			nm = new NodeMatcherLongestOnly(); 
-			matches = nm.findMatchingNodesInGraph(fragmentGraph, entailmentGraph);
+			testlogger.info("fragmentsGraphs.size: " + fragmentGraphs.size());
+			matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next(), entailmentGraph);
 			Assert.assertEquals(0, matches.size()); 
 			testlogger.info("NodeMatcher does not match a node."); 			
 
