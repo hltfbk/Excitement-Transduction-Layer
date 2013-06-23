@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Hashtable;
 import java.util.Set;
 
+import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
@@ -171,7 +172,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 						// check whether we can induce such edge from lower-level entailments (get confidence >0) 
 						Double confidence = induceEntailment(workGraph, candidateEntailingNode, candidateEntailedNode);
 						if (confidence>0){
-							workGraph.addEdgeByInduction(candidateEntailingNode, candidateEntailedNode, confidence);
+							workGraph.addEdgeByInduction(candidateEntailingNode, candidateEntailedNode, DecisionLabel.Entailment, confidence);
 						}
 					}
 				}

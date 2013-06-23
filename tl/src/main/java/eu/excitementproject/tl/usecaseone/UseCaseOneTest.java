@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.usecaseone;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,16 +70,17 @@ public class UseCaseOneTest {
 */		
 		
 		File dir = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1");
+		int fileNumberLimit = 100000000;
 		
 //		File f;
 		JCas aJCas;
 
 		try {
 
-		
-//			for (String name: files) {
+			int i =0;
 			for (File f : dir.listFiles()) {
-		
+				i++; 
+				if (i>fileNumberLimit) break;
 //				f = new File(name); 
 				aJCas = CASUtils.createNewInputCas(); 
 				CASUtils.deserializeFromXmi(aJCas, f); 
@@ -94,18 +96,35 @@ public class UseCaseOneTest {
 			eda = new MaxEntClassificationEDA();	
 			eda.initialize(config);
 			
-			// initialize use case one runner
-			use1 = new UseCaseOneRunnerPrototype(lap, eda);
+			// prepare the output folder
+			String outputFolder = "./src/test/outputs/"+dir.getPath().replace(".\\src\\test\\resources\\","").replace("\\","/");
+			File theDir = new File(outputFolder);
+  		    // if the directory does not exist, create it
+		    if (!theDir.exists())
+		    {
+		      System.out.println("creating directory: " + outputFolder);
+		      boolean result = theDir.mkdir();  
+		      if(result){    
+		         System.out.println("DIR created");  
+		     }
+		      else {
+		    	  System.err.println("Could not create the output directory. No output files will be created."); 
+		    	  outputFolder=null;
+		      }
+		   }
+
+		    // initialize use case one runner
+			use1 = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
 			
 			// build collapsed graph
 			graph = use1.buildCollapsedGraph(docs);
 
-			UseCaseOneRunnerPrototype.inspectGraph(graph);
+			use1.inspectGraph(graph);
 			
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
 				ModifierAnnotatorException | 
-				GraphMergerException | CollapsedGraphGeneratorException e) {
+				GraphMergerException | CollapsedGraphGeneratorException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

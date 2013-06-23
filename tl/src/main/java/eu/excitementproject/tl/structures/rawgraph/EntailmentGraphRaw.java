@@ -21,6 +21,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
+import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 
 /**
@@ -355,8 +356,8 @@ public class EntailmentGraphRaw extends
 	 * @param confidence
 	 * @return the edge, which was added to the graph
 	 */
-	public EntailmentRelation addEdgeByInduction(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, Double confidence){
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(confidence), EdgeType.INDUCED);
+	public EntailmentRelation addEdgeByInduction(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, DecisionLabel entailmentDesicion, Double confidence){
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionWithConfidence(confidence,entailmentDesicion), EdgeType.INDUCED);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;
 	}
@@ -431,14 +432,10 @@ public class EntailmentGraphRaw extends
 	 * @param filename - the name of the file to save the graph
 	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
 	 */
-	public void toDOT(String filename) throws EntailmentGraphRawException{
-		try {
+	public void toDOT(String filename) throws IOException{
 			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
 			out.write(this.toDOT());
 			out.close();
-		} catch (IOException e) {
-			throw new EntailmentGraphRawException(e.getMessage());
-		}		
 	}	
 	
 	
