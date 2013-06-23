@@ -1,6 +1,10 @@
 package eu.excitementproject.tl.toplevel.usecaseonerunner;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -43,11 +47,19 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	GraphMerger graphMerger;
 	CollapsedGraphGenerator collapseGraph;
 	
+	String outputPath = null;
+	
 	private final static Logger logger = Logger.getLogger(UseCaseOneRunnerPrototype.class.getName());
 	
-	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException{
+	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda, String outputFolder) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
 		this.lap = lap;
 		this.eda = eda;
+		this.outputPath = outputFolder;
+		if (outputFolder != null){
+			BufferedWriter logfile = new BufferedWriter(new FileWriter(outputFolder+"/log.txt")); //create log file (if exists - rewrite)
+			logfile.write(outputFolder+": "+Calendar.getInstance()+"\n");
+			logfile.close();			
+		}
 		
 		initInterfaces();
 	}
@@ -78,20 +90,29 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphRaw buildRawGraph(Set<Interaction> docs) 
-			throws GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException{
+			throws GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException{
 		
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>(); 
 
 		for(Interaction i: docs) {
 			JCas aJCas = i.createAndFillInputCAS();
 			annotateCAS(aJCas);
-			logger.info("Adding fragment graphs for text: " + aJCas.getDocumentText());
+			log("Adding fragment graphs for text: " + aJCas.getDocumentText());
 			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
 		}
 		
 		inspectGraph(fgs);
 		
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
+	}
+	
+	private void log(String message) throws IOException{
+		logger.info(message);
+		if (outputPath != null){
+			BufferedWriter logfile = new BufferedWriter(new FileWriter(outputPath+"/log.txt",true)); //open log file for append
+			logfile.write(message+"\n");
+			logfile.close();			
+		}
 	}
 	
 	
@@ -107,7 +128,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphRaw buildRawGraph(List<JCas> docs) 
-			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException{
+			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
 		
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>(); 
 
@@ -161,7 +182,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs) 
-				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException {
+				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException {
 		
 		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
 		inspectGraph(rawGraph);
@@ -183,7 +204,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs) 
-				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException {
+				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException {
 		
 		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
 		inspectGraph(rawGraph);
@@ -210,41 +231,45 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 */
 
 	
-	public static void inspectGraph(EntailmentGraphCollapsed graph) {
+	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException{
 
 		if (graph != null) { 
-			logger.info(graph.toString());
+			log("COLLAPSED GRAPH:\n");
+			log(graph.toString());
+			if (outputPath != null) graph.toDOT(outputPath+"/collapsed_graph.txt");
 		} else {
-			logger.info("The graph is null");
+			log("The graph is null");
 		}
 	}
 
 	
-	public static void inspectGraph(EntailmentGraphRaw graph) {
+	public void inspectGraph(EntailmentGraphRaw graph) throws IOException{
 
 		if (graph != null) { 
-			logger.info(graph.toString());
+			log("RAW GRAPH:\n");			
+			log(graph.toString());
+			if (outputPath != null) graph.toDOT(outputPath+"/raw_graph.txt");
 		} else {
-			logger.info("The graph is null");
+			log("The graph is null");
 		}		
 	}
 	
 	
-	public static void inspectGraph(Set<FragmentGraph> fgs) {
+	public void inspectGraph(Set<FragmentGraph> fgs) throws IOException{
 		
-		logger.info("Inspecting the fragmentGraphs:");
+		log("Inspecting the fragmentGraphs:");
 		
 		if (fgs != null) {
-			logger.info("\t" + fgs.size() + " graphs to check");
+			log("\t" + fgs.size() + " graphs to check");
 			for(FragmentGraph fg : fgs) {
 				if ( fg != null ) {
-					logger.info(fg.toString());
+					log(fg.toString());
 				} else {
-					logger.info("Fragment graph is null");
+					log("Fragment graph is null");
 				}
 			}
 		} else {
-			logger.info("The set of fragment graphs is null");
+			log("The set of fragment graphs is null");
 		}
 	}
 

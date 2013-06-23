@@ -12,8 +12,8 @@ public class TEDecisionByScore implements TEDecision{
 	
 	final Double confidence;
 	
-	public TEDecisionByScore(Double randomConfidence){
-		this.confidence = randomConfidence; 
+	public TEDecisionByScore(Double confidence){
+		this.confidence = confidence; 
 	}
 	
 	public DecisionLabel getDecision() {
