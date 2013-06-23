@@ -292,14 +292,10 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 * @param filename - the name of the file to save the graph
 	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
 	 */
-	public void toDOT(String filename) throws EntailmentGraphRawException{
-		try {
+	public void toDOT(String filename) throws IOException{
 			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
 			out.write(this.toDOT());
 			out.close();
-		} catch (IOException e) {
-			throw new EntailmentGraphRawException(e.getMessage());
-		}		
 	}	
 
 	/******************************************************************************************

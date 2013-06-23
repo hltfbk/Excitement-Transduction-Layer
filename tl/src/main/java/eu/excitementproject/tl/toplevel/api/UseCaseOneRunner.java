@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.toplevel.api;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
@@ -22,12 +23,12 @@ public abstract interface UseCaseOneRunner {
 	EntailmentGraphRaw buildRawGraph(Set<Interaction> docs)
 			throws GraphMergerException, FragmentGraphGeneratorException,
 			LAPException, FragmentAnnotatorException,
-			ModifierAnnotatorException;
+			ModifierAnnotatorException, IOException;
 
 
 	EntailmentGraphRaw buildRawGraph(List<JCas> docs)
 			throws GraphMergerException, FragmentGraphGeneratorException,
-			FragmentAnnotatorException, ModifierAnnotatorException, LAPException;
+			FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException;
 
 
 	EntailmentGraphCollapsed buildCollapsedGraph(File f)
@@ -37,12 +38,12 @@ public abstract interface UseCaseOneRunner {
 	EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs)
 			throws CollapsedGraphGeneratorException, GraphMergerException,
 			FragmentGraphGeneratorException, LAPException,
-			FragmentAnnotatorException, ModifierAnnotatorException;
+			FragmentAnnotatorException, ModifierAnnotatorException, IOException;
 
 
 	EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs)
 			throws CollapsedGraphGeneratorException, GraphMergerException,
 			FragmentGraphGeneratorException, FragmentAnnotatorException,
-			ModifierAnnotatorException, LAPException;
+			ModifierAnnotatorException, LAPException, IOException;
 
 }

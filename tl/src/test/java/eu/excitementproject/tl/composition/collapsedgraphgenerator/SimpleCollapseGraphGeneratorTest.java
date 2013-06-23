@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.composition.collapsedgraphgenerator;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
 import org.junit.Test;
@@ -87,7 +88,7 @@ public class SimpleCollapseGraphGeneratorTest {
 					} catch (GraphMergerException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					} catch (EntailmentGraphRawException e) {
+					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (CollapsedGraphGeneratorException e) {
