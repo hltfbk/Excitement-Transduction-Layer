@@ -96,7 +96,7 @@ public class EntailmentGraphRaw extends
 			// create and add nodes
 			for (int temp = 0; temp < entailmentUnitList.getLength(); temp++) {    
 				Node eu = entailmentUnitList.item(temp);     
-				System.out.println("\nCurrent Element :" + eu.getNodeName());     
+				eu.getNodeName();     
 				if (eu.getNodeType() == Node.ELEMENT_NODE) {  
 					Set<String> completeStatementTexts = new HashSet<String>();
 					Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
@@ -137,7 +137,7 @@ public class EntailmentGraphRaw extends
 			NodeList entailmentRelationList = doc.getElementsByTagName("entailmentRelationEdge");
 			for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
 				Node er = entailmentRelationList.item(temp);     
-				System.out.println("\nCurrent Element :" + er.getNodeName());     
+				er.getNodeName();     
 				if (er.getNodeType() == Node.ELEMENT_NODE) {  
 					
 					Element erElement = (Element) er;
