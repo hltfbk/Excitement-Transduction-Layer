@@ -27,6 +27,8 @@ import org.xml.sax.SAXException;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
+import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -90,7 +92,6 @@ public class EntailmentGraphRaw extends
 			doc.getDocumentElement().normalize();	     
 			doc.getDocumentElement().getNodeName();
 			NodeList entailmentUnitList = doc.getElementsByTagName("entailmentUnitNode");
-			NodeList entailmentRelationList = doc.getElementsByTagName("entailmentRelationEdge");
 			
 			// create and add nodes
 			for (int temp = 0; temp < entailmentUnitList.getLength(); temp++) {    
@@ -103,7 +104,7 @@ public class EntailmentGraphRaw extends
 					
 					Element euElement = (Element) eu;
 					String text = euElement.getAttribute("text");
-					Integer level = Integer.getInteger(euElement.getAttribute("level"));
+					Integer level = Integer.valueOf(euElement.getAttribute("level"));
 					
 			       	NodeList completeStatementList = doc.getElementsByTagName("completeStatementText");
 			       	for (int i = 0; i < completeStatementList.getLength(); i++) {    
@@ -123,7 +124,7 @@ public class EntailmentGraphRaw extends
 			       		Element eumElement = (Element) mention;
 			       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"));
 			       		m.setCategoryId(eumElement.getAttribute("categoryId"));
-			       		m.setLevel(Integer.getInteger(eumElement.getAttribute("level")));
+			       		m.setLevel(Integer.valueOf(eumElement.getAttribute("level")));
 			       		mentions.add(m);
 			       	}
 			       	
@@ -133,6 +134,24 @@ public class EntailmentGraphRaw extends
 
 			
 			// create and add edges
+			NodeList entailmentRelationList = doc.getElementsByTagName("entailmentRelationEdge");
+			for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
+				Node er = entailmentRelationList.item(temp);     
+				System.out.println("\nCurrent Element :" + er.getNodeName());     
+				if (er.getNodeType() == Node.ELEMENT_NODE) {  
+					
+					Element erElement = (Element) er;
+					String source = erElement.getAttribute("source");
+					String target = erElement.getAttribute("target");
+					EdgeType edgeType = EdgeType.convert(erElement.getAttribute("type"));
+					TEDecision edge = new TEDecisionWithConfidence(Double.valueOf(erElement.getAttribute("confidence")), DecisionLabel.getLabelFor(erElement.getAttribute("decisionLabel")));
+					
+					EntailmentUnit sourceVertex = this.getVertex(source);
+					EntailmentUnit targetVertex = this.getVertex(target);
+					EntailmentRelation e = new EntailmentRelation(sourceVertex, targetVertex, edge, edgeType);
+					this.addEdge(sourceVertex, targetVertex, e);
+				}
+			}
 		} catch (DOMException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -143,6 +162,9 @@ public class EntailmentGraphRaw extends
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (EDAException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -21,7 +21,6 @@ import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
