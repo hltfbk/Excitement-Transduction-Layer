@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -101,7 +104,7 @@ public class UseCaseOneFromXMLTest {
 			
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
-				ModifierAnnotatorException | 
+				ModifierAnnotatorException | TransformerException | ParserConfigurationException |
 				GraphMergerException | CollapsedGraphGeneratorException | DataReaderException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

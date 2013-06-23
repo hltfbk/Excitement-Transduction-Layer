@@ -100,6 +100,14 @@ public class EntailmentRelation extends DefaultEdge {
 	}
 		
 	
+	
+	/**
+	 * @return the lap
+	 */
+	public LAPAccess getLap() {
+		return lap;
+	}
+
 	/**
 	 * @return the edgeType
 	 */
