@@ -60,7 +60,7 @@ public class DemoUseCase2OMQGerman {
 		/** Step 1: Building an entailment graph from existing data */
 		
 		//Read in files
-		String fileName = "OMQ_confidential_data_small.xml";
+		String fileName = "OMQ_dummy_data_small.xml";
 		String[] files = {"./src/test/resources/WP2_public_data_XML/" + fileName,};
 		File f;
 		Set<Interaction> docs = new HashSet<Interaction>();
