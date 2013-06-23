@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.EDABasic;
@@ -19,6 +22,7 @@ import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
@@ -152,7 +156,12 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public EntailmentGraphCollapsed buildCollapsedGraph(File f) 
 			throws CollapsedGraphGeneratorException{
 		
-		return collapseGraph.generateCollapsedGraph(new EntailmentGraphRaw(f));
+		try {
+			return collapseGraph.generateCollapsedGraph(new EntailmentGraphRaw(f));
+		} catch (EntailmentGraphRawException e) {
+			// TODO Auto-generated catch block
+			throw new CollapsedGraphGeneratorException(e.getMessage());
+		}
 	}
 	
 
@@ -182,7 +191,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs) 
-				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException {
+				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException, ParserConfigurationException, TransformerException {
 		
 		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
 		inspectGraph(rawGraph);
@@ -204,7 +213,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs) 
-				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException {
+				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException, ParserConfigurationException, TransformerException {
 		
 		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
 		inspectGraph(rawGraph);
@@ -231,24 +240,30 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 */
 
 	
-	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException{
+	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException, TransformerException, ParserConfigurationException{
 
 		if (graph != null) { 
 			log("COLLAPSED GRAPH:\n");
 			log(graph.toString());
-			if (outputPath != null) graph.toDOT(outputPath+"/collapsed_graph.txt");
+			if (outputPath != null) {
+				graph.toDOT(outputPath+"/collapsed_graph.dot.txt");
+				graph.toXML(outputPath+"/collapsed_graph.xml");
+			}
 		} else {
 			log("The graph is null");
 		}
 	}
 
 	
-	public void inspectGraph(EntailmentGraphRaw graph) throws IOException{
+	public void inspectGraph(EntailmentGraphRaw graph) throws IOException, TransformerException, ParserConfigurationException{
 
 		if (graph != null) { 
 			log("RAW GRAPH:\n");			
 			log(graph.toString());
-			if (outputPath != null) graph.toDOT(outputPath+"/raw_graph.txt");
+			if (outputPath != null) {
+				graph.toDOT(outputPath+"/raw_graph.dot.txt");
+				graph.toXML(outputPath+"/raw_graph.xml");
+			}
 		} else {
 			log("The graph is null");
 		}		

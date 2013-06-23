@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.structures.collapsedgraph;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
@@ -10,9 +11,21 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
@@ -297,6 +310,98 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			out.write(this.toDOT());
 			out.close();
 	}	
+	
+	public void toXML(String filename) throws ParserConfigurationException, TransformerException{
+		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+ 
+		// root elements
+		Document doc = docBuilder.newDocument();
+		Element rootElement = doc.createElement("collapsedGraph");
+		doc.appendChild(rootElement);
+ 
+		// add nodes
+		for (EquivalenceClass ec : this.vertexSet()){
+			// staff elements
+			Element equivalenceClassNode = doc.createElement("equivalenceClassNode");
+			rootElement.appendChild(equivalenceClassNode);
+	 
+			// set label attribute to eu element
+			equivalenceClassNode.setAttribute("label",ec.getLabel());
+	 
+			/*	protected Set<String> completeStatementTexts;					*/
+			for (EntailmentUnit eu : ec.getEntailmentUnits()){
+				// entailmentUnit elements
+				Element entailmentUnit = doc.createElement("entailmentUnit");
+		 
+				// set text attribute to eu element
+				entailmentUnit.setAttribute("text",eu.getText());
+				// set level attribute to eu element
+				entailmentUnit.setAttribute("level",String.valueOf(eu.getLevel()));
+		 
+				/*	protected Set<String> completeStatementTexts;					*/
+				for (String csText : eu.getCompleteStatementTexts()){
+					// completeStatementText elements
+					Element completeStatementText = doc.createElement("completeStatementText");
+					completeStatementText.appendChild(doc.createTextNode(csText));
+					entailmentUnit.appendChild(completeStatementText);						
+				}
+
+				/*	protected Set<EntailmentUnitMention> mentions = null;										*/
+				for (EntailmentUnitMention eum : eu.getMentions()){
+					// eu mentions elements
+					Element eumention = doc.createElement("entailmentUnitMention");
+					eumention.setAttribute("text",eum.getText());
+					eumention.setAttribute("categoryId",eum.getCategoryId());
+					eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
+					entailmentUnit.appendChild(eumention);						
+				}
+
+				/*	protected Set<String> interactionIds = null;										*/
+				for (String interactionId : eu.getInteractionIds()){
+					// completeStatementText elements
+					Element interaction = doc.createElement("interactionId");
+					interaction.appendChild(doc.createTextNode(interactionId));
+					entailmentUnit.appendChild(interaction);						
+				}					
+				equivalenceClassNode.appendChild(entailmentUnit);						
+			}
+
+			/*	protected Set<String> interactionIds = null;										*/
+			for (String interactionId : ec.getInteractionIds()){
+				// completeStatementText elements
+				Element interaction = doc.createElement("interactionId");
+				interaction.appendChild(doc.createTextNode(interactionId));
+				equivalenceClassNode.appendChild(interaction);						
+			}					
+		}
+ 
+		// add edges
+		for (EntailmentRelationCollapsed r  : this.edgeSet()){
+			// staff elements
+			Element entailmentrelationEdge = doc.createElement("entailmentRelationCollapsedEdge");
+			rootElement.appendChild(entailmentrelationEdge);
+	 
+			// set source attribute to eu element
+			entailmentrelationEdge.setAttribute("source",r.getSource().getLabel());
+			// set target attribute to eu element
+			entailmentrelationEdge.setAttribute("target",r.getTarget().getLabel());
+			// set confidence attribute to eu element
+			entailmentrelationEdge.setAttribute("confidence",String.valueOf(r.getConfidence()));
+		}
+		
+		// write the content into xml file
+		TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		Transformer transformer = transformerFactory.newTransformer();
+		DOMSource source = new DOMSource(doc);
+		StreamResult result = new StreamResult(new File(filename));
+ 
+		// Output to console for testing
+		// StreamResult result = new StreamResult(System.out);
+ 
+		transformer.transform(source, result);		 
+  }
+	
 
 	/******************************************************************************************
 	 * OTHER AUXILIARY METHODS

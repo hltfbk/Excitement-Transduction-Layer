@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -70,7 +73,7 @@ public class UseCaseOneTest {
 */		
 		
 		File dir = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1");
-		int fileNumberLimit = 100000000;
+		int fileNumberLimit = 10;
 		
 //		File f;
 		JCas aJCas;
@@ -123,7 +126,7 @@ public class UseCaseOneTest {
 			
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
-				ModifierAnnotatorException | 
+				ModifierAnnotatorException | TransformerException | ParserConfigurationException | 
 				GraphMergerException | CollapsedGraphGeneratorException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
