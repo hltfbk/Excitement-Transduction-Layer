@@ -1,10 +1,13 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Set;
 
-import org.junit.Ignore;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import org.junit.Test;
 
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -12,7 +15,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 
 public class EntailmentGraphRawTest {
 	
-	@Ignore 
+
 	@Test
 	public void test() {
 		
@@ -61,6 +64,28 @@ public class EntailmentGraphRawTest {
 					e.printStackTrace();
 				}							
 			}
+		}
+
+		System.out.println("\n\n=================================================================================================================================\n");
+		System.out.println("TESTING XML SAVE/LOAD \n");
+		System.out.println("=================================================================================================================================\n");
+		rawGraph = EntailmentGraphRaw.getSampleOuput(false);
+		System.out.println("********************************\n Sample graph:\n"+rawGraph.toString());
+		
+		try {
+			String xmlFile = "./src/test/outputs/sampleRawGraph.xml";
+			rawGraph.toXML(xmlFile);
+			EntailmentGraphRaw loadedGraph = new EntailmentGraphRaw(new File(xmlFile));
+			loadedGraph.toString();
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (EntailmentGraphRawException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 	}
