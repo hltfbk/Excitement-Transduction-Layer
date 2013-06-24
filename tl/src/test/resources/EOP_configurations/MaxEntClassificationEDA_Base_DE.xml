@@ -19,10 +19,10 @@
 	
 	<section name="eu.excitementproject.eop.core.MaxEntClassificationEDA">
 		<property name="modelFile">./src/main/resources/model/MaxEntClassificationEDAModel_Base_DE</property>
-		<property name="trainDir">./target/DE/dev/</property>
-		<property name="testDir">./target/DE/test/</property>
+		<property name="trainDir">/tmp/</property>
+		<property name="testDir">/tmp/</property>
 		<property name="classifier">10000,1</property>
-		<property name="Components">BagOfWordsScoring,BagOfLemmasScoring</property>
+		<property name="Components">BagOfWordsScoring</property>
 	</section>
 
 </configuration>
