@@ -1,8 +1,12 @@
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 import org.apache.uima.jcas.JCas;
 
@@ -47,7 +51,7 @@ import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototy
 public class DemoUseCase2OMQGerman {
 	
 	public static void main(String[] args) throws FragmentAnnotatorException, ModifierAnnotatorException, 
-		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, LAPException, EntailmentGraphRawException {
+		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, LAPException, EntailmentGraphRawException, IOException, TransformerException, ParserConfigurationException {
 
 		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");		
 		CommonConfig config = null;
@@ -79,13 +83,13 @@ public class DemoUseCase2OMQGerman {
 			eda.initialize(config);
 			
 			// initialize use case one runner
-			use1 = new UseCaseOneRunnerPrototype(lap, eda);
+			use1 = new UseCaseOneRunnerPrototype(lap, eda, "./src/test/outputs/");
 			
 			// build raw graph
 			graph = use1.buildRawGraph(docs);
 			graph.toDOT("./src/test/outputs/graph_"+ fileName + ".txt");
 
-			UseCaseOneRunnerPrototype.inspectGraph(graph);
+			use1.inspectGraph(graph);
 		
 			/** Step 2: Annotating an incoming email based on the entailment graph */
 			//create some sample input

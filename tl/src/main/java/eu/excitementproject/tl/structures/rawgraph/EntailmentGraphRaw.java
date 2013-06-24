@@ -8,10 +8,27 @@ import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Set;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
 import org.jgrapht.graph.DirectedMultigraph;
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
+import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -21,6 +38,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
+import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 
 /**
@@ -62,11 +80,96 @@ public class EntailmentGraphRaw extends
 	 */
 	/**
 	 * 
-	 * @param file -- a file (possibly xml) from which to load a previously produced graph
+	 * @param xmlFile -- a file (possibly xml) from which to load a previously produced graph
 	 */
-	public EntailmentGraphRaw(File file){
+	public EntailmentGraphRaw(File xmlFile) throws EntailmentGraphRawException{
 		super(EntailmentRelation.class);
-		//TODO: implement 
+    	try {
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(xmlFile);
+    
+			doc.getDocumentElement().normalize();	     
+			doc.getDocumentElement().getNodeName();
+			NodeList entailmentUnitList = doc.getElementsByTagName("entailmentUnitNode");
+			
+			// create and add nodes
+			for (int temp = 0; temp < entailmentUnitList.getLength(); temp++) {    
+				Node eu = entailmentUnitList.item(temp);     
+				eu.getNodeName();     
+				if (eu.getNodeType() == Node.ELEMENT_NODE) {  
+					Set<String> completeStatementTexts = new HashSet<String>();
+					Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
+					Set<String> interactionIds = new HashSet<String>();
+					
+					Element euElement = (Element) eu;
+					String text = euElement.getAttribute("text");
+					Integer level = Integer.valueOf(euElement.getAttribute("level"));
+					
+			       	NodeList completeStatementList = doc.getElementsByTagName("completeStatementText");
+			       	for (int i = 0; i < completeStatementList.getLength(); i++) {    
+			       		Node cs = completeStatementList.item(i);
+			       		completeStatementTexts.add(cs.getTextContent());
+			       	}
+			       	
+			       	NodeList interactionIdList = doc.getElementsByTagName("interactionId");
+			       	for (int i = 0; i < interactionIdList.getLength(); i++) {    
+			       		Node id = interactionIdList.item(i);
+			       		interactionIds.add(id.getTextContent());
+			       	}
+			       	
+			       	NodeList eumList = doc.getElementsByTagName("entailmentUnitMention");
+			       	for (int i = 0; i < eumList.getLength(); i++) {    
+			       		Node mention = eumList.item(i);
+			       		Element eumElement = (Element) mention;
+			       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"));
+			       		m.setCategoryId(eumElement.getAttribute("categoryId"));
+			       		m.setLevel(Integer.valueOf(eumElement.getAttribute("level")));
+			       		mentions.add(m);
+			       	}
+			       	
+			       	this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level));
+				}
+			}
+
+			
+			// create and add edges
+			NodeList entailmentRelationList = doc.getElementsByTagName("entailmentRelationEdge");
+			for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
+				Node er = entailmentRelationList.item(temp);     
+				er.getNodeName();     
+				if (er.getNodeType() == Node.ELEMENT_NODE) {  
+					
+					Element erElement = (Element) er;
+					String source = erElement.getAttribute("source");
+					String target = erElement.getAttribute("target");
+					EdgeType edgeType = EdgeType.convert(erElement.getAttribute("type"));
+					TEDecision edge = new TEDecisionWithConfidence(Double.valueOf(erElement.getAttribute("confidence")), DecisionLabel.getLabelFor(erElement.getAttribute("decisionLabel")));
+					
+					EntailmentUnit sourceVertex = this.getVertex(source);
+					EntailmentUnit targetVertex = this.getVertex(target);
+					EntailmentRelation e = new EntailmentRelation(sourceVertex, targetVertex, edge, edgeType);
+					this.addEdge(sourceVertex, targetVertex, e);
+				}
+			}
+		} catch (DOMException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (EDAException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    	
 	}
 	
 	/**
@@ -76,18 +179,7 @@ public class EntailmentGraphRaw extends
 	public EntailmentGraphRaw(FragmentGraph fg) {
 		super(EntailmentRelation.class);
 		copyFragmentGraphNodesAndEdges(fg);
-		/*		// copy edges (with nodes)
-		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
-			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
-		}
-		// copy nodes, which have no edges (must happen only if base statement = complete statement => graph has a single node and no edges) 
-		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
-			if (this.getVertex(fragmentGraphNode.getText())==null) {
-				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText());
-				this.addVertex(newNode);
-			}
-		}
-*/	}
+	}
 	
 	/**
 	 * Initialize an empty work graph
@@ -355,8 +447,8 @@ public class EntailmentGraphRaw extends
 	 * @param confidence
 	 * @return the edge, which was added to the graph
 	 */
-	public EntailmentRelation addEdgeByInduction(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, Double confidence){
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(confidence), EdgeType.INDUCED);
+	public EntailmentRelation addEdgeByInduction(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, DecisionLabel entailmentDesicion, Double confidence){
+		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionWithConfidence(confidence,entailmentDesicion), EdgeType.INDUCED);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;
 	}
@@ -431,15 +523,93 @@ public class EntailmentGraphRaw extends
 	 * @param filename - the name of the file to save the graph
 	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
 	 */
-	public void toDOT(String filename) throws EntailmentGraphRawException{
-		try {
+	public void toDOT(String filename) throws IOException{
 			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
 			out.write(this.toDOT());
 			out.close();
-		} catch (IOException e) {
-			throw new EntailmentGraphRawException(e.getMessage());
-		}		
 	}	
+	
+	
+	public void toXML(String filename) throws ParserConfigurationException, TransformerException{
+				DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+				DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+		 
+				// root elements
+				Document doc = docBuilder.newDocument();
+				Element rootElement = doc.createElement("rawGraph");
+				doc.appendChild(rootElement);
+		 
+				// add nodes
+				for (EntailmentUnit eu : this.vertexSet()){
+					// EntailmentUnit elements
+					Element entailmentUnitNode = doc.createElement("entailmentUnitNode");
+					rootElement.appendChild(entailmentUnitNode);
+			 
+					// set text attribute to eu element
+					entailmentUnitNode.setAttribute("text",eu.getText());
+					// set level attribute to eu element
+					entailmentUnitNode.setAttribute("level",String.valueOf(eu.getLevel()));
+			 
+					/*	protected Set<String> completeStatementTexts;					*/
+					for (String csText : eu.getCompleteStatementTexts()){
+						// completeStatementText elements
+						Element completeStatementText = doc.createElement("completeStatementText");
+						completeStatementText.appendChild(doc.createTextNode(csText));
+						entailmentUnitNode.appendChild(completeStatementText);						
+					}
+
+					/*	protected Set<EntailmentUnitMention> mentions = null;										*/
+					for (EntailmentUnitMention eum : eu.getMentions()){
+						// eu mentions elements
+						Element eumention = doc.createElement("entailmentUnitMention");
+						eumention.setAttribute("text",eum.getText());
+						eumention.setAttribute("categoryId",eum.getCategoryId());
+						eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
+						entailmentUnitNode.appendChild(eumention);						
+					}
+
+					/*	protected Set<String> interactionIds = null;										*/
+					for (String interactionId : eu.getInteractionIds()){
+						// completeStatementText elements
+						Element interaction = doc.createElement("interactionId");
+						interaction.appendChild(doc.createTextNode(interactionId));
+						entailmentUnitNode.appendChild(interaction);						
+					}					
+				}
+		 
+				// add edges
+				for (EntailmentRelation r  : this.edgeSet()){
+					// staff elements
+					Element entailmentrelationEdge = doc.createElement("entailmentRelationEdge");
+					rootElement.appendChild(entailmentrelationEdge);
+			 
+					// set source attribute to eu element
+					entailmentrelationEdge.setAttribute("source",r.getSource().getText());
+					// set target attribute to eu element
+					entailmentrelationEdge.setAttribute("target",r.getTarget().getText());
+					// set confidence attribute to eu element
+					entailmentrelationEdge.setAttribute("confidence",String.valueOf(r.getConfidence()));
+					// set edgeType attribute to eu element
+					entailmentrelationEdge.setAttribute("type",r.getEdgeType().toString());
+					// set label attribute to eu element
+					entailmentrelationEdge.setAttribute("decisionLabel",r.getLabel().toString());
+					// set eda attribute to eu element
+					if (r.getEda()!=null )entailmentrelationEdge.setAttribute("eda",r.getEda().toString());
+					// set lap attribute to eu element
+					if (r.getLap() != null) entailmentrelationEdge.setAttribute("lap",r.getLap().getComponentName());
+				}
+				
+				// write the content into xml file
+				TransformerFactory transformerFactory = TransformerFactory.newInstance();
+				Transformer transformer = transformerFactory.newTransformer();
+				DOMSource source = new DOMSource(doc);
+				StreamResult result = new StreamResult(new File(filename));
+		 
+				// Output to console for testing
+				// StreamResult result = new StreamResult(System.out);
+		 
+				transformer.transform(source, result);		 
+		  }
 	
 	
 	/******************************************************************************************

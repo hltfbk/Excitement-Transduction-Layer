@@ -59,6 +59,27 @@ public class EntailmentUnit{
 	}
 
 
+	/** Constructor to create entailment units from xml files 
+	 * @param text
+	 * @param completeStatementTexts
+	 * @param mentions
+	 * @param interactionIds
+	 * @param level
+	 */
+	public EntailmentUnit(String text, Set<String> completeStatementTexts,
+			Set<EntailmentUnitMention> mentions, Set<String> interactionIds,
+			int level) {
+		super();
+		this.text = text;
+		this.completeStatementTexts = completeStatementTexts;
+		this.mentions = mentions;
+		this.interactionIds = interactionIds;
+		this.level = level;
+	}
+
+
+	
+	
 	/******************************************************************************************
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
@@ -136,7 +157,6 @@ public class EntailmentUnit{
 	 * @return the number of fragment graphs, in which the entailmet unit was seen.
 	 */
 	public int getNumberOfTextualInputs() {
-		//return frequency;
 		return this.completeStatementTexts.size();
 	}
 

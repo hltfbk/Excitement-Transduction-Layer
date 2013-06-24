@@ -1,8 +1,12 @@
 package eu.excitementproject.tl.usecaseone;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -73,18 +77,35 @@ public class UseCaseOneFromXMLTest {
 			eda = new MaxEntClassificationEDA();	
 			eda.initialize(config);
 			
-			// initialize use case one runner
-			use1 = new UseCaseOneRunnerPrototype(lap, eda);
+			// prepare the output folder
+			String outputFolder = "./src/test/outputs/"+files[0].replace(".xml", "").replace("./src/test/resources/","");
+			File theDir = new File(outputFolder);
+  		    // if the directory does not exist, create it
+		    if (!theDir.exists())
+		    {
+		      System.out.println("creating directory: " + outputFolder);
+		      boolean result = theDir.mkdir();  
+		      if(result){    
+		         System.out.println("DIR created");  
+		     }
+		      else {
+		    	  System.err.println("Could not create the output directory. No output files will be created."); 
+		    	  outputFolder=null;
+		      }
+		   }
+		  
+		    // initialize use case one runner
+			use1 = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
 			
 			// build collapsed graph
 			graph = use1.buildCollapsedGraph(docs);
 
-			UseCaseOneRunnerPrototype.inspectGraph(graph);
+			use1.inspectGraph(graph);
 			
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
-				ModifierAnnotatorException | 
-				GraphMergerException | CollapsedGraphGeneratorException | DataReaderException e) {
+				ModifierAnnotatorException | TransformerException | ParserConfigurationException |
+				GraphMergerException | CollapsedGraphGeneratorException | DataReaderException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

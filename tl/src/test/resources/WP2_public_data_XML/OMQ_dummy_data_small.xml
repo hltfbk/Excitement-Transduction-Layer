@@ -100,6 +100,21 @@ angezeigt. wenn ich "starten" drücke bricht alles ab.
 Warum muß ich das produkt überhaupt registrieren, wenn ich eine gültige Seriennummer habe?
 Die dabei anzugebenden Fragen sind meine persönlichen Daten, die niemanden etzwas angehen.]]></text>
 		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>multimedia software developer</businessScenario>
+				<dataSource></dataSource>
+				<id>4</id>
+				<author></author>
+				<date>2013-06-20</date>
+				<category>100</category>
+			</metadata>
+			<text><![CDATA[Ich werde aufgefordert, das Programm zu
+aktivieren. Wenn ich das mache, wird mir angezeigt, das das Produkt
+bereits aktiviert ist.
+
+Wie gehe ich weiter vor ?]]></text>
+		</interaction>
 	</interactions>
 </dataset>
 		

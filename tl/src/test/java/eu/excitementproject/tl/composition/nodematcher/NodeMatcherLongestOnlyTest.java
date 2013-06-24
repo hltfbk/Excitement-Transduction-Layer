@@ -2,7 +2,6 @@ package eu.excitementproject.tl.composition.nodematcher;
 
 import static org.junit.Assert.fail;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import junit.framework.Assert;

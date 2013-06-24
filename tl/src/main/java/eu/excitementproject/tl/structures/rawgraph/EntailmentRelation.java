@@ -94,11 +94,27 @@ public class EntailmentRelation extends DefaultEdge {
 	private void setAttributes(EntailmentUnit source, EntailmentUnit target, EdgeType edgeType, EDABasic<?> eda, LAPAccess lap){
 		this.source = source;
 		this.target = target;	
-		this.edgeType = EdgeType.EDA;
+		this.edgeType = edgeType;
 		this.eda = eda;
 		this.lap = lap;	
 	}
+		
 	
+	
+	/**
+	 * @return the lap
+	 */
+	public LAPAccess getLap() {
+		return lap;
+	}
+
+	/**
+	 * @return the edgeType
+	 */
+	public EdgeType getEdgeType() {
+		return edgeType;
+	}
+
 	/**
 	 * @return TEdecision
 	 */
@@ -182,7 +198,7 @@ public class EntailmentRelation extends DefaultEdge {
 	 * ****************************************************************************************/
 	@Override 
 	public String toString(){
-		return this.getSource().getText()+" --> "+this.getTarget().getText() +" ("+this.getLabel().toString()+", "+this.getConfidence()+") ";
+		return this.getSource().getText()+" --> "+this.getTarget().getText() +" ("+this.getLabel().toString()+", "+this.getEdgeType().toString()+", "+this.getConfidence()+") ";
 	}
 	
 	/** Returns a string with the edge in DOT format for outputting the graph

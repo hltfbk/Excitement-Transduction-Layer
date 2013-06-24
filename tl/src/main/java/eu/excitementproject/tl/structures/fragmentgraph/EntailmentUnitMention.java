@@ -162,6 +162,14 @@ public class EntailmentUnitMention {
 	}
 	
 	
+	
+	/**
+	 * @param level the level to set
+	 */
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
 	/**
 	 * 
 	 * @return -- the text of the current node object

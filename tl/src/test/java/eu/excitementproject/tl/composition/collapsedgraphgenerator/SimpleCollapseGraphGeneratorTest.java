@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.composition.collapsedgraphgenerator;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
 import org.junit.Test;
@@ -20,7 +21,6 @@ import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -87,7 +87,7 @@ public class SimpleCollapseGraphGeneratorTest {
 					} catch (GraphMergerException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					} catch (EntailmentGraphRawException e) {
+					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (CollapsedGraphGeneratorException e) {

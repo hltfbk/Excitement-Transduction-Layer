@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.structures.fragmentgraph;
 
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -16,8 +17,9 @@ import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.ModifierAnnotation;
+import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.laputils.CASUtils;
-import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
 /**
  * 
@@ -86,14 +88,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	public FragmentGraph(Class<? extends FragmentGraphEdge> edgeClass) {
 		super(edgeClass);
 	}
-	
-	public FragmentGraph(String text, Set<String> modifiers) {
-		this(FragmentGraphEdge.class);
-		baseStatement = new EntailmentUnitMention(text, new HashSet<String>(), modifiers);
-		topStatement = new EntailmentUnitMention(text, null, null);
-		buildGraph(text, modifiers, modifiers, null);
-	}
-	
+		
 
 	/**
 	 * Build a fragment graph from a (determined) fragment in a CAS object corresponding to a document,
@@ -119,36 +114,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		Set<ModifierAnnotation> mods = getFragmentModifiers(aJCas,frag);		
 		buildGraph(aJCas, frag, mods, null);
 	}
-	
-	
-	/**
-	 * 
-	 * @param text -- a text fragment
-	 * @param modifiers -- set of string modifiers in the text
-	 * @param parent -- the parent node for the one that is built in the first step 
-	 * 					(has one extra modifier compared to the node that is being built)
-	 */
-	private void buildGraph(String text, Set<String> modifiers, Set<String> allModifiers, EntailmentUnitMention parent) {
-		EntailmentUnitMention eum = new EntailmentUnitMention(text, modifiers, allModifiers);
 		
-		if (! this.containsVertex(eum)) { // double check that this test does what it should
-			addVertex(eum);			
-		} else {
-			eum = this.getVertex(eum);
-		}
-
-		if (parent != null) {
-			this.addEdge(parent, eum); // double check the direction of the added edges
-		}
-
-		Set<String> sma;
-		for(String m: modifiers) {
-			sma = new HashSet<String>(modifiers);
-			sma.remove(m);
-			buildGraph(text, sma, allModifiers, eum);
-		}
-	}
-	
 
 	/**
 	 * start with the top node that has all modifiers, remove them one by one 
@@ -356,29 +322,26 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	/**
 	 * 
 	 * @return a sample set of fragment graphs, for testing purposes
+	 * @throws LAPException 
 	 */
 	public static Set<FragmentGraph> getSampleOutput() {
 		Set<FragmentGraph> fgs  = new HashSet<FragmentGraph>();
-		
-		String text = "Food was really bad";
-		Set<String> modifs = new HashSet<String>();
-		modifs.add("really");
-		fgs.add(new FragmentGraph(text,modifs));
-		
-		text = "I didn't like the food";
-		modifs.clear();
-		fgs.add(new FragmentGraph(text,modifs));
-		
-		text = "a little more leg room would have been perfect";
-		modifs.clear();
-		modifs.add("a little");
-		fgs.add(new FragmentGraph(text,modifs));
 
-		text = "Disappointed with the amount of legroom compared with other trains";
-		modifs.clear();
-		modifs.add("amount of");
-		modifs.add("compared with other trains");
-		fgs.add(new FragmentGraph(text,modifs));
+		try {
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/alma_speech/Speech3.1.004.txt.xmi"); 
+
+			// initiate the FragGraphGenerator... 
+			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
+
+			// Read in inputCASes for the examples, and generate the FragmentGraphs 
+			CASUtils.deserializeFromXmi(aJCas, f); 
+			fgs = fragGen.generateFragmentGraphs(aJCas);
+			
+		} catch (Exception e) {
+			logger.info("Problems generating same fragment graphs from CAS");
+			e.printStackTrace();
+		}
 		
 		return fgs;
 	}
@@ -390,30 +353,14 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 */
     public static FragmentGraph getSampleGraph() {
 
-		String text = "The hard old seats were very uncomfortable";
-		Set<String> modifiers = new HashSet<String>();
-		modifiers.add("hard");
-		modifiers.add("old");
-		modifiers.add("very");
-		FragmentGraph g = new FragmentGraph(text,modifiers);
-		
-		System.out.println("fragment graph: " + g.toString());
-		
-		return g;
+    	for(FragmentGraph g : getSampleOutput()){				
+  //  		System.out.println("fragment graph: " + g.toString());
+    		return g;
+    	}
+		return null;
     }
 
-    
-    
-	public static void main(String [] argv) {
-			String text = "The hard old seats were very uncomfortable";
-			Set<String> modifiers = new HashSet<String>();
-			modifiers.add("hard");
-			modifiers.add("old");
-			modifiers.add("very");
-			FragmentGraph g = new FragmentGraph(text,modifiers);
-					
-			System.out.println("Graph: \\" + g.toString());
-	}
+
 	
 	/* This method was added by Lili on May, 20 
 	 * to allow retrieving the source and the target of an edge using its corresponding getters)*/
