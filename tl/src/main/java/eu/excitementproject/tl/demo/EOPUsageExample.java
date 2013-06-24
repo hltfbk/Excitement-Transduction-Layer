@@ -9,7 +9,7 @@ import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
-import eu.excitementproject.eop.lap.PlatformCASProber;
+//import eu.excitementproject.eop.lap.PlatformCASProber;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.laputils.LemmaLevelLapEN;
