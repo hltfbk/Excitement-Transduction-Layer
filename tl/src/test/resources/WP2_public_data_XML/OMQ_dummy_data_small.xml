@@ -10,32 +10,6 @@
 			<metadata>
 				<businessScenario>multimedia software developer</businessScenario>
 				<dataSource></dataSource>
-				<id>2</id>
-				<author></author>
-				<date>2013-06-20</date>
-				<category>100</category>
-			</metadata>
-			<text><![CDATA[Nach jedem Start erscheint das Fenster mit der Erinnerung an die "Suche nach einer Aktualisierung". Das nervt.]]></text>
-		</interaction>
-		<interaction>
-			<metadata>
-				<businessScenario>multimedia software developer</businessScenario>
-				<dataSource></dataSource>
-				<id>3</id>
-				<author></author>
-				<date>2013-06-20</date>
-				<category>100</category>
-			</metadata>
-			<text><![CDATA[Sehr geehrte Damen und Herren,
-
-ich habe mir einen neuen PC mit WIN 7 Premium zugelegt. Das Programm kann ich jedoch nicht starten. Beim Start kommt immer wieder das Anmeldefenster der
-Registrierung mit meiner Serien Nr. Benötige ich eventuell eine neue bzw. 2. Serien Nr.?
-Wie kann ich das Problem beheben? Für Ihre Mühe im Voraus "Besten Dank"]]></text>
-		</interaction>
-		<interaction>
-			<metadata>
-				<businessScenario>multimedia software developer</businessScenario>
-				<dataSource></dataSource>
 				<id>4</id>
 				<author></author>
 				<date>2013-06-20</date>
@@ -46,59 +20,6 @@ aktivieren. Wenn ich das mache, wird mir angezeigt, das das Produkt
 bereits aktiviert ist.
 
 Wie gehe ich weiter vor ?]]></text>
-		</interaction>
-		<interaction>
-			<metadata>
-				<businessScenario>multimedia software developer</businessScenario>
-				<dataSource></dataSource>
-				<id>5</id>
-				<author></author>
-				<date>2013-06-20</date>
-				<category>100</category>
-			</metadata>
-			<text><![CDATA[Sehr geehrte Damen und Herren,
-jedes Mal, wenn ich das Programm starte, werde ich aufgefordert dieses Produkt zu
-registrieren. Es ist schon bereits registriert.
-Wenn ich dieser aufforderung nachgehe, bekomme ich aber den Hinweis, daß es unter dieser
-Nummer bereits registriert ist.
-Was kann ich tun, daß diese Aufforderung nicht mehr kommt?
-Vielen Dank im Voraus.]]></text>
-		</interaction>
-		<interaction>
-			<metadata>
-				<businessScenario>multimedia software developer</businessScenario>
-				<dataSource></dataSource>
-				<id>6</id>
-				<author></author>
-				<date>2013-06-20</date>
-				<category>100</category>
-			</metadata>
-			<text><![CDATA[Mein Programm behauptet dauernd, es wäre nicht registriert. Obwohl ich sicher
-bin, dass ich das bereits direkt bei der Installation gemacht habe, bin ich inzwischen
-schon -zigmal der Aufforderung nachgekommen und habe auf "jetzt registrieren" geklickt,
-bisher jedoch ohne Erfolg.
-
-Was kann der Grund dafür sein und wie bekomme ich das Programm besänftigt?
-
-Beste Grüße und schönes Wochenende.]]></text>
-		</interaction>
-		<interaction>
-			<metadata>
-				<businessScenario>multimedia software developer</businessScenario>
-				<dataSource></dataSource>
-				<id>7</id>
-				<author></author>
-				<date>2013-06-20</date>
-				<category>100</category>
-			</metadata>
-			<text><![CDATA[Ich habe das Produkt registriert, kann das programm aber nicht starten. Es bricht jedesmal
-ab.
-
-Als erstes erscheint die Registrierungsabfrage. Sie wird mit bereits registriert
-angezeigt. wenn ich "starten" drücke bricht alles ab.
-
-Warum muß ich das produkt überhaupt registrieren, wenn ich eine gültige Seriennummer habe?
-Die dabei anzugebenden Fragen sind meine persönlichen Daten, die niemanden etzwas angehen.]]></text>
 		</interaction>
 	</interactions>
 </dataset>
