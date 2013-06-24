@@ -1,7 +1,6 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
 import java.io.File;
-import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Set;
 
@@ -35,12 +34,7 @@ public class EntailmentGraphRawTest {
 		System.out.println("=================================================================================================================================\n");
 
 
-		String text = "The hard old seats were very uncomfortable";
-		Set<String> modifiers = new HashSet<String>();
-		modifiers.add("hard");
-		modifiers.add("old");
-		modifiers.add("very");
-		FragmentGraph g = new FragmentGraph(text,modifiers);
+		FragmentGraph g = FragmentGraph.getSampleGraph();
 		
 		rawGraph = new EntailmentGraphRaw(g);
 		System.out.println("********************************\n Copy of a Fragment graph:\n"+rawGraph.toString());
