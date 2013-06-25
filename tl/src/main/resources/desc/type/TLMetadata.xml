@@ -60,6 +60,11 @@ The type  includes: (all strings)
           <description>this field holds the name of the author, if it is applicable (e.g. web forums)</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
+        <featureDescription>
+          <name>category</name>
+          <description>This type describes cateogry of the interaction. It corresponds to input XML file &lt;Interaction&gt; &lt;metadata&gt; &lt;category&gt;, and will hold that metadata string as it is.  </description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
   </types>

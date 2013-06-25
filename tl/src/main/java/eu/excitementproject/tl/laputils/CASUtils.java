@@ -500,8 +500,9 @@ public final class CASUtils {
 	 * @param date The date of the interaction: as ISO format of Year-Month-Day (YYYY-MM-DD)
 	 * @param businessScenario This string holds the business scenario of the interaction (like coffeeshop, internet shopping, train claims, etc)
 	 * @param author this field holds the name of the author, if it is applicable (e.g. web forums)
+	 * @param category This type describes cateogry of the interaction. It corresponds to input XML file <Interaction> <metadata> <category>, and will hold that metadata string as it is.  
 	 */
-	public static void addTLMetaData(JCas aJCas, String interactionId, String channel, String provider, String date, String businessScenario, String author) 
+	public static void addTLMetaData(JCas aJCas, String interactionId, String channel, String provider, String date, String businessScenario, String author, String category) 
 	{
 		// Generate a new type, fill in  
 		Metadata meta = new Metadata(aJCas);
@@ -522,6 +523,9 @@ public final class CASUtils {
 		
 		if (author != null)
 			meta.setAuthor(author); 
+		
+		if (category != null)
+			meta.setCategory(category); 
 		
 		// get length of the document and annotate over the whole SOFA 
 		int begin = 0; 
