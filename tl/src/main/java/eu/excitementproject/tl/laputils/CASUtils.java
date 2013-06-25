@@ -547,6 +547,7 @@ public final class CASUtils {
 	/**
 	 * 
 	 * This static method reads in one Metadata annotation given on the input JCAS. You can use the getters within this returned Metadata type to access actual metadata string fields. (- interactionId, - channel, - provider, - date (string as YYYY-MM-DD), - businessScenario, - author) 
+	 * If the annotation is not present, it will return null 
 	 * 
 	 * @param aJCas the JCas with metadata. 
 	 * @return the Metadata annotation type. you can use "get methods" to get various values. will return null, if no metadata is annotated. If there is more than one metadata annotation, this method will return blindly the first one.   
@@ -556,9 +557,15 @@ public final class CASUtils {
 		AnnotationIndex<Annotation> metaIndex = aJCas.getAnnotationIndex(Metadata.type);
 		Iterator<Annotation> mIter = metaIndex.iterator(); 		
 		
-		Metadata meta = (Metadata) mIter.next(); 
+		if (mIter.hasNext())
+		{
+			Metadata meta = (Metadata) mIter.next(); 
 		
-		return meta; 
+			return meta; 
+		}
+		else
+		{
+			return null; 
+		}
 	}
-	
 }
