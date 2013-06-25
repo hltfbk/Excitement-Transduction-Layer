@@ -4,6 +4,8 @@ import java.util.Set;
 
 import org.apache.uima.jcas.JCas;
 
+import arkref.parsestuff.U;
+
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
@@ -74,6 +76,8 @@ public class UseCaseTwoRunnerPrototype implements UseCaseTwoRunner {
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
 			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph, graph);
+			System.out.println("CATEGORY:" +
+					matches.iterator().next().getScores().get(0).getNode().getMentions().iterator().next().getCategoryId());
 			//add category annotation to CAS
 			ca.addCategoryAnnotation(cas, matches);
 		}	
