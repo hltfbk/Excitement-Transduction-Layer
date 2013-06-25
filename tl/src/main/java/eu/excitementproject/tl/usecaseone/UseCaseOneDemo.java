@@ -150,7 +150,7 @@ public class UseCaseOneDemo {
 		String dataDir = "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1";
 		String outputFolder = "./src/test/outputs/"+dataDir.replace(".\\src\\test\\resources\\","").replace("\\","/");
 		
-		UseCaseOneDemo demoEN = new UseCaseOneDemo(configFileName, dataDir, outputFolder, OpenNLPTaggerEN.class, MaxEntClassificationEDA.class);
+		UseCaseOneDemo demoEN = new UseCaseOneDemo(configFileName, dataDir, outputFolder, TreeTaggerEN.class, MaxEntClassificationEDA.class);
 		demoEN.inspectResults();
 	}
 	
