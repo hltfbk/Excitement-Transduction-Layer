@@ -10,16 +10,34 @@
 			<metadata>
 				<businessScenario>multimedia software developer</businessScenario>
 				<dataSource></dataSource>
-				<id>4</id>
+				<id>2</id>
 				<author></author>
 				<date>2013-06-20</date>
 				<category>100</category>
 			</metadata>
-			<text><![CDATA[Ich werde aufgefordert, das Programm zu
-aktivieren. Wenn ich das mache, wird mir angezeigt, das das Produkt
-bereits aktiviert ist.
-
-Wie gehe ich weiter vor ?]]></text>
+			<text><![CDATA[Nach jedem Start erscheint das Fenster mit der Erinnerung an die Suche nach einer Aktualisierung. Das nervt.]]></text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>multimedia software developer</businessScenario>
+				<dataSource></dataSource>
+				<id>3</id>
+				<author></author>
+				<date>2013-06-20</date>
+				<category>100</category>
+			</metadata>
+			<text><![CDATA[Ich habe mir einen neuen PC zugelegt. Das Programm kann ich jedoch nicht starten. Beim Start kommt immer wieder das Anmeldefenster. Wie kann ich das Problem beheben?]]></text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>multimedia software developer</businessScenario>
+				<dataSource></dataSource>
+				<id>5</id>
+				<author></author>
+				<date>2013-06-20</date>
+				<category>100</category>
+			</metadata>
+			<text><![CDATA[Wenn ich das Programm starte, werde ich aufgefordert es zu registrieren. Es ist schon bereits registriert.]]></text>
 		</interaction>
 	</interactions>
 </dataset>

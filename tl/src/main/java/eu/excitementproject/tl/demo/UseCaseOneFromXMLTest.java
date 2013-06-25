@@ -1,4 +1,4 @@
-package eu.excitementproject.tl.usecaseone;
+package eu.excitementproject.tl.demo;
 
 import java.io.File;
 import java.io.IOException;

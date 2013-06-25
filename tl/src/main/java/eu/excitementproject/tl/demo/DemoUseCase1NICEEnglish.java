@@ -1,8 +1,8 @@
 package eu.excitementproject.tl.demo;
 
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
+
 import eu.excitementproject.eop.lap.dkpro.OpenNLPTaggerEN;
-import eu.excitementproject.tl.usecaseone.UseCaseOneDemo;
 
 public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 
