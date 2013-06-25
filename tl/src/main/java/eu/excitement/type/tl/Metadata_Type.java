@@ -25,7 +25,7 @@ The type  includes: (all strings)
 - date (string as YYYY-MM-DD)  
 - businessScenario 
 - author
- * Updated by JCasGen Wed Jun 12 11:06:43 CEST 2013
+ * Updated by JCasGen Tue Jun 25 09:17:53 CEST 2013
  * @generated */
 public class Metadata_Type extends Annotation_Type {
   /** @generated */
@@ -160,6 +160,24 @@ public class Metadata_Type extends Annotation_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_author, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_category;
+  /** @generated */
+  final int     casFeatCode_category;
+  /** @generated */ 
+  public String getCategory(int addr) {
+        if (featOkTst && casFeat_category == null)
+      jcas.throwFeatMissing("category", "eu.excitement.type.tl.Metadata");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_category);
+  }
+  /** @generated */    
+  public void setCategory(int addr, String v) {
+        if (featOkTst && casFeat_category == null)
+      jcas.throwFeatMissing("category", "eu.excitement.type.tl.Metadata");
+    ll_cas.ll_setStringValue(addr, casFeatCode_category, v);}
+    
+  
 
 
 
@@ -192,6 +210,10 @@ public class Metadata_Type extends Annotation_Type {
  
     casFeat_author = jcas.getRequiredFeatureDE(casType, "author", "uima.cas.String", featOkTst);
     casFeatCode_author  = (null == casFeat_author) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_author).getCode();
+
+ 
+    casFeat_category = jcas.getRequiredFeatureDE(casType, "category", "uima.cas.String", featOkTst);
+    casFeatCode_category  = (null == casFeat_category) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_category).getCode();
 
   }
 }

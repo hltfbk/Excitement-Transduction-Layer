@@ -268,7 +268,7 @@ public final class InteractionReader {
 			aJCas.setDocumentText(interactionString); 
 			aJCas.setDocumentLanguage(languageID); 
 			// annotate the metadata (among fraggraph dumpdata, only interactionID is available from interaction file name) 
-			CASUtils.addTLMetaData(aJCas, interactionId, null, null, null, null, null); 
+			CASUtils.addTLMetaData(aJCas, interactionId, null, null, null, null, null, null); 
 
 		}
 		else if (!SOFAText.equals(interactionString))  
@@ -278,7 +278,7 @@ public final class InteractionReader {
 			aJCas.setDocumentText(interactionString); 
 			aJCas.setDocumentLanguage(languageID); 
 			// annotate the metadata (among fraggraph dumpdata, only interactionID is available from interaction file name) 
-			CASUtils.addTLMetaData(aJCas, interactionId, null, null, null, null, null); 
+			CASUtils.addTLMetaData(aJCas, interactionId, null, null, null, null, null, null); 
 		}
 		else
 		{
