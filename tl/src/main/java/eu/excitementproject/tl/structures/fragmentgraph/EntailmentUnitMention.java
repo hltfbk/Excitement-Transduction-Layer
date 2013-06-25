@@ -106,7 +106,14 @@ public class EntailmentUnitMention {
 	
 	private String getCategoryId(JCas aJCas) {
 		
-		return CASUtils.getTLMetaData(aJCas).getCategory();
+		if (CASUtils.getTLMetaData(aJCas) != null)
+		{
+			return CASUtils.getTLMetaData(aJCas).getCategory();
+		}
+		else
+		{
+			return null; 
+		}
 		
 /*	AnnotationIndex<Annotation> catIndex = aJCas.getAnnotationIndex(CategoryAnnotation.type);
 
