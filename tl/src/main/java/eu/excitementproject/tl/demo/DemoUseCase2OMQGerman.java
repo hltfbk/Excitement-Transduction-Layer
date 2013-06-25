@@ -19,9 +19,7 @@ import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
-import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
@@ -31,8 +29,8 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorEx
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.InteractionReader;
+import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
-import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
@@ -53,7 +51,7 @@ public class DemoUseCase2OMQGerman {
 	public static void main(String[] args) throws FragmentAnnotatorException, ModifierAnnotatorException, 
 		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, LAPException, EntailmentGraphRawException, IOException, TransformerException, ParserConfigurationException {
 
-		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");		
+		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml");		
 		CommonConfig config = null;
 		LAPAccess lap;
 		EDABasic<?> eda;
@@ -75,7 +73,7 @@ public class DemoUseCase2OMQGerman {
 				docs.addAll(InteractionReader.readInteractionXML(f));
 			}
 			// initialize the lap			
-			lap = new TreeTaggerEN();
+			lap = new LemmaLevelLapDE();
 			
 			// initialize the eda			
 			config = new ImplCommonConfig(configFile);
@@ -86,6 +84,9 @@ public class DemoUseCase2OMQGerman {
 			use1 = new UseCaseOneRunnerPrototype(lap, eda, "./src/test/outputs/");
 			
 			// build raw graph
+			
+			for (Interaction doc : docs) System.out.println("doc_cat:" + doc.getCategory());
+			
 			graph = use1.buildRawGraph(docs);
 			graph.toDOT("./src/test/outputs/graph_"+ fileName + ".txt");
 
@@ -95,7 +96,8 @@ public class DemoUseCase2OMQGerman {
 			//create some sample input
 			JCas cas = CASUtils.createNewInputCas();
 			cas.setDocumentLanguage("DE");
-			cas.setDocumentText("Es ist bereits registriert.");
+			cas.setDocumentText("Es ist registriert."); /*NOTE: This string does not appear in 
+													the emails on which the graph was built!*/
 			
 			// initialize use case two runner
 			use2 = new UseCaseTwoRunnerPrototype(lap, eda);
