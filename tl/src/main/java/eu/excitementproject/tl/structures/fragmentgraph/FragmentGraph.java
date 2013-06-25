@@ -40,6 +40,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * @param <V> Vertex class
  * @param <E> Edge class
  */
+@SuppressWarnings("unused")
 public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMention,FragmentGraphEdge> {
 
 	/**
@@ -198,12 +199,12 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * @param f -- a fragment annotation
 	 * @return the set of category annotations that cover fragment f
 	 */
-	public static Set<CategoryAnnotation> getFragmentCategories(JCas aJCas, FragmentAnnotation f) {
+/*	public static Set<CategoryAnnotation> getFragmentCategories(JCas aJCas, FragmentAnnotation f) {
 		Set<CategoryAnnotation> cas = new HashSet<CategoryAnnotation>();
 		cas.addAll(JCasUtil.selectCovering(aJCas, CategoryAnnotation.class, f.getBegin(), f.getEnd()));
 		return cas;
 	}
-	
+*/	
 	
 	/**
 	 * Return the FragmentGraph node that corresponds to the given argument, 
@@ -222,7 +223,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return null;
 	}
 	
-	@SuppressWarnings("unused")
+	
 	private EntailmentUnitMention getVertex(String eumText) {
 		for(EntailmentUnitMention e: this.vertexSet()) {
 			if (e.getText().matches(eumText)) {
