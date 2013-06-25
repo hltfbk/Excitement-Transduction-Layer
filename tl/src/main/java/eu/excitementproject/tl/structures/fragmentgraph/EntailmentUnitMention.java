@@ -126,7 +126,14 @@ public class EntailmentUnitMention {
 	
 	private String getCategoryId(JCas aJCas, FragmentAnnotation frag) {
 
-		return CASUtils.getTLMetaData(aJCas).getCategory();
+		if (CASUtils.getTLMetaData(aJCas) != null)
+		{
+			return CASUtils.getTLMetaData(aJCas).getCategory();
+		}
+		else
+		{
+			return null; 
+		}
 
 /*		Set<CategoryAnnotation> cas = FragmentGraph.getFragmentCategories(aJCas, frag);
 		if (cas != null && !cas.isEmpty()) {
