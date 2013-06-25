@@ -500,8 +500,9 @@ public final class CASUtils {
 	 * @param date The date of the interaction: as ISO format of Year-Month-Day (YYYY-MM-DD)
 	 * @param businessScenario This string holds the business scenario of the interaction (like coffeeshop, internet shopping, train claims, etc)
 	 * @param author this field holds the name of the author, if it is applicable (e.g. web forums)
+	 * @param category This type describes cateogry of the interaction. It corresponds to input XML file <Interaction> <metadata> <category>, and will hold that metadata string as it is.  
 	 */
-	public static void addTLMetaData(JCas aJCas, String interactionId, String channel, String provider, String date, String businessScenario, String author) 
+	public static void addTLMetaData(JCas aJCas, String interactionId, String channel, String provider, String date, String businessScenario, String author, String category) 
 	{
 		// Generate a new type, fill in  
 		Metadata meta = new Metadata(aJCas);
@@ -523,6 +524,9 @@ public final class CASUtils {
 		if (author != null)
 			meta.setAuthor(author); 
 		
+		if (category != null)
+			meta.setCategory(category); 
+		
 		// get length of the document and annotate over the whole SOFA 
 		int begin = 0; 
 		int end = 1; 
@@ -543,6 +547,7 @@ public final class CASUtils {
 	/**
 	 * 
 	 * This static method reads in one Metadata annotation given on the input JCAS. You can use the getters within this returned Metadata type to access actual metadata string fields. (- interactionId, - channel, - provider, - date (string as YYYY-MM-DD), - businessScenario, - author) 
+	 * If the annotation is not present, it will return null 
 	 * 
 	 * @param aJCas the JCas with metadata. 
 	 * @return the Metadata annotation type. you can use "get methods" to get various values. will return null, if no metadata is annotated. If there is more than one metadata annotation, this method will return blindly the first one.   
@@ -552,9 +557,15 @@ public final class CASUtils {
 		AnnotationIndex<Annotation> metaIndex = aJCas.getAnnotationIndex(Metadata.type);
 		Iterator<Annotation> mIter = metaIndex.iterator(); 		
 		
-		Metadata meta = (Metadata) mIter.next(); 
+		if (mIter.hasNext())
+		{
+			Metadata meta = (Metadata) mIter.next(); 
 		
-		return meta; 
+			return meta; 
+		}
+		else
+		{
+			return null; 
+		}
 	}
-	
 }

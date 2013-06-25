@@ -169,15 +169,16 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @param f -- a file containing a serialized raw entailment graph
 	 * 
 	 * @return the collapsed entailment graph corresponding to the raw graph in the input file
+ 	 * @throws EntailmentGraphRawException 
 	 */
-/*	
+	
 	public EntailmentGraphCollapsed buildGraph(File f, double confidence) 
-			throws CollapsedGraphGeneratorException{
+			throws CollapsedGraphGeneratorException, EntailmentGraphRawException{
 			
 		SimpleCollapseGraphGenerator scgg = new SimpleCollapseGraphGenerator(); 
 		return scgg.generateCollapsedGraph(new EntailmentGraphRaw(f),confidence);		
 	}
-*/
+
 	
 	/**
 	 * Builds a collapsed entailment graph from a set of user interactions
@@ -230,14 +231,18 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @param confidence -- a score for filtering edges
 	 * 
 	 * @return a collapsed entailment graph
+	 * @throws IOException 
+	 * @throws ModifierAnnotatorException 
+	 * @throws FragmentAnnotatorException 
+	 * @throws LAPException 
 	 */
-/*	
+	
 	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs, double confidence) 
-			throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException{
+			throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException{
 
 		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs),confidence);		
 	}
-*/
+
 
 	
 	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException, TransformerException, ParserConfigurationException{
@@ -296,16 +301,18 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @param confidence -- a score for filtering edges
 	 * 
 	 * @return a collapsed entailment graph
+	 * @throws IOException 
+	 * @throws LAPException 
 	 * @throws FragmentAnnotatorException 
 	 * @throws ModifierAnnotatorException 
 	 */
-/*	
+	
 	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs, double confidence) 
-			throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException{
+			throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException{
 			
 		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs),confidence);		
 	}
-*/
+
 
 	protected void annotateCAS(JCas aJCas) throws FragmentAnnotatorException, ModifierAnnotatorException {
 		fragAnot.annotateFragments(aJCas);

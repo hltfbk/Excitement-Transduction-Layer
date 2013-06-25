@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
@@ -8,6 +9,9 @@ import java.util.Set;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.EDABasic;
@@ -50,6 +54,9 @@ public class DemoUseCase2OMQGerman {
 	
 	public static void main(String[] args) throws FragmentAnnotatorException, ModifierAnnotatorException, 
 		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, LAPException, EntailmentGraphRawException, IOException, TransformerException, ParserConfigurationException {
+
+		BasicConfigurator.configure(); 
+		Logger.getRootLogger().setLevel(Level.INFO);  
 
 		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml");		
 		CommonConfig config = null;

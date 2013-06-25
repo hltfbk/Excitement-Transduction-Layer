@@ -175,8 +175,9 @@ public class CASUtilsTest {
 			String date = "2013-06-12"; 
 			String businessScenario = null; 
 			String author = null; 
+			String category = null; 
 		
-			CASUtils.addTLMetaData(aJCas, interactionId, channel, provider, date, businessScenario, author); 
+			CASUtils.addTLMetaData(aJCas, interactionId, channel, provider, date, businessScenario, author, category); 
 			File f = new File("./target/metatest.xmi"); 
 			CASUtils.serializeToXmi(aJCas, f);
 			

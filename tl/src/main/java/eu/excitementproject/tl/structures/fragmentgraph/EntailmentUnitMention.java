@@ -15,6 +15,7 @@ import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitement.type.tl.ModifierPart;
+import eu.excitementproject.tl.laputils.CASUtils;
 
 
 /**
@@ -26,6 +27,7 @@ import eu.excitement.type.tl.ModifierPart;
  * 
  * 
  */
+@SuppressWarnings("unused")
 public class EntailmentUnitMention {
 	
 	Set<ModifierAnnotation> modifiers = null;
@@ -52,30 +54,6 @@ public class EntailmentUnitMention {
 		end = text.length();
 	}
 	
-	/**
-	 * 
-	 * @param textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
-	 * @param level
-	 */
-	public EntailmentUnitMention(String textFragment, Set<String> modifiers, Set<String> allModifiers) {
-		text = textFragment;
-		modifiersText = addModifiers(textFragment, modifiers); 		
-		this.level = modifiersText.size();
-		
-		String chars = textFragment;
-		if (allModifiers != null) {
-			for(String ma: allModifiers) {
-				if (! modifiers.contains(ma)) {
-					chars = removeModifier(chars,ma);
-				}
-			}
-		}
-		text = chars;
-//		text.trim().replaceAll(" +", " ");
-		begin = 0;
-		end = text.length();
-	}
-
 
 	/**
 	 * 
@@ -126,9 +104,11 @@ public class EntailmentUnitMention {
 	}
 	
 	
-	@SuppressWarnings("unused")
-	private String getCategoryId(JCas aJCas) {		
-		AnnotationIndex<Annotation> catIndex = aJCas.getAnnotationIndex(CategoryAnnotation.type);
+	private String getCategoryId(JCas aJCas) {
+		
+		return CASUtils.getTLMetaData(aJCas).getCategory();
+		
+/*	AnnotationIndex<Annotation> catIndex = aJCas.getAnnotationIndex(CategoryAnnotation.type);
 
 		if (catIndex != null && catIndex.size() > 0) {
 			Iterator<Annotation> catIt = catIndex.iterator(); 
@@ -140,11 +120,22 @@ public class EntailmentUnitMention {
 			return d.getCategoryId();
 		}
 		return "N/A";
+*/
 	}
 	
 	
 	private String getCategoryId(JCas aJCas, FragmentAnnotation frag) {
-		Set<CategoryAnnotation> cas = FragmentGraph.getFragmentCategories(aJCas, frag);
+
+		if (CASUtils.getTLMetaData(aJCas) != null)
+		{
+			return CASUtils.getTLMetaData(aJCas).getCategory();
+		}
+		else
+		{
+			return null; 
+		}
+
+/*		Set<CategoryAnnotation> cas = FragmentGraph.getFragmentCategories(aJCas, frag);
 		if (cas != null && !cas.isEmpty()) {
 			for (CategoryAnnotation cat: cas) {
 				// assume one category annotation per fragment (or document, makes no difference here)
@@ -154,6 +145,7 @@ public class EntailmentUnitMention {
 			}
 		}
 		return "N/A";
+*/
 	}
 	
 	
