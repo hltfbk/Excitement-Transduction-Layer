@@ -22,8 +22,8 @@ The type  includes: (all strings)
 - date (string as YYYY-MM-DD)  
 - businessScenario 
 - author
- * Updated by JCasGen Wed Jun 12 11:06:43 CEST 2013
- * XML source: /home/tailblues/progs/Excitement-Transduction-Layer/tl/src/main/resources/desc/type/TLMetadata.xml
+ * Updated by JCasGen Tue Jun 25 09:17:53 CEST 2013
+ * XML source: /Users/tailblues/progs/Excitement-Transduction-Layer/tl/src/main/resources/desc/type/TLMetadata.xml
  * @generated */
 public class Metadata extends Annotation {
   /** @generated
@@ -177,6 +177,24 @@ public class Metadata extends Annotation {
     if (Metadata_Type.featOkTst && ((Metadata_Type)jcasType).casFeat_author == null)
       jcasType.jcas.throwFeatMissing("author", "eu.excitement.type.tl.Metadata");
     jcasType.ll_cas.ll_setStringValue(addr, ((Metadata_Type)jcasType).casFeatCode_author, v);}    
+   
+    
+  //*--------------*
+  //* Feature: category
+
+  /** getter for category - gets This type describes cateogry of the interaction. It corresponds to input XML file <Interaction> <metadata> <category>, and will hold that metadata string as it is.  
+   * @generated */
+  public String getCategory() {
+    if (Metadata_Type.featOkTst && ((Metadata_Type)jcasType).casFeat_category == null)
+      jcasType.jcas.throwFeatMissing("category", "eu.excitement.type.tl.Metadata");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Metadata_Type)jcasType).casFeatCode_category);}
+    
+  /** setter for category - sets This type describes cateogry of the interaction. It corresponds to input XML file <Interaction> <metadata> <category>, and will hold that metadata string as it is.   
+   * @generated */
+  public void setCategory(String v) {
+    if (Metadata_Type.featOkTst && ((Metadata_Type)jcasType).casFeat_category == null)
+      jcasType.jcas.throwFeatMissing("category", "eu.excitement.type.tl.Metadata");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Metadata_Type)jcasType).casFeatCode_category, v);}    
   }
 
     
