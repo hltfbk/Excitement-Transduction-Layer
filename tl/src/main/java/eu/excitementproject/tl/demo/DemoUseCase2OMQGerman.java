@@ -31,6 +31,7 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorEx
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.InteractionReader;
+import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -75,7 +76,7 @@ public class DemoUseCase2OMQGerman {
 				docs.addAll(InteractionReader.readInteractionXML(f));
 			}
 			// initialize the lap			
-			lap = new TreeTaggerEN();
+			lap = new LemmaLevelLapDE();
 			
 			// initialize the eda			
 			config = new ImplCommonConfig(configFile);
