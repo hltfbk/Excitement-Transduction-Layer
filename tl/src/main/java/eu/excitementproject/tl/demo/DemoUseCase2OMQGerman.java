@@ -58,7 +58,7 @@ public class DemoUseCase2OMQGerman {
 		BasicConfigurator.configure(); 
 		Logger.getRootLogger().setLevel(Level.INFO);  
 
-		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");		
+		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml");		
 		CommonConfig config = null;
 		LAPAccess lap;
 		EDABasic<?> eda;
@@ -91,6 +91,9 @@ public class DemoUseCase2OMQGerman {
 			use1 = new UseCaseOneRunnerPrototype(lap, eda, "./src/test/outputs/");
 			
 			// build raw graph
+			
+			for (Interaction doc : docs) System.out.println("doc_cat:" + doc.getCategory());
+			
 			graph = use1.buildRawGraph(docs);
 			graph.toDOT("./src/test/outputs/graph_"+ fileName + ".txt");
 
@@ -100,7 +103,8 @@ public class DemoUseCase2OMQGerman {
 			//create some sample input
 			JCas cas = CASUtils.createNewInputCas();
 			cas.setDocumentLanguage("DE");
-			cas.setDocumentText("Es ist bereits registriert.");
+			cas.setDocumentText("Es ist registriert."); /*NOTE: This string does not appear in 
+													the emails on which the graph was built!*/
 			
 			// initialize use case two runner
 			use2 = new UseCaseTwoRunnerPrototype(lap, eda);
