@@ -135,8 +135,10 @@ public class CASUtilsTest {
 			CASUtils.serializeToXmi(aJCas, xmiOut); 
 			JCas jcas2 = CASUtils.createNewInputCas(); 
 			CASUtils.deserializeFromXmi(jcas2, xmiOut); 
-			//CASUtils.dumpCAS(jcas2); 
 			Assert.assertEquals(jcas2.getDocumentText(),aJCas.getDocumentText()); 
+			//CASUtils.dumpCAS(jcas2); 
+			CASUtils.dumpAnnotationsInCAS(aJCas, AssumedFragment.type); 
+
 		}
 		catch (Exception e)
 		{
@@ -169,6 +171,11 @@ public class CASUtilsTest {
 //			- author
 			JCas aJCas = CASUtils.createNewInputCas(); 
 			aJCas.setDocumentLanguage("EN"); 
+			aJCas.setDocumentText("test document."); 
+			CASUtils.Region[] r = new CASUtils.Region[1]; 
+			r[0] = new CASUtils.Region(0,12);
+			CASUtils.annotateOneAssumedFragment(aJCas, r); 
+			
 			String interactionId = "Heidelberg.1"; 
 			String channel = "e-mail"; 
 			String provider = "HEICL"; 
@@ -192,7 +199,10 @@ public class CASUtilsTest {
 			Assert.assertEquals(date, m.getDate());  
 			Assert.assertEquals(businessScenario, m.getBusinessScenario());
 			Assert.assertEquals(author,  m.getAuthor()); 
-						
+			
+			// only metadata will be printed 
+			CASUtils.dumpAnnotationsInCAS(aJCas, Metadata.type); 
+			
 		}
 		catch (Exception e)
 		{
