@@ -4,6 +4,8 @@
 .settings/
 target/
 tl/target/
+tl/src/test/outputs/
+*~
 
 # Package Files #
 *.jar
