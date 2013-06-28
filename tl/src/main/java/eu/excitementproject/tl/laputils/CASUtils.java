@@ -111,6 +111,24 @@ public final class CASUtils {
 
 	}
 	/**
+	 * This methods dumps the give type of annotations to the console 
+	 * 
+	 * @param aJCas
+	 * @param annotType type id of the Annotation. (e.g. Lemma.type, CategoryAnnotation.type)  
+	 */
+	static public void dumpAnnotationsInCAS(JCas aJCas, int annotType)
+	{		
+		AnnotationIndex<Annotation> annotIndex = aJCas.getAnnotationIndex(annotType);
+		Iterator<Annotation> annotIter = annotIndex.iterator(); 		
+		if(annotIter.hasNext())
+		{
+			Annotation a = annotIter.next(); 
+			Type t = a.getType(); 
+			PlatformCASProber.printAnnotations(aJCas.getCas(), t, System.out);
+		}
+	}
+
+	/**
 	 *  This method dumps the content of CAS to Console  
 	 *  
 	 */

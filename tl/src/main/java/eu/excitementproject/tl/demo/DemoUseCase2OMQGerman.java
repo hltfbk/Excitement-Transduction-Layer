@@ -14,6 +14,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
+import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
@@ -103,7 +104,7 @@ public class DemoUseCase2OMQGerman {
 			//create some sample input
 			JCas cas = CASUtils.createNewInputCas();
 			cas.setDocumentLanguage("DE");
-			cas.setDocumentText("Es ist registriert."); /*NOTE: This string does not appear in 
+			cas.setDocumentText("Ich bin traurig. Es ist registriert."); /*NOTE: This string does not appear in 
 													the emails on which the graph was built!*/
 			
 			// initialize use case two runner
@@ -111,6 +112,7 @@ public class DemoUseCase2OMQGerman {
 			use2.annotateCategories(cas, graph);
 			
 			//print CAS category
+			CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 			
 
 		} catch (ConfigurationException | EDAException | ComponentException | 
