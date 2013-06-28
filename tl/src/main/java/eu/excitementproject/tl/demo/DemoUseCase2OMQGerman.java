@@ -110,8 +110,8 @@ public class DemoUseCase2OMQGerman {
 			use2 = new UseCaseTwoRunnerPrototype(lap, eda);
 			use2.annotateCategories(cas, graph);
 			
-			//print CAS
-			CASUtils.dumpCAS(cas);
+			//print CAS category
+			
 
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
