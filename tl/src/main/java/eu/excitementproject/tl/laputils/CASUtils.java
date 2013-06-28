@@ -13,6 +13,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
+import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.XmiCasDeserializer;
 import org.apache.uima.cas.impl.XmiCasSerializer;
 import org.apache.uima.cas.text.AnnotationIndex;
@@ -91,6 +92,24 @@ public final class CASUtils {
 		return a; 
 	}
 	
+	/**
+	 * This methods dumps the give type of annotations to the console 
+	 * 
+	 * @param aJCas
+	 * @param annotType type id of the Annotation. (e.g. Lemma.type, CategoryAnnotation.type)  
+	 */
+	static public void dumpAnnotationsInCAS(JCas aJCas, int annotType)
+	{		
+		AnnotationIndex<Annotation> annotIndex = aJCas.getAnnotationIndex(annotType);
+		Iterator<Annotation> annotIter = annotIndex.iterator(); 		
+		if(annotIter.hasNext())
+		{
+			Annotation a = annotIter.next(); 
+			Type t = a.getType(); 
+			PlatformCASProber.printAnnotations(aJCas.getCas(), t, System.out);
+		}
+	}
+
 	/**
 	 *  This method dumps the content of CAS to Console  
 	 *  
