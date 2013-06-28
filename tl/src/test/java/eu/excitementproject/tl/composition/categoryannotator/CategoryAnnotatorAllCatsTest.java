@@ -2,10 +2,7 @@ package eu.excitementproject.tl.composition.categoryannotator;
 
 import static org.junit.Assert.fail;
 
-import java.util.HashSet;
 import java.util.Set;
-
-import junit.framework.Assert;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -13,22 +10,15 @@ import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.NodeMatcher;
-import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
-import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
-import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
-import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
-import eu.excitementproject.tl.structures.search.PerNodeScore;
 
 
 public class CategoryAnnotatorAllCatsTest {
