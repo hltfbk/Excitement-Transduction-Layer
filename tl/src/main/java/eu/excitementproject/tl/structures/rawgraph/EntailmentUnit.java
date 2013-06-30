@@ -156,7 +156,7 @@ public class EntailmentUnit{
 	 * i.e. the number of fragment graphs, in which the entailmet unit was seen.
 	 * @return the number of fragment graphs, in which the entailmet unit was seen.
 	 */
-	public int getNumberOfTextualInputs() {
+	public int getNumberOfCompleteStatements() {
 		return this.completeStatementTexts.size();
 	}
 
