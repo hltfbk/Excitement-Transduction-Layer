@@ -4,9 +4,6 @@ import java.io.File;
 import java.util.Hashtable;
 import java.util.Set;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-
 import org.junit.Test;
 
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -24,6 +21,12 @@ public class EntailmentGraphRawTest {
 		
 		EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuput(false);
 		System.out.println("********************************\n Non-random graph:\n"+rawGraph.toString());
+		try {
+			rawGraph.toXML("./src/test/outputs/sampleRawGraph.xml");
+		} catch (EntailmentGraphRawException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		
 		rawGraph = EntailmentGraphRaw.getSampleOuput(true);
@@ -67,16 +70,17 @@ public class EntailmentGraphRawTest {
 		System.out.println("********************************\n Sample graph:\n"+rawGraph.toString());
 		
 		try {
-			String xmlFile = "./src/test/outputs/sampleRawGraph.xml";
-			rawGraph.toXML(xmlFile);
+//			String xmlFile = "./src/test/outputs/sampleRawGraph.xml";
+			String xmlFile = "./src/test/outputs/raw_graph.xml";
 			EntailmentGraphRaw loadedGraph = new EntailmentGraphRaw(new File(xmlFile));
 			loadedGraph.toString();
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (TransformerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			for (EntailmentUnit eu : loadedGraph.vertexSet()){
+				System.out.println("\n"+eu.getText());
+				System.out.println(eu.getCompleteStatementTexts().size());
+				for (String text: eu.getCompleteStatementTexts()){
+					System.out.println("  : "+text);					
+				}
+			}
 		} catch (EntailmentGraphRawException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -26,6 +26,8 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.OpenNLPTaggerEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
@@ -45,7 +47,7 @@ public class UseCaseOneDemo {
 	protected UseCaseOneRunnerPrototype useOne;
 	protected EntailmentGraphCollapsed graph;
 	
-	public UseCaseOneDemo(String configFileName, String dataDir, String outputFolder, Class<?> lapClass, Class<?> edaClass) {
+	public UseCaseOneDemo(String configFileName, String dataDir, int fileNumberLimit, String outputFolder, Class<?> lapClass, Class<?> edaClass) {
 		
 		// turning on Log4J, with INFO level logs 
 		BasicConfigurator.resetConfiguration(); 
@@ -55,7 +57,7 @@ public class UseCaseOneDemo {
 		try {
 			configFile = new File(configFileName);
 		
-			List<JCas> docs = loadData(dataDir);
+			List<JCas> docs = loadData(dataDir, fileNumberLimit);
 
 			initializeLap(lapClass);
 			initializeEDA(edaClass);
@@ -83,7 +85,7 @@ public class UseCaseOneDemo {
 			
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
-				ModifierAnnotatorException | TransformerException | ParserConfigurationException | 
+				ModifierAnnotatorException | EntailmentGraphRawException | 
 				GraphMergerException | CollapsedGraphGeneratorException | IOException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,11 +108,11 @@ public class UseCaseOneDemo {
 	}
 
 
-	private List<JCas> loadData(String dataDir) {
+	private List<JCas> loadData(String dataDir, int fileNumberLimit) {
 	
 		List<JCas> docs = new ArrayList<JCas>();
 		File dir = new File(dataDir);
-		int fileNumberLimit = 3;
+	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constuctor
 
 		//File f;
 		JCas aJCas;
@@ -135,8 +137,7 @@ public class UseCaseOneDemo {
 	public void inspectResults() {
 		try {
 			useOne.inspectGraph(graph);
-		} catch (IOException | TransformerException
-				| ParserConfigurationException e) {
+		} catch (IOException | EntailmentGraphCollapsedException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Error inspecting results");
 			e.printStackTrace();
@@ -149,8 +150,9 @@ public class UseCaseOneDemo {
 		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
 		String dataDir = "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1";
 		String outputFolder = "./src/test/outputs/"+dataDir.replace(".\\src\\test\\resources\\","").replace("\\","/");
+		int fileNumberLimit = 4;
 		
-		UseCaseOneDemo demoEN = new UseCaseOneDemo(configFileName, dataDir, outputFolder, TreeTaggerEN.class, MaxEntClassificationEDA.class);
+		UseCaseOneDemo demoEN = new UseCaseOneDemo(configFileName, dataDir, fileNumberLimit, outputFolder, TreeTaggerEN.class, MaxEntClassificationEDA.class);
 		demoEN.inspectResults();
 	}
 	

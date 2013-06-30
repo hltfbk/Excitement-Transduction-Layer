@@ -80,7 +80,7 @@ public class EntailmentGraphRaw extends
 	 */
 	/**
 	 * 
-	 * @param xmlFile -- a file (possibly xml) from which to load a previously produced graph
+	 * @param xmlFile -- an xml file from which to load a previously produced graph
 	 */
 	public EntailmentGraphRaw(File xmlFile) throws EntailmentGraphRawException{
 		super(EntailmentRelation.class);
@@ -96,42 +96,45 @@ public class EntailmentGraphRaw extends
 			// create and add nodes
 			for (int temp = 0; temp < entailmentUnitList.getLength(); temp++) {    
 				Node eu = entailmentUnitList.item(temp);     
-				eu.getNodeName();     
-				if (eu.getNodeType() == Node.ELEMENT_NODE) {  
-					Set<String> completeStatementTexts = new HashSet<String>();
-					Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
-					Set<String> interactionIds = new HashSet<String>();
-					
-					Element euElement = (Element) eu;
-					String text = euElement.getAttribute("text");
-					Integer level = Integer.valueOf(euElement.getAttribute("level"));
-					
-			       	NodeList completeStatementList = doc.getElementsByTagName("completeStatementText");
-			       	for (int i = 0; i < completeStatementList.getLength(); i++) {    
-			       		Node cs = completeStatementList.item(i);
-			       		completeStatementTexts.add(cs.getTextContent());
-			       	}
-			       	
-			       	NodeList interactionIdList = doc.getElementsByTagName("interactionId");
-			       	for (int i = 0; i < interactionIdList.getLength(); i++) {    
-			       		Node id = interactionIdList.item(i);
-			       		interactionIds.add(id.getTextContent());
-			       	}
-			       	
-			       	NodeList eumList = doc.getElementsByTagName("entailmentUnitMention");
-			       	for (int i = 0; i < eumList.getLength(); i++) {    
-			       		Node mention = eumList.item(i);
-			       		Element eumElement = (Element) mention;
-			       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"));
-			       		m.setCategoryId(eumElement.getAttribute("categoryId"));
-			       		m.setLevel(Integer.valueOf(eumElement.getAttribute("level")));
-			       		mentions.add(m);
-			       	}
-			       	
-			       	this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level));
-				}
-			}
+				eu.getNodeName();   
 
+				Element euElement = (Element) eu;
+				String text = euElement.getAttribute("text");
+				Integer level = Integer.valueOf(euElement.getAttribute("level"));
+
+				Set<String> completeStatementTexts = new HashSet<String>();
+				Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
+				Set<String> interactionIds = new HashSet<String>();
+				
+				NodeList childNodes = eu.getChildNodes();
+		       	for (int i = 0; i < childNodes.getLength(); i++) {    
+		       		Node child = childNodes.item(i);
+		       		System.out.println(i+">>"+child.getNodeName());
+		       		if (child.getNodeName().equals("completeStatement")){
+			       		Element csElement = (Element) child;
+			       		String cstext = csElement.getAttribute("text");
+			       		System.out.println(cstext);			       		
+		       			completeStatementTexts.add(cstext);
+		       		}
+		       		
+		       		if (child.getNodeName().equals("interactionId")){
+		       			Element idElement = (Element) child;			       		
+		       			interactionIds.add(idElement.getAttribute("id"));
+		       		}
+		       		
+		       		if (child.getNodeName().equals("entailmentUnitMention")){
+			       		Element eumElement = (Element) child;
+			       		int eumLevel = Integer.valueOf(eumElement.getAttribute("level"));
+			       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel);
+			       		m.setCategoryId(eumElement.getAttribute("categoryId"));
+			       		mentions.add(m);	       			
+		       		}
+				}
+
+							       
+			    this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level));
+			}
+			
 			
 			// create and add edges
 			NodeList entailmentRelationList = doc.getElementsByTagName("entailmentRelationEdge");
@@ -152,21 +155,9 @@ public class EntailmentGraphRaw extends
 					this.addEdge(sourceVertex, targetVertex, e);
 				}
 			}
-		} catch (DOMException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (EDAException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (DOMException | ParserConfigurationException | SAXException
+				| IOException | EDAException e) {
+			throw new EntailmentGraphRawException("Could not load collapsed graph from " + xmlFile.getAbsolutePath()+"\n"+e.getMessage());
 		}
 
     	
@@ -530,85 +521,90 @@ public class EntailmentGraphRaw extends
 	}	
 	
 	
-	public void toXML(String filename) throws ParserConfigurationException, TransformerException{
-				DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-				DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-		 
-				// root elements
-				Document doc = docBuilder.newDocument();
-				Element rootElement = doc.createElement("rawGraph");
-				doc.appendChild(rootElement);
-		 
-				// add nodes
-				for (EntailmentUnit eu : this.vertexSet()){
-					// EntailmentUnit elements
-					Element entailmentUnitNode = doc.createElement("entailmentUnitNode");
-					rootElement.appendChild(entailmentUnitNode);
-			 
-					// set text attribute to eu element
-					entailmentUnitNode.setAttribute("text",eu.getText());
-					// set level attribute to eu element
-					entailmentUnitNode.setAttribute("level",String.valueOf(eu.getLevel()));
-			 
-					/*	protected Set<String> completeStatementTexts;					*/
-					for (String csText : eu.getCompleteStatementTexts()){
-						// completeStatementText elements
-						Element completeStatementText = doc.createElement("completeStatementText");
-						completeStatementText.appendChild(doc.createTextNode(csText));
-						entailmentUnitNode.appendChild(completeStatementText);						
-					}
+	public void toXML(String filename) throws EntailmentGraphRawException{
+				try {
+					DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+					DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+ 
+					// root elements
+					Document doc = docBuilder.newDocument();
+					Element rootElement = doc.createElement("rawGraph");
+					doc.appendChild(rootElement);
+ 
+					// add nodes
+					for (EntailmentUnit eu : this.vertexSet()){
+						// EntailmentUnit elements
+						Element entailmentUnitNode = doc.createElement("entailmentUnitNode");
+						rootElement.appendChild(entailmentUnitNode);
+ 
+						// set text attribute to eu element
+						entailmentUnitNode.setAttribute("text",eu.getText());
+						// set level attribute to eu element
+						entailmentUnitNode.setAttribute("level",String.valueOf(eu.getLevel()));
+ 
+						/*	protected Set<String> completeStatementTexts;					*/
+						for (String csText : eu.getCompleteStatementTexts()){
+							// completeStatementText elements
+							Element completeStatementText = doc.createElement("completeStatement");
+							completeStatementText.setAttribute("text",csText);
+							entailmentUnitNode.appendChild(completeStatementText);						
+						}
 
-					/*	protected Set<EntailmentUnitMention> mentions = null;										*/
-					for (EntailmentUnitMention eum : eu.getMentions()){
-						// eu mentions elements
-						Element eumention = doc.createElement("entailmentUnitMention");
-						eumention.setAttribute("text",eum.getText());
-						eumention.setAttribute("categoryId",eum.getCategoryId());
-						eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
-						entailmentUnitNode.appendChild(eumention);						
-					}
+						/*	protected Set<EntailmentUnitMention> mentions = null;										*/
+						for (EntailmentUnitMention eum : eu.getMentions()){
+							// eu mentions elements
+							Element eumention = doc.createElement("entailmentUnitMention");
+							eumention.setAttribute("text",eum.getText());
+							eumention.setAttribute("categoryId",eum.getCategoryId());
+							eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
+							entailmentUnitNode.appendChild(eumention);						
+						}
 
-					/*	protected Set<String> interactionIds = null;										*/
-					for (String interactionId : eu.getInteractionIds()){
-						// completeStatementText elements
-						Element interaction = doc.createElement("interactionId");
-						interaction.appendChild(doc.createTextNode(interactionId));
-						entailmentUnitNode.appendChild(interaction);						
-					}					
-				}
-		 
-				// add edges
-				for (EntailmentRelation r  : this.edgeSet()){
-					// staff elements
-					Element entailmentrelationEdge = doc.createElement("entailmentRelationEdge");
-					rootElement.appendChild(entailmentrelationEdge);
-			 
-					// set source attribute to eu element
-					entailmentrelationEdge.setAttribute("source",r.getSource().getText());
-					// set target attribute to eu element
-					entailmentrelationEdge.setAttribute("target",r.getTarget().getText());
-					// set confidence attribute to eu element
-					entailmentrelationEdge.setAttribute("confidence",String.valueOf(r.getConfidence()));
-					// set edgeType attribute to eu element
-					entailmentrelationEdge.setAttribute("type",r.getEdgeType().toString());
-					// set label attribute to eu element
-					entailmentrelationEdge.setAttribute("decisionLabel",r.getLabel().toString());
-					// set eda attribute to eu element
-					if (r.getEda()!=null )entailmentrelationEdge.setAttribute("eda",r.getEda().toString());
-					// set lap attribute to eu element
-					if (r.getLap() != null) entailmentrelationEdge.setAttribute("lap",r.getLap().getComponentName());
-				}
-				
-				// write the content into xml file
-				TransformerFactory transformerFactory = TransformerFactory.newInstance();
-				Transformer transformer = transformerFactory.newTransformer();
-				DOMSource source = new DOMSource(doc);
-				StreamResult result = new StreamResult(new File(filename));
-		 
-				// Output to console for testing
-				// StreamResult result = new StreamResult(System.out);
-		 
-				transformer.transform(source, result);		 
+						/*	protected Set<String> interactionIds = null;										*/
+						for (String interactionId : eu.getInteractionIds()){
+							// completeStatementText elements
+							Element interaction = doc.createElement("interactionId");
+							interaction.setAttribute("id",interactionId);
+							entailmentUnitNode.appendChild(interaction);						
+						}					
+					}
+ 
+					// add edges
+					for (EntailmentRelation r  : this.edgeSet()){
+						// staff elements
+						Element entailmentrelationEdge = doc.createElement("entailmentRelationEdge");
+						rootElement.appendChild(entailmentrelationEdge);
+ 
+						// set source attribute to eu element
+						entailmentrelationEdge.setAttribute("source",r.getSource().getText());
+						// set target attribute to eu element
+						entailmentrelationEdge.setAttribute("target",r.getTarget().getText());
+						// set confidence attribute to eu element
+						entailmentrelationEdge.setAttribute("confidence",String.valueOf(r.getConfidence()));
+						// set edgeType attribute to eu element
+						entailmentrelationEdge.setAttribute("type",r.getEdgeType().toString());
+						// set label attribute to eu element
+						entailmentrelationEdge.setAttribute("decisionLabel",r.getLabel().toString());
+						// set eda attribute to eu element
+						if (r.getEda()!=null )entailmentrelationEdge.setAttribute("eda",r.getEda().toString());
+						// set lap attribute to eu element
+						if (r.getLap() != null) entailmentrelationEdge.setAttribute("lap",r.getLap().getComponentName());
+					}
+					
+					// write the content into xml file
+					TransformerFactory transformerFactory = TransformerFactory.newInstance();
+					Transformer transformer = transformerFactory.newTransformer();
+					DOMSource source = new DOMSource(doc);
+					StreamResult result = new StreamResult(new File(filename));
+ 
+					// Output to console for testing
+					// StreamResult result = new StreamResult(System.out);
+ 
+					transformer.transform(source, result);
+				} catch (DOMException | ParserConfigurationException | TransformerException e) {
+					throw new EntailmentGraphRawException(e.getMessage());
+					// TODO Auto-generated catch block
+				}		 
 		  }
 	
 	

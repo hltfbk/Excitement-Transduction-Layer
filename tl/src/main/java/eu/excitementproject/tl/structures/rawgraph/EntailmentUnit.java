@@ -253,7 +253,7 @@ public class EntailmentUnit{
 	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
 	 */
 	public EntailmentUnit(String textFragment, int level, String completeStatementText, String interactionId) {
-		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment);
+		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level);
 		setAttributes(eum, completeStatementText, interactionId);
 	}
 	
@@ -266,7 +266,7 @@ public class EntailmentUnit{
 	 * @param category - category id 
 	 */
 	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category, String interactionId) {
-		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment);
+		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level);
 		eum.setCategoryId(category);
 		setAttributes(eum, completeStatementText, interactionId);
 	}

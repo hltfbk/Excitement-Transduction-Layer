@@ -46,15 +46,14 @@ public class EntailmentUnitMention {
 	/**
 	 * @param textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
 	 */
-	public EntailmentUnitMention(String textFragment) {
+	public EntailmentUnitMention(String textFragment, int level) {
 		text = textFragment;
-		level = 0;
+		this.level = level;
 		modifiersText = new HashSet<SimpleModifier>();
 		begin = 0;
 		end = text.length();
 	}
 	
-
 	/**
 	 * 
 	 * Build an entailmentUnit based on the (determined) fragment annotation in a document CAS object, 

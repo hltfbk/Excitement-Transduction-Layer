@@ -17,13 +17,19 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
@@ -68,6 +74,107 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	}
 
 	
+	/**
+	 * 
+	 * @param xmlFile -- a file (possibly xml) from which to load a previously produced graph
+	 */
+	public EntailmentGraphCollapsed(File xmlFile) throws EntailmentGraphCollapsedException{
+		super(EntailmentRelationCollapsed.class);
+		numberOfEntailmentUnits = 0;
+		textualInputs = new HashSet<String>();
+    	try {
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(xmlFile);
+    
+			doc.getDocumentElement().normalize();	     
+			doc.getDocumentElement().getNodeName();
+			
+			NodeList equivalenceClassList = doc.getElementsByTagName("equivalenceClassNode");
+			// create and add nodes
+			for (int nodeNumber = 0; nodeNumber < equivalenceClassList.getLength(); nodeNumber++) {  
+				Node eqClassNode = equivalenceClassList.item(nodeNumber);     
+				eqClassNode.getNodeName();  
+				if (eqClassNode.getNodeType() == Node.ELEMENT_NODE) { 
+					// read the label of the node
+					Element eqClassElement = (Element) eqClassNode;
+					String label = eqClassElement.getAttribute("label");
+		       		System.out.println("\n"+label);
+					
+					// create the set of entailment units of the node
+					NodeList entailmentUnitList = eqClassNode.getChildNodes();
+					Set<EntailmentUnit> s_eu = new HashSet<EntailmentUnit>();
+					
+					for (int temp = 0; temp < entailmentUnitList.getLength(); temp++) {    
+						Node eu = entailmentUnitList.item(temp);     
+						if (!eu.getNodeName().equals("entailmentUnit")) continue;   
+
+						Element euElement = (Element) eu;
+						String text = euElement.getAttribute("text");
+						Integer level = Integer.valueOf(euElement.getAttribute("level"));
+
+						Set<String> completeStatementTexts = new HashSet<String>();
+						Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
+						Set<String> interactionIds = new HashSet<String>();
+						
+						NodeList childNodes = eu.getChildNodes();
+				       	for (int i = 0; i < childNodes.getLength(); i++) {    
+				       		Node child = childNodes.item(i);
+				       		System.out.println("\n"+i+">>"+child.getNodeName());
+				       		if (child.getNodeName().equals("completeStatement")){
+					       		Element csElement = (Element) child;
+					       		String cstext = csElement.getAttribute("text");
+					       		System.out.println(cstext);			       		
+				       			completeStatementTexts.add(cstext);
+				       		}
+				       		
+				       		if (child.getNodeName().equals("interactionId")){
+				       			Element idElement = (Element) child;
+				       			String id = idElement.getAttribute("id");
+					       		System.out.println(id);			       		
+				       			interactionIds.add(id);
+				       		}
+				       		
+				       		if (child.getNodeName().equals("entailmentUnitMention")){
+					       		Element eumElement = (Element) child;
+					       		int eumLevel = Integer.valueOf(eumElement.getAttribute("level"));
+					       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel);
+					       		m.setCategoryId(eumElement.getAttribute("categoryId"));
+					       		mentions.add(m);	       			
+				       		}
+						}		
+				       	EntailmentUnit newEntailmentUnit = new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level);
+				       	System.out.println(newEntailmentUnit.getCompleteStatementTexts());
+					    s_eu.add(newEntailmentUnit);
+					    System.out.println(s_eu.size());
+					} // done creating s_eu
+					// create and add a new node to the graph
+					this.addVertex(new EquivalenceClass(label, s_eu));					
+				}							
+			}
+			
+			// create and add edges
+			NodeList edgeList = doc.getElementsByTagName("entailmentRelationCollapsedEdge");
+			for (int temp = 0; temp < edgeList.getLength(); temp++) {    
+				Node er = edgeList.item(temp);     
+				er.getNodeName();     
+				if (er.getNodeType() == Node.ELEMENT_NODE) {  
+					
+					Element erElement = (Element) er;
+					String source = erElement.getAttribute("source");
+					String target = erElement.getAttribute("target");
+					double confidence = Double.valueOf(erElement.getAttribute("confidence"));
+					
+					EquivalenceClass sourceVertex = this.getVertex(source);
+					EquivalenceClass targetVertex = this.getVertex(target);
+					EntailmentRelationCollapsed e = new EntailmentRelationCollapsed(sourceVertex, targetVertex, confidence);
+					this.addEdge(sourceVertex, targetVertex, e);
+				}
+			}
+		} catch (DOMException | ParserConfigurationException | SAXException | IOException e) {
+			throw new EntailmentGraphCollapsedException("Could not load collapsed graph from " + xmlFile.getAbsolutePath()+"\n"+e.getMessage());
+		}    	
+	}	
 	
 	/******************************************************************************************
 	 * METHODS REQUIRED BY INDUSTRIAL SCENARIOS
@@ -311,95 +418,92 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			out.close();
 	}	
 	
-	public void toXML(String filename) throws ParserConfigurationException, TransformerException{
-		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+	public void toXML(String filename) throws EntailmentGraphCollapsedException{
+		try {
+			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
  
-		// root elements
-		Document doc = docBuilder.newDocument();
-		Element rootElement = doc.createElement("collapsedGraph");
-		doc.appendChild(rootElement);
+			// root elements
+			Document doc = docBuilder.newDocument();
+			Element rootElement = doc.createElement("collapsedGraph");
+			doc.appendChild(rootElement);
  
-		// add nodes
-		for (EquivalenceClass ec : this.vertexSet()){
-			// staff elements
-			Element equivalenceClassNode = doc.createElement("equivalenceClassNode");
-			rootElement.appendChild(equivalenceClassNode);
-	 
-			// set label attribute to eu element
-			equivalenceClassNode.setAttribute("label",ec.getLabel());
-	 
-			/*	protected Set<String> completeStatementTexts;					*/
-			for (EntailmentUnit eu : ec.getEntailmentUnits()){
-				// entailmentUnit elements
-				Element entailmentUnit = doc.createElement("entailmentUnit");
-		 
-				// set text attribute to eu element
-				entailmentUnit.setAttribute("text",eu.getText());
-				// set level attribute to eu element
-				entailmentUnit.setAttribute("level",String.valueOf(eu.getLevel()));
-		 
+			// add nodes
+			for (EquivalenceClass ec : this.vertexSet()){
+				// staff elements
+				Element equivalenceClassNode = doc.createElement("equivalenceClassNode");
+				rootElement.appendChild(equivalenceClassNode);
+ 
+				// set label attribute to eu element
+				equivalenceClassNode.setAttribute("label",ec.getLabel());
+ 
 				/*	protected Set<String> completeStatementTexts;					*/
-				for (String csText : eu.getCompleteStatementTexts()){
-					// completeStatementText elements
-					Element completeStatementText = doc.createElement("completeStatementText");
-					completeStatementText.appendChild(doc.createTextNode(csText));
-					entailmentUnit.appendChild(completeStatementText);						
-				}
+				for (EntailmentUnit eu : ec.getEntailmentUnits()){
+					// EntailmentUnit elements
+					Element entailmentUnit = doc.createElement("entailmentUnit");
+					// set text attribute to eu element
+					entailmentUnit.setAttribute("text",eu.getText());
+					// set level attribute to eu element
+					entailmentUnit.setAttribute("level",String.valueOf(eu.getLevel()));
 
-				/*	protected Set<EntailmentUnitMention> mentions = null;										*/
-				for (EntailmentUnitMention eum : eu.getMentions()){
-					// eu mentions elements
-					Element eumention = doc.createElement("entailmentUnitMention");
-					eumention.setAttribute("text",eum.getText());
-					eumention.setAttribute("categoryId",eum.getCategoryId());
-					eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
-					entailmentUnit.appendChild(eumention);						
-				}
+					/*	protected Set<String> completeStatementTexts;					*/
+					for (String csText : eu.getCompleteStatementTexts()){
+						// completeStatementText elements
+						Element completeStatementText = doc.createElement("completeStatement");
+						completeStatementText.setAttribute("text",csText);
+						entailmentUnit.appendChild(completeStatementText);						
+					}
 
-				/*	protected Set<String> interactionIds = null;										*/
-				for (String interactionId : eu.getInteractionIds()){
-					// completeStatementText elements
-					Element interaction = doc.createElement("interactionId");
-					interaction.appendChild(doc.createTextNode(interactionId));
-					entailmentUnit.appendChild(interaction);						
-				}					
-				equivalenceClassNode.appendChild(entailmentUnit);						
+					/*	protected Set<EntailmentUnitMention> mentions = null;										*/
+					for (EntailmentUnitMention eum : eu.getMentions()){
+						// eu mentions elements
+						Element eumention = doc.createElement("entailmentUnitMention");
+						eumention.setAttribute("text",eum.getText());
+						eumention.setAttribute("categoryId",eum.getCategoryId());
+						eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
+						entailmentUnit.appendChild(eumention);						
+					}
+
+					/*	protected Set<String> interactionIds = null;										*/
+					for (String interactionId : eu.getInteractionIds()){
+						// completeStatementText elements
+						Element interaction = doc.createElement("interactionId");
+						interaction.setAttribute("id",interactionId);
+						entailmentUnit.appendChild(interaction);						
+					}					
+					equivalenceClassNode.appendChild(entailmentUnit);						
+				}
 			}
-
-			/*	protected Set<String> interactionIds = null;										*/
-			for (String interactionId : ec.getInteractionIds()){
-				// completeStatementText elements
-				Element interaction = doc.createElement("interactionId");
-				interaction.appendChild(doc.createTextNode(interactionId));
-				equivalenceClassNode.appendChild(interaction);						
-			}					
-		}
  
-		// add edges
-		for (EntailmentRelationCollapsed r  : this.edgeSet()){
-			// staff elements
-			Element entailmentrelationEdge = doc.createElement("entailmentRelationCollapsedEdge");
-			rootElement.appendChild(entailmentrelationEdge);
-	 
-			// set source attribute to eu element
-			entailmentrelationEdge.setAttribute("source",r.getSource().getLabel());
-			// set target attribute to eu element
-			entailmentrelationEdge.setAttribute("target",r.getTarget().getLabel());
-			// set confidence attribute to eu element
-			entailmentrelationEdge.setAttribute("confidence",String.valueOf(r.getConfidence()));
-		}
-		
-		// write the content into xml file
-		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		Transformer transformer = transformerFactory.newTransformer();
-		DOMSource source = new DOMSource(doc);
-		StreamResult result = new StreamResult(new File(filename));
+			// add edges
+			for (EntailmentRelationCollapsed r  : this.edgeSet()){
+				// staff elements
+				Element entailmentrelationEdge = doc.createElement("entailmentRelationCollapsedEdge");
+				rootElement.appendChild(entailmentrelationEdge);
  
-		// Output to console for testing
-		// StreamResult result = new StreamResult(System.out);
+				// set source attribute to eu element
+				entailmentrelationEdge.setAttribute("source",r.getSource().getLabel());
+				// set target attribute to eu element
+				entailmentrelationEdge.setAttribute("target",r.getTarget().getLabel());
+				// set confidence attribute to eu element
+				entailmentrelationEdge.setAttribute("confidence",String.valueOf(r.getConfidence()));
+			}
+			
+			// write the content into xml file
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(doc);
+			StreamResult result = new StreamResult(new File(filename));
  
-		transformer.transform(source, result);		 
+			// Output to console for testing
+			// StreamResult result = new StreamResult(System.out);
+ 
+			transformer.transform(source, result);
+		} catch (DOMException | ParserConfigurationException | TransformerFactoryConfigurationError |
+				TransformerException e) {
+			// TODO Auto-generated catch block
+			throw new EntailmentGraphCollapsedException(e.getMessage());
+		}		 
   }
 	
 

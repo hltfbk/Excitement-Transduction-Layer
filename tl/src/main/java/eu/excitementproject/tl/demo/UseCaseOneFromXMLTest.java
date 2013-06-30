@@ -5,9 +5,6 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -23,6 +20,8 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -104,7 +103,7 @@ public class UseCaseOneFromXMLTest {
 			
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
-				ModifierAnnotatorException | TransformerException | ParserConfigurationException |
+				ModifierAnnotatorException | EntailmentGraphRawException | EntailmentGraphCollapsedException |
 				GraphMergerException | CollapsedGraphGeneratorException | DataReaderException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

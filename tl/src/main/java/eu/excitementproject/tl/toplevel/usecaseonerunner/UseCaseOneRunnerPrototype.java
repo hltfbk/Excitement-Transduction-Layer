@@ -10,9 +10,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.EDABasic;
@@ -22,6 +19,7 @@ import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
@@ -192,7 +190,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs) 
-				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException, ParserConfigurationException, TransformerException {
+				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException, EntailmentGraphRawException {
 		
 		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
 		inspectGraph(rawGraph);
@@ -214,7 +212,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs) 
-				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException, ParserConfigurationException, TransformerException {
+				throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException, EntailmentGraphRawException {
 		
 		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
 		inspectGraph(rawGraph);
@@ -245,7 +243,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 
 
 	
-	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException, TransformerException, ParserConfigurationException{
+	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException, EntailmentGraphCollapsedException{
 
 		if (graph != null) { 
 			log("COLLAPSED GRAPH:\n");
@@ -260,7 +258,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 
 	
-	public void inspectGraph(EntailmentGraphRaw graph) throws IOException, TransformerException, ParserConfigurationException{
+	public void inspectGraph(EntailmentGraphRaw graph) throws IOException, EntailmentGraphRawException{
 
 		if (graph != null) { 
 			log("RAW GRAPH:\n");			
