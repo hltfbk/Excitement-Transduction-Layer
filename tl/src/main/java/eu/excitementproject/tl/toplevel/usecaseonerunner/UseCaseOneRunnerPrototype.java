@@ -173,8 +173,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public EntailmentGraphCollapsed buildGraph(File f, double confidence) 
 			throws CollapsedGraphGeneratorException, EntailmentGraphRawException{
 			
-		SimpleCollapseGraphGenerator scgg = new SimpleCollapseGraphGenerator(); 
-		return scgg.generateCollapsedGraph(new EntailmentGraphRaw(f),confidence);		
+		return collapseGraph.generateCollapsedGraph(new EntailmentGraphRaw(f),confidence);		
 	}
 
 	
@@ -276,12 +275,18 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public void inspectGraph(Set<FragmentGraph> fgs) throws IOException{
 		
 		log("Inspecting the fragmentGraphs:");
+		int i = 1;
 		
 		if (fgs != null) {
 			log("\t" + fgs.size() + " graphs to check");
+			
 			for(FragmentGraph fg : fgs) {
 				if ( fg != null ) {
 					log(fg.toString());
+					if (outputPath != null) {
+						fg.toDOT(outputPath+"/fragment_graph_" + i + ".dot.txt");
+						i++;
+					}
 				} else {
 					log("Fragment graph is null");
 				}
