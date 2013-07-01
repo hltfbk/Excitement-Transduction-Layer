@@ -271,5 +271,10 @@ public class EntailmentUnitMention {
 	public void setCategoryId(String category) {
 		this.categoryId = category;		
 	}
+
+	
+	public String getTextWithoutDoulbeSpaces(){
+		return this.getText().trim().replaceAll(" +", " ");
+	}
 	
 }
