@@ -1,7 +1,10 @@
 package eu.excitementproject.tl.structures.fragmentgraph;
 
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -18,8 +21,10 @@ import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 
 /**
  * 
@@ -396,4 +401,27 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return eum;
 	}
 
+	
+	/** Saves the graph in DOT format to the given file. If such file already exists, it will be overwritten.
+	 * @param filename - the name of the file to save the graph
+	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
+	 */
+	public void toDOT(String filename) throws IOException{
+			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+			out.write(this.toDOT());
+			out.close();
+	}	
+	
+	/** Generates a single string, which contains the graph in DOT format for visualization
+	 * @return the generated string
+	 */
+	public String toDOT(){
+		String s = "digraph rawGraph {\n";
+		for (FragmentGraphEdge edge : this.edgeSet()){
+			s+=edge.toDOT();
+		}
+		s+="}";	
+		return s;
+	}
+	
 }

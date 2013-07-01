@@ -53,4 +53,24 @@ public class FragmentGraphEdge extends DefaultEdge{
 	}
 	
 	
+	// stolen from the EntailmentRelation
+	/******************************************************************************************
+	 * PRINT
+	 * ****************************************************************************************/
+	@Override 
+	public String toString(){
+		return this.getSource().getText()+" --> "+this.getTarget().getText() +" (Default entailment) ";
+	}
+	
+	/** Returns a string with the edge in DOT format for outputting the graph
+	 * @return the generated string
+	 */	public String toDOT(){
+		String s = "\""+this.getSource().getTextWithoutDoulbeSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoulbeSpaces()+"\"";
+		s+= " [label=1]";
+		String color = "red";
+		color = "green";		
+		s+= " [color="+color+"]";
+		return s+"\n";
+	}
+	
 }
