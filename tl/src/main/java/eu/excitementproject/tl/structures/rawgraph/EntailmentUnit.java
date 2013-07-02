@@ -154,7 +154,7 @@ public class EntailmentUnit{
 
 	/** The method returns the size of the set of completeStatementTexts,
 	 * i.e. the number of fragment graphs, in which the entailmet unit was seen.
-	 * @return the number of fragment graphs, in which the entailmet unit was seen.
+	 * @return the number of complete statements (fragment graphs), in which the entailmet unit was seen.
 	 */
 	public int getNumberOfCompleteStatements() {
 		return this.completeStatementTexts.size();
