@@ -45,8 +45,10 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 			System.out.println("\nThe number of nodes is: "+graph.getNumberOfEquivalenceClasses());
 			System.out.println("The overall number of entailment units is: "+graph.getNumberOfEntailmentUnits());
 			System.out.println("The number of (complete) textual inputs is: "+graph.getNumberOfTextualInputs());
+			
 
-			// get some example entailment unit (its canonical text)
+			// get some example entailment unit
+			// we use its canonical text (note that the unit itself can also be passed as the parameter to the methods below)
 			String euText = ""; 
 			if (graph.vertexSet().iterator().hasNext()) {
 				euText = graph.vertexSet().iterator().next().getLabel();
@@ -54,7 +56,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 			
 			System.out.println("\nShow equivalent statements for \""+euText+"\":");
 			int i=1;
-			for (EntailmentUnit eu : graph.getVertex(euText).getEntailmentUnits()){
+			for (EntailmentUnit eu : graph.getEquivalentEntailmentUnits(euText)){
 				System.out.println("\t"+i+") "+eu.getText());
 				i++;
 			}
@@ -84,6 +86,15 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 				if (i%5==0) System.out.println();
 				i++;				
 			}
+			System.out.println();
+			
+			System.out.println("\nShow top-3 sorted nodes:");
+			i=1;
+			for (EquivalenceClass node: graph.sortNodesByNumberOfInteractions(3)){
+				System.out.print("  node#"+i+": "+node.toString());
+				i++;				
+			}
+			
 		} catch (EntailmentGraphCollapsedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
