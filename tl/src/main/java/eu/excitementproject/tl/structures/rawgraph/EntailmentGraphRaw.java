@@ -109,11 +109,9 @@ public class EntailmentGraphRaw extends
 				NodeList childNodes = eu.getChildNodes();
 		       	for (int i = 0; i < childNodes.getLength(); i++) {    
 		       		Node child = childNodes.item(i);
-		       		System.out.println(i+">>"+child.getNodeName());
 		       		if (child.getNodeName().equals("completeStatement")){
 			       		Element csElement = (Element) child;
 			       		String cstext = csElement.getAttribute("text");
-			       		System.out.println(cstext);			       		
 		       			completeStatementTexts.add(cstext);
 		       		}
 		       		
@@ -244,7 +242,6 @@ public class EntailmentGraphRaw extends
 	public Hashtable<Integer, Set<EntailmentUnit>> getFragmentGraphNodes(EntailmentUnit baseStatementNode, String completeStatementText) throws EntailmentGraphRawException {
 		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
 
-		System.out.println(baseStatementNode.toString());
 		if (!baseStatementNode.completeStatementTexts.contains(completeStatementText)) throw new EntailmentGraphRawException("Base statement node \""+baseStatementNode.getText()+"\" does not correspond to the complete statement \""+ completeStatementText+"\"\n");
 		
 		EntailmentUnit completeStatementNode = getVertex(completeStatementText);

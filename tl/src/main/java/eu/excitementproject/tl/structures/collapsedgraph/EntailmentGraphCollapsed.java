@@ -99,8 +99,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 					// read the label of the node
 					Element eqClassElement = (Element) eqClassNode;
 					String label = eqClassElement.getAttribute("label");
-		       		System.out.println("\n"+label);
-					
+				
 					// create the set of entailment units of the node
 					NodeList entailmentUnitList = eqClassNode.getChildNodes();
 					Set<EntailmentUnit> s_eu = new HashSet<EntailmentUnit>();
@@ -120,18 +119,15 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 						NodeList childNodes = eu.getChildNodes();
 				       	for (int i = 0; i < childNodes.getLength(); i++) {    
 				       		Node child = childNodes.item(i);
-				       		System.out.println("\n"+i+">>"+child.getNodeName());
 				       		if (child.getNodeName().equals("completeStatement")){
 					       		Element csElement = (Element) child;
 					       		String cstext = csElement.getAttribute("text");
-					       		System.out.println(cstext);			       		
 				       			completeStatementTexts.add(cstext);
 				       		}
 				       		
 				       		if (child.getNodeName().equals("interactionId")){
 				       			Element idElement = (Element) child;
 				       			String id = idElement.getAttribute("id");
-					       		System.out.println(id);			       		
 				       			interactionIds.add(id);
 				       		}
 				       		
@@ -144,9 +140,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 				       		}
 						}		
 				       	EntailmentUnit newEntailmentUnit = new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level);
-				       	System.out.println(newEntailmentUnit.getCompleteStatementTexts());
 					    s_eu.add(newEntailmentUnit);
-					    System.out.println(s_eu.size());
 					} // done creating s_eu
 					// create and add a new node to the graph
 					this.addVertex(new EquivalenceClass(label, s_eu));					
