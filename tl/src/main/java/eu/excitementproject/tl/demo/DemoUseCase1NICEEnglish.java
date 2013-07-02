@@ -40,7 +40,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 			EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(xmlFile);
 			System.out.println("\nLoaded the graph from ./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_50/collapsed_graph.xml");
 
-			graph.toString();
+			System.out.println(graph.toString());
 			
 			System.out.println("\nThe number of nodes is: "+graph.getNumberOfEquivalenceClasses());
 			System.out.println("The overall number of entailment units is: "+graph.getNumberOfEntailmentUnits());
