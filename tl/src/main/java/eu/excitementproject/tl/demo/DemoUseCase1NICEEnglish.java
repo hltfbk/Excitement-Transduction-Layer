@@ -34,8 +34,8 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 		demoEN.inspectResults();
 		// the results can be found under "./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1"
 */		
-		// now load some existing collapsed graph (we load one with 50 interactions)
-		File xmlFile = new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_50/collapsed_graph.xml");
+		// now load some existing collapsed graph (we load one with 20 interactions)
+		File xmlFile = new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_20/collapsed_graph.xml");
 		try {
 			EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(xmlFile);
 			System.out.println("\nLoaded the graph from ./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_50/collapsed_graph.xml");
