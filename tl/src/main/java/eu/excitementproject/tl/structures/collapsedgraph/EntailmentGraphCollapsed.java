@@ -279,7 +279,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 */
 	public Set<EquivalenceClass> getEntailedEquivalenceClasses(String entailmentUnitText){
 		EquivalenceClass vertex = getVertex(entailmentUnitText);
-		if (vertex!=null) return this.getEntailingNodes(vertex);
+		if (vertex!=null) return this.getEntailedNodes(vertex);
 		return null;		
 	}
 	
