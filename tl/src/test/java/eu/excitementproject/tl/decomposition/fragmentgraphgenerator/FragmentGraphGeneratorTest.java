@@ -37,7 +37,8 @@ public class FragmentGraphGeneratorTest {
 			File f4 = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_speech/13764618_75839896.txt.xmi"); 
 
 			// initiate the FragGraphGenerator... 
-			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
+//			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
+			FragmentGraphLiteGeneratorFromCAS fragGen = new FragmentGraphLiteGeneratorFromCAS(); 
 
 			// Read in inputCASes for the examples, and generate the FragmentGraphs 
 			CASUtils.deserializeFromXmi(aJCas, f1); 
