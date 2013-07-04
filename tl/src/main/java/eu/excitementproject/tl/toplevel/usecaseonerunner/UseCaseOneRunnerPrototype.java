@@ -31,6 +31,7 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorEx
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
@@ -38,6 +39,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 
+@SuppressWarnings("unused")
 public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	
 	LAPAccess lap = null;
@@ -75,7 +77,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		fragAnot = new SentenceAsFragmentAnnotator(lap);
 		modAnot = new AdvAsModifierAnnotator(lap); 		
 
-		fragGen = new FragmentGraphGeneratorFromCAS();
+//		fragGen = new FragmentGraphGeneratorFromCAS();
+		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
 		collapseGraph = new SimpleCollapseGraphGenerator();
 	}
