@@ -11,7 +11,7 @@
     <configurationParameterSettings/>
     <typeSystemDescription>
       <imports>
-        <import name="desc.typesystem"/>
+        <import name="desc.EOPtypesystem"/>
         <import name="desc.TLtypesystem"/>
       </imports>
     </typeSystemDescription>

@@ -7,12 +7,12 @@
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>lap</artifactId>
-  		<version>0.8.3</version>
+  		<version>1.0.1</version>
   	</dependency>
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>core</artifactId>
-  		<version>0.8.3</version>
+  		<version>1.0.1</version>
   	</dependency>
   	<dependency>
   		<groupId>net.sf.jgrapht</groupId>
