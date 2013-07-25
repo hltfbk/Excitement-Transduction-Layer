@@ -24,6 +24,34 @@
   		<artifactId>jgraph</artifactId>
   		<version>5.13.0.0</version>
   	</dependency>
+
+	<!-- TreeTagger related dependencies --> 
+	<!-- You need to install TreeTagger;  please read /tl/src/scripts/treetagger/README.txt, and follow the instructions --> 
+    	<dependency>
+     		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+     		<artifactId>de.tudarmstadt.ukp.dkpro.core.treetagger-bin</artifactId>
+     		<version>LATEST</version>
+    	</dependency>
+    	<dependency>
+     		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+     		<artifactId>de.tudarmstadt.ukp.dkpro.core.treetagger-model-de</artifactId>
+     		<version>LATEST</version>
+    	</dependency>
+    	<dependency>
+     		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+     		<artifactId>de.tudarmstadt.ukp.dkpro.core.treetagger-model-en</artifactId>
+     		<version>LATEST</version>
+    	</dependency>
+    	<dependency>
+     		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+     		<artifactId>de.tudarmstadt.ukp.dkpro.core.treetagger-model-it</artifactId>
+     		<version>LATEST</version>
+    	</dependency>
+	<!-- end of TreeTagger related dependencies --> 
+ 	
+  	
+ 	
+  
   </dependencies>
   
     <repositories>
