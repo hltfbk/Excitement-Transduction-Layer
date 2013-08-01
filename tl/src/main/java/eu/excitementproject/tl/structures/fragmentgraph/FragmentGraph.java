@@ -9,6 +9,23 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.jgrapht.graph.DirectedMultigraph;
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.EdgeFactory;
 import org.jgrapht.graph.ClassBasedEdgeFactory;
@@ -335,7 +352,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 
 		try {
 			JCas aJCas = CASUtils.createNewInputCas(); 
-			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/alma_speech/Speech3.1.004.txt.xmi"); 
+			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/100771.txt.xmi"); 
 
 			// initiate the FragGraphGenerator... 
 			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
@@ -424,4 +441,67 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return s;
 	}
 	
+	/**
+	 * Outputs the fragment graph in XML format
+	 */
+	public void toXML(String filename) throws FragmentGraphException{
+		try {
+			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+
+			// root elements
+			Document doc = docBuilder.newDocument();
+			Element rootElement = doc.createElement("rawGraph");
+			doc.appendChild(rootElement);
+
+			// add nodes
+			for (EntailmentUnitMention eu : this.vertexSet()){
+				// EntailmentUnit elements
+				Element entailmentUnitNode = doc.createElement("entailmentUnitMentionNode");
+				rootElement.appendChild(entailmentUnitNode);
+
+				// set text attribute to eu element
+				entailmentUnitNode.setAttribute("text",eu.getText());
+				// set level attribute to eu element
+				entailmentUnitNode.setAttribute("level",String.valueOf(eu.getLevel()));
+				entailmentUnitNode.setAttribute("categoryId",eu.getCategoryId());
+
+				Element completeStatementText = doc.createElement("completeStatement");
+				completeStatementText.setAttribute("text",eu.getTextWithoutDoulbeSpaces());
+				entailmentUnitNode.appendChild(completeStatementText);		
+
+				Element interaction = doc.createElement("interactionId");
+				interaction.setAttribute("id",this.getInteractionId());
+				entailmentUnitNode.appendChild(interaction);						
+			}
+
+			// add edges
+			for (FragmentGraphEdge r  : this.edgeSet()){
+				// staff elements
+				Element entailmentrelationEdge = doc.createElement("entailmentRelationEdge");
+				rootElement.appendChild(entailmentrelationEdge);
+
+				// set source attribute to eu element
+				entailmentrelationEdge.setAttribute("source",r.getSource().getText());
+				// set target attribute to eu element
+				entailmentrelationEdge.setAttribute("target",r.getTarget().getText());
+				// set confidence attribute to eu element
+				entailmentrelationEdge.setAttribute("confidence",String.valueOf(r.getWeight()));
+			}
+			
+			// write the content into xml file
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(doc);
+			StreamResult result = new StreamResult(new File(filename));
+
+			// Output to console for testing
+			// StreamResult result = new StreamResult(System.out);
+
+			transformer.transform(source, result);
+		} catch (DOMException | ParserConfigurationException | TransformerException e) {
+			throw new FragmentGraphException(e.getMessage());
+			// TODO Auto-generated catch block
+		}		 
+  }
 }
