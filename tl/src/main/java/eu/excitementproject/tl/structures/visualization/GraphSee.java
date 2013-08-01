@@ -26,11 +26,11 @@ public class GraphSee extends JFrame {
     
     public GraphSee() {
     	super("Graph visualization");
-    	FragmentGraph fg = FragmentGraph.getSampleGraph();
-    	equipMe(new FragmentGraphPanel(fg));
+//    	FragmentGraph fg = FragmentGraph.getSampleGraph();
+//    	equipMe(new FragmentGraphPanel(fg));
     	
-//    	EntailmentGraphRaw egr = EntailmentGraphRaw.getSampleOuput(true);
-//    	equipMe(new RawGraphPanel(egr));    	
+    	EntailmentGraphRaw egr = EntailmentGraphRaw.getSampleOuput(true);
+    	equipMe(new RawGraphPanel(egr));    	
     }
     
     public GraphSee(TLGraphPanel<?,?> tlgp) {

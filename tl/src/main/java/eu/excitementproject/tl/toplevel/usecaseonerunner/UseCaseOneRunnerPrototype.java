@@ -77,8 +77,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		fragAnot = new SentenceAsFragmentAnnotator(lap);
 		modAnot = new AdvAsModifierAnnotator(lap); 		
 
-//		fragGen = new FragmentGraphGeneratorFromCAS();
-		fragGen = new FragmentGraphLiteGeneratorFromCAS();
+		fragGen = new FragmentGraphGeneratorFromCAS();
+//		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
 		collapseGraph = new SimpleCollapseGraphGenerator();
 	}
