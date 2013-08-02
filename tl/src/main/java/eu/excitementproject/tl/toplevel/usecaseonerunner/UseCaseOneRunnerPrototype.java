@@ -35,6 +35,7 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphException;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
@@ -288,6 +289,12 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 					log(fg.toString());
 					if (outputPath != null) {
 						fg.toDOT(outputPath+"/fragment_graph_" + i + ".dot.txt");
+						try {
+							fg.toXML(outputPath+"/fragment_graph_" + i + ".xml");
+						} catch (FragmentGraphException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						i++;
 					}
 				} else {
