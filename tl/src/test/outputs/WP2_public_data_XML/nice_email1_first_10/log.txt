@@ -1,1 +1,275 @@
-./src/test/outputs/WP2_public_data_XML/nice_email1_first_10: java.util.GregorianCalendar[time=1371976737665,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Asia/Jerusalem",offset=7200000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Asia/Jerusalem,offset=7200000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=23,startDayOfWeek=6,startTime=7200000,startTimeMode=0,endMode=3,endMonth=9,endDay=2,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2013,MONTH=5,WEEK_OF_YEAR=26,WEEK_OF_MONTH=5,DAY_OF_MONTH=23,DAY_OF_YEAR=174,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=4,AM_PM=0,HOUR=11,HOUR_OF_DAY=11,MINUTE=38,SECOND=57,MILLISECOND=665,ZONE_OFFSET=7200000,DST_OFFSET=3600000]
+./src/test/outputs/WP2_public_data_XML/nice_email1_first_10: java.util.GregorianCalendar[time=1375703419491,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Berlin",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=143,lastRule=java.util.SimpleTimeZone[id=Europe/Berlin,offset=3600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2013,MONTH=7,WEEK_OF_YEAR=32,WEEK_OF_MONTH=2,DAY_OF_MONTH=5,DAY_OF_YEAR=217,DAY_OF_WEEK=2,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=1,HOUR_OF_DAY=13,MINUTE=50,SECOND=19,MILLISECOND=491,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+Adding fragment graphs for text: In Standard Magnum - formerly Leisure First - go back to the type and quality of meals you offered until about a year ago . The new food offering is second rate . We are frequent travellers using Quasigo for around 10 return journeys per annum and used to look forward to a decent breakfast going out and dinner on the return . No longer !
+Adding fragment graphs for text: Fast , friendly and efficient , also very good prices for travel booked in advanced . However , disappointed with food menu on train as we are vegetarian and vegan . Vegetarian options sold out and on vegan meals
+Adding fragment graphs for text: More legroom and shorter , quieter and more targeted announcements .
+Adding fragment graphs for text: The service was so poor on the trip and the food was not delivered properly. Yet they did not give us all the food as the rest of the carriages and they claim it was not enough for all the passengers .
+Adding fragment graphs for text: Tickets are way too expensive
+Adding fragment graphs for text: I am a Carte Blanche member and travel quite a bit - I love how convenient the service is . The trains could use some updating . The food is Standard Magnum is also very bad . However , I like the lounge and the 10 minute check in . Bring back free drinks in Standard Magnum ( with Champagne ) , please ! : )
+Adding fragment graphs for text: Do better offers (more promotions, early bird offers etc), more ticket flexibility, better rewards for frequent travellers . Also: make mobile tickets with QR code available for bookings for more than 1 passenger.
+Adding fragment graphs for text: When booking the seat numbers could show if it 's a 4 table seat or just a 2 seat . I did n't need a table but a little more leg room would have been perfect .
+Adding fragment graphs for text: Make same-day, different times flexible tickets more of an option. There are plenty of seats ...
+Adding fragment graphs for text: Friendly guy for service ..he deserves promotion. Food was a bit average. This time train was running as scheduled , but too often delays. In general better than flying Allover ok to good
+Inspecting the fragmentGraphs:
+	27 graphs to check
+
+Fragment graph: 
+ Interaction id = 106746
+vertex: : )  ( category: null, span: 305 -- 308)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 106746
+vertex: The food is Standard Magnum is also very bad .  ( category: null, span: 129 -- 175)  ( level = 2)
+	--entails-->   vertex: The food is Standard Magnum is also      bad .  ( category: null, span: 129 -- 175) 
+	--entails-->   vertex: The food is Standard Magnum is      very bad .  ( category: null, span: 129 -- 175) 
+vertex: The food is Standard Magnum is also      bad .  ( category: null, span: 129 -- 175)  ( level = 1)
+	--entails-->   vertex: The food is Standard Magnum is           bad .  ( category: null, span: 129 -- 175) 
+vertex: The food is Standard Magnum is           bad .  ( category: null, span: 129 -- 175)  ( level = 0)
+vertex: The food is Standard Magnum is      very bad .  ( category: null, span: 129 -- 175)  ( level = 1)
+	--entails-->   vertex: The food is Standard Magnum is           bad .  ( category: null, span: 129 -- 175) 
+
+
+Fragment graph: 
+ Interaction id = 107379
+vertex: More legroom and shorter , quieter and more targeted announcements .  ( category: null, span: 0 -- 68)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 106746
+vertex: However , I like the lounge and the 10 minute check in .  ( category: null, span: 176 -- 232)  ( level = 1)
+	--entails-->   vertex:         , I like the lounge and the 10 minute check in .  ( category: null, span: 176 -- 232) 
+vertex:         , I like the lounge and the 10 minute check in .  ( category: null, span: 176 -- 232)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 109435
+vertex: In general better than flying Allover ok to good  ( category: null, span: 139 -- 187)  ( level = 1)
+	--entails-->   vertex: In general        than flying Allover ok to good  ( category: null, span: 139 -- 187) 
+vertex: In general        than flying Allover ok to good  ( category: null, span: 139 -- 187)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 109435
+vertex: Food was a bit average.  ( category: null, span: 50 -- 73)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 105536
+vertex: Yet they did not give us all the food as the rest of the carriages and they claim it was not enough for all the passengers .  ( category: null, span: 77 -- 201)  ( level = 2)
+	--entails-->   vertex: Yet they did not give us all the food as the rest of the carriages and they claim it was     enough for all the passengers .  ( category: null, span: 77 -- 201) 
+	--entails-->   vertex: Yet they did     give us all the food as the rest of the carriages and they claim it was not enough for all the passengers .  ( category: null, span: 77 -- 201) 
+vertex: Yet they did not give us all the food as the rest of the carriages and they claim it was     enough for all the passengers .  ( category: null, span: 77 -- 201)  ( level = 1)
+	--entails-->   vertex: Yet they did     give us all the food as the rest of the carriages and they claim it was     enough for all the passengers .  ( category: null, span: 77 -- 201) 
+vertex: Yet they did     give us all the food as the rest of the carriages and they claim it was     enough for all the passengers .  ( category: null, span: 77 -- 201)  ( level = 0)
+vertex: Yet they did     give us all the food as the rest of the carriages and they claim it was not enough for all the passengers .  ( category: null, span: 77 -- 201)  ( level = 1)
+	--entails-->   vertex: Yet they did     give us all the food as the rest of the carriages and they claim it was     enough for all the passengers .  ( category: null, span: 77 -- 201) 
+
+
+Fragment graph: 
+ Interaction id = 10
+vertex: Also: make mobile tickets with QR code available for bookings for more than 1 passenger.  ( category: null, span: 125 -- 213)  ( level = 1)
+	--entails-->   vertex:     : make mobile tickets with QR code available for bookings for more than 1 passenger.  ( category: null, span: 125 -- 213) 
+vertex:     : make mobile tickets with QR code available for bookings for more than 1 passenger.  ( category: null, span: 125 -- 213)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 1
+vertex: There are plenty of seats ...  ( category: null, span: 67 -- 96)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 103691
+vertex: No longer !  ( category: null, span: 328 -- 339)  ( level = 2)
+	--entails-->   vertex: No        !  ( category: null, span: 328 -- 339) 
+	--entails-->   vertex:    longer !  ( category: null, span: 328 -- 339) 
+vertex: No        !  ( category: null, span: 328 -- 339)  ( level = 1)
+	--entails-->   vertex:           !  ( category: null, span: 328 -- 339) 
+vertex:           !  ( category: null, span: 328 -- 339)  ( level = 0)
+vertex:    longer !  ( category: null, span: 328 -- 339)  ( level = 1)
+	--entails-->   vertex:           !  ( category: null, span: 328 -- 339) 
+
+
+Fragment graph: 
+ Interaction id = 103691
+vertex: In Standard Magnum - formerly Leisure First - go back to the type and quality of meals you offered until about a year ago .  ( category: null, span: 0 -- 123)  ( level = 3)
+	--entails-->   vertex: In Standard Magnum - formerly Leisure First - go back to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123) 
+	--entails-->   vertex: In Standard Magnum - formerly Leisure First - go      to the type and quality of meals you offered until about a year ago .  ( category: null, span: 0 -- 123) 
+	--entails-->   vertex: In Standard Magnum -          Leisure First - go back to the type and quality of meals you offered until about a year ago .  ( category: null, span: 0 -- 123) 
+vertex: In Standard Magnum - formerly Leisure First - go back to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123)  ( level = 2)
+	--entails-->   vertex: In Standard Magnum - formerly Leisure First - go      to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123) 
+	--entails-->   vertex: In Standard Magnum -          Leisure First - go back to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123) 
+vertex: In Standard Magnum - formerly Leisure First - go      to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123)  ( level = 1)
+	--entails-->   vertex: In Standard Magnum -          Leisure First - go      to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123) 
+vertex: In Standard Magnum -          Leisure First - go      to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123)  ( level = 0)
+vertex: In Standard Magnum -          Leisure First - go back to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123)  ( level = 1)
+	--entails-->   vertex: In Standard Magnum -          Leisure First - go      to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123) 
+vertex: In Standard Magnum - formerly Leisure First - go      to the type and quality of meals you offered until about a year ago .  ( category: null, span: 0 -- 123)  ( level = 2)
+	--entails-->   vertex: In Standard Magnum - formerly Leisure First - go      to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123) 
+	--entails-->   vertex: In Standard Magnum -          Leisure First - go      to the type and quality of meals you offered until about a year ago .  ( category: null, span: 0 -- 123) 
+vertex: In Standard Magnum -          Leisure First - go      to the type and quality of meals you offered until about a year ago .  ( category: null, span: 0 -- 123)  ( level = 1)
+	--entails-->   vertex: In Standard Magnum -          Leisure First - go      to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123) 
+vertex: In Standard Magnum -          Leisure First - go back to the type and quality of meals you offered until about a year ago .  ( category: null, span: 0 -- 123)  ( level = 2)
+	--entails-->   vertex: In Standard Magnum -          Leisure First - go back to the type and quality of meals you offered until about a year     .  ( category: null, span: 0 -- 123) 
+	--entails-->   vertex: In Standard Magnum -          Leisure First - go      to the type and quality of meals you offered until about a year ago .  ( category: null, span: 0 -- 123) 
+
+
+Fragment graph: 
+ Interaction id = 108849
+vertex: Fast , friendly and efficient , also very good prices for travel booked in advanced .  ( category: null, span: 0 -- 85)  ( level = 3)
+	--entails-->   vertex: Fast , friendly and efficient ,      very good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+	--entails-->   vertex: Fast , friendly and efficient , also      good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+	--entails-->   vertex:      , friendly and efficient , also very good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+vertex: Fast , friendly and efficient ,      very good prices for travel booked in advanced .  ( category: null, span: 0 -- 85)  ( level = 2)
+	--entails-->   vertex: Fast , friendly and efficient ,           good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+	--entails-->   vertex:      , friendly and efficient ,      very good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+vertex: Fast , friendly and efficient ,           good prices for travel booked in advanced .  ( category: null, span: 0 -- 85)  ( level = 1)
+	--entails-->   vertex:      , friendly and efficient ,           good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+vertex:      , friendly and efficient ,           good prices for travel booked in advanced .  ( category: null, span: 0 -- 85)  ( level = 0)
+vertex:      , friendly and efficient ,      very good prices for travel booked in advanced .  ( category: null, span: 0 -- 85)  ( level = 1)
+	--entails-->   vertex:      , friendly and efficient ,           good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+vertex: Fast , friendly and efficient , also      good prices for travel booked in advanced .  ( category: null, span: 0 -- 85)  ( level = 2)
+	--entails-->   vertex: Fast , friendly and efficient ,           good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+	--entails-->   vertex:      , friendly and efficient , also      good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+vertex:      , friendly and efficient , also      good prices for travel booked in advanced .  ( category: null, span: 0 -- 85)  ( level = 1)
+	--entails-->   vertex:      , friendly and efficient ,           good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+vertex:      , friendly and efficient , also very good prices for travel booked in advanced .  ( category: null, span: 0 -- 85)  ( level = 2)
+	--entails-->   vertex:      , friendly and efficient ,      very good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+	--entails-->   vertex:      , friendly and efficient , also      good prices for travel booked in advanced .  ( category: null, span: 0 -- 85) 
+
+
+Fragment graph: 
+ Interaction id = 1
+vertex: Make same-day, different times flexible tickets more of an option.  ( category: null, span: 0 -- 66)  ( level = 1)
+	--entails-->   vertex: Make same-day, different times flexible tickets      of an option.  ( category: null, span: 0 -- 66) 
+vertex: Make same-day, different times flexible tickets      of an option.  ( category: null, span: 0 -- 66)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 103691
+vertex: The new food offering is second rate .  ( category: null, span: 124 -- 162)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 103691
+vertex: We are frequent travellers using Quasigo for around 10 return journeys per annum and used to look forward to a decent breakfast going out and dinner on the return .  ( category: null, span: 163 -- 327)  ( level = 2)
+	--entails-->   vertex: We are frequent travellers using Quasigo for around 10 return journeys per annum and used to look         to a decent breakfast going out and dinner on the return .  ( category: null, span: 163 -- 327) 
+	--entails-->   vertex: We are frequent travellers using Quasigo for        10 return journeys per annum and used to look forward to a decent breakfast going out and dinner on the return .  ( category: null, span: 163 -- 327) 
+vertex: We are frequent travellers using Quasigo for around 10 return journeys per annum and used to look         to a decent breakfast going out and dinner on the return .  ( category: null, span: 163 -- 327)  ( level = 1)
+	--entails-->   vertex: We are frequent travellers using Quasigo for        10 return journeys per annum and used to look         to a decent breakfast going out and dinner on the return .  ( category: null, span: 163 -- 327) 
+vertex: We are frequent travellers using Quasigo for        10 return journeys per annum and used to look         to a decent breakfast going out and dinner on the return .  ( category: null, span: 163 -- 327)  ( level = 0)
+vertex: We are frequent travellers using Quasigo for        10 return journeys per annum and used to look forward to a decent breakfast going out and dinner on the return .  ( category: null, span: 163 -- 327)  ( level = 1)
+	--entails-->   vertex: We are frequent travellers using Quasigo for        10 return journeys per annum and used to look         to a decent breakfast going out and dinner on the return .  ( category: null, span: 163 -- 327) 
+
+
+Fragment graph: 
+ Interaction id = 100771
+vertex: I did n't need a table but a little more leg room would have been perfect .  ( category: null, span: 84 -- 159)  ( level = 2)
+	--entails-->   vertex: I did     need a table but a little more leg room would have been perfect .  ( category: null, span: 84 -- 159) 
+	--entails-->   vertex: I did n't need a table but a        more leg room would have been perfect .  ( category: null, span: 84 -- 159) 
+vertex: I did     need a table but a little more leg room would have been perfect .  ( category: null, span: 84 -- 159)  ( level = 1)
+	--entails-->   vertex: I did     need a table but a        more leg room would have been perfect .  ( category: null, span: 84 -- 159) 
+vertex: I did     need a table but a        more leg room would have been perfect .  ( category: null, span: 84 -- 159)  ( level = 0)
+vertex: I did n't need a table but a        more leg room would have been perfect .  ( category: null, span: 84 -- 159)  ( level = 1)
+	--entails-->   vertex: I did     need a table but a        more leg room would have been perfect .  ( category: null, span: 84 -- 159) 
+
+
+Fragment graph: 
+ Interaction id = 108849
+vertex: Vegetarian options sold out and on vegan meals  ( category: null, span: 166 -- 212)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 100771
+vertex: When booking the seat numbers could show if it 's a 4 table seat or just a 2 seat .  ( category: null, span: 0 -- 83)  ( level = 2)
+	--entails-->   vertex: When booking the seat numbers could show if it 's a 4 table seat or      a 2 seat .  ( category: null, span: 0 -- 83) 
+	--entails-->   vertex:      booking the seat numbers could show if it 's a 4 table seat or just a 2 seat .  ( category: null, span: 0 -- 83) 
+vertex: When booking the seat numbers could show if it 's a 4 table seat or      a 2 seat .  ( category: null, span: 0 -- 83)  ( level = 1)
+	--entails-->   vertex:      booking the seat numbers could show if it 's a 4 table seat or      a 2 seat .  ( category: null, span: 0 -- 83) 
+vertex:      booking the seat numbers could show if it 's a 4 table seat or      a 2 seat .  ( category: null, span: 0 -- 83)  ( level = 0)
+vertex:      booking the seat numbers could show if it 's a 4 table seat or just a 2 seat .  ( category: null, span: 0 -- 83)  ( level = 1)
+	--entails-->   vertex:      booking the seat numbers could show if it 's a 4 table seat or      a 2 seat .  ( category: null, span: 0 -- 83) 
+
+
+Fragment graph: 
+ Interaction id = 108849
+vertex: However , disappointed with food menu on train as we are vegetarian and vegan .  ( category: null, span: 86 -- 165)  ( level = 1)
+	--entails-->   vertex:         , disappointed with food menu on train as we are vegetarian and vegan .  ( category: null, span: 86 -- 165) 
+vertex:         , disappointed with food menu on train as we are vegetarian and vegan .  ( category: null, span: 86 -- 165)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 109435
+vertex: This time train was running as scheduled , but too often delays.  ( category: null, span: 74 -- 138)  ( level = 2)
+	--entails-->   vertex: This time train was running as scheduled , but too       delays.  ( category: null, span: 74 -- 138) 
+	--entails-->   vertex: This time train was running as scheduled , but     often delays.  ( category: null, span: 74 -- 138) 
+vertex: This time train was running as scheduled , but too       delays.  ( category: null, span: 74 -- 138)  ( level = 1)
+	--entails-->   vertex: This time train was running as scheduled , but           delays.  ( category: null, span: 74 -- 138) 
+vertex: This time train was running as scheduled , but           delays.  ( category: null, span: 74 -- 138)  ( level = 0)
+vertex: This time train was running as scheduled , but     often delays.  ( category: null, span: 74 -- 138)  ( level = 1)
+	--entails-->   vertex: This time train was running as scheduled , but           delays.  ( category: null, span: 74 -- 138) 
+
+
+Fragment graph: 
+ Interaction id = 0
+vertex: Tickets are way too expensive  ( category: null, span: 0 -- 29)  ( level = 2)
+	--entails-->   vertex: Tickets are way     expensive  ( category: null, span: 0 -- 29) 
+	--entails-->   vertex: Tickets are     too expensive  ( category: null, span: 0 -- 29) 
+vertex: Tickets are way     expensive  ( category: null, span: 0 -- 29)  ( level = 1)
+	--entails-->   vertex: Tickets are         expensive  ( category: null, span: 0 -- 29) 
+vertex: Tickets are         expensive  ( category: null, span: 0 -- 29)  ( level = 0)
+vertex: Tickets are     too expensive  ( category: null, span: 0 -- 29)  ( level = 1)
+	--entails-->   vertex: Tickets are         expensive  ( category: null, span: 0 -- 29) 
+
+
+Fragment graph: 
+ Interaction id = 109435
+vertex: Friendly guy for service ..he deserves promotion.  ( category: null, span: 0 -- 49)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 106746
+vertex: Bring back free drinks in Standard Magnum ( with Champagne ) , please !  ( category: null, span: 233 -- 304)  ( level = 1)
+	--entails-->   vertex: Bring      free drinks in Standard Magnum ( with Champagne ) , please !  ( category: null, span: 233 -- 304) 
+vertex: Bring      free drinks in Standard Magnum ( with Champagne ) , please !  ( category: null, span: 233 -- 304)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 105536
+vertex: The service was so poor on the trip and the food was not delivered properly.  ( category: null, span: 0 -- 76)  ( level = 3)
+	--entails-->   vertex: The service was    poor on the trip and the food was not delivered properly.  ( category: null, span: 0 -- 76) 
+	--entails-->   vertex: The service was so poor on the trip and the food was not delivered         .  ( category: null, span: 0 -- 76) 
+	--entails-->   vertex: The service was so poor on the trip and the food was     delivered properly.  ( category: null, span: 0 -- 76) 
+vertex: The service was    poor on the trip and the food was not delivered properly.  ( category: null, span: 0 -- 76)  ( level = 2)
+	--entails-->   vertex: The service was    poor on the trip and the food was not delivered         .  ( category: null, span: 0 -- 76) 
+	--entails-->   vertex: The service was    poor on the trip and the food was     delivered properly.  ( category: null, span: 0 -- 76) 
+vertex: The service was    poor on the trip and the food was not delivered         .  ( category: null, span: 0 -- 76)  ( level = 1)
+	--entails-->   vertex: The service was    poor on the trip and the food was     delivered         .  ( category: null, span: 0 -- 76) 
+vertex: The service was    poor on the trip and the food was     delivered         .  ( category: null, span: 0 -- 76)  ( level = 0)
+vertex: The service was    poor on the trip and the food was     delivered properly.  ( category: null, span: 0 -- 76)  ( level = 1)
+	--entails-->   vertex: The service was    poor on the trip and the food was     delivered         .  ( category: null, span: 0 -- 76) 
+vertex: The service was so poor on the trip and the food was not delivered         .  ( category: null, span: 0 -- 76)  ( level = 2)
+	--entails-->   vertex: The service was    poor on the trip and the food was not delivered         .  ( category: null, span: 0 -- 76) 
+	--entails-->   vertex: The service was so poor on the trip and the food was     delivered         .  ( category: null, span: 0 -- 76) 
+vertex: The service was so poor on the trip and the food was     delivered         .  ( category: null, span: 0 -- 76)  ( level = 1)
+	--entails-->   vertex: The service was    poor on the trip and the food was     delivered         .  ( category: null, span: 0 -- 76) 
+vertex: The service was so poor on the trip and the food was     delivered properly.  ( category: null, span: 0 -- 76)  ( level = 2)
+	--entails-->   vertex: The service was    poor on the trip and the food was     delivered properly.  ( category: null, span: 0 -- 76) 
+	--entails-->   vertex: The service was so poor on the trip and the food was     delivered         .  ( category: null, span: 0 -- 76) 
+
+
+Fragment graph: 
+ Interaction id = 106746
+vertex: I am a Carte Blanche member and travel quite a bit - I love how convenient the service is .  ( category: null, span: 0 -- 91)  ( level = 1)
+	--entails-->   vertex: I am a Carte Blanche member and travel quite a bit - I love     convenient the service is .  ( category: null, span: 0 -- 91) 
+vertex: I am a Carte Blanche member and travel quite a bit - I love     convenient the service is .  ( category: null, span: 0 -- 91)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 10
+vertex: Do better offers (more promotions, early bird offers etc), more ticket flexibility, better rewards for frequent travellers .  ( category: null, span: 0 -- 124)  ( level = 0)
+
+
+Fragment graph: 
+ Interaction id = 106746
+vertex: The trains could use some updating .  ( category: null, span: 92 -- 128)  ( level = 0)
+

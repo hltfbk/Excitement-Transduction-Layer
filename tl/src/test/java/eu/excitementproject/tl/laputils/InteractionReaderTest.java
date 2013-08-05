@@ -184,7 +184,7 @@ public class InteractionReaderTest {
 		try {
 			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
 			testlogger.info("The test file `" + f.getPath() + "'has " + iList.size() + " interactions in it."); 
-			assertEquals(iList.size(), 1); 
+			assertEquals(iList.size(), 3); 
 
 			// check first interaction. 
 			Interaction one = iList.get(0); 

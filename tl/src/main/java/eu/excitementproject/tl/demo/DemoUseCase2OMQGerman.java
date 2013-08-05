@@ -88,16 +88,32 @@ public class DemoUseCase2OMQGerman {
 			eda = new MaxEntClassificationEDA();	
 			eda.initialize(config);
 			
-			// initialize use case one runner
-			use1 = new UseCaseOneRunnerPrototype(lap, eda, "./src/test/outputs/");
+			// prepare the output folder
+			String outputFolder = "./src/test/outputs/"+files[0].replace(".xml", "").replace("./src/test/resources/","");
+			File theDir = new File(outputFolder);
+  		    // if the directory does not exist, create it
+		    if (!theDir.exists())
+		    {
+		      System.out.println("creating directory: " + outputFolder);
+		      boolean result = theDir.mkdir();  
+		      if(result){    
+		         System.out.println("DIR created");  
+		     }
+		      else {
+		    	  System.err.println("Could not create the output directory. No output files will be created."); 
+		    	  outputFolder=null;
+		      }
+		   }
+		  
+		    // initialize use case one runner
+		    use1 = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
 			
 			// build raw graph
-			
 			for (Interaction doc : docs) System.out.println("doc_cat:" + doc.getCategory());
-			
 			graph = use1.buildRawGraph(docs);
 			graph.toDOT("./src/test/outputs/graph_"+ fileName + ".txt");
-
+			
+			//inspect graph
 			use1.inspectGraph(graph);
 		
 			/** Step 2: Annotating an incoming email based on the entailment graph */
