@@ -71,7 +71,7 @@ public class DemoUseCase2OMQGerman {
 		
 		//Read in files
 		String fileName = "OMQ_dummy_data_small.xml";
-		String[] files = {"./src/test/resources/WP2_public_data_XML/" + fileName,};
+		String[] files = {"src/test/resources/WP2_public_data_XML/" + fileName,};
 		File f;
 		Set<Interaction> docs = new HashSet<Interaction>();
 
@@ -89,7 +89,7 @@ public class DemoUseCase2OMQGerman {
 			eda.initialize(config);
 			
 			// prepare the output folder
-			String outputFolder = "./src/test/outputs/"+files[0].replace(".xml", "").replace("./src/test/resources/","");
+			String outputFolder = "src/test/outputs/"+files[0].replace(".xml", "").replace("./src/test/resources/","");
 			File theDir = new File(outputFolder);
   		    // if the directory does not exist, create it
 		    if (!theDir.exists())
