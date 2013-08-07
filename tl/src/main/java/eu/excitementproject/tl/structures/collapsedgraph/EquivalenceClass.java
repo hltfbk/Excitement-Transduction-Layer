@@ -1,6 +1,7 @@
 package  eu.excitementproject.tl.structures.collapsedgraph;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
@@ -23,6 +24,8 @@ public class EquivalenceClass {
 	final String label;
 	
 	Set<EntailmentUnit> entailmentUnits = null;
+	
+	Map<Long,Double> categoryConfidences = null;
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
