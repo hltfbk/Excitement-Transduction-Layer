@@ -97,6 +97,13 @@ public class EquivalenceClass {
 		return entailmentUnits;
 	}
 	
+	/**
+	 * @return the categoryConfidences
+	 */
+	public Map<Long,Double> getCategoryConfidences() {
+		return categoryConfidences;
+	}
+
 	/** The  method  returns the ids of interactions that contain entailment units covered by the equivalence class
 	 * @return the set of interaction ids
 	 */
