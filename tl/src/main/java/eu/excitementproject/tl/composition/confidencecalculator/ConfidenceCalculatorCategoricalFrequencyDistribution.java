@@ -29,10 +29,10 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 	public void computeCategoryConfidences(EntailmentGraphCollapsed graph)
 			throws ConfidenceCalculatorException {
 
-		Set<EquivalenceClass> nodes = graph.vertexSet();		
-		int sumMentions = 0;
+		Set<EquivalenceClass> nodes = graph.vertexSet();	
 		
 		for (EquivalenceClass node : nodes) { //for each node in the graph
+			int sumMentions = 0;
 			//map collecting the different categories and how often their occur on this node
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode 
 				= new HashMap<String, Integer>();
@@ -53,16 +53,12 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			//compute combined category confidences for this node
 			Map<String,Double> categoryConfidences = new HashMap<String,Double>();
 			for (String category : categoryFrequencyDistributionOnNode.keySet()) {	
-				double score 
-					= (double) categoryFrequencyDistributionOnNode.get(category) 
-					/ (double) sumMentions;
+				double categoryFrequency = categoryFrequencyDistributionOnNode.get(category);
+				double score = (double) categoryFrequency / (double) sumMentions;
 				categoryConfidences.put(category, score);
 			}
 			//add confidence scores to node
 			node.setCategoryConfidences(categoryConfidences);
 		}
 	}
-	
-	
-
 }
