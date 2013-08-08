@@ -17,6 +17,29 @@ import eu.excitementproject.tl.structures.Interaction;
 
 public class InteractionReaderTest {
 	
+	@Test
+	public void test_aligner() {
+		
+		CASUtils.Region[] r1 = InteractionReader.alignBtoA("Although this is a terrible idea,  it would work", "this is a idea"); 
+		assertTrue(r1 != null); 
+			
+		CASUtils.Region[] r2 = InteractionReader.alignBtoA("I could have used some more legroom", "more  legroom"); 
+		assertTrue(r2 != null); 
+			
+		CASUtils.Region[] r3 = InteractionReader.alignBtoA("V good exp at security with pushchair - baby allowed to sleep , etc . Would welcome extra luggage space and/or priority boarding for pushchairs .", "Would welcome priority boarding for pushchairs");
+		assertTrue(r3 != null); 
+		assertTrue(r3[0].getBegin() > 10); 
+		
+		CASUtils.Region[] r4 = InteractionReader.alignBtoA("That was a great idea for us", "That is a idea"); 
+		assertTrue(r4 == null); 
+		
+		// Known problem: 
+		// This is not trivial problem. (from Right side would be better?) 
+		// Full text "Telefonica blah blah [something not relevant], ... Telefonica is here but others are also really good". 
+		// Fragment "Telefonica is here but others are good". 
+		// (maps     ^1st Telefonica, ^last Okay. ) 
+				
+	}
 	@Test 
 	public void test_reader2() {
 		

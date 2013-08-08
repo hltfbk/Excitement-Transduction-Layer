@@ -22,6 +22,7 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 //import eu.excitementproject.tl.laputils.CASUtils.Region;
+//import eu.excitementproject.tl.laputils.CASUtils.Region;
 import eu.excitementproject.tl.structures.Interaction;
 
 /**
@@ -106,7 +107,7 @@ public final class InteractionReader {
 			
 			// get metadata (for now, only cateogry, if exist) 
 			
-			// TODO: check we will use metadata like the followings: 
+			// TODO (low priority) check we will use metadata like the followings, or not.  
 			// businessScenario (e.g. train, coffeehouse, etc) , 
 			// dataSource (company name, prolly confidential), 
 			// date (meaningless in our setup? - all 0001-01-01 in the data) 
@@ -143,6 +144,13 @@ public final class InteractionReader {
 	 *  <P> The resulting CAS is ready to be fed to the FragmentGraph generator.  
 	 *  
 	 *  <P> <B> Warning: WP2 graph dump does not have language ID. So this method does not and cannot fill languageID of the CAS. Thus the caller need to set the language ID of the CAS, by calling aJCas.setDocumentLanguage()
+	 *  
+	 *  <P> Known problem:
+	 *  Non-continuous fragment must be mapped from raw texts. (no mapping info given in the file). This is not trivial problem. 
+	 *  It works okay in current implementation, but some times it fails. For example: 
+	 *  <P><I> Full text: "XXCompany something not relevant, ... XXCompany is here but not really good".</I></P>
+	 *  <P><I> Fragment written as: "XXCompany is not really good".
+	 *  <P> Current implementation will map XXCompany to the first occurence. No easy solution to really resolve this; something like full aligner would be needed. but for now, this would be an overkill. Leaving as it is. 
 	 *  
 	 * @param interactionRawText A raw text file that holds the interaction string. 
 	 * @param graphsInXML The graphs dump, as defined in WP2 public data (the XML holds one <F_entailment_graph>) 
@@ -234,26 +242,44 @@ public final class InteractionReader {
 		
 		
 		// Match original text, and set it as fragment 
-		// Match modifier, set it as modifiers 
+		int frag_start; 
+		int frag_end; 
+		CASUtils.Region[] r = null; 
+		
+		// If this is not a simple "one-region" fragment ... 
 		if (!interactionString.contains(original_text))
 		{
-			// The interaction raw text does not have this fragment 
-			// original text. Something is a missing (e.g. wrong XML, or wrong raw interaction) 
-
-			testlogger.info("Integrity fail: throwing an exception. The interaction raw text does not contain fragment text.");
-			testlogger.info("Content of the fragment <original_text>:");
-			testlogger.info(original_text); 			
-			testlogger.info("Content of the interaction raw file:");
-			testlogger.info(interactionString); 			
-			throw new DataIntegrityFail("The interaction raw text does not contain fragment original text -- can be caused by non-continous fragment. Currently the reader does not non-continuous fragments yet."); 
+			// The interaction raw text does not have this fragment as it is. 
+			// It can be a non continuous fragment. Let's try to align it. 
+			r = alignBtoA(interactionString, original_text); // this method will return a list  
 			
-			// TODO [#A] Code for non-continuous fragment matching :-( Non-trivial. 
-			
+			if (r == null) // means, no such align was possible 
+			{
+				// if this mapping was not possible. 
+				testlogger.info("Integrity fail: throwing an exception. The interaction raw text does not contain fragment text.");
+				testlogger.info("Content of the fragment <original_text>:");
+				testlogger.info(original_text); 			
+				testlogger.info("Content of the interaction raw file:");
+				testlogger.info(interactionString); 			
+				throw new DataIntegrityFail("The interaction raw text does not contain fragment original text -- this can be caused by wrong tokenization (different tokenization on raw text and original text, etc), or changes in marking original_text."); 
+			}
+			else
+			{
+				// put frag_start, frag_end, from first r[0] and last r[size-1]. 
+				frag_start = r[0].getBegin();  
+				frag_end = r[r.length-1].getEnd(); 
+				// r is already ready. 
+			}
 		}
-		// it contains, so the following will always be meaningful. 
-		int frag_start = interactionString.indexOf(original_text); 
-		int frag_end = frag_start + original_text.length(); 
-
+		else // simple one region fragment 
+		{
+			// it contains, so the following will always be meaningful. 
+			frag_start = interactionString.indexOf(original_text); 
+			frag_end = frag_start + original_text.length(); 
+			
+			r = new CASUtils.Region[1]; 
+			r[0] = new CASUtils.Region(frag_start, frag_end);
+		}
 		// Okay, let's annotate the fragment 
 		
 		// prepare CAS
@@ -285,14 +311,23 @@ public final class InteractionReader {
 			testlogger.debug("The same interaction text already in the CAS. Only adding annotations."); 			
 		}
 
-		// annotate Fragment 
-		CASUtils.Region[] r = new CASUtils.Region[1]; 
-		r[0] = new CASUtils.Region(frag_start, frag_end);
 
-		// annotate the modifier 			
+		// now annotate via CASUtils.annotateOneDeterminedFragment 
 		testlogger.debug("Annotating fragment:"); 
 		testlogger.debug("Text: " + original_text + ", begin: " + frag_start + ", end: " + frag_end ); 			
-
+		if (r.length > 1)
+		{
+			testlogger.debug("(This has a non-continuous fragment)"); 
+			String s = "[ "; 
+			for(CASUtils.Region x: r)
+			{
+				int b = x.getBegin(); 
+				int e = x.getEnd(); 
+				s = s + "(" + b + " - " + e + "), "; 
+			}
+			s += " ]"; 
+			testlogger.debug(s); 
+		}
 		try {
 			CASUtils.annotateOneDeterminedFragment(aJCas,  r); 
 		}
@@ -326,7 +361,7 @@ public final class InteractionReader {
 					throw new DataIntegrityFail("Something is wrong. The fragment text does not contain modifier text."); 			
 				}
 				// match and convert the location to "Interaction" level index. 
-				// TODO : note that if the fragment holds two same modifiers, this can lead to wrong match. 
+				// TODO : (Known problem) note that if the fragment holds two same modifiers, this can lead to wrong match. 
 				// one solution would be using poz value... but that has its own problem. So for now, going this way. 
 			
 				int temp_begin = original_text.indexOf(mod); 
@@ -355,5 +390,81 @@ public final class InteractionReader {
 		}
 		
 	}
-	
+
+	/**
+	 * A utility method. Gets two string A and B, maps tokens (WS separated from string) of B to A; report mapping of each B tokens as the locations of A.  
+	 * Mainly used for non-continuous fragment mapping 
+	 * 
+	 * Return null, if B cannot be fully mapped to A. 
+	 * Return non-null, List<CASUtils.Region>, if one such mapping is found. 
+	 * 
+	 * Simple, Left first matching via WS-separation of two string. 
+	 * @param A the longer string. (
+	 * @param B the shorter string, which will be mapped to A. 
+	 * @return
+	 */
+	public static CASUtils.Region[] alignBtoA(String a, String b) {
+		
+		// split 
+		String[] a_tokens = a.split("\\s+"); 
+		String[] b_tokens = b.split("\\s+"); 
+		
+		// stores region of each token of A, on A string 
+		CASUtils.Region[] a_tokens_regions = new CASUtils.Region[a_tokens.length]; 
+		
+		// result will be stored here 
+		CASUtils.Region[] result = new CASUtils.Region[b_tokens.length];  
+
+		// init a_tokens_regions (per each token, same index i)  
+		int last_end_position = 0; 
+		for(int i=0; i < a_tokens.length; i++)
+		{
+			int begin = a.indexOf(a_tokens[i], last_end_position); 
+			int end = begin + a_tokens[i].length(); 
+			a_tokens_regions[i] = new CASUtils.Region(begin, end); 
+			last_end_position = end; 
+		}
+
+		
+		// now iterate over a tokens, and match b. 
+		int point_on_b= 0; 
+		boolean all_matched = false; 
+		for(int i=0; i < a_tokens.length; i++)
+		{
+			// slide over a tokens, while b pointer stays there 
+			// unless there is a match. (b pointer only proceed if there is a match) 
+			String token_a = a_tokens[i]; 
+			String token_b = b_tokens[point_on_b]; 
+			
+			// some preprocessing to make sure ',' or '.' doesn't hinder match.  
+			token_a = token_a.replaceAll("\\W", ""); 
+			token_b = token_b.replaceAll("\\W", ""); 
+			
+			//if ( a_tokens[i].equals(b_tokens[point_on_b]) )
+			if (token_a.equals(token_b))
+			{
+				// match found. push region of a_tokens[i] to result 
+				result[point_on_b] = a_tokens_regions[i]; 
+				// update b pointer 
+				point_on_b ++; 
+				if (point_on_b >= b_tokens.length)
+				{
+					all_matched = true; 
+					break; // ran out of b
+				}
+			}
+			// no match? nothing to do. 
+		}
+		
+		
+		// the method will return null, if such mapping was not possible				
+		if (!all_matched)
+			return null;  
+		else
+		{
+			// sanity check 
+			assert(result[b_tokens.length -1] != null); 
+			return result; 
+		}
+	}	
 }
