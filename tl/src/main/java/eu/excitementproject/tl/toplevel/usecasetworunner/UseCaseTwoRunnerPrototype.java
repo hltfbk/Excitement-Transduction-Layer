@@ -3,6 +3,7 @@ package eu.excitementproject.tl.toplevel.usecasetworunner;
 import java.util.Set;
 
 
+
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.EDABasic;
@@ -23,14 +24,14 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.toplevel.api.UseCaseTwoRunner;
 
 /**
  * The UseCaseTwoRunnerPrototype provides an implementation of the UseCaseTwoRunner interface, 
- * which has one interface method annotateCategories(JCas cas, EntailmentGraphRaw graph). 
+ * which has one interface method annotateCategories(JCas cas, EntailmentGraphCollapsed graph). 
  * In the current implementation, this method annotates categories on the given input CAS based 
  * on an input entailment graph using the following module implementations:
  * 
@@ -55,7 +56,7 @@ public class UseCaseTwoRunnerPrototype implements UseCaseTwoRunner {
 	}
 	
 	@Override
-	public void annotateCategories(JCas cas, EntailmentGraphRaw graph) 
+	public void annotateCategories(JCas cas, EntailmentGraphCollapsed graph) 
 			throws FragmentAnnotatorException, ModifierAnnotatorException, FragmentGraphGeneratorException, LAPException, NodeMatcherException, CategoryAnnotatorException {
 		//add fragment annotation
 		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 

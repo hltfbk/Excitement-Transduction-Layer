@@ -11,11 +11,14 @@ import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
+import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.NodeMatcher;
+import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
@@ -32,8 +35,11 @@ public class CategoryAnnotatorAllCatsTest {
 		
 		try {					
 			/************* TEST 1 ***************/
-			testlogger.info("Reading sample entailment graph."); 			
-			EntailmentGraphRaw entailmentGraph = EntailmentGraphRaw.getSampleOuputWithCategories(false); 	
+			testlogger.info("Reading sample raw entailment graph."); 			
+			EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuputWithCategories(false); 	
+			CollapsedGraphGenerator cgg = new SimpleCollapseGraphGenerator();
+			testlogger.info("Creating collapsed entailment graph from sample graph."); 			
+			EntailmentGraphCollapsed entailmentGraph = cgg.generateCollapsedGraph(rawGraph);
 			testlogger.info("Creating a sample CAS.");
 			JCas cas = CASUtils.createNewInputCas(); 
 			cas.setDocumentText("Hello Mister Grey. I have to say that I'm very Disappointed with the amount of legroom compared with other trains. Best, Sarah White"); 

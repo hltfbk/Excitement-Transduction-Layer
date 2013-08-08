@@ -30,7 +30,7 @@ public class GraphSee extends JFrame {
 //    	equipMe(new FragmentGraphPanel(fg));
     	
     	EntailmentGraphRaw egr = EntailmentGraphRaw.getSampleOuput(true);
-    	equipMe(new RawGraphPanel(egr));    	
+//    	equipMe(new RawGraphPanel(egr));    	
     }
     
     public GraphSee(TLGraphPanel<?,?> tlgp) {

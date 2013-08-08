@@ -4,6 +4,7 @@
 package eu.excitementproject.tl.composition.collapsedgraphgenerator;
 
 import java.util.Set;
+
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;

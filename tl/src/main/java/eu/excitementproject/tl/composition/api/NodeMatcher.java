@@ -3,9 +3,10 @@ package eu.excitementproject.tl.composition.api;
 //import java.util.List;
 import java.util.Set;
 
+
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 
 /**
@@ -29,11 +30,11 @@ public interface NodeMatcher {
 
 	/**
 	 * @param fragmentGraphs - fragment graph ({@link FragmentGraph})
-	 * @param entailmentGraph - one entailment graph (raw) ({@link EntailmentGraphRaw})
+	 * @param entailmentGraph - one entailment graph (collapsed) ({@link EntailmentGraphCollapsed})
 	 * @return set of node matches ({@link NodeMatch})
 	 * @throws NodeMatcherException if node matching fails
 	 */
-	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph, EntailmentGraphRaw entailmentGraph) 
+	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph, EntailmentGraphCollapsed entailmentGraph) 
 			throws NodeMatcherException;
 
 

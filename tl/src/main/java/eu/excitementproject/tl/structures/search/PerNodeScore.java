@@ -1,10 +1,10 @@
 package eu.excitementproject.tl.structures.search;
 
-import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
+import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 
 /**
  * (class) PerNodeScore
- 	- is a tuple (=EntailmentUnit=, =double= score)
+ 	- is a tuple (=EquivalenceClass=, =double= score)
    (e.g. so [(node a, score x), (node b, score y) ...] ) 
 
  * @author Kathrin Eichler
@@ -12,13 +12,13 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  */
 public class PerNodeScore {
 	
-	protected EntailmentUnit node;
+	protected EquivalenceClass node;
 	protected double score;
 	
-	public EntailmentUnit getNode() {
+	public EquivalenceClass getNode() {
 		return node;
 	}
-	public void setNode(EntailmentUnit node) {
+	public void setNode(EquivalenceClass node) {
 		this.node = node;
 	}
 	public double getScore() {
