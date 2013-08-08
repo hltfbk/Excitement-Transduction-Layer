@@ -1,6 +1,7 @@
 package  eu.excitementproject.tl.structures.collapsedgraph;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
@@ -23,6 +24,8 @@ public class EquivalenceClass {
 	final String label;
 	
 	Set<EntailmentUnit> entailmentUnits = null;
+	
+	Map<String,Double> categoryConfidences = null;
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
@@ -94,6 +97,20 @@ public class EquivalenceClass {
 		return entailmentUnits;
 	}
 	
+	/**
+	 * @return the categoryConfidences
+	 */
+	public Map<String,Double> getCategoryConfidences() {
+		return categoryConfidences;
+	}
+
+	/**
+	 * @return the categoryConfidences
+	 */
+	public void setCategoryConfidences(Map<String,Double> categoryConfidences) {
+		this.categoryConfidences = categoryConfidences;
+	}
+
 	/** The  method  returns the ids of interactions that contain entailment units covered by the equivalence class
 	 * @return the set of interaction ids
 	 */

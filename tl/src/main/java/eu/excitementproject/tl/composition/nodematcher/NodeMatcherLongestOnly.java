@@ -4,14 +4,16 @@
 package eu.excitementproject.tl.composition.nodematcher;
 
 import java.util.ArrayList;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
@@ -31,7 +33,7 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	
 	@Override
 	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph,
-			EntailmentGraphRaw entailmentGraph) throws NodeMatcherException {
+			EntailmentGraphCollapsed entailmentGraph) throws NodeMatcherException {
 		
 		//create empty node match set
 		Set<NodeMatch> nodeMatches = new HashSet<NodeMatch>();
@@ -60,15 +62,15 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	 * @return
 	 */
 	private NodeMatch findMatchingNodesForMention(
-			EntailmentUnitMention mentionToBeFound, EntailmentGraphRaw entailmentGraph) {
+			EntailmentUnitMention mentionToBeFound, EntailmentGraphCollapsed entailmentGraph) {
 		//read entailment graph nodes
-		Set<EntailmentUnit> vertexSet = entailmentGraph.vertexSet();
+		Set<EquivalenceClass> vertexSet = entailmentGraph.vertexSet();
 		List<PerNodeScore> scores = new ArrayList<PerNodeScore>();
-		for (EntailmentUnit eu : vertexSet) { //for each node in the entailment graph
-			double score = getNodeScore(mentionToBeFound, eu);	
+		for (EquivalenceClass ec : vertexSet) { //for each node in the entailment graph
+			double score = getNodeScore(mentionToBeFound, ec);	
 			if (score > 0) { //add non-zero scores to list
 				PerNodeScore perNodeScore = new PerNodeScore();
-				perNodeScore.setNode(eu);
+				perNodeScore.setNode(ec);
 				perNodeScore.setScore(score);
 				scores.add(perNodeScore);
 			}
@@ -92,13 +94,16 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	 * @return
 	 */
 	private double getNodeScore(EntailmentUnitMention mentionToBeFound,
-			EntailmentUnit eu) {		
-		Set<EntailmentUnitMention> mentions = eu.getMentions();
-		for (EntailmentUnitMention mention : mentions) { //for each mention associated to this node	
-			String mentionText = mention.getText().replaceAll("\\s+", " ").trim();
-			String mentionToBeFoundText = mentionToBeFound.getText().replaceAll("\\s+", " ").trim();	
-			if (mentionText.equals(mentionToBeFoundText)) { //compare to mention to be found
-				return 1;
+			EquivalenceClass ec) {		
+		Set<EntailmentUnit> eus = ec.getEntailmentUnits();
+		for (EntailmentUnit eu : eus) {
+			Set<EntailmentUnitMention> mentions = eu.getMentions();
+			for (EntailmentUnitMention mention : mentions) { //for each mention associated to this node	
+				String mentionText = mention.getText().replaceAll("\\s+", " ").trim();
+				String mentionToBeFoundText = mentionToBeFound.getText().replaceAll("\\s+", " ").trim();	
+				if (mentionText.equals(mentionToBeFoundText)) { //compare to mention to be found
+					return 1;
+				}
 			}
 		}
 		return 0;
