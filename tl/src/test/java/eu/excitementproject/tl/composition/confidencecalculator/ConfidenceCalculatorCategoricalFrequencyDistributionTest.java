@@ -10,24 +10,14 @@ import junit.framework.Assert;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
-import eu.excitementproject.tl.composition.api.NodeMatcher;
-import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
 import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
-import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
-import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
-import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
-import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
-import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.search.NodeMatch;
 
 public class ConfidenceCalculatorCategoricalFrequencyDistributionTest {
 

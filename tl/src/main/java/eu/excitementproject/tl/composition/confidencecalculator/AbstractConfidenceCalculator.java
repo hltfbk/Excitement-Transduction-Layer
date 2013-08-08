@@ -2,7 +2,6 @@ package eu.excitementproject.tl.composition.confidencecalculator;
 
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 
 /** An implementation of the {@link ConfidenceCalculator} interface
