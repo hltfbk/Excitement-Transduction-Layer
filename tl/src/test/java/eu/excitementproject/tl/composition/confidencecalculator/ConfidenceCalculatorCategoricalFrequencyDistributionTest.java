@@ -1,0 +1,72 @@
+package eu.excitementproject.tl.composition.confidencecalculator;
+
+import static org.junit.Assert.fail;
+
+import java.util.Map;
+import java.util.Set;
+
+import junit.framework.Assert;
+
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.uima.jcas.JCas;
+import org.junit.Test;
+
+import eu.excitementproject.tl.composition.api.CategoryAnnotator;
+import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
+import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
+import eu.excitementproject.tl.composition.api.NodeMatcher;
+import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
+import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
+import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
+import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
+import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
+import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.search.NodeMatch;
+
+public class ConfidenceCalculatorCategoricalFrequencyDistributionTest {
+
+	@Test
+	public void test() {
+		BasicConfigurator.resetConfiguration(); 
+		BasicConfigurator.configure(); 
+		Logger.getRootLogger().setLevel(Level.INFO); 
+		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.composition.confidencecalculator.test"); 
+		
+		try {					
+			/************* TEST 1 ***************/
+			testlogger.info("Reading sample raw entailment graph."); 			
+			EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuputWithCategories(false); 	
+			CollapsedGraphGenerator cgg = new SimpleCollapseGraphGenerator();
+			testlogger.info("Creating collapsed entailment graph from sample graph."); 			
+			EntailmentGraphCollapsed entailmentGraph = cgg.generateCollapsedGraph(rawGraph);
+			testlogger.info("Adding confidence scores to graph.");
+			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
+			cc.computeCategoryConfidences(entailmentGraph);		
+			testlogger.info("Reading nodes from updated graph.");
+			Set<EquivalenceClass> nodes = entailmentGraph.vertexSet();
+			testlogger.info("Reading category confidences per node.");
+			for (EquivalenceClass node : nodes) {
+				Map<String,Double> categoryConfidences = node.getCategoryConfidences();
+				testlogger.info("Category confidences for node \"" + node.getLabel() + "\"");
+				double sum = 0.0;
+				for (String category : categoryConfidences.keySet()) {
+					double score = categoryConfidences.get(category);
+					testlogger.info(category + " : " + score);		
+					sum += score;
+				}
+				Assert.assertEquals(1.0, sum);
+			}			
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+	}
+
+}
