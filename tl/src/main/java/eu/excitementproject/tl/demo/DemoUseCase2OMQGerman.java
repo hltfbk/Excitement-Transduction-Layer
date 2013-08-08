@@ -25,6 +25,8 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
+import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
@@ -36,6 +38,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
@@ -65,7 +68,7 @@ public class DemoUseCase2OMQGerman {
 		EDABasic<?> eda;
 		UseCaseOneRunnerPrototype use1;
 		UseCaseTwoRunnerPrototype use2;
-		EntailmentGraphRaw graph = null;
+		EntailmentGraphCollapsed graph = null;
 
 		/** Step 1: Building an entailment graph from existing data */
 		
@@ -108,9 +111,9 @@ public class DemoUseCase2OMQGerman {
 		    // initialize use case one runner
 		    use1 = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
 			
-			// build raw graph
+			// build collapsed graph
 			for (Interaction doc : docs) System.out.println("doc_cat:" + doc.getCategory());
-			graph = use1.buildRawGraph(docs);
+			graph = use1.buildCollapsedGraph(docs);
 			graph.toDOT("./src/test/outputs/graph_"+ fileName + ".txt");
 			
 			//inspect graph
@@ -134,9 +137,10 @@ public class DemoUseCase2OMQGerman {
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
 				ModifierAnnotatorException | 
-				GraphMergerException | DataReaderException e) {
+				GraphMergerException | CollapsedGraphGeneratorException | DataReaderException | 
+				EntailmentGraphCollapsedException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
 
 }

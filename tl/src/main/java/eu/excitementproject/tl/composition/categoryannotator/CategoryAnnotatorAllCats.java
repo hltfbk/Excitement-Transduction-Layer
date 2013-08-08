@@ -10,41 +10,46 @@ import org.apache.uima.jcas.JCas;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 
 /**
  * The CategoryAnnotator adds category annotation to an input CAS, based on an input set of 
  * NodeMatch-es. This requires the combination of category information in the NodeMatch-es
- * to category confidence scores. 
+ * to final category confidence scores. 
  * 
  * Each NodeMatch in the input set of NodeMatch-es holds exactly one EntailmentUnitMention M
  * (found in the input CAS), which is associated to a list of PerNodeScore-s P. 
- * PerNodeScore-s refer to tuples of an EntailmentUnit E (a node in a raw entailment graph) and
- * a confidence score C denoting the confidence of M matching E. 
  * 
- * In this implementation of the CategoryAnnotator module, category confidence scores are 
- * computed in the following way:
+ * PerNodeScore-s refer to tuples of an EquivalenceClass E (a node in a collapsed entailment 
+ * graph) and a confidence score C denoting the confidence of M matching E. 
  * 
- * For each P, we first collect the category distribution on the node by retrieving the category
- * of each of the m mentions associated to P and storing the sum of occurrences of this category. 
- * Let's refer to the category as c, the sum as sum(c).  
+ * In this implementation of the CategoryAnnotator module, category confidence scores for 
+ * a particular M are computed by going through all the per node scores found for M, 
+ * reading the category confidence scores associated to each node, and multiplying each 
+ * category confidence with the confidence of the match. All combined confidences are summed
+ * up per category and divided by the total number of mentions to compute the final score
+ * for each category.
  * 
- * In a second step, we now compute a score s(c) for each category occurring on the node using
- * the following formula: 
+ * The pseudocode is given in the following:
  * 
- * s(c) = C * sum(c) / m
- * 
- * To compute the final category confidence, all scores for a particular category are summed up 
- * and, in the end, divided by the total number of NodeMatch-es.
- * 
+ * Init sumCAT[]; //the sum of all scores for a particular category 
+ * Init sumMentions; //total # of mentions in the node scores
+ * For each P = <E,C> associated to M: //for each per node score
+ *    For each E[n] in E: //for each matching graph node (= equivalence class) in the node score
+ *    	 For each CAT[n] in E[n]: //for each category in the graph node
+ *    		score = CAT[n].score * C; //multiply category confidence with match confidence
+ *          sumCAT[n] += score; //sum up the scores computed for this category
+ *          sumMentions++; //count total # of mentions
+ * finalScore[n] = sumCAT[n] / sumMentions; //compute final score by dividing sum by # of mentions
+ *  
  * @author Kathrin Eichler
  *
  */
 public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
-
+	
 	@Override
 	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches)
 			throws CategoryAnnotatorException, LAPException {
@@ -55,48 +60,30 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 			int endPosition = mentionInCAS.getEnd();
 			CASUtils.Region region = new CASUtils.Region(startPosition, endPosition);
 			List<PerNodeScore> scores = match.getScores();
-			HashMap<String, Double> categorySum = new HashMap<String, Double>();
-			//map storing a sum of scores for each category, needs to be divided by the total number 
-			//of nodes (sumNodeScores):
-			int sumNodeScores = scores.size();
+			HashMap<String,Double> sumCategoryConfidencesPerCategory = new HashMap<String,Double>();
+			double sumMentions = 0.0;
 			for (PerNodeScore score : scores) { //for each matching EG node for this mention
-				EntailmentUnit eu = score.getNode();
-				double nodeScore = score.getScore(); //score telling us how well this node matches the mentionInCAS
-				//compute category distribution on node: how often does each category occur on this node?
-				HashMap<String, Integer> categoryDistributionOnNode = new HashMap<String, Integer>();
-				//this map collects the different categories and how often their occur on this node
-				int sumMentions = 0;
-				for (EntailmentUnitMention mentionOnNode : eu.getMentions()) { //for each mention associated to the node
-					sumMentions++;
-					String categoryMention = mentionOnNode.getCategoryId();
-					int count = 0;
-					if (categoryDistributionOnNode.containsKey(categoryMention)) {
-						count = categoryDistributionOnNode.get(categoryMention);
+				EquivalenceClass E = score.getNode();
+				double C = score.getScore(); //score telling us how well this node matches the mentionInCAS
+				//category confidences on node
+				Map<String, Double> categoryConfidencesOnNode = E.getCategoryConfidences();
+				for (String category : categoryConfidencesOnNode.keySet()) {	
+					double confidence = categoryConfidencesOnNode.get(category);
+					double sumCategory = 0.0;
+					if (sumCategoryConfidencesPerCategory.containsKey(category)) {
+						sumCategory = sumCategoryConfidencesPerCategory.get(category); //read sum in case we've stored a sum from a previous node
 					}
-					count++;
-					categoryDistributionOnNode.put(categoryMention, count);
-				}
-				//compute and add up scores for each category on this node
-				for (String category : categoryDistributionOnNode.keySet()) {	
-					double sum = 0.0;
-					if (categorySum.containsKey(category)) {
-						sum = categorySum.get(category); //read sum in case we've stored a sum from a previous node
-					}
-					/* Calculation of score: node score * category occurrence / number of mentions
-					 * node score: how well does the node match the mention? 
-					 * category occurrence: how many mentions on the node are associated to this category 
-					 * number of mentions: total number of mentios associated to this node
-					 * 
-					 * All scores are summed up and later divided by the total number of matching nodes.
-					 */
-					sum += nodeScore * categoryDistributionOnNode.get(category) / (double)sumMentions;
-					categorySum.put(category, sum);
+					sumCategory += confidence * C;
+					sumCategoryConfidencesPerCategory.put(category, sumCategory);
+					sumMentions ++;
 				}
 			}
 			Map<String, Double> decisions = new HashMap<String, Double>();
-			for (String category : categorySum.keySet()) {
-				double confidence = categorySum.get(category) / (double) sumNodeScores;
-				decisions.put(category, confidence);
+			for (String category : sumCategoryConfidencesPerCategory.keySet()) {
+				double finalConfidence 
+					= (double) sumCategoryConfidencesPerCategory.get(category) 
+					/ (double) sumMentions;
+				decisions.put(category, finalConfidence);
 			}
 			//add annotation to CAS (per matching mention)
 			CASUtils.annotateCategories(cas, region, mentionInCAS.getText(), decisions);

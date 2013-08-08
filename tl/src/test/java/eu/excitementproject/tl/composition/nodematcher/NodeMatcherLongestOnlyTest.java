@@ -12,11 +12,14 @@ import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
+import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.NodeMatcher;
+import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CASUtils.Region;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
@@ -33,7 +36,10 @@ public class NodeMatcherLongestOnlyTest {
 		
 		try {
 			testlogger.info("Reading in a sample entailment graph."); 
-			EntailmentGraphRaw entailmentGraph = EntailmentGraphRaw.getSampleOuput(false); 
+			EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuput(false); 
+			CollapsedGraphGenerator cgg = new SimpleCollapseGraphGenerator();
+			testlogger.info("Creating collapsed entailment graph from sample graph."); 			
+			EntailmentGraphCollapsed entailmentGraph = cgg.generateCollapsedGraph(rawGraph);
 			
 			/************* TEST 1 ***************/
 			testlogger.info("Creating fragment graph for sentence 'Disappointed with the amount of legroom compared with other trains'."); 			

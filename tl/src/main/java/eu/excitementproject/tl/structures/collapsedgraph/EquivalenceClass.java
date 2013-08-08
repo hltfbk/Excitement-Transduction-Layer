@@ -25,7 +25,7 @@ public class EquivalenceClass {
 	
 	Set<EntailmentUnit> entailmentUnits = null;
 	
-	Map<Long,Double> categoryConfidences = null;
+	Map<String,Double> categoryConfidences = null;
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
@@ -100,8 +100,15 @@ public class EquivalenceClass {
 	/**
 	 * @return the categoryConfidences
 	 */
-	public Map<Long,Double> getCategoryConfidences() {
+	public Map<String,Double> getCategoryConfidences() {
 		return categoryConfidences;
+	}
+
+	/**
+	 * @return the categoryConfidences
+	 */
+	public void setCategoryConfidences(Map<String,Double> categoryConfidences) {
+		this.categoryConfidences = categoryConfidences;
 	}
 
 	/** The  method  returns the ids of interactions that contain entailment units covered by the equivalence class
