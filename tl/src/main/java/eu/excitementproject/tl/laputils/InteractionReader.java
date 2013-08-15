@@ -21,8 +21,6 @@ import org.apache.uima.jcas.JCas;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
-//import eu.excitementproject.tl.laputils.CASUtils.Region;
-//import eu.excitementproject.tl.laputils.CASUtils.Region;
 import eu.excitementproject.tl.structures.Interaction;
 
 /**
@@ -150,7 +148,7 @@ public final class InteractionReader {
 	 *  It works okay in current implementation, but some times it fails. For example: 
 	 *  <P><I> Full text: "XXCompany something not relevant, ... XXCompany is here but not really good".</I></P>
 	 *  <P><I> Fragment written as: "XXCompany is not really good".
-	 *  <P> Current implementation will map XXCompany to the first occurence. No easy solution to really resolve this; something like full aligner would be needed. but for now, this would be an overkill. Leaving as it is. 
+	 *  <P> Current implementation will map XXCompany to the first occurrence. No easy solution to really resolve this; something like full aligner would be needed. but for now, this would be an overkill. Leaving as it is. Non-continuous modifiers also have the same problem. (But much less, since there are only 10 non-cont-mods in the data)
 	 *  
 	 * @param interactionRawText A raw text file that holds the interaction string. 
 	 * @param graphsInXML The graphs dump, as defined in WP2 public data (the XML holds one <F_entailment_graph>) 
@@ -349,34 +347,87 @@ public final class InteractionReader {
 				String[] m = modpoz.split("poz="); 
 				String mod = m[0]; 
 			
+				// modifier match on fragment. 
+				// Note that we need to convert the location to "Interaction" level index. 
+				// TODO : (or not?) (Known problem) note that if the fragment holds two same modifiers, this can lead to wrong match. 
+				// one solution would be using poz value... but that has its own problem. So for now, going this way. 
+				
+				int temp_begin=0;  // begin location on fragment
+				int temp_end=0;    // end location on frag 
+				int mod_begin=0;   // begin on document text 
+				int mod_end=0;     // end on document text 
+
+				CASUtils.Region[] mod_r = null; 
+
 				if (!original_text.contains(mod))
 				{
-					// original text does not have modifier string. Something wrong. 
-					testlogger.info("Integrity fail: throwing an exception. The fragment text does not contain modifier text.");
-					testlogger.info("Content of the fragment <original_text>:");
-					testlogger.info(original_text); 			
-					testlogger.info("The problematic modifier");
-					testlogger.info(mod); 			
+					// modifier text does not exist as it is. Try to check if it exist as 
+					// "non-continuous way". 
+					// It can be a non continuous fragment. Let's try to align it. 
+					CASUtils.Region[] local_r = alignBtoA(original_text, mod); // this method will return a list  
+					
+					if (local_r == null) // this null array means that mapping wasn't possible. 
+					{
+						// Something wrong. 
+						testlogger.info("Integrity fail: throwing an exception. The fragment text does not contain modifier text.");
+						testlogger.info("Content of the fragment <original_text>:");
+						testlogger.info(original_text); 			
+						testlogger.info("The problematic modifier");
+						testlogger.info(mod); 			
 
-					throw new DataIntegrityFail("Something is wrong. The fragment text does not contain modifier text."); 			
+						throw new DataIntegrityFail("Something is wrong. The fragment text does not contain modifier text. "); 
+					}
+					else
+					{
+						// Okay. Let's do the "multi-part modifier match" 
+						
+						// for each region in the modifier, add "frag_strat" (local_r notes index on fragment text)
+						// to retrieve "document index", we need to do this. 
+						mod_r = new CASUtils.Region[local_r.length];
+						for(int i=0; i < mod_r.length; i++)
+						{
+							mod_r[i] = new CASUtils.Region(local_r[i].getBegin() + frag_start, local_r[i].getEnd() + frag_start); 
+						}
+						// now mod_r is ready 
+						// set mod_begin & mod_end 
+						mod_begin = mod_r[0].getBegin(); 
+						mod_end = mod_r[mod_r.length -1].getEnd(); 						
+					}
 				}
-				// match and convert the location to "Interaction" level index. 
-				// TODO : (Known problem) note that if the fragment holds two same modifiers, this can lead to wrong match. 
-				// one solution would be using poz value... but that has its own problem. So for now, going this way. 
-			
-				int temp_begin = original_text.indexOf(mod); 
-				int temp_end = temp_begin + mod.length(); 
-				int mod_begin = temp_begin + frag_start; 
-				int mod_end = temp_end + frag_start; 
+				else
+				{
+					// simple match case 
+								
+					temp_begin = original_text.indexOf(mod); 
+					temp_end = temp_begin + mod.length(); 
+					mod_begin = temp_begin + frag_start; 
+					mod_end = temp_end + frag_start; 
 
+					mod_r = new CASUtils.Region[1]; 
+					mod_r[0] = new CASUtils.Region(mod_begin, mod_end);
+
+				}
+				
 				// annotate the modifier 			
 				testlogger.debug("Annotating modifier:"); 
-				testlogger.debug("Text: " + mod + ", begin: " + mod_begin + ", end: " + mod_end ); 			
+				testlogger.debug("Text: " + mod + ", begin: " + mod_begin + ", end: " + mod_end ); 	
+				
+				if (mod_r.length > 1)
+				{
+					testlogger.debug("(This is a non-continuous modifier *2)"); 
+					String s = "[ "; 
+					for(CASUtils.Region x: mod_r)
+					{
+						int b = x.getBegin(); 
+						int e = x.getEnd(); 
+						s = s + "(" + b + " - " + e + "), "; 
+					}
+					s += " ]"; 
+					testlogger.debug(s); 
+				}
 
-				r = new CASUtils.Region[1]; 
-				r[0] = new CASUtils.Region(mod_begin, mod_end);
 				try { 
-					CASUtils.annotateOneModifier(aJCas, r); 
+					CASUtils.annotateOneModifier(aJCas, mod_r); 
 				}
 				catch (LAPException e)
 				{
@@ -405,9 +456,21 @@ public final class InteractionReader {
 	 */
 	public static CASUtils.Region[] alignBtoA(String a, String b) {
 		
+		//Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+		//testlogger.debug("aligner input a: " + a); 
+		//testlogger.debug("aligner input b: " + b); 
+		
+		// sanity check 
+		if (a == null || b== null)
+			return null;
+
 		// split 
 		String[] a_tokens = a.split("\\s+"); 
 		String[] b_tokens = b.split("\\s+"); 
+		
+		// another sanity check 
+		if (a_tokens.length == 0 || b_tokens.length == 0)
+			return null; 
 		
 		// stores region of each token of A, on A string 
 		CASUtils.Region[] a_tokens_regions = new CASUtils.Region[a_tokens.length]; 
@@ -433,6 +496,7 @@ public final class InteractionReader {
 		{
 			// slide over a tokens, while b pointer stays there 
 			// unless there is a match. (b pointer only proceed if there is a match) 
+			
 			String token_a = a_tokens[i]; 
 			String token_b = b_tokens[point_on_b]; 
 			
