@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>TLkeyword</name>
+  <description>This file defines TLKeyword annotation. The annotation can annotate a part of text that is relevant to the application. The annotation is expected to be done by WP7 application side, to indicate those terms are of interests for WP7 application. The annotation will be used in WP6 library to extract relevant fragments. 
+</description>
+  <version>1.0</version>
+  <vendor/>
+  <types>
+    <typeDescription>
+      <name>eu.excitement.type.tl.KeywordAnnotation</name>
+      <description>The annotation marks a keyword (or a keyphrase, no restriction on the number of terms in it), that is relevant for the  application side (TL layer user).
+The annotation will be used in the TL library to extract relevant fragments. 
+
+It does not have any specific features, and annotation itself (begin - end) is meaningful. </description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
