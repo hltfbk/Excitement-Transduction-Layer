@@ -8,5 +8,6 @@
     <import name="desc.type.TLmodifier"/>
     <import name="desc.type.TLcategory"/>
     <import name="desc.type.TLMetadata"/>
+    <import name="desc.type.TLkeyword"/>
   </imports>
 </typeSystemDescription>
