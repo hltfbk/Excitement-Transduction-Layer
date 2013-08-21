@@ -21,7 +21,8 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 		
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
 				"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1", 4,
-				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1",
+//				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1",
+				"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
@@ -29,11 +30,11 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	
 	public static void main(String[] argv) {
 
-/*		// run the flow, create raw and collapsed entailment graphs and save them to files
+		// run the flow, create raw and collapsed entailment graphs and save them to files
 		DemoUseCase1NICEEnglish demoEN = new DemoUseCase1NICEEnglish();
 		demoEN.inspectResults();
 		// the results can be found under "./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1"
-*/		
+		
 		// now load some existing collapsed graph (we load one with 10 interactions)
 		File xmlFile = new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
 		try {
