@@ -17,68 +17,59 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 @SuppressWarnings("unused")
-public class GraphViewer extends JFrame {
-
-
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 924027832829838299L;
-
-//	private static final Color     DEFAULT_BG_COLOR = Color.decode( "#FAFBFF" );
-    private static final Dimension DEFAULT_SIZE = new Dimension( 1000, 700 );
+public class GraphViewer {
     
-    private GraphRenderer graphRenderer = null;
-    
-    public GraphViewer() {
+	private static final Dimension DEFAULT_SIZE = new Dimension( 1000, 700 );
 
-    	super("E X C I T M E N T  |  g r a p h v i e w");
-
+	public static void drawRandomGraph() {
+		
+    	JFrame frame = new JFrame("E X C I T M E N T  |  g r a p h v i e w");
+    	
     	try {
-    		if (graphRenderer == null) {
 
  //    			FragmentGraph g = FragmentGraph.getSampleGraph();
     			EntailmentGraphRaw g = EntailmentGraphRaw.getSampleOuput(false);
  //   			EntailmentGraphCollapsed g = new EntailmentGraphCollapsed(new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/collapsed_graph.xml"));
     		
     			System.out.println("GRAPH:\n\n" + g.toString() + "\n\n");
-    			graphRenderer = new GraphRenderer(g);
-    		}
+    			final GraphRenderer graphRenderer = new GraphRenderer(g);
     	
-    		equipMe();
+    			frame.setSize(DEFAULT_SIZE);
+    			frame.setContentPane(graphRenderer);
+    			frame.pack();
+    			frame.setVisible(true);
+
+//    			this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    			
+    			frame.addWindowListener(new WindowAdapter() {
+    				public void windowActivated(WindowEvent e) {
+    					graphRenderer.m_vis.run("draw");
+    				}
+    				public void windowDeactivated(WindowEvent e) {
+    					graphRenderer.m_vis.cancel("layout");
+    				}
+    			});
+    			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		} catch (Exception e){ // (EntailmentGraphCollapsedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
     
- 
-    @SuppressWarnings("rawtypes")
-	public GraphViewer(AbstractGraph g) {    	
-    	graphRenderer = new GraphRenderer(g);
-    	equipMe();    	
-    }
-    
-    public GraphViewer(GraphRenderer gr) {
-    	super("E X C I T M E N T  |  g r a p h v i e w");
-    	graphRenderer = gr;
-    	equipMe();
-    }
 
-    
-	/**
-	 * Creates visual elements.
-	 */
-	private void equipMe() {
-
-		this.setSize(DEFAULT_SIZE);
-		this.setContentPane(graphRenderer);
-		this.pack();
-		this.setVisible(true);
+	@SuppressWarnings("rawtypes")
+	public static void drawGraph(AbstractGraph g) {
+		JFrame frame = new JFrame("E X C I T M E N T  |  g r a p h v i e w");
+    	final GraphRenderer graphRenderer = new GraphRenderer(g);
+    	
+		frame.setSize(DEFAULT_SIZE);
+		frame.setContentPane(graphRenderer);
+		frame.pack();
+		frame.setVisible(true);
 
 //		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
-		this.addWindowListener(new WindowAdapter() {
+		frame.addWindowListener(new WindowAdapter() {
 			public void windowActivated(WindowEvent e) {
 				graphRenderer.m_vis.run("draw");
 			}
@@ -86,22 +77,50 @@ public class GraphViewer extends JFrame {
 				graphRenderer.m_vis.cancel("layout");
 			}
 		});
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}   
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+ 
 	
+
+
+    
+	/**
+	 * Creates visual elements.
+	 */
+/*	
+	private static void equipMe(JFrame frame, GraphRenderer graphRenderer) {
+		
+		frame.setSize(DEFAULT_SIZE);
+		frame.setContentPane(graphRenderer);
+		frame.pack();
+		frame.setVisible(true);
+
+//		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		
+		frame.addWindowListener(new WindowAdapter() {
+			public void windowActivated(WindowEvent e) {
+				graphRenderer.m_vis.run("draw");
+			}
+			public void windowDeactivated(WindowEvent e) {
+				graphRenderer.m_vis.cancel("layout");
+			}
+		});
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}   
+*/	
 	
 	public static void main(String[] argv) {
 
 		// something just to try, without parameters
-		final GraphViewer tf = new GraphViewer();
+//		GraphViewer.drawRandomGraph();
 		
 		// visualize a specific graph (could be either FragmentGraph, EntailmentGraphRaw, or EntailmentGraphCollapsed
-/*		try{
+		try{
 			EntailmentGraphCollapsed g = new EntailmentGraphCollapsed(new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/collapsed_graph.xml"));
-			final GraphViewer tf = new GraphViewer(g);
+			GraphViewer.drawGraph(g);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-*/		
+		
 	}
 }
