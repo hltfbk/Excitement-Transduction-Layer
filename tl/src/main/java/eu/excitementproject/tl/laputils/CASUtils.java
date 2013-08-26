@@ -6,8 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 //import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -108,6 +110,26 @@ public final class CASUtils {
 			Type t = a.getType(); 
 			PlatformCASProber.printAnnotations(aJCas.getCas(), t, System.out);
 		}
+	}
+
+	/**
+	 * This methods retrieves the category annotations on the given CAS 
+	 * 
+	 * @param aJCas
+	 */
+	static public Set<CategoryDecision> getCategoryAnnotationsInCAS(JCas aJCas)
+	{	
+		Set<CategoryDecision> decisions = new HashSet<CategoryDecision>();
+		AnnotationIndex<Annotation> annotIndex = aJCas.getAnnotationIndex(CategoryAnnotation.type);
+		Iterator<Annotation> annotIter = annotIndex.iterator(); 
+		while (annotIter.hasNext()) {
+			CategoryAnnotation a = (CategoryAnnotation) annotIter.next(); 
+			FSArray categories = a.getCategories();
+			for (int i=0; i<categories.size(); i++) {
+				decisions.add((CategoryDecision) categories.get(i));
+			}
+		}
+		return decisions;
 	}
 
 	/**
@@ -362,9 +384,7 @@ public final class CASUtils {
 		for (String decision : decisions.keySet()) {
 			CategoryDecision cd = new CategoryDecision(aJCas);
 			cd.setCategoryId(decision);
-			System.out.println("decision: " + decision);
 			cd.setConfidence(decisions.get(decision));
-			System.out.println("confidence: " + decisions.get(decision));
 			ca.setCategories(i, cd);
 			i++;
 		}
