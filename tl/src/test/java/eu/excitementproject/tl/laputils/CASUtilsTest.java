@@ -26,6 +26,7 @@ import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.Metadata;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
+//import eu.excitementproject.tl.laputils.CASUtils.Region;
 public class CASUtilsTest {
 
 	@Test
@@ -160,7 +161,7 @@ public class CASUtilsTest {
 		{
 			fail(e.getMessage()); 
 		}
-		
+				
 		// testing for metadata annotation 
 		try {
 //			- interactionId 
@@ -209,6 +210,22 @@ public class CASUtilsTest {
 			fail(e.getMessage()); 
 		}
 		
-		
+		// testing keyword annotation 
+		try {
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			assertNotNull(aJCas); 
+
+			// set some text            1         2
+			//                01234567890123456789012345678
+			String docText = "It was a really slow train."; 
+			aJCas.setDocumentLanguage("EN");
+			aJCas.setDocumentText(docText); 
+			CASUtils.annotateOneKeyword(aJCas, new CASUtils.Region(21,26)); 
+			
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
 	}
 }

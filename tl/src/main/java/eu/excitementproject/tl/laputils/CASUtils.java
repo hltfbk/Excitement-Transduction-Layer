@@ -34,6 +34,7 @@ import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentPart;
+import eu.excitement.type.tl.KeywordAnnotation;
 import eu.excitement.type.tl.Metadata;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitement.type.tl.ModifierPart;
@@ -358,6 +359,24 @@ public final class CASUtils {
 	static public ModifierAnnotation annotateOneModifier(JCas aJCas, Region[] r) throws LAPException
 	{
 		return annotateOneModifier(aJCas, r, null); 
+	}
+	
+	
+	/**
+	 * This simply static method adds one TLKeyword annotation on the given Region. 
+	 * @param aJCas The input JCas that holds the input (interaction) text 
+	 * @param r The region (begin - end) that will be annotated by a new TLkeyword annotation 
+	 */
+	static public void annotateOneKeyword(JCas aJCas, Region r)
+	{
+		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+
+		KeywordAnnotation key = new KeywordAnnotation(aJCas); 
+		key.setBegin(r.getBegin()); 
+		key.setEnd(r.getEnd()); 
+		key.addToIndexes(); 
+		
+		l.debug("Generated an KeywordAnnotation. The annotated part is: " + key.getCoveredText()); 		
 	}
 	
 	/**

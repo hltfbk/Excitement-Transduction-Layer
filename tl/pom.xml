@@ -47,11 +47,13 @@
      		<artifactId>de.tudarmstadt.ukp.dkpro.core.treetagger-model-it</artifactId>
      		<version>20101115.0</version>
     	</dependency>
-	<!-- end of TreeTagger related dependencies --> 
- 	
-  	
- 	
-  
+	<!-- end of TreeTagger related dependencies -->
+
+	<dependency>
+		<groupId>org.prefuse</groupId>
+		<artifactId>prefuse</artifactId>
+		<version>beta-20071021</version>
+	</dependency>
   </dependencies>
   
     <repositories>
