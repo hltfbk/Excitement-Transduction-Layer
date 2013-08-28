@@ -6,9 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -103,47 +105,56 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 					// create the set of entailment units of the node
 					NodeList entailmentUnitList = eqClassNode.getChildNodes();
 					Set<EntailmentUnit> s_eu = new HashSet<EntailmentUnit>();
+					Map<String, Double> categoryConfidences = new HashMap<String, Double>();
 					
 					for (int temp = 0; temp < entailmentUnitList.getLength(); temp++) {    
 						Node eu = entailmentUnitList.item(temp);     
-						if (!eu.getNodeName().equals("entailmentUnit")) continue;   
-
-						Element euElement = (Element) eu;
-						String text = euElement.getAttribute("text");
-						Integer level = Integer.valueOf(euElement.getAttribute("level"));
-
-						Set<String> completeStatementTexts = new HashSet<String>();
-						Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
-						Set<String> interactionIds = new HashSet<String>();
 						
-						NodeList childNodes = eu.getChildNodes();
-				       	for (int i = 0; i < childNodes.getLength(); i++) {    
-				       		Node child = childNodes.item(i);
-				       		if (child.getNodeName().equals("completeStatement")){
-					       		Element csElement = (Element) child;
-					       		String cstext = csElement.getAttribute("text");
-				       			completeStatementTexts.add(cstext);
-				       		}
-				       		
-				       		if (child.getNodeName().equals("interactionId")){
-				       			Element idElement = (Element) child;
-				       			String id = idElement.getAttribute("id");
-				       			interactionIds.add(id);
-				       		}
-				       		
-				       		if (child.getNodeName().equals("entailmentUnitMention")){
-					       		Element eumElement = (Element) child;
-					       		int eumLevel = Integer.valueOf(eumElement.getAttribute("level"));
-					       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel);
-					       		m.setCategoryId(eumElement.getAttribute("categoryId"));
-					       		mentions.add(m);	       			
-				       		}
-						}		
-				       	EntailmentUnit newEntailmentUnit = new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level);
-					    s_eu.add(newEntailmentUnit);
+						if (eu.getNodeName().equals("entailmentUnit")) { 
+							Element euElement = (Element) eu;
+							String text = euElement.getAttribute("text");
+							Integer level = Integer.valueOf(euElement.getAttribute("level"));
+	
+							Set<String> completeStatementTexts = new HashSet<String>();
+							Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
+							Set<String> interactionIds = new HashSet<String>();
+							
+							NodeList childNodes = eu.getChildNodes();
+					       	for (int i = 0; i < childNodes.getLength(); i++) {    
+					       		Node child = childNodes.item(i);
+					       		if (child.getNodeName().equals("completeStatement")){
+						       		Element csElement = (Element) child;
+						       		String cstext = csElement.getAttribute("text");
+					       			completeStatementTexts.add(cstext);
+					       		}
+					       		
+					       		if (child.getNodeName().equals("interactionId")){
+					       			Element idElement = (Element) child;
+					       			String id = idElement.getAttribute("id");
+					       			interactionIds.add(id);
+					       		}
+					       		
+					       		if (child.getNodeName().equals("entailmentUnitMention")){
+						       		Element eumElement = (Element) child;
+						       		int eumLevel = Integer.valueOf(eumElement.getAttribute("level"));
+						       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel);
+						       		m.setCategoryId(eumElement.getAttribute("categoryId"));
+						       		mentions.add(m);	       			
+					       		}
+							}		
+					       	EntailmentUnit newEntailmentUnit = new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level);
+						    s_eu.add(newEntailmentUnit);
+						} else if (eu.getNodeName().equals("categoryConfidence")) { //added for use case 2
+							Element euElement = (Element) eu;
+							String category = euElement.getAttribute("category");
+							Double confidence = Double.valueOf(euElement.getAttribute("confidence"));
+							categoryConfidences.put(category, confidence);
+						}
 					} // done creating s_eu
 					// create and add a new node to the graph
-					this.addVertex(new EquivalenceClass(label, s_eu));					
+					EquivalenceClass ec = new EquivalenceClass(label, s_eu);
+					ec.setCategoryConfidences(categoryConfidences); //added for use case 2
+					this.addVertex(ec);					
 				}							
 			}
 			
@@ -430,6 +441,15 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
  
 				// set label attribute to eu element
 				equivalenceClassNode.setAttribute("label",ec.getLabel());
+				
+				//add category confidences (use case 2)
+				for (String category : ec.getCategoryConfidences().keySet()) {
+					// categoryConfidence elements
+					Element categoryConfidence = doc.createElement("categoryConfidence");
+					categoryConfidence.setAttribute("category",category);
+					categoryConfidence.setAttribute("confidence",ec.getCategoryConfidences().get(category).toString());					
+					equivalenceClassNode.appendChild(categoryConfidence);						
+				}
  
 				/*	protected Set<String> completeStatementTexts;					*/
 				for (EntailmentUnit eu : ec.getEntailmentUnits()){
