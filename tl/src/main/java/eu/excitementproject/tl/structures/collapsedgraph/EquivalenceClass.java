@@ -8,7 +8,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman
+ * @author vivi@fbk & Lili Kotlerman & Kathrin
  * 
  * The node of the collapsed entailment graph is an equivalence class. 
  * This type of node will contain all text fragments that are equivalent from
@@ -25,7 +25,7 @@ public class EquivalenceClass {
 	
 	Set<EntailmentUnit> entailmentUnits = null;
 	
-	Map<String,Double> categoryConfidences = null;
+	Map<String,Double> categoryConfidences = null; //added for use case 2
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
@@ -80,7 +80,7 @@ public class EquivalenceClass {
 	}
 
 	/******************************************************************************************
-	 * SETTERS/GERRETS
+	 * SETTERS/GETTERS
 	 * ****************************************************************************************/
 
 	/**
@@ -98,6 +98,8 @@ public class EquivalenceClass {
 	}
 	
 	/**
+	 * added for use case 2. 
+	 * 
 	 * @return the categoryConfidences
 	 */
 	public Map<String,Double> getCategoryConfidences() {
@@ -105,6 +107,8 @@ public class EquivalenceClass {
 	}
 
 	/**
+	 * added for use case 2. 
+	 * 
 	 * @return the categoryConfidences
 	 */
 	public void setCategoryConfidences(Map<String,Double> categoryConfidences) {
