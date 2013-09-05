@@ -30,12 +30,15 @@ public interface NodeMatcher {
 
 	/**
 	 * @param fragmentGraphs - fragment graph ({@link FragmentGraph})
-	 * @param entailmentGraph - one entailment graph (collapsed) ({@link EntailmentGraphCollapsed})
 	 * @return set of node matches ({@link NodeMatch})
 	 * @throws NodeMatcherException if node matching fails
 	 */
-	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph, EntailmentGraphCollapsed entailmentGraph) 
+	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph) 
 			throws NodeMatcherException;
 
+	/**
+	 * @param entailmentGraph - one entailment graph (collapsed) ({@link EntailmentGraphCollapsed})
+	*/
+	public void setEntailmentGraph(EntailmentGraphCollapsed graph);
 
 }
