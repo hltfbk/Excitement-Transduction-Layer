@@ -207,6 +207,22 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		return this.vertexSet().size();
 	}	
 		
+	/**
+	 * @return the number of text fragments (= the number of fragment graphs) from which the graph was built
+	 */
+	public int getNumberOfFragmentGraphs() {
+		int fNum=0;
+		for (EquivalenceClass ec : this.vertexSet()){
+			for (EntailmentUnit eu : ec.getEntailmentUnits()){
+				// retrieve the set of completeStatementTexts, i.e. texts found at top nodes of fragment graphs
+				Set<String> completeStatementTexts = eu.getCompleteStatementTexts();  				
+				for (EntailmentUnitMention mention : eu.getMentions()){
+					if (completeStatementTexts.contains(mention.getText())) fNum++; // count the mentions of these texts 
+				}
+			}
+		}
+		return fNum;
+	}
 		
 	/**This method returns equivalent entailment units for a given input entailment unit text, 
 	 * i.e. entailment units, which are in the same equivalence class
