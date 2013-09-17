@@ -31,9 +31,15 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  */
 public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	
+	private EntailmentGraphCollapsed entailmentGraph;
+	
 	@Override
-	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph,
-			EntailmentGraphCollapsed entailmentGraph) throws NodeMatcherException {
+	public void setEntailmentGraph(EntailmentGraphCollapsed graph) {
+		this.entailmentGraph = graph;
+	}
+
+	@Override
+	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph) throws NodeMatcherException {
 		
 		//create empty node match set
 		Set<NodeMatch> nodeMatches = new HashSet<NodeMatch>();
@@ -107,9 +113,6 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 			}
 		}
 		return 0;
-	}
-
-	
-	
+	}	
 	
 }
