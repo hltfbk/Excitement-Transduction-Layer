@@ -72,9 +72,10 @@ public class UseCaseTwoRunnerPrototype implements UseCaseTwoRunner {
 
 		//call node matcher on each fragment graph
 		NodeMatcher nm = new NodeMatcherLongestOnly();
+		nm.setEntailmentGraph(graph);
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
-			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph, graph);
+			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph);
 			//add category annotation to CAS
 			ca.addCategoryAnnotation(cas, matches);
 		}	

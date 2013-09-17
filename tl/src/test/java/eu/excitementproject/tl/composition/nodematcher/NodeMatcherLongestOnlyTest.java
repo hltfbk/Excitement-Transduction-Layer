@@ -59,7 +59,8 @@ public class NodeMatcherLongestOnlyTest {
 			Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(jcas);
 			testlogger.info("Calling node matcher on the fragment graph."); 			
 			NodeMatcher nm = new NodeMatcherLongestOnly(); 
-			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next(), entailmentGraph);
+			nm.setEntailmentGraph(entailmentGraph);
+			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next());
 			Assert.assertEquals(1, matches.size()); //should return a single match
 			for (NodeMatch nodeMatch : matches) {
 				Assert.assertEquals("Disappointed with the amount of legroom compared with other trains", nodeMatch.getMention().getText().trim());
@@ -86,8 +87,7 @@ public class NodeMatcherLongestOnlyTest {
 			testlogger.info("Creating fragment graph from CAS."); 			
 			fragmentGraphs = fgg.generateFragmentGraphs(jcas2);
 			testlogger.info("Calling node matcher on the fragment graph."); 			
-			nm = new NodeMatcherLongestOnly(); 
-			matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next(), entailmentGraph);
+			matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next());
 			Assert.assertEquals(1, matches.size()); 
 			testlogger.info("NodeMatcher matches a single node."); 			
 			for (NodeMatch nodeMatch : matches) {
@@ -110,9 +110,7 @@ public class NodeMatcherLongestOnlyTest {
 			CASUtils.annotateOneDeterminedFragment(jcas3, fragmentRegions);
 			fragmentGraphs = fgg.generateFragmentGraphs(jcas3);
 			testlogger.info("Calling node matcher on the fragment graph."); 			
-			nm = new NodeMatcherLongestOnly(); 
-			testlogger.info("fragmentsGraphs.size: " + fragmentGraphs.size());
-			matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next(), entailmentGraph);
+			matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next());
 			Assert.assertEquals(0, matches.size()); 
 			testlogger.info("NodeMatcher does not match a node."); 			
 

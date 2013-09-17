@@ -8,5 +8,5 @@ An implementation of the {@link NodeMatcher} interface
 * 
 */
 public abstract class AbstractNodeMatcher implements NodeMatcher {
-
+	
 }
