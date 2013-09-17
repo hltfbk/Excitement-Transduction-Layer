@@ -49,6 +49,33 @@
     	</dependency>
 	<!-- end of TreeTagger related dependencies -->
 
+	<!-- Lucene related dependencies --> 
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>4.4.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>4.4.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>4.4.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queries</artifactId>
+            <version>4.4.0</version>
+            <scope>provided</scope>
+        </dependency>
+	<!-- end of Lucene related dependencies -->
+
 	<dependency>
 		<groupId>org.prefuse</groupId>
 		<artifactId>prefuse</artifactId>

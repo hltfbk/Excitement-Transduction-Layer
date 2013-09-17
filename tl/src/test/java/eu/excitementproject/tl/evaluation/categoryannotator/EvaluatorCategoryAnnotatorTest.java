@@ -2,6 +2,7 @@ package eu.excitementproject.tl.evaluation.categoryannotator;
 
 import static org.junit.Assert.fail;
 
+
 import java.io.File;
 import java.util.Set;
 
@@ -13,10 +14,8 @@ import org.junit.Test;
 
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
-import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
 import eu.excitementproject.tl.composition.api.NodeMatcher;
 import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
-import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
@@ -28,7 +27,6 @@ import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 
 public class EvaluatorCategoryAnnotatorTest {
@@ -41,7 +39,7 @@ public class EvaluatorCategoryAnnotatorTest {
 		
 		try {					
 			/************* TEST 1 ***************/
-			String filename = "./src/test/outputs/collapsed_graph_omq.xml";
+			String filename = "./src/test/outputs/collapsed_graph.xml";
 			testlogger.info("Reading collapsed entailment graph from file " + filename); 	
 			EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(new File(filename));
 			testlogger.info("Creating a sample CAS.");
