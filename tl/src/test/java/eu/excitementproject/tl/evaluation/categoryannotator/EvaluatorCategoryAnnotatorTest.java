@@ -39,7 +39,7 @@ public class EvaluatorCategoryAnnotatorTest {
 		
 		try {					
 			/************* TEST 1 ***************/
-			String filename = "./src/test/outputs/collapsed_graph_omq.xml";
+			String filename = "./src/test/outputs/collapsed_graph.xml";
 			testlogger.info("Reading collapsed entailment graph from file " + filename); 	
 			EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(new File(filename));
 			testlogger.info("Creating a sample CAS.");
