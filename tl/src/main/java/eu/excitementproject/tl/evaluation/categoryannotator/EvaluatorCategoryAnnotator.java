@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.CategoryAnnotation;
@@ -46,17 +47,22 @@ import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototy
  * @author Kathrin
  *
  * This class evaluates the category annotation on an incoming email (use case 2). 
+ * 
  * It first reads in a dataset of emails associated to categories and splits it into a training and test set. 
  * It then builds an entailment graph (collapsed) from the training set, and annotates the emails in the test set
  * based on the generated entailment graph. Finally, it compares the automatically created categories to the 
  * manually annotated categories in the test set.
  * 
+ * As the manually assigned categories are per email, whereas the automatically generated ones are assigend per 
+ * entailment unit mention, we first calculate a combined score for each automatically assigned category
+ * by summing up all confidences per category to get the "best" category (the one with the highest sum). 
+ * This best category is then compared to the manually assigned one. 
  */
 
 public class EvaluatorCategoryAnnotator {
 	
 	public static void main(String[] args) {
-		String inputFilename = "src/test/resources/WP2_public_data_XML/OMQ_dummy_data_small.xml"; //dataset to be evaluated
+		String inputFilename = "./src/test/resources/WP2_public_data_XML/dummy_data_for_evaluator_test.xml"; //dataset to be evaluated
 		String outputDirname = "D:/temp"; //output directory (for generated entailment graph)
 		String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml"; //config file for EDA
 				
@@ -64,6 +70,8 @@ public class EvaluatorCategoryAnnotator {
 	}
 
 	public static double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename) {
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.categoryannotator"); 
+		
 		File configFile = new File(configFilename);	
 		CommonConfig config = null;
 		LAPAccess lap;
@@ -80,7 +88,7 @@ public class EvaluatorCategoryAnnotator {
 
 		try {
 			for (String name: files) {
-				System.out.println("Reading " + name);
+				logger.info("Reading " + name);
 				f = new File(name);
 				docs.addAll(InteractionReader.readInteractionXML(f));
 			}
@@ -92,19 +100,19 @@ public class EvaluatorCategoryAnnotator {
 				if (Integer.parseInt(doc.getInteractionId()) % 3 == 0) docsTest.add(doc);
 				else docsTrain.add(doc);
 			}
-			System.out.println("Training set contains " + docsTrain.size() + " documents.");
-			System.out.println("Test set contains " + docsTest.size() + " documents.");
+			logger.info("Training set contains " + docsTrain.size() + " documents.");
+			logger.info("Test set contains " + docsTest.size() + " documents.");
 			
 			File theDir = new File(outputDirname);
 			
 			// if the directory does not exist, create it
 			if (!theDir.exists()) {
-				System.out.println("creating directory: " + outputDirname);
+				logger.debug("Creating directory: " + outputDirname);
 				boolean result = theDir.mkdir();
 				if(result){
-					System.out.println("DIR created");
+					logger.debug("DIR created");
 				} else {
-					System.err.println("Could not create the output directory. No output files will be created.");
+					logger.debug("Could not create the output directory. No output files will be created.");
 					outputDirname=null;
 				}
 			}
@@ -113,11 +121,11 @@ public class EvaluatorCategoryAnnotator {
 			config = new ImplCommonConfig(configFile);
 			eda = new MaxEntClassificationEDA();	
 			eda.initialize(config);
-			System.out.println("Initialized config.");
+			logger.info("Initialized config.");
 			use1 = new UseCaseOneRunnerPrototype(lap, eda, outputDirname);
 			double threshold = 0.99;
 			graph = use1.buildCollapsedGraph(docsTrain, threshold);
-			System.out.println("Built collapsed graph.");
+			logger.info("Built collapsed graph.");
 			cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 			cc.computeCategoryConfidences(graph);
 			String outputFile = outputDirname + "/test.graph.xml";
@@ -125,7 +133,7 @@ public class EvaluatorCategoryAnnotator {
 			graph = new EntailmentGraphCollapsed(new File(outputFile));
 			//GraphViewer.drawGraph(graph);
 
-			System.out.println("Computed and added category confidences.");
+			logger.info("Computed and added category confidences.");
 
 			// Send each email in test data + graph to node use case 2 and have it annotated
 			int countPositive = 0;
@@ -134,9 +142,9 @@ public class EvaluatorCategoryAnnotator {
 				cas = doc.createAndFillInputCAS();
 				use2 = new UseCaseTwoRunnerPrototype(lap, eda);
 				use2.annotateCategories(cas, graph);
-				System.out.println("_________________________________________________________");
+				logger.info("_________________________________________________________");
 				Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
-			    System.out.println("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
+				logger.info("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
 				CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 				
 				// Compare automatic to manual annotation
@@ -155,10 +163,11 @@ public class EvaluatorCategoryAnnotator {
 				ValueComparator bvc =  new ValueComparator(categoryScores);
 		        Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
 		        sortedMap.putAll(categoryScores);
-				System.out.println("category sums:  " + sortedMap);
+		        logger.debug("category sums:  " + sortedMap);
 				if (sortedMap.size() > 0) {
-					bestCat = sortedMap.entrySet().iterator().next().toString();
-					System.out.println("Best cat: " + bestCat);
+					bestCat = sortedMap.keySet().iterator().next().toString();
+					logger.info("Best category: " + bestCat);
+					logger.info("Correct category: " + doc.getCategory());
 					if (doc.getCategory().equals(bestCat)) {
 						countPositive++;
 					} 
@@ -167,7 +176,7 @@ public class EvaluatorCategoryAnnotator {
 			
 			// Compute and print result	
 			double result = (double) countPositive / (double) docsTest.size();
-			System.out.println("Final result: " + result);
+			logger.info("Final result: " + result);
 			return result;
 			
 		} catch (ConfigurationException | EDAException | ComponentException 

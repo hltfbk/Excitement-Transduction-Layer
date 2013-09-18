@@ -507,11 +507,9 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
-			StreamResult result = new StreamResult(new File(filename));
- 
-			// Output to console for testing
-			// StreamResult result = new StreamResult(System.out);
- 
+			File f = new File(filename); 
+			StreamResult result = new StreamResult(f.toURI().getPath());
+
 			transformer.transform(source, result);
 		} catch (DOMException | ParserConfigurationException | TransformerFactoryConfigurationError |
 				TransformerException e) {
