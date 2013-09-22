@@ -1,10 +1,15 @@
-package eu.excitementproject.tl.evaluation;
+package eu.excitementproject.tl.evaluation.graphmerger;
 
 import java.util.Set;
 
+import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 
-public class GraphMergerEvaluator {
+/**
+ * This class contains methods for evaluating graph merger results
+ * @author Lili Kotlerman
+*/
+public class EvaluatorGraphMerger {
 
 
 	/** Evaluates the merge graph procedure. 
@@ -12,20 +17,20 @@ public class GraphMergerEvaluator {
 	 * i.e. that both were built from exactly the same set of fragment graphs.
 	 * Thus, evaluation reflects the quality of the merging process per se.
 	 * @param goldStandardEdges
-	 * @param workGraphEdges
+	 * @param evaluatedGraphEdges
 	 * @return evaluation measures (recall, precision, f1).
 	 */
-	public EvaluationMeasures evaluate(Set<EntailmentRelation> goldStandardEdges, Set<EntailmentRelation> workGraphEdges){
+	public static EvaluationMeasures evaluate(Set<EntailmentRelation> goldStandardEdges, Set<EntailmentRelation> evaluatedGraphEdges){
 		
 		double correctlyAddedEdges = 0.0;
 		for (EntailmentRelation gsEdge : goldStandardEdges){
-			for (EntailmentRelation workEdge : workGraphEdges){
+			for (EntailmentRelation workEdge : evaluatedGraphEdges){
 				if (gsEdge.isSameSourceAndTarget(workEdge)) correctlyAddedEdges++;
 			}
 		}
 		
 		EvaluationMeasures eval = new EvaluationMeasures();
-		eval.setPrecision(correctlyAddedEdges/workGraphEdges.size());
+		eval.setPrecision(correctlyAddedEdges/evaluatedGraphEdges.size());
 		eval.setRecall(correctlyAddedEdges/goldStandardEdges.size());
 		
 		return eval;
