@@ -235,8 +235,15 @@ public final class InteractionReader {
 		testlogger.debug("Content of the fragment <original_text>:");
 		testlogger.debug(original_text); 			
 
-		testlogger.debug("Content of the <modifiers>:");
-		testlogger.debug(modifiers); 			
+		if ((modifiers != null) && (modifiers.trim().length() > 0 ))  // sometimes there are "empty space" modifiers, and we are checking this with trim() 
+		{
+			testlogger.debug("Content of the <modifiers>:");
+			testlogger.debug(modifiers); 			
+		}
+		else
+		{
+			testlogger.debug("No or empty <modifiers>"); 						
+		}
 		
 		
 		// Match original text, and set it as fragment 
@@ -339,8 +346,8 @@ public final class InteractionReader {
 		// e.g. 		
         // <modifiers>ladiespoz=2;at Stars Bridgepoz=4 5 6</modifiers>
 
-		if (modifiers != null)
-		{
+		if ((modifiers != null) && (modifiers.trim().length() > 0 ))  // sometimes there are "empty space" modifiers, and we are checking this with trim() 
+		{						
 			String[] modpoz_data = modifiers.split(";"); 
 			for (String modpoz : modpoz_data)
 			{
