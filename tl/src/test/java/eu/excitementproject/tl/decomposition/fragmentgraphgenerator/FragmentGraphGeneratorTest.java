@@ -3,7 +3,10 @@ package eu.excitementproject.tl.decomposition.fragmentgraphgenerator;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.util.Set;
+
+import javax.swing.filechooser.FileFilter;
 
 import junit.framework.Assert;
 
@@ -31,14 +34,17 @@ public class FragmentGraphGeneratorTest {
 			
 			// generate fragment graphs from each of the inputCAS examples.  
 			JCas aJCas = CASUtils.createNewInputCas(); 
-			File f1 = new File("./src/test/resources/WP2_public_data_CAS_XMI/alma_speech/Speech3.1.004.txt.xmi");
+			
+			// initiate the FragGraphGenerator... 
+//			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
+			FragmentGraphLiteGeneratorFromCAS fragGen = new FragmentGraphLiteGeneratorFromCAS(); 
+
+// generate fragment graphs from given files			
+/*			File f1 = new File("./src/test/resources/WP2_public_data_CAS_XMI/alma_speech/Speech3.1.004.txt.xmi");
 			File f2 = new File("./src/test/resources/WP2_public_data_CAS_XMI/alma_social_media/0004.txt.xmi"); 
 			File f3 = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/100771.txt.xmi"); 
 			File f4 = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_speech/13764618_75839896.txt.xmi"); 
 
-			// initiate the FragGraphGenerator... 
-//			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
-			FragmentGraphLiteGeneratorFromCAS fragGen = new FragmentGraphLiteGeneratorFromCAS(); 
 
 			// Read in inputCASes for the examples, and generate the FragmentGraphs 
 			CASUtils.deserializeFromXmi(aJCas, f1); 
@@ -86,7 +92,42 @@ public class FragmentGraphGeneratorTest {
 			System.out.println("\n________________\nFragment graphs for example 4: ");
 			for(FragmentGraph f: fgs_example4) {
 				System.out.println(f.toString());
-			}	
+			}
+			
+*/				
+			
+// generate fragment graphs from files in a given directory			
+			
+			File dir = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_speech");
+			FilenameFilter filter = new FilenameFilter() {
+				public boolean accept(File directory, String fileName) {
+					return fileName.endsWith(".xmi");
+				}
+			};
+			
+			System.out.println("Processing directory " + dir.getName());
+			
+			for(File f: dir.listFiles(filter)) {
+				// Read in inputCASes for the examples, and generate the FragmentGraphs 
+				
+				System.out.println("Processing fragments from file " + f.getName());
+				
+				CASUtils.deserializeFromXmi(aJCas, f); 
+				Set<FragmentGraph> fgs_example = fragGen.generateFragmentGraphs(aJCas);
+				
+//				Assert.assertNotNull(fgs_example); 
+//				Assert.assertTrue(fgs_example.size() > 0);
+				if (fgs_example == null || fgs_example.size() <= 0) {
+					System.out.println("\n________________\nNO fragment graphs for file " + f.getName());
+				} else {
+					System.out.println("\n________________\nFragment graphs for file " + f.getName() + " (" + fgs_example.size() + ")");
+					for(FragmentGraph fg: fgs_example) {
+						System.out.println(fg.toString());
+					}
+				}
+			}
+			
+				
 		}
 		catch (Exception e)
 		{
