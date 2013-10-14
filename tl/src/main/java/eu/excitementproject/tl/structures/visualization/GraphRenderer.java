@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
@@ -36,6 +37,7 @@ import prefuse.action.ActionList;
 import prefuse.action.RepaintAction;
 import prefuse.action.assignment.ColorAction;
 import prefuse.action.filter.GraphDistanceFilter;
+import prefuse.action.layout.Layout;
 import prefuse.action.layout.graph.ForceDirectedLayout;
 import prefuse.activity.Activity;
 import prefuse.controls.DragControl;
@@ -47,6 +49,7 @@ import prefuse.controls.ZoomControl;
 import prefuse.controls.ZoomToFitControl;
 import prefuse.data.Graph;
 import prefuse.data.Node;
+import prefuse.data.Schema;
 import prefuse.data.Table;
 import prefuse.data.Tuple;
 import prefuse.data.event.TupleSetListener;
@@ -56,15 +59,19 @@ import prefuse.data.tuple.TupleSet;
 import prefuse.render.DefaultRendererFactory;
 import prefuse.render.LabelRenderer;
 import prefuse.util.ColorLib;
+import prefuse.util.FontLib;
 import prefuse.util.GraphicsLib;
+import prefuse.util.PrefuseLib;
 import prefuse.util.display.DisplayLib;
 import prefuse.util.display.ItemBoundsListener;
 import prefuse.util.force.ForceSimulator;
 import prefuse.util.io.IOLib;
 import prefuse.util.ui.JForcePanel;
 import prefuse.util.ui.JValueSlider;
+import prefuse.visual.DecoratorItem;
 import prefuse.visual.VisualGraph;
 import prefuse.visual.VisualItem;
+import prefuse.visual.expression.InGroupPredicate;
 import eu.excitementproject.tl.structures.visualization.utils.TLGraphMLExporter;
 
 public class GraphRenderer extends JPanel {
@@ -81,11 +88,16 @@ public class GraphRenderer extends JPanel {
 	private static final String tmpFile = "/tmp/graphMLfile.xml";
 	
 	public Visualization m_vis;
-
-	
-	public GraphRenderer() {
-		// TODO Auto-generated constructor stub
-	}
+	public static final String AGGR = "aggregates";
+    public static final String EDGE_DECORATORS = "edgeDeco";
+    public static final String NODE_DECORATORS = "nodeDeco";
+    public static final String AGGR_DECORATORS = "aggrDeco";
+    private static final Schema DECORATOR_SCHEMA = PrefuseLib.getVisualItemSchema(); 
+    static { 
+    	DECORATOR_SCHEMA.setDefault(VisualItem.INTERACTIVE, false); 
+    	DECORATOR_SCHEMA.setDefault(VisualItem.TEXTCOLOR, ColorLib.gray(128)); 
+    	DECORATOR_SCHEMA.setDefault(VisualItem.FONT, FontLib.getFont("Tahoma",10));
+    }
 
 	@SuppressWarnings("rawtypes")
 	public GraphRenderer(AbstractGraph g){
@@ -109,8 +121,10 @@ public class GraphRenderer extends JPanel {
 		initializeGraphRenderer(g, "vertex_label");
 	}
 	
+	
+	
 	private void initializeGraphRenderer(Graph g, String label) {
-
+		
 		inspectGraph(g);
 		
 		// create a new, empty visualization for our data
@@ -173,7 +187,13 @@ public class GraphRenderer extends JPanel {
 		animate.add(new ForceDirectedLayout(graph));
 		animate.add(fill);
 		animate.add(new RepaintAction());
-
+		//animate.add(colors);
+		animate.add(new ForceDirectedLayout(graph, true));
+	        //layout.add(new AggregateLayout2(AGGR));
+		animate.add(new LabelLayout2(EDGE_DECORATORS));
+		animate.add(new LabelLayout2(NODE_DECORATORS));
+		animate.add(new LabelLayout2(AGGR_DECORATORS));
+		animate.add(new RepaintAction());
 		// finally, we register our ActionList with the Visualization.
 		// we can later execute our Actions by invoking a method on our
 		// Visualization, using the name we've chosen below.
@@ -254,7 +274,7 @@ public class GraphRenderer extends JPanel {
 
 		add(split);
 	}
-
+	
 	// just to check if the graph was read properly
 	@SuppressWarnings("rawtypes")
 	private void inspectGraph(Graph g) {		
@@ -268,19 +288,51 @@ public class GraphRenderer extends JPanel {
 	}
 
 	
+	
 	public void setGraph(Graph g, String label) {
 		// update labeling
 		DefaultRendererFactory drf = (DefaultRendererFactory) m_vis
 				.getRendererFactory();
 		((LabelRenderer) drf.getDefaultRenderer()).setTextField(label);
-
+		
+	
 		// update graph
 		m_vis.removeGroup(graph);
+		// add labels for nodes and edges
+        g.addColumn(VisualItem.LABEL, String.class);
+        for (int i = 0; i < g.getNodeCount(); i++) {
+			g.getNode(i).setString(VisualItem.LABEL, ""+g.getNode(i));
+		}
+        for (int i = 0; i < g.getEdgeCount(); i++) {
+			g.getEdge(i).setString(VisualItem.LABEL, ""+g.getEdge(i).getString("edge_label"));
+		}
+        
 		VisualGraph vg = m_vis.addGraph(graph, g);
 		m_vis.setValue(edges, null, VisualItem.INTERACTIVE, Boolean.FALSE);
 		VisualItem f = (VisualItem) vg.getNode(0);
 		m_vis.getGroup(Visualization.FOCUS_ITEMS).setTuple(f);
 		f.setFixed(false);
+		
+		
+		
+		
+		
+		
+		
+		drf.add(new InGroupPredicate(EDGE_DECORATORS), new LabelRenderer(VisualItem.LABEL));
+       // drf.add(new InGroupPredicate(NODE_DECORATORS), new LabelRenderer(VisualItem.LABEL));
+        drf.add(new InGroupPredicate(AGGR_DECORATORS), new LabelRenderer("id"));
+        m_vis.setRendererFactory(drf);
+        // adding decorators, one group for the nodes, one for the edges and one
+        // for the aggregates
+        DECORATOR_SCHEMA.setDefault(VisualItem.TEXTCOLOR, ColorLib.gray(0));
+        m_vis.addDecorators(EDGE_DECORATORS, edges, DECORATOR_SCHEMA);
+        DECORATOR_SCHEMA.setDefault(VisualItem.TEXTCOLOR, ColorLib.gray(128));
+       // m_vis.addDecorators(NODE_DECORATORS, nodes, DECORATOR_SCHEMA);
+        // the HoverPredicate makes this group of decorators to appear only on mouseOver
+        DECORATOR_SCHEMA.setDefault(VisualItem.TEXTCOLOR, ColorLib.gray(255, 128));
+        DECORATOR_SCHEMA.setDefault(VisualItem.FONT, FontLib.getFont("Tahoma", Font.BOLD, 48));
+       // m_vis.addDecorators(AGGR_DECORATORS, AGGR, new HoverPredicate(), DECORATOR_SCHEMA);
 	}
 
 
@@ -444,3 +496,31 @@ public class GraphRenderer extends JPanel {
 	}
 	
 }
+class LabelLayout2 extends Layout {
+    public LabelLayout2(String group) {
+        super(group);
+    }
+    @SuppressWarnings("rawtypes")
+	public void run(double frac) {
+        Iterator iter = m_vis.items(m_group);
+        while ( iter.hasNext() ) {
+            DecoratorItem decorator = (DecoratorItem)iter.next();
+            VisualItem decoratedItem = decorator.getDecoratedItem();
+            Rectangle2D bounds = decoratedItem.getBounds();
+            double x = bounds.getCenterX();
+            double y = bounds.getCenterY();
+            /* modification to move edge labels more to the arrow head
+            double x2 = 0, y2 = 0;
+            if (decoratedItem instanceof EdgeItem){
+            	VisualItem dest = ((EdgeItem)decoratedItem).getTargetItem(); 
+            	x2 = dest.getX();
+            	y2 = dest.getY();
+            	x = (x + x2) / 2;
+            	y = (y + y2) / 2;
+            }
+            */
+            setX(decorator, null, x);
+            setY(decorator, null, y);
+        }
+    }
+} // end of inner class LabelLayout	

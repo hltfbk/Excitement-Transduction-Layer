@@ -108,7 +108,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		}
 		
 		inspectGraph(fgs);
-		
+				
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}
 	
