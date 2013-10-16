@@ -68,8 +68,7 @@ public class CategoryAnnotatorAllCatsTest {
 			FragmentGraphGenerator fgg = new FragmentGraphGeneratorFromCAS();
 			Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(cas);
 			testlogger.info("Calling node matcher on the fragment graph."); 			
-			NodeMatcher nm = new NodeMatcherLongestOnly(); 
-			nm.setEntailmentGraph(entailmentGraph);
+			NodeMatcher nm = new NodeMatcherLongestOnly(entailmentGraph); 
 			for (FragmentGraph fragmentGraph : fragmentGraphs) {
 				Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph);
 				testlogger.info("Calling category annotator."); 			
