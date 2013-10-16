@@ -1,4 +1,4 @@
-package eu.excitementproject.tl.composition.collapsedgraphgenerator;
+package eu.excitementproject.tl.composition.graphoptimizer;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,17 +18,18 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
-public class SimpleCollapseGraphGeneratorTest {
+public class SimpleGraphOptimizerTest {
 
 	@Test
 	public void test() {
@@ -55,8 +56,8 @@ public class SimpleCollapseGraphGeneratorTest {
 						rawGraph.toDOT("./src/test/outputs/rawGraph.txt");
 						
 						System.out.println("**** Collapsing the the raw graph ****");
-						CollapsedGraphGenerator collapser = new SimpleCollapseGraphGenerator();
-						EntailmentGraphCollapsed finalGraph = collapser.generateCollapsedGraph(rawGraph);
+						GraphOptimizer collapser = new SimpleGraphOptimizer();
+						EntailmentGraphCollapsed finalGraph = collapser.optimizeGraph(rawGraph);
 						System.out.println("Done:\n"+finalGraph.toString());
 						finalGraph.toDOT("./src/test/outputs/collapsedGraph.txt");
 						
@@ -65,7 +66,7 @@ public class SimpleCollapseGraphGeneratorTest {
 						System.out.println(rawGraph.toString());
 						rawGraph.toDOT("./src/test/outputs/sampleRawGraph.txt");
 						System.out.println("**** Collapsing the the raw graph ****");
-						finalGraph = collapser.generateCollapsedGraph(rawGraph, 0.2);
+						finalGraph = collapser.optimizeGraph(rawGraph, 0.2);
 						System.out.println("Done:\n"+finalGraph.toString());
 						finalGraph.toDOT("./src/test/outputs/collapsedGraphFromSample.txt");
 						

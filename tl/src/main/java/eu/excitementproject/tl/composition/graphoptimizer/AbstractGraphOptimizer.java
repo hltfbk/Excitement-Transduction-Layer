@@ -1,12 +1,12 @@
 /**
  * 
  */
-package eu.excitementproject.tl.composition.collapsedgraphgenerator;
+package eu.excitementproject.tl.composition.graphoptimizer;
 
 import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
-import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
@@ -15,7 +15,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 
 /**
-An implementation of the {@link CollapsedGraphGenerator} interface:
+An implementation of the {@link GraphOptimizer} interface:
 We do not foresee any external EOP component dependency for this
 module. But this is not definite. The first prototype will shed some
 light for us. Like other modules, if it needs any arguments or
@@ -24,7 +24,7 @@ constructor.
  * @author Lili
  * 
  */
-public abstract class AbstractCollapsedGraphGenerator implements CollapsedGraphGenerator{
+public abstract class AbstractGraphOptimizer implements GraphOptimizer{
 
 	
 	/**
