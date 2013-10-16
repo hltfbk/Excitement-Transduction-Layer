@@ -33,7 +33,7 @@ constructor.
  * @author Lili
 
  */
-public interface CollapsedGraphGenerator {
+public interface GraphOptimizer {
 
 	/**
 	 * @param workGraph - one entailment graph ({@link EntailmentGraphRaw})
@@ -41,9 +41,9 @@ public interface CollapsedGraphGenerator {
 	 * @throws CollapsedGraphGeneratorException if the implementation can't convert the graph for some
   reason
 	 */
-	public EntailmentGraphCollapsed generateCollapsedGraph(EntailmentGraphRaw workGraph) 
+	public EntailmentGraphCollapsed optimizeGraph(EntailmentGraphRaw workGraph) 
 			throws CollapsedGraphGeneratorException;
 
-	public EntailmentGraphCollapsed generateCollapsedGraph(EntailmentGraphRaw workGraph, Double confidenceThreshold) 
+	public EntailmentGraphCollapsed optimizeGraph(EntailmentGraphRaw workGraph, Double confidenceThreshold) 
 			throws CollapsedGraphGeneratorException;
 }

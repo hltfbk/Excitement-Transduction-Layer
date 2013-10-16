@@ -15,14 +15,14 @@ import org.apache.uima.jcas.JCas;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.GraphMerger;
-import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
@@ -50,7 +50,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	ModifierAnnotator modAnot;
 	FragmentGraphGenerator fragGen;
 	GraphMerger graphMerger;
-	CollapsedGraphGenerator collapseGraph;
+	GraphOptimizer collapseGraph;
 	
 	String outputPath = null;
 	
@@ -81,7 +81,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		fragGen = new FragmentGraphGeneratorFromCAS();
 //		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
-		collapseGraph = new SimpleCollapseGraphGenerator();
+		collapseGraph = new SimpleGraphOptimizer();
 	}
 	
 	/**
@@ -159,7 +159,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			throws CollapsedGraphGeneratorException{
 		
 		try {
-			return collapseGraph.generateCollapsedGraph(new EntailmentGraphRaw(f));
+			return collapseGraph.optimizeGraph(new EntailmentGraphRaw(f));
 		} catch (EntailmentGraphRawException e) {
 			// TODO Auto-generated catch block
 			throw new CollapsedGraphGeneratorException(e.getMessage());
@@ -177,7 +177,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public EntailmentGraphCollapsed buildGraph(File f, double confidence) 
 			throws CollapsedGraphGeneratorException, EntailmentGraphRawException{
 			
-		return collapseGraph.generateCollapsedGraph(new EntailmentGraphRaw(f),confidence);		
+		return collapseGraph.optimizeGraph(new EntailmentGraphRaw(f),confidence);		
 	}
 
 	
@@ -199,7 +199,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		inspectGraph(rawGraph);
 		
 //		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
-		return collapseGraph.generateCollapsedGraph(rawGraph);
+		return collapseGraph.optimizeGraph(rawGraph);
 	}
 	
 	
@@ -221,7 +221,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		inspectGraph(rawGraph);
 		
 //		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs));
-		return collapseGraph.generateCollapsedGraph(rawGraph);
+		return collapseGraph.optimizeGraph(rawGraph);
 	}
 	
 	/**
@@ -241,7 +241,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs, double confidence) 
 			throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException{
 
-		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs),confidence);		
+		return collapseGraph.optimizeGraph(buildRawGraph(docs),confidence);		
 	}
 
 
@@ -323,7 +323,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs, double confidence) 
 			throws CollapsedGraphGeneratorException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException{
 			
-		return collapseGraph.generateCollapsedGraph(buildRawGraph(docs),confidence);		
+		return collapseGraph.optimizeGraph(buildRawGraph(docs),confidence);		
 	}
 
 

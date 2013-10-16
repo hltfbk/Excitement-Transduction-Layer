@@ -1,4 +1,4 @@
-package eu.excitementproject.tl.composition.collapsedgraphgenerator;
+package eu.excitementproject.tl.composition.graphoptimizer;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,18 +14,18 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
-public class SimpleCollapseGraphGenerator extends AbstractCollapsedGraphGenerator{
+public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 
 	@Override
-	public EntailmentGraphCollapsed generateCollapsedGraph(
+	public EntailmentGraphCollapsed optimizeGraph(
 			EntailmentGraphRaw workGraph)
 			throws CollapsedGraphGeneratorException {
 		
-		return generateCollapsedGraph(workGraph, getAverageConfidenceOfEntailment(workGraph));
+		return optimizeGraph(workGraph, getAverageConfidenceOfEntailment(workGraph));
 	}
 
 	@Override
-	public EntailmentGraphCollapsed generateCollapsedGraph(
+	public EntailmentGraphCollapsed optimizeGraph(
 			EntailmentGraphRaw workGraph, Double confidenceThreshold)
 			throws CollapsedGraphGeneratorException {
 		

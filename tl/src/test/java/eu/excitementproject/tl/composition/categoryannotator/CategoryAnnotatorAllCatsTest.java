@@ -15,11 +15,11 @@ import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
-import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.api.NodeMatcher;
-import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
@@ -48,9 +48,9 @@ public class CategoryAnnotatorAllCatsTest {
 			/************* TEST 1 ***************/
 			testlogger.info("Reading sample raw entailment graph."); 			
 			EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuputWithCategories(false); 	
-			CollapsedGraphGenerator cgg = new SimpleCollapseGraphGenerator();
+			GraphOptimizer cgg = new SimpleGraphOptimizer();
 			testlogger.info("Creating collapsed entailment graph from sample graph."); 			
-			EntailmentGraphCollapsed entailmentGraph = cgg.generateCollapsedGraph(rawGraph);
+			EntailmentGraphCollapsed entailmentGraph = cgg.optimizeGraph(rawGraph);
 			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 			cc.computeCategoryConfidences(entailmentGraph);
 			testlogger.info("Creating a sample CAS.");
