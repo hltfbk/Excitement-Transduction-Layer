@@ -3,9 +3,7 @@ package eu.excitementproject.tl.composition.api;
 //import java.util.List;
 import java.util.Set;
 
-
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
-import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 

@@ -27,8 +27,6 @@ import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.BooleanClause;
-import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
@@ -39,7 +37,6 @@ import org.apache.lucene.util.Version;
 
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
-import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
@@ -180,7 +177,6 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		 for (EquivalenceClass ec : entailmentGraph.vertexSet()) {
 			 doc = new Document(); // make a new, empty document	
 			 String label = ec.getLabel();
-			 Map<String,Double> categoryConfidences = ec.getCategoryConfidences();
 			 for (EntailmentUnit eu : ec.getEntailmentUnits()) { //index entailment units
 				 String euText = eu.getTextWithoutDoulbeSpaces();
 				 doc.add(new TextField("euText", euText, Store.YES));
@@ -230,7 +226,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		
 		TopDocs results = searcher.search(query, 5);
 		ScoreDoc[] hits = results.scoreDocs;
-		int numTotalHits = results.totalHits;
+		//int numTotalHits = results.totalHits;
 		//logger.info(numTotalHits + " potentially matching documents:");
 		Map<Document,Float> matchScores = new HashMap<Document,Float>();
 		for (int i=0; i<hits.length; i++) {

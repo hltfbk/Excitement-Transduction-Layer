@@ -18,7 +18,7 @@ public class EvaluatorCategoryAnnotatorTest {
 		
 		try {					
 			testlogger.info("Reading dataset for evaluation.");
-			String inputFilename = "./src/test/resources/WP2_public_data_XML/dummy_data_for_evaluator_test.xml"; //dataset to be evaluated
+			String inputFilename = "./src/test/resources/WP2_public_data_XML/german_dummy_data_for_evaluator_test.xml"; //dataset to be evaluated
 			String outputDirname = "./src/test/outputs/"; //output directory (for generated entailment graph)
 			String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml"; //config file for EDA
 					
