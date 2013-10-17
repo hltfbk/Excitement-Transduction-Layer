@@ -32,6 +32,7 @@ import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalcul
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
 import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
@@ -71,10 +72,11 @@ public class DemoUseCase2OMQGerman {
 	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
 	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/";
 	static String xmlDataFilename = "german_dummy_data_for_evaluator_test.xml";
-	static String outputFoldername = "D:/temp/";
+	static String xmlGraphFilename = "src/test/resources/sample_graphs/german_dummy_data_for_evaluator_test_graph.xml";
+	static String outputFoldername = "src/test/resources/";
 	
 	public static void main(String[] args) throws FragmentAnnotatorException, ModifierAnnotatorException,
-		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, LAPException, EntailmentGraphRawException, IOException, TransformerException, ParserConfigurationException {
+		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, LAPException, EntailmentGraphRawException, IOException, TransformerException, ParserConfigurationException, EntailmentGraphCollapsedException {
 		
 		BasicConfigurator.configure();
 		Logger.getRootLogger().setLevel(Level.INFO);
@@ -122,7 +124,7 @@ public class DemoUseCase2OMQGerman {
 			if (!theDir.exists()) {
 				boolean result = theDir.mkdir();
 				if(result){
-					System.out.println("DIR created");
+					System.out.println("Created dir " + theDir.getAbsolutePath());
 				} else {
 					System.err.println("Could not create the output directory. No output files will be created.");
 					outputFolder=null;
@@ -133,7 +135,8 @@ public class DemoUseCase2OMQGerman {
 			use1 = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
 			
 			// build collapsed graph
-			graph = use1.buildCollapsedGraph(docs);
+			graph = use1.buildCollapsedGraph(docs, 0.99);
+			graph.toXML(xmlGraphFilename);
 			//GraphViewer.drawGraph(graph);
 			
 			// compute category confidences and add them to graph

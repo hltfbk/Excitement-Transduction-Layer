@@ -35,6 +35,9 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
+import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
+import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
+import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -65,12 +68,36 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	
 	private final static Logger logger = Logger.getLogger(NodeMatcherLucene.class.getName());
 	
+	
+	/**
+	 * Constructor with just one input argument: the entailment graph.
+	 * 
+	 * @param myEntailmentGraph
+	 */
+	public NodeMatcherLucene(EntailmentGraphCollapsed myEntailmentGraph) {
+		entailmentGraph = myEntailmentGraph;
+		indexPath = "src/test/resources/Lucene_index/";
+		analyzer = new StandardAnalyzer(Version.LUCENE_44);
+	}
+	
+	/**
+	 * Constructor with just three input arguments:
+	 * 
+	 * @param myEntailmentGraph: the input entailment graph
+	 * @param myIndexPath: the path to which the index will be written
+	 * @param myAnalyzer: the analyzer to be used for indexing / searching
+	 */
 	public NodeMatcherLucene(EntailmentGraphCollapsed myEntailmentGraph, String myIndexPath, Analyzer myAnalyzer) {
 		entailmentGraph = myEntailmentGraph;
 		indexPath = myIndexPath;
 		analyzer = myAnalyzer;
 	}
 	
+	/**
+	 * Initializing the search process: reading the index and initializing searcher and query parser. 
+	 * 
+	 * @throws IOException
+	 */
 	public void initializeSearch() throws IOException {
 		reader = DirectoryReader.open(FSDirectory.open(new File(indexPath)));
 		searcher = new IndexSearcher(reader);
@@ -80,7 +107,9 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		
 	
 	/**
-	 * Finds longest match in the entailment graph nodes for the input fragment graph.
+	 * Find entailment units in the entailment graph nodes matching the input fragment graph (longest match).
+	 * 
+	 * @param fragmentGraph: the input fragment graph
 	 */
 	@Override
 	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph) throws NodeMatcherException {
@@ -109,17 +138,40 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	/**
 	 * Finds nodes in an entailment graph that match a mention.
 	 * 
-	 * Simple implementation: Go through all the nodes in the entailment graph and compare
-	 * mention to be found to all mentions associated to the nodes. 
+	 * Search for a query text (the mentionToBeFound) in the index. For a node to be returned, 
+	 * all tokens in the query have to EXACTLY match the tokens of at least one entailment unit 
+	 * associated to the node. (There can be difference in word order, however!)
+	 * The score of the match is set to 1.0.
 	 * 
-	 * @param mention
-	 * @param entailmentGraph
-	 * @return
-	 * @throws IOException 
-	 * @throws ParseException 
+	 * @param mentionToBeFound: mention from the fragment graph
+	 * @return NodeMatch holding the input mention associated to PerNodeScore-s (matching nodes and the confidence of the match)
+	 * @throws ParseException
+	 * @throws IOException
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
-		Map<Document,Float> matchScores = search(mentionToBeFound.getTextWithoutDoulbeSpaces());
+		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
+		Query query = parser.parse(queryText);
+		
+		Date start = new Date();
+		searcher.search(query, null, 100);
+		Date end = new Date();
+		logger.info("Search took "+(end.getTime()-start.getTime())+"ms");
+		
+		TopDocs results = searcher.search(query, 5);
+		ScoreDoc[] hits = results.scoreDocs;
+		//int numTotalHits = results.totalHits;
+		//logger.info(numTotalHits + " potentially matching documents:");
+		Map<Document,Float> matchScores = new HashMap<Document,Float>();
+		for (int i=0; i<hits.length; i++) {
+			ScoreDoc hit = hits[i];
+		    Document d = searcher.doc(hit.doc);
+		    //matchScores.put(d, hit.score); //score returned by Lucene
+		    if (d.getField("euText").stringValue().split("\\s+").length == queryText.split("\\s+").length) {
+		    	//all query terms match and returned document has the same number of terms --> perfect match!
+		    	matchScores.put(d, new Float(1.0)); 
+		    }
+		}	
+		logger.info(matchScores.size() + " matching documents");
 		List<PerNodeScore> scores = new ArrayList<PerNodeScore>();
 		for (Document document : matchScores.keySet()) {
 		    float score = matchScores.get(document);
@@ -198,62 +250,25 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		 logger.info("Added " + written + " documents");
 		 logger.info("Updated " + updated + " documents");
     }
-	
-	/**
-	 * Search for a query text in the index. For a node to be returned, all tokens in the query have 
-	 * to EXACTLY match the tokens of at least one entailment unit associated to the node. 
-	 * (There can be difference in word order, however!)
-	 * The score of the match is set to 1.0.
-	 * 
-	 * @param queryText
-	 * @return map holding the matching documents and the confidence score of the match
-	 * @throws ParseException
-	 * @throws IOException
-	 */
-	private static Map<Document,Float> search(String queryText) throws ParseException, IOException {
-		/*
-		BooleanQuery booleanQuery = new BooleanQuery();
-		for (String queryToken : queryText.split("\\s+")) {
-			Query query = parser.parse(queryToken);
-			booleanQuery.add(query, BooleanClause.Occur.MUST);
-		}*/
-		Query query = parser.parse(queryText);
 		
-		Date start = new Date();
-		searcher.search(query, null, 100);
-		Date end = new Date();
-		logger.info("Search took "+(end.getTime()-start.getTime())+"ms");
-		
-		TopDocs results = searcher.search(query, 5);
-		ScoreDoc[] hits = results.scoreDocs;
-		//int numTotalHits = results.totalHits;
-		//logger.info(numTotalHits + " potentially matching documents:");
-		Map<Document,Float> matchScores = new HashMap<Document,Float>();
-		for (int i=0; i<hits.length; i++) {
-			ScoreDoc hit = hits[i];
-		    Document d = searcher.doc(hit.doc);
-		    //matchScores.put(d, hit.score); //score returned by Lucene
-		    if (d.getField("euText").stringValue().split("\\s+").length == queryText.split("\\s+").length) {
-		    	//all query terms match and returned document has the same number of terms --> perfect match!
-		    	matchScores.put(d, new Float(1.0)); 
-		    }
-		}	
-		logger.info(matchScores.size() + " matching documents");
-		return matchScores;
-	}
-	
-	public static void main(String[] args) throws IOException, ParseException, EntailmentGraphCollapsedException {
-		EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(new File("D:/temp/test.graph.xml"));
-		NodeMatcherLucene nm = new NodeMatcherLucene(graph, "D:/temp/indexPath/", new StandardAnalyzer(Version.LUCENE_44));
+	public static void main(String[] args) throws IOException, ParseException, EntailmentGraphCollapsedException, ConfidenceCalculatorException {
+		EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(new File("src/test/resources/sample_graphs/german_dummy_data_for_evaluator_test_graph.xml"));
+		ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
+		cc.computeCategoryConfidences(graph);
+		NodeMatcherLucene nm = new NodeMatcherLucene(graph, "src/test/resources/Lucene_index", new StandardAnalyzer(Version.LUCENE_44));
 		nm.indexGraphNodes();
 		nm.initializeSearch();
 		NodeMatch nodeMatch = nm.findMatchingNodesForMention(new EntailmentUnitMention("Die Punkte lösen mein Problem nicht", 0));
 		if (null != nodeMatch) {
 			List<PerNodeScore> perNodeScores = nodeMatch.getScores();
 			for (PerNodeScore perNodeScore : perNodeScores) {
-				System.out.println(perNodeScore.getNode().getLabel());
-				System.out.println(perNodeScore.getScore());
-				System.out.println(perNodeScore.getNode().getCategoryConfidences().size());
+				System.out.println("Matching node in graph: " + perNodeScore.getNode().getLabel());
+				System.out.println("Score of the match: " + perNodeScore.getScore());
+				System.out.println("Category confidences: ");
+				for (String category : perNodeScore.getNode().getCategoryConfidences().keySet()) {
+					System.out.println("category "+ category + ": " + perNodeScore.getNode().getCategoryConfidences().get(category));					
+				}
+				
 			}
 		}		
 	}
