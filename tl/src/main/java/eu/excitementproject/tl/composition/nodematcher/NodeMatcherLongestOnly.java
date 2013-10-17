@@ -33,11 +33,10 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	
 	private EntailmentGraphCollapsed entailmentGraph;
 	
-	@Override
-	public void setEntailmentGraph(EntailmentGraphCollapsed graph) {
-		this.entailmentGraph = graph;
+	public NodeMatcherLongestOnly(EntailmentGraphCollapsed graph) {
+		entailmentGraph = graph;
 	}
-
+	
 	@Override
 	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph) throws NodeMatcherException {
 		
@@ -113,6 +112,6 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 			}
 		}
 		return 0;
-	}	
-	
+	}
+
 }

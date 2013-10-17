@@ -58,8 +58,7 @@ public class NodeMatcherLongestOnlyTest {
 			FragmentGraphGenerator fgg = new FragmentGraphGeneratorFromCAS();
 			Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(jcas);
 			testlogger.info("Calling node matcher on the fragment graph."); 			
-			NodeMatcher nm = new NodeMatcherLongestOnly(); 
-			nm.setEntailmentGraph(entailmentGraph);
+			NodeMatcher nm = new NodeMatcherLongestOnly(entailmentGraph); 
 			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next());
 			Assert.assertEquals(1, matches.size()); //should return a single match
 			for (NodeMatch nodeMatch : matches) {

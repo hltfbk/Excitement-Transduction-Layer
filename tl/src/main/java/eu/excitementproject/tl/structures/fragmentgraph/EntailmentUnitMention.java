@@ -274,7 +274,7 @@ public class EntailmentUnitMention {
 	}
 
 	
-	public String getTextWithoutDoulbeSpaces(){
+	public String getTextWithoutDoubleSpaces(){
 		return this.getText().trim().replaceAll(" +", " ");
 	}
 	

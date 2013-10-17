@@ -71,8 +71,7 @@ public class UseCaseTwoRunnerPrototype implements UseCaseTwoRunner {
 		Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(cas);
 
 		//call node matcher on each fragment graph
-		NodeMatcher nm = new NodeMatcherLongestOnly();
-		nm.setEntailmentGraph(graph);
+		NodeMatcher nm = new NodeMatcherLongestOnly(graph);
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
 			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph);

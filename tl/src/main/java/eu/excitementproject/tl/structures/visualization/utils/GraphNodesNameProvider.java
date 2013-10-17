@@ -12,7 +12,7 @@ public class GraphNodesNameProvider implements VertexNameProvider {
 	@Override
 	public String getVertexName(Object vertex) {
 		if (vertex.getClass() == EntailmentUnitMention.class) {
-			return ((EntailmentUnitMention) vertex).getTextWithoutDoulbeSpaces();
+			return ((EntailmentUnitMention) vertex).getTextWithoutDoubleSpaces();
 		}
 		
 		if (vertex.getClass() == EntailmentUnit.class) {
