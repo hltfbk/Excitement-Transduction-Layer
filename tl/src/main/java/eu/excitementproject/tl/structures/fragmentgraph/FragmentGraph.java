@@ -352,7 +352,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 
 		try {
 			JCas aJCas = CASUtils.createNewInputCas(); 
-			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/100771.txt.xmi"); 
+			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/107379.txt.xmi"); 
 
 			// initiate the FragGraphGenerator... 
 			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
@@ -467,7 +467,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 				entailmentUnitNode.setAttribute("categoryId",eu.getCategoryId());
 
 				Element completeStatementText = doc.createElement("completeStatement");
-				completeStatementText.setAttribute("text",eu.getTextWithoutDoulbeSpaces());
+				completeStatementText.setAttribute("text",eu.getTextWithoutDoubleSpaces());
 				entailmentUnitNode.appendChild(completeStatementText);		
 
 				Element interaction = doc.createElement("interactionId");

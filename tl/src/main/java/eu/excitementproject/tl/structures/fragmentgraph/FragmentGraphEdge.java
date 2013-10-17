@@ -65,7 +65,7 @@ public class FragmentGraphEdge extends DefaultEdge{
 	/** Returns a string with the edge in DOT format for outputting the graph
 	 * @return the generated string
 	 */	public String toDOT(){
-		String s = "\""+this.getSource().getTextWithoutDoulbeSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoulbeSpaces()+"\"";
+		String s = "\""+this.getSource().getTextWithoutDoubleSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoubleSpaces()+"\"";
 		s+= " [label=1]";
 		String color = "red";
 		color = "green";		

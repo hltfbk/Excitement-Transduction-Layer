@@ -443,14 +443,16 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 				equivalenceClassNode.setAttribute("label",ec.getLabel());
 				
 				//add category confidences (use case 2)
-				for (String category : ec.getCategoryConfidences().keySet()) {
-					// categoryConfidence elements
-					Element categoryConfidence = doc.createElement("categoryConfidence");
-					categoryConfidence.setAttribute("category",category);
-					categoryConfidence.setAttribute("confidence",ec.getCategoryConfidences().get(category).toString());					
-					equivalenceClassNode.appendChild(categoryConfidence);						
+				if (null != ec.getCategoryConfidences()) {
+					for (String category : ec.getCategoryConfidences().keySet()) {
+						// categoryConfidence elements
+						Element categoryConfidence = doc.createElement("categoryConfidence");
+						categoryConfidence.setAttribute("category",category);
+						categoryConfidence.setAttribute("confidence",ec.getCategoryConfidences().get(category).toString());					
+						equivalenceClassNode.appendChild(categoryConfidence);						
+					}
 				}
- 
+				
 				/*	protected Set<String> completeStatementTexts;					*/
 				for (EntailmentUnit eu : ec.getEntailmentUnits()){
 					// EntailmentUnit elements
