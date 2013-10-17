@@ -24,7 +24,7 @@ public class FragmentGraphTest {
 		
 		// generate fragment graphs from each of the inputCAS examples.  
 		JCas aJCas = CASUtils.createNewInputCas(); 
-		File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/alma_speech/Speech3.1.004.txt.xmi"); 
+		File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_3/3.txt.xmi"); 
 
 		// initiate the FragGraphGenerator... 
 		FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 

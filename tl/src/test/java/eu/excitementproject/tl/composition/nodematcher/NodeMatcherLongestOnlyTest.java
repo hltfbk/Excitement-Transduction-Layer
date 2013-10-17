@@ -12,9 +12,9 @@ import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.NodeMatcher;
-import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.laputils.CASUtils;
@@ -37,9 +37,9 @@ public class NodeMatcherLongestOnlyTest {
 		try {
 			testlogger.info("Reading in a sample entailment graph."); 
 			EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuput(false); 
-			CollapsedGraphGenerator cgg = new SimpleCollapseGraphGenerator();
+			GraphOptimizer cgg = new SimpleGraphOptimizer();
 			testlogger.info("Creating collapsed entailment graph from sample graph."); 			
-			EntailmentGraphCollapsed entailmentGraph = cgg.generateCollapsedGraph(rawGraph);
+			EntailmentGraphCollapsed entailmentGraph = cgg.optimizeGraph(rawGraph);
 			
 			/************* TEST 1 ***************/
 			testlogger.info("Creating fragment graph for sentence 'Disappointed with the amount of legroom compared with other trains'."); 			
