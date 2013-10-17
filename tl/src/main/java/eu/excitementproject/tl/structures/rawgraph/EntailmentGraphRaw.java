@@ -592,8 +592,10 @@ public class EntailmentGraphRaw extends
 					TransformerFactory transformerFactory = TransformerFactory.newInstance();
 					Transformer transformer = transformerFactory.newTransformer();
 					DOMSource source = new DOMSource(doc);
-					StreamResult result = new StreamResult(new File(filename));
- 
+
+					File f = new File(filename);
+					StreamResult result = new StreamResult(f.toURI().getPath());
+
 					// Output to console for testing
 					// StreamResult result = new StreamResult(System.out);
  
