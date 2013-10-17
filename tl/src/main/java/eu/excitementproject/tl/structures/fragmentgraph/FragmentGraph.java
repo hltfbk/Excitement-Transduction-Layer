@@ -352,7 +352,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 
 		try {
 			JCas aJCas = CASUtils.createNewInputCas(); 
-			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/107379.txt.xmi"); 
+			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/100771.txt.xmi"); 
 
 			// initiate the FragGraphGenerator... 
 			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
