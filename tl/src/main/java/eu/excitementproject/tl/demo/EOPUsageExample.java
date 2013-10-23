@@ -2,6 +2,9 @@ package eu.excitementproject.tl.demo;
 
 import java.io.File;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.TEDecision;
@@ -9,6 +12,7 @@ import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 //import eu.excitementproject.eop.lap.PlatformCASProber;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
@@ -27,6 +31,11 @@ public class EOPUsageExample {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
+		BasicConfigurator.resetConfiguration(); 
+		BasicConfigurator.configure(); 
+		Logger.getRootLogger().setLevel(Level.INFO);  // for UIMA (hiding < INFO) 
+		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.demo"); 
 
 		try {
 
@@ -94,7 +103,9 @@ public class EOPUsageExample {
 			
 			// Okay. Run. 
 			TEDecision d = meceda.process(edaInputCas); 
-			System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			testlogger.info("TIE with English Basic Configuration."); 
+			testlogger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			//System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
 			
 			// As you see, this ends up with Entailment, and you can see some score, if you look into the decision object. 
 			// All right. This was just one minute version. Maybe 10 min version would follow later on ... 
@@ -130,7 +141,9 @@ public class EOPUsageExample {
 			
 			// Okay. Run. 
 			TEDecision d = meceda.process(edaInputCas); 
-			System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			testlogger.info("TIE with German Basic Configuration."); 
+			testlogger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			//System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
 			
 		}
 		catch (Exception e)
@@ -139,7 +152,7 @@ public class EOPUsageExample {
 			System.exit(1); 
 		}
 
-		// Part #2. This is a small test for Italian 
+		// Part #3. This is a small test for Italian 
 		try 
 		{
 			// Prepare an Italian LAP, and generate the Entailment Pair  
@@ -162,7 +175,9 @@ public class EOPUsageExample {
 			
 			// Okay. Run. 
 			TEDecision d = meceda.process(edaInputCas); 
-			System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			testlogger.info("TIE with Italian Basic Configuration."); 
+			testlogger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			//System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
 			
 		}
 		catch (Exception e)
@@ -171,6 +186,76 @@ public class EOPUsageExample {
 			System.exit(1); 
 		}
 		
-	}
+		// Part #4. TIE with Lexical Resources 
+		try 
+		{
+			// To run this configuration: 
+			// 1) You need to download eop-resources-1.0.2.tar.gz from the following URL 
+			// 		http://hlt-services4.fbk.eu:8080/artifactory/simple/private-internal/eu/excitementproject/eop-resources/1.0.2.tar/eop-resources-1.0.2.tar.gz			
+			// 2) Unpack it in some path.  
+			// 3) Update the following configuration file: it must point WordNet and VerbOcean path of the unpacked eop-resources. 
+            //    (wordNetFilesPath and verbOceanFilePath) 
 
+			File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO_EN.xml");
+
+			// Setting up EDA and init. If anything missing (missing path), it will raise exception. 
+			// Log4j Info will show VerbOcean and WordNet loaded (or not). 
+			CommonConfig config = null;
+			config = new ImplCommonConfig(configFile);
+			MaxEntClassificationEDA meceda = new MaxEntClassificationEDA();	
+			meceda.initialize(config); 
+			testlogger.info("TIE English Configuration with WordNet + VerbOcean initialized"); 
+						
+			// The configuration requires lemmas, and We use TreeTagger EN 
+			LAPAccess treetaggerEN = new LemmaLevelLapEN(); 
+			JCas edaInputCas = treetaggerEN.generateSingleTHPairCAS("WP6 successfully delivered the first prototype.", "The first WP6 prototype is working."); 			
+			
+			// Okay. Run. 
+			TEDecision d = meceda.process(edaInputCas); 
+			testlogger.info("TIE with English Lexical Resources."); 
+			testlogger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+						
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			System.exit(1); 
+		}
+		
+		// Part #5. TIE EN with Full configurations (Lexical Resources + Parser features) 
+		try 
+		{
+			// To run this configuration: 
+			// 1) You need to download eop-resources-1.0.2.tar.gz from the following URL 
+			// 		http://hlt-services4.fbk.eu:8080/artifactory/simple/private-internal/eu/excitementproject/eop-resources/1.0.2.tar/eop-resources-1.0.2.tar.gz			
+			// 2) Unpack it in some path.  
+			// 3) Update the following configuration file: it must point WordNet and VerbOcean path of the unpacked eop-resources. 
+			//    (wordNetFilesPath and verbOceanFilePath) 
+			File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml");
+
+			// Setting up EDA and init. If anything missing (missing path), it will raise exception. 
+			// Log4j Info will show VerbOcean and WordNet loaded (or not). 
+			CommonConfig config = null;
+			config = new ImplCommonConfig(configFile);
+			MaxEntClassificationEDA meceda = new MaxEntClassificationEDA();	
+			meceda.initialize(config); 
+			testlogger.info("TIE English Configuration with Lexical resources and Parser features initialized"); 
+						
+			// The configuration requires Parse tree results, in addition to lemmas
+			// so we use MaltParser EN here. 
+			LAPAccess lap = new MaltParserEN(); 
+			JCas edaInputCas = lap.generateSingleTHPairCAS("WP6 successfully delivered the first prototype.", "The first WP6 prototype is working."); 			
+			
+			// Okay. Run. 
+			TEDecision d = meceda.process(edaInputCas); 
+			testlogger.info("TIE with Parser features & Resources."); 
+			testlogger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+						
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			System.exit(1); 
+		}		
+	}
 }
