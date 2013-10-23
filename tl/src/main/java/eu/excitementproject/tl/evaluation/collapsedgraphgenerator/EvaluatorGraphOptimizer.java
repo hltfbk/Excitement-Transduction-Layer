@@ -16,7 +16,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  * @author Lili Kotlerman
  *
  */
-public class EvaluatorCollapsedGrapgGenerator {
+public class EvaluatorGraphOptimizer {
 	
 	// holds the best-fit gold-standard labels for evaluated clusters. Key - real cluster's label, value - best-fit gold label
 	private HashMap<String, String> bestFitLabelsMap = null;  
@@ -127,5 +127,4 @@ public class EvaluatorCollapsedGrapgGenerator {
 		if ((gsEdge.getSource().getLabel().equals(evaluatedEdge.getSource().getLabel())) && (gsEdge.getTarget().getLabel().equals(evaluatedEdge.getTarget().getLabel()))) return true;		 
 		return false;
 	}
-	
 }
