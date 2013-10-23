@@ -6,7 +6,8 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 
 /**
- * This class contains methods for evaluating graph merger results
+ * This class contains methods for evaluating graph merger results.
+ * Currently the evaluation accepts ONLY edges with "entailment" decision label
  * @author Lili Kotlerman
 */
 public class EvaluatorGraphMerger {
@@ -16,8 +17,8 @@ public class EvaluatorGraphMerger {
 	 * The assumption is that the nodes of the gold standard merged graph and the evaluated graph are the same,
 	 * i.e. that both were built from exactly the same set of fragment graphs.
 	 * Thus, evaluation reflects the quality of the merging process per se.
-	 * @param goldStandardEdges
-	 * @param evaluatedGraphEdges
+	 * @param goldStandardEdges - "entailment" edges from the gold standard annotation
+	 * @param evaluatedGraphEdges - "entailment" edges from the evaluated graph
 	 * @return evaluation measures (recall, precision, f1).
 	 */
 	public static EvaluationMeasures evaluate(Set<EntailmentRelation> goldStandardEdges, Set<EntailmentRelation> evaluatedGraphEdges){

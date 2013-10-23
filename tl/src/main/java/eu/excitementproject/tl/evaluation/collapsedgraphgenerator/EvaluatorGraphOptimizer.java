@@ -6,11 +6,17 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
+import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.tl.evaluation.graphmerger.EvaluatorGraphMerger;
 import eu.excitementproject.tl.evaluation.utils.TLClusteringResultsEvaluator;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
+import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 /**
  * @author Lili Kotlerman
@@ -21,6 +27,51 @@ public class EvaluatorGraphOptimizer {
 	// holds the best-fit gold-standard labels for evaluated clusters. Key - real cluster's label, value - best-fit gold label
 	private HashMap<String, String> bestFitLabelsMap = null;  
 
+	/** De-collapses each of the collapsed nodes of the given graph into a complete subgraph of EntailmentUnits (bi-directed clique, where entailment units are connected to each other in both directions)
+	 * Duplicates the edges (collapsed source node -> collapsed target node) of the collapsed graph to connect all source EntailmentUnits with all target EntailmentUnits in the original edge's direction      
+	 * @param goldStandardEdges - "entailment" edges from the gold standard annotation
+	 * @param collapsedGraph - "entailment" of from the de-collapsed graph
+	 * @return evaluation measures (recall, precision, f1).
+	 */
+	public EvaluationMeasures evaluateDecollapsedGraph(Set<EntailmentRelation> goldStandardEdges, EntailmentGraphCollapsed collapsedGraph){
+		return EvaluatorGraphMerger.evaluate(goldStandardEdges, getAllEntailmentRelations(collapsedGraph));
+	}
+	
+	/** De-collapses each of the collapsed nodes of the given graph into a complete subgraph of EntailmentUnits (bi-directed clique, where entailment units are connected to each other in both directions)
+	 * Duplicates the edges (collapsed source node -> collapsed target node) of the collapsed graph to connect all source EntailmentUnits with all target EntailmentUnits in the original edge's direction      
+	 * @param collapsedGraph
+	 * @return The full set of edges after de-collapsing is performed, which should be passed to the EvaluatorGraphMerger process
+	 */
+	private static Set<EntailmentRelation> getAllEntailmentRelations(EntailmentGraphCollapsed collapsedGraph){
+		Set<EntailmentRelation> decollapsedGraphEdges = new HashSet<EntailmentRelation>();
+
+		// decollapse all the collapsed nodes
+		for (EquivalenceClass collapsedNode : collapsedGraph.vertexSet()){
+			for (EntailmentUnit nodeUnitA : collapsedNode.getEntailmentUnits()){
+				for (EntailmentUnit nodeUnitB : collapsedNode.getEntailmentUnits()){
+					if (nodeUnitA.equals(nodeUnitB)) continue;
+					// add "entailment" edge between nodeUnitA and nodeUnitB in both directions
+					// since we don't know the confidences of relations within the collapsedNode, we use 1.0 confidence 
+					// we specify EdgeType.UNKNOWN, since we don't know the origins of relations within the collapsedNode (potentially, not only EDA edges, but also fragment graph edges can be collapsed under one collapsed node)
+					decollapsedGraphEdges.add(new EntailmentRelation(nodeUnitA, nodeUnitB, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment),EdgeType.UNKNOWN));										
+					decollapsedGraphEdges.add(new EntailmentRelation(nodeUnitB, nodeUnitA, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment),EdgeType.UNKNOWN));
+					// TODO currently EvaluatorGraphMerger works only with "entailment" edges. Otherwise, "paraphrase" edge can be added here instead
+				}
+			}
+		}
+		
+		// duplicate edges
+		for (EntailmentRelationCollapsed edge : collapsedGraph.edgeSet()){
+			// for each edge in the collapsed graph
+			for (EntailmentUnit sourceUnit : edge.getSource().getEntailmentUnits()){
+				for (EntailmentUnit targetUnit : edge.getTarget().getEntailmentUnits()){
+					// add "entailment" edge between source unit and target unit, with the same confidence as in the original edge between collapsed source & target nodes
+					decollapsedGraphEdges.add(new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(edge.getConfidence(), DecisionLabel.Entailment), EdgeType.UNKNOWN));
+				}
+			}
+		}
+		return decollapsedGraphEdges;
+	}
 	
 	/**
 	 * Considering paraphrasing statements united together under one node ({@link EquivalenceClass}) as clusters of statements, evaluate how similar automatic "clustering" is to the gold-standard one
@@ -127,4 +178,5 @@ public class EvaluatorGraphOptimizer {
 		if ((gsEdge.getSource().getLabel().equals(evaluatedEdge.getSource().getLabel())) && (gsEdge.getTarget().getLabel().equals(evaluatedEdge.getTarget().getLabel()))) return true;		 
 		return false;
 	}
+	
 }
