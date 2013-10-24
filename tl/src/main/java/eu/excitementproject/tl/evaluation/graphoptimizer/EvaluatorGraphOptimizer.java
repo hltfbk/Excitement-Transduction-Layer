@@ -29,6 +29,7 @@ public class EvaluatorGraphOptimizer {
 	// holds the best-fit gold-standard labels for evaluated clusters. Key - real cluster's label, value - best-fit gold label
 	private HashMap<String, String> bestFitLabelsMap = null;  
 
+	
 	/** De-collapses each of the collapsed nodes of the given graph into a complete subgraph of EntailmentUnits (bi-directed clique, where entailment units are connected to each other in both directions)
 	 * Duplicates the edges (collapsed source node -> collapsed target node) of the collapsed graph to connect all source EntailmentUnits with all target EntailmentUnits in the original edge's direction      
 	 * @param goldStandardEdges - "entailment" edges from the gold standard annotation
