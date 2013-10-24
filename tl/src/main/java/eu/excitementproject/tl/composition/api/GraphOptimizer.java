@@ -1,6 +1,6 @@
 package eu.excitementproject.tl.composition.api;
 
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
@@ -38,12 +38,12 @@ public interface GraphOptimizer {
 	/**
 	 * @param workGraph - one entailment graph ({@link EntailmentGraphRaw})
 	 * @return one collapsed entailment graph ({@link EntailmentGraphCollapsed})
-	 * @throws GraphOptimizerException if the implementation can't convert the graph for some
+	 * @throws CollapsedGraphGeneratorException if the implementation can't convert the graph for some
   reason
 	 */
 	public EntailmentGraphCollapsed optimizeGraph(EntailmentGraphRaw workGraph) 
-			throws GraphOptimizerException;
+			throws CollapsedGraphGeneratorException;
 
 	public EntailmentGraphCollapsed optimizeGraph(EntailmentGraphRaw workGraph, Double confidenceThreshold) 
-			throws GraphOptimizerException;
+			throws CollapsedGraphGeneratorException;
 }

@@ -6,7 +6,7 @@ import java.util.Set;
 import org.jgrapht.alg.CycleDetector;
 
 import eu.excitementproject.eop.common.DecisionLabel;
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -19,7 +19,7 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 	@Override
 	public EntailmentGraphCollapsed optimizeGraph(
 			EntailmentGraphRaw workGraph)
-			throws GraphOptimizerException {
+			throws CollapsedGraphGeneratorException {
 		
 		return optimizeGraph(workGraph, getAverageConfidenceOfEntailment(workGraph));
 	}
@@ -27,7 +27,7 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 	@Override
 	public EntailmentGraphCollapsed optimizeGraph(
 			EntailmentGraphRaw workGraph, Double confidenceThreshold)
-			throws GraphOptimizerException {
+			throws CollapsedGraphGeneratorException {
 		
 		// Step 1 - clean up the work graph
 		
@@ -95,9 +95,9 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 		// - Copy edges (in case of multiple edges assign min confidence)
 		for (EntailmentRelation workGraphEdge : workGraph.edgeSet()){
 			EquivalenceClass source = collapsedGraph.getVertex(workGraphEdge.getSource());
-			if (source==null) throw new GraphOptimizerException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getSource());
+			if (source==null) throw new CollapsedGraphGeneratorException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getSource());
 			EquivalenceClass target = collapsedGraph.getVertex(workGraphEdge.getTarget());
-			if (target==null) throw new GraphOptimizerException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getTarget());
+			if (target==null) throw new CollapsedGraphGeneratorException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getTarget());
 			
 			if (source.equals(target)) continue; // if source and target of the work graph edge are both mapped to the same equivalence class - don't add this edge (this will be a loop)  
 			

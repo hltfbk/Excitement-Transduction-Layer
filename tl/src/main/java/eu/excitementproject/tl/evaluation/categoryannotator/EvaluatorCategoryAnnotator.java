@@ -25,7 +25,7 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
@@ -182,7 +182,7 @@ public class EvaluatorCategoryAnnotator {
 		} catch (ConfigurationException | EDAException | ComponentException 
 			| FragmentAnnotatorException | ModifierAnnotatorException 
 			| GraphMergerException | IOException 
-			| GraphOptimizerException 
+			| CollapsedGraphGeneratorException 
 			| FragmentGraphGeneratorException 
 			| ConfidenceCalculatorException 
 			| NodeMatcherException 

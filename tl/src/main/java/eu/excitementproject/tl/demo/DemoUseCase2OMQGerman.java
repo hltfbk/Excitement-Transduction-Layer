@@ -30,7 +30,7 @@ import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -182,7 +182,7 @@ public class DemoUseCase2OMQGerman {
 		} catch (ConfigurationException | EDAException | ComponentException |
 			FragmentAnnotatorException | FragmentGraphGeneratorException |
 			ModifierAnnotatorException |
-			GraphMergerException | GraphOptimizerException | DataReaderException |
+			GraphMergerException | CollapsedGraphGeneratorException | DataReaderException |
 			 ConfidenceCalculatorException e) {
 			e.printStackTrace();
 		}

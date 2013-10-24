@@ -8,7 +8,7 @@ import java.util.Set;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -33,18 +33,18 @@ public abstract interface UseCaseOneRunner {
 
 
 	EntailmentGraphCollapsed buildCollapsedGraph(File f)
-			throws GraphOptimizerException;
+			throws CollapsedGraphGeneratorException;
 
 
 	EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs)
-			throws GraphOptimizerException, GraphMergerException,
+			throws CollapsedGraphGeneratorException, GraphMergerException,
 			FragmentGraphGeneratorException, LAPException,
 			FragmentAnnotatorException, ModifierAnnotatorException, IOException,
 			EntailmentGraphRawException;
 
 
 	EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs)
-			throws GraphOptimizerException, GraphMergerException,
+			throws CollapsedGraphGeneratorException, GraphMergerException,
 			FragmentGraphGeneratorException, FragmentAnnotatorException,
 			ModifierAnnotatorException, LAPException, IOException, 
 			EntailmentGraphRawException;
