@@ -1,0 +1,57 @@
+* Short memo about RTE pair data from WP2 data (merged graphs) 
+
+** Data Scope
+- NICE (email, speech) and ALMA (social, speech) WP2 merged graphs,
+  2012 Sep. 30 version.  
+
+*** NICE EMAIL (file: nice_email_edges.eopformat.xml) 
+- 43302 pairs 
+- 6431 ENTAILMENT pairs 
+- 36871 NONENTAILMENT pairs 
+
+*** NICE SPEECH (file: nice_speech_edges.eopformat.xml) 
+- 3530 pairs 
+- 177 ENTAILMENT pairs 
+- 3353 NONENTAILMENT pairs 
+
+*** ALMA SOCIAL (file: alma_social_edges.eopformat.xml) 
+- 194612 pairs 
+- 2024 ENTAILMENT pairs 
+- 192588 NONENTAILMENT pairs 
+
+*** ALMA SPEECH (file: alma_speech_edges.eopformat.xml) 
+- 76756 pairs 
+- 146 ENTAILMENT pairs 
+- 76610 NONENTAILMENT pairs 
+
+** How the data has been generated?
+   1) For each cluster 
+      a) extracted "inter-fragment" edges (internal edges among
+      fragments are ignored). Edges only exist when they are
+      entailment. (directed edges) 
+      b) those edges were used as T (from) -> T (to) ENTAILMENT pairs. 
+      c) extracted "inter-fragment" node (directed) pairs that *does
+      not* have edges between them. This means that they are
+      non-entailment. 
+      d) used those edges as T (from)-> T (to) NONENTAILMENT pairs 
+   2) Once we get edges from each cluster, they are summed up, and
+      printed out as EOP RTE pair data XML format. 
+
+** Note 
+- Note that (as graphs get larger), "non-entailment" node pairs are
+  increasing far larger than entailment pairs. Thus the data is quite
+  skewed to "non-entailment" common. 
+- The data posted this time has all data "as is". No effort was done
+  to make this less skewed, or anything like that. 
+- In the EOP format XML file, all ENTAILMENT pairs comes first, and
+  NONENTAILMENT pairs comes later in the file. Maybe this order is
+  useful to extract ENTAILMENT/NONENTAILMENT pairs only. 
+
+** To reproduce the data from WP2 (or WP2-like) data 
+- You might want to regenerate EOP RTE pair data from WP2 data, or
+  some data similar from them. You can use the scripts that Gil wrote
+  for this. 
+- https://github.com/gilnoh/RTEFormatWork  (check WP2-merged-graphs
+  directory; Runner.rb is the ruby script that does the
+  conversion. all relevant source is there, too.) 
+
