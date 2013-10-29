@@ -48,8 +48,6 @@ public class GoldStandardEdgesLoader {
 		return edges;
 	}
 
-
-
 	public void addAnnotations(String xmlAnnotationFilename) throws GraphEvaluatorException{		
 		// read all the nodes from xml annotation file and add them to the index 
 	   		try {
@@ -64,10 +62,8 @@ public class GoldStandardEdgesLoader {
 					// add nodes to the dictionary nodeTextById
 					for (int temp = 0; temp < nodes.getLength(); temp++) {    
 						Node xmlNode = nodes.item(temp);     
-						//node.getNodeName();   
 
 						Element nodeElement = (Element) xmlNode;
-					//	String text = nodeElement.getAttribute("original_text");
 						String id = nodeElement.getAttribute("id");
 						NodeList xmlChildNodes = xmlNode.getChildNodes();
 				       	for (int i = 0; i < xmlChildNodes.getLength(); i++) {    
@@ -75,7 +71,6 @@ public class GoldStandardEdgesLoader {
 				       		if (child.getNodeName().equals("original_text")){
 							   	String text = child.getTextContent();
 				       			nodeTextById.put(id, text);
-							   	System.out.println("Added node with id <<"+id+">> and text <<"+text+">>");
 				       		}
 				       	}
 					}   										
