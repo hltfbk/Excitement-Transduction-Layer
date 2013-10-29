@@ -43,41 +43,47 @@ public class GoldStandardLoader {
 		
 		// read all the nodes from xml annotation file and create their index 
 		Map<String,String> nodeTextById = new HashMap<String,String>(); //[id] [text]
-	   	try {				
-	   			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-				Document doc = dBuilder.parse(new File(xmlAnnotationFilename));
-	    
-				doc.getDocumentElement().normalize();	     
-				doc.getDocumentElement().getNodeName();
-				NodeList nodes = doc.getElementsByTagName("node");
-				
-				// add nodes to the dictionary nodeTextById
-				for (int temp = 0; temp < nodes.getLength(); temp++) {    
-					Node node = nodes.item(temp);     
-					//node.getNodeName();   
+	   			try {
+					DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+					DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+					Document doc = dBuilder.parse(new File(xmlAnnotationFilename));
+   
+					doc.getDocumentElement().normalize();	     
+					doc.getDocumentElement().getNodeName();
+					NodeList nodes = doc.getElementsByTagName("node");
+					
+					// add nodes to the dictionary nodeTextById
+					for (int temp = 0; temp < nodes.getLength(); temp++) {    
+						Node node = nodes.item(temp);     
+						//node.getNodeName();   
 
-					Element nodeElement = (Element) node;
-					String text = nodeElement.getAttribute("original_text");
-					String id = nodeElement.getAttribute("id");
-			       	nodeTextById.put(id, text);
-				}   	
-				
-				
-				
-				// load all the edges
-				NodeList entailmentRelationList = doc.getElementsByTagName("edge");
-				for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
-					Node er = entailmentRelationList.item(temp);     
-					er.getNodeName();     
-					Element erElement = (Element) er;
-					String source = erElement.getAttribute("source");
-					String target = erElement.getAttribute("target");
+						Element nodeElement = (Element) node;
+						String text = nodeElement.getAttribute("original_text");
+						String id = nodeElement.getAttribute("id");
+					   	nodeTextById.put(id, text);
+					}   	
+					
+					
+					
+					// load all the edges
+					NodeList entailmentRelationList = doc.getElementsByTagName("edge");
+					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
+						Node er = entailmentRelationList.item(temp);     
+						er.getNodeName();     
+						Element erElement = (Element) er;
+						String source = erElement.getAttribute("source");
+						String target = erElement.getAttribute("target");
+					}
+				} catch (ParserConfigurationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SAXException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			} catch (DOMException | ParserConfigurationException | SAXException
-					| IOException | EDAException e) {
-				throw new EntailmentGraphRawException("Could not load collapsed graph from " + xmlFile.getAbsolutePath()+"\n"+e.getMessage());
-			}
 
 		
 		return edges;

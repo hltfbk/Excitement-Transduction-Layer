@@ -8,7 +8,7 @@ package eu.excitementproject.tl.composition.exceptions;
  * @author Lili
  *
  */
-public class CollapsedGraphGeneratorException extends Exception {
+public class GraphOptimizerException extends Exception {
 	
 	private static final long serialVersionUID = -2023803901835429501L;
 
@@ -16,7 +16,7 @@ public class CollapsedGraphGeneratorException extends Exception {
   reason
 	 * @param message
 	 */
-	public CollapsedGraphGeneratorException(String message) {
+	public GraphOptimizerException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
