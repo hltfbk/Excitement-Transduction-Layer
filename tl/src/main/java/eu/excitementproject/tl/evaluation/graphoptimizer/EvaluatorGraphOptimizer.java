@@ -1,4 +1,4 @@
-package eu.excitementproject.tl.evaluation.collapsedgraphgenerator;
+package eu.excitementproject.tl.evaluation.graphoptimizer;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,6 +8,7 @@ import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.evaluation.graphmerger.EvaluatorGraphMerger;
+import eu.excitementproject.tl.evaluation.utils.ExtendedEvaluationMeasures;
 import eu.excitementproject.tl.evaluation.utils.TLClusteringResultsEvaluator;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -19,6 +20,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 /**
+ * This class contains methods for evaluating graph optimizer results.
  * @author Lili Kotlerman
  *
  */
@@ -27,13 +29,14 @@ public class EvaluatorGraphOptimizer {
 	// holds the best-fit gold-standard labels for evaluated clusters. Key - real cluster's label, value - best-fit gold label
 	private HashMap<String, String> bestFitLabelsMap = null;  
 
+	
 	/** De-collapses each of the collapsed nodes of the given graph into a complete subgraph of EntailmentUnits (bi-directed clique, where entailment units are connected to each other in both directions)
 	 * Duplicates the edges (collapsed source node -> collapsed target node) of the collapsed graph to connect all source EntailmentUnits with all target EntailmentUnits in the original edge's direction      
 	 * @param goldStandardEdges - "entailment" edges from the gold standard annotation
 	 * @param collapsedGraph - "entailment" of from the de-collapsed graph
 	 * @return evaluation measures (recall, precision, f1).
 	 */
-	public EvaluationMeasures evaluateDecollapsedGraph(Set<EntailmentRelation> goldStandardEdges, EntailmentGraphCollapsed collapsedGraph){
+	public static EvaluationMeasures evaluateDecollapsedGraph(Set<EntailmentRelation> goldStandardEdges, EntailmentGraphCollapsed collapsedGraph){
 		return EvaluatorGraphMerger.evaluate(goldStandardEdges, getAllEntailmentRelations(collapsedGraph));
 	}
 	
@@ -81,8 +84,8 @@ public class EvaluatorGraphOptimizer {
 	 * @param includeAllMeasures - if true all the measures are calculated, otherwise only purity is calculated
 	 * @return clustering evaluation measures (Purity, RandIndex, Recall, Precision and F1), as described in "Introduction to Information Retrieval" (Manning et al, 2008)
 	 */
-	public EvaluationMeasures evaluateMergeOfParaphrasingNodes(Set<EquivalenceClass> goldStandardNodes, Set<EquivalenceClass> evaluatedGraphNodes, boolean includeAllMeasures){
-		EvaluationMeasures eval = new EvaluationMeasures();
+	public ExtendedEvaluationMeasures evaluateMergeOfParaphrasingNodes(Set<EquivalenceClass> goldStandardNodes, Set<EquivalenceClass> evaluatedGraphNodes, boolean includeAllMeasures){
+		ExtendedEvaluationMeasures eval = new ExtendedEvaluationMeasures();
 		
 		//  A map with the gold-standard clusters. Keys are cluster labels, values are lists containing the ids of items in the corresponding cluster
 		HashMap<String, LinkedList<Integer>> evaluatedClusters = new HashMap<String, LinkedList<Integer>>();
