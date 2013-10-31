@@ -15,6 +15,11 @@
   		<version>1.0.1</version>
   	</dependency>
   	<dependency>
+  		<groupId>eu.excitementproject</groupId>
+  		<artifactId>globalgraphoptimizer</artifactId>
+  		<version>1.0.3-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
   		<groupId>net.sf.jgrapht</groupId>
   		<artifactId>jgrapht</artifactId>
   		<version>0.8.3</version>
