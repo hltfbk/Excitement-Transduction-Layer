@@ -78,6 +78,8 @@ public final class InteractionReader {
 			throw new DataReaderException("unable to access the input file", ioe);
 		}	
 		
+		System.out.println("Processing file ...");
+		
 		// open the document <dataset> (top) 
 		Element dataset = dom.getDocumentElement(); 
 		
@@ -109,7 +111,10 @@ public final class InteractionReader {
 			// businessScenario (e.g. train, coffeehouse, etc) , 
 			// dataSource (company name, prolly confidential), 
 			// date (meaningless in our setup? - all 0001-01-01 in the data) 
-		
+			
+			// get the keywords
+			String keywords = oneInteraction.getElementsByTagName("keyword").item(0).getFirstChild().getNodeValue();
+			
 			Element meta = (Element) oneInteraction.getElementsByTagName("metadata").item(0); 
 			Node c = meta.getElementsByTagName("category").item(0).getFirstChild(); 
 			String category = null;
@@ -125,7 +130,7 @@ public final class InteractionReader {
 				interactionId = idval.getNodeValue(); 
 			}
 			
-			Interaction interaction = new Interaction(interactionText, lang, interactionId, category, channel, provider); 
+			Interaction interaction = new Interaction(interactionText, lang, interactionId, category, channel, provider, keywords); 
 			interactionList.add(interaction); 			
 		}
 		

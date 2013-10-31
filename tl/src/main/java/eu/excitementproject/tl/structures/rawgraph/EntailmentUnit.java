@@ -234,8 +234,8 @@ public class EntailmentUnit{
 	@Override
 	public String toString(){
 		String s="\""+this.getText()+"\"";
-		if(isBaseStatement()) s+=" (base statement)";
-		else if(this.level>0) s+= " ("+this.level+" mod.)";
+		if(isBaseStatement()) s+=" (base statement)\n";
+		else if(this.level>0) s+= " ("+this.level+" mod.)\n";
 		else s+= " (level unknown)";
 		if (!this.completeStatementTexts.isEmpty()) s+=" " + this.completeStatementTexts.size()+ " complete statements";
 		return s;

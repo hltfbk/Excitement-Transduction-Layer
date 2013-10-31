@@ -28,10 +28,12 @@ public class Interaction {
 	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
 	 * @param channel channel of the interaction, free string, and depends on the application 
 	 * @param provider
-	 * @param category 
+	 * @param category
+	 * @param keywords -- an array of keywords for the interaction 
 	 */
+
 	
-	public Interaction(String interactionString, String langID, String interactionId, String category, String channel, String provider)
+	public Interaction(String interactionString, String langID, String interactionId, String category, String channel, String provider, String keywords)
 	{
 		this.lang = langID; 
 		this.interactionId = interactionId; 
@@ -39,6 +41,27 @@ public class Interaction {
 		this.provider= provider; 
 		this.interactionString = interactionString; 	
 		this.category = category; 
+		if (keywords == null) {
+			this.keywords = null;
+		} else {
+			this.keywords = keywords.split(",");
+		}
+	}
+
+	
+	/**
+	 * Constructor for the data type. This constructor is "full" one. 
+	 * 
+	 * @param interactionString Whole interaction as one string. 
+	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
+	 * @param channel channel of the interaction, free string, and depends on the application 
+	 * @param provider
+	 * @param category 
+	 */
+	
+	public Interaction(String interactionString, String langID, String interactionId, String category, String channel, String provider)
+	{
+		this(interactionString, langID, interactionId, category, channel, provider, null);
 	}
 	
 	/**
@@ -49,8 +72,20 @@ public class Interaction {
 	 */
 	public Interaction(String interactionString, String langID)
 	{
-		this(interactionString, langID, null, null, null, null); 
+		this(interactionString, langID, null, null, null, null, null); 
 	}
+	
+	/**
+	 * Minimal Constructor for Usecase 1 with keywords. The constructor will only fill interaction and Language ID and keywords. channel, provider and category will be set as null.  If you need to set those metadata, use the full constructor.
+	 * 
+	 * @param interactionString Whole interaction as one string
+	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
+	 */
+	public Interaction(String interactionString, String langID, String keywords)
+	{
+		this(interactionString, langID, null, null, null, null, keywords); 
+	}
+	
 	
 	/**
 	 * Minimal Constructor for Usecase 2. The constructor will only fill interaction, language ID and cateogry. Channel and category will be null. If you need to set those metadata, use full constructor. 
@@ -61,7 +96,21 @@ public class Interaction {
 	 */
 	public Interaction(String interactionString, String langID, String interactionId, String category)
 	{
-		this(interactionString, langID, interactionId, category, null, null); 
+		this(interactionString, langID, interactionId, category, null, null, null); 
+	}
+	
+	
+	
+	/**
+	 * Minimal Constructor for Usecase 2 with keywords. The constructor will only fill interaction, language ID and cateogry. Channel and category will be null. If you need to set those metadata, use full constructor. 
+	 * 
+	 * @param interactionString Whole interaction as one string
+	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
+	 * @param category channel of the interaction, free string, and depends on the application
+	 */
+	public Interaction(String interactionString, String langID, String interactionId, String category, String keywords)
+	{
+		this(interactionString, langID, interactionId, category, null, null, keywords); 
 	}
 	
 	/**
@@ -90,6 +139,7 @@ public class Interaction {
 		aJCas.setDocumentText(this.interactionString); 
 		
 		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.category);
+		CASUtils.addTLKeywords(aJCas, this.keywords);
 		
 		// TODO : do we need to add category metadata information 
 		// as category annotation? Check this with Kathrin 
@@ -161,5 +211,7 @@ public class Interaction {
 	private final String interactionId; 
 	private final String channel; 
 	private final String provider; 
-	private final String category; 
+	private final String category;
+	
+	private final String[] keywords;
 }
