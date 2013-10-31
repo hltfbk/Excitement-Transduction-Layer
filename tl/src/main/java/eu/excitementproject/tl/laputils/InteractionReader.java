@@ -113,7 +113,7 @@ public final class InteractionReader {
 			// date (meaningless in our setup? - all 0001-01-01 in the data) 
 			
 			// get the keywords
-			String keywords = oneInteraction.getElementsByTagName("keyword").item(0).getFirstChild().getNodeValue();
+			String keywords = getKeywords(oneInteraction);
 			
 			Element meta = (Element) oneInteraction.getElementsByTagName("metadata").item(0); 
 			Node c = meta.getElementsByTagName("category").item(0).getFirstChild(); 
@@ -137,6 +137,19 @@ public final class InteractionReader {
 		return interactionList; 
 	}
 	
+	private static String getKeywords(Element oneInteraction) {
+
+		String keywords = null;
+		
+		NodeList elements = oneInteraction.getElementsByTagName("keyword");
+				
+		if (elements != null && elements.getLength() > 0) {
+			keywords = oneInteraction.getElementsByTagName("keyword").item(0).getFirstChild().getNodeValue();
+		}
+		
+		return keywords;
+	}
+
 	/**
 	 * 
 	 * This reader reads WP2 "human annotated fragment graph annotation dump" data, and fills in the given CAS with the "interaction" with "fragment" annotation. Also adds "modifiers" annotations, if any.  

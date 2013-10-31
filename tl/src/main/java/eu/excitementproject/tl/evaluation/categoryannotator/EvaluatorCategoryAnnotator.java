@@ -59,10 +59,10 @@ import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototy
  * This best category is then compared to the manually assigned one. 
  */
 
-public class EvaluatorCategoryAnnotator {
+public class EvaluatorCategoryAnnotator { 
 	
 	public static void main(String[] args) {
-		String inputFilename = "./src/test/resources/WP2_public_data_XML/dummy_data_for_evaluator_test.xml"; //dataset to be evaluated
+		String inputFilename = "./src/test/resources/WP2_public_data_XML/german_dummy_data_for_evaluator_test.xml"; //dataset to be evaluated
 		String outputDirname = "D:/temp"; //output directory (for generated entailment graph)
 		String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml"; //config file for EDA
 				
