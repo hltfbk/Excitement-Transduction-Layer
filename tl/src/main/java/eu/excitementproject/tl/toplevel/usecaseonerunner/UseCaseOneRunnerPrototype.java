@@ -51,21 +51,25 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	FragmentGraphGenerator fragGen;
 	GraphMerger graphMerger;
 	GraphOptimizer collapseGraph;
-	
-	String outputPath = null;
-	
+		
 	private final static Logger logger = Logger.getLogger(UseCaseOneRunnerPrototype.class.getName());
 	
-	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda, String outputFolder) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
+	// output path used for outputting graphs to files
+	private String outputPath = ".";
+	
+	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
 		this.lap = lap;
 		this.eda = eda;
-		this.outputPath = outputFolder;
-		if (outputFolder != null){
-			BufferedWriter logfile = new BufferedWriter(new FileWriter(outputFolder+"/log.txt")); //create log file (if exists - rewrite)
-			logfile.write(outputFolder+": "+Calendar.getInstance()+"\n");
-			logfile.close();			
-		}
-		
+
+		initInterfaces();
+	}
+	
+	
+	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda, String outputPath) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
+		this.lap = lap;
+		this.eda = eda;
+		this.outputPath = outputPath;
+
 		initInterfaces();
 	}
 	
@@ -103,7 +107,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		for(Interaction i: docs) {
 			JCas aJCas = i.createAndFillInputCAS();
 			annotateCAS(aJCas);
-			log("Adding fragment graphs for text: " + aJCas.getDocumentText());
+			logger.info("Adding fragment graphs for text: " + aJCas.getDocumentText());
 			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
 		}
 		
@@ -112,6 +116,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}
 	
+/*	
 	private void log(String message) throws IOException{
 		logger.info(message);
 		if (outputPath != null){
@@ -120,7 +125,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			logfile.close();			
 		}
 	}
-	
+*/	
 	
 	/**
 	 * Builds a raw entailment graph from a set of user interactions
@@ -249,14 +254,13 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException, EntailmentGraphCollapsedException{
 
 		if (graph != null) { 
-			log("COLLAPSED GRAPH:\n");
-			log(graph.toString());
+			logger.info("COLLAPSED GRAPH:\n" + graph.toString());
 			if (outputPath != null) {
 				graph.toDOT(outputPath+"/collapsed_graph.dot.txt");
 				graph.toXML(outputPath+"/collapsed_graph.xml");
 			}
 		} else {
-			log("The graph is null");
+			logger.info("The collapsed graph is null");
 		}
 	}
 
@@ -264,29 +268,28 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public void inspectGraph(EntailmentGraphRaw graph) throws IOException, EntailmentGraphRawException{
 
 		if (graph != null) { 
-			log("RAW GRAPH:\n");			
-			log(graph.toString());
+			logger.info("RAW GRAPH:\n" + graph.toString());			
 			if (outputPath != null) {
 				graph.toDOT(outputPath+"/raw_graph.dot.txt");
 				graph.toXML(outputPath+"/raw_graph.xml");
 			}
 		} else {
-			log("The graph is null");
+			logger.info("The raw graph is null");
 		}		
 	}
 	
 	
 	public void inspectGraph(Set<FragmentGraph> fgs) throws IOException{
 		
-		log("Inspecting the fragmentGraphs:");
+		logger.info("Inspecting the fragmentGraphs:");
 		int i = 1;
 		
 		if (fgs != null) {
-			log("\t" + fgs.size() + " graphs to check");
+			logger.info("\t" + fgs.size() + " graphs to check");
 			
 			for(FragmentGraph fg : fgs) {
 				if ( fg != null ) {
-					log(fg.toString());
+					logger.info(fg.toString());
 					if (outputPath != null) {
 						fg.toDOT(outputPath+"/fragment_graph_" + i + ".dot.txt");
 						try {
@@ -298,11 +301,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 						i++;
 					}
 				} else {
-					log("Fragment graph is null");
+					logger.info("Fragment graph is null");
 				}
 			}
 		} else {
-			log("The set of fragment graphs is null");
+			logger.info("The set of fragment graphs is null");
 		}
 	}
 

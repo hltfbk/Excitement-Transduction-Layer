@@ -1,8 +1,9 @@
 package eu.excitementproject.tl.structures.fragmentgraph;
 
-import eu.excitementproject.tl.decomposition.fragmentannotator.Span;
+import eu.excitementproject.tl.laputils.CASUtils.Region;
 
-public class SimpleModifier extends Span {
+
+public class SimpleModifier extends Region {
 
 	private String modifier;
 	
@@ -16,6 +17,6 @@ public class SimpleModifier extends Span {
 	}
 	
 	public int getStart() {
-		return this.begin;
+		return getBegin();
 	}
 }

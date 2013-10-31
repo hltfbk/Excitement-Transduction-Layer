@@ -6,11 +6,12 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationColla
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({ "rawtypes", "unused" })
 public class GraphEdgeNameProvider implements EdgeNameProvider {
 
 	@Override
 	public String getEdgeName(Object edge) {
+/*		
 		if (edge.getClass() == FragmentGraphEdge.class) {
 //			return ((FragmentGraphEdge) edge).getWeight()+" ";
 			return "Fragment_entailment";
@@ -23,8 +24,11 @@ public class GraphEdgeNameProvider implements EdgeNameProvider {
 		if (edge.getClass() == EntailmentRelationCollapsed.class) {
 			return ((EntailmentRelationCollapsed) edge).getConfidence()+"";
 		}
-		
+
 		return "NO_RELATION";
+*/
+		
+		return edge.toString();
 	}
 
 }

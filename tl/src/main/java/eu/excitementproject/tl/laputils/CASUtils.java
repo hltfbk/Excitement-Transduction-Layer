@@ -6,10 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 //import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -27,8 +30,10 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.InvalidXMLException;
 import org.apache.uima.util.XMLInputSource;
 import org.apache.uima.util.XMLSerializer;
+import org.uimafit.util.JCasUtil;
 import org.xml.sax.SAXException;
 
+import edu.stanford.nlp.util.StringUtils;
 import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
@@ -54,6 +59,7 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
 // TODO: [#C] set typepath convention for UIMAFit based CAS generation. 
 // TODO: [#C] Check UIMAFit CASUtil, and wrap some needed things.  
 
+@SuppressWarnings("unused")
 public final class CASUtils {
 	/**
 	 * <P>
@@ -376,7 +382,7 @@ public final class CASUtils {
 		key.setEnd(r.getEnd()); 
 		key.addToIndexes(); 
 		
-		l.debug("Generated an KeywordAnnotation. The annotated part is: " + key.getCoveredText()); 		
+		l.debug("Generated a KeywordAnnotation. The annotated part is: " + key.getCoveredText());
 	}
 	
 	/**
@@ -432,6 +438,11 @@ public final class CASUtils {
 		public int getEnd()
 		{
 			return end; 
+		}
+		
+		@Override
+		public String toString() {
+			return " (" + begin + "," + end + ") ";
 		}
 		
 		private final int begin; 
@@ -624,6 +635,27 @@ public final class CASUtils {
 		else
 		{
 			return null; 
+		}
+	}
+
+	public static void addTLKeywords(JCas aJCas, String[] keywords) {
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.CASUtils");
+		
+		if (keywords != null) {
+			
+			logger.info("adding " + keywords.length + " keywords : " + StringUtils.join(keywords));
+			
+			String text = aJCas.getDocumentText();
+			for (int i = 0; i < keywords.length; i++) {
+				
+//				Pattern p = Pattern.compile("\\b" + keywords[i] + "\\b"); // did not work because of tokenization (e.g. "File-Optionen" which in the context does not refer to the compound
+				Pattern p = Pattern.compile(keywords[i]);
+				Matcher m = p.matcher(text);
+				while (m.find()) {
+					annotateOneKeyword(aJCas, new Region(m.start(),m.end()));
+				}
+			}
 		}
 	}
 }
