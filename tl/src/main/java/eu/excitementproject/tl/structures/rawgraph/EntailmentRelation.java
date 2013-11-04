@@ -213,6 +213,20 @@ public class EntailmentRelation extends DefaultEdge {
 		return s+"\n";
 	}
 	
+	 
+	/******************************************************************************************
+	 * METHODS FOR EVALUATION PURPOSES
+	 * ****************************************************************************************/
+	 /** 
+	 * @param anotherEdge EntailmentRelation to compare with
+	 * @return true if the edge's source and target texts are the same as that of anotherEdge
+	 */
+	public boolean isSameSourceAndTarget(EntailmentRelation anotherEdge){
+		 if ((this.getSource().getText().equals(anotherEdge.getSource().getText())) && (this.getTarget().getText().equals(anotherEdge.getTarget().getText()))) return true;		 
+		 return false;
+	 }
+	 
+	 
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/

@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<provider>OMQ</provider>
+<channel>email</channel>
+<language>DE</language>
+  <interactions>
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>1</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>86</category>
+				<keyword>Exportieren,lesbare,Schrift,aendern</keyword>
+    </metadata>
+	<text>
+> Hallo,
+ich habe seit 2 Tagen in meiner Warehouse Software unter Exportieren-File Optionen ein fast nicht lesbare Schrift. Wie kann ich diese wieder aendern.
+</text>
+</interaction>
+   
+   <interaction>
+   <metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>2</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>86</category>
+				<keyword>Beschriftung,Exportbildschirm,lesbar</keyword>
+    </metadata>
+	<text>
+> Ich habe alle Versionen Sales firstclass von 2006 bis heute. Am Samstag bekam
+> die Version WAREHOUSE Sales firstclass 20 Neo, musste nach der Installation
+> feststellen, dass die Beschriftung der Knoepfe im Exportbildschirm
+> nicht lesbar sind (z.B. Dateiformat, Navigation, Komprimierung, Schrift, Sortieren
+> u.s.w. die komplette Beschriftung unter File-Optionen, Titelseite gestalten und
+> Knoepfe gestalten. Nach einer Deinstallation und einer erneuten
+> Installation hat sich die Darstellung im Exportbildschirm nicht geaendert.
+> Da ich Warehouse Schulungen fuer Firmenchefs durchfuehre, ist ein
+> ordnungsgemaesses Arbeiten nicht moeglich. 
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>3</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>86</category>
+				<keyword>Ablaufmarker,Ablauf,Exportroutine,Vorschaufenster,Schrift,Filemenü</keyword>
+    </metadata>
+	<text>
+Hallo, ich habe 3 Fragen zu "Sales firstclass WH Neo":
+1. Im Übersichts-Modus habe ich mit dem Ablaufmarker (blaue Linie mit Beginn- und Endmarkierung) einen Teil des Ablaufes markiert. Die Exportroutine exportiert aber den gesamten Ablauf, also auch das was außerhalb des Ablaufmarkers ist. Ist das ein Programmfehler (bei "Sales firstclass 2008" wird nur korrekt der Ablaufteil zwischen dem Beginn- und Endzeiger gebrannt)?
+2. Im Exportmodus ist die Schrift im kleinen Vorschaufenster im Filemenü immer identisch mit der Schrift der Überschriftzeile vom Untermenü. Wie kann ich diese Verknüpfung lösen, oder ist das ein Programmfehler?
+3. Gibt es eine vollständige Anleitung, evtl. zum herunterladen oder zu bestellen?
+M.f.G. Miraculix
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>4</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>Specificationsheet,Sprechblase,Specificationsheets</keyword>
+    </metadata>
+	<text>
+Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen. Dieser
+ist nun abgesprungen! Danke für eine solch toll funtionierende Technik ich bin stinkesauer!
+Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen! Ich bitte um eine Antwort die nicht wieder
+21 Tage dauert!
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>5</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>Blasen,Vorschein</keyword>
+    </metadata>
+	<text>
+	Seit Ihrem update kommen komische Blasen auf meinem Blatt zu Vorschein, die ich aber nicht
+reingemacht habe !
+</text>
+</interaction>
+
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>6</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>detailsheet,Sprechblasen,erscheinen</keyword>
+    </metadata>
+	<text>
+auf meinem detailsheet http://www.rhein-main-versand.de sind seit gestern
+abend einige Calibri-Texte durch blaue Sprechblasen(?!) ersetzt, u.a. auch das
+Impressum - im lokalen specificationsheet-creator erscheinen die texte aber korrekt und bereit
+zur Freischaltung - würde mich riesig freuenm, wenn Sie die blauen Sprechblasen
+wieder durch die entsprechenden Texte ersetzen könnten :)
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>6</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>Sammlungen,verwalten,Buttons</keyword>
+    </metadata>
+	<text>
+Sehr geehrte Damen und Herren, 
+leider kann ich ab heute nicht mehr meine Sammlungen verwalten.
+Es tut sich bei Auswahl des entsprechenden Buttons gar nichts mehr.
+Können Sie diesen Fehler beheben?
+Mit freundlichen Grüßen
+Kruksel Gueney
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>7</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>Specificationsheets,eingebunden,Konfiguration,öffnet,Fenster,Artikel-Preview</keyword>
+    </metadata>
+	<text>
+Ich habe die Online-Sammlung als Link in einem meiner Blätter meines Specificationsheets eingebunden. Als Konfiguration habe ich gewählt"öffnen im gleichen Fenster".
+Trotzdem öffnet sich dann die Online-Sammlung in einem neuen Fenster, welches aber nur halbe Bildschirmgröße erreicht. D.H., es muß von Hand auf volle Bildschirmgröße gebracht werden.
+
+Weiterhin treten in der Online-Sammlung zwei Probleme auf:
+1. Die Artikel-Preview läuft meistens links oben in der  Ecke und wird von dem weißen Balken (Meine Sammlungen etc.) zum Teil überdeckt.
+3. Die eingebundenen Statistiken werden nicht immer gezeigt.
+
+Vorab vielen Dank für eine Rückantwort
+
+Jürgen Plantsch
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>8</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>XML,Sammlung,wirksam,Previewbilder,gelöscht</keyword>
+    </metadata>
+	<text>
+Hallo!
+Habe heute meine Online-Sammlung von Shockwave auf XML-Version umgestellt. Warum werden Änderungen in den Sammlungen nicht
+wirksam? Habe Cookies und Cache geleert.
+Möchte gerne die Studio-Version nutzen, aber ich kann die Previewbilder nicht austauschen, obwohl sie im Online-Organizer gelöscht wurden - d.h. ich habe die Reihenfolge der Produkte so verändert bzw. Produkte gelöscht,damit die Preview immer das erste Produkt zeigt, aber es passiert nichts.
+Ich wäre für Hilfe sehr dankbar.
+
+Mit freundlichen Grüßen
+
+Clara Frieden
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>9</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>verschwinden,Artikelpreview</keyword>
+    </metadata>
+	<text>
+In unregelmäsigen Abständen verschwinden gewisse Produkte 
+aus den Artikelpreview Rahmen.
+Die Produkte sind dann aber jeweils immernoch im Online-Ordner, und ich muss sie wieder neu den Artikel-Preview Rahmen zuordnen. Bei einzelnen Produkten passiert das nicht.
+
+Es sind WHDT Produkte, zwischen 50KB und 500KB
+
+Warum ist das?
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>10</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>hochladen,Ordner,erstellen</keyword>
+    </metadata>
+	<text>
+Habe seit kurzen den Specssheet Creator WH firstclass.
+Wenn ich unter "Eigene Produktpalette" Daten, Statistiken oder Prozesse hochladen will und einen neuen Ordner erstellen möchte, so öffnet sich wenn ich das Werkzeug anklicke immer nur die Auswahl
+
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>11</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>57</category>
+				<keyword>Produktpalettencenter,hochladen,Produkte,Zugriff</keyword>
+    </metadata>
+	<text>
+Habe keinen Zugriff mehr auf den Produktpalettencenter. Kann so keine Produkte mehr hochladen.
+Die Online Sammlung ist aber noch abrufbar.
+Woran kann es liegen.
+Gruss G.Krüger
+    </text>
+	</interaction>
+	
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>12</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>92</category>
+				<keyword>Tabellenpräsentation,Produktdarstellungs,Verlinken,Absturz</keyword>
+    </metadata>
+	<text>
+Guten Tag,
+seit einigen Tagen scheint es beim SpecssheetCreator8 einen ?Bug? zu geben. 
+Wenn man in der Tabellenpräsentation die Produktdarstellungs-Version wähl, dort dann bei Verlinken
+Dynamicolisting oder Popup wählen will, stürzt Iso ab (Ein Skript verlangsamt Iso 13. Soll
+das Skript weiterhin ausgeführt werden?... oder so ähnlich). Dann ist egal ob man ja oder
+nein drückt, denn es kommt zum Absturz: "Das Iso Addon ist abgestürzt".
+Dies habe ich auf verscheidenen Computern mit verschiedenen Browsern ausprobiert. Es
+scheint also ein Software-Problem zu sein.
+Bitte beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+raus gehen muß.
+Falls nicht, ist das Programm für mich nicht zu gebrauchen ist und ich werde es kündigen
+müssen.
+
+    </text>
+	</interaction>
+ </interactions>   
+</dataset>	

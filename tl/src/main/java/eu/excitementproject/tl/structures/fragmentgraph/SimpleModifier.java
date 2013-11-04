@@ -1,15 +1,15 @@
 package eu.excitementproject.tl.structures.fragmentgraph;
 
-public class SimpleModifier {
+import eu.excitementproject.tl.laputils.CASUtils.Region;
+
+
+public class SimpleModifier extends Region {
 
 	private String modifier;
-	private int start;
-	private int end;
 	
 	public SimpleModifier(String text, int start, int end) {
+		super(start, end);
 		modifier = text;
-		this.start = start;
-		this.end = end;
 	}
 	
 	public String getText() {
@@ -17,10 +17,6 @@ public class SimpleModifier {
 	}
 	
 	public int getStart() {
-		return start;
-	}
-	
-	public int getEnd() {
-		return end;
+		return getBegin();
 	}
 }

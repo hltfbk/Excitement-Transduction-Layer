@@ -19,7 +19,7 @@ import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
@@ -41,7 +41,7 @@ public class UseCaseOneFromXMLTest {
 		BasicConfigurator.configure(); 
 		Logger.getRootLogger().setLevel(Level.INFO); 
 
-		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");		
+		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_IT.xml");		
 		CommonConfig config = null;
 		LAPAccess lap;
 		EDABasic<?> eda;
@@ -55,7 +55,7 @@ public class UseCaseOneFromXMLTest {
 //		};
 		
 		// with small example - Gil
-		String[] files = {"./src/test/resources/WP2_public_data_XML/nice_email1_first_10.xml",};
+		String[] files = {"./src/test/resources/WP2_public_data_XML/alma_social_media_frag.xml",};
 		
 		File f;
 
@@ -95,7 +95,7 @@ public class UseCaseOneFromXMLTest {
 		  
 		    // initialize use case one runner
 			use1 = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
-			
+						
 			// build collapsed graph
 			graph = use1.buildCollapsedGraph(docs);
 
@@ -104,7 +104,7 @@ public class UseCaseOneFromXMLTest {
 		} catch (ConfigurationException | EDAException | ComponentException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
 				ModifierAnnotatorException | EntailmentGraphRawException | EntailmentGraphCollapsedException |
-				GraphMergerException | CollapsedGraphGeneratorException | DataReaderException | IOException e) {
+				GraphMergerException | GraphOptimizerException | DataReaderException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -30,7 +30,7 @@ import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
-import eu.excitementproject.tl.composition.exceptions.CollapsedGraphGeneratorException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -76,8 +76,9 @@ public class DemoUseCase2OMQGerman {
 	static String outputFoldername = "src/test/resources/";
 	
 	public static void main(String[] args) throws FragmentAnnotatorException, ModifierAnnotatorException,
-		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, LAPException, EntailmentGraphRawException, IOException, TransformerException, ParserConfigurationException, EntailmentGraphCollapsedException {
-		
+		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, 
+		LAPException, EntailmentGraphRawException, IOException, TransformerException, 
+		ParserConfigurationException, EntailmentGraphCollapsedException {
 		
 		BasicConfigurator.configure();
 		Logger.getRootLogger().setLevel(Level.INFO);
@@ -95,7 +96,6 @@ public class DemoUseCase2OMQGerman {
 		String[] files = {xmlDataFoldername+xmlDataFilename,};
 		File f;
 		Set<Interaction> docs = new HashSet<Interaction>();
-		
 		
 		try {
 			for (String name: files) {
@@ -133,7 +133,6 @@ public class DemoUseCase2OMQGerman {
 				}
 			}
 			
-			
 			// initialize use case one runner
 			use1 = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
 			
@@ -147,13 +146,12 @@ public class DemoUseCase2OMQGerman {
 			cc.computeCategoryConfidences(graph);
 			
 			/** Step 2: Annotating an incoming email based on the entailment graph */
-			
 			//create some sample input
 			JCas cas = CASUtils.createNewInputCas();
 			cas.setDocumentLanguage("DE");
-			cas.setDocumentText("Wie gehe ich vor?"); /*NOTE: This string does not appear in
+			cas.setDocumentText("Leider lösen die Punkte mein Problem nicht."); /*NOTE: This string does not appear in
 			the emails on which the graph was built!*/
-		
+			
 			//add fragment annotation
 			FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 
 			fa.annotateFragments(cas);
@@ -178,6 +176,7 @@ public class DemoUseCase2OMQGerman {
 				//add category annotation to CAS
 				ca.addCategoryAnnotation(cas, matches);
 			}	
+			
 			//print CAS category
 			CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 			
@@ -185,7 +184,7 @@ public class DemoUseCase2OMQGerman {
 		} catch (ConfigurationException | EDAException | ComponentException |
 			FragmentAnnotatorException | FragmentGraphGeneratorException |
 			ModifierAnnotatorException |
-			GraphMergerException | CollapsedGraphGeneratorException | DataReaderException |
+			GraphMergerException | GraphOptimizerException | DataReaderException |
 			 ConfidenceCalculatorException e) {
 			e.printStackTrace();
 		}

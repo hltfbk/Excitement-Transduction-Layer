@@ -12,9 +12,9 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import eu.excitementproject.tl.composition.api.CollapsedGraphGenerator;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
-import eu.excitementproject.tl.composition.collapsedgraphgenerator.SimpleCollapseGraphGenerator;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -32,9 +32,9 @@ public class ConfidenceCalculatorCategoricalFrequencyDistributionTest {
 			/************* TEST 1 ***************/
 			testlogger.info("Reading sample raw entailment graph."); 			
 			EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuputWithCategories(false); 	
-			CollapsedGraphGenerator cgg = new SimpleCollapseGraphGenerator();
+			GraphOptimizer cgg = new SimpleGraphOptimizer();
 			testlogger.info("Creating collapsed entailment graph from sample graph."); 			
-			EntailmentGraphCollapsed entailmentGraph = cgg.generateCollapsedGraph(rawGraph);
+			EntailmentGraphCollapsed entailmentGraph = cgg.optimizeGraph(rawGraph);
 			testlogger.info("Adding confidence scores to graph.");
 			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 			cc.computeCategoryConfidences(entailmentGraph);		

@@ -27,6 +27,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.jgrapht.EdgeFactory;
 import org.jgrapht.graph.ClassBasedEdgeFactory;
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
@@ -187,13 +188,25 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 */
 	private boolean consistentModifiers(Set<ModifierAnnotation> sma) {
 		
+		printAnnotations(sma);
+		
 		for(ModifierAnnotation m: sma) {
 			ModifierAnnotation m_dp = m.getDependsOn();
 			if (m_dp != null && ! sma.contains(m_dp)) {
+				System.out.println("Modifiers not consistent");
 				return false;
 			}
 		}
+		System.out.println("Modifiers OK");
 		return true;
+	}
+
+	// to check the modifier set
+	private void printAnnotations(Set<ModifierAnnotation> sma) {
+
+		for (Annotation a: sma) {
+			System.out.println("\t" + a.getCoveredText() + " / " + a.getClass());
+		}
 	}
 
 	/**
@@ -209,6 +222,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		FragmentPart fp;
 		for(int i = 0; i < f.getFragParts().size(); i++) {
 			fp = f.getFragParts(i);
+			System.out.println("Processing fragment part " + fp.getCoveredText());
 			mas.addAll(JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, fp.getBegin(), fp.getEnd()));
 		}
 		return mas;
@@ -352,7 +366,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 
 		try {
 			JCas aJCas = CASUtils.createNewInputCas(); 
-			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/107379.txt.xmi"); 
+			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/107379.txt.xmi"); 
 
 			// initiate the FragGraphGenerator... 
 			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
@@ -506,4 +520,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 			// TODO Auto-generated catch block
 		}		 
   }
+	
+	
+	
 }

@@ -78,6 +78,8 @@ public final class InteractionReader {
 			throw new DataReaderException("unable to access the input file", ioe);
 		}	
 		
+		System.out.println("Processing file ...");
+		
 		// open the document <dataset> (top) 
 		Element dataset = dom.getDocumentElement(); 
 		
@@ -109,7 +111,10 @@ public final class InteractionReader {
 			// businessScenario (e.g. train, coffeehouse, etc) , 
 			// dataSource (company name, prolly confidential), 
 			// date (meaningless in our setup? - all 0001-01-01 in the data) 
-		
+			
+			// get the keywords
+			String keywords = getKeywords(oneInteraction);
+			
 			Element meta = (Element) oneInteraction.getElementsByTagName("metadata").item(0); 
 			Node c = meta.getElementsByTagName("category").item(0).getFirstChild(); 
 			String category = null;
@@ -125,13 +130,26 @@ public final class InteractionReader {
 				interactionId = idval.getNodeValue(); 
 			}
 			
-			Interaction interaction = new Interaction(interactionText, lang, interactionId, category, channel, provider); 
+			Interaction interaction = new Interaction(interactionText, lang, interactionId, category, channel, provider, keywords); 
 			interactionList.add(interaction); 			
 		}
 		
 		return interactionList; 
 	}
 	
+	private static String getKeywords(Element oneInteraction) {
+
+		String keywords = null;
+		
+		NodeList elements = oneInteraction.getElementsByTagName("keyword");
+				
+		if (elements != null && elements.getLength() > 0) {
+			keywords = oneInteraction.getElementsByTagName("keyword").item(0).getFirstChild().getNodeValue();
+		}
+		
+		return keywords;
+	}
+
 	/**
 	 * 
 	 * This reader reads WP2 "human annotated fragment graph annotation dump" data, and fills in the given CAS with the "interaction" with "fragment" annotation. Also adds "modifiers" annotations, if any.  
@@ -235,8 +253,15 @@ public final class InteractionReader {
 		testlogger.debug("Content of the fragment <original_text>:");
 		testlogger.debug(original_text); 			
 
-		testlogger.debug("Content of the <modifiers>:");
-		testlogger.debug(modifiers); 			
+		if ((modifiers != null) && (modifiers.trim().length() > 0 ))  // sometimes there are "empty space" modifiers, and we are checking this with trim() 
+		{
+			testlogger.debug("Content of the <modifiers>:");
+			testlogger.debug(modifiers); 			
+		}
+		else
+		{
+			testlogger.debug("No or empty <modifiers>"); 						
+		}
 		
 		
 		// Match original text, and set it as fragment 
@@ -339,8 +364,8 @@ public final class InteractionReader {
 		// e.g. 		
         // <modifiers>ladiespoz=2;at Stars Bridgepoz=4 5 6</modifiers>
 
-		if (modifiers != null)
-		{
+		if ((modifiers != null) && (modifiers.trim().length() > 0 ))  // sometimes there are "empty space" modifiers, and we are checking this with trim() 
+		{						
 			String[] modpoz_data = modifiers.split(";"); 
 			for (String modpoz : modpoz_data)
 			{

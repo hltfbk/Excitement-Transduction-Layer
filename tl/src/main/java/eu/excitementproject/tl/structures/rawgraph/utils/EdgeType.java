@@ -5,7 +5,8 @@ public enum EdgeType {
 	EDA,
 	FRAGMENT_GRAPH,
 	INDUCED,
-	UNKNOWN, //TODO: do we need Unknown type? Are there other types?
+	MANUAL_ANNOTATION,
+	UNKNOWN, 
 	;
 	
 
@@ -18,6 +19,7 @@ public enum EdgeType {
 		if (str.equals("EDA")) return EDA;
 		if (str.equals("FRAGMENT_GRAPH")) return FRAGMENT_GRAPH;
 		if (str.equals("INDUCED")) return INDUCED;
+		if (str.equals("MANUAL_ANNOTATION")) return MANUAL_ANNOTATION;
 		return UNKNOWN;
 	}
 	

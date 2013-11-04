@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
 import java.io.BufferedWriter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -475,19 +476,7 @@ public class EntailmentGraphRaw extends
 			s+="\n\t"+v.toString();
 		}
 		
-		s+="\n\nBASE STATEMENT NODES:";
-		for (EntailmentUnit v: this.getBaseStatements()){
-			s+="\n\t"+v.toString();
-		}
-
-		s+="\n\nENTAILMENTS";
-		for (EntailmentRelation e: this.edgeSet()){
-			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
-				s+="\n\t"+e.toString();
-			}
-		}
-
-		s+="\n\nALL EDGES:";
+		s+="\n\nEDGES:";
 		for (EntailmentRelation e: this.edgeSet()){
 			s+="\n\t"+e.toString();
 		}
@@ -605,7 +594,33 @@ public class EntailmentGraphRaw extends
 					// TODO Auto-generated catch block
 				}		 
 		  }
-	
+		
+	public String toStringDetailed(){
+		String s = "";
+		s+="\nNODES:";
+		for (EntailmentUnit v: this.vertexSet()){
+			s+="\n\t"+v.toString();
+		}
+		
+		s+="\n\nBASE STATEMENT NODES:";
+		for (EntailmentUnit v: this.getBaseStatements()){
+			s+="\n\t"+v.toString();
+		}
+
+		s+="\n\nENTAILMENTS";
+		for (EntailmentRelation e: this.edgeSet()){
+			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
+				s+="\n\t"+e.toString();
+			}
+		}
+
+		s+="\n\nALL EDGES:";
+		for (EntailmentRelation e: this.edgeSet()){
+			s+="\n\t"+e.toString();
+		}
+		
+		return s;
+	}
 	
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES

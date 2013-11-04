@@ -6,12 +6,13 @@ import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({ "rawtypes", "unused" })
 public class GraphNodesNameProvider implements VertexNameProvider {
 
 	@Override
 	public String getVertexName(Object vertex) {
-		if (vertex.getClass() == EntailmentUnitMention.class) {
+		
+/*		if (vertex.getClass() == EntailmentUnitMention.class) {
 			return ((EntailmentUnitMention) vertex).getTextWithoutDoubleSpaces();
 		}
 		
@@ -24,5 +25,7 @@ public class GraphNodesNameProvider implements VertexNameProvider {
 		}
 		
 		return "UNKNOWN vertex class";
+*/
+		return vertex.toString();
 	}
 }
