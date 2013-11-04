@@ -59,12 +59,12 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  */
 public class NodeMatcherLucene extends AbstractNodeMatcher {
 	
-	private static EntailmentGraphCollapsed entailmentGraph;
-	private static String indexPath;
-	private static IndexReader reader;
-	private static IndexSearcher searcher;
-	private static Analyzer analyzer;
-	private static QueryParser parser; 
+	private EntailmentGraphCollapsed entailmentGraph;
+	private String indexPath;
+	private IndexReader reader;
+	private IndexSearcher searcher;
+	private Analyzer analyzer;
+	private QueryParser parser; 
 	
 	private final static Logger logger = Logger.getLogger(NodeMatcherLucene.class.getName());
 	
@@ -101,7 +101,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	public void initializeSearch() throws IOException {
 		reader = DirectoryReader.open(FSDirectory.open(new File(indexPath)));
 		searcher = new IndexSearcher(reader);
-		parser = new QueryParser(Version.LUCENE_44, "euText", analyzer); //field to be searcher: euText (test of entailment unit)
+		parser = new QueryParser(Version.LUCENE_44, "euText", analyzer); //field to be searched: euText (test of entailment unit)
 		parser.setDefaultOperator(QueryParser.AND_OPERATOR);
 	}
 		
@@ -150,7 +150,8 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
-		Query query = parser.parse(queryText);
+		String queryTextEscaped = QueryParser.escape(queryText); //make sure special chars like '?' are escaped
+		Query query = parser.parse(queryTextEscaped);
 		
 		Date start = new Date();
 		searcher.search(query, null, 100);

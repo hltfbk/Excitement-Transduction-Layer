@@ -335,3 +335,4 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		modAnot.annotateModifiers(aJCas);
 	}
 }
+
