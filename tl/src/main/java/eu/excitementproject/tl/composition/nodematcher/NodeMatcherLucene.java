@@ -59,12 +59,12 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  */
 public class NodeMatcherLucene extends AbstractNodeMatcher {
 	
-	private static EntailmentGraphCollapsed entailmentGraph;
-	private static String indexPath;
-	private static IndexReader reader;
-	private static IndexSearcher searcher;
-	private static Analyzer analyzer;
-	private static QueryParser parser; 
+	private EntailmentGraphCollapsed entailmentGraph;
+	private String indexPath;
+	private IndexReader reader;
+	private IndexSearcher searcher;
+	private Analyzer analyzer;
+	private QueryParser parser; 
 	
 	private final static Logger logger = Logger.getLogger(NodeMatcherLucene.class.getName());
 	
@@ -101,7 +101,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	public void initializeSearch() throws IOException {
 		reader = DirectoryReader.open(FSDirectory.open(new File(indexPath)));
 		searcher = new IndexSearcher(reader);
-		parser = new QueryParser(Version.LUCENE_44, "euText", analyzer); //field to be searcher: euText (test of entailment unit)
+		parser = new QueryParser(Version.LUCENE_44, "euText", analyzer); //field to be searched: euText (test of entailment unit)
 		parser.setDefaultOperator(QueryParser.AND_OPERATOR);
 	}
 		
@@ -150,7 +150,10 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
-		Query query = parser.parse(queryText);
+		String queryTextEscaped = QueryParser.escape(queryText); //make sure special chars like '?' are escaped
+		Query query = parser.parse(queryTextEscaped);
+		System.out.println("query: " + query);
+		System.out.println("analyzer: " + parser.getAnalyzer());
 		
 		Date start = new Date();
 		searcher.search(query, null, 100);
@@ -204,6 +207,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		logger.info("Indexing graph nodes to directory '" + indexPath + "'..."); 
 		Directory dir = FSDirectory.open(new File(indexPath));
 		IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_44, analyzer);
+		System.out.println("indexing analyzer: " + analyzer);
 		 
 		 if (create) {
 			 // Create a new index in the directory, removing any
@@ -232,6 +236,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 			 for (EntailmentUnit eu : ec.getEntailmentUnits()) { //index entailment units
 				 String euText = eu.getTextWithoutDoulbeSpaces();
 				 doc.add(new TextField("euText", euText, Store.YES));
+				 System.out.println("euText: " + doc.get("euText"));
 				 doc.add(new TextField("label", label, Store.YES));
 			 }
 			 if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
