@@ -152,8 +152,6 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
 		String queryTextEscaped = QueryParser.escape(queryText); //make sure special chars like '?' are escaped
 		Query query = parser.parse(queryTextEscaped);
-		System.out.println("query: " + query);
-		System.out.println("analyzer: " + parser.getAnalyzer());
 		
 		Date start = new Date();
 		searcher.search(query, null, 100);
@@ -207,7 +205,6 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		logger.info("Indexing graph nodes to directory '" + indexPath + "'..."); 
 		Directory dir = FSDirectory.open(new File(indexPath));
 		IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_44, analyzer);
-		System.out.println("indexing analyzer: " + analyzer);
 		 
 		 if (create) {
 			 // Create a new index in the directory, removing any
@@ -236,7 +233,6 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 			 for (EntailmentUnit eu : ec.getEntailmentUnits()) { //index entailment units
 				 String euText = eu.getTextWithoutDoulbeSpaces();
 				 doc.add(new TextField("euText", euText, Store.YES));
-				 System.out.println("euText: " + doc.get("euText"));
 				 doc.add(new TextField("label", label, Store.YES));
 			 }
 			 if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {

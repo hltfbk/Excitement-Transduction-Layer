@@ -69,7 +69,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 */
 public class DemoUseCase2OMQGerman {
 	
-	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
+	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
 	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/";
 	static String xmlDataFilename = "german_dummy_data_for_evaluator_test.xml";
 	static String xmlGraphFilename = "src/test/resources/sample_graphs/german_dummy_data_for_evaluator_test_graph.xml";
