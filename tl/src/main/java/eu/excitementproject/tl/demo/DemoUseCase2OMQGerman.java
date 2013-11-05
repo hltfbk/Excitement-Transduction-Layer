@@ -147,7 +147,7 @@ public class DemoUseCase2OMQGerman {
 			//create some sample input
 			JCas cas = CASUtils.createNewInputCas();
 			cas.setDocumentLanguage("DE");
-			cas.setDocumentText("Leider lösen die Punkte mein Problem nicht."); /*NOTE: This string does not appear in
+			cas.setDocumentText("Wie gehe ich vor?"); /*NOTE: This string does not appear in
 			the emails on which the graph was built!*/
 			
 			//add fragment annotation

@@ -150,7 +150,9 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
-		Query query = parser.parse(queryText);
+		String escaped = QueryParser.escape(queryText);	
+		Query query = parser.parse(escaped);
+		
 		
 		Date start = new Date();
 		searcher.search(query, null, 100);
