@@ -4,6 +4,8 @@
 .settings/
 target/
 tl/target/
+fragment_graph*.txt
+fragment_graph*.xml
 
 # Package Files #
 *.jar
