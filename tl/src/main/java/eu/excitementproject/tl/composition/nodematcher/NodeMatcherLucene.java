@@ -269,11 +269,10 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		if (null != nodeMatch) {
 			List<PerNodeScore> perNodeScores = nodeMatch.getScores();
 			for (PerNodeScore perNodeScore : perNodeScores) {
-				System.out.println("Matching node in graph: " + perNodeScore.getNode().getLabel());
-				System.out.println("Score of the match: " + perNodeScore.getScore());
-				System.out.println("Category confidences: ");
+				logger.info("Score of the match: " + perNodeScore.getScore());
+				logger.info("Category confidences: ");
 				for (String category : perNodeScore.getNode().getCategoryConfidences().keySet()) {
-					System.out.println("category "+ category + ": " + perNodeScore.getNode().getCategoryConfidences().get(category));					
+					logger.info("category "+ category + ": " + perNodeScore.getNode().getCategoryConfidences().get(category));					
 				}
 				
 			}
