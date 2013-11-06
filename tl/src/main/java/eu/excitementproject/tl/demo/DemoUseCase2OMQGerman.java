@@ -138,9 +138,9 @@ public class DemoUseCase2OMQGerman {
 			if (!theDir.exists()) {
 				boolean result = theDir.mkdir();
 				if(result){
-					System.out.println("Created dir " + theDir.getAbsolutePath());
+					logger.info("Created dir " + theDir.getAbsolutePath());
 				} else {
-					System.err.println("Could not create the output directory. No output files will be created.");
+					logger.error("Could not create the output directory. No output files will be created.");
 					outputFolder=null;
 				}
 			}
