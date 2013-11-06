@@ -1,3 +1,0 @@
-digraph rawGraph {
-"Im Exportmodus ist die Schrift im kleinen Vorschaufenster im Filemenü immer identisch mit der Schrift der Überschriftzeile vom Untermenü." -> "Im Exportmodus ist die Schrift im kleinen Vorschaufenster im Filemenü identisch mit der Schrift der Überschriftzeile vom Untermenü." [label=1] [color=green]
-}

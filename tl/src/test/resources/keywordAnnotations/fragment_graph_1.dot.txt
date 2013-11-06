@@ -1,7 +1,0 @@
-digraph rawGraph {
-"Vorab vielen Dank für eine Rückantwort
-
-Jürgen Plantsch" -> "vielen Dank für eine Rückantwort
-
-Jürgen Plantsch" [label=1] [color=green]
-}

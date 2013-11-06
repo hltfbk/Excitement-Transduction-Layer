@@ -1,6 +1,0 @@
-digraph rawGraph {
-"Die Online Sammlung ist aber noch abrufbar." -> "Die Online Sammlung ist aber abrufbar." [label=1] [color=green]
-"Die Online Sammlung ist aber abrufbar." -> "Die Online Sammlung ist abrufbar." [label=1] [color=green]
-"Die Online Sammlung ist aber noch abrufbar." -> "Die Online Sammlung ist noch abrufbar." [label=1] [color=green]
-"Die Online Sammlung ist noch abrufbar." -> "Die Online Sammlung ist abrufbar." [label=1] [color=green]
-}

@@ -1,6 +1,0 @@
-digraph rawGraph {
-"Es tut sich bei Auswahl des entsprechenden Buttons gar nichts mehr." -> "Es tut sich bei Auswahl des entsprechenden Buttons nichts mehr." [label=1] [color=green]
-"Es tut sich bei Auswahl des entsprechenden Buttons nichts mehr." -> "Es tut sich bei Auswahl des entsprechenden Buttons nichts ." [label=1] [color=green]
-"Es tut sich bei Auswahl des entsprechenden Buttons gar nichts mehr." -> "Es tut sich bei Auswahl des entsprechenden Buttons gar nichts ." [label=1] [color=green]
-"Es tut sich bei Auswahl des entsprechenden Buttons gar nichts ." -> "Es tut sich bei Auswahl des entsprechenden Buttons nichts ." [label=1] [color=green]
-}

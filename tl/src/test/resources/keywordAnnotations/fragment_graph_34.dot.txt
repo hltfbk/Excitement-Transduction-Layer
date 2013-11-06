@@ -1,5 +1,0 @@
-digraph rawGraph {
-"Ich bitte um eine Antwort die nicht wieder
-21 Tage dauert!" -> "Ich bitte um eine Antwort die nicht 
-21 Tage dauert!" [label=1] [color=green]
-}

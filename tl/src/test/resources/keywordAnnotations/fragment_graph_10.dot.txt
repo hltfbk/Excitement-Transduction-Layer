@@ -1,3 +1,0 @@
-digraph rawGraph {
-"Die eingebundenen Statistiken werden nicht immer gezeigt." -> "Die eingebundenen Statistiken werden nicht gezeigt." [label=1] [color=green]
-}

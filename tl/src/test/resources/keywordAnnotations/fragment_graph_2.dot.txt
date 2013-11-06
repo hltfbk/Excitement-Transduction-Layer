@@ -1,5 +1,0 @@
-digraph rawGraph {
-"> Hallo,
-ich habe seit 2 Tagen in meiner Warehouse Software unter Exportieren-File Optionen ein fast nicht lesbare Schrift." -> "> Hallo,
-ich habe seit 2 Tagen in meiner Warehouse Software unter Exportieren-File Optionen ein nicht lesbare Schrift." [label=1] [color=green]
-}

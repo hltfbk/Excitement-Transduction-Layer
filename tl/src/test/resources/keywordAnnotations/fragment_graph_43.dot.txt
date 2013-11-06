@@ -1,6 +1,0 @@
-digraph rawGraph {
-"Kann so keine Produkte mehr hochladen." -> "Kann keine Produkte mehr hochladen." [label=1] [color=green]
-"Kann keine Produkte mehr hochladen." -> "Kann keine Produkte hochladen." [label=1] [color=green]
-"Kann so keine Produkte mehr hochladen." -> "Kann so keine Produkte hochladen." [label=1] [color=green]
-"Kann so keine Produkte hochladen." -> "Kann keine Produkte hochladen." [label=1] [color=green]
-}

@@ -1,6 +1,0 @@
-digraph rawGraph {
-"Die Exportroutine exportiert aber den gesamten Ablauf, also auch das was außerhalb des Ablaufmarkers ist." -> "Die Exportroutine exportiert aber den gesamten Ablauf, auch das was außerhalb des Ablaufmarkers ist." [label=1] [color=green]
-"Die Exportroutine exportiert aber den gesamten Ablauf, auch das was außerhalb des Ablaufmarkers ist." -> "Die Exportroutine exportiert aber den gesamten Ablauf, das was außerhalb des Ablaufmarkers ist." [label=1] [color=green]
-"Die Exportroutine exportiert aber den gesamten Ablauf, also auch das was außerhalb des Ablaufmarkers ist." -> "Die Exportroutine exportiert aber den gesamten Ablauf, also das was außerhalb des Ablaufmarkers ist." [label=1] [color=green]
-"Die Exportroutine exportiert aber den gesamten Ablauf, also das was außerhalb des Ablaufmarkers ist." -> "Die Exportroutine exportiert aber den gesamten Ablauf, das was außerhalb des Ablaufmarkers ist." [label=1] [color=green]
-}
