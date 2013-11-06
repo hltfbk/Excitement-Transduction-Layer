@@ -4,9 +4,6 @@
 .settings/
 target/
 tl/target/
-*fragment_graph*.txt
-*fragment_graph*.xml
-tl/src/test/resources/Lucene_index
 
 # Package Files #
 *.jar

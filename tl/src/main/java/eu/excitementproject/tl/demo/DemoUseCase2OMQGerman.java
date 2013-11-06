@@ -80,7 +80,7 @@ public class DemoUseCase2OMQGerman {
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
 	
-	static boolean readGraph = true;
+	static boolean readGraph = false; //read previously created graph instead of creating it
 
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
