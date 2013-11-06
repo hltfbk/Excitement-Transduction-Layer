@@ -192,7 +192,6 @@ public class DemoUseCase2OMQGerman {
 		//call node matcher on each fragment graph
 		NodeMatcherLucene nm = new NodeMatcherLucene(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
 		nm.indexGraphNodes();
-		logger.info("Indexed graph nodes");
 		nm.initializeSearch();
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
