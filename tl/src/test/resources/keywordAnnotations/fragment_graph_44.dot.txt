@@ -1,0 +1,3 @@
+digraph rawGraph {
+"oder so ähnlich)." -> "oder ähnlich)." [label=1] [color=green]
+}

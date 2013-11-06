@@ -1,0 +1,5 @@
+digraph rawGraph {
+"Es
+scheint also ein Software-Problem zu sein." -> "Es
+scheint ein Software-Problem zu sein." [label=1] [color=green]
+}

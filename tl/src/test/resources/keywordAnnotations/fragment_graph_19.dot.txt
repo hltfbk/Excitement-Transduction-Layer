@@ -1,0 +1,5 @@
+digraph rawGraph {
+"Seit Ihrem update kommen komische Blasen auf meinem Blatt zu Vorschein, die ich aber nicht
+reingemacht habe !" -> "Seit Ihrem update kommen komische Blasen auf meinem Blatt zu Vorschein, die ich nicht
+reingemacht habe !" [label=1] [color=green]
+}

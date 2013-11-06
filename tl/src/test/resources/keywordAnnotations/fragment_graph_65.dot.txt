@@ -1,0 +1,5 @@
+digraph rawGraph {
+"Soll
+das Skript weiterhin ausgeführt werden?..." -> "Soll
+das Skript ausgeführt werden?..." [label=1] [color=green]
+}

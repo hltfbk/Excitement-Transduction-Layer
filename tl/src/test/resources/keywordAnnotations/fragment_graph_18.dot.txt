@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Ist das ein Programmfehler (bei "Sales firstclass 2008" wird nur korrekt der Ablaufteil zwischen dem Beginn- und Endzeiger gebrannt)?" -> "Ist das ein Programmfehler (bei "Sales firstclass 2008" wird korrekt der Ablaufteil zwischen dem Beginn- und Endzeiger gebrannt)?" [label=1] [color=green]
+}

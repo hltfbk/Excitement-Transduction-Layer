@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Wie kann ich diese wieder aendern." -> "Wie kann ich diese aendern." [label=1] [color=green]
+}

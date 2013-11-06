@@ -1,0 +1,38 @@
+digraph rawGraph {
+"Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine nur als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine nur als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine nur als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine nur als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine nur als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine noch als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine noch als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine noch als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine noch als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine noch als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte 
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine nur als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+"Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." -> "Auf meinem Specificationsheet werden die Textbausteine noch als Sprechblase angezeigt, ich hätte 
+ eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen." [label=1] [color=green]
+}

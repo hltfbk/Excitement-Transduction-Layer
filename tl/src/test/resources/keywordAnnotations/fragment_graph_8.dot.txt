@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Produkte gelöscht,damit die Preview immer das erste Produkt zeigt, aber es passiert nichts." -> "Produkte gelöscht,damit die Preview das erste Produkt zeigt, aber es passiert nichts." [label=1] [color=green]
+}

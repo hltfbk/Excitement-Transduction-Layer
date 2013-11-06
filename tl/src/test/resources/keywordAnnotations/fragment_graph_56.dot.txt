@@ -1,0 +1,38 @@
+digraph rawGraph {
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade 
+konnte ich mich auf Warehouse halbwegs verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade 
+konnte ich mich auf Warehouse halbwegs verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade 
+konnte ich mich auf Warehouse verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade 
+konnte ich mich auf Warehouse verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade 
+konnte ich mich auf Warehouse verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade 
+konnte ich mich auf Warehouse halbwegs verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade 
+konnte ich mich auf Warehouse halbwegs verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade 
+konnte ich mich auf Warehouse halbwegs verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade 
+konnte ich mich auf Warehouse verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade 
+konnte ich mich auf Warehouse verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade 
+konnte ich mich auf Warehouse verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade 
+konnte ich mich auf Warehouse halbwegs verlassen!" [label=1] [color=green]
+"Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen!" -> "Ich hoffe und erwarte, dass das Specificationsheet umgehend einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse verlassen!" [label=1] [color=green]
+}

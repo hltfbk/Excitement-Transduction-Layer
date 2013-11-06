@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Ich wäre für Hilfe sehr dankbar." -> "Ich wäre für Hilfe dankbar." [label=1] [color=green]
+}

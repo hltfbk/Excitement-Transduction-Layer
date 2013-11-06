@@ -1,0 +1,5 @@
+digraph rawGraph {
+"Weiterhin treten in der Online-Sammlung zwei Probleme auf:
+1." -> "treten in der Online-Sammlung zwei Probleme auf:
+1." [label=1] [color=green]
+}

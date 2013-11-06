@@ -1,0 +1,3 @@
+digraph rawGraph {
+"> Ich habe alle Versionen Sales firstclass von 2006 bis heute." -> "> Ich habe alle Versionen Sales firstclass von 2006 bis ." [label=1] [color=green]
+}

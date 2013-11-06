@@ -1,0 +1,14 @@
+digraph rawGraph {
+"Bitte beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+raus gehen muß." -> "Bitte beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+ gehen muß." [label=1] [color=green]
+"Bitte beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+ gehen muß." -> "beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+ gehen muß." [label=1] [color=green]
+"Bitte beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+raus gehen muß." -> "beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+raus gehen muß." [label=1] [color=green]
+"beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+raus gehen muß." -> "beheben Sie dies umgehend, da meine gewerbliches Daten-Blatt in den nächsten Tagen
+ gehen muß." [label=1] [color=green]
+}

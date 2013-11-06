@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Habe keinen Zugriff mehr auf den Produktpalettencenter." -> "Habe keinen Zugriff auf den Produktpalettencenter." [label=1] [color=green]
+}

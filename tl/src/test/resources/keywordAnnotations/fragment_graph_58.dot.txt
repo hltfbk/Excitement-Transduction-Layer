@@ -1,0 +1,5 @@
+digraph rawGraph {
+"Dieser
+ist nun abgesprungen!" -> "Dieser
+ist abgesprungen!" [label=1] [color=green]
+}
