@@ -79,8 +79,11 @@ public class DemoUseCase2OMQGerman {
 	static String xmlDataFilename = "keywordAnnotations.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
+	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_complete_th.xml";
 	
 	static boolean readGraph = false; //read previously created graph instead of creating it
+	static boolean processTrainingData = false; //process the data in "edaTrainingFilename"
+	static boolean trainEDA = true; //train the EDA on the processed data
 
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
@@ -96,11 +99,9 @@ public class DemoUseCase2OMQGerman {
 		CommonConfig config = new ImplCommonConfig(configFile);
 		LAPAccess lap = new MaltParserDE(); 			
 		EDABasic<?> eda = new MaxEntClassificationEDA();	
-		eda.initialize(config);
 		FragmentAnnotator fragAnot = new KeywordBasedFragmentAnnotator(lap);
 		ModifierAnnotator modAnot = new AdvAsModifierAnnotator(lap); 		
 		FragmentGraphGenerator fragGen = new FragmentGraphLiteGeneratorFromCAS();
-		GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
 		GraphOptimizer graphOptimizer = new SimpleGraphOptimizer();
 		
 		/** Step 1: Building an entailment graph from existing data */
@@ -124,12 +125,17 @@ public class DemoUseCase2OMQGerman {
 			}
 			
 			// train EDA
-/*			File trainingFile = new File("./src/test/resources/EDA_training_data/omq_pairs_complete.xml"); //training input file
-			File outputDir = new File("./target/DE/dev/"); // output dir as written in configuration!
-			if (!outputDir.exists()) outputDir.mkdirs();
-			lap.processRawInputFormat(trainingFile, outputDir); //process training data and store output
-			eda.startTraining(config); //train EDA (may take a some time)
-			System.out.print("Training completed."); */
+			if (processTrainingData) {
+				File trainingFile = new File(edaTrainingFilename); //training input file
+				File outputDir = new File("./target/DE/dev/"); // output dir as written in configuration!
+				if (!outputDir.exists()) outputDir.mkdirs();
+				lap.processRawInputFormat(trainingFile, outputDir); //process training data and store output
+				logger.info("Processing training data."); 
+			}
+			if (trainEDA) {
+				eda.startTraining(config); //train EDA (may take a some time)
+				logger.info("Training completed."); 
+			}
 			
 			// prepare the output folder
 			String outputFolder = fragmentGraphOutputFoldername+xmlDataFilename.replace(".xml", "");
@@ -156,6 +162,8 @@ public class DemoUseCase2OMQGerman {
 			}
 			
 			//merge graph
+			eda.initialize(config);
+			GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
 			EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 
 			//optimize graph
