@@ -150,7 +150,9 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
-		Query query = parser.parse(queryText);
+		String escaped = QueryParser.escape(queryText);	
+		Query query = parser.parse(escaped);
+		
 		
 		Date start = new Date();
 		searcher.search(query, null, 100);
@@ -198,57 +200,62 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	 * 
 	 * @throws IOException
 	 */
-	public void indexGraphNodes() throws IOException {
+	public void indexGraphNodes() {
 		boolean create = true;
 		
 		logger.info("Indexing graph nodes to directory '" + indexPath + "'..."); 
-		Directory dir = FSDirectory.open(new File(indexPath));
-		IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_44, analyzer);
-		 
-		 if (create) {
-			 // Create a new index in the directory, removing any
-		     // previously indexed documents:
-		     iwc.setOpenMode(OpenMode.CREATE);
-		 } else {
-			 // Add new documents to an existing index:
-		     iwc.setOpenMode(OpenMode.CREATE_OR_APPEND);
-		 }
-		 
-		 // Optional: for better indexing performance, if you
-		 // are indexing many documents, increase the RAM
-		 // buffer.  But if you do this, increase the max heap
-		 // size to the JVM (eg add -Xmx512m or -Xmx1g):
-		 //
-		 // iwc.setRAMBufferSizeMB(256.0);
-		 
-		 IndexWriter writer = new IndexWriter(dir, iwc);
-		 
-		 Document doc;
-		 int written = 0;
-		 int updated = 0;
-		 for (EquivalenceClass ec : entailmentGraph.vertexSet()) {
-			 doc = new Document(); // make a new, empty document	
-			 String label = ec.getLabel();
-			 for (EntailmentUnit eu : ec.getEntailmentUnits()) { //index entailment units
-				 String euText = eu.getTextWithoutDoulbeSpaces();
-				 doc.add(new TextField("euText", euText, Store.YES));
-				 doc.add(new TextField("label", label, Store.YES));
+		Directory dir;
+		try {
+			dir = FSDirectory.open(new File(indexPath));
+			IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_44, analyzer);
+			 
+			 if (create) {
+				 // Create a new index in the directory, removing any
+			     // previously indexed documents:
+			     iwc.setOpenMode(OpenMode.CREATE);
+			 } else {
+				 // Add new documents to an existing index:
+			     iwc.setOpenMode(OpenMode.CREATE_OR_APPEND);
 			 }
-			 if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
-					// New index, so we just add the document (no old document can be there):
-					writer.addDocument(doc);
-					written++;
-				 } else {
-					// Existing index (an old copy of this document may have been indexed) so 
-					// we use updateDocument instead to replace the old one matching the exact 
-					// path, if present:
-					writer.updateDocument(new Term("id", "1"), doc);
-					updated++;
+			 
+			 // Optional: for better indexing performance, if you
+			 // are indexing many documents, increase the RAM
+			 // buffer.  But if you do this, increase the max heap
+			 // size to the JVM (eg add -Xmx512m or -Xmx1g):
+			 //
+			 // iwc.setRAMBufferSizeMB(256.0);
+			 
+			 IndexWriter writer = new IndexWriter(dir, iwc);
+			 
+			 Document doc;
+			 int written = 0;
+			 int updated = 0;
+			 for (EquivalenceClass ec : entailmentGraph.vertexSet()) {
+				 doc = new Document(); // make a new, empty document	
+				 String label = ec.getLabel();
+				 for (EntailmentUnit eu : ec.getEntailmentUnits()) { //index entailment units
+					 String euText = eu.getTextWithoutDoulbeSpaces();
+					 doc.add(new TextField("euText", euText, Store.YES));
+					 doc.add(new TextField("label", label, Store.YES));
 				 }
-		 }		
-		 writer.close();
-		 logger.info("Added " + written + " documents");
-		 logger.info("Updated " + updated + " documents");
+				 if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
+						// New index, so we just add the document (no old document can be there):
+						writer.addDocument(doc);
+						written++;
+					 } else {
+						// Existing index (an old copy of this document may have been indexed) so 
+						// we use updateDocument instead to replace the old one matching the exact 
+						// path, if present:
+						writer.updateDocument(new Term("id", "1"), doc);
+						updated++;
+					 }
+			 }		
+			 writer.close();
+				logger.info("Added " + written + " documents");
+				logger.info("Updated " + updated + " documents");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 		
 	public static void main(String[] args) throws IOException, ParseException, EntailmentGraphCollapsedException, ConfidenceCalculatorException {
@@ -262,11 +269,10 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		if (null != nodeMatch) {
 			List<PerNodeScore> perNodeScores = nodeMatch.getScores();
 			for (PerNodeScore perNodeScore : perNodeScores) {
-				System.out.println("Matching node in graph: " + perNodeScore.getNode().getLabel());
-				System.out.println("Score of the match: " + perNodeScore.getScore());
-				System.out.println("Category confidences: ");
+				logger.info("Score of the match: " + perNodeScore.getScore());
+				logger.info("Category confidences: ");
 				for (String category : perNodeScore.getNode().getCategoryConfidences().keySet()) {
-					System.out.println("category "+ category + ": " + perNodeScore.getNode().getCategoryConfidences().get(category));					
+					logger.info("category "+ category + ": " + perNodeScore.getNode().getCategoryConfidences().get(category));					
 				}
 				
 			}
