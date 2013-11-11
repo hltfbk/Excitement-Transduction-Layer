@@ -46,4 +46,9 @@ public class EvaluationMeasures {
 		if ((precision == null)||(recall == null)) return null;		
 		return 2*precision*recall/(precision+recall);		
 	}
+	
+	@Override
+	public String toString(){
+		return "Recall="+getRecall()+";\tPrec="+getPrecision()+";\tF1="+getF1();		
+	}
 }

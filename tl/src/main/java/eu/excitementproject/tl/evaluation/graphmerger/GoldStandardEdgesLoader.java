@@ -92,22 +92,5 @@ public class GoldStandardEdgesLoader {
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());
 				}		
-	}
-	
-	public static void main(String[] args) {
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
-		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
-		try {
-			loader.addAnnotations(annotationFilename);
-			int i=1;		
-			for (EntailmentRelation edge : loader.edges){
-				System.out.println(i+": "+edge);
-				i++;
-			}
-		} catch (GraphEvaluatorException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-				
-	}
+	}	
 }
