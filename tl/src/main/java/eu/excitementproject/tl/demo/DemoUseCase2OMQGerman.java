@@ -29,6 +29,7 @@ import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.api.NodeMatcherWithIndex;
 import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
@@ -198,7 +199,7 @@ public class DemoUseCase2OMQGerman {
 		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
 
 		//call node matcher on each fragment graph
-		NodeMatcherLuceneSimple nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
+		NodeMatcherWithIndex nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
 		nm.indexGraphNodes();
 		nm.initializeSearch();
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();

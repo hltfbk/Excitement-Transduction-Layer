@@ -19,15 +19,12 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field.Store;
 import org.apache.lucene.document.TextField;
-import org.apache.lucene.index.DirectoryReader;
-import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
@@ -49,7 +46,7 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 
 /**
- * This NodeMatcher compares an input fragment graph to an input entailment graph. It transforms
+ * This NodeMatcher compares an input fragment graph to an input entailment graph using Lucene. It transforms
  * the entailment graph into a Lucene index and the fragment graph into a Lucene query, which is
  * then matched against this index. For efficiency reasons, it compares the base statement only. 
  * If a matching node is found, it returns this node together with the confidence score of the match. 
@@ -57,55 +54,20 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  * @author Kathrin Eichler
  *
  */
-public class NodeMatcherLucene extends AbstractNodeMatcher {
+public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 	
-	private static EntailmentGraphCollapsed entailmentGraph;
-	private static String indexPath;
-	private static IndexReader reader;
-	private static IndexSearcher searcher;
-	private static Analyzer analyzer;
-	private static QueryParser parser; 
+	private final static Logger logger = Logger.getLogger(NodeMatcherLuceneSimple.class.getName());
 	
-	private final static Logger logger = Logger.getLogger(NodeMatcherLucene.class.getName());
-	
-	
-	/**
-	 * Constructor with just one input argument: the entailment graph.
-	 * 
-	 * @param myEntailmentGraph
-	 */
-	public NodeMatcherLucene(EntailmentGraphCollapsed myEntailmentGraph) {
-		entailmentGraph = myEntailmentGraph;
-		indexPath = "src/test/resources/Lucene_index/";
-		analyzer = new StandardAnalyzer(Version.LUCENE_44);
+	public NodeMatcherLuceneSimple(EntailmentGraphCollapsed myEntailmentGraph) {
+		super(myEntailmentGraph);
+	}
+
+	public NodeMatcherLuceneSimple(EntailmentGraphCollapsed myEntailmentGraph, 
+			String myIndexPath, Analyzer myAnalyzer) {
+		super(myEntailmentGraph, myIndexPath, myAnalyzer);
 	}
 	
-	/**
-	 * Constructor with just three input arguments:
-	 * 
-	 * @param myEntailmentGraph: the input entailment graph
-	 * @param myIndexPath: the path to which the index will be written
-	 * @param myAnalyzer: the analyzer to be used for indexing / searching
-	 */
-	public NodeMatcherLucene(EntailmentGraphCollapsed myEntailmentGraph, String myIndexPath, Analyzer myAnalyzer) {
-		entailmentGraph = myEntailmentGraph;
-		indexPath = myIndexPath;
-		analyzer = myAnalyzer;
-	}
-	
-	/**
-	 * Initializing the search process: reading the index and initializing searcher and query parser. 
-	 * 
-	 * @throws IOException
-	 */
-	public void initializeSearch() throws IOException {
-		reader = DirectoryReader.open(FSDirectory.open(new File(indexPath)));
-		searcher = new IndexSearcher(reader);
-		parser = new QueryParser(Version.LUCENE_44, "euText", analyzer); //field to be searcher: euText (test of entailment unit)
-		parser.setDefaultOperator(QueryParser.AND_OPERATOR);
-	}
-		
-	
+
 	/**
 	 * Find entailment units in the entailment graph nodes matching the input fragment graph (longest match).
 	 * 
@@ -150,9 +112,13 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
+		String fieldToBeSearched = "euText";
+		
+		QueryParser parser = new QueryParser(Version.LUCENE_44, fieldToBeSearched, analyzer); 
+		parser.setDefaultOperator(QueryParser.AND_OPERATOR);
+
 		String escaped = QueryParser.escape(queryText);	
 		Query query = parser.parse(escaped);
-		
 		
 		Date start = new Date();
 		searcher.search(query, null, 100);
@@ -168,7 +134,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 			ScoreDoc hit = hits[i];
 		    Document d = searcher.doc(hit.doc);
 		    //matchScores.put(d, hit.score); //score returned by Lucene
-		    if (d.getField("euText").stringValue().split("\\s+").length == queryText.split("\\s+").length) {
+		    if (d.getField(fieldToBeSearched).stringValue().split("\\s+").length == queryText.split("\\s+").length) {
 		    	//all query terms match and returned document has the same number of terms --> perfect match!
 		    	matchScores.put(d, new Float(1.0)); 
 		    }
@@ -200,6 +166,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 	 * 
 	 * @throws IOException
 	 */
+	@Override
 	public void indexGraphNodes() {
 		boolean create = true;
 		
@@ -262,7 +229,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(new File("src/test/resources/sample_graphs/german_dummy_data_for_evaluator_test_graph.xml"));
 		ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 		cc.computeCategoryConfidences(graph);
-		NodeMatcherLucene nm = new NodeMatcherLucene(graph, "src/test/resources/Lucene_index", new StandardAnalyzer(Version.LUCENE_44));
+		NodeMatcherLuceneSimple nm = new NodeMatcherLuceneSimple(graph, "src/test/resources/Lucene_index", new StandardAnalyzer(Version.LUCENE_44));
 		nm.indexGraphNodes();
 		nm.initializeSearch();
 		NodeMatch nodeMatch = nm.findMatchingNodesForMention(new EntailmentUnitMention("Die Punkte lösen mein Problem nicht", 0));
@@ -273,8 +240,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 				logger.info("Category confidences: ");
 				for (String category : perNodeScore.getNode().getCategoryConfidences().keySet()) {
 					logger.info("category "+ category + ": " + perNodeScore.getNode().getCategoryConfidences().get(category));					
-				}
-				
+				}			
 			}
 		}		
 	}
