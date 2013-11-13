@@ -29,6 +29,7 @@ import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.api.NodeMatcherWithIndex;
 import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
@@ -40,7 +41,7 @@ import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
-import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLucene;
+import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
@@ -79,11 +80,11 @@ public class DemoUseCase2OMQGerman {
 	static String xmlDataFilename = "keywordAnnotations.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
-	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_complete_th.xml";
+	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_1_th.xml";
 	
-	static boolean readGraph = false; //read previously created graph instead of creating it
+	static boolean readGraph = true; //read previously created graph instead of creating it
 	static boolean processTrainingData = false; //process the data in "edaTrainingFilename"
-	static boolean trainEDA = true; //train the EDA on the processed data
+	static boolean trainEDA = false; //train the EDA on the processed data
 
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
@@ -198,7 +199,7 @@ public class DemoUseCase2OMQGerman {
 		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
 
 		//call node matcher on each fragment graph
-		NodeMatcherLucene nm = new NodeMatcherLucene(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
+		NodeMatcherWithIndex nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
 		nm.indexGraphNodes();
 		nm.initializeSearch();
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();

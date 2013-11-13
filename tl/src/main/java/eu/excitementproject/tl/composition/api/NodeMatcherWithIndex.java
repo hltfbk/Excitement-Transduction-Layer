@@ -9,14 +9,18 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
 
 /**
  * OMQ usecase composition-flow "NodeMatcher"
-The module will match the given fragment graph to the entailment graph. 
-It will return a set of node matches (matching nodes in the entailment graph
-associated to match confidence scores) as the result. 
-  
+ * 
+ * The module matches a given fragment graph against an entailment graph. 
+ * It returns a set of node matches (matching nodes in the entailment graph
+ * associated to match confidence scores) as the result.
+ * 
+ * The search is based on indexing the nodes in the entailment graph and 
+ * searching in this index.
+ *  
  * @author Kathrin Eichler
  *
  */
-public interface NodeMatcher {
+public interface NodeMatcherWithIndex {
 
 	/**
 	 * @param fragmentGraph - fragment graph ({@link FragmentGraph})
@@ -25,5 +29,9 @@ public interface NodeMatcher {
 	 */
 	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph) 
 			throws NodeMatcherException;
+
+	public void indexGraphNodes();
+
+	public void initializeSearch();
 
 }
