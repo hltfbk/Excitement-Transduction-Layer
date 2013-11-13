@@ -191,13 +191,13 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}
 			
+			setup(1);
 			eda.initialize(config);
 			logger.info("Initialized config.");
 			use1 = new UseCaseOneRunnerPrototype(lap, eda, outputDirname);
 			double threshold = 0.99;
 			EntailmentGraphCollapsed graph = use1.buildCollapsedGraph(docsTrain, threshold);
 			logger.info("Built collapsed graph.");
-			confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 			confidenceCalculator.computeCategoryConfidences(graph);
 			String outputFile = outputDirname + "/test.graph.xml";
 			graph.toXML(outputFile);			
