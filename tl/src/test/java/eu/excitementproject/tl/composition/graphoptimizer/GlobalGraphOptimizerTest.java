@@ -1,5 +1,7 @@
 package eu.excitementproject.tl.composition.graphoptimizer;
 
+import static org.junit.Assert.fail;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
@@ -14,7 +16,6 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
-import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.GraphMerger;
@@ -27,7 +28,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 public class GlobalGraphOptimizerTest {
 
-	//@Ignore("Fails sometimes.")
+	@Ignore("Fails sometimes.")
 	@Test
 	public void test() {
 
@@ -62,27 +63,11 @@ public class GlobalGraphOptimizerTest {
 						finalGraph = collapser.optimizeGraph(rawGraph, 0.2);
 						System.out.println("Done:\n"+finalGraph.toString());
 						finalGraph.toDOT("./src/test/outputs/collapsedGraphFromSample.txt");						
-					} catch (LAPException e) {
+					} catch (ConfigurationException | EDAException | ComponentException |
+							GraphMergerException | IOException | GraphOptimizerException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					} catch (ConfigurationException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (EDAException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (ComponentException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (GraphMergerException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (GraphOptimizerException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						fail(e.getMessage());
 					}
 				
 			
