@@ -17,7 +17,7 @@
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>globalgraphoptimizer</artifactId>
-  		<version>1.0.3-SNAPSHOT</version>
+  		<version>1.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>net.sf.jgrapht</groupId>
@@ -29,7 +29,7 @@
   		<artifactId>jgraph</artifactId>
   		<version>5.13.0.0</version>
   	</dependency>
-
+  	
 	<!-- TreeTagger related dependencies --> 
 	<!-- You need to install TreeTagger;  please read /tl/src/scripts/treetagger/README.txt, and follow the instructions --> 
     	<dependency>
@@ -116,7 +116,16 @@
                        	<target>1.7</target>
                 	</configuration>
   		</plugin>
-  		
+  		<plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-surefire-plugin</artifactId>
+		  <version>2.13</version>
+		  <configuration>
+		    <skipTests>false</skipTests>
+		    <argLine>-Xms1G -Xmx1G</argLine>
+		  </configuration>
+		</plugin>
+
   	</plugins>
   </build>
 

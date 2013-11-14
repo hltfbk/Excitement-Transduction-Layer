@@ -10,6 +10,8 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import org.apache.log4j.Logger;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.util.Version;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.CategoryAnnotation;
@@ -22,23 +24,41 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
+import eu.excitementproject.tl.composition.api.GraphMerger;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.api.NodeMatcherWithIndex;
+import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
+import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
+import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
+import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
+import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
+import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
 
@@ -61,37 +81,91 @@ import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototy
 
 public class EvaluatorCategoryAnnotator { 
 	
+    private static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
+    
+    static LAPAccess lap;
+    static CommonConfig config;
+	static String configFilename; //config file for EDA
+	static EDABasic<?> eda;
+    static FragmentAnnotator fragmentAnnotatorForGraphBuilding;
+    static FragmentAnnotator fragmentAnnotatorForNewInput;
+    static ModifierAnnotator modifierAnnotator;
+    static FragmentGraphGenerator fragmentGraphGenerator;
+    static GraphMerger graphMerger;
+    static GraphOptimizer graphOptimizer;
+    static NodeMatcherWithIndex nodeMatcher;
+	static CategoryAnnotator categoryAnnotator;
+	static ConfidenceCalculator confidenceCalculator;
+	
+	static double thresholdForOptimizing = 0.99;
+
+    static int setup;
+    
+    static boolean readGraphFromFile = false;
+    
 	public static void main(String[] args) {
-		String inputFilename = "./src/test/resources/WP2_public_data_XML/german_dummy_data_for_evaluator_test.xml"; //dataset to be evaluated
-		String outputDirname = "D:/temp"; //output directory (for generated entailment graph)
-		String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml"; //config file for EDA
+		String inputFoldername = "./src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
+		String outputGraphFilename = "./src/test/resources/sample_graphs/graph.xml"; //output directory (for generated entailment graph)
 				
-		runEvaluationOnTrainTestDataset(inputFilename, outputDirname, configFilename);
+		setup(1);
+		
+		//runEvaluationOnTrainTestDataset(inputFilename, outputDirname, configFilename);
+		try {
+			runEvaluationXFoldCross(inputFoldername, outputGraphFilename);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Pick a specific evaluation setup.
+	 * 
+	 * @param i
+	 */
+	private static void setup(int i) {
+		try {
+			switch(i){
+	        	case 1:
+	        		lap = new LemmaLevelLapDE(); //lap = new MaltParserDE();
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
+	        		File configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();	
+		    		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lap);
+		    		fragmentAnnotatorForNewInput = new SentenceAsFragmentAnnotator(lap);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lap); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lap, eda);
+		    		graphOptimizer = new SimpleGraphOptimizer();
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution();
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			}
+		} catch (LAPException | FragmentAnnotatorException | ModifierAnnotatorException | ConfigurationException e) {
+			e.printStackTrace();
+		} catch (GraphMergerException e) {
+			e.printStackTrace();
+		} 			
 	}
 
 	public static double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename) {
-		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.categoryannotator"); 
 		
-		File configFile = new File(configFilename);	
-		CommonConfig config = null;
-		LAPAccess lap;
-		EDABasic<?> eda;
 		UseCaseOneRunnerPrototype use1;
 		UseCaseTwoRunnerPrototype use2;
-		EntailmentGraphCollapsed graph = null;
-		ConfidenceCalculator cc = null;
 		
 		// Read in all emails with their associated categories and split into train/test set
+		logger.info("Reading input " + inputFilename);
 		String[] files =  {inputFilename};
 		File f;
 		Set<Interaction> docs = new HashSet<Interaction>();
 
 		try {
 			for (String name: files) {
-				logger.info("Reading " + name);
+				logger.info("Reading file " + name);
 				f = new File(name);
 				docs.addAll(InteractionReader.readInteractionXML(f));
 			}
+			
+			logger.info("Added " + docs.size() + " documents");
 			
 			// Split emails into train and test set
 			Set<Interaction> docsTrain = new HashSet<Interaction>();
@@ -117,17 +191,14 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}
 			
-			lap = new LemmaLevelLapDE();
-			config = new ImplCommonConfig(configFile);
-			eda = new MaxEntClassificationEDA();	
+			setup(1);
 			eda.initialize(config);
 			logger.info("Initialized config.");
 			use1 = new UseCaseOneRunnerPrototype(lap, eda, outputDirname);
 			double threshold = 0.99;
-			graph = use1.buildCollapsedGraph(docsTrain, threshold);
+			EntailmentGraphCollapsed graph = use1.buildCollapsedGraph(docsTrain, threshold);
 			logger.info("Built collapsed graph.");
-			cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
-			cc.computeCategoryConfidences(graph);
+			confidenceCalculator.computeCategoryConfidences(graph);
 			String outputFile = outputDirname + "/test.graph.xml";
 			graph.toXML(outputFile);			
 			graph = new EntailmentGraphCollapsed(new File(outputFile));
@@ -147,31 +218,8 @@ public class EvaluatorCategoryAnnotator {
 				logger.info("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
 				CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 				
-				// Compare automatic to manual annotation
-				String bestCat = "";
-			    HashMap<String,Double> categoryScores = new HashMap<String,Double>();
-				for (CategoryDecision decision: decisions) {
-					String category = decision.getCategoryId();
-					double sum = 0;
-					if (categoryScores.containsKey(category)) {
-						sum = categoryScores.get(category);
-					}
-					//add up all scores for each category on the CAS and compare the sums of each category
-					sum += decision.getConfidence();
-					categoryScores.put(category, sum);
-				}
-				ValueComparator bvc =  new ValueComparator(categoryScores);
-		        Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
-		        sortedMap.putAll(categoryScores);
-		        logger.debug("category sums:  " + sortedMap);
-				if (sortedMap.size() > 0) {
-					bestCat = sortedMap.keySet().iterator().next().toString();
-					logger.info("Best category: " + bestCat);
-					logger.info("Correct category: " + doc.getCategory());
-					if (doc.getCategory().equals(bestCat)) {
-						countPositive++;
-					} 
-				}				
+				countPositive = compareDecisionsForInteraction(countPositive,
+						doc, decisions);				
 			}
 			
 			// Compute and print result	
@@ -191,21 +239,267 @@ public class EvaluatorCategoryAnnotator {
 			return -1;
 		}
 	}
+
+	/**
+	 * Compare automatic to manual annotation on interaction level (with no "most probable" category)
+	 * 
+	 * @param countPositive
+	 * @param doc
+	 * @param decisions
+	 * @return
+	 */
+	private static int compareDecisionsForInteraction(int countPositive,
+			Interaction doc, Set<CategoryDecision> decisions) {
+		return compareDecisionsForInteraction(countPositive, doc, decisions, "N/A");
+	}
 	
-	public void runEvaluationTenFoldCross() {
-		//1. read in all emails with their associated categories (test data)
-		
-		//2. split the dataset into ten equally sized parts
-		
-		//for each part P
-		//	3. read in entailment graph EG generated on remaining 9 parts
-		
-		//	for each email E in P
-		// 		4. send E + EG to node matcher / category annotator and have it annoatted
-		
-		//4. compare automatic to manual annotation
-		
-		//5. compute and print result		
+	/**
+	 * Compare automatic to manual annotation on interaction level
+	 * 
+	 * @param countPositive
+	 * @param doc
+	 * @param decisions
+	 * @param mostProbableCat
+	 * @return
+	 */
+	private static int compareDecisionsForInteraction(int countPositive,
+			Interaction doc, Set<CategoryDecision> decisions, String mostProbableCat) {
+		String bestCat = "";
+		HashMap<String,Double> categoryScores = new HashMap<String,Double>();
+		logger.debug("Number of decisions: " + decisions.size());
+		for (CategoryDecision decision: decisions) {
+			String category = decision.getCategoryId();
+			double sum = 0;
+			if (categoryScores.containsKey(category)) {
+				sum = categoryScores.get(category);
+			}
+			//add up all scores for each category on the CAS
+			sum += decision.getConfidence();
+			categoryScores.put(category, sum);
+		}
+		// get the category with the highest sum
+		ValueComparator bvc =  new ValueComparator(categoryScores);
+		Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
+		sortedMap.putAll(categoryScores);
+		logger.debug("category sums:  " + sortedMap);
+		if (sortedMap.size() > 0) {
+			bestCat = sortedMap.keySet().iterator().next().toString();
+			logger.info("Best category: " + bestCat);
+			logger.info("Correct category: " + doc.getCategory());
+		} else bestCat = mostProbableCat;
+		if (doc.getCategory().equals(bestCat)) {
+			countPositive++;
+		} 
+		return countPositive;
+	}
+	
+	/**
+	 * Runs X-fold cross-validation on X files found in the input directory. For each fold, it uses one input
+	 * file for testing and the remaining input files for building the entailment graph used for category
+	 * annotation. 
+	 * 
+	 * @param inputDataFoldername
+	 * @param outputGraphFilename
+	 * @throws Exception
+	 */
+	public static void runEvaluationXFoldCross(String inputDataFoldername, String outputGraphFilename) throws Exception {
+		Map<Integer, File> fileIndex = indexFilesinDirectory(inputDataFoldername);	    	
+	    
+	    //check if there are at least two files in the dir
+	    double numberOfFolds = fileIndex.size();
+	    if (numberOfFolds < 2) {
+    		logger.warn("Please specify a folder with at least two files (train + test)!");
+    		return;
+	    }	    	
+	    
+	   	logger.info("Creating " + numberOfFolds + " folds.");
+	   	Map<Integer, Double> foldAccuracies = new HashMap<Integer, Double>();
+	   			
+	    for (int i=1; i<=fileIndex.size(); i++) { //for each input file
+	    	logger.info("Creating fold " + i);
+	    	//Create a fold for each file, with the file being the test data and the 
+	    	//remaining files being used for building the graph
+    		Set<Interaction> trainingDocs = new HashSet<Interaction>();
+    		Set<Interaction> testDocs = new HashSet<Interaction>();
+	    	for (int j=1; j<=fileIndex.size(); j++) {
+				File f = fileIndex.get(j);
+	    		if (i==j) { //add documents in test file to test set
+	    			logger.info("Reading file " + f.getName());	    			
+					testDocs.addAll(InteractionReader.readInteractionXML(f));
+	    			logger.info("Test set of fold "+i+" now contains " + testDocs.size() + " documents");
+	    		} else { //add documents in remaining files to training set
+	    			logger.info("Reading file " + f.getName());	    			
+					trainingDocs.addAll(InteractionReader.readInteractionXML(f));
+	    			logger.info("Training set of fold "+i+" now contains " + trainingDocs.size() + " documents");
+	    		}
+	        }
+	    	
+	    	//For each fold, generate entailment graph EG from training set
+	    	EntailmentGraphCollapsed graph;
+	    	if (readGraphFromFile) {
+	    		graph = new EntailmentGraphCollapsed(new File(outputGraphFilename));
+	    	} else {
+		    	graph = buildGraph(trainingDocs);
+				graph.toXML(outputGraphFilename);			
+	    	}
+	    	
+    		String mostProbableCat = computeMostProbablyCategory(trainingDocs);
+	    	
+	    	//For each email E in the test set, send it to nodematcher / category annotator and have it annotated
+			int countPositive = 0;
+			for (Interaction interaction : testDocs) {
+				JCas cas = annotateInteraction(graph, interaction);	
+				
+				//print CAS category
+				CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
+				
+		    	//Compare automatic to manual annotation
+				Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+				countPositive = compareDecisionsForInteraction(countPositive,
+						interaction, decisions, mostProbableCat);				
+			}
+	    	logger.info("Count positive: " + countPositive);
+		    double accuracyInThisFold = ((double)countPositive / (double)testDocs.size());
+		    foldAccuracies.put(i, accuracyInThisFold);
+	    }	
+	    printResult(numberOfFolds, foldAccuracies);
+			
+	}
+
+	/**
+	 * Compute and print final result
+	 * 
+	 * @param numberOfFolds
+	 * @param foldAccuracy
+	 */
+	private static void printResult(double numberOfFolds,
+			Map<Integer, Double> foldAccuracy) {
+		double sumAccuracies = 0;
+	    for (int fold : foldAccuracy.keySet()) {
+	    	double accuracy = foldAccuracy.get(fold);
+	    	logger.info("Accuracy in fold " + fold + ": " + accuracy);
+	    	sumAccuracies += accuracy;
+	    }
+	    logger.info("Overall accurracy: " + (sumAccuracies / (double)numberOfFolds));
+	}
+
+	/**
+	 * Annotate interaction using entailment graph
+	 * 
+	 * @param graph
+	 * @param interaction
+	 * @return
+	 * @throws LAPException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws NodeMatcherException
+	 * @throws CategoryAnnotatorException
+	 */
+	private static JCas annotateInteraction(EntailmentGraphCollapsed graph,
+			Interaction interaction) throws LAPException,
+			FragmentAnnotatorException, ModifierAnnotatorException,
+			FragmentGraphGeneratorException, NodeMatcherException,
+			CategoryAnnotatorException {
+		JCas cas = interaction.createAndFillInputCAS();
+		fragmentAnnotatorForNewInput.annotateFragments(cas);
+		modifierAnnotator.annotateModifiers(cas);
+		logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+		Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
+		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+
+		//call node matcher on each fragment graph
+		nodeMatcher = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
+		nodeMatcher.indexGraphNodes();
+		nodeMatcher.initializeSearch();
+		for (FragmentGraph fragmentGraph: fragmentGraphs) {
+			System.out.println("fragment graph: " + fragmentGraph.getCompleteStatement());
+			Set<NodeMatch> matches = nodeMatcher.findMatchingNodesInGraph(fragmentGraph);
+			System.out.println("matches: " + matches.size());
+			//add category annotation to CAS
+			categoryAnnotator.addCategoryAnnotation(cas, matches);
+		}
+		return cas;
+	}
+
+	/**
+	 * Compute most probable category in training set
+	 * 
+	 * @param trainingDocs
+	 * @return
+	 */
+	private static String computeMostProbablyCategory(
+			Set<Interaction> trainingDocs) {
+		Map<String, Double> categoryOccurrences = new HashMap<String,Double>();
+		for (Interaction interaction : trainingDocs) {
+			String cat = interaction.getCategory();
+			double occ = 1;
+			if (categoryOccurrences.containsKey(cat)) {
+				occ += categoryOccurrences.get(cat);
+			}
+			categoryOccurrences.put(cat, occ);
+		}
+		ValueComparator bvc =  new ValueComparator(categoryOccurrences);
+		Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
+		sortedMap.putAll(categoryOccurrences);
+		logger.debug("category sums:  " + sortedMap);
+		String mostProbableCat = "N/A";
+		if (sortedMap.size() > 0) {
+			mostProbableCat = sortedMap.keySet().iterator().next().toString();
+			logger.info("Most probably category: " + mostProbableCat);
+		}
+		return mostProbableCat;
+	}
+
+	/**
+	 * Read and index all files in the input folder 
+	 * 
+	 * @param inputDataFoldername
+	 * @return
+	 */
+	private static Map<Integer, File> indexFilesinDirectory(
+			String inputDataFoldername) {
+		File folder = new File(inputDataFoldername);
+		Map<Integer,File> fileIndex = new HashMap<Integer, File>();
+		int countFiles = 0;
+		logger.info("Number of files: " + folder.listFiles().length);
+	    for (File fileEntry : folder.listFiles()) {
+	    	if (fileEntry.isFile()) {
+	    		fileIndex.put(countFiles+1, fileEntry);
+	    		countFiles++;
+	    	}
+	    }
+		return fileIndex;
+	}
+
+	/**
+	 * Build collapsed graph from interactions, including category information.
+	 * 
+	 * @param trainingDocs
+	 * @return
+	 * @throws Exception 
+	 */
+	private static EntailmentGraphCollapsed buildGraph(Set<Interaction> trainingDocs) throws Exception {
+		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();			
+		JCas cas = CASUtils.createNewInputCas();
+		for(Interaction i: trainingDocs) {
+			i.fillInputCAS(cas); 
+			fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
+			modifierAnnotator.annotateModifiers(cas);
+			logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+			fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
+		}
+		logger.info("Created " + fgs.size() + " fragment graphs.");
+		eda.initialize(config);
+		logger.info("Initialized config.");
+		EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
+		logger.info("Merged graphs.");
+		EntailmentGraphCollapsed graph = graphOptimizer.optimizeGraph(egr, thresholdForOptimizing);
+		logger.info("Built collapsed graph.");		
+		confidenceCalculator.computeCategoryConfidences(graph);
+		logger.info("Computed category confidences and added them to graph.");		
+
+		return graph;
 	}
 
 	/**
@@ -251,4 +545,3 @@ class ValueComparator implements Comparator<String> {
         } 
     }
 }
-
