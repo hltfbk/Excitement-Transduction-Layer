@@ -28,7 +28,6 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 public class GlobalGraphOptimizerTest {
 
-	@Ignore("Fails sometimes.")
 	@Test
 	public void test() {
 
