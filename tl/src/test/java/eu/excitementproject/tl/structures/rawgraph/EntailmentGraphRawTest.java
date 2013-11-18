@@ -4,10 +4,15 @@ import java.io.File;
 import java.util.Hashtable;
 import java.util.Set;
 
+import javax.xml.transform.TransformerException;
+
 import org.junit.Test;
+
+import static org.junit.Assert.fail;
 
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
+import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 public class EntailmentGraphRawTest {
 	
@@ -22,10 +27,9 @@ public class EntailmentGraphRawTest {
 		EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuput(false);
 		System.out.println("********************************\n Non-random graph:\n"+rawGraph.toString());
 		try {
-			rawGraph.toXML("./src/test/outputs/sampleRawGraph.xml");
-		} catch (EntailmentGraphRawException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			XMLFileWriter.write(rawGraph.toXML(), "./src/test/outputs/sampleRawGraph.xml");			
+		} catch (EntailmentGraphRawException | TransformerException e) {
+			fail(e.getMessage());
 		}
 
 		
@@ -57,8 +61,7 @@ public class EntailmentGraphRawTest {
 						}
 					}
 				} catch (EntailmentGraphRawException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					fail(e.getMessage());
 				}							
 			}
 		}
@@ -70,8 +73,7 @@ public class EntailmentGraphRawTest {
 		System.out.println("********************************\n Sample graph:\n"+rawGraph.toString());
 		
 		try {
-//			String xmlFile = "./src/test/outputs/sampleRawGraph.xml";
-			String xmlFile = "./src/test/outputs/raw_graph.xml";
+			String xmlFile = "./src/test/outputs/sampleRawGraph.xml";
 			EntailmentGraphRaw loadedGraph = new EntailmentGraphRaw(new File(xmlFile));
 			loadedGraph.toString();
 			for (EntailmentUnit eu : loadedGraph.vertexSet()){
@@ -82,8 +84,7 @@ public class EntailmentGraphRawTest {
 				}
 			}
 		} catch (EntailmentGraphRawException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			fail(e.getMessage());
 		}
 		
 	}

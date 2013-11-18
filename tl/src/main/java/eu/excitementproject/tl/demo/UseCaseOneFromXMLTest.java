@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.xml.transform.TransformerException;
+
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -101,7 +103,7 @@ public class UseCaseOneFromXMLTest {
 
 			use1.inspectGraph(graph);
 			
-		} catch (ConfigurationException | EDAException | ComponentException | 
+		} catch (ConfigurationException | EDAException | ComponentException | TransformerException | 
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
 				ModifierAnnotatorException | EntailmentGraphRawException | EntailmentGraphCollapsedException |
 				GraphMergerException | GraphOptimizerException | DataReaderException | IOException e) {

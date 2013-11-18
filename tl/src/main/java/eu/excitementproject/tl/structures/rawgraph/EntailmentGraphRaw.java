@@ -12,11 +12,7 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.jgrapht.graph.DirectedMultigraph;
 import org.w3c.dom.DOMException;
@@ -507,7 +503,7 @@ public class EntailmentGraphRaw extends
 	}	
 	
 	
-	public void toXML(String filename) throws EntailmentGraphRawException{
+	public DOMSource toXML() throws EntailmentGraphRawException{
 				try {
 					DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 					DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -577,19 +573,9 @@ public class EntailmentGraphRaw extends
 						if (r.getLap() != null) entailmentrelationEdge.setAttribute("lap",r.getLap().getComponentName());
 					}
 					
-					// write the content into xml file
-					TransformerFactory transformerFactory = TransformerFactory.newInstance();
-					Transformer transformer = transformerFactory.newTransformer();
-					DOMSource source = new DOMSource(doc);
-
-					File f = new File(filename);
-					StreamResult result = new StreamResult(f.toURI().getPath());
-
-					// Output to console for testing
-					// StreamResult result = new StreamResult(System.out);
- 
-					transformer.transform(source, result);
-				} catch (DOMException | ParserConfigurationException | TransformerException e) {
+					return new DOMSource(doc);
+				
+				} catch (DOMException | ParserConfigurationException e) {
 					throw new EntailmentGraphRawException(e.getMessage());
 					// TODO Auto-generated catch block
 				}		 
