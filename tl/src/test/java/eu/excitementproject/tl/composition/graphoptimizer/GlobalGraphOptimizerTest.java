@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitementproject.eop.common.EDAException;

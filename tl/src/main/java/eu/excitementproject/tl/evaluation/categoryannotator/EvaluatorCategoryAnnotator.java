@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import javax.xml.transform.TransformerException;
+
 import org.apache.log4j.Logger;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.util.Version;
@@ -59,6 +61,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
+import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
 
@@ -200,7 +203,7 @@ public class EvaluatorCategoryAnnotator {
 			logger.info("Built collapsed graph.");
 			confidenceCalculator.computeCategoryConfidences(graph);
 			String outputFile = outputDirname + "/test.graph.xml";
-			graph.toXML(outputFile);			
+			XMLFileWriter.write(graph.toXML(), outputFile);			
 			graph = new EntailmentGraphCollapsed(new File(outputFile));
 			//GraphViewer.drawGraph(graph);
 
@@ -227,7 +230,7 @@ public class EvaluatorCategoryAnnotator {
 			logger.info("Final result: " + result);
 			return result;
 			
-		} catch (ConfigurationException | EDAException | ComponentException 
+		} catch (ConfigurationException | EDAException | ComponentException | TransformerException
 			| FragmentAnnotatorException | ModifierAnnotatorException 
 			| GraphMergerException | IOException 
 			| GraphOptimizerException 
@@ -340,7 +343,7 @@ public class EvaluatorCategoryAnnotator {
 	    		graph = new EntailmentGraphCollapsed(new File(outputGraphFilename));
 	    	} else {
 		    	graph = buildGraph(trainingDocs);
-				graph.toXML(outputGraphFilename);			
+				XMLFileWriter.write(graph.toXML(), outputGraphFilename);			
 	    	}
 	    	
     		String mostProbableCat = computeMostProbablyCategory(trainingDocs);

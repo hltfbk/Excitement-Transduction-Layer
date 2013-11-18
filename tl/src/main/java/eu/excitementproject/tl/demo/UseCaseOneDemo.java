@@ -83,7 +83,7 @@ public class UseCaseOneDemo {
 			// build collapsed graph
 			graph = useOne.buildCollapsedGraph(docs);
 			
-		} catch (ConfigurationException | EDAException | ComponentException | 
+		} catch (ConfigurationException | EDAException | ComponentException | TransformerException |
 				FragmentAnnotatorException | FragmentGraphGeneratorException | 
 				ModifierAnnotatorException | EntailmentGraphRawException | 
 				GraphMergerException | GraphOptimizerException | IOException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
@@ -137,7 +137,7 @@ public class UseCaseOneDemo {
 	public void inspectResults() {
 		try {
 			useOne.inspectGraph(graph);
-		} catch (IOException | EntailmentGraphCollapsedException e) {
+		} catch (IOException | TransformerException | EntailmentGraphCollapsedException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Error inspecting results");
 			e.printStackTrace();

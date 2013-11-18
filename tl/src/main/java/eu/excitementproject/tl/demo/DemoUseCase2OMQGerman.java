@@ -61,6 +61,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
+import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
 * Shows OMQ use case data flow.
@@ -173,7 +174,7 @@ public class DemoUseCase2OMQGerman {
 			// compute category confidences and add them to graph
 			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 			cc.computeCategoryConfidences(graph);
-			graph.toXML(xmlGraphFilename);
+			XMLFileWriter.write(graph.toXML(), xmlGraphFilename);
 		}
 		//GraphViewer.drawGraph(graph);
 			

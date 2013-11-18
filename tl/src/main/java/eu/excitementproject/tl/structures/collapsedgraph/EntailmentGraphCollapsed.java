@@ -16,12 +16,7 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 import org.w3c.dom.DOMException;
@@ -439,7 +434,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			out.close();
 	}	
 	
-	public void toXML(String filename) throws EntailmentGraphCollapsedException{
+	public DOMSource toXML() throws EntailmentGraphCollapsedException{
 		try {
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -521,16 +516,8 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 				entailmentrelationEdge.setAttribute("confidence",String.valueOf(r.getConfidence()));
 			}
 			
-			// write the content into xml file
-			TransformerFactory transformerFactory = TransformerFactory.newInstance();
-			Transformer transformer = transformerFactory.newTransformer();
-			DOMSource source = new DOMSource(doc);
-			File f = new File(filename); 
-			StreamResult result = new StreamResult(f.toURI().getPath());
-
-			transformer.transform(source, result);
-		} catch (DOMException | ParserConfigurationException | TransformerFactoryConfigurationError |
-				TransformerException e) {
+			return new DOMSource(doc);
+		} catch (DOMException | ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			throw new EntailmentGraphCollapsedException(e.getMessage());
 		}		 
