@@ -1,6 +1,8 @@
 package eu.excitementproject.tl.evaluation.graphmerger;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -94,17 +96,32 @@ public class GoldStandardEdgesLoader {
 				}		
 	}
 	
+	/** Generates a single string, which contains the gold standard edges in DOT format for visualization
+	 * @return the generated string
+	 */
+	public String toDOT(){
+		String s = "digraph gsGraph {\n";
+		int i=1;
+		for (EntailmentRelation edge : edges){
+			s+=edge.toDOT();
+			System.out.println(i+": "+edge);
+			i++;
+			if(i==1000) break;
+		}
+		s+="}";	
+		return s;
+	}
+	
 	public static void main(String[] args) {
 		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
-		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
+//		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
+		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/email0020.xml";
 		try {
 			loader.addAnnotations(annotationFilename);
-			int i=1;		
-			for (EntailmentRelation edge : loader.edges){
-				System.out.println(i+": "+edge);
-				i++;
-			}
-		} catch (GraphEvaluatorException e) {
+			BufferedWriter out = new BufferedWriter(new FileWriter(annotationFilename+".dot"));
+			out.write(loader.toDOT());
+			out.close();			
+		} catch (GraphEvaluatorException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
