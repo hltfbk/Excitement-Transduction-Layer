@@ -219,16 +219,29 @@ public class EntailmentGraphRaw extends
 	 * @param fg - the inout fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
-		// copy edges (with nodes)
+		// copy nodes (add if new, update mentions if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
+		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
+			this.addEntailmentUnitMention(fragmentGraphNode, fg.getCompleteStatement().getText(), fg.getInteractionId());
+			}
+		// add edges
 		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
 			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
 		}
-		// copy nodes, which have no edges (must happen only if base statement = complete statement => graph has a single node and no edges) 
-		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
-			if (this.getVertex(fragmentGraphNode.getText())==null) {
-				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText(), fg.getInteractionId());
-				this.addVertex(newNode);
-			}
+	}
+	
+	/** The method gets an EntailmentUnitMention and either adds a new EntailmentUnit node or, if a relevant EntailmentUnit already exists in the graph, updates the list of its mentions  
+	 * @param mention - the EntailmentUnitMention to be added to the graph
+	 * @param completeStatementText - the text of the mention's complete statement
+	 * @param interactionId - String denoting the interaction in which the mention occurred
+	 */
+	public void addEntailmentUnitMention(EntailmentUnitMention mention, String completeStatementText, String interactionId){
+		EntailmentUnit node = this.getVertex(mention.getText());
+		if (node==null) {
+			EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText, interactionId);
+			this.addVertex(newNode);
+		}
+		else{
+			node.addMention(mention, completeStatementText);
 		}
 	}
 	
@@ -395,35 +408,21 @@ public class EntailmentGraphRaw extends
 	}
 	
 	/**
-	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If a vertex exists - add the corresponding new entailment unit mention
+	 * Copy an edge from a FragmentGraph. 
+	 * Although the method is called from copyFragmentGraphNodesAndEdges(), where nodes are added before adding edges, for generality if vertices do not exist - add them, and if a vertex exists - add the corresponding new entailment unit mention.
+	 * Since the mentions, their complete statements and interaction ids are sets, there will be no duplicate mentions etc. added 
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
 	 * @return the edge, which was added to the graph
 	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
 	 */
 	public EntailmentRelation addEdgeFromFragmentGraph(FragmentGraphEdge fragmentGraphEdge, FragmentGraph fg){
-		EntailmentUnit sourceVertex = getVertex(fragmentGraphEdge.getSource().getText());
-		EntailmentUnit targetVertex = getVertex(fragmentGraphEdge.getTarget().getText());
+		// take care of the source and target vertices 
+		this.addEntailmentUnitMention(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText(), fg.getInteractionId());
+		this.addEntailmentUnitMention(fragmentGraphEdge.getTarget(), fg.getCompleteStatement().getText(), fg.getInteractionId());
 
-		// if vertices do not exist - add them, otherwise - update their frequency and completeStatementTexts
-		if(sourceVertex==null){
-			sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText(), fg.getInteractionId());
-			this.addVertex(sourceVertex);
-		}
-		else {
-			sourceVertex.addMention(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText());
-		}
-		
-		if(targetVertex==null){
-			targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget(),fg.getCompleteStatement().getText(), fg.getInteractionId());
-			this.addVertex(targetVertex);
-		}
-		else {
-			targetVertex.addMention(fragmentGraphEdge.getTarget(), fg.getCompleteStatement().getText());
-		}
-					
 		// now create and add the edge
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.FRAGMENT_GRAPH);
-		this.addEdge(sourceVertex, targetVertex, edge);
+		EntailmentRelation edge = new EntailmentRelation(this.getVertex(fragmentGraphEdge.getSource().getText()), this.getVertex(fragmentGraphEdge.getTarget().getText()), new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.FRAGMENT_GRAPH);
+		this.addEdge(this.getVertex(fragmentGraphEdge.getSource().getText()), this.getVertex(fragmentGraphEdge.getTarget().getText()), edge);
 		return edge;
 	}
 	
