@@ -95,11 +95,7 @@ public class GoldStandardEdgesLoader {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());
 				}		
 	}	
-	public static void main(String[] args) {
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
-		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
-		try {
-			loader.addAnnotations(annotationFilename);
+
 	/** Generates a single string, which contains the gold standard edges in DOT format for visualization
 	 * @return the generated string
 	 */
