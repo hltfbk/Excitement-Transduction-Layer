@@ -30,4 +30,8 @@ public class ExtendedEvaluationMeasures extends EvaluationMeasures{
 	public void setRandIndex(Double randIndex) {
 		this.randIndex = randIndex;
 	}
+	
+	public String toString(){
+		return super.toString()+";\tPurity="+getPurity()+";\tRandIndex="+getRandIndex();
+	}
 }

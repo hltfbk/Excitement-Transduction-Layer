@@ -1,7 +1,10 @@
 package eu.excitementproject.tl.composition.graphoptimizer;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+
+import org.apache.commons.lang.exception.ExceptionUtils;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.TEDecision;
@@ -88,20 +91,23 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 			}
 		}*/
 
+		HashMap<String, Integer> nodeIndex = new HashMap<String, Integer>(); 
 		int i = 1;
-		for (EntailmentUnit source : workGraph.vertexSet()) {
-			for (EntailmentUnit target : workGraph.vertexSet()){
-				if (source.equals(target)) continue; // don't add loops
-				Double confidence = detectConfidence(workGraph, source, target,confidenceThreshold);
-				if (confidence == TEDecision.CONFIDENCE_NOT_AVAILABLE)
-					throw new GraphOptimizerException("Unavaliable score was detected.");
-				RelationNode sourceNode = new RelationNode(i++,source.getText());
-				RelationNode targetNode = new RelationNode(i++,target.getText());
-				try {
-					graph.addEdge(new RuleEdge(sourceNode, targetNode,confidence));
-				} catch (Exception e) {
-					throw new GraphOptimizerException("Problem when adding edge "+source.getText()+" -> "+target.getText()+" with confidence = "+confidence+".\n"+e);
-				}
+		for (EntailmentUnit node : workGraph.vertexSet()) {
+			nodeIndex.put(node.getText(), i);
+			RelationNode rNode = new RelationNode(i++,node.getText());
+			graph.addNode(rNode);
+		}
+		for (EntailmentRelation edge : workGraph.edgeSet()) {
+			Double confidence = detectConfidence(workGraph, edge.getSource(), edge.getTarget(), confidenceThreshold);
+			if (confidence == TEDecision.CONFIDENCE_NOT_AVAILABLE)
+				throw new GraphOptimizerException("Unavaliable score was detected.");
+			RelationNode sourceNode = new RelationNode(nodeIndex.get(edge.getSource().getText()),edge.getSource().getText());
+			RelationNode targetNode = new RelationNode(nodeIndex.get(edge.getTarget().getText()),edge.getTarget().getText());
+			try {
+				graph.addEdge(new RuleEdge(sourceNode, targetNode,confidence));
+			} catch (Exception e) {
+				throw new GraphOptimizerException("Problem when adding edge "+edge.getSource().getText()+" -> "+edge.getTarget().getText()+" with confidence = "+confidence+".\n"+e);
 			}
 		}
 		
@@ -109,7 +115,7 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 		try {
 			componnetGraphs = graphLearner.learn(graph);
 		} catch (Exception e) {
-			throw new GraphOptimizerException("Problem with global optimization.\n"+e);
+			throw new GraphOptimizerException("Problem with global optimization.\n"+ExceptionUtils.getFullStackTrace(e));
 		}
 		EntailmentGraphCollapsed ret = new EntailmentGraphCollapsed();
 

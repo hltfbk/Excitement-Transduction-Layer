@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import javax.xml.transform.TransformerException;
+
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.EDABasic;
@@ -37,6 +39,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphException;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 
@@ -195,10 +198,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @throws ModifierAnnotatorException 
 	 * @throws FragmentAnnotatorException 
 	 * @throws LAPException 
+	 * @throws TransformerException 
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(Set<Interaction> docs) 
-				throws GraphOptimizerException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException, EntailmentGraphRawException {
+				throws GraphOptimizerException, GraphMergerException, FragmentGraphGeneratorException, LAPException, FragmentAnnotatorException, ModifierAnnotatorException, IOException, EntailmentGraphRawException, TransformerException {
 		
 		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
 		inspectGraph(rawGraph);
@@ -217,10 +221,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 * @throws ModifierAnnotatorException 
 	 * @throws FragmentAnnotatorException 
 	 * @throws LAPException 
+	 * @throws TransformerException 
 	 */
 	@Override
 	public EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs) 
-				throws GraphOptimizerException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException, EntailmentGraphRawException {
+				throws GraphOptimizerException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException, EntailmentGraphRawException, TransformerException {
 		
 		EntailmentGraphRaw rawGraph = buildRawGraph(docs);
 		inspectGraph(rawGraph);
@@ -251,13 +256,13 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 
 
 	
-	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException, EntailmentGraphCollapsedException{
+	public void inspectGraph(EntailmentGraphCollapsed graph) throws IOException, EntailmentGraphCollapsedException, TransformerException{
 
 		if (graph != null) { 
 			logger.info("COLLAPSED GRAPH:\n" + graph.toString());
 			if (outputPath != null) {
 				graph.toDOT(outputPath+"/collapsed_graph.dot.txt");
-				graph.toXML(outputPath+"/collapsed_graph.xml");
+				XMLFileWriter.write(graph.toXML(), outputPath+"/collapsed_graph.xml");
 			}
 		} else {
 			logger.info("The collapsed graph is null");
@@ -265,13 +270,13 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 
 	
-	public void inspectGraph(EntailmentGraphRaw graph) throws IOException, EntailmentGraphRawException{
+	public void inspectGraph(EntailmentGraphRaw graph) throws IOException, EntailmentGraphRawException, TransformerException{
 
 		if (graph != null) { 
 			logger.info("RAW GRAPH:\n" + graph.toString());			
 			if (outputPath != null) {
 				graph.toDOT(outputPath+"/raw_graph.dot.txt");
-				graph.toXML(outputPath+"/raw_graph.xml");
+				XMLFileWriter.write(graph.toXML(), outputPath+"/raw_graph.xml");
 			}
 		} else {
 			logger.info("The raw graph is null");

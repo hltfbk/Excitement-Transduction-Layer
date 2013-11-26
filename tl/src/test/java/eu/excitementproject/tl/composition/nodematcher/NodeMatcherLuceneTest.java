@@ -39,7 +39,7 @@ public class NodeMatcherLuceneTest {
 			EntailmentGraphCollapsed entailmentGraph = new EntailmentGraphCollapsed(testGraphFile);
 
 			/************* Indexing and search initialization **********************/
-			NodeMatcherLucene nm = new NodeMatcherLucene(entailmentGraph); 
+			NodeMatcherLuceneSimple nm = new NodeMatcherLuceneSimple(entailmentGraph); 
 			nm.indexGraphNodes();
 			nm.initializeSearch();
 			

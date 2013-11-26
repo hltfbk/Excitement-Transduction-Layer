@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
+import javax.xml.transform.TransformerException;
+
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPException;
@@ -40,13 +42,13 @@ public abstract interface UseCaseOneRunner {
 			throws GraphOptimizerException, GraphMergerException,
 			FragmentGraphGeneratorException, LAPException,
 			FragmentAnnotatorException, ModifierAnnotatorException, IOException,
-			EntailmentGraphRawException;
+			EntailmentGraphRawException, TransformerException;
 
 
 	EntailmentGraphCollapsed buildCollapsedGraph(List<JCas> docs)
 			throws GraphOptimizerException, GraphMergerException,
 			FragmentGraphGeneratorException, FragmentAnnotatorException,
 			ModifierAnnotatorException, LAPException, IOException, 
-			EntailmentGraphRawException;
+			EntailmentGraphRawException, TransformerException;
 
 }
