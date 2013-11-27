@@ -7,7 +7,6 @@ import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.dom.DOMSource;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
