@@ -55,7 +55,7 @@ public class EntailmentUnitMention {
 		modifiersText = new HashSet<SimpleModifier>();
 		begin = 0;
 		end = text.length();
-		if (interactionId==null){
+		if ((interactionId==null)||(interactionId.isEmpty())){
 			this.interactionId = "NotAvailable";
 		}
 		else {
