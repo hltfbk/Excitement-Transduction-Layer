@@ -598,6 +598,23 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		 }
 		 	 
 	 }
+	
+	/**
+	 * Returns the total number of distinct categories in the graph.
+	 */
+	public int getNumberOfCategories() {
+		Set<EquivalenceClass> nodes = this.vertexSet();
+		Set<String> categories = new HashSet<String>();
+		for (EquivalenceClass ec : nodes) {
+			for (EntailmentUnit eu : ec.getEntailmentUnits()) {
+				for (EntailmentUnitMention eum : eu.getMentions()) {
+					categories.add(eum.getCategoryId());					
+				}
+			}
+		}
+		return categories.size();		
+	}
+
 
 	/******************************************************************************************
 	 * LEGACY
