@@ -112,7 +112,6 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	
 							Set<String> completeStatementTexts = new HashSet<String>();
 							Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
-							Set<String> interactionIds = new HashSet<String>();
 							
 							NodeList childNodes = eu.getChildNodes();
 					       	for (int i = 0; i < childNodes.getLength(); i++) {    
@@ -122,22 +121,17 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 						       		String cstext = csElement.getAttribute("text");
 					       			completeStatementTexts.add(cstext);
 					       		}
-					       		
-					       		if (child.getNodeName().equals("interactionId")){
-					       			Element idElement = (Element) child;
-					       			String id = idElement.getAttribute("id");
-					       			interactionIds.add(id);
-					       		}
-					       		
+					       							       		
 					       		if (child.getNodeName().equals("entailmentUnitMention")){
 						       		Element eumElement = (Element) child;
 						       		int eumLevel = Integer.valueOf(eumElement.getAttribute("level"));
-						       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel);
+						       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel, eumElement.getAttribute("interactionId"));
+//						       		m.setInteractionId(eumElement.getAttribute("interactionId"));
 						       		m.setCategoryId(eumElement.getAttribute("categoryId"));
 						       		mentions.add(m);	       			
 					       		}
 							}		
-					       	EntailmentUnit newEntailmentUnit = new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level);
+					       	EntailmentUnit newEntailmentUnit = new EntailmentUnit(text, completeStatementTexts, mentions, level);
 						    s_eu.add(newEntailmentUnit);
 						} else if (eu.getNodeName().equals("categoryConfidence")) { //added for use case 2
 							Element euElement = (Element) eu;
@@ -486,6 +480,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 						// eu mentions elements
 						Element eumention = doc.createElement("entailmentUnitMention");
 						eumention.setAttribute("text",eum.getText());
+						eumention.setAttribute("interactionId",eum.getInteractionId());
 						eumention.setAttribute("categoryId",eum.getCategoryId());
 						eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
 						entailmentUnit.appendChild(eumention);						

@@ -101,7 +101,6 @@ public class EntailmentGraphRaw extends
 
 				Set<String> completeStatementTexts = new HashSet<String>();
 				Set<EntailmentUnitMention> mentions = new HashSet<EntailmentUnitMention>();
-				Set<String> interactionIds = new HashSet<String>();
 				
 				NodeList childNodes = eu.getChildNodes();
 		       	for (int i = 0; i < childNodes.getLength(); i++) {    
@@ -111,23 +110,19 @@ public class EntailmentGraphRaw extends
 			       		String cstext = csElement.getAttribute("text");
 		       			completeStatementTexts.add(cstext);
 		       		}
-		       		
-		       		if (child.getNodeName().equals("interactionId")){
-		       			Element idElement = (Element) child;			       		
-		       			interactionIds.add(idElement.getAttribute("id"));
-		       		}
-		       		
+		       				       		
 		       		if (child.getNodeName().equals("entailmentUnitMention")){
 			       		Element eumElement = (Element) child;
 			       		int eumLevel = Integer.valueOf(eumElement.getAttribute("level"));
-			       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel);
+			       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel, eumElement.getAttribute("interactionId"));
+			       		m.setInteractionId(eumElement.getAttribute("interactionId"));
 			       		m.setCategoryId(eumElement.getAttribute("categoryId"));
 			       		mentions.add(m);	       			
 		       		}
 				}
 
 							       
-			    this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, interactionIds, level));
+			    this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, level));
 			}
 			
 			
@@ -215,16 +210,29 @@ public class EntailmentGraphRaw extends
 	 * @param fg - the inout fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
-		// copy edges (with nodes)
+		// copy nodes (add if new, update mentions if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
+		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
+			this.addEntailmentUnitMention(fragmentGraphNode, fg.getCompleteStatement().getText());
+			}
+		// add edges
 		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
 			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
 		}
-		// copy nodes, which have no edges (must happen only if base statement = complete statement => graph has a single node and no edges) 
-		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
-			if (this.getVertex(fragmentGraphNode.getText())==null) {
-				EntailmentUnit newNode = new EntailmentUnit(fragmentGraphNode, fg.getCompleteStatement().getText(), fg.getInteractionId());
-				this.addVertex(newNode);
-			}
+	}
+	
+	/** The method gets an EntailmentUnitMention and either adds a new EntailmentUnit node or, if a relevant EntailmentUnit already exists in the graph, updates the list of its mentions  
+	 * @param mention - the EntailmentUnitMention to be added to the graph
+	 * @param completeStatementText - the text of the mention's complete statement
+	 * @param interactionId - String denoting the interaction in which the mention occurred
+	 */
+	public void addEntailmentUnitMention(EntailmentUnitMention mention, String completeStatementText){
+		EntailmentUnit node = this.getVertex(mention.getText());
+		if (node==null) {
+			EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText);
+			this.addVertex(newNode);
+		}
+		else{
+			node.addMention(mention, completeStatementText);
 		}
 	}
 	
@@ -391,35 +399,21 @@ public class EntailmentGraphRaw extends
 	}
 	
 	/**
-	 * Copy an edge from a FragmentGraph - if vertices do not exist - add them. If a vertex exists - add the corresponding new entailment unit mention
+	 * Copy an edge from a FragmentGraph. 
+	 * Although the method is called from copyFragmentGraphNodesAndEdges(), where nodes are added before adding edges, for generality if vertices do not exist - add them, and if a vertex exists - add the corresponding new entailment unit mention.
+	 * Since the mentions, their complete statements and interaction ids are sets, there will be no duplicate mentions etc. added 
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
 	 * @return the edge, which was added to the graph
 	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
 	 */
 	public EntailmentRelation addEdgeFromFragmentGraph(FragmentGraphEdge fragmentGraphEdge, FragmentGraph fg){
-		EntailmentUnit sourceVertex = getVertex(fragmentGraphEdge.getSource().getText());
-		EntailmentUnit targetVertex = getVertex(fragmentGraphEdge.getTarget().getText());
+		// take care of the source and target vertices 
+		this.addEntailmentUnitMention(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText());
+		this.addEntailmentUnitMention(fragmentGraphEdge.getTarget(), fg.getCompleteStatement().getText());
 
-		// if vertices do not exist - add them, otherwise - update their frequency and completeStatementTexts
-		if(sourceVertex==null){
-			sourceVertex = new EntailmentUnit(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText(), fg.getInteractionId());
-			this.addVertex(sourceVertex);
-		}
-		else {
-			sourceVertex.addMention(fragmentGraphEdge.getSource(), fg.getCompleteStatement().getText());
-		}
-		
-		if(targetVertex==null){
-			targetVertex = new EntailmentUnit(fragmentGraphEdge.getTarget(),fg.getCompleteStatement().getText(), fg.getInteractionId());
-			this.addVertex(targetVertex);
-		}
-		else {
-			targetVertex.addMention(fragmentGraphEdge.getTarget(), fg.getCompleteStatement().getText());
-		}
-					
 		// now create and add the edge
-		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.FRAGMENT_GRAPH);
-		this.addEdge(sourceVertex, targetVertex, edge);
+		EntailmentRelation edge = new EntailmentRelation(this.getVertex(fragmentGraphEdge.getSource().getText()), this.getVertex(fragmentGraphEdge.getTarget().getText()), new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.FRAGMENT_GRAPH);
+		this.addEdge(this.getVertex(fragmentGraphEdge.getSource().getText()), this.getVertex(fragmentGraphEdge.getTarget().getText()), edge);
 		return edge;
 	}
 	
@@ -538,17 +532,18 @@ public class EntailmentGraphRaw extends
 							Element eumention = doc.createElement("entailmentUnitMention");
 							eumention.setAttribute("text",eum.getText());
 							eumention.setAttribute("categoryId",eum.getCategoryId());
+							eumention.setAttribute("interactionId",eum.getInteractionId());
 							eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
 							entailmentUnitNode.appendChild(eumention);						
 						}
 
-						/*	protected Set<String> interactionIds = null;										*/
+					/*		protected Set<String> interactionIds = null;										
 						for (String interactionId : eu.getInteractionIds()){
 							// completeStatementText elements
 							Element interaction = doc.createElement("interactionId");
 							interaction.setAttribute("id",interactionId);
 							entailmentUnitNode.appendChild(interaction);						
-						}					
+						}				*/	
 					}
  
 					// add edges
@@ -734,15 +729,15 @@ public class EntailmentGraphRaw extends
 	public static EntailmentGraphRaw getSampleOuputWithCategories(boolean randomEdges){
 		
 		// create the to-be graph nodes
-		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.", "1","interaction1");
-		EntailmentUnit B = new EntailmentUnit("Food was bad.",0,"Food was really bad.", "1","interaction1");
-		EntailmentUnit C = new EntailmentUnit("I didn't like the food.",0,"I didn't like the food.", "2","interaction2");
-		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect",1,"a little more leg room would have been perfect", "3","interaction3");
-		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect",0,"a little more leg room would have been perfect", "3","interaction3"); 
-		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains",2,"Disappointed with the amount of legroom compared with other trains", "3","interaction4");
-		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains",1,"Disappointed with the amount of legroom compared with other trains", "3","interaction4");
-		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom",1,"Disappointed with the amount of legroom compared with other trains", "4","interaction4");
-		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom",0,"Disappointed with the amount of legroom compared with other trains", "3","interaction4");
+		EntailmentUnit A = new EntailmentUnit("Food was really bad.",1,"Food was really bad.", "1");
+		EntailmentUnit B = new EntailmentUnit("Food was bad.",0,"Food was really bad.", "1");
+		EntailmentUnit C = new EntailmentUnit("I didn't like the food.",0,"I didn't like the food.", "2");
+		EntailmentUnit D = new EntailmentUnit("a little more leg room would have been perfect",1,"a little more leg room would have been perfect", "3");
+		EntailmentUnit E = new EntailmentUnit("more leg room would have been perfect",0,"a little more leg room would have been perfect", "3"); 
+		EntailmentUnit F = new EntailmentUnit("Disappointed with the amount of legroom compared with other trains",2,"Disappointed with the amount of legroom compared with other trains", "3");
+		EntailmentUnit G = new EntailmentUnit("Disappointed with legroom compared with other trains",1,"Disappointed with the amount of legroom compared with other trains", "3");
+		EntailmentUnit H = new EntailmentUnit("Disappointed with the amount of legroom",1,"Disappointed with the amount of legroom compared with other trains", "4");
+		EntailmentUnit I = new EntailmentUnit("Disappointed with legroom",0,"Disappointed with the amount of legroom compared with other trains", "3");
 
 		// create an empty graph
 		EntailmentGraphRaw sampleRawGraph = new EntailmentGraphRaw();
