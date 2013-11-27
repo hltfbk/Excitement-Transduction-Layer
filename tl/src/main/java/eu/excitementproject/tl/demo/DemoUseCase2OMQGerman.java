@@ -1,13 +1,13 @@
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
+import javax.xml.transform.dom.DOMSource;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -24,6 +24,7 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
@@ -40,7 +41,7 @@ import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
@@ -56,6 +57,7 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.InteractionReader;
+import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
@@ -77,18 +79,27 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 public class DemoUseCase2OMQGerman {
 	
 	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
-	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/";
-	static String xmlDataFilename = "keywordAnnotations.xml";
+	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
+	static String xmlDataFilename = "omq_public_1_emails.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
 	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_1_th.xml";
 	
-	static boolean readGraph = true; //read previously created graph instead of creating it
-	static boolean processTrainingData = false; //process the data in "edaTrainingFilename"
-	static boolean trainEDA = false; //train the EDA on the processed data
-
+	static boolean readGraph = false; //if true: read previously created graph instead of creating it
+	static boolean processTrainingData = false; //if true: process the data in "edaTrainingFilename"
+	static boolean trainEDA = false; //if true: train the EDA on the processed data
+	static boolean keywordsProvided = false; //if true: input dataset contains keyword metadata
+	
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
+	static File configFile;
+	static CommonConfig config;
+	static LAPAccess lap;
+	static EDABasic<?> eda; 
+	static FragmentAnnotator fragAnot;
+	static ModifierAnnotator modAnot;
+	static FragmentGraphGenerator fragGen;
+	static GraphOptimizer graphOptimizer; 
 
 	public static void main(String[] args) throws FragmentAnnotatorException, ModifierAnnotatorException,
 		FragmentGraphGeneratorException, NodeMatcherException, CategoryAnnotatorException, EntailmentGraphRawException, IOException, TransformerException, ParserConfigurationException, EntailmentGraphCollapsedException, ConfigurationException, EDAException, ComponentException, GraphMergerException, DataReaderException, GraphOptimizerException, ConfidenceCalculatorException {
@@ -97,21 +108,73 @@ public class DemoUseCase2OMQGerman {
 	
 		/** Step 0: Initialization */
 		
-		File configFile = new File(configFilename);	
-		CommonConfig config = new ImplCommonConfig(configFile);
-		LAPAccess lap = new MaltParserDE(); 			
-		EDABasic<?> eda = new MaxEntClassificationEDA();	
-		FragmentAnnotator fragAnot = new KeywordBasedFragmentAnnotator(lap);
-		ModifierAnnotator modAnot = new AdvAsModifierAnnotator(lap); 		
-		FragmentGraphGenerator fragGen = new FragmentGraphLiteGeneratorFromCAS();
-		GraphOptimizer graphOptimizer = new SimpleGraphOptimizer();
-		
+		configureSetup();
+				
 		/** Step 1: Building an entailment graph from existing data */
 		
-		EntailmentGraphCollapsed graph = null;
+		long start = System.currentTimeMillis();
 		String xmlGraphFilename = xmlGraphFoldername + xmlDataFilename.replace(".xml", "") + "_graph.xml";
+		EntailmentGraphCollapsed graph = buildGraph(xmlGraphFilename);
+		long end = System.currentTimeMillis();
+		logger.info("Building graph took " + ((double)(end-start))/60000.0 + " minutes.");
 		
-		if (readGraph) {
+		/** Step 2: Annotating an incoming email based on the entailment graph */
+
+		String emailText = "Wie kann ich diese aendern?";
+		annotateIncomingEmail(graph, emailText);
+			
+	}
+
+	private static void annotateIncomingEmail(EntailmentGraphCollapsed graph, String text)
+			throws LAPException, FragmentAnnotatorException,
+			ModifierAnnotatorException, FragmentGraphGeneratorException,
+			NodeMatcherException, CategoryAnnotatorException {
+		//create some sample input
+		JCas cas = CASUtils.createNewInputCas();
+		cas.setDocumentLanguage("DE");
+		cas.setDocumentText(text); 
+		
+		//add fragment annotation
+		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 
+		fa.annotateFragments(cas);
+		
+		//add modifier annotation
+		ModifierAnnotator ma = new AdvAsModifierAnnotator(lap);
+		ma.annotateModifiers(cas);
+		
+		//create fragment graphs
+		FragmentGraphGenerator fgg = new FragmentGraphGeneratorFromCAS();
+		Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(cas);
+		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+
+		//call node matcher on each fragment graph
+		NodeMatcherWithIndex nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
+		nm.indexGraphNodes();
+		nm.initializeSearch();
+		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
+		for (FragmentGraph fragmentGraph: fragmentGraphs) {
+			System.out.println("fragment graph: " + fragmentGraph.getCompleteStatement());
+			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph);
+			System.out.println("matches: " + matches.size());
+			//add category annotation to CAS
+			ca.addCategoryAnnotation(cas, matches);
+		}	
+		
+		//print CAS category
+		CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
+	}
+
+	private static EntailmentGraphCollapsed buildGraph(String xmlGraphFilename)
+			throws EntailmentGraphCollapsedException, DataReaderException,
+			LAPException, ConfigurationException, EDAException,
+			ComponentException, FragmentAnnotatorException,
+			ModifierAnnotatorException, FragmentGraphGeneratorException,
+			GraphMergerException, GraphOptimizerException,
+			ConfidenceCalculatorException, TransformerException {
+		EntailmentGraphCollapsed graph = null;
+		File graphFile = new File(xmlGraphFilename);
+		
+		if (readGraph && graphFile.exists()) {
 			graph = new EntailmentGraphCollapsed(new File(xmlGraphFilename));
 			logger.info("Read graph from " + xmlGraphFilename);
 			logger.info("Number of graph nodes: " + graph.vertexSet().size());
@@ -154,67 +217,53 @@ public class DemoUseCase2OMQGerman {
 			}
 				
 			//build fragment graphs from input data
-			Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();			
+			Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
+			JCas cas = CASUtils.createNewInputCas();
 			for(Interaction i: docs) {
-				JCas aJCas = i.createAndFillInputCAS();
-				fragAnot.annotateFragments(aJCas);
-				modAnot.annotateModifiers(aJCas);
-				logger.info("Adding fragment graphs for text: " + aJCas.getDocumentText());
-				fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
+				i.fillInputCAS(cas); 
+				fragAnot.annotateFragments(cas);
+				modAnot.annotateModifiers(cas);
+				logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+				fgs.addAll(fragGen.generateFragmentGraphs(cas));
 			}
+			logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
 			
 			//merge graph
 			eda.initialize(config);
 			GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
 			EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
+			logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
 
 			//optimize graph
 			graph = graphOptimizer.optimizeGraph(egr, 0.99);
+			logger.info("Optimized graph: " + graph.vertexSet().size() + " nodes");
 			
 			// compute category confidences and add them to graph
 			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 			cc.computeCategoryConfidences(graph);
-			XMLFileWriter.write(graph.toXML(), xmlGraphFilename);
+			logger.info("Computed category confidence");
+			XMLFileWriter.write(graph.toXML(), xmlGraphFilename);			
+			logger.info("Wrote to file");
 		}
-		//GraphViewer.drawGraph(graph);
-			
-		/** Step 2: Annotating an incoming email based on the entailment graph */
-		
-		//create some sample input
-		JCas cas = CASUtils.createNewInputCas();
-		cas.setDocumentLanguage("DE");
-		cas.setDocumentText("Wie kann ich diese aendern?"); /*NOTE: This string does not appear in
-		the emails on which the graph was built!*/
-		
-		//add fragment annotation
-		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 
-		fa.annotateFragments(cas);
-		
-		//add modifier annotation
-		ModifierAnnotator ma = new AdvAsModifierAnnotator(lap);
-		ma.annotateModifiers(cas);
-		
-		//create fragment graphs
-		FragmentGraphGenerator fgg = new FragmentGraphGeneratorFromCAS();
-		Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(cas);
-		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+		return graph;
+	}
 
-		//call node matcher on each fragment graph
-		NodeMatcherWithIndex nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
-		nm.indexGraphNodes();
-		nm.initializeSearch();
-		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
-		for (FragmentGraph fragmentGraph: fragmentGraphs) {
-			System.out.println("fragment graph: " + fragmentGraph.getCompleteStatement());
-			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph);
-			System.out.println("matches: " + matches.size());
-			//add category annotation to CAS
-			ca.addCategoryAnnotation(cas, matches);
-		}	
-		
-		//print CAS category
-		CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
-			
+	private static void configureSetup() throws ConfigurationException,
+			LAPException, FragmentAnnotatorException,
+			ModifierAnnotatorException {
+		configFile = new File(configFilename);	
+		config = new ImplCommonConfig(configFile);
+		if (keywordsProvided) { //keyword-based fragment annotation	
+			lap = new MaltParserDE(); 
+			fragAnot = new KeywordBasedFragmentAnnotator(lap);	
+		} else { //sentence-based fragment annotation
+			lap = new LemmaLevelLapDE(); 
+			fragAnot = new SentenceAsFragmentAnnotator(lap);
+		}
+		modAnot = new AdvAsModifierAnnotator(lap); 		
+		eda = new MaxEntClassificationEDA();	
+		fragGen = new FragmentGraphLiteGeneratorFromCAS();
+		graphOptimizer = new GlobalGraphOptimizer();
 	}
 
 }
