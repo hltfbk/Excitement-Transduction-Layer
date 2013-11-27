@@ -28,6 +28,10 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * 
  * 
  */
+/**
+ * @author Lili
+ *
+ */
 @SuppressWarnings("unused")
 public class EntailmentUnitMention {
 	
@@ -55,12 +59,7 @@ public class EntailmentUnitMention {
 		modifiersText = new HashSet<SimpleModifier>();
 		begin = 0;
 		end = text.length();
-		if ((interactionId==null)||(interactionId.isEmpty())){
-			this.interactionId = "NotAvailable";
-		}
-		else {
-			this.interactionId = interactionId;
-		}
+		setInteractionId(interactionId);
 	}
 	
 	/**
@@ -79,7 +78,7 @@ public class EntailmentUnitMention {
 		level = mods.size();
 		begin = frag.getBegin();
 		end = frag.getEnd();
-		interactionId = getInteractionId(aJCas);
+		setInteractionId(getInteractionId(aJCas));
 		
 		CharSequence chars = frag.getText();
 		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
@@ -195,7 +194,12 @@ public class EntailmentUnitMention {
 	 * @param interactionId - the id of the interaction, in which the mention occurred
 	 */
 	public void setInteractionId(String interactionId) {
-		this.interactionId = interactionId;
+		if ((interactionId==null)||(interactionId.isEmpty())){
+			this.interactionId = "NotAvailable";
+		}
+		else {
+			this.interactionId = interactionId;
+		}
 	}
 
 	/**
