@@ -115,7 +115,6 @@ public class EntailmentGraphRaw extends
 			       		Element eumElement = (Element) child;
 			       		int eumLevel = Integer.valueOf(eumElement.getAttribute("level"));
 			       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel, eumElement.getAttribute("interactionId"));
-			       		m.setInteractionId(eumElement.getAttribute("interactionId"));
 			       		m.setCategoryId(eumElement.getAttribute("categoryId"));
 			       		mentions.add(m);	       			
 		       		}
