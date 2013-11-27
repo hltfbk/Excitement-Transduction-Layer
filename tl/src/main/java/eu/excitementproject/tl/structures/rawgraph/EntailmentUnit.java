@@ -36,9 +36,6 @@ public class EntailmentUnit{
 	
 	protected Set<EntailmentUnitMention> mentions = null;
 	
-	protected Set<String> interactionIds = null;
-	
-
 	protected int level = -1; // negative value means "unknown"
 	
 	
@@ -52,10 +49,9 @@ public class EntailmentUnit{
 	 * 
 	 * @param eum -- the entailment unit mention
 	 * @param completeStatementText	-- String holding the completeStatementText of the fragment graph, from which the current entailment unit mention is taken
-	 * @param interactionId -- String holding the interactionId of the fragment graph, from which the current entailment unit mention is taken
 	 */
-	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText, String interactionId) {
-		setAttributes(eum, completeStatementText, interactionId);
+	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText) {
+		setAttributes(eum, completeStatementText);
 	}
 
 
@@ -63,17 +59,14 @@ public class EntailmentUnit{
 	 * @param text
 	 * @param completeStatementTexts
 	 * @param mentions
-	 * @param interactionIds
 	 * @param level
 	 */
 	public EntailmentUnit(String text, Set<String> completeStatementTexts,
-			Set<EntailmentUnitMention> mentions, Set<String> interactionIds,
-			int level) {
+			Set<EntailmentUnitMention> mentions, int level) {
 		super();
 		this.text = text;
 		this.completeStatementTexts = completeStatementTexts;
 		this.mentions = mentions;
-		this.interactionIds = interactionIds;
 		this.level = level;
 	}
 
@@ -87,18 +80,14 @@ public class EntailmentUnit{
 	/** Setter for all the attributes  
 	 * @param eum - entailment unit mention
 	 * @param completeStatementText - the text of the complete statement of the fragment graph from which the input entailment unit mention originated  
-	 * @param interactionId - the interaction id of the fragment graph from which the input entailment unit mention originated
 	 */
-	private void setAttributes(EntailmentUnitMention eum, String completeStatementText, String interactionId){
+	private void setAttributes(EntailmentUnitMention eum, String completeStatementText){
 		mentions = new HashSet<EntailmentUnitMention>();
 		mentions.add(eum);
 		text = eum.getText();
 		level = eum.getLevel();	
 		completeStatementTexts = new HashSet<String>();
-		completeStatementTexts.add(completeStatementText);
-		interactionIds = new HashSet<String>();
-		interactionIds.add(interactionId);
-		
+		completeStatementTexts.add(completeStatementText);		
 	}
 
 	/**
@@ -112,7 +101,13 @@ public class EntailmentUnit{
 	 * @return the interactionIds
 	 */
 	public Set<String> getInteractionIds() {
-		return interactionIds;
+		Set<String> interactionIds = new HashSet<String>();
+		for (EntailmentUnitMention mention : mentions){
+			if (mention.getInteractionId()!=null) {
+				interactionIds.add(mention.getInteractionId());
+			}
+		}
+		return interactionIds;		
 	}
 	
 	/**
@@ -252,9 +247,9 @@ public class EntailmentUnit{
 	 * @param level -- the number of modifiers in the textFragment
 	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
 	 */
-	public EntailmentUnit(String textFragment, int level, String completeStatementText, String interactionId) {
-		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level);
-		setAttributes(eum, completeStatementText, interactionId);
+	public EntailmentUnit(String textFragment, int level, String completeStatementText) {
+		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level, "sampleInteraction");
+		setAttributes(eum, completeStatementText);
 	}
 	
 	/**
@@ -265,10 +260,10 @@ public class EntailmentUnit{
 	 * @param completeStatementText - the complete statement of the corresponding fragment graph 
 	 * @param category - category id 
 	 */
-	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category, String interactionId) {
-		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level);
+	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category) {
+		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level, "sampleInteraction");
 		eum.setCategoryId(category);
-		setAttributes(eum, completeStatementText, interactionId);
+		setAttributes(eum, completeStatementText);
 	}
 	
 

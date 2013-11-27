@@ -47,14 +47,20 @@ public class EntailmentUnitMention {
 	
 	/**
 	 * @param textFragment -- a text fragment from which we construct a node (with the corresponding annotations)
+	 * @param level -- the level of the fragment (number of modifiers)
 	 */
-	public EntailmentUnitMention(String textFragment, int level) {
+	public EntailmentUnitMention(String textFragment, int level, String interactionId) {
 		text = textFragment;
 		this.level = level;
 		modifiersText = new HashSet<SimpleModifier>();
 		begin = 0;
 		end = text.length();
-		interactionId = null;
+		if (interactionId==null){
+			this.interactionId = "NotAvailable";
+		}
+		else {
+			this.interactionId = interactionId;
+		}
 	}
 	
 	/**
@@ -181,6 +187,15 @@ public class EntailmentUnitMention {
 	 */
 	public void setLevel(int level) {
 		this.level = level;
+	}
+	
+	
+
+	/**
+	 * @param interactionId - the id of the interaction, in which the mention occurred
+	 */
+	public void setInteractionId(String interactionId) {
+		this.interactionId = interactionId;
 	}
 
 	/**

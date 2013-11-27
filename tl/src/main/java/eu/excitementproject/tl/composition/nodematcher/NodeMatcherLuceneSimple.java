@@ -232,7 +232,7 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 		NodeMatcherLuceneSimple nm = new NodeMatcherLuceneSimple(graph, "src/test/resources/Lucene_index", new StandardAnalyzer(Version.LUCENE_44));
 		nm.indexGraphNodes();
 		nm.initializeSearch();
-		NodeMatch nodeMatch = nm.findMatchingNodesForMention(new EntailmentUnitMention("Die Punkte lösen mein Problem nicht", 0));
+		NodeMatch nodeMatch = nm.findMatchingNodesForMention(new EntailmentUnitMention("Die Punkte lösen mein Problem nicht", 0, null));
 		if (null != nodeMatch) {
 			List<PerNodeScore> perNodeScores = nodeMatch.getScores();
 			for (PerNodeScore perNodeScore : perNodeScores) {
