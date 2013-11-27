@@ -61,10 +61,10 @@ public class TLGraphMLExporter {
 //			return graph;
 		
 		if (graph.getClass() == EntailmentGraphRaw.class)
-			return addRootNode((EntailmentGraphRaw) ((EntailmentGraphRaw) graph).clone(), new EntailmentUnit(new EntailmentUnitMention("ROOT", 0), "ROOT", "none"));
+			return addRootNode((EntailmentGraphRaw) ((EntailmentGraphRaw) graph).clone(), new EntailmentUnit(new EntailmentUnitMention("ROOT", 0, "ROOT"), "none"));
 		
 		if (graph.getClass() == EntailmentGraphCollapsed.class)
-			return addRootNode((EntailmentGraphCollapsed) ((EntailmentGraphCollapsed) graph).clone(), new EquivalenceClass(new EntailmentUnit(new EntailmentUnitMention("ROOT", 0), "ROOT", "none")));
+			return addRootNode((EntailmentGraphCollapsed) ((EntailmentGraphCollapsed) graph).clone(), new EquivalenceClass(new EntailmentUnit(new EntailmentUnitMention("ROOT", 0, "ROOT"), "none")));
 		
 		return graph;
 	}

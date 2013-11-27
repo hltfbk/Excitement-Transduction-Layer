@@ -120,6 +120,11 @@ public class GoldStandardEdgesLoader {
 			loader.addAnnotations(annotationFilename);
 			BufferedWriter out = new BufferedWriter(new FileWriter(annotationFilename+".dot"));
 			out.write(loader.toDOT());
-			out.close();			
+			out.close();
 		} catch (GraphEvaluatorException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}			
+	}
+
 }
