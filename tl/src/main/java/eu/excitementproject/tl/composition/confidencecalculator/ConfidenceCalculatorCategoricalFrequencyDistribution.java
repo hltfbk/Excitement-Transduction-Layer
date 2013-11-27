@@ -21,10 +21,25 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 * To compute the final confidence for each category, we divide the sum calculated for this category
 * by the number of mentions associated to the node. 
 * 
+* It also includes a TFIDF-based implementation, where 
+*   tf = number of occurrences of the category on this node
+*   idf = Math.log(N/n)
+*   N = total number of different categories
+*   n = number of different categories associated to this particular node
 */
 
 public class ConfidenceCalculatorCategoricalFrequencyDistribution extends AbstractConfidenceCalculator {
+	
+	boolean tfidf = true; 
+	
+	public ConfidenceCalculatorCategoricalFrequencyDistribution() {
+		this.tfidf = true;
+	}
 
+	public ConfidenceCalculatorCategoricalFrequencyDistribution(boolean tfidf) {
+		this.tfidf = tfidf;
+	}
+	
 	@Override
 	public void computeCategoryConfidences(EntailmentGraphCollapsed graph)
 			throws ConfidenceCalculatorException {
@@ -40,21 +55,29 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			for (EntailmentUnit eu : eus) {	//for each entailment unit in the node		
 				for (EntailmentUnitMention mentionOnNode : eu.getMentions()) { 
 					//for each mention associated to the entailment unit
-					sumMentions++;
+					sumMentions++; 
 					String categoryMention = mentionOnNode.getCategoryId();
-					int count = 0;
+					int tf = 0; //how often does the "term" occur in the "document" --> how often does category occur on the node
 					if (categoryFrequencyDistributionOnNode.containsKey(categoryMention)) {
-						count = categoryFrequencyDistributionOnNode.get(categoryMention);
+						tf = categoryFrequencyDistributionOnNode.get(categoryMention);
 					}
-					count++;
-					categoryFrequencyDistributionOnNode.put(categoryMention, count);
+					tf++;
+					categoryFrequencyDistributionOnNode.put(categoryMention, tf);
 				}
 			}
 			//compute combined category confidences for this node
 			Map<String,Double> categoryConfidences = new HashMap<String,Double>();
+			int N = graph.getNumberOfCategories(); //overall number of categories
+			double score = 0;
 			for (String category : categoryFrequencyDistributionOnNode.keySet()) {	
-				double categoryFrequency = categoryFrequencyDistributionOnNode.get(category);
-				double score = (double) categoryFrequency / (double) sumMentions;
+				double tf = categoryFrequencyDistributionOnNode.get(category);
+				if (tfidf) {
+					double n = categoryFrequencyDistributionOnNode.size(); //number of "documents" containing the "term" --> number of different categories in the node
+					double idf = Math.log(N/n);
+					score = tf*idf;
+				} else {
+				  score = tf / (double) sumMentions;
+				}
 				categoryConfidences.put(category, score);
 			}
 			//add confidence scores to node
