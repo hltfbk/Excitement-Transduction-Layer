@@ -59,7 +59,7 @@ public class EntailmentUnitMention {
 		modifiersText = new HashSet<SimpleModifier>();
 		begin = 0;
 		end = text.length();
-		setInteractionId(interactionId);
+		this.interactionId = interactionId;
 	}
 	
 	/**
@@ -78,7 +78,7 @@ public class EntailmentUnitMention {
 		level = mods.size();
 		begin = frag.getBegin();
 		end = frag.getEnd();
-		setInteractionId(getInteractionId(aJCas));
+		interactionId=getInteractionId(aJCas);
 		
 		CharSequence chars = frag.getText();
 		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
@@ -188,19 +188,6 @@ public class EntailmentUnitMention {
 		this.level = level;
 	}
 	
-	
-
-	/**
-	 * @param interactionId - the id of the interaction, in which the mention occurred
-	 */
-	public void setInteractionId(String interactionId) {
-		if ((interactionId==null)||(interactionId.isEmpty())){
-			this.interactionId = "NotAvailable";
-		}
-		else {
-			this.interactionId = interactionId;
-		}
-	}
 
 	/**
 	 * 
