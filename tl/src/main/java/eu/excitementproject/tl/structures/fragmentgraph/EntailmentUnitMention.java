@@ -33,6 +33,7 @@ public class EntailmentUnitMention {
 	
 	Set<ModifierAnnotation> modifiers = null;
 
+	protected String interactionId;
 	protected String text;
 	protected Set<SimpleModifier> modifiersText;
 	protected int level;
@@ -53,6 +54,7 @@ public class EntailmentUnitMention {
 		modifiersText = new HashSet<SimpleModifier>();
 		begin = 0;
 		end = text.length();
+		interactionId = null;
 	}
 	
 	/**
@@ -71,6 +73,7 @@ public class EntailmentUnitMention {
 		level = mods.size();
 		begin = frag.getBegin();
 		end = frag.getEnd();
+		interactionId = getInteractionId(aJCas);
 		
 		CharSequence chars = frag.getText();
 		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
@@ -109,9 +112,7 @@ public class EntailmentUnitMention {
 		if (CASUtils.getTLMetaData(aJCas) != null)
 		{
 			return CASUtils.getTLMetaData(aJCas).getCategory();
-		}
-		else
-		{
+		} else 	{
 			return null; 
 		}
 		
@@ -161,6 +162,19 @@ public class EntailmentUnitMention {
 	}
 	
 	
+	private String getInteractionId(JCas aJCas) {
+
+		if (CASUtils.getTLMetaData(aJCas) != null)
+		{
+			return CASUtils.getTLMetaData(aJCas).getInteractionId();
+		} else 	{
+			return null; 
+		}
+	}
+	
+	public String getInteractionId() {
+		return interactionId;
+	}
 	
 	/**
 	 * @param level the level to set
@@ -266,7 +280,7 @@ public class EntailmentUnitMention {
 	
 	public boolean equals(EntailmentUnitMention eum) {
 //		return eum.getText().matches(text);
-		return eum.getText().equals(text);
+		return (eum.getText().equals(text) && (eum.getInteractionId() != null) && (eum.getInteractionId().equals(interactionId)));
 	}
 
 	public void setCategoryId(String category) {
