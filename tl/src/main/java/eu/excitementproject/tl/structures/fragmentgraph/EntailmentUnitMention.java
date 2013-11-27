@@ -295,7 +295,7 @@ public class EntailmentUnitMention {
 	
 	public boolean equals(EntailmentUnitMention eum) {
 //		return eum.getText().matches(text);
-		return (eum.getText().equals(text) && ((eum.getInteractionId() == null) || (eum.getInteractionId().equals(interactionId))));
+		return (eum.getText().equals(text) && ((eum.getInteractionId() == null) || (interactionId == null) || (eum.getInteractionId().equals(interactionId))));
 	}
 
 	public void setCategoryId(String category) {
