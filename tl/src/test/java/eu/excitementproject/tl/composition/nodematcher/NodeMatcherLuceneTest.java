@@ -54,7 +54,7 @@ public class NodeMatcherLuceneTest {
 			CASUtils.annotateOneDeterminedFragment(jcas, fragmentRegions);
 			testlogger.info("Adding modifier: 'leider'"); 			
 			Region[] modifierRegions = new Region[1];
-			modifierRegions[0] = new Region(18,23);
+			modifierRegions[0] = new Region(17,21);
 			CASUtils.annotateOneModifier(jcas, modifierRegions);
 			testlogger.info("Creating fragment graph from CAS."); 			
 			FragmentGraphGenerator fgg = new FragmentGraphGeneratorFromCAS();
