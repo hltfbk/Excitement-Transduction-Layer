@@ -36,7 +36,7 @@ public class ConfidenceCalculatorCategoricalFrequencyDistributionTest {
 			testlogger.info("Creating collapsed entailment graph from sample graph."); 			
 			EntailmentGraphCollapsed entailmentGraph = cgg.optimizeGraph(rawGraph);
 			testlogger.info("Adding confidence scores to graph.");
-			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
+			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution(false);
 			cc.computeCategoryConfidences(entailmentGraph);		
 			testlogger.info("Reading nodes from updated graph.");
 			Set<EquivalenceClass> nodes = entailmentGraph.vertexSet();
