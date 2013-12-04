@@ -26,20 +26,35 @@ public class CachedLAPAccessTest {
 		CachedLAPAccess cachedLAP = null; 
 		
 		try {
-			underlyingLAP = new LemmaLevelLapEN(); 
-			cachedLAP = new CachedLAPAccess(underlyingLAP); 
+			underlyingLAP = new LemmaLevelLapEN(); // tree tagger 
+			cachedLAP = new CachedLAPAccess(underlyingLAP); // and cached LAP that works on it. 
 		}
 		catch(Exception e)
 		{
 			fail(e.getMessage()); 
 		}
+
+		// here's the usage. 
+		// 
 		
-		// now we have original LAP "underlyingLAP" and 
-		// cached (wrappered) one 
-		JCas originalCAS = null; 
-		JCas cachedCAS = null; 
+		// First, only use one JCas only. Reuse it all the time. 		
+		JCas workJCas = null; 
 		String text = "This is a pipe."; 
 		String hypo = "Holy, this is not a pipe!"; 
+		
+		try 
+		{
+			workJCas = CASUtils.createNewInputCas(); // only make it once! 
+			
+		}
+		catch(Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+
+		
+		JCas originalCAS = null; 
+		JCas cachedCAS = null; 
 		try {
 			originalCAS = underlyingLAP.generateSingleTHPairCAS(text, hypo); 
 			cachedCAS = cachedLAP.generateSingleTHPairCAS(text, hypo); 
@@ -75,21 +90,21 @@ public class CachedLAPAccessTest {
 			fail(e.getMessage()); 
 		}	
 		
-		
 		//  meaningless, but well. can't resist.   
-		try {
-			for(int i=0; i < 1000; i++)
-			{
-				JCas a = CASUtils.createNewInputCas(); 
-				//underlyingLAP.generateSingleTHPairCAS(hypo, text); // 91.02
-				cachedLAP.annotateSingleTHPairCAS(hypo, text, a); // 67.564 
-				//cachedLAP.generateSingleTHPairCAS(hypo, text); // 
-			}
-		}
-		catch (Exception e)
-		{
-			fail(e.getMessage());
-		}
+//		try {
+//			for(int i=0; i < 1000; i++)
+//			{
+//				JCas a = CASUtils.createNewInputCas(); 
+//				//underlyingLAP.generateSingleTHPairCAS(hypo, text); // 91.02
+//				cachedLAP.annotateSingleTHPairCAS(hypo, text, a); // 67.564 
+//				//cachedLAP.generateSingleTHPairCAS(hypo, text); // 
+//			}
+//		}
+//		catch (Exception e)
+//		{
+//			fail(e.getMessage());
+//		}
+		
 	}
 
 }
