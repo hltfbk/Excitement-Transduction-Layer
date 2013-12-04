@@ -50,8 +50,8 @@ public class CachedLAPAccessTest {
 		}
 		// Prover
 		try {
-			//PlatformCASProber.probeCas(originalCAS, System.out);
-			//PlatformCASProber.probeCas(cachedCAS, System.out);
+			PlatformCASProber.probeCas(originalCAS, System.out);
+			PlatformCASProber.probeCas(cachedCAS, System.out);
 			// even dump? 
 			//PlatformCASProber.probeCasAndPrintContent(originalCAS, System.out); 
 			//PlatformCASProber.probeCasAndPrintContent(cachedCAS, System.out); 			
@@ -67,14 +67,29 @@ public class CachedLAPAccessTest {
 			cachedCAS = cachedLAP.generateSingleTHPairCAS(hypo, text);
 			cachedCAS = cachedLAP.generateSingleTHPairCAS(hypo, text);
 			originalCAS = underlyingLAP.generateSingleTHPairCAS(hypo, text); 
-			PlatformCASProber.probeCasAndPrintContent(originalCAS, System.out); 
-			PlatformCASProber.probeCasAndPrintContent(cachedCAS, System.out); 			
+			//PlatformCASProber.probeCasAndPrintContent(originalCAS, System.out); 
+			//PlatformCASProber.probeCasAndPrintContent(cachedCAS, System.out); 			
 		}
 		catch (Exception e)
 		{
 			fail(e.getMessage()); 
 		}	
 		
+		
+		//  meaningless, but well. can't resist.   
+		try {
+			for(int i=0; i < 1000; i++)
+			{
+				JCas a = CASUtils.createNewInputCas(); 
+				//underlyingLAP.generateSingleTHPairCAS(hypo, text); // 91.02
+				cachedLAP.annotateSingleTHPairCAS(hypo, text, a); // 67.564 
+				//cachedLAP.generateSingleTHPairCAS(hypo, text); // 
+			}
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage());
+		}
 	}
 
 }

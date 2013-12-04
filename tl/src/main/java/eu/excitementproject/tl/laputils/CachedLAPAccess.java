@@ -56,7 +56,23 @@ public class CachedLAPAccess implements LAPAccess {
 		this.receivedCall = 0; 
 		this.actualCall = 0; 
 		theLogger = Logger.getLogger("eu.excitementproject.tl.laputils.CachedLAPAccess"); 
-
+		
+		// make a call and get language ID (loading models also...) 
+		JCas test = underlyingLAP.generateSingleTHPairCAS("This is a text.", "This is a hypothesis."); 
+		actualCall++; 
+		
+		try {
+			this.languageId = test.getView(LAP_ImplBase.TEXTVIEW).getDocumentLanguage(); 
+		}
+		catch (CASException e)
+		{
+			throw new LAPException("Unable to get language ID from underlying LAP annotation result!:" + e.getMessage()); 
+		}
+		
+		if (this.languageId==null)
+		{
+			throw new LAPException("Unable to get language ID from underlying LAP annotation result!"); 			
+		}
 	}
 
 	//
@@ -91,27 +107,46 @@ public class CachedLAPAccess implements LAPAccess {
 		
 		receivedCall ++; // for checking number of saved calls to underlying LAP 
 		
-		// if we don't have the cache for text input and hypothesis input
-		// fill the cache with them. 
+		// if we don't have the cache for text input and/or hypothesis input
+		// First we fill the cache with them. 
 		
-		// note that we simply put both text/string on both cache. 
-		// assuming that text will be used as hypothesis on some other cases 
-		// (e.g. mainly designed for entailment graphs) 
-		if ( (!textviewCache.containsKey(text)) || (!hypoviewCache.containsKey(hypothesis)) )
+		// if text is not in cache; 
+		if (!textviewCache.containsKey(text))
 		{
-			// requires adding of caching element on (at least) one of the side. 
-			JCas thJCas = underlyingLAP.generateSingleTHPairCAS(text, hypothesis); 
-			actualCall ++; // for checking number of saved calls to underlying LAP 
-			
-			if (!textviewCache.containsKey(text))
-			{
-				textviewCache.put(text,  thJCas); 
-			}
-			if (!hypoviewCache.containsKey(hypothesis))
-			{
-				hypoviewCache.put(hypothesis,  thJCas); 
-			}
+			// we make a cached CAS that holds both views 
+			// that has "text", and put it in the both cache. 
+			JCas aCacheJCas = CASUtils.createNewInputCas(); 
+			prepareCacheContent(aCacheJCas, text); 
+			textviewCache.put(text,  aCacheJCas); 
+			hypoviewCache.put(text,  aCacheJCas); 
 		}
+		
+		if (!hypoviewCache.containsKey(hypothesis))
+		{
+			JCas aCacheJCas = CASUtils.createNewInputCas(); 
+			prepareCacheContent(aCacheJCas, hypothesis); 
+			textviewCache.put(hypothesis,  aCacheJCas); 
+			hypoviewCache.put(hypothesis,  aCacheJCas); 			
+		}
+		
+//		// note that we simply put both text/string on both cache. 
+//		// assuming that text will be used as hypothesis on some other cases 
+//		// (e.g. mainly designed for entailment graphs) 
+//		if ( (!textviewCache.containsKey(text)) || (!hypoviewCache.containsKey(hypothesis)) )
+//		{
+//			// requires adding of caching element on (at least) one of the side. 
+//			JCas thJCas = underlyingLAP.generateSingleTHPairCAS(text, hypothesis); 
+//			actualCall ++; // for checking number of saved calls to underlying LAP 
+//			
+//			if (!textviewCache.containsKey(text))
+//			{
+//				textviewCache.put(text,  thJCas); 
+//			}
+//			if (!hypoviewCache.containsKey(hypothesis))
+//			{
+//				hypoviewCache.put(hypothesis,  thJCas); 
+//			}
+//		}
 		
 		// Okay. we are fully sure that each annotated view exist in the cache. 
 		// make up CAS by using the cache value 
@@ -199,6 +234,42 @@ public class CachedLAPAccess implements LAPAccess {
 		underlyingLAP.addAnnotationOn(arg0, arg1); 
 	}
 	
+	//
+	// private methods 
+	private void prepareCacheContent(JCas aJCas, String input) throws LAPException {
+		
+		// generate views and set SOFA 
+		JCas textView = null; JCas hypoView = null; 
+		try {
+			textView = aJCas.createView(LAP_ImplBase.TEXTVIEW);
+			hypoView = aJCas.createView(LAP_ImplBase.HYPOTHESISVIEW); 
+		}
+		catch (CASException e) 
+		{
+			throw new LAPException("Unble to create new views", e); 
+		}
+		textView.setDocumentLanguage(this.languageId); 
+		hypoView.setDocumentLanguage(this.languageId);
+		textView.setDocumentText(input);
+		hypoView.setDocumentText(input);
+		
+		// annotate Text (on TextView) 
+		Text t = new Text(textView);
+		t.setBegin(0); t.setEnd(input.length()); 
+		t.addToIndexes(); 
+		
+		// annotate Hypothesis (on HypothesisView) 
+		Hypothesis h = new Hypothesis(hypoView);
+		h.setBegin(0); h.setEnd(input.length()); 
+		h.addToIndexes(); 
+		
+		// okay. now call underlyingLAP to annotate 
+		underlyingLAP.addAnnotationOn(aJCas, LAP_ImplBase.TEXTVIEW); 
+		underlyingLAP.addAnnotationOn(aJCas, LAP_ImplBase.HYPOTHESISVIEW);
+		
+		// done. aJCas is updated to be used for cache. 
+		actualCall ++; 
+	}
 	
 	//
 	// private data 
@@ -208,5 +279,6 @@ public class CachedLAPAccess implements LAPAccess {
 	
 	private int receivedCall; 
 	private int actualCall; 
+	private String languageId; 
 	Logger theLogger; 
 }
