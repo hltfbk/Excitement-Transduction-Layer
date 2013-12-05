@@ -39,9 +39,10 @@ import org.apache.uima.util.CasCopier;
  * 
  * Thus, it provides (relatively) transparent cache for LAPAccess. 
  * 
- * TODO: say something about which methods are cached, and which are not. 
- * TODO: write about even faster access method that is added to reduce CAS init time.  
- * 
+ * It adds one more method that is fastest: annotateSingleTHPairCAS(), which is not 
+ * part of LAPAccess interface. This methods gets one CAS, and uses that CAS to annotate, 
+ * and this reduces the time needed to generate a new CAS. 
+ *  
  * @author Tae-Gil Noh 
  *
  */
