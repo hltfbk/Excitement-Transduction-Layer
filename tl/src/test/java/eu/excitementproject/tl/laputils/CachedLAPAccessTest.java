@@ -25,27 +25,13 @@ public class CachedLAPAccessTest {
 		LAPAccess underlyingLAP = null; 
 		CachedLAPAccess cachedLAP = null; 
 		
-		try {
-			underlyingLAP = new LemmaLevelLapEN(); // tree tagger 
-			cachedLAP = new CachedLAPAccess(underlyingLAP); // and cached LAP that works on it. 
-		}
-		catch(Exception e)
-		{
-			fail(e.getMessage()); 
-		}
-
-		// here's the usage. 
-		// 
-		
-		// First, only use one JCas only. Reuse it all the time. 		
-		JCas workJCas = null; 
+		// here's our text and hypothesis. 
 		String text = "This is a pipe."; 
 		String hypo = "Holy, this is not a pipe!"; 
 		
-		try 
-		{
-			workJCas = CASUtils.createNewInputCas(); // only make it once! 
-			
+		try {
+			underlyingLAP = new LemmaLevelLapEN(); // tree tagger 
+			cachedLAP = new CachedLAPAccess(underlyingLAP); // and cached LAP that works with this LAP
 		}
 		catch(Exception e)
 		{
@@ -53,35 +39,71 @@ public class CachedLAPAccessTest {
 		}
 
 		
+		//
+		// here's the usage. 
+		//
+		
+		// First, "previously", how you used LAP without cache. 
 		JCas originalCAS = null; 
-		JCas cachedCAS = null; 
 		try {
 			originalCAS = underlyingLAP.generateSingleTHPairCAS(text, hypo); 
-			cachedCAS = cachedLAP.generateSingleTHPairCAS(text, hypo); 
+			// as you see in this call, it is the LAP that generates 
+			// one CAS and gives you back. 
+			// making a new CAS takes some time (10 - 20 ms?) 
+			// So, if we can skip 
+			// by providing already existing CAS, it would be better.
+			// next example shows how you can do this. 
 		}
 		catch(Exception e)
 		{
 			fail(e.getMessage()); 
 		}
-		// Prover
-		try {
-			PlatformCASProber.probeCas(originalCAS, System.out);
-			PlatformCASProber.probeCas(cachedCAS, System.out);
-			// even dump? 
-			//PlatformCASProber.probeCasAndPrintContent(originalCAS, System.out); 
-			//PlatformCASProber.probeCasAndPrintContent(cachedCAS, System.out); 			
-		}
-		catch(Exception e)
-		{
-			fail(e.getMessage()); 
-		}	
 		
+		// here's the "new usage" 
+		// 
+		// First, you need one CAS that will be used again and again for 
+		// the cachedLAP. We reuse it all the time. 		
+		JCas workJCas = null; 
+		try 
+		{
+			workJCas = CASUtils.createNewInputCas(); 	
+		}
+		catch(Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+		
+		// Okay. we have one CAS. 
+		// now, we ask nicely to the cachedLAP to use this CAS 
+		// to annotate text and hypothesis. 
+		// and the LAP do not make a new CAS. 
+		try {
+			// note that you don't need to .reset() the CAS. The first thing that 
+			// this cachedLAP does is "reset()" that CAS to make it a empty, clean CAS. 
+			cachedLAP.annotateSingleTHPairCAS(text, hypo, workJCas); 
+		}
+		catch(Exception e)
+		{
+			fail(e.getMessage()); 
+		}
+		
+		//
+		// usage example ENDS 
+		//
+		
+		
+		//
+		// Some test codes 
+		
+		JCas cachedCAS = null; 
 		// caching test 
 		try {
 			cachedCAS = cachedLAP.generateSingleTHPairCAS(text, hypo);
 			cachedCAS = cachedLAP.generateSingleTHPairCAS(hypo, text);
 			cachedCAS = cachedLAP.generateSingleTHPairCAS(hypo, text);
 			originalCAS = underlyingLAP.generateSingleTHPairCAS(hypo, text); 
+			PlatformCASProber.probeCas(originalCAS,  System.out);
+			PlatformCASProber.probeCas(cachedCAS,  System.out);
 			//PlatformCASProber.probeCasAndPrintContent(originalCAS, System.out); 
 			//PlatformCASProber.probeCasAndPrintContent(cachedCAS, System.out); 			
 		}
