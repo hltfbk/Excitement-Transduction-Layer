@@ -64,6 +64,10 @@ public final class InteractionReader {
 		// Open XML file 
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		Document dom = null;
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.InteractionReader");
+		logger.info("Processing file " + xmlFile);
+		
 		try {
 			//Using factory get an instance of document builder
 			DocumentBuilder db = dbf.newDocumentBuilder();
