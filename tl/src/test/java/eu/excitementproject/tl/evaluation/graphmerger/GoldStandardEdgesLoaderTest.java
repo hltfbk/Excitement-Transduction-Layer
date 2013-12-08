@@ -21,7 +21,7 @@ public class GoldStandardEdgesLoaderTest {
 
 			loader = new GoldStandardEdgesLoader(false);
 			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";			
-			loader.addAnnotations(annotationFilename);
+			loader.addAnnotationsFromFile(annotationFilename);
 	
 		} catch (GraphEvaluatorException e) {
 			// TODO Auto-generated catch block

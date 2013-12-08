@@ -15,12 +15,13 @@ public class EvaluatorGraphOptimizerTest {
 
 	@Test
 	public void test() {
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(false);
+		boolean includeFragmentGraphEdges = false;
+		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(includeFragmentGraphEdges);
 		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
 		try {
-			loader.addAnnotations(annotationFilename);
+			loader.addAnnotationsFromFile(annotationFilename);
 			System.out.println("Loaded "+loader.getEdges().size()+" gold standard edges.");
-			System.out.println(EvaluatorGraphOptimizer.evaluateDecollapsedGraph(loader.getEdges(), new EntailmentGraphCollapsed(new File("./src/test/resources/sample_graphs/collapsed_graph_for_evaluator_test.xml"))));
+			System.out.println(EvaluatorGraphOptimizer.evaluateDecollapsedGraph(loader.getEdges(), new EntailmentGraphCollapsed(new File("./src/test/resources/sample_graphs/collapsed_graph_for_evaluator_test.xml")), includeFragmentGraphEdges));
 		} catch (GraphEvaluatorException | EntailmentGraphCollapsedException e) {
 			e.printStackTrace();
 			fail(e.getMessage());

@@ -1,8 +1,6 @@
 package eu.excitementproject.tl.evaluation.graphmerger;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -64,7 +62,7 @@ public class GoldStandardEdgesLoader {
 					for (File annotationFile : clusterAnnotationDir.listFiles()){
 						if (annotationFile.getName().endsWith(".xml")){
 							System.out.println("Loading annotations from file "+annotationFile);
-							addAnnotations(annotationFile.getPath());
+							addAnnotationsFromFile(annotationFile.getPath());
 						}
 					}
 					if (includeFragmentGraphEdges){
@@ -74,7 +72,7 @@ public class GoldStandardEdgesLoader {
 							System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
 							for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
 								if (annotationFile.getName().endsWith(".xml")){
-									addAnnotations(annotationFile.getPath());
+									addAnnotationsFromFile(annotationFile.getPath());
 								}
 							}							
 						}
@@ -85,8 +83,8 @@ public class GoldStandardEdgesLoader {
 		}
 		else throw new GraphEvaluatorException("Invalid directory with gold-standard annotations in given: " + annotationsFolder);
 	}
-	
-	public void addAnnotations(String xmlAnnotationFilename) throws GraphEvaluatorException{		
+		
+	public void addAnnotationsFromFile(String xmlAnnotationFilename) throws GraphEvaluatorException{		
 		// read all the nodes from xml annotation file and add them to the index 
 	   		try {
 					DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -140,6 +138,9 @@ public class GoldStandardEdgesLoader {
 				}		
 	}	
 
+
+   //	Methods for internal testing purposes
+	
 	/** Generates a single string, which contains the gold standard edges in DOT format for visualization
 	 * @return the generated string
 	 */
@@ -152,7 +153,4 @@ public class GoldStandardEdgesLoader {
 		return s;
 	}
 	
-	public static void main(String[] args) {
-	}
-
 }
