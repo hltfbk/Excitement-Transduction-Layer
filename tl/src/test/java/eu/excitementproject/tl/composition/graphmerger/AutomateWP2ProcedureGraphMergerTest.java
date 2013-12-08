@@ -1,5 +1,7 @@
 package eu.excitementproject.tl.composition.graphmerger;
 
+import static org.junit.Assert.fail;
+
 import java.util.Set;
 import org.junit.Test;
 
@@ -34,12 +36,9 @@ public class AutomateWP2ProcedureGraphMergerTest {
 			EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
 			System.out.println(rawGraph.isEmpty());
 			System.out.println(rawGraph.toString());
-		} catch (LAPException e) {
-			// TODO Auto-generated catch block
+		} catch (LAPException | GraphMergerException e) {
 			e.printStackTrace();
-		} catch (GraphMergerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			fail(e.getMessage()); 
 		}
 		
 	}

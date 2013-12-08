@@ -22,8 +22,8 @@ public class EvaluatorGraphOptimizerTest {
 			System.out.println("Loaded "+loader.getEdges().size()+" gold standard edges.");
 			System.out.println(EvaluatorGraphOptimizer.evaluateDecollapsedGraph(loader.getEdges(), new EntailmentGraphCollapsed(new File("./src/test/resources/sample_graphs/collapsed_graph_for_evaluator_test.xml"))));
 		} catch (GraphEvaluatorException | EntailmentGraphCollapsedException e) {
-			fail(e.getMessage());
 			e.printStackTrace();
+			fail(e.getMessage());
 		}		
 	}
 

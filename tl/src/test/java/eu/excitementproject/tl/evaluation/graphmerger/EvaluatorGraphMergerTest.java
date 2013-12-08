@@ -22,8 +22,8 @@ public class EvaluatorGraphMergerTest {
 			}
 */			System.out.println(EvaluatorGraphMerger.evaluate(loader.getEdges(), loader.getEdges()));
 		} catch (GraphEvaluatorException e) {
-			fail(e.getMessage());
 			e.printStackTrace();
+			fail(e.getMessage());
 		}		
 	}
 

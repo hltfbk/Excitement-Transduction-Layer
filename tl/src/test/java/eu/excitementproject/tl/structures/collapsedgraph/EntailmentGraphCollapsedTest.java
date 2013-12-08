@@ -1,5 +1,7 @@
 package eu.excitementproject.tl.structures.collapsedgraph;
 
+import static org.junit.Assert.fail;
+
 import java.io.File;
 
 import org.junit.Test;
@@ -16,8 +18,8 @@ public class EntailmentGraphCollapsedTest {
 			graph.toString();
 			System.out.println("Graph based on "+ graph.getNumberOfFragmentGraphs()+ "fragment graphs");
 		} catch (EntailmentGraphCollapsedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			fail(e.getMessage());
 		}
 	}
 
