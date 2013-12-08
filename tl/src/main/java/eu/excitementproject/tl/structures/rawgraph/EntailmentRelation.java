@@ -1,7 +1,8 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
-import java.util.logging.Logger;
 
+
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.graph.DefaultEdge;
 
@@ -13,6 +14,7 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
@@ -56,6 +58,8 @@ public class EntailmentRelation extends DefaultEdge {
 	 * EOP lap
 	 */
 	LAPAccess lap;
+	CachedLAPAccess cachedLAP;
+	
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
@@ -96,7 +100,15 @@ public class EntailmentRelation extends DefaultEdge {
 		this.target = target;	
 		this.edgeType = edgeType;
 		this.eda = eda;
-		this.lap = lap;	
+		this.lap = lap;
+		if (this.lap != null) {
+			try {
+				cachedLAP = new CachedLAPAccess(lap);
+			} catch(LAPException e) {
+				logger.error("Could not created cached lap access object for the given LAP");
+				e.printStackTrace();
+			}
+		}
 	}
 		
 	
@@ -187,7 +199,7 @@ public class EntailmentRelation extends DefaultEdge {
 		// extract annotations from "from" and "to" to form the JCas object that is used as input to the EDA
 		logger.info("Generating a cass for the pair: \n \tTEXT: " + source.getText() + "\n \tHYPOTHESIS: " + target.getText());
 		try {
-			return lap.generateSingleTHPairCAS(source.getTextWithoutDoulbeSpaces(), target.getTextWithoutDoulbeSpaces());
+			return cachedLAP.generateSingleTHPairCAS(source.getTextWithoutDoulbeSpaces(), target.getTextWithoutDoulbeSpaces());
 		} catch (LAPException e) {
 			throw new EntailmentGraphRawException(e.getMessage());
 		}
