@@ -1,8 +1,6 @@
 package eu.excitementproject.tl.evaluation.graphmerger;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -35,11 +33,13 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidenc
 public class GoldStandardEdgesLoader {
 	
 	Set<EntailmentRelation> edges;
-	Map<String,String> nodeTextById;	
+	Map<String,String> nodeTextById;
+	boolean includeFragmentGraphEdges;
 	
-	public GoldStandardEdgesLoader() {
+	public GoldStandardEdgesLoader(boolean includeFragmentGraphEdges) {
 		edges = new HashSet<EntailmentRelation>();
-		nodeTextById = new HashMap<String,String>(); //[id] [text]	
+		nodeTextById = new HashMap<String,String>(); //[id] [text]
+		this.includeFragmentGraphEdges = includeFragmentGraphEdges;
 	}
 	
 
@@ -50,7 +50,41 @@ public class GoldStandardEdgesLoader {
 		return edges;
 	}
 
-	public void addAnnotations(String xmlAnnotationFilename) throws GraphEvaluatorException{		
+	public void addAllAnnotations(String annotationsFolder) throws GraphEvaluatorException{
+		File mainAnnotationsDir = new File(annotationsFolder);
+		if (mainAnnotationsDir.isDirectory()){
+			System.out.println(annotationsFolder+" is a directory");			
+			for (String object : mainAnnotationsDir.list()){
+				// get sub-directories
+				File clusterAnnotationDir = new File(mainAnnotationsDir+"/"+object);
+				if (clusterAnnotationDir.isDirectory()){
+					// each sub-directory should contain a single xml file with annotations
+					for (File annotationFile : clusterAnnotationDir.listFiles()){
+						if (annotationFile.getName().endsWith(".xml")){
+							System.out.println("Loading annotations from file "+annotationFile);
+							addAnnotationsFromFile(annotationFile.getPath());
+						}
+					}
+					if (includeFragmentGraphEdges){
+						// if fragment graph edges should be included - go to the corresponding "FragmentGraphs" folder and load all the graphs
+						File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+						if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+							System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+							for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+								if (annotationFile.getName().endsWith(".xml")){
+									addAnnotationsFromFile(annotationFile.getPath());
+								}
+							}							
+						}
+						else throw new GraphEvaluatorException("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
+					}
+				}
+			}
+		}
+		else throw new GraphEvaluatorException("Invalid directory with gold-standard annotations in given: " + annotationsFolder);
+	}
+		
+	public void addAnnotationsFromFile(String xmlAnnotationFilename) throws GraphEvaluatorException{		
 		// read all the nodes from xml annotation file and add them to the index 
 	   		try {
 					DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -84,9 +118,17 @@ public class GoldStandardEdgesLoader {
 						er.getNodeName();     
 						Element erElement = (Element) er;
 						String src = erElement.getAttribute("source");
-						if (!nodeTextById.containsKey(src)) throw new GraphEvaluatorException("Annotation file "+xmlAnnotationFilename+" contains and edge with source node "+ src+ ", which is not presented in the nodes list");
+						if (!nodeTextById.containsKey(src)) {
+							System.err.println("Annotation file "+xmlAnnotationFilename+" contains an edge with source node "+ src+ ", which is not presented in the nodes list");
+							continue;
+							//throw new GraphEvaluatorException("Annotation file "+xmlAnnotationFilename+" contains and edge with source node "+ src+ ", which is not presented in the nodes list");
+						}
 						String tgt = erElement.getAttribute("target");
-						if (!nodeTextById.containsKey(tgt)) throw new GraphEvaluatorException("Annotation file "+xmlAnnotationFilename+" contains and edge with target node "+ tgt+ ", which is not presented in the nodes list");
+						if (!nodeTextById.containsKey(tgt)) {
+							System.err.println("Annotation file "+xmlAnnotationFilename+" contains an edge with target node "+ tgt+ ", which is not presented in the nodes list");
+							continue;
+							//throw new GraphEvaluatorException("Annotation file "+xmlAnnotationFilename+" contains and edge with target node "+ tgt+ ", which is not presented in the nodes list");
+						}
 						EntailmentUnit sourceUnit = new EntailmentUnit(nodeTextById.get(src), -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
 						EntailmentUnit targetUnit = new EntailmentUnit(nodeTextById.get(tgt), -1, "", "unknown"); 
 						edges.add(new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), EdgeType.MANUAL_ANNOTATION));
@@ -96,35 +138,19 @@ public class GoldStandardEdgesLoader {
 				}		
 	}	
 
+
+   //	Methods for internal testing purposes
+	
 	/** Generates a single string, which contains the gold standard edges in DOT format for visualization
 	 * @return the generated string
 	 */
 	public String toDOT(){
 		String s = "digraph gsGraph {\n";
-		int i=1;
 		for (EntailmentRelation edge : edges){
 			s+=edge.toDOT();
-			System.out.println(i+": "+edge);
-			i++;
-			if(i==1000) break;
 		}
 		s+="}";	
 		return s;
 	}
 	
-	public static void main(String[] args) {
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
-//		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
-		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/email0020.xml";
-		try {
-			loader.addAnnotations(annotationFilename);
-			BufferedWriter out = new BufferedWriter(new FileWriter(annotationFilename+".dot"));
-			out.write(loader.toDOT());
-			out.close();
-		} catch (GraphEvaluatorException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}			
-	}
-
 }

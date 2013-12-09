@@ -63,7 +63,6 @@ public class GlobalGraphOptimizerTest {
 						finalGraph.toDOT("./src/test/outputs/collapsedGraphFromSample.txt");						
 					} catch (ConfigurationException | EDAException | ComponentException |
 							GraphMergerException | IOException | GraphOptimizerException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 						fail(e.getMessage());
 					}

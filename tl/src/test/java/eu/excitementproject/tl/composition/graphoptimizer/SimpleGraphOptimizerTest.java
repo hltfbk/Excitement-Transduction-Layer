@@ -1,5 +1,7 @@
 package eu.excitementproject.tl.composition.graphoptimizer;
 
+import static org.junit.Assert.fail;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
@@ -12,6 +14,7 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
+import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.GraphMerger;
@@ -71,29 +74,11 @@ public class SimpleGraphOptimizerTest {
 						for (EquivalenceClass node : finalGraph.sortNodesByNumberOfInteractions(5)){
 							System.out.println(node.toString());
 						}
-					} catch (LAPException e) {
-						// TODO Auto-generated catch block
+					} catch (ConfigurationException | EDAException | ComponentException |
+							GraphMergerException | IOException | GraphOptimizerException e) {
 						e.printStackTrace();
-					} catch (ConfigurationException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (EDAException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (ComponentException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (GraphMergerException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (GraphOptimizerException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						fail(e.getMessage());
 					}
-				
 			
 			
 	}
