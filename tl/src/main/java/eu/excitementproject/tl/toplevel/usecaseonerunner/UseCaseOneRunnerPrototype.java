@@ -35,6 +35,7 @@ import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmen
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphException;
@@ -46,7 +47,7 @@ import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 @SuppressWarnings("unused")
 public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	
-	LAPAccess lap = null;
+	CachedLAPAccess lap = null;
 	EDABasic<?> eda = null;
 	
 	FragmentAnnotator fragAnot;
@@ -60,7 +61,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	// output path used for outputting graphs to files
 	private String outputPath = ".";
 	
-	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
+	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
 		this.lap = lap;
 		this.eda = eda;
 
@@ -68,7 +69,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 	
 	
-	public UseCaseOneRunnerPrototype(LAPAccess lap, EDABasic<?> eda, String outputPath) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
+	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda, String outputPath) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
 		this.lap = lap;
 		this.eda = eda;
 		this.outputPath = outputPath;

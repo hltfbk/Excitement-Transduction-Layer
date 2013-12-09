@@ -25,7 +25,6 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
@@ -54,6 +53,7 @@ import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmen
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
@@ -86,7 +86,7 @@ public class EvaluatorCategoryAnnotator {
 	
     private static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
     
-    static LAPAccess lap;
+    static CachedLAPAccess lap;
     static CommonConfig config;
 	static String configFilename; //config file for EDA
 	static EDABasic<?> eda;
@@ -129,7 +129,7 @@ public class EvaluatorCategoryAnnotator {
 		try {
 			switch(i){
 	        	case 1:
-	        		lap = new LemmaLevelLapDE(); //lap = new MaltParserDE();
+	        		lap = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
 	        		File configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);

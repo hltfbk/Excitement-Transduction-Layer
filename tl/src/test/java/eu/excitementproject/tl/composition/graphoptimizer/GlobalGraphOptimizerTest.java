@@ -14,13 +14,13 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.GraphMerger;
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -33,7 +33,7 @@ public class GlobalGraphOptimizerTest {
 					try {
 						System.out.println("**** Test graph optimizer: merged graph ****");
 
-						LAPAccess lap = new TreeTaggerEN();
+						CachedLAPAccess lap = new CachedLAPAccess(new TreeTaggerEN());
 						File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");				
 						CommonConfig config = null;
 						config = new ImplCommonConfig(configFile);

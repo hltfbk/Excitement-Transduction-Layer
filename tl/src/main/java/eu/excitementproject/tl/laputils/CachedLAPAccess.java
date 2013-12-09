@@ -56,6 +56,8 @@ import org.apache.uima.util.XMLInputSource;
  */
 public class CachedLAPAccess implements LAPAccess {
 
+	public JCas workJCas;
+	
 	public CachedLAPAccess(LAPAccess underlyingLAP) throws LAPException 
 	{
 		// setting up the AE for type system
@@ -100,6 +102,10 @@ public class CachedLAPAccess implements LAPAccess {
 		{
 			throw new LAPException("Unable to get language ID from underlying LAP annotation result!"); 			
 		}
+		
+		// initialize our working CAS
+		workJCas = CASUtils.createNewInputCas(); 
+		
 	}
 
 	//

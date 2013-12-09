@@ -12,6 +12,7 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.PlatformCASProber;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 
+@SuppressWarnings("unused")
 public class CachedLAPAccessTest {
 
 	@Test
