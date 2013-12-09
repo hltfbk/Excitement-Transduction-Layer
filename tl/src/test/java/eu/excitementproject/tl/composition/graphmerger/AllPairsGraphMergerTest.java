@@ -15,7 +15,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
-public class AutomateWP2ProcedureGraphMergerTest {
+public class AllPairsGraphMergerTest {
 
 	@Test
 	public void test() {
@@ -24,7 +24,7 @@ public class AutomateWP2ProcedureGraphMergerTest {
 			LAPAccess lap = new TreeTaggerEN();
 			EDABasic<?> eda = new RandomEDA();
 			
-			GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,eda); 
+			GraphMerger merger = new AllPairsGraphMerger(lap,eda); 
 			
 			Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
 			System.out.println("**** Merging the following fragment graphs with  RandomEDA (complete statements printed) ****");			
