@@ -2,6 +2,7 @@ package eu.excitementproject.tl.structures;
 
 import org.apache.uima.jcas.JCas;
 
+
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.laputils.CASUtils;
 
@@ -40,6 +41,7 @@ public class Interaction {
 		this.channel = channel; 
 		this.provider= provider; 
 		this.interactionString = interactionString; 	
+		this.relevantText = null;
 		this.category = category; 
 		if (keywords == null) {
 			this.keywords = null;
@@ -48,7 +50,34 @@ public class Interaction {
 		}
 	}
 
-	
+
+	/**
+	 * Constructor for the data type. This constructor is "full" one. 
+	 * 
+	 * @param interactionString Whole interaction as one string. 
+	 * @param relevantText relevant text within the full string
+	 * @param langID language ID, following ISO standard (EN, DE, IT, etc) 
+	 * @param channel channel of the interaction, free string, and depends on the application 
+	 * @param provider
+	 * @param category
+	 * @param keywords -- an array of keywords for the interaction 
+	 */
+	public Interaction(String interactionString, String relevantText, String langID, String interactionId, String category, String channel, String provider, String keywords)
+	{
+		this.lang = langID; 
+		this.interactionId = interactionId; 
+		this.channel = channel; 
+		this.provider= provider; 
+		this.interactionString = interactionString; 	
+		this.relevantText = relevantText;
+		this.category = category; 
+		if (keywords == null) {
+			this.keywords = null;
+		} else {
+			this.keywords = keywords.split(",");
+		}
+	}
+
 	/**
 	 * Constructor for the data type. This constructor is "full" one. 
 	 * 
@@ -155,6 +184,15 @@ public class Interaction {
 		return interactionString; 
 	}
 	/**
+	 * public getter for relevant text 
+	 * @return the relevant text. 
+	 * 
+	 */
+	public final String getRelevantText()
+	{
+		return relevantText; 
+	}
+	/**
 	 * public getter for language ID 
 	 * @return language ID 
 	 */
@@ -197,6 +235,11 @@ public class Interaction {
 	 *  Interaction as String: Obligatory value, main data of this data type. cannot be null. 
 	 */
 	private final String interactionString; 
+	
+	/**
+	 *  Relevant text as String: Optional value, can be null. 
+	 */
+	private final String relevantText; 
 	
 	/**
 	 * language ID: Obligatory metadata. cannot be null.  
