@@ -2,10 +2,6 @@ package eu.excitementproject.tl.evaluation.graphmerger;
 
 import static org.junit.Assert.*;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import org.junit.Test;
 
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
