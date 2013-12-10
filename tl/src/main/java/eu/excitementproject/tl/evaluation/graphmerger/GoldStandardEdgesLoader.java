@@ -63,6 +63,11 @@ public class GoldStandardEdgesLoader {
 						if (annotationFile.getName().endsWith(".xml")){
 							System.out.println("Loading annotations from file "+annotationFile);
 							addAnnotationsFromFile(annotationFile.getPath());
+							try {
+								ClusterStatistics.processCluster(annotationFile);
+							} catch (ParserConfigurationException | SAXException | IOException e) {							
+								e.printStackTrace();
+							}
 						}
 					}
 					if (includeFragmentGraphEdges){
@@ -73,6 +78,11 @@ public class GoldStandardEdgesLoader {
 							for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
 								if (annotationFile.getName().endsWith(".xml")){
 									addAnnotationsFromFile(annotationFile.getPath());
+									try {
+										ClusterStatistics.processCluster(annotationFile);
+									} catch (ParserConfigurationException | SAXException | IOException e) {							
+										e.printStackTrace();
+									}
 								}
 							}							
 						}
@@ -107,6 +117,7 @@ public class GoldStandardEdgesLoader {
 				       		if (child.getNodeName().equals("original_text")){
 							   	String text = child.getTextContent();
 				       			nodeTextById.put(id, text);
+				       			System.out.println("\tnode\t"+id);
 				       		}
 				       	}
 					}   										
