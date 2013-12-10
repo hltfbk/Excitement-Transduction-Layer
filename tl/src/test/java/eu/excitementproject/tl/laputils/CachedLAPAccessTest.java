@@ -10,7 +10,9 @@ import org.junit.Test;
 
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.PlatformCASProber;
+import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 
+@SuppressWarnings("unused")
 public class CachedLAPAccessTest {
 
 	@Test
@@ -31,6 +33,7 @@ public class CachedLAPAccessTest {
 		
 		try {
 			underlyingLAP = new LemmaLevelLapEN(); // tree tagger 
+			//underlyingLAP = new MaltParserEN(); 
 			cachedLAP = new CachedLAPAccess(underlyingLAP); // and cached LAP that works with this LAP
 		}
 		catch(Exception e)
@@ -113,19 +116,20 @@ public class CachedLAPAccessTest {
 		}	
 		
 		//  meaningless, but well. can't resist.   
-//		try {
-//			for(int i=0; i < 1000; i++)
-//			{
-//				JCas a = CASUtils.createNewInputCas(); 
-//				//underlyingLAP.generateSingleTHPairCAS(hypo, text); // 91.02
-//				cachedLAP.annotateSingleTHPairCAS(hypo, text, a); // 67.564 
-//				//cachedLAP.generateSingleTHPairCAS(hypo, text); // 
-//			}
-//		}
-//		catch (Exception e)
-//		{
-//			fail(e.getMessage());
-//		}
+		try {
+			JCas a = CASUtils.createNewInputCas(); 
+
+			for(int i=0; i < 3000; i++)
+			{
+				//underlyingLAP.generateSingleTHPairCAS(hypo, text); // with TREETAGGER EN 22.5 seconds 
+				//cachedLAP.generateSingleTHPairCAS(hypo, text); // TREETAGGER EN 18.118
+				cachedLAP.annotateSingleTHPairCAS(hypo, text, a); // TREETAGGER EN 4.687 
+			}
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage());
+		}
 		
 	}
 

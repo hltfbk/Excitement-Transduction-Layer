@@ -22,7 +22,6 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
@@ -55,6 +54,7 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
@@ -78,8 +78,8 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 public class DemoUseCase2OMQGerman {
 	
 	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
-	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
-	static String xmlDataFilename = "omq_public_1_emails.xml";
+	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/";
+	static String xmlDataFilename = "keywordAnnotations3.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
 	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_1_th.xml";
@@ -87,13 +87,13 @@ public class DemoUseCase2OMQGerman {
 	static boolean readGraph = false; //if true: read previously created graph instead of creating it
 	static boolean processTrainingData = false; //if true: process the data in "edaTrainingFilename"
 	static boolean trainEDA = false; //if true: train the EDA on the processed data
-	static boolean keywordsProvided = false; //if true: input dataset contains keyword metadata
+	static boolean keywordsProvided = true; //if true: input dataset contains keyword metadata
 	
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
 	static File configFile;
 	static CommonConfig config;
-	static LAPAccess lap;
+	static CachedLAPAccess lap;
 	static EDABasic<?> eda; 
 	static FragmentAnnotator fragAnot;
 	static ModifierAnnotator modAnot;
@@ -253,10 +253,10 @@ public class DemoUseCase2OMQGerman {
 		configFile = new File(configFilename);	
 		config = new ImplCommonConfig(configFile);
 		if (keywordsProvided) { //keyword-based fragment annotation	
-			lap = new MaltParserDE(); 
+			lap = new CachedLAPAccess(new MaltParserDE()); 
 			fragAnot = new KeywordBasedFragmentAnnotator(lap);	
 		} else { //sentence-based fragment annotation
-			lap = new LemmaLevelLapDE(); 
+			lap = new CachedLAPAccess(new LemmaLevelLapDE()); 
 			fragAnot = new SentenceAsFragmentAnnotator(lap);
 		}
 		modAnot = new AdvAsModifierAnnotator(lap); 		

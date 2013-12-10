@@ -1,7 +1,8 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
-import java.util.logging.Logger;
 
+
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.graph.DefaultEdge;
 
@@ -10,9 +11,9 @@ import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.common.exception.ComponentException;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
@@ -55,7 +56,8 @@ public class EntailmentRelation extends DefaultEdge {
 	/*
 	 * EOP lap
 	 */
-	LAPAccess lap;
+	CachedLAPAccess lap;
+	
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
@@ -68,7 +70,7 @@ public class EntailmentRelation extends DefaultEdge {
 	 * @param lap
 	 * @throws EntailmentGraphRawException
 	 */
-	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda, LAPAccess lap) throws EntailmentGraphRawException {
+	public EntailmentRelation(EntailmentUnit source, EntailmentUnit target, EDABasic<?> eda, CachedLAPAccess lap) throws EntailmentGraphRawException {
 		setAttributes(source, target, EdgeType.EDA, eda, lap);
 		computeTEdecision();
 	}
@@ -91,12 +93,12 @@ public class EntailmentRelation extends DefaultEdge {
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
 
-	private void setAttributes(EntailmentUnit source, EntailmentUnit target, EdgeType edgeType, EDABasic<?> eda, LAPAccess lap){
+	private void setAttributes(EntailmentUnit source, EntailmentUnit target, EdgeType edgeType, EDABasic<?> eda, CachedLAPAccess lap){
 		this.source = source;
 		this.target = target;	
 		this.edgeType = edgeType;
 		this.eda = eda;
-		this.lap = lap;	
+		this.lap = lap;
 	}
 		
 	
@@ -104,7 +106,7 @@ public class EntailmentRelation extends DefaultEdge {
 	/**
 	 * @return the lap
 	 */
-	public LAPAccess getLap() {
+	public CachedLAPAccess getLap() {
 		return lap;
 	}
 
@@ -187,7 +189,9 @@ public class EntailmentRelation extends DefaultEdge {
 		// extract annotations from "from" and "to" to form the JCas object that is used as input to the EDA
 		logger.info("Generating a cass for the pair: \n \tTEXT: " + source.getText() + "\n \tHYPOTHESIS: " + target.getText());
 		try {
-			return lap.generateSingleTHPairCAS(source.getTextWithoutDoulbeSpaces(), target.getTextWithoutDoulbeSpaces());
+			
+			lap.annotateSingleTHPairCAS(source.getTextWithoutDoulbeSpaces(), target.getTextWithoutDoulbeSpaces(), lap.workJCas);
+			return lap.workJCas;
 		} catch (LAPException e) {
 			throw new EntailmentGraphRawException(e.getMessage());
 		}

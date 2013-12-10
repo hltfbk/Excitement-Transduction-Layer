@@ -11,7 +11,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
@@ -19,16 +18,16 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -45,7 +44,7 @@ public class UseCaseOneFromXMLTest {
 
 		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_IT.xml");		
 		CommonConfig config = null;
-		LAPAccess lap;
+		CachedLAPAccess lap;
 		EDABasic<?> eda;
 		UseCaseOneRunnerPrototype use1;
 		EntailmentGraphCollapsed graph;
@@ -71,7 +70,7 @@ public class UseCaseOneFromXMLTest {
 			}
 						
 			// initialize the lap			
-			lap = new TreeTaggerEN();
+			lap = new CachedLAPAccess(new TreeTaggerEN());
 			
 			// initialize the eda			
 			config = new ImplCommonConfig(configFile);

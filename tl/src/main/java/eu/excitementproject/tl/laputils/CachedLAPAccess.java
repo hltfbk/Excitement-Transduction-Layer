@@ -1,8 +1,11 @@
 package eu.excitementproject.tl.laputils;
 
 import java.io.File;
+import java.io.InputStream;
 
 import org.apache.log4j.Logger;
+import org.apache.uima.UIMAFramework;
+import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.FSIterator;
@@ -21,8 +24,13 @@ import eu.excitementproject.tl.laputils.CASUtils;
 import java.util.HashMap;
 //import java.util.Iterator;
 import java.util.Map;
+
+import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.ResourceSpecifier;
 //import java.util.Set;
 import org.apache.uima.util.CasCopier;
+import org.apache.uima.util.InvalidXMLException;
+import org.apache.uima.util.XMLInputSource;
 
 /**
  * 
@@ -48,8 +56,28 @@ import org.apache.uima.util.CasCopier;
  */
 public class CachedLAPAccess implements LAPAccess {
 
+	public JCas workJCas;
+	
 	public CachedLAPAccess(LAPAccess underlyingLAP) throws LAPException 
 	{
+		// setting up the AE for type system
+        // note that you need at least one AE to get a JCAS. (valina UIMA)
+        try {
+                InputStream s = this.getClass().getResourceAsStream("/desc/DummyAE.xml"); // This AE does nothing, but holding all types.
+                XMLInputSource in = new XMLInputSource(s, null);
+                ResourceSpecifier specifier = UIMAFramework.getXMLParser().parseResourceSpecifier(in);                
+                AnalysisEngine ae = UIMAFramework.produceAnalysisEngine(specifier);
+                this.typeAE = ae;
+        }
+        catch (InvalidXMLException e)
+        {
+                throw new LAPException("AE descriptor is not a valid XML", e);                        
+        }
+        catch (ResourceInitializationException e)
+        {
+                throw new LAPException("Unable to initialize the AE", e);
+        }                
+        
 		// setting basic 
 		this.underlyingLAP = underlyingLAP; 
 		this.textviewCache = new HashMap<String, JCas>(); 
@@ -74,6 +102,10 @@ public class CachedLAPAccess implements LAPAccess {
 		{
 			throw new LAPException("Unable to get language ID from underlying LAP annotation result!"); 			
 		}
+		
+		// initialize our working CAS
+		workJCas = CASUtils.createNewInputCas(); 
+		
 	}
 
 	//
@@ -85,8 +117,16 @@ public class CachedLAPAccess implements LAPAccess {
 	@Override
 	public JCas generateSingleTHPairCAS(String arg0, String arg1) throws LAPException {
 		// generate a new CAS 
-		JCas aJCas = CASUtils.createNewInputCas(); 
-		
+		//JCas aJCas = CASUtils.createNewInputCas(); 
+		JCas aJCas = null; 
+		try 
+		{
+			aJCas = this.typeAE.newJCas(); 
+		}
+		catch (ResourceInitializationException e)
+		{
+			throw new LAPException("Unable to create new JCas", e);
+        }		
 		// actual work is done here, with all caching. 
 		annotateSingleTHPairCAS(arg0, arg1, aJCas); 
 		
@@ -277,7 +317,8 @@ public class CachedLAPAccess implements LAPAccess {
 	private LAPAccess underlyingLAP; 	
 	private Map<String, JCas> textviewCache; 
 	private Map<String, JCas> hypoviewCache; 
-	
+	private AnalysisEngine typeAE;
+
 	private int receivedCall; 
 	private int actualCall; 
 	private String languageId; 

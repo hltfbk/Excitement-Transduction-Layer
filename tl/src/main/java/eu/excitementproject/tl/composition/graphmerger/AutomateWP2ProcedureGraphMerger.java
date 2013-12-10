@@ -6,18 +6,26 @@ import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
+/**
+ * This graph merger automates the WP2 manual procedure. 
+ * Note that in this implementation only "entailment" edges are added during the merge, while "non-entailment" edges are not added. 
+ * I.e. absence of an edge in the merged graph should be interpreted as "no entailment"  
+
+ * @author Lili Kotlerman
+ *
+ */
 public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 
-	public AutomateWP2ProcedureGraphMerger(LAPAccess lap, EDABasic<?> eda)
+	public AutomateWP2ProcedureGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
 		// TODO Auto-generated constructor stub
