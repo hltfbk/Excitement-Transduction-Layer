@@ -8,27 +8,25 @@ import java.util.Set;
 
 import org.junit.Test;
 
-//import eu.excitementproject.eop.common.EDABasic;
-//import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
-
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.GraphMerger;
-import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+//import eu.excitementproject.eop.common.EDABasic;
+//import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 public class SimpleGraphOptimizerTest {
 
@@ -38,7 +36,7 @@ public class SimpleGraphOptimizerTest {
 					try {
 						System.out.println("**** Test collapsed graph generator: merged graph ****");
 
-						LAPAccess lap = new TreeTaggerEN();
+						CachedLAPAccess lap = new CachedLAPAccess(new TreeTaggerEN());
 //					EDABasic<?> eda = new RandomEDA();
 						File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml");				
 						CommonConfig config = null;

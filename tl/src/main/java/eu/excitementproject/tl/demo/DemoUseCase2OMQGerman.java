@@ -22,7 +22,6 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
@@ -55,6 +54,7 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
@@ -93,7 +93,7 @@ public class DemoUseCase2OMQGerman {
 
 	static File configFile;
 	static CommonConfig config;
-	static LAPAccess lap;
+	static CachedLAPAccess lap;
 	static EDABasic<?> eda; 
 	static FragmentAnnotator fragAnot;
 	static ModifierAnnotator modAnot;
@@ -253,10 +253,10 @@ public class DemoUseCase2OMQGerman {
 		configFile = new File(configFilename);	
 		config = new ImplCommonConfig(configFile);
 		if (keywordsProvided) { //keyword-based fragment annotation	
-			lap = new MaltParserDE(); 
+			lap = new CachedLAPAccess(new MaltParserDE()); 
 			fragAnot = new KeywordBasedFragmentAnnotator(lap);	
 		} else { //sentence-based fragment annotation
-			lap = new LemmaLevelLapDE(); 
+			lap = new CachedLAPAccess(new LemmaLevelLapDE()); 
 			fragAnot = new SentenceAsFragmentAnnotator(lap);
 		}
 		modAnot = new AdvAsModifierAnnotator(lap); 		

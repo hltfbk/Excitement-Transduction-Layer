@@ -28,7 +28,7 @@ import eu.excitementproject.tl.structures.Interaction;
  * This class provides a simple reader for WP2 defined Interaction XML file.
  * Also, the class provides a not-so-simple reader of WP2 fragment graph annotation dump. 
  * 
- * @author Gil
+ * @author Gil (modified by Kathrin to include relevantTexts)
  *
  */
 public final class InteractionReader {
@@ -107,8 +107,25 @@ public final class InteractionReader {
 		{
 			// get interaction String
 			Element oneInteraction = (Element) interactionNodes.item(i); 
-			String interactionText = oneInteraction.getElementsByTagName("text").item(0).getFirstChild().getNodeValue(); 
 			
+			NodeList texts = oneInteraction.getElementsByTagName("text");
+			String interactionText = "";
+			String relevantText = "";
+			
+			if (texts.item(0).getChildNodes().getLength() == 1) { //the usual case: just one text  
+				interactionText = oneInteraction.getElementsByTagName("text").item(0).getFirstChild().getNodeValue(); 				
+			} else { //more than one texts --> probably contains a "relevantText" node
+				Node node = texts.item(0);
+				NodeList children = node.getChildNodes();
+				for (int k=0; k<children.getLength(); k++) {
+					Node childNode = children.item(k);
+					interactionText += childNode.getTextContent();
+					if (childNode.getNodeName().equals("relevantText")) {
+						relevantText += childNode.getTextContent(); 
+					}
+				}
+			}			
+
 			// get metadata (for now, only cateogry, if exist) 
 			
 			// TODO (low priority) check we will use metadata like the followings, or not.  
@@ -134,7 +151,8 @@ public final class InteractionReader {
 				interactionId = idval.getNodeValue(); 
 			}
 			
-			Interaction interaction = new Interaction(interactionText, lang, interactionId, category, channel, provider, keywords); 
+			Interaction interaction = new Interaction(interactionText, relevantText, lang, interactionId, category, channel, provider, keywords); 
+
 			interactionList.add(interaction); 			
 		}
 		
