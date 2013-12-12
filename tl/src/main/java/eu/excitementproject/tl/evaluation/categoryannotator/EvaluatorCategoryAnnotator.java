@@ -1,7 +1,6 @@
 package eu.excitementproject.tl.evaluation.categoryannotator;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -26,7 +25,6 @@ import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
@@ -66,7 +64,6 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
-import eu.excitementproject.tl.structures.rawgraph.utils.NoEDA;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
@@ -156,7 +153,7 @@ public class EvaluatorCategoryAnnotator {
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
 	        		File configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
-	        		eda = new NoEDA();
+	        		eda = new MaxEntClassificationEDA();
 		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
