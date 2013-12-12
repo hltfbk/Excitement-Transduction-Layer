@@ -80,6 +80,7 @@ public class DemoUseCase2OMQGerman {
 	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
 	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
 	static String xmlDataFilename = "omq_public_1_emails.xml";
+//	static String xmlDataFilename = "keywordAnnotations3.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
 	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_1_th.xml";
@@ -88,6 +89,7 @@ public class DemoUseCase2OMQGerman {
 	static boolean processTrainingData = false; //if true: process the data in "edaTrainingFilename"
 	static boolean trainEDA = false; //if true: train the EDA on the processed data
 	static boolean keywordsProvided = false; //if true: input dataset contains keyword metadata
+	static boolean relevantTextProvided = true; //if true; input dataset contains relevantText annotation
 	
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
@@ -215,24 +217,25 @@ public class DemoUseCase2OMQGerman {
 				}
 			}
 				
-			//build fragment graphs from input data
+			//build fragment graphs from input data and merge them
 			Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
 			JCas cas = CASUtils.createNewInputCas();
+			eda.initialize(config);
+			GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
+			EntailmentGraphRaw egr = null;
 			for(Interaction i: docs) {
-				i.fillInputCAS(cas); 
+				i.fillInputCAS(cas, relevantTextProvided); 
 				fragAnot.annotateFragments(cas);
 				modAnot.annotateModifiers(cas);
 				logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-				fgs.addAll(fragGen.generateFragmentGraphs(cas));
+				fgs  = fragGen.generateFragmentGraphs(cas);
+				logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
+				System.out.println("Built fragment graphs: " +fgs.size()+ " graphs.");
+				egr = graphMerger.mergeGraphs(fgs, egr);
+				logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
+				System.out.println("Merged graph: " +egr.vertexSet().size()+ " nodes");
 			}
-			logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
 			
-			//merge graph
-			eda.initialize(config);
-			GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
-			EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-			logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-
 			//optimize graph
 			graph = graphOptimizer.optimizeGraph(egr, 0.99);
 			logger.info("Optimized graph: " + graph.vertexSet().size() + " nodes");
