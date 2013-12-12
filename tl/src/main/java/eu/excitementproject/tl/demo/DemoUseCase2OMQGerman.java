@@ -10,11 +10,12 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.de.GermanAnalyzer;
 import org.apache.lucene.util.Version;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.CategoryAnnotation;
+import eu.excitement.type.tl.CategoryDecision;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
@@ -121,12 +122,16 @@ public class DemoUseCase2OMQGerman {
 		
 		/** Step 2: Annotating an incoming email based on the entailment graph */
 
-		String emailText = "Wie kann ich diese aendern?";
-		annotateIncomingEmail(graph, emailText);
+		String emailText = "Speicheranfrage ist ungültig.";
+		JCas cas = annotateIncomingEmail(graph, emailText);
+		Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+		for (CategoryDecision decision: decisions) {
+			logger.info("decision: " + decision.getCategoryId() + ":" + decision.getConfidence());
+		}
 			
 	}
 
-	private static void annotateIncomingEmail(EntailmentGraphCollapsed graph, String text)
+	private static JCas annotateIncomingEmail(EntailmentGraphCollapsed graph, String text)
 			throws LAPException, FragmentAnnotatorException,
 			ModifierAnnotatorException, FragmentGraphGeneratorException,
 			NodeMatcherException, CategoryAnnotatorException {
@@ -149,20 +154,19 @@ public class DemoUseCase2OMQGerman {
 		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
 
 		//call node matcher on each fragment graph
-		NodeMatcherWithIndex nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
+		NodeMatcherWithIndex nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new GermanAnalyzer(Version.LUCENE_44));
 		nm.indexGraphNodes();
 		nm.initializeSearch();
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
-			System.out.println("fragment graph: " + fragmentGraph.getCompleteStatement());
 			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph);
-			System.out.println("matches: " + matches.size());
 			//add category annotation to CAS
 			ca.addCategoryAnnotation(cas, matches);
 		}	
 		
 		//print CAS category
 		CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
+		return cas;
 	}
 
 	private static EntailmentGraphCollapsed buildGraph(String xmlGraphFilename)
@@ -230,14 +234,12 @@ public class DemoUseCase2OMQGerman {
 				logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 				fgs  = fragGen.generateFragmentGraphs(cas);
 				logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
-				System.out.println("Built fragment graphs: " +fgs.size()+ " graphs.");
 				egr = graphMerger.mergeGraphs(fgs, egr);
 				logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-				System.out.println("Merged graph: " +egr.vertexSet().size()+ " nodes");
 			}
 			
 			//optimize graph
-			graph = graphOptimizer.optimizeGraph(egr, 0.99);
+			graph = graphOptimizer.optimizeGraph(egr, 0.95);
 			logger.info("Optimized graph: " + graph.vertexSet().size() + " nodes");
 			
 			// compute category confidences and add them to graph
