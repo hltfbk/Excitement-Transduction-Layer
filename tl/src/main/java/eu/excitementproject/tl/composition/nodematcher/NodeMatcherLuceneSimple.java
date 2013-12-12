@@ -111,6 +111,8 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 	 * @throws IOException
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
+		boolean checkExactTokenMatch = true;  //TODO: make configurable from outside!
+		
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
 		String fieldToBeSearched = "euText";
 		
@@ -133,11 +135,14 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 		for (int i=0; i<hits.length; i++) {
 			ScoreDoc hit = hits[i];
 		    Document d = searcher.doc(hit.doc);
-		    matchScores.put(d, hit.score); //score returned by Lucene
-		    //if (d.getField(fieldToBeSearched).stringValue().split("\\s+").length == queryText.split("\\s+").length) {
-		    //all query terms match and returned document has the same number of terms --> perfect match!
-		    matchScores.put(d, new Float(1.0)); 
-		   	//}
+		    if (checkExactTokenMatch) {
+			    if (d.getField(fieldToBeSearched).stringValue().split("\\s+").length == queryText.split("\\s+").length) {
+			    	//all query terms match and returned document has the same number of terms --> perfect match!
+			    	matchScores.put(d, new Float(1.0)); 
+			    }
+		    } else {
+		    	matchScores.put(d, hit.score); //score returned by Lucene
+		   	}
 		}	
 		logger.info(matchScores.size() + " matching documents");
 		List<PerNodeScore> scores = new ArrayList<PerNodeScore>();
