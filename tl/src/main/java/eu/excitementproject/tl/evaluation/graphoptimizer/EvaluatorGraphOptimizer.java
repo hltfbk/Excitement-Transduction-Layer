@@ -36,8 +36,8 @@ public class EvaluatorGraphOptimizer {
 	 * @param collapsedGraph - "entailment" of from the de-collapsed graph
 	 * @return evaluation measures (recall, precision, f1).
 	 */
-	public static EvaluationMeasures evaluateDecollapsedGraph(Set<EntailmentRelation> goldStandardEdges, EntailmentGraphCollapsed collapsedGraph){
-		return EvaluatorGraphMerger.evaluate(goldStandardEdges, getAllEntailmentRelations(collapsedGraph));
+	public static EvaluationMeasures evaluateDecollapsedGraph(Set<EntailmentRelation> goldStandardEdges, EntailmentGraphCollapsed collapsedGraph,  boolean includeFragmentGraphEdges){
+		return EvaluatorGraphMerger.evaluate(goldStandardEdges, getAllEntailmentRelations(collapsedGraph), includeFragmentGraphEdges);
 	}
 	
 	/** De-collapses each of the collapsed nodes of the given graph into a complete subgraph of EntailmentUnits (bi-directed clique, where entailment units are connected to each other in both directions)

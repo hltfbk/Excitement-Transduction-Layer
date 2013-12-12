@@ -10,20 +10,21 @@ public class EvaluatorGraphMergerTest {
 
 	@Test
 	public void test() {
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
+		boolean includeFragmentGraphEdges = false;
+		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(includeFragmentGraphEdges);
 		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
 		try {
-			loader.addAnnotations(annotationFilename);
+			loader.addAnnotationsFromFile(annotationFilename);
 			System.out.println("Loaded "+loader.getEdges().size()+" gold standard edges.");
 /*			int i=1;		
 			for (EntailmentRelation edge : loader.getEdges){
 				System.out.println(i+": "+edge);
 				i++;
 			}
-*/			System.out.println(EvaluatorGraphMerger.evaluate(loader.getEdges(), loader.getEdges()));
+*/			System.out.println(EvaluatorGraphMerger.evaluate(loader.getEdges(), loader.getEdges(), includeFragmentGraphEdges));
 		} catch (GraphEvaluatorException e) {
-			fail(e.getMessage());
 			e.printStackTrace();
+			fail(e.getMessage());
 		}		
 	}
 

@@ -23,6 +23,7 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.OpenNLPTaggerEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -34,6 +35,7 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorEx
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.demo.DemoUseCase1NICEEnglish;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
@@ -42,7 +44,7 @@ public class UseCaseOneDemo {
 
 	protected File configFile;
 	protected CommonConfig config = null;
-	protected LAPAccess lap;
+	protected CachedLAPAccess lap;
 	protected EDABasic<?> eda;
 	protected UseCaseOneRunnerPrototype useOne;
 	protected EntailmentGraphCollapsed graph;
@@ -95,7 +97,12 @@ public class UseCaseOneDemo {
 	private void initializeLap(Class<?> lapClass) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		// initialize the lap
 		Constructor<?> lapClassConstructor = lapClass.getConstructor();
-		lap = (LAPAccess) lapClassConstructor.newInstance();
+		LAPAccess lapAc = (LAPAccess) lapClassConstructor.newInstance();
+		try {
+			lap = new CachedLAPAccess(lapAc);
+		} catch (LAPException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

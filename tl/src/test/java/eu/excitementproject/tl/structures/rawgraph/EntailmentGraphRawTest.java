@@ -29,6 +29,7 @@ public class EntailmentGraphRawTest {
 		try {
 			XMLFileWriter.write(rawGraph.toXML(), "./src/test/outputs/sampleRawGraph.xml");			
 		} catch (EntailmentGraphRawException | TransformerException e) {
+			e.printStackTrace();
 			fail(e.getMessage());
 		}
 
@@ -61,6 +62,7 @@ public class EntailmentGraphRawTest {
 						}
 					}
 				} catch (EntailmentGraphRawException e) {
+					e.printStackTrace();
 					fail(e.getMessage());
 				}							
 			}
@@ -84,6 +86,7 @@ public class EntailmentGraphRawTest {
 				}
 			}
 		} catch (EntailmentGraphRawException e) {
+			e.printStackTrace();
 			fail(e.getMessage());
 		}
 		

@@ -64,6 +64,10 @@ public final class InteractionReader {
 		// Open XML file 
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		Document dom = null;
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.InteractionReader");
+		logger.info("Processing file " + xmlFile);
+		
 		try {
 			//Using factory get an instance of document builder
 			DocumentBuilder db = dbf.newDocumentBuilder();
@@ -121,7 +125,7 @@ public final class InteractionReader {
 					}
 				}
 			}			
-			
+
 			// get metadata (for now, only cateogry, if exist) 
 			
 			// TODO (low priority) check we will use metadata like the followings, or not.  
@@ -148,6 +152,7 @@ public final class InteractionReader {
 			}
 			
 			Interaction interaction = new Interaction(interactionText, relevantText, lang, interactionId, category, channel, provider, keywords); 
+
 			interactionList.add(interaction); 			
 		}
 		

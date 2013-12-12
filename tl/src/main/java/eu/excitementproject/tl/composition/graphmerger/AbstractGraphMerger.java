@@ -8,11 +8,11 @@ import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
@@ -32,7 +32,7 @@ should be clearly exposed in the Constructor.
  */
 public abstract class AbstractGraphMerger implements GraphMerger{
 
-	private final LAPAccess lap;
+	private final CachedLAPAccess lap;
 	private final EDABasic<?> eda;
 	
 	/** The needed LAP & EDA related configurations should be passed via the
@@ -43,7 +43,7 @@ should be clearly exposed in the Constructor.
 	 * @param eda
 	 * @throws GraphMergerException
 	 */
-	public AbstractGraphMerger(LAPAccess lap, EDABasic<?> eda) throws GraphMergerException{
+	public AbstractGraphMerger(CachedLAPAccess lap, EDABasic<?> eda) throws GraphMergerException{
 		this.lap=lap;
 		this.eda=eda;
 	}
@@ -58,7 +58,7 @@ should be clearly exposed in the Constructor.
 	/**
 	 * @return the LAP passed in the constructor to the GraphMerger implementation
 	 */
-	public LAPAccess getLap() {
+	public CachedLAPAccess getLap() {
 		return this.lap;
 	}
 	

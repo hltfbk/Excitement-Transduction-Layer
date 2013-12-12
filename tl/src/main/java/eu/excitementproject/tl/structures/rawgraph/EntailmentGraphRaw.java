@@ -1,7 +1,6 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
 import java.io.BufferedWriter;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -26,9 +25,9 @@ import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.TEDecision;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
@@ -391,7 +390,7 @@ public class EntailmentGraphRaw extends
 	 * @return the edge, which was added to the graph
 	 * @throws LAPException 
 	 */
-	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda, LAPAccess lap) throws EntailmentGraphRawException{
+	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda, CachedLAPAccess lap) throws EntailmentGraphRawException{
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda, lap);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;

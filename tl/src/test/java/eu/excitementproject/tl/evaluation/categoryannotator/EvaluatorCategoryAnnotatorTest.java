@@ -23,7 +23,8 @@ public class EvaluatorCategoryAnnotatorTest {
 			String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml"; //config file for EDA
 					
 			testlogger.info("Computing result for dataset.");
-			double result = EvaluatorCategoryAnnotator.runEvaluationOnTrainTestDataset(inputFilename, outputDirname, configFilename);
+			EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator();
+			double result = eca.runEvaluationOnTrainTestDataset(inputFilename, outputDirname, configFilename);
 
 			Assert.assertEquals(result, 0.5); 
 			
