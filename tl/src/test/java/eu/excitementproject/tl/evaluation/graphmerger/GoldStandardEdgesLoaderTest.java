@@ -10,7 +10,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 public class GoldStandardEdgesLoaderTest {
 
@@ -20,15 +23,20 @@ public class GoldStandardEdgesLoaderTest {
 		try {
 			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_example");
 //			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_blind");
-			System.out.println("\nLoaded "+loader.edges.size()+ " edges.");
+//			System.out.println("\nLoaded "+loader.edges.size()+ " edges.");
 
 			loader = new GoldStandardEdgesLoader(false);
 			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";			
 //			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/email0020.lost.xml";			
+//			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/email0020.xml";			
 			loader.addAnnotationsFromFile(annotationFilename);
 			try {
 				ClusterStatistics.processCluster(new File(annotationFilename));
-			} catch (ParserConfigurationException | SAXException | IOException e) {							
+				EntailmentGraphRaw gr = loader.getRawGraph();
+				gr.toDOT(annotationFilename+".dot");
+				EntailmentGraphCollapsed gc = loader.getCollapsedGraph();
+				gc.toDOT(annotationFilename+".collapsed.dot");
+			} catch (ParserConfigurationException | SAXException | IOException | GraphOptimizerException e) {							
 				e.printStackTrace();
 			}			
 	

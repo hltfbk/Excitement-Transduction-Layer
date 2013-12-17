@@ -19,7 +19,12 @@ import org.xml.sax.SAXException;
 
 
 import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
@@ -164,4 +169,19 @@ public class GoldStandardEdgesLoader {
 		return s;
 	}
 	
+	public EntailmentGraphRaw getRawGraph(){
+		EntailmentGraphRaw g = new EntailmentGraphRaw();
+		for (String v : nodeTextById.values()){
+			g.addVertex(new EntailmentUnit(v, -1, "", "unknown")); // the EUs should be the same as created when adding edges to the "edges" attribute of the class 
+		}
+		for (EntailmentRelation e : edges){
+			g.addEdgeByInduction(e.getSource(), e.getTarget(), DecisionLabel.Entailment, 1.0);
+		}
+		return g;
+	}
+	
+	public EntailmentGraphCollapsed getCollapsedGraph() throws GraphOptimizerException {
+		SimpleGraphOptimizer opt = new SimpleGraphOptimizer();
+		return opt.optimizeGraph(getRawGraph(),0.0);
+	}
 }

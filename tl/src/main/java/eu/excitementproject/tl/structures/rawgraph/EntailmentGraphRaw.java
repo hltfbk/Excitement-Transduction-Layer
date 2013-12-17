@@ -419,6 +419,7 @@ public class EntailmentGraphRaw extends
 	
 	/**
 	 * Create an edge induced from prior knowledge. Confidence is to be given as parameter.
+	 * The vertices are assumed to be present in the graph
 	 * @param sourceVertex
 	 * @param targetVertex
 	 * @param confidence
@@ -477,6 +478,9 @@ public class EntailmentGraphRaw extends
 	 */
 	public String toDOT(){
 		String s = "digraph rawGraph {\n";
+		for (EntailmentUnit node : this.vertexSet()){
+			s+="\""+node.getText()+"\";";
+		}
 		for (EntailmentRelation edge : this.edgeSet()){
 			s+=edge.toDOT();
 		}
