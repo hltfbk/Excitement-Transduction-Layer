@@ -81,7 +81,7 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 		
 		/** read fragment graph, starting with the longest (complete) statement, going down to the 
 		base statement, stopping as soon as a match is found */
-		for (int i = fragmentGraph.getMaxLevel(); i>=0; i--) {		
+		for (int i = fragmentGraph.getMaxLevel(); i>=0; i--) {	
 			Set<EntailmentUnitMention> mentions = fragmentGraph.getNodes(i); 
 			for (EntailmentUnitMention mention : mentions) {
 				NodeMatch match;
@@ -111,6 +111,8 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 	 * @throws IOException
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
+		boolean checkExactTokenMatch = true;  //TODO: make configurable from outside!
+		
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
 		String fieldToBeSearched = "euText";
 		
@@ -125,19 +127,22 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 		Date end = new Date();
 		logger.info("Search took "+(end.getTime()-start.getTime())+"ms");
 		
-		TopDocs results = searcher.search(query, 5);
+		TopDocs results = searcher.search(query, 20);
 		ScoreDoc[] hits = results.scoreDocs;
-		//int numTotalHits = results.totalHits;
-		//logger.info(numTotalHits + " potentially matching documents:");
+		int numTotalHits = results.totalHits;
+		System.out.println(numTotalHits + " potentially matching documents:");
 		Map<Document,Float> matchScores = new HashMap<Document,Float>();
 		for (int i=0; i<hits.length; i++) {
 			ScoreDoc hit = hits[i];
 		    Document d = searcher.doc(hit.doc);
-		    //matchScores.put(d, hit.score); //score returned by Lucene
-		    if (d.getField(fieldToBeSearched).stringValue().split("\\s+").length == queryText.split("\\s+").length) {
-		    	//all query terms match and returned document has the same number of terms --> perfect match!
-		    	matchScores.put(d, new Float(1.0)); 
-		    }
+		    if (checkExactTokenMatch) {
+			    if (d.getField(fieldToBeSearched).stringValue().split("\\s+").length == queryText.split("\\s+").length) {
+			    	//all query terms match and returned document has the same number of terms --> perfect match!
+			    	matchScores.put(d, new Float(1.0)); 
+			    }
+		    } else {
+		    	matchScores.put(d, hit.score); //score returned by Lucene
+		   	}
 		}	
 		logger.info(matchScores.size() + " matching documents");
 		List<PerNodeScore> scores = new ArrayList<PerNodeScore>();

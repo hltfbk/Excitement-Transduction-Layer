@@ -17,7 +17,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
  */
 
 /**
- * @author Gil 
+ * @author Gil (modified by Kathrin to include relevantText)
  *
  */
 public class Interaction {
@@ -166,7 +166,6 @@ public class Interaction {
 		aJCas.reset(); 
 		aJCas.setDocumentLanguage(this.lang); 
 		aJCas.setDocumentText(this.interactionString); 
-		
 		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.category);
 		CASUtils.addTLKeywords(aJCas, this.keywords);
 		
@@ -174,6 +173,25 @@ public class Interaction {
 		// as category annotation? Check this with Kathrin 
 	}
 		
+	/**
+	 * This methods gets one JCAS, cleans it up, and fill it with this Interaction. set language ID and CAS text by the information of this Interaction.
+	 * 
+	 * @param aJCas
+	 * @param relevantText, if true: set document text to relevant text only
+	 */
+	public void fillInputCAS(JCas aJCas, boolean relevantTextProvided)
+	{
+		aJCas.reset(); 
+		aJCas.setDocumentLanguage(this.lang); 
+		if (relevantTextProvided) {
+			aJCas.setDocumentText(this.relevantText); 
+		} else {
+			aJCas.setDocumentText(this.interactionString); 
+		}
+		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.category);
+		CASUtils.addTLKeywords(aJCas, this.keywords);
+	}
+
 	/**
 	 * public getter for interaction string 
 	 * @return the interaction string. 

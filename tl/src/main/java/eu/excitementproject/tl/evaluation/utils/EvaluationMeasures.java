@@ -1,5 +1,7 @@
 package eu.excitementproject.tl.evaluation.utils;
 
+import java.util.List;
+
 /**
  * This class is a container for the values of Recall, Precision and F1 calculated by different evaluators
  * @author Lili Kotlerman 
@@ -13,6 +15,24 @@ public class EvaluationMeasures {
 		this.precision = null;
 	}
 
+	
+	public EvaluationMeasures(int tp, int fp, int tn, int fn) {
+		precision = 1.0 * tp / (tp + fp);
+		recall = 1.0 * tp / (tp + fn);
+	}
+	
+	
+	/**
+	 * The scores is the list of TP, FP, TN, FN
+	 * @param scores
+	 */
+	public EvaluationMeasures(List<Integer> scores) {
+		int tp = scores.get(0);
+		int fp = scores.get(1);
+		int fn = scores.get(3);
+		precision = 1.0 * tp / (tp + fp);
+		recall = 1.0 * tp / (tp + fn);
+	}
 	
 	/**
 	 * @return the recall
