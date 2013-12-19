@@ -39,7 +39,7 @@ public class GoldStandardEdgesLoader {
 	Set<EntailmentRelation> edges;
 	Map<String,String> nodeTextById;
 	
-	public GoldStandardEdgesLoader(boolean includeFragmentGraphEdges) {
+	public GoldStandardEdgesLoader() {
 		edges = new HashSet<EntailmentRelation>();
 		nodeTextById = new HashMap<String,String>(); //[id] [text]
 	}

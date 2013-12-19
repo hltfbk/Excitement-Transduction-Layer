@@ -49,7 +49,7 @@ public class EvaluatorGraphMerger {
 	}
 	
 	public static EvaluationMeasures evaluate(Set<EntailmentRelation> goldStandardEdges, String goldStandardAnnotationsDirectory, boolean includeFragmentGraphEdges) throws GraphEvaluatorException {
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(includeFragmentGraphEdges);
+		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
 		loader.addAllAnnotations(goldStandardAnnotationsDirectory);
 		return evaluate(goldStandardEdges, loader.getEdges(), includeFragmentGraphEdges);
 	}

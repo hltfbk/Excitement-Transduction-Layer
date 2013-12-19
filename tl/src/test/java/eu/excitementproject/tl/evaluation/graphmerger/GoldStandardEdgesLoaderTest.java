@@ -19,13 +19,13 @@ public class GoldStandardEdgesLoaderTest {
 
 	@Test
 	public void test() {
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(true);
+		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
 		try {
-			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_example");
-//			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_blind");
+//			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_example");
+			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_blind");
 //			System.out.println("\nLoaded "+loader.edges.size()+ " edges.");
 
-			loader = new GoldStandardEdgesLoader(false);
+			loader = new GoldStandardEdgesLoader();
 			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";			
 //			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/email0020.lost.xml";			
 //			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/email0020.xml";			
