@@ -23,7 +23,6 @@ import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
@@ -39,12 +38,10 @@ public class GoldStandardEdgesLoader {
 	
 	Set<EntailmentRelation> edges;
 	Map<String,String> nodeTextById;
-	boolean includeFragmentGraphEdges;
 	
 	public GoldStandardEdgesLoader(boolean includeFragmentGraphEdges) {
 		edges = new HashSet<EntailmentRelation>();
 		nodeTextById = new HashMap<String,String>(); //[id] [text]
-		this.includeFragmentGraphEdges = includeFragmentGraphEdges;
 	}
 	
 
@@ -75,24 +72,25 @@ public class GoldStandardEdgesLoader {
 							}
 						}
 					}
-					if (includeFragmentGraphEdges){
-						// if fragment graph edges should be included - go to the corresponding "FragmentGraphs" folder and load all the graphs
-						File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
-						if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-							System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
-							for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
-								if (annotationFile.getName().endsWith(".xml")){
-									addAnnotationsFromFile(annotationFile.getPath());
-									try {
-										ClusterStatistics.processCluster(annotationFile);
-									} catch (ParserConfigurationException | SAXException | IOException e) {							
-										e.printStackTrace();
-									}
+					
+					// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
+					// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
+					File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+					if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+						System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+						for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+							if (annotationFile.getName().endsWith(".xml")){
+								addAnnotationsFromFile(annotationFile.getPath());
+								try {
+									ClusterStatistics.processCluster(annotationFile);
+								} catch (ParserConfigurationException | SAXException | IOException e) {							
+									e.printStackTrace();
 								}
-							}							
-						}
-						else throw new GraphEvaluatorException("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
+							}
+						}							
 					}
+					else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
+					
 				}
 			}
 		}
@@ -168,7 +166,7 @@ public class GoldStandardEdgesLoader {
 		s+="}";	
 		return s;
 	}
-	
+			
 	public EntailmentGraphRaw getRawGraph(){
 		EntailmentGraphRaw g = new EntailmentGraphRaw();
 		for (String v : nodeTextById.values()){
