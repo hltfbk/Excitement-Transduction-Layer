@@ -60,6 +60,28 @@ public class GoldStandardEdgesLoader {
 				// get sub-directories
 				File clusterAnnotationDir = new File(mainAnnotationsDir+"/"+object);
 				if (clusterAnnotationDir.isDirectory()){
+					// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
+					// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
+					File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+					if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+						System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+						int fgid=1;
+						for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+							if (annotationFile.getName().endsWith(".xml")){
+								System.out.println("Fragment graph # "+fgid);
+								try {
+									ClusterStatistics.processCluster(annotationFile);
+								} catch (ParserConfigurationException | SAXException | IOException e) {							
+									e.printStackTrace();
+								}
+								addAnnotationsFromFile(annotationFile.getPath());
+								fgid++;
+							}
+						}							
+					}
+					else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
+
+					// now load merge-graph annotations	
 					// each sub-directory should contain a single xml file with annotations
 					for (File annotationFile : clusterAnnotationDir.listFiles()){
 						if (annotationFile.getName().endsWith(".xml")){
@@ -71,26 +93,7 @@ public class GoldStandardEdgesLoader {
 								e.printStackTrace();
 							}
 						}
-					}
-					
-					// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
-					// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
-					File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
-					if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-						System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
-						for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
-							if (annotationFile.getName().endsWith(".xml")){
-								addAnnotationsFromFile(annotationFile.getPath());
-								try {
-									ClusterStatistics.processCluster(annotationFile);
-								} catch (ParserConfigurationException | SAXException | IOException e) {							
-									e.printStackTrace();
-								}
-							}
-						}							
-					}
-					else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
-					
+					}									
 				}
 			}
 		}
@@ -119,7 +122,8 @@ public class GoldStandardEdgesLoader {
 				       		Node child = xmlChildNodes.item(i);
 				       		if (child.getNodeName().equals("original_text")){
 							   	String text = child.getTextContent();
-				       			nodeTextById.put(id, text);
+				       			nodeTextById.put(id, text);				       			
+				       			if (id.endsWith("_0")) System.out.println(text);
 				       			System.out.println("\tnode\t"+id);
 				       		}
 				       	}
@@ -143,8 +147,8 @@ public class GoldStandardEdgesLoader {
 							continue;
 							//throw new GraphEvaluatorException("Annotation file "+xmlAnnotationFilename+" contains and edge with target node "+ tgt+ ", which is not presented in the nodes list");
 						}
-						EntailmentUnit sourceUnit = new EntailmentUnit(nodeTextById.get(src), -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
-						EntailmentUnit targetUnit = new EntailmentUnit(nodeTextById.get(tgt), -1, "", "unknown"); 
+						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
+						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt)); 
 						edges.add(new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), EdgeType.MANUAL_ANNOTATION));
 					}
 				} catch (ParserConfigurationException | SAXException | IOException e) {
@@ -170,7 +174,7 @@ public class GoldStandardEdgesLoader {
 	public EntailmentGraphRaw getRawGraph(){
 		EntailmentGraphRaw g = new EntailmentGraphRaw();
 		for (String v : nodeTextById.values()){
-			g.addVertex(new EntailmentUnit(v, -1, "", "unknown")); // the EUs should be the same as created when adding edges to the "edges" attribute of the class 
+			g.addVertex(getGoldStandardNode(v)); // the EUs should be the same as created when adding edges to the "edges" attribute of the class 
 		}
 		for (EntailmentRelation e : edges){
 			g.addEdgeByInduction(e.getSource(), e.getTarget(), DecisionLabel.Entailment, 1.0);
@@ -181,5 +185,9 @@ public class GoldStandardEdgesLoader {
 	public EntailmentGraphCollapsed getCollapsedGraph() throws GraphOptimizerException {
 		SimpleGraphOptimizer opt = new SimpleGraphOptimizer();
 		return opt.optimizeGraph(getRawGraph(),0.0);
+	}
+	
+	protected EntailmentUnit getGoldStandardNode(String text){
+		return new EntailmentUnit(text, -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
 	}
 }
