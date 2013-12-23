@@ -16,7 +16,7 @@ public class EvaluatorGraphOptimizerTest {
 	@Test
 	public void test() {
 		boolean includeFragmentGraphEdges = false;
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(includeFragmentGraphEdges);
+		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
 		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
 		try {
 			loader.addAnnotationsFromFile(annotationFilename);

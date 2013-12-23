@@ -410,6 +410,9 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 */
 	public String toDOT(){
 		String s = "digraph collapsedGraph {\n";
+		for (EquivalenceClass node : this.vertexSet()){
+			s+=node.toDOT();
+		}		
 		for (EntailmentRelationCollapsed edge : this.edgeSet()){
 			s+=edge.toDOT();
 		}
