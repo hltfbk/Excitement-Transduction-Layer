@@ -206,7 +206,7 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 				 doc = new Document(); // make a new, empty document	
 				 String label = ec.getLabel();
 				 for (EntailmentUnit eu : ec.getEntailmentUnits()) { //index entailment units
-					 String euText = eu.getTextWithoutDoulbeSpaces();
+					 String euText = eu.getTextWithoutDoubleSpaces();
 					 doc.add(new TextField("euText", euText, Store.YES));
 					 doc.add(new TextField("label", label, Store.YES));
 				 }
