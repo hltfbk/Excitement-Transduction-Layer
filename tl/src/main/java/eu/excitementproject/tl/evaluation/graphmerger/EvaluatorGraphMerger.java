@@ -25,11 +25,13 @@ public class EvaluatorGraphMerger {
 	 */
 	public static EvaluationMeasures evaluate(Set<EntailmentRelation> goldStandardEdges, Set<EntailmentRelation> evaluatedGraphEdges, boolean includeFragmentGraphEdges){
 		
-		//TODO check if both GS and evaluated relations are defined over exactly the same list of nodes - if not, throw exception
-		
+		//TODO Transitive closure: GS fragment graphs contain closure edges. Understand whether GS merge phase has closure edges as well. If yes - need to evaluate our graphs with transitive closure. If not - need to add closure edges when generating fragment graphs.
+		// e.g. GS edge "Cannot retrieve tickets at Moonport station with card --> Cannot retrieve tickets" is not found in the raw graph
+				
 		double correctlyAddedEdges = 0.0;
 		double excludedEdges = 0.0;
-		for (EntailmentRelation gsEdge : goldStandardEdges){
+		for (EntailmentRelation gsEdge : goldStandardEdges){	
+			boolean correct = false;
 			for (EntailmentRelation workEdge : evaluatedGraphEdges){
 				if (!includeFragmentGraphEdges){
 					if (workEdge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) {
@@ -37,8 +39,14 @@ public class EvaluatorGraphMerger {
 						continue;	// don't check FRAGMENT_GRAPH edges (exclude from the evaluations)					
 					}
 				}
-				if (gsEdge.isSameSourceAndTarget(workEdge)) correctlyAddedEdges++;
+				if (gsEdge.isSameSourceAndTarget(workEdge)) {
+					System.out.println("+\t"+gsEdge);
+					correctlyAddedEdges++;
+					correct = true;
+					continue; // if found this gs edge - go look for the next one
+				}				
 			}
+			if (!correct) System.out.println("-\t"+gsEdge);
 		}
 		
 		EvaluationMeasures eval = new EvaluationMeasures();

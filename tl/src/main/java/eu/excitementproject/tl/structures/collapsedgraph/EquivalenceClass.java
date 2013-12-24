@@ -167,7 +167,7 @@ public class EquivalenceClass {
 		String s = "\""+label.trim().replaceAll(" +", " ")+"\" ("+this.getInteractionIds().size()+" interactions) :\n";
 		int i=1;
 		for (EntailmentUnit eu : entailmentUnits){
-			s+="\t"+i+")\""+eu.getTextWithoutDoulbeSpaces()+"\"\n";
+			s+="\t"+i+")\""+eu.getTextWithoutDoubleSpaces()+"\"\n";
 			i++;
 		}
 		s+="\n";
@@ -181,7 +181,7 @@ public class EquivalenceClass {
 		String s = "\""+label.trim().replaceAll(" +", " ")+" (Total: "+this.getInteractionIds().size()+" interaction(s)):";
 		for (EntailmentUnit eu : entailmentUnits){
 			//if (eu.getText().equals(label)) continue;
-			s+="\\n"+eu.getTextWithoutDoulbeSpaces()+" ("+eu.getInteractionIds().size()+" interaction(s))";;			
+			s+="\\n"+eu.getTextWithoutDoubleSpaces()+" ("+eu.getInteractionIds().size()+" interaction(s))";;			
 		}
 		s+="\"";
 		return s;

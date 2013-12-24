@@ -218,7 +218,7 @@ public class EntailmentUnit{
 		return true;
 	}
 
-	public String getTextWithoutDoulbeSpaces(){
+	public String getTextWithoutDoubleSpaces(){
 		return this.getText().trim().replaceAll(" +", " ");
 	}
 

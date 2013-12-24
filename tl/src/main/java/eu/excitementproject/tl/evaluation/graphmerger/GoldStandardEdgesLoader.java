@@ -36,26 +36,38 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidenc
  */
 public class GoldStandardEdgesLoader {
 	
-	Set<EntailmentRelation> edges;
-	Map<String,String> nodeTextById;
+	// TODO Verify why "Food could be better --> Food could be better" is loaded from the GS, and even more than once
 	
+	Map<String,EntailmentRelation> edges;
+	Map<String,String> nodeTextById;
+	Set<String> nodesOfInterest;
+	
+	/** Loads all GS edges
+	 */
 	public GoldStandardEdgesLoader() {
-		edges = new HashSet<EntailmentRelation>();
-		nodeTextById = new HashMap<String,String>(); //[id] [text]
+		this(null);
 	}
 	
+	/** Loads GS edges connecting nodes of interest
+	 * @param nodesOfInterest - Used to only load edges between the nodes in this set. Other edges will be ignored. 
+	 */
+	public GoldStandardEdgesLoader(Set<String> nodesOfInterest) {
+		edges = new HashMap<String,EntailmentRelation>();
+		nodeTextById = new HashMap<String,String>(); //[id] [text]
+		this.nodesOfInterest = nodesOfInterest;
+	}
 
 	/**
 	 * @return the edges
 	 */
 	public Set<EntailmentRelation> getEdges() {
-		return edges;
+		return new HashSet<EntailmentRelation>(edges.values());
 	}
 
 	public void addAllAnnotations(String annotationsFolder) throws GraphEvaluatorException{
 		File mainAnnotationsDir = new File(annotationsFolder);
 		if (mainAnnotationsDir.isDirectory()){
-			System.out.println(annotationsFolder+" is a directory");			
+//			System.out.println(annotationsFolder);			
 			for (String object : mainAnnotationsDir.list()){
 				// get sub-directories
 				File clusterAnnotationDir = new File(mainAnnotationsDir+"/"+object);
@@ -64,17 +76,17 @@ public class GoldStandardEdgesLoader {
 					// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
 					File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
 					if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-						System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+//						System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
 						int fgid=1;
 						for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
 							if (annotationFile.getName().endsWith(".xml")){
-								System.out.println("Fragment graph # "+fgid);
+/*								System.out.println("Fragment graph # "+fgid);
 								try {
 									ClusterStatistics.processCluster(annotationFile);
 								} catch (ParserConfigurationException | SAXException | IOException e) {							
 									e.printStackTrace();
 								}
-								addAnnotationsFromFile(annotationFile.getPath());
+*/								addAnnotationsFromFile(annotationFile.getPath());
 								fgid++;
 							}
 						}							
@@ -85,14 +97,14 @@ public class GoldStandardEdgesLoader {
 					// each sub-directory should contain a single xml file with annotations
 					for (File annotationFile : clusterAnnotationDir.listFiles()){
 						if (annotationFile.getName().endsWith(".xml")){
-							System.out.println("Loading annotations from file "+annotationFile);
+//							System.out.println("Loading annotations from file "+annotationFile);
 							addAnnotationsFromFile(annotationFile.getPath());
-							try {
+/*							try {
 								ClusterStatistics.processCluster(annotationFile);
 							} catch (ParserConfigurationException | SAXException | IOException e) {							
 								e.printStackTrace();
 							}
-						}
+*/						}
 					}									
 				}
 			}
@@ -122,9 +134,12 @@ public class GoldStandardEdgesLoader {
 				       		Node child = xmlChildNodes.item(i);
 				       		if (child.getNodeName().equals("original_text")){
 							   	String text = child.getTextContent();
-				       			nodeTextById.put(id, text);				       			
+				       			if (nodesOfInterest!=null){
+				       				if (!nodesOfInterest.contains(text)) continue; // don't add nodes which are not of interest, if nodesOfInterest is not null
+				       			}
+							   	nodeTextById.put(id, text);				       			
 				       			//if (id.endsWith("_0")) System.out.println(text);
-				       			System.out.println("\t"+id);
+//				       			System.out.println("\t"+id);
 				       		}
 				       	}
 					}   										
@@ -137,19 +152,24 @@ public class GoldStandardEdgesLoader {
 						Element erElement = (Element) er;
 						String src = erElement.getAttribute("source");
 						if (!nodeTextById.containsKey(src)) {
-							System.err.println("Annotation file "+xmlAnnotationFilename+" contains an edge with source node "+ src+ ", which is not presented in the nodes list");
+							// if nodesOfInterest==null, then we have a buggy behavior of the annotation file
+							// if nodesOfInterest!=null, then this is likely to be because src is not one of the nodesOfInterest, so no error message needed
+							if (nodesOfInterest==null) System.err.println("Annotation file "+xmlAnnotationFilename+" contains an edge with source node "+ src+ ", which is not presented in the nodes list");
 							continue;
-							//throw new GraphEvaluatorException("Annotation file "+xmlAnnotationFilename+" contains and edge with source node "+ src+ ", which is not presented in the nodes list");
 						}
 						String tgt = erElement.getAttribute("target");
 						if (!nodeTextById.containsKey(tgt)) {
-							System.err.println("Annotation file "+xmlAnnotationFilename+" contains an edge with target node "+ tgt+ ", which is not presented in the nodes list");
+							if (nodesOfInterest==null) System.err.println("Annotation file "+xmlAnnotationFilename+" contains an edge with target node "+ tgt+ ", which is not presented in the nodes list");
 							continue;
-							//throw new GraphEvaluatorException("Annotation file "+xmlAnnotationFilename+" contains and edge with target node "+ tgt+ ", which is not presented in the nodes list");
 						}
+						
+						if (nodeTextById.get(src).equals(nodeTextById.get(tgt))) continue; // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
+						// TODO: as soon as if we have unification of statements (e.g. "I didn't like the food" == "we didn't like the food" etc), need to replace equals() with the new method 
+
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
-						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt)); 
-						edges.add(new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), EdgeType.MANUAL_ANNOTATION));
+						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
+						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit);
+						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instaed of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
 					}
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());
@@ -164,7 +184,7 @@ public class GoldStandardEdgesLoader {
 	 */
 	public String toDOT(){
 		String s = "digraph gsGraph {\n";
-		for (EntailmentRelation edge : edges){
+		for (EntailmentRelation edge : edges.values()){
 			s+=edge.toDOT();
 		}
 		s+="}";	
@@ -176,7 +196,7 @@ public class GoldStandardEdgesLoader {
 		for (String v : nodeTextById.values()){
 			g.addVertex(getGoldStandardNode(v)); // the EUs should be the same as created when adding edges to the "edges" attribute of the class 
 		}
-		for (EntailmentRelation e : edges){
+		for (EntailmentRelation e : edges.values()){
 			g.addEdgeByInduction(e.getSource(), e.getTarget(), DecisionLabel.Entailment, 1.0);
 		}
 		return g;
@@ -189,5 +209,13 @@ public class GoldStandardEdgesLoader {
 	
 	protected EntailmentUnit getGoldStandardNode(String text){
 		return new EntailmentUnit(text, -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
+	}
+	
+	protected EntailmentRelation getGoldStandardEdge(EntailmentUnit sourceUnit, EntailmentUnit targetUnit){
+		return new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), EdgeType.MANUAL_ANNOTATION);
+	}
+	
+	public Set<String> getNodes(){
+		return new HashSet<String>(nodeTextById.values());
 	}
 }

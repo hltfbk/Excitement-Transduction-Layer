@@ -38,7 +38,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 			}
 			textToCompleteStatementId.put(nodeTextById.get(id), getCompleteStamentId(id)); //for every node, fill in the map of node text -> complete statement id			
 		}
-		for (EntailmentRelation e : edges){	
+		for (EntailmentRelation e : edges.values()){	
 			String srcRefId = textToCompleteStatementId.get(e.getSource().getText());
 			String tgtRefId = textToCompleteStatementId.get(e.getTarget().getText());
 			g.addEdgeByInduction(getGoldStandardNode(nodeTextById.get(srcRefId)), getGoldStandardNode(nodeTextById.get(tgtRefId)), DecisionLabel.Entailment, 1.0);

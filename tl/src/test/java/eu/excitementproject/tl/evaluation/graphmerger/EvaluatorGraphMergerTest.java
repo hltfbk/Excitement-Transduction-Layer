@@ -4,13 +4,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import eu.excitementproject.tl.demo.DemoUseCase1NICEEnglish;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 
 public class EvaluatorGraphMergerTest {
 
 	@Test
 	public void test() {
-		boolean includeFragmentGraphEdges = false;
+		boolean includeFragmentGraphEdges = true;
+		
+		DemoUseCase1NICEEnglish demoEN = new DemoUseCase1NICEEnglish();
+		demoEN.inspectResults();
+		
 		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
 		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
 		try {
