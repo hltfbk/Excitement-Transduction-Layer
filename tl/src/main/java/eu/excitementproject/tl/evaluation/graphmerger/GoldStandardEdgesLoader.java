@@ -123,8 +123,8 @@ public class GoldStandardEdgesLoader {
 				       		if (child.getNodeName().equals("original_text")){
 							   	String text = child.getTextContent();
 				       			nodeTextById.put(id, text);				       			
-				       			if (id.endsWith("_0")) System.out.println(text);
-				       			System.out.println("\tnode\t"+id);
+				       			//if (id.endsWith("_0")) System.out.println(text);
+				       			System.out.println("\t"+id);
 				       		}
 				       	}
 					}   										

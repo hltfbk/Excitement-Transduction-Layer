@@ -21,9 +21,8 @@ public class GoldStandardEdgesLoaderTest {
 	public void test() {
 		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
 		try {
-			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_example");
+			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open");
 
-			/*			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_big");
 			try {
 				EntailmentGraphRaw gr = loader.getRawGraph();
 				gr.toDOT("./src/test/resources/WP2_gold_standard_annotation/_big/raw_full.dot");
@@ -32,13 +31,9 @@ public class GoldStandardEdgesLoaderTest {
 			} catch (IOException | GraphOptimizerException e) {						
 				e.printStackTrace();
 			}				
-*/
-//			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_blind");
 			
 			loader = new GoldStandardEdgesLoader();
 			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";			
-//			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/email0020.lost.xml";			
-//			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/email0020.xml";			
 			loader.addAnnotationsFromFile(annotationFilename);
 			try {
 				ClusterStatistics.processCluster(new File(annotationFilename));
