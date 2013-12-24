@@ -19,19 +19,29 @@ public class Experiment extends AbstractExperiment {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Experiment e = new Experiment("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 15,
+
+		Experiment e = new Experiment(
+//				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
+//				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
+				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
+
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 19,
 				"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
 		
+		
 		String gsAnnotationsDir = "./src/test/resources/WP2_gold_standard_annotation/NICE_open";
 		boolean includeFragmentGraphEdges = false;
 		EntailmentGraphRaw gr = e.buildRawGraph();
-		EvaluationMeasures res = e.evaluateRawGraph(gr, gsAnnotationsDir, includeFragmentGraphEdges);
-		System.out.println(res.toString());
 		
+		//TODO Verify why FG edges are not found in the graph. Is it only for closure edges? 
+	//	System.out.println(gr);
+		for (double confidenceThreshold=0.5; confidenceThreshold<1; confidenceThreshold+=0.05){
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, gr, gsAnnotationsDir, includeFragmentGraphEdges);
+			System.out.println(confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+		}
 	}
 
 }

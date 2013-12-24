@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.xml.transform.TransformerException;
 
+import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
@@ -21,6 +22,7 @@ import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 public abstract class AbstractExperiment extends UseCaseOneDemo {
@@ -46,6 +48,16 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		}
 	}
 	
+	public EntailmentGraphRaw buildRawGraph(Double thresould) {
+		try {
+			return this.useOne.buildRawGraph(this.docs);
+		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
+				ModifierAnnotatorException | IOException e) {
+			e.printStackTrace();	
+			return null;
+		}
+	}
+
 	public EntailmentGraphCollapsed buildCollapsedGraph() {
 		try {
 			return this.useOne.buildCollapsedGraph(this.docs);
@@ -94,5 +106,30 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		loadGS(rawGraph, gsAnnotationsDir);
 		//TODO Here preliminary cleaning will also be needed, unless we fix the inconsistency 		
 		return EvaluatorGraphOptimizer.evaluateDecollapsedGraph(gsloader.getEdges(), collapsedGraph, includeFragmentGraphEdges);
+	}
+	
+	/** Evaluate raw graph, where only edges with confidence > threshold are left
+	 * @param confidenceThreshold
+	 * @param graph
+	 * @param gsAnnotationsDir
+	 * @param includeFragmentGraphEdges
+	 * @return
+	 */
+	public EvaluationMeasures evaluateRawGraph(double confidenceThreshold, EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){			
+		// remove edges with confidence < threshold
+		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
+		for (EntailmentRelation workEdge : graph.edgeSet()){
+			if (!workEdge.getLabel().equals(DecisionLabel.Entailment)){
+				workEdgesToRemove.add(workEdge);
+			}
+			else{ // if this is an "entailment" edge
+				if(workEdge.getConfidence()<confidenceThreshold) {
+					workEdgesToRemove.add(workEdge);
+				}
+			}
+		}
+		graph.removeAllEdges(workEdgesToRemove);
+		// evaluate the resulting graph
+		return evaluateRawGraph(graph, gsAnnotationsDir, includeFragmentGraphEdges);
 	}
 }

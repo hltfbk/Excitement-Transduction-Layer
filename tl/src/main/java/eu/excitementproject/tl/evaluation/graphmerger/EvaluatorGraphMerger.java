@@ -34,7 +34,7 @@ public class EvaluatorGraphMerger {
 		double correctlyAddedEdges = 0.0;
 		Set<String> excludedEdges = new HashSet<String>();
 		for (EntailmentRelation gsEdge : goldStandardEdges){	
-			boolean correct = false;
+//			boolean correct = false;
 			for (EntailmentRelation workEdge : evaluatedGraphEdges){
 				if (!includeFragmentGraphEdges){
 					if (workEdge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) {
@@ -43,13 +43,13 @@ public class EvaluatorGraphMerger {
 					}
 				}
 				if (gsEdge.isSameSourceAndTarget(workEdge)) {
-					System.out.println("+\t"+gsEdge);
+//					System.out.println("+\t"+gsEdge);
 					correctlyAddedEdges++;
-					correct = true;
+//					correct = true;
 					continue; // if found this gs edge - go look for the next one
 				}				
 			}
-			if (!correct) System.out.println("-\t"+gsEdge);
+//			if (!correct) System.out.println("-\t"+gsEdge);
 		}
 		
 		EvaluationMeasures eval = new EvaluationMeasures();
