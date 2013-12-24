@@ -20,14 +20,14 @@ public class Experiment extends AbstractExperiment {
 	 */
 	public static void main(String[] args) {
 		Experiment e = new Experiment("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 10,
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 15,
 				"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
 		
 		String gsAnnotationsDir = "./src/test/resources/WP2_gold_standard_annotation/NICE_open";
-		boolean includeFragmentGraphEdges = true;
+		boolean includeFragmentGraphEdges = false;
 		EntailmentGraphRaw gr = e.buildRawGraph();
 		EvaluationMeasures res = e.evaluateRawGraph(gr, gsAnnotationsDir, includeFragmentGraphEdges);
 		System.out.println(res.toString());

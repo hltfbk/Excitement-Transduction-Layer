@@ -21,7 +21,6 @@ import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 public abstract class AbstractExperiment extends UseCaseOneDemo {

@@ -36,8 +36,6 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidenc
  */
 public class GoldStandardEdgesLoader {
 	
-	// TODO Verify why "Food could be better --> Food could be better" is loaded from the GS, and even more than once
-	
 	Map<String,EntailmentRelation> edges;
 	Map<String,String> nodeTextById;
 	Set<String> nodesOfInterest;

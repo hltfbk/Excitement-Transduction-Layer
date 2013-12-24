@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.evaluation.graphmerger;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
@@ -27,15 +28,17 @@ public class EvaluatorGraphMerger {
 		
 		//TODO Transitive closure: GS fragment graphs contain closure edges. Understand whether GS merge phase has closure edges as well. If yes - need to evaluate our graphs with transitive closure. If not - need to add closure edges when generating fragment graphs.
 		// e.g. GS edge "Cannot retrieve tickets at Moonport station with card --> Cannot retrieve tickets" is not found in the raw graph
-				
+		
+		// TODO consider adding a verification of whether GS and work graph have the same set of nodes
+		
 		double correctlyAddedEdges = 0.0;
-		double excludedEdges = 0.0;
+		Set<String> excludedEdges = new HashSet<String>();
 		for (EntailmentRelation gsEdge : goldStandardEdges){	
 			boolean correct = false;
 			for (EntailmentRelation workEdge : evaluatedGraphEdges){
 				if (!includeFragmentGraphEdges){
 					if (workEdge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) {
-						excludedEdges++;
+						excludedEdges.add(workEdge.toString()); 
 						continue;	// don't check FRAGMENT_GRAPH edges (exclude from the evaluations)					
 					}
 				}
@@ -50,8 +53,8 @@ public class EvaluatorGraphMerger {
 		}
 		
 		EvaluationMeasures eval = new EvaluationMeasures();
-		eval.setPrecision(correctlyAddedEdges/(evaluatedGraphEdges.size()-excludedEdges));
-		eval.setRecall(correctlyAddedEdges/(goldStandardEdges.size()-excludedEdges)); // assume that all fragment graph edges are present also in the gold standard
+		eval.setPrecision(correctlyAddedEdges/(evaluatedGraphEdges.size()-excludedEdges.size()));
+		eval.setRecall(correctlyAddedEdges/(goldStandardEdges.size()-excludedEdges.size())); // assume that all fragment graph edges are present also in the gold standard
 		
 		return eval;
 	}
