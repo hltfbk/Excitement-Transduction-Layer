@@ -48,6 +48,7 @@ public class UseCaseOneDemo {
 	protected EDABasic<?> eda;
 	protected UseCaseOneRunnerPrototype useOne;
 	protected EntailmentGraphCollapsed graph;
+	protected List<JCas> docs;
 	
 	public UseCaseOneDemo(String configFileName, String dataDir, int fileNumberLimit, String outputFolder, Class<?> lapClass, Class<?> edaClass) {
 		
@@ -59,7 +60,7 @@ public class UseCaseOneDemo {
 		try {
 			configFile = new File(configFileName);
 		
-			List<JCas> docs = loadData(dataDir, fileNumberLimit);
+			docs = loadData(dataDir, fileNumberLimit);
 
 			initializeLap(lapClass);
 			initializeEDA(edaClass);
@@ -150,8 +151,7 @@ public class UseCaseOneDemo {
 			e.printStackTrace();
 		}
 	}
-	
-
+		
 	public static void main(String[] argv) {
 		
 		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
