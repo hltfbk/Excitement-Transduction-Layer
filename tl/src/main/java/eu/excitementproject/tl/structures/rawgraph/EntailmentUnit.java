@@ -180,6 +180,21 @@ public class EntailmentUnit{
 		mentions.add(entailmentUnitMention);
 		completeStatementTexts.add(completeStatementText);
 	}
+	
+	/** Returns true if the given text is the text of one of the mentions. 
+	 * Also returns true if the text is "relevant" to the EU, i.e. if the text is new, but is a mention of the same entailment unit 
+	 * Currently the 2nd is achieved by using "ignore case" for comparison of the texts.
+	 * As soon as if we have better unification of statements (e.g. "I didn't like the food" == "we didn't like the food" etc == "I do not like your food" etc), it should be done within this method						 
+	 * @param text
+	 * @return
+	 */
+	public boolean isTextIncludedOrRelevant(String text){
+		if (this.text.equalsIgnoreCase(text)) return true;		
+		for (String mentionText : this.getMentionTexts()){
+			if (mentionText.equalsIgnoreCase(text)) return true; 
+		}
+		return false;
+	}
 
 	
 	/******************************************************************************************

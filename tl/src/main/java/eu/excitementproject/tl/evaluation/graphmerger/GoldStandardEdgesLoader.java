@@ -161,10 +161,9 @@ public class GoldStandardEdgesLoader {
 							continue;
 						}
 						
-						if (nodeTextById.get(src).equals(nodeTextById.get(tgt))) continue; // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
-						// TODO: as soon as if we have unification of statements (e.g. "I didn't like the food" == "we didn't like the food" etc), need to replace equals() with the new method 
 
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
+						if (sourceUnit.isTextIncludedOrRelevant(nodeTextById.get(tgt))) continue; // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
 						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit);
 						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instaed of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
@@ -206,6 +205,7 @@ public class GoldStandardEdgesLoader {
 	}
 	
 	protected EntailmentUnit getGoldStandardNode(String text){
+	//	System.out.println("<<"+text+">>");
 		return new EntailmentUnit(text, -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
 	}
 	
