@@ -20,20 +20,19 @@ public class NiceDemoExperiment  {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-/*		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
+		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
         String inputsDir = "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_3";
         String outputFolder = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3";
                                        
-//        int fileNumberLimit = getNumberOfFilesFromInputsDir(inputsDir);
         int fileNumberLimit = 33;
         
         UseCaseOneDemo demoEN = new UseCaseOneDemo(configFileName, inputsDir, fileNumberLimit, outputFolder,
         		TreeTaggerEN.class,
 				MaxEntClassificationEDA.class);
         demoEN.inspectResults();
-        */
+        
 
-		String o1 = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3_sort_out1/";
+		String o1 = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3/";
 		String o2 = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3_sort_out3/";
 		try {
 			EntailmentGraphRaw out1 = new EntailmentGraphRaw(new File(o1+"raw_graph.xml"));

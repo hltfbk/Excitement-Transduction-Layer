@@ -1,5 +1,6 @@
 package  eu.excitementproject.tl.structures.collapsedgraph;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -127,6 +128,20 @@ public class EquivalenceClass {
 	}
 	
 
+	/******************************************************************************************
+	 * COMPARATORS
+	 * ****************************************************************************************/
+
+	/**
+	 * Comparator to sort equivalence classes in descending order by their number of interactions
+	 */
+	public static class DescendingNumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
+	    @Override
+	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
+	        return -1*Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
+	    }
+	}
+	
 	/******************************************************************************************
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/

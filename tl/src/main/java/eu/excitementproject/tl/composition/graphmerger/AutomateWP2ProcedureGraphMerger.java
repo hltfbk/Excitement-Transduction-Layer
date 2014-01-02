@@ -40,7 +40,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
 
 		List<FragmentGraph> fg = new LinkedList<FragmentGraph>(fragmentGraphs);
-		Collections.sort(fg, new FGComparator());
+		Collections.sort(fg, new FragmentGraph.CompleteStatementComparator());
 		// Iterate over the list of fragment graphs and merge them one by one
 		for (FragmentGraph fragmentGraph : fg){
 			workGraph=mergeGraphs(fragmentGraph, workGraph);
@@ -218,16 +218,5 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		}
 		return 0.0; // otherwise - return 0
 	}
-
-	/**
-	 * Comparator to sort fragment graphs 
-	 */
-	public class FGComparator implements Comparator<FragmentGraph> {
-	    @Override
-	    public int compare(FragmentGraph gA, FragmentGraph gB) {
-	    	return gA.getCompleteStatement().getText().compareTo(gB.getCompleteStatement().getText());
-	    }
-	}
-
 
 }
