@@ -90,21 +90,23 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		GoldStandardAnalyzer anal = new GoldStandardAnalyzer(true);			
+		GoldStandardAnalyzer anal = new GoldStandardAnalyzer(false);			
 		try {
-			anal.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/_big");
+			anal.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open");
 			EntailmentGraphRaw gr = anal.getRawGraph();
-			gr.toDOT("./src/test/resources/WP2_gold_standard_annotation/_big/rawCS.dot");
+			gr.toDOT("./src/test/resources/WP2_gold_standard_annotation/NICE_open/rawCS.dot");
 			
-			System.out.println("Preparing CW clustrering input");
+/*			System.out.println("Preparing CW clustrering input");
 			anal.getCWClustererInput("./src/test/resources/WP2_gold_standard_annotation/_big");
 			System.out.println("Done");
-			
+*/			
 			EntailmentGraphCollapsed gc = anal.getCollapsedGraph();
-			gc.toDOT("./src/test/resources/WP2_gold_standard_annotation/_big/collapsedCS.dot");
+			gc.toDOT("./src/test/resources/WP2_gold_standard_annotation/NICE_open/collapsedCS.dot");
 		} catch (IOException | GraphOptimizerException | GraphEvaluatorException e) {						
 			e.printStackTrace();
 		}				
-	}	
+	}
+	
+	
 
 }

@@ -11,6 +11,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -40,6 +41,9 @@ public class GoldStandardEdgesLoader {
 	Map<String,String> nodeTextById;
 	Set<String> nodesOfInterest;
 	
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader");
+
+	
 	/** Loads all GS edges
 	 */
 	public GoldStandardEdgesLoader() {
@@ -65,7 +69,7 @@ public class GoldStandardEdgesLoader {
 	public void addAllAnnotations(String annotationsFolder) throws GraphEvaluatorException{
 		File mainAnnotationsDir = new File(annotationsFolder);
 		if (mainAnnotationsDir.isDirectory()){
-//			System.out.println(annotationsFolder);			
+			logger.debug("Loading GS annotations from folder "+annotationsFolder);			
 			for (String object : mainAnnotationsDir.list()){
 				// get sub-directories
 				File clusterAnnotationDir = new File(mainAnnotationsDir+"/"+object);
@@ -74,12 +78,12 @@ public class GoldStandardEdgesLoader {
 					// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
 					File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
 					if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-//						System.out.println("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+						logger.debug("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
 						int fgid=1;
 						for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
 							if (annotationFile.getName().endsWith(".xml")){
-/*								System.out.println("Fragment graph # "+fgid);
-								try {
+								logger.debug("Fragment graph # "+fgid);
+/*								try {
 									ClusterStatistics.processCluster(annotationFile);
 								} catch (ParserConfigurationException | SAXException | IOException e) {							
 									e.printStackTrace();
@@ -95,7 +99,7 @@ public class GoldStandardEdgesLoader {
 					// each sub-directory should contain a single xml file with annotations
 					for (File annotationFile : clusterAnnotationDir.listFiles()){
 						if (annotationFile.getName().endsWith(".xml")){
-//							System.out.println("Loading annotations from file "+annotationFile);
+							logger.debug("Loading annotations from file "+annotationFile);
 							addAnnotationsFromFile(annotationFile.getPath());
 /*							try {
 								ClusterStatistics.processCluster(annotationFile);
@@ -137,7 +141,7 @@ public class GoldStandardEdgesLoader {
 				       			}
 							   	nodeTextById.put(id, text);				       			
 				       			//if (id.endsWith("_0")) System.out.println(text);
-//				       			System.out.println("\t"+id);
+				       			logger.debug("\t"+id+"\t"+text);
 				       		}
 				       	}
 					}   										
@@ -152,12 +156,12 @@ public class GoldStandardEdgesLoader {
 						if (!nodeTextById.containsKey(src)) {
 							// if nodesOfInterest==null, then we have a buggy behavior of the annotation file
 							// if nodesOfInterest!=null, then this is likely to be because src is not one of the nodesOfInterest, so no error message needed
-							if (nodesOfInterest==null) System.err.println("Annotation file "+xmlAnnotationFilename+" contains an edge with source node "+ src+ ", which is not presented in the nodes list");
+							if (nodesOfInterest==null) logger.error("Annotation file "+xmlAnnotationFilename+" contains an edge with source node "+ src+ ", which is not presented in the nodes list");
 							continue;
 						}
 						String tgt = erElement.getAttribute("target");
 						if (!nodeTextById.containsKey(tgt)) {
-							if (nodesOfInterest==null) System.err.println("Annotation file "+xmlAnnotationFilename+" contains an edge with target node "+ tgt+ ", which is not presented in the nodes list");
+							if (nodesOfInterest==null) logger.error("Annotation file "+xmlAnnotationFilename+" contains an edge with target node "+ tgt+ ", which is not presented in the nodes list");
 							continue;
 						}
 						

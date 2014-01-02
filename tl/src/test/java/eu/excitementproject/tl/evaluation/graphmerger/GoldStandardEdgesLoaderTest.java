@@ -7,6 +7,8 @@ import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
@@ -19,18 +21,19 @@ public class GoldStandardEdgesLoaderTest {
 
 	@Test
 	public void test() {
+		Logger.getRootLogger().setLevel(Level.INFO); 
 		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
 		try {
 			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open");
 
-			try {
+	/*		try {
 				EntailmentGraphRaw gr = loader.getRawGraph();
 				gr.toDOT("./src/test/resources/WP2_gold_standard_annotation/_big/raw_full.dot");
 				EntailmentGraphCollapsed gc = loader.getCollapsedGraph();
 				gc.toDOT("./src/test/resources/WP2_gold_standard_annotation/_big/collapsed_full.dot");
 			} catch (IOException | GraphOptimizerException e) {						
 				e.printStackTrace();
-			}				
+			}		*/		
 			
 			loader = new GoldStandardEdgesLoader();
 			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";			
