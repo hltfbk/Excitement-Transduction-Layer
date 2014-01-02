@@ -5,12 +5,10 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
-import edu.mit.jwi.data.IClosable;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import gate.util.Out;
 
 /**
  * This class contains methods for evaluating graph merger results.
@@ -120,7 +118,7 @@ public class EvaluatorGraphMerger {
 		return eval;
 	}
 	
-	private static String getSourceAndTargetString(EntailmentRelation edge){
+	public static String getSourceAndTargetString(EntailmentRelation edge){
 		return edge.getSource().getTextWithoutDoubleSpaces()+" -> "+edge.getTarget().getTextWithoutDoubleSpaces();
 	}
 	
