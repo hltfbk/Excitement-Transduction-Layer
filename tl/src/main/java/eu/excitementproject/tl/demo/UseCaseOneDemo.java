@@ -97,8 +97,22 @@ public class UseCaseOneDemo {
 
 	private void initializeLap(Class<?> lapClass) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		// initialize the lap
-		Constructor<?> lapClassConstructor = lapClass.getConstructor();
-		LAPAccess lapAc = (LAPAccess) lapClassConstructor.newInstance();
+		LAPAccess lapAc = null;
+		if (lapClass.getName().contains("BIUFullLAP")){
+			Constructor<?> lapClassConstructor = lapClass.getConstructor(CommonConfig.class);
+			try {
+				config = new ImplCommonConfig(configFile);
+				lapAc = (LAPAccess) lapClassConstructor.newInstance(config);
+			} catch (ConfigurationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else{ // if not BIUFullLAP
+			Constructor<?> lapClassConstructor = lapClass.getConstructor();
+			lapAc = (LAPAccess) lapClassConstructor.newInstance();
+		}
+
 		try {
 			lap = new CachedLAPAccess(lapAc);
 		} catch (LAPException e) {
