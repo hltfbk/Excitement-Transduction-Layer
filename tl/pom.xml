@@ -86,6 +86,8 @@
 		<artifactId>prefuse</artifactId>
 		<version>beta-20071021</version>
 	</dependency>
+
+
   </dependencies>
   
     <repositories>

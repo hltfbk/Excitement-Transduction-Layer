@@ -190,7 +190,7 @@ public class EntailmentRelation extends DefaultEdge {
 		logger.info("Generating a cass for the pair: \n \tTEXT: " + source.getText() + "\n \tHYPOTHESIS: " + target.getText());
 		try {
 			
-			lap.annotateSingleTHPairCAS(source.getTextWithoutDoulbeSpaces(), target.getTextWithoutDoulbeSpaces(), lap.workJCas);
+			lap.annotateSingleTHPairCAS(source.getTextWithoutDoubleSpaces(), target.getTextWithoutDoubleSpaces(), lap.workJCas);
 			return lap.workJCas;
 		} catch (LAPException e) {
 			throw new EntailmentGraphRawException(e.getMessage());
@@ -208,7 +208,7 @@ public class EntailmentRelation extends DefaultEdge {
 	/** Returns a string with the edge in DOT format for outputting the graph
 	 * @return the generated string
 	 */	public String toDOT(){
-		String s = "\""+this.getSource().getTextWithoutDoulbeSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoulbeSpaces()+"\"";
+		String s = "\""+this.getSource().getTextWithoutDoubleSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoubleSpaces()+"\"";
 		s+= " [label="+this.getConfidence()+"]";
 		String color = "red";
 		if (this.getLabel().is(DecisionLabel.Entailment)) color="blue";
@@ -224,9 +224,10 @@ public class EntailmentRelation extends DefaultEdge {
 	 /** 
 	 * @param anotherEdge EntailmentRelation to compare with
 	 * @return true if the edge's source and target texts are the same as that of anotherEdge
+	 * Use getTextWithoutDoubleSpaces() method to get node's text, since gold standard fragment graphs hold node texts without double spaces
 	 */
 	public boolean isSameSourceAndTarget(EntailmentRelation anotherEdge){
-		 if ((this.getSource().getText().equals(anotherEdge.getSource().getText())) && (this.getTarget().getText().equals(anotherEdge.getTarget().getText()))) return true;		 
+		 if ((this.getSource().getTextWithoutDoubleSpaces().equals(anotherEdge.getSource().getTextWithoutDoubleSpaces())) && (this.getTarget().getTextWithoutDoubleSpaces().equals(anotherEdge.getTarget().getTextWithoutDoubleSpaces()))) return true;		 
 		 return false;
 	 }
 	 
@@ -266,5 +267,7 @@ public class EntailmentRelation extends DefaultEdge {
 	protected static TEDecision computeRandomTEdecision(RandomEDA eda){		
 		TEDecision edge = eda.process(null);
 		return edge;
-	}			
+	}	
+	
+	
 }

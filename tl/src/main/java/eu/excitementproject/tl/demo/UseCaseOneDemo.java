@@ -48,6 +48,7 @@ public class UseCaseOneDemo {
 	protected EDABasic<?> eda;
 	protected UseCaseOneRunnerPrototype useOne;
 	protected EntailmentGraphCollapsed graph;
+	protected List<JCas> docs;
 	
 	public UseCaseOneDemo(String configFileName, String dataDir, int fileNumberLimit, String outputFolder, Class<?> lapClass, Class<?> edaClass) {
 		
@@ -59,7 +60,7 @@ public class UseCaseOneDemo {
 		try {
 			configFile = new File(configFileName);
 		
-			List<JCas> docs = loadData(dataDir, fileNumberLimit);
+			docs = loadData(dataDir, fileNumberLimit);
 
 			initializeLap(lapClass);
 			initializeEDA(edaClass);
@@ -96,8 +97,22 @@ public class UseCaseOneDemo {
 
 	private void initializeLap(Class<?> lapClass) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		// initialize the lap
-		Constructor<?> lapClassConstructor = lapClass.getConstructor();
-		LAPAccess lapAc = (LAPAccess) lapClassConstructor.newInstance();
+		LAPAccess lapAc = null;
+		if (lapClass.getName().contains("BIUFullLAP")){
+			Constructor<?> lapClassConstructor = lapClass.getConstructor(CommonConfig.class);
+			try {
+				config = new ImplCommonConfig(configFile);
+				lapAc = (LAPAccess) lapClassConstructor.newInstance(config);
+			} catch (ConfigurationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else{ // if not BIUFullLAP
+			Constructor<?> lapClassConstructor = lapClass.getConstructor();
+			lapAc = (LAPAccess) lapClassConstructor.newInstance();
+		}
+
 		try {
 			lap = new CachedLAPAccess(lapAc);
 		} catch (LAPException e) {
@@ -150,8 +165,7 @@ public class UseCaseOneDemo {
 			e.printStackTrace();
 		}
 	}
-	
-
+		
 	public static void main(String[] argv) {
 		
 		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";

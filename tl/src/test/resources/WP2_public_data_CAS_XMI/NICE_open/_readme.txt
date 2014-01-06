@@ -1,0 +1,2 @@
+This folder was created by Lili and lists all xmi files with open data interactions, but in addition contains blind-test-set fragments from the same interactions. 
+Needs to be replaced with the correct CASes generated from the open-data fragment graphs only.

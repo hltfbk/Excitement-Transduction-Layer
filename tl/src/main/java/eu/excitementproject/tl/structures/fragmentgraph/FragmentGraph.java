@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -46,7 +47,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 
 /**
  * 
- * @author vivi@fbk
+ * @author vivi@fbk & Lili Kotlerman
  *
  *	Graph structure for a text fragment.
  *	We assume a text fragment is composed of a base statement (BS) plus a number of modifiers (M).
@@ -521,6 +522,15 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		}		 
   }
 	
+	/**
+	 * Comparator to sort fragment graphs by their complete statement texts 
+	 */
+	public static class CompleteStatementComparator implements Comparator<FragmentGraph> {
+	    @Override
+	    public int compare(FragmentGraph gA, FragmentGraph gB) {
+	    	return gA.getCompleteStatement().getText().compareTo(gB.getCompleteStatement().getText());
+	    }
+	}
 	
 	
 }

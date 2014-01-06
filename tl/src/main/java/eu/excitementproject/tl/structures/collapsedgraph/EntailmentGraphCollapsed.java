@@ -350,7 +350,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 				
 		List<EquivalenceClass> sortedNodes = new LinkedList<EquivalenceClass>();
 		sortedNodes.addAll(this.vertexSet());
-		Collections.sort(sortedNodes, new DescendingNumberOfInteractionsComparator());
+		Collections.sort(sortedNodes, new EquivalenceClass.DescendingNumberOfInteractionsComparator());
 		sortedNodes.subList(X, sortedNodes.size()).clear(); //remove all the elements with index starting at X (incusive)
 		return sortedNodes;
 	}
@@ -552,15 +552,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		return null;
 	}
 
-	/**
-	 * Comparator to sort equivalence classes in descending order by their number of interactions
-	 */
-	public class DescendingNumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
-	    @Override
-	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
-	        return -1*Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
-	    }
-	}
+
 	
 	/* (non-Javadoc)
 	 * @see org.jgrapht.graph.AbstractBaseGraph#addVertex(java.lang.Object)
