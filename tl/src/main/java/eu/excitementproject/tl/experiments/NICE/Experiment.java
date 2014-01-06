@@ -25,7 +25,7 @@ public class Experiment extends AbstractExperiment {
 	 */
 	public static void main(String[] args) {
 
-		Experiment eTIEpos = new Experiment(
+		/*			Experiment eTIEpos = new Experiment(
 //				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
 				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
@@ -35,7 +35,7 @@ public class Experiment extends AbstractExperiment {
 				MaxEntClassificationEDA.class
 				);
 		
-/*		
+	
 		Experiment eTIEparsed = new Experiment(
 				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
@@ -54,17 +54,17 @@ public class Experiment extends AbstractExperiment {
 				DKProSimilaritySimpleEDA.class
 				);*/
 		
-	/*	Experiment eBIUTEE = new Experiment(
-				"D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/biutee_wp6.xml",
+		Experiment eBIUTEE = new Experiment(
+				"./src/test/resources/EOP_configurations/biutee_wp6.xml",
 
 				"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 2,
 				"./src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
 				BIUFullLAP.class,
-				BiuteeEDA.class
-				);*/
+				MaxEntClassificationEDA.class
+				);
 		
 		
-		Experiment e = eTIEpos; 
+		Experiment e = eBIUTEE; 
 		String gsAnnotationsDir = "./src/test/resources/WP2_gold_standard_annotation/NICE_open";
 		boolean includeFragmentGraphEdges = false;
 		EntailmentGraphRaw gr = e.buildRawGraph();

@@ -24,6 +24,7 @@ import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.OpenNLPTaggerEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -55,11 +56,12 @@ public class UseCaseOneDemo {
 		// turning on Log4J, with INFO level logs 
 		BasicConfigurator.resetConfiguration(); 
 		BasicConfigurator.configure(); 
-		Logger.getRootLogger().setLevel(Level.INFO); 
+		Logger.getRootLogger().setLevel(Level.TRACE); 
 		
 		try {
 			configFile = new File(configFileName);
-		
+			config = new ImplCommonConfig(configFile);
+			
 			docs = loadData(dataDir, fileNumberLimit);
 
 			initializeLap(lapClass);
@@ -99,12 +101,13 @@ public class UseCaseOneDemo {
 		// initialize the lap
 		LAPAccess lapAc = null;
 		if (lapClass.getName().contains("BIUFullLAP")){
-			Constructor<?> lapClassConstructor = lapClass.getConstructor(CommonConfig.class);
+			//Constructor<?> lapClassConstructor = lapClass.getConstructor(CommonConfig.class);
 			try {
-				config = new ImplCommonConfig(configFile);
-				lapAc = (LAPAccess) lapClassConstructor.newInstance(config);
-			} catch (ConfigurationException e) {
-				// TODO Auto-generated catch block
+				lapAc = new BIUFullLAP(config); //lapAc = (LAPAccess) lapClassConstructor.newInstance(config);
+				System.out.println("Testing LAP: "+lapAc.getComponentName());
+				JCas  test = lapAc.generateSingleTHPairCAS("This is a biutee test.", "This is a biutee hypothesis.");
+				System.out.println("Done");
+			} catch (ConfigurationException | LAPException e) {
 				e.printStackTrace();
 			}
 		}
@@ -123,7 +126,6 @@ public class UseCaseOneDemo {
 	
 	private void initializeEDA(Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException {
 		// initialize the eda			
-		config = new ImplCommonConfig(configFile);
 		Constructor<?> edaClassConstructor = edaClass.getConstructor();
 		eda = (EDABasic<?>) edaClassConstructor.newInstance();
 		eda.initialize(config);		
