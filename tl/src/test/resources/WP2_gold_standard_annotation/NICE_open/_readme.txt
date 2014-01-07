@@ -1,1 +1,1 @@
-This is dev-test split of open data for WP6. Cluster email0020 (food quality) is not full, but only contains the part from the open data.
+This is the open data for WP6. Cluster email0020 (food quality) is not full, but only contains the open-data part of the cluster.
