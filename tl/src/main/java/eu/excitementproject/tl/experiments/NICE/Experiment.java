@@ -55,10 +55,11 @@ public class Experiment extends AbstractExperiment {
 				);*/
 		
 		Experiment eBIUTEE = new Experiment(
-				"./src/test/resources/EOP_configurations/biutee_wp6.xml",
+//				"./src/test/resources/EOP_configurations/biutee_wp6.xml",
+				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_configurations/biutee_wp6.xml",
 
-				"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 2,
-				"./src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
+				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 2,
+				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
 				BIUFullLAP.class,
 				MaxEntClassificationEDA.class
 				);

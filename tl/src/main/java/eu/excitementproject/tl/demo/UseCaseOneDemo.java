@@ -56,7 +56,7 @@ public class UseCaseOneDemo {
 		// turning on Log4J, with INFO level logs 
 		BasicConfigurator.resetConfiguration(); 
 		BasicConfigurator.configure(); 
-		Logger.getRootLogger().setLevel(Level.TRACE); 
+		Logger.getRootLogger().setLevel(Level.INFO); 
 		
 		try {
 			configFile = new File(configFileName);
@@ -100,13 +100,11 @@ public class UseCaseOneDemo {
 	private void initializeLap(Class<?> lapClass) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		// initialize the lap
 		LAPAccess lapAc = null;
-		if (lapClass.getName().contains("BIUFullLAP")){
-			//Constructor<?> lapClassConstructor = lapClass.getConstructor(CommonConfig.class);
+		if (lapClass.getName().contains("BIUFullLAP")){			
 			try {
-				lapAc = new BIUFullLAP(config); //lapAc = (LAPAccess) lapClassConstructor.newInstance(config);
-				System.out.println("Testing LAP: "+lapAc.getComponentName());
-				JCas  test = lapAc.generateSingleTHPairCAS("This is a biutee test.", "This is a biutee hypothesis.");
-				System.out.println("Done");
+				//Constructor<?> lapClassConstructor = lapClass.getConstructor(CommonConfig.class);
+				//lapAc = (LAPAccess) lapClassConstructor.newInstance(config);
+				lapAc = new BIUFullLAP(config); 
 			} catch (ConfigurationException | LAPException e) {
 				e.printStackTrace();
 			}
