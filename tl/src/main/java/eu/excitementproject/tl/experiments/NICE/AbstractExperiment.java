@@ -92,7 +92,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		
 		// Preliminary cleaning to run the evaluations over the same set of nodes.
 		// Part of it is done by gold standard edges loader, when loading only nodes of interest. 
-		// Yet, nodes of interest might contain unrelated nodes (due to using input, which has some blind-set fragments as well)  
+		// Yet, nodes of interest might contain unrelated nodes (due to using input, which has some blind-set fragments as well, or due to using a limited number of input files)  
 		Set<EntailmentUnit> nodesToRemove = new HashSet<EntailmentUnit>();
 		Set<String> gsNodeTexts = gsloader.getNodes();		
 		for (EntailmentUnit node : graph.vertexSet()){
@@ -112,7 +112,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 	 * @param confidenceThreshold
 	 * @param graph
 	 * @param gsAnnotationsDir
-	 * @param includeFragmentGraphEdges
+	 * @param includeFragmentGraphEdges - if true, the evaluation will consider all the edges in the raw graph; if false - fragment graph edges will be excluded from the evaluation 
 	 * @return
 	 */
 	public EvaluationMeasures evaluateRawGraph(double confidenceThreshold, EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){			

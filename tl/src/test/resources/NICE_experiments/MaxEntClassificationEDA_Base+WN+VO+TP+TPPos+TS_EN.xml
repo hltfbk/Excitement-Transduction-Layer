@@ -47,7 +47,7 @@
 	</section>
 	
 	<section name="eu.excitementproject.eop.core.MaxEntClassificationEDA">
-		<property name="modelFile">./src/test/resources/EOP_models/MaxEntClassificationEDAModel_Base+WN+VO+TP+TPPos+TS_EN</property>
+		<property name="modelFile">D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/MaxEntClassificationEDAModel_Base+WN+VO+TP+TPPos+TS_EN</property>
 		<property name="trainDir">/tmp/</property>
 		<property name="testDir">/tmp/</property>
 		<property name="classifier">10000,1</property>
