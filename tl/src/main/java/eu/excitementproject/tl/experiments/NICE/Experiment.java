@@ -1,6 +1,6 @@
 package eu.excitementproject.tl.experiments.NICE;
 
-//import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeMain;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
@@ -61,7 +61,7 @@ public class Experiment extends AbstractExperiment {
 				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 2,
 				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
 				BIUFullLAP.class,
-				MaxEntClassificationEDA.class
+				BiuteeEDA.class
 				);
 		
 		

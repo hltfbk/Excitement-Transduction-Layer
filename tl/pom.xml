@@ -18,7 +18,7 @@
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>biutee</artifactId>
   		<version>1.0.1</version>
-  	</dependency>
+  	</dependency>  	
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>globalgraphoptimizer</artifactId>
