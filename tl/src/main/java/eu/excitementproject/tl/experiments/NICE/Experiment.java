@@ -1,6 +1,6 @@
 package eu.excitementproject.tl.experiments.NICE;
 
-//import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeMain;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
@@ -25,9 +25,9 @@ public class Experiment extends AbstractExperiment {
 	 */
 	public static void main(String[] args) {
 
-		Experiment eTIEpos = new Experiment(
-//				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
+		/*			Experiment eTIEpos = new Experiment(
+//				"./src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
+				"./src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
 				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 1,
 				"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
@@ -35,9 +35,9 @@ public class Experiment extends AbstractExperiment {
 				MaxEntClassificationEDA.class
 				);
 		
-/*		
+	
 		Experiment eTIEparsed = new Experiment(
-				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
+				"./src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 19,
 				"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
@@ -54,17 +54,18 @@ public class Experiment extends AbstractExperiment {
 				DKProSimilaritySimpleEDA.class
 				);*/
 		
-	/*	Experiment eBIUTEE = new Experiment(
-				"D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/biutee_wp6.xml",
+		Experiment eBIUTEE = new Experiment(
+//				"./src/test/resources/EOP_configurations/biutee_wp6.xml",
+				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/NICE_experiments/biutee_wp6.xml",
 
-				"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 2,
-				"./src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
+				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 2,
+				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
 				BIUFullLAP.class,
 				BiuteeEDA.class
-				);*/
+				);
 		
 		
-		Experiment e = eTIEpos; 
+		Experiment e = eBIUTEE; 
 		String gsAnnotationsDir = "./src/test/resources/WP2_gold_standard_annotation/NICE_open";
 		boolean includeFragmentGraphEdges = false;
 		EntailmentGraphRaw gr = e.buildRawGraph();
