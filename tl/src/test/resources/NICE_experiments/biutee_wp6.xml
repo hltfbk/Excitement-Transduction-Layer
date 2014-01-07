@@ -15,8 +15,11 @@
 		<property name = "threads">1</property>
 		<property name = "unigram_lidston_ser_file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/Reuters-PPD_unigram.ser</property>
 
-		<property name = "search_model">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/model_search_1.xml</property>
-		<property name = "predictions_model">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/model_predictions_2.xml</property>
+		<property name = "oldsearch_model">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/model_search_1.xml</property>
+		<property name = "oldpredictions_model">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/model_predictions_2.xml</property>
+
+		<property name = "search_model">D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/biutee+WN+VO+Syntactic_EN/model_search_1.xml</property>
+		<property name = "predictions_model">D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/biutee+WN+VO+Syntactic_EN/model_predictions_2.xml</property>
 
 		<!-- optional parameters -->
 		<property name = "dummy_prediction_classifier">false</property>
