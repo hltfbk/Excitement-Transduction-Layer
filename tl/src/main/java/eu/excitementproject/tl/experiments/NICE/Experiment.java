@@ -26,8 +26,8 @@ public class Experiment extends AbstractExperiment {
 	public static void main(String[] args) {
 
 		/*			Experiment eTIEpos = new Experiment(
-//				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
+//				"./src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
+				"./src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
 				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 1,
 				"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
@@ -37,7 +37,7 @@ public class Experiment extends AbstractExperiment {
 		
 	
 		Experiment eTIEparsed = new Experiment(
-				"./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
+				"./src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 19,
 				"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
@@ -56,7 +56,7 @@ public class Experiment extends AbstractExperiment {
 		
 		Experiment eBIUTEE = new Experiment(
 //				"./src/test/resources/EOP_configurations/biutee_wp6.xml",
-				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_configurations/biutee_wp6.xml",
+				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/NICE_experiments/biutee_wp6.xml",
 
 				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 2,
 				"D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
