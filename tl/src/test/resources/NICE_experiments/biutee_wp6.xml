@@ -2,27 +2,24 @@
 
 	<section name = "rte_pairs_preprocess">
 		<property name = "easyfirst_stanford_pos_tagger">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/stanford-postagger-full-2008-09-28/models/bidirectional-wsj-0-18.tagger</property>
-		<property name = "stanford_ner_classifier_path">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/stanford-ner-2009-01-16/classifiers/ner-eng-ie.crf-3-all2008-distsim.ser.gz</property>
-		
+		<property name = "stanford_ner_classifier_path">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/stanford-ner-2009-01-16/classifiers/ner-eng-ie.crf-3-all2008-distsim.ser.gz</property>		
 		<property name = "new_normalizer">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/BiuNormalizer/string_rules.txt</property>
 		<property name = "coreferencer">ARKREF</property>
-
-
 		<property name = "easyfirst_host">localhost</property>
 		<property name = "easyfirst_port">8080</property>
-
-
 	</section>
 
 	<section name = "rte_pairs_train_and_test">
-		<property name = "serialization_filename">dummy.ser</property>
 		<property name = "lemmatizer_rule_file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/GATE-3.1/plugins/Tools/resources/morph/default.rul</property>
 		<property name = "parser">EASYFIRST</property>
 		<property name = "threads">1</property>
 		<property name = "unigram_lidston_ser_file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/Reuters-PPD_unigram.ser</property>
 
-		<property name = "search_model">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/_lili/trainDummy/model_search_1.xml</property>
-		<property name = "predictions_model">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/_lili/trainDummy/model_predictions_2.xml</property>
+		<property name = "oldsearch_model">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/model_search_1.xml</property>
+		<property name = "oldpredictions_model">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/model_predictions_2.xml</property>
+
+		<property name = "search_model">D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/biutee+WN+VO+Syntactic_EN/model_search_1.xml</property>
+		<property name = "predictions_model">D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/biutee+WN+VO+Syntactic_EN/model_predictions_2.xml</property>
 
 		<!-- optional parameters -->
 		<property name = "dummy_prediction_classifier">false</property>
