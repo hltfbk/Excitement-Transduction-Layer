@@ -223,7 +223,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		FragmentPart fp;
 		for(int i = 0; i < f.getFragParts().size(); i++) {
 			fp = f.getFragParts(i);
-			System.out.println("Processing fragment part " + fp.getCoveredText());
+			logger.info("Processing fragment part " + fp.getCoveredText());
 			mas.addAll(JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, fp.getBegin(), fp.getEnd()));
 		}
 		return mas;
