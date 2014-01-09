@@ -10,11 +10,12 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.de.GermanAnalyzer;
 import org.apache.lucene.util.Version;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.CategoryAnnotation;
+import eu.excitement.type.tl.CategoryDecision;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
@@ -78,8 +79,9 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 public class DemoUseCase2OMQGerman {
 	
 	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
-	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/";
-	static String xmlDataFilename = "keywordAnnotations3.xml";
+	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
+	static String xmlDataFilename = "omq_public_1_emails.xml";
+//	static String xmlDataFilename = "keywordAnnotations3.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
 	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_1_th.xml";
@@ -87,7 +89,8 @@ public class DemoUseCase2OMQGerman {
 	static boolean readGraph = false; //if true: read previously created graph instead of creating it
 	static boolean processTrainingData = false; //if true: process the data in "edaTrainingFilename"
 	static boolean trainEDA = false; //if true: train the EDA on the processed data
-	static boolean keywordsProvided = true; //if true: input dataset contains keyword metadata
+	static boolean keywordsProvided = false; //if true: input dataset contains keyword metadata
+	static boolean relevantTextProvided = true; //if true; input dataset contains relevantText annotation
 	
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
@@ -119,12 +122,16 @@ public class DemoUseCase2OMQGerman {
 		
 		/** Step 2: Annotating an incoming email based on the entailment graph */
 
-		String emailText = "Wie kann ich diese aendern?";
-		annotateIncomingEmail(graph, emailText);
+		String emailText = "Speicheranfrage ist ungültig.";
+		JCas cas = annotateIncomingEmail(graph, emailText);
+		Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+		for (CategoryDecision decision: decisions) {
+			logger.info("decision: " + decision.getCategoryId() + ":" + decision.getConfidence());
+		}
 			
 	}
 
-	private static void annotateIncomingEmail(EntailmentGraphCollapsed graph, String text)
+	private static JCas annotateIncomingEmail(EntailmentGraphCollapsed graph, String text)
 			throws LAPException, FragmentAnnotatorException,
 			ModifierAnnotatorException, FragmentGraphGeneratorException,
 			NodeMatcherException, CategoryAnnotatorException {
@@ -147,20 +154,19 @@ public class DemoUseCase2OMQGerman {
 		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
 
 		//call node matcher on each fragment graph
-		NodeMatcherWithIndex nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
+		NodeMatcherWithIndex nm = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new GermanAnalyzer(Version.LUCENE_44));
 		nm.indexGraphNodes();
 		nm.initializeSearch();
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
-			System.out.println("fragment graph: " + fragmentGraph.getCompleteStatement());
 			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph);
-			System.out.println("matches: " + matches.size());
 			//add category annotation to CAS
 			ca.addCategoryAnnotation(cas, matches);
 		}	
 		
 		//print CAS category
 		CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
+		return cas;
 	}
 
 	private static EntailmentGraphCollapsed buildGraph(String xmlGraphFilename)
@@ -215,26 +221,25 @@ public class DemoUseCase2OMQGerman {
 				}
 			}
 				
-			//build fragment graphs from input data
+			//build fragment graphs from input data and merge them
 			Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
 			JCas cas = CASUtils.createNewInputCas();
+			eda.initialize(config);
+			GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
+			EntailmentGraphRaw egr = null;
 			for(Interaction i: docs) {
-				i.fillInputCAS(cas); 
+				i.fillInputCAS(cas, relevantTextProvided); 
 				fragAnot.annotateFragments(cas);
 				modAnot.annotateModifiers(cas);
 				logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-				fgs.addAll(fragGen.generateFragmentGraphs(cas));
+				fgs  = fragGen.generateFragmentGraphs(cas);
+				logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
+				egr = graphMerger.mergeGraphs(fgs, egr);
+				logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
 			}
-			logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
 			
-			//merge graph
-			eda.initialize(config);
-			GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
-			EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-			logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-
 			//optimize graph
-			graph = graphOptimizer.optimizeGraph(egr, 0.99);
+			graph = graphOptimizer.optimizeGraph(egr, 0.95);
 			logger.info("Optimized graph: " + graph.vertexSet().size() + " nodes");
 			
 			// compute category confidences and add them to graph
@@ -264,5 +269,4 @@ public class DemoUseCase2OMQGerman {
 		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphOptimizer = new GlobalGraphOptimizer();
 	}
-
 }

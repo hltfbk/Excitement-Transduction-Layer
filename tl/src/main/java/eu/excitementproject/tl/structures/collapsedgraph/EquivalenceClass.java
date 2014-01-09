@@ -1,5 +1,6 @@
 package  eu.excitementproject.tl.structures.collapsedgraph;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -128,6 +129,20 @@ public class EquivalenceClass {
 	
 
 	/******************************************************************************************
+	 * COMPARATORS
+	 * ****************************************************************************************/
+
+	/**
+	 * Comparator to sort equivalence classes in descending order by their number of interactions
+	 */
+	public static class DescendingNumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
+	    @Override
+	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
+	        return -1*Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
+	    }
+	}
+	
+	/******************************************************************************************
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
 
@@ -167,7 +182,7 @@ public class EquivalenceClass {
 		String s = "\""+label.trim().replaceAll(" +", " ")+"\" ("+this.getInteractionIds().size()+" interactions) :\n";
 		int i=1;
 		for (EntailmentUnit eu : entailmentUnits){
-			s+="\t"+i+")\""+eu.getTextWithoutDoulbeSpaces()+"\"\n";
+			s+="\t"+i+")\""+eu.getTextWithoutDoubleSpaces()+"\"\n";
 			i++;
 		}
 		s+="\n";
@@ -181,7 +196,7 @@ public class EquivalenceClass {
 		String s = "\""+label.trim().replaceAll(" +", " ")+" (Total: "+this.getInteractionIds().size()+" interaction(s)):";
 		for (EntailmentUnit eu : entailmentUnits){
 			//if (eu.getText().equals(label)) continue;
-			s+="\\n"+eu.getTextWithoutDoulbeSpaces()+" ("+eu.getInteractionIds().size()+" interaction(s))";;			
+			s+="\\n"+eu.getTextWithoutDoubleSpaces()+" ("+eu.getInteractionIds().size()+" interaction(s))";;			
 		}
 		s+="\"";
 		return s;

@@ -1,5 +1,5 @@
 digraph rawGraph {
-"Food was really bad." -> "Food was bad." [label=1.0] [color=blue]
+"Food was really bad.";"Food was bad.";"I didn't like the food.";"a little more leg room would have been perfect";"more leg room would have been perfect";"Disappointed with the amount of legroom compared with other trains";"Disappointed with legroom compared with other trains";"Disappointed with the amount of legroom";"Disappointed with legroom";"Food was really bad." -> "Food was bad." [label=1.0] [color=blue]
 "Food was bad." -> "Food was really bad." [label=0.0] [color=red]
 "a little more leg room would have been perfect" -> "more leg room would have been perfect" [label=1.0] [color=blue]
 "more leg room would have been perfect" -> "a little more leg room would have been perfect" [label=0.0] [color=red]

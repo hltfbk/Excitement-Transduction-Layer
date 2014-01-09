@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="9">
+	<node implicit_focus="" focus="confirmation" implicit_context="" explicit_context="13764644_76379048.txt" modality="FALSE" id ="13764644_76379048.txt_1_0">
+		<original_text>the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said</original_text>
+		<correct_text>the confirmation was for the twentieth through the twenty fourth coming back friday morning that was never said</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="flight" focus="it's" implicit_context="" explicit_context="13764673_76463240.txt" modality="FALSE" id ="13764673_76463240.txt_2_0">
+		<original_text>it seems like it's indefinite when it's going to leave</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764888_80919841-2.txt" modality="FALSE" id ="13764888_80919841-2.txt_1_0">
+		<original_text>i've missed my flight through moonport</original_text>
+		<correct_text></correct_text>
+		<modifiers>through moonportpoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764888_80919841-2.txt" modality="FALSE" id ="13764888_80919841-2.txt_1_1">
+		<original_text>i've missed my flight</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="connection" implicit_context="" explicit_context="13764888_80919841-2.txt" modality="FALSE" id ="13764888_80919841-2.txt_2_0">
+		<original_text>i've missed my connection through moonport</original_text>
+		<correct_text></correct_text>
+		<modifiers>through moonportpoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="connection" implicit_context="" explicit_context="13764888_80919841-2.txt" modality="FALSE" id ="13764888_80919841-2.txt_2_1">
+		<original_text>i've missed my connection</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764888_80919841-2.txt" modality="FALSE" id ="13764888_80919841-2.txt_3_0">
+		<original_text>the flight was diverted stars bridge</original_text>
+		<correct_text>the flight was diverted to stars bridge</correct_text>
+		<modifiers>stars bridgepoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764888_80919841-2.txt" modality="FALSE" id ="13764888_80919841-2.txt_3_1">
+		<original_text>the flight was diverted</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="insurance" focus="" implicit_context="" explicit_context="13764973_84033481.txt" modality="TRUE" id ="13764973_84033481.txt_1_0">
+		<original_text>i have to provide all of that stuff</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="13764888_80919841-2.txt_1_1" source="13764888_80919841-2.txt_1_0" id="13764888_80919841-2.txt_1_1-13764888_80919841-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764888_80919841-2.txt_2_0" source="13764888_80919841-2.txt_1_0" id="13764888_80919841-2.txt_2_0-13764888_80919841-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764888_80919841-2.txt_2_1" source="13764888_80919841-2.txt_1_1" id="13764888_80919841-2.txt_2_1-13764888_80919841-2.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764888_80919841-2.txt_2_1" source="13764888_80919841-2.txt_2_0" id="13764888_80919841-2.txt_2_1-13764888_80919841-2.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764888_80919841-2.txt_1_0" source="13764888_80919841-2.txt_2_0" id="13764888_80919841-2.txt_1_0-13764888_80919841-2.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764888_80919841-2.txt_1_1" source="13764888_80919841-2.txt_2_1" id="13764888_80919841-2.txt_1_1-13764888_80919841-2.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764888_80919841-2.txt_3_1" source="13764888_80919841-2.txt_3_0" id="13764888_80919841-2.txt_3_1-13764888_80919841-2.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

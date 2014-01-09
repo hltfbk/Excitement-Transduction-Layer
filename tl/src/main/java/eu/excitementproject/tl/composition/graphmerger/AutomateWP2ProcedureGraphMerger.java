@@ -2,6 +2,8 @@ package eu.excitementproject.tl.composition.graphmerger;
 
 import java.util.Collections;
 import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -35,8 +37,10 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs,
 			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
 
+		List<FragmentGraph> fg = new LinkedList<FragmentGraph>(fragmentGraphs);
+		Collections.sort(fg, new FragmentGraph.CompleteStatementComparator());
 		// Iterate over the list of fragment graphs and merge them one by one
-		for (FragmentGraph fragmentGraph : fragmentGraphs){
+		for (FragmentGraph fragmentGraph : fg){
 			workGraph=mergeGraphs(fragmentGraph, workGraph);
 		}
 		return workGraph;
