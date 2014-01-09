@@ -1,9 +1,9 @@
 package eu.excitementproject.tl.evaluation.categoryannotator;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -91,11 +91,7 @@ import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototy
 
 public class EvaluatorCategoryAnnotator { 
 	
-	List<String> categoryAssignment = new ArrayList<String>();
-	
-	private static String comparatorOutput = "";
-	
-    private static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
+	private static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
     static long startTime = System.currentTimeMillis();
     static long endTime = 0;
     
@@ -300,7 +296,6 @@ public class EvaluatorCategoryAnnotator {
 		String bestCat = "";
 		logger.info("Number of decisions for interaction "+doc.getInteractionId()+": " + decisions.size());
 		bestCat = computeBestCat(decisions, mostProbableCat);
-		categoryAssignment.add(doc.getInteractionId()+"_"+bestCat);
 		logger.info("Correct category: " + doc.getCategory());
 		logger.info("Best category: " + bestCat);
 		if (doc.getCategory().equals(bestCat)) {
