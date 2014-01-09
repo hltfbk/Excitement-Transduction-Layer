@@ -20,9 +20,9 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	public DemoUseCase1NICEEnglish() {
 		
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1", 4,
+				"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 33,
 //				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1",
-				"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
+				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);

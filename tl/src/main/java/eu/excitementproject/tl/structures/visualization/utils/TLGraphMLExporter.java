@@ -98,7 +98,7 @@ public class TLGraphMLExporter {
 		if (graph.getClass() == EntailmentGraphRaw.class) {
 			((EntailmentGraphRaw) graph).addEdge((EntailmentUnit) source, (EntailmentUnit) target, 
 						new EntailmentRelation((EntailmentUnit) source, (EntailmentUnit) target, new TEDecisionWithConfidence(1.0,DecisionLabel.Entailment), EdgeType.INDUCED));
-			System.out.println("ADDED EDGE: " + ((EntailmentUnit) source).getTextWithoutDoulbeSpaces() + " / " + ((EntailmentUnit) target).getTextWithoutDoulbeSpaces());
+			System.out.println("ADDED EDGE: " + ((EntailmentUnit) source).getTextWithoutDoubleSpaces() + " / " + ((EntailmentUnit) target).getTextWithoutDoubleSpaces());
 		} else if (graph.getClass() == EntailmentGraphCollapsed.class) {
 			((EntailmentGraphCollapsed) graph).addEdge((EquivalenceClass) source, (EquivalenceClass) target,
 						new EntailmentRelationCollapsed((EquivalenceClass) source, (EquivalenceClass) target, 1.0));

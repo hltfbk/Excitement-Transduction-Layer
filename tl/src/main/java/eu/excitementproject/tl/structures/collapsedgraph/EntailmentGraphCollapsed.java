@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -350,7 +349,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 				
 		List<EquivalenceClass> sortedNodes = new LinkedList<EquivalenceClass>();
 		sortedNodes.addAll(this.vertexSet());
-		Collections.sort(sortedNodes, new DescendingNumberOfInteractionsComparator());
+		Collections.sort(sortedNodes, new EquivalenceClass.DescendingNumberOfInteractionsComparator());
 		sortedNodes.subList(X, sortedNodes.size()).clear(); //remove all the elements with index starting at X (incusive)
 		return sortedNodes;
 	}
@@ -410,6 +409,9 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 */
 	public String toDOT(){
 		String s = "digraph collapsedGraph {\n";
+		for (EquivalenceClass node : this.vertexSet()){
+			s+=node.toDOT();
+		}		
 		for (EntailmentRelationCollapsed edge : this.edgeSet()){
 			s+=edge.toDOT();
 		}
@@ -549,15 +551,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		return null;
 	}
 
-	/**
-	 * Comparator to sort equivalence classes in descending order by their number of interactions
-	 */
-	public class DescendingNumberOfInteractionsComparator implements Comparator<EquivalenceClass> {
-	    @Override
-	    public int compare(EquivalenceClass nodeA, EquivalenceClass nodeB) {
-	        return -1*Integer.compare(nodeA.getInteractionIds().size(),nodeB.getInteractionIds().size());
-	    }
-	}
+
 	
 	/* (non-Javadoc)
 	 * @see org.jgrapht.graph.AbstractBaseGraph#addVertex(java.lang.Object)

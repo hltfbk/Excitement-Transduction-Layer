@@ -79,10 +79,9 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 public class DemoUseCase2OMQGerman {
 	
 	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
-	//static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
-	//static String xmlDataFilename = "omq_public_1_emails.xml";
-	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/";
-	static String xmlDataFilename = "keywordAnnotations3.xml";
+	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
+	static String xmlDataFilename = "omq_public_1_emails.xml";
+//	static String xmlDataFilename = "keywordAnnotations3.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
 	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_1_th.xml";
@@ -90,7 +89,7 @@ public class DemoUseCase2OMQGerman {
 	static boolean readGraph = false; //if true: read previously created graph instead of creating it
 	static boolean processTrainingData = false; //if true: process the data in "edaTrainingFilename"
 	static boolean trainEDA = false; //if true: train the EDA on the processed data
-	static boolean keywordsProvided = true; //if true: input dataset contains keyword metadata
+	static boolean keywordsProvided = false; //if true: input dataset contains keyword metadata
 	static boolean relevantTextProvided = true; //if true; input dataset contains relevantText annotation
 	
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
@@ -270,5 +269,4 @@ public class DemoUseCase2OMQGerman {
 		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphOptimizer = new GlobalGraphOptimizer();
 	}
-
 }

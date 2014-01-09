@@ -224,7 +224,7 @@ public class EntailmentGraphRaw extends
 	 * @param interactionId - String denoting the interaction in which the mention occurred
 	 */
 	public void addEntailmentUnitMention(EntailmentUnitMention mention, String completeStatementText){
-		EntailmentUnit node = this.getVertex(mention.getText());
+		EntailmentUnit node = this.getVertexMentioningText(mention.getText());
 		if (node==null) {
 			EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText);
 			this.addVertex(newNode);
@@ -419,6 +419,7 @@ public class EntailmentGraphRaw extends
 	
 	/**
 	 * Create an edge induced from prior knowledge. Confidence is to be given as parameter.
+	 * The vertices are assumed to be present in the graph
 	 * @param sourceVertex
 	 * @param targetVertex
 	 * @param confidence
@@ -442,6 +443,21 @@ public class EntailmentGraphRaw extends
 		}
 		return null;
 	}
+	
+	/**
+	 * Return the vertex (EntailmentUnit), which has the corresponding text at one of it's mentions, if it is found in the graph. 
+	 * Otherwise return null.
+	 * The case of the text is ignored (to unify texts regardless to their case)
+	 * @param text the text of the EntailmentUnit to be found
+	 * @return
+	 */
+	public EntailmentUnit getVertexMentioningText(String text){
+		for (EntailmentUnit eu : this.vertexSet()){
+			if (eu.isTextIncludedOrRelevant(text)) return eu;
+		}
+		return null;
+	}
+	
 	
 	/**
 	 * @return true if the graph has no vertices (i.e. the graph is empty) 
@@ -477,6 +493,9 @@ public class EntailmentGraphRaw extends
 	 */
 	public String toDOT(){
 		String s = "digraph rawGraph {\n";
+		for (EntailmentUnit node : this.vertexSet()){
+			s+="\""+node.getText()+"\";";
+		}
 		for (EntailmentRelation edge : this.edgeSet()){
 			s+=edge.toDOT();
 		}

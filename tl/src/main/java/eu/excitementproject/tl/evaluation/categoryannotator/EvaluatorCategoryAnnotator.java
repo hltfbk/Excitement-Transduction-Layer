@@ -1,12 +1,14 @@
 package eu.excitementproject.tl.evaluation.categoryannotator;
 
 import java.io.File;
-
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -26,7 +28,6 @@ import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.ImplCommonConfig;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
@@ -66,7 +67,6 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
-import eu.excitementproject.tl.structures.rawgraph.utils.NoEDA;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
@@ -90,6 +90,10 @@ import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototy
  */
 
 public class EvaluatorCategoryAnnotator { 
+	
+	List<String> categoryAssignment = new ArrayList<String>();
+	
+	private static String comparatorOutput = "";
 	
     private static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
     static long startTime = System.currentTimeMillis();
@@ -156,7 +160,7 @@ public class EvaluatorCategoryAnnotator {
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
 	        		File configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
-	        		eda = new NoEDA();
+	        		eda = new MaxEntClassificationEDA();
 		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
@@ -294,8 +298,11 @@ public class EvaluatorCategoryAnnotator {
 	private int compareDecisionsForInteraction(int countPositive,
 			Interaction doc, Set<CategoryDecision> decisions, String mostProbableCat) {
 		String bestCat = "";
+		logger.info("Number of decisions for interaction "+doc.getInteractionId()+": " + decisions.size());
 		bestCat = computeBestCat(decisions, mostProbableCat);
+		categoryAssignment.add(doc.getInteractionId()+"_"+bestCat);
 		logger.info("Correct category: " + doc.getCategory());
+		logger.info("Best category: " + bestCat);
 		if (doc.getCategory().equals(bestCat)) {
 			countPositive++;
 		} 
@@ -314,11 +321,11 @@ public class EvaluatorCategoryAnnotator {
 		logger.debug("Computing best category");
 		logger.debug("Number of decisions: " + decisions.size());
 		String bestCat;
-		HashMap<String,Double> categoryScores = new HashMap<String,Double>();
+		HashMap<String,Float> categoryScores = new HashMap<String,Float>();
 		if (scoreCombination.equals("sum")) {
 			for (CategoryDecision decision: decisions) {
 				String category = decision.getCategoryId();
-				double sum = 0; //the sum of scores for a particular category 
+				float sum = 0; //the sum of scores for a particular category 
 				if (categoryScores.containsKey(category)) {
 					sum = categoryScores.get(category);
 				}
@@ -327,9 +334,10 @@ public class EvaluatorCategoryAnnotator {
 				categoryScores.put(category, sum);
 			}
 		}
+		
 		// get the category with the highest value
 		ValueComparator bvc =  new ValueComparator(categoryScores);
-		Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
+		Map<String,Float> sortedMap = new TreeMap<String,Float>(bvc);
 		sortedMap.putAll(categoryScores);
 		logger.debug("category sums:  " + sortedMap);
 		if (sortedMap.size() > 0) {
@@ -369,12 +377,12 @@ public class EvaluatorCategoryAnnotator {
 	    
 	   	Map<Integer, Double> foldAccuracies = new HashMap<Integer, Double>();
 
-	   	Set<Interaction> graphDocs = new HashSet<Interaction>();
-		Set<Interaction> testDocs = new HashSet<Interaction>();
+	   	List<Interaction> graphDocs = new ArrayList<Interaction>();
+		List<Interaction> testDocs = new ArrayList<Interaction>();
 		String edaTrainingFilename;
 		
 	    for (int i=1; i<=3; i++) { //Create a fold for each of the three input files
-		    logger.info("Creating fold " + i);
+	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
     		int k=j+1;
@@ -397,6 +405,7 @@ public class EvaluatorCategoryAnnotator {
 	    		logger.info("Reading graph from " + graphFile.getAbsolutePath());
 	    		graph = new EntailmentGraphCollapsed(graphFile);
 				mostProbableCat = computeMostFrequentCategory(graph);
+				logger.info("Most frequent category in graph: " + mostProbableCat);
 	    	} else { // build graph
 	    		String graphDocumentsFilename = inputDataFoldername + "omq_public_"+j+"_emails.xml";
 				logger.info("Reading documents for graph building from " + graphDocumentsFilename);	    			
@@ -433,21 +442,27 @@ public class EvaluatorCategoryAnnotator {
 				XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
 	    	}
 
+	    	//indexing graph nodes and initializing search
+			nodeMatcher = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
+			nodeMatcher.indexGraphNodes();
+			nodeMatcher.initializeSearch();
 
 	    	boolean skipEval = false;
 	    	if (!skipEval) {
 		    	//For each email E in the test set, send it to nodematcher / category annotator and have it annotated
 				int countPositive = 0;
+				
 				for (Interaction interaction : testDocs) {
-					logger.info("annotating interaction " + interaction.getInteractionId());
-					logger.info("interaction text: " + interaction.getInteractionString());
 					JCas cas = annotateInteraction(graph, interaction);	
 					
 					//print CAS category
-					CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
+					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
 			    	//Compare automatic to manual annotation
+					logger.info("annotating interaction " + interaction.getInteractionId());
+			//		logger.info("interaction text: " + interaction.getInteractionString());
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+		
 					countPositive = compareDecisionsForInteraction(countPositive,
 							interaction, decisions, mostProbableCat);				
 				}
@@ -459,10 +474,17 @@ public class EvaluatorCategoryAnnotator {
 	    }			
 	}
 
+	/**
+	 * Find out what's the most frequent category stored in the graph.
+	 * 
+	 * @param graph
+	 * @return most frequent category
+	 */
+	
 	private String computeMostFrequentCategory(EntailmentGraphCollapsed graph) {
 		int numberOfTextualInputs = graph.getNumberOfTextualInputs();
 		logger.info("num of textual inputs: " + numberOfTextualInputs);
-		Map<String, Double> categoryOccurrences = new HashMap<String,Double>();
+		Map<String, Float> categoryOccurrences = new HashMap<String,Float>();
 		Set<String> processedInteractions = new HashSet<String>();
 		for (EquivalenceClass ec : graph.vertexSet()) {
 			for (EntailmentUnit eu : ec.getEntailmentUnits()) {
@@ -470,7 +492,7 @@ public class EvaluatorCategoryAnnotator {
 					String interactionId = eum.getInteractionId();
 					if (!processedInteractions.contains(interactionId)) {
 						String cat = eum.getCategoryId();					
-						double occ = 1;
+						float occ = 1;
 						if (categoryOccurrences.containsKey(cat)) {
 							occ += categoryOccurrences.get(cat);
 						}
@@ -480,17 +502,14 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}
 		}
-		for (String cat : categoryOccurrences.keySet()) System.out.println("cat: " + cat);		
 		ValueComparator bvc =  new ValueComparator(categoryOccurrences);
-		Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
+		Map<String,Float> sortedMap = new TreeMap<String,Float>(bvc);
 		sortedMap.putAll(categoryOccurrences);
-		for (String cat : sortedMap.keySet()) System.out.println("cat: " + cat + " / val: " + categoryOccurrences.get(cat));		
-System.exit(1);
 		logger.debug("category sums:  " + sortedMap);
 		String mostFrequentCat = "N/A";
 		if (sortedMap.size() > 0) {
 			mostFrequentCat = sortedMap.keySet().iterator().next().toString();
-			logger.info("Most probably category: " + mostFrequentCat);
+			logger.info("Most probable category: " + mostFrequentCat);
 			logger.info("Occurs " + categoryOccurrences.get(mostFrequentCat) + " times");
 			logger.info("Number of processed interactions " + processedInteractions.size());
 			logger.info("Baseline: " + (double) categoryOccurrences.get(mostFrequentCat)/ (double) processedInteractions.size());
@@ -551,22 +570,19 @@ System.exit(1);
 		JCas cas = interaction.createAndFillInputCAS();
 		fragmentAnnotatorForNewInput.annotateFragments(cas);
 		modifierAnnotator.annotateModifiers(cas);
-		logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+		//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 		Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
-		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+		//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
 		
 		if (fragmentGraphs.size() == 0) {
 			System.exit(0);
 		}
 
 		//call node matcher on each fragment graph
-		nodeMatcher = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
-		nodeMatcher.indexGraphNodes();
-		nodeMatcher.initializeSearch();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
-			logger.info("fragment graph: " + fragmentGraph.getCompleteStatement());
+			//logger.info("fragment graph: " + fragmentGraph.getCompleteStatement());
 			Set<NodeMatch> matches = nodeMatcher.findMatchingNodesInGraph(fragmentGraph);
-			logger.info("matches: " + matches.size());
+			//logger.info("matches: " + matches.size());
 			//add category annotation to CAS
 			categoryAnnotator.addCategoryAnnotation(cas, matches);
 		}
@@ -580,24 +596,24 @@ System.exit(1);
 	 * @return
 	 */
 	private String computeMostFrequentCategory(
-			Set<Interaction> trainingDocs) {
-		Map<String, Double> categoryOccurrences = new HashMap<String,Double>();
+			List<Interaction> trainingDocs) {
+		Map<String, Float> categoryOccurrences = new HashMap<String,Float>();
 		for (Interaction interaction : trainingDocs) {
 			String cat = interaction.getCategory();
-			double occ = 1;
+			float occ = 1;
 			if (categoryOccurrences.containsKey(cat)) {
 				occ += categoryOccurrences.get(cat);
 			}
 			categoryOccurrences.put(cat, occ);
 		}
 		ValueComparator bvc =  new ValueComparator(categoryOccurrences);
-		Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
+		Map<String,Float> sortedMap = new TreeMap<String,Float>(bvc);
 		sortedMap.putAll(categoryOccurrences);
 		logger.debug("category sums:  " + sortedMap);
 		String mostFrequentCat = "N/A";
 		if (sortedMap.size() > 0) {
 			mostFrequentCat = sortedMap.keySet().iterator().next().toString();
-			logger.info("Most probably category: " + mostFrequentCat);
+			logger.info("Most probable category: " + mostFrequentCat);
 			logger.info("Occurs " + categoryOccurrences.get(mostFrequentCat) + " times");
 			logger.info("Number of training docs " + trainingDocs.size());
 			logger.info("Baseline: " + (double) categoryOccurrences.get(mostFrequentCat)/ (double) trainingDocs.size());
@@ -783,16 +799,26 @@ System.exit(1);
 
 class ValueComparator implements Comparator<String> {
 
-    Map<String, Double> base;
-    public ValueComparator(Map<String, Double> base) {
+    Map<String, Float> base;
+    public ValueComparator(Map<String, Float> base) {
         this.base = base;
     }
     
     public int compare(String a, String b) {
-        if (base.get(a) > base.get(b)) {
+        if (base.get(a) > base.get(b) && (Math.abs(base.get(a)-base.get(b))>0.01)) {
+        	//check if difference between the values is large enough (otherwise, results differ in each run, due to rounding differences!)
             return -1;
-    	} else {
-            return 1;
-        } 
+        }
+        if (base.get(a) < base.get(b) && (Math.abs(base.get(a)-base.get(b))>0.01)) {
+        	return 1;
+        }
+        //if both have (nearly) the same value, decide based on key:
+		if (Integer.parseInt(a) > Integer.parseInt(b)) {
+			return -1;
+		}
+		if (Integer.parseInt(a) < Integer.parseInt(b)) {
+	        return 1;
+		}
+		return 0;
     }
 }

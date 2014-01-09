@@ -24,6 +24,7 @@ import eu.excitementproject.eop.core.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.OpenNLPTaggerEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -48,6 +49,7 @@ public class UseCaseOneDemo {
 	protected EDABasic<?> eda;
 	protected UseCaseOneRunnerPrototype useOne;
 	protected EntailmentGraphCollapsed graph;
+	protected List<JCas> docs;
 	
 	public UseCaseOneDemo(String configFileName, String dataDir, int fileNumberLimit, String outputFolder, Class<?> lapClass, Class<?> edaClass) {
 		
@@ -58,8 +60,9 @@ public class UseCaseOneDemo {
 		
 		try {
 			configFile = new File(configFileName);
-		
-			List<JCas> docs = loadData(dataDir, fileNumberLimit);
+			config = new ImplCommonConfig(configFile);
+			
+			docs = loadData(dataDir, fileNumberLimit);
 
 			initializeLap(lapClass);
 			initializeEDA(edaClass);
@@ -96,8 +99,21 @@ public class UseCaseOneDemo {
 
 	private void initializeLap(Class<?> lapClass) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		// initialize the lap
-		Constructor<?> lapClassConstructor = lapClass.getConstructor();
-		LAPAccess lapAc = (LAPAccess) lapClassConstructor.newInstance();
+		LAPAccess lapAc = null;
+		if (lapClass.getName().contains("BIUFullLAP")){			
+			try {
+				//Constructor<?> lapClassConstructor = lapClass.getConstructor(CommonConfig.class);
+				//lapAc = (LAPAccess) lapClassConstructor.newInstance(config);
+				lapAc = new BIUFullLAP(config); 
+			} catch (ConfigurationException | LAPException e) {
+				e.printStackTrace();
+			}
+		}
+		else{ // if not BIUFullLAP
+			Constructor<?> lapClassConstructor = lapClass.getConstructor();
+			lapAc = (LAPAccess) lapClassConstructor.newInstance();
+		}
+
 		try {
 			lap = new CachedLAPAccess(lapAc);
 		} catch (LAPException e) {
@@ -108,7 +124,6 @@ public class UseCaseOneDemo {
 	
 	private void initializeEDA(Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException {
 		// initialize the eda			
-		config = new ImplCommonConfig(configFile);
 		Constructor<?> edaClassConstructor = edaClass.getConstructor();
 		eda = (EDABasic<?>) edaClassConstructor.newInstance();
 		eda.initialize(config);		
@@ -150,8 +165,7 @@ public class UseCaseOneDemo {
 			e.printStackTrace();
 		}
 	}
-	
-
+		
 	public static void main(String[] argv) {
 		
 		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
