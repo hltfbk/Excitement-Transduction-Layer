@@ -20,9 +20,9 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	public DemoUseCase1NICEEnglish() {
 		
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 10,
+				"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1", 33,
 //				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1",
-				"./src/test/outputs/WP2_public_data_CAS_XMI/fragment_test",
+				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
@@ -32,11 +32,11 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 
 		// run the flow, create raw and collapsed entailment graphs and save them to files
 		DemoUseCase1NICEEnglish demoEN = new DemoUseCase1NICEEnglish();
-//		demoEN.inspectResults();
+		demoEN.inspectResults();
 		// the results can be found under "./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1"
 		
 		// now load some existing collapsed graph (we load one with 10 interactions)
-/*		
+		
 		File xmlFile = new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
 		try {
 			EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(xmlFile);
@@ -101,7 +101,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-*/		
+		
 	}
 	
 }

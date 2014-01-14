@@ -152,8 +152,6 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			annotateCAS(aJCas);
 			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
 		}
-
-		System.exit(1);
 		
 		inspectGraph(fgs);
 
