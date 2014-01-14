@@ -137,8 +137,8 @@ public class EntailmentGraphRaw extends
 					EdgeType edgeType = EdgeType.convert(erElement.getAttribute("type"));
 					TEDecision edge = new TEDecisionWithConfidence(Double.valueOf(erElement.getAttribute("confidence")), DecisionLabel.getLabelFor(erElement.getAttribute("decisionLabel")));
 					
-					EntailmentUnit sourceVertex = this.getVertex(source);
-					EntailmentUnit targetVertex = this.getVertex(target);
+					EntailmentUnit sourceVertex = this.getVertexWithText(source);
+					EntailmentUnit targetVertex = this.getVertexWithText(target);
 					EntailmentRelation e = new EntailmentRelation(sourceVertex, targetVertex, edge, edgeType);
 					this.addEdge(sourceVertex, targetVertex, e);
 				}
@@ -224,7 +224,7 @@ public class EntailmentGraphRaw extends
 	 * @param interactionId - String denoting the interaction in which the mention occurred
 	 */
 	public void addEntailmentUnitMention(EntailmentUnitMention mention, String completeStatementText){
-		EntailmentUnit node = this.getVertexMentioningText(mention.getText());
+		EntailmentUnit node = this.getVertexWithText(mention.getText());
 		if (node==null) {
 			EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText);
 			this.addVertex(newNode);
@@ -244,10 +244,15 @@ public class EntailmentGraphRaw extends
 	 */
 	public Hashtable<Integer, Set<EntailmentUnit>> getFragmentGraphNodes(EntailmentUnit baseStatementNode, String completeStatementText) throws EntailmentGraphRawException {
 		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
-
+		
+/*		System.out.println("----");
+		System.out.println(baseStatementNode);
+		System.out.println(completeStatementText);
+		System.out.println(baseStatementNode.completeStatementTexts);
+*/
 		if (!baseStatementNode.completeStatementTexts.contains(completeStatementText)) throw new EntailmentGraphRawException("Base statement node \""+baseStatementNode.getText()+"\" does not correspond to the complete statement \""+ completeStatementText+"\"\n");
 		
-		EntailmentUnit completeStatementNode = getVertex(completeStatementText);
+		EntailmentUnit completeStatementNode = getVertexWithText(completeStatementText);
 		if (completeStatementNode==null) throw new EntailmentGraphRawException("The raw graph does not contain a node \""+completeStatementText+"\"\n");
 		
 		Set<EntailmentUnit> nodes = getAllNodes(completeStatementNode, baseStatementNode, new HashSet<EntailmentUnit>());
@@ -410,8 +415,8 @@ public class EntailmentGraphRaw extends
 		this.addEntailmentUnitMention(fragmentGraphEdge.getTarget(), fg.getCompleteStatement().getText());
 
 		// now create and add the edge
-		EntailmentRelation edge = new EntailmentRelation(this.getVertex(fragmentGraphEdge.getSource().getText()), this.getVertex(fragmentGraphEdge.getTarget().getText()), new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.FRAGMENT_GRAPH);
-		this.addEdge(this.getVertex(fragmentGraphEdge.getSource().getText()), this.getVertex(fragmentGraphEdge.getTarget().getText()), edge);
+		EntailmentRelation edge = new EntailmentRelation(this.getVertexWithText(fragmentGraphEdge.getSource().getText()), this.getVertexWithText(fragmentGraphEdge.getTarget().getText()), new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.FRAGMENT_GRAPH);
+		this.addEdge(this.getVertexWithText(fragmentGraphEdge.getSource().getText()), this.getVertexWithText(fragmentGraphEdge.getTarget().getText()), edge);
 		return edge;
 	}
 	
@@ -437,12 +442,13 @@ public class EntailmentGraphRaw extends
 	 * @param text the text of the EntailmentUnit to be found
 	 * @return
 	 */
-	public EntailmentUnit getVertex(String text){
+/*	public EntailmentUnit getVertex(String text){
 		for (EntailmentUnit eu : this.vertexSet()){
 			if (eu.getText().equals(text)) return eu;
 		}
 		return null;
-	}
+	}*/
+	
 	
 	/**
 	 * Return the vertex (EntailmentUnit), which has the corresponding text at one of it's mentions, if it is found in the graph. 
@@ -451,7 +457,7 @@ public class EntailmentGraphRaw extends
 	 * @param text the text of the EntailmentUnit to be found
 	 * @return
 	 */
-	public EntailmentUnit getVertexMentioningText(String text){
+	public EntailmentUnit getVertexWithText(String text){
 		for (EntailmentUnit eu : this.vertexSet()){
 			if (eu.isTextIncludedOrRelevant(text)) return eu;
 		}
