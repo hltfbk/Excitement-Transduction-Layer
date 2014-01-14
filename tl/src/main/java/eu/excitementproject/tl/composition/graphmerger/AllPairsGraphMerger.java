@@ -57,7 +57,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 		workGraph.copyFragmentGraphNodesAndEdges(fragmentGraph);
 		
 		// find the node corresponding to the fragment graph's base statement in the work graph
-		EntailmentUnit newBaseStatement = workGraph.getVertex(fragmentGraph.getBaseStatement().getText());
+		EntailmentUnit newBaseStatement = workGraph.getVertexWithText(fragmentGraph.getBaseStatement().getText());
 		/* It might be that we already had this base statement in the raw graph, but resulting from a different completeStatement
 		* e.g. The old clerk was very rude -> ... -> The clerk was rude
 		*  vs. The young clerk was too rude -> ...-> The clerk was rude
