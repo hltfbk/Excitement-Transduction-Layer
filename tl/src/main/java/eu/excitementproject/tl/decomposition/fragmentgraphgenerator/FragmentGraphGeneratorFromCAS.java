@@ -24,9 +24,9 @@ public class FragmentGraphGeneratorFromCAS extends
 				
 		for(Annotation a : text.getAnnotationIndex(DeterminedFragment.type)) {
 			logger.info("Processing fragment: " + a.getCoveredText());
-			if (!(a.getCoveredText().contains("Moonport") && a.getCoveredText().contains("Quasigo terminal"))) {
+//			if (!(a.getCoveredText().contains("Moonport") && a.getCoveredText().contains("Quasigo terminal"))) {
 				fgs.add(new FragmentGraph(text,(DeterminedFragment) a));
-			}
+//			}
 		}
 		
 		return fgs;
