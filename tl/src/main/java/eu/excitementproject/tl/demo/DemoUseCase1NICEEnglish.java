@@ -20,7 +20,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	public DemoUseCase1NICEEnglish() {
 		
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/fragment_test", 33,
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 10,
 //				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1",
 				"./src/test/outputs/WP2_public_data_CAS_XMI/fragment_test",
 				TreeTaggerEN.class,
