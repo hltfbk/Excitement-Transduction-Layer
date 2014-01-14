@@ -14,6 +14,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.FragmentAnnotation;
+import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitement.type.tl.ModifierPart;
 import eu.excitementproject.tl.laputils.CASUtils;
@@ -80,7 +81,8 @@ public class EntailmentUnitMention {
 		end = frag.getEnd();
 		interactionId=getInteractionId(aJCas);
 		
-		CharSequence chars = frag.getText();
+//		CharSequence chars = frag.getText();
+		CharSequence chars = getTextFragment(frag);
 		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
 			if (! mods.contains(ma)) {
 				logger.info("\t removing " + ma.getCoveredText());
@@ -98,6 +100,31 @@ public class EntailmentUnitMention {
 	}
 
 	
+	private CharSequence getTextFragment(FragmentAnnotation frag) {
+		
+		if (frag.getFragParts() == null || frag.getFragParts().size() == 0) {
+			return frag.getText();
+		}
+
+//		logger.info("Processing FragmentAnnotation for :" + frag.getCoveredText());
+		
+		String text = "";
+		FragmentPart f, prev = null;
+		for(int i = 0; i < frag.getFragParts().size(); i++) {
+			f = frag.getFragParts(i);
+			
+			if (prev != null) {
+				text += StringUtils.rightPad(" ", f.getBegin() - prev.getEnd());
+			} 
+			text += f.getCoveredText();
+			prev = f;
+		}
+		
+		System.out.println("Fragment text: " + frag.getText() + "\nWith spaces: " + text);
+
+		return text;
+	}
+
 	private Set<SimpleModifier> addModifiers(String textFragment,
 			Set<String> mods) {
 		Set<SimpleModifier> sms = new HashSet<SimpleModifier>();
@@ -232,7 +259,7 @@ public class EntailmentUnitMention {
 		CharSequence chs = chars;
 		ModifierPart mp;
 		
-//		logger.info("Removing modifiers from string : " + chars);
+		logger.info("Removing modifiers from string : " + chars + " (begin: " + begin + ", end: " + end + ")");
 		
 		for (int i = 0; i < ma.getModifierParts().size(); i++) {
 			mp = ma.getModifierParts(i);

@@ -164,6 +164,7 @@ public class EvaluatorCategoryAnnotator {
 		    		tfidf = true;
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
 	        	case 1: //TIE with base configuration (inflection only)
 	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
 	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
@@ -180,6 +181,7 @@ public class EvaluatorCategoryAnnotator {
 		    		tfidf = true;
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
 	        	case 2: //TIE with base configuration + GermaNet 
 	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
 	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
@@ -196,6 +198,7 @@ public class EvaluatorCategoryAnnotator {
 		    		tfidf = true;
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
 			}
 		} catch (FragmentAnnotatorException | ModifierAnnotatorException | ConfigurationException e) {
 			e.printStackTrace();
