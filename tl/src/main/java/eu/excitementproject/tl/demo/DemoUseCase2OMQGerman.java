@@ -269,5 +269,4 @@ public class DemoUseCase2OMQGerman {
 		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphOptimizer = new GlobalGraphOptimizer();
 	}
-
 }

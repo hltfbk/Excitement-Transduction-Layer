@@ -1,11 +1,14 @@
 package eu.excitementproject.tl.evaluation.categoryannotator;
 
 import java.io.File;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -88,7 +91,7 @@ import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototy
 
 public class EvaluatorCategoryAnnotator { 
 	
-    private static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
+	private static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
     static long startTime = System.currentTimeMillis();
     static long endTime = 0;
     
@@ -106,23 +109,27 @@ public class EvaluatorCategoryAnnotator {
     static NodeMatcherWithIndex nodeMatcher;
 	static CategoryAnnotator categoryAnnotator;
 	static ConfidenceCalculator confidenceCalculator;
+    static boolean tfidf;
+    static File configFile;
+	
 	
 	static double thresholdForOptimizing = 0.99;
 
     static int setup;
     
-    static boolean readGraphFromFile = true;
+    static boolean readGraphFromFile = false;
     
     static boolean trainEDA = false;
     static boolean processTrainingData = false;
-    
+
     static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction
     
 	public static void main(String[] args) {
 		String inputFoldername = "./src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
 		String outputGraphFoldername = "./src/test/resources/sample_graphs/"; //output directory (for generated entailment graph)
 			
-		EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator();
+		setup = 1;
+		EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setup);
 		
 		try {
 			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername);
@@ -147,11 +154,21 @@ public class EvaluatorCategoryAnnotator {
 	private void setup(int i) {
 		try {
 			switch(i){
-	        	case 1:
+	        	case 0: //simple tfidf (graph with non-connected nodes)
+	        		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphOptimizer = new GlobalGraphOptimizer();
+		    		tfidf = true;
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+	        	case 1: //TIE with base configuration (inflection only)
 	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
 	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
-	        		File configFile = new File(configFilename);
+	        		configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
 	        		eda = new MaxEntClassificationEDA();
 		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
@@ -160,7 +177,23 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphOptimizer = new GlobalGraphOptimizer();
-		    		boolean tfidf = true;
+		    		tfidf = true;
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+	        	case 2: //TIE with base configuration + GermaNet 
+	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
+	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
+	    			configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN_DE.xml";;
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphOptimizer = new GlobalGraphOptimizer();
+		    		tfidf = true;
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 			}
@@ -291,8 +324,10 @@ public class EvaluatorCategoryAnnotator {
 	private int compareDecisionsForInteraction(int countPositive,
 			Interaction doc, Set<CategoryDecision> decisions, String mostProbableCat) {
 		String bestCat = "";
+		logger.info("Number of decisions for interaction "+doc.getInteractionId()+": " + decisions.size());
 		bestCat = computeBestCat(decisions, mostProbableCat);
 		logger.info("Correct category: " + doc.getCategory());
+		logger.info("Best category: " + bestCat);
 		if (doc.getCategory().equals(bestCat)) {
 			countPositive++;
 		} 
@@ -311,11 +346,11 @@ public class EvaluatorCategoryAnnotator {
 		logger.debug("Computing best category");
 		logger.debug("Number of decisions: " + decisions.size());
 		String bestCat;
-		HashMap<String,Double> categoryScores = new HashMap<String,Double>();
+		HashMap<String,Float> categoryScores = new HashMap<String,Float>();
 		if (scoreCombination.equals("sum")) {
 			for (CategoryDecision decision: decisions) {
 				String category = decision.getCategoryId();
-				double sum = 0; //the sum of scores for a particular category 
+				float sum = 0; //the sum of scores for a particular category 
 				if (categoryScores.containsKey(category)) {
 					sum = categoryScores.get(category);
 				}
@@ -324,9 +359,10 @@ public class EvaluatorCategoryAnnotator {
 				categoryScores.put(category, sum);
 			}
 		}
+		
 		// get the category with the highest value
 		ValueComparator bvc =  new ValueComparator(categoryScores);
-		Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
+		Map<String,Float> sortedMap = new TreeMap<String,Float>(bvc);
 		sortedMap.putAll(categoryScores);
 		logger.debug("category sums:  " + sortedMap);
 		if (sortedMap.size() > 0) {
@@ -366,12 +402,12 @@ public class EvaluatorCategoryAnnotator {
 	    
 	   	Map<Integer, Double> foldAccuracies = new HashMap<Integer, Double>();
 
-	   	Set<Interaction> graphDocs = new HashSet<Interaction>();
-		Set<Interaction> testDocs = new HashSet<Interaction>();
+	   	List<Interaction> graphDocs = new ArrayList<Interaction>();
+		List<Interaction> testDocs = new ArrayList<Interaction>();
 		String edaTrainingFilename;
 		
 	    for (int i=1; i<=3; i++) { //Create a fold for each of the three input files
-		    logger.info("Creating fold " + i);
+	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
     		int k=j+1;
@@ -394,6 +430,7 @@ public class EvaluatorCategoryAnnotator {
 	    		logger.info("Reading graph from " + graphFile.getAbsolutePath());
 	    		graph = new EntailmentGraphCollapsed(graphFile);
 				mostProbableCat = computeMostFrequentCategory(graph);
+				logger.info("Most frequent category in graph: " + mostProbableCat);
 	    	} else { // build graph
 	    		String graphDocumentsFilename = inputDataFoldername + "omq_public_"+j+"_emails.xml";
 				logger.info("Reading documents for graph building from " + graphDocumentsFilename);	    			
@@ -425,26 +462,32 @@ public class EvaluatorCategoryAnnotator {
 				logger.info("Reduced training set contains " +graphDocs.size()+ " documents.");
 				logger.info("Building graph..."); 
 		    	graph = new EntailmentGraphCollapsed();
-//				graph = buildGraph(graphDocs);
+				graph = buildGraph(graphDocs);
 				logger.info("Writing graph to " + graphFile.getAbsolutePath()); 
 				XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
 	    	}
 
+	    	//indexing graph nodes and initializing search
+			nodeMatcher = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
+			nodeMatcher.indexGraphNodes();
+			nodeMatcher.initializeSearch();
 
 	    	boolean skipEval = false;
 	    	if (!skipEval) {
 		    	//For each email E in the test set, send it to nodematcher / category annotator and have it annotated
 				int countPositive = 0;
+				
 				for (Interaction interaction : testDocs) {
-					logger.info("annotating interaction " + interaction.getInteractionId());
-					logger.info("interaction text: " + interaction.getInteractionString());
 					JCas cas = annotateInteraction(graph, interaction);	
 					
 					//print CAS category
-					CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
+					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
 			    	//Compare automatic to manual annotation
+					logger.info("annotating interaction " + interaction.getInteractionId());
+			//		logger.info("interaction text: " + interaction.getInteractionString());
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+		
 					countPositive = compareDecisionsForInteraction(countPositive,
 							interaction, decisions, mostProbableCat);				
 				}
@@ -456,10 +499,17 @@ public class EvaluatorCategoryAnnotator {
 	    }			
 	}
 
+	/**
+	 * Find out what's the most frequent category stored in the graph.
+	 * 
+	 * @param graph
+	 * @return most frequent category
+	 */
+	
 	private String computeMostFrequentCategory(EntailmentGraphCollapsed graph) {
 		int numberOfTextualInputs = graph.getNumberOfTextualInputs();
 		logger.info("num of textual inputs: " + numberOfTextualInputs);
-		Map<String, Double> categoryOccurrences = new HashMap<String,Double>();
+		Map<String, Float> categoryOccurrences = new HashMap<String,Float>();
 		Set<String> processedInteractions = new HashSet<String>();
 		for (EquivalenceClass ec : graph.vertexSet()) {
 			for (EntailmentUnit eu : ec.getEntailmentUnits()) {
@@ -467,7 +517,7 @@ public class EvaluatorCategoryAnnotator {
 					String interactionId = eum.getInteractionId();
 					if (!processedInteractions.contains(interactionId)) {
 						String cat = eum.getCategoryId();					
-						double occ = 1;
+						float occ = 1;
 						if (categoryOccurrences.containsKey(cat)) {
 							occ += categoryOccurrences.get(cat);
 						}
@@ -477,22 +527,18 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}
 		}
-		for (String cat : categoryOccurrences.keySet()) System.out.println("cat: " + cat);		
 		ValueComparator bvc =  new ValueComparator(categoryOccurrences);
-		Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
+		Map<String,Float> sortedMap = new TreeMap<String,Float>(bvc);
 		sortedMap.putAll(categoryOccurrences);
-		for (String cat : sortedMap.keySet()) System.out.println("cat: " + cat + " / val: " + categoryOccurrences.get(cat));		
-System.exit(1);
 		logger.debug("category sums:  " + sortedMap);
 		String mostFrequentCat = "N/A";
 		if (sortedMap.size() > 0) {
 			mostFrequentCat = sortedMap.keySet().iterator().next().toString();
-			logger.info("Most probably category: " + mostFrequentCat);
+			logger.info("Most probable category: " + mostFrequentCat);
 			logger.info("Occurs " + categoryOccurrences.get(mostFrequentCat) + " times");
 			logger.info("Number of processed interactions " + processedInteractions.size());
 			logger.info("Baseline: " + (double) categoryOccurrences.get(mostFrequentCat)/ (double) processedInteractions.size());
 		}
-		
 //		System.exit(0);
 		return mostFrequentCat;
 
@@ -548,22 +594,19 @@ System.exit(1);
 		JCas cas = interaction.createAndFillInputCAS();
 		fragmentAnnotatorForNewInput.annotateFragments(cas);
 		modifierAnnotator.annotateModifiers(cas);
-		logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+		//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 		Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
-		logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+		//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
 		
 		if (fragmentGraphs.size() == 0) {
 			System.exit(0);
 		}
 
 		//call node matcher on each fragment graph
-		nodeMatcher = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
-		nodeMatcher.indexGraphNodes();
-		nodeMatcher.initializeSearch();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
-			logger.info("fragment graph: " + fragmentGraph.getCompleteStatement());
+			//logger.info("fragment graph: " + fragmentGraph.getCompleteStatement());
 			Set<NodeMatch> matches = nodeMatcher.findMatchingNodesInGraph(fragmentGraph);
-			logger.info("matches: " + matches.size());
+			//logger.info("matches: " + matches.size());
 			//add category annotation to CAS
 			categoryAnnotator.addCategoryAnnotation(cas, matches);
 		}
@@ -577,24 +620,24 @@ System.exit(1);
 	 * @return
 	 */
 	private String computeMostFrequentCategory(
-			Set<Interaction> trainingDocs) {
-		Map<String, Double> categoryOccurrences = new HashMap<String,Double>();
+			List<Interaction> trainingDocs) {
+		Map<String, Float> categoryOccurrences = new HashMap<String,Float>();
 		for (Interaction interaction : trainingDocs) {
 			String cat = interaction.getCategory();
-			double occ = 1;
+			float occ = 1;
 			if (categoryOccurrences.containsKey(cat)) {
 				occ += categoryOccurrences.get(cat);
 			}
 			categoryOccurrences.put(cat, occ);
 		}
 		ValueComparator bvc =  new ValueComparator(categoryOccurrences);
-		Map<String,Double> sortedMap = new TreeMap<String,Double>(bvc);
+		Map<String,Float> sortedMap = new TreeMap<String,Float>(bvc);
 		sortedMap.putAll(categoryOccurrences);
 		logger.debug("category sums:  " + sortedMap);
 		String mostFrequentCat = "N/A";
 		if (sortedMap.size() > 0) {
 			mostFrequentCat = sortedMap.keySet().iterator().next().toString();
-			logger.info("Most probably category: " + mostFrequentCat);
+			logger.info("Most probable category: " + mostFrequentCat);
 			logger.info("Occurs " + categoryOccurrences.get(mostFrequentCat) + " times");
 			logger.info("Number of training docs " + trainingDocs.size());
 			logger.info("Baseline: " + (double) categoryOccurrences.get(mostFrequentCat)/ (double) trainingDocs.size());
@@ -628,11 +671,11 @@ System.exit(1);
 	/**
 	 * Build collapsed graph from interactions, including category information.
 	 * 
-	 * @param trainingDocs
+	 * @param graphDocs
 	 * @return
 	 * @throws Exception 
 	 */
-	private EntailmentGraphCollapsed buildGraph(Set<Interaction> trainingDocs) throws Exception {
+	private EntailmentGraphCollapsed buildGraph(List<Interaction> graphDocs) throws Exception {
 		startTime = endTime;
 		endTime   = System.currentTimeMillis();
 		logger.info((endTime - startTime));		
@@ -644,7 +687,7 @@ System.exit(1);
 		
 		//build fragment graphs from input data
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
-		for(Interaction i: trainingDocs) {
+		for(Interaction i: graphDocs) {
 			logger.info("relevantText: " + i.getRelevantText());
 			if (i.getRelevantText() == null) System.exit(1);
 			i.fillInputCAS(cas); 
@@ -654,64 +697,27 @@ System.exit(1);
 			fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
 		}
 		logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
-
 		
-		//merge one doc after the other --> takes ages with EOP EDA!!
-		/*
-		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();
-		for(Interaction i: trainingDocs) {
-			logger.info("Processing interaction " + count + " of " + trainingDocs.size());
-			logger.info("Interaction text:  " + i.getInteractionString());
-			count++;
-			i.fillInputCAS(cas); 
-			fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
-			modifierAnnotator.annotateModifiers(cas);
-			logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-			fgs = fragmentGraphGenerator.generateFragmentGraphs(cas);
-			logger.info("Adding " + fgs.size() + " fragment graphs");
-			egr = graphMerger.mergeGraphs(fgs, egr);
-			logger.info("Merged graph now has " + egr.vertexSet().size() + " nodes");
-			startTime = endTime;
-			endTime   = System.currentTimeMillis();
-			logger.info("Merging took " + ((double)(endTime - startTime)/60000) + " minutes");		
-		}*/
-		
-		
-		//merge graph --> takes a really long time!
-		/*
-		eda.initialize(config);
-		egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-		logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-		*/
-		
-		
-		//merge graph - baseline
-		count = 0; 
-		for (FragmentGraph fg : fgs) {
-			count++;
-			logger.info("Adding fragment graph " +count+ " out of " + fgs.size());
-			for (EntailmentUnitMention eum : fg.vertexSet()) {
-				egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
-			}
-		}			
-		logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-
+		if (setup == 0) {
+			count = 0; 
+			for (FragmentGraph fg : fgs) {
+				count++;
+				logger.info("Adding fragment graph " +count+ " out of " + fgs.size());
+				for (EntailmentUnitMention eum : fg.vertexSet()) {
+					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
+				}
+			}			
+		} else { //merge graph --> takes a really long time!
+			eda.initialize(config);
+			egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
+			logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
+		}
 		
 		startTime = endTime;
 		endTime   = System.currentTimeMillis();
 		logger.info((endTime - startTime));		
 		logger.info("Merged all fragment graphs");
-		
 		logger.info(egr.toStringDetailed());
-		//System.exit(0);
-				
-		
-		//EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-		
-		logger.info("Merged graphs.");
-		startTime = endTime;
-		endTime   = System.currentTimeMillis();
-		logger.info((endTime - startTime));		
 		EntailmentGraphCollapsed graph = graphOptimizer.optimizeGraph(egr, thresholdForOptimizing);
 		logger.info("Built collapsed graph.");		
 		startTime = endTime;
@@ -780,16 +786,26 @@ System.exit(1);
 
 class ValueComparator implements Comparator<String> {
 
-    Map<String, Double> base;
-    public ValueComparator(Map<String, Double> base) {
+    Map<String, Float> base;
+    public ValueComparator(Map<String, Float> base) {
         this.base = base;
     }
     
     public int compare(String a, String b) {
-        if (base.get(a) > base.get(b)) {
+        if (base.get(a) > base.get(b) && (Math.abs(base.get(a)-base.get(b))>0.01)) {
+        	//check if difference between the values is large enough (otherwise, results differ in each run, due to rounding differences!)
             return -1;
-    	} else {
-            return 1;
-        } 
+        }
+        if (base.get(a) < base.get(b) && (Math.abs(base.get(a)-base.get(b))>0.01)) {
+        	return 1;
+        }
+        //if both have (nearly) the same value, decide based on key:
+		if (Integer.parseInt(a) > Integer.parseInt(b)) {
+			return -1;
+		}
+		if (Integer.parseInt(a) < Integer.parseInt(b)) {
+	        return 1;
+		}
+		return 0;
     }
 }
