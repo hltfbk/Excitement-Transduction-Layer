@@ -145,8 +145,8 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 		for (AbstractOntologyGraph componnetGraph : componnetGraphs) {
 			for (AbstractRuleEdge componentEdge : componnetGraph.getEdges()) {
 				if (componentEdge.score() >= confidenceThreshold) { //TODO: do we need the threshold here? Should it be confidenceThreshold or just 0 (to retain only entailment edges)? 				
-					EntailmentUnit source = workGraph.getVertex(componentEdge.from().description());
-					EntailmentUnit target=  workGraph.getVertex(componentEdge.to().description());
+					EntailmentUnit source = workGraph.getVertexWithText(componentEdge.from().description());
+					EntailmentUnit target=  workGraph.getVertexWithText(componentEdge.to().description());
 					EntailmentRelation edge = new EntailmentRelation(source, target, new TEDecisionWithConfidence(componentEdge.score(), DecisionLabel.Entailment));
 					tmpRawGraph.addEdge(source, target, edge);
 				}

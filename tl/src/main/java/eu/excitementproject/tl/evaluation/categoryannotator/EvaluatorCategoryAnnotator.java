@@ -109,23 +109,27 @@ public class EvaluatorCategoryAnnotator {
     static NodeMatcherWithIndex nodeMatcher;
 	static CategoryAnnotator categoryAnnotator;
 	static ConfidenceCalculator confidenceCalculator;
+    static boolean tfidf;
+    static File configFile;
+	
 	
 	static double thresholdForOptimizing = 0.99;
 
     static int setup;
     
-    static boolean readGraphFromFile = true;
+    static boolean readGraphFromFile = false;
     
     static boolean trainEDA = false;
     static boolean processTrainingData = false;
-    
+
     static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction
     
 	public static void main(String[] args) {
 		String inputFoldername = "./src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
 		String outputGraphFoldername = "./src/test/resources/sample_graphs/"; //output directory (for generated entailment graph)
 			
-		EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator();
+		setup = 1;
+		EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setup);
 		
 		try {
 			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername);
@@ -150,11 +154,22 @@ public class EvaluatorCategoryAnnotator {
 	private void setup(int i) {
 		try {
 			switch(i){
-	        	case 1:
+	        	case 0: //simple tfidf (graph with non-connected nodes)
+	        		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphOptimizer = new GlobalGraphOptimizer();
+		    		tfidf = true;
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 1: //TIE with base configuration (inflection only)
 	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
 	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
-	        		File configFile = new File(configFilename);
+	        		configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
 	        		eda = new MaxEntClassificationEDA();
 		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
@@ -163,9 +178,27 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphOptimizer = new GlobalGraphOptimizer();
-		    		boolean tfidf = true;
+		    		tfidf = true;
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 2: //TIE with base configuration + GermaNet 
+	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
+	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
+	    			configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN_DE.xml";;
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphOptimizer = new GlobalGraphOptimizer();
+		    		tfidf = true;
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
 			}
 		} catch (FragmentAnnotatorException | ModifierAnnotatorException | ConfigurationException e) {
 			e.printStackTrace();
@@ -432,7 +465,7 @@ public class EvaluatorCategoryAnnotator {
 				logger.info("Reduced training set contains " +graphDocs.size()+ " documents.");
 				logger.info("Building graph..."); 
 		    	graph = new EntailmentGraphCollapsed();
-//				graph = buildGraph(graphDocs);
+				graph = buildGraph(graphDocs);
 				logger.info("Writing graph to " + graphFile.getAbsolutePath()); 
 				XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
 	    	}
@@ -509,7 +542,6 @@ public class EvaluatorCategoryAnnotator {
 			logger.info("Number of processed interactions " + processedInteractions.size());
 			logger.info("Baseline: " + (double) categoryOccurrences.get(mostFrequentCat)/ (double) processedInteractions.size());
 		}
-		
 //		System.exit(0);
 		return mostFrequentCat;
 
@@ -642,11 +674,11 @@ public class EvaluatorCategoryAnnotator {
 	/**
 	 * Build collapsed graph from interactions, including category information.
 	 * 
-	 * @param trainingDocs
+	 * @param graphDocs
 	 * @return
 	 * @throws Exception 
 	 */
-	private EntailmentGraphCollapsed buildGraph(Set<Interaction> trainingDocs) throws Exception {
+	private EntailmentGraphCollapsed buildGraph(List<Interaction> graphDocs) throws Exception {
 		startTime = endTime;
 		endTime   = System.currentTimeMillis();
 		logger.info((endTime - startTime));		
@@ -658,7 +690,7 @@ public class EvaluatorCategoryAnnotator {
 		
 		//build fragment graphs from input data
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
-		for(Interaction i: trainingDocs) {
+		for(Interaction i: graphDocs) {
 			logger.info("relevantText: " + i.getRelevantText());
 			if (i.getRelevantText() == null) System.exit(1);
 			i.fillInputCAS(cas); 
@@ -668,64 +700,27 @@ public class EvaluatorCategoryAnnotator {
 			fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
 		}
 		logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
-
 		
-		//merge one doc after the other --> takes ages with EOP EDA!!
-		/*
-		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();
-		for(Interaction i: trainingDocs) {
-			logger.info("Processing interaction " + count + " of " + trainingDocs.size());
-			logger.info("Interaction text:  " + i.getInteractionString());
-			count++;
-			i.fillInputCAS(cas); 
-			fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
-			modifierAnnotator.annotateModifiers(cas);
-			logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-			fgs = fragmentGraphGenerator.generateFragmentGraphs(cas);
-			logger.info("Adding " + fgs.size() + " fragment graphs");
-			egr = graphMerger.mergeGraphs(fgs, egr);
-			logger.info("Merged graph now has " + egr.vertexSet().size() + " nodes");
-			startTime = endTime;
-			endTime   = System.currentTimeMillis();
-			logger.info("Merging took " + ((double)(endTime - startTime)/60000) + " minutes");		
-		}*/
-		
-		
-		//merge graph --> takes a really long time!
-		/*
-		eda.initialize(config);
-		egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-		logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-		*/
-		
-		
-		//merge graph - baseline
-		count = 0; 
-		for (FragmentGraph fg : fgs) {
-			count++;
-			logger.info("Adding fragment graph " +count+ " out of " + fgs.size());
-			for (EntailmentUnitMention eum : fg.vertexSet()) {
-				egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
-			}
-		}			
-		logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-
+		if (setup == 0) {
+			count = 0; 
+			for (FragmentGraph fg : fgs) {
+				count++;
+				logger.info("Adding fragment graph " +count+ " out of " + fgs.size());
+				for (EntailmentUnitMention eum : fg.vertexSet()) {
+					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
+				}
+			}			
+		} else { //merge graph --> takes a really long time!
+			eda.initialize(config);
+			egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
+			logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
+		}
 		
 		startTime = endTime;
 		endTime   = System.currentTimeMillis();
 		logger.info((endTime - startTime));		
 		logger.info("Merged all fragment graphs");
-		
 		logger.info(egr.toStringDetailed());
-		//System.exit(0);
-				
-		
-		//EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-		
-		logger.info("Merged graphs.");
-		startTime = endTime;
-		endTime   = System.currentTimeMillis();
-		logger.info((endTime - startTime));		
 		EntailmentGraphCollapsed graph = graphOptimizer.optimizeGraph(egr, thresholdForOptimizing);
 		logger.info("Built collapsed graph.");		
 		startTime = endTime;

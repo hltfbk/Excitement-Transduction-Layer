@@ -20,9 +20,8 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	public DemoUseCase1NICEEnglish() {
 		
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 33,
-//				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1",
-				"./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 20,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
@@ -36,6 +35,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 		// the results can be found under "./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1"
 		
 		// now load some existing collapsed graph (we load one with 10 interactions)
+		
 		File xmlFile = new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
 		try {
 			EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(xmlFile);
