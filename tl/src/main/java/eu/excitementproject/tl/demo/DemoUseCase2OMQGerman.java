@@ -250,8 +250,7 @@ public class DemoUseCase2OMQGerman {
 			
 			//optimize graph
 			logger.info("Merged graph contains " + egr.edgeSet().size() + " edges");
-			System.exit(1);
-			graph = graphOptimizer.optimizeGraph(egr, 0.9);
+			graph = graphOptimizer.optimizeGraph(egr, 0.8);
 			logger.info("Optimized graph: " + graph.vertexSet().size() + " nodes");
 			logger.info("Optimized graph contains " + graph.edgeSet().size() + " edges");
 			
@@ -261,7 +260,6 @@ public class DemoUseCase2OMQGerman {
 			logger.info("Computed category confidence");
 			XMLFileWriter.write(graph.toXML(), xmlGraphFilename);			
 			logger.info("Wrote to file " + xmlGraphFilename);
-			GraphViewer.drawGraph(graph);
 		}
 		return graph;
 	}
