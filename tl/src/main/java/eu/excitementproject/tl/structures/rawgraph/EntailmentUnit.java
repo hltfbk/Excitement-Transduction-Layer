@@ -188,10 +188,11 @@ public class EntailmentUnit{
 	 * @param text
 	 * @return
 	 */
-	public boolean isTextIncludedOrRelevant(String text){
-		if (this.text.equalsIgnoreCase(text)) return true;		
+	public boolean isTextIncludedOrRelevant(String text){		
+		String cleanText = getTextWithoutDoubleSpaces(text);
+		if (this.getTextWithoutDoubleSpaces().equalsIgnoreCase(cleanText)) return true;		
 		for (String mentionText : this.getMentionTexts()){
-			if (mentionText.equalsIgnoreCase(text)) return true; 
+			if (getTextWithoutDoubleSpaces(mentionText).equalsIgnoreCase(cleanText)) return true; 
 		}
 		return false;
 	}
@@ -236,6 +237,11 @@ public class EntailmentUnit{
 	public String getTextWithoutDoubleSpaces(){
 		return this.getText().trim().replaceAll(" +", " ");
 	}
+	
+	public String getTextWithoutDoubleSpaces(String text){
+		return text.trim().replaceAll(" +", " ");
+	}
+	
 
 	/******************************************************************************************
 	 * PRINT

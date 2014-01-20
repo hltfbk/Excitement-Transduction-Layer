@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.graph.DefaultEdge;
 
+
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
@@ -16,6 +17,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawExceptio
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
+import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 
 /**
@@ -176,6 +178,9 @@ public class EntailmentRelation extends DefaultEdge {
 			edge = eda.process(pairCAS);
 		} catch (EDAException | ComponentException e) {
 			throw new EntailmentGraphRawException(e.getMessage());
+		} catch (RuntimeException rune) {
+			logger.error("Cannot obtain EDA decision for edge: " + source.getText() + " -> " + target.getText() +"\n"+rune.getMessage());
+			edge = new TEDecisionWithConfidence(0.0, DecisionLabel.Unknown);
 		}
 	}
 
@@ -189,11 +194,31 @@ public class EntailmentRelation extends DefaultEdge {
 		// extract annotations from "from" and "to" to form the JCas object that is used as input to the EDA
 		logger.info("Generating a cass for the pair: \n \tTEXT: " + source.getText() + "\n \tHYPOTHESIS: " + target.getText());
 		try {
-			
 			lap.annotateSingleTHPairCAS(source.getTextWithoutDoubleSpaces(), target.getTextWithoutDoubleSpaces(), lap.workJCas);
-			return lap.workJCas;
+
+/*			// some printouts trying to understand why BIUTEE LAP fails
+			System.out.println("generateTHPairCAS:   "+lap.workJCas.getDocumentLanguage());
+			Pair pairAnno = JCasUtil.selectSingle(lap.workJCas, Pair.class);
+			System.out.println("generateTHPairCAS:   "+pairAnno);
+			Text textAnno = pairAnno.getText();
+			System.out.println("generateTHPairCAS:   <<"+textAnno.getCoveredText()+">>");
+			Hypothesis hypothesisAnno = pairAnno.getHypothesis();
+			System.out.println("generateTHPairCAS:   <<"+hypothesisAnno.getCoveredText()+">>");
+
+			try {
+				JCas textView = lap.workJCas.getView(LAP_ImplBase.TEXTVIEW);
+				Sentence textSentence = JCasUtil.selectSingle(textView, Sentence.class);
+				System.out.println("generateTHPairCAS:   "+textSentence.getCoveredText());
+				JCas hypothesisView = lap.workJCas.getView(LAP_ImplBase.HYPOTHESISVIEW);
+				Sentence hypothesisSentence = JCasUtil.selectSingle(hypothesisView, Sentence.class);
+				System.out.println("generateTHPairCAS:   "+hypothesisSentence.getCoveredText());
+			} catch (CASException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+*/			return lap.workJCas;
 		} catch (LAPException e) {
-			throw new EntailmentGraphRawException(e.getMessage());
+			throw new EntailmentGraphRawException("Cannot generate THPairCAS for edge: " + source.getText() + " -> " + target.getText() +"\n"+e.getMessage());
 		}
 	}
 

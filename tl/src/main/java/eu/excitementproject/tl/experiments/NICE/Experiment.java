@@ -62,7 +62,7 @@ public class Experiment extends AbstractExperiment {
 		Experiment eBIUTEE = new Experiment(
 				tlDir+"src/test/resources/NICE_experiments/biutee_wp6.xml",
 				
-				tlDir+"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 15,
+				tlDir+"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 25,
 				tlDir+"src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
 				
 				BIUFullLAP.class,
