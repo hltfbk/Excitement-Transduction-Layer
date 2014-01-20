@@ -16,6 +16,7 @@ import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
+import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
@@ -64,6 +65,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
+import eu.excitementproject.tl.structures.visualization.GraphViewer;
 
 /**
 * Shows OMQ use case data flow.
@@ -80,7 +82,8 @@ public class DemoUseCase2OMQGerman {
 	
 	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
 	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
-	static String xmlDataFilename = "omq_public_1_emails.xml";
+	static String xmlDataFilename = "smallest_a.xml";
+//	static String xmlDataFilename = "omq_public_1_emails.xml";
 //	static String xmlDataFilename = "keywordAnnotations3.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
@@ -90,7 +93,7 @@ public class DemoUseCase2OMQGerman {
 	static boolean processTrainingData = false; //if true: process the data in "edaTrainingFilename"
 	static boolean trainEDA = false; //if true: train the EDA on the processed data
 	static boolean keywordsProvided = false; //if true: input dataset contains keyword metadata
-	static boolean relevantTextProvided = true; //if true; input dataset contains relevantText annotation
+	static boolean relevantTextProvided = false; //if true; input dataset contains relevantText annotation
 	
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
@@ -175,7 +178,7 @@ public class DemoUseCase2OMQGerman {
 			ComponentException, FragmentAnnotatorException,
 			ModifierAnnotatorException, FragmentGraphGeneratorException,
 			GraphMergerException, GraphOptimizerException,
-			ConfidenceCalculatorException, TransformerException {
+			ConfidenceCalculatorException, TransformerException, EntailmentGraphRawException {
 		EntailmentGraphCollapsed graph = null;
 		File graphFile = new File(xmlGraphFilename);
 		
@@ -230,24 +233,35 @@ public class DemoUseCase2OMQGerman {
 			for(Interaction i: docs) {
 				i.fillInputCAS(cas, relevantTextProvided); 
 				fragAnot.annotateFragments(cas);
-				modAnot.annotateModifiers(cas);
-				logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-				fgs  = fragGen.generateFragmentGraphs(cas);
-				logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
-				egr = graphMerger.mergeGraphs(fgs, egr);
-				logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
+				if (cas.getAnnotationIndex(FragmentAnnotation.type).size() > 0) {
+					modAnot.annotateModifiers(cas);
+					logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+					fgs  = fragGen.generateFragmentGraphs(cas);
+					logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
+					egr = graphMerger.mergeGraphs(fgs, egr);
+					logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
+					String xmlMergedGraphFilename = xmlGraphFoldername + xmlDataFilename.replace(".xml", "") + "_merged_graph.xml";
+					XMLFileWriter.write(egr.toXML(), xmlMergedGraphFilename);			
+					logger.info("Wrote to file " + xmlMergedGraphFilename);
+				} else {
+					logger.error("No fragment annotation found!");
+				}
 			}
 			
 			//optimize graph
-			graph = graphOptimizer.optimizeGraph(egr, 0.95);
+			logger.info("Merged graph contains " + egr.edgeSet().size() + " edges");
+			System.exit(1);
+			graph = graphOptimizer.optimizeGraph(egr, 0.9);
 			logger.info("Optimized graph: " + graph.vertexSet().size() + " nodes");
+			logger.info("Optimized graph contains " + graph.edgeSet().size() + " edges");
 			
 			// compute category confidences and add them to graph
 			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 			cc.computeCategoryConfidences(graph);
 			logger.info("Computed category confidence");
 			XMLFileWriter.write(graph.toXML(), xmlGraphFilename);			
-			logger.info("Wrote to file");
+			logger.info("Wrote to file " + xmlGraphFilename);
+			GraphViewer.drawGraph(graph);
 		}
 		return graph;
 	}
@@ -260,9 +274,11 @@ public class DemoUseCase2OMQGerman {
 		if (keywordsProvided) { //keyword-based fragment annotation	
 			lap = new CachedLAPAccess(new MaltParserDE()); 
 			fragAnot = new KeywordBasedFragmentAnnotator(lap);	
+			logger.info("Using keyword-based fragment annotator.");
 		} else { //sentence-based fragment annotation
 			lap = new CachedLAPAccess(new LemmaLevelLapDE()); 
 			fragAnot = new SentenceAsFragmentAnnotator(lap);
+			logger.info("Using sentence-as-fragment annotator.");
 		}
 		modAnot = new AdvAsModifierAnnotator(lap); 		
 		eda = new MaxEntClassificationEDA();	
