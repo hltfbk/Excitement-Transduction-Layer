@@ -6,7 +6,9 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 public class Experiment extends AbstractExperiment {
@@ -16,7 +18,8 @@ public class Experiment extends AbstractExperiment {
 			Class<?> edaClass) {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
-		// TODO Auto-generated constructor stub
+		
+		m_optimizer = new SimpleGraphOptimizer();
 	}
 
 	/**
@@ -62,7 +65,7 @@ public class Experiment extends AbstractExperiment {
 		Experiment eBIUTEE = new Experiment(
 				tlDir+"src/test/resources/NICE_experiments/biutee_wp6.xml",
 				
-				tlDir+"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 25,
+				tlDir+"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 5,
 				tlDir+"src/test/outputs/WP2_public_data_CAS XMI/nice_email_3",
 				
 				BIUFullLAP.class,
@@ -81,18 +84,22 @@ public class Experiment extends AbstractExperiment {
 */
 			
 		Experiment e = eBIUTEE; 
-		EntailmentGraphRaw gr = e.buildRawGraph();
+		e.buildRawGraph();
 		
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open";
-		boolean includeFragmentGraphEdges = false;
+		boolean includeFragmentGraphEdges = true;
 
 		//TODO Verify why FG edges are not found in the graph. Is it only for closure edges? 
 	//	System.out.println(gr);
 		for (double confidenceThreshold=0.5; confidenceThreshold<1; confidenceThreshold+=0.05){
-			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, gr, gsAnnotationsDir, includeFragmentGraphEdges);
-			System.out.println(confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
+			System.out.println("raw\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			EntailmentGraphCollapsed cgr= e.collapseGraph(confidenceThreshold);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, includeFragmentGraphEdges);
+			System.out.println("collapsed\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());			
 		}
 		System.out.println("Done");
+		
 	}
 
 }
