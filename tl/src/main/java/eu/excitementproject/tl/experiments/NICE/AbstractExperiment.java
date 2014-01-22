@@ -102,7 +102,12 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		return EvaluatorGraphMerger.evaluate(gsloader.getEdges(), graph.edgeSet(), includeFragmentGraphEdges);
 	}
 	
-	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){			
+	/** Excluding fragment graph edges is not available - for collapsed graph we don't keep track of the edges' origin, also logically it's not relevant for collapsed graph evaluation
+	 * @param graph
+	 * @param gsAnnotationsDir
+	 * @return
+	 */
+	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir){			
 		// de-collapse the graph into the corresponding raw graph
 		EntailmentGraphRaw rawGraph = new EntailmentGraphRaw();
 		for (EntailmentRelation e : EvaluatorGraphOptimizer.getAllEntailmentRelations(graph)){
@@ -110,7 +115,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 			if (!rawGraph.containsVertex(e.getTarget())) rawGraph.addVertex(e.getTarget());
 			rawGraph.addEdge(e.getSource(), e.getTarget(), e);
 		}		
-		return evaluateRawGraph(rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);
+		return evaluateRawGraph(rawGraph, gsAnnotationsDir, true);
 	}
 	
 /*	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphRaw rawGraph, EntailmentGraphCollapsed collapsedGraph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){		
