@@ -8,6 +8,7 @@ import javax.xml.transform.TransformerException;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -27,7 +28,9 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 public abstract class AbstractExperiment extends UseCaseOneDemo {
 
-	GoldStandardEdgesLoader gsloader = null;
+	public GoldStandardEdgesLoader gsloader = null;
+	public EntailmentGraphRaw m_rawGraph = null;
+	public GraphOptimizer m_optimizer = null;
 	
 	public AbstractExperiment(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
@@ -38,36 +41,33 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		
 	}
 	
-	public EntailmentGraphRaw buildRawGraph() {
+	public void buildRawGraph() {
 		try {
-			return this.useOne.buildRawGraph(this.docs);
+			m_rawGraph = this.useOne.buildRawGraph(this.docs);
 		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
 				ModifierAnnotatorException | IOException e) {
+			e.printStackTrace();	
+		}
+	}
+
+	public EntailmentGraphCollapsed collapseGraph() {
+		try {
+			return m_optimizer.optimizeGraph(m_rawGraph);
+		} catch (GraphOptimizerException e) {
 			e.printStackTrace();	
 			return null;
 		}
 	}
 	
-	public EntailmentGraphRaw buildRawGraph(Double thresould) {
+	public EntailmentGraphCollapsed collapseGraph(Double threshold) {
 		try {
-			return this.useOne.buildRawGraph(this.docs);
-		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
-				ModifierAnnotatorException | IOException e) {
+			return m_optimizer.optimizeGraph(m_rawGraph, threshold);
+		} catch (GraphOptimizerException e) {
 			e.printStackTrace();	
 			return null;
 		}
 	}
 
-	public EntailmentGraphCollapsed buildCollapsedGraph() {
-		try {
-			return this.useOne.buildCollapsedGraph(this.docs);
-		} catch (LAPException | EntailmentGraphRawException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
-				ModifierAnnotatorException | IOException | TransformerException | GraphMergerException | GraphOptimizerException e) {
-			e.printStackTrace();	
-			return null;
-		}
-	}
-	
 	/** 
 	 * @param graph
 	 * @param gsAnnotationsDir
@@ -102,12 +102,23 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		return EvaluatorGraphMerger.evaluate(gsloader.getEdges(), graph.edgeSet(), includeFragmentGraphEdges);
 	}
 	
-	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphRaw rawGraph, EntailmentGraphCollapsed collapsedGraph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){		
+	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){			
+		// de-collapse the graph into the corresponding raw graph
+		EntailmentGraphRaw rawGraph = new EntailmentGraphRaw();
+		for (EntailmentRelation e : EvaluatorGraphOptimizer.getAllEntailmentRelations(graph)){
+			if (!rawGraph.containsVertex(e.getSource())) rawGraph.addVertex(e.getSource());
+			if (!rawGraph.containsVertex(e.getTarget())) rawGraph.addVertex(e.getTarget());
+			rawGraph.addEdge(e.getSource(), e.getTarget(), e);
+		}		
+		return evaluateRawGraph(rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);
+	}
+	
+/*	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphRaw rawGraph, EntailmentGraphCollapsed collapsedGraph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){		
 		loadGS(rawGraph, gsAnnotationsDir);
 		//TODO Here preliminary cleaning will also be needed, unless we fix the inconsistency 		
 		return EvaluatorGraphOptimizer.evaluateDecollapsedGraph(gsloader.getEdges(), collapsedGraph, includeFragmentGraphEdges);
-	}
-	
+	}*/
+
 	/** Evaluate raw graph, where only edges with confidence > threshold are left
 	 * @param confidenceThreshold
 	 * @param graph

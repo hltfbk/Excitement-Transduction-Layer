@@ -45,7 +45,7 @@ public class EvaluatorGraphOptimizer {
 	 * @param collapsedGraph
 	 * @return The full set of edges after de-collapsing is performed, which should be passed to the EvaluatorGraphMerger process
 	 */
-	private static Set<EntailmentRelation> getAllEntailmentRelations(EntailmentGraphCollapsed collapsedGraph){
+	public static Set<EntailmentRelation> getAllEntailmentRelations(EntailmentGraphCollapsed collapsedGraph){
 		Set<EntailmentRelation> decollapsedGraphEdges = new HashSet<EntailmentRelation>();
 
 		// decollapse all the collapsed nodes
