@@ -41,7 +41,7 @@ import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
@@ -65,7 +65,6 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
-import eu.excitementproject.tl.structures.visualization.GraphViewer;
 
 /**
 * Shows OMQ use case data flow.
@@ -281,6 +280,6 @@ public class DemoUseCase2OMQGerman {
 		modAnot = new AdvAsModifierAnnotator(lap); 		
 		eda = new MaxEntClassificationEDA();	
 		fragGen = new FragmentGraphLiteGeneratorFromCAS();
-		graphOptimizer = new GlobalGraphOptimizer();
+		graphOptimizer = new SimpleGraphOptimizer();
 	}
 }
