@@ -37,7 +37,7 @@ public class ExperimentAlma extends AbstractExperiment {
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit/test";
 		int fileLimit = 1000;
-		String outDir = dataDir.replace("resources", "outputs").replace("test", "");
+		String outDir = dataDir.replace("resources", "outputs");
 		
 		
 		String conf = tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml";
