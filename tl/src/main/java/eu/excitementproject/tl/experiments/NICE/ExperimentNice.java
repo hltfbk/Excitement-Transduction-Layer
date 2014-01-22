@@ -14,13 +14,17 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedEx
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
+import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
-public class Experiment extends AbstractExperiment {
+/** 
+ * Class to load NICE data, build the graphs and evaluate them
+ * @author Lili Kotlerman
+ * 
+ */
+public class ExperimentNice extends AbstractExperiment {
 
-	public Experiment(String configFileName, String dataDir,
+	public ExperimentNice(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
@@ -50,7 +54,7 @@ public class Experiment extends AbstractExperiment {
 				);
 */		
 
-		Experiment eTIEposRes = new Experiment(
+		ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -91,7 +95,7 @@ public class Experiment extends AbstractExperiment {
 		);
 */
 			
-		Experiment e = eTIEposRes; 
+		ExperimentNice e = eTIEposRes; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");

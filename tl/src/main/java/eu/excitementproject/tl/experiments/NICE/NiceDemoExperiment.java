@@ -13,6 +13,11 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
+/**
+ * Tmp class for the stuff needed to support NICE demo development
+ * @author Lili Kotlerman
+ *
+ */
 public class NiceDemoExperiment  {
 
 

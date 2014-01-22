@@ -1,15 +1,12 @@
-package eu.excitementproject.tl.experiments.NICE;
+package eu.excitementproject.tl.experiments;
 
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.xml.transform.TransformerException;
-
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -26,6 +23,11 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
+/**
+ * Class with methods for running experiments & evaluations
+ * @author Lili Kotlerman
+ *
+ */
 public abstract class AbstractExperiment extends UseCaseOneDemo {
 
 	public GoldStandardEdgesLoader gsloader = null;
@@ -39,6 +41,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 		
+		// Logger.getRootLogger().setLevel(Level.ERROR); 
 	}
 	
 	public void buildRawGraph() {

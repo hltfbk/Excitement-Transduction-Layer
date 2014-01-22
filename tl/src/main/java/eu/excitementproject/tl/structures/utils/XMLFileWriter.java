@@ -8,6 +8,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+/**
+ * Class for saving xml data to the file system
+ * @author Lili Kotlerman
+ *
+ */
 public class XMLFileWriter {
 	
 	public static void write(DOMSource source, String filename) throws TransformerException{

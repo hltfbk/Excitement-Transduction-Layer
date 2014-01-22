@@ -9,12 +9,17 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedEx
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
-import eu.excitementproject.tl.experiments.NICE.AbstractExperiment;
+import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 
-public class Experiment extends AbstractExperiment {
+/**
+ * Class to load ALMA data, build the graphs and evaluate them
+ * @author Lili Kotlerman
+ *
+ */
+public class ExperimentAlma extends AbstractExperiment {
 
-	public Experiment(String configFileName, String dataDir,
+	public ExperimentAlma(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
@@ -39,7 +44,7 @@ public class Experiment extends AbstractExperiment {
 		Class<?> lapClass = TreeTaggerEN.class;
 		Class<?> edaClass = MaxEntClassificationEDA.class;
 
-		Experiment e = new Experiment(conf, dataDir, fileLimit, outDir, lapClass, edaClass);			
+		ExperimentAlma e = new ExperimentAlma(conf, dataDir, fileLimit, outDir, lapClass, edaClass);			
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
