@@ -11,6 +11,7 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 
 import org.jgrapht.graph.DirectedMultigraph;
@@ -35,6 +36,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
+import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 
 /**
@@ -599,7 +601,11 @@ public class EntailmentGraphRaw extends
 					// TODO Auto-generated catch block
 				}		 
 		  }
-		
+	
+	public void toXML(String filename) throws TransformerException, EntailmentGraphRawException{
+		XMLFileWriter.write(this.toXML(), filename);
+	}
+	
 	public String toStringDetailed(){
 		String s = "";
 		s+="\nNODES:";

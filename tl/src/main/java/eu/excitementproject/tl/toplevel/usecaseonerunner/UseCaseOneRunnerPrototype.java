@@ -155,8 +155,13 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>(); 
 		
 		for(JCas aJCas: docs) {
-			annotateCAS(aJCas);
-			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
+			try {
+				annotateCAS(aJCas);
+				fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
+			} catch (Exception e) {
+				logger.info("Cannot annotate modifiers and/or generate fragment graph. Skipping the problematic input.\n"+e);
+				//TODO: debug why ModdifierAnnotatorException is raised on NICE data with BIUTEE
+			}
 		}
 		
 		inspectGraph(fgs);

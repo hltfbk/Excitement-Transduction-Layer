@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="15">
+	<node implicit_focus="" focus="bag" implicit_context="" explicit_context="13764680_76468004.txt" modality="FALSE" id ="13764680_76468004.txt_1_0">
+		<original_text>my bag i don't know where it is</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="bags" implicit_context="" explicit_context="13764878_82942763.txt" modality="FALSE" id ="13764878_82942763.txt_1_0">
+		<original_text>one of my bags arrived and i don't want to not</original_text>
+		<correct_text>one of my bags arrived and another one did not</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="bag" focus="" implicit_context="" explicit_context="13764888_80919841.txt" modality="FALSE" id ="13764888_80919841.txt_1_0">
+		<original_text>i'm on day three in narnia without my back</original_text>
+		<correct_text>i'm on day three in narnia without my bag </correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="bag" implicit_context="" explicit_context="13765022_84067622.txt" modality="FALSE" id ="13765022_84067622.txt_1_0">
+		<original_text>my bag was out there</original_text>
+		<correct_text>my bag was not there</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="bag" implicit_context="" explicit_context="13765028_82963501.txt" modality="FALSE" id ="13765028_82963501.txt_1_0">
+		<original_text>high arrived home in moonport last night but my bag did not</original_text>
+		<correct_text>i arrived home in moonport last night, but my bag did not</correct_text>
+		<modifiers>last nightpoz=5 6;in moonportpoz=3 4</modifiers>
+	</node>
+	<node implicit_focus="" focus="bag" implicit_context="" explicit_context="13765028_82963501.txt" modality="FALSE" id ="13765028_82963501.txt_1_1">
+		<original_text>high arrived home in moonport but my bag did not</original_text>
+		<correct_text>i arrived home in moonport but my bag did not </correct_text>
+		<modifiers>in moonportpoz=3 4</modifiers>
+	</node>
+	<node implicit_focus="" focus="bag" implicit_context="" explicit_context="13765028_82963501.txt" modality="FALSE" id ="13765028_82963501.txt_1_2">
+		<original_text>high arrived home last night but my bag did not</original_text>
+		<correct_text>i arrived home last night, but my bag did not</correct_text>
+		<modifiers>last nightpoz=5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="bag" implicit_context="" explicit_context="13765028_82963501.txt" modality="FALSE" id ="13765028_82963501.txt_1_3">
+		<original_text>high arrived home but my bag did not</original_text>
+		<correct_text>i arrived home but my bag did not</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="bag" focus="" implicit_context="" explicit_context="13765107_84849719.txt" modality="FALSE" id ="13765107_84849719.txt_1_0">
+		<original_text>why are they keep on my back</original_text>
+		<correct_text>why are they keeping my bag</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="bags" implicit_context="" explicit_context="13765197_83038377.txt" modality="FALSE" id ="13765197_83038377.txt_2_0">
+		<original_text>we had um three bags that were left last night</original_text>
+		<correct_text></correct_text>
+		<modifiers>threepoz=3;last nightpoz=8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="bags" implicit_context="" explicit_context="13765197_83038377.txt" modality="FALSE" id ="13765197_83038377.txt_2_1">
+		<original_text>we had um bags that were left last night</original_text>
+		<correct_text></correct_text>
+		<modifiers>last nightpoz=8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="bags" implicit_context="" explicit_context="13765197_83038377.txt" modality="FALSE" id ="13765197_83038377.txt_2_2">
+		<original_text>we had um three bags that were left</original_text>
+		<correct_text></correct_text>
+		<modifiers>threepoz=3</modifiers>
+	</node>
+	<node implicit_focus="" focus="bags" implicit_context="" explicit_context="13765197_83038377.txt" modality="FALSE" id ="13765197_83038377.txt_2_3">
+		<original_text>we had um bags that were left</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="bag" implicit_context="" explicit_context="13765218_85964833.txt" modality="FALSE" id ="13765218_85964833.txt_1_0">
+		<original_text>why did n't they just gave me my bag</original_text>
+		<correct_text>why didn't they just give me my bag</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="bags" implicit_context="" explicit_context="13765222_86100744.txt" modality="FALSE" id ="13765222_86100744.txt_1_0">
+		<original_text>her bags it looks like have been transferred over</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="13765022_84067622.txt_1_0" source="13764680_76468004.txt_1_0" id="13765022_84067622.txt_1_0-13764680_76468004.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764680_76468004.txt_1_0" source="13764878_82942763.txt_1_0" id="13764680_76468004.txt_1_0-13764878_82942763.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765022_84067622.txt_1_0" source="13764878_82942763.txt_1_0" id="13765022_84067622.txt_1_0-13764878_82942763.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764680_76468004.txt_1_0" source="13764888_80919841.txt_1_0" id="13764680_76468004.txt_1_0-13764888_80919841.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765022_84067622.txt_1_0" source="13764888_80919841.txt_1_0" id="13765022_84067622.txt_1_0-13764888_80919841.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765028_82963501.txt_1_1" source="13765028_82963501.txt_1_0" id="13765028_82963501.txt_1_1-13765028_82963501.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765028_82963501.txt_1_2" source="13765028_82963501.txt_1_0" id="13765028_82963501.txt_1_2-13765028_82963501.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765028_82963501.txt_1_3" source="13765028_82963501.txt_1_1" id="13765028_82963501.txt_1_3-13765028_82963501.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765028_82963501.txt_1_3" source="13765028_82963501.txt_1_2" id="13765028_82963501.txt_1_3-13765028_82963501.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764680_76468004.txt_1_0" source="13765028_82963501.txt_1_3" id="13764680_76468004.txt_1_0-13765028_82963501.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765022_84067622.txt_1_0" source="13765028_82963501.txt_1_3" id="13765022_84067622.txt_1_0-13765028_82963501.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765022_84067622.txt_1_0" source="13765107_84849719.txt_1_0" id="13765022_84067622.txt_1_0-13765107_84849719.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765218_85964833.txt_1_0" source="13765107_84849719.txt_1_0" id="13765218_85964833.txt_1_0-13765107_84849719.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_2_1" source="13765197_83038377.txt_2_0" id="13765197_83038377.txt_2_1-13765197_83038377.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_2_2" source="13765197_83038377.txt_2_0" id="13765197_83038377.txt_2_2-13765197_83038377.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_2_3" source="13765197_83038377.txt_2_1" id="13765197_83038377.txt_2_3-13765197_83038377.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_2_3" source="13765197_83038377.txt_2_2" id="13765197_83038377.txt_2_3-13765197_83038377.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765022_84067622.txt_1_0" source="13765197_83038377.txt_2_3" id="13765022_84067622.txt_1_0-13765197_83038377.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765022_84067622.txt_1_0" source="13765218_85964833.txt_1_0" id="13765022_84067622.txt_1_0-13765218_85964833.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765107_84849719.txt_1_0" source="13765218_85964833.txt_1_0" id="13765107_84849719.txt_1_0-13765218_85964833.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765022_84067622.txt_1_0" source="13765222_86100744.txt_1_0" id="13765022_84067622.txt_1_0-13765222_86100744.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>
