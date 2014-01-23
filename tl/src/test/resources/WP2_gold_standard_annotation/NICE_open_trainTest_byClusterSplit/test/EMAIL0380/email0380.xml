@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="14">
+	<node implicit_focus="" focus="Toilets washrooms" implicit_context="" explicit_context="127257.txt" modality="FALSE" id ="127257.txt_1_0">
+		<original_text>Toilets / washrooms sometimes disappointing</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="Toilet" implicit_context="" explicit_context="16005.txt" modality="FALSE" id ="16005.txt_4_0">
+		<original_text>Toilet tissue quality is famously bad</original_text>
+		<correct_text></correct_text>
+		<modifiers>qualitypoz=2;famouslypoz=4</modifiers>
+	</node>
+	<node implicit_focus="" focus="Toilet" implicit_context="" explicit_context="16005.txt" modality="FALSE" id ="16005.txt_4_1">
+		<original_text>Toilet tissue is famously bad</original_text>
+		<correct_text></correct_text>
+		<modifiers>famouslypoz=4</modifiers>
+	</node>
+	<node implicit_focus="" focus="Toilet" implicit_context="" explicit_context="16005.txt" modality="FALSE" id ="16005.txt_4_2">
+		<original_text>Toilet tissue quality is bad</original_text>
+		<correct_text></correct_text>
+		<modifiers>qualitypoz=2</modifiers>
+	</node>
+	<node implicit_focus="" focus="Toilet" implicit_context="" explicit_context="16005.txt" modality="FALSE" id ="16005.txt_4_3">
+		<original_text>Toilet tissue is bad</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="toilets" implicit_context="" explicit_context="187987.txt" modality="TRUE" id ="187987.txt_2_0">
+		<original_text>toilets cleaned</original_text>
+		<correct_text>toilets need to be cleaned</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="toilets" implicit_context="" explicit_context="327783.txt" modality="FALSE" id ="327783.txt_6_0">
+		<original_text>toilets were very dirty</original_text>
+		<correct_text></correct_text>
+		<modifiers>verypoz=2</modifiers>
+	</node>
+	<node implicit_focus="" focus="toilets" implicit_context="" explicit_context="327783.txt" modality="FALSE" id ="327783.txt_6_1">
+		<original_text>toilets were dirty</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="toilet" implicit_context="" explicit_context="330688.txt" modality="FALSE" id ="330688.txt_4_0">
+		<original_text>toilet hygiene non existing</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="toilet" implicit_context="" explicit_context="457080.txt" modality="FALSE" id ="457080.txt_2_0">
+		<original_text>toilet floor dirty</original_text>
+		<correct_text>toilet floor is dirty</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="toilets" implicit_context="" explicit_context="483394.txt" modality="FALSE" id ="483394.txt_5_0">
+		<original_text>not enough ladies toilets at Stars Bridge</original_text>
+		<correct_text></correct_text>
+		<modifiers>ladiespoz=2;at Stars Bridgepoz=4 5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="toilets" implicit_context="" explicit_context="483394.txt" modality="FALSE" id ="483394.txt_5_1">
+		<original_text>not enough toilets at Stars Bridge</original_text>
+		<correct_text></correct_text>
+		<modifiers>at Stars Bridgepoz=4 5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="toilets" implicit_context="" explicit_context="483394.txt" modality="FALSE" id ="483394.txt_5_2">
+		<original_text>not enough ladies toilets</original_text>
+		<correct_text></correct_text>
+		<modifiers>ladiespoz=2</modifiers>
+	</node>
+	<node implicit_focus="" focus="toilets" implicit_context="" explicit_context="483394.txt" modality="FALSE" id ="483394.txt_5_3">
+		<original_text>not enough toilets</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="16005.txt_4_1" source="16005.txt_4_0" id="16005.txt_4_1-16005.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="16005.txt_4_2" source="16005.txt_4_0" id="16005.txt_4_2-16005.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="16005.txt_4_3" source="16005.txt_4_1" id="16005.txt_4_3-16005.txt_4_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="16005.txt_4_3" source="16005.txt_4_2" id="16005.txt_4_3-16005.txt_4_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="327783.txt_6_1" source="187987.txt_2_0" id="327783.txt_6_1-187987.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="330688.txt_4_0" source="187987.txt_2_0" id="330688.txt_4_0-187987.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="327783.txt_6_1" source="327783.txt_6_0" id="327783.txt_6_1-327783.txt_6_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="187987.txt_2_0" source="327783.txt_6_1" id="187987.txt_2_0-327783.txt_6_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="330688.txt_4_0" source="327783.txt_6_1" id="330688.txt_4_0-327783.txt_6_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="327783.txt_6_1" source="330688.txt_4_0" id="327783.txt_6_1-330688.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="187987.txt_2_0" source="330688.txt_4_0" id="187987.txt_2_0-330688.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="327783.txt_6_1" source="457080.txt_2_0" id="327783.txt_6_1-457080.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="330688.txt_4_0" source="457080.txt_2_0" id="330688.txt_4_0-457080.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="187987.txt_2_0" source="457080.txt_2_0" id="187987.txt_2_0-457080.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="483394.txt_5_1" source="483394.txt_5_0" id="483394.txt_5_1-483394.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="483394.txt_5_2" source="483394.txt_5_0" id="483394.txt_5_2-483394.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="483394.txt_5_3" source="483394.txt_5_1" id="483394.txt_5_3-483394.txt_5_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="483394.txt_5_3" source="483394.txt_5_2" id="483394.txt_5_3-483394.txt_5_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

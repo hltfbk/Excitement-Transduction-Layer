@@ -15,6 +15,7 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
@@ -29,6 +30,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedEx
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
+import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
  * 
@@ -519,7 +521,10 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		}		 
   }
 	
-
+	public void toXML(String filename) throws EntailmentGraphCollapsedException, TransformerException{
+		XMLFileWriter.write(this.toXML(), filename);
+	}
+	
 	/******************************************************************************************
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/

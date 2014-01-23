@@ -1,5 +1,10 @@
 package eu.excitementproject.tl.structures.rawgraph.utils;
 
+/**
+ * Enum to store the types of edges in TL raw graphs (EntailmentGraphRaw)
+ * @author Lili Kotlerman
+ *
+ */
 public enum EdgeType {
 
 	EDA,
