@@ -100,6 +100,13 @@ public class EntailmentUnitMention {
 	}
 
 	
+	/**
+	 * Builds the text fragment -- when the fragment is made up of fragment parts, the in-between pieces
+	 * 							   will be blank spaces to allow for proper position computations later on
+	 * 							   (when removing modifiers for example)
+	 * @param frag -- a fragment annotation
+	 * @return the text (including spaces for missing non-contiguous pieces with respect to the full interaction text)
+	 */
 	private CharSequence getTextFragment(FragmentAnnotation frag) {
 		
 		if (frag.getFragParts() == null || frag.getFragParts().size() == 0) {

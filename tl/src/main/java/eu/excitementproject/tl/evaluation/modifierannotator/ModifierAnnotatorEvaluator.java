@@ -44,16 +44,23 @@ public class ModifierAnnotatorEvaluator {
 			CASUtils.deserializeFromXmi(goldJCas, xmiIn);
 			// It has Mod & Frag annots, but doesn't have tokens at all!
 			// we need to add them. 
-			lap.addAnnotationOn(goldJCas);
 			
-			// 2nd. prepare a system output, by making a interaction ...
-			String interactionText = goldJCas.getDocumentText();
-			String interactionLang = goldJCas.getDocumentLanguage();
-			Interaction in = new Interaction(interactionText, interactionLang);  
-			JCas sysJCas = in.createAndFillInputCAS();
-			modAnnot.annotateModifiers(sysJCas); 
+			// check if the CAS covers text (e.g. nice_email_@ 108849.txt.xmi)
+			if ( goldJCas != null && 
+					goldJCas.getDocumentText() != null && 
+					! goldJCas.getDocumentText().isEmpty() && 
+					goldJCas.getDocumentText().length() > 0) {
+				lap.addAnnotationOn(goldJCas);
 			
-			counts = addScores(counts, FragmentAndModifierMatchCounter.countModifierCounts(goldJCas, sysJCas));
+				// 2nd. prepare a system output, by making a interaction ...
+				String interactionText = goldJCas.getDocumentText();
+				String interactionLang = goldJCas.getDocumentLanguage();
+				Interaction in = new Interaction(interactionText, interactionLang);  
+				JCas sysJCas = in.createAndFillInputCAS();
+				modAnnot.annotateModifiers(sysJCas); 
+			
+				counts = addScores(counts, FragmentAndModifierMatchCounter.countModifierCounts(goldJCas, sysJCas));
+			}
 		}
 		
 		logger.info("Final counts: " + counts.toString());

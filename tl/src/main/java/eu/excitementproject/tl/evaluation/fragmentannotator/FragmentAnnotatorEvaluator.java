@@ -44,20 +44,27 @@ public class FragmentAnnotatorEvaluator {
 			CASUtils.deserializeFromXmi(goldJCas, xmiIn);
 			// It has Mod & Frag annots, but doesn't have tokens at all!
 			// we need to add them. 
-			lap.addAnnotationOn(goldJCas);
 			
-			// 2nd. prepare a system output, by making a interaction ...
-			String interactionText = goldJCas.getDocumentText();
-			String interactionLang = goldJCas.getDocumentLanguage();
+			if (goldJCas != null &&
+					goldJCas.getDocumentText() != null &&
+					! goldJCas.getDocumentText().isEmpty() &&
+					goldJCas.getDocumentText().matches(".*\\w+.*")) {
+		
+				lap.addAnnotationOn(goldJCas);
 			
-		// how to add the keywords here? we have no xmis for data that has keywords ... 
-//			String interactionKeywords = ... ;
+				// 2nd. prepare a system output, by making a interaction ...
+				String interactionText = goldJCas.getDocumentText();
+				String interactionLang = goldJCas.getDocumentLanguage();
 			
-			Interaction in = new Interaction(interactionText, interactionLang);  
-			JCas sysJCas = in.createAndFillInputCAS();
-			fragAnnot.annotateFragments(sysJCas); 
+				// how to add the keywords here? we have no xmis for data that has keywords ... 
+				//			String interactionKeywords = ... ;
 			
-			counts = addScores(counts, FragmentAndModifierMatchCounter.countFragmentCounts(goldJCas, sysJCas));
+				Interaction in = new Interaction(interactionText, interactionLang);  
+				JCas sysJCas = in.createAndFillInputCAS();
+				fragAnnot.annotateFragments(sysJCas); 
+			
+				counts = addScores(counts, FragmentAndModifierMatchCounter.countFragmentCounts(goldJCas, sysJCas));
+			}
 		}
 		
 		logger.info("Final counts: " + counts.toString());

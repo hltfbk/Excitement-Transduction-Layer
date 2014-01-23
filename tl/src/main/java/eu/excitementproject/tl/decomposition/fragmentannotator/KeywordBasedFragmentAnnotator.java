@@ -257,6 +257,7 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 			if (t != null && 
 					(! t.getCoveredText().matches(k.getCoveredText()))
 				) {
+				logger.info("building fragment with head token " + t.getCoveredText());
 				frags = makeOneFragment(aJCas, t);
 			}
 		}
@@ -276,6 +277,8 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	private boolean isGovernorInDeps(JCas aJCas, Annotation k) {
 		
 		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, k.getBegin(), k.getEnd());
+		
+		logger.info("Checking if " + k.getCoveredText() + " is governor in some dependencies");
 		
 		if (deps != null && deps.size() > 0) {
 			for (Dependency d: deps) {
@@ -300,7 +303,7 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 		Collection<POS> pos = JCasUtil.selectCovering(aJCas, POS.class, k.getBegin(), k.getEnd());
 		
 		for(POS p: pos) {
-//			System.out.println("POS for " + k.getCoveredText() + " : " + p.getPosValue());
+			logger.info("POS for " + k.getCoveredText() + " : " + p.getPosValue());
 //			if (p.getPosValue().matches("^(N|V).*"))
 			if (p.getPosValue().matches("^V.*"))
 				return true;
@@ -362,7 +365,7 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 		if (deps != null && deps.size() > 0) {
 			for(Dependency d: deps) {
 				
-//				logger.info("\t\tdependency: (" + d.getGovernor().getCoveredText() + "," + d.getDependent().getCoveredText() + ") => " + d.getDependencyType());
+				logger.info("\t\tdependency: (" + d.getGovernor().getCoveredText() + "," + d.getDependent().getCoveredText() + ") => " + d.getDependencyType());
 				
 				if (d.getGovernor().getCoveredText().matches(word)) {
 					Token t = d.getDependent();
