@@ -1,7 +1,7 @@
 package eu.excitementproject.tl.evaluation.categoryannotator;
 
 import java.io.File;
-
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -13,13 +13,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.TransformerException;
 
 import org.apache.log4j.Logger;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.de.GermanAnalyzer;
 import org.apache.lucene.util.Version;
 import org.apache.uima.jcas.JCas;
 
+import de.tuebingen.uni.sfs.germanet.api.GermaNet;
+import de.tuebingen.uni.sfs.germanet.api.LexUnit;
 import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
 import eu.excitementproject.eop.common.EDABasic;
@@ -34,17 +37,20 @@ import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.api.NodeMatcher;
 import eu.excitementproject.tl.composition.api.NodeMatcherWithIndex;
 import eu.excitementproject.tl.composition.categoryannotator.CategoryAnnotatorAllCats;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
+import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
@@ -58,6 +64,7 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
+import eu.excitementproject.tl.laputils.CategoryReader;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
@@ -91,7 +98,7 @@ import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototy
 
 public class EvaluatorCategoryAnnotator { 
 	
-	private static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
+	static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
     static long startTime = System.currentTimeMillis();
     static long endTime = 0;
     
@@ -106,33 +113,51 @@ public class EvaluatorCategoryAnnotator {
     static FragmentGraphGenerator fragmentGraphGenerator;
     static GraphMerger graphMerger;
     static GraphOptimizer graphOptimizer;
-    static NodeMatcherWithIndex nodeMatcher;
+    static NodeMatcher nodeMatcher;
+    static NodeMatcherWithIndex nodeMatcherWithIndex;
 	static CategoryAnnotator categoryAnnotator;
 	static ConfidenceCalculator confidenceCalculator;
-    static boolean tfidf;
     static File configFile;
+	static GermaNet germanet;
+	static Set<String> GermaNetLexicon; 
+    
+	//CHOOSE CONFIGURATION:
 	
-	
-	static double thresholdForOptimizing = 0.99;
-
-    static int setup;
+	static double thresholdForOptimizing = 0.8;
+	static int minTokenOccurrence = 5;
+	static int minTokenOccurrenceInCategories = 2;
+    
+	static boolean tfidf = true;
+    static boolean LuceneSearch = true;
+    
+    static int setup = 2;
     
     static boolean readGraphFromFile = false;
+    static boolean readMergedGraphFromFile = false;
     
     static boolean trainEDA = false;
     static boolean processTrainingData = false;
 
-    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction
-    
+    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction    
+
 	public static void main(String[] args) {
 		String inputFoldername = "./src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
 		String outputGraphFoldername = "./src/test/resources/sample_graphs/"; //output directory (for generated entailment graph)
-			
-		setup = 1;
+		String categoriesFilename = inputFoldername + "omq_public_categories.xml"; 
+		
+		/*
+		try {
+			GermaNetLexicon = getGermaNetLexicon();
+			logger.info("GermaNet lexicon contains " + GermaNetLexicon.size() + " entries");
+		} catch (LAPException | FragmentAnnotatorException | XMLStreamException | IOException e1) {
+			e1.printStackTrace();
+		}	
+	*/	
 		EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setup);
 		
 		try {
-			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername);
+			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+			//eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -154,14 +179,13 @@ public class EvaluatorCategoryAnnotator {
 	private void setup(int i) {
 		try {
 			switch(i){
-	        	case 0: //simple tfidf (graph with non-connected nodes)
+	        	case 0: //simple tfidf (no EDA use --> graph with non-connected nodes)
+	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
+	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
 	        		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-		    		graphOptimizer = new GlobalGraphOptimizer();
-		    		tfidf = true;
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
@@ -177,8 +201,7 @@ public class EvaluatorCategoryAnnotator {
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-		    		graphOptimizer = new GlobalGraphOptimizer();
-		    		tfidf = true;
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
@@ -194,8 +217,7 @@ public class EvaluatorCategoryAnnotator {
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-		    		graphOptimizer = new GlobalGraphOptimizer();
-		    		tfidf = true;
+		    		graphOptimizer = new SimpleGraphOptimizer();// new GlobalGraphOptimizer(); --> don't use
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
@@ -209,6 +231,8 @@ public class EvaluatorCategoryAnnotator {
 		} 			
 	}
 
+
+	/** OLD Method --> don't use; TODO: update or delete! */
 	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename) {
 		
 		UseCaseOneRunnerPrototype use1;
@@ -301,6 +325,7 @@ public class EvaluatorCategoryAnnotator {
 			return -1;
 		}
 	}
+	
 
 	/**
 	 * Compare automatic to manual annotation on interaction level (with no "most probable" category)
@@ -328,7 +353,7 @@ public class EvaluatorCategoryAnnotator {
 			Interaction doc, Set<CategoryDecision> decisions, String mostProbableCat) {
 		String bestCat = "";
 		logger.info("Number of decisions for interaction "+doc.getInteractionId()+": " + decisions.size());
-		bestCat = computeBestCat(decisions, mostProbableCat);
+		bestCat = computeBestCat(decisions, mostProbableCat, doc.getCategory());
 		logger.info("Correct category: " + doc.getCategory());
 		logger.info("Best category: " + bestCat);
 		if (doc.getCategory().equals(bestCat)) {
@@ -345,7 +370,7 @@ public class EvaluatorCategoryAnnotator {
 	 * @param mostProbableCat
 	 * @return
 	 */
-	private String computeBestCat(Set<CategoryDecision> decisions, String mostProbableCat) {
+	private String computeBestCat(Set<CategoryDecision> decisions, String mostProbableCat, String correctCat) {
 		logger.debug("Computing best category");
 		logger.debug("Number of decisions: " + decisions.size());
 		String bestCat;
@@ -371,14 +396,16 @@ public class EvaluatorCategoryAnnotator {
 		if (sortedMap.size() > 0) {
 			bestCat = sortedMap.keySet().iterator().next().toString();
 			logger.info("Best category: " + bestCat);
+			if (categoryScores.keySet().contains(correctCat)) logger.info("Computed confidence for correct category: " + categoryScores.get(correctCat));
+			else logger.info("Computed confidence for correct category: N/A");
 		} else bestCat = mostProbableCat;
 		return bestCat;
 	}
 	
 	/**
 	 * Runs three-fold cross-validation on the files found in the input directory. This directory must contain
-	 * exactly three email files (ending with "_emails.xml" plus exactly one TH pair file for each of these email
-	 * files (same file but ending with "_th.xml"). 
+	 * exactly three email files (named "omq_public_[123]_emails.xml") plus exactly one TH pair file for each of these email
+	 * files (same file name but ending with "_th.xml"). 
 	 * 
 	 * For each fold, this method uses one of these email files for testing. 
 	 * 
@@ -388,15 +415,16 @@ public class EvaluatorCategoryAnnotator {
 	 * If trainEDA is set to false, it uses both remaining email files for building the entailment graph. 
 	 * 
 	 * @param inputDataFoldername
+	 * @param categoriesFilename 
 	 * @param outputGraphFilename
 	 * @throws Exception
 	 */
-	public void runEvaluationThreeFoldCross(String inputDataFoldername, String outputGraphFoldername) throws Exception {
+	public void runEvaluationThreeFoldCross(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
 		Map<Integer, File> fileIndex = indexFilesinDirectory(inputDataFoldername);	    	
 	    	
 	    //check if there are enough files in the dir
-	    double numberOfFolds = fileIndex.size()/2;
-	    if (processTrainingData && numberOfFolds != 3) { //TODO: elaborate this check (is the type of file correct: three interaction and three TH pair files)
+	    double numberOfFolds = 3;
+	    if (processTrainingData && fileIndex.size() < 6) { //TODO: elaborate this check (is the type of file correct: three interaction and three TH pair files)
     		logger.warn("Please specify a folder with three email and three T/H pair files (for EDA training + graph building + testing)!");
     		return;
 	    } else {	     
@@ -409,7 +437,8 @@ public class EvaluatorCategoryAnnotator {
 		List<Interaction> testDocs = new ArrayList<Interaction>();
 		String edaTrainingFilename;
 		
-	    for (int i=1; i<=3; i++) { //Create a fold for each of the three input files
+//	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
+	    for (int i=1; i<=1; i++) { //Create a fold for each of the three input files
 	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
@@ -427,7 +456,9 @@ public class EvaluatorCategoryAnnotator {
         	
 			//For each fold, read entailment graph EG or generate it from training set
 	    	EntailmentGraphCollapsed graph;
-    		File graphFile = new File(outputGraphFoldername + "omq_public_"+i+"_graph.xml");
+    		File graphFile = new File(outputGraphFoldername + "omq_public_"+i+"_graph_"+setup + "_" + minTokenOccurrence + ".xml");
+    		File mergedGraphFile = new File(outputGraphFoldername + "omq_public_"+i+"_merged_graph_"+setup + "_" + minTokenOccurrence + ".xml");
+    		
     		String mostProbableCat;
 	    	if (readGraphFromFile) { // read graph
 	    		logger.info("Reading graph from " + graphFile.getAbsolutePath());
@@ -452,29 +483,46 @@ public class EvaluatorCategoryAnnotator {
 					} // training data already exists
 					eda.startTraining(config); //train EDA (may take a some time)
 					logger.info("Training completed."); 
-				} else { //add documents to graph creation set
+				} else { //add documents to graph creation set --> don't, dataset will be too large for graph building!
+					/*
 					String secondGraphFilename = inputDataFoldername + "omq_public_"+k+"_emails.xml";
 	    			logger.info("Reading second graph file " + secondGraphFilename);	    			
-	    			graphDocs.addAll(InteractionReader.readInteractionXML(new File(graphDocumentsFilename)));		  
+	    			graphDocs.addAll(InteractionReader.readInteractionXML(new File(graphDocumentsFilename)));	
+	    			*/	  
 				}
 				logger.info("Graph set of fold "+i+" now contains " + graphDocs.size() + " documents");
 
+	    		//Add category texts
+	    		graphDocs.addAll(CategoryReader.readCategoryXML(new File(categoriesFilename)));
+	    		logger.info("added " + graphDocs.size() + " categories");
+	    		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(), minTokenOccurrenceInCategories);
+	    		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
+	    		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
+	    		graph = buildCollapsedGraphWithCategoryInfo(egr);
+	    		logger.info("Number of nodes in collapsed graph: " + graph.vertexSet().size());
+	    		logger.info("Number of edges in collapsed graph: " + graph.edgeSet().size());
+	    		XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
+	    		
 				mostProbableCat = computeMostFrequentCategory(graphDocs);
 
 				//graphDocs = reduceTrainingDataSize(graphDocs, 20); //reduce the number of emails on which the graph is built
-				logger.info("Reduced training set contains " +graphDocs.size()+ " documents.");
+				//logger.info("Reduced training set contains " +graphDocs.size()+ " documents.");
+			
 				logger.info("Building graph..."); 
-		    	graph = new EntailmentGraphCollapsed();
-				graph = buildGraph(graphDocs);
-				logger.info("Writing graph to " + graphFile.getAbsolutePath()); 
+		    	logger.info("Writing collapsed graph to " + graphFile.getAbsolutePath()); 
 				XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
 	    	}
 
+			logger.info("Collapsed graph " + graphFile.getAbsolutePath() + " contains " + graph.vertexSet().size() + " nodes and " + graph.edgeSet().size() + " edges");
+	    	
 	    	//indexing graph nodes and initializing search
-			nodeMatcher = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new StandardAnalyzer(Version.LUCENE_44));
-			nodeMatcher.indexGraphNodes();
-			nodeMatcher.initializeSearch();
-
+			if (LuceneSearch) {
+				nodeMatcherWithIndex = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new GermanAnalyzer(Version.LUCENE_44));
+				nodeMatcherWithIndex.indexGraphNodes();
+				nodeMatcherWithIndex.initializeSearch();
+			} else {
+				nodeMatcher = new NodeMatcherLongestOnly(graph);
+			}
 	    	boolean skipEval = false;
 	    	if (!skipEval) {
 		    	//For each email E in the test set, send it to nodematcher / category annotator and have it annotated
@@ -542,7 +590,6 @@ public class EvaluatorCategoryAnnotator {
 			logger.info("Number of processed interactions " + processedInteractions.size());
 			logger.info("Baseline: " + (double) categoryOccurrences.get(mostFrequentCat)/ (double) processedInteractions.size());
 		}
-//		System.exit(0);
 		return mostFrequentCat;
 
 	}
@@ -601,15 +648,16 @@ public class EvaluatorCategoryAnnotator {
 		Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
 		//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
 		
-		if (fragmentGraphs.size() == 0) {
-			System.exit(0);
-		}
-
 		//call node matcher on each fragment graph
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
-			//logger.info("fragment graph: " + fragmentGraph.getCompleteStatement());
-			Set<NodeMatch> matches = nodeMatcher.findMatchingNodesInGraph(fragmentGraph);
-			//logger.info("matches: " + matches.size());
+			logger.info("fragment graph: " + fragmentGraph.getCompleteStatement());
+			Set<NodeMatch> matches; 
+			if (LuceneSearch) {
+				matches = nodeMatcherWithIndex.findMatchingNodesInGraph(fragmentGraph);
+			} else {
+				matches = nodeMatcher.findMatchingNodesInGraph(fragmentGraph);
+			}
+			logger.info("matches: " + matches.size());
 			//add category annotation to CAS
 			categoryAnnotator.addCategoryAnnotation(cas, matches);
 		}
@@ -678,49 +726,21 @@ public class EvaluatorCategoryAnnotator {
 	 * @return
 	 * @throws Exception 
 	 */
-	private EntailmentGraphCollapsed buildGraph(List<Interaction> graphDocs) throws Exception {
-		startTime = endTime;
-		endTime   = System.currentTimeMillis();
-		logger.info((endTime - startTime));		
-		JCas cas = CASUtils.createNewInputCas();
+	private EntailmentGraphCollapsed buildGraph(List<Interaction> graphDocs, File mergedGraphFile, int minOccurrence) throws Exception {
 		EntailmentGraphRaw egr = new EntailmentGraphRaw();
-		eda.initialize(config);
-		logger.info("Initialized config.");
-		int count = 1;
-		
-		//build fragment graphs from input data
-		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
-		for(Interaction i: graphDocs) {
-			logger.info("relevantText: " + i.getRelevantText());
-			if (i.getRelevantText() == null) System.exit(1);
-			i.fillInputCAS(cas); 
-			fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
-			modifierAnnotator.annotateModifiers(cas);
-			logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-			fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
-		}
-		logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
-		
-		if (setup == 0) {
-			count = 0; 
-			for (FragmentGraph fg : fgs) {
-				count++;
-				logger.info("Adding fragment graph " +count+ " out of " + fgs.size());
-				for (EntailmentUnitMention eum : fg.vertexSet()) {
-					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
-				}
-			}			
-		} else { //merge graph --> takes a really long time!
-			eda.initialize(config);
-			egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-			logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-		}
-		
-		startTime = endTime;
-		endTime   = System.currentTimeMillis();
-		logger.info((endTime - startTime));		
-		logger.info("Merged all fragment graphs");
-		logger.info(egr.toStringDetailed());
+		if (readMergedGraphFromFile) {
+			egr = new EntailmentGraphRaw(mergedGraphFile);
+		} else { //build fragment graphs from input data and merge them
+			buildRawGraph(graphDocs, mergedGraphFile, egr, minOccurrence);			
+		}		
+		EntailmentGraphCollapsed graph = buildCollapsedGraphWithCategoryInfo(egr);		
+		return graph;
+	}
+
+	private EntailmentGraphCollapsed buildCollapsedGraphWithCategoryInfo(
+			EntailmentGraphRaw egr) throws GraphOptimizerException,
+			ConfidenceCalculatorException {
+		logger.info("Merged graph contains " + egr.vertexSet().size() + " nodes and " + egr.edgeSet().size() + " edges");
 		EntailmentGraphCollapsed graph = graphOptimizer.optimizeGraph(egr, thresholdForOptimizing);
 		logger.info("Built collapsed graph.");		
 		startTime = endTime;
@@ -730,8 +750,93 @@ public class EvaluatorCategoryAnnotator {
 		logger.info("Computed category confidences and added them to graph.");		
 		startTime = endTime;
 		endTime   = System.currentTimeMillis();
-		logger.info((endTime - startTime));		
+		logger.info((endTime - startTime));
 		return graph;
+	}
+
+	private EntailmentGraphRaw buildRawGraph(List<Interaction> graphDocs,
+			File mergedGraphFile, EntailmentGraphRaw egr, int minOccurrence)
+			throws FragmentAnnotatorException, ModifierAnnotatorException,
+			FragmentGraphGeneratorException, ConfigurationException,
+			EDAException, ComponentException, GraphMergerException,
+			LAPException, TransformerException, EntailmentGraphRawException {
+		logger.info("Initialized config.");
+		
+		JCas cas = CASUtils.createNewInputCas();
+		
+		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, cas);
+		
+		if (setup == 0) {
+			int count = 0; 
+			for (FragmentGraph fg : fgs) {
+				count++;
+				logger.info("Adding fragment graph " +count+ " out of " + fgs.size());
+				for (EntailmentUnitMention eum : fg.vertexSet()) {
+					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
+				}
+			}			
+		} else { //merge graph --> takes a really long time and uses too much memory: TODO reduce number of fgs
+			eda.initialize(config);
+			Set<FragmentGraph> fgsReduced = new HashSet<FragmentGraph>();
+			Set<FragmentGraph> fgsRest = new HashSet<FragmentGraph>();
+			String text = "";
+			HashMap<String, Integer> tokenOccurrences = computeTokenOccurrences(fgs);
+			for (FragmentGraph fg : fgs) {
+				text = fg.getBaseStatement().getTextWithoutDoubleSpaces();
+				//TODO: get lemma and use it as node name?
+				if (
+					//	GermaNetLexicon.contains(text) ||  	// merge only fragments with an entry in GermaNet
+						tokenOccurrences.get(text.toLowerCase()) >= minOccurrence) fgsReduced.add(fg); 
+							// merge only fragments occurring at least as often as the threshold
+				else fgsRest.add(fg); //add remaining fragments to graph (no EDA call --> no edges)
+			}
+			logger.info("fgs contains " + fgs.size() + " fgs");
+			logger.info("fgsreduced contains " + fgsReduced.size() + " fgs");
+			egr = graphMerger.mergeGraphs(fgsReduced, new EntailmentGraphRaw());
+			logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
+			for (FragmentGraph fg : fgsRest) {
+				for (EntailmentUnitMention eum : fg.vertexSet()) {
+					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());	
+				}
+			}
+			logger.info("Added " + fgsRest.size() + " remaining mentions");
+			logger.info("Merged graph + remaining mentions: " +egr.vertexSet().size()+ " nodes");
+		}
+		logger.info("Writing merged graph to " + mergedGraphFile.getAbsolutePath()); 
+		XMLFileWriter.write(egr.toXML(), mergedGraphFile.getAbsolutePath());
+		logger.info("Merged graph + remaining mentions: " +egr.vertexSet().size()+ " nodes");	
+		return egr; 
+	}
+
+	private Set<FragmentGraph> buildFragmentGraphs(List<Interaction> graphDocs,
+			JCas cas) throws FragmentAnnotatorException,
+			ModifierAnnotatorException, FragmentGraphGeneratorException {
+		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
+		for(Interaction i: graphDocs) {
+			logger.info("relevantText: " + i.getRelevantText());
+			if (i.getRelevantText() == null) System.err.println("No relevant text found in interaction " + i.getInteractionId());
+			i.fillInputCAS(cas); 
+			fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
+			modifierAnnotator.annotateModifiers(cas);
+			logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+			fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
+		}
+		logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
+		return fgs;
+	}
+
+	private HashMap<String, Integer> computeTokenOccurrences(
+			Set<FragmentGraph> fgs) {
+		String text;
+		HashMap<String, Integer> tokenOccurrences = new HashMap<String,Integer>();
+		for (FragmentGraph fg : fgs) {  // compute the number of occurrences of each fragment text
+			int countOccurrence = 0;
+			text = fg.getBaseStatement().getTextWithoutDoubleSpaces();
+			if (tokenOccurrences.containsKey(text.toLowerCase())) countOccurrence = tokenOccurrences.get(text.toLowerCase());
+			countOccurrence++;
+			tokenOccurrences.put(text.toLowerCase(), countOccurrence);
+		}
+		return tokenOccurrences;
 	}
 
 	/**
@@ -751,24 +856,98 @@ public class EvaluatorCategoryAnnotator {
 	}
 	
 	/**
-	 * This evaluation simulates the real use case. Can be used to find out what's the best graph size
+	 * This evaluation simulates the real use case. It goes through the list of interactions, 
+	 * creates a graph from the first interaction and annotates the second interaction based on this graph. 
+	 * It then adds the second one to the graph and annotates the third, and so on, 
+	 * evaluating the categorization result in each step. 
+	 * 
+	 * This evaluation can also be used to find out what's the best graph size
 	 * (adding new nodes doesn't improve the result)
+	 * 
+	 * @throws Exception 
 	 */
-	public void runIncrementalEvaluation() {
-		//init map<int,int> positivesPerCount
-		//for each run (maybe 10, 100,...)
-			//order emails randomly
-			//create empty graph
-			//init count
-			//for each email
-				//compute category based on graph
-				//compare category to real category for email
-				//result = positivesPerCount.get(count)
-				//if match: result++
-				//positivesPerCount.put(count, result)
-				//add email with category info to graph
-				//count++
-		//compute overall result (divide positivesPerCount by number of runs)
+	public void runIncrementalEvaluation(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
+		List<Double> accuracyPerRun = new ArrayList<Double>();
+		String documentsFilename = inputDataFoldername + "omq_public_1_emails.xml"; //TODO: replace 1 by "all" at some point
+		JCas cas = CASUtils.createNewInputCas();
+		String mostProbableCat; 
+		int countPositive = 0;
+		int run = 1;
+
+		//Read documents for annotation, compute token occurrences (for filtering fragments to be merged)
+		logger.info("Reading documents from " + documentsFilename);	    		
+		List<Interaction> docs = new ArrayList<Interaction>();
+		docs.addAll(InteractionReader.readInteractionXML(new File(documentsFilename)));
+		Set<FragmentGraph> fgs = buildFragmentGraphs(docs, cas);
+		HashMap<String,Integer> tokenOccurrences = computeTokenOccurrences(fgs);
+
+		//Initialize graph with category texts (assuming they are available beforehand)
+		List<Interaction> graphDocs = new ArrayList<Interaction>(); 
+		graphDocs.addAll(CategoryReader.readCategoryXML(new File(categoriesFilename)));
+		logger.info("added " + graphDocs.size() + " categories");
+		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + ".xml");	
+		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(), minTokenOccurrenceInCategories);
+		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
+		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
+		EntailmentGraphCollapsed egc = buildCollapsedGraphWithCategoryInfo(egr);
+		logger.info("Number of nodes in collapsed graph: " + egc.vertexSet().size());
+		logger.info("Number of edges in collapsed graph: " + egc.edgeSet().size());
+		File graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + ".xml");
+		XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
+
+		//Iterate through interactions, annotate each using existing graph and then add interaction to graph 
+		for (Interaction doc : docs) {	
+			logger.info("Processing doument " + run + " out of " + docs.size());
+			if (run > 15) break; //TODO: Remove (debugging only)
+			//Annotate document and compare to manual annotation
+			logger.info("graph contains " + egc.vertexSet().size() + " nodes ");
+			mostProbableCat = computeMostFrequentCategory(egc); //compute most frequent category in graph
+	    	//indexing graph nodes and initializing search
+			if (LuceneSearch) {
+				nodeMatcherWithIndex = new NodeMatcherLuceneSimple(egc, "./src/test/resources/Lucene_index/incremental/", new GermanAnalyzer(Version.LUCENE_44));
+				nodeMatcherWithIndex.indexGraphNodes();
+				nodeMatcherWithIndex.initializeSearch();
+			} else {
+				nodeMatcher = new NodeMatcherLongestOnly(egc);
+			}
+			
+			logger.info("annotating interaction " + doc.getInteractionId());
+			cas = annotateInteraction(egc, doc); //annotate interaction using graph
+	    	//Compare automatic to manual annotation
+			Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+			countPositive = compareDecisionsForInteraction(countPositive,
+					doc, decisions, mostProbableCat);	
+			double accuracy = (double) countPositive / (double) run;
+			logger.info("Accuracy in run " + run + ": " + accuracy);
+			accuracyPerRun.add(accuracy);
+			run++;
+			
+			//Add document to existing graph
+			Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
+			if (setup == 0) {
+				for (FragmentGraph fg : fragmentGraphs) { //just add the statement, no EDA call
+					egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
+				}
+			} else {
+				for (FragmentGraph fg : fragmentGraphs) { //if token occurrence is above threshold, merge it into graph
+					if (tokenOccurrences.get(fg.getCompleteStatement().getTextWithoutDoubleSpaces().toLowerCase()) > minTokenOccurrence) {
+						logger.info("Merging " + fg.getCompleteStatement());
+						egr = graphMerger.mergeGraphs(fg, egr); 
+					} else { //if it's below the threshold, just add it
+						logger.info("Adding " + fg.getCompleteStatement());
+						egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
+					}
+				}
+			}
+			egc = buildCollapsedGraphWithCategoryInfo(egr);			
+			mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_"+setup + "_" + minTokenOccurrence +".xml");	
+			graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_"+setup + "_" + minTokenOccurrence +".xml");
+			XMLFileWriter.write(egr.toXML(), mergedGraphFile.getAbsolutePath());			
+			XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
+		}
+		for (int i=1; i<accuracyPerRun.size(); i++) {
+			System.out.println(accuracyPerRun.get(i));
+		}
 	}
 	
 	
@@ -783,8 +962,18 @@ public class EvaluatorCategoryAnnotator {
 			//2. create entailment graph from remaining emails
 			//3. store graph in resources
 	}
-}
 
+	private static Set<String> getGermaNetLexicon() throws LAPException, FragmentAnnotatorException, FileNotFoundException, XMLStreamException, IOException {
+		// check token annotation is there or not 
+		germanet = new GermaNet("D:/DFKI/EXCITEMENT/Linguistic Analysis/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML");
+		Set<String> lexicon = new HashSet<String>(); 
+		List<LexUnit> lexunits = germanet.getLexUnits();
+		for (LexUnit lexunit : lexunits) {
+			lexicon.addAll(lexunit.getOrthForms());
+		}
+		return lexicon;
+	}			
+}
 
 
 class ValueComparator implements Comparator<String> {
