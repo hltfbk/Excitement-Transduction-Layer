@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -25,7 +27,6 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  * @author Lili Kotlerman
  *
  */public class AllPairsGraphMerger extends AbstractGraphMerger {
-
 	public AllPairsGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
@@ -35,12 +36,19 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs,
 			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+		
+		Logger mergeLogger = Logger.getLogger("eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger"); 
+		
 		List<FragmentGraph> fg = new LinkedList<FragmentGraph>(fragmentGraphs);
 		Collections.sort(fg, new FragmentGraph.CompleteStatementComparator());
 		// Iterate over the list of fragment graphs and merge them one by one
+		int i = 0;
 		for (FragmentGraph fragmentGraph : fg){
 			workGraph=mergeGraphs(fragmentGraph, workGraph);
+			i++;
+			mergeLogger.info("Merged FG #"+String.valueOf(i)+" out of "+String.valueOf(fg.size()));
 		}
+		
 		return workGraph;
 	}
 
@@ -74,7 +82,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 			throw new GraphMergerException(e.getMessage());
 		}
 		
-		// 2. For each of the new fragment graph nodes, calculate TE decision with all other nodes in the graph (except for the nodes in the current fragment graph and cases where an edge alredy exists) 
+		// 2. For each of the new fragment graph nodes, calculate TE decision with all other nodes in the graph (except for the nodes in the current fragment graph and cases where an edge already exists) 
 		for (EntailmentUnit newNode : newFragmentGraphNodes){
 			for (EntailmentUnit node : workGraph.vertexSet()){
 				if (newFragmentGraphNodes.contains(node)) continue; // don't compare with nodes from the same fragment graph
