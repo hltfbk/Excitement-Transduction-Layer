@@ -106,8 +106,9 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 			for (EntailmentUnitMention mention : mentions) { //for each mention associated to this node	
 				String mentionText = mention.getText().replaceAll("\\s+", " ").trim();
 				String mentionToBeFoundText = mentionToBeFound.getText().replaceAll("\\s+", " ").trim();	
-				if (mentionText.equals(mentionToBeFoundText)) { //compare to mention to be found
-					return 1;
+				if (mentionText.toLowerCase().trim().equals(mentionToBeFoundText.toLowerCase().trim())) { //compare to mention to be found
+			//	if (mentionText.equals(mentionToBeFoundText)) { //compare to mention to be found
+						return 1;
 				}
 			}
 		}
