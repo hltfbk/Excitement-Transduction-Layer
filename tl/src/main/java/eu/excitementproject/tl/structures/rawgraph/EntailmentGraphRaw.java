@@ -247,11 +247,12 @@ public class EntailmentGraphRaw extends
 	public Hashtable<Integer, Set<EntailmentUnit>> getFragmentGraphNodes(EntailmentUnit baseStatementNode, String completeStatementText) throws EntailmentGraphRawException {
 		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
 		
-/*		System.out.println("----");
+// /*		
+		System.out.println("----");
 		System.out.println(baseStatementNode);
 		System.out.println(completeStatementText);
 		System.out.println(baseStatementNode.completeStatementTexts);
-*/
+// */
 		if (!baseStatementNode.completeStatementTexts.contains(completeStatementText)) throw new EntailmentGraphRawException("Base statement node \""+baseStatementNode.getText()+"\" does not correspond to the complete statement \""+ completeStatementText+"\"\n");
 		
 		EntailmentUnit completeStatementNode = getVertexWithText(completeStatementText);

@@ -21,9 +21,10 @@ public class ModifierAnnotatorEvaluationTest {
 		
 		try {
 			EvaluationMeasures eval = ModifierAnnotatorEvaluator.evaluateModifiers(
-					"src/test/resources/WP2_public_data_CAS_XMI/nice_email_1", 
+//					"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 
+					"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media", 
 					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator", 
-					"EN");
+					"IT");
 			
 			logger.info(eval.toString());
 			

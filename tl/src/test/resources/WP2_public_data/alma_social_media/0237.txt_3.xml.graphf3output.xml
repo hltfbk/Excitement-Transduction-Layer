@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node implicit_focus="" focus="prenotazione" implicit_context="" explicit_context="0237.txt" modality="FALSE" implicit_statement="FALSE" id="0237.txt_3_0">
-        <original_text>non funziona la prenotazione</original_text>
-        <correct_text> </correct_text>
-        <modifiers> </modifiers>
-    </node>
-</F_entailment_graph>

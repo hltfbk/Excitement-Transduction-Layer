@@ -42,7 +42,7 @@ public class UseCaseOneFromXMLTest {
 		BasicConfigurator.configure(); 
 		Logger.getRootLogger().setLevel(Level.INFO); 
 
-		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_IT.xml");		
+		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml");		
 		CommonConfig config = null;
 		CachedLAPAccess lap;
 		EDABasic<?> eda;
@@ -56,7 +56,7 @@ public class UseCaseOneFromXMLTest {
 //		};
 		
 		// with small example - Gil
-		String[] files = {"./src/test/resources/WP2_public_data_XML/alma_social_media_frag.xml",};
+		String[] files = {"./src/test/resources/omq_testing/for_fragments.xml",};
 		
 		File f;
 

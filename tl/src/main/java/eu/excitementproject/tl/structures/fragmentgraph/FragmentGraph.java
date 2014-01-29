@@ -150,7 +150,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * @param mods -- set of modifiers
 	 * @param parent -- parent node (that has one extra modifier compared to the current node)
 	 */
-	private void buildGraph(JCas aJCas, FragmentAnnotation frag, Set<ModifierAnnotation> modifiers, EntailmentUnitMention parent) {
+	protected void buildGraph(JCas aJCas, FragmentAnnotation frag, Set<ModifierAnnotation> modifiers, EntailmentUnitMention parent) {
 		
 		EntailmentUnitMention eum = new EntailmentUnitMention(aJCas, frag, modifiers);
 		
@@ -203,7 +203,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	}
 
 	// to check the modifier set
-	private void printAnnotations(Set<ModifierAnnotation> sma) {
+	protected void printAnnotations(Set<ModifierAnnotation> sma) {
 
 		for (Annotation a: sma) {
 			System.out.println("\t" + a.getCoveredText() + " / " + a.getClass());
@@ -251,7 +251,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * @return -- the node in this fragment graph that equals the given entailment unit mention,
 	 *            or the given entailment unit mention if no equal node exists
 	 */
-	private EntailmentUnitMention getVertex(EntailmentUnitMention eum) {
+	protected EntailmentUnitMention getVertex(EntailmentUnitMention eum) {
 		for(EntailmentUnitMention e: this.vertexSet()) {
 			if (eum.equals(e)) {
 				return e;

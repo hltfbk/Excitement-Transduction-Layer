@@ -36,7 +36,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 		
 		// now load some existing collapsed graph (we load one with 10 interactions)
 		
-		File xmlFile = new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
+/*		File xmlFile = new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
 		try {
 			EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(xmlFile);
 			System.out.println("\nLoaded the graph from ./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
@@ -100,7 +100,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+*/		
 	}
 	
 }
