@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="13">
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0005.txt" modality="FALSE" id ="0005.txt_2_0">
+		<original_text>TELEFONIAX sta cercando di truffarmi</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0142.txt" modality="FALSE" id ="0142.txt_1_0">
+		<original_text>la TELEFONIAX non risolve i problemi</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0147.txt" modality="FALSE" id ="0147.txt_2_0">
+		<original_text>la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe</original_text>
+		<correct_text>la TelefoniaX che prende in giro i clienti è davvero una catastrofe</correct_text>
+		<modifiers>i clietipoz=6 7;davveropoz=9</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0147.txt" modality="FALSE" id ="0147.txt_2_1">
+		<original_text>la TELEFONIAX ke prende in giro è davvero una catastrofe</original_text>
+		<correct_text>la TelefoniaX che prende in giro è davvero una catastrofe</correct_text>
+		<modifiers>davveropoz=9</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0147.txt" modality="FALSE" id ="0147.txt_2_2">
+		<original_text>la TELEFONIAX ke prende in giro i clieti è una catastrofe</original_text>
+		<correct_text>la TelefoniaX che prende in giro i clienti è una catastrofe</correct_text>
+		<modifiers>i clietipoz=6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0147.txt" modality="FALSE" id ="0147.txt_2_3">
+		<original_text>la TELEFONIAX ke prende in giro è una catastrofe</original_text>
+		<correct_text>la TelefoniaX che prende in giro è una catastrofe</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="promettete" implicit_context="" explicit_context="0308.txt" modality="FALSE" id ="0308.txt_2_0">
+		<original_text>promettete cose che non potrete mai far ottenere</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0315.txt" modality="FALSE" id ="0315.txt_1_0">
+		<original_text>la TELEFONIAX e solo una fregatura</original_text>
+		<correct_text>la TelefoniaX è solo una fregatura</correct_text>
+		<modifiers>solopoz=3</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0315.txt" modality="FALSE" id ="0315.txt_1_1">
+		<original_text>la TELEFONIAX e una fregatura</original_text>
+		<correct_text>la TelefoniaX è una fregatura</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="servizi" implicit_context="" explicit_context="0318.txt" modality="FALSE" id ="0318.txt_1_0">
+		<original_text>sono 3 mesi ke i servizi TELEFONIAX sim non funzionano</original_text>
+		<correct_text>sono 3 mesi che i servizi TelefoniaX sim non funzionano</correct_text>
+		<modifiers>TELEFONIAX simpoz=6 7;sono 3 mesi kepoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizi" implicit_context="" explicit_context="0318.txt" modality="FALSE" id ="0318.txt_1_1">
+		<original_text>sono 3 mesi ke i servizi non funzionano</original_text>
+		<correct_text>sono 3 mesi che i servizi non funzionano</correct_text>
+		<modifiers>sono 3 mesi kepoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizi" implicit_context="" explicit_context="0318.txt" modality="FALSE" id ="0318.txt_1_2">
+		<original_text>i servizi TELEFONIAX sim non funzionano</original_text>
+		<correct_text></correct_text>
+		<modifiers>TELEFONIAX simpoz=6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizi" implicit_context="" explicit_context="0318.txt" modality="FALSE" id ="0318.txt_1_3">
+		<original_text>i servizi non funzionano</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="0147.txt_2_1" source="0147.txt_2_0" id="0147.txt_2_1-0147.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0147.txt_2_2" source="0147.txt_2_0" id="0147.txt_2_2-0147.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0147.txt_2_3" source="0147.txt_2_1" id="0147.txt_2_3-0147.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0147.txt_2_3" source="0147.txt_2_2" id="0147.txt_2_3-0147.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0315.txt_1_1" source="0315.txt_1_0" id="0315.txt_1_1-0315.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0318.txt_1_1" source="0318.txt_1_0" id="0318.txt_1_1-0318.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0318.txt_1_2" source="0318.txt_1_0" id="0318.txt_1_2-0318.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0318.txt_1_3" source="0318.txt_1_1" id="0318.txt_1_3-0318.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0318.txt_1_3" source="0318.txt_1_2" id="0318.txt_1_3-0318.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

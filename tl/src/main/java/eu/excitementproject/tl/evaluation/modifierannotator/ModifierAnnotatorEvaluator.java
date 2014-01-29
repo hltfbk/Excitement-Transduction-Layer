@@ -59,7 +59,7 @@ public class ModifierAnnotatorEvaluator {
 				JCas sysJCas = in.createAndFillInputCAS();
 				modAnnot.annotateModifiers(sysJCas); 
 			
-				counts = addScores(counts, FragmentAndModifierMatchCounter.countModifierCounts(goldJCas, sysJCas));
+				counts = addScores(counts, FragmentAndModifierMatchCounter.countModifierCounts(sysJCas, goldJCas));
 			}
 		}
 		

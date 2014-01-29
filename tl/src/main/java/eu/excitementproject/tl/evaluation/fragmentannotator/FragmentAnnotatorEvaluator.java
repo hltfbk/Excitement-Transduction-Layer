@@ -63,7 +63,7 @@ public class FragmentAnnotatorEvaluator {
 				JCas sysJCas = in.createAndFillInputCAS();
 				fragAnnot.annotateFragments(sysJCas); 
 			
-				counts = addScores(counts, FragmentAndModifierMatchCounter.countFragmentCounts(goldJCas, sysJCas));
+				counts = addScores(counts, FragmentAndModifierMatchCounter.countFragmentCounts(sysJCas, goldJCas));
 			}
 		}
 		

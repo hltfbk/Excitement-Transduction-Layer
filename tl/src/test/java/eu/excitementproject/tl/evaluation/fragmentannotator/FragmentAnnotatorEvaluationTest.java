@@ -20,10 +20,10 @@ public class FragmentAnnotatorEvaluationTest {
 		
 		try {
 			EvaluationMeasures eval = FragmentAnnotatorEvaluator.evaluateFragments(
-					"src/test/resources/WP2_public_data_CAS_XMI/nice_speech", 
-//					"src/test/resources/WP2_public_data_CAS_XMI/alma_speech", 
+//					"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 
+					"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media", 
 					"eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator", 
-					"EN");
+					"IT");
 			
 			logger.info(eval.toString());
 			
