@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="12">
+	<node implicit_focus="" focus="book" implicit_context="" explicit_context="13764759_80299358-2.txt" modality="FALSE" id ="13764759_80299358-2.txt_1_0">
+		<original_text>you book something six months in advance and then you guys change it that your whim</original_text>
+		<correct_text>you book something six months in advance and then you guys change it at your whim</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="flights" focus="" implicit_context="" explicit_context="13764766_78604096.txt" modality="FALSE" id ="13764766_78604096.txt_1_0">
+		<original_text>the book was in two different totally select</original_text>
+		<correct_text>they booked us in two different totally flights</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="booking" focus="" implicit_context="" explicit_context="13764792_81008437.txt" modality="FALSE" id ="13764792_81008437.txt_1_0">
+		<original_text>why are we being penalized by having to make a choice now when you guys haven't even open up the flights yet</original_text>
+		<correct_text></correct_text>
+		<modifiers>when you guys haven't even open up the flights yetpoz=12 13 14 15 16 17 18 19 20 21;by having to make a choice nowpoz=5 6 7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="booking" focus="" implicit_context="" explicit_context="13764792_81008437.txt" modality="FALSE" id ="13764792_81008437.txt_1_1">
+		<original_text>why are we being penalized by having to make a choice now</original_text>
+		<correct_text></correct_text>
+		<modifiers>by having to make a choice nowpoz=5 6 7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="booking" focus="" implicit_context="" explicit_context="13764792_81008437.txt" modality="FALSE" id ="13764792_81008437.txt_1_2">
+		<original_text>why are we being penalized when you guys haven't even open up the flights yet</original_text>
+		<correct_text></correct_text>
+		<modifiers>when you guys haven't even open up the flights yetpoz=12 13 14 15 16 17 18 19 20 21</modifiers>
+	</node>
+	<node implicit_focus="booking" focus="" implicit_context="" explicit_context="13764792_81008437.txt" modality="FALSE" id ="13764792_81008437.txt_1_3">
+		<original_text>why are we being penalized</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="book" focus="" implicit_context="" explicit_context="13764825_81144163.txt" modality="FALSE" id ="13764825_81144163.txt_1_0">
+		<original_text>when i go to look at i keep saying segment selected was unavailable</original_text>
+		<correct_text>when i go to book it it keep saying segment selected unavailable</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="representative" focus="person" implicit_context="" explicit_context="13765013_83600327-2.txt" modality="FALSE" id ="13765013_83600327-2.txt_1_0">
+		<original_text>the person that reinstated the reservation yesterday reinstated the wrong one</original_text>
+		<correct_text></correct_text>
+		<modifiers>that reinstated the reservationpoz=2 3 4 5;yesterdaypoz=6</modifiers>
+	</node>
+	<node implicit_focus="representative" focus="person" implicit_context="" explicit_context="13765013_83600327-2.txt" modality="FALSE" id ="13765013_83600327-2.txt_1_1">
+		<original_text>the person that reinstated the reservation reinstated the wrong one</original_text>
+		<correct_text></correct_text>
+		<modifiers>that reinstated the reservationpoz=2 3 4 5</modifiers>
+	</node>
+	<node implicit_focus="representative" focus="person" implicit_context="" explicit_context="13765013_83600327-2.txt" modality="FALSE" id ="13765013_83600327-2.txt_1_2">
+		<original_text>the person reinstated the wrong one</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="price" implicit_context="" explicit_context="13765013_83600327.txt" modality="FALSE" id ="13765013_83600327.txt_1_0">
+		<original_text>all i want is a reservation reinstated for the same price</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="website" focus="it" implicit_context="" explicit_context="13765133_84335771.txt" modality="FALSE" id ="13765133_84335771.txt_1_0">
+		<original_text>i've tried about twenty times to booked a flight on it</original_text>
+		<correct_text>i've tried about twenty times to book a flight on it</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="13764792_81008437.txt_1_1" source="13764792_81008437.txt_1_0" id="13764792_81008437.txt_1_1-13764792_81008437.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764792_81008437.txt_1_2" source="13764792_81008437.txt_1_0" id="13764792_81008437.txt_1_2-13764792_81008437.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764792_81008437.txt_1_3" source="13764792_81008437.txt_1_1" id="13764792_81008437.txt_1_3-13764792_81008437.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764792_81008437.txt_1_3" source="13764792_81008437.txt_1_2" id="13764792_81008437.txt_1_3-13764792_81008437.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765013_83600327-2.txt_1_1" source="13765013_83600327-2.txt_1_0" id="13765013_83600327-2.txt_1_1-13765013_83600327-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765013_83600327-2.txt_1_2" source="13765013_83600327-2.txt_1_1" id="13765013_83600327-2.txt_1_2-13765013_83600327-2.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

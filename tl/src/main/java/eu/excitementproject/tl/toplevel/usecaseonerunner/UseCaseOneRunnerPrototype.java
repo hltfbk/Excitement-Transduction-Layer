@@ -31,9 +31,11 @@ import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphNoNegGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -83,11 +85,16 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	
 	
 	private void initInterfaces() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
+		
 		fragAnot = new SentenceAsFragmentAnnotator(lap);
+//		fragAnot = new KeywordBasedFragmentAnnotator(lap);
+		
 		modAnot = new AdvAsModifierAnnotator(lap); 		
 
 		fragGen = new FragmentGraphGeneratorFromCAS();
 //		fragGen = new FragmentGraphLiteGeneratorFromCAS();
+//		fragGen = new FragmentGraphNoNegGeneratorFromCAS();
+
 		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
 		collapseGraph = new SimpleGraphOptimizer();
 	}
@@ -146,11 +153,15 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
 		
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>(); 
-
 		
 		for(JCas aJCas: docs) {
-			annotateCAS(aJCas);
-			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
+			try {
+				annotateCAS(aJCas);
+				fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
+			} catch (Exception e) {
+				logger.info("Cannot annotate modifiers and/or generate fragment graph. Skipping the problematic input.\n"+e);
+				//TODO: debug why ModdifierAnnotatorException is raised on NICE data with BIUTEE
+			}
 		}
 		
 		inspectGraph(fgs);

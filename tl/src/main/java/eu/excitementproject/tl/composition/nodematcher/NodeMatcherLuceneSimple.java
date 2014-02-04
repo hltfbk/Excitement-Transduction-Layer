@@ -12,8 +12,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Logger;
 
+import org.apache.log4j.Logger;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
@@ -33,6 +33,7 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
+import eu.excitementproject.tl.composition.api.NodeMatcher;
 import eu.excitementproject.tl.composition.confidencecalculator.ConfidenceCalculatorCategoricalFrequencyDistribution;
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
@@ -54,9 +55,9 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  * @author Kathrin Eichler
  *
  */
-public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
+public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene implements NodeMatcher {
 	
-	private final static Logger logger = Logger.getLogger(NodeMatcherLuceneSimple.class.getName());
+	static Logger logger = Logger.getLogger(NodeMatcherLuceneSimple.class.getName());
 	
 	public NodeMatcherLuceneSimple(EntailmentGraphCollapsed myEntailmentGraph) {
 		super(myEntailmentGraph);
@@ -112,6 +113,7 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 	 */
 	public NodeMatch findMatchingNodesForMention(EntailmentUnitMention mentionToBeFound) throws ParseException, IOException {
 		boolean checkExactTokenMatch = true;  //TODO: make configurable from outside!
+		boolean checkParentNodes = false;  //TODO: make configurable from outside!
 		
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
 		String fieldToBeSearched = "euText";
@@ -124,13 +126,15 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 		
 		Date start = new Date();
 		searcher.search(query, null, 100);
+		logger.info("query: " + query);
+		logger.info("number of docs in index:" + searcher.getIndexReader().numDocs());
 		Date end = new Date();
 		logger.info("Search took "+(end.getTime()-start.getTime())+"ms");
 		
 		TopDocs results = searcher.search(query, 20);
 		ScoreDoc[] hits = results.scoreDocs;
 		int numTotalHits = results.totalHits;
-		System.out.println(numTotalHits + " potentially matching documents:");
+		logger.info(numTotalHits + " potentially matching documents:");
 		Map<Document,Float> matchScores = new HashMap<Document,Float>();
 		for (int i=0; i<hits.length; i++) {
 			ScoreDoc hit = hits[i];
@@ -138,22 +142,40 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 		    if (checkExactTokenMatch) {
 			    if (d.getField(fieldToBeSearched).stringValue().split("\\s+").length == queryText.split("\\s+").length) {
 			    	//all query terms match and returned document has the same number of terms --> perfect match!
-			    	matchScores.put(d, new Float(1.0)); 
+			    	//well, almost... (does not cover compounds, e.g. for "Daten" we find "XML-Daten"; TODO: deal with this issue!
+			    	logger.info("text: " + d.getField(fieldToBeSearched).stringValue());
+			    	logger.info("score: " + hit.score);
+//			    	matchScores.put(d, new Float(1.0)); 
+			    	matchScores.put(d, hit.score); 
 			    }
 		    } else {
 		    	matchScores.put(d, hit.score); //score returned by Lucene
 		   	}
 		}	
 		logger.info(matchScores.size() + " matching documents");
+		if (matchScores.size() > 1) {
+			for (Document d : matchScores.keySet()) logger.info("matching doc: " + d.get("label") + ":" + matchScores.get(d));
+		}
 		List<PerNodeScore> scores = new ArrayList<PerNodeScore>();
 		for (Document document : matchScores.keySet()) {
 		    float score = matchScores.get(document);
 			if (score > 0) { //add non-zero scores to list
 				PerNodeScore perNodeScore = new PerNodeScore();
 				EquivalenceClass ec = entailmentGraph.getVertex(document.get("label"));				
+				for (String cat : ec.getCategoryConfidences().keySet()) logger.info(cat + ":" + ec.getCategoryConfidences().get(cat) +"\n");
 				perNodeScore.setNode(ec);
 				perNodeScore.setScore(score);
 				scores.add(perNodeScore);
+				if (checkParentNodes) {
+					Set<EquivalenceClass> parentNodes = entailmentGraph.getEntailedNodes(ec);
+					logger.info("entailed nodes:" ); 
+					for (EquivalenceClass parent : parentNodes) {
+						logger.info("entailed node: " + parent.getLabel() ); 
+						perNodeScore.setNode(parent);
+						perNodeScore.setScore(entailmentGraph.getEdge(ec, parent).getConfidence());
+						scores.add(perNodeScore);						
+					}
+				}
 			}
 		}
 		
@@ -163,6 +185,7 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene {
 			nodeMatch.setScores(scores);
 			return nodeMatch;
 		}
+
 		return null;
 	}
 	

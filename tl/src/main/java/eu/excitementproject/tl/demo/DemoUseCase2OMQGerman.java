@@ -81,6 +81,10 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 public class DemoUseCase2OMQGerman {
 	
 	static String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
+
+	//	static String xmlDataFoldername = "./src/test/resources/WP2_public_data_XML/OMQ";
+//	static String xmlDataFoldername = "./src/test/resources/omq_testing/";
+	
 	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
 	static String xmlDataFilename = "9interactions.xml";
 //	static String xmlDataFilename = "omq_public_1_emails.xml";
@@ -93,6 +97,7 @@ public class DemoUseCase2OMQGerman {
 	static boolean readGraph = false; //if true: read previously created graph instead of creating it
 	static boolean processTrainingData = false; //if true: process the data in "edaTrainingFilename"
 	static boolean trainEDA = false; //if true: train the EDA on the processed data
+
 	static boolean keywordsProvided = false; //if true: input dataset contains keyword metadata
 	static boolean relevantTextProvided = false; //if true; input dataset contains relevantText annotation
 	
@@ -126,13 +131,13 @@ public class DemoUseCase2OMQGerman {
 		
 		/** Step 2: Annotating an incoming email based on the entailment graph */
 
-		String emailText = "Speicheranfrage ist ungültig.";
+/*		String emailText = "Speicheranfrage ist ungültig.";
 		JCas cas = annotateIncomingEmail(graph, emailText);
 		Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
 		for (CategoryDecision decision: decisions) {
 			logger.info("decision: " + decision.getCategoryId() + ":" + decision.getConfidence());
 		}
-			
+*/			
 	}
 
 	private static JCas annotateIncomingEmail(EntailmentGraphCollapsed graph, String text)

@@ -41,36 +41,65 @@ public class ConvertWP2PublicData {
 		Path dir = null; 
 		Path outputdir = null; 
 
-		// Let's build NICE e-mail data. 
-		{
-		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_1/");
-		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_1"); 
-
-		totalcount += processWP2Data(dir, outputdir, "EN"); 
+		// This is the usage example. 
+		// Use "processWP2Data()" for per-interaction XMI file generation. 
+		// Use "processWP2DataPerFragment()" for per-fragment XMI file generation. 
 		
-		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_2/");
-		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_2"); 
-		totalcount += processWP2Data(dir, outputdir, "EN"); 
+		// DIR prepare:  
+		// File names will be determined by "interaction name" (processWP2Data()), or 
+		// "fragment XML name" (processWP2DataPerFramgnet()) 
+//		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
+		dir = Paths.get("./src/test/resources/WP2_public_data/NICE_open/");
 
-		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_3/");
-		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_3"); 
-		totalcount += processWP2Data(dir, outputdir, "EN"); 
+		
+//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag");
+//		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media"); 
+		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag"); 
 
-		dir = Paths.get("./src/test/resources/WP2_public_data/nice_speech/");
-		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_speech"); 
-		totalcount += processWP2Data(dir, outputdir, "EN"); 	
-		}
+		
+		// Actual call: use this for "per-fragment" XMI saving 
+		totalcount += processWP2DataPerFragment(dir, outputdir, "EN"); 
+		
+		// Actual call: Use this, for "per-interaction" XMI saving. 
+//		totalcount += processWP2Data(dir, outputdir, "IT"); 
 
-		// and for ALMAwave 
-		{
-		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
-		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/alma_social_media"); 
-		totalcount += processWP2Data(dir, outputdir, "IT"); 		
-
-		dir = Paths.get("./src/test/resources/WP2_public_data/alma_speech/");
-		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/alma_speech"); 
-		totalcount += processWP2Data(dir, outputdir, "IT"); 		
-		}
+		// end of "processWP2DataPerFragment()" example. 
+	
+		//
+		// The following codes will process WP2 open data directory and 
+		// generate all interactions as XMI (per interaction) on /target/ dir. 
+		// 
+		
+//		// Let's build NICE e-mail data. 
+//		{
+//		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_1/");
+//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_1"); 
+//
+//		totalcount += processWP2Data(dir, outputdir, "EN"); 
+//		
+//		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_2/");
+//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_2"); 
+//		totalcount += processWP2Data(dir, outputdir, "EN"); 
+//
+//		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_3/");
+//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_3"); 
+//		totalcount += processWP2Data(dir, outputdir, "EN"); 
+//
+//		dir = Paths.get("./src/test/resources/WP2_public_data/nice_speech/");
+//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_speech"); 
+//		totalcount += processWP2Data(dir, outputdir, "EN"); 	
+//		}
+//
+//		// and for ALMAwave 
+//		{
+//		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
+//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/alma_social_media"); 
+//		totalcount += processWP2Data(dir, outputdir, "IT"); 		
+//
+//		dir = Paths.get("./src/test/resources/WP2_public_data/alma_speech/");
+//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/alma_speech"); 
+//		totalcount += processWP2Data(dir, outputdir, "IT"); 		
+//		}
 
 		System.out.println("In total: " + totalcount + " XMI files generated, over /target/ directories"); 
 	}
@@ -152,5 +181,89 @@ public class ConvertWP2PublicData {
 		System.out.println("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
 		return generated; 
 	}
+
 	
+	/**
+	 * This method is roughly equal to processWP2Data() method, however, this version 
+	 * saves XMI files per-fragment, instead of per-interaction 
+	 * @param from Directory Path, that holds WP2 public data .txt and XML (They have to be in one directory) 
+	 * @param to Directory Path, where the new XMI files will be generated. 
+	 * @param langID language ID. WP2 frag-dump data does not have language ID. Thus we need this. 
+	 */
+
+	public static int processWP2DataPerFragment(Path from, Path to, String languageID)
+	{
+		
+		Path dir = from; 
+		Path outputdir = to; 
+		
+		try {
+			if (Files.notExists(outputdir))
+			{
+				Files.createDirectories(outputdir); 
+			}
+		}
+		catch (IOException e){
+			System.err.println(e); 
+		}
+		
+		// The work JCAS 
+		JCas aJCas = null; 
+		try {
+			aJCas = CASUtils.createNewInputCas(); 
+		}
+		catch (LAPException e)
+		{
+		    System.err.println(e);
+		    System.exit(1); 
+		}
+		
+		int generated = 0; 
+		
+		// Outer loop access Interaction Text file (.txt) 
+		// while inner loop accesses associated "fragment (fragment graphs) XML"
+		try (DirectoryStream<Path> stream =
+			     Files.newDirectoryStream(dir, "*.txt")) {
+			    for (Path entry: stream) {
+			        System.out.println(entry.getFileName()); 
+			        try (DirectoryStream<Path> xmlstream = Files.newDirectoryStream(dir, entry.getFileName() + "_" + "*.xml"))
+			        {
+			        	for (Path xmlfile : xmlstream)
+			        	{			
+				        	aJCas.reset();       		
+			        		// call the reader. Note that it loads multiple XML files (multiple fragments) with same interaction  
+			        		System.out.println("\t" + xmlfile.getFileName()) ;
+			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas, languageID); 			        		
+			        		
+				        	// Now the JCAS has one fragment annotations, and associated modifier annotations.  
+				        	// (each XML = one fragment)
+				        	// lets store it. 
+				        	String outPathString = outputdir.toString() + "/" + xmlfile.getFileName() + ".xmi";
+				        	Path xmiPath = Paths.get(outPathString); 
+				        	CASUtils.serializeToXmi(aJCas, xmiPath.toFile()); 		
+				        	System.out.println(xmiPath.toString() + " generated." );
+				        	generated++; 
+
+			        	}			        	
+			        }
+			        catch (DataIntegrityFail x)
+			        {
+			        	System.err.println(x); 
+			        	// simply pass to next for loop element 
+			        	System.err.println("Unable to proceed on " + entry.getFileName() +". Pass to next entry"); 
+			        	continue; 
+			        }
+			        catch (IOException | DirectoryIteratorException | DataReaderException | LAPException x) {
+					    System.err.println(x);
+					    System.exit(2); 
+			        }
+			  }
+		} catch (IOException | DirectoryIteratorException x ) {
+		    System.err.println(x);
+		}		
+		
+		System.out.println("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
+		return generated; 
+	}
+
 }

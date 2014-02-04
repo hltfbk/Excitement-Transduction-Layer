@@ -11,6 +11,7 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 
 import org.jgrapht.graph.DirectedMultigraph;
@@ -35,6 +36,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
+import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 
 /**
@@ -245,11 +247,12 @@ public class EntailmentGraphRaw extends
 	public Hashtable<Integer, Set<EntailmentUnit>> getFragmentGraphNodes(EntailmentUnit baseStatementNode, String completeStatementText) throws EntailmentGraphRawException {
 		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
 		
-/*		System.out.println("----");
+// /*		
+		System.out.println("----");
 		System.out.println(baseStatementNode);
 		System.out.println(completeStatementText);
 		System.out.println(baseStatementNode.completeStatementTexts);
-*/
+// */
 		if (!baseStatementNode.completeStatementTexts.contains(completeStatementText)) throw new EntailmentGraphRawException("Base statement node \""+baseStatementNode.getText()+"\" does not correspond to the complete statement \""+ completeStatementText+"\"\n");
 		
 		EntailmentUnit completeStatementNode = getVertexWithText(completeStatementText);
@@ -598,7 +601,11 @@ public class EntailmentGraphRaw extends
 					// TODO Auto-generated catch block
 				}		 
 		  }
-		
+	
+	public void toXML(String filename) throws TransformerException, EntailmentGraphRawException{
+		XMLFileWriter.write(this.toXML(), filename);
+	}
+	
 	public String toStringDetailed(){
 		String s = "";
 		s+="\nNODES:";

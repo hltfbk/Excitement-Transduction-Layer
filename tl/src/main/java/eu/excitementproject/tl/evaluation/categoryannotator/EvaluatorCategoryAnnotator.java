@@ -76,6 +76,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
+import eu.excitementproject.tl.structures.visualization.GraphViewer;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
 
@@ -130,9 +131,9 @@ public class EvaluatorCategoryAnnotator {
 	static boolean tfidf = true;
     static boolean LuceneSearch = true;
     
-    static int setup = 2;
+    static int setup = 1;
     
-    static boolean readGraphFromFile = false;
+    static boolean readGraphFromFile = true;
     static boolean readMergedGraphFromFile = false;
     
     static boolean trainEDA = false;
@@ -157,7 +158,7 @@ public class EvaluatorCategoryAnnotator {
 		
 		try {
 			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
-			//eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+			eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -186,6 +187,7 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
@@ -280,6 +282,7 @@ public class EvaluatorCategoryAnnotator {
 			setup(1);
 			eda.initialize(config);
 			logger.info("Initialized config.");
+			logger.info("LAP: " + lapForFragments.getComponentName());
 			use1 = new UseCaseOneRunnerPrototype(lapForFragments, eda, outputDirname);
 			double threshold = 0.99;
 			EntailmentGraphCollapsed graph = use1.buildCollapsedGraph(docsTrain, threshold);
@@ -288,7 +291,8 @@ public class EvaluatorCategoryAnnotator {
 			String outputFile = outputDirname + "/test.graph.xml";
 			XMLFileWriter.write(graph.toXML(), outputFile);			
 			graph = new EntailmentGraphCollapsed(new File(outputFile));
-			//GraphViewer.drawGraph(graph);
+			
+			logger.info(graph.toString());
 
 			logger.info("Computed and added category confidences.");
 

@@ -85,7 +85,7 @@ public class GraphRenderer extends JPanel {
 	private static final String nodes = "graph.nodes";
 	private static final String edges = "graph.edges";
 	
-	private static final String tmpFile = "/tmp/graphMLfile.xml";
+	private static final String tmpFile = "graphMLfile.xml";
 	
 	public Visualization m_vis;
 	public static final String AGGR = "aggregates";

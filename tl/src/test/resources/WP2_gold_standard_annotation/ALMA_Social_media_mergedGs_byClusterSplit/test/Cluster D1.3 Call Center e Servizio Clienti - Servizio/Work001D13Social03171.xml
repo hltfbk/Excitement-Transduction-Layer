@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="109">
+	<node implicit_focus="" focus="servizio" implicit_context="" explicit_context="0015.txt" modality="FALSE" id ="0015.txt_1_0">
+		<original_text>il servizio richiesto NON era stato effettuato</original_text>
+		<correct_text></correct_text>
+		<modifiers>richiestopoz=2</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio" implicit_context="" explicit_context="0015.txt" modality="FALSE" id ="0015.txt_1_1">
+		<original_text>il servizio NON era stato effettuato</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza tecnica" implicit_context="" explicit_context="0028.txt" modality="FALSE" id ="0028.txt_1_0">
+		<original_text>Oggi ho sperimentato l'assistenza tecnica di TELEFONIAX adsl , devo dire molto molto molto scadente</original_text>
+		<correct_text></correct_text>
+		<modifiers>Oggi ho sperimentatopoz=0 1 2;molto molto moltopoz=11 12 13;di TELEFONIAX adslpoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza tecnica" implicit_context="" explicit_context="0028.txt" modality="FALSE" id ="0028.txt_1_1">
+		<original_text>l'assistenza tecnica di TELEFONIAX adsl , devo dire molto molto molto scadente</original_text>
+		<correct_text></correct_text>
+		<modifiers>molto molto moltopoz=11 12 13;di TELEFONIAX adslpoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza tecnica" implicit_context="" explicit_context="0028.txt" modality="FALSE" id ="0028.txt_1_2">
+		<original_text>Oggi ho sperimentato l'assistenza tecnica di TELEFONIAX adsl , devo dire scadente</original_text>
+		<correct_text></correct_text>
+		<modifiers>Oggi ho sperimentatopoz=0 1 2;di TELEFONIAX adslpoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza tecnica" implicit_context="" explicit_context="0028.txt" modality="FALSE" id ="0028.txt_1_3">
+		<original_text>Oggi ho sperimentato l'assistenza tecnica , devo dire molto molto molto scadente</original_text>
+		<correct_text></correct_text>
+		<modifiers>Oggi ho sperimentatopoz=0 1 2;molto molto moltopoz=11 12 13</modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza tecnica" implicit_context="" explicit_context="0028.txt" modality="FALSE" id ="0028.txt_1_4">
+		<original_text>l'assistenza tecnica di TELEFONIAX adsl , devo dire scadente</original_text>
+		<correct_text></correct_text>
+		<modifiers>di TELEFONIAX adslpoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza tecnica" implicit_context="" explicit_context="0028.txt" modality="FALSE" id ="0028.txt_1_5">
+		<original_text>l'assistenza tecnica , devo dire molto molto molto scadente</original_text>
+		<correct_text></correct_text>
+		<modifiers>molto molto moltopoz=11 12 13</modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza tecnica" implicit_context="" explicit_context="0028.txt" modality="FALSE" id ="0028.txt_1_6">
+		<original_text>Oggi ho sperimentato l'assistenza tecnica , devo dire scadente</original_text>
+		<correct_text></correct_text>
+		<modifiers>Oggi ho sperimentatopoz=0 1 2</modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza tecnica" implicit_context="" explicit_context="0028.txt" modality="FALSE" id ="0028.txt_1_7">
+		<original_text>l'assistenza tecnica , devo dire scadente</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tecnico" implicit_context="" explicit_context="0041.txt" modality="FALSE" id ="0041.txt_1_0">
+		<original_text>non volete mandarci neanche un tecnico</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="contattare" implicit_context="" explicit_context="0043.txt" modality="TRUE" id ="0043.txt_1_0">
+		<original_text>Non riesco a contattare nessun tecnico per istallare la CONSOLLE 2</original_text>
+		<correct_text></correct_text>
+		<modifiers>per la CONSOLLE 2poz=6 8 9 10;istallarepoz=7;nessun tecnicopoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="contattare" implicit_context="" explicit_context="0043.txt" modality="TRUE" id ="0043.txt_1_1">
+		<original_text>Non riesco a contattare nessun tecnico per la CONSOLLE 2</original_text>
+		<correct_text></correct_text>
+		<modifiers>per la CONSOLLE 2poz=6 8 9 10;nessun tecnicopoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="contattare" implicit_context="" explicit_context="0043.txt" modality="TRUE" id ="0043.txt_1_2">
+		<original_text>Non riesco a contattare per istallare la CONSOLLE 2</original_text>
+		<correct_text></correct_text>
+		<modifiers>per la CONSOLLE 2poz=6 8 9 10;istallarepoz=7</modifiers>
+	</node>
+	<node implicit_focus="" focus="contattare" implicit_context="" explicit_context="0043.txt" modality="TRUE" id ="0043.txt_1_3">
+		<original_text>Non riesco a contattare nessun tecnico</original_text>
+		<correct_text></correct_text>
+		<modifiers>nessun tecnicopoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="contattare" implicit_context="" explicit_context="0043.txt" modality="TRUE" id ="0043.txt_1_4">
+		<original_text>Non riesco a contattare per la CONSOLLE 2</original_text>
+		<correct_text></correct_text>
+		<modifiers>per la CONSOLLE 2poz=6 8 9 10</modifiers>
+	</node>
+	<node implicit_focus="" focus="contattare" implicit_context="" explicit_context="0043.txt" modality="TRUE" id ="0043.txt_1_5">
+		<original_text>Non riesco a contattare</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tecnici" implicit_context="" explicit_context="0069.txt" modality="FALSE" id ="0069.txt_2_0">
+		<original_text>tecnici altamente incompetenti</original_text>
+		<correct_text></correct_text>
+		<modifiers>altamentepoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="tecnici" implicit_context="" explicit_context="0069.txt" modality="FALSE" id ="0069.txt_2_1">
+		<original_text>tecnici incompetenti</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" id ="0091.txt_2_0">
+		<original_text>sto ancora aspettando che il servizio tecnico , o chi per lui , mi contatti per verificare l'incongruenza</original_text>
+		<correct_text></correct_text>
+		<modifiers>per verificare l'incongruenzapoz=15 16 17;, o chi per lui ,poz=7 8 9 10 11 12</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" id ="0091.txt_2_1">
+		<original_text>sto ancora aspettando che il servizio tecnico , o chi per lui , mi contatti</original_text>
+		<correct_text></correct_text>
+		<modifiers>, o chi per lui ,poz=7 8 9 10 11 12</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" id ="0091.txt_2_2">
+		<original_text>sto ancora aspettando che il servizio tecnico mi contatti per verificare l'incongruenza</original_text>
+		<correct_text></correct_text>
+		<modifiers>per verificare l'incongruenzapoz=15 16 17</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio tecnico" implicit_context="" explicit_context="0091.txt" modality="FALSE" id ="0091.txt_2_3">
+		<original_text>sto ancora aspettando che il servizio tecnico mi contatti</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0093.txt" modality="FALSE" id ="0093.txt_5_0">
+		<original_text>ancora attendo la vostra chiamata</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0094.txt" modality="FALSE" id ="0094.txt_1_0">
+		<original_text>nessuno mi ha chiamato</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="assistenza" implicit_context="" explicit_context="0118.txt" modality="FALSE" id ="0118.txt_2_0">
+		<original_text>dal 20 / 4 aspetto ancora la vostra assistenza</original_text>
+		<correct_text></correct_text>
+		<modifiers>ancorapoz=5;dal 20 / 4poz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="" focus="assistenza" implicit_context="" explicit_context="0118.txt" modality="FALSE" id ="0118.txt_2_1">
+		<original_text>dal 20 / 4 aspetto la vostra assistenza</original_text>
+		<correct_text></correct_text>
+		<modifiers>dal 20 / 4poz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="" focus="assistenza" implicit_context="" explicit_context="0118.txt" modality="FALSE" id ="0118.txt_2_2">
+		<original_text>aspetto ancora la vostra assistenza</original_text>
+		<correct_text></correct_text>
+		<modifiers>ancorapoz=5</modifiers>
+	</node>
+	<node implicit_focus="" focus="assistenza" implicit_context="" explicit_context="0118.txt" modality="FALSE" id ="0118.txt_2_3">
+		<original_text>aspetto la vostra assistenza</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="soldi" implicit_context="" explicit_context="0121.txt" modality="FALSE" id ="0121.txt_2_0">
+		<original_text>i soldi ve li siete presi senza risolvere il problema dal cc</original_text>
+		<correct_text>i soldi ve li siete presi senza risolvere il problema dal conto corrente</correct_text>
+		<modifiers>dal ccpoz=10 11</modifiers>
+	</node>
+	<node implicit_focus="" focus="soldi" implicit_context="" explicit_context="0121.txt" modality="FALSE" id ="0121.txt_2_1">
+		<original_text>i soldi ve li siete presi senza risolvere il problema</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="collegarmi" focus="" implicit_context="" explicit_context="0121.txt" modality="FALSE" id ="0121.txt_3_0">
+		<original_text>nn riuscite a risolvere il mio problema cn tante telefonate</original_text>
+		<correct_text>non riuscite a risolvere il mio problema con tante telefonate</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="collegarmi" focus="" implicit_context="" explicit_context="0121.txt" modality="FALSE" id ="0121.txt_4_0">
+		<original_text>nn riuscite a risolvere il mio problema cn tanti messaggi</original_text>
+		<correct_text>non riuscite a risolvere il mio problema con tanti messaggi</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio" implicit_context="" explicit_context="0133.txt" modality="FALSE" id ="0133.txt_2_0">
+		<original_text>ho ricevuto un servizio da CIALTRONI</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0143.txt" modality="FALSE" id ="0143.txt_1_0">
+		<original_text>sono stanca di dover chiamare ogni volta per lo stesso problema</original_text>
+		<correct_text></correct_text>
+		<modifiers>ogni voltapoz=5 6</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0143.txt" modality="FALSE" id ="0143.txt_1_1">
+		<original_text>sono stanca di dover chiamare per lo stesso problema</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="risposta" implicit_context="" explicit_context="0158.txt" modality="FALSE" id ="0158.txt_1_0">
+		<original_text>sono settimane che aspetto una risposta , dopo aver compilato il form del Servizio Clienti</original_text>
+		<correct_text></correct_text>
+		<modifiers>sono settimane chepoz=0 1 2;del Servizio Clientipoz=12 13 14;, dopo aver compilato il formpoz=6 7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="" focus="risposta" implicit_context="" explicit_context="0158.txt" modality="FALSE" id ="0158.txt_1_1">
+		<original_text>aspetto una risposta , dopo aver compilato il form del Servizio Clienti</original_text>
+		<correct_text></correct_text>
+		<modifiers>del Servizio Clientipoz=12 13 14;, dopo aver compilato il formpoz=6 7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="" focus="risposta" implicit_context="" explicit_context="0158.txt" modality="FALSE" id ="0158.txt_1_2">
+		<original_text>sono settimane che aspetto una risposta , dopo aver compilato il form</original_text>
+		<correct_text></correct_text>
+		<modifiers>sono settimane chepoz=0 1 2;, dopo aver compilato il formpoz=6 7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="" focus="risposta" implicit_context="" explicit_context="0158.txt" modality="FALSE" id ="0158.txt_1_3">
+		<original_text>aspetto una risposta , dopo aver compilato il form</original_text>
+		<correct_text></correct_text>
+		<modifiers>, dopo aver compilato il formpoz=6 7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="" focus="risposta" implicit_context="" explicit_context="0158.txt" modality="FALSE" id ="0158.txt_1_4">
+		<original_text>sono settimane che aspetto una risposta</original_text>
+		<correct_text></correct_text>
+		<modifiers>sono settimane chepoz=0 1 2</modifiers>
+	</node>
+	<node implicit_focus="" focus="risposta" implicit_context="" explicit_context="0158.txt" modality="FALSE" id ="0158.txt_1_5">
+		<original_text>aspetto una risposta</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio" implicit_context="" explicit_context="0172.txt" modality="FALSE" id ="0172.txt_1_0">
+		<original_text>Sono veramente insoddisfatta del servizio</original_text>
+		<correct_text></correct_text>
+		<modifiers>veramentepoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio" implicit_context="" explicit_context="0172.txt" modality="FALSE" id ="0172.txt_1_1">
+		<original_text>Sono insoddisfatta del servizio</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazioni" implicit_context="" explicit_context="0176.txt" modality="FALSE" id ="0176.txt_1_0">
+		<original_text>le segnalazioni fatte sul sito non hanno risposta</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="segnalazioni" focus="" implicit_context="" explicit_context="0176.txt" modality="FALSE" id ="0176.txt_2_0">
+		<original_text>così come quelle telefoniche</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazione" implicit_context="" explicit_context="0180.txt" modality="FALSE" id ="0180.txt_1_0">
+		<original_text>non ho ancora avuto conferme sull'apertura della vostra segnalazione ai tecnici</original_text>
+		<correct_text></correct_text>
+		<modifiers>ai tecnicipoz=9 10;ancorapoz=2</modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazione" implicit_context="" explicit_context="0180.txt" modality="FALSE" id ="0180.txt_1_1">
+		<original_text>non ho ancora avuto conferme sull'apertura della vostra segnalazione</original_text>
+		<correct_text></correct_text>
+		<modifiers>ancorapoz=2</modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazione" implicit_context="" explicit_context="0180.txt" modality="FALSE" id ="0180.txt_1_2">
+		<original_text>non ho avuto conferme sull'apertura della vostra segnalazione ai tecnici</original_text>
+		<correct_text></correct_text>
+		<modifiers>ai tecnicipoz=9 10</modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazione" implicit_context="" explicit_context="0180.txt" modality="FALSE" id ="0180.txt_1_3">
+		<original_text>non ho avuto conferme sull'apertura della vostra segnalazione</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="conferma" implicit_context="" explicit_context="0181.txt" modality="FALSE" id ="0181.txt_1_0">
+		<original_text>sarebbe arrivato un messaggio di conferma , ma per ora non abbiamo ricevuto nulla</original_text>
+		<correct_text>sarebbe dovuto arrivare un messaggio di conferma, ma per ora non abbiamo ricevuto nulla</correct_text>
+		<modifiers>sarebbe arrivato un messaggio di conferma , mapoz=0 1 2 3 4 5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="conferma" implicit_context="" explicit_context="0181.txt" modality="FALSE" id ="0181.txt_1_1">
+		<original_text>per ora non abbiamo ricevuto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0192.txt" modality="FALSE" id ="0192.txt_1_0">
+		<original_text>non mi ricontattano dopo che ho mandato vari reclami</original_text>
+		<correct_text></correct_text>
+		<modifiers>dopo che ho mandato vari reclamipoz=3 4 5 6 7 8</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0192.txt" modality="FALSE" id ="0192.txt_1_1">
+		<original_text>non mi ricontattano</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza" implicit_context="" explicit_context="0204.txt" modality="FALSE" id ="0204.txt_2_0">
+		<original_text>l'assistenza è stata a dir poco inidonea</original_text>
+		<correct_text></correct_text>
+		<modifiers>a dir pocopoz=3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="l'assistenza" implicit_context="" explicit_context="0204.txt" modality="FALSE" id ="0204.txt_2_1">
+		<original_text>l'assistenza è stata inidonea</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0229.txt" modality="FALSE" id ="0229.txt_1_0">
+		<original_text>Ancora nessun contatto da voi</original_text>
+		<correct_text></correct_text>
+		<modifiers>Ancorapoz=0</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0229.txt" modality="FALSE" id ="0229.txt_1_1">
+		<original_text>nessun contatto da voi</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0258.txt" modality="FALSE" id ="0258.txt_2_0">
+		<original_text>dopo svariate tentativi nessuno ma chiamato</original_text>
+		<correct_text>dopo svariati tentativi nessuno mi ha chiamato</correct_text>
+		<modifiers>dopo svariate tentativipoz=0 1 2</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0258.txt" modality="FALSE" id ="0258.txt_2_1">
+		<original_text>nessuno ma chiamato</original_text>
+		<correct_text>nessuno mi ha chiamato</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="diservizi" implicit_context="" explicit_context="0258.txt" modality="FALSE" id ="0258.txt_3_0">
+		<original_text>non capisco xche questi diservizi da parte vostra</original_text>
+		<correct_text>non capisco perchè questi disservizi da parte vostra</correct_text>
+		<modifiers>da parte vostrapoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="diservizi" implicit_context="" explicit_context="0258.txt" modality="FALSE" id ="0258.txt_3_1">
+		<original_text>non capisco xche questi diservizi</original_text>
+		<correct_text>non capisco perchè questi disservizi</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0259.txt" modality="FALSE" id ="0259.txt_1_0">
+		<original_text>da febbraio 2011 cha mando delle raccomandate spendendo dei soldi . . . . ma nessuno mi chiama</original_text>
+		<correct_text>da febbraio 2011 che mando delle raccomandate spendendo dei soldi . . . . ma nessuno mi chiama</correct_text>
+		<modifiers>da febbraio 2011 chapoz=0 1 2 3;mando delle raccomandate . . . . mapoz=4 5 6 10 11 12 13 14;spendendo dei soldipoz=7 8 9</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0259.txt" modality="FALSE" id ="0259.txt_1_1">
+		<original_text>mando delle raccomandate spendendo dei soldi . . . . ma nessuno mi chiama</original_text>
+		<correct_text></correct_text>
+		<modifiers>mando delle raccomandate . . . . mapoz=4 5 6 10 11 12 13 14;spendendo dei soldipoz=7 8 9</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0259.txt" modality="FALSE" id ="0259.txt_1_2">
+		<original_text>da febbraio 2011 cha mando delle raccomandate . . . . ma nessuno mi chiama</original_text>
+		<correct_text>da febbraio 2011 che mando delle raccomandate . . . . ma nessuno mi chiama</correct_text>
+		<modifiers>da febbraio 2011 chapoz=0 1 2 3;mando delle raccomandate . . . . mapoz=4 5 6 10 11 12 13 14</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0259.txt" modality="FALSE" id ="0259.txt_1_3">
+		<original_text>mando delle raccomandate . . . . ma nessuno mi chiama</original_text>
+		<correct_text></correct_text>
+		<modifiers>mando delle raccomandate . . . . mapoz=4 5 6 10 11 12 13 14</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0259.txt" modality="FALSE" id ="0259.txt_1_4">
+		<original_text>da febbraio 2011 cha nessuno mi chiama</original_text>
+		<correct_text>da febbraio 2011 che nessuno mi chiama</correct_text>
+		<modifiers>da febbraio 2011 chapoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0259.txt" modality="FALSE" id ="0259.txt_1_5">
+		<original_text>nessuno mi chiama</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0264.txt" modality="FALSE" id ="0264.txt_1_0">
+		<original_text>provate a soddisfare meglio le richieste di clienti</original_text>
+		<correct_text>provate a soddisfare meglio le richieste dei clienti</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="assistenza clienti" implicit_context="" explicit_context="0277.txt" modality="FALSE" id ="0277.txt_2_0">
+		<original_text>La vostra assistenza clienti lascia decisamente a desiderare</original_text>
+		<correct_text></correct_text>
+		<modifiers>decisamentepoz=5</modifiers>
+	</node>
+	<node implicit_focus="" focus="assistenza clienti" implicit_context="" explicit_context="0277.txt" modality="FALSE" id ="0277.txt_2_1">
+		<original_text>La vostra assistenza clienti lascia a desiderare</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="avvisi" implicit_context="" explicit_context="0281.txt" modality="FALSE" id ="0281.txt_1_0">
+		<original_text>e' come minimo penoso che una compagnia nojn avvisi la clientela di un problema cosi' grave</original_text>
+		<correct_text>è come minimo penoso che una compagnia non avvisi la clientela di un problema così grave</correct_text>
+		<modifiers>la clientelapoz=9 10;come minimopoz=1 2;una compagniapoz=5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="avvisi" implicit_context="" explicit_context="0281.txt" modality="FALSE" id ="0281.txt_1_1">
+		<original_text>e' come minimo penoso che una compagnia nojn avvisi di un problema cosi' grave</original_text>
+		<correct_text>è come minimo penoso che una compagnia non avvisi di un problema così grave</correct_text>
+		<modifiers>come minimopoz=1 2;una compagniapoz=5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="avvisi" implicit_context="" explicit_context="0281.txt" modality="FALSE" id ="0281.txt_1_2">
+		<original_text>e' penoso che una compagnia nojn avvisi la clientela di un problema cosi' grave</original_text>
+		<correct_text>è penoso che una compagnia non avvisi la clientela di un problema così grave</correct_text>
+		<modifiers>la clientelapoz=9 10;una compagniapoz=5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="avvisi" implicit_context="" explicit_context="0281.txt" modality="FALSE" id ="0281.txt_1_3">
+		<original_text>e' come minimo penoso che nojn avvisi la clientela di un problema cosi' grave</original_text>
+		<correct_text>è come minimo penoso che non si avvisi la clientela di un problema così grave</correct_text>
+		<modifiers>la clientelapoz=9 10;come minimopoz=1 2</modifiers>
+	</node>
+	<node implicit_focus="" focus="avvisi" implicit_context="" explicit_context="0281.txt" modality="FALSE" id ="0281.txt_1_4">
+		<original_text>e' penoso che una compagnia nojn avvisi di un problema cosi' grave</original_text>
+		<correct_text>è penoso che una compagnia non avvisi di un problema così grave</correct_text>
+		<modifiers>una compagniapoz=5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="avvisi" implicit_context="" explicit_context="0281.txt" modality="FALSE" id ="0281.txt_1_5">
+		<original_text>e' come minimo penoso che nojn avvisi di un problema cosi' grave</original_text>
+		<correct_text>è come minimo penoso che non si avvisi di un problema così grave</correct_text>
+		<modifiers>come minimopoz=1 2</modifiers>
+	</node>
+	<node implicit_focus="" focus="avvisi" implicit_context="" explicit_context="0281.txt" modality="FALSE" id ="0281.txt_1_6">
+		<original_text>e' penoso che nojn avvisi la clientela di un problema cosi' grave</original_text>
+		<correct_text>è penoso che non si avvisi la clientela di un problema così grave</correct_text>
+		<modifiers>la clientelapoz=9 10</modifiers>
+	</node>
+	<node implicit_focus="" focus="avvisi" implicit_context="" explicit_context="0281.txt" modality="FALSE" id ="0281.txt_1_7">
+		<original_text>e' penoso che nojn avvisi di un problema cosi' grave</original_text>
+		<correct_text>è penoso che non si avvisi di un problema così grave</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="feedback" implicit_context="" explicit_context="0292.txt" modality="FALSE" id ="0292.txt_1_0">
+		<original_text>Ho mandato una raccomandata due mesi fa non ho ancora ricevuto nessun feedback</original_text>
+		<correct_text></correct_text>
+		<modifiers>Ho mandato una raccomandatapoz=0 1 2 3;due mesi fapoz=4 5 6;ancorapoz=9</modifiers>
+	</node>
+	<node implicit_focus="" focus="feedback" implicit_context="" explicit_context="0292.txt" modality="FALSE" id ="0292.txt_1_1">
+		<original_text>Ho mandato una raccomandata non ho ancora ricevuto nessun feedback</original_text>
+		<correct_text></correct_text>
+		<modifiers>Ho mandato una raccomandatapoz=0 1 2 3;ancorapoz=9</modifiers>
+	</node>
+	<node implicit_focus="" focus="feedback" implicit_context="" explicit_context="0292.txt" modality="FALSE" id ="0292.txt_1_2">
+		<original_text>Ho mandato una raccomandata due mesi fa non ho ricevuto nessun feedback</original_text>
+		<correct_text></correct_text>
+		<modifiers>Ho mandato una raccomandatapoz=0 1 2 3;due mesi fapoz=4 5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="feedback" implicit_context="" explicit_context="0292.txt" modality="FALSE" id ="0292.txt_1_3">
+		<original_text>non ho ancora ricevuto nessun feedback</original_text>
+		<correct_text></correct_text>
+		<modifiers>ancorapoz=9</modifiers>
+	</node>
+	<node implicit_focus="" focus="feedback" implicit_context="" explicit_context="0292.txt" modality="FALSE" id ="0292.txt_1_4">
+		<original_text>Ho mandato una raccomandata non ho ricevuto nessun feedback</original_text>
+		<correct_text></correct_text>
+		<modifiers>Ho mandato una raccomandatapoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="" focus="feedback" implicit_context="" explicit_context="0292.txt" modality="FALSE" id ="0292.txt_1_5">
+		<original_text>non ho ricevuto nessun feedback</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="MODELLOA2" implicit_context="" explicit_context="0296.txt" modality="FALSE" id ="0296.txt_1_0">
+		<original_text>qualcuno si degni di chiamarmi per dirmi dov'è finito sto benedetto MODELLOA2</original_text>
+		<correct_text></correct_text>
+		<modifiers>qualcuno si degni di chiamarmi per dirmipoz=0 1 2 3 4 5 6;benedettopoz=10</modifiers>
+	</node>
+	<node implicit_focus="" focus="MODELLOA2" implicit_context="" explicit_context="0296.txt" modality="FALSE" id ="0296.txt_1_1">
+		<original_text>dov'è finito sto benedetto MODELLOA2</original_text>
+		<correct_text></correct_text>
+		<modifiers>benedettopoz=10</modifiers>
+	</node>
+	<node implicit_focus="" focus="MODELLOA2" implicit_context="" explicit_context="0296.txt" modality="FALSE" id ="0296.txt_1_2">
+		<original_text>qualcuno si degni di chiamarmi per dirmi dov'è finito sto MODELLOA2</original_text>
+		<correct_text></correct_text>
+		<modifiers>qualcuno si degni di chiamarmi per dirmipoz=0 1 2 3 4 5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="MODELLOA2" implicit_context="" explicit_context="0296.txt" modality="FALSE" id ="0296.txt_1_3">
+		<original_text>dov'è finito sto MODELLOA2</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazioni" implicit_context="" explicit_context="0307.txt" modality="FALSE" id ="0307.txt_2_0">
+		<original_text>ho fatto un sacco di segnalazioni al 444 ma niente</original_text>
+		<correct_text></correct_text>
+		<modifiers>un sacco dipoz=2 3 4</modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazioni" implicit_context="" explicit_context="0307.txt" modality="FALSE" id ="0307.txt_2_1">
+		<original_text>ho fatto segnalazioni al 444 ma niente</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazioni" implicit_context="" explicit_context="0307.txt" modality="FALSE" id ="0307.txt_3_0">
+		<original_text>ho fatto un sacco di segnalazioni sul sito ma niente</original_text>
+		<correct_text></correct_text>
+		<modifiers>un sacco dipoz=2 3 4</modifiers>
+	</node>
+	<node implicit_focus="" focus="segnalazioni" implicit_context="" explicit_context="0307.txt" modality="FALSE" id ="0307.txt_3_1">
+		<original_text>ho fatto segnalazioni sul sito ma niente</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0308.txt" modality="FALSE" id ="0308.txt_4_0">
+		<original_text>tutti questi danni e nessuno ti si fila</original_text>
+		<correct_text></correct_text>
+		<modifiers>tutti questi danni epoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="assistenza clienti" focus="" implicit_context="" explicit_context="0308.txt" modality="FALSE" id ="0308.txt_4_1">
+		<original_text>nessuno ti si fila</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0313.txt" modality="FALSE" id ="0313.txt_5_0">
+		<original_text>TELEFONIAX it sto facendo segnalazioni da 1 mese . . . ma non è mai stato risolto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers>itpoz=1;maipoz=14;da 1 mesepoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0313.txt" modality="FALSE" id ="0313.txt_5_1">
+		<original_text>TELEFONIAX sto facendo segnalazioni da 1 mese . . . ma non è mai stato risolto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers>maipoz=14;da 1 mesepoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0313.txt" modality="FALSE" id ="0313.txt_5_2">
+		<original_text>TELEFONIAX it sto facendo segnalazioni da 1 mese . . . ma non è stato risolto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers>itpoz=1;da 1 mesepoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0313.txt" modality="FALSE" id ="0313.txt_5_3">
+		<original_text>TELEFONIAX it sto facendo segnalazioni . . . ma non è mai stato risolto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers>itpoz=1;maipoz=14</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0313.txt" modality="FALSE" id ="0313.txt_5_4">
+		<original_text>TELEFONIAX sto facendo segnalazioni da 1 mese . . . ma non è stato risolto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers>da 1 mesepoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0313.txt" modality="FALSE" id ="0313.txt_5_5">
+		<original_text>TELEFONIAX sto facendo segnalazioni . . . ma non è mai stato risolto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers>maipoz=14</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0313.txt" modality="FALSE" id ="0313.txt_5_6">
+		<original_text>TELEFONIAX it sto facendo segnalazioni . . . ma non è stato risolto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers>itpoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="0313.txt" modality="FALSE" id ="0313.txt_5_7">
+		<original_text>TELEFONIAX sto facendo segnalazioni . . . ma non è stato risolto nulla</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio" implicit_context="" explicit_context="0314.txt" modality="FALSE" id ="0314.txt_1_0">
+		<original_text>sono due mesi che un servizio non viene attivato</original_text>
+		<correct_text></correct_text>
+		<modifiers>sono due mesi chepoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio" implicit_context="" explicit_context="0314.txt" modality="FALSE" id ="0314.txt_1_1">
+		<original_text>un servizio non viene attivato</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="indagini" implicit_context="" explicit_context="0317.txt" modality="FALSE" id ="0317.txt_1_0">
+		<original_text>sono estremamente irritanti le indagini sulla qualità del servizio</original_text>
+		<correct_text></correct_text>
+		<modifiers>sulla qualità del serviziopoz=5 6 7 8;estremamentepoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="indagini" implicit_context="" explicit_context="0317.txt" modality="FALSE" id ="0317.txt_1_1">
+		<original_text>sono estremamente irritanti le indagini</original_text>
+		<correct_text></correct_text>
+		<modifiers>estremamentepoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="indagini" implicit_context="" explicit_context="0317.txt" modality="FALSE" id ="0317.txt_1_2">
+		<original_text>sono irritanti le indagini sulla qualità del servizio</original_text>
+		<correct_text></correct_text>
+		<modifiers>sulla qualità del serviziopoz=5 6 7 8</modifiers>
+	</node>
+	<node implicit_focus="" focus="indagini" implicit_context="" explicit_context="0317.txt" modality="FALSE" id ="0317.txt_1_3">
+		<original_text>sono irritanti le indagini</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="0015.txt_1_1" source="0015.txt_1_0" id="0015.txt_1_1-0015.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_3_0" source="0015.txt_1_0" id="0258.txt_3_0-0015.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_3_1" source="0015.txt_1_1" id="0258.txt_3_1-0015.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0314.txt_1_1" source="0015.txt_1_1" id="0314.txt_1_1-0015.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_1" source="0028.txt_1_0" id="0028.txt_1_1-0028.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_2" source="0028.txt_1_0" id="0028.txt_1_2-0028.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_3" source="0028.txt_1_0" id="0028.txt_1_3-0028.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_4" source="0028.txt_1_1" id="0028.txt_1_4-0028.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_5" source="0028.txt_1_1" id="0028.txt_1_5-0028.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_4" source="0028.txt_1_2" id="0028.txt_1_4-0028.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_6" source="0028.txt_1_2" id="0028.txt_1_6-0028.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_5" source="0028.txt_1_3" id="0028.txt_1_5-0028.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_6" source="0028.txt_1_3" id="0028.txt_1_6-0028.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_7" source="0028.txt_1_4" id="0028.txt_1_7-0028.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_7" source="0028.txt_1_5" id="0028.txt_1_7-0028.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_7" source="0028.txt_1_6" id="0028.txt_1_7-0028.txt_1_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0204.txt_2_1" source="0028.txt_1_7" id="0204.txt_2_1-0028.txt_1_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0043.txt_1_1" source="0043.txt_1_0" id="0043.txt_1_1-0043.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0043.txt_1_2" source="0043.txt_1_0" id="0043.txt_1_2-0043.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0043.txt_1_3" source="0043.txt_1_1" id="0043.txt_1_3-0043.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0043.txt_1_4" source="0043.txt_1_1" id="0043.txt_1_4-0043.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0043.txt_1_4" source="0043.txt_1_2" id="0043.txt_1_4-0043.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0043.txt_1_5" source="0043.txt_1_3" id="0043.txt_1_5-0043.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_0" source="0043.txt_1_3" id="0229.txt_1_0-0043.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0043.txt_1_5" source="0043.txt_1_4" id="0043.txt_1_5-0043.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0069.txt_2_1" source="0069.txt_2_0" id="0069.txt_2_1-0069.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_6" source="0069.txt_2_0" id="0028.txt_1_6-0069.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_5" source="0069.txt_2_0" id="0028.txt_1_5-0069.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_4" source="0069.txt_2_0" id="0028.txt_1_4-0069.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0204.txt_2_0" source="0069.txt_2_0" id="0204.txt_2_0-0069.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0028.txt_1_7" source="0069.txt_2_1" id="0028.txt_1_7-0069.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0204.txt_2_1" source="0069.txt_2_1" id="0204.txt_2_1-0069.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0091.txt_2_1" source="0091.txt_2_0" id="0091.txt_2_1-0091.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0091.txt_2_2" source="0091.txt_2_0" id="0091.txt_2_2-0091.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_1" source="0091.txt_2_0" id="0158.txt_1_1-0091.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_2" source="0091.txt_2_0" id="0158.txt_1_2-0091.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_0" source="0091.txt_2_0" id="0118.txt_2_0-0091.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0091.txt_2_3" source="0091.txt_2_1" id="0091.txt_2_3-0091.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_4" source="0091.txt_2_1" id="0158.txt_1_4-0091.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_0" source="0091.txt_2_1" id="0229.txt_1_0-0091.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_0" source="0091.txt_2_1" id="0192.txt_1_0-0091.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_3" source="0091.txt_2_1" id="0158.txt_1_3-0091.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_2" source="0091.txt_2_1" id="0118.txt_2_2-0091.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_1" source="0091.txt_2_1" id="0118.txt_2_1-0091.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0091.txt_2_3" source="0091.txt_2_2" id="0091.txt_2_3-0091.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_0" source="0091.txt_2_2" id="0229.txt_1_0-0091.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_4" source="0091.txt_2_2" id="0158.txt_1_4-0091.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_3" source="0091.txt_2_2" id="0158.txt_1_3-0091.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_2" source="0091.txt_2_2" id="0118.txt_2_2-0091.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_1" source="0091.txt_2_2" id="0118.txt_2_1-0091.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_5" source="0091.txt_2_3" id="0158.txt_1_5-0091.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0093.txt_5_0" source="0091.txt_2_3" id="0093.txt_5_0-0091.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0091.txt_2_3" id="0229.txt_1_1-0091.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0091.txt_2_3" id="0192.txt_1_1-0091.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0091.txt_2_3" id="0258.txt_2_1-0091.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0091.txt_2_3" id="0292.txt_1_5-0091.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_3" source="0091.txt_2_3" id="0118.txt_2_3-0091.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0094.txt_1_0" source="0091.txt_2_3" id="0094.txt_1_0-0091.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0093.txt_5_0" id="0292.txt_1_5-0093.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0094.txt_1_0" id="0229.txt_1_1-0094.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0094.txt_1_0" id="0192.txt_1_1-0094.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0094.txt_1_0" id="0258.txt_2_1-0094.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0094.txt_1_0" id="0292.txt_1_5-0094.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_1" source="0118.txt_2_0" id="0118.txt_2_1-0118.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_2" source="0118.txt_2_0" id="0118.txt_2_2-0118.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_3" source="0118.txt_2_1" id="0118.txt_2_3-0118.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0118.txt_2_3" source="0118.txt_2_2" id="0118.txt_2_3-0118.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0121.txt_2_1" source="0121.txt_2_0" id="0121.txt_2_1-0121.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0204.txt_2_1" source="0121.txt_2_1" id="0204.txt_2_1-0121.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0143.txt_1_1" source="0121.txt_3_0" id="0143.txt_1_1-0121.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0121.txt_4_0" source="0121.txt_3_0" id="0121.txt_4_0-0121.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0143.txt_1_1" source="0121.txt_4_0" id="0143.txt_1_1-0121.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0308.txt_4_1" source="0133.txt_2_0" id="0308.txt_4_1-0133.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0172.txt_1_1" source="0133.txt_2_0" id="0172.txt_1_1-0133.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0143.txt_1_1" source="0143.txt_1_0" id="0143.txt_1_1-0143.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_1" source="0158.txt_1_0" id="0158.txt_1_1-0158.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_2" source="0158.txt_1_0" id="0158.txt_1_2-0158.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_3" source="0158.txt_1_1" id="0158.txt_1_3-0158.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_3" source="0158.txt_1_2" id="0158.txt_1_3-0158.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_4" source="0158.txt_1_2" id="0158.txt_1_4-0158.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_5" source="0158.txt_1_3" id="0158.txt_1_5-0158.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_5" source="0158.txt_1_4" id="0158.txt_1_5-0158.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0172.txt_1_1" source="0172.txt_1_0" id="0172.txt_1_1-0172.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0308.txt_4_1" source="0172.txt_1_1" id="0308.txt_4_1-0172.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0133.txt_2_0" source="0172.txt_1_1" id="0133.txt_2_0-0172.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_5" source="0176.txt_1_0" id="0158.txt_1_5-0176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0093.txt_5_0" source="0176.txt_1_0" id="0093.txt_5_0-0176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0176.txt_1_0" id="0229.txt_1_1-0176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0176.txt_1_0" id="0192.txt_1_1-0176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0176.txt_1_0" id="0258.txt_2_1-0176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_3_1" source="0176.txt_1_0" id="0307.txt_3_1-0176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0176.txt_1_0" id="0292.txt_1_5-0176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0094.txt_1_0" source="0176.txt_1_0" id="0094.txt_1_0-0176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0180.txt_1_1" source="0180.txt_1_0" id="0180.txt_1_1-0180.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0180.txt_1_2" source="0180.txt_1_0" id="0180.txt_1_2-0180.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_1" source="0180.txt_1_0" id="0158.txt_1_1-0180.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0180.txt_1_3" source="0180.txt_1_1" id="0180.txt_1_3-0180.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_2_0" source="0180.txt_1_1" id="0307.txt_2_0-0180.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_3" source="0180.txt_1_1" id="0158.txt_1_3-0180.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0180.txt_1_3" source="0180.txt_1_2" id="0180.txt_1_3-0180.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_2_0" source="0180.txt_1_2" id="0307.txt_2_0-0180.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_3" source="0180.txt_1_2" id="0158.txt_1_3-0180.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0093.txt_5_0" source="0180.txt_1_3" id="0093.txt_5_0-0180.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0158.txt_1_5" source="0180.txt_1_3" id="0158.txt_1_5-0180.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0180.txt_1_3" id="0229.txt_1_1-0180.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0180.txt_1_3" id="0192.txt_1_1-0180.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0180.txt_1_3" id="0258.txt_2_1-0180.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_2_1" source="0180.txt_1_3" id="0307.txt_2_1-0180.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0180.txt_1_3" id="0292.txt_1_5-0180.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0094.txt_1_0" source="0180.txt_1_3" id="0094.txt_1_0-0180.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0181.txt_1_1" source="0181.txt_1_0" id="0181.txt_1_1-0181.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0192.txt_1_0" id="0192.txt_1_1-0192.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_0" source="0192.txt_1_0" id="0229.txt_1_0-0192.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0192.txt_1_1" id="0229.txt_1_1-0192.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0094.txt_1_0" source="0192.txt_1_1" id="0094.txt_1_0-0192.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0192.txt_1_1" id="0258.txt_2_1-0192.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0192.txt_1_1" id="0292.txt_1_5-0192.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0204.txt_2_1" source="0204.txt_2_0" id="0204.txt_2_1-0204.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0229.txt_1_0" id="0229.txt_1_1-0229.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0094.txt_1_0" source="0229.txt_1_1" id="0094.txt_1_0-0229.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0229.txt_1_1" id="0192.txt_1_1-0229.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0229.txt_1_1" id="0258.txt_2_1-0229.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0229.txt_1_1" id="0292.txt_1_5-0229.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0258.txt_2_0" id="0258.txt_2_1-0258.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0258.txt_2_1" id="0229.txt_1_1-0258.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0258.txt_2_1" id="0192.txt_1_1-0258.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0094.txt_1_0" source="0258.txt_2_1" id="0094.txt_1_0-0258.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0258.txt_2_1" id="0292.txt_1_5-0258.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_3_1" source="0258.txt_3_0" id="0258.txt_3_1-0258.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0172.txt_1_0" source="0258.txt_3_0" id="0172.txt_1_0-0258.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_1" source="0259.txt_1_0" id="0259.txt_1_1-0259.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_2" source="0259.txt_1_0" id="0259.txt_1_2-0259.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_0" source="0259.txt_1_0" id="0292.txt_1_0-0259.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_3" source="0259.txt_1_1" id="0259.txt_1_3-0259.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_1" source="0259.txt_1_1" id="0292.txt_1_1-0259.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_2" source="0259.txt_1_1" id="0292.txt_1_2-0259.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_3" source="0259.txt_1_2" id="0259.txt_1_3-0259.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_4" source="0259.txt_1_2" id="0259.txt_1_4-0259.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_1" source="0259.txt_1_2" id="0292.txt_1_1-0259.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_2" source="0259.txt_1_2" id="0292.txt_1_2-0259.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_5" source="0259.txt_1_3" id="0259.txt_1_5-0259.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_4" source="0259.txt_1_3" id="0292.txt_1_4-0259.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_3" source="0259.txt_1_3" id="0292.txt_1_3-0259.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_5" source="0259.txt_1_4" id="0259.txt_1_5-0259.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0259.txt_1_5" id="0292.txt_1_5-0259.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0277.txt_2_1" source="0264.txt_1_0" id="0277.txt_2_1-0264.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0277.txt_2_1" source="0277.txt_2_0" id="0277.txt_2_1-0277.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0204.txt_2_1" source="0277.txt_2_1" id="0204.txt_2_1-0277.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_1" source="0281.txt_1_0" id="0281.txt_1_1-0281.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_2" source="0281.txt_1_0" id="0281.txt_1_2-0281.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_3" source="0281.txt_1_0" id="0281.txt_1_3-0281.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_4" source="0281.txt_1_1" id="0281.txt_1_4-0281.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_5" source="0281.txt_1_1" id="0281.txt_1_5-0281.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_4" source="0281.txt_1_2" id="0281.txt_1_4-0281.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_6" source="0281.txt_1_2" id="0281.txt_1_6-0281.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_5" source="0281.txt_1_3" id="0281.txt_1_5-0281.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_6" source="0281.txt_1_3" id="0281.txt_1_6-0281.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_7" source="0281.txt_1_4" id="0281.txt_1_7-0281.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_0" source="0281.txt_1_4" id="0229.txt_1_0-0281.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_7" source="0281.txt_1_5" id="0281.txt_1_7-0281.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_0" source="0281.txt_1_5" id="0229.txt_1_0-0281.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0281.txt_1_7" source="0281.txt_1_6" id="0281.txt_1_7-0281.txt_1_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_0" source="0281.txt_1_6" id="0229.txt_1_0-0281.txt_1_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0281.txt_1_7" id="0229.txt_1_1-0281.txt_1_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0281.txt_1_7" id="0192.txt_1_1-0281.txt_1_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0281.txt_1_7" id="0258.txt_2_1-0281.txt_1_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0281.txt_1_7" id="0292.txt_1_5-0281.txt_1_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_5" source="0281.txt_1_7" id="0259.txt_1_5-0281.txt_1_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0094.txt_1_0" source="0281.txt_1_7" id="0094.txt_1_0-0281.txt_1_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_1" source="0292.txt_1_0" id="0292.txt_1_1-0292.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_2" source="0292.txt_1_0" id="0292.txt_1_2-0292.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_3" source="0292.txt_1_1" id="0292.txt_1_3-0292.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_4" source="0292.txt_1_1" id="0292.txt_1_4-0292.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_1" source="0292.txt_1_1" id="0259.txt_1_1-0292.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_4" source="0292.txt_1_2" id="0292.txt_1_4-0292.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_1" source="0292.txt_1_2" id="0259.txt_1_1-0292.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0292.txt_1_3" id="0292.txt_1_5-0292.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_3" source="0292.txt_1_3" id="0259.txt_1_3-0292.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0292.txt_1_5" source="0292.txt_1_4" id="0292.txt_1_5-0292.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0259.txt_1_3" source="0292.txt_1_4" id="0259.txt_1_3-0292.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0093.txt_5_0" source="0292.txt_1_5" id="0093.txt_5_0-0292.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_1_1" source="0292.txt_1_5" id="0229.txt_1_1-0292.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0192.txt_1_1" source="0292.txt_1_5" id="0192.txt_1_1-0292.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_2_1" source="0292.txt_1_5" id="0258.txt_2_1-0292.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0094.txt_1_0" source="0292.txt_1_5" id="0094.txt_1_0-0292.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0296.txt_1_1" source="0296.txt_1_0" id="0296.txt_1_1-0296.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0296.txt_1_2" source="0296.txt_1_0" id="0296.txt_1_2-0296.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0296.txt_1_3" source="0296.txt_1_1" id="0296.txt_1_3-0296.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0296.txt_1_3" source="0296.txt_1_2" id="0296.txt_1_3-0296.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_2_1" source="0307.txt_2_0" id="0307.txt_2_1-0307.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_3_1" source="0307.txt_3_0" id="0307.txt_3_1-0307.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0308.txt_4_1" source="0308.txt_4_0" id="0308.txt_4_1-0308.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_1" source="0313.txt_5_0" id="0313.txt_5_1-0313.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_2" source="0313.txt_5_0" id="0313.txt_5_2-0313.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_3" source="0313.txt_5_0" id="0313.txt_5_3-0313.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_4" source="0313.txt_5_1" id="0313.txt_5_4-0313.txt_5_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_5" source="0313.txt_5_1" id="0313.txt_5_5-0313.txt_5_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_4" source="0313.txt_5_2" id="0313.txt_5_4-0313.txt_5_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_6" source="0313.txt_5_2" id="0313.txt_5_6-0313.txt_5_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_5" source="0313.txt_5_3" id="0313.txt_5_5-0313.txt_5_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_6" source="0313.txt_5_3" id="0313.txt_5_6-0313.txt_5_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_7" source="0313.txt_5_4" id="0313.txt_5_7-0313.txt_5_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_3_0" source="0313.txt_5_4" id="0307.txt_3_0-0313.txt_5_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_7" source="0313.txt_5_5" id="0313.txt_5_7-0313.txt_5_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_3_0" source="0313.txt_5_5" id="0307.txt_3_0-0313.txt_5_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0313.txt_5_7" source="0313.txt_5_6" id="0313.txt_5_7-0313.txt_5_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_3_0" source="0313.txt_5_6" id="0307.txt_3_0-0313.txt_5_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0143.txt_1_1" source="0313.txt_5_7" id="0143.txt_1_1-0313.txt_5_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0121.txt_4_0" source="0313.txt_5_7" id="0121.txt_4_0-0313.txt_5_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0121.txt_3_0" source="0313.txt_5_7" id="0121.txt_3_0-0313.txt_5_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0307.txt_3_1" source="0313.txt_5_7" id="0307.txt_3_1-0313.txt_5_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0314.txt_1_1" source="0314.txt_1_0" id="0314.txt_1_1-0314.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0015.txt_1_0" source="0314.txt_1_0" id="0015.txt_1_0-0314.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0172.txt_1_0" source="0314.txt_1_0" id="0172.txt_1_0-0314.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_3_0" source="0314.txt_1_0" id="0258.txt_3_0-0314.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0258.txt_3_1" source="0314.txt_1_1" id="0258.txt_3_1-0314.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0015.txt_1_1" source="0314.txt_1_1" id="0015.txt_1_1-0314.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0317.txt_1_1" source="0317.txt_1_0" id="0317.txt_1_1-0317.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0317.txt_1_2" source="0317.txt_1_0" id="0317.txt_1_2-0317.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0317.txt_1_3" source="0317.txt_1_1" id="0317.txt_1_3-0317.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0317.txt_1_3" source="0317.txt_1_2" id="0317.txt_1_3-0317.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

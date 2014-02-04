@@ -176,6 +176,9 @@ public class EntailmentRelation extends DefaultEdge {
 		JCas pairCAS = generateTHPairCAS();
 		try {
 			edge = eda.process(pairCAS);
+			if (edge.getConfidence() > 0.5) {
+				logger.info("EDA says : " +  edge.getDecision() + "(" + edge.getConfidence() + ")");
+			}
 		} catch (EDAException | ComponentException e) {
 			throw new EntailmentGraphRawException(e.getMessage());
 		} catch (RuntimeException rune) {
