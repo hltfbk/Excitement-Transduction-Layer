@@ -67,15 +67,19 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 				double C = score.getScore(); //score telling us how well this node matches the mentionInCAS
 				//category confidences on node
 				Map<String, Double> categoryConfidencesOnNode = E.getCategoryConfidences();
-				for (String category : categoryConfidencesOnNode.keySet()) {	
-					double confidence = categoryConfidencesOnNode.get(category);
-					double sumCategory = 0.0;
-					if (sumCategoryConfidencesPerCategory.containsKey(category)) {
-						sumCategory = sumCategoryConfidencesPerCategory.get(category); //read sum in case we've stored a sum from a previous node
+				try {
+					for (String category : categoryConfidencesOnNode.keySet()) {	
+						double confidence = categoryConfidencesOnNode.get(category);
+						double sumCategory = 0.0;
+						if (sumCategoryConfidencesPerCategory.containsKey(category)) {
+							sumCategory = sumCategoryConfidencesPerCategory.get(category); //read sum in case we've stored a sum from a previous node
+						}
+						sumCategory += confidence * C;
+						sumCategoryConfidencesPerCategory.put(category, sumCategory);
+						sumMentions ++;
 					}
-					sumCategory += confidence * C;
-					sumCategoryConfidencesPerCategory.put(category, sumCategory);
-					sumMentions ++;
+				} catch (NullPointerException e) {
+					System.err.println("Missing category confidences. Run ConfidenceCalculator on graph!");
 				}
 			}
 			Map<String, Double> decisions = new HashMap<String, Double>();

@@ -86,8 +86,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	
 	private void initInterfaces() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
 		
-//		fragAnot = new SentenceAsFragmentAnnotator(lap);
-		fragAnot = new KeywordBasedFragmentAnnotator(lap);
+		fragAnot = new SentenceAsFragmentAnnotator(lap);
+//		fragAnot = new KeywordBasedFragmentAnnotator(lap);
 		
 		modAnot = new AdvAsModifierAnnotator(lap); 		
 

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitementproject.eop.lap.LAPException;
@@ -13,6 +14,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 public class FragmentAnnotatorEvaluationTest {
 	
 	@Test
+	@Ignore
 	public void test() {
 	
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator: test");

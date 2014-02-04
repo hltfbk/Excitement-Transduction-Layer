@@ -30,4 +30,14 @@ public class NodeMatch {
 	public void setScores(List<PerNodeScore> scores) {
 		this.scores = scores;
 	}
+	
+	public String toString() {
+		String retVal = this.mention.getTextWithoutDoubleSpaces() + ":\n";
+		for (PerNodeScore score : scores) {
+			retVal += score.getNode().getLabel() + ":" + score.getScore()+", ";
+			retVal += score.getNode().getCategoryConfidences()+"\n";
+		}
+		retVal += "\n";
+		return retVal;
+	}
 }

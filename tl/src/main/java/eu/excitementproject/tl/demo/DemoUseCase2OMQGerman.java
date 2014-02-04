@@ -52,6 +52,7 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorEx
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
@@ -85,11 +86,10 @@ public class DemoUseCase2OMQGerman {
 //	static String xmlDataFoldername = "./src/test/resources/omq_testing/";
 	
 	static String xmlDataFoldername = "src/test/resources/WP2_public_data_XML/OMQ/";
-	static String xmlDataFilename = "smallest_a.xml";
-
+	static String xmlDataFilename = "9interactions.xml";
 //	static String xmlDataFilename = "omq_public_1_emails.xml";
 //	static String xmlDataFilename = "keywordAnnotations3.xml";
-	
+//	static String xmlDataFilename = "smallest_a.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
 	static String fragmentGraphOutputFoldername = "src/test/resources/";
 	static String edaTrainingFilename = "./src/test/resources/WP2_public_RTE_pair_data/omq_public_1_th.xml";
@@ -150,7 +150,8 @@ public class DemoUseCase2OMQGerman {
 		cas.setDocumentText(text); 
 		
 		//add fragment annotation
-		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 
+//		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 
+		FragmentAnnotator fa = new TokenAsFragmentAnnotatorForGerman(lap); 
 		fa.annotateFragments(cas);
 		
 		//add modifier annotation
@@ -256,7 +257,7 @@ public class DemoUseCase2OMQGerman {
 			
 			//optimize graph
 			logger.info("Merged graph contains " + egr.edgeSet().size() + " edges");
-			graph = graphOptimizer.optimizeGraph(egr, 0.8);
+			graph = graphOptimizer.optimizeGraph(egr, 0.95);
 			logger.info("Optimized graph: " + graph.vertexSet().size() + " nodes");
 			logger.info("Optimized graph contains " + graph.edgeSet().size() + " edges");
 			
@@ -281,7 +282,8 @@ public class DemoUseCase2OMQGerman {
 			logger.info("Using keyword-based fragment annotator.");
 		} else { //sentence-based fragment annotation
 			lap = new CachedLAPAccess(new LemmaLevelLapDE()); 
-			fragAnot = new SentenceAsFragmentAnnotator(lap);
+			//fragAnot = new SentenceAsFragmentAnnotator(lap);
+			fragAnot = new TokenAsFragmentAnnotatorForGerman(lap);
 			logger.info("Using sentence-as-fragment annotator.");
 		}
 		modAnot = new AdvAsModifierAnnotator(lap); 		
