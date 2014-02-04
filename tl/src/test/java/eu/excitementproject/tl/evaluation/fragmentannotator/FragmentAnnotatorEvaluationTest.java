@@ -14,7 +14,6 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 public class FragmentAnnotatorEvaluationTest {
 	
 	@Test
-	@Ignore
 	public void test() {
 	
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator: test");
