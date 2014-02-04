@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="1">
+    <node id="0121.txt_4_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0121.txt" implicit_context="" focus="" implicit_focus="collegarmi">
+        <original_text>nn riuscite a risolvere il mio problema cn tanti messaggi</original_text>
+        <correct_text>non riuscite a risolvere il mio problema con tanti messaggi</correct_text>
+        <modifiers></modifiers>
+    </node>
+</F_entailment_graph>

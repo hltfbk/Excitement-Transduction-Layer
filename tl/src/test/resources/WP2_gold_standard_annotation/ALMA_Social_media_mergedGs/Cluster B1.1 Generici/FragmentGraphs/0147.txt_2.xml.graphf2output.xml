@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0147.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0147.txt" implicit_context="" focus="TELEFONIAX" implicit_focus="">
+        <original_text>la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe</original_text>
+        <correct_text>la TelefoniaX che prende in giro i clienti è davvero una catastrofe</correct_text>
+        <modifiers>i clietipoz=6 7;davveropoz=9</modifiers>
+    </node>
+    <node id="0147.txt_2_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0147.txt" implicit_context="" focus="TELEFONIAX" implicit_focus="">
+        <original_text>la TELEFONIAX ke prende in giro è davvero una catastrofe</original_text>
+        <correct_text>la TelefoniaX che prende in giro è davvero una catastrofe</correct_text>
+        <modifiers>davveropoz=9</modifiers>
+    </node>
+    <node id="0147.txt_2_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0147.txt" implicit_context="" focus="TELEFONIAX" implicit_focus="">
+        <original_text>la TELEFONIAX ke prende in giro i clieti è una catastrofe</original_text>
+        <correct_text>la TelefoniaX che prende in giro i clienti è una catastrofe</correct_text>
+        <modifiers>i clietipoz=6 7</modifiers>
+    </node>
+    <node id="0147.txt_2_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0147.txt" implicit_context="" focus="TELEFONIAX" implicit_focus="">
+        <original_text>la TELEFONIAX ke prende in giro è una catastrofe</original_text>
+        <correct_text>la TelefoniaX che prende in giro è una catastrofe</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0147.txt_2_0-0147.txt_2_1" source="0147.txt_2_0" target="0147.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0147.txt_2_0-0147.txt_2_1" source="0147.txt_2_0" target="0147.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0147.txt_2_0-0147.txt_2_2" source="0147.txt_2_0" target="0147.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0147.txt_2_0-0147.txt_2_2" source="0147.txt_2_0" target="0147.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0147.txt_2_2-0147.txt_2_3" source="0147.txt_2_2" target="0147.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0147.txt_2_1-0147.txt_2_3" source="0147.txt_2_1" target="0147.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0147.txt_2_1-0147.txt_2_3" source="0147.txt_2_1" target="0147.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0147.txt_2_2-0147.txt_2_3" source="0147.txt_2_2" target="0147.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0147.txt_2_0-0147.txt_2_3" source="0147.txt_2_0" target="0147.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

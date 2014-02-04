@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0284.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0284.txt" implicit_context="" focus="sito" implicit_focus="">
+        <original_text>Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile</original_text>
+        <correct_text>Controllerei volentieri il mio traffico se solo ogni volta il sito non desse qualche problema inspiegabile</correct_text>
+        <modifiers>inspiegabilepoz=15;Controllerei volentieri il mio traffico se solo ogni voltapoz=0 1 2 3 4 5 6 7 8</modifiers>
+    </node>
+    <node id="0284.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0284.txt" implicit_context="" focus="sito" implicit_focus="">
+        <original_text>Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema</original_text>
+        <correct_text>Controllerei volentieri il mio traffico se solo ogni volta il sito non desse qualche problema</correct_text>
+        <modifiers>Controllerei volentieri il mio traffico se solo ogni voltapoz=0 1 2 3 4 5 6 7 8</modifiers>
+    </node>
+    <node id="0284.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0284.txt" implicit_context="" focus="sito" implicit_focus="">
+        <original_text>il sito non dasse qualche problema inspiegabile</original_text>
+        <correct_text>il sito non desse qualche problema inspiegabile</correct_text>
+        <modifiers>inspiegabilepoz=15</modifiers>
+    </node>
+    <node id="0284.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0284.txt" implicit_context="" focus="sito" implicit_focus="">
+        <original_text>il sito non dasse qualche problema</original_text>
+        <correct_text>il sito non desse qualche problema</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0284.txt_1_0-0284.txt_1_1" source="0284.txt_1_0" target="0284.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0284.txt_1_0-0284.txt_1_1" source="0284.txt_1_0" target="0284.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0284.txt_1_0-0284.txt_1_2" source="0284.txt_1_0" target="0284.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0284.txt_1_0-0284.txt_1_2" source="0284.txt_1_0" target="0284.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0284.txt_1_2-0284.txt_1_3" source="0284.txt_1_2" target="0284.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0284.txt_1_1-0284.txt_1_3" source="0284.txt_1_1" target="0284.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0284.txt_1_1-0284.txt_1_3" source="0284.txt_1_1" target="0284.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0284.txt_1_2-0284.txt_1_3" source="0284.txt_1_2" target="0284.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0284.txt_1_0-0284.txt_1_3" source="0284.txt_1_0" target="0284.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

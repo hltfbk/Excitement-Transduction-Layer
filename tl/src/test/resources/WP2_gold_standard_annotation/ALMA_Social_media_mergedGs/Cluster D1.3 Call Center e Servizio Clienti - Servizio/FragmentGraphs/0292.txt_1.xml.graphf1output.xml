@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="6">
+    <node id="0292.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0292.txt" implicit_context="" focus="feedback" implicit_focus="">
+        <original_text>Ho mandato una raccomandata due mesi fa non ho ancora ricevuto nessun feedback</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Ho mandato una raccomandatapoz=0 1 2 3;due mesi fapoz=4 5 6;ancorapoz=9</modifiers>
+    </node>
+    <node id="0292.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0292.txt" implicit_context="" focus="feedback" implicit_focus="">
+        <original_text>Ho mandato una raccomandata non ho ancora ricevuto nessun feedback</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Ho mandato una raccomandatapoz=0 1 2 3;ancorapoz=9</modifiers>
+    </node>
+    <node id="0292.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0292.txt" implicit_context="" focus="feedback" implicit_focus="">
+        <original_text>Ho mandato una raccomandata due mesi fa non ho ricevuto nessun feedback</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Ho mandato una raccomandatapoz=0 1 2 3;due mesi fapoz=4 5 6</modifiers>
+    </node>
+    <node id="0292.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0292.txt" implicit_context="" focus="feedback" implicit_focus="">
+        <original_text>non ho ancora ricevuto nessun feedback</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=9</modifiers>
+    </node>
+    <node id="0292.txt_1_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0292.txt" implicit_context="" focus="feedback" implicit_focus="">
+        <original_text>Ho mandato una raccomandata non ho ricevuto nessun feedback</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Ho mandato una raccomandatapoz=0 1 2 3</modifiers>
+    </node>
+    <node id="0292.txt_1_5" implicit_statement="FALSE" modality="FALSE" explicit_context="0292.txt" implicit_context="" focus="feedback" implicit_focus="">
+        <original_text>non ho ricevuto nessun feedback</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0292.txt_1_0-0292.txt_1_1" source="0292.txt_1_0" target="0292.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_0-0292.txt_1_1" source="0292.txt_1_0" target="0292.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_0-0292.txt_1_2" source="0292.txt_1_0" target="0292.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_0-0292.txt_1_2" source="0292.txt_1_0" target="0292.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_1-0292.txt_1_3" source="0292.txt_1_1" target="0292.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_1-0292.txt_1_3" source="0292.txt_1_1" target="0292.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_0-0292.txt_1_3" source="0292.txt_1_0" target="0292.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_2-0292.txt_1_4" source="0292.txt_1_2" target="0292.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_1-0292.txt_1_4" source="0292.txt_1_1" target="0292.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_1-0292.txt_1_4" source="0292.txt_1_1" target="0292.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_2-0292.txt_1_4" source="0292.txt_1_2" target="0292.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_0-0292.txt_1_4" source="0292.txt_1_0" target="0292.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_4-0292.txt_1_5" source="0292.txt_1_4" target="0292.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_3-0292.txt_1_5" source="0292.txt_1_3" target="0292.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_3-0292.txt_1_5" source="0292.txt_1_3" target="0292.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_4-0292.txt_1_5" source="0292.txt_1_4" target="0292.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_1-0292.txt_1_5" source="0292.txt_1_1" target="0292.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_2-0292.txt_1_5" source="0292.txt_1_2" target="0292.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0292.txt_1_0-0292.txt_1_5" source="0292.txt_1_0" target="0292.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
