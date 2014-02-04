@@ -1,10 +1,15 @@
 package eu.excitementproject.tl.experiments.ALMA;
 
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import javax.xml.transform.TransformerException;
 
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
+import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
@@ -35,15 +40,32 @@ public class ExperimentAlma extends AbstractExperiment {
 
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 		String tlDir = "/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media/";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_social_media_mergedGs/";
+
+//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/";
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_split/test/";
+//		String dataDir = tlDir+"target/ALMA_toy_test/data/";
+
+
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs_byClusterSplit/test/";
+//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs/";
+//		String gsAnnotationsDir = tlDir+"target/ALMA_toy_test/gold_standard/";		
+		
 		int fileLimit = 1000;
 		String outDir = dataDir.replace("resources", "outputs");
 		
+		File outputDir = new File(outDir);
+		if (! outputDir.exists()) {
+			try {
+				Files.createDirectories(Paths.get(outDir));
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+		}
 		
 		String conf = tlDir+"src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_IT.xml";
-		Class<?> lapClass = TreeTaggerEN.class;
-		Class<?> edaClass = MaxEntClassificationEDA.class;
+		Class<?> lapClass = TreeTaggerIT.class;
+		Class<?> edaClass = null; // MaxEntClassificationEDA.class;
 
 		ExperimentAlma e = new ExperimentAlma(conf, dataDir, fileLimit, outDir, lapClass, edaClass);			
 		e.buildRawGraph();

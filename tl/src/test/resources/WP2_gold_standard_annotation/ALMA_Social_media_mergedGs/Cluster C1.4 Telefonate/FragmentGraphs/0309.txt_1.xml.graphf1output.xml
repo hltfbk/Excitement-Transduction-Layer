@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0309.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0309.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>una linea telefonica mai attivata . . . . . . per un loro disservizio</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per un loro disserviziopoz=11 12 13 14;telefonicapoz=2</modifiers>
+    </node>
+    <node id="0309.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0309.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>una linea telefonica mai attivata . . . . . .</original_text>
+        <correct_text> </correct_text>
+        <modifiers>telefonicapoz=2</modifiers>
+    </node>
+    <node id="0309.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0309.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>una linea mai attivata . . . . . . per un loro disservizio</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per un loro disserviziopoz=11 12 13 14</modifiers>
+    </node>
+    <node id="0309.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0309.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>una linea mai attivata . . . . . .</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0309.txt_1_0-0309.txt_1_1" source="0309.txt_1_0" target="0309.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0309.txt_1_0-0309.txt_1_1" source="0309.txt_1_0" target="0309.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0309.txt_1_0-0309.txt_1_2" source="0309.txt_1_0" target="0309.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0309.txt_1_0-0309.txt_1_2" source="0309.txt_1_0" target="0309.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0309.txt_1_2-0309.txt_1_3" source="0309.txt_1_2" target="0309.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0309.txt_1_1-0309.txt_1_3" source="0309.txt_1_1" target="0309.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0309.txt_1_1-0309.txt_1_3" source="0309.txt_1_1" target="0309.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0309.txt_1_2-0309.txt_1_3" source="0309.txt_1_2" target="0309.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0309.txt_1_0-0309.txt_1_3" source="0309.txt_1_0" target="0309.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
