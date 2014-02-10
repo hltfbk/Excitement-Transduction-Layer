@@ -242,7 +242,8 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 
 		Set<Region> frags = null;
 		
-		if (isNorV(aJCas, k) && isGovernorInDeps(aJCas, k)) { 
+//		if (isNorV(aJCas, k) && isGovernorInDeps(aJCas, k)) {
+		if (isNorV(aJCas, k) || (! isGovernorInDeps(aJCas, k))) {  // if it is noun or verb, or if the word does not have a governor, then expand it instead of trying to go up) 
 			frags = getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
 		}
 
