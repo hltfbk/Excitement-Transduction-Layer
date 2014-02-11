@@ -650,7 +650,7 @@ public final class CASUtils {
 			for (int i = 0; i < keywords.length; i++) {
 				
 //				Pattern p = Pattern.compile("\\b" + keywords[i] + "\\b"); // did not work because of tokenization (e.g. "File-Optionen" which in the context does not refer to the compound
-				Pattern p = Pattern.compile(keywords[i]);
+				Pattern p = Pattern.compile(keywords[i],Pattern.CASE_INSENSITIVE);
 				Matcher m = p.matcher(text);
 				while (m.find()) {
 					annotateOneKeyword(aJCas, new Region(m.start(),m.end()));
