@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.xml.transform.TransformerException;
 
 import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
@@ -55,7 +56,7 @@ public class ExperimentNice extends AbstractExperiment {
 				);
 		*/
 
-		ExperimentNice eTIEposRes = new ExperimentNice(
+	/*	ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -63,9 +64,9 @@ public class ExperimentNice extends AbstractExperiment {
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
-
+*/
 				
-/*		ExperimentNice eTIEparsedRes = new ExperimentNice(
+		ExperimentNice eTIEparsedRes = new ExperimentNice(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -73,7 +74,9 @@ public class ExperimentNice extends AbstractExperiment {
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
 				);
-*/
+
+		
+
 		
 	/*	ExperimentNice eBIUTEE = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/biutee_wp6.xml",
@@ -84,6 +87,14 @@ public class ExperimentNice extends AbstractExperiment {
 				BiuteeEDA.class
 				);*/
 		
+/*		ExperimentNice EditDistBase = new ExperimentNice(
+				tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
+
+				dataDir, fileLimit, outDir,
+
+				TreeTaggerEN.class,
+				EditDistanceEDA.class
+				);		*/
 		
 		/*		//TODO: find what lap to use + find the conf files + what EDA to use (simple vs classifier)
 		Experiment eDKPro = new Experiment(
@@ -96,7 +107,7 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eTIEposRes; 
+		ExperimentNice e = eTIEparsedRes; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
