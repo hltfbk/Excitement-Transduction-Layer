@@ -30,20 +30,19 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  * a particular M are computed by going through all the per node scores found for M, 
  * reading the category confidence scores associated to each node, and multiplying each 
  * category confidence with the confidence of the match. All combined confidences are summed
- * up per category and divided by the total number of mentions to compute the final score
+ * up per category and divided by the total number of category mentions to compute the final score
  * for each category.
  * 
  * The pseudocode is given in the following:
  * 
  * Init sumCAT[]; //the sum of all scores for a particular category 
  * Init sumMentions; //total # of mentions in the node scores
- * For each P = <E,C> associated to M: //for each per node score
- *    For each E[n] in E: //for each matching graph node (= equivalence class) in the node score
- *    	 For each CAT[n] in E[n]: //for each category in the graph node
- *    		score = CAT[n].score * C; //multiply category confidence with match confidence
- *          sumCAT[n] += score; //sum up the scores computed for this category
- *          sumMentions++; //count total # of mentions
- * finalScore[n] = sumCAT[n] / sumMentions; //compute final score by dividing sum by # of mentions
+ * For each P[m] = <E,C> associated to M: //for each per node score / matching graph node (= equivalence class)
+ *   For each CAT[n] in E[m]: //for each category in the graph node
+ *  	score = CAT[n].score * C; //multiply category confidence with match confidence
+ *      sumCAT[n] += score; //sum up the scores computed for this category
+ *      sumMentions++; //count total # of category mentions
+ * finalScore[n] = sumCAT[n] / sumMentions; //compute final score by dividing sum by # of category mentions
  *  
  * @author Kathrin Eichler
  *
