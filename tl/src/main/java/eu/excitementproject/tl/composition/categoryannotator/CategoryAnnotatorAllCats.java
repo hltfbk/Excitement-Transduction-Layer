@@ -41,8 +41,8 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  *   For each CAT[n] in E[m]: //for each category in the graph node
  *  	score = CAT[n].score * C; //multiply category confidence with match confidence
  *      sumCAT[n] += score; //sum up the scores computed for this category
- *      sumMentions++; //count total # of category mentions
- * finalScore[n] = sumCAT[n] / sumMentions; //compute final score by dividing sum by # of category mentions
+ *      sumCategoryMentions++; //count total # of category mentions
+ * finalScore[n] = sumCAT[n] / sumCategoryMentions; //compute final score by dividing sum by # of category mentions
  *  
  * @author Kathrin Eichler
  *
@@ -60,7 +60,7 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 			CASUtils.Region region = new CASUtils.Region(startPosition, endPosition);
 			List<PerNodeScore> scores = match.getScores();
 			HashMap<String,Double> sumCategoryConfidencesPerCategory = new HashMap<String,Double>();
-			double sumMentions = 0.0;
+			double sumCategoryMentions = 0.0;
 			for (PerNodeScore score : scores) { //for each matching EG node for this mention
 				EquivalenceClass E = score.getNode();
 				double C = score.getScore(); //score telling us how well this node matches the mentionInCAS
@@ -75,7 +75,7 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 						}
 						sumCategory += confidence * C;
 						sumCategoryConfidencesPerCategory.put(category, sumCategory);
-						sumMentions ++;
+						sumCategoryMentions ++;
 					}
 				} catch (NullPointerException e) {
 					System.err.println("Missing category confidences. Run ConfidenceCalculator on graph!");
@@ -85,7 +85,7 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 			for (String category : sumCategoryConfidencesPerCategory.keySet()) {
 				double finalConfidence 
 					= (double) sumCategoryConfidencesPerCategory.get(category) 
-					/ (double) sumMentions;
+					/ (double) sumCategoryMentions;
 				decisions.put(category, finalConfidence);
 			}
 			//add annotation to CAS (per matching mention)
