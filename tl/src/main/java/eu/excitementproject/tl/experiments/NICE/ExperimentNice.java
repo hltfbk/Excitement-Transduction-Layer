@@ -66,26 +66,26 @@ public class ExperimentNice extends AbstractExperiment {
 				);
 */
 				
-		ExperimentNice eTIEparsedRes = new ExperimentNice(
+	/*	ExperimentNice eTIEparsedRes = new ExperimentNice(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				dataDir, fileLimit, outDir,
 				
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
-				);
+				);*/
 
 		
 
 		
-	/*	ExperimentNice eBIUTEE = new ExperimentNice(
+		ExperimentNice eBIUTEE = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/biutee_wp6.xml",
 				
 				dataDir, fileLimit, outDir,
 				
 				BIUFullLAP.class,
 				BiuteeEDA.class
-				);*/
+				);
 		
 /*		ExperimentNice EditDistBase = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
@@ -107,7 +107,7 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eTIEparsedRes; 
+		ExperimentNice e = eBIUTEE; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
