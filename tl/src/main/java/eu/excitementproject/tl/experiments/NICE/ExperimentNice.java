@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.xml.transform.TransformerException;
 
 import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
@@ -39,7 +40,8 @@ public class ExperimentNice extends AbstractExperiment {
 	public static void main(String[] args) {
 
 		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
+//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit/test";
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
@@ -52,7 +54,7 @@ public class ExperimentNice extends AbstractExperiment {
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
-*/		
+		*/
 
 	/*	ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
@@ -61,21 +63,23 @@ public class ExperimentNice extends AbstractExperiment {
 
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
-				);*/
-
+				);
+*/
 				
-/*		ExperimentNice eTIEparsedRes = new ExperimentNice(
+	/*	ExperimentNice eTIEparsedRes = new ExperimentNice(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				dataDir, fileLimit, outDir,
 				
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
-				);
-*/
+				);*/
+
+		
+
 		
 		ExperimentNice eBIUTEE = new ExperimentNice(
-				tlDir+"src/test/resources/NICE_experiments/biutee_wp6.xml",
+				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci.xml",
 				
 				dataDir, fileLimit, outDir,
 				
@@ -83,6 +87,14 @@ public class ExperimentNice extends AbstractExperiment {
 				BiuteeEDA.class
 				);
 		
+/*		ExperimentNice EditDistBase = new ExperimentNice(
+				tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
+
+				dataDir, fileLimit, outDir,
+
+				TreeTaggerEN.class,
+				EditDistanceEDA.class
+				);		*/
 		
 		/*		//TODO: find what lap to use + find the conf files + what EDA to use (simple vs classifier)
 		Experiment eDKPro = new Experiment(

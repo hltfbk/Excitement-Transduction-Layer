@@ -39,6 +39,7 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphException;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -163,9 +164,21 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 				//TODO: debug why ModdifierAnnotatorException is raised on NICE data with BIUTEE
 			}
 		}
-		
+				
 		inspectGraph(fgs);
 
+/*		// uncomment to get a printout of all the nodes in the fragment graphs
+		int i = 1;
+		int j = 1;
+		for (FragmentGraph fg : fgs){
+			for (EntailmentUnitMention eum : fg.vertexSet()){
+				System.out.println(i+" "+j+"\t"+eum.getInteractionId()+"\t"+eum.getTextWithoutDoubleSpaces());
+				j++;
+			}
+			i++;
+		}
+		System.in.read();
+*/	
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}
 	

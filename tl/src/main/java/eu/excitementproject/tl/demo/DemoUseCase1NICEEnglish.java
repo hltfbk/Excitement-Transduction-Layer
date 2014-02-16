@@ -1,14 +1,9 @@
 package eu.excitementproject.tl.demo;
 
-import java.io.File;
 
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
-import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 
@@ -20,8 +15,8 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	public DemoUseCase1NICEEnglish() {
 		
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 20,
-				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test", 2000,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
@@ -30,7 +25,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	public static void main(String[] argv) {
 
 		// run the flow, create raw and collapsed entailment graphs and save them to files
-		DemoUseCase1NICEEnglish demoEN = new DemoUseCase1NICEEnglish();
+		DemoUseCase1NICEEnglish demoEN = new DemoUseCase1NICEEnglish();		
 		demoEN.inspectResults();
 		// the results can be found under "./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1"
 		
