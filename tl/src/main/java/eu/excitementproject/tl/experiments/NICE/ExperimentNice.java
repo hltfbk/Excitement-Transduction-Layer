@@ -79,7 +79,7 @@ public class ExperimentNice extends AbstractExperiment {
 
 		
 		ExperimentNice eBIUTEE = new ExperimentNice(
-				tlDir+"src/test/resources/NICE_experiments/biutee_wp6.xml",
+				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci.xml",
 				
 				dataDir, fileLimit, outDir,
 				
