@@ -6,6 +6,8 @@ package eu.excitementproject.tl.composition.graphmerger;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPException;
@@ -28,9 +30,11 @@ Constructor (Thus, they are not defined in the interface). Also, any
 additional configurable parameters of this module implementation
 should be clearly exposed in the Constructor.
 
- * @author Lili
+ * @author Lili Kotlerman
  */
 public abstract class AbstractGraphMerger implements GraphMerger{
+
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.composition.graphmerger");
 
 	private final CachedLAPAccess lap;
 	private final EDABasic<?> eda;
@@ -128,6 +132,7 @@ should be clearly exposed in the Constructor.
 	protected EntailmentRelation getEntailmentRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode) throws GraphMergerException{	
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
 		EntailmentRelation r = getRelation(candidateEntailingNode, candidateEntailedNode);
+		logger.info("\t'"+candidateEntailingNode.getTextWithoutDoubleSpaces() +"'\t->\t'"+candidateEntailedNode.getTextWithoutDoubleSpaces()+"'\t"+r.getLabel().toString());
 		if (r.getLabel().equals(DecisionLabel.Entailment)) return r;
 		return null;
 	}
