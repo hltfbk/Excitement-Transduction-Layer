@@ -6,6 +6,7 @@ import java.util.Set;
 import org.jgrapht.alg.CycleDetector;
 
 import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
@@ -14,6 +15,13 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
+/**
+ * Naive implementation of {@link GraphOptimizer} interface. 
+ * Assumption: only entailment edges are present in the graph (no non-entailing edges)
+ * Removes all edges with confidence < threshold and collapses each cycles into a single {@link EquivalenceClass} node 
+ * @author Lili Kotlerman
+ *
+ */
 public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 
 	@Override
