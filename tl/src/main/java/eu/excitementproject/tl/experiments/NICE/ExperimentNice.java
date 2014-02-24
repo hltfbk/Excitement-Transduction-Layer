@@ -46,6 +46,9 @@ public class ExperimentNice extends AbstractExperiment {
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 		
+		System.out.println(tlDir);
+	//	System.out.println(System.getProperties());
+		
 	/*	ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
@@ -79,7 +82,8 @@ public class ExperimentNice extends AbstractExperiment {
 
 		
 		ExperimentNice eBIUTEE = new ExperimentNice(
-				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci.xml",
+				tlDir+"src/test/resources/NICE_experiments/biutee.xml",
+//				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci+WN.xml",
 				
 				dataDir, fileLimit, outDir,
 				
