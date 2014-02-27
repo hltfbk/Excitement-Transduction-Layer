@@ -116,7 +116,7 @@ public class ExperimentNice extends AbstractExperiment {
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
 			e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_rawGraph.dot");
-		} catch (IOException | TransformerException | EntailmentGraphRawException e1) {
+		} catch (IOException | EntailmentGraphRawException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

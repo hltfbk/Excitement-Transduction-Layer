@@ -269,7 +269,7 @@ public class EntailmentRelation extends DefaultEdge {
 	 * @param target
 	 * @return the generated "random" entailment relation
 	 */
-	public static EntailmentRelation GenerateRandomEntailmentRelation(EntailmentUnit source, EntailmentUnit target) {		
+	public static EntailmentRelation generateRandomEntailmentRelation(EntailmentUnit source, EntailmentUnit target) {		
 		RandomEDA eda = new RandomEDA();
 		EntailmentRelation edge = new EntailmentRelation(source, target, computeRandomTEdecision(eda), EdgeType.EDA);
 		return edge;
