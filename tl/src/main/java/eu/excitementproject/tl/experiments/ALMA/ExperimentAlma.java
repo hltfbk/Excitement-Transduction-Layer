@@ -84,7 +84,7 @@ public class ExperimentAlma extends AbstractExperiment {
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
-		} catch (TransformerException | EntailmentGraphRawException e1) {
+		} catch (EntailmentGraphRawException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

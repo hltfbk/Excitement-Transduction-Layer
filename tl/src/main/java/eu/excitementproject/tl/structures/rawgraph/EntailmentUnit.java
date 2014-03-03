@@ -196,6 +196,17 @@ public class EntailmentUnit{
 		}
 		return false;
 	}
+	
+	/** Returns true if the node was seen within the fragment graph defined by the input completeStatementText
+	 * Otherwise returns false
+	 * @param node
+	 * @param completeStatementText
+	 * @return
+	 */
+	public boolean isPartOfFragmentGraph(String completeStatementText){
+		if (completeStatementTexts.contains(completeStatementText)) return true;
+		return false;
+	}
 
 	
 	/******************************************************************************************
