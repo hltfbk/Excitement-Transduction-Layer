@@ -59,6 +59,7 @@ import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
@@ -76,7 +77,6 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
-import eu.excitementproject.tl.structures.visualization.GraphViewer;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
 
@@ -131,10 +131,10 @@ public class EvaluatorCategoryAnnotator {
 	static boolean tfidf = true;
     static boolean LuceneSearch = true;
     
-    static int setup = 1;
+    static int setup = 3;
     
     static boolean readGraphFromFile = true;
-    static boolean readMergedGraphFromFile = false;
+    static boolean readMergedGraphFromFile = true;
     
     static boolean trainEDA = false;
     static boolean processTrainingData = false;
@@ -180,7 +180,7 @@ public class EvaluatorCategoryAnnotator {
 	private void setup(int i) {
 		try {
 			switch(i){
-	        	case 0: //simple tfidf (no EDA use --> graph with non-connected nodes)
+				case 0: //simple tfidf (no EDA use --> graph with non-connected nodes)
 	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
 	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
 	        		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
@@ -220,6 +220,22 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphOptimizer = new SimpleGraphOptimizer();// new GlobalGraphOptimizer(); --> don't use
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 3: //TIE with base configuration (inflection only)
+	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
+	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+		    		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lapForFragments);
+		    		fragmentAnnotatorForNewInput = new SentenceAsFragmentAnnotator(lapForFragments);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
@@ -902,7 +918,6 @@ public class EvaluatorCategoryAnnotator {
 		//Iterate through interactions, annotate each using existing graph and then add interaction to graph 
 		for (Interaction doc : docs) {	
 			logger.info("Processing doument " + run + " out of " + docs.size());
-			if (run > 15) break; //TODO: Remove (debugging only)
 			//Annotate document and compare to manual annotation
 			logger.info("graph contains " + egc.vertexSet().size() + " nodes ");
 			mostProbableCat = computeMostFrequentCategory(egc); //compute most frequent category in graph
@@ -934,12 +949,18 @@ public class EvaluatorCategoryAnnotator {
 				}
 			} else {
 				for (FragmentGraph fg : fragmentGraphs) { //if token occurrence is above threshold, merge it into graph
-					if (tokenOccurrences.get(fg.getCompleteStatement().getTextWithoutDoubleSpaces().toLowerCase()) > minTokenOccurrence) {
+					String textLC = fg.getCompleteStatement().getTextWithoutDoubleSpaces().toLowerCase();
+					if (tokenOccurrences.containsKey(textLC)) { //textLC is a token
+						if (tokenOccurrences.get(textLC) > minTokenOccurrence) {
+							logger.info("Merging " + fg.getCompleteStatement());
+							egr = graphMerger.mergeGraphs(fg, egr); 
+						} else { //if it's below the threshold, just add it
+							logger.info("Adding " + fg.getCompleteStatement());
+							egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
+						}
+					} else { //textLC is not a token
 						logger.info("Merging " + fg.getCompleteStatement());
 						egr = graphMerger.mergeGraphs(fg, egr); 
-					} else { //if it's below the threshold, just add it
-						logger.info("Adding " + fg.getCompleteStatement());
-						egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
 					}
 				}
 			}

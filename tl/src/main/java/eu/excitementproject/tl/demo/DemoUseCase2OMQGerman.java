@@ -98,7 +98,7 @@ public class DemoUseCase2OMQGerman {
 	static boolean processTrainingData = false; //if true: process the data in "edaTrainingFilename"
 	static boolean trainEDA = false; //if true: train the EDA on the processed data
 
-	static boolean keywordsProvided = false; //if true: input dataset contains keyword metadata
+	static boolean keywordsProvided = true; //if true: input dataset contains keyword metadata
 	static boolean relevantTextProvided = false; //if true; input dataset contains relevantText annotation
 	
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
