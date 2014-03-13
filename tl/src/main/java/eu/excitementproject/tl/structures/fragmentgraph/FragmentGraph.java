@@ -43,6 +43,8 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.RegionUtils;
+import eu.excitementproject.tl.laputils.CASUtils.Region;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 
 /**
@@ -220,15 +222,50 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	public static Set<ModifierAnnotation> getFragmentModifiers(JCas aJCas,
 			FragmentAnnotation f) {
 		Set<ModifierAnnotation> mas = new HashSet<ModifierAnnotation>();
+		Set<Region> fragmentRegions = new HashSet<Region>();
 		FragmentPart fp;
 		for(int i = 0; i < f.getFragParts().size(); i++) {
 			fp = f.getFragParts(i);
 			logger.info("Processing fragment part " + fp.getCoveredText());
-			mas.addAll(JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, fp.getBegin(), fp.getEnd()));
+			fragmentRegions.add(new Region(fp.getBegin(), fp.getEnd()));
+//			mas.addAll(JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, fp.getBegin(), fp.getEnd()));
 		}
+		
+		for(Region r: RegionUtils.compressRegions(fragmentRegions)) {
+			
+			System.out.println("Fragment region: " + r.getBegin()  + " -- " + r.getEnd());
+			mas.addAll(JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, r.getBegin(), r.getEnd()));
+		}
+		
 		return mas;
 	}
 
+	
+	/**
+	 * build maximal (span-wise) contiguous regions for annotated fragments
+	 * this is to avoid missing modifiers that have a longer span than the fragment parts 
+	 * which now (Feb 2014) consist of tokens
+	 * 
+	 * 
+	 * @param contiguousRegions
+	 * @param begin
+	 * @param end
+	 */
+	private static void addRegion(Set<Region> contiguousRegions, int begin,
+			int end) {
+
+		if (contiguousRegions.isEmpty()) {
+			contiguousRegions.add(new Region(begin, end));
+		} else {
+		
+			Set<Region> newRegions = new HashSet<Region>();
+			for(Region r: contiguousRegions) {
+				
+			}
+		}
+	}
+	
+	
 	/**
 	 * Gather a (determined) fragment's category annotations
 	 * 
@@ -243,6 +280,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	}
 */	
 	
+
 	/**
 	 * Return the FragmentGraph node that corresponds to the given argument, 
 	 * or this argument if no such node exists in the graph (to avoid adding duplicate nodes)

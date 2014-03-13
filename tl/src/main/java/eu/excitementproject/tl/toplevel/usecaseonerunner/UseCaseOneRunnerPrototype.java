@@ -14,6 +14,7 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.uima.jcas.JCas;
 
+import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
@@ -58,7 +59,10 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	FragmentGraphGenerator fragGen;
 	GraphMerger graphMerger;
 	GraphOptimizer collapseGraph;
-		
+
+	int count = 0;
+	int count_2 = 0;
+	
 	private final static Logger logger = Logger.getLogger(UseCaseOneRunnerPrototype.class.getName());
 	
 	// output path used for outputting graphs to files
@@ -319,6 +323,10 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			
 			for(FragmentGraph fg : fgs) {
 				if ( fg != null ) {
+					
+					count_2 += fg.vertexSet().size();
+					logger.info("FG_NODES: " + fg.getInteractionId() + " -- " + fg.vertexSet().size());
+					
 					logger.info(fg.toString());
 					if (outputPath != null) {
 						fg.toDOT(outputPath+"/fragment_graph_" + i + ".dot.txt");
@@ -337,6 +345,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		} else {
 			logger.info("The set of fragment graphs is null");
 		}
+		
+		logger.info("NUMBER_OF_FG_NODES: " + count_2);
 	}
 
 	/**
@@ -361,7 +371,13 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 
 
 	protected void annotateCAS(JCas aJCas) throws FragmentAnnotatorException, ModifierAnnotatorException {
+				
+		count += Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size());
+		
+		System.out.println("INFO:NR_OF_NODES = " + Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size())); 
+		System.out.println("INFO:NR_OF_NODES_CUMULATIVE = " + count); 
+		
 		fragAnot.annotateFragments(aJCas);
-		modAnot.annotateModifiers(aJCas);
+//		modAnot.annotateModifiers(aJCas);
 	}
 }
