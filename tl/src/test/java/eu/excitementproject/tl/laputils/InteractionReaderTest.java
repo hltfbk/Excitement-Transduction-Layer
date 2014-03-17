@@ -110,7 +110,25 @@ public class InteractionReaderTest {
 		{
 			fail(e.getMessage()); 
 		}
-				
+		
+		
+		testlogger.info("Reading two fragments from ALMA data for focus testing");
+		try {
+			File i = new File("./src/test/resources/WP2_public_data/alma_social_media/0004.txt"); 
+			File f1 = new File("./src/test/resources/WP2_public_data/alma_social_media/0004.txt_1.xml.graphf1output.xml");
+			File f2 = new File("./src/test/resources/WP2_public_data/alma_social_media/0004.txt_2.xml.graphf2output.xml"); 
+
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			
+			InteractionReader.readWP2FragGraphDump(i,  f1,  aJCas, "IT");
+			InteractionReader.readWP2FragGraphDump(i,  f2,  aJCas, "IT"); 
+
+			CASUtils.dumpCAS(aJCas); 
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}
 	}
 
     @Test
