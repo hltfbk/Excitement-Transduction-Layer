@@ -20,8 +20,9 @@ public class SemevalStuff {
 	 */
 	public static void main(String[] args) {
 		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open";
-
+//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open";
+		String gsAnnotationsDir = "D:/Lili/NICE dadasets/NICEall";
+		String resSting = "";
 		File gsDir = new File(gsAnnotationsDir);
 		for(String s: gsDir.list()){
 			File f = new File(gsAnnotationsDir+"/"+s);
@@ -44,12 +45,14 @@ public class SemevalStuff {
 					System.out.println(c.vertexSet().size());
 					c.toDOT("D:/Lili/collapsedGold"+f.getName().toUpperCase()+".open.dot.txt");
 					c.toXML("D:/Lili/collapsedGold"+f.getName().toUpperCase()+".open.xml");
+					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(r.vertexSet().size())+"\t"+String.valueOf(c.vertexSet().size())+"\t"+String.valueOf(r.edgeSet().size())+"\t"+String.valueOf(c.edgeSet().size())+"\n";
 				} catch (GraphEvaluatorException | GraphOptimizerException | IOException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}							
 			}
 		}
+		System.out.println(resSting);
 	}
 
 }
