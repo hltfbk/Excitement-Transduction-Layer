@@ -1,7 +1,10 @@
 package  eu.excitementproject.tl.structures.collapsedgraph;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -181,7 +184,9 @@ public class EquivalenceClass {
 	public String toString(){
 		String s = "\""+label.trim().replaceAll(" +", " ")+"\" ("+this.getInteractionIds().size()+" interactions) :\n";
 		int i=1;
-		for (EntailmentUnit eu : entailmentUnits){
+		List<EntailmentUnit> eus = new LinkedList<EntailmentUnit>(entailmentUnits);
+		Collections.sort(eus, new EntailmentUnit.TextComparator());
+		for (EntailmentUnit eu : eus){
 			s+="\t"+i+")\""+eu.getTextWithoutDoubleSpaces()+"\"\n";
 			i++;
 		}
