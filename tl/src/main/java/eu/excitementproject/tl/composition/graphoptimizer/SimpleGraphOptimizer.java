@@ -164,7 +164,7 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 				// then the current and the previously found cycles of this node should be merged
 				EquivalenceClass previousRelatedCycle = getEquivalenceClass(cycles, nodeInCurrentCycle);
 				if (previousRelatedCycle!=null){ // if such previous cycle was found
-					if (previousRelatedCycle.toString().equals(currentCycle.toString())) continue; // if it's not the same cycle as the current one
+					if (previousRelatedCycle.toString().equals(currentCycle.toString())) continue; // if it's not the same cycle as the c
 					logger.info("\t>> found in another cycle of "+String.valueOf(previousRelatedCycle.getEntailmentUnits().size())+" entailment units");
 					logger.info("\t>> " +previousRelatedCycle+"\n");
 					cycles.remove(previousRelatedCycle); // remove it from cycles
