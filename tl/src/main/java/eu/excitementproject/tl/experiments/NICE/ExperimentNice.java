@@ -59,15 +59,15 @@ public class ExperimentNice extends AbstractExperiment {
 				);
 		*/
 
-	/*	ExperimentNice eTIEposRes = new ExperimentNice(
+/*		ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
 				dataDir, fileLimit, outDir,
 
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
-				);
-*/
+				);*/
+
 				
 	/*	ExperimentNice eTIEparsedRes = new ExperimentNice(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
@@ -76,14 +76,14 @@ public class ExperimentNice extends AbstractExperiment {
 				
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
-				);*/
-
+				);
+*/
 		
 
 		
 		ExperimentNice eBIUTEE = new ExperimentNice(
-				tlDir+"src/test/resources/NICE_experiments/biutee.xml",
-//				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci+WN.xml",
+				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci.xml",
+//				tlDir+"src/test/resources/NICE_experiments/biutee.xml",
 				
 				dataDir, fileLimit, outDir,
 				
@@ -116,7 +116,7 @@ public class ExperimentNice extends AbstractExperiment {
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
 			e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_rawGraph.dot");
-		} catch (IOException | TransformerException | EntailmentGraphRawException e1) {
+		} catch (IOException | EntailmentGraphRawException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

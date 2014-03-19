@@ -99,7 +99,7 @@ public class GoldStandardEdgesLoader {
 					// each sub-directory should contain a single xml file with annotations
 					for (File annotationFile : clusterAnnotationDir.listFiles()){
 						if (annotationFile.getName().endsWith(".xml")){
-							logger.debug("Loading annotations from file "+annotationFile);
+							logger.debug(">>>>Loading merge annotations from file "+annotationFile);
 							addAnnotationsFromFile(annotationFile.getPath());
 /*							try {
 								ClusterStatistics.processCluster(annotationFile);
@@ -114,6 +114,50 @@ public class GoldStandardEdgesLoader {
 		else throw new GraphEvaluatorException("Invalid directory with gold-standard annotations in given: " + annotationsFolder);
 	}
 		
+
+	public void addClusterAnnotations(String annotationsFolder) throws GraphEvaluatorException{
+		File clusterAnnotationDir = new File(annotationsFolder);
+		if (clusterAnnotationDir.isDirectory()){
+			// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
+			// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
+			File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+			if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+				logger.debug("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+				int fgid=1;
+				for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+					if (annotationFile.getName().endsWith(".xml")){
+						logger.debug("Fragment graph # "+fgid);
+/*								try {
+									ClusterStatistics.processCluster(annotationFile);
+								} catch (ParserConfigurationException | SAXException | IOException e) {							
+									e.printStackTrace();
+								}
+*/								addAnnotationsFromFile(annotationFile.getPath());
+						fgid++;
+					}
+				}							
+			}
+			else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
+
+			// now load merge-graph annotations	
+			// clusterAnnotationDir should contain a single xml file with annotations
+			for (File annotationFile : clusterAnnotationDir.listFiles()){
+				if (annotationFile.getName().endsWith(".xml")){
+					logger.debug(">>>>Loading merge annotations from file "+annotationFile);
+					addAnnotationsFromFile(annotationFile.getPath());
+/*							try {
+								ClusterStatistics.processCluster(annotationFile);
+							} catch (ParserConfigurationException | SAXException | IOException e) {							
+								e.printStackTrace();
+							}
+*/						}
+			}									
+		}
+		else throw new GraphEvaluatorException("Invalid directory with gold-standard annotations in given: " + annotationsFolder);
+	}
+	
+	
+	
 	public void addAnnotationsFromFile(String xmlAnnotationFilename) throws GraphEvaluatorException{		
 		// read all the nodes from xml annotation file and add them to the index 
 	   		try {

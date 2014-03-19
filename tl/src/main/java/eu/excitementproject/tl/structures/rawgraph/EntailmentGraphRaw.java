@@ -169,17 +169,6 @@ public class EntailmentGraphRaw extends
 		super(EntailmentRelation.class);
 	}
 	
-	public boolean isEntailment(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
-		if (getEdge(entailingNode, entailedNode)!=null) return true;
-		return false;
-	}
-
-	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
-		if (nodeA.equals(nodeB)) return true; // if both nodes are the same
-		if (isEntailment(nodeA, nodeB)||(isEntailment(nodeB, nodeA))) return true;
-		return false;
-	}
-
 	/******************************************************************************************
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
@@ -206,7 +195,18 @@ public class EntailmentGraphRaw extends
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
 
-	/** Copied all nodes and edges from the input fragment graph to the raw entailment graph
+	public boolean isEntailment(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
+		if (getEdge(entailingNode, entailedNode)!=null) return true;
+		return false;
+	}
+
+	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
+		if (nodeA.equals(nodeB)) return true; // if both nodes are the same
+		if (isEntailment(nodeA, nodeB)||(isEntailment(nodeB, nodeA))) return true;
+		return false;
+	}
+
+	/** Copies all nodes and edges from the input fragment graph to the raw entailment graph
 	 * @param fg - the inout fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
@@ -223,7 +223,6 @@ public class EntailmentGraphRaw extends
 	/** The method gets an EntailmentUnitMention and either adds a new EntailmentUnit node or, if a relevant EntailmentUnit already exists in the graph, updates the list of its mentions  
 	 * @param mention - the EntailmentUnitMention to be added to the graph
 	 * @param completeStatementText - the text of the mention's complete statement
-	 * @param interactionId - String denoting the interaction in which the mention occurred
 	 */
 	public void addEntailmentUnitMention(EntailmentUnitMention mention, String completeStatementText){
 		EntailmentUnit node = this.getVertexWithText(mention.getText());
@@ -260,7 +259,7 @@ public class EntailmentGraphRaw extends
 		
 		Set<EntailmentUnit> nodes = getAllNodes(completeStatementNode, baseStatementNode, new HashSet<EntailmentUnit>());
 		for(EntailmentUnit node: nodes){
-			if (belongsToFragmentGraph(node,completeStatementText)){
+			if (node.isPartOfFragmentGraph(completeStatementText)){
 				Integer level = node.getLevel();
 				if (!nodesByLevel.containsKey(level)) nodesByLevel.put(level, new HashSet<EntailmentUnit>());
 				if (!nodesByLevel.get(level).contains(node)) nodesByLevel.get(level).add(node);
@@ -293,16 +292,6 @@ public class EntailmentGraphRaw extends
 		return nodesToReturn;
 	}
 	
-	/** Returns true if the given node was seen within the fragment graph defined by the input completeStatementText
-	 * Otherwise returns false
-	 * @param node
-	 * @param completeStatementText
-	 * @return
-	 */
-	private boolean belongsToFragmentGraph(EntailmentUnit node, String completeStatementText){
-		if (node.completeStatementTexts.contains(completeStatementText)) return true;
-		return false;
-	}
 	
 	/** Returns the set of nodes, which entail the given node
 	 * @param node whose entailing nodes are returned
@@ -365,7 +354,7 @@ public class EntailmentGraphRaw extends
 	}
 	
 
-	/** get entailed nodes what belong to the same fragment graph and have the specified nummber of modifiers (level)
+	/** Get entailed nodes what belong to the same fragment graph and have the specified nummber of modifiers (level)
 	 * @param node
 	 * @return
 	 */
@@ -454,7 +443,7 @@ public class EntailmentGraphRaw extends
 	
 	
 	/**
-	 * Return the vertex (EntailmentUnit), which has the corresponding text at one of it's mentions, if it is found in the graph. 
+	 * Return the vertex (EntailmentUnit), which has the given text at one of its mentions, if it is found in the graph. 
 	 * Otherwise return null.
 	 * The case of the text is ignored (to unify texts regardless to their case)
 	 * @param text the text of the EntailmentUnit to be found
@@ -602,8 +591,14 @@ public class EntailmentGraphRaw extends
 				}		 
 		  }
 	
-	public void toXML(String filename) throws TransformerException, EntailmentGraphRawException{
-		XMLFileWriter.write(this.toXML(), filename);
+	public void toXML(String filename) throws EntailmentGraphRawException{
+		
+		try {
+			XMLFileWriter.write(this.toXML(), filename);
+		} catch (TransformerException e) {
+			throw new EntailmentGraphRawException("Cannot save the graph to the xml file "+filename+".\n"+e);
+		}
+		
 	}
 	
 	public String toStringDetailed(){
@@ -645,8 +640,8 @@ public class EntailmentGraphRaw extends
 	 * @return the edge, which was added to the graph
 	 * @throws LAPException 
 	 */
-	public EntailmentRelation addEdgeFromRandomEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda) {
-		EntailmentRelation edge = EntailmentRelation.GenerateRandomEntailmentRelation(sourceVertex, targetVertex);
+	public EntailmentRelation addEdgeWithRandomDecision(EntailmentUnit sourceVertex, EntailmentUnit targetVertex) {
+		EntailmentRelation edge = EntailmentRelation.generateRandomEntailmentRelation(sourceVertex, targetVertex);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;
 	}
@@ -689,15 +684,13 @@ public class EntailmentGraphRaw extends
 		sampleRawGraph.addVertex(G); sampleRawGraph.addVertex(H); sampleRawGraph.addVertex(I);
 		
 
-		if (randomEdges){ // add random edges
-			EDABasic<?> eda = new RandomEDA();
-				
+		if (randomEdges){ // add random edges			
 			// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.equals(v2)) { //don't calculate for a node with itself  
-						sampleRawGraph.addEdgeFromRandomEDA(v1, v2, eda);
-						sampleRawGraph.addEdgeFromRandomEDA(v2, v1, eda);
+						sampleRawGraph.addEdgeWithRandomDecision(v1, v2);
+						sampleRawGraph.addEdgeWithRandomDecision(v2, v1);
 					}
 				}
 			}
@@ -779,14 +772,12 @@ public class EntailmentGraphRaw extends
 		
 
 		if (randomEdges){ // add random edges
-			EDABasic<?> eda = new RandomEDA();
-			
 			// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.equals(v2)) { //don't calculate for a node with itself  
-						sampleRawGraph.addEdgeFromRandomEDA(v1, v2, eda);
-						sampleRawGraph.addEdgeFromRandomEDA(v2, v1, eda);
+						sampleRawGraph.addEdgeWithRandomDecision(v1, v2);
+						sampleRawGraph.addEdgeWithRandomDecision(v2, v1);
 					}
 				}
 			}
