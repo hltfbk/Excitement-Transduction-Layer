@@ -2,6 +2,7 @@ package eu.excitementproject.tl.composition.graphoptimizer;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.jgrapht.alg.CycleDetector;
 
@@ -24,6 +25,8 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  */
 public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 
+	private final static Logger logger = Logger.getLogger("eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer");
+	
 	@Override
 	public EntailmentGraphCollapsed optimizeGraph(
 			EntailmentGraphRaw workGraph)
@@ -55,6 +58,7 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 			}
 		}
 		workGraph.removeAllEdges(workEdgesToRemove);
+		logger.info("Removed "+String.valueOf(workEdgesToRemove.size())+" low-confidence edges.");
 		
 		// Step 2 - create collapsed graph from the cleaned-up work graph (copy nodes and edges)
 
@@ -151,18 +155,24 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 		// for each such vertex, find all the vertices in the corresponding cycle
 		// these vertices are to form one equivalence class
 		for (EntailmentUnit currentNode : cycleNodes){
-			Set<EntailmentUnit> currentCycle = cycleDetector.findCyclesContainingVertex(currentNode);
-			for (EntailmentUnit nodeInCurrentCycle: currentCycle){
+			EquivalenceClass currentCycle = new EquivalenceClass(cycleDetector.findCyclesContainingVertex(currentNode));
+			logger.info("Current node: "+currentNode.getText());
+			logger.info(currentCycle.getEntailmentUnits().size()+" nodes in cycle:");
+			for (EntailmentUnit nodeInCurrentCycle: currentCycle.getEntailmentUnits()){
+				logger.info("-- "+nodeInCurrentCycle.getText());
 				// if a node in the current cycle was already seen as part of another cycle, 
 				// then the current and the previously found cycles of this node should be merged
 				EquivalenceClass previousRelatedCycle = getEquivalenceClass(cycles, nodeInCurrentCycle);
 				if (previousRelatedCycle!=null){ // if such previous cycle was found
+					if (previousRelatedCycle.toString().equals(currentCycle.toString())) continue; // if it's not the same cycle as the current one
+					logger.info("\t>> found in another cycle of "+String.valueOf(previousRelatedCycle.getEntailmentUnits().size())+" entailment units");
+					logger.info("\t>> " +previousRelatedCycle+"\n");
 					cycles.remove(previousRelatedCycle); // remove it from cycles
-					previousRelatedCycle.add(currentCycle); // unite the previous one with the current one
+					previousRelatedCycle.add(currentCycle.getEntailmentUnits()); // unite the previous one with the current one
 					cycles.add(previousRelatedCycle); // put the updated cycle back
 				}
 				else{ // if no previous related cycle was found, create the new one
-					cycles.add(new EquivalenceClass(currentCycle));  
+					cycles.add(currentCycle);  
 				}
 			}
 		}		
