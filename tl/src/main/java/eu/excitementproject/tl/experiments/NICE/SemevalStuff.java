@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.xml.transform.TransformerException;
 
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
@@ -22,6 +23,7 @@ public class SemevalStuff {
 		GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader();
 		try {
 			gsloader.addAllAnnotations(gsAnnotationsDir);
+			gsloader.getRawGraph().toXML("D:/Lili/rawGold.open.xml");
 			System.out.print("Number of edges: ");
 			System.out.println(gsloader.getCollapsedGraph().edgeSet().size());
 			System.out.print("Number of nodes: ");
@@ -29,7 +31,7 @@ public class SemevalStuff {
 			System.out.println(c.vertexSet().size());
 			c.toDOT("D:/Lili/collapsedGold.open.dot.txt");
 			c.toXML("D:/Lili/collapsedGold.open.xml");
-		} catch (GraphEvaluatorException | GraphOptimizerException | IOException | EntailmentGraphCollapsedException | TransformerException e) {
+		} catch (GraphEvaluatorException | GraphOptimizerException | IOException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}			
