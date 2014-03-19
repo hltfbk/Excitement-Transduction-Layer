@@ -15,8 +15,8 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	public DemoUseCase1NICEEnglish() {
 		
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test", 2000,
-				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/train", 2000,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/train",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
