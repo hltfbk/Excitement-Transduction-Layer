@@ -152,13 +152,21 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 		// find the set of all vertices which participate in at least one cycle in this graph 
 		Set<EntailmentUnit> cycleNodes = cycleDetector.findCycles();
 					
+		Set<EntailmentUnit> closedList = new HashSet<EntailmentUnit>();
+		
 		// for each such vertex, find all the vertices in the corresponding cycle
 		// these vertices are to form one equivalence class
 		for (EntailmentUnit currentNode : cycleNodes){
+			if (closedList.contains(currentNode)) {
+				logger.info("Skipping node <<"+currentNode.getText()+">> since equivalence class with this node was already generated");
+				continue; // if already generated an equivalence class with this node - no need to do it again
+			}
+			closedList.add(currentNode);
 			EquivalenceClass currentCycle = new EquivalenceClass(cycleDetector.findCyclesContainingVertex(currentNode));
 			logger.info("Current node: "+currentNode.getText());
 			logger.info(currentCycle.getEntailmentUnits().size()+" nodes in cycle:");
 			for (EntailmentUnit nodeInCurrentCycle: currentCycle.getEntailmentUnits()){
+				closedList.add(nodeInCurrentCycle);
 				logger.info("-- "+nodeInCurrentCycle.getText());
 				// if a node in the current cycle was already seen as part of another cycle, 
 				// then the current and the previously found cycles of this node should be merged
@@ -173,7 +181,7 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 				}
 				else{ // if no previous related cycle was found, create the new one
 					cycles.add(currentCycle);  
-				}
+				}				
 			}
 		}		
 		return cycles;

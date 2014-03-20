@@ -226,10 +226,6 @@ public class EquivalenceClass {
 			nodeIdsByText.put(text.replace("\t","").replace("\n",""), idsOfText);
 		}	
 		
-		for (String text : nodeIdsByText.keySet()){
-			System.out.println(text+" : "+nodeIdsByText.get(text));
-		}
-		
 		String s = "\"";
 		List<EntailmentUnit> eus = new LinkedList<EntailmentUnit>(entailmentUnits);
 		Collections.sort(eus, new EntailmentUnit.TextComparator());
