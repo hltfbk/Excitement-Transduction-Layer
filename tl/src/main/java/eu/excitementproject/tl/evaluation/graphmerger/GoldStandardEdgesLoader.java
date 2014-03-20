@@ -39,6 +39,13 @@ public class GoldStandardEdgesLoader {
 	
 	Map<String,EntailmentRelation> edges;
 	Map<String,String> nodeTextById;
+	/**
+	 * @return the nodeTextById
+	 */
+	public Map<String, String> getNodeTextById() {
+		return nodeTextById;
+	}
+
 	Set<String> nodesOfInterest;
 	
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader");

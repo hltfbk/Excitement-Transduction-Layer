@@ -608,6 +608,36 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		return categories.size();		
 	}
 
+	
+	/******************************************************************************************
+	 * METHODS FOR INTERNAL TESTING PURPOSES
+	 * ****************************************************************************************/
+
+	
+	/** Generates a single string, which contains the graph in DOT format for visualization
+	 * @return the generated string
+	 */
+	public String toDOT(Map<String,String> nodeTextById){
+		String s = "digraph collapsedGraph {\n";
+		for (EquivalenceClass node : this.vertexSet()){
+			s+=node.toDOT(nodeTextById);
+		}		
+		for (EntailmentRelationCollapsed edge : this.edgeSet()){
+			s+=edge.toDOT(nodeTextById);
+		}
+		s+="}";	
+		return s;
+	}
+
+	/** Saves the graph in DOT format to the given file. If such file already exists, it will be overwritten.
+	 * @param filename - the name of the file to save the graph
+	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
+	 */
+	public void toDOT(String filename, Map<String,String> nodeTextById) throws IOException{
+			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+			out.write(this.toDOT(nodeTextById));
+			out.close();
+	}	
 
 	/******************************************************************************************
 	 * LEGACY
