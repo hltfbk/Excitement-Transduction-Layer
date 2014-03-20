@@ -1,5 +1,7 @@
 package  eu.excitementproject.tl.structures.collapsedgraph;
 
+import java.util.Map;
+
 import org.jgrapht.graph.DefaultEdge;
 
 
@@ -91,4 +93,16 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 		return s+"\n";
 	}	
 	
+	/******************************************************************************************
+	 * METHODS FOR INTERNAL TESTING PURPOSES
+	 * ****************************************************************************************/
+	/** Returns a string with the edge in DOT format for outputting the graph
+	 * @return the generated string
+	 */
+	public String toDOT(Map<String,String> nodeTextById){
+		String s = this.getSource().toDOT(nodeTextById)+ " -> "+this.getTarget().toDOT(nodeTextById);
+		s+= " [label="+this.getConfidence()+"]";
+		s+= " [color=blue]";
+		return s+"\n";
+	}	
 }

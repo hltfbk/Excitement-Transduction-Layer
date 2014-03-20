@@ -19,8 +19,6 @@ public class SemevalStuff {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open";
 		String gsAnnotationsDir = "D:/Lili/NICE dadasets/NICEall";
 		String resSting = "";
 		File gsDir = new File(gsAnnotationsDir);
@@ -36,19 +34,20 @@ public class SemevalStuff {
 					System.out.println(r.edgeSet().size());
 					System.out.print("Number of nodes: ");
 					System.out.println(r.vertexSet().size());
-					r.toDOT("D:/Lili/rawGold"+f.getName().toUpperCase()+".open.dot.txt");
-					r.toXML("D:/Lili/rawGold"+f.getName().toUpperCase()+".open.xml");
+					r.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_raw.dot.txt");
+					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_raw.xml");
 					EntailmentGraphCollapsed c = gsloader.getCollapsedGraph();
 					System.out.print("Collapsed graph.\nNumber of edges: ");
 					System.out.println(c.edgeSet().size());
 					System.out.print("Number of nodes: ");
 					System.out.println(c.vertexSet().size());
-					c.toDOT("D:/Lili/collapsedGold"+f.getName().toUpperCase()+".open.dot.txt");
-					c.toXML("D:/Lili/collapsedGold"+f.getName().toUpperCase()+".open.xml");
+					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.dot.txt", gsloader.getNodeTextById());
+					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.xml");
 					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(r.vertexSet().size())+"\t"+String.valueOf(c.vertexSet().size())+"\t"+String.valueOf(r.edgeSet().size())+"\t"+String.valueOf(c.edgeSet().size())+"\n";
 				} catch (GraphEvaluatorException | GraphOptimizerException | IOException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+									
 				}							
 			}
 		}

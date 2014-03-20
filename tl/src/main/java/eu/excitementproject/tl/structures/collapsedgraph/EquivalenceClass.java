@@ -2,6 +2,7 @@ package  eu.excitementproject.tl.structures.collapsedgraph;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -201,11 +202,44 @@ public class EquivalenceClass {
 		String s = "\""+label.trim().replaceAll(" +", " ")+" (Total: "+this.getInteractionIds().size()+" interaction(s)):";
 		for (EntailmentUnit eu : entailmentUnits){
 			//if (eu.getText().equals(label)) continue;
-			s+="\\n"+eu.getTextWithoutDoubleSpaces()+" ("+eu.getInteractionIds().size()+" interaction(s))";;			
+			s+="\\n"+eu.getTextWithoutDoubleSpaces()+" ("+eu.getInteractionIds().size()+" interaction(s))";			
 		}
 		s+="\"";
 		return s;
 	}
 	
+
+	/******************************************************************************************
+	 * METHODS FOR INTERNAL TESTING PURPOSES
+	 * ****************************************************************************************/
+
+	/** Returns a string with the node in DOT format for outputting the graph (with node Ids added to text) 
+	 * @return the generated string
+	 */
+	public String toDOT(Map<String,String> nodeTextById){
+		Map<String,Set<String>> nodeIdsByText = new HashMap<String, Set<String>>();
+		for (String nodeId : nodeTextById.keySet()){
+			String text = nodeTextById.get(nodeId);
+			Set<String> idsOfText = new HashSet<String>();
+			if (nodeIdsByText.containsKey(text)) idsOfText = new HashSet<String>(nodeIdsByText.get(text));
+			idsOfText.add(nodeId.replace("\t","").replace("\n",""));
+			nodeIdsByText.put(text.replace("\t","").replace("\n",""), idsOfText);
+		}	
+		
+		for (String text : nodeIdsByText.keySet()){
+			System.out.println(text+" : "+nodeIdsByText.get(text));
+		}
+		
+		String s = "\"";
+		List<EntailmentUnit> eus = new LinkedList<EntailmentUnit>(entailmentUnits);
+		Collections.sort(eus, new EntailmentUnit.TextComparator());
+		for (EntailmentUnit eu : eus){
+			//if (eu.getText().equals(label)) continue;
+			s+=eu.getTextWithoutDoubleSpaces().replace("\t","").replace("\n","")+" "+nodeIdsByText.get(eu.getText())+"\\n";			
+		}
+		s+="\"";
+		return s;
+	}	
+		
 	
 }
