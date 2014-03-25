@@ -103,18 +103,21 @@ public class GoldStandardEdgesLoader {
 					else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
 
 					// now load merge-graph annotations	
-					// each sub-directory should contain a single xml file with annotations
-					for (File annotationFile : clusterAnnotationDir.listFiles()){
-						if (annotationFile.getName().endsWith(".xml")){
-							logger.debug(">>>>Loading merge annotations from file "+annotationFile);
-							addAnnotationsFromFile(annotationFile.getPath());
-/*							try {
-								ClusterStatistics.processCluster(annotationFile);
-							} catch (ParserConfigurationException | SAXException | IOException e) {							
-								e.printStackTrace();
-							}
-*/						}
-					}									
+					// each sub-directory should contain a fodler called "FinalMergedGraph" with a single xml file with annotations
+					File clusterAnnotationMergedGraphDir = new File (clusterAnnotationDir+"/"+"FinalMergedGraph");
+					if (clusterAnnotationMergedGraphDir.isDirectory()){
+						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
+							if (annotationFile.getName().endsWith(".xml")){
+								logger.debug(">>>>Loading merge annotations from file "+annotationFile);
+								addAnnotationsFromFile(annotationFile.getPath());
+	/*							try {
+									ClusterStatistics.processCluster(annotationFile);
+								} catch (ParserConfigurationException | SAXException | IOException e) {							
+									e.printStackTrace();
+								}
+	*/						}
+						}	
+					}
 				}
 			}
 		}
