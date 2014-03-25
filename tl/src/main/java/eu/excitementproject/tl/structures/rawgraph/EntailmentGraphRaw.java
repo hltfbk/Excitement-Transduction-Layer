@@ -750,6 +750,42 @@ public class EntailmentGraphRaw extends
             }
         }
 	}	
+	
+    /**
+	 *  Removes all transitive closure edges from the graph.
+	 *  Expected use - for internal testing purposes only
+	 */
+	public void removeTransitiveClosure(){    
+		Set<EntailmentRelation> edgesToRemove = new HashSet<EntailmentRelation>();
+
+        // At every iteration of the outer loop, we find if there is a path of length 1
+        // between nodes that also have a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EntailmentUnit v1 : this.vertexSet()) {
+            	edgesToRemove.clear();
+
+                for (EntailmentUnit v2 : this.getEntailedNodes(v1)) {
+                    for (EntailmentUnit v3 : this.getEntailedNodes(v2)) {
+                        Set<EntailmentRelation> e = this.getAllEdges(v1, v3);
+                        if (!e.isEmpty()) {
+                        	edgesToRemove.addAll(e);
+                        	logger.info("Remove transitive closure edges: "+ e.toString());
+                            done = false;
+                        }
+                    }
+                }
+
+                this.removeAllEdges(edgesToRemove);
+            }
+        }
+	}
+	
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
