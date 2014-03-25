@@ -42,33 +42,41 @@ public class SemevalStuff {
 	}
 	
 	private static boolean createWP2xml(File annotationFile, File newFile, GoldStandardEdgesLoader gsloader){
+		boolean hasEdges = true;
 		try {
 			String s = "";
 			BufferedReader reader = new BufferedReader(new FileReader(annotationFile));
 			String line = reader.readLine();
-			while(!line.contains("<edge ")){ // copy node lines, and stop as soon as reach edges
+			while(!line.contains("<edge ")) { // copy node lines, and stop as soon as reach edges
 				s+=line+"\n";							
 				line = reader.readLine();
+				if (line.contains("</F_entailment_graph>\n")) {
+					hasEdges=false;
+					break; 
+				}
 			}
 			reader. close();
-			// now add all edges from the graph
-			EntailmentGraphRaw r = gsloader.getRawGraph();
-			r.applyTransitiveClosure(false);
 			
-			// build a mapping from text to all its ids
-			Map<String,Set<String>> textToIdsMap = new HashMap<String, Set<String>>();
-			for (String id : gsloader.getNodeTextById().keySet()){
-				String text = gsloader.getNodeTextById().get(id);
-				Set<String> idsOfText = new HashSet<String>();
-				if (textToIdsMap.containsKey(text)) idsOfText = textToIdsMap.get(text);
-				idsOfText.add(id);
-				textToIdsMap.put(text, idsOfText);
+			if (hasEdges){
+				// add all edges from the graph
+				EntailmentGraphRaw r = gsloader.getRawGraph();
+				r.applyTransitiveClosure(false);
+				
+				// build a mapping from text to all its ids
+				Map<String,Set<String>> textToIdsMap = new HashMap<String, Set<String>>();
+				for (String id : gsloader.getNodeTextById().keySet()){
+					String text = gsloader.getNodeTextById().get(id);
+					Set<String> idsOfText = new HashSet<String>();
+					if (textToIdsMap.containsKey(text)) idsOfText = textToIdsMap.get(text);
+					idsOfText.add(id);
+					textToIdsMap.put(text, idsOfText);
+				}
+				
+				// add edges to the file
+				for (EntailmentRelation edge : r.edgeSet()){
+					s+=getWP2edge(edge, textToIdsMap);
+				}			
 			}
-			
-			// add edges to the file
-			for (EntailmentRelation edge : r.edgeSet()){
-				s+=getWP2edge(edge, textToIdsMap);
-			}			
 			
 			s+="</F_entailment_graph>\n";
 			BufferedWriter writer = new BufferedWriter(new FileWriter(newFile));
