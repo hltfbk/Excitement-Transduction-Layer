@@ -184,7 +184,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 	public static void main(String[] args) {
 		GoldStandardAnalyzer anal = new GoldStandardAnalyzer(false);			
 		try {
-			anal.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open", false);
+			anal.loadAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open", false);
 			EntailmentGraphRaw gr = anal.getRawGraph();
 			gr.toDOT("./src/test/resources/WP2_gold_standard_annotation/NICE_open/rawCS.dot");
 			

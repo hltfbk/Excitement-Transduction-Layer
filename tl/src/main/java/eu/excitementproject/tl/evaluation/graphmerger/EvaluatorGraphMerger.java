@@ -124,7 +124,7 @@ public class EvaluatorGraphMerger {
 	
 	public static EvaluationMeasures evaluate(Set<EntailmentRelation> goldStandardEdges, String goldStandardAnnotationsDirectory, boolean includeFragmentGraphEdges) throws GraphEvaluatorException {
 		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
-		loader.addAllAnnotations(goldStandardAnnotationsDirectory, false);
+		loader.loadAllAnnotations(goldStandardAnnotationsDirectory, false);
 		return evaluate(goldStandardEdges, loader.getEdges(), includeFragmentGraphEdges);
 	}
 }

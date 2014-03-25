@@ -78,7 +78,7 @@ public class GoldStandardEdgesLoader {
 	 * @param loadFragmentGraphs - set =true to verify FGs are consistent with the merged xml (or in case merge xml does not include all the FGs) 
 	 * @throws GraphEvaluatorException
 	 */
-	public void addAllAnnotations(String annotationsFolder, boolean loadFragmentGraphs) throws GraphEvaluatorException{
+	public void loadAllAnnotations(String annotationsFolder, boolean loadFragmentGraphs) throws GraphEvaluatorException{
 		File mainAnnotationsDir = new File(annotationsFolder);
 		if (mainAnnotationsDir.isDirectory()){
 			logger.debug("Loading GS annotations from folder "+annotationsFolder);			
