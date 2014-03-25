@@ -83,7 +83,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		}
 		gsloader = new GoldStandardEdgesLoader(nodesOfInterest);
 		try {
-			gsloader.addAllAnnotations(gsAnnotationsDir);
+			gsloader.addAllAnnotations(gsAnnotationsDir, false);
 		} catch (GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

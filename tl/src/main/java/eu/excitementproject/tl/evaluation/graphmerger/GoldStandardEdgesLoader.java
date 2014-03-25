@@ -73,7 +73,12 @@ public class GoldStandardEdgesLoader {
 		return new HashSet<EntailmentRelation>(edges.values());
 	}
 
-	public void addAllAnnotations(String annotationsFolder) throws GraphEvaluatorException{
+	/**
+	 * @param annotationsFolder
+	 * @param loadFragmentGraphs - set =true to verify FGs are consistent with the merged xml (or in case merge xml does not include all the FGs) 
+	 * @throws GraphEvaluatorException
+	 */
+	public void addAllAnnotations(String annotationsFolder, boolean loadFragmentGraphs) throws GraphEvaluatorException{
 		File mainAnnotationsDir = new File(annotationsFolder);
 		if (mainAnnotationsDir.isDirectory()){
 			logger.debug("Loading GS annotations from folder "+annotationsFolder);			
@@ -81,26 +86,29 @@ public class GoldStandardEdgesLoader {
 				// get sub-directories
 				File clusterAnnotationDir = new File(mainAnnotationsDir+"/"+object);
 				if (clusterAnnotationDir.isDirectory()){
-					// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
-					// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
-					File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
-					if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-						logger.debug("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
-						int fgid=1;
-						for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
-							if (annotationFile.getName().endsWith(".xml")){
-								logger.debug("Fragment graph # "+fgid);
-/*								try {
-									ClusterStatistics.processCluster(annotationFile);
-								} catch (ParserConfigurationException | SAXException | IOException e) {							
-									e.printStackTrace();
+					
+					if (loadFragmentGraphs){
+						// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
+						// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
+						File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+						if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+							logger.debug("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+							int fgid=1;
+							for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+								if (annotationFile.getName().endsWith(".xml")){
+									logger.debug("Fragment graph # "+fgid);
+	/*								try {
+										ClusterStatistics.processCluster(annotationFile);
+									} catch (ParserConfigurationException | SAXException | IOException e) {							
+										e.printStackTrace();
+									}
+	*/								addAnnotationsFromFile(annotationFile.getPath());
+									fgid++;
 								}
-*/								addAnnotationsFromFile(annotationFile.getPath());
-								fgid++;
-							}
-						}							
+							}							
+						}
+						else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");						
 					}
-					else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
 
 					// now load merge-graph annotations	
 					// each sub-directory should contain a folder called "FinalMergedGraph" with a single xml file with annotations
@@ -125,29 +133,37 @@ public class GoldStandardEdgesLoader {
 	}
 		
 
-	public void addClusterAnnotations(String annotationsFolder) throws GraphEvaluatorException{
+	/**
+	 * @param annotationsFolder
+	 * @param loadFragmentGraphs - set =true to verify FGs are consistent with the merged xml (or in case merge xml does not include all the FGs)
+	 * @throws GraphEvaluatorException
+	 */
+	public void addClusterAnnotations(String annotationsFolder, boolean loadFragmentGraphs) throws GraphEvaluatorException{
 		File clusterAnnotationDir = new File(annotationsFolder);
 		if (clusterAnnotationDir.isDirectory()){
-			// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
-			// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
-			File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
-			if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-				logger.info("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
-				int fgid=1;
-				for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
-					if (annotationFile.getName().endsWith(".xml")){
-						logger.debug("Fragment graph # "+fgid);
-/*								try {
-									ClusterStatistics.processCluster(annotationFile);
-								} catch (ParserConfigurationException | SAXException | IOException e) {							
-									e.printStackTrace();
-								}
-*/								addAnnotationsFromFile(annotationFile.getPath());
-						fgid++;
-					}
-				}							
+			
+			if (loadFragmentGraphs){
+				// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
+				// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
+				File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+				if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+					logger.info("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+					int fgid=1;
+					for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+						if (annotationFile.getName().endsWith(".xml")){
+							logger.debug("Fragment graph # "+fgid);
+	/*								try {
+										ClusterStatistics.processCluster(annotationFile);
+									} catch (ParserConfigurationException | SAXException | IOException e) {							
+										e.printStackTrace();
+									}
+	*/								addAnnotationsFromFile(annotationFile.getPath());
+							fgid++;
+						}
+					}							
+				}
+				else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");				
 			}
-			else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
 
 			// now load merge-graph annotations	
 			// clusterAnnotationDir should contain a folder called "FinalMergedGraph" with a single xml file with annotations
