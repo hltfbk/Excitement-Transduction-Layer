@@ -18,6 +18,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 
+import org.apache.log4j.Logger;
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
@@ -52,6 +53,9 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	/**
 	 * 
 	 */
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed");
+
+	
 	private static final long serialVersionUID = 5957243707939421299L;
 		
 	Set<String> textualInputs = null; //the textual inputs (complete statements), on which the entailment graph was built.
@@ -639,6 +643,76 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			out.close();
 	}	
 
+	/******************************************************************************************
+	 * TRANSITIVE CLOSURE
+	 * ****************************************************************************************/
+	   /**
+     * Computes floor(log_2(n)) + 1
+     */
+    private int computeBinaryLog(int n)
+    {
+        assert n >= 0;
+
+        int result = 0;
+        while (n > 0) {
+            n >>= 1;
+            ++result;
+        }
+
+        return result;
+    }
+    
+    /**
+	 *  Adds transitive closure edges to the graph
+	 *  Based on org.jgrapht.alg.TransitiveClosure
+	 */
+	public void applyTransitiveClosure(){    
+		Map<EquivalenceClass,Double> newEdgeTargets = new HashMap<EquivalenceClass,Double>();
+
+        // At every iteration of the outer loop, we add a path of length 1
+        // between nodes that originally had a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EquivalenceClass v1 : this.vertexSet()) {
+                newEdgeTargets.clear();
+
+                for (EntailmentRelationCollapsed v1OutEdge : this.outgoingEdgesOf(v1)) {
+                	EquivalenceClass v2 = this.getEdgeTarget(v1OutEdge);
+                	Double confidence = v1OutEdge.getConfidence();
+                    for (EntailmentRelationCollapsed v2OutEdge : this.outgoingEdgesOf(v2)) {
+                    	EquivalenceClass v3 = this.getEdgeTarget(v2OutEdge);
+
+                        if (v1.equals(v3)) {
+                            // Its a simple graph, so no self loops.
+                            continue;
+                        }
+
+                        if (this.getEdge(v1, v3) != null) {
+                            // There is already an edge from v1 ---> v3, skip;
+                            continue;
+                        }
+                        
+                        //Lili: assign min confidence of the 2 edges as the confidence of the transitive edge
+                        if (v2OutEdge.getConfidence() < confidence) confidence=v2OutEdge.getConfidence();
+                        newEdgeTargets.put(v3,confidence);
+                        done = false;
+                    }
+                }
+
+                for (EquivalenceClass v3 : newEdgeTargets.keySet()) {
+                    EntailmentRelationCollapsed closureEdge = new EntailmentRelationCollapsed(v1, v3, newEdgeTargets.get(v3));
+                	this.addEdge(v1, v3, closureEdge);
+                	logger.info("Added transitive closure edge: "+closureEdge.toString());
+                }
+            }
+        }
+	}
+	
 	/******************************************************************************************
 	 * LEGACY
 	 * ****************************************************************************************/
