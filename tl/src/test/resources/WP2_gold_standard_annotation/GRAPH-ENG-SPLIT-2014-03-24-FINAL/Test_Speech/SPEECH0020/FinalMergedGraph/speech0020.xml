@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="13">
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13764631_76451726.txt" modality="FALSE" id ="13764631_76451726.txt_1_0">
+		<original_text>i cann't believe that you're canceling at a last minute like this</original_text>
+		<correct_text>i can't believe that you're canceling at a last minute like this </correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13764766_78604096-2.txt" modality="FALSE" id ="13764766_78604096-2.txt_1_0">
+		<original_text>i get called at six thirty in the morning telling me that much fly hasn't cancel</original_text>
+		<correct_text>i get called at six thirty in the morning telling me that my flight has been canceled</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13764789_81559386.txt" modality="FALSE" id ="13764789_81559386.txt_1_0">
+		<original_text>you guys a cancel twice on us</original_text>
+		<correct_text>you guys have canceled twice on us</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764790_78628180.txt" modality="FALSE" id ="13764790_78628180.txt_1_0">
+		<original_text>i just got called again that my flight was canceled</original_text>
+		<correct_text></correct_text>
+		<modifiers>againpoz=4</modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764790_78628180.txt" modality="FALSE" id ="13764790_78628180.txt_1_1">
+		<original_text>i just got called that my flight was canceled</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="card" focus="that" implicit_context="" explicit_context="13764796_82293716-2.txt" modality="FALSE" id ="13764796_82293716-2.txt_1_0">
+		<original_text>we'd actually canceled that</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764816_82295687.txt" modality="FALSE" id ="13764816_82295687.txt_1_0">
+		<original_text>quasi cancel that flight</original_text>
+		<correct_text>quasi canceled that flight</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764816_82295687.txt" modality="FALSE" id ="13764816_82295687.txt_5_0">
+		<original_text>you guys almost always cancel the flight</original_text>
+		<correct_text>you guys almost always cancel the flights</correct_text>
+		<modifiers>almost alwayspoz=2 3</modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764816_82295687.txt" modality="FALSE" id ="13764816_82295687.txt_5_1">
+		<original_text>you guys cancel the flight</original_text>
+		<correct_text>you guys cancel the flights</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="flights" implicit_context="" explicit_context="13764829_81137701.txt" modality="FALSE" id ="13764829_81137701.txt_1_0">
+		<original_text>there canceling flights</original_text>
+		<correct_text>they're canceling flights</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="service" implicit_context="" explicit_context="13764957_83408162.txt" modality="FALSE" id ="13764957_83408162.txt_2_0">
+		<original_text>you guys discontinued the service</original_text>
+		<correct_text></correct_text>
+		<modifiers>guyspoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="service" implicit_context="" explicit_context="13764957_83408162.txt" modality="FALSE" id ="13764957_83408162.txt_2_1">
+		<original_text>you discontinued the service</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13765197_83038377.txt" modality="FALSE" id ="13765197_83038377.txt_1_0">
+		<original_text>i flight was canceled</original_text>
+		<correct_text>our flight was canceled</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="13764790_78628180.txt_1_1" source="13764631_76451726.txt_1_0" id="13764790_78628180.txt_1_1-13764631_76451726.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13764631_76451726.txt_1_0" id="13764816_82295687.txt_5_1-13764631_76451726.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_1_0" source="13764631_76451726.txt_1_0" id="13764816_82295687.txt_1_0-13764631_76451726.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701.txt_1_0" source="13764631_76451726.txt_1_0" id="13764829_81137701.txt_1_0-13764631_76451726.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13764631_76451726.txt_1_0" id="13764957_83408162.txt_2_1-13764631_76451726.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_1_0" source="13764631_76451726.txt_1_0" id="13765197_83038377.txt_1_0-13764631_76451726.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13764766_78604096-2.txt_1_0" id="13764816_82295687.txt_5_1-13764766_78604096-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764790_78628180.txt_1_1" source="13764766_78604096-2.txt_1_0" id="13764790_78628180.txt_1_1-13764766_78604096-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_1_0" source="13764766_78604096-2.txt_1_0" id="13764816_82295687.txt_1_0-13764766_78604096-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701.txt_1_0" source="13764766_78604096-2.txt_1_0" id="13764829_81137701.txt_1_0-13764766_78604096-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_1_0" source="13764766_78604096-2.txt_1_0" id="13765197_83038377.txt_1_0-13764766_78604096-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13764766_78604096-2.txt_1_0" id="13764957_83408162.txt_2_1-13764766_78604096-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13764789_81559386.txt_1_0" id="13764816_82295687.txt_5_1-13764789_81559386.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_1_0" source="13764789_81559386.txt_1_0" id="13764816_82295687.txt_1_0-13764789_81559386.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701.txt_1_0" source="13764789_81559386.txt_1_0" id="13764829_81137701.txt_1_0-13764789_81559386.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_1_0" source="13764789_81559386.txt_1_0" id="13765197_83038377.txt_1_0-13764789_81559386.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13764789_81559386.txt_1_0" id="13764957_83408162.txt_2_1-13764789_81559386.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764790_78628180.txt_1_1" source="13764790_78628180.txt_1_0" id="13764790_78628180.txt_1_1-13764790_78628180.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_0" source="13764790_78628180.txt_1_0" id="13764957_83408162.txt_2_0-13764790_78628180.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_0" source="13764790_78628180.txt_1_0" id="13764816_82295687.txt_5_0-13764790_78628180.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13764790_78628180.txt_1_1" id="13764816_82295687.txt_5_1-13764790_78628180.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_1_0" source="13764790_78628180.txt_1_1" id="13764816_82295687.txt_1_0-13764790_78628180.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701.txt_1_0" source="13764790_78628180.txt_1_1" id="13764829_81137701.txt_1_0-13764790_78628180.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_1_0" source="13764790_78628180.txt_1_1" id="13765197_83038377.txt_1_0-13764790_78628180.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13764790_78628180.txt_1_1" id="13764957_83408162.txt_2_1-13764790_78628180.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13764816_82295687.txt_1_0" id="13764816_82295687.txt_5_1-13764816_82295687.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701.txt_1_0" source="13764816_82295687.txt_1_0" id="13764829_81137701.txt_1_0-13764816_82295687.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13764816_82295687.txt_1_0" id="13764957_83408162.txt_2_1-13764816_82295687.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765197_83038377.txt_1_0" source="13764816_82295687.txt_1_0" id="13765197_83038377.txt_1_0-13764816_82295687.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13764816_82295687.txt_5_0" id="13764816_82295687.txt_5_1-13764816_82295687.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_0" source="13764816_82295687.txt_5_0" id="13764957_83408162.txt_2_0-13764816_82295687.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701.txt_1_0" source="13764816_82295687.txt_5_1" id="13764829_81137701.txt_1_0-13764816_82295687.txt_5_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13764816_82295687.txt_5_1" id="13764957_83408162.txt_2_1-13764816_82295687.txt_5_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13764829_81137701.txt_1_0" id="13764816_82295687.txt_5_1-13764829_81137701.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13764829_81137701.txt_1_0" id="13764957_83408162.txt_2_1-13764829_81137701.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13764957_83408162.txt_2_0" id="13764957_83408162.txt_2_1-13764957_83408162.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13764957_83408162.txt_2_1" id="13764816_82295687.txt_5_1-13764957_83408162.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701.txt_1_0" source="13764957_83408162.txt_2_1" id="13764829_81137701.txt_1_0-13764957_83408162.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_2_1" source="13765197_83038377.txt_1_0" id="13764957_83408162.txt_2_1-13765197_83038377.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_5_1" source="13765197_83038377.txt_1_0" id="13764816_82295687.txt_5_1-13765197_83038377.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701.txt_1_0" source="13765197_83038377.txt_1_0" id="13764829_81137701.txt_1_0-13765197_83038377.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764816_82295687.txt_1_0" source="13765197_83038377.txt_1_0" id="13764816_82295687.txt_1_0-13765197_83038377.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>
