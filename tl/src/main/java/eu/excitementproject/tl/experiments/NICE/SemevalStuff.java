@@ -50,7 +50,7 @@ public class SemevalStuff {
 			while(!line.contains("<edge ")) { // copy node lines, and stop as soon as reach edges
 				s+=line+"\n";							
 				line = reader.readLine();
-				if (line.contains("</F_entailment_graph>\n")) {
+				if (line.contains("</F_entailment_graph>")) {
 					hasEdges=false;
 					break; 
 				}
