@@ -91,7 +91,7 @@ public class SemevalStuff {
 	
 	public static void createWP2Data(){
 		//String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test";
-		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
+		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
 		File gsDir = new File(gsAnnotationsDir);
 		for(String clusterAnnotationDir: gsDir.list()){
 			try {
@@ -104,7 +104,6 @@ public class SemevalStuff {
 					File clusterAnnotationMergedGraphDir = new File (gsAnnotationsDir+"/"+clusterAnnotationDir+"/"+"FinalMergedGraph");
 					System.out.println(clusterAnnotationMergedGraphDir.getAbsolutePath());
 					if (clusterAnnotationMergedGraphDir.isDirectory()){
-						System.out.println(f.getName().toUpperCase()+" LOADING");
 						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
 							if (annotationFile.getName().endsWith(".xml")){
 								gsloader.addAnnotationsFromFile(annotationFile.getPath());

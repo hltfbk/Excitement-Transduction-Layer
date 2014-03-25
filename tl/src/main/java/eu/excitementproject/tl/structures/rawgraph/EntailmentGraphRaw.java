@@ -67,7 +67,7 @@ public class EntailmentGraphRaw extends
 	/**
 	 * 
 	 */
-	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphRaw");
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw");
 
 	
 	private static final long serialVersionUID = -3274655854206417667L;
