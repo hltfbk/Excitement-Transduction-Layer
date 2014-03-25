@@ -103,7 +103,7 @@ public class GoldStandardEdgesLoader {
 					else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
 
 					// now load merge-graph annotations	
-					// each sub-directory should contain a fodler called "FinalMergedGraph" with a single xml file with annotations
+					// each sub-directory should contain a folder called "FinalMergedGraph" with a single xml file with annotations
 					File clusterAnnotationMergedGraphDir = new File (clusterAnnotationDir+"/"+"FinalMergedGraph");
 					if (clusterAnnotationMergedGraphDir.isDirectory()){
 						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
@@ -132,7 +132,7 @@ public class GoldStandardEdgesLoader {
 			// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
 			File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
 			if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-				logger.debug("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+				logger.info("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
 				int fgid=1;
 				for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
 					if (annotationFile.getName().endsWith(".xml")){
@@ -150,10 +150,12 @@ public class GoldStandardEdgesLoader {
 			else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
 
 			// now load merge-graph annotations	
-			// clusterAnnotationDir should contain a single xml file with annotations
-			for (File annotationFile : clusterAnnotationDir.listFiles()){
-				if (annotationFile.getName().endsWith(".xml")){
-					logger.debug(">>>>Loading merge annotations from file "+annotationFile);
+			// clusterAnnotationDir should contain a folder called "FinalMergedGraph" with a single xml file with annotations
+			File clusterAnnotationMergedGraphDir = new File (clusterAnnotationDir+"/"+"FinalMergedGraph");
+			if (clusterAnnotationMergedGraphDir.isDirectory()){
+				for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
+					if (annotationFile.getName().endsWith(".xml")){
+					logger.info("Loading merge annotations from file "+annotationFile);
 					addAnnotationsFromFile(annotationFile.getPath());
 /*							try {
 								ClusterStatistics.processCluster(annotationFile);
@@ -161,6 +163,7 @@ public class GoldStandardEdgesLoader {
 								e.printStackTrace();
 							}
 */						}
+				}
 			}									
 		}
 		else throw new GraphEvaluatorException("Invalid directory with gold-standard annotations in given: " + annotationsFolder);
