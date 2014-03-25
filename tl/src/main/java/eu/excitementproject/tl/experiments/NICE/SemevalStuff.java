@@ -19,8 +19,9 @@ public class SemevalStuff {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev_Email";
-		String resSting ="Cluster"+"\t"+"origRawNodes"+"\t"+"origRawEdges"+"\t"+"noClosureRawEdges"+"\t"+"withClosureRawEdges"+"\t"+"origCollapsedNodes"+"origCollapsedEdges"+"\t"+"noClosureRawEdges"+"\t"+"withClosureRawEdges"+"\n";
+		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test";
+//		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
+		String resSting ="Cluster"+"\t"+"origRawNodes"+"\t"+"origRawEdges"+"\t"+"noClosureRawEdges"+"\t"+"withClosureRawEdges"+"\t"+"origCollapsedNodes"+"\t"+"origCollapsedEdges"+"\t"+"noClosureRawEdges"+"\t"+"withClosureRawEdges"+"\n";
 		File gsDir = new File(gsAnnotationsDir);
 		for(String s: gsDir.list()){
 			File f = new File(gsAnnotationsDir+"/"+s);
@@ -57,7 +58,7 @@ public class SemevalStuff {
 					System.out.println(withClosureRawEdges);
 					System.out.print("Number of nodes: ");
 					int withClosureRawNodes =r.vertexSet().size(); 
-					System.out.println(r.vertexSet().size());
+					System.out.println(withClosureRawNodes);
 					r.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawClosure.dot.txt");
 					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawClosure.xml");
 
@@ -70,7 +71,6 @@ public class SemevalStuff {
 					System.out.println(origCollapsedNodes);
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.xml");
-					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(r.vertexSet().size())+"\t"+String.valueOf(c.vertexSet().size())+"\t"+String.valueOf(r.edgeSet().size())+"\t"+String.valueOf(c.edgeSet().size())+"\n";
 					
 					c.removeTransitiveClosure();
 					System.out.print("Collapsed graph -MinusClosure.\nNumber of edges: ");
@@ -81,7 +81,6 @@ public class SemevalStuff {
 					System.out.println(noClosureCollapsedNodes);
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedNoClosure.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedNoClosure.xml");
-					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(r.vertexSet().size())+"\t"+String.valueOf(c.vertexSet().size())+"\t"+String.valueOf(r.edgeSet().size())+"\t"+String.valueOf(c.edgeSet().size())+"\n";
 
 					
 					c.applyTransitiveClosure(true);
@@ -93,7 +92,9 @@ public class SemevalStuff {
 					System.out.println(withClosureCollapsedNodes);
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.xml");
+					
 					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+String.valueOf(noClosureRawEdges)+"\t"+String.valueOf(withClosureRawEdges)+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+String.valueOf(noClosureCollapsedEdges)+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
+	//				resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+"---"+"\t"+"---"+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+String.valueOf(noClosureCollapsedEdges)+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
 				} catch (GraphEvaluatorException | GraphOptimizerException | IOException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
 
 					// TODO Auto-generated catch block

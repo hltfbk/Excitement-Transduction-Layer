@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="0218.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0218.txt" implicit_context="" focus="portabilità" implicit_focus="">
+        <original_text>è dal 17 / 5 / 2012 che aspetto la portabilità</original_text>
+        <correct_text> </correct_text>
+        <modifiers>è dal 17 / 5 / 2012 chepoz=0 1 2 3 4 5 6 7</modifiers>
+    </node>
+    <node id="0218.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0218.txt" implicit_context="" focus="portabilità" implicit_focus="">
+        <original_text>aspetto la portabilità</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0218.txt_1_0-0218.txt_1_1" source="0218.txt_1_0" target="0218.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0218.txt_1_0-0218.txt_1_1" source="0218.txt_1_0" target="0218.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

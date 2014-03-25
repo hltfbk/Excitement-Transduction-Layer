@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="Speech5.1.004.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech5.1.004.txt" implicit_context="" focus="negozi TELEFONIAX" implicit_focus="">
+        <original_text>sono due giorni che giro x negozi TELEFONIAX e mi sono davvero stufata</original_text>
+        <correct_text>sono due giorni che giro per negozi TELEFONIAX e mi sono davvero stufata</correct_text>
+        <modifiers>sono due giorni chepoz=0 1 2 3;davveropoz=11</modifiers>
+    </node>
+    <node id="Speech5.1.004.txt_2_1" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech5.1.004.txt" implicit_context="" focus="negozi TELEFONIAX" implicit_focus="">
+        <original_text>giro x negozi TELEFONIAX e mi sono davvero stufata</original_text>
+        <correct_text>giro per negozi TELEFONIAX e mi sono davvero stufata</correct_text>
+        <modifiers>davveropoz=11</modifiers>
+    </node>
+    <node id="Speech5.1.004.txt_2_2" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech5.1.004.txt" implicit_context="" focus="negozi TELEFONIAX" implicit_focus="">
+        <original_text>sono due giorni che giro x negozi TELEFONIAX e mi sono stufata</original_text>
+        <correct_text>sono due giorni che giro per negozi TELEFONIAX e mi sono stufata</correct_text>
+        <modifiers>sono due giorni chepoz=0 1 2 3</modifiers>
+    </node>
+    <node id="Speech5.1.004.txt_2_3" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech5.1.004.txt" implicit_context="" focus="negozi TELEFONIAX" implicit_focus="">
+        <original_text>giro x negozi TELEFONIAX e mi sono stufata</original_text>
+        <correct_text>giro per negozi TELEFONIAX e mi sono stufata</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="Speech5.1.004.txt_2_0-Speech5.1.004.txt_2_1" source="Speech5.1.004.txt_2_0" target="Speech5.1.004.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech5.1.004.txt_2_0-Speech5.1.004.txt_2_1" source="Speech5.1.004.txt_2_0" target="Speech5.1.004.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech5.1.004.txt_2_0-Speech5.1.004.txt_2_2" source="Speech5.1.004.txt_2_0" target="Speech5.1.004.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech5.1.004.txt_2_0-Speech5.1.004.txt_2_2" source="Speech5.1.004.txt_2_0" target="Speech5.1.004.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech5.1.004.txt_2_2-Speech5.1.004.txt_2_3" source="Speech5.1.004.txt_2_2" target="Speech5.1.004.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech5.1.004.txt_2_1-Speech5.1.004.txt_2_3" source="Speech5.1.004.txt_2_1" target="Speech5.1.004.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech5.1.004.txt_2_1-Speech5.1.004.txt_2_3" source="Speech5.1.004.txt_2_1" target="Speech5.1.004.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech5.1.004.txt_2_2-Speech5.1.004.txt_2_3" source="Speech5.1.004.txt_2_2" target="Speech5.1.004.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech5.1.004.txt_2_0-Speech5.1.004.txt_2_3" source="Speech5.1.004.txt_2_0" target="Speech5.1.004.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
