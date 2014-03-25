@@ -48,9 +48,15 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	public EntailmentRelationCollapsed(EquivalenceClass source, EquivalenceClass target, double c) {
 		this(source, target, c, EdgeType.DIRECT); //by default assign "direct" edge type
 	}
-
-
 	
+
+	/**
+	 * @return the edgeType
+	 */
+	public EdgeType getEdgeType() {
+		return edgeType;
+	}
+
 	public EntailmentRelationCollapsed(EquivalenceClass source, EquivalenceClass target, double c, EdgeType edgeType) {
 		this.source = source;
 		this.target = target;
