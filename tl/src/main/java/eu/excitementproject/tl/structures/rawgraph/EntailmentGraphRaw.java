@@ -4,8 +4,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Map;
 import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -14,6 +16,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 
+import org.apache.log4j.Logger;
 import org.jgrapht.graph.DirectedMultigraph;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
@@ -29,6 +32,8 @@ import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
+import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
@@ -62,6 +67,9 @@ public class EntailmentGraphRaw extends
 	/**
 	 * 
 	 */
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphRaw");
+
+	
 	private static final long serialVersionUID = -3274655854206417667L;
 	/*
 	 * To build the work graph we need to know the configuration,
@@ -302,7 +310,9 @@ public class EntailmentGraphRaw extends
 
 		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
-			entailingNodes.add(edge.getSource());
+			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)){ // only add the node to the list if the edge is an "entailment" edge
+				entailingNodes.add(edge.getSource());				
+			}
 		}
 		return entailingNodes;
 	}
@@ -317,8 +327,10 @@ public class EntailmentGraphRaw extends
 
 		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
-			EntailmentUnit entailingNode = edge.getSource();
-			if (entailingNode.getLevel()==level) entailingNodes.add(entailingNode);
+			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)){ // only add the node to the list if the edge is an "entailment" edge
+				EntailmentUnit entailingNode = edge.getSource();
+				if (entailingNode.getLevel()==level) entailingNodes.add(entailingNode);				
+			}
 		}
 		return entailingNodes;
 	}
@@ -332,7 +344,9 @@ public class EntailmentGraphRaw extends
 
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
-			entailedNodes.add(edge.getTarget());
+			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)){
+				entailedNodes.add(edge.getTarget());	// only add the node to the list if the edge is an "entailment" edge			
+			}
 		}
 		return entailedNodes;
 	}
@@ -347,8 +361,12 @@ public class EntailmentGraphRaw extends
 
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
-			EntailmentUnit entailedNode = edge.getTarget();
-			if (entailedNode.getLevel()==level) entailedNodes.add(entailedNode);
+			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)){
+				// only add the node to the list if the edge is an "entailment" edge
+				EntailmentUnit entailedNode = edge.getTarget();
+				if (entailedNode.getLevel()==level) entailedNodes.add(entailedNode);				
+			}
+
 		}
 		return entailedNodes;
 	}
@@ -628,6 +646,106 @@ public class EntailmentGraphRaw extends
 		return s;
 	}
 	
+	/******************************************************************************************
+	 * TRANSITIVE CLOSURE
+	 * ****************************************************************************************/
+	   /**
+     * Computes floor(log_2(n)) + 1
+     */
+    private int computeBinaryLog(int n)
+    {
+        assert n >= 0;
+
+        int result = 0;
+        while (n > 0) {
+            n >>= 1;
+            ++result;
+        }
+
+        return result;
+    }
+    
+    /** 
+     * @param source
+     * @param target
+     * @return the highest confidence of source -> target
+     */
+    private Double getBestDirectConfidence(EntailmentUnit source, EntailmentUnit target){
+    	Double confidence = 0.0;
+    	for (EntailmentRelation edge : this.getAllEdges(source, target)){
+    		if (edge.getConfidence() > confidence) confidence = edge.getConfidence();
+    	}
+    	return confidence;
+    }
+    
+    /**
+	 *  Adds transitive closure edges to the graph. Only consider "entailment" edges!!! (currently we don't propagate non-entailment relation)
+	 *  If some transitive edges are present in the graph, change their type to "TRANSITIVE_CLOSURE"
+	 *  Based on org.jgrapht.alg.TransitiveClosure
+	 */
+	public void applyTransitiveClosure(){    
+		Map<EntailmentUnit,Double> newEdgeTargets = new HashMap<EntailmentUnit,Double>();
+
+        // At every iteration of the outer loop, we add a path of length 1
+        // between nodes that originally had a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EntailmentUnit v1 : this.vertexSet()) {
+                newEdgeTargets.clear();
+
+                for (EntailmentUnit v2 : this.getEntailedNodes(v1)) {
+                	Double confidence = getBestDirectConfidence(v1,v2);
+                	
+                    for (EntailmentUnit v3 : this.getEntailedNodes(v2)) {
+
+                    	if (newEdgeTargets.containsKey(v3)){
+                    		continue; // since we're in a multu-graph, maybe we already added v3 to newEdgeTargets 
+                    	}
+                    	
+                    	Double secondStepConfidence = getBestDirectConfidence(v2, v3);
+                        // Assign min confidence of the 2 edges as the confidence of the transitive edge
+                        if (secondStepConfidence < confidence) confidence=secondStepConfidence;
+
+                        if (v1.equals(v3)) {
+                            // Don't add self loops.
+                            continue;
+                        }
+
+                        EntailmentRelation e = this.getEdge(v1, v3);
+                        if (e != null) {
+                            // There is already an edge from v1 ---> v3
+                        	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
+                        		continue; // if it's a closure edge already - skip
+                        	}
+                        	else { // if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
+                        		confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type 
+                        	}
+                        }
+                        
+                        newEdgeTargets.put(v3,confidence);
+                        done = false;
+                    }
+                }
+
+                for (EntailmentUnit v3 : newEdgeTargets.keySet()) {
+                    EntailmentRelation e = this.getEdge(v1, v3);
+                	if (e!=null){
+                    	this.removeAllEdges(v1, v3);                    	
+                		logger.info("Removed edge: "+ e.toString()+" to add it as a transitive closure edge");
+                    }
+                	double confidence = newEdgeTargets.get(v3);
+                	EntailmentRelation closureEdge = new EntailmentRelation(v1, v3, new TEDecisionWithConfidence(confidence, DecisionLabel.Entailment), EdgeType.TRANSITIVE_CLOSURE);
+                	this.addEdge(v1, v3, closureEdge);
+                	logger.info("Added transitive closure edge: "+closureEdge.toString());
+                }
+            }
+        }
+	}	
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
