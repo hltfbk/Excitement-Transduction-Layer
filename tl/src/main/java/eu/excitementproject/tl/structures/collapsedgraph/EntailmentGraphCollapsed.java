@@ -751,15 +751,13 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
                         EntailmentRelationCollapsed e = this.getEdge(v1, v3);
                         if (e != null) {
                         	edgesToRemove.add(e);
+                        	logger.info("Remove transitive closure edge: "+ e.toString());
                             done = false;
                         }
                     }
                 }
 
-                for (EntailmentRelationCollapsed e : edgesToRemove) {
-                	this.removeEdge(e);
-                	logger.info("Removed transitive closure edge: "+ e.toString());
-                }
+                this.removeAllEdges(edgesToRemove);
             }
         }
 	}
