@@ -29,7 +29,7 @@ public class SemevalStuff {
 				System.out.println(f.getName().toUpperCase());
 				try {
 					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader();
-					gsloader.addClusterAnnotations(f.getAbsolutePath(), false);
+					gsloader.loadClusterAnnotations(f.getAbsolutePath(), false);
 					EntailmentGraphRaw r = gsloader.getRawGraph();
 					System.out.print("Raw graph.\nNumber of edges: ");
 					int origRawEdges = r.edgeSet().size();
@@ -105,5 +105,7 @@ public class SemevalStuff {
 		}
 		System.out.println(resSting);
 	}
+	
+	
 
 }
