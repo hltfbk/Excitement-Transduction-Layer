@@ -728,6 +728,42 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
         }
 	}
 	
+    /**
+	 *  Removes all transitive closure edges from the graph.
+	 */
+	public void removeTransitiveClosure(){    
+		Set<EntailmentRelationCollapsed> edgesToRemove = new HashSet<EntailmentRelationCollapsed>();
+
+        // At every iteration of the outer loop, we find if there is a path of length 1
+        // between nodes that also have a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EquivalenceClass v1 : this.vertexSet()) {
+            	edgesToRemove.clear();
+
+                for (EquivalenceClass v2 : this.getEntailedNodes(v1)) {
+                    for (EquivalenceClass v3 : this.getEntailedNodes(v2)) {
+                        EntailmentRelationCollapsed e = this.getEdge(v1, v3);
+                        if (e != null) {
+                        	edgesToRemove.add(e);
+                            done = false;
+                        }
+                    }
+                }
+
+                for (EntailmentRelationCollapsed e : edgesToRemove) {
+                	this.removeEdge(e);
+                	logger.info("Removed transitive closure edge: "+ e.toString());
+                }
+            }
+        }
+	}
+	
 	/******************************************************************************************
 	 * LEGACY
 	 * ****************************************************************************************/
