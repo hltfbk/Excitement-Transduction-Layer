@@ -31,6 +31,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedEx
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
@@ -663,7 +664,8 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
     }
     
     /**
-	 *  Adds transitive closure edges to the graph
+	 *  Adds transitive closure edges to the graph.
+	 *  If some transitive edges are present in the graph, change their type to "TRANSITIVE_CLOSURE"
 	 *  Based on org.jgrapht.alg.TransitiveClosure
 	 */
 	public void applyTransitiveClosure(){    
@@ -687,25 +689,37 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
                     for (EntailmentRelationCollapsed v2OutEdge : this.outgoingEdgesOf(v2)) {
                     	EquivalenceClass v3 = this.getEdgeTarget(v2OutEdge);
 
+                        // Assign min confidence of the 2 edges as the confidence of the transitive edge
+                        if (v2OutEdge.getConfidence() < confidence) confidence=v2OutEdge.getConfidence();
+
                         if (v1.equals(v3)) {
-                            // Its a simple graph, so no self loops.
+                            // Don't add self loops.
                             continue;
                         }
 
-                        if (this.getEdge(v1, v3) != null) {
-                            // There is already an edge from v1 ---> v3, skip;
-                            continue;
+                        EntailmentRelationCollapsed e = this.getEdge(v1, v3);
+                        if (e != null) {
+                            // There is already an edge from v1 ---> v3
+                        	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
+                        		continue; // if it's a closure edge already - skip
+                        	}
+                        	else { // if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
+                        		confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type 
+                        	}
                         }
                         
-                        //Lili: assign min confidence of the 2 edges as the confidence of the transitive edge
-                        if (v2OutEdge.getConfidence() < confidence) confidence=v2OutEdge.getConfidence();
                         newEdgeTargets.put(v3,confidence);
                         done = false;
                     }
                 }
 
                 for (EquivalenceClass v3 : newEdgeTargets.keySet()) {
-                    EntailmentRelationCollapsed closureEdge = new EntailmentRelationCollapsed(v1, v3, newEdgeTargets.get(v3));
+                    EntailmentRelationCollapsed e = this.getEdge(v1, v3);
+                	if (e!=null){
+                    	this.removeAllEdges(v1, v3);                    	
+                		logger.info("Removed edge: "+ e.toString()+" to add it as a transitive closure edge");
+                    }
+                	EntailmentRelationCollapsed closureEdge = new EntailmentRelationCollapsed(v1, v3, newEdgeTargets.get(v3), EdgeType.TRANSITIVE_CLOSURE);
                 	this.addEdge(v1, v3, closureEdge);
                 	logger.info("Added transitive closure edge: "+closureEdge.toString());
                 }
