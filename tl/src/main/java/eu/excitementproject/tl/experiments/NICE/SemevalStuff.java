@@ -36,6 +36,15 @@ public class SemevalStuff {
 					System.out.println(r.vertexSet().size());
 					r.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_raw.dot.txt");
 					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_raw.xml");
+
+/*					r.applyTransitiveClosure(false);
+					System.out.print("Raw graph+Closure.\nNumber of edges: ");
+					System.out.println(r.edgeSet().size());
+					System.out.print("Number of nodes: ");
+					System.out.println(r.vertexSet().size());
+					r.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawClosure.dot.txt");
+					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawClosure.xml");
+*/
 					EntailmentGraphCollapsed c = gsloader.getCollapsedGraph();
 					System.out.print("Collapsed graph.\nNumber of edges: ");
 					System.out.println(c.edgeSet().size());
@@ -44,7 +53,27 @@ public class SemevalStuff {
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.xml");
 					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(r.vertexSet().size())+"\t"+String.valueOf(c.vertexSet().size())+"\t"+String.valueOf(r.edgeSet().size())+"\t"+String.valueOf(c.edgeSet().size())+"\n";
+					
+					c.removeTransitiveClosure();
+					System.out.print("Collapsed graph -MinusClosure.\nNumber of edges: ");
+					System.out.println(c.edgeSet().size());
+					System.out.print("Number of nodes: ");
+					System.out.println(c.vertexSet().size());
+					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.dot.txt", gsloader.getNodeTextById());
+					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.xml");
+					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(r.vertexSet().size())+"\t"+String.valueOf(c.vertexSet().size())+"\t"+String.valueOf(r.edgeSet().size())+"\t"+String.valueOf(c.edgeSet().size())+"\n";
+
+					
+					c.applyTransitiveClosure(true);
+					System.out.print("Collapsed graph + closure.\nNumber of edges: ");
+					System.out.println(c.edgeSet().size());
+					System.out.print("Number of nodes: ");
+					System.out.println(c.vertexSet().size());
+					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.dot.txt", gsloader.getNodeTextById());
+					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.xml");
+					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(r.vertexSet().size())+"\t"+String.valueOf(c.vertexSet().size())+"\t"+String.valueOf(r.edgeSet().size())+"\t"+String.valueOf(c.edgeSet().size())+"\n";
 				} catch (GraphEvaluatorException | GraphOptimizerException | IOException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
+
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 									
