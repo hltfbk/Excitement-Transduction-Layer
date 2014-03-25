@@ -5,12 +5,16 @@ package eu.excitementproject.tl.structures.rawgraph.utils;
  * @author Lili Kotlerman
  *
  */
-public enum EdgeType {
+public enum EdgeType { // note that the types are not mutually exclusive, choice of edge type depends on the type of the graph, and the context in which it is used
 
-	EDA,
+	EDA, //e.g. EDA can be called for direct edges, as well as for edges that could have been induced by transitive closure
 	FRAGMENT_GRAPH,
-	INDUCED,
+	INDUCED, 
 	MANUAL_ANNOTATION,
+	
+	TRANSITIVE_CLOSURE,
+	DIRECT,
+	
 	UNKNOWN, 
 	;
 	
@@ -25,6 +29,9 @@ public enum EdgeType {
 		if (str.equals("FRAGMENT_GRAPH")) return FRAGMENT_GRAPH;
 		if (str.equals("INDUCED")) return INDUCED;
 		if (str.equals("MANUAL_ANNOTATION")) return MANUAL_ANNOTATION;
+		if (str.equals("DIRECT")) return DIRECT;
+		if (str.equals("TRANSITIVE_CLOSURE")) return TRANSITIVE_CLOSURE;
+		
 		return UNKNOWN;
 	}
 	
