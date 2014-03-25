@@ -683,14 +683,12 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
             for (EquivalenceClass v1 : this.vertexSet()) {
                 newEdgeTargets.clear();
 
-                for (EntailmentRelationCollapsed v1OutEdge : this.outgoingEdgesOf(v1)) {
-                	EquivalenceClass v2 = this.getEdgeTarget(v1OutEdge);
-                	Double confidence = v1OutEdge.getConfidence();
-                    for (EntailmentRelationCollapsed v2OutEdge : this.outgoingEdgesOf(v2)) {
-                    	EquivalenceClass v3 = this.getEdgeTarget(v2OutEdge);
+                for (EquivalenceClass v2 : this.getEntailedNodes(v1)) {
+                	Double confidence = this.getEdge(v1, v2).getConfidence();
+                    for (EquivalenceClass v3 : this.getEntailedNodes(v2)) {
 
                         // Assign min confidence of the 2 edges as the confidence of the transitive edge
-                        if (v2OutEdge.getConfidence() < confidence) confidence=v2OutEdge.getConfidence();
+                        if (this.getEdge(v2, v3).getConfidence() < confidence) confidence=this.getEdge(v2, v3).getConfidence();
 
                         if (v1.equals(v3)) {
                             // Don't add self loops.
