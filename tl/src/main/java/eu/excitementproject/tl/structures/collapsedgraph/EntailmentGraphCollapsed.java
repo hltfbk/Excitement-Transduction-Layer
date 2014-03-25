@@ -665,10 +665,11 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
     
     /**
 	 *  Adds transitive closure edges to the graph.
-	 *  If some transitive edges are present in the graph, change their type to "TRANSITIVE_CLOSURE"
 	 *  Based on org.jgrapht.alg.TransitiveClosure
+	 *  
+	 * @param changeTypeOfExistingEdges - if true, existing transitive closure edges will change their type to "TRANSITIVE_CLOSURE" 
 	 */
-	public void applyTransitiveClosure(){    
+	public void applyTransitiveClosure(boolean changeTypeOfExistingEdges){    
 		Map<EquivalenceClass,Double> newEdgeTargets = new HashMap<EquivalenceClass,Double>();
 
         // At every iteration of the outer loop, we add a path of length 1
@@ -698,6 +699,8 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
                         EntailmentRelationCollapsed e = this.getEdge(v1, v3);
                         if (e != null) {
                             // There is already an edge from v1 ---> v3
+                        	if (!changeTypeOfExistingEdges) continue; 
+                        	
                         	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
                         		continue; // if it's a closure edge already - skip
                         	}

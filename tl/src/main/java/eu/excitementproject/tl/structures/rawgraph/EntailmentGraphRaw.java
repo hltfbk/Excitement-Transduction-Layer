@@ -680,10 +680,11 @@ public class EntailmentGraphRaw extends
     
     /**
 	 *  Adds transitive closure edges to the graph. Only consider "entailment" edges!!! (currently we don't propagate non-entailment relation)
-	 *  If some transitive edges are present in the graph, change their type to "TRANSITIVE_CLOSURE"
 	 *  Based on org.jgrapht.alg.TransitiveClosure
+	 *  
+	 * @param changeTypeOfExistingEdges - if true, existing transitive closure edges will change their type to "TRANSITIVE_CLOSURE" 
 	 */
-	public void applyTransitiveClosure(){    
+	public void applyTransitiveClosure(boolean changeTypeOfExistingEdges){    
 		Map<EntailmentUnit,Double> newEdgeTargets = new HashMap<EntailmentUnit,Double>();
 
         // At every iteration of the outer loop, we add a path of length 1
@@ -719,6 +720,9 @@ public class EntailmentGraphRaw extends
                         EntailmentRelation e = this.getEdge(v1, v3);
                         if (e != null) {
                             // There is already an edge from v1 ---> v3
+                        	if (!changeTypeOfExistingEdges) continue; 
+
+                        	
                         	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
                         		continue; // if it's a closure edge already - skip
                         	}
