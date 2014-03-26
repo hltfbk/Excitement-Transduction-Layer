@@ -782,6 +782,14 @@ public class EntailmentGraphRaw extends
         }
 	}*/
 	
+	public void removeTransitiveClosure(){   
+		Set<EntailmentRelation> edgesToRemove = new HashSet<EntailmentRelation>();
+		for(EntailmentRelation e : this.edgeSet()){
+			if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) edgesToRemove.add(e); 
+		}
+		removeAllEdges(edgesToRemove);
+	}
+	
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/

@@ -762,6 +762,14 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
         }
 	}*/
 	
+	public void removeTransitiveClosure(){   
+		Set<EntailmentRelationCollapsed> edgesToRemove = new HashSet<EntailmentRelationCollapsed>();
+		for(EntailmentRelationCollapsed e : this.edgeSet()){
+			if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) edgesToRemove.add(e); 
+		}
+		removeAllEdges(edgesToRemove);
+	}
+	
 	/******************************************************************************************
 	 * LEGACY
 	 * ****************************************************************************************/
