@@ -63,7 +63,7 @@ public class GoldStandardToWP2translator {
 			if (hasEdges){
 				// add all edges from the graph
 				EntailmentGraphRaw r = gsloader.getRawGraph();
-				r.applyTransitiveClosure(false);
+				r.applyTransitiveClosure(true);
 				
 				// build a mapping from text to all its ids
 				Map<String,Set<String>> textToIdsMap = new HashMap<String, Set<String>>();

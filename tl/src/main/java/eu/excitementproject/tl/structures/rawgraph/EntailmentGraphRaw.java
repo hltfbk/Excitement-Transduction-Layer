@@ -736,7 +736,7 @@ public class EntailmentGraphRaw extends
                     EntailmentRelation e = this.getEdge(v1, v3);
                 	if (e!=null){
                     	this.removeAllEdges(v1, v3);                    	
-                		logger.info("Removed edge: "+ e.toString()+" to add it as a transitive closure edge");
+                		logger.info("Removed \"direct\" edge(s): "+ e.toString()+" to add a corresponding transitive closure edge");
                     }
                 	double confidence = newEdgeTargets.get(v3);
                 	EntailmentRelation closureEdge = new EntailmentRelation(v1, v3, new TEDecisionWithConfidence(confidence, DecisionLabel.Entailment), EdgeType.TRANSITIVE_CLOSURE);
