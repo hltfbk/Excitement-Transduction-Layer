@@ -14,6 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -237,12 +238,20 @@ public class GoldStandardEdgesLoader {
 							if (nodesOfInterest==null) logger.error("Annotation file "+xmlAnnotationFilename+" contains an edge with target node "+ tgt+ ", which is not presented in the nodes list");
 							continue;
 						}
-						System.out.println(er.getAttributes());
+						
+						boolean isDirect = false;
+						NodeList features = erElement.getChildNodes();
+						for (int i =0; i<features.getLength(); i++){
+							if (features.item(i).getNodeName().equals("entailment")){
+								Element erEntailment = (Element) features.item(i);
+								isDirect = erEntailment.getAttribute("type").equals("direct");
+							}								
+						}
 
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
 						if (sourceUnit.isTextIncludedOrRelevant(nodeTextById.get(tgt))) continue; // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
-						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit);
+						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, isDirect);
 						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
 					}
 				} catch (ParserConfigurationException | SAXException | IOException e) {
@@ -271,7 +280,7 @@ public class GoldStandardEdgesLoader {
 			g.addVertex(getGoldStandardNode(v)); // the EUs should be the same as created when adding edges to the "edges" attribute of the class 
 		}
 		for (EntailmentRelation e : edges.values()){
-			g.addEdgeByInduction(e.getSource(), e.getTarget(), DecisionLabel.Entailment, 1.0);
+			g.addEdge(e.getSource(), e.getTarget(), e);
 		}
 		return g;
 	}
@@ -290,6 +299,13 @@ public class GoldStandardEdgesLoader {
 		return new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), EdgeType.MANUAL_ANNOTATION);
 	}
 	
+	protected EntailmentRelation getGoldStandardEdge(EntailmentUnit sourceUnit, EntailmentUnit targetUnit, boolean isDirect){
+		EdgeType type;
+		if (isDirect) type = EdgeType.DIRECT;
+		else type = EdgeType.TRANSITIVE_CLOSURE;
+		return new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), type);
+	}
+
 	public Set<String> getNodes(){
 		return new HashSet<String>(nodeTextById.values());
 	}
