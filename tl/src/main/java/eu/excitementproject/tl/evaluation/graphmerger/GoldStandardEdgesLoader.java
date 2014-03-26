@@ -237,13 +237,13 @@ public class GoldStandardEdgesLoader {
 							if (nodesOfInterest==null) logger.error("Annotation file "+xmlAnnotationFilename+" contains an edge with target node "+ tgt+ ", which is not presented in the nodes list");
 							continue;
 						}
-						
+						System.out.println(er.getAttributes());
 
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
 						if (sourceUnit.isTextIncludedOrRelevant(nodeTextById.get(tgt))) continue; // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
 						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit);
-						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instaed of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
+						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
 					}
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());

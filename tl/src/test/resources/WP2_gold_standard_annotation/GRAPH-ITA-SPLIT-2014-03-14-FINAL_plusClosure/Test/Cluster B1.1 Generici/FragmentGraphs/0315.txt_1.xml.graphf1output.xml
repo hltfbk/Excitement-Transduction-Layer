@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="0315.txt_1_0" implicit_statement="TRUE" modality="FALSE" explicit_context="0315.txt" implicit_context="" focus="TELEFONIAX" implicit_focus="">
+        <original_text>la TELEFONIAX e solo una fregatura</original_text>
+        <correct_text>la TelefoniaX è solo una fregatura</correct_text>
+        <modifiers>solopoz=3</modifiers>
+    </node>
+    <node id="0315.txt_1_1" implicit_statement="TRUE" modality="FALSE" explicit_context="0315.txt" implicit_context="" focus="TELEFONIAX" implicit_focus="">
+        <original_text>la TELEFONIAX e una fregatura</original_text>
+        <correct_text>la TelefoniaX è una fregatura</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0315.txt_1_0-0315.txt_1_1" source="0315.txt_1_0" target="0315.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0315.txt_1_0-0315.txt_1_1" source="0315.txt_1_0" target="0315.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

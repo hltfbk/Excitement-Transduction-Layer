@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="Speech4.1.010.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.010.txt" implicit_context="" focus="TELEFONIAX CONSOLLE" implicit_focus="">
+        <original_text>La TELEFONIAX CONSOLLE ha una velocita ’ di connessione ridicola</original_text>
+        <correct_text>la TELEFONIAX CONSOLLE ha una velocità di connessione ridicola</correct_text>
+        <modifiers>velocita ’ dipoz=5 6 7</modifiers>
+    </node>
+    <node id="Speech4.1.010.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.010.txt" implicit_context="" focus="TELEFONIAX CONSOLLE" implicit_focus="">
+        <original_text>La TELEFONIAX CONSOLLE ha una connessione ridicola</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="Speech4.1.010.txt_1_0-Speech4.1.010.txt_1_1" source="Speech4.1.010.txt_1_0" target="Speech4.1.010.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.010.txt_1_0-Speech4.1.010.txt_1_1" source="Speech4.1.010.txt_1_0" target="Speech4.1.010.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0270.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0270.txt" implicit_context="" focus="CONSOLLE" implicit_focus="">
+        <original_text>non parliamo della CONSOLLE ke da un sacco di problemi</original_text>
+        <correct_text>non parliamo della Consolle che da un sacco di problemi</correct_text>
+        <modifiers>un sacco dipoz=6 7 8;non parliamo della kepoz=0 1 2 4</modifiers>
+    </node>
+    <node id="0270.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0270.txt" implicit_context="" focus="CONSOLLE" implicit_focus="">
+        <original_text>non parliamo della CONSOLLE ke da problemi</original_text>
+        <correct_text>non parliamo della Consolle che da problemi</correct_text>
+        <modifiers>non parliamo della kepoz=0 1 2 4</modifiers>
+    </node>
+    <node id="0270.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0270.txt" implicit_context="" focus="CONSOLLE" implicit_focus="">
+        <original_text>CONSOLLE da un sacco di problemi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>un sacco dipoz=6 7 8</modifiers>
+    </node>
+    <node id="0270.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0270.txt" implicit_context="" focus="CONSOLLE" implicit_focus="">
+        <original_text>CONSOLLE da problemi</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0270.txt_1_0-0270.txt_1_1" source="0270.txt_1_0" target="0270.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0270.txt_1_0-0270.txt_1_1" source="0270.txt_1_0" target="0270.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0270.txt_1_0-0270.txt_1_2" source="0270.txt_1_0" target="0270.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0270.txt_1_0-0270.txt_1_2" source="0270.txt_1_0" target="0270.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0270.txt_1_2-0270.txt_1_3" source="0270.txt_1_2" target="0270.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0270.txt_1_1-0270.txt_1_3" source="0270.txt_1_1" target="0270.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0270.txt_1_1-0270.txt_1_3" source="0270.txt_1_1" target="0270.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0270.txt_1_2-0270.txt_1_3" source="0270.txt_1_2" target="0270.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0270.txt_1_0-0270.txt_1_3" source="0270.txt_1_0" target="0270.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="1">
+    <node id="Speech3.4.002.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech3.4.002.txt" implicit_context="" focus="segnalazione" implicit_focus="">
+        <original_text>Nonostante la segnalazione non ricevo piu ’ offerte</original_text>
+        <correct_text> </correct_text>
+        <modifiers></modifiers>
+    </node>
+</F_entailment_graph>
