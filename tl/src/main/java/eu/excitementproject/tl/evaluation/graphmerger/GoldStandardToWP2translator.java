@@ -28,7 +28,7 @@ public class GoldStandardToWP2translator {
 		String s="";
 		String targetText = edge.getTarget().getText();
 		String sourceText = edge.getSource().getText();
-		System.out.println("The edge: "+edge.toString());
+		System.out.print("Edge: "+edge.toString()+"\t");
 		int i=0;
 		for (String tgtId : textToIdsMap.get(targetText)){
 			for (String srcId: textToIdsMap.get(sourceText)){
@@ -40,7 +40,7 @@ public class GoldStandardToWP2translator {
 				i++;
 			}
 		}			
-		System.out.println("\t was translated into "+String.valueOf(i)+" wp2 edges.\n");
+		System.out.println(String.valueOf(i)+"\twp2 edges.");
 		return s;
 	}
 	
