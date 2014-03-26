@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.jgrapht.graph.DefaultEdge;
 
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
+
 
 
 /**
@@ -28,6 +30,8 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	EquivalenceClass source;
 	EquivalenceClass target;
 	
+	EdgeType edgeType;
+	
 	double confidence;
 	
 	/******************************************************************************************
@@ -42,11 +46,23 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	 *  (corresponding to decisions from various EDAs) 
 	 */
 	public EntailmentRelationCollapsed(EquivalenceClass source, EquivalenceClass target, double c) {
+		this(source, target, c, EdgeType.DIRECT); //by default assign "direct" edge type
+	}
+	
+
+	/**
+	 * @return the edgeType
+	 */
+	public EdgeType getEdgeType() {
+		return edgeType;
+	}
+
+	public EntailmentRelationCollapsed(EquivalenceClass source, EquivalenceClass target, double c, EdgeType edgeType) {
 		this.source = source;
 		this.target = target;
 		this.confidence = c;
+		this.edgeType = edgeType;
 	}
-
 	/******************************************************************************************
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/

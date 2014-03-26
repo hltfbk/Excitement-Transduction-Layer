@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0184.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0184.txt" implicit_context="" focus="premio" implicit_focus="">
+        <original_text>premio ordinato presso un negozio TELEFONIAX DUE ancora non pervenuto</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=7;presso un negozio TELEFONIAX DUEpoz=2 3 4 5 6</modifiers>
+    </node>
+    <node id="0184.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0184.txt" implicit_context="" focus="premio" implicit_focus="">
+        <original_text>premio ordinato presso un negozio TELEFONIAX DUE non pervenuto</original_text>
+        <correct_text> </correct_text>
+        <modifiers>presso un negozio TELEFONIAX DUEpoz=2 3 4 5 6</modifiers>
+    </node>
+    <node id="0184.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0184.txt" implicit_context="" focus="premio" implicit_focus="">
+        <original_text>premio ordinato ancora non pervenuto</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=7</modifiers>
+    </node>
+    <node id="0184.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0184.txt" implicit_context="" focus="premio" implicit_focus="">
+        <original_text>premio ordinato non pervenuto</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0184.txt_1_0-0184.txt_1_1" source="0184.txt_1_0" target="0184.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0184.txt_1_0-0184.txt_1_1" source="0184.txt_1_0" target="0184.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0184.txt_1_0-0184.txt_1_2" source="0184.txt_1_0" target="0184.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0184.txt_1_0-0184.txt_1_2" source="0184.txt_1_0" target="0184.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0184.txt_1_2-0184.txt_1_3" source="0184.txt_1_2" target="0184.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0184.txt_1_1-0184.txt_1_3" source="0184.txt_1_1" target="0184.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0184.txt_1_1-0184.txt_1_3" source="0184.txt_1_1" target="0184.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0184.txt_1_2-0184.txt_1_3" source="0184.txt_1_2" target="0184.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0184.txt_1_0-0184.txt_1_3" source="0184.txt_1_0" target="0184.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -3,8 +3,6 @@ package eu.excitementproject.tl.structures.rawgraph;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
-
-import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
 /*

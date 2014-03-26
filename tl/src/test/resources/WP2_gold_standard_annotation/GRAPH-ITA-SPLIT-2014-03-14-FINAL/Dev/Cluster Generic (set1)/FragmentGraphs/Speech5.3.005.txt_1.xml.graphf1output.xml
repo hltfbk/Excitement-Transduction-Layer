@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="Speech5.3.005.txt_1_0" implicit_statement="TRUE" modality="FALSE" explicit_context="Speech5.3.005.txt" implicit_context="" focus="MODELLOA2" implicit_focus="">
+        <original_text>sto ancora aspettando che qualcuno mi comunichi quando arrivera ’ il mio MODELLOA2</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=1;qualcuno mi comunichi quandopoz=4 5 6 7</modifiers>
+    </node>
+    <node id="Speech5.3.005.txt_1_1" implicit_statement="TRUE" modality="FALSE" explicit_context="Speech5.3.005.txt" implicit_context="" focus="MODELLOA2" implicit_focus="">
+        <original_text>sto aspettando che qualcuno mi comunichi quando arrivera ’ il mio MODELLOA2</original_text>
+        <correct_text> </correct_text>
+        <modifiers>qualcuno mi comunichi quandopoz=4 5 6 7</modifiers>
+    </node>
+    <node id="Speech5.3.005.txt_1_2" implicit_statement="TRUE" modality="FALSE" explicit_context="Speech5.3.005.txt" implicit_context="" focus="MODELLOA2" implicit_focus="">
+        <original_text>sto ancora aspettando che arrivera ’ il mio MODELLOA2</original_text>
+        <correct_text>sto ancora aspettando che arrivi il mio MODELLOA2</correct_text>
+        <modifiers>ancorapoz=1</modifiers>
+    </node>
+    <node id="Speech5.3.005.txt_1_3" implicit_statement="TRUE" modality="FALSE" explicit_context="Speech5.3.005.txt" implicit_context="" focus="MODELLOA2" implicit_focus="">
+        <original_text>sto aspettando che arrivera ’ il mio MODELLOA2</original_text>
+        <correct_text>sto aspettando che arrivi il mio MODELLOA2</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="Speech5.3.005.txt_1_0-Speech5.3.005.txt_1_1" source="Speech5.3.005.txt_1_0" target="Speech5.3.005.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech5.3.005.txt_1_0-Speech5.3.005.txt_1_1" source="Speech5.3.005.txt_1_0" target="Speech5.3.005.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech5.3.005.txt_1_0-Speech5.3.005.txt_1_2" source="Speech5.3.005.txt_1_0" target="Speech5.3.005.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech5.3.005.txt_1_0-Speech5.3.005.txt_1_2" source="Speech5.3.005.txt_1_0" target="Speech5.3.005.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech5.3.005.txt_1_2-Speech5.3.005.txt_1_3" source="Speech5.3.005.txt_1_2" target="Speech5.3.005.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech5.3.005.txt_1_1-Speech5.3.005.txt_1_3" source="Speech5.3.005.txt_1_1" target="Speech5.3.005.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech5.3.005.txt_1_1-Speech5.3.005.txt_1_3" source="Speech5.3.005.txt_1_1" target="Speech5.3.005.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech5.3.005.txt_1_2-Speech5.3.005.txt_1_3" source="Speech5.3.005.txt_1_2" target="Speech5.3.005.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech5.3.005.txt_1_0-Speech5.3.005.txt_1_3" source="Speech5.3.005.txt_1_0" target="Speech5.3.005.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

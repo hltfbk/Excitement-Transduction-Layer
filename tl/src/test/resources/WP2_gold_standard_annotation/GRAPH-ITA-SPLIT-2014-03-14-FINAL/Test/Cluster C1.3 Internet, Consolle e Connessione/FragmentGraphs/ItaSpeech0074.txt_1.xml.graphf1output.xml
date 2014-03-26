@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="1">
+    <node id="ItaSpeech0074.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="ItaSpeech0074.txt" implicit_context="" focus="connessione internet" implicit_focus="">
+        <original_text>non funziona la connessione internet</original_text>
+        <correct_text> </correct_text>
+        <modifiers></modifiers>
+    </node>
+</F_entailment_graph>

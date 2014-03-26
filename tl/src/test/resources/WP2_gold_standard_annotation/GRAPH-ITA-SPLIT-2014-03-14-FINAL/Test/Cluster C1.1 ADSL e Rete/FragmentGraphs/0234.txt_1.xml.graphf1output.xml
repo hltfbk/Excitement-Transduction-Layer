@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0234.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0234.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>agnone ( is ) siamo senza segnale a volte per giorni interi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>agnone ( is )poz=0 1 2 3;a volte per giorni interipoz=7 8 9 10 11</modifiers>
+    </node>
+    <node id="0234.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0234.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>siamo senza segnale a volte per giorni interi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a volte per giorni interipoz=7 8 9 10 11</modifiers>
+    </node>
+    <node id="0234.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0234.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>agnone ( is ) siamo senza segnale</original_text>
+        <correct_text> </correct_text>
+        <modifiers>agnone ( is )poz=0 1 2 3</modifiers>
+    </node>
+    <node id="0234.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0234.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>siamo senza segnale</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0234.txt_1_0-0234.txt_1_1" source="0234.txt_1_0" target="0234.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0234.txt_1_0-0234.txt_1_1" source="0234.txt_1_0" target="0234.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0234.txt_1_0-0234.txt_1_2" source="0234.txt_1_0" target="0234.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0234.txt_1_0-0234.txt_1_2" source="0234.txt_1_0" target="0234.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0234.txt_1_2-0234.txt_1_3" source="0234.txt_1_2" target="0234.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0234.txt_1_1-0234.txt_1_3" source="0234.txt_1_1" target="0234.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0234.txt_1_1-0234.txt_1_3" source="0234.txt_1_1" target="0234.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0234.txt_1_2-0234.txt_1_3" source="0234.txt_1_2" target="0234.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0234.txt_1_0-0234.txt_1_3" source="0234.txt_1_0" target="0234.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="18">
+	<node implicit_focus="" focus="website" implicit_context="" explicit_context="13764637_77233258-2.txt" modality="FALSE" id ="13764637_77233258-2.txt_1_0">
+		<original_text>there's something wrong with the website</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="website" focus="it's" implicit_context="" explicit_context="13764637_77233258-2.txt" modality="FALSE" id ="13764637_77233258-2.txt_2_0">
+		<original_text>it's not allowing me to book get online</original_text>
+		<correct_text>it's not allowing me to book it online</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="13764637_77233258.txt" modality="FALSE" id ="13764637_77233258.txt_1_0">
+		<original_text>ticket is not available on the website</original_text>
+		<correct_text></correct_text>
+		<modifiers>on the websitepoz=4 5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="13764637_77233258.txt" modality="FALSE" id ="13764637_77233258.txt_1_1">
+		<original_text>ticket is not available</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="website" focus="" implicit_context="" explicit_context="13764743_77605503.txt" modality="FALSE" id ="13764743_77605503.txt_1_0">
+		<original_text>i am having a great deal of difficulty trying to pull up my uh advantage balance</original_text>
+		<correct_text>i am having a great deal of difficulty trying to pull up my advantage balance</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="ticket" focus="" implicit_context="" explicit_context="13764800_80670011.txt" modality="TRUE" id ="13764800_80670011.txt_1_0">
+		<original_text>i'm having to travel forty five minutes to an hour to go to an airport the book it taking that technically i should be able to do over the internet</original_text>
+		<correct_text>i'm having to travel forty five minutes to an hour to go to an airport to book a ticket that technically i should be able to do over the internet </correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="website" implicit_context="" explicit_context="13764826_81589824.txt" modality="FALSE" id ="13764826_81589824.txt_1_0">
+		<original_text>i was getting very frustrated with the website</original_text>
+		<correct_text></correct_text>
+		<modifiers>verypoz=3</modifiers>
+	</node>
+	<node implicit_focus="" focus="website" implicit_context="" explicit_context="13764826_81589824.txt" modality="FALSE" id ="13764826_81589824.txt_1_1">
+		<original_text>i was getting frustrated with the website</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="website" focus="" implicit_context="" explicit_context="13764826_81589824.txt" modality="FALSE" id ="13764826_81589824.txt_5_0">
+		<original_text>i kept getting bounced out</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="website" implicit_context="" explicit_context="13764848_82871346.txt" modality="FALSE" id ="13764848_82871346.txt_1_0">
+		<original_text>every time i do this on your website it says the flight is no longer available this price</original_text>
+		<correct_text>every time i do this on your website it says the flight is no longer available at this price</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="website" implicit_context="" explicit_context="13764899_83105425.txt" modality="FALSE" id ="13764899_83105425.txt_1_0">
+		<original_text>i 'm having trouble with the website</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="website" focus="" implicit_context="" explicit_context="13765042_83667551.txt" modality="FALSE" id ="13765042_83667551.txt_1_0">
+		<original_text>i just tried to book a trip online and it said it to i took too long start over again</original_text>
+		<correct_text>i just tried to book a trip online and it said it took too long start over again</correct_text>
+		<modifiers>a trippoz=5 6;justpoz=1</modifiers>
+	</node>
+	<node implicit_focus="website" focus="" implicit_context="" explicit_context="13765042_83667551.txt" modality="FALSE" id ="13765042_83667551.txt_1_1">
+		<original_text>i just tried to book online and it said it to i took too long start over again</original_text>
+		<correct_text>i just tried to book online and it said it took too long start over again </correct_text>
+		<modifiers>justpoz=1</modifiers>
+	</node>
+	<node implicit_focus="website" focus="" implicit_context="" explicit_context="13765042_83667551.txt" modality="FALSE" id ="13765042_83667551.txt_1_2">
+		<original_text>i tried to book online and it said it to i took too long start over again</original_text>
+		<correct_text>i tried to book online and it said it took too long start over again</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="website" focus="" implicit_context="" explicit_context="13765069_84130827.txt" modality="FALSE" id ="13765069_84130827.txt_1_0">
+		<original_text>they're not showing them is available</original_text>
+		<correct_text>they're not showing them as available</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="website" implicit_context="" explicit_context="13765133_84335771.txt" modality="FALSE" id ="13765133_84335771.txt_3_0">
+		<original_text>i mean have the nothing but trouble with this ridiculous website</original_text>
+		<correct_text>i've been having nothing but trouble with this ridiculous website</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="website" focus="" implicit_context="" explicit_context="13765269_84557628.txt" modality="FALSE" id ="13765269_84557628.txt_1_0">
+		<original_text>it doesn't seem to that they're there anymore</original_text>
+		<correct_text>it doesn't seem that they're there anymore</correct_text>
+		<modifiers>anymorepoz=7</modifiers>
+	</node>
+	<node implicit_focus="website" focus="" implicit_context="" explicit_context="13765269_84557628.txt" modality="FALSE" id ="13765269_84557628.txt_1_1">
+		<original_text>it doesn't seem to that they're there</original_text>
+		<correct_text>it doesn't seem that they're there</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="13764899_83105425.txt_1_0" source="13764637_77233258-2.txt_1_0" id="13764899_83105425.txt_1_0-13764637_77233258-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13764637_77233258-2.txt_2_0" id="13764637_77233258-2.txt_1_0-13764637_77233258-2.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13764637_77233258-2.txt_2_0" id="13764899_83105425.txt_1_0-13764637_77233258-2.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258.txt_1_1" source="13764637_77233258.txt_1_0" id="13764637_77233258.txt_1_1-13764637_77233258.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13764637_77233258.txt_1_1" id="13764899_83105425.txt_1_0-13764637_77233258.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13764743_77605503.txt_1_0" id="13764637_77233258-2.txt_1_0-13764743_77605503.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764826_81589824.txt_1_1" source="13764743_77605503.txt_1_0" id="13764826_81589824.txt_1_1-13764743_77605503.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13764743_77605503.txt_1_0" id="13764899_83105425.txt_1_0-13764743_77605503.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13764800_80670011.txt_1_0" id="13764637_77233258-2.txt_1_0-13764800_80670011.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_2_0" source="13764800_80670011.txt_1_0" id="13764637_77233258-2.txt_2_0-13764800_80670011.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13764800_80670011.txt_1_0" id="13764899_83105425.txt_1_0-13764800_80670011.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764826_81589824.txt_1_1" source="13764826_81589824.txt_1_0" id="13764826_81589824.txt_1_1-13764826_81589824.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13764826_81589824.txt_1_1" id="13764637_77233258-2.txt_1_0-13764826_81589824.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13764826_81589824.txt_1_1" id="13764899_83105425.txt_1_0-13764826_81589824.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13764826_81589824.txt_5_0" id="13764637_77233258-2.txt_1_0-13764826_81589824.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764826_81589824.txt_1_1" source="13764826_81589824.txt_5_0" id="13764826_81589824.txt_1_1-13764826_81589824.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13764826_81589824.txt_5_0" id="13764899_83105425.txt_1_0-13764826_81589824.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13764848_82871346.txt_1_0" id="13764637_77233258-2.txt_1_0-13764848_82871346.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765069_84130827.txt_1_0" source="13764848_82871346.txt_1_0" id="13765069_84130827.txt_1_0-13764848_82871346.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13764848_82871346.txt_1_0" id="13764899_83105425.txt_1_0-13764848_82871346.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13764899_83105425.txt_1_0" id="13764637_77233258-2.txt_1_0-13764899_83105425.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765042_83667551.txt_1_1" source="13765042_83667551.txt_1_0" id="13765042_83667551.txt_1_1-13765042_83667551.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765042_83667551.txt_1_2" source="13765042_83667551.txt_1_0" id="13765042_83667551.txt_1_2-13765042_83667551.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13765042_83667551.txt_1_2" id="13764637_77233258-2.txt_1_0-13765042_83667551.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_2_0" source="13765042_83667551.txt_1_2" id="13764637_77233258-2.txt_2_0-13765042_83667551.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13765042_83667551.txt_1_2" id="13764899_83105425.txt_1_0-13765042_83667551.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13765069_84130827.txt_1_0" id="13764899_83105425.txt_1_0-13765069_84130827.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13765069_84130827.txt_1_0" id="13764637_77233258-2.txt_1_0-13765069_84130827.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258.txt_1_1" source="13765069_84130827.txt_1_0" id="13764637_77233258.txt_1_1-13765069_84130827.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764899_83105425.txt_1_0" source="13765133_84335771.txt_3_0" id="13764899_83105425.txt_1_0-13765133_84335771.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764637_77233258-2.txt_1_0" source="13765133_84335771.txt_3_0" id="13764637_77233258-2.txt_1_0-13765133_84335771.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765269_84557628.txt_1_1" source="13765269_84557628.txt_1_0" id="13765269_84557628.txt_1_1-13765269_84557628.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>
