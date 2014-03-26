@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0170.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0170.txt" implicit_context="" focus="professionalità" implicit_focus="">
+        <original_text>mancanza di professionalità nello stipulare contratti che siete i primi a non rispettare</original_text>
+        <correct_text> </correct_text>
+        <modifiers>che siete i primi a non rispettarepoz=6 7 8 9 10 11 12;nello stipulare contrattipoz=3 4 5</modifiers>
+    </node>
+    <node id="0170.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0170.txt" implicit_context="" focus="professionalità" implicit_focus="">
+        <original_text>mancanza di professionalità nello stipulare contratti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nello stipulare contrattipoz=3 4 5</modifiers>
+    </node>
+    <node id="0170.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0170.txt" implicit_context="" focus="professionalità" implicit_focus="">
+        <original_text>mancanza di professionalità che siete i primi a non rispettare</original_text>
+        <correct_text> </correct_text>
+        <modifiers>che siete i primi a non rispettarepoz=6 7 8 9 10 11 12</modifiers>
+    </node>
+    <node id="0170.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0170.txt" implicit_context="" focus="professionalità" implicit_focus="">
+        <original_text>mancanza di professionalità</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0170.txt_1_0-0170.txt_1_1" source="0170.txt_1_0" target="0170.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0170.txt_1_0-0170.txt_1_1" source="0170.txt_1_0" target="0170.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0170.txt_1_0-0170.txt_1_2" source="0170.txt_1_0" target="0170.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0170.txt_1_0-0170.txt_1_2" source="0170.txt_1_0" target="0170.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0170.txt_1_2-0170.txt_1_3" source="0170.txt_1_2" target="0170.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0170.txt_1_1-0170.txt_1_3" source="0170.txt_1_1" target="0170.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0170.txt_1_1-0170.txt_1_3" source="0170.txt_1_1" target="0170.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0170.txt_1_2-0170.txt_1_3" source="0170.txt_1_2" target="0170.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0170.txt_1_0-0170.txt_1_3" source="0170.txt_1_0" target="0170.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node id="0012.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0012.txt" implicit_context="" focus="TELEFONIAX CONSOLLE 2" implicit_focus="">
+        <original_text>Ho problemi con la TELEFONIAX CONSOLLE 2 . . il mio pc rileva la rete wifi ma non riesco a connettermi pur inserendo la wpa2 corretta</original_text>
+        <correct_text> </correct_text>
+        <modifiers>pur inserendo la wpa2 correttapoz=21 22 23 24 25;problemi conpoz=1 2;il mio pc rileva la rete wifi mapoz=9 10 11 12 13 14 15 16</modifiers>
+    </node>
+    <node id="0012.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0012.txt" implicit_context="" focus="TELEFONIAX CONSOLLE 2" implicit_focus="">
+        <original_text>Ho problemi con la TELEFONIAX CONSOLLE 2 . . il mio pc rileva la rete wifi ma non riesco a connettermi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>problemi conpoz=1 2;il mio pc rileva la rete wifi mapoz=9 10 11 12 13 14 15 16</modifiers>
+    </node>
+    <node id="0012.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0012.txt" implicit_context="" focus="TELEFONIAX CONSOLLE 2" implicit_focus="">
+        <original_text>Ho la TELEFONIAX CONSOLLE 2 . . il mio pc rileva la rete wifi ma non riesco a connettermi pur inserendo la wpa2 corretta</original_text>
+        <correct_text> </correct_text>
+        <modifiers>pur inserendo la wpa2 correttapoz=21 22 23 24 25;il mio pc rileva la rete wifi mapoz=9 10 11 12 13 14 15 16</modifiers>
+    </node>
+    <node id="0012.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0012.txt" implicit_context="" focus="TELEFONIAX CONSOLLE 2" implicit_focus="">
+        <original_text>Ho problemi con la TELEFONIAX CONSOLLE 2 . . non riesco a connettermi pur inserendo la wpa2 corretta</original_text>
+        <correct_text> </correct_text>
+        <modifiers>pur inserendo la wpa2 correttapoz=21 22 23 24 25;problemi conpoz=1 2</modifiers>
+    </node>
+    <node id="0012.txt_1_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0012.txt" implicit_context="" focus="TELEFONIAX CONSOLLE 2" implicit_focus="">
+        <original_text>Ho la TELEFONIAX CONSOLLE 2 . . il mio pc rileva la rete wifi ma non riesco a connettermi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>il mio pc rileva la rete wifi mapoz=9 10 11 12 13 14 15 16</modifiers>
+    </node>
+    <node id="0012.txt_1_5" implicit_statement="FALSE" modality="FALSE" explicit_context="0012.txt" implicit_context="" focus="TELEFONIAX CONSOLLE 2" implicit_focus="">
+        <original_text>Ho problemi con la TELEFONIAX CONSOLLE 2 . . non riesco a connettermi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>problemi conpoz=1 2</modifiers>
+    </node>
+    <node id="0012.txt_1_6" implicit_statement="FALSE" modality="FALSE" explicit_context="0012.txt" implicit_context="" focus="TELEFONIAX CONSOLLE 2" implicit_focus="">
+        <original_text>Ho la TELEFONIAX CONSOLLE 2 . . non riesco a connettermi pur inserendo la wpa2 corretta</original_text>
+        <correct_text> </correct_text>
+        <modifiers>pur inserendo la wpa2 correttapoz=21 22 23 24 25</modifiers>
+    </node>
+    <node id="0012.txt_1_7" implicit_statement="FALSE" modality="FALSE" explicit_context="0012.txt" implicit_context="" focus="TELEFONIAX CONSOLLE 2" implicit_focus="">
+        <original_text>Ho la TELEFONIAX CONSOLLE 2 . . non riesco a connettermi</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0012.txt_1_0-0012.txt_1_1" source="0012.txt_1_0" target="0012.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_1" source="0012.txt_1_0" target="0012.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_2" source="0012.txt_1_0" target="0012.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_2" source="0012.txt_1_0" target="0012.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_3" source="0012.txt_1_0" target="0012.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_3" source="0012.txt_1_0" target="0012.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_2-0012.txt_1_4" source="0012.txt_1_2" target="0012.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_1-0012.txt_1_4" source="0012.txt_1_1" target="0012.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_1-0012.txt_1_4" source="0012.txt_1_1" target="0012.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_2-0012.txt_1_4" source="0012.txt_1_2" target="0012.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_4" source="0012.txt_1_0" target="0012.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_3-0012.txt_1_5" source="0012.txt_1_3" target="0012.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_1-0012.txt_1_5" source="0012.txt_1_1" target="0012.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_1-0012.txt_1_5" source="0012.txt_1_1" target="0012.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_3-0012.txt_1_5" source="0012.txt_1_3" target="0012.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_5" source="0012.txt_1_0" target="0012.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_3-0012.txt_1_6" source="0012.txt_1_3" target="0012.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_2-0012.txt_1_6" source="0012.txt_1_2" target="0012.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_2-0012.txt_1_6" source="0012.txt_1_2" target="0012.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_3-0012.txt_1_6" source="0012.txt_1_3" target="0012.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_6" source="0012.txt_1_0" target="0012.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_6-0012.txt_1_7" source="0012.txt_1_6" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_5-0012.txt_1_7" source="0012.txt_1_5" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_4-0012.txt_1_7" source="0012.txt_1_4" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_4-0012.txt_1_7" source="0012.txt_1_4" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_5-0012.txt_1_7" source="0012.txt_1_5" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_6-0012.txt_1_7" source="0012.txt_1_6" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_2-0012.txt_1_7" source="0012.txt_1_2" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_3-0012.txt_1_7" source="0012.txt_1_3" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_0-0012.txt_1_7" source="0012.txt_1_0" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0012.txt_1_1-0012.txt_1_7" source="0012.txt_1_1" target="0012.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

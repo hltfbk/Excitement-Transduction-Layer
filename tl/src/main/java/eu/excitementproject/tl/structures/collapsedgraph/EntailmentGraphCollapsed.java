@@ -704,9 +704,9 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
                         	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
                         		continue; // if it's a closure edge already - skip
                         	}
-                        	else { // if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
-                        		confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type 
-                        	}
+                        	
+                        	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
+                        	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type                         	
                         }
                         
                         newEdgeTargets.put(v3,confidence);
@@ -728,9 +728,9 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
         }
 	}
 	
-    /**
+ /*   *//**
 	 *  Removes all transitive closure edges from the graph.
-	 */
+	 *//*
 	public void removeTransitiveClosure(){    
 		Set<EntailmentRelationCollapsed> edgesToRemove = new HashSet<EntailmentRelationCollapsed>();
 
@@ -760,6 +760,14 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
                 this.removeAllEdges(edgesToRemove);
             }
         }
+	}*/
+	
+	public void removeTransitiveClosure(){   
+		Set<EntailmentRelationCollapsed> edgesToRemove = new HashSet<EntailmentRelationCollapsed>();
+		for(EntailmentRelationCollapsed e : this.edgeSet()){
+			if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) edgesToRemove.add(e); 
+		}
+		removeAllEdges(edgesToRemove);
 	}
 	
 	/******************************************************************************************

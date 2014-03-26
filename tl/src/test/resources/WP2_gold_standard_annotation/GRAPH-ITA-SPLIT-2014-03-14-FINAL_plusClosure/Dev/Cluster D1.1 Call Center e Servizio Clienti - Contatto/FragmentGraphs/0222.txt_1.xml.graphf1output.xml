@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0222.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0222.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>15 minuti di attesa e ancora non risponde nessuno</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=5;15 minuti di attesapoz=0 1 2 3</modifiers>
+    </node>
+    <node id="0222.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0222.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>15 minuti di attesa e non risponde nessuno</original_text>
+        <correct_text> </correct_text>
+        <modifiers>15 minuti di attesapoz=0 1 2 3</modifiers>
+    </node>
+    <node id="0222.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0222.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>e ancora non risponde nessuno</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=5</modifiers>
+    </node>
+    <node id="0222.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0222.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>e non risponde nessuno</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0222.txt_1_0-0222.txt_1_1" source="0222.txt_1_0" target="0222.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0222.txt_1_0-0222.txt_1_1" source="0222.txt_1_0" target="0222.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0222.txt_1_0-0222.txt_1_2" source="0222.txt_1_0" target="0222.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0222.txt_1_0-0222.txt_1_2" source="0222.txt_1_0" target="0222.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0222.txt_1_2-0222.txt_1_3" source="0222.txt_1_2" target="0222.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0222.txt_1_1-0222.txt_1_3" source="0222.txt_1_1" target="0222.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0222.txt_1_1-0222.txt_1_3" source="0222.txt_1_1" target="0222.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0222.txt_1_2-0222.txt_1_3" source="0222.txt_1_2" target="0222.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0222.txt_1_0-0222.txt_1_3" source="0222.txt_1_0" target="0222.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

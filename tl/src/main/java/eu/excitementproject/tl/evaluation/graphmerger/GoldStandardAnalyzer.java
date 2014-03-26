@@ -90,9 +90,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 		}
 	}
 	
-	public static void getStatistics() {
-		//String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test";
-		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
+	public static void getStatistics(String gsAnnotationsDir) {
 		String resSting ="Cluster"+"\t"+"origRawNodes"+"\t"+"origRawEdges"+"\t"+"noClosureRawEdges"+"\t"+"withClosureRawEdges"+"\t"+"origCollapsedNodes"+"\t"+"origCollapsedEdges"+"\t"+"noClosureRawEdges"+"\t"+"withClosureRawEdges"+"\n";
 		File gsDir = new File(gsAnnotationsDir);
 		for(String s: gsDir.list()){
@@ -113,7 +111,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_raw.xml");
 
 					
-					r.removeTransitiveClosure();
+/*					r.removeTransitiveClosure();
 					System.out.print("Raw graph -MinusClosure.\nNumber of edges: ");
 					int noClosureRawEdges = r.edgeSet().size();
 					System.out.println(noClosureRawEdges);
@@ -122,7 +120,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					System.out.println(noClosureRawNodes);
 					r.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawNoClosure.dot.txt");
 					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawNoClosure.xml");
-
+*/
 					
 					r.applyTransitiveClosure(false);
 					System.out.print("Raw graph+Closure.\nNumber of edges: ");
@@ -144,7 +142,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.xml");
 					
-					c.removeTransitiveClosure();
+	/*				c.removeTransitiveClosure();
 					System.out.print("Collapsed graph -MinusClosure.\nNumber of edges: ");
 					int noClosureCollapsedEdges = c.edgeSet().size(); 
 					System.out.println(noClosureCollapsedEdges);
@@ -153,7 +151,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					System.out.println(noClosureCollapsedNodes);
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedNoClosure.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedNoClosure.xml");
-
+*/
 					
 					c.applyTransitiveClosure(true);
 					System.out.print("Collapsed graph + closure.\nNumber of edges: ");
@@ -165,7 +163,8 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.xml");
 					
-					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+String.valueOf(noClosureRawEdges)+"\t"+String.valueOf(withClosureRawEdges)+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+String.valueOf(noClosureCollapsedEdges)+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
+					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+"NA"+"\t"+String.valueOf(withClosureRawEdges)+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+"NA"+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
+//					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+String.valueOf(noClosureRawEdges)+"\t"+String.valueOf(withClosureRawEdges)+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+String.valueOf(noClosureCollapsedEdges)+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
 	//				resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+"---"+"\t"+"---"+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+String.valueOf(noClosureCollapsedEdges)+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
 				} catch (GraphEvaluatorException | GraphOptimizerException | IOException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
 

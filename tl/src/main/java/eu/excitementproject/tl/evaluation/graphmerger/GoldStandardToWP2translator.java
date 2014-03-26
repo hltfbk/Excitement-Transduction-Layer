@@ -28,6 +28,8 @@ public class GoldStandardToWP2translator {
 		String s="";
 		String targetText = edge.getTarget().getText();
 		String sourceText = edge.getSource().getText();
+		System.out.print("Edge: "+edge.toString()+"\t");
+		int i=0;
 		for (String tgtId : textToIdsMap.get(targetText)){
 			for (String srcId: textToIdsMap.get(sourceText)){
 				s += "\t<edge target=\""+tgtId+"\" source=\""+srcId+"\" id=\""+tgtId+"-"+srcId+"\">\n";
@@ -35,8 +37,10 @@ public class GoldStandardToWP2translator {
 				if (edge.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) s+= "\t\t<entailment type=\"clousure\">yes</entailment>\n";
 				else s+= "\t\t<entailment type=\"direct\">yes</entailment>\n";
 				s+="\t</edge>\n";
+				i++;
 			}
-		}				
+		}			
+		System.out.println(String.valueOf(i)+"\twp2 edges.");
 		return s;
 	}
 	
@@ -88,9 +92,7 @@ public class GoldStandardToWP2translator {
 		}
 	}
 	
-	public static void createWP2Data(){
-		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
-		//String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
+	public static void createWP2Data(String gsAnnotationsDir){
 		File gsDir = new File(gsAnnotationsDir);
 		for(String clusterAnnotationDir: gsDir.list()){
 			try {
@@ -127,8 +129,10 @@ public class GoldStandardToWP2translator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-			
-		createWP2Data();
+		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test";
+	//	String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
+
+		createWP2Data(gsAnnotationsDir);
 		
 	}
 

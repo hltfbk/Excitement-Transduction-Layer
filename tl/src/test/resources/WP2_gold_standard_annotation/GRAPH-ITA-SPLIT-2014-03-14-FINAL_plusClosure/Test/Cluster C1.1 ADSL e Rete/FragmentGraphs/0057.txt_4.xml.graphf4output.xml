@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="0057.txt_4_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0057.txt" implicit_context="" focus="adsl" implicit_focus="">
+        <original_text>non riescono ancora a risolvermi i problemi con adsl</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ancorapoz=2</modifiers>
+    </node>
+    <node id="0057.txt_4_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0057.txt" implicit_context="" focus="adsl" implicit_focus="">
+        <original_text>non riescono a risolvermi i problemi con adsl</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0057.txt_4_0-0057.txt_4_1" source="0057.txt_4_0" target="0057.txt_4_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0057.txt_4_0-0057.txt_4_1" source="0057.txt_4_0" target="0057.txt_4_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
