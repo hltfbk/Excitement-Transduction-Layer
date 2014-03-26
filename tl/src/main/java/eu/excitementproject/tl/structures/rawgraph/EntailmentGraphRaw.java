@@ -717,15 +717,14 @@ public class EntailmentGraphRaw extends
                         EntailmentRelation e = this.getEdge(v1, v3);
                         if (e != null) {
                             // There is already an edge from v1 ---> v3
-                        	if (!changeTypeOfExistingEdges) continue; 
-
+                        	if (!changeTypeOfExistingEdges)	continue; 
                         	
                         	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
                         		continue; // if it's a closure edge already - skip
                         	}
-                        	else { // if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
-                        		confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type 
-                        	}
+ 
+                        	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
+                        	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type 
                         }
                         
                         newEdgeTargets.put(v3,confidence);
@@ -752,7 +751,7 @@ public class EntailmentGraphRaw extends
 	 *  Removes all transitive closure edges from the graph.
 	 *  Expected use - for internal testing purposes only
 	 */
-	public void removeTransitiveClosure(){    
+/*	public void removeTransitiveClosure(){    
 		Set<EntailmentRelation> edgesToRemove = new HashSet<EntailmentRelation>();
 
         // At every iteration of the outer loop, we find if there is a path of length 1
@@ -781,7 +780,7 @@ public class EntailmentGraphRaw extends
                 this.removeAllEdges(edgesToRemove);
             }
         }
-	}
+	}*/
 	
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
