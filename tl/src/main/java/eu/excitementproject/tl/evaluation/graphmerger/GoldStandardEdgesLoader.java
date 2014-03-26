@@ -14,7 +14,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -37,6 +36,9 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidenc
  *
  */
 public class GoldStandardEdgesLoader {
+	
+	private static final String DIRECT_EDGE_TYPE_STRING = "direct";
+	private static final String CLOSURE_EDGE_TYPE_STRING = "clousure";
 	
 	Map<String,EntailmentRelation> edges;
 	Map<String,String> nodeTextById;
@@ -239,19 +241,20 @@ public class GoldStandardEdgesLoader {
 							continue;
 						}
 						
-						boolean isDirect = false;
+						EdgeType type = EdgeType.MANUAL_ANNOTATION;
 						NodeList features = erElement.getChildNodes();
 						for (int i =0; i<features.getLength(); i++){
 							if (features.item(i).getNodeName().equals("entailment")){
 								Element erEntailment = (Element) features.item(i);
-								isDirect = erEntailment.getAttribute("type").equals("direct");
+								if(erEntailment.getAttribute("type").equals(DIRECT_EDGE_TYPE_STRING)) type = EdgeType.DIRECT;
+								else if(erEntailment.getAttribute("type").equals(CLOSURE_EDGE_TYPE_STRING)) type = EdgeType.TRANSITIVE_CLOSURE;
 							}								
 						}
 
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
 						if (sourceUnit.isTextIncludedOrRelevant(nodeTextById.get(tgt))) continue; // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
-						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, isDirect);
+						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, type);
 						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
 					}
 				} catch (ParserConfigurationException | SAXException | IOException e) {
@@ -299,10 +302,7 @@ public class GoldStandardEdgesLoader {
 		return new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), EdgeType.MANUAL_ANNOTATION);
 	}
 	
-	protected EntailmentRelation getGoldStandardEdge(EntailmentUnit sourceUnit, EntailmentUnit targetUnit, boolean isDirect){
-		EdgeType type;
-		if (isDirect) type = EdgeType.DIRECT;
-		else type = EdgeType.TRANSITIVE_CLOSURE;
+	protected EntailmentRelation getGoldStandardEdge(EntailmentUnit sourceUnit, EntailmentUnit targetUnit, EdgeType type){
 		return new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), type);
 	}
 
