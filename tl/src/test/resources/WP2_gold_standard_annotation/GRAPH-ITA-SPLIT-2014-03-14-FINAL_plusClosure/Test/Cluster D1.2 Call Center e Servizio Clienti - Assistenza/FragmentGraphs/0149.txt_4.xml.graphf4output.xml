@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="0149.txt_4_0" implicit_statement="TRUE" modality="FALSE" explicit_context="0149.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
-        <original_text>che definire incompetente suonerebbe come un complimento</original_text>
-        <correct_text> </correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="Speech3.2.012.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech3.2.012.txt" implicit_context="" focus="promozioni" implicit_focus="">
-        <original_text>Le vostre promozioni costano troppo rispetto agli altri operatori</original_text>
-        <correct_text> </correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

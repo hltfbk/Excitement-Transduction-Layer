@@ -1,1 +1,0 @@
-Allow fully flexible economy tickets or allow different classes to be combined on the same booking. E.g. Non-flexible economy outbound and business return

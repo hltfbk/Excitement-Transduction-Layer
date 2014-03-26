@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="Speech3.2.018.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech3.2.018.txt" implicit_context="" focus="connessione" implicit_focus="">
-        <original_text>la connessione non e ’ disponibile</original_text>
-        <correct_text> </correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

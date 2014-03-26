@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="0164.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0164.txt" implicit_context="" focus="TELEFONIAX HOME" implicit_focus="">
-        <original_text>TELEFONIAX HOME e lenta</original_text>
-        <correct_text>TelefoniaX Home è lenta</correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

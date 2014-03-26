@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="Speech5.3.007.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech5.3.007.txt" implicit_context="" focus="promozione" implicit_focus="">
-        <original_text>la promozione non mi e ’ stata attivata</original_text>
-        <correct_text> </correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>
