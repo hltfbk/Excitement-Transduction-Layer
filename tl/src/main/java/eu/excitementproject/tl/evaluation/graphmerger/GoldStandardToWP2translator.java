@@ -28,6 +28,8 @@ public class GoldStandardToWP2translator {
 		String s="";
 		String targetText = edge.getTarget().getText();
 		String sourceText = edge.getSource().getText();
+		System.out.println("The edge: "+edge.toString());
+		int i=0;
 		for (String tgtId : textToIdsMap.get(targetText)){
 			for (String srcId: textToIdsMap.get(sourceText)){
 				s += "\t<edge target=\""+tgtId+"\" source=\""+srcId+"\" id=\""+tgtId+"-"+srcId+"\">\n";
@@ -35,8 +37,10 @@ public class GoldStandardToWP2translator {
 				if (edge.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) s+= "\t\t<entailment type=\"clousure\">yes</entailment>\n";
 				else s+= "\t\t<entailment type=\"direct\">yes</entailment>\n";
 				s+="\t</edge>\n";
+				i++;
 			}
-		}				
+		}			
+		System.out.println("\t was translated into "+String.valueOf(i)+" wp2 edges.\n");
 		return s;
 	}
 	
