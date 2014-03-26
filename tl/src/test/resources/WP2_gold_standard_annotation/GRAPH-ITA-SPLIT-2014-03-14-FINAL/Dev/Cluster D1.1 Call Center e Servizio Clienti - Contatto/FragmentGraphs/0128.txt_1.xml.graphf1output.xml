@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node id="0128.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0128.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>sono arrivata all'opzione dell'operatore , ma ovviamente dopo dieci minuti di attesa nessuno si è fatto vivo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>dopo dieci minuti di attesapoz=7 8 9 10 11;ovviamentepoz=6;sono arrivata all'opzione dell'operatore , mapoz=0 1 2 3 4 5</modifiers>
+    </node>
+    <node id="0128.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0128.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>sono arrivata all'opzione dell'operatore , ma ovviamente nessuno si è fatto vivo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ovviamentepoz=6;sono arrivata all'opzione dell'operatore , mapoz=0 1 2 3 4 5</modifiers>
+    </node>
+    <node id="0128.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0128.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>sono arrivata all'opzione dell'operatore , ma dopo dieci minuti di attesa nessuno si è fatto vivo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>dopo dieci minuti di attesapoz=7 8 9 10 11;sono arrivata all'opzione dell'operatore , mapoz=0 1 2 3 4 5</modifiers>
+    </node>
+    <node id="0128.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0128.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>ovviamente dopo dieci minuti di attesa nessuno si è fatto vivo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>dopo dieci minuti di attesapoz=7 8 9 10 11;ovviamentepoz=6</modifiers>
+    </node>
+    <node id="0128.txt_1_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0128.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>sono arrivata all'opzione dell'operatore , ma nessuno si è fatto vivo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>sono arrivata all'opzione dell'operatore , mapoz=0 1 2 3 4 5</modifiers>
+    </node>
+    <node id="0128.txt_1_5" implicit_statement="FALSE" modality="FALSE" explicit_context="0128.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>ovviamente nessuno si è fatto vivo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ovviamentepoz=6</modifiers>
+    </node>
+    <node id="0128.txt_1_6" implicit_statement="FALSE" modality="FALSE" explicit_context="0128.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>dopo dieci minuti di attesa nessuno si è fatto vivo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>dopo dieci minuti di attesapoz=7 8 9 10 11</modifiers>
+    </node>
+    <node id="0128.txt_1_7" implicit_statement="FALSE" modality="FALSE" explicit_context="0128.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>nessuno si è fatto vivo</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0128.txt_1_0-0128.txt_1_1" source="0128.txt_1_0" target="0128.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_1" source="0128.txt_1_0" target="0128.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_2" source="0128.txt_1_0" target="0128.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_2" source="0128.txt_1_0" target="0128.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_3" source="0128.txt_1_0" target="0128.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_3" source="0128.txt_1_0" target="0128.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_2-0128.txt_1_4" source="0128.txt_1_2" target="0128.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_1-0128.txt_1_4" source="0128.txt_1_1" target="0128.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_1-0128.txt_1_4" source="0128.txt_1_1" target="0128.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_2-0128.txt_1_4" source="0128.txt_1_2" target="0128.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_4" source="0128.txt_1_0" target="0128.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_3-0128.txt_1_5" source="0128.txt_1_3" target="0128.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_1-0128.txt_1_5" source="0128.txt_1_1" target="0128.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_1-0128.txt_1_5" source="0128.txt_1_1" target="0128.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_3-0128.txt_1_5" source="0128.txt_1_3" target="0128.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_5" source="0128.txt_1_0" target="0128.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_3-0128.txt_1_6" source="0128.txt_1_3" target="0128.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_2-0128.txt_1_6" source="0128.txt_1_2" target="0128.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_2-0128.txt_1_6" source="0128.txt_1_2" target="0128.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_3-0128.txt_1_6" source="0128.txt_1_3" target="0128.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_6" source="0128.txt_1_0" target="0128.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_6-0128.txt_1_7" source="0128.txt_1_6" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_5-0128.txt_1_7" source="0128.txt_1_5" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_4-0128.txt_1_7" source="0128.txt_1_4" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_4-0128.txt_1_7" source="0128.txt_1_4" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_5-0128.txt_1_7" source="0128.txt_1_5" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_6-0128.txt_1_7" source="0128.txt_1_6" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_2-0128.txt_1_7" source="0128.txt_1_2" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_3-0128.txt_1_7" source="0128.txt_1_3" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_0-0128.txt_1_7" source="0128.txt_1_0" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0128.txt_1_1-0128.txt_1_7" source="0128.txt_1_1" target="0128.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="Speech3.1.006.txt_1_0" implicit_statement="TRUE" modality="FALSE" explicit_context="Speech3.1.006.txt" implicit_context="" focus="rimborsa" implicit_focus="">
+        <original_text>chi mi rimborsa dei soldi spesi inutilmente</original_text>
+        <correct_text> </correct_text>
+        <modifiers>inutilmentepoz=6</modifiers>
+    </node>
+    <node id="Speech3.1.006.txt_1_1" implicit_statement="TRUE" modality="FALSE" explicit_context="Speech3.1.006.txt" implicit_context="" focus="rimborsa" implicit_focus="">
+        <original_text>chi mi rimborsa dei soldi spesi</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="Speech3.1.006.txt_1_0-Speech3.1.006.txt_1_1" source="Speech3.1.006.txt_1_0" target="Speech3.1.006.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech3.1.006.txt_1_0-Speech3.1.006.txt_1_1" source="Speech3.1.006.txt_1_0" target="Speech3.1.006.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

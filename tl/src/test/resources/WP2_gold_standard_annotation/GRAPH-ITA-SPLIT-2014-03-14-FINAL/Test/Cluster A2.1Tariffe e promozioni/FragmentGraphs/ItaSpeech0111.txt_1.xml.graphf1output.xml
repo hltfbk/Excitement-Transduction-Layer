@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="ItaSpeech0111.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="ItaSpeech0111.txt" implicit_context="" focus="promozione" implicit_focus="">
+        <original_text>la promozione si trasformerà in un'altra ma io non voglio</original_text>
+        <correct_text> </correct_text>
+        <modifiers>iopoz=7;in un'altrapoz=4 5</modifiers>
+    </node>
+    <node id="ItaSpeech0111.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="ItaSpeech0111.txt" implicit_context="" focus="promozione" implicit_focus="">
+        <original_text>la promozione si trasformerà in un'altra ma non voglio</original_text>
+        <correct_text> </correct_text>
+        <modifiers>in un'altrapoz=4 5</modifiers>
+    </node>
+    <node id="ItaSpeech0111.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="ItaSpeech0111.txt" implicit_context="" focus="promozione" implicit_focus="">
+        <original_text>la promozione si trasformerà ma io non voglio</original_text>
+        <correct_text> </correct_text>
+        <modifiers>iopoz=7</modifiers>
+    </node>
+    <node id="ItaSpeech0111.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="ItaSpeech0111.txt" implicit_context="" focus="promozione" implicit_focus="">
+        <original_text>la promozione si trasformerà ma non voglio</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="ItaSpeech0111.txt_1_0-ItaSpeech0111.txt_1_1" source="ItaSpeech0111.txt_1_0" target="ItaSpeech0111.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0111.txt_1_0-ItaSpeech0111.txt_1_1" source="ItaSpeech0111.txt_1_0" target="ItaSpeech0111.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0111.txt_1_0-ItaSpeech0111.txt_1_2" source="ItaSpeech0111.txt_1_0" target="ItaSpeech0111.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0111.txt_1_0-ItaSpeech0111.txt_1_2" source="ItaSpeech0111.txt_1_0" target="ItaSpeech0111.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0111.txt_1_2-ItaSpeech0111.txt_1_3" source="ItaSpeech0111.txt_1_2" target="ItaSpeech0111.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0111.txt_1_1-ItaSpeech0111.txt_1_3" source="ItaSpeech0111.txt_1_1" target="ItaSpeech0111.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0111.txt_1_1-ItaSpeech0111.txt_1_3" source="ItaSpeech0111.txt_1_1" target="ItaSpeech0111.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0111.txt_1_2-ItaSpeech0111.txt_1_3" source="ItaSpeech0111.txt_1_2" target="ItaSpeech0111.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0111.txt_1_0-ItaSpeech0111.txt_1_3" source="ItaSpeech0111.txt_1_0" target="ItaSpeech0111.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node id="0305.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0305.txt" implicit_context="" focus="dell'attivazione" implicit_focus="">
+        <original_text>A casa mia siamo senza telefono da due mesi in attesa dell'attivazione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>A casa miapoz=0 1 2;da due mesipoz=6 7 8;senza telefonopoz=4 5</modifiers>
+    </node>
+    <node id="0305.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0305.txt" implicit_context="" focus="dell'attivazione" implicit_focus="">
+        <original_text>siamo senza telefono da due mesi in attesa dell'attivazione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da due mesipoz=6 7 8;senza telefonopoz=4 5</modifiers>
+    </node>
+    <node id="0305.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0305.txt" implicit_context="" focus="dell'attivazione" implicit_focus="">
+        <original_text>A casa mia siamo senza telefono in attesa dell'attivazione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>A casa miapoz=0 1 2;senza telefonopoz=4 5</modifiers>
+    </node>
+    <node id="0305.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0305.txt" implicit_context="" focus="dell'attivazione" implicit_focus="">
+        <original_text>A casa mia siamo da due mesi in attesa dell'attivazione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>A casa miapoz=0 1 2;da due mesipoz=6 7 8</modifiers>
+    </node>
+    <node id="0305.txt_1_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0305.txt" implicit_context="" focus="dell'attivazione" implicit_focus="">
+        <original_text>siamo senza telefono in attesa dell'attivazione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>senza telefonopoz=4 5</modifiers>
+    </node>
+    <node id="0305.txt_1_5" implicit_statement="FALSE" modality="FALSE" explicit_context="0305.txt" implicit_context="" focus="dell'attivazione" implicit_focus="">
+        <original_text>siamo da due mesi in attesa dell'attivazione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da due mesipoz=6 7 8</modifiers>
+    </node>
+    <node id="0305.txt_1_6" implicit_statement="FALSE" modality="FALSE" explicit_context="0305.txt" implicit_context="" focus="dell'attivazione" implicit_focus="">
+        <original_text>A casa mia siamo in attesa dell'attivazione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>A casa miapoz=0 1 2</modifiers>
+    </node>
+    <node id="0305.txt_1_7" implicit_statement="FALSE" modality="FALSE" explicit_context="0305.txt" implicit_context="" focus="dell'attivazione" implicit_focus="">
+        <original_text>siamo in attesa dell'attivazione</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0305.txt_1_0-0305.txt_1_1" source="0305.txt_1_0" target="0305.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_1" source="0305.txt_1_0" target="0305.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_2" source="0305.txt_1_0" target="0305.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_2" source="0305.txt_1_0" target="0305.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_3" source="0305.txt_1_0" target="0305.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_3" source="0305.txt_1_0" target="0305.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_2-0305.txt_1_4" source="0305.txt_1_2" target="0305.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_1-0305.txt_1_4" source="0305.txt_1_1" target="0305.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_1-0305.txt_1_4" source="0305.txt_1_1" target="0305.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_2-0305.txt_1_4" source="0305.txt_1_2" target="0305.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_4" source="0305.txt_1_0" target="0305.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_3-0305.txt_1_5" source="0305.txt_1_3" target="0305.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_1-0305.txt_1_5" source="0305.txt_1_1" target="0305.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_1-0305.txt_1_5" source="0305.txt_1_1" target="0305.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_3-0305.txt_1_5" source="0305.txt_1_3" target="0305.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_5" source="0305.txt_1_0" target="0305.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_3-0305.txt_1_6" source="0305.txt_1_3" target="0305.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_2-0305.txt_1_6" source="0305.txt_1_2" target="0305.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_2-0305.txt_1_6" source="0305.txt_1_2" target="0305.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_3-0305.txt_1_6" source="0305.txt_1_3" target="0305.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_6" source="0305.txt_1_0" target="0305.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_6-0305.txt_1_7" source="0305.txt_1_6" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_5-0305.txt_1_7" source="0305.txt_1_5" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_4-0305.txt_1_7" source="0305.txt_1_4" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_4-0305.txt_1_7" source="0305.txt_1_4" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_5-0305.txt_1_7" source="0305.txt_1_5" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_6-0305.txt_1_7" source="0305.txt_1_6" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_2-0305.txt_1_7" source="0305.txt_1_2" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_3-0305.txt_1_7" source="0305.txt_1_3" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_0-0305.txt_1_7" source="0305.txt_1_0" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0305.txt_1_1-0305.txt_1_7" source="0305.txt_1_1" target="0305.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -37,8 +37,18 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidenc
  */
 public class GoldStandardEdgesLoader {
 	
+	private static final String DIRECT_EDGE_TYPE_STRING = "direct";
+	private static final String CLOSURE_EDGE_TYPE_STRING = "clousure";
+	
 	Map<String,EntailmentRelation> edges;
 	Map<String,String> nodeTextById;
+	/**
+	 * @return the nodeTextById
+	 */
+	public Map<String, String> getNodeTextById() {
+		return nodeTextById;
+	}
+
 	Set<String> nodesOfInterest;
 	
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader");
@@ -66,7 +76,12 @@ public class GoldStandardEdgesLoader {
 		return new HashSet<EntailmentRelation>(edges.values());
 	}
 
-	public void addAllAnnotations(String annotationsFolder) throws GraphEvaluatorException{
+	/**
+	 * @param annotationsFolder
+	 * @param loadFragmentGraphs - set =true to verify FGs are consistent with the merged xml (or in case merge xml does not include all the FGs) 
+	 * @throws GraphEvaluatorException
+	 */
+	public void loadAllAnnotations(String annotationsFolder, boolean loadFragmentGraphs) throws GraphEvaluatorException{
 		File mainAnnotationsDir = new File(annotationsFolder);
 		if (mainAnnotationsDir.isDirectory()){
 			logger.debug("Loading GS annotations from folder "+annotationsFolder);			
@@ -74,46 +89,107 @@ public class GoldStandardEdgesLoader {
 				// get sub-directories
 				File clusterAnnotationDir = new File(mainAnnotationsDir+"/"+object);
 				if (clusterAnnotationDir.isDirectory()){
-					// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
-					// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
-					File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
-					if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-						logger.debug("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
-						int fgid=1;
-						for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+					
+					if (loadFragmentGraphs){
+						// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
+						// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
+						File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+						if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+							logger.debug("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+							int fgid=1;
+							for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+								if (annotationFile.getName().endsWith(".xml")){
+									logger.debug("Fragment graph # "+fgid);
+	/*								try {
+										ClusterStatistics.processCluster(annotationFile);
+									} catch (ParserConfigurationException | SAXException | IOException e) {							
+										e.printStackTrace();
+									}
+	*/								addAnnotationsFromFile(annotationFile.getPath());
+									fgid++;
+								}
+							}							
+						}
+						else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");						
+					}
+
+					// now load merge-graph annotations	
+					// each sub-directory should contain a folder called "FinalMergedGraph" with a single xml file with annotations
+					File clusterAnnotationMergedGraphDir = new File (clusterAnnotationDir+"/"+"FinalMergedGraph");
+					if (clusterAnnotationMergedGraphDir.isDirectory()){
+						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
 							if (annotationFile.getName().endsWith(".xml")){
-								logger.debug("Fragment graph # "+fgid);
-/*								try {
+								logger.debug(">>>>Loading merge annotations from file "+annotationFile);
+								addAnnotationsFromFile(annotationFile.getPath());
+	/*							try {
 									ClusterStatistics.processCluster(annotationFile);
 								} catch (ParserConfigurationException | SAXException | IOException e) {							
 									e.printStackTrace();
 								}
-*/								addAnnotationsFromFile(annotationFile.getPath());
-								fgid++;
-							}
-						}							
+	*/						}
+						}	
 					}
-					else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");
-
-					// now load merge-graph annotations	
-					// each sub-directory should contain a single xml file with annotations
-					for (File annotationFile : clusterAnnotationDir.listFiles()){
-						if (annotationFile.getName().endsWith(".xml")){
-							logger.debug("Loading annotations from file "+annotationFile);
-							addAnnotationsFromFile(annotationFile.getPath());
-/*							try {
-								ClusterStatistics.processCluster(annotationFile);
-							} catch (ParserConfigurationException | SAXException | IOException e) {							
-								e.printStackTrace();
-							}
-*/						}
-					}									
 				}
 			}
 		}
 		else throw new GraphEvaluatorException("Invalid directory with gold-standard annotations in given: " + annotationsFolder);
 	}
 		
+
+	/**
+	 * @param annotationsFolder
+	 * @param loadFragmentGraphs - set =true to verify FGs are consistent with the merged xml (or in case merge xml does not include all the FGs)
+	 * @throws GraphEvaluatorException
+	 */
+	public void loadClusterAnnotations(String annotationsFolder, boolean loadFragmentGraphs) throws GraphEvaluatorException{
+		File clusterAnnotationDir = new File(annotationsFolder);
+		if (clusterAnnotationDir.isDirectory()){
+			
+			if (loadFragmentGraphs){
+				// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
+				// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
+				File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+				if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+					logger.info("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+					int fgid=1;
+					for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+						if (annotationFile.getName().endsWith(".xml")){
+							logger.debug("Fragment graph # "+fgid);
+	/*								try {
+										ClusterStatistics.processCluster(annotationFile);
+									} catch (ParserConfigurationException | SAXException | IOException e) {							
+										e.printStackTrace();
+									}
+	*/								addAnnotationsFromFile(annotationFile.getPath());
+							fgid++;
+						}
+					}							
+				}
+				else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");				
+			}
+
+			// now load merge-graph annotations	
+			// clusterAnnotationDir should contain a folder called "FinalMergedGraph" with a single xml file with annotations
+			File clusterAnnotationMergedGraphDir = new File (clusterAnnotationDir+"/"+"FinalMergedGraph");
+			if (clusterAnnotationMergedGraphDir.isDirectory()){
+				for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
+					if (annotationFile.getName().endsWith(".xml")){
+					logger.info("Loading merge annotations from file "+annotationFile);
+					addAnnotationsFromFile(annotationFile.getPath());
+/*							try {
+								ClusterStatistics.processCluster(annotationFile);
+							} catch (ParserConfigurationException | SAXException | IOException e) {							
+								e.printStackTrace();
+							}
+*/						}
+				}
+			}									
+		}
+		else throw new GraphEvaluatorException("Invalid directory with gold-standard annotations in given: " + annotationsFolder);
+	}
+	
+	
+	
 	public void addAnnotationsFromFile(String xmlAnnotationFilename) throws GraphEvaluatorException{		
 		// read all the nodes from xml annotation file and add them to the index 
 	   		try {
@@ -165,12 +241,21 @@ public class GoldStandardEdgesLoader {
 							continue;
 						}
 						
+						EdgeType type = EdgeType.MANUAL_ANNOTATION;
+						NodeList features = erElement.getChildNodes();
+						for (int i =0; i<features.getLength(); i++){
+							if (features.item(i).getNodeName().equals("entailment")){
+								Element erEntailment = (Element) features.item(i);
+								if(erEntailment.getAttribute("type").equals(DIRECT_EDGE_TYPE_STRING)) type = EdgeType.DIRECT;
+								else if(erEntailment.getAttribute("type").equals(CLOSURE_EDGE_TYPE_STRING)) type = EdgeType.TRANSITIVE_CLOSURE;
+							}								
+						}
 
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
 						if (sourceUnit.isTextIncludedOrRelevant(nodeTextById.get(tgt))) continue; // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
-						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit);
-						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instaed of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
+						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, type);
+						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
 					}
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());
@@ -198,7 +283,7 @@ public class GoldStandardEdgesLoader {
 			g.addVertex(getGoldStandardNode(v)); // the EUs should be the same as created when adding edges to the "edges" attribute of the class 
 		}
 		for (EntailmentRelation e : edges.values()){
-			g.addEdgeByInduction(e.getSource(), e.getTarget(), DecisionLabel.Entailment, 1.0);
+			g.addEdge(e.getSource(), e.getTarget(), e);
 		}
 		return g;
 	}
@@ -217,6 +302,10 @@ public class GoldStandardEdgesLoader {
 		return new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), EdgeType.MANUAL_ANNOTATION);
 	}
 	
+	protected EntailmentRelation getGoldStandardEdge(EntailmentUnit sourceUnit, EntailmentUnit targetUnit, EdgeType type){
+		return new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment), type);
+	}
+
 	public Set<String> getNodes(){
 		return new HashSet<String>(nodeTextById.values());
 	}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="Speech3.1.006.txt_3_0" implicit_statement="FALSE" modality="TRUE" explicit_context="Speech3.1.006.txt" implicit_context="" focus="disattivare" implicit_focus="">
+        <original_text>Dal sito non riesco disattivare l'internet mobile</original_text>
+        <correct_text>Dal sito non riesco a disattivare l'internet mobile</correct_text>
+        <modifiers>Dal sitopoz=0 1</modifiers>
+    </node>
+    <node id="Speech3.1.006.txt_3_1" implicit_statement="FALSE" modality="TRUE" explicit_context="Speech3.1.006.txt" implicit_context="" focus="disattivare" implicit_focus="">
+        <original_text>non riesco disattivare l'internet mobile</original_text>
+        <correct_text>non riesco a disattivare l'internet mobile</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="Speech3.1.006.txt_3_0-Speech3.1.006.txt_3_1" source="Speech3.1.006.txt_3_0" target="Speech3.1.006.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech3.1.006.txt_3_0-Speech3.1.006.txt_3_1" source="Speech3.1.006.txt_3_0" target="Speech3.1.006.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

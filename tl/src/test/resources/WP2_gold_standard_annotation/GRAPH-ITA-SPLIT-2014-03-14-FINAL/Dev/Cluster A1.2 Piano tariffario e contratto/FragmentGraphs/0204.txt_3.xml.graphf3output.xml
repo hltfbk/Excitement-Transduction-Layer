@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="0204.txt_3_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0204.txt" implicit_context="" focus="canoni" implicit_focus="">
+        <original_text>Mi hanno addebitato 3 canoni per il dispositivo mobile</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per il dispositivo mobilepoz=5 6 7 8</modifiers>
+    </node>
+    <node id="0204.txt_3_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0204.txt" implicit_context="" focus="canoni" implicit_focus="">
+        <original_text>Mi hanno addebitato 3 canoni</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0204.txt_3_0-0204.txt_3_1" source="0204.txt_3_0" target="0204.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0204.txt_3_0-0204.txt_3_1" source="0204.txt_3_0" target="0204.txt_3_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -4,8 +4,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Map;
 import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -14,6 +16,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 
+import org.apache.log4j.Logger;
 import org.jgrapht.graph.DirectedMultigraph;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
@@ -33,7 +36,6 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
@@ -62,6 +64,9 @@ public class EntailmentGraphRaw extends
 	/**
 	 * 
 	 */
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw");
+
+	
 	private static final long serialVersionUID = -3274655854206417667L;
 	/*
 	 * To build the work graph we need to know the configuration,
@@ -169,17 +174,6 @@ public class EntailmentGraphRaw extends
 		super(EntailmentRelation.class);
 	}
 	
-	public boolean isEntailment(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
-		if (getEdge(entailingNode, entailedNode)!=null) return true;
-		return false;
-	}
-
-	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
-		if (nodeA.equals(nodeB)) return true; // if both nodes are the same
-		if (isEntailment(nodeA, nodeB)||(isEntailment(nodeB, nodeA))) return true;
-		return false;
-	}
-
 	/******************************************************************************************
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
@@ -206,7 +200,18 @@ public class EntailmentGraphRaw extends
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
 
-	/** Copied all nodes and edges from the input fragment graph to the raw entailment graph
+	public boolean isEntailment(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
+		if (getEdge(entailingNode, entailedNode)!=null) return true;
+		return false;
+	}
+
+	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
+		if (nodeA.equals(nodeB)) return true; // if both nodes are the same
+		if (isEntailment(nodeA, nodeB)||(isEntailment(nodeB, nodeA))) return true;
+		return false;
+	}
+
+	/** Copies all nodes and edges from the input fragment graph to the raw entailment graph
 	 * @param fg - the inout fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
@@ -223,7 +228,6 @@ public class EntailmentGraphRaw extends
 	/** The method gets an EntailmentUnitMention and either adds a new EntailmentUnit node or, if a relevant EntailmentUnit already exists in the graph, updates the list of its mentions  
 	 * @param mention - the EntailmentUnitMention to be added to the graph
 	 * @param completeStatementText - the text of the mention's complete statement
-	 * @param interactionId - String denoting the interaction in which the mention occurred
 	 */
 	public void addEntailmentUnitMention(EntailmentUnitMention mention, String completeStatementText){
 		EntailmentUnit node = this.getVertexWithText(mention.getText());
@@ -260,7 +264,7 @@ public class EntailmentGraphRaw extends
 		
 		Set<EntailmentUnit> nodes = getAllNodes(completeStatementNode, baseStatementNode, new HashSet<EntailmentUnit>());
 		for(EntailmentUnit node: nodes){
-			if (belongsToFragmentGraph(node,completeStatementText)){
+			if (node.isPartOfFragmentGraph(completeStatementText)){
 				Integer level = node.getLevel();
 				if (!nodesByLevel.containsKey(level)) nodesByLevel.put(level, new HashSet<EntailmentUnit>());
 				if (!nodesByLevel.get(level).contains(node)) nodesByLevel.get(level).add(node);
@@ -293,16 +297,6 @@ public class EntailmentGraphRaw extends
 		return nodesToReturn;
 	}
 	
-	/** Returns true if the given node was seen within the fragment graph defined by the input completeStatementText
-	 * Otherwise returns false
-	 * @param node
-	 * @param completeStatementText
-	 * @return
-	 */
-	private boolean belongsToFragmentGraph(EntailmentUnit node, String completeStatementText){
-		if (node.completeStatementTexts.contains(completeStatementText)) return true;
-		return false;
-	}
 	
 	/** Returns the set of nodes, which entail the given node
 	 * @param node whose entailing nodes are returned
@@ -313,7 +307,9 @@ public class EntailmentGraphRaw extends
 
 		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
-			entailingNodes.add(edge.getSource());
+			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)){ // only add the node to the list if the edge is an "entailment" edge
+				entailingNodes.add(edge.getSource());				
+			}
 		}
 		return entailingNodes;
 	}
@@ -328,8 +324,10 @@ public class EntailmentGraphRaw extends
 
 		Set<EntailmentUnit> entailingNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.incomingEdgesOf(node)){
-			EntailmentUnit entailingNode = edge.getSource();
-			if (entailingNode.getLevel()==level) entailingNodes.add(entailingNode);
+			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)){ // only add the node to the list if the edge is an "entailment" edge
+				EntailmentUnit entailingNode = edge.getSource();
+				if (entailingNode.getLevel()==level) entailingNodes.add(entailingNode);				
+			}
 		}
 		return entailingNodes;
 	}
@@ -343,7 +341,9 @@ public class EntailmentGraphRaw extends
 
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
-			entailedNodes.add(edge.getTarget());
+			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)){
+				entailedNodes.add(edge.getTarget());	// only add the node to the list if the edge is an "entailment" edge			
+			}
 		}
 		return entailedNodes;
 	}
@@ -358,14 +358,18 @@ public class EntailmentGraphRaw extends
 
 		Set<EntailmentUnit> entailedNodes = new HashSet<EntailmentUnit>();
 		for (EntailmentRelation edge : this.outgoingEdgesOf(node)){
-			EntailmentUnit entailedNode = edge.getTarget();
-			if (entailedNode.getLevel()==level) entailedNodes.add(entailedNode);
+			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)){
+				// only add the node to the list if the edge is an "entailment" edge
+				EntailmentUnit entailedNode = edge.getTarget();
+				if (entailedNode.getLevel()==level) entailedNodes.add(entailedNode);				
+			}
+
 		}
 		return entailedNodes;
 	}
 	
 
-	/** get entailed nodes what belong to the same fragment graph and have the specified nummber of modifiers (level)
+	/** Get entailed nodes what belong to the same fragment graph and have the specified nummber of modifiers (level)
 	 * @param node
 	 * @return
 	 */
@@ -454,7 +458,7 @@ public class EntailmentGraphRaw extends
 	
 	
 	/**
-	 * Return the vertex (EntailmentUnit), which has the corresponding text at one of it's mentions, if it is found in the graph. 
+	 * Return the vertex (EntailmentUnit), which has the given text at one of its mentions, if it is found in the graph. 
 	 * Otherwise return null.
 	 * The case of the text is ignored (to unify texts regardless to their case)
 	 * @param text the text of the EntailmentUnit to be found
@@ -602,8 +606,14 @@ public class EntailmentGraphRaw extends
 				}		 
 		  }
 	
-	public void toXML(String filename) throws TransformerException, EntailmentGraphRawException{
-		XMLFileWriter.write(this.toXML(), filename);
+	public void toXML(String filename) throws EntailmentGraphRawException{
+		
+		try {
+			XMLFileWriter.write(this.toXML(), filename);
+		} catch (TransformerException e) {
+			throw new EntailmentGraphRawException("Cannot save the graph to the xml file "+filename+".\n"+e);
+		}
+		
 	}
 	
 	public String toStringDetailed(){
@@ -634,6 +644,153 @@ public class EntailmentGraphRaw extends
 	}
 	
 	/******************************************************************************************
+	 * TRANSITIVE CLOSURE
+	 * ****************************************************************************************/
+	   /**
+     * Computes floor(log_2(n)) + 1
+     */
+    private int computeBinaryLog(int n)
+    {
+        assert n >= 0;
+
+        int result = 0;
+        while (n > 0) {
+            n >>= 1;
+            ++result;
+        }
+
+        return result;
+    }
+    
+    /** 
+     * @param source
+     * @param target
+     * @return the highest confidence of source -> target
+     */
+    private Double getBestDirectConfidence(EntailmentUnit source, EntailmentUnit target){
+    	Double confidence = 0.0;
+    	for (EntailmentRelation edge : this.getAllEdges(source, target)){
+    		if (edge.getConfidence() > confidence) confidence = edge.getConfidence();
+    	}
+    	return confidence;
+    }
+    
+    /**
+	 *  Adds transitive closure edges to the graph. Only consider "entailment" edges!!! (currently we don't propagate non-entailment relation)
+	 *  Based on org.jgrapht.alg.TransitiveClosure
+	 *  
+	 * @param changeTypeOfExistingEdges - if true, existing transitive closure edges will change their type to "TRANSITIVE_CLOSURE" 
+	 */
+	public void applyTransitiveClosure(boolean changeTypeOfExistingEdges){    
+		Map<EntailmentUnit,Double> newEdgeTargets = new HashMap<EntailmentUnit,Double>();
+
+        // At every iteration of the outer loop, we add a path of length 1
+        // between nodes that originally had a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EntailmentUnit v1 : this.vertexSet()) {
+                newEdgeTargets.clear();
+
+                for (EntailmentUnit v2 : this.getEntailedNodes(v1)) {
+                	Double confidence = getBestDirectConfidence(v1,v2);
+                	
+                    for (EntailmentUnit v3 : this.getEntailedNodes(v2)) {
+
+                    	if (newEdgeTargets.containsKey(v3)){
+                    		continue; // since we're in a multu-graph, maybe we already added v3 to newEdgeTargets 
+                    	}
+                    	
+                    	Double secondStepConfidence = getBestDirectConfidence(v2, v3);
+                        // Assign min confidence of the 2 edges as the confidence of the transitive edge
+                        if (secondStepConfidence < confidence) confidence=secondStepConfidence;
+
+                        if (v1.equals(v3)) {
+                            // Don't add self loops.
+                            continue;
+                        }
+
+                        EntailmentRelation e = this.getEdge(v1, v3);
+                        if (e != null) {
+                            // There is already an edge from v1 ---> v3
+                        	if (!changeTypeOfExistingEdges)	continue; 
+                        	
+                        	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
+                        		continue; // if it's a closure edge already - skip
+                        	}
+ 
+                        	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
+                        	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type 
+                        }
+                        
+                        newEdgeTargets.put(v3,confidence);
+                        done = false;
+                    }
+                }
+
+                for (EntailmentUnit v3 : newEdgeTargets.keySet()) {
+                    EntailmentRelation e = this.getEdge(v1, v3);
+                	if (e!=null){
+                    	this.removeAllEdges(v1, v3);                    	
+                		logger.info("Removed \"direct\" edge(s): "+ e.toString()+" to add a corresponding transitive closure edge");
+                    }
+                	double confidence = newEdgeTargets.get(v3);
+                	EntailmentRelation closureEdge = new EntailmentRelation(v1, v3, new TEDecisionWithConfidence(confidence, DecisionLabel.Entailment), EdgeType.TRANSITIVE_CLOSURE);
+                	this.addEdge(v1, v3, closureEdge);
+                	logger.info("Added transitive closure edge: "+closureEdge.toString());
+                }
+            }
+        }
+	}	
+	
+    /**
+	 *  Removes all transitive closure edges from the graph.
+	 *  Expected use - for internal testing purposes only
+	 */
+/*	public void removeTransitiveClosure(){    
+		Set<EntailmentRelation> edgesToRemove = new HashSet<EntailmentRelation>();
+
+        // At every iteration of the outer loop, we find if there is a path of length 1
+        // between nodes that also have a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EntailmentUnit v1 : this.vertexSet()) {
+            	edgesToRemove.clear();
+
+                for (EntailmentUnit v2 : this.getEntailedNodes(v1)) {
+                    for (EntailmentUnit v3 : this.getEntailedNodes(v2)) {
+                        Set<EntailmentRelation> e = this.getAllEdges(v1, v3);
+                        if (!e.isEmpty()) {
+                        	edgesToRemove.addAll(e);
+                        	logger.info("Remove transitive closure edges: "+ e.toString());
+                            done = false;
+                        }
+                    }
+                }
+
+                this.removeAllEdges(edgesToRemove);
+            }
+        }
+	}*/
+	
+	public void removeTransitiveClosure(){   
+		Set<EntailmentRelation> edgesToRemove = new HashSet<EntailmentRelation>();
+		for(EntailmentRelation e : this.edgeSet()){
+			if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) edgesToRemove.add(e); 
+		}
+		removeAllEdges(edgesToRemove);
+	}
+	
+	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
 	
@@ -645,8 +802,8 @@ public class EntailmentGraphRaw extends
 	 * @return the edge, which was added to the graph
 	 * @throws LAPException 
 	 */
-	public EntailmentRelation addEdgeFromRandomEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda) {
-		EntailmentRelation edge = EntailmentRelation.GenerateRandomEntailmentRelation(sourceVertex, targetVertex);
+	public EntailmentRelation addEdgeWithRandomDecision(EntailmentUnit sourceVertex, EntailmentUnit targetVertex) {
+		EntailmentRelation edge = EntailmentRelation.generateRandomEntailmentRelation(sourceVertex, targetVertex);
 		this.addEdge(sourceVertex, targetVertex, edge);
 		return edge;
 	}
@@ -689,15 +846,13 @@ public class EntailmentGraphRaw extends
 		sampleRawGraph.addVertex(G); sampleRawGraph.addVertex(H); sampleRawGraph.addVertex(I);
 		
 
-		if (randomEdges){ // add random edges
-			EDABasic<?> eda = new RandomEDA();
-				
+		if (randomEdges){ // add random edges			
 			// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.equals(v2)) { //don't calculate for a node with itself  
-						sampleRawGraph.addEdgeFromRandomEDA(v1, v2, eda);
-						sampleRawGraph.addEdgeFromRandomEDA(v2, v1, eda);
+						sampleRawGraph.addEdgeWithRandomDecision(v1, v2);
+						sampleRawGraph.addEdgeWithRandomDecision(v2, v1);
 					}
 				}
 			}
@@ -779,14 +934,12 @@ public class EntailmentGraphRaw extends
 		
 
 		if (randomEdges){ // add random edges
-			EDABasic<?> eda = new RandomEDA();
-			
 			// add edges - calculate TEDecision in both directions between all pairs of nodes (don't calculate for a node with itself) 
 			for (EntailmentUnit v1 : sampleRawGraph.vertexSet()){
 				for (EntailmentUnit v2 : sampleRawGraph.vertexSet()){
 					if (!v1.equals(v2)) { //don't calculate for a node with itself  
-						sampleRawGraph.addEdgeFromRandomEDA(v1, v2, eda);
-						sampleRawGraph.addEdgeFromRandomEDA(v2, v1, eda);
+						sampleRawGraph.addEdgeWithRandomDecision(v1, v2);
+						sampleRawGraph.addEdgeWithRandomDecision(v2, v1);
 					}
 				}
 			}
