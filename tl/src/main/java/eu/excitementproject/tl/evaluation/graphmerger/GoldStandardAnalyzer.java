@@ -23,8 +23,8 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 
 	boolean presentFragmentGraphsAsSingleNode;
 	
-	public GoldStandardAnalyzer(boolean presentFragmentGraphsAsSingleNode) {
-		super();
+	public GoldStandardAnalyzer(boolean presentFragmentGraphsAsSingleNode, boolean withClosure) {
+		super(withClosure);
 		this.presentFragmentGraphsAsSingleNode = presentFragmentGraphsAsSingleNode;
 	}
 
@@ -98,7 +98,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 			if (f.isDirectory()){
 				System.out.println(f.getName().toUpperCase());
 				try {
-					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader();
+					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader(false); //load only the original data, no transitive closure added
 					gsloader.loadClusterAnnotations(f.getAbsolutePath(), false);
 					EntailmentGraphRaw r = gsloader.getRawGraph();
 					System.out.print("Raw graph.\nNumber of edges: ");
@@ -181,7 +181,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		GoldStandardAnalyzer anal = new GoldStandardAnalyzer(false);			
+		GoldStandardAnalyzer anal = new GoldStandardAnalyzer(false, true);			
 		try {
 			anal.loadAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open", false);
 			EntailmentGraphRaw gr = anal.getRawGraph();

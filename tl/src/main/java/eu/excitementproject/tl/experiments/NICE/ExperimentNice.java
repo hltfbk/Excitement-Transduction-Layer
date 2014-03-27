@@ -42,14 +42,15 @@ public class ExperimentNice extends AbstractExperiment {
 		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit/test";
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
+		
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 		
 		System.out.println(tlDir);
 	//	System.out.println(System.getProperties());
 		
-	/*	ExperimentNice eTIEpos = new ExperimentNice(
+		ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -57,7 +58,7 @@ public class ExperimentNice extends AbstractExperiment {
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
-		*/
+		
 
 /*		ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
@@ -81,7 +82,7 @@ public class ExperimentNice extends AbstractExperiment {
 		
 
 		
-		ExperimentNice eBIUTEE = new ExperimentNice(
+	/*	ExperimentNice eBIUTEE = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci.xml",
 //				tlDir+"src/test/resources/NICE_experiments/biutee.xml",
 				
@@ -89,7 +90,7 @@ public class ExperimentNice extends AbstractExperiment {
 				
 				BIUFullLAP.class,
 				BiuteeEDA.class
-				);
+				);*/
 		
 /*		ExperimentNice EditDistBase = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
@@ -111,7 +112,7 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eBIUTEE; 
+		ExperimentNice e = eTIEpos; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");

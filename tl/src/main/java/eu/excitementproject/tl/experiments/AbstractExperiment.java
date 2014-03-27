@@ -81,7 +81,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		for (EntailmentUnit node : graph.vertexSet()){
 			nodesOfInterest.add(node.getTextWithoutDoubleSpaces()); //Use getTextWithoutDoubleSpaces() method to get node's text, since gold standard fragment graphs hold node texts without double spaces
 		}
-		gsloader = new GoldStandardEdgesLoader(nodesOfInterest);
+		gsloader = new GoldStandardEdgesLoader(nodesOfInterest, true); //load closure edges
 		try {
 			gsloader.loadAllAnnotations(gsAnnotationsDir, false);
 		} catch (GraphEvaluatorException e) {
