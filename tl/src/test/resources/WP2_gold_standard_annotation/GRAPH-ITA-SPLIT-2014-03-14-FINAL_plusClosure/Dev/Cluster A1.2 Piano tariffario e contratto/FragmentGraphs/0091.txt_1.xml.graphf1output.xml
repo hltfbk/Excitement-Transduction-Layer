@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="0091.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0091.txt" implicit_context="" focus="credito" implicit_focus="">
-        <original_text>disallineamento del credito</original_text>
-        <correct_text> </correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>
