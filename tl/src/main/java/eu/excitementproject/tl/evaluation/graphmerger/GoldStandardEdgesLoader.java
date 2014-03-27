@@ -299,7 +299,9 @@ public class GoldStandardEdgesLoader {
 	
 	public EntailmentGraphCollapsed getCollapsedGraph() throws GraphOptimizerException {
 		SimpleGraphOptimizer opt = new SimpleGraphOptimizer();
-		return opt.optimizeGraph(getRawGraph(),0.0);
+		EntailmentGraphCollapsed g = opt.optimizeGraph(getRawGraph(),0.0);
+		g.applyTransitiveClosure(false);
+		return g;
 	}
 	
 	protected EntailmentUnit getGoldStandardNode(String text){
