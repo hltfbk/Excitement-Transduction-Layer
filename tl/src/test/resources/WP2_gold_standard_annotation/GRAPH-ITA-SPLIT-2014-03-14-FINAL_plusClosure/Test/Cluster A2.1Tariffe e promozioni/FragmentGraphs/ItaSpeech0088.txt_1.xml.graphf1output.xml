@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="ItaSpeech0088.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="ItaSpeech0088.txt" implicit_context="" focus="promozione" implicit_focus="">
+        <original_text>cambiate la promozione ma io non ho chiesto questo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>iopoz=4</modifiers>
+    </node>
+    <node id="ItaSpeech0088.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="ItaSpeech0088.txt" implicit_context="" focus="promozione" implicit_focus="">
+        <original_text>cambiate la promozione ma non ho chiesto questo</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="ItaSpeech0088.txt_1_0-ItaSpeech0088.txt_1_1" source="ItaSpeech0088.txt_1_0" target="ItaSpeech0088.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="ItaSpeech0088.txt_1_0-ItaSpeech0088.txt_1_1" source="ItaSpeech0088.txt_1_0" target="ItaSpeech0088.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

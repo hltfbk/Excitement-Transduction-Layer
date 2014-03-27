@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="12">
+	<node implicit_focus="" focus="servizio post vendita" implicit_context="" explicit_context="0067.txt" modality="FALSE" id ="0067.txt_1_0">
+		<original_text>ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono</original_text>
+		<correct_text></correct_text>
+		<modifiers>ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX mapoz=0 1 2 3 4 5 6 7 8 9 10 11 12</modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio post vendita" implicit_context="" explicit_context="0067.txt" modality="FALSE" id ="0067.txt_1_1">
+		<original_text>non mi rispondono</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="servizio" implicit_context="" explicit_context="0098.txt" modality="FALSE" id ="0098.txt_2_0">
+		<original_text>servizio che fa pena</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="Gestione Commerciale" implicit_context="" explicit_context="0174.txt" modality="FALSE" id ="0174.txt_1_0">
+		<original_text>Pessima Gestione Commerciale</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="linea" implicit_context="" explicit_context="0213.txt" modality="FALSE" id ="0213.txt_2_0">
+		<original_text>a mia madre è stata immediamente staccata la linea senza alcun preavviso</original_text>
+		<correct_text></correct_text>
+		<modifiers>a mia madre è stata immediamentepoz=0 1 2 3 4 5;senza alcun preavvisopoz=9 10 11</modifiers>
+	</node>
+	<node implicit_focus="" focus="linea" implicit_context="" explicit_context="0213.txt" modality="FALSE" id ="0213.txt_2_1">
+		<original_text>staccata la linea senza alcun preavviso</original_text>
+		<correct_text></correct_text>
+		<modifiers>senza alcun preavvisopoz=9 10 11</modifiers>
+	</node>
+	<node implicit_focus="" focus="linea" implicit_context="" explicit_context="0213.txt" modality="FALSE" id ="0213.txt_2_2">
+		<original_text>a mia madre è stata immediamente staccata la linea</original_text>
+		<correct_text></correct_text>
+		<modifiers>a mia madre è stata immediamentepoz=0 1 2 3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="linea" implicit_context="" explicit_context="0213.txt" modality="FALSE" id ="0213.txt_2_3">
+		<original_text>staccata la linea</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="linea" implicit_context="" explicit_context="0262.txt" modality="FALSE" id ="0262.txt_2_0">
+		<original_text>attesa che un tizio vestito da tecnico ti sistemi la linea</original_text>
+		<correct_text></correct_text>
+		<modifiers>tizio vestito dapoz=3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="linea" implicit_context="" explicit_context="0262.txt" modality="FALSE" id ="0262.txt_2_1">
+		<original_text>attesa che un tecnico ti sistemi la linea</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="assistenza" focus="" implicit_context="" explicit_context="0303.txt" modality="FALSE" id ="0303.txt_2_0">
+		<original_text>lasciate la gente con problemi</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="assistenza" focus="" implicit_context="" explicit_context="0303.txt" modality="FALSE" id ="0303.txt_3_0">
+		<original_text>non vi preocupate dei clienti</original_text>
+		<correct_text>non vi preoccupate dei clienti</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="0067.txt_1_1" source="0067.txt_1_0" id="0067.txt_1_1-0067.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0213.txt_2_3" source="0067.txt_1_1" id="0213.txt_2_3-0067.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0303.txt_3_0" source="0067.txt_1_1" id="0303.txt_3_0-0067.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0213.txt_2_1" source="0213.txt_2_0" id="0213.txt_2_1-0213.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0213.txt_2_2" source="0213.txt_2_0" id="0213.txt_2_2-0213.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0213.txt_2_3" source="0213.txt_2_1" id="0213.txt_2_3-0213.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0262.txt_2_0" source="0213.txt_2_1" id="0262.txt_2_0-0213.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0213.txt_2_3" source="0213.txt_2_2" id="0213.txt_2_3-0213.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0303.txt_2_0" source="0213.txt_2_3" id="0303.txt_2_0-0213.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0262.txt_2_1" source="0213.txt_2_3" id="0262.txt_2_1-0213.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0262.txt_2_1" source="0262.txt_2_0" id="0262.txt_2_1-0262.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0303.txt_2_0" source="0262.txt_2_1" id="0303.txt_2_0-0262.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0098.txt_2_0" source="0303.txt_3_0" id="0098.txt_2_0-0303.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0303.txt_2_0" source="0303.txt_3_0" id="0303.txt_2_0-0303.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

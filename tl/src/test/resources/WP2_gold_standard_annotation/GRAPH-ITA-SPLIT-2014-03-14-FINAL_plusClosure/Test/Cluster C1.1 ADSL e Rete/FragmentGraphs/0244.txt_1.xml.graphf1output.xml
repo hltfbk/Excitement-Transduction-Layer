@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0244.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0244.txt" implicit_context="" focus="rete" implicit_focus="">
+        <original_text>ed è da alcune ore ke ho problemi con la Vs . rete x cellulare</original_text>
+        <correct_text>ed è da alcune ore che ho problemi con la vostra rete per cellulare</correct_text>
+        <modifiers>ed è da alcune ore kepoz=0 1 2 3 4 5;x cellularepoz=13 14</modifiers>
+    </node>
+    <node id="0244.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0244.txt" implicit_context="" focus="rete" implicit_focus="">
+        <original_text>ho problemi con la Vs . rete x cellulare</original_text>
+        <correct_text>ho problemi con la vostra rete per cellulare</correct_text>
+        <modifiers>x cellularepoz=13 14</modifiers>
+    </node>
+    <node id="0244.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0244.txt" implicit_context="" focus="rete" implicit_focus="">
+        <original_text>ed è da alcune ore ke ho problemi con la Vs . rete</original_text>
+        <correct_text>ed è da alcune ore che ho problemi con la vostra rete</correct_text>
+        <modifiers>ed è da alcune ore kepoz=0 1 2 3 4 5</modifiers>
+    </node>
+    <node id="0244.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0244.txt" implicit_context="" focus="rete" implicit_focus="">
+        <original_text>ho problemi con la Vs . rete</original_text>
+        <correct_text>ho problemi con la vostra rete</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0244.txt_1_0-0244.txt_1_1" source="0244.txt_1_0" target="0244.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0244.txt_1_0-0244.txt_1_1" source="0244.txt_1_0" target="0244.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0244.txt_1_0-0244.txt_1_2" source="0244.txt_1_0" target="0244.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0244.txt_1_0-0244.txt_1_2" source="0244.txt_1_0" target="0244.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0244.txt_1_2-0244.txt_1_3" source="0244.txt_1_2" target="0244.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0244.txt_1_1-0244.txt_1_3" source="0244.txt_1_1" target="0244.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0244.txt_1_1-0244.txt_1_3" source="0244.txt_1_1" target="0244.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0244.txt_1_2-0244.txt_1_3" source="0244.txt_1_2" target="0244.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0244.txt_1_0-0244.txt_1_3" source="0244.txt_1_0" target="0244.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

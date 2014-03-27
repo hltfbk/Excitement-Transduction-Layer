@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="3">
+	<node implicit_focus="" focus="miles" implicit_context="" explicit_context="13764665_77155079-2.txt" modality="TRUE" id ="13764665_77155079-2.txt_1_0">
+		<original_text>I have to put two hundred thousand miles because I want to get a good connection</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13764665_77155079.txt" modality="FALSE" id ="13764665_77155079.txt_1_0">
+		<original_text>i can never find it a a light on the day i want</original_text>
+		<correct_text>i can never find a flight on the date i want</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="flights" implicit_context="" explicit_context="13764829_81137701-2.txt" modality="FALSE" id ="13764829_81137701-2.txt_5_0">
+		<original_text>there weren't many flights</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+</F_entailment_graph>
