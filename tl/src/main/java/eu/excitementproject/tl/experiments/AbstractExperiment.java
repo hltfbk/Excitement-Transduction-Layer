@@ -1,7 +1,11 @@
 package eu.excitementproject.tl.experiments;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -34,6 +38,9 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 	public EntailmentGraphRaw m_rawGraph = null;
 	public GraphOptimizer m_optimizer = null;
 	
+	public List<Double> confidenceThresholds;
+	public Map<String,Map<Double,EvaluationMeasures>> results;
+	
 	public AbstractExperiment(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) {
@@ -42,8 +49,41 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 				edaClass);
 		
 		// Logger.getRootLogger().setLevel(Level.ERROR); 
+		
+		confidenceThresholds= new LinkedList<Double>();
+		for (double confidenceThreshold=0.5; confidenceThreshold<1; confidenceThreshold+=0.05){
+			confidenceThresholds.add(confidenceThreshold);
+		}
+		
+		results = new HashMap<String, Map<Double,EvaluationMeasures>>();
 	}
 	
+	public void printResults(){
+		for (String setting : results.keySet()){
+			System.out.println();
+			for (double threshold : confidenceThresholds){
+				EvaluationMeasures res = results.get(setting).get(threshold);
+				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());				
+			}
+		}
+	}
+	
+	public void addResult(String setting, double threshold, EvaluationMeasures res){
+		Map<Double,EvaluationMeasures> resultsForSetting = new HashMap<Double,EvaluationMeasures>();
+		if(results.containsKey(setting)) resultsForSetting = results.get(setting);
+		resultsForSetting.put(threshold, res);
+		results.put(setting, resultsForSetting);
+	}
+	
+	/**
+	 * @param confidenceThresholds the confidenceThresholds to set
+	 */
+	public void setConfidenceThresholds(List<Double> confidenceThresholds) {
+		this.confidenceThresholds = confidenceThresholds;
+	}
+
+
+
 	public void buildRawGraph() {
 		try {
 			m_rawGraph = this.useOne.buildRawGraph(this.docs);

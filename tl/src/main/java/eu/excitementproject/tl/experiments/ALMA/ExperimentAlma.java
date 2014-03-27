@@ -50,7 +50,7 @@ public class ExperimentAlma extends AbstractExperiment {
 
 
 //		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs_byClusterSplit/test/";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs/";
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
 //		String gsAnnotationsDir = tlDir+"target/ALMA_toy_test/gold_standard/";		
 		
 		int fileLimit = 1000;
@@ -91,23 +91,64 @@ public class ExperimentAlma extends AbstractExperiment {
 		
 		boolean includeFragmentGraphEdges = true;
 
-		for (double confidenceThreshold=0.5; confidenceThreshold<1; confidenceThreshold+=0.05){
+		for (double confidenceThreshold : e.confidenceThresholds){
+			
+			String setting = "raw without FG";
 			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
-			System.out.println("raw without FG\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			EntailmentGraphCollapsed cgr= e.collapseGraph(confidenceThreshold);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "raw with FG";
 			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
-			System.out.println("raw with FG\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "collapsed";
+			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold);
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
-			System.out.println("collapsed\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());			
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+
+			setting = "collapsed+closure";
+			cgr.applyTransitiveClosure(false);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+
+			e.m_rawGraph.applyTransitiveClosure(false);
+			
+			setting = "plusClosure raw without FG";
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure raw with FG";
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure collapsed";
+			cgr = e.collapseGraph(confidenceThreshold);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure collapsed+closure";
+			cgr.applyTransitiveClosure(false);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
 			try {
 				cgr.toXML(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.xml");
-			} catch (EntailmentGraphCollapsedException | TransformerException e1) {
+				cgr.toDOT(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.dot");
+			} catch (EntailmentGraphCollapsedException | TransformerException | IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
-		System.out.println("Done");
-		
+		e.printResults();
+		System.out.println("Done");		
 	}
 
 }
