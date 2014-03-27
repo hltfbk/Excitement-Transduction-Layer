@@ -39,6 +39,7 @@ public class GoldStandardEdgesLoader {
 	
 	private static final String DIRECT_EDGE_TYPE_STRING = "direct";
 	private static final String CLOSURE_EDGE_TYPE_STRING = "clousure";
+	private static String MERGED_XML_SUFFIX;
 	
 	Map<String,EntailmentRelation> edges;
 	Map<String,String> nodeTextById;
@@ -53,24 +54,32 @@ public class GoldStandardEdgesLoader {
 	
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader");
 
+	/**
+	 * @param withClosure - defines which of the merged xml files will be loaded - with or without transitive closure edges
+	 */
+	private void setMergedFileSuffix(boolean withClosure){
+		if (withClosure) MERGED_XML_SUFFIX = "PlusClosure.xml";
+		else MERGED_XML_SUFFIX = ".xml";
+	}
 	
 	/** Loads all GS edges
 	 */
-	public GoldStandardEdgesLoader() {
-		this(null);
+	public GoldStandardEdgesLoader(boolean withClosure) {
+		this(null, withClosure);
 	}
 	
 	/** Loads GS edges connecting nodes of interest
 	 * @param nodesOfInterest - Used to only load edges between the nodes in this set. Other edges will be ignored. 
 	 */
-	public GoldStandardEdgesLoader(Set<String> nodesOfInterest) {
+	public GoldStandardEdgesLoader(Set<String> nodesOfInterest, boolean withClosure) {
+		setMergedFileSuffix(withClosure);
 		edges = new HashMap<String,EntailmentRelation>();
 		nodeTextById = new HashMap<String,String>(); //[id] [text]
 		this.nodesOfInterest = nodesOfInterest;
 	}
 
 	/**
-	 * @return the edges
+	 * @return the edges (including transitive)
 	 */
 	public Set<EntailmentRelation> getEdges() {
 		return new HashSet<EntailmentRelation>(edges.values());
@@ -114,11 +123,11 @@ public class GoldStandardEdgesLoader {
 					}
 
 					// now load merge-graph annotations	
-					// each sub-directory should contain a folder called "FinalMergedGraph" with a single xml file with annotations
+					// each sub-directory should contain a folder called "FinalMergedGraph" with a single xml file with annotations (or two files - *.xml or *PlusClosure.xml)
 					File clusterAnnotationMergedGraphDir = new File (clusterAnnotationDir+"/"+"FinalMergedGraph");
 					if (clusterAnnotationMergedGraphDir.isDirectory()){
 						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
-							if (annotationFile.getName().endsWith(".xml")){
+							if (annotationFile.getName().endsWith(MERGED_XML_SUFFIX)){
 								logger.debug(">>>>Loading merge annotations from file "+annotationFile);
 								addAnnotationsFromFile(annotationFile.getPath());
 	/*							try {
@@ -173,7 +182,7 @@ public class GoldStandardEdgesLoader {
 			File clusterAnnotationMergedGraphDir = new File (clusterAnnotationDir+"/"+"FinalMergedGraph");
 			if (clusterAnnotationMergedGraphDir.isDirectory()){
 				for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
-					if (annotationFile.getName().endsWith(".xml")){
+					if (annotationFile.getName().endsWith(MERGED_XML_SUFFIX)){
 					logger.info("Loading merge annotations from file "+annotationFile);
 					addAnnotationsFromFile(annotationFile.getPath());
 /*							try {
@@ -290,7 +299,9 @@ public class GoldStandardEdgesLoader {
 	
 	public EntailmentGraphCollapsed getCollapsedGraph() throws GraphOptimizerException {
 		SimpleGraphOptimizer opt = new SimpleGraphOptimizer();
-		return opt.optimizeGraph(getRawGraph(),0.0);
+		EntailmentGraphCollapsed g = opt.optimizeGraph(getRawGraph(),0.0);
+		g.applyTransitiveClosure(false);
+		return g;
 	}
 	
 	protected EntailmentUnit getGoldStandardNode(String text){

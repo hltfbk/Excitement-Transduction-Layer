@@ -23,7 +23,7 @@ public class GoldStandardEdgesLoaderTest {
 	@Ignore @Test
 	public void test() {
 		Logger.getRootLogger().setLevel(Level.INFO); 
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
+		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(true);
 		try {
 			loader.loadAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open", false);
 
@@ -36,7 +36,7 @@ public class GoldStandardEdgesLoaderTest {
 				e.printStackTrace();
 			}		*/		
 			
-			loader = new GoldStandardEdgesLoader();
+			loader = new GoldStandardEdgesLoader(true);
 			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";			
 			loader.addAnnotationsFromFile(annotationFilename);
 			try {

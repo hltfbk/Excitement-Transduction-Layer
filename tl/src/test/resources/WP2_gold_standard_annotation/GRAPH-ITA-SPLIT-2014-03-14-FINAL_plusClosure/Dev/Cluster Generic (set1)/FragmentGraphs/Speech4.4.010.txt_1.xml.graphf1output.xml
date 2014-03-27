@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="Speech4.4.010.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.4.010.txt" implicit_context="" focus="TELEFONIAX" implicit_focus="">
-        <original_text>TELEFONIAX siete una vergogna</original_text>
-        <correct_text> </correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

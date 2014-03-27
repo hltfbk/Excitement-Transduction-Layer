@@ -20,7 +20,7 @@ public class EvaluatorGraphMergerTest {
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.evaluation.graphmerger.test"); 
 		
 		boolean includeFragmentGraphEdges = true;
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
+		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(true);
 		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
 		try {
 			loader.addAnnotationsFromFile(annotationFilename);

@@ -99,7 +99,7 @@ public class GoldStandardToWP2translator {
 				File f = new File(gsAnnotationsDir+"/"+clusterAnnotationDir);
 				if (f.isDirectory()){
 					System.out.println(f.getName().toUpperCase());
-					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader();		
+					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader(false); //load the original data only		
 					// load merge-graph annotations	
 					// clusterAnnotationDir should contain a folder called "FinalMergedGraph" with a single xml file with annotations
 					File clusterAnnotationMergedGraphDir = new File (gsAnnotationsDir+"/"+clusterAnnotationDir+"/"+"FinalMergedGraph");
