@@ -1,9 +1,0 @@
-Automatic Annotations: 0
-Manual Annotations:	67
-	"YES" entailment:	43
-	"Bidirectional" entailment:	5
-	"NO" entailment: 	19
-
-Automatic annotations ("NO" entailment):	0
-
-Total Annotations:	67
