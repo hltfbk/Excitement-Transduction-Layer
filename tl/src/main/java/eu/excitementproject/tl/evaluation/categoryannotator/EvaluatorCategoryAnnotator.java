@@ -59,6 +59,7 @@ import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
@@ -76,7 +77,6 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
-import eu.excitementproject.tl.structures.visualization.GraphViewer;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
 
@@ -131,9 +131,9 @@ public class EvaluatorCategoryAnnotator {
 	static boolean tfidf = true;
     static boolean LuceneSearch = true;
     
-    static int setup = 1;
+    static int setup = 0;
     
-    static boolean readGraphFromFile = true;
+    static boolean readGraphFromFile = false;
     static boolean readMergedGraphFromFile = false;
     
     static boolean trainEDA = false;
@@ -223,6 +223,22 @@ public class EvaluatorCategoryAnnotator {
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
+	        	case 99: //TIE with base configuration (inflection only) and sentences as fragments
+	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
+	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+		    		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lapForFragments);
+		    		fragmentAnnotatorForNewInput = new SentenceAsFragmentAnnotator(lapForFragments);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
 			}
 		} catch (FragmentAnnotatorException | ModifierAnnotatorException | ConfigurationException e) {
 			e.printStackTrace();
@@ -234,8 +250,9 @@ public class EvaluatorCategoryAnnotator {
 	}
 
 
-	/** OLD Method --> don't use; TODO: update or delete! */
-	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename) {
+	/** OLD Method --> don't use; TODO: update or delete! 
+	 * @throws EntailmentGraphRawException */
+	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename, double thresholdForOptimizing) {
 		
 		UseCaseOneRunnerPrototype use1;
 		UseCaseTwoRunnerPrototype use2;
@@ -279,30 +296,55 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}
 			
-			setup(1);
+			setup(99);
 			eda.initialize(config);
 			logger.info("Initialized config.");
 			logger.info("LAP: " + lapForFragments.getComponentName());
-			use1 = new UseCaseOneRunnerPrototype(lapForFragments, eda, outputDirname);
-			double threshold = 0.99;
-			EntailmentGraphCollapsed graph = use1.buildCollapsedGraph(docsTrain, threshold);
-			logger.info("Built collapsed graph.");
-			confidenceCalculator.computeCategoryConfidences(graph);
-			String outputFile = outputDirname + "/test.graph.xml";
-			XMLFileWriter.write(graph.toXML(), outputFile);			
-			graph = new EntailmentGraphCollapsed(new File(outputFile));
+						
+			//building fragment graphs
+			JCas cas = CASUtils.createNewInputCas();
+			List<Interaction> graphDocs = new ArrayList<Interaction>();
+			for (Interaction i : docsTrain) graphDocs.add(i);
+			Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, cas);
+			for (FragmentGraph fg : fgs) {
+				logger.info(fg.toString());
+			}			
+			logger.info("Built fragment graphs.");
 			
-			logger.info(graph.toString());
+			//merging fragment graphs
+			EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
+			String outputFile = outputDirname + "test.rawgraph.xml";
+			XMLFileWriter.write(egr.toXML(), outputFile);			
+			logger.info("Wrote raw graph to " + outputFile);
+			logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
+			logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
+			
+			//collapsing graph
+			EntailmentGraphCollapsed egc = graphOptimizer.optimizeGraph(egr, thresholdForOptimizing);
+			logger.info("Number of nodes in collapsed graph: " + egc.vertexSet().size());
+			logger.info("Number of edges in collapsed graph: " + egc.edgeSet().size());
+			logger.info("Wrote collapsed graph to " + outputFile);
+			outputFile = outputDirname + "test.collapsedgraph.xml";
+			XMLFileWriter.write(egc.toXML(), outputFile);					
 
+			//adding combined category confidences
+			confidenceCalculator.computeCategoryConfidences(egc);
 			logger.info("Computed and added category confidences.");
+			outputFile = outputDirname + "test.collapsedgraph_confidences.xml";
+			XMLFileWriter.write(egc.toXML(), outputFile);			
+			logger.info("Wrote collapsed graph with confidences to " + outputFile);
+
+			//reading previously built graph from file
+			egc = new EntailmentGraphCollapsed(new File(outputFile));
+			logger.info("Read collapsed graph with confidences from " + outputFile);
 
 			// Send each email in test data + graph to node use case 2 and have it annotated
 			int countPositive = 0;
 			for (Interaction doc : docsTest) {
-				JCas cas;
+//				JCas cas;
 				cas = doc.createAndFillInputCAS();
 				use2 = new UseCaseTwoRunnerPrototype(lapForFragments, eda);
-				use2.annotateCategories(cas, graph);
+				use2.annotateCategories(cas, egc);
 				logger.info("_________________________________________________________");
 				Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
 				logger.info("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
@@ -319,12 +361,12 @@ public class EvaluatorCategoryAnnotator {
 			
 		} catch (ConfigurationException | EDAException | ComponentException 
 			| FragmentAnnotatorException | ModifierAnnotatorException 
-			| GraphMergerException | IOException 
+			| GraphMergerException
 			| GraphOptimizerException 
 			| FragmentGraphGeneratorException 
 			| ConfidenceCalculatorException 
 			| NodeMatcherException 
-			| CategoryAnnotatorException | DataReaderException | EntailmentGraphCollapsedException | TransformerException e) {
+			| CategoryAnnotatorException | DataReaderException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
 			e.printStackTrace();
 			return -1;
 		}
