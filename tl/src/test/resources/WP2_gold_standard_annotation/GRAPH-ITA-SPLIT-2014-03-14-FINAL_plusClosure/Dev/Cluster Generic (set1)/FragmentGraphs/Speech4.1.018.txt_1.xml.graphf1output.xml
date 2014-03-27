@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="16">
+    <node id="Speech4.1.018.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>Da due giorni che nella mia zona non abbiamo campo per la linea ADSL</original_text>
+        <correct_text> </correct_text>
+        <modifiers>campo perpoz=9 10;Da due giorni chepoz=0 1 2 3;nella mia zonapoz=4 5 6;ADSLpoz=13</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>Da due giorni che nella mia zona non abbiamo la linea ADSL</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Da due giorni chepoz=0 1 2 3;nella mia zonapoz=4 5 6;ADSLpoz=13</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>nella mia zona non abbiamo campo per la linea ADSL</original_text>
+        <correct_text> </correct_text>
+        <modifiers>campo perpoz=9 10;nella mia zonapoz=4 5 6;ADSLpoz=13</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>Da due giorni che non abbiamo campo per la linea ADSL</original_text>
+        <correct_text> </correct_text>
+        <modifiers>campo perpoz=9 10;Da due giorni chepoz=0 1 2 3;ADSLpoz=13</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_4" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>Da due giorni che nella mia zona non abbiamo campo per la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers>campo perpoz=9 10;Da due giorni chepoz=0 1 2 3;nella mia zonapoz=4 5 6</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_5" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>nella mia zona non abbiamo la linea ADSL</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nella mia zonapoz=4 5 6;ADSLpoz=13</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_6" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>Da due giorni che non abbiamo la linea ADSL</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Da due giorni chepoz=0 1 2 3;ADSLpoz=13</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_7" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>Da due giorni che nella mia zona non abbiamo la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Da due giorni chepoz=0 1 2 3;nella mia zonapoz=4 5 6</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_8" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>non abbiamo campo per la linea ADSL</original_text>
+        <correct_text> </correct_text>
+        <modifiers>campo perpoz=9 10;ADSLpoz=13</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_9" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>nella mia zona non abbiamo campo per la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers>campo perpoz=9 10;nella mia zonapoz=4 5 6</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_10" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>Da due giorni che non abbiamo campo per la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers>campo perpoz=9 10;Da due giorni chepoz=0 1 2 3</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_11" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>non abbiamo la linea ADSL</original_text>
+        <correct_text> </correct_text>
+        <modifiers>ADSLpoz=13</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_12" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>nella mia zona non abbiamo la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nella mia zonapoz=4 5 6</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_13" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>Da due giorni che non abbiamo la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Da due giorni chepoz=0 1 2 3</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_14" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>non abbiamo campo per la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers>campo perpoz=9 10</modifiers>
+    </node>
+    <node id="Speech4.1.018.txt_1_15" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech4.1.018.txt" implicit_context="" focus="linea" implicit_focus="">
+        <original_text>non abbiamo la linea</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_1" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_1" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_2" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_2" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_3" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_3" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_4" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_4" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_5" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_5" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_5" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_5" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_5" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_6" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_6" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_6" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_6" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_6" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_7" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_7" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_7" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_7" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_7" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_8" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_8" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_8" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_8" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_8" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_9" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_9" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_9" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_9" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_9" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_10" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_10" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_10" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_10" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_10" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_8-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_8" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_6-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_6" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_5-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_5" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_5-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_5" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_6-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_6" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_8-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_8" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_11" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_9-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_9" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_7-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_7" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_5-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_5" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_5-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_5" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_7-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_7" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_9-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_9" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_12" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_12">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_10-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_10" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_7-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_7" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_6-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_6" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_6-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_6" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_7-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_7" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_10-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_10" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_13" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_13">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_10-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_10" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_9-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_9" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_8-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_8" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_8-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_8" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_9-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_9" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_10-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_10" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_14" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_14">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_14-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_14" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_13-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_13" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_12-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_12" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_11-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_11" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_11-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_11" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_12-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_12" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_13-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_13" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_14-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_14" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_8-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_8" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_9-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_9" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_10-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_10" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_3-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_3" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_4-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_4" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_0-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_0" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_2-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_2" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_6-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_6" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_7-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_7" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_1-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_1" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech4.1.018.txt_1_5-Speech4.1.018.txt_1_15" source="Speech4.1.018.txt_1_5" target="Speech4.1.018.txt_1_15">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

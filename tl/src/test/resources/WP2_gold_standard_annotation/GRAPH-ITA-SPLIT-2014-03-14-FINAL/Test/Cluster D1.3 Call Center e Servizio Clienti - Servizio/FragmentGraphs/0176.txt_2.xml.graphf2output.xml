@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="0176.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0176.txt" implicit_context="" focus="" implicit_focus="segnalazioni">
-        <original_text>così come quelle telefoniche</original_text>
-        <correct_text> </correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

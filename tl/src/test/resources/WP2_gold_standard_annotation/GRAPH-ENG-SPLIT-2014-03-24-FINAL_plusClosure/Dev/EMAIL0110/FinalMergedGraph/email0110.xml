@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="72">
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="1.txt" modality="FALSE" id ="1.txt_1_0">
+		<original_text>Make same - day , different times flexible tickets more of an option</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="offers" implicit_context="" explicit_context="10.txt" modality="FALSE" id ="10.txt_1_0">
+		<original_text>Do better offers ( more promotions , early bird offers etc )</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="10.txt" modality="FALSE" id ="10.txt_2_0">
+		<original_text>more ticket flexibility</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="rewards" implicit_context="" explicit_context="10.txt" modality="FALSE" id ="10.txt_3_0">
+		<original_text>better rewards for frequent travellers</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="10.txt" modality="FALSE" id ="10.txt_4_0">
+		<original_text>make mobile tickets with QR code available for bookings for more than 1 passenger</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="booking" implicit_context="" explicit_context="100771.txt" modality="TRUE" id ="100771.txt_3_0">
+		<original_text>When booking the seat numbers could show if it 's a 4 table seat or just a 2 seat</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="train" implicit_context="" explicit_context="11.txt" modality="FALSE" id ="11.txt_1_0">
+		<original_text>the train was overbooked</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="11.txt" modality="FALSE" id ="11.txt_5_0">
+		<original_text>Cannot retrieve tickets at Moonport station with card</original_text>
+		<correct_text></correct_text>
+		<modifiers>with cardpoz=6 7;at Moonport stationpoz=3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="11.txt" modality="FALSE" id ="11.txt_5_1">
+		<original_text>Cannot retrieve tickets at Moonport station</original_text>
+		<correct_text></correct_text>
+		<modifiers>at Moonport stationpoz=3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="11.txt" modality="FALSE" id ="11.txt_5_2">
+		<original_text>Cannot retrieve tickets with card</original_text>
+		<correct_text></correct_text>
+		<modifiers>with cardpoz=6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="11.txt" modality="FALSE" id ="11.txt_5_3">
+		<original_text>Cannot retrieve tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="14.txt" modality="TRUE" id ="14.txt_1_0">
+		<original_text>It would be great to have ticket at a reasonable price not only 3 months in advance</original_text>
+		<correct_text></correct_text>
+		<modifiers>not only 3 months in advancepoz=11 12 13 14 15 16</modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="14.txt" modality="" id ="14.txt_1_1">
+		<original_text>It would be great to have ticket at a reasonable price</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="15.txt" modality="FALSE" id ="15.txt_1_0">
+		<original_text>to be able to put ticket on my smartphone</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="15.txt" modality="FALSE" id ="15.txt_2_0">
+		<original_text>I could only print ticket</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="16.txt" modality="FALSE" id ="16.txt_1_0">
+		<original_text>Allow fully flexible economy tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers>fullypoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="16.txt" modality="FALSE" id ="16.txt_1_1">
+		<original_text>Allow flexible economy tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="classes" implicit_context="" explicit_context="16.txt" modality="FALSE" id ="16.txt_4_0">
+		<original_text>allow different classes to be combined on the same booking</original_text>
+		<correct_text></correct_text>
+		<modifiers>on the same bookingpoz=6 7 8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="classes" implicit_context="" explicit_context="16.txt" modality="FALSE" id ="16.txt_4_1">
+		<original_text>allow different classes to be combined</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="17.txt" modality="FALSE" id ="17.txt_1_0">
+		<original_text>Allow name changes on tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="offers" implicit_context="" explicit_context="18.txt" modality="FALSE" id ="18.txt_2_0">
+		<original_text>offers on 1st class travel for leisure travellers</original_text>
+		<correct_text></correct_text>
+		<modifiers>for leisure travellerspoz=5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="offers" implicit_context="" explicit_context="18.txt" modality="FALSE" id ="18.txt_2_1">
+		<original_text>offers on 1st class travel</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="seats" implicit_context="" explicit_context="18.txt" modality="FALSE" id ="18.txt_3_0">
+		<original_text>Help when booking seats so as many as possible can be spaced out / not next to another passenger</original_text>
+		<correct_text></correct_text>
+		<modifiers>so as many as possible can be spaced out / not next to another passengerpoz=4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</modifiers>
+	</node>
+	<node implicit_focus="" focus="seats" implicit_context="" explicit_context="18.txt" modality="FALSE" id ="18.txt_3_1">
+		<original_text>Help when booking seats</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="carte blanche" implicit_context="" explicit_context="193822.txt" modality="FALSE" id ="193822.txt_8_0">
+		<original_text>not happy with changes to carte blanche system</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="20.txt" modality="FALSE" id ="20.txt_1_0">
+		<original_text>cheaper tickets at shorter notice</original_text>
+		<correct_text></correct_text>
+		<modifiers>at shorter noticepoz=2 3 4</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="20.txt" modality="FALSE" id ="20.txt_1_1">
+		<original_text>cheaper tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="lounge" implicit_context="" explicit_context="21.txt" modality="FALSE" id ="21.txt_1_0">
+		<original_text>access to the lounge for premium standard tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers>for premium standard ticketspoz=4 5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="lounge" implicit_context="" explicit_context="21.txt" modality="FALSE" id ="21.txt_1_1">
+		<original_text>access to the lounge</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="21.txt" modality="FALSE" id ="21.txt_4_0">
+		<original_text>More flexible tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="22.txt" modality="TRUE" id ="22.txt_1_0">
+		<original_text>You need to be more flexible in terms of change of ticket even if not flexible</original_text>
+		<correct_text></correct_text>
+		<modifiers>even if not flexiblepoz=12 13 14 15</modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="22.txt" modality="TRUE" id ="22.txt_1_1">
+		<original_text>You need to be more flexible in terms of change of ticket</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="23.txt" modality="FALSE" id ="23.txt_2_0">
+		<original_text>be able to change semi flexible tickets online</original_text>
+		<correct_text></correct_text>
+		<modifiers>semi flexiblepoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="23.txt" modality="FALSE" id ="23.txt_2_1">
+		<original_text>be able to change tickets online</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="27.txt" modality="FALSE" id ="27.txt_1_0">
+		<original_text>The ticket machine always has problems</original_text>
+		<correct_text></correct_text>
+		<modifiers>alwayspoz=3</modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="27.txt" modality="FALSE" id ="27.txt_1_1">
+		<original_text>The ticket machine has problems</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="28.txt" modality="TRUE" id ="28.txt_1_0">
+		<original_text>You could open the ticket office earlier</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="29.txt" modality="FALSE" id ="29.txt_1_0">
+		<original_text>More cheap tickets deals at odd moments , not just when booked in advance</original_text>
+		<correct_text>More cheap tickets deals at all moments, not just when booked in advance</correct_text>
+		<modifiers>at odd momentspoz=4 5 6;not just when booked in advancepoz=8 9 10 11 12 13</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="29.txt" modality="FALSE" id ="29.txt_1_1">
+		<original_text>More cheap tickets deals , not just when booked in advance</original_text>
+		<correct_text>More cheap tickets deals, not just when booked in advance</correct_text>
+		<modifiers>not just when booked in advancepoz=8 9 10 11 12 13</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="29.txt" modality="FALSE" id ="29.txt_1_2">
+		<original_text>More cheap tickets deals at odd moments ,</original_text>
+		<correct_text>More cheap tickets deals at all moments</correct_text>
+		<modifiers>at odd momentspoz=4 5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="29.txt" modality="FALSE" id ="29.txt_1_3">
+		<original_text>More cheap tickets deals ,</original_text>
+		<correct_text>More cheap tickets deals,</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="31.txt" modality="FALSE" id ="31.txt_3_0">
+		<original_text>print at home tickets take up too much paper</original_text>
+		<correct_text></correct_text>
+		<modifiers>print at homepoz=0 1 2</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="31.txt" modality="FALSE" id ="31.txt_3_1">
+		<original_text>tickets take up too much paper</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="31.txt" modality="FALSE" id ="31.txt_4_0">
+		<original_text>print at home tickets take up too much ink</original_text>
+		<correct_text></correct_text>
+		<modifiers>print at homepoz=0 1 2</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="31.txt" modality="FALSE" id ="31.txt_4_1">
+		<original_text>tickets take up too much ink</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="32.txt" modality="TRUE" id ="32.txt_1_0">
+		<original_text>it would be easier for me to be on time if the tickets listed boarding time as well as departure time</original_text>
+		<correct_text></correct_text>
+		<modifiers>as well as departure timepoz=16 17 18 19 20;to be on timepoz=6 7 8 9;for mepoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="32.txt" modality="TRUE" id ="32.txt_1_1">
+		<original_text>it would be easier for me to be on time if the tickets listed boarding time</original_text>
+		<correct_text></correct_text>
+		<modifiers>to be on timepoz=6 7 8 9;for mepoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="32.txt" modality="TRUE" id ="32.txt_1_2">
+		<original_text>it would be easier for me if the tickets listed boarding time as well as departure time</original_text>
+		<correct_text></correct_text>
+		<modifiers>as well as departure timepoz=16 17 18 19 20;for mepoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="32.txt" modality="TRUE" id ="32.txt_1_3">
+		<original_text>it would be easier to be on time if the tickets listed boarding time as well as departure time</original_text>
+		<correct_text></correct_text>
+		<modifiers>as well as departure timepoz=16 17 18 19 20;to be on timepoz=6 7 8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="32.txt" modality="TRUE" id ="32.txt_1_4">
+		<original_text>it would be easier for me if the tickets listed boarding time</original_text>
+		<correct_text></correct_text>
+		<modifiers>for mepoz=4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="32.txt" modality="TRUE" id ="32.txt_1_5">
+		<original_text>it would be easier to be on time if the tickets listed boarding time</original_text>
+		<correct_text></correct_text>
+		<modifiers>to be on timepoz=6 7 8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="32.txt" modality="TRUE" id ="32.txt_1_6">
+		<original_text>it would be easier if the tickets listed boarding time as well as departure time</original_text>
+		<correct_text></correct_text>
+		<modifiers>as well as departure timepoz=16 17 18 19 20</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="32.txt" modality="TRUE" id ="32.txt_1_7">
+		<original_text>it would be easier if the tickets listed boarding time</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="33.txt" modality="TRUE" id ="33.txt_1_0">
+		<original_text>Accepting tickets on the Blackberry would be great</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="37.txt" modality="FALSE" id ="37.txt_1_0">
+		<original_text>Introduce a season ticket for weekly travellers</original_text>
+		<correct_text></correct_text>
+		<modifiers>for weekly travellerspoz=4 5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="37.txt" modality="FALSE" id ="37.txt_1_1">
+		<original_text>Introduce a season ticket</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="internet tickets" implicit_context="" explicit_context="38.txt" modality="FALSE" id ="38.txt_1_0">
+		<original_text>Too long internet tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers>Toopoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="internet tickets" implicit_context="" explicit_context="38.txt" modality="FALSE" id ="38.txt_1_1">
+		<original_text>long internet tickets</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="46653.txt" modality="FALSE" id ="46653.txt_1_0">
+		<original_text>The e - tickets weren't entirely straightforward with the scanners</original_text>
+		<correct_text></correct_text>
+		<modifiers>entirelypoz=5;with the scannerspoz=7 8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="46653.txt" modality="FALSE" id ="46653.txt_1_1">
+		<original_text>The e - tickets weren't straightforward with the scanners</original_text>
+		<correct_text></correct_text>
+		<modifiers>with the scannerspoz=7 8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="46653.txt" modality="FALSE" id ="46653.txt_1_2">
+		<original_text>The e - tickets weren't entirely straightforward</original_text>
+		<correct_text></correct_text>
+		<modifiers>entirelypoz=5</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="46653.txt" modality="FALSE" id ="46653.txt_1_3">
+		<original_text>The e - tickets weren't straightforward</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="6.txt" modality="FALSE" id ="6.txt_1_0">
+		<original_text>make all tickets exchangeable</original_text>
+		<correct_text></correct_text>
+		<modifiers>allpoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="6.txt" modality="FALSE" id ="6.txt_1_1">
+		<original_text>make tickets exchangeable</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="6.txt" modality="FALSE" id ="6.txt_2_0">
+		<original_text>make all tickets refundable</original_text>
+		<correct_text></correct_text>
+		<modifiers>allpoz=1</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="6.txt" modality="FALSE" id ="6.txt_2_1">
+		<original_text>make tickets refundable</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="8.txt" modality="TRUE" id ="8.txt_1_0">
+		<original_text>Name changes on tickets should be allowed for a fee</original_text>
+		<correct_text></correct_text>
+		<modifiers>for a feepoz=7 8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="8.txt" modality="TRUE" id ="8.txt_1_1">
+		<original_text>Name changes on tickets should be allowed</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="9.txt" modality="FALSE" id ="9.txt_3_0">
+		<original_text>the tickets are not always checked at the gates</original_text>
+		<correct_text></correct_text>
+		<modifiers>at the gatespoz=6 7 8;alwayspoz=4</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="9.txt" modality="FALSE" id ="9.txt_3_1">
+		<original_text>the tickets are not always checked</original_text>
+		<correct_text></correct_text>
+		<modifiers>alwayspoz=4</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="9.txt" modality="FALSE" id ="9.txt_3_2">
+		<original_text>the tickets are not checked at the gates</original_text>
+		<correct_text></correct_text>
+		<modifiers>at the gatespoz=6 7 8</modifiers>
+	</node>
+	<node implicit_focus="" focus="tickets" implicit_context="" explicit_context="9.txt" modality="FALSE" id ="9.txt_3_3">
+		<original_text>the tickets are not checked</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="16.txt_1_1" source="1.txt_1_0" id="16.txt_1_1-1.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_3" source="1.txt_1_0" id="29.txt_1_3-1.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_1" source="1.txt_1_0" id="22.txt_1_1-1.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="1.txt_1_0" id="21.txt_4_0-1.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="1.txt_1_0" id="10.txt_2_0-1.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="6.txt_1_1" source="1.txt_1_0" id="6.txt_1_1-1.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_3" source="10.txt_1_0" id="29.txt_1_3-10.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_1" source="10.txt_1_0" id="20.txt_1_1-10.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="10.txt_2_0" id="21.txt_4_0-10.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="10.txt_4_0" id="21.txt_4_0-10.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="10.txt_4_0" id="10.txt_2_0-10.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="18.txt_3_1" source="100771.txt_3_0" id="18.txt_3_1-100771.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="11.txt_5_1" source="11.txt_5_0" id="11.txt_5_1-11.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="11.txt_5_2" source="11.txt_5_0" id="11.txt_5_2-11.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="11.txt_5_3" source="11.txt_5_1" id="11.txt_5_3-11.txt_5_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="11.txt_5_3" source="11.txt_5_2" id="11.txt_5_3-11.txt_5_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="14.txt_1_1" source="14.txt_1_0" id="14.txt_1_1-14.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_2" source="14.txt_1_0" id="29.txt_1_2-14.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_1" source="14.txt_1_0" id="29.txt_1_1-14.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_0" source="14.txt_1_0" id="20.txt_1_0-14.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_1" source="14.txt_1_1" id="20.txt_1_1-14.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="16.txt_1_1" source="16.txt_1_0" id="16.txt_1_1-16.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_1" source="16.txt_1_1" id="22.txt_1_1-16.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="16.txt_1_1" id="21.txt_4_0-16.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="16.txt_1_1" id="10.txt_2_0-16.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="16.txt_4_1" source="16.txt_4_0" id="16.txt_4_1-16.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="16.txt_4_1" id="21.txt_4_0-16.txt_4_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="16.txt_4_1" id="10.txt_2_0-16.txt_4_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="16.txt_1_1" source="17.txt_1_0" id="16.txt_1_1-17.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_1" source="17.txt_1_0" id="22.txt_1_1-17.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="17.txt_1_0" id="21.txt_4_0-17.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="6.txt_1_1" source="17.txt_1_0" id="6.txt_1_1-17.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="17.txt_1_0" id="10.txt_2_0-17.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="8.txt_1_1" source="17.txt_1_0" id="8.txt_1_1-17.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="18.txt_2_1" source="18.txt_2_0" id="18.txt_2_1-18.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_3" source="18.txt_2_1" id="29.txt_1_3-18.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_1_0" source="18.txt_2_1" id="10.txt_1_0-18.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_1" source="18.txt_2_1" id="20.txt_1_1-18.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="18.txt_3_1" source="18.txt_3_0" id="18.txt_3_1-18.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_1" source="20.txt_1_0" id="20.txt_1_1-20.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_2" source="20.txt_1_0" id="29.txt_1_2-20.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_1_1" source="21.txt_1_0" id="21.txt_1_1-21.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="21.txt_4_0" id="10.txt_2_0-21.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_1" source="22.txt_1_0" id="22.txt_1_1-22.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="22.txt_1_1" id="10.txt_2_0-22.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="22.txt_1_1" id="21.txt_4_0-22.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="23.txt_2_1" source="23.txt_2_0" id="23.txt_2_1-23.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_0" source="23.txt_2_0" id="22.txt_1_0-23.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="6.txt_1_0" source="23.txt_2_0" id="6.txt_1_0-23.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="23.txt_2_1" id="10.txt_2_0-23.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_1" source="23.txt_2_1" id="22.txt_1_1-23.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="23.txt_2_1" id="21.txt_4_0-23.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="6.txt_1_1" source="23.txt_2_1" id="6.txt_1_1-23.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="27.txt_1_1" source="27.txt_1_0" id="27.txt_1_1-27.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_1" source="29.txt_1_0" id="29.txt_1_1-29.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_2" source="29.txt_1_0" id="29.txt_1_2-29.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_3" source="29.txt_1_1" id="29.txt_1_3-29.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_0" source="29.txt_1_1" id="20.txt_1_0-29.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_3" source="29.txt_1_2" id="29.txt_1_3-29.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_0" source="29.txt_1_2" id="20.txt_1_0-29.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_1" source="29.txt_1_3" id="20.txt_1_1-29.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="31.txt_3_1" source="31.txt_3_0" id="31.txt_3_1-31.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="31.txt_4_1" source="31.txt_4_0" id="31.txt_4_1-31.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_1" source="32.txt_1_0" id="32.txt_1_1-32.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_2" source="32.txt_1_0" id="32.txt_1_2-32.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_3" source="32.txt_1_0" id="32.txt_1_3-32.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_4" source="32.txt_1_1" id="32.txt_1_4-32.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_5" source="32.txt_1_1" id="32.txt_1_5-32.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_4" source="32.txt_1_2" id="32.txt_1_4-32.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_6" source="32.txt_1_2" id="32.txt_1_6-32.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_5" source="32.txt_1_3" id="32.txt_1_5-32.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_6" source="32.txt_1_3" id="32.txt_1_6-32.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_7" source="32.txt_1_4" id="32.txt_1_7-32.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="46653.txt_1_2" source="32.txt_1_4" id="46653.txt_1_2-32.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_7" source="32.txt_1_5" id="32.txt_1_7-32.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="46653.txt_1_2" source="32.txt_1_5" id="46653.txt_1_2-32.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32.txt_1_7" source="32.txt_1_6" id="32.txt_1_7-32.txt_1_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="46653.txt_1_2" source="32.txt_1_6" id="46653.txt_1_2-32.txt_1_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="46653.txt_1_3" source="32.txt_1_7" id="46653.txt_1_3-32.txt_1_7">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="15.txt_1_0" source="33.txt_1_0" id="15.txt_1_0-33.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="37.txt_1_1" source="37.txt_1_0" id="37.txt_1_1-37.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="29.txt_1_3" source="37.txt_1_1" id="29.txt_1_3-37.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="20.txt_1_1" source="37.txt_1_1" id="20.txt_1_1-37.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="38.txt_1_1" source="38.txt_1_0" id="38.txt_1_1-38.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="46653.txt_1_1" source="46653.txt_1_0" id="46653.txt_1_1-46653.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="46653.txt_1_2" source="46653.txt_1_0" id="46653.txt_1_2-46653.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="46653.txt_1_3" source="46653.txt_1_1" id="46653.txt_1_3-46653.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="46653.txt_1_3" source="46653.txt_1_2" id="46653.txt_1_3-46653.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="6.txt_1_1" source="6.txt_1_0" id="6.txt_1_1-6.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_0" source="6.txt_1_0" id="22.txt_1_0-6.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="6.txt_1_1" id="10.txt_2_0-6.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_1" source="6.txt_1_1" id="22.txt_1_1-6.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="6.txt_1_1" id="21.txt_4_0-6.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="6.txt_2_1" source="6.txt_2_0" id="6.txt_2_1-6.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="6.txt_2_1" id="10.txt_2_0-6.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_1" source="6.txt_2_1" id="22.txt_1_1-6.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="6.txt_2_1" id="21.txt_4_0-6.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="8.txt_1_1" source="8.txt_1_0" id="8.txt_1_1-8.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_0" source="8.txt_1_0" id="22.txt_1_0-8.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="16.txt_1_0" source="8.txt_1_0" id="16.txt_1_0-8.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="10.txt_2_0" source="8.txt_1_1" id="10.txt_2_0-8.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="16.txt_1_1" source="8.txt_1_1" id="16.txt_1_1-8.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="22.txt_1_1" source="8.txt_1_1" id="22.txt_1_1-8.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="21.txt_4_0" source="8.txt_1_1" id="21.txt_4_0-8.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="17.txt_1_0" source="8.txt_1_1" id="17.txt_1_0-8.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="9.txt_3_1" source="9.txt_3_0" id="9.txt_3_1-9.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="9.txt_3_2" source="9.txt_3_0" id="9.txt_3_2-9.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="9.txt_3_3" source="9.txt_3_1" id="9.txt_3_3-9.txt_3_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="9.txt_3_3" source="9.txt_3_2" id="9.txt_3_3-9.txt_3_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

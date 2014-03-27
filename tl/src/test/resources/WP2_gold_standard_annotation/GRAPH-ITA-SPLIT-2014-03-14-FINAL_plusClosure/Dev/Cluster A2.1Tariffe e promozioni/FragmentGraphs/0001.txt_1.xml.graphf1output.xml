@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node id="0001.txt_1_0" implicit_statement="FALSE" modality="TRUE" explicit_context="0001.txt" implicit_context="" focus="concorso" implicit_focus="">
+        <original_text>oggi non è possibile accedere al concorso DIVERTITI E OTTIENI su 444 . it</original_text>
+        <correct_text> </correct_text>
+        <modifiers>oggipoz=0;DIVERTITI E OTTIENIpoz=7 8 9;su 444 . itpoz=10 11 12 13</modifiers>
+    </node>
+    <node id="0001.txt_1_1" implicit_statement="FALSE" modality="TRUE" explicit_context="0001.txt" implicit_context="" focus="concorso" implicit_focus="">
+        <original_text>non è possibile accedere al concorso DIVERTITI E OTTIENI su 444 . it</original_text>
+        <correct_text> </correct_text>
+        <modifiers>DIVERTITI E OTTIENIpoz=7 8 9;su 444 . itpoz=10 11 12 13</modifiers>
+    </node>
+    <node id="0001.txt_1_2" implicit_statement="FALSE" modality="TRUE" explicit_context="0001.txt" implicit_context="" focus="concorso" implicit_focus="">
+        <original_text>oggi non è possibile accedere al concorso su 444 . it</original_text>
+        <correct_text> </correct_text>
+        <modifiers>oggipoz=0;su 444 . itpoz=10 11 12 13</modifiers>
+    </node>
+    <node id="0001.txt_1_3" implicit_statement="FALSE" modality="TRUE" explicit_context="0001.txt" implicit_context="" focus="concorso" implicit_focus="">
+        <original_text>oggi non è possibile accedere al concorso DIVERTITI E OTTIENI</original_text>
+        <correct_text> </correct_text>
+        <modifiers>oggipoz=0;DIVERTITI E OTTIENIpoz=7 8 9</modifiers>
+    </node>
+    <node id="0001.txt_1_4" implicit_statement="FALSE" modality="TRUE" explicit_context="0001.txt" implicit_context="" focus="concorso" implicit_focus="">
+        <original_text>non è possibile accedere al concorso su 444 . it</original_text>
+        <correct_text> </correct_text>
+        <modifiers>su 444 . itpoz=10 11 12 13</modifiers>
+    </node>
+    <node id="0001.txt_1_5" implicit_statement="FALSE" modality="TRUE" explicit_context="0001.txt" implicit_context="" focus="concorso" implicit_focus="">
+        <original_text>non è possibile accedere al concorso DIVERTITI E OTTIENI</original_text>
+        <correct_text> </correct_text>
+        <modifiers>DIVERTITI E OTTIENIpoz=7 8 9</modifiers>
+    </node>
+    <node id="0001.txt_1_6" implicit_statement="FALSE" modality="TRUE" explicit_context="0001.txt" implicit_context="" focus="concorso" implicit_focus="">
+        <original_text>oggi non è possibile accedere al concorso</original_text>
+        <correct_text> </correct_text>
+        <modifiers>oggipoz=0</modifiers>
+    </node>
+    <node id="0001.txt_1_7" implicit_statement="FALSE" modality="TRUE" explicit_context="0001.txt" implicit_context="" focus="concorso" implicit_focus="">
+        <original_text>non è possibile accedere al concorso</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0001.txt_1_0-0001.txt_1_1" source="0001.txt_1_0" target="0001.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_1" source="0001.txt_1_0" target="0001.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_2" source="0001.txt_1_0" target="0001.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_2" source="0001.txt_1_0" target="0001.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_3" source="0001.txt_1_0" target="0001.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_3" source="0001.txt_1_0" target="0001.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_2-0001.txt_1_4" source="0001.txt_1_2" target="0001.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_1-0001.txt_1_4" source="0001.txt_1_1" target="0001.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_1-0001.txt_1_4" source="0001.txt_1_1" target="0001.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_2-0001.txt_1_4" source="0001.txt_1_2" target="0001.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_4" source="0001.txt_1_0" target="0001.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_3-0001.txt_1_5" source="0001.txt_1_3" target="0001.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_1-0001.txt_1_5" source="0001.txt_1_1" target="0001.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_1-0001.txt_1_5" source="0001.txt_1_1" target="0001.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_3-0001.txt_1_5" source="0001.txt_1_3" target="0001.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_5" source="0001.txt_1_0" target="0001.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_3-0001.txt_1_6" source="0001.txt_1_3" target="0001.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_2-0001.txt_1_6" source="0001.txt_1_2" target="0001.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_2-0001.txt_1_6" source="0001.txt_1_2" target="0001.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_3-0001.txt_1_6" source="0001.txt_1_3" target="0001.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_6" source="0001.txt_1_0" target="0001.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_6-0001.txt_1_7" source="0001.txt_1_6" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_5-0001.txt_1_7" source="0001.txt_1_5" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_4-0001.txt_1_7" source="0001.txt_1_4" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_4-0001.txt_1_7" source="0001.txt_1_4" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_5-0001.txt_1_7" source="0001.txt_1_5" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_6-0001.txt_1_7" source="0001.txt_1_6" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_2-0001.txt_1_7" source="0001.txt_1_2" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_3-0001.txt_1_7" source="0001.txt_1_3" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_0-0001.txt_1_7" source="0001.txt_1_0" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0001.txt_1_1-0001.txt_1_7" source="0001.txt_1_1" target="0001.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
