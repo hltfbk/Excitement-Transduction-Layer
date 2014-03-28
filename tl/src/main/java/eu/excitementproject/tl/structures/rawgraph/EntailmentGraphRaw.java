@@ -220,7 +220,7 @@ public class EntailmentGraphRaw extends
 		return false;
 	}
 
-	/** Copies all nodes and edges from the input fragment graph to the raw entailment graph
+	/** Copies all nodes and edges (incl. transitive closure) from the input fragment graph to the raw entailment graph
 	 * @param fg - the inout fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
