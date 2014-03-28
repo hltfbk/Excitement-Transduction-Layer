@@ -36,6 +36,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 
 	public GoldStandardEdgesLoader gsloader = null;
 	public EntailmentGraphRaw m_rawGraph = null;
+	public EntailmentGraphRaw m_rawGraph_plusClosure = null;
 	public GraphOptimizer m_optimizer = null;
 	
 	public List<Double> confidenceThresholds;
@@ -87,6 +88,8 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 	public void buildRawGraph() {
 		try {
 			m_rawGraph = this.useOne.buildRawGraph(this.docs);
+			m_rawGraph_plusClosure = new EntailmentGraphRaw(m_rawGraph.vertexSet(), m_rawGraph.edgeSet());
+			m_rawGraph_plusClosure.applyTransitiveClosure(false);
 		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
 				ModifierAnnotatorException | IOException e) {
 			e.printStackTrace();	
@@ -102,8 +105,9 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		}
 	}
 	
-	public EntailmentGraphCollapsed collapseGraph(Double threshold) {
+	public EntailmentGraphCollapsed collapseGraph(Double threshold, boolean withClosure) {
 		try {
+			if (withClosure) return m_optimizer.optimizeGraph(m_rawGraph_plusClosure, threshold);
 			return m_optimizer.optimizeGraph(m_rawGraph, threshold);
 		} catch (GraphOptimizerException e) {
 			e.printStackTrace();	
