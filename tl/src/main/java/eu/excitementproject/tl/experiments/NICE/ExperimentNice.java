@@ -42,14 +42,15 @@ public class ExperimentNice extends AbstractExperiment {
 		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit/test";
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
+		
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 		
 		System.out.println(tlDir);
 	//	System.out.println(System.getProperties());
 		
-	/*	ExperimentNice eTIEpos = new ExperimentNice(
+		ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -57,17 +58,17 @@ public class ExperimentNice extends AbstractExperiment {
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
-		*/
+		
 
-	/*	ExperimentNice eTIEposRes = new ExperimentNice(
+/*		ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
 				dataDir, fileLimit, outDir,
 
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
-				);
-*/
+				);*/
+
 				
 	/*	ExperimentNice eTIEparsedRes = new ExperimentNice(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
@@ -76,20 +77,20 @@ public class ExperimentNice extends AbstractExperiment {
 				
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
-				);*/
-
+				);
+*/
 		
 
 		
-		ExperimentNice eBIUTEE = new ExperimentNice(
-				tlDir+"src/test/resources/NICE_experiments/biutee.xml",
-//				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci+WN.xml",
+	/*	ExperimentNice eBIUTEE = new ExperimentNice(
+				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci.xml",
+//				tlDir+"src/test/resources/NICE_experiments/biutee.xml",
 				
 				dataDir, fileLimit, outDir,
 				
 				BIUFullLAP.class,
 				BiuteeEDA.class
-				);
+				);*/
 		
 /*		ExperimentNice EditDistBase = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
@@ -111,7 +112,7 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eBIUTEE; 
+		ExperimentNice e = eTIEpos; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
@@ -123,16 +124,56 @@ public class ExperimentNice extends AbstractExperiment {
 		
 		boolean includeFragmentGraphEdges = true;
 
-		//TODO Verify why FG edges are not found in the graph. Is it only for closure edges? 
+		//TODO Verify why FG edges are not found in the graph. Is it only for closure edges? -- solved for plusClosure data??? 
 	//	System.out.println(gr);
-		for (double confidenceThreshold=0.5; confidenceThreshold<1; confidenceThreshold+=0.05){
+		for (double confidenceThreshold : e.confidenceThresholds){
+			
+			String setting = "raw without FG";
 			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
-			System.out.println("raw without FG\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			EntailmentGraphCollapsed cgr= e.collapseGraph(confidenceThreshold);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "raw with FG";
 			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
-			System.out.println("raw with FG\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "collapsed";
+			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold);
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
-			System.out.println("collapsed\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());			
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+
+			setting = "collapsed+closure";
+			cgr.applyTransitiveClosure(false);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+
+			e.m_rawGraph.applyTransitiveClosure(false);
+			
+			setting = "plusClosure raw without FG";
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure raw with FG";
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure collapsed";
+			cgr = e.collapseGraph(confidenceThreshold);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure collapsed+closure";
+			cgr.applyTransitiveClosure(false);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
 			try {
 				cgr.toXML(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.xml");
 				cgr.toDOT(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.dot");
@@ -141,6 +182,7 @@ public class ExperimentNice extends AbstractExperiment {
 				e1.printStackTrace();
 			}
 		}
+		e.printResults();
 		System.out.println("Done");
 		
 	}

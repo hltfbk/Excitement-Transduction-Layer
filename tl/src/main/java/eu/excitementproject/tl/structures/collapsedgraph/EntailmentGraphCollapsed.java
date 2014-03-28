@@ -18,6 +18,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 
+import org.apache.log4j.Logger;
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
@@ -30,6 +31,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedEx
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
@@ -52,6 +54,9 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	/**
 	 * 
 	 */
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed");
+
+	
 	private static final long serialVersionUID = 5957243707939421299L;
 		
 	Set<String> textualInputs = null; //the textual inputs (complete statements), on which the entailment graph was built.
@@ -608,7 +613,163 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		return categories.size();		
 	}
 
+	
+	/******************************************************************************************
+	 * METHODS FOR INTERNAL TESTING PURPOSES
+	 * ****************************************************************************************/
 
+	
+	/** Generates a single string, which contains the graph in DOT format for visualization
+	 * @return the generated string
+	 */
+	public String toDOT(Map<String,String> nodeTextById){
+		String s = "digraph collapsedGraph {\n";
+		for (EquivalenceClass node : this.vertexSet()){
+			s+=node.toDOT(nodeTextById);
+		}		
+		for (EntailmentRelationCollapsed edge : this.edgeSet()){
+			s+=edge.toDOT(nodeTextById);
+		}
+		s+="}";	
+		return s;
+	}
+
+	/** Saves the graph in DOT format to the given file. If such file already exists, it will be overwritten.
+	 * @param filename - the name of the file to save the graph
+	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
+	 */
+	public void toDOT(String filename, Map<String,String> nodeTextById) throws IOException{
+			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+			out.write(this.toDOT(nodeTextById));
+			out.close();
+	}	
+
+	/******************************************************************************************
+	 * TRANSITIVE CLOSURE
+	 * ****************************************************************************************/
+	   /**
+     * Computes floor(log_2(n)) + 1
+     */
+    private int computeBinaryLog(int n)
+    {
+        assert n >= 0;
+
+        int result = 0;
+        while (n > 0) {
+            n >>= 1;
+            ++result;
+        }
+
+        return result;
+    }
+    
+    /**
+	 *  Adds transitive closure edges to the graph.
+	 *  Based on org.jgrapht.alg.TransitiveClosure
+	 *  
+	 * @param changeTypeOfExistingEdges - if true, existing transitive closure edges will change their type to "TRANSITIVE_CLOSURE" 
+	 */
+	public void applyTransitiveClosure(boolean changeTypeOfExistingEdges){    
+		Map<EquivalenceClass,Double> newEdgeTargets = new HashMap<EquivalenceClass,Double>();
+
+        // At every iteration of the outer loop, we add a path of length 1
+        // between nodes that originally had a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EquivalenceClass v1 : this.vertexSet()) {
+                newEdgeTargets.clear();
+
+                for (EquivalenceClass v2 : this.getEntailedNodes(v1)) {
+                	Double confidence = this.getEdge(v1, v2).getConfidence();
+                    for (EquivalenceClass v3 : this.getEntailedNodes(v2)) {
+
+                        // Assign min confidence of the 2 edges as the confidence of the transitive edge
+                        if (this.getEdge(v2, v3).getConfidence() < confidence) confidence=this.getEdge(v2, v3).getConfidence();
+
+                        if (v1.equals(v3)) {
+                            // Don't add self loops.
+                            continue;
+                        }
+
+                        EntailmentRelationCollapsed e = this.getEdge(v1, v3);
+                        if (e != null) {
+                            // There is already an edge from v1 ---> v3
+                        	if (!changeTypeOfExistingEdges) continue; 
+                        	
+                        	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
+                        		continue; // if it's a closure edge already - skip
+                        	}
+                        	
+                        	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
+                        	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type                         	
+                        }
+                        
+                        newEdgeTargets.put(v3,confidence);
+                        done = false;
+                    }
+                }
+
+                for (EquivalenceClass v3 : newEdgeTargets.keySet()) {
+                    EntailmentRelationCollapsed e = this.getEdge(v1, v3);
+                	if (e!=null){
+                    	this.removeAllEdges(v1, v3);                    	
+                		logger.info("Removed edge: "+ e.toString()+" to add it as a transitive closure edge");
+                    }
+                	EntailmentRelationCollapsed closureEdge = new EntailmentRelationCollapsed(v1, v3, newEdgeTargets.get(v3), EdgeType.TRANSITIVE_CLOSURE);
+                	this.addEdge(v1, v3, closureEdge);
+                	logger.info("Added transitive closure edge: "+closureEdge.toString());
+                }
+            }
+        }
+	}
+	
+ /*   *//**
+	 *  Removes all transitive closure edges from the graph.
+	 *//*
+	public void removeTransitiveClosure(){    
+		Set<EntailmentRelationCollapsed> edgesToRemove = new HashSet<EntailmentRelationCollapsed>();
+
+        // At every iteration of the outer loop, we find if there is a path of length 1
+        // between nodes that also have a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EquivalenceClass v1 : this.vertexSet()) {
+            	edgesToRemove.clear();
+
+                for (EquivalenceClass v2 : this.getEntailedNodes(v1)) {
+                    for (EquivalenceClass v3 : this.getEntailedNodes(v2)) {
+                        EntailmentRelationCollapsed e = this.getEdge(v1, v3);
+                        if (e != null) {
+                        	edgesToRemove.add(e);
+                        	logger.info("Remove transitive closure edge: "+ e.toString());
+                            done = false;
+                        }
+                    }
+                }
+
+                this.removeAllEdges(edgesToRemove);
+            }
+        }
+	}*/
+	
+	public void removeTransitiveClosure(){   
+		Set<EntailmentRelationCollapsed> edgesToRemove = new HashSet<EntailmentRelationCollapsed>();
+		for(EntailmentRelationCollapsed e : this.edgeSet()){
+			if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) edgesToRemove.add(e); 
+		}
+		removeAllEdges(edgesToRemove);
+	}
+	
 	/******************************************************************************************
 	 * LEGACY
 	 * ****************************************************************************************/

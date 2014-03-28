@@ -25,6 +25,7 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CASUtils.Region;
+import eu.excitementproject.tl.laputils.RegionUtils;
 
 /**
  * This class implements the keyword-based "fragment annotator". 
@@ -197,7 +198,7 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 		for(Set<Region> frags: detFrags) {
 			if (frags != null && frags.size() > 0) {
 				// compress the spans (by concatenating adjacent portions) before generating the fragment annotation
-				frags = compressSpans(frags);
+				frags = RegionUtils.compressRegions(frags);
 				logger.info("Adding fragment with Region: " + getCoveredSpan(frags));
 				CASUtils.Region[] r = new CASUtils.Region[frags.size()];
 				int i = 0;
@@ -410,45 +411,6 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 		return relevantDeps;
 	}
 
-	/**
-	 * Compresses the previously generated spans by aggregating adjacent ones
-	 * We know it contains more than one Region
-	 * 
-	 * @param spans
-	 * @return a compressed version of the given spans
-	 */
-	private Set<Region> compressSpans(Set<Region> spanset) {
-		
-		Region[] spans = spanset.toArray(new Region[spanset.size()]);
 
-		SortedSet<Region> compressedSpans = new TreeSet<Region>(new Comparator<Region>() {
-			public int compare(Region a, Region b) {
-				if (a.getBegin() < b.getBegin()) { return -1; }
-				if (a.getBegin() > b.getBegin()) { return 1; }
-				return 0;
-			}
-		});
-				
-		if (spans != null && spans.length > 0) {  
-		
-			int begin = spans[0].getBegin();	
-			int end = spans[0].getEnd();
-		
-			for(int i=1; i < spans.length; i++) {
-						
-				if ( (0 <= (spans[i].getBegin() - end)) && ((spans[i].getBegin() - end) <= 3)) {
-					end = spans[i].getEnd();
-				} else {
-					compressedSpans.add(new Region(begin, end));
-					begin = spans[i].getBegin();
-					end = spans[i].getEnd();
-				}			
-			}
-		
-			compressedSpans.add(new Region(begin, end));
-		}
-		
-		return compressedSpans;
-	}
 
 }

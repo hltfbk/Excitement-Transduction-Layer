@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="Speech3.4.002.txt_2_0" implicit_statement="FALSE" modality="TRUE" explicit_context="Speech3.4.002.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>da mesi non riesco piu ’ ha contattare il 444 per parlare con un operatore</original_text>
+        <correct_text>da mesi non riesco più a contattare il 444 per parlare con un operatore</correct_text>
+        <modifiers>per parlare con un operatorepoz=10 11 12 13 14;da mesipoz=0 1</modifiers>
+    </node>
+    <node id="Speech3.4.002.txt_2_1" implicit_statement="FALSE" modality="TRUE" explicit_context="Speech3.4.002.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>da mesi non riesco piu ’ ha contattare il 444</original_text>
+        <correct_text>da mesi non riesco più a contattare il 444</correct_text>
+        <modifiers>da mesipoz=0 1</modifiers>
+    </node>
+    <node id="Speech3.4.002.txt_2_2" implicit_statement="FALSE" modality="TRUE" explicit_context="Speech3.4.002.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>non riesco piu ’ ha contattare il 444 per parlare con un operatore</original_text>
+        <correct_text>non riesco più a contattare il 444 per parlare con un operatore</correct_text>
+        <modifiers>per parlare con un operatorepoz=10 11 12 13 14</modifiers>
+    </node>
+    <node id="Speech3.4.002.txt_2_3" implicit_statement="FALSE" modality="TRUE" explicit_context="Speech3.4.002.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>non riesco piu ’ ha contattare il 444</original_text>
+        <correct_text>non riesco più a contattare il 444</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="Speech3.4.002.txt_2_0-Speech3.4.002.txt_2_1" source="Speech3.4.002.txt_2_0" target="Speech3.4.002.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.002.txt_2_0-Speech3.4.002.txt_2_1" source="Speech3.4.002.txt_2_0" target="Speech3.4.002.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.002.txt_2_0-Speech3.4.002.txt_2_2" source="Speech3.4.002.txt_2_0" target="Speech3.4.002.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.002.txt_2_0-Speech3.4.002.txt_2_2" source="Speech3.4.002.txt_2_0" target="Speech3.4.002.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.002.txt_2_2-Speech3.4.002.txt_2_3" source="Speech3.4.002.txt_2_2" target="Speech3.4.002.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.002.txt_2_1-Speech3.4.002.txt_2_3" source="Speech3.4.002.txt_2_1" target="Speech3.4.002.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.002.txt_2_1-Speech3.4.002.txt_2_3" source="Speech3.4.002.txt_2_1" target="Speech3.4.002.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.002.txt_2_2-Speech3.4.002.txt_2_3" source="Speech3.4.002.txt_2_2" target="Speech3.4.002.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.002.txt_2_0-Speech3.4.002.txt_2_3" source="Speech3.4.002.txt_2_0" target="Speech3.4.002.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

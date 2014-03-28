@@ -101,7 +101,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		// There might be an existing entailment edge because the two base statements were present in the work graph before
 		if (!workGraph.isEntailmentInAnyDirection(newBaseStatement, workGraphBaseStatement)){
 			// If there's no existing entailment, check if there is entailment between the base statements
-			logger.info("Checking entailment between base statements");
+//			logger.info("Checking entailment between base statements");
 			Set<EntailmentRelation> edgesToAdd = getEntailmentRelations(workGraphBaseStatement, newBaseStatement);
 			if (edgesToAdd.isEmpty()) return workGraph; // empty set = no entailment, i.e. we are done  - there's nothing else to merge (return the current work graph)
 			
@@ -115,7 +115,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		// If there was an existing entailment edge, or if we just found that there is entailment in either direction between the 2 base statements
 		// Now we need to look at the direction of the entailment and check in this direction for 1st-level nodes
 		// And then propagate for the upper-level nodes
-		logger.info("Checking entailment on upper levels");
+//		logger.info("Checking entailment on upper levels");
 		
 		// check if both graph have 1-level nodes (maybe one of the 2 fragment graphs only has one node (base statement = complete statement))
 		if (!oldFragmentGraphNodes.keySet().contains(1)) return workGraph; // no 1-level in "old fr.graph" => no need to continue merging

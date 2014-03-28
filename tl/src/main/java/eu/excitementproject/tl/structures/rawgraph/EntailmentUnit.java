@@ -1,8 +1,8 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
-
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
 /*
@@ -253,6 +253,20 @@ public class EntailmentUnit{
 		return text.trim().replaceAll(" +", " ");
 	}
 	
+
+	/******************************************************************************************
+	 * COMPARATORS
+	 * ****************************************************************************************/
+
+	/**
+	 * Comparator to sort equivalence classes in descending order by their number of interactions
+	 */
+	public static class TextComparator implements Comparator<EntailmentUnit> {
+	    @Override
+	    public int compare(EntailmentUnit nodeA, EntailmentUnit nodeB) {
+	        return nodeA.getText().compareTo(nodeB.getText());
+	    }
+	}
 
 	/******************************************************************************************
 	 * PRINT

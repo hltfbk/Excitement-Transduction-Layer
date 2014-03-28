@@ -487,6 +487,24 @@ public final class InteractionReader {
 			testlogger.debug("This fragment node has no modifiers."); 
 		}
 		
+		
+		// vv@fbk -- get the focus if it exists, and add it as a keyword annotation
+		String keyword = null;
+		if (topnode.getAttribute("focus") != null ) {
+			keyword = topnode.getAttribute("focus");
+		}
+		
+		if (keyword != null && original_text.contains(keyword)) {
+			testlogger.debug("Adding the focus as a keyword annotation.");
+
+			frag_start = interactionString.indexOf(keyword); 
+			frag_end = frag_start + keyword.length(); 
+			
+			CASUtils.Region keyw_r = new CASUtils.Region(frag_start, frag_end);
+			
+			CASUtils.annotateOneKeyword(aJCas, keyw_r);
+		}
+		
 	}
 
 	/**
