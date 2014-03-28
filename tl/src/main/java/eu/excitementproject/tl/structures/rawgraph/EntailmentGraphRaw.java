@@ -220,10 +220,13 @@ public class EntailmentGraphRaw extends
 		return false;
 	}
 
-	/** Copies all nodes and edges from the input fragment graph to the raw entailment graph
+	/** Copies all nodes and edges (incl. transitive closure) from the input fragment graph to the raw entailment graph
 	 * @param fg - the inout fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
+		// first add transitive closure
+		fg.applyTransitiveClosure();
+		
 		// copy nodes (add if new, update mentions if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
 		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
 			this.addEntailmentUnitMention(fragmentGraphNode, fg.getCompleteStatement().getText());
@@ -728,12 +731,14 @@ public class EntailmentGraphRaw extends
                             // There is already an edge from v1 ---> v3
                         	if (!changeTypeOfExistingEdges)	continue; 
                         	
-                        	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) {
-                        		continue; // if it's a closure edge already - skip
+                        	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) { // if it's a closure edge already
+                        		if (e.getConfidence()>=confidence) continue; // and its confidence is >= current - skip
+                        		// if its confidence is lower than current, we want to update the edge with the current confidence, since we have a more confident transitive path from v1 to v3 now 
                         	}
- 
-                        	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
-                        	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type 
+                        	else{
+                               	// if it's not a closure edge, add it as not an edge with EdgeType="TRANSITIVE_CLOSURE"
+                            	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type                        		
+                        	}
                         }
                         
                         newEdgeTargets.put(v3,confidence);

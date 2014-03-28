@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 
@@ -26,13 +28,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.jgrapht.EdgeFactory;
 import org.jgrapht.graph.ClassBasedEdgeFactory;
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
-
 import org.uimafit.util.JCasUtil;
 
 import eu.excitement.type.tl.CategoryAnnotation;
@@ -45,7 +45,10 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.RegionUtils;
 import eu.excitementproject.tl.laputils.CASUtils.Region;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
+import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
  * 
@@ -570,5 +573,85 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	    }
 	}
 	
+	/******************************************************************************************
+	 * TRANSITIVE CLOSURE
+	 * ****************************************************************************************/
+	   /**
+     * Computes floor(log_2(n)) + 1
+     */
+    private int computeBinaryLog(int n)
+    {
+        assert n >= 0;
+
+        int result = 0;
+        while (n > 0) {
+            n >>= 1;
+            ++result;
+        }
+
+        return result;
+    }
+    
+    /**
+	 *  Adds transitive closure edges to the graph.
+	 *  Based on org.jgrapht.alg.TransitiveClosure
+	 */
+	public void applyTransitiveClosure(){    
+		Map<EntailmentUnitMention,Double> newEdgeTargets = new HashMap<EntailmentUnitMention,Double>();
+
+        // At every iteration of the outer loop, we add a path of length 1
+        // between nodes that originally had a path of length 2. In the worst
+        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
+        // if there is no change to the output graph.
+
+        int bound = computeBinaryLog(this.vertexSet().size());
+        boolean done = false;
+        for (int i = 0; !done && (i < bound); ++i) {
+            done = true;
+            for (EntailmentUnitMention v1 : this.vertexSet()) {
+                newEdgeTargets.clear();
+
+                for (EntailmentUnitMention v2 : this.getEntailedNodes(v1)) {
+                	Double weight = this.getEdge(v1, v2).getWeight();
+                    for (EntailmentUnitMention v3 : this.getEntailedNodes(v2)) {
+
+                        // Assign min confidence of the 2 edges as the confidence of the transitive edge
+                        if (this.getEdge(v2, v3).getWeight() < weight) weight=this.getEdge(v2, v3).getWeight();
+
+                        if (v1.equals(v3)) {
+                            // Don't add self loops.
+                            continue;
+                        }
+
+                        if (this.getEdge(v1, v3) != null) {
+                        	// Already have such edge
+                        	continue; 
+                        }
+                                      
+                        newEdgeTargets.put(v3,weight);
+                        done = false;
+                    }
+                }
+
+                for (EntailmentUnitMention v3 : newEdgeTargets.keySet()) {
+                	this.addEdge(v1, v3);
+                }
+            }
+        }
+	}
+
 	
+	/** Returns the set of nodes, entailed by the given node
+	 * @param node whose entailed nodes are returned
+	 * @return Set<EntailmentUnitMention> with all the entailed nodes of the given node
+	 */
+	public Set<EntailmentUnitMention> getEntailedNodes(EntailmentUnitMention node){
+		if (!this.containsVertex(node)) return null;
+
+		Set<EntailmentUnitMention> entailedNodes = new HashSet<EntailmentUnitMention>();
+		for (FragmentGraphEdge edge : this.outgoingEdgesOf(node)){
+			entailedNodes.add(edge.getTarget());
+		}
+		return entailedNodes;
+	}
 }
