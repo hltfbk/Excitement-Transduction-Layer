@@ -78,6 +78,15 @@ public class EntailmentGraphRaw extends
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
 
+	public EntailmentGraphRaw(Set<EntailmentUnit> nodes, Set<EntailmentRelation> edges){
+		this();
+		for (EntailmentUnit node : nodes){
+			this.addVertex(node);  
+		}
+		for (EntailmentRelation e : edges){
+			this.addEdge(e.getSource(), e.getTarget(), e);
+		}
+	}	
 	/*
 	 * a constructor for initializing a graph from a (xml) file
 	 */

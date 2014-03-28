@@ -132,7 +132,7 @@ public class ExperimentNice extends AbstractExperiment {
 	//	System.out.println(gr);
 		
 		for (double confidenceThreshold : e.confidenceThresholds){
-			
+			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 			String setting = "raw without FG";
 			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
@@ -144,7 +144,7 @@ public class ExperimentNice extends AbstractExperiment {
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "collapsed";
-			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold);
+			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
@@ -157,21 +157,20 @@ public class ExperimentNice extends AbstractExperiment {
 
 		}
 
-		e.m_rawGraph.applyTransitiveClosure(false);			
-		for (double confidenceThreshold : e.confidenceThresholds){
-						
+		for (double confidenceThreshold : e.confidenceThresholds){						
+			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
 			String setting = "plusClosure raw without FG";
-			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure raw with FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure collapsed";
-			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold);
+			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, true);
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
