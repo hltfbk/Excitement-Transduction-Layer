@@ -115,10 +115,13 @@ public class ExperimentAlma extends AbstractExperiment {
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 
-			e.m_rawGraph.applyTransitiveClosure(false);
-			
-			setting = "plusClosure raw without FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
+		}
+
+		e.m_rawGraph.applyTransitiveClosure(false);			
+		for (double confidenceThreshold : e.confidenceThresholds){
+						
+			String setting = "plusClosure raw without FG";
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
@@ -128,7 +131,7 @@ public class ExperimentAlma extends AbstractExperiment {
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure collapsed";
-			cgr = e.collapseGraph(confidenceThreshold);
+			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold);
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
@@ -138,17 +141,11 @@ public class ExperimentAlma extends AbstractExperiment {
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
-			
-			try {
-				cgr.toXML(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.xml");
-				cgr.toDOT(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.dot");
-			} catch (EntailmentGraphCollapsedException | TransformerException | IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 		}
+		
+		
 		e.printResults();
-		System.out.println("Done");		
+		System.out.println("Done");
 	}
 
 }
