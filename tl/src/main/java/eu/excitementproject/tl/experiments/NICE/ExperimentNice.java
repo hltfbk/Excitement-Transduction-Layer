@@ -17,6 +17,7 @@ import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -39,12 +40,14 @@ public class ExperimentNice extends AbstractExperiment {
 	 */
 	public static void main(String[] args) {
 
-		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
+		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
+
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
 		
-		int fileLimit = 1000000;
+		int fileLimit = 10;
 		String outDir = dataDir.replace("resources", "outputs");
 		
 		System.out.println(tlDir);
@@ -124,8 +127,10 @@ public class ExperimentNice extends AbstractExperiment {
 		
 		boolean includeFragmentGraphEdges = true;
 
+		
 		//TODO Verify why FG edges are not found in the graph. Is it only for closure edges? -- solved for plusClosure data??? 
 	//	System.out.println(gr);
+		
 		for (double confidenceThreshold : e.confidenceThresholds){
 			
 			String setting = "raw without FG";
@@ -150,10 +155,13 @@ public class ExperimentNice extends AbstractExperiment {
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 
-			e.m_rawGraph.applyTransitiveClosure(false);
-			
-			setting = "plusClosure raw without FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
+		}
+
+		e.m_rawGraph.applyTransitiveClosure(false);			
+		for (double confidenceThreshold : e.confidenceThresholds){
+						
+			String setting = "plusClosure raw without FG";
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
@@ -163,7 +171,7 @@ public class ExperimentNice extends AbstractExperiment {
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure collapsed";
-			cgr = e.collapseGraph(confidenceThreshold);
+			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold);
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
@@ -173,15 +181,9 @@ public class ExperimentNice extends AbstractExperiment {
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
-			
-			try {
-				cgr.toXML(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.xml");
-				cgr.toDOT(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.dot");
-			} catch (EntailmentGraphCollapsedException | TransformerException | IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 		}
+		
+		
 		e.printResults();
 		System.out.println("Done");
 		
