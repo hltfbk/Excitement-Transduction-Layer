@@ -40,30 +40,30 @@ public class ExperimentNice extends AbstractExperiment {
 	 */
 	public static void main(String[] args) {
 
-		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
-//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
+//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
 		
-		int fileLimit = 10;
+		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 		
 		System.out.println(tlDir);
 	//	System.out.println(System.getProperties());
 		
-		ExperimentNice eTIEpos = new ExperimentNice(
+	/*	ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
 
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
-				);
+				);*/
 		
 
-/*		ExperimentNice eTIEposRes = new ExperimentNice(
+	/*	ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -73,7 +73,7 @@ public class ExperimentNice extends AbstractExperiment {
 				);*/
 
 				
-	/*	ExperimentNice eTIEparsedRes = new ExperimentNice(
+		ExperimentNice eTIEparsedRes = new ExperimentNice(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -81,7 +81,7 @@ public class ExperimentNice extends AbstractExperiment {
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
 				);
-*/
+
 		
 
 		
@@ -115,7 +115,7 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eTIEpos; 
+		ExperimentNice e = eTIEparsedRes; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
