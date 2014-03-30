@@ -224,7 +224,7 @@ public class EntailmentGraphRaw extends
 	 * @param fg - the inout fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
-		// first add transitive closure
+		// first add transitive closure to the FG
 		fg.applyTransitiveClosure();
 		
 		// copy nodes (add if new, update mentions if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
