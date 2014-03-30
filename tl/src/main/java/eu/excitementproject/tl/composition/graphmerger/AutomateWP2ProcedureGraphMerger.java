@@ -30,7 +30,6 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	public AutomateWP2ProcedureGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
