@@ -96,6 +96,17 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		}
 	}
 
+	public void buildRawGraph(double confidenceThreshold) {
+		try {
+			m_rawGraph = this.useOne.buildRawGraph(this.docs, confidenceThreshold);
+			m_rawGraph_plusClosure = new EntailmentGraphRaw(m_rawGraph.vertexSet(), m_rawGraph.edgeSet());
+			m_rawGraph_plusClosure.applyTransitiveClosure(false);
+		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
+				ModifierAnnotatorException | IOException e) {
+			e.printStackTrace();	
+		}
+	}
+	
 	public EntailmentGraphCollapsed collapseGraph() {
 		try {
 			return m_optimizer.optimizeGraph(m_rawGraph);
