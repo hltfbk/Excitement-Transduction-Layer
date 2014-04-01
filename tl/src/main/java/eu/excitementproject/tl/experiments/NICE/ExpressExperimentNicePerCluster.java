@@ -116,10 +116,17 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		);
 */
 			
-		ExpressExperimentNicePerCluster e = eTIEparsedRes; 
+
+		File gsDir = new File(gsAnnotationsDir);
+		for (String clusterDir : gsDir.list()){
+			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
+			System.out.println(gsClusterDir);
+		}		
+
+		/*		ExpressExperimentNicePerCluster e = eTIEparsedRes; 
 		
 		Double confidenceThreshold = 0.8;
-	//	e.buildRawGraph(confidenceThreshold);
+			e.buildRawGraph(confidenceThreshold);
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.xml");
 			e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.dot");
@@ -133,7 +140,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		for (String clusterDir : gsDir.list()){
 			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
 			System.out.println(gsClusterDir);
-/*			System.out.println("With threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
+			System.out.println("With threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 			String setting = "raw without FG"+"\t"+clusterDir;
 			EvaluationMeasures res = e.evaluateRawGraph(e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
@@ -155,11 +162,12 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 			res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
-*/		
+	
 		}
 		
 			
 		e.printResults();
+	*/	
 		System.out.println("Done");
 		
 	}

@@ -16,7 +16,6 @@ import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.demo.UseCaseOneDemo;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.EvaluatorGraphMerger;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
@@ -32,7 +31,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  * @author Lili Kotlerman
  *
  */
-public abstract class AbstractExperiment extends UseCaseOneDemo {
+public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 
 	public GoldStandardEdgesLoader gsloader = null;
 	public EntailmentGraphRaw m_rawGraph = null;
