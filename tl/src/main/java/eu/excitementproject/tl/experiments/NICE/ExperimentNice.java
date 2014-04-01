@@ -72,7 +72,7 @@ public class ExperimentNice extends AbstractExperiment {
 		dataDir, fileLimit, outDir,
 
 		TreeTaggerEN.class, //not used, just some available LAP
-		ProbabilisticEDA.class
+		ProbabilisticEDA.class // to assign desired probability go to the EDA code (hard-coded in the beginning)
 		);
 		
 		/*	ExperimentNice eTIEpos = new ExperimentNice(

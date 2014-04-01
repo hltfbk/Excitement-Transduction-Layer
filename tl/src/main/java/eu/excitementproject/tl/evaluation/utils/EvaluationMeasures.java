@@ -10,6 +10,19 @@ public class EvaluationMeasures {
 	Double recall;
 	Double precision;
 	
+	// memorize for future analysis
+	int truePositives;
+	int falsePositives;
+	int trueNegatives;
+	int falseNegatives;
+	
+	private void setRawNumbers(int tp, int fp, int tn, int fn){
+		truePositives=tp;
+		falsePositives=fp;
+		trueNegatives=tn;
+		falseNegatives=fn;
+	}
+	
 	public EvaluationMeasures() {
 		this.recall = null;
 		this.precision = null;
@@ -19,6 +32,8 @@ public class EvaluationMeasures {
 	public EvaluationMeasures(int tp, int fp, int tn, int fn) {
 		precision = 1.0 * tp / (tp + fp);
 		recall = 1.0 * tp / (tp + fn);
+		
+		setRawNumbers(tp, fp, tn, fn);
 	}
 	
 	
@@ -29,9 +44,13 @@ public class EvaluationMeasures {
 	public EvaluationMeasures(List<Integer> scores) {
 		int tp = scores.get(0);
 		int fp = scores.get(1);
+		int tn = scores.get(2);
 		int fn = scores.get(3);
+				
 		precision = 1.0 * tp / (tp + fp);
 		recall = 1.0 * tp / (tp + fn);
+
+		setRawNumbers(tp, fp, tn, fn);
 	}
 	
 	/**
@@ -71,4 +90,34 @@ public class EvaluationMeasures {
 	public String toString(){
 		return "Recall="+getRecall()+";\tPrec="+getPrecision()+";\tF1="+getF1();		
 	}
+
+	/**
+	 * @return the truePositives
+	 */
+	public int getTruePositives() {
+		return truePositives;
+	}
+
+	/**
+	 * @return the falsePositives
+	 */
+	public int getFalsePositives() {
+		return falsePositives;
+	}
+
+	/**
+	 * @return the trueNegatives
+	 */
+	public int getTrueNegatives() {
+		return trueNegatives;
+	}
+
+	/**
+	 * @return the falseNegatives
+	 */
+	public int getFalseNegatives() {
+		return falseNegatives;
+	}
+	
+	
 }
