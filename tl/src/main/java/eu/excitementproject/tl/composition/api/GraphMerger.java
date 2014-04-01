@@ -80,4 +80,10 @@ public interface GraphMerger {
 			FragmentGraph fragmentGraph,
 			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException;
 	
+	/**
+	 * Set confidence threshold to be applied while merging
+	 * To disable thresholding, set the threshold to null
+	 * @param entailmentConfidenceThreshold the entailmentConfidenceThreshold to set
+	 */
+	public void setEntailmentConfidenceThreshold(Double entailmentConfidenceThreshold);
 }

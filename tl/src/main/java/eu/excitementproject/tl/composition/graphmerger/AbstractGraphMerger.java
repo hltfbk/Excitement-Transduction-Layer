@@ -75,7 +75,8 @@ should be clearly exposed in the Constructor.
 	}
 
 	
-	/** Checks for entailment (in both directions) between nodeA and nodeB. If there is entailment in any direction, corresponding EntailmentRelation(s) will be returned. 
+	/** Checks for entailment (in both directions) between nodeA and nodeB. If there is entailment in any direction, corresponding EntailmentRelation(s) will be returned.
+	 * The yes/no decision on entailment takes into considerartion the value of entailmentConfideneThreshold, if defined.   
 	 * @param workGraph
 	 * @param nodeA
 	 * @param nodeB
@@ -111,9 +112,9 @@ should be clearly exposed in the Constructor.
 	}
 
 	
-	/*
-	 * viv@fbk: added lap parameter
-	 */			
+	
+	 // viv@fbk: added lap parameter
+	 			
 	protected EntailmentRelation getRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode) throws GraphMergerException{	
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
 		try {
@@ -157,12 +158,9 @@ should be clearly exposed in the Constructor.
 	/**
 	 * @param entailmentConfidenceThreshold the entailmentConfidenceThreshold to set
 	 */
-	public void setEntailmentConfidenceThreshold(
-			Double entailmentConfidenceThreshold) {
+	@Override
+	public void setEntailmentConfidenceThreshold(Double entailmentConfidenceThreshold) {
 		this.entailmentConfidenceThreshold = entailmentConfidenceThreshold;
 	}
-	
-	
-
-
+		
 }
