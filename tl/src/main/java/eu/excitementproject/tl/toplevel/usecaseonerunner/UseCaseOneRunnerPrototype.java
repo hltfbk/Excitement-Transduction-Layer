@@ -183,8 +183,32 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		}
 		System.in.read();
 */	
+		graphMerger.setEntailmentConfidenceThreshold(null); //make sure no threshold is applied
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}
+	
+
+	
+	/**
+	 * Builds a raw entailment graph from a set of user interactions, using a confidence threshold when adding edges
+	 * 
+	 * @param docs -- a set of user interactions as JCas objects
+	 * @param confidenceThreshold -- threshold on entailment confidence. Edges will be added to the graph only if entailment decision confidence is >= threshold  
+	 *  
+	 * @return an raw entailment graph (the multigraph with all edges and nodes)
+	 * @throws FragmentAnnotatorException 
+	 * @throws ModifierAnnotatorException 
+	 * @throws LAPException 
+	 */
+
+	public EntailmentGraphRaw buildRawGraph(List<JCas> docs, double confidenceThreshold) 
+			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
+		
+		graphMerger.setEntailmentConfidenceThreshold(confidenceThreshold);
+		return buildRawGraph(docs);
+	}	
+	
+	
 	
 	/**
 	 * @param f -- a file containing a serialized raw entailment graph

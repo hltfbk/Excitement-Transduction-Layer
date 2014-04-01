@@ -220,11 +220,22 @@ public class EntailmentGraphRaw extends
 		return false;
 	}
 
+	public boolean isEntailmentInSingleDirectionOnly(EntailmentUnit nodeA, EntailmentUnit nodeB){
+		if (nodeA.equals(nodeB)) return false; // if both nodes are the same - this is bidirectional, not single direction
+		if (isEntailment(nodeA, nodeB)) {
+			if (!isEntailment(nodeB, nodeA))return true;
+		}
+		if (isEntailment(nodeB, nodeA)) {
+			if (!isEntailment(nodeA, nodeB)) return true;
+		}		
+		return false;
+	}
+
 	/** Copies all nodes and edges (incl. transitive closure) from the input fragment graph to the raw entailment graph
 	 * @param fg - the inout fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
-		// first add transitive closure
+		// first add transitive closure to the FG
 		fg.applyTransitiveClosure();
 		
 		// copy nodes (add if new, update mentions if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
