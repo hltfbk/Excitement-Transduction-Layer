@@ -15,6 +15,8 @@ import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
+import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -127,8 +129,23 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		DKProSimilaritySimpleEDA.class
 		);
 */
-			
+/*			
+		File gsDir = new File(gsAnnotationsDir);
+		for (String clusterDir : gsDir.list()){
+			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
+			System.out.println(gsClusterDir);
+			GoldStandardEdgesLoader gsLoader = new GoldStandardEdgesLoader(true);
+			try {
+				gsLoader.loadClusterAnnotations(gsClusterDir, false);
+				System.out.println(gsLoader.getEdges().size());
+			} catch (GraphEvaluatorException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}*/
 
+		
+		
 	
 		ExpressExperimentNicePerCluster e = eTIEpos; 
 		
@@ -146,9 +163,12 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		File gsDir = new File(gsAnnotationsDir);
 		for (String clusterDir : gsDir.list()){
 			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
+			File clustGS = new File(gsClusterDir);
+			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 
-			for (double threshold : e.confidenceThresholds){
+			double threshold = confidenceThreshold;
+	//		for (double threshold : e.confidenceThresholds){
 				if (threshold < confidenceThreshold) continue;
 				System.out.println("Before applying threshold "+ threshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 				String setting = "raw without FG"+"\t"+clusterDir;
@@ -173,13 +193,13 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
 
-			}
+	//		}
 
-			for (double threshold : e.confidenceThresholds){						
+	//		for (double threshold : e.confidenceThresholds){						
 				if (threshold < confidenceThreshold) continue;
 				System.out.println("Before applying threshold "+ threshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
-				String setting = "plusClosure raw without FG"+"\t"+clusterDir;
-				EvaluationMeasures res = e.evaluateRawGraph(threshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+				setting = "plusClosure raw without FG"+"\t"+clusterDir;
+				res = e.evaluateRawGraph(threshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
 				
@@ -189,7 +209,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				e.addResult(setting, threshold, res);
 				
 				setting = "plusClosure collapsed"+"\t"+clusterDir;
-				EntailmentGraphCollapsed cgr = e.collapseGraph(threshold, true);
+				cgr = e.collapseGraph(threshold, true);
 				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
@@ -199,7 +219,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
-			}			
+	//		}			
 			
 		}
 			

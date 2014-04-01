@@ -164,12 +164,12 @@ public class GoldStandardEdgesLoader {
 					for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
 						if (annotationFile.getName().endsWith(".xml")){
 							logger.debug("Fragment graph # "+fgid);
-	/*								try {
+									try {
 										ClusterStatistics.processCluster(annotationFile);
 									} catch (ParserConfigurationException | SAXException | IOException e) {							
 										e.printStackTrace();
 									}
-	*/								addAnnotationsFromFile(annotationFile.getPath());
+									addAnnotationsFromFile(annotationFile.getPath());
 							fgid++;
 						}
 					}							
@@ -185,12 +185,12 @@ public class GoldStandardEdgesLoader {
 					if (annotationFile.getName().endsWith(MERGED_XML_SUFFIX)){
 					logger.info("Loading merge annotations from file "+annotationFile);
 					addAnnotationsFromFile(annotationFile.getPath());
-/*							try {
+							try {
 								ClusterStatistics.processCluster(annotationFile);
 							} catch (ParserConfigurationException | SAXException | IOException e) {							
 								e.printStackTrace();
 							}
-*/						}
+						}
 				}
 			}									
 		}
