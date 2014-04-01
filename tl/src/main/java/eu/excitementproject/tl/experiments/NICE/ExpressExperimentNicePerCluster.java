@@ -150,7 +150,8 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		ExpressExperimentNicePerCluster e = eTIEpos; 
 		
 		Double confidenceThreshold = e.confidenceThresholds.get(6); // = 0.8
-			e.buildRawGraph(confidenceThreshold);
+		System.out.println("Threshold is "+confidenceThreshold);
+		e.buildRawGraph(confidenceThreshold);
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.xml");
 			e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.dot");
