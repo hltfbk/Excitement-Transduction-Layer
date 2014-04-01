@@ -18,12 +18,12 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 public class ProbabilisticEDA implements EDABasic<ProbabilisticTEDecision>{
 
 	private Random generator;
-	private Double entailmentProbability;
+	private final Double entailmentProbability=0.8;
 	
-	public ProbabilisticEDA(Double entailmentProbability) {
+	
+	public ProbabilisticEDA() {
 		try {
 			initialize(null);
-			this.entailmentProbability = entailmentProbability;
 		} catch (ConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

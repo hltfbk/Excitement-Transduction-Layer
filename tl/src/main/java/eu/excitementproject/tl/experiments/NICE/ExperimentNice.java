@@ -18,6 +18,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
@@ -56,7 +57,7 @@ public class ExperimentNice extends AbstractExperiment {
 		
 
 		
-		ExperimentNice eRandom = new ExperimentNice(
+/*		ExperimentNice eRandom = new ExperimentNice(
 		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 
 		dataDir, fileLimit, outDir,
@@ -64,7 +65,15 @@ public class ExperimentNice extends AbstractExperiment {
 		TreeTaggerEN.class, //not used, just some available LAP
 		RandomEDA.class
 		);
-		
+*/		
+		ExperimentNice eProb = new ExperimentNice(
+		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+
+		dataDir, fileLimit, outDir,
+
+		TreeTaggerEN.class, //not used, just some available LAP
+		ProbabilisticEDA.class
+		);
 		
 		/*	ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
@@ -128,7 +137,7 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eRandom; 
+		ExperimentNice e = eProb; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
