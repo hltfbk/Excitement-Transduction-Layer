@@ -18,6 +18,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -53,7 +54,19 @@ public class ExperimentNice extends AbstractExperiment {
 		System.out.println(tlDir);
 	//	System.out.println(System.getProperties());
 		
-	/*	ExperimentNice eTIEpos = new ExperimentNice(
+
+		
+		ExperimentNice eRandom = new ExperimentNice(
+		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+
+		dataDir, fileLimit, outDir,
+
+		TreeTaggerEN.class, //not used, just some available LAP
+		RandomEDA.class
+		);
+		
+		
+		/*	ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -73,7 +86,7 @@ public class ExperimentNice extends AbstractExperiment {
 				);*/
 
 				
-		ExperimentNice eTIEparsedRes = new ExperimentNice(
+/*		ExperimentNice eTIEparsedRes = new ExperimentNice(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -81,7 +94,7 @@ public class ExperimentNice extends AbstractExperiment {
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
 				);
-
+*/
 		
 
 		
@@ -115,7 +128,7 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eTIEparsedRes; 
+		ExperimentNice e = eRandom; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
