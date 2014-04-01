@@ -64,8 +64,10 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		for (String setting : results.keySet()){
 			System.out.println();
 			for (double threshold : confidenceThresholds){
-				EvaluationMeasures res = results.get(setting).get(threshold);
-				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());				
+				if (results.get(setting).containsKey(threshold)){
+					EvaluationMeasures res = results.get(setting).get(threshold);
+					System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());									
+				}
 			}
 		}
 	}

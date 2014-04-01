@@ -131,7 +131,6 @@ public class UseCaseOneForExperiments {
 	
 		List<JCas> docs = new ArrayList<JCas>();
 		File dir = new File(dataDir);
-	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constuctor
 
 		//File f;
 		JCas aJCas;
@@ -151,16 +150,6 @@ public class UseCaseOneForExperiments {
 			e.printStackTrace();
 		}
 		return docs;
-	}
-	
-	public void inspectResults() {
-		try {
-			useOne.inspectGraph(graph);
-		} catch (IOException | TransformerException | EntailmentGraphCollapsedException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Error inspecting results");
-			e.printStackTrace();
-		}
-	}		
+	}	
 	
 }
