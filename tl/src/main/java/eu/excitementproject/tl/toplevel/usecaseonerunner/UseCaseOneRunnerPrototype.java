@@ -144,7 +144,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 */	
 	
 	/**
-	 * Builds a raw entailment graph from a set of user interactions
+	 * Builds a raw entailment graph from a set of user interactions without any threshold applied at merge phase
 	 * 
 	 * @param docs -- a set of user interactions as JCas objects
 	 *  

@@ -22,6 +22,7 @@ import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
+import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -58,7 +59,16 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 	//	System.out.println(System.getProperties());
 		
 
-	/*	ExpressExperimentNicePerCluster eProb = new ExpressExperimentNicePerCluster(
+		ExpressExperimentNicePerCluster eRand = new ExpressExperimentNicePerCluster(
+		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+
+		dataDir, fileLimit, outDir,
+
+		TreeTaggerEN.class, //not used, just some available LAP
+		RandomEDA.class 
+		);
+		
+		/*	ExpressExperimentNicePerCluster eProb = new ExpressExperimentNicePerCluster(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 
 				dataDir, fileLimit, outDir,
@@ -68,7 +78,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				);*/
 		
 		
-		ExpressExperimentNicePerCluster eTIEpos = new ExpressExperimentNicePerCluster(
+	/*	ExpressExperimentNicePerCluster eTIEpos = new ExpressExperimentNicePerCluster(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -76,7 +86,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
-		
+		*/
 
 	/*	ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
@@ -147,7 +157,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		
 		
 	
-		ExpressExperimentNicePerCluster e = eTIEpos; 
+		ExpressExperimentNicePerCluster e = eRand; 
 		
 		Double confidenceThreshold = e.confidenceThresholds.get(6); // = 0.8
 		System.out.println("Threshold is "+confidenceThreshold);
@@ -169,7 +179,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 
-			double threshold = 0.0;
+			double threshold = e.confidenceThresholds.get(0);
 	//		for (double threshold : e.confidenceThresholds){
 			//	if (threshold < confidenceThreshold) continue;
 				System.out.println("Before applying threshold "+ threshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
