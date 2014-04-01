@@ -33,7 +33,7 @@ public class ProbabilisticTEDecision implements TEDecision{
 	}*/
 
 	public DecisionLabel getDecision() {
-		if (decisionConfidence >= entailmentProbability) return DecisionLabel.Paraphrase;
+		if (decisionConfidence >= entailmentProbability) return DecisionLabel.Entailment;
 		return DecisionLabel.NonEntailment;
 	}
 	
