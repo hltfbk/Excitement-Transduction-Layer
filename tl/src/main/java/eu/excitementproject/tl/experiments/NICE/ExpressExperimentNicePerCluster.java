@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.experiments.NICE;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.xml.transform.TransformerException;
@@ -18,17 +19,15 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
  * @author Lili Kotlerman
  * 
  */
-public class ExperimentNice extends AbstractExperiment {
+public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 
-	public ExperimentNice(String configFileName, String dataDir,
+	public ExpressExperimentNicePerCluster(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
@@ -55,27 +54,7 @@ public class ExperimentNice extends AbstractExperiment {
 		System.out.println(tlDir);
 	//	System.out.println(System.getProperties());
 		
-
-		
-/*		ExperimentNice eRandom = new ExperimentNice(
-		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
-
-		dataDir, fileLimit, outDir,
-
-		TreeTaggerEN.class, //not used, just some available LAP
-		RandomEDA.class
-		);
-*/		
-		ExperimentNice eProb = new ExperimentNice(
-		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
-
-		dataDir, fileLimit, outDir,
-
-		TreeTaggerEN.class, //not used, just some available LAP
-		ProbabilisticEDA.class // to assign desired probability go to the EDA code (hard-coded in the beginning)
-		);
-		
-		/*	ExperimentNice eTIEpos = new ExperimentNice(
+	/*	ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -95,7 +74,7 @@ public class ExperimentNice extends AbstractExperiment {
 				);*/
 
 				
-/*		ExperimentNice eTIEparsedRes = new ExperimentNice(
+		ExpressExperimentNicePerCluster eTIEparsedRes = new ExpressExperimentNicePerCluster(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -103,7 +82,7 @@ public class ExperimentNice extends AbstractExperiment {
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
 				);
-*/
+
 		
 
 		
@@ -137,74 +116,49 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eProb; 
-		e.buildRawGraph();
+		ExpressExperimentNicePerCluster e = eTIEparsedRes; 
+		
+		Double confidenceThreshold = 0.8;
+	//	e.buildRawGraph(confidenceThreshold);
 		try {
-			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
-			e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_rawGraph.dot");
+			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.xml");
+			e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.dot");
 		} catch (IOException | EntailmentGraphRawException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-				
-		boolean isSingleClusterGS = false;
-
 		
-		//TODO Verify why FG edges are not found in the graph. Is it only for closure edges? -- solved for plusClosure data??? 
-	//	System.out.println(gr);
-		
-		for (double confidenceThreshold : e.confidenceThresholds){
-			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
-			String setting = "raw without FG";
-			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+		boolean isSingleClusterGS = true;
+		File gsDir = new File(gsAnnotationsDir);
+		for (String clusterDir : gsDir.list()){
+			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
+			System.out.println(gsClusterDir);
+/*			System.out.println("With threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
+			String setting = "raw without FG"+"\t"+clusterDir;
+			EvaluationMeasures res = e.evaluateRawGraph(e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
-			setting = "raw with FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
+			setting = "raw with FG"+"\t"+clusterDir;
+			res = e.evaluateRawGraph(e.m_rawGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
-			setting = "collapsed";
+			setting = "collapsed"+"\t"+clusterDir;
 			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+			res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 
-			setting = "collapsed+closure";
+			setting = "collapsed+closure"+"\t"+clusterDir;
 			cgr.applyTransitiveClosure(false);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+			res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
-
-		}
-
-		for (double confidenceThreshold : e.confidenceThresholds){						
-			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
-			String setting = "plusClosure raw without FG";
-			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
-			
-			setting = "plusClosure raw with FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
-			
-			setting = "plusClosure collapsed";
-			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, true);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
-			
-			setting = "plusClosure collapsed+closure";
-			cgr.applyTransitiveClosure(false);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
+*/		
 		}
 		
-		
+			
 		e.printResults();
 		System.out.println("Done");
 		
