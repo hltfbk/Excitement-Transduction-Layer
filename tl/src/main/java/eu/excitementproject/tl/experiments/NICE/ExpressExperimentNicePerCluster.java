@@ -160,6 +160,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		}
 		
 		boolean isSingleClusterGS = true;
+		
 		File gsDir = new File(gsAnnotationsDir);
 		for (String clusterDir : gsDir.list()){
 			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
@@ -167,7 +168,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 
-			double threshold = confidenceThreshold;
+			double threshold = 0.0;
 	//		for (double threshold : e.confidenceThresholds){
 			//	if (threshold < confidenceThreshold) continue;
 				System.out.println("Before applying threshold "+ threshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
