@@ -134,7 +134,7 @@ public class UseCaseOneDemo {
 	
 		List<JCas> docs = new ArrayList<JCas>();
 		File dir = new File(dataDir);
-	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constuctor
+	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constructor
 
 		//File f;
 		JCas aJCas;
