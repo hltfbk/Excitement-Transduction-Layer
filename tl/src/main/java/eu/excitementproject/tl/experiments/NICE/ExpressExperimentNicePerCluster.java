@@ -19,6 +19,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -54,7 +55,18 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		System.out.println(tlDir);
 	//	System.out.println(System.getProperties());
 		
-	/*	ExperimentNice eTIEpos = new ExperimentNice(
+
+		ExpressExperimentNicePerCluster eProb = new ExpressExperimentNicePerCluster(
+				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+
+				dataDir, fileLimit, outDir,
+
+				TreeTaggerEN.class, //not used, just some available LAP
+				ProbabilisticEDA.class // to assign desired probability go to the EDA code (hard-coded in the beginning)
+				);
+		
+		
+		/*	ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -74,7 +86,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				);*/
 
 				
-		ExpressExperimentNicePerCluster eTIEparsedRes = new ExpressExperimentNicePerCluster(
+	/*	ExpressExperimentNicePerCluster eTIEparsedRes = new ExpressExperimentNicePerCluster(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -82,7 +94,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
 				);
-
+*/
 		
 
 		
@@ -117,13 +129,8 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 */
 			
 
-		File gsDir = new File(gsAnnotationsDir);
-		for (String clusterDir : gsDir.list()){
-			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
-			System.out.println(gsClusterDir);
-		}		
-
-		/*		ExpressExperimentNicePerCluster e = eTIEparsedRes; 
+	
+		ExpressExperimentNicePerCluster e = eProb; 
 		
 		Double confidenceThreshold = 0.8;
 			e.buildRawGraph(confidenceThreshold);
@@ -167,7 +174,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		
 			
 		e.printResults();
-	*/	
+		
 		System.out.println("Done");
 		
 	}
