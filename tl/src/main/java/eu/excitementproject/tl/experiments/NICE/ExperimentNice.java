@@ -18,6 +18,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
@@ -56,7 +57,7 @@ public class ExperimentNice extends AbstractExperiment {
 		
 
 		
-		ExperimentNice eRandom = new ExperimentNice(
+/*		ExperimentNice eRandom = new ExperimentNice(
 		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 
 		dataDir, fileLimit, outDir,
@@ -64,7 +65,15 @@ public class ExperimentNice extends AbstractExperiment {
 		TreeTaggerEN.class, //not used, just some available LAP
 		RandomEDA.class
 		);
-		
+*/		
+		ExperimentNice eProb = new ExperimentNice(
+		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+
+		dataDir, fileLimit, outDir,
+
+		TreeTaggerEN.class, //not used, just some available LAP
+		ProbabilisticEDA.class // to assign desired probability go to the EDA code (hard-coded in the beginning)
+		);
 		
 		/*	ExperimentNice eTIEpos = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
@@ -128,7 +137,7 @@ public class ExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExperimentNice e = eRandom; 
+		ExperimentNice e = eProb; 
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
@@ -137,8 +146,8 @@ public class ExperimentNice extends AbstractExperiment {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-		boolean includeFragmentGraphEdges = true;
+				
+		boolean isSingleClusterGS = false;
 
 		
 		//TODO Verify why FG edges are not found in the graph. Is it only for closure edges? -- solved for plusClosure data??? 
@@ -147,24 +156,24 @@ public class ExperimentNice extends AbstractExperiment {
 		for (double confidenceThreshold : e.confidenceThresholds){
 			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 			String setting = "raw without FG";
-			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "raw with FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "collapsed";
 			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 
 			setting = "collapsed+closure";
 			cgr.applyTransitiveClosure(false);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 
@@ -173,24 +182,24 @@ public class ExperimentNice extends AbstractExperiment {
 		for (double confidenceThreshold : e.confidenceThresholds){						
 			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
 			String setting = "plusClosure raw without FG";
-			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges);		
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure raw with FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges);		
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure collapsed";
 			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, true);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure collapsed+closure";
 			cgr.applyTransitiveClosure(false);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 		}

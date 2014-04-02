@@ -16,7 +16,6 @@ import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.demo.UseCaseOneDemo;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.EvaluatorGraphMerger;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
@@ -32,7 +31,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  * @author Lili Kotlerman
  *
  */
-public abstract class AbstractExperiment extends UseCaseOneDemo {
+public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 
 	public GoldStandardEdgesLoader gsloader = null;
 	public EntailmentGraphRaw m_rawGraph = null;
@@ -41,6 +40,8 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 	
 	public List<Double> confidenceThresholds;
 	public Map<String,Map<Double,EvaluationMeasures>> results;
+	
+	public static final boolean includeFragmentGraphEdges = true;
 	
 	public AbstractExperiment(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
@@ -63,8 +64,10 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		for (String setting : results.keySet()){
 			System.out.println();
 			for (double threshold : confidenceThresholds){
-				EvaluationMeasures res = results.get(setting).get(threshold);
-				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());				
+				if (results.get(setting).containsKey(threshold)){
+					EvaluationMeasures res = results.get(setting).get(threshold);
+					System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());									
+				}
 			}
 		}
 	}
@@ -131,7 +134,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 	 * @param gsAnnotationsDir
 	 * @return 
 	 */
-	private void loadGS(EntailmentGraphRaw graph, String gsAnnotationsDir){
+	private void loadGSAll(EntailmentGraphRaw graph, String gsAnnotationsDir){
 		Set<String> nodesOfInterest = new HashSet<String>();
 		for (EntailmentUnit node : graph.vertexSet()){
 			nodesOfInterest.add(node.getTextWithoutDoubleSpaces()); //Use getTextWithoutDoubleSpaces() method to get node's text, since gold standard fragment graphs hold node texts without double spaces
@@ -145,8 +148,28 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		}			
 	}
 	
-	public EvaluationMeasures evaluateRawGraph(EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){			
-		loadGS(graph, gsAnnotationsDir);
+	/** 
+	 * @param graph
+	 * @param clusterAnnotationsDir
+	 * @return 
+	 */
+	private void loadGSCluster(EntailmentGraphRaw graph, String clusterAnnotationsDir){
+		Set<String> nodesOfInterest = new HashSet<String>();
+		for (EntailmentUnit node : graph.vertexSet()){
+			nodesOfInterest.add(node.getTextWithoutDoubleSpaces()); //Use getTextWithoutDoubleSpaces() method to get node's text, since gold standard fragment graphs hold node texts without double spaces
+		}
+		gsloader = new GoldStandardEdgesLoader(nodesOfInterest, true); //true=load closure edges
+		try {
+			gsloader.loadClusterAnnotations(clusterAnnotationsDir, false);
+		} catch (GraphEvaluatorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}			
+	}	
+	
+	public EvaluationMeasures evaluateRawGraph(EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
+		if (isSingleClusterGS) loadGSCluster(graph, gsAnnotationsDir); 
+		else loadGSAll(graph, gsAnnotationsDir);
 		
 		// Preliminary cleaning to run the evaluations over the same set of nodes.
 		// Part of it is done by gold standard edges loader, when loading only nodes of interest. 
@@ -165,7 +188,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 	 * @param gsAnnotationsDir
 	 * @return
 	 */
-	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir){			
+	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean isSingleClusterGS){			
 		// de-collapse the graph into the corresponding raw graph
 		EntailmentGraphRaw rawGraph = new EntailmentGraphRaw();
 		for (EntailmentRelation e : EvaluatorGraphOptimizer.getAllEntailmentRelations(graph)){
@@ -173,7 +196,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 			if (!rawGraph.containsVertex(e.getTarget())) rawGraph.addVertex(e.getTarget());
 			rawGraph.addEdge(e.getSource(), e.getTarget(), e);
 		}		
-		return evaluateRawGraph(rawGraph, gsAnnotationsDir, true);
+		return evaluateRawGraph(rawGraph, gsAnnotationsDir, true, isSingleClusterGS);
 	}
 	
 /*	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphRaw rawGraph, EntailmentGraphCollapsed collapsedGraph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){		
@@ -189,7 +212,7 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 	 * @param includeFragmentGraphEdges - if true, the evaluation will consider all the edges in the raw graph; if false - fragment graph edges will be excluded from the evaluation 
 	 * @return
 	 */
-	public EvaluationMeasures evaluateRawGraph(double confidenceThreshold, EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){			
+	public EvaluationMeasures evaluateRawGraph(double confidenceThreshold, EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
 		// remove edges with confidence < threshold
 		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
 		for (EntailmentRelation workEdge : graph.edgeSet()){
@@ -204,6 +227,6 @@ public abstract class AbstractExperiment extends UseCaseOneDemo {
 		}
 		graph.removeAllEdges(workEdgesToRemove);
 		// evaluate the resulting graph
-		return evaluateRawGraph(graph, gsAnnotationsDir, includeFragmentGraphEdges);
+		return evaluateRawGraph(graph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);
 	}
 }

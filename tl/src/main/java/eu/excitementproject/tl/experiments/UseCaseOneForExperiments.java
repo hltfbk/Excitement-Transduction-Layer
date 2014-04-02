@@ -1,4 +1,4 @@
-package eu.excitementproject.tl.demo;
+package eu.excitementproject.tl.experiments;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,7 +41,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
 @SuppressWarnings("unused")
-public class UseCaseOneDemo {
+public class UseCaseOneForExperiments {
 
 	protected File configFile;
 	protected CommonConfig config = null;
@@ -51,7 +51,7 @@ public class UseCaseOneDemo {
 	protected EntailmentGraphCollapsed graph;
 	protected List<JCas> docs;
 	
-	public UseCaseOneDemo(String configFileName, String dataDir, int fileNumberLimit, String outputFolder, Class<?> lapClass, Class<?> edaClass) {
+	public UseCaseOneForExperiments(String configFileName, String dataDir, int fileNumberLimit, String outputFolder, Class<?> lapClass, Class<?> edaClass) {
 		
 		// turning on Log4J, with INFO level logs 
 		BasicConfigurator.resetConfiguration(); 
@@ -84,14 +84,11 @@ public class UseCaseOneDemo {
 
 			// initialize use case one runner
 			useOne = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
-			
-			// build collapsed graph
-			graph = useOne.buildCollapsedGraph(docs);
-			
-		} catch (ConfigurationException | EDAException | ComponentException | TransformerException |
-				FragmentAnnotatorException | FragmentGraphGeneratorException | 
-				ModifierAnnotatorException | EntailmentGraphRawException | 
-				GraphMergerException | GraphOptimizerException | IOException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+						
+		} catch (ConfigurationException | EDAException | ComponentException | 
+				FragmentAnnotatorException |  
+				ModifierAnnotatorException | 
+				GraphMergerException | IOException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -134,7 +131,6 @@ public class UseCaseOneDemo {
 	
 		List<JCas> docs = new ArrayList<JCas>();
 		File dir = new File(dataDir);
-	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constructor
 
 		//File f;
 		JCas aJCas;
@@ -154,27 +150,6 @@ public class UseCaseOneDemo {
 			e.printStackTrace();
 		}
 		return docs;
-	}
-	
-	public void inspectResults() {
-		try {
-			useOne.inspectGraph(graph);
-		} catch (IOException | TransformerException | EntailmentGraphCollapsedException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Error inspecting results");
-			e.printStackTrace();
-		}
-	}
-		
-	public static void main(String[] argv) {
-		
-		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
-		String dataDir = "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1";
-		String outputFolder = "./src/test/outputs/"+dataDir.replace(".\\src\\test\\resources\\","").replace("\\","/");
-		int fileNumberLimit = 4;
-		
-		UseCaseOneDemo demoEN = new UseCaseOneDemo(configFileName, dataDir, fileNumberLimit, outputFolder, TreeTaggerEN.class, MaxEntClassificationEDA.class);
-		demoEN.inspectResults();
-	}
+	}	
 	
 }
