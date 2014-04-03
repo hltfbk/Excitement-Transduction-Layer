@@ -39,7 +39,7 @@ public class GoldStandardEdgesLoader {
 	
 	private static final String DIRECT_EDGE_TYPE_STRING = "direct";
 	private static final String CLOSURE_EDGE_TYPE_STRING = "clousure";
-	private static String MERGED_XML_SUFFIX;
+	private boolean loadClosure;
 	
 	Map<String,EntailmentRelation> edges;
 	Map<String,String> nodeTextById;
@@ -58,8 +58,18 @@ public class GoldStandardEdgesLoader {
 	 * @param withClosure - defines which of the merged xml files will be loaded - with or without transitive closure edges
 	 */
 	private void setMergedFileSuffix(boolean withClosure){
-		if (withClosure) MERGED_XML_SUFFIX = "PlusClosure.xml";
-		else MERGED_XML_SUFFIX = ".xml";
+		loadClosure=withClosure;
+	}
+	
+	private boolean isValidMergedFile(String filename){
+		if (loadClosure){
+			if (filename.contains("PlusClosure.xml")) return true;
+			return false;
+		}
+		else {
+			if (filename.contains("PlusClosure.xml")) return false;
+			return true;			
+		}
 	}
 	
 	/** Loads all GS edges
@@ -183,7 +193,7 @@ public class GoldStandardEdgesLoader {
 			File clusterAnnotationMergedGraphDir = new File (clusterAnnotationDir+"/"+"FinalMergedGraph");
 			if (clusterAnnotationMergedGraphDir.isDirectory()){
 				for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
-					if (annotationFile.getName().endsWith(MERGED_XML_SUFFIX)){
+					if (isValidMergedFile(annotationFile.getName())){
 					logger.info("Loading merge annotations from file "+annotationFile);
 					addAnnotationsFromFile(annotationFile.getPath(), false);
 							try {
