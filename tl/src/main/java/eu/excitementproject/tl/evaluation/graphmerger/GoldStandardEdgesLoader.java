@@ -170,7 +170,7 @@ public class GoldStandardEdgesLoader {
 									} catch (ParserConfigurationException | SAXException | IOException e) {							
 										e.printStackTrace();
 									}
-									addAnnotationsFromFile(annotationFile.getPath());
+									addAnnotationsFromFile(annotationFile.getPath(), true);
 							fgid++;
 						}
 					}							
@@ -185,7 +185,7 @@ public class GoldStandardEdgesLoader {
 				for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
 					if (annotationFile.getName().endsWith(MERGED_XML_SUFFIX)){
 					logger.info("Loading merge annotations from file "+annotationFile);
-					addAnnotationsFromFile(annotationFile.getPath());
+					addAnnotationsFromFile(annotationFile.getPath(), false);
 							try {
 								ClusterStatistics.processCluster(annotationFile);
 							} catch (ParserConfigurationException | SAXException | IOException e) {							
@@ -200,7 +200,7 @@ public class GoldStandardEdgesLoader {
 	
 	
 	
-	public void addAnnotationsFromFile(String xmlAnnotationFilename) throws GraphEvaluatorException{		
+	public void addAnnotationsFromFile(String xmlAnnotationFilename, boolean isFragmentGraphAnnotation) throws GraphEvaluatorException{		
 		// read all the nodes from xml annotation file and add them to the index 
 	   		try {
 					DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -251,14 +251,17 @@ public class GoldStandardEdgesLoader {
 							continue;
 						}
 						
-						EdgeType type = EdgeType.MANUAL_ANNOTATION;
-						NodeList features = erElement.getChildNodes();
-						for (int i =0; i<features.getLength(); i++){
-							if (features.item(i).getNodeName().equals("entailment")){
-								Element erEntailment = (Element) features.item(i);
-								if(erEntailment.getAttribute("type").equals(DIRECT_EDGE_TYPE_STRING)) type = EdgeType.DIRECT;
-								else if(erEntailment.getAttribute("type").equals(CLOSURE_EDGE_TYPE_STRING)) type = EdgeType.TRANSITIVE_CLOSURE;
-							}								
+						EdgeType type = EdgeType.MANUAL_ANNOTATION;						
+						if (isFragmentGraphAnnotation) type = EdgeType.FRAGMENT_GRAPH;
+						else{
+							NodeList features = erElement.getChildNodes();
+							for (int i =0; i<features.getLength(); i++){
+								if (features.item(i).getNodeName().equals("entailment")){
+									Element erEntailment = (Element) features.item(i);
+									if(erEntailment.getAttribute("type").equals(DIRECT_EDGE_TYPE_STRING)) type = EdgeType.DIRECT;
+									else if(erEntailment.getAttribute("type").equals(CLOSURE_EDGE_TYPE_STRING)) type = EdgeType.TRANSITIVE_CLOSURE;
+								}								
+							}							
 						}
 
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 

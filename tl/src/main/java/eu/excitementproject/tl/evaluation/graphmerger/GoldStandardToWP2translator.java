@@ -107,7 +107,7 @@ public class GoldStandardToWP2translator {
 					if (clusterAnnotationMergedGraphDir.isDirectory()){
 						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
 							if (annotationFile.getName().endsWith(".xml")){
-								gsloader.addAnnotationsFromFile(annotationFile.getPath());
+								gsloader.addAnnotationsFromFile(annotationFile.getPath(), false);
 								System.out.println(f.getName().toUpperCase()+" GS LOADED");
 								if (createWP2xml(annotationFile, new File(gsAnnotationsDir+"/"+clusterAnnotationDir+"/FinalMergedGraph/"+annotationFile.getName().replace(".xml", "PlusClosure.xml")), gsloader)){
 									System.out.println(f.getName().toUpperCase()+" CLOSURE XML IS CREATED");									
