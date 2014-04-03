@@ -62,6 +62,8 @@ public class GoldStandardEdgesLoader {
 	}
 	
 	private boolean isValidMergedFile(String filename){
+		if (!filename.endsWith(".xml")) return false;
+		
 		if (loadClosure){
 			if (filename.contains("PlusClosure.xml")) return true;
 			return false;
