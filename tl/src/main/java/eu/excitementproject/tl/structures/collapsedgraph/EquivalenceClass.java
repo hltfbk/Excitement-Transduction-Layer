@@ -237,5 +237,17 @@ public class EquivalenceClass {
 		return s;
 	}	
 		
+	public String toShortString(){
+		String s="";
+		int i=1;
+		List<EntailmentUnit> eus = new LinkedList<EntailmentUnit>(entailmentUnits);
+		Collections.sort(eus, new EntailmentUnit.TextComparator());
+		for (EntailmentUnit eu : eus){
+			s+="  "+i+") "+eu.getTextWithoutDoubleSpaces()+"\n";
+			i++;
+		}
+		s+="\n";
+		return s;
+	}
 	
 }
