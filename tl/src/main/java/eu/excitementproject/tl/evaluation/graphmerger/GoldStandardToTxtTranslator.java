@@ -15,8 +15,13 @@ import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 public class GoldStandardToTxtTranslator {
+	EntailmentGraphRaw rg = null;
 	EntailmentGraphCollapsed cg = null;
 	Map<String,Set<String>> textToIdsMap; 
 	
@@ -46,13 +51,13 @@ public class GoldStandardToTxtTranslator {
 		int relation = getRelation(nodeA, nodeB);
 				
 		if (relation == 1) {
-			String s = getEdge(nodeA,nodeB)+"\tYes\n";
+			String s = getEdge(nodeA,nodeB)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeA, nodeB))+"\n";
 			s+=getEdge(nodeB, nodeA)+"\tNo\n";
 			return s;
 		}
 		
 		if (relation == -1) {
-			String s = getEdge(nodeB, nodeA)+"\tYes\n";
+			String s = getEdge(nodeB, nodeA)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeB, nodeA))+"\n";
 			s+=getEdge(nodeA, nodeB)+"\tNo\n";
 			return s;
 		}
@@ -72,6 +77,9 @@ public class GoldStandardToTxtTranslator {
 		}
 				
 		System.out.println(gsloader.edges.size());
+
+		rg = gsloader.getRawGraph();
+		
 		cg = gsloader.getCollapsedGraph();
 		cg.applyTransitiveClosure(false);
 		
@@ -85,6 +93,17 @@ public class GoldStandardToTxtTranslator {
 		}		
 	}
 	
+	private int countFragmentGraphEdges(EquivalenceClass source, EquivalenceClass target){
+		int fge = 0;
+		for (EntailmentUnit src : source.getEntailmentUnits()){
+			for (EntailmentUnit tgt : target.getEntailmentUnits()){				
+				for(EntailmentRelation edge : rg.getAllEdges(src, tgt)){
+					if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) fge++;
+				}				
+			}
+		}
+		return fge;
+	}
 /*	private void loadGraph(String collapsedXmlFileName) throws EntailmentGraphCollapsedException {
 		cg = new EntailmentGraphCollapsed(new File(collapsedXmlFileName));
 		cg.applyTransitiveClosure(false);
@@ -103,6 +122,8 @@ public class GoldStandardToTxtTranslator {
 				nodeId++;
 				writer.write("collapsed node #"+String.valueOf(nodeId)+" : "+ node.getEntailmentUnits().size() +" entailment unit(s) before editing\n"+getNode(node)+"\n");
 			}
+			
+			writer.write("\nSource	#EU in src	->	Target	#EU in tgt	Decision	#FG edges\n");
 			
 			// now for each possible pairs of nodes, output the relation
 			Set<String> closedList = new HashSet<String>();
