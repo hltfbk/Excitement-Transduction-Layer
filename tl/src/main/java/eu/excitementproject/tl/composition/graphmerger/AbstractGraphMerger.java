@@ -142,7 +142,7 @@ should be clearly exposed in the Constructor.
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
 		EntailmentRelation r = getRelation(candidateEntailingNode, candidateEntailedNode);
 		logger.info("\t'"+candidateEntailingNode.getTextWithoutDoubleSpaces() +"'\t->\t'"+candidateEntailedNode.getTextWithoutDoubleSpaces()+"'\t"+r.getLabel().toString());
-		if (r.getLabel().equals(DecisionLabel.Entailment)) {
+		if (r.getLabel().is(DecisionLabel.Entailment)) {
 			if (isSufficientConfidence(r.getConfidence()))  return r;			
 		}
 		return null;

@@ -127,29 +127,29 @@ public class ExpressExperimentNice extends AbstractExperiment {
 			e1.printStackTrace();
 		}
 		
-		boolean includeFragmentGraphEdges = true;
+		boolean isSingleClusterGS = false;
 
 		
-		System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
+		System.out.println("With threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 		String setting = "raw without FG";
-		EvaluationMeasures res = e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
+		EvaluationMeasures res = e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 		
 		setting = "raw with FG";
-		res = e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
+		res = e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
 		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 		
 		setting = "collapsed";
 		EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
-		res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+		res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 
 		setting = "collapsed+closure";
 		cgr.applyTransitiveClosure(false);
-		res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
+		res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 			

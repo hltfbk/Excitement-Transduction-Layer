@@ -23,7 +23,7 @@ public class EvaluatorGraphMergerTest {
 		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(true);
 		String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";
 		try {
-			loader.addAnnotationsFromFile(annotationFilename);
+			loader.addAnnotationsFromFile(annotationFilename, false);
 			testlogger.info("Loaded "+loader.getEdges().size()+" gold standard edges.");
 /*			int i=1;		
 			for (EntailmentRelation edge : loader.getEdges){

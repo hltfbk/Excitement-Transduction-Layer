@@ -15,11 +15,13 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
  * @author LiliKotlerman
  *
  */
-public class RandomEDA implements EDABasic<ProbabilisticTEDecision>{
+public class ProbabilisticEDA implements EDABasic<ProbabilisticTEDecision>{
 
 	private Random generator;
+	private final Double entailmentProbability=0.8;
 	
-	public RandomEDA() {
+	
+	public ProbabilisticEDA() {
 		try {
 			initialize(null);
 		} catch (ConfigurationException e) {
@@ -43,7 +45,7 @@ public class RandomEDA implements EDABasic<ProbabilisticTEDecision>{
 
 	public ProbabilisticTEDecision process(JCas aCas) {
 		
-		return new ProbabilisticTEDecision(generator.nextDouble());
+		return new ProbabilisticTEDecision(generator.nextDouble(), entailmentProbability);
 	}
 
 	public void shutdown() {
