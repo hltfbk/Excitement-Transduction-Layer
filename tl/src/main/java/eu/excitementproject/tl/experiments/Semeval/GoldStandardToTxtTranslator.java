@@ -1,4 +1,4 @@
-package eu.excitementproject.tl.evaluation.graphmerger;
+package eu.excitementproject.tl.experiments.Semeval;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,6 +12,7 @@ import java.util.Set;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
+import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -76,7 +77,7 @@ public class GoldStandardToTxtTranslator {
 			gsloader.loadClusterAnnotations(gsClusterDir.getAbsolutePath(), true); //load FG + merged data
 		}
 				
-		System.out.println(gsloader.edges.size());
+		System.out.println(gsloader.getEdges().size());
 
 		rg = gsloader.getRawGraph();
 		
