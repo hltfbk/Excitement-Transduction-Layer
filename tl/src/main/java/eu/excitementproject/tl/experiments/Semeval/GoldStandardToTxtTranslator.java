@@ -150,9 +150,12 @@ public class GoldStandardToTxtTranslator {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		File clusterAnnotationsDir = new File("C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev/EMAIL0220");
-		File txtFile = new File("C:/Users/Lili/Dropbox/_tmp/semeval/EMAIL0210_collapsed.txt");
+	public static void main(String[] args) {		
+//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
+		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
+		
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test/EMAIL0210");
+		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/EMAIL0210_collapsed.txt");
 		
 		GoldStandardToTxtTranslator tr = new GoldStandardToTxtTranslator();
 		try {
