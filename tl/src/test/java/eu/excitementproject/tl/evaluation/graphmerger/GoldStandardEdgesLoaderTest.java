@@ -38,7 +38,7 @@ public class GoldStandardEdgesLoaderTest {
 			
 			loader = new GoldStandardEdgesLoader(true);
 			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";			
-			loader.addAnnotationsFromFile(annotationFilename);
+			loader.addAnnotationsFromFile(annotationFilename, false);
 			try {
 				ClusterStatistics.processCluster(new File(annotationFilename));
 				EntailmentGraphRaw gr = loader.getRawGraph();

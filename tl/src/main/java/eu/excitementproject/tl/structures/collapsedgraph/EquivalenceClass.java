@@ -237,5 +237,14 @@ public class EquivalenceClass {
 		return s;
 	}	
 		
+	public String toStringWithIds(Map<String,Set<String>> nodeIdsByText){
+		String s="";
+		List<EntailmentUnit> eus = new LinkedList<EntailmentUnit>(entailmentUnits);
+		Collections.sort(eus, new EntailmentUnit.TextComparator());
+		for (EntailmentUnit eu : eus){
+			s+="\t"+eu.getTextWithoutDoubleSpaces().replace("\t","").replace("\n","")+"\t"+nodeIdsByText.get(eu.getText())+"\n";			
+		}
+		return s;
+	}
 	
 }
