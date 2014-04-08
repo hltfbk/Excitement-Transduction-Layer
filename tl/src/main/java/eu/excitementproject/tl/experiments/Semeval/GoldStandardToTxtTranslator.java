@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import arkref.parsestuff.RegexUtil.R;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
@@ -22,21 +23,50 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 public class GoldStandardToTxtTranslator {
+	
+	private enum Relation{
+		BIDIR,
+		AB,
+		BA,
+		NONE
+	}
+	
 	EntailmentGraphRaw rg = null;
-	EntailmentGraphCollapsed cg = null;
+	EntailmentGraphCollapsed wp2cg = null;
+	EntailmentGraphCollapsed ourCg = null;
 	Map<String,Set<String>> textToIdsMap; 
 	
-	private int getRelation(EquivalenceClass nodeA, EquivalenceClass nodeB){
+	private int getWP2Relation(EquivalenceClass nodeA, EquivalenceClass nodeB){
 		// Note: in a collapsed graph there can be 1 edge (in either direction) or no edge
-		Set<EntailmentRelationCollapsed> edges = cg.getAllEdges(nodeA, nodeB);
+		
+		Set<EntailmentRelationCollapsed> edges = wp2cg.getAllEdges(nodeA, nodeB);
 		if (!edges.isEmpty()) return 1; //A->B
 		
-		edges = cg.getAllEdges(nodeB, nodeA);
+		edges = wp2cg.getAllEdges(nodeB, nodeA);
 		if (!edges.isEmpty()) return -1; //B->A
 		
 		return 0; //no entailment in any direction
 	}
 
+	private Relation getRelation(EquivalenceClass nodeA, EquivalenceClass nodeB){
+		// Note: in a collapsed graph there can be 1 edge (in either direction) or no edge
+		
+		boolean ab=false;
+		boolean ba=false;
+		
+		for (EntailmentUnit a : nodeA.getEntailmentUnits()){
+			for (EntailmentUnit b : nodeB.getEntailmentUnits()){
+				if (rg.isEntailment(a, b)) ab = true;
+				if (rg.isEntailment(b, a)) ba = true;
+			}
+		}
+		
+		if ((ab)&&(ba)) return Relation.BIDIR;
+		if (ab) return Relation.AB;
+		if (ba) return Relation.BA;
+		return Relation.NONE;
+		
+	}
 	
 	private String getNode(EquivalenceClass node){
 		return node.toStringWithIds(textToIdsMap);
@@ -49,20 +79,25 @@ public class GoldStandardToTxtTranslator {
 
 	
 	private String getAnnotatedEdge(EquivalenceClass nodeA, EquivalenceClass nodeB){
-		int relation = getRelation(nodeA, nodeB);
+		Relation relation = getRelation(nodeA, nodeB);
 				
-		if (relation == 1) {
+		if (relation.equals(Relation.AB)) {
 			String s = getEdge(nodeA,nodeB)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeA, nodeB))+"\n";
 			s+=getEdge(nodeB, nodeA)+"\tNo\n";
 			return s;
 		}
 		
-		if (relation == -1) {
+		if (relation.equals(Relation.BA)) {
 			String s = getEdge(nodeB, nodeA)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeB, nodeA))+"\n";
 			s+=getEdge(nodeA, nodeB)+"\tNo\n";
 			return s;
 		}
 		
+		if (relation.equals(Relation.BIDIR)){
+			String s = getEdge(nodeA,nodeB)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeA, nodeB))+"\n";
+			s+=getEdge(nodeB, nodeA)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeB, nodeA))+"\n";
+			return s;
+		}
 		// relation == 0
 		String s = getEdge(nodeA, nodeB)+"\tNo\n";
 		s+=getEdge(nodeB, nodeA)+"\tNo\n";
@@ -81,8 +116,8 @@ public class GoldStandardToTxtTranslator {
 
 		rg = gsloader.getRawGraph();
 		
-		cg = gsloader.getCollapsedGraph();
-		cg.applyTransitiveClosure(false);
+		wp2cg = gsloader.getCollapsedGraph();
+		wp2cg.applyTransitiveClosure(false);
 		
 		textToIdsMap = new HashMap<String, Set<String>>();
 		for (String id : gsloader.getNodeTextById().keySet()){
@@ -112,14 +147,14 @@ public class GoldStandardToTxtTranslator {
 */
 	
 	private void translateFromXml(File txtFile) throws EntailmentGraphCollapsedException, IOException{
-			if (cg==null){
+			if (wp2cg==null){
 				System.out.println("Collapsed graph not loaded. Exiting.");
 				return;
 			}
 			
 			int nodeId = 0;
 			BufferedWriter writer = new BufferedWriter(new FileWriter(txtFile));
-			for (EquivalenceClass node : cg.vertexSet()){
+			for (EquivalenceClass node : wp2cg.vertexSet()){
 				nodeId++;
 				writer.write("collapsed node #"+String.valueOf(nodeId)+" : "+ node.getEntailmentUnits().size() +" entailment unit(s) before editing\n"+getNode(node)+"\n");
 			}
@@ -129,8 +164,8 @@ public class GoldStandardToTxtTranslator {
 			// now for each possible pairs of nodes, output the relation
 			Set<String> closedList = new HashSet<String>();
 			int pairId = 0;
-			for (EquivalenceClass nodeA : cg.vertexSet()){
-				for (EquivalenceClass nodeB : cg.vertexSet()){
+			for (EquivalenceClass nodeA : wp2cg.vertexSet()){
+				for (EquivalenceClass nodeB : wp2cg.vertexSet()){
 					if (nodeA.equals(nodeB)) continue;	
 					
 					String pair1 = nodeA.toString()+nodeB.toString();
@@ -151,11 +186,13 @@ public class GoldStandardToTxtTranslator {
 	 * @param args
 	 */
 	public static void main(String[] args) {		
-//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
-		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
+		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
+//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
 		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test/EMAIL0210");
-		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/EMAIL0210_collapsed.txt");
+		String clusterName = "EMAIL0010";
+		
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev/"+clusterName);
+		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");
 		
 		GoldStandardToTxtTranslator tr = new GoldStandardToTxtTranslator();
 		try {
