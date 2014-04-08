@@ -1,7 +1,5 @@
-package eu.excitementproject.tl.experiments.NICE;
+package eu.excitementproject.tl.experiments.Semeval;
 
-import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardAnalyzer;
-import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardToWP2translator;
 
 public class SemevalStuff {
 

@@ -1,4 +1,4 @@
-package eu.excitementproject.tl.evaluation.graphmerger;
+package eu.excitementproject.tl.experiments.Semeval;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,6 +12,7 @@ import java.util.Set;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
+import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -76,7 +77,7 @@ public class GoldStandardToTxtTranslator {
 			gsloader.loadClusterAnnotations(gsClusterDir.getAbsolutePath(), true); //load FG + merged data
 		}
 				
-		System.out.println(gsloader.edges.size());
+		System.out.println(gsloader.getEdges().size());
 
 		rg = gsloader.getRawGraph();
 		
@@ -149,9 +150,12 @@ public class GoldStandardToTxtTranslator {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		File clusterAnnotationsDir = new File("C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev/EMAIL0220");
-		File txtFile = new File("C:/Users/Lili/Dropbox/_tmp/semeval/EMAIL0210_collapsed.txt");
+	public static void main(String[] args) {		
+//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
+		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
+		
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test/EMAIL0210");
+		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/EMAIL0210_collapsed.txt");
 		
 		GoldStandardToTxtTranslator tr = new GoldStandardToTxtTranslator();
 		try {

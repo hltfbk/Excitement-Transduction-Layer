@@ -22,6 +22,7 @@ import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
+import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -58,7 +59,16 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 	//	System.out.println(System.getProperties());
 		
 
-	/*	ExpressExperimentNicePerCluster eProb = new ExpressExperimentNicePerCluster(
+		ExpressExperimentNicePerCluster eRand = new ExpressExperimentNicePerCluster(
+		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+
+		dataDir, fileLimit, outDir,
+
+		TreeTaggerEN.class, //not used, just some available LAP
+		RandomEDA.class 
+		);
+		
+		/*	ExpressExperimentNicePerCluster eProb = new ExpressExperimentNicePerCluster(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 
 				dataDir, fileLimit, outDir,
@@ -68,7 +78,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				);*/
 		
 		
-		ExpressExperimentNicePerCluster eTIEpos = new ExpressExperimentNicePerCluster(
+	/*	ExpressExperimentNicePerCluster eTIEpos = new ExpressExperimentNicePerCluster(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
@@ -76,7 +86,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
-		
+		*/
 
 	/*	ExperimentNice eTIEposRes = new ExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
@@ -147,10 +157,11 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 		
 		
 	
-		ExpressExperimentNicePerCluster e = eTIEpos; 
+		ExpressExperimentNicePerCluster e = eRand; 
 		
-		Double confidenceThreshold = e.confidenceThresholds.get(6); // = 0.8
-			e.buildRawGraph(confidenceThreshold);
+		Double confidenceThreshold = e.confidenceThresholds.get(0); // get(6) = 0.8
+		System.out.println("Threshold is "+confidenceThreshold);
+		e.buildRawGraph(confidenceThreshold);
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.xml");
 			e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.dot");
@@ -168,60 +179,60 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 
-			double threshold = 0.0;
+			double threshold = e.confidenceThresholds.get(0);
 	//		for (double threshold : e.confidenceThresholds){
 			//	if (threshold < confidenceThreshold) continue;
 				System.out.println("Before applying threshold "+ threshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
-				String setting = "raw without FG"+"\t"+clusterDir;
-				EvaluationMeasures res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+				String setting = clusterDir + "\t" +  "raw without FG";
+				EvaluationMeasures res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
 				
-				setting = "raw with FG"+"\t"+clusterDir;
-				res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
+/*				setting = clusterDir + "\t" +  "raw with FG";
+				res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
-				
-				setting = "collapsed"+"\t"+clusterDir;
+*/				
+				setting = clusterDir + "\t" +  "collapsed";
 				EntailmentGraphCollapsed cgr = e.collapseGraph(threshold, false);
-				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
 
-				setting = "collapsed+closure"+"\t"+clusterDir;
+/*				setting = clusterDir + "\t" +  "collapsed+closure";
 				cgr.applyTransitiveClosure(false);
-				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
-
+*/
 	//		}
 
-	//		for (double threshold : e.confidenceThresholds){						
+	/*//		for (double threshold : e.confidenceThresholds){						
 		//		if (threshold < confidenceThreshold) continue;
 				System.out.println("Before applying threshold "+ threshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
-				setting = "plusClosure raw without FG"+"\t"+clusterDir;
-				res = e.evaluateRawGraph(threshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+				setting = clusterDir + "\t" +  "plusClosure raw without FG";
+				res = e.evaluateRawGraph(threshold, e.m_rawGraph_plusClosure, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
 				
-				setting = "plusClosure raw with FG"+"\t"+clusterDir;
-				res = e.evaluateRawGraph(threshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
+				setting = clusterDir + "\t" +  "plusClosure raw with FG";
+				res = e.evaluateRawGraph(threshold, e.m_rawGraph_plusClosure, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
 				
-				setting = "plusClosure collapsed"+"\t"+clusterDir;
+				setting = clusterDir + "\t" +  "plusClosure collapsed";
 				cgr = e.collapseGraph(threshold, true);
-				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
 				
-				setting = "plusClosure collapsed+closure"+"\t"+clusterDir;
+				setting = clusterDir + "\t" +  "plusClosure collapsed+closure";
 				cgr.applyTransitiveClosure(false);
-				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, threshold, res);
 	//		}			
-			
+*/			
 		}
 			
 		e.printResults();

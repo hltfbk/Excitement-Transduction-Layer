@@ -41,8 +41,8 @@ public class GoldStandardEdgesLoader {
 	private static final String CLOSURE_EDGE_TYPE_STRING = "clousure";
 	private boolean loadClosure;
 	
-	Map<String,EntailmentRelation> edges;
-	Map<String,String> nodeTextById;
+	protected Map<String,EntailmentRelation> edges;
+	protected Map<String,String> nodeTextById;
 	/**
 	 * @return the nodeTextById
 	 */
