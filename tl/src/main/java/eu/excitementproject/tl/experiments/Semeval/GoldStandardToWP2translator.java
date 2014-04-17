@@ -33,6 +33,7 @@ public class GoldStandardToWP2translator {
 		int i=0;
 		for (String tgtId : textToIdsMap.get(targetText)){
 			for (String srcId: textToIdsMap.get(sourceText)){
+				if (srcId.equals(tgtId)) continue; // do not add edges with same src and tgt ids
 				s += "\t<edge target=\""+tgtId+"\" source=\""+srcId+"\" id=\""+tgtId+"-"+srcId+"\">\n";
 				s += "\t\t<entailment_mod_insensitive> </entailment_mod_insensitive>\n";
 				if (edge.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) s+= "\t\t<entailment type=\"clousure\">yes</entailment>\n";
