@@ -1,7 +1,9 @@
 package eu.excitementproject.tl.experiments.Semeval;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -146,26 +148,28 @@ public class GoldStandardToTxtTranslator {
 	}
 */
 	
-	private void translateFromXml(File txtFile) throws EntailmentGraphCollapsedException, IOException{
-			if (wp2cg==null){
+	private void translateFromXml(EntailmentGraphCollapsed cg, File txtFile) throws EntailmentGraphCollapsedException, IOException{
+			if (cg==null){
 				System.out.println("Collapsed graph not loaded. Exiting.");
 				return;
 			}
 			
-			int nodeId = 0;
 			BufferedWriter writer = new BufferedWriter(new FileWriter(txtFile));
-			for (EquivalenceClass node : wp2cg.vertexSet()){
+			writer.write("Node caption	Entailment Unit	EU_id					Node_check	Comments\n\n");
+			
+			int nodeId = 1000;
+			for (EquivalenceClass node : cg.vertexSet()){
 				nodeId++;
 				writer.write("collapsed node #"+String.valueOf(nodeId)+" : "+ node.getEntailmentUnits().size() +" entailment unit(s) before editing\n"+getNode(node)+"\n");
 			}
 			
-			writer.write("\nSource	#EU in src	->	Target	#EU in tgt	Decision	#FG edges\n");
+			writer.write("\nSource	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments\n\n");
 			
 			// now for each possible pairs of nodes, output the relation
 			Set<String> closedList = new HashSet<String>();
 			int pairId = 0;
-			for (EquivalenceClass nodeA : wp2cg.vertexSet()){
-				for (EquivalenceClass nodeB : wp2cg.vertexSet()){
+			for (EquivalenceClass nodeA : cg.vertexSet()){
+				for (EquivalenceClass nodeB : cg.vertexSet()){
 					if (nodeA.equals(nodeB)) continue;	
 					
 					String pair1 = nodeA.toString()+nodeB.toString();
@@ -181,6 +185,101 @@ public class GoldStandardToTxtTranslator {
 			writer.close();
 	}
 	
+	private boolean isEmpty(String s){
+		s=s.replace("\n", "");
+		if (s.isEmpty()) return true;
+		for (String ss : s.split("\t")){
+			if (!ss.isEmpty()) return false; 
+		}
+		return true;
+	}
+
+	private boolean areNodesConsistent(){
+		boolean cons=true;
+		Set<String> wp2eus = new HashSet<String>();
+		for (EntailmentUnit eu : rg.vertexSet()) wp2eus.add(eu.getTextWithoutDoubleSpaces());
+		
+		Set<String> closedList = new HashSet<String>();
+		for (EquivalenceClass node : ourCg.vertexSet()){
+			for(EntailmentUnit eu : node.getEntailmentUnits()){
+				if (closedList.contains(eu.getTextWithoutDoubleSpaces())) {
+					System.err.println("ERROR: "+eu.getText()+" is listed in more that one collapsed node.");
+					cons = false;
+				}
+				else{
+					if (!wp2eus.contains(eu.getText())){
+						System.err.println("ERROR: "+eu.getTextWithoutDoubleSpaces()+" is not found in the raw graph.");
+						cons = false;						
+					}
+					else closedList.add(eu.getText());
+				}
+			}
+		}
+		return cons;
+	}
+	
+	private void generateCollapsedGraphForFixedNodes(File inputFile) throws EntailmentGraphCollapsedException, IOException{
+		if (rg==null){
+			System.out.println("raw graph not loaded. Exiting.");
+			return;
+		}
+		rg.applyTransitiveClosure(false);
+		ourCg = new EntailmentGraphCollapsed();
+		
+		BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+		
+		String line = reader.readLine(); //caption line before all nodes
+		while (line!=null){
+			if (line.contains("Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments")) break;
+			if (isEmpty(line)) { //skip "empty" line
+				line=reader.readLine();	
+				continue;  
+			}
+			
+			// if reached this point - have just read a node's caption 		
+			line = reader.readLine(); // read the first eu (if any)
+			Set<EntailmentUnit> nodeEUs = new HashSet<EntailmentUnit>();
+			while(!isEmpty(line)) {
+				String text = line.split("\t")[1];
+				EntailmentUnit eu = GoldStandardEdgesLoader.getGoldStandardNode(text);
+				nodeEUs.add(eu);
+				line=reader.readLine();
+			}
+			if (!nodeEUs.isEmpty()){
+				EquivalenceClass node = new EquivalenceClass(nodeEUs);
+				ourCg.addVertex(node);
+			}
+		}
+		reader.close();
+		System.out.println(ourCg.vertexSet().size());
+
+/*		BufferedWriter writer = new BufferedWriter(new FileWriter(new File(inputFile.getAbsolutePath()+".edgesForCleanNodes.txt")));
+		for (EquivalenceClass node : wp2cg.vertexSet()){
+			nodeId++;
+			writer.write("collapsed node #"+String.valueOf(nodeId)+" : "+ node.getEntailmentUnits().size() +" entailment unit(s) before editing\n"+getNode(node)+"\n");
+		}
+		
+		writer.write("\nSource	#EU in src	->	Target	#EU in tgt	Decision	#FG edges\n");
+		
+		// now for each possible pairs of nodes, output the relation
+		Set<String> closedList = new HashSet<String>();
+		int pairId = 0;
+		for (EquivalenceClass nodeA : wp2cg.vertexSet()){
+			for (EquivalenceClass nodeB : wp2cg.vertexSet()){
+				if (nodeA.equals(nodeB)) continue;	
+				
+				String pair1 = nodeA.toString()+nodeB.toString();
+				String pair2 = nodeB.toString()+nodeA.toString();
+				if (closedList.contains(pair1)) continue;
+				if (closedList.contains(pair2)) continue;
+				closedList.add(pair1); closedList.add(pair2);
+				
+				pairId++;
+				writer.write("node pair #"+String.valueOf(pairId)+":\n"+getAnnotatedEdge(nodeA, nodeB)+"\n");
+			}
+		}
+		writer.close();
+*/}
 	
 	/**
 	 * @param args
@@ -189,19 +288,31 @@ public class GoldStandardToTxtTranslator {
 		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
 		
-		String clusterName = "EMAIL0010";
+		String clusterName = "EMAIL0210";
 		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev/"+clusterName);
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/test/"+clusterName);
 		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");
+		File txtFileUp = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNoded.txt");
 		
 		GoldStandardToTxtTranslator tr = new GoldStandardToTxtTranslator();
 		try {
 			tr.loadClusterGraph(clusterAnnotationsDir);
-			tr.translateFromXml(txtFile);
+			//tr.translateFromXml(tr.wp2cg,txtFile);
+
+			File fixedNodesFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_Reconciled.txt");
+			tr.generateCollapsedGraphForFixedNodes(fixedNodesFile);	
+			if(tr.areNodesConsistent()){
+				tr.translateFromXml(tr.ourCg, txtFileUp);
+			}
+			else{
+				System.err.println("Nodes are not consistent, no updated file was generated.");
+			}
+		
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		
 	}
 
