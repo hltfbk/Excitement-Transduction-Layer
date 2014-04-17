@@ -320,9 +320,10 @@ public class GoldStandardEdgesLoader {
 		return g;
 	}
 	
-	protected EntailmentUnit getGoldStandardNode(String text){
+	public static EntailmentUnit getGoldStandardNode(String text){
 	//	System.out.println("<<"+text+">>");
-		return new EntailmentUnit(text, -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
+		 EntailmentUnit eu = new EntailmentUnit(text, -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
+		 return new EntailmentUnit(eu.getTextWithoutDoubleSpaces(), -1, "", "unknown");
 	}
 	
 	protected EntailmentRelation getGoldStandardEdge(EntailmentUnit sourceUnit, EntailmentUnit targetUnit){
