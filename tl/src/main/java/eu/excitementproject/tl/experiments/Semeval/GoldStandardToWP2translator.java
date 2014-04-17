@@ -102,13 +102,14 @@ public class GoldStandardToWP2translator {
 				if (f.isDirectory()){
 					System.out.println(f.getName().toUpperCase());
 					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader(false); //load the original data only		
+					gsloader.setExcludeSelfLoops(false); // do not exclude self-loops (edges between nodes with the same text are present in the GS, while in our graph these nodes become a single nodes and such edges are self-loops)
 					// load merge-graph annotations	
 					// clusterAnnotationDir should contain a folder called "FinalMergedGraph" with a single xml file with annotations
 					File clusterAnnotationMergedGraphDir = new File (gsAnnotationsDir+"/"+clusterAnnotationDir+"/"+"FinalMergedGraph");
 					System.out.println(clusterAnnotationMergedGraphDir.getAbsolutePath());
 					if (clusterAnnotationMergedGraphDir.isDirectory()){
 						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
-							if (annotationFile.getName().endsWith(".xml")){
+							if (gsloader.isValidMergedFile(annotationFile.getName())){
 								gsloader.addAnnotationsFromFile(annotationFile.getPath(), false);
 								System.out.println(f.getName().toUpperCase()+" GS LOADED");
 								if (createWP2xml(annotationFile, new File(gsAnnotationsDir+"/"+clusterAnnotationDir+"/FinalMergedGraph/"+annotationFile.getName().replace(".xml", "PlusClosure.xml")), gsloader)){
@@ -131,9 +132,13 @@ public class GoldStandardToWP2translator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test";
-	//	String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
+	//	String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test";
+	//	String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-TMP/Dev";
 
+	//	String gsAnnotationsDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
+		String gsAnnotationsDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
+		
+		
 		createWP2Data(gsAnnotationsDir);
 		
 	}
