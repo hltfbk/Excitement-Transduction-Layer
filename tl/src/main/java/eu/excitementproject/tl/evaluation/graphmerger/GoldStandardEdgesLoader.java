@@ -37,10 +37,18 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidenc
  */
 public class GoldStandardEdgesLoader {
 	
+	private boolean excludeSelfLoops = true; // will be true, if false not explicitly required  
+
+	public void setExcludeSelfLoops(boolean excludeSelfLoops) {
+		this.excludeSelfLoops = excludeSelfLoops;
+	}
+
 	private static final String DIRECT_EDGE_TYPE_STRING = "direct";
 	private static final String CLOSURE_EDGE_TYPE_STRING = "clousure";
+
 	private boolean loadClosure;
 	
+
 	protected Map<String,EntailmentRelation> edges;
 	protected Map<String,String> nodeTextById;
 	/**
@@ -61,7 +69,7 @@ public class GoldStandardEdgesLoader {
 		loadClosure=withClosure;
 	}
 	
-	private boolean isValidMergedFile(String filename){
+	public boolean isValidMergedFile(String filename){
 		if (!filename.endsWith(".xml")) return false;
 		
 		if (loadClosure){
@@ -203,7 +211,7 @@ public class GoldStandardEdgesLoader {
 							} catch (ParserConfigurationException | SAXException | IOException e) {							
 								e.printStackTrace();
 							}
-						}
+					}
 				}
 			}									
 		}
@@ -277,7 +285,9 @@ public class GoldStandardEdgesLoader {
 						}
 
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
-						if (sourceUnit.isTextIncludedOrRelevant(nodeTextById.get(tgt))) continue; // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
+						if (excludeSelfLoops){ // GS contains edges between nodes with the same text, when the nodes originate from different fragments. In out graphs we have those at one node, so need to exclude "loop" annotations from the GS for our evaluations
+							if (sourceUnit.isTextIncludedOrRelevant(nodeTextById.get(tgt))) continue; 
+						}
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
 						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, type);
 						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
@@ -321,9 +331,11 @@ public class GoldStandardEdgesLoader {
 	}
 	
 	public static EntailmentUnit getGoldStandardNode(String text){
-	//	System.out.println("<<"+text+">>");
 		 EntailmentUnit eu = new EntailmentUnit(text, -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
-		 return new EntailmentUnit(eu.getTextWithoutDoubleSpaces(), -1, "", "unknown");
+		 return eu;
+		 
+		// return new EntailmentUnit(eu.getTextWithoutDoubleSpaces(), -1, "", "unknown");
+		//TODO:	do this carefully so that nodeTextById also contains texts without double spaces, as well as nodesOfInterest 
 	}
 	
 	protected EntailmentRelation getGoldStandardEdge(EntailmentUnit sourceUnit, EntailmentUnit targetUnit){
