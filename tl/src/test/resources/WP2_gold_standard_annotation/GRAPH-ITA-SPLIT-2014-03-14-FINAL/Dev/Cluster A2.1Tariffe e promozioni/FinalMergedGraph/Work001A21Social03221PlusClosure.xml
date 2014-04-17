@@ -1954,11 +1954,11 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0031.txt_1_14" source="0031.txt_1_10" id="0031.txt_1_14-0031.txt_1_10">
+	<edge target="0011.txt_1_7" source="0011.txt_1_5" id="0011.txt_1_7-0011.txt_1_5">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0011.txt_1_7" source="0011.txt_1_5" id="0011.txt_1_7-0011.txt_1_5">
+	<edge target="0031.txt_1_14" source="0031.txt_1_10" id="0031.txt_1_14-0031.txt_1_10">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
@@ -2338,11 +2338,11 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="clousure">yes</entailment>
 	</edge>
-	<edge target="0065.txt_1_2" source="0059.txt_1_5" id="0065.txt_1_2-0059.txt_1_5">
+	<edge target="0031.txt_1_15" source="0031.txt_1_9" id="0031.txt_1_15-0031.txt_1_9">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="clousure">yes</entailment>
 	</edge>
-	<edge target="0031.txt_1_15" source="0031.txt_1_9" id="0031.txt_1_15-0031.txt_1_9">
+	<edge target="0065.txt_1_2" source="0059.txt_1_5" id="0065.txt_1_2-0059.txt_1_5">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="clousure">yes</entailment>
 	</edge>
@@ -2698,11 +2698,11 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="clousure">yes</entailment>
 	</edge>
-	<edge target="0299.txt_1_0" source="0187.txt_1_0" id="0299.txt_1_0-0187.txt_1_0">
+	<edge target="0299.txt_2_1" source="0187.txt_1_0" id="0299.txt_2_1-0187.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="clousure">yes</entailment>
 	</edge>
-	<edge target="0299.txt_2_1" source="0187.txt_1_0" id="0299.txt_2_1-0187.txt_1_0">
+	<edge target="0299.txt_1_0" source="0187.txt_1_0" id="0299.txt_1_0-0187.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="clousure">yes</entailment>
 	</edge>
