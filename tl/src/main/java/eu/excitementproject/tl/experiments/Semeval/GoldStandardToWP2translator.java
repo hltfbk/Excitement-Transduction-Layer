@@ -1,4 +1,4 @@
-package eu.excitementproject.tl.evaluation.graphmerger;
+package eu.excitementproject.tl.experiments.Semeval;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Set;
 
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
+import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
@@ -32,6 +33,7 @@ public class GoldStandardToWP2translator {
 		int i=0;
 		for (String tgtId : textToIdsMap.get(targetText)){
 			for (String srcId: textToIdsMap.get(sourceText)){
+				if (srcId.equals(tgtId)) continue; // do not add edges with same src and tgt ids
 				s += "\t<edge target=\""+tgtId+"\" source=\""+srcId+"\" id=\""+tgtId+"-"+srcId+"\">\n";
 				s += "\t\t<entailment_mod_insensitive> </entailment_mod_insensitive>\n";
 				if (edge.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) s+= "\t\t<entailment type=\"clousure\">yes</entailment>\n";
@@ -100,13 +102,14 @@ public class GoldStandardToWP2translator {
 				if (f.isDirectory()){
 					System.out.println(f.getName().toUpperCase());
 					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader(false); //load the original data only		
+					gsloader.setExcludeSelfLoops(false); // do not exclude self-loops (edges between nodes with the same text are present in the GS, while in our graph these nodes become a single nodes and such edges are self-loops)
 					// load merge-graph annotations	
 					// clusterAnnotationDir should contain a folder called "FinalMergedGraph" with a single xml file with annotations
 					File clusterAnnotationMergedGraphDir = new File (gsAnnotationsDir+"/"+clusterAnnotationDir+"/"+"FinalMergedGraph");
 					System.out.println(clusterAnnotationMergedGraphDir.getAbsolutePath());
 					if (clusterAnnotationMergedGraphDir.isDirectory()){
 						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
-							if (annotationFile.getName().endsWith(".xml")){
+							if (gsloader.isValidMergedFile(annotationFile.getName())){
 								gsloader.addAnnotationsFromFile(annotationFile.getPath(), false);
 								System.out.println(f.getName().toUpperCase()+" GS LOADED");
 								if (createWP2xml(annotationFile, new File(gsAnnotationsDir+"/"+clusterAnnotationDir+"/FinalMergedGraph/"+annotationFile.getName().replace(".xml", "PlusClosure.xml")), gsloader)){
@@ -129,9 +132,13 @@ public class GoldStandardToWP2translator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test";
-	//	String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
+	//	String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test";
+	//	String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-TMP/Dev";
 
+	//	String gsAnnotationsDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
+		String gsAnnotationsDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
+		
+		
 		createWP2Data(gsAnnotationsDir);
 		
 	}

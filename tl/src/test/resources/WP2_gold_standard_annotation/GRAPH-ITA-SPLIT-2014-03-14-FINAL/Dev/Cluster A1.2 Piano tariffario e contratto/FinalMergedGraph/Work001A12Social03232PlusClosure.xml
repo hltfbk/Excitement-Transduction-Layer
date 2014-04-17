@@ -915,11 +915,11 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0154.txt_1_3" source="0154.txt_1_2" id="0154.txt_1_3-0154.txt_1_2">
+	<edge target="0091.txt_1_0" source="0116.txt_1_3" id="0091.txt_1_0-0116.txt_1_3">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0091.txt_1_0" source="0116.txt_1_3" id="0091.txt_1_0-0116.txt_1_3">
+	<edge target="0154.txt_1_3" source="0154.txt_1_2" id="0154.txt_1_3-0154.txt_1_2">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>

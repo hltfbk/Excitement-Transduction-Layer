@@ -144,7 +144,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 */	
 	
 	/**
-	 * Builds a raw entailment graph from a set of user interactions
+	 * Builds a raw entailment graph from a set of user interactions without any threshold applied at merge phase
 	 * 
 	 * @param docs -- a set of user interactions as JCas objects
 	 *  
@@ -155,6 +155,24 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphRaw buildRawGraph(List<JCas> docs) 
+			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
+		
+		graphMerger.setEntailmentConfidenceThreshold(null); //make sure no threshold is applied
+		return buildRaw(docs);
+	}
+	
+	/**
+	 * Builds a raw entailment graph from a set of user interactions
+	 * 
+	 * @param docs -- a set of user interactions as JCas objects
+	 *  
+	 * @return an raw entailment graph (the multigraph with all edges and nodes)
+	 * @throws FragmentAnnotatorException 
+	 * @throws ModifierAnnotatorException 
+	 * @throws LAPException 
+	 */
+	
+	private EntailmentGraphRaw buildRaw(List<JCas> docs) 
 			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
 		
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>(); 
@@ -183,11 +201,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		}
 		System.in.read();
 */	
-		graphMerger.setEntailmentConfidenceThreshold(null); //make sure no threshold is applied
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}
-	
-
 	
 	/**
 	 * Builds a raw entailment graph from a set of user interactions, using a confidence threshold when adding edges
@@ -205,7 +220,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
 		
 		graphMerger.setEntailmentConfidenceThreshold(confidenceThreshold);
-		return buildRawGraph(docs);
+		return buildRaw(docs);
+		
 	}	
 	
 	
