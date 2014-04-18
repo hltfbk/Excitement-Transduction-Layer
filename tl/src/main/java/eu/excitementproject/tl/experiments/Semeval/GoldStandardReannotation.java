@@ -143,7 +143,7 @@ public class GoldStandardReannotation {
 	private int countFragmentGraphEdges(EquivalenceClass source, EquivalenceClass target){
 		int fge = 0;
 		for (EntailmentUnit src : source.getEntailmentUnits()){
-			for (EntailmentUnit tgt : target.getEntailmentUnits()){				
+			for (EntailmentUnit tgt : target.getEntailmentUnits()){
 				for(EntailmentRelation edge : rg.getAllEdges(src, tgt)){
 					if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) fge++;
 				}				
@@ -227,7 +227,7 @@ public class GoldStandardReannotation {
 		return cons;
 	}
 	
-	private void loadFixedNodes(BufferedReader reader) throws IOException{
+	private boolean loadFixedNodes(BufferedReader reader) throws IOException{
 		String line = reader.readLine(); //caption line before all nodes
 		while (line!=null){
 			if (line.contains("Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments")) break;
@@ -237,6 +237,15 @@ public class GoldStandardReannotation {
 			}
 			
 			// if reached this point - have just read a node's caption 		
+			// verify if the caption has editor's flag
+			String[] caption = line.split("\t");
+			if (caption.length<8) {
+				System.out.println(caption[0]);
+				System.out.println("No editor's flag specified for this node in column 8 (H). Loading nodes interrupted.");
+				return false;
+			}
+			System.out.println(caption[0]+"\t...\t"+caption[7]);
+			// start reading the contents of the node
 			line = reader.readLine(); // read the first eu (if any)
 			Set<EntailmentUnit> nodeEUs = new HashSet<EntailmentUnit>();
 			while(!isEmpty(line)) {
@@ -250,45 +259,28 @@ public class GoldStandardReannotation {
 				ourCg.addVertex(node);
 			}
 		}		
+		return true;
 	}
 	
-	private void generateCollapsedGraphForFixedNodes(File inputFile) throws EntailmentGraphCollapsedException, IOException{
+	private boolean generateCollapsedGraphForFixedNodes(File inputFile) throws EntailmentGraphCollapsedException, IOException{
 		if (rg==null){
 			System.out.println("Raw graph not loaded. Exiting.");
-			return;
+			return false;
 		}
 		rg.applyTransitiveClosure(false);
 		ourCg = new EntailmentGraphCollapsed();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-		
-/*		String line = reader.readLine(); //caption line before all nodes
-		while (line!=null){
-			if (line.contains("Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments")) break;
-			if (isEmpty(line)) { //skip "empty" line
-				line=reader.readLine();	
-				continue;  
-			}
 			
-			// if reached this point - have just read a node's caption 		
-			line = reader.readLine(); // read the first eu (if any)
-			Set<EntailmentUnit> nodeEUs = new HashSet<EntailmentUnit>();
-			while(!isEmpty(line)) {
-				String text = line.split("\t")[1];
-				EntailmentUnit eu = GoldStandardEdgesLoader.getGoldStandardNode(text);
-				nodeEUs.add(eu);
-				line=reader.readLine();
-			}
-			if (!nodeEUs.isEmpty()){
-				EquivalenceClass node = new EquivalenceClass(nodeEUs);
-				ourCg.addVertex(node);
-			}
-		}
-*/		
-		loadFixedNodes(reader);
+		boolean success = loadFixedNodes(reader);
 		reader.close();
-		System.out.println(ourCg.vertexSet().size());
 
+		if (success) {
+			System.out.println("Loaded "+ourCg.vertexSet().size()+" non-empty collapsed nodes");
+			return true;
+		}
+		ourCg = null;
+		return false; 
 	}
 	
 	/**
@@ -301,7 +293,7 @@ public class GoldStandardReannotation {
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 
 		String clusterName = "EMAIL0210";		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/test/"+clusterName);
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test/"+clusterName);
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
 			return;
@@ -325,12 +317,14 @@ public class GoldStandardReannotation {
 			//tr.translateFromXml(tr.wp2cg,txtFile);
 
 			File fixedNodesFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_Reconciled.txt");
-			tr.generateCollapsedGraphForFixedNodes(fixedNodesFile);	
-			if(tr.areNodesConsistent()){
-				tr.createTxtFromGraph(tr.ourCg, txtFileUp);
-			}
-			else{
-				System.err.println("Nodes are not consistent, no updated file was generated.");
+			if (tr.generateCollapsedGraphForFixedNodes(fixedNodesFile)){
+				if(tr.areNodesConsistent()){
+					tr.createTxtFromGraph(tr.ourCg, txtFileUp);
+					System.out.println("Updated file generated.");
+				}
+				else{
+					System.err.println("Nodes are not consistent, no updated file was generated.");
+				}				
 			}
 		
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
