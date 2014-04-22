@@ -16,6 +16,7 @@ import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
@@ -151,13 +152,33 @@ public class GoldStandardReannotation {
 		}
 		return fge;
 	}
+
 /*	private void loadGraph(String collapsedXmlFileName) throws EntailmentGraphCollapsedException {
 		cg = new EntailmentGraphCollapsed(new File(collapsedXmlFileName));
 		cg.applyTransitiveClosure(false);
 	}
 */
+
+	private int countEdgePairs(){
+		Set<String> closedList = new HashSet<String>();
+		int pairId = 0;
+		for (EquivalenceClass nodeA : ourCg.vertexSet()){
+			for (EquivalenceClass nodeB : ourCg.vertexSet()){
+				if (nodeA.equals(nodeB)) continue;	
+				
+				String pair1 = nodeA.toString()+nodeB.toString();
+				String pair2 = nodeB.toString()+nodeA.toString();
+				if (closedList.contains(pair1)) continue;
+				if (closedList.contains(pair2)) continue;
+				closedList.add(pair1); closedList.add(pair2);
+				
+				pairId++;
+			}
+		}
+		return pairId;
+	}
 	
-	private void createTxtFromGraph(EntailmentGraphCollapsed cg, File txtFile) throws EntailmentGraphCollapsedException, IOException{
+	private void createTxtForReannotation(EntailmentGraphCollapsed cg, File txtFile) throws EntailmentGraphCollapsedException, IOException{
 			if (cg==null){
 				System.out.println("Collapsed graph not loaded. Exiting.");
 				return;
@@ -166,7 +187,7 @@ public class GoldStandardReannotation {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(txtFile));
 			writer.write("Node caption	Entailment Unit	EU_id					Node_check	Comments\n\n");
 			
-			int nodeId = 1000;
+			int nodeId = 0;
 			for (EquivalenceClass node : cg.vertexSet()){
 				nodeId++;
 				writer.write("collapsed node #"+String.valueOf(nodeId)+" : "+ node.getEntailmentUnits().size() +" entailment unit(s) before editing\n"+getNode(node)+"\n");
@@ -227,7 +248,12 @@ public class GoldStandardReannotation {
 		return cons;
 	}
 	
-	private boolean loadFixedNodes(BufferedReader reader) throws IOException{
+	private boolean areEdgesConsistent(){
+		boolean cons=true;
+		return cons;
+	}
+
+	private boolean loadFixedNodes(BufferedReader reader, boolean checkFlagsOnNodes) throws IOException{
 		String line = reader.readLine(); //caption line before all nodes
 		while (line!=null){
 			if (line.contains("Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments")) break;
@@ -237,14 +263,18 @@ public class GoldStandardReannotation {
 			}
 			
 			// if reached this point - have just read a node's caption 		
-			// verify if the caption has editor's flag
-			String[] caption = line.split("\t");
-			if (caption.length<8) {
-				System.out.println(caption[0]);
-				System.out.println("No editor's flag specified for this node in column 8 (H). Loading nodes interrupted.");
-				return false;
+			
+			if (checkFlagsOnNodes){
+				// verify if the caption has editor's flag
+				String[] caption = line.split("\t");
+				if (caption.length<8) {
+					System.out.println(caption[0]);
+					System.out.println("No editor's flag specified for this node in column 8 (H). Loading nodes interrupted.");
+					return false;
+				}
+				System.out.println(caption[0]+"\t...\t"+caption[7]);
 			}
-			System.out.println(caption[0]+"\t...\t"+caption[7]);
+			
 			// start reading the contents of the node
 			line = reader.readLine(); // read the first eu (if any)
 			Set<EntailmentUnit> nodeEUs = new HashSet<EntailmentUnit>();
@@ -262,6 +292,117 @@ public class GoldStandardReannotation {
 		return true;
 	}
 	
+
+	private boolean loadReannotatedCollapsedGraph(File txtFileReannotated, boolean checkNodesConsistency) throws Exception{
+		ourCg = new EntailmentGraphCollapsed();		
+		BufferedReader reader = new BufferedReader(new FileReader(txtFileReannotated));
+		
+		String line = reader.readLine(); //caption line before all nodes
+		while (line!=null){
+			if (line.contains("Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments")) break;
+			if (isEmpty(line)) { //skip "empty" line
+				line=reader.readLine();	
+				continue;  
+			}
+			
+			// if reached this point - have just read a node's caption 					
+			// start reading the contents of the node
+			line = reader.readLine(); // read the first eu (if any)
+			Set<EntailmentUnit> nodeEUs = new HashSet<EntailmentUnit>();
+			while(!isEmpty(line)) {
+				String text = line.split("\t")[1];
+				EntailmentUnit eu = GoldStandardEdgesLoader.getGoldStandardNode(text);
+				nodeEUs.add(eu);
+				line=reader.readLine();
+			}
+			if (!nodeEUs.isEmpty()){
+				EquivalenceClass node = new EquivalenceClass(nodeEUs);
+				ourCg.addVertex(node);
+			}
+		}		
+		
+		if (checkNodesConsistency){ // worth checking that no collapsed nodes or single EUs were deleted by mistake
+			// to check again for nodes' consistency - need to load the raw graph 
+			if (rg==null){
+				System.out.println("Raw graph not loaded, cannot check for the consistency of nodes. Exiting.");
+				reader.close();
+				return false;
+			}
+			if (!areNodesConsistent()) {
+				reader.close();
+				return false;
+			}
+		}
+
+		// when reached this point, line contains the caption of edges
+		int processedEdgePairs = 0;
+		line = reader.readLine(); // read next line after the caption
+		while (line!=null){
+			if (isEmpty(line)) { //skip "empty" line
+				line=reader.readLine();	
+				continue;  
+			}
+			
+			// if reached this point - have just read an edge pair's caption 		
+			// start reading the contents of the edge pair
+			line = reader.readLine(); // read the first annotation out of 2
+			EntailmentRelationCollapsed ed1 = getReannotatedEdge(line);
+			if (ed1!=null) ourCg.addEdge(ed1.getSource(), ed1.getTarget(), ed1);
+			line = reader.readLine(); // read the 2nd annotation out of 2
+			EntailmentRelationCollapsed ed2 = getReannotatedEdge(line);
+			if (ed2!=null) ourCg.addEdge(ed2.getSource(), ed2.getTarget(), ed2);
+			processedEdgePairs++; //successfully processed a pair of edge annotations
+			
+			line = reader.readLine(); // proceed to the next annotation
+		}		
+		reader.close();
+		
+		int expectedPairs = countEdgePairs();
+		if (expectedPairs!=processedEdgePairs) {
+			System.err.println("Error detected: Expected "+expectedPairs+" edge pairs. Loaded successfully "+ processedEdgePairs+" reannotated pairs.");
+			return false;
+		}
+		
+		// if reached this point, the graph is loaded
+		System.out.println("Successfully processed "+ processedEdgePairs+" re-annotated edge pairs.");
+		// consistency check for edges - all transitive closure edges should be explicitly present in the graph
+		// if not - smth is wrong
+		int addedEdges = ourCg.edgeSet().size();
+		System.out.println("Checking edges for consistency:");
+		ourCg.applyTransitiveClosure(false);
+		if (ourCg.edgeSet().size() != addedEdges){
+			for (EntailmentRelationCollapsed edge : ourCg.edgeSet()){
+				if (edge.getEdgeType().equals(EdgeType.TRANSITIVE_CLOSURE)) System.err.println("Inconsistent edge: "+ edge);
+			}
+		}
+		else {
+			System.out.println("The graph is consistent. Congratulations :)");
+		}
+		
+		
+		return true;
+	}
+	
+		private EntailmentRelationCollapsed getReannotatedEdge(String line) throws Exception{
+			String[] s = line.split("\t");
+			try {
+				EquivalenceClass src = ourCg.getVertex(s[0]);
+				if (src == null) throw new Exception("Cannot find node with text "+s[1]);
+				EquivalenceClass tgt = ourCg.getVertex(s[3]);
+				if (tgt == null) throw new Exception("Cannot find node with text "+s[3]);
+				Integer decision = Integer.valueOf(s[7]);
+				if (decision==1){
+					EntailmentRelationCollapsed edge = new EntailmentRelationCollapsed(src, tgt, 1.0, EdgeType.MANUAL_ANNOTATION);
+					return edge;
+				}
+				if (decision == 0) return null;
+				throw new Exception("Illegal decision annotation (only 0 or 1 allowed): " + decision);
+			} catch (Exception e) {
+				System.err.println("Cannot read egde annotation from line: "+line);
+				throw e;
+			}			
+		}
+	
 	private boolean generateCollapsedGraphForFixedNodes(File inputFile) throws EntailmentGraphCollapsedException, IOException{
 		if (rg==null){
 			System.out.println("Raw graph not loaded. Exiting.");
@@ -272,7 +413,7 @@ public class GoldStandardReannotation {
 		
 		BufferedReader reader = new BufferedReader(new FileReader(inputFile));
 			
-		boolean success = loadFixedNodes(reader);
+		boolean success = loadFixedNodes(reader, true);
 		reader.close();
 
 		if (success) {
@@ -310,7 +451,7 @@ public class GoldStandardReannotation {
 		}
 	*/	
 		
-		// create txt file for updated collapsed nodes		
+/*		// create txt file for updated collapsed nodes		
 		try {
 			File txtFileUp = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt");
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -319,7 +460,7 @@ public class GoldStandardReannotation {
 			File fixedNodesFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_Reconciled.txt");
 			if (tr.generateCollapsedGraphForFixedNodes(fixedNodesFile)){
 				if(tr.areNodesConsistent()){
-					tr.createTxtFromGraph(tr.ourCg, txtFileUp);
+					tr.createTxtForReannotation(tr.ourCg, txtFileUp);
 					System.out.println("Updated file generated.");
 				}
 				else{
@@ -331,8 +472,21 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+*/		
+
+		// load final re-annotated graph 		
+		try {
+			File txtFileReannotated = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes_Reconciled.txt");
+			tr.loadClusterGraph(clusterAnnotationsDir);
+			//tr.translateFromXml(tr.wp2cg,txtFile);
+
+			tr.loadReannotatedCollapsedGraph(txtFileReannotated, true);
 		
-		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 }
