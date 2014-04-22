@@ -13,7 +13,7 @@ public class SemevalStuff {
 	
 	//	GoldStandardAnalyzer.getStatistics(gsAnnotationsDir);
 		
-		GoldStandardToWP2translator.createWP2Data(gsAnnotationsDir);
+		GoldStandardToWP2FormatTranslator.createWP2Data(gsAnnotationsDir);
 		
 	}
 	

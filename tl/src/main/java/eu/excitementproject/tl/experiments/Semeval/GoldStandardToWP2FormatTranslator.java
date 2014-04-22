@@ -17,7 +17,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
-public class GoldStandardToWP2translator {
+public class GoldStandardToWP2FormatTranslator {
 
 	private static String getWP2edge(EntailmentRelation edge, Map<String,Set<String>> textToIdsMap){
 /*		Output example
