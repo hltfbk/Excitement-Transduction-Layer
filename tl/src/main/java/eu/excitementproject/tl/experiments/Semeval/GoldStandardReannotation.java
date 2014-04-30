@@ -213,6 +213,7 @@ public class GoldStandardReannotation {
 				}
 			}
 			writer.close();
+			System.out.println("Reannotaiton file "+txtFile+" created successfully.");
 	}
 	
 	private boolean isEmpty(String s){
@@ -227,18 +228,18 @@ public class GoldStandardReannotation {
 	private boolean areNodesConsistent(){
 		boolean cons=true;
 		Set<String> wp2eus = new HashSet<String>();
-		for (EntailmentUnit eu : rg.vertexSet()) wp2eus.add(eu.getTextWithoutDoubleSpaces());
+		for (EntailmentUnit eu : rg.vertexSet()) wp2eus.add(eu.getText());
 		
 		Set<String> closedList = new HashSet<String>();
 		for (EquivalenceClass node : ourCg.vertexSet()){
 			for(EntailmentUnit eu : node.getEntailmentUnits()){
-				if (closedList.contains(eu.getTextWithoutDoubleSpaces())) {
+				if (closedList.contains(eu.getText())) {
 					System.err.println("ERROR: <<"+eu.getText()+">> is listed in more that one collapsed node.");
 					cons = false;
 				}
 				else{
 					if (!wp2eus.contains(eu.getText())){
-						System.err.println("ERROR: <<"+eu.getTextWithoutDoubleSpaces()+">> is not found in the raw graph.");
+						System.err.println("ERROR: <<"+eu.getText()+">> is not found in the raw graph.");
 						cons = false;						
 					}
 					else closedList.add(eu.getText());
@@ -433,23 +434,23 @@ public class GoldStandardReannotation {
 		
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 
-		String clusterName = "EMAIL0210";		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test/"+clusterName);
+		String clusterName = "EMAIL0010";		
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev/"+clusterName);
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
 			return;
 		}
 			
 		// create txt file for original WP2 annotation
-	/*	File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");		
+		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");		
 		try {
 			tr.loadClusterGraph(clusterAnnotationsDir);
-			tr.createTxtFromGraph(tr.wp2cg,txtFile);
+			tr.createTxtForReannotation(tr.wp2cg,txtFile);
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	*/	
+		
 		
 /*		// create txt file for updated collapsed nodes		
 		try {
@@ -474,7 +475,7 @@ public class GoldStandardReannotation {
 		}
 */		
 
-		// load final re-annotated graph 		
+	/*	// load final re-annotated graph 		
 		try {
 			File txtFileReannotated = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes_Reconciled.txt");
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -486,7 +487,7 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+*/
 	}
 
 }

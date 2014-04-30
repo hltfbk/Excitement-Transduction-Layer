@@ -332,9 +332,9 @@ public class GoldStandardEdgesLoader {
 	
 	public static EntailmentUnit getGoldStandardNode(String text){
 		 EntailmentUnit eu = new EntailmentUnit(text, -1, "", "unknown"); // "-1" level means "unknown", put "" as complete statement text, since only the text of the node is compared when comparing edges
-//		 return eu;
+		 return eu;
 		 
-		 return new EntailmentUnit(eu.getTextWithoutDoubleSpaces(), -1, "", "unknown");
+	//	 return new EntailmentUnit(eu.getTextWithoutDoubleSpaces(), -1, "", "unknown");
 		//TODO:	do this carefully so that nodeTextById also contains texts without double spaces, as well as nodesOfInterest 
 	}
 	
