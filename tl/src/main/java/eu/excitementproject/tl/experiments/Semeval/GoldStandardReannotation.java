@@ -11,10 +11,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
+import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -34,12 +36,14 @@ public class GoldStandardReannotation {
 	
 	EntailmentGraphRaw rg = null;
 	EntailmentGraphCollapsed wp2cg = null;
+	EntailmentGraphRaw rfg = null;	// contains a raw graph with only fragment graphs in it, no additional edges
 	EntailmentGraphCollapsed ourCg = null;
 	Map<String,Set<String>> textToIdsMap = null;
 	
 	private void clearData(){
 		rg = null;
 		wp2cg = null;
+		rfg = null;	
 		ourCg = null;
 		textToIdsMap = null;		
 	}
@@ -109,9 +113,9 @@ public class GoldStandardReannotation {
 			s+=getEdge(nodeB, nodeA)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeB, nodeA))+"\n";
 			return s;
 		}
-		// relation == 0
-		String s = getEdge(nodeA, nodeB)+"\tNo\n";
-		s+=getEdge(nodeB, nodeA)+"\tNo\n";
+		// relation == NONE
+		String s = getEdge(nodeA,nodeB)+"\tNo\t"+String.valueOf(countFragmentGraphEdges(nodeA, nodeB))+"\n";
+		s+=getEdge(nodeB, nodeA)+"\tNo\t"+String.valueOf(countFragmentGraphEdges(nodeB, nodeA))+"\n";
 		return s;
 	}
 	
@@ -125,9 +129,7 @@ public class GoldStandardReannotation {
 		}
 				
 		System.out.println(gsloader.getEdges().size());
-
-		rg = gsloader.getRawGraph();
-		
+		rg = gsloader.getRawGraph();		
 		wp2cg = gsloader.getCollapsedGraph();
 		wp2cg.applyTransitiveClosure(false);
 		
@@ -139,18 +141,36 @@ public class GoldStandardReannotation {
 			idsOfText.add(id);
 			textToIdsMap.put(text, idsOfText);
 		}		
+		
+		GoldStandardEdgesLoader gsFGloader = new GoldStandardEdgesLoader(false); //load the original data only		
+		if (gsClusterDir.isDirectory()){
+			System.out.println(gsClusterDir.getName().toUpperCase());
+			gsFGloader.loadFGrawGraph(gsClusterDir.getAbsolutePath()); //load only FGs
+		}
+		rfg = gsFGloader.getRawGraph();
+		
+		
 	}
 	
-	private int countFragmentGraphEdges(EquivalenceClass source, EquivalenceClass target){
-		int fge = 0;
+	private Integer countFragmentGraphEdges(EquivalenceClass source, EquivalenceClass target){
+		int yesFge = 0;
+		int noFge = 0;
 		for (EntailmentUnit src : source.getEntailmentUnits()){
 			for (EntailmentUnit tgt : target.getEntailmentUnits()){
-				for(EntailmentRelation edge : rg.getAllEdges(src, tgt)){
-					if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) fge++;
+				for(EntailmentRelation edge : rfg.getAllEdges(src, tgt)){
+					if (edge.getLabel().equals(DecisionLabel.Entailment)) yesFge++;
+					else noFge++;
 				}				
 			}
 		}
-		return fge;
+		if ((yesFge>0)&&(noFge>0)){
+			System.err.println("Smth is not OK with the collapsed nodes! There is a collapsed edge that has both positive and negative underlying edges in FGs (will have <<null>> in the corresponding column):");
+			System.err.println("\t"+source.getLabel()+"  ->  "+target.getLabel());			
+			return null;   
+		}
+		if (yesFge > 0) return yesFge;
+		if (noFge > 0) return -1*noFge;
+		return 0;
 	}
 
 /*	private void loadGraph(String collapsedXmlFileName) throws EntailmentGraphCollapsedException {
@@ -246,11 +266,6 @@ public class GoldStandardReannotation {
 				}
 			}
 		}
-		return cons;
-	}
-	
-	private boolean areEdgesConsistent(){
-		boolean cons=true;
 		return cons;
 	}
 
@@ -370,16 +385,40 @@ public class GoldStandardReannotation {
 		// if not - smth is wrong
 		int addedEdges = ourCg.edgeSet().size();
 		System.out.println("Checking edges for consistency:");
+		boolean isConsistent = true;
 		ourCg.applyTransitiveClosure(false);
 		if (ourCg.edgeSet().size() != addedEdges){
 			for (EntailmentRelationCollapsed edge : ourCg.edgeSet()){
-				if (edge.getEdgeType().equals(EdgeType.TRANSITIVE_CLOSURE)) System.err.println("Inconsistent edge: "+ edge);
+				if (edge.getEdgeType().equals(EdgeType.TRANSITIVE_CLOSURE)) {
+					System.err.println("Inconsistent edge: "+ edge);
+					isConsistent = false;
+				}
 			}
 		}
-		else {
-			System.out.println("The graph is consistent. Congratulations :)");
+			
+		// now check if added edges into fragment graphs
+		Set<EntailmentRelation> decollapsedEdges = EvaluatorGraphOptimizer.getAllEntailmentRelations(ourCg);
+		for (EntailmentRelation e : decollapsedEdges){
+			
+			// debug part
+			if (e.getSource().getText().equals("leg room is uncomfortable for someone of 187 cm")){
+				if (e.getTarget().getText().equals("leg room is abit uncomfortable")){
+					System.err.println("!!!! "+e);
+				}
+			} // end debug part
+			
+			EntailmentUnit rs = rfg.getVertexWithText(e.getSource().getText());
+			EntailmentUnit rt = rfg.getVertexWithText(e.getTarget().getText());
+			for (EntailmentRelation fge : rfg.getAllEdges(rs, rt)){
+				if (fge.getLabel().equals(DecisionLabel.NonEntailment)){
+					isConsistent = false;
+					System.err.println("Edge added into Fragment Graph: "+ e);										
+					System.err.println("	from collapsed edge: "+ ourCg.getEdge(ourCg.getVertex(e.getSource()), ourCg.getVertex(e.getTarget())));					
+				}
+			}
 		}
 		
+		if (isConsistent) System.out.println("The graph is consistent. Congratulations :)");		
 		
 		return true;
 	}
@@ -429,19 +468,24 @@ public class GoldStandardReannotation {
 	 * @param args
 	 */
 	public static void main(String[] args) {		
-		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
-//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
+//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
+		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
 		
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 
-		String clusterName = "EMAIL0010";		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev/"+clusterName);
+//		String clusterName = "EMAIL0010";		
+		String clusterName = "EMAIL0210";		
+
+		String set = "Test";
+	//	String set = "Dev";
+		
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
 			return;
 		}
 			
-		// create txt file for original WP2 annotation
+	/*	// create txt file for original WP2 annotation
 		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");		
 		try {
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -449,10 +493,10 @@ public class GoldStandardReannotation {
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		
-/*		// create txt file for updated collapsed nodes		
+	/*	// create txt file for updated collapsed nodes		
 		try {
 			File txtFileUp = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt");
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -473,9 +517,9 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-*/		
+		*/
 
-	/*	// load final re-annotated graph 		
+		// load final re-annotated graph 		
 		try {
 			File txtFileReannotated = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes_Reconciled.txt");
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -487,7 +531,7 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-*/
+
 	}
 
 }
