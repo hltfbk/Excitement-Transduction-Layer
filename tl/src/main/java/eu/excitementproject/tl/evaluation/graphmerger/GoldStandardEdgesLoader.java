@@ -477,7 +477,7 @@ public class GoldStandardEdgesLoader {
 							if (!foundYesEdges){ // if there's no "yes" edge between current src and tgt
 								EntailmentRelation noEdge = new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.NonEntailment), type);
 								edges.put(noEdge.toString(),noEdge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case
-								System.out.println("NO_EDGE_ADDED: "+noEdge);
+								System.out.println("\"NO\" EDGE ADDED: "+noEdge);
 							}
 						}
 					}
