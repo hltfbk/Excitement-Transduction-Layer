@@ -1,6 +1,6 @@
 Node caption	Entailment Unit	EU_id					Node_check	Comments
 
-collapsed node #1001 : 18 entailment unit(s) before editing
+collapsed node #1 : 18 entailment unit(s) before editing
 	Disappointed with the amount of legroom	[228632.txt_1_1]
 	I would like more legroom	[470062.txt_1_3]
 	Increase leg room	[213033.txt_1_0]
@@ -20,75 +20,75 @@ collapsed node #1001 : 18 entailment unit(s) before editing
 	need more leg room	[427784.txt_1_1]
 	only comment I can make is the legroom	[334406.txt_1_1]
 
-collapsed node #1002 : 4 entailment unit(s) before editing
+collapsed node #2 : 4 entailment unit(s) before editing
 	I 'm 6ft 5 and cannot sit comfortably	[470062.txt_5_0]
 	leg room is uncomfortable for someone of 187 cm	[255004.txt_3_4]
 	more space seating for people having long legs	[24.txt_2_0]
 	need more leg room for tall persons	[427784.txt_1_0]
 
-collapsed node #1003 : 5 entailment unit(s) before editing
-	More legroom in standard class	null
+collapsed node #3 : 5 entailment unit(s) before editing
+	           More legroom in standard class	[339428.txt_1_0]
 	leg room in 2nd class is uncomfortable	[255004.txt_3_5]
 	leg room in standard class was poor	[44805.txt_2_1]
 	more leg room in 2nd class	[512034.txt_1_1]
 	more leg space in second class	[427082.txt_1_1]
 
-collapsed node #1004 : 4 entailment unit(s) before editing
+collapsed node #4 : 4 entailment unit(s) before editing
 	10 cm more leg space	[427082.txt_1_2]
 	Slightly more leg room	[512034.txt_1_2]
 	a little more leg room would have been perfect	[100771.txt_1_0]
 	leg room is abit uncomfortable	[255004.txt_3_6]
 
-collapsed node #1005 : 1 entailment unit(s) before editing
+collapsed node #5 : 1 entailment unit(s) before editing
 	leg room is less than that of Thays trains	[255004.txt_1_1]
 
-collapsed node #1006 : 3 entailment unit(s) before editing
+collapsed node #6 : 3 entailment unit(s) before editing
 	10 cm more leg space in second class	[427082.txt_1_0]
 	Slightly more leg room in 2nd class	[512034.txt_1_0]
 	leg room in 2nd class is abit uncomfortable	[255004.txt_3_3]
 
-collapsed node #1007 : 1 entailment unit(s) before editing
+collapsed node #7 : 1 entailment unit(s) before editing
 	I would like much more legroom on Quasigo train	[470062.txt_1_0]
 
-collapsed node #1008 : 1 entailment unit(s) before editing
+collapsed node #8 : 1 entailment unit(s) before editing
 	leg room on the trains is a lot less than the Quicksun service by Unigo	[201646.txt_1_0]
 
-collapsed node #1009 : 1 entailment unit(s) before editing
+collapsed node #9 : 1 entailment unit(s) before editing
 	leg room in standard class was quite poor	[44805.txt_2_0]
 
-collapsed node #1010 : 1 entailment unit(s) before editing
+collapsed node #10 : 1 entailment unit(s) before editing
 	leg room in 2nd class is abit uncomfortable for someone of 187 cm	[255004.txt_3_0]
 
-collapsed node #1011 : 1 entailment unit(s) before editing
+collapsed node #11 : 1 entailment unit(s) before editing
 	leg room in 2nd class is less than that of Thays trains	[255004.txt_1_0]
 
-collapsed node #1012 : 1 entailment unit(s) before editing
+collapsed node #12 : 1 entailment unit(s) before editing
 	leg room is abit uncomfortable for someone of 187 cm	[255004.txt_3_2]
 
-collapsed node #1013 : 1 entailment unit(s) before editing
+collapsed node #13 : 1 entailment unit(s) before editing
 	leg room in 2nd class is uncomfortable for someone of 187 cm	[255004.txt_3_1]
 
-collapsed node #1014 : 2 entailment unit(s) before editing
+collapsed node #14 : 2 entailment unit(s) before editing
 	I would like much more legroom	[470062.txt_1_2]
 	leg room was quite poor	[44805.txt_2_2]
 
-collapsed node #1015 : 1 entailment unit(s) before editing
+collapsed node #15 : 1 entailment unit(s) before editing
 	Little leg room in our seats	[52781.txt_1_0]
 
-collapsed node #1016 : 1 entailment unit(s) before editing
+collapsed node #16 : 1 entailment unit(s) before editing
 	The table seats could do with more legroom	[218023.txt_1_0]
 
-collapsed node #1017 : 2 entailment unit(s) before editing
+collapsed node #17 : 2 entailment unit(s) before editing
 	could do with more legroom on the train	[524160.txt_1_0]
 	only comment I can make is the legroom in the train	[334406.txt_1_0]
 
-collapsed node #1018 : 1 entailment unit(s) before editing
+collapsed node #18 : 1 entailment unit(s) before editing
 	I would like more legroom on Quasigo train	[470062.txt_1_1]
 
-collapsed node #1019 : 1 entailment unit(s) before editing
+collapsed node #19 : 1 entailment unit(s) before editing
 	Disappointed with the amount of legroom compared with other trains	[228632.txt_1_0]
 
-collapsed node #1020 : 1 entailment unit(s) before editing
+collapsed node #20 : 1 entailment unit(s) before editing
 	leg room on the trains is less than the Quicksun service by Unigo	[201646.txt_1_1]
 
 
@@ -99,7 +99,7 @@ need more leg room for tall persons	4	->	More legroom	18	Yes	3
 More legroom	18	->	need more leg room for tall persons	4	No
 
 node pair #2:
-more leg room in 2nd class	5	->	More legroom	18	Yes	5
+more leg room in 2nd class	5	->	More legroom	18	Yes	4
 More legroom	18	->	more leg room in 2nd class	5	No
 
 node pair #3:
@@ -171,40 +171,40 @@ leg room on the trains is less than the Quicksun service by Unigo	1	->	More legr
 More legroom	18	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
 
 node pair #20:
-need more leg room for tall persons	4	->	more leg room in 2nd class	5	No
-more leg room in 2nd class	5	->	need more leg room for tall persons	4	No
+need more leg room for tall persons	4	->	more leg room in 2nd class	5	No	-1
+more leg room in 2nd class	5	->	need more leg room for tall persons	4	No	-1
 
 node pair #21:
-need more leg room for tall persons	4	->	10 cm more leg space	4	Yes	0
+need more leg room for tall persons	4	->	10 cm more leg space	4	Yes	-1
 10 cm more leg space	4	->	need more leg room for tall persons	4	No
 
 node pair #22:
-need more leg room for tall persons	4	->	leg room is less than that of Thays trains	1	No
-leg room is less than that of Thays trains	1	->	need more leg room for tall persons	4	No
+need more leg room for tall persons	4	->	leg room is less than that of Thays trains	1	No	0
+leg room is less than that of Thays trains	1	->	need more leg room for tall persons	4	No	0
 
 node pair #23:
-need more leg room for tall persons	4	->	Slightly more leg room in 2nd class	3	No
-Slightly more leg room in 2nd class	3	->	need more leg room for tall persons	4	No
+need more leg room for tall persons	4	->	Slightly more leg room in 2nd class	3	No	-1
+Slightly more leg room in 2nd class	3	->	need more leg room for tall persons	4	No	-1
 
 node pair #24:
-need more leg room for tall persons	4	->	I would like much more legroom on Quasigo train	1	No
-I would like much more legroom on Quasigo train	1	->	need more leg room for tall persons	4	No
+need more leg room for tall persons	4	->	I would like much more legroom on Quasigo train	1	No	0
+I would like much more legroom on Quasigo train	1	->	need more leg room for tall persons	4	No	0
 
 node pair #25:
-need more leg room for tall persons	4	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	need more leg room for tall persons	4	No
+need more leg room for tall persons	4	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	need more leg room for tall persons	4	No	0
 
 node pair #26:
-need more leg room for tall persons	4	->	leg room in standard class was quite poor	1	No
-leg room in standard class was quite poor	1	->	need more leg room for tall persons	4	No
+need more leg room for tall persons	4	->	leg room in standard class was quite poor	1	No	0
+leg room in standard class was quite poor	1	->	need more leg room for tall persons	4	No	0
 
 node pair #27:
 leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	need more leg room for tall persons	4	Yes	1
 need more leg room for tall persons	4	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
 
 node pair #28:
-need more leg room for tall persons	4	->	leg room in 2nd class is less than that of Thays trains	1	No
-leg room in 2nd class is less than that of Thays trains	1	->	need more leg room for tall persons	4	No
+need more leg room for tall persons	4	->	leg room in 2nd class is less than that of Thays trains	1	No	0
+leg room in 2nd class is less than that of Thays trains	1	->	need more leg room for tall persons	4	No	0
 
 node pair #29:
 leg room is abit uncomfortable for someone of 187 cm	1	->	need more leg room for tall persons	4	Yes	1
@@ -239,28 +239,28 @@ need more leg room for tall persons	4	->	Disappointed with the amount of legroom
 Disappointed with the amount of legroom compared with other trains	1	->	need more leg room for tall persons	4	No
 
 node pair #37:
-need more leg room for tall persons	4	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	need more leg room for tall persons	4	No
+need more leg room for tall persons	4	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	need more leg room for tall persons	4	No	0
 
 node pair #38:
-more leg room in 2nd class	5	->	10 cm more leg space	4	Yes	0
+more leg room in 2nd class	5	->	10 cm more leg space	4	Yes	-3
 10 cm more leg space	4	->	more leg room in 2nd class	5	No
 
 node pair #39:
-more leg room in 2nd class	5	->	leg room is less than that of Thays trains	1	No
-leg room is less than that of Thays trains	1	->	more leg room in 2nd class	5	No
+more leg room in 2nd class	5	->	leg room is less than that of Thays trains	1	No	0
+leg room is less than that of Thays trains	1	->	more leg room in 2nd class	5	No	0
 
 node pair #40:
 Slightly more leg room in 2nd class	3	->	more leg room in 2nd class	5	Yes	3
 more leg room in 2nd class	5	->	Slightly more leg room in 2nd class	3	No
 
 node pair #41:
-more leg room in 2nd class	5	->	I would like much more legroom on Quasigo train	1	No
-I would like much more legroom on Quasigo train	1	->	more leg room in 2nd class	5	No
+more leg room in 2nd class	5	->	I would like much more legroom on Quasigo train	1	No	0
+I would like much more legroom on Quasigo train	1	->	more leg room in 2nd class	5	No	0
 
 node pair #42:
-more leg room in 2nd class	5	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	more leg room in 2nd class	5	No
+more leg room in 2nd class	5	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	more leg room in 2nd class	5	No	0
 
 node pair #43:
 leg room in standard class was quite poor	1	->	more leg room in 2nd class	5	Yes	1
@@ -275,15 +275,15 @@ leg room in 2nd class is less than that of Thays trains	1	->	more leg room in 2n
 more leg room in 2nd class	5	->	leg room in 2nd class is less than that of Thays trains	1	No
 
 node pair #46:
-more leg room in 2nd class	5	->	leg room is abit uncomfortable for someone of 187 cm	1	No
-leg room is abit uncomfortable for someone of 187 cm	1	->	more leg room in 2nd class	5	No
+more leg room in 2nd class	5	->	leg room is abit uncomfortable for someone of 187 cm	1	No	-1
+leg room is abit uncomfortable for someone of 187 cm	1	->	more leg room in 2nd class	5	No	-1
 
 node pair #47:
 leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	more leg room in 2nd class	5	Yes	1
 more leg room in 2nd class	5	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
 
 node pair #48:
-more leg room in 2nd class	5	->	leg room was quite poor	2	Yes	0
+more leg room in 2nd class	5	->	leg room was quite poor	2	Yes	-1
 leg room was quite poor	2	->	more leg room in 2nd class	5	No
 
 node pair #49:
@@ -307,12 +307,12 @@ more leg room in 2nd class	5	->	Disappointed with the amount of legroom compared
 Disappointed with the amount of legroom compared with other trains	1	->	more leg room in 2nd class	5	No
 
 node pair #54:
-more leg room in 2nd class	5	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	more leg room in 2nd class	5	No
+more leg room in 2nd class	5	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	more leg room in 2nd class	5	No	0
 
 node pair #55:
-10 cm more leg space	4	->	leg room is less than that of Thays trains	1	No
-leg room is less than that of Thays trains	1	->	10 cm more leg space	4	No
+10 cm more leg space	4	->	leg room is less than that of Thays trains	1	No	0
+leg room is less than that of Thays trains	1	->	10 cm more leg space	4	No	0
 
 node pair #56:
 Slightly more leg room in 2nd class	3	->	10 cm more leg space	4	Yes	3
@@ -343,7 +343,7 @@ leg room is abit uncomfortable for someone of 187 cm	1	->	10 cm more leg space	4
 10 cm more leg space	4	->	leg room is abit uncomfortable for someone of 187 cm	1	No
 
 node pair #63:
-leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	10 cm more leg space	4	Yes	0
+leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	10 cm more leg space	4	Yes	-1
 10 cm more leg space	4	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
 
 node pair #64:
@@ -371,64 +371,64 @@ node pair #69:
 Disappointed with the amount of legroom compared with other trains	1	->	10 cm more leg space	4	Yes	0
 
 node pair #70:
-10 cm more leg space	4	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	10 cm more leg space	4	No
+10 cm more leg space	4	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	10 cm more leg space	4	No	0
 
 node pair #71:
-leg room is less than that of Thays trains	1	->	Slightly more leg room in 2nd class	3	No
-Slightly more leg room in 2nd class	3	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	Slightly more leg room in 2nd class	3	No	0
+Slightly more leg room in 2nd class	3	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #72:
-leg room is less than that of Thays trains	1	->	I would like much more legroom on Quasigo train	1	No
-I would like much more legroom on Quasigo train	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	I would like much more legroom on Quasigo train	1	No	0
+I would like much more legroom on Quasigo train	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #73:
 leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room is less than that of Thays trains	1	Yes	0
 leg room is less than that of Thays trains	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
 
 node pair #74:
-leg room is less than that of Thays trains	1	->	leg room in standard class was quite poor	1	No
-leg room in standard class was quite poor	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	leg room in standard class was quite poor	1	No	0
+leg room in standard class was quite poor	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #75:
-leg room is less than that of Thays trains	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
-leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No	0
+leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #76:
 leg room in 2nd class is less than that of Thays trains	1	->	leg room is less than that of Thays trains	1	Yes	1
 leg room is less than that of Thays trains	1	->	leg room in 2nd class is less than that of Thays trains	1	No
 
 node pair #77:
-leg room is less than that of Thays trains	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No
-leg room is abit uncomfortable for someone of 187 cm	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No	0
+leg room is abit uncomfortable for someone of 187 cm	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #78:
-leg room is less than that of Thays trains	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
-leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No	0
+leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #79:
-leg room is less than that of Thays trains	1	->	leg room was quite poor	2	No
-leg room was quite poor	2	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	leg room was quite poor	2	No	0
+leg room was quite poor	2	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #80:
-leg room is less than that of Thays trains	1	->	Little leg room in our seats	1	No
-Little leg room in our seats	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	Little leg room in our seats	1	No	0
+Little leg room in our seats	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #81:
-leg room is less than that of Thays trains	1	->	The table seats could do with more legroom	1	No
-The table seats could do with more legroom	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	The table seats could do with more legroom	1	No	0
+The table seats could do with more legroom	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #82:
-leg room is less than that of Thays trains	1	->	could do with more legroom on the train	2	No
-could do with more legroom on the train	2	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	could do with more legroom on the train	2	No	0
+could do with more legroom on the train	2	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #83:
-leg room is less than that of Thays trains	1	->	I would like more legroom on Quasigo train	1	No
-I would like more legroom on Quasigo train	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	I would like more legroom on Quasigo train	1	No	0
+I would like more legroom on Quasigo train	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #84:
-leg room is less than that of Thays trains	1	->	Disappointed with the amount of legroom compared with other trains	1	No
-Disappointed with the amount of legroom compared with other trains	1	->	leg room is less than that of Thays trains	1	No
+leg room is less than that of Thays trains	1	->	Disappointed with the amount of legroom compared with other trains	1	No	0
+Disappointed with the amount of legroom compared with other trains	1	->	leg room is less than that of Thays trains	1	No	0
 
 node pair #85:
 leg room is less than that of Thays trains	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	Yes	0
@@ -439,27 +439,27 @@ Slightly more leg room in 2nd class	3	->	I would like much more legroom on Quasi
 I would like much more legroom on Quasigo train	1	->	Slightly more leg room in 2nd class	3	No
 
 node pair #87:
-Slightly more leg room in 2nd class	3	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	Slightly more leg room in 2nd class	3	No
+Slightly more leg room in 2nd class	3	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	Slightly more leg room in 2nd class	3	No	0
 
 node pair #88:
-Slightly more leg room in 2nd class	3	->	leg room in standard class was quite poor	1	No
-leg room in standard class was quite poor	1	->	Slightly more leg room in 2nd class	3	No
+Slightly more leg room in 2nd class	3	->	leg room in standard class was quite poor	1	No	0
+leg room in standard class was quite poor	1	->	Slightly more leg room in 2nd class	3	No	0
 
 node pair #89:
 leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	Slightly more leg room in 2nd class	3	Yes	1
 Slightly more leg room in 2nd class	3	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
 
 node pair #90:
-Slightly more leg room in 2nd class	3	->	leg room in 2nd class is less than that of Thays trains	1	No
-leg room in 2nd class is less than that of Thays trains	1	->	Slightly more leg room in 2nd class	3	No
+Slightly more leg room in 2nd class	3	->	leg room in 2nd class is less than that of Thays trains	1	No	0
+leg room in 2nd class is less than that of Thays trains	1	->	Slightly more leg room in 2nd class	3	No	0
 
 node pair #91:
-Slightly more leg room in 2nd class	3	->	leg room is abit uncomfortable for someone of 187 cm	1	No
-leg room is abit uncomfortable for someone of 187 cm	1	->	Slightly more leg room in 2nd class	3	No
+Slightly more leg room in 2nd class	3	->	leg room is abit uncomfortable for someone of 187 cm	1	No	-1
+leg room is abit uncomfortable for someone of 187 cm	1	->	Slightly more leg room in 2nd class	3	No	-1
 
 node pair #92:
-leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	Slightly more leg room in 2nd class	3	Yes	0
+leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	Slightly more leg room in 2nd class	3	Yes	-1
 Slightly more leg room in 2nd class	3	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
 
 node pair #93:
@@ -487,12 +487,12 @@ Slightly more leg room in 2nd class	3	->	Disappointed with the amount of legroom
 Disappointed with the amount of legroom compared with other trains	1	->	Slightly more leg room in 2nd class	3	No
 
 node pair #99:
-Slightly more leg room in 2nd class	3	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	Slightly more leg room in 2nd class	3	No
+Slightly more leg room in 2nd class	3	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	Slightly more leg room in 2nd class	3	No	0
 
 node pair #100:
-I would like much more legroom on Quasigo train	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	I would like much more legroom on Quasigo train	1	No
+I would like much more legroom on Quasigo train	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	I would like much more legroom on Quasigo train	1	No	0
 
 node pair #101:
 leg room in standard class was quite poor	1	->	I would like much more legroom on Quasigo train	1	Yes	0
@@ -503,8 +503,8 @@ leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	I would l
 I would like much more legroom on Quasigo train	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
 
 node pair #103:
-I would like much more legroom on Quasigo train	1	->	leg room in 2nd class is less than that of Thays trains	1	No
-leg room in 2nd class is less than that of Thays trains	1	->	I would like much more legroom on Quasigo train	1	No
+I would like much more legroom on Quasigo train	1	->	leg room in 2nd class is less than that of Thays trains	1	No	0
+leg room in 2nd class is less than that of Thays trains	1	->	I would like much more legroom on Quasigo train	1	No	0
 
 node pair #104:
 leg room is abit uncomfortable for someone of 187 cm	1	->	I would like much more legroom on Quasigo train	1	Yes	0
@@ -539,28 +539,28 @@ I would like much more legroom on Quasigo train	1	->	Disappointed with the amoun
 Disappointed with the amount of legroom compared with other trains	1	->	I would like much more legroom on Quasigo train	1	No
 
 node pair #112:
-I would like much more legroom on Quasigo train	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	I would like much more legroom on Quasigo train	1	No
+I would like much more legroom on Quasigo train	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	I would like much more legroom on Quasigo train	1	No	0
 
 node pair #113:
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room in standard class was quite poor	1	No
-leg room in standard class was quite poor	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room in standard class was quite poor	1	No	0
+leg room in standard class was quite poor	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
 
 node pair #114:
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
-leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No	0
+leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
 
 node pair #115:
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room in 2nd class is less than that of Thays trains	1	No
-leg room in 2nd class is less than that of Thays trains	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room in 2nd class is less than that of Thays trains	1	No	0
+leg room in 2nd class is less than that of Thays trains	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
 
 node pair #116:
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No
-leg room is abit uncomfortable for someone of 187 cm	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No	0
+leg room is abit uncomfortable for someone of 187 cm	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
 
 node pair #117:
-leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
-leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
+leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No	0
+leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No	0
 
 node pair #118:
 leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg room was quite poor	2	Yes	0
@@ -591,20 +591,20 @@ leg room on the trains is a lot less than the Quicksun service by Unigo	1	->	leg
 leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room on the trains is a lot less than the Quicksun service by Unigo	1	No
 
 node pair #125:
-leg room in standard class was quite poor	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
-leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room in standard class was quite poor	1	No
+leg room in standard class was quite poor	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No	0
+leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room in standard class was quite poor	1	No	0
 
 node pair #126:
-leg room in standard class was quite poor	1	->	leg room in 2nd class is less than that of Thays trains	1	No
-leg room in 2nd class is less than that of Thays trains	1	->	leg room in standard class was quite poor	1	No
+leg room in standard class was quite poor	1	->	leg room in 2nd class is less than that of Thays trains	1	No	0
+leg room in 2nd class is less than that of Thays trains	1	->	leg room in standard class was quite poor	1	No	0
 
 node pair #127:
-leg room in standard class was quite poor	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No
-leg room is abit uncomfortable for someone of 187 cm	1	->	leg room in standard class was quite poor	1	No
+leg room in standard class was quite poor	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No	0
+leg room is abit uncomfortable for someone of 187 cm	1	->	leg room in standard class was quite poor	1	No	0
 
 node pair #128:
-leg room in standard class was quite poor	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
-leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room in standard class was quite poor	1	No
+leg room in standard class was quite poor	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No	0
+leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room in standard class was quite poor	1	No	0
 
 node pair #129:
 leg room in standard class was quite poor	1	->	leg room was quite poor	2	Yes	1
@@ -631,12 +631,12 @@ leg room in standard class was quite poor	1	->	Disappointed with the amount of l
 Disappointed with the amount of legroom compared with other trains	1	->	leg room in standard class was quite poor	1	No
 
 node pair #135:
-leg room in standard class was quite poor	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room in standard class was quite poor	1	No
+leg room in standard class was quite poor	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room in standard class was quite poor	1	No	0
 
 node pair #136:
-leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room in 2nd class is less than that of Thays trains	1	No
-leg room in 2nd class is less than that of Thays trains	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
+leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room in 2nd class is less than that of Thays trains	1	No	0
+leg room in 2nd class is less than that of Thays trains	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No	0
 
 node pair #137:
 leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room is abit uncomfortable for someone of 187 cm	1	Yes	1
@@ -671,16 +671,16 @@ leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	Disappoin
 Disappointed with the amount of legroom compared with other trains	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
 
 node pair #145:
-leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No
+leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room in 2nd class is abit uncomfortable for someone of 187 cm	1	No	0
 
 node pair #146:
-leg room in 2nd class is less than that of Thays trains	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No
-leg room is abit uncomfortable for someone of 187 cm	1	->	leg room in 2nd class is less than that of Thays trains	1	No
+leg room in 2nd class is less than that of Thays trains	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No	0
+leg room is abit uncomfortable for someone of 187 cm	1	->	leg room in 2nd class is less than that of Thays trains	1	No	0
 
 node pair #147:
-leg room in 2nd class is less than that of Thays trains	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
-leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room in 2nd class is less than that of Thays trains	1	No
+leg room in 2nd class is less than that of Thays trains	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No	0
+leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room in 2nd class is less than that of Thays trains	1	No	0
 
 node pair #148:
 leg room in 2nd class is less than that of Thays trains	1	->	leg room was quite poor	2	Yes	0
@@ -711,8 +711,8 @@ leg room in 2nd class is less than that of Thays trains	1	->	leg room on the tra
 leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room in 2nd class is less than that of Thays trains	1	No
 
 node pair #155:
-leg room is abit uncomfortable for someone of 187 cm	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
-leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No
+leg room is abit uncomfortable for someone of 187 cm	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No	-1
+leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No	-1
 
 node pair #156:
 leg room is abit uncomfortable for someone of 187 cm	1	->	leg room was quite poor	2	Yes	0
@@ -739,8 +739,8 @@ leg room is abit uncomfortable for someone of 187 cm	1	->	Disappointed with the 
 Disappointed with the amount of legroom compared with other trains	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No
 
 node pair #162:
-leg room is abit uncomfortable for someone of 187 cm	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No
+leg room is abit uncomfortable for someone of 187 cm	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room is abit uncomfortable for someone of 187 cm	1	No	0
 
 node pair #163:
 leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room was quite poor	2	Yes	0
@@ -767,8 +767,8 @@ leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	Disappointed w
 Disappointed with the amount of legroom compared with other trains	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
 
 node pair #169:
-leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No
+leg room in 2nd class is uncomfortable for someone of 187 cm	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room in 2nd class is uncomfortable for someone of 187 cm	1	No	0
 
 node pair #170:
 leg room was quite poor	2	->	Little leg room in our seats	1	Yes	0
@@ -783,16 +783,16 @@ leg room was quite poor	2	->	could do with more legroom on the train	2	Yes	0
 could do with more legroom on the train	2	->	leg room was quite poor	2	Yes	0
 
 node pair #173:
-leg room was quite poor	2	->	I would like more legroom on Quasigo train	1	Yes	0
-I would like more legroom on Quasigo train	1	->	leg room was quite poor	2	Yes	0
+leg room was quite poor	2	->	I would like more legroom on Quasigo train	1	Yes	-1
+I would like more legroom on Quasigo train	1	->	leg room was quite poor	2	Yes	-1
 
 node pair #174:
 leg room was quite poor	2	->	Disappointed with the amount of legroom compared with other trains	1	Yes	0
 Disappointed with the amount of legroom compared with other trains	1	->	leg room was quite poor	2	Yes	0
 
 node pair #175:
-leg room was quite poor	2	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room was quite poor	2	No
+leg room was quite poor	2	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	leg room was quite poor	2	No	0
 
 node pair #176:
 Little leg room in our seats	1	->	The table seats could do with more legroom	1	Yes	0
@@ -811,8 +811,8 @@ Little leg room in our seats	1	->	Disappointed with the amount of legroom compar
 Disappointed with the amount of legroom compared with other trains	1	->	Little leg room in our seats	1	Yes	0
 
 node pair #180:
-Little leg room in our seats	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	Little leg room in our seats	1	No
+Little leg room in our seats	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	Little leg room in our seats	1	No	0
 
 node pair #181:
 The table seats could do with more legroom	1	->	could do with more legroom on the train	2	Yes	0
@@ -827,8 +827,8 @@ The table seats could do with more legroom	1	->	Disappointed with the amount of 
 Disappointed with the amount of legroom compared with other trains	1	->	The table seats could do with more legroom	1	Yes	0
 
 node pair #184:
-The table seats could do with more legroom	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	The table seats could do with more legroom	1	No
+The table seats could do with more legroom	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	The table seats could do with more legroom	1	No	0
 
 node pair #185:
 could do with more legroom on the train	2	->	I would like more legroom on Quasigo train	1	Yes	0
@@ -839,18 +839,18 @@ could do with more legroom on the train	2	->	Disappointed with the amount of leg
 Disappointed with the amount of legroom compared with other trains	1	->	could do with more legroom on the train	2	Yes	0
 
 node pair #187:
-could do with more legroom on the train	2	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	could do with more legroom on the train	2	No
+could do with more legroom on the train	2	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	could do with more legroom on the train	2	No	0
 
 node pair #188:
 I would like more legroom on Quasigo train	1	->	Disappointed with the amount of legroom compared with other trains	1	Yes	0
 Disappointed with the amount of legroom compared with other trains	1	->	I would like more legroom on Quasigo train	1	Yes	0
 
 node pair #189:
-I would like more legroom on Quasigo train	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	I would like more legroom on Quasigo train	1	No
+I would like more legroom on Quasigo train	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	I would like more legroom on Quasigo train	1	No	0
 
 node pair #190:
-Disappointed with the amount of legroom compared with other trains	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No
-leg room on the trains is less than the Quicksun service by Unigo	1	->	Disappointed with the amount of legroom compared with other trains	1	No
+Disappointed with the amount of legroom compared with other trains	1	->	leg room on the trains is less than the Quicksun service by Unigo	1	No	0
+leg room on the trains is less than the Quicksun service by Unigo	1	->	Disappointed with the amount of legroom compared with other trains	1	No	0
 
