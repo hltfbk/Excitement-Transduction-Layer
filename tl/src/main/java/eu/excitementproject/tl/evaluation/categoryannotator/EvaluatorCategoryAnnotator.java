@@ -254,6 +254,7 @@ public class EvaluatorCategoryAnnotator {
 	 * @throws EntailmentGraphRawException */
 	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename, double thresholdForOptimizing) {
 		
+		@SuppressWarnings("unused")
 		UseCaseOneRunnerPrototype use1;
 		UseCaseTwoRunnerPrototype use2;
 		
@@ -640,6 +641,7 @@ public class EvaluatorCategoryAnnotator {
 
 	}
 
+	@SuppressWarnings("unused")
 	private Set<Interaction> reduceTrainingDataSize(
 			Set<Interaction> trainingDocs, int i) {
 		Set<Interaction> interactions = new HashSet<Interaction>();
@@ -772,6 +774,7 @@ public class EvaluatorCategoryAnnotator {
 	 * @return
 	 * @throws Exception 
 	 */
+	@SuppressWarnings("unused")
 	private EntailmentGraphCollapsed buildGraph(List<Interaction> graphDocs, File mergedGraphFile, int minOccurrence) throws Exception {
 		EntailmentGraphRaw egr = new EntailmentGraphRaw();
 		if (readMergedGraphFromFile) {
@@ -1009,6 +1012,7 @@ public class EvaluatorCategoryAnnotator {
 			//3. store graph in resources
 	}
 
+	@SuppressWarnings("unused")
 	private static Set<String> getGermaNetLexicon() throws LAPException, FragmentAnnotatorException, FileNotFoundException, XMLStreamException, IOException {
 		// check token annotation is there or not 
 		germanet = new GermaNet("D:/DFKI/EXCITEMENT/Linguistic Analysis/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML");
