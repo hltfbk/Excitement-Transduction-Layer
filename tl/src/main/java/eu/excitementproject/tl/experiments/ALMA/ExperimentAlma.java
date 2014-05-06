@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import javax.xml.transform.TransformerException;
+//import javax.xml.transform.TransformerException;
 
-import eu.excitementproject.eop.common.DecisionLabel;
-import eu.excitementproject.eop.core.EditDistanceEDA;
+//import eu.excitementproject.eop.common.DecisionLabel;
+//import eu.excitementproject.eop.core.EditDistanceEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+//import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
@@ -38,7 +38,7 @@ public class ExperimentAlma extends AbstractExperiment {
 	/**
 	 * @param args
 	 */
-	@SuppressWarnings("rawtypes")
+//	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";

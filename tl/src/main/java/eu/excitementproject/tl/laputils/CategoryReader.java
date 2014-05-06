@@ -2,8 +2,8 @@ package eu.excitementproject.tl.laputils;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
+//import java.nio.charset.Charset;
+//import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +12,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.log4j.Logger;
-import org.apache.uima.jcas.JCas;
+//import org.apache.uima.jcas.JCas;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -21,8 +21,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
+//import eu.excitementproject.eop.lap.LAPException;
+//import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.structures.Interaction;
 
@@ -90,8 +90,11 @@ public final class CategoryReader {
 		Element dataset = dom.getDocumentElement(); 
 		
 		// first, read in the metadata attached to the dataset. 
+		@SuppressWarnings("unused")
 		Element providerE = (Element) dataset.getElementsByTagName("provider").item(0); 
+		@SuppressWarnings("unused")
 		Element channelE = (Element) dataset.getElementsByTagName("channel").item(0);
+		@SuppressWarnings("unused")
 		Element languageE = (Element) dataset.getElementsByTagName("language").item(0);
 
 		// common metadata for all interactions of this file. 
