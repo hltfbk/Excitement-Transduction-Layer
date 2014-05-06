@@ -228,11 +228,13 @@ public class GoldStandardReannotation {
 	private boolean areNodesConsistent(){
 		boolean cons=true;
 		Set<String> wp2eus = new HashSet<String>();
+		Set<String> ourEus = new HashSet<String>();
 		for (EntailmentUnit eu : rg.vertexSet()) wp2eus.add(eu.getText());
 		
 		Set<String> closedList = new HashSet<String>();
 		for (EquivalenceClass node : ourCg.vertexSet()){
 			for(EntailmentUnit eu : node.getEntailmentUnits()){
+				ourEus.add(eu.getText());
 				if (closedList.contains(eu.getText())) {
 					System.err.println("ERROR: <<"+eu.getText()+">> is listed in more that one collapsed node.");
 					cons = false;
@@ -244,6 +246,16 @@ public class GoldStandardReannotation {
 					}
 					else closedList.add(eu.getText());
 				}
+			}
+		}
+		
+		// now check if there are EUs present in the raw graph, but not listed in the update
+		wp2eus.removeAll(ourEus);
+		if (wp2eus.size()>0) {
+			System.out.println("WARNING:");			
+			System.out.println("The following "+wp2eus.size()+" EUs from the raw graph are not present in the updated nodes:");
+			for (String s : wp2eus){
+				System.out.println(" - "+s);
 			}
 		}
 		return cons;
@@ -388,7 +400,7 @@ public class GoldStandardReannotation {
 			String[] s = line.split("\t");
 			try {
 				EquivalenceClass src = ourCg.getVertex(s[0]);
-				if (src == null) throw new Exception("Cannot find node with text "+s[1]);
+				if (src == null) throw new Exception("Cannot find node with text "+s[0]);
 				EquivalenceClass tgt = ourCg.getVertex(s[3]);
 				if (tgt == null) throw new Exception("Cannot find node with text "+s[3]);
 				Integer decision = Integer.valueOf(s[7]);
@@ -441,7 +453,7 @@ public class GoldStandardReannotation {
 			return;
 		}
 			
-		// create txt file for original WP2 annotation
+/*		// create txt file for original WP2 annotation
 		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");		
 		try {
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -450,7 +462,7 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+*/		
 		
 /*		// create txt file for updated collapsed nodes		
 		try {
@@ -473,9 +485,9 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-*/		
-
-	/*	// load final re-annotated graph 		
+		
+*/
+		// load final re-annotated graph 		
 		try {
 			File txtFileReannotated = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes_Reconciled.txt");
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -487,7 +499,7 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-*/
+
 	}
 
 }
