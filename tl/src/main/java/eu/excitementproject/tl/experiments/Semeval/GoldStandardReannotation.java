@@ -98,13 +98,13 @@ public class GoldStandardReannotation {
 				
 		if (relation.equals(Relation.AB)) {
 			String s = getEdge(nodeA,nodeB)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeA, nodeB))+"\n";
-			s+=getEdge(nodeB, nodeA)+"\tNo\n";
+			s+=getEdge(nodeB, nodeA)+"\tNo\t"+String.valueOf(countFragmentGraphEdges(nodeB, nodeA))+"\n";
 			return s;
 		}
 		
 		if (relation.equals(Relation.BA)) {
 			String s = getEdge(nodeB, nodeA)+"\tYes\t"+String.valueOf(countFragmentGraphEdges(nodeB, nodeA))+"\n";
-			s+=getEdge(nodeA, nodeB)+"\tNo\n";
+			s += getEdge(nodeA,nodeB)+"\tNo\t"+String.valueOf(countFragmentGraphEdges(nodeA, nodeB))+"\n";
 			return s;
 		}
 		
