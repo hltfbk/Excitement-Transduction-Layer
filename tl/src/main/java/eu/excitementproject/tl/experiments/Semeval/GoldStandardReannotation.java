@@ -424,8 +424,10 @@ public class GoldStandardReannotation {
 			for (EntailmentRelation fge : rfg.getAllEdges(rs, rt)){
 				if (fge.getLabel().equals(DecisionLabel.NonEntailment)){
 					isConsistent = false;
-					System.err.println("Edge added into Fragment Graph: "+ e);										
-					System.err.println("	from collapsed edge: "+ ourCg.getEdge(ourCg.getVertex(e.getSource()), ourCg.getVertex(e.getTarget())));					
+					System.err.println("Edge added into Fragment Graph: "+ e);	
+					EntailmentRelationCollapsed edge = ourCg.getEdge(ourCg.getVertex(e.getSource().getText()), ourCg.getVertex(e.getTarget().getText()));
+					if (edge!=null) System.err.println("	from collapsed edge: "+ edge);
+					else System.err.println("	as part of collapsed node: "+ ourCg.getVertex(e.getSource().getText()));
 				}
 			}
 		}
@@ -486,10 +488,10 @@ public class GoldStandardReannotation {
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 
 //		String clusterName = "EMAIL0010";		
-		String clusterName = "EMAIL0210";		
+		String clusterName = "EMAIL0030";		
 
-		String set = "Test";
-	//	String set = "Dev";
+	//	String set = "Test";
+		String set = "Dev";
 		
 		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
 		if (!clusterAnnotationsDir.exists()) {
@@ -497,9 +499,7 @@ public class GoldStandardReannotation {
 			return;
 		}
 			
-/*		// create txt file for original WP2 annotation
 	/*	// create txt file for original WP2 annotation
-		// create txt file for original WP2 annotation
 		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");		
 		try {
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -508,7 +508,7 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-*/		
+		
 		
 	/*	// create txt file for updated collapsed nodes		
 		try {
@@ -530,11 +530,9 @@ public class GoldStandardReannotation {
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
-*/
-	/*	// load final re-annotated graph 		
-		// load final re-annotated graph 		
+
 		// load final re-annotated graph 		
 		try {
 			File txtFileReannotated = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes_Reconciled.txt");
@@ -546,7 +544,7 @@ public class GoldStandardReannotation {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 
 	}
 
