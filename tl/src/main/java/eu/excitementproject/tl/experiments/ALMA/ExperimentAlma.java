@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import javax.xml.transform.TransformerException;
+//import javax.xml.transform.TransformerException;
 
+//import eu.excitementproject.eop.common.DecisionLabel;
+//import eu.excitementproject.eop.core.EditDistanceEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+//import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
@@ -36,18 +38,19 @@ public class ExperimentAlma extends AbstractExperiment {
 	/**
 	 * @param args
 	 */
+//	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 		String tlDir = "/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/";
 
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_split/test/";
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/";
+//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_split/test/";
 //		String dataDir = tlDir+"target/ALMA_toy_test/data/";
 
 
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs_byClusterSplit/test/";
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs/";
+//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs_byClusterSplit/test/";
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
 //		String gsAnnotationsDir = tlDir+"target/ALMA_toy_test/gold_standard/";		
 		
 		int fileLimit = 1000;
@@ -64,37 +67,84 @@ public class ExperimentAlma extends AbstractExperiment {
 		}
 		
 		String conf = tlDir+"src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_IT.xml";
-		Class<?> lapClass = TreeTaggerIT.class;
-		Class<?> edaClass = null; // MaxEntClassificationEDA.class;
+//		String conf = tlDir+"src/test/resources/EOP_configurations/EditDistanceEDA_NonLexRes_IT.xml";
+		
+//		Class<?> edaClass = EditDistanceEDA.class;
+		Class<?> edaClass = MaxEntClassificationEDA.class;
+//		Class<?> edaClass = FakeEDA.class;
 
-		ExperimentAlma e = new ExperimentAlma(conf, dataDir, fileLimit, outDir, lapClass, edaClass);			
+		Class<?> lapClass = TreeTaggerIT.class;
+		
+		
+		ExperimentAlma e = new ExperimentAlma(conf, dataDir, fileLimit, outDir, lapClass, edaClass);
+		
+// 		for the FakeEDA only -- set the returned decision to what we want
+//		((FakeEDA) e.eda).initialize(DecisionLabel.Unknown);
+		
 		e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
-		} catch (TransformerException | EntailmentGraphRawException e1) {
+		} catch (EntailmentGraphRawException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
-		boolean includeFragmentGraphEdges = true;
+		boolean isSingleClusterGS = false;
 
-		for (double confidenceThreshold=0.5; confidenceThreshold<1; confidenceThreshold+=0.05){
-			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges);		
-			System.out.println("raw without FG\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			EntailmentGraphCollapsed cgr= e.collapseGraph(confidenceThreshold);
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges);		
-			System.out.println("raw with FG\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir);
-			System.out.println("collapsed\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());			
-			try {
-				cgr.toXML(outDir+"/"+e.configFile.getName()+String.valueOf(confidenceThreshold)+"_collapsedGraph.xml");
-			} catch (EntailmentGraphCollapsedException | TransformerException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+		for (double confidenceThreshold : e.confidenceThresholds){
+			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
+			String setting = "raw without FG";
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "raw with FG";
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "collapsed";
+			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+
+			setting = "collapsed+closure";
+			cgr.applyTransitiveClosure(false);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+
 		}
-		System.out.println("Done");
+
+		for (double confidenceThreshold : e.confidenceThresholds){						
+			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
+			String setting = "plusClosure raw without FG";
+			EvaluationMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure raw with FG";
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure collapsed";
+			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, true);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+			
+			setting = "plusClosure collapsed+closure";
+			cgr.applyTransitiveClosure(false);
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
+			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+			e.addResult(setting, confidenceThreshold, res);
+		}
 		
+		
+		e.printResults();
+		System.out.println("Done");
 	}
 
 }

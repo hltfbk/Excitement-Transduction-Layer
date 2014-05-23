@@ -387,7 +387,18 @@ public class EvaluatorCategoryAnnotator {
 			egc = new EntailmentGraphCollapsed(new File(outputFile));
 			logger.info("Read collapsed graph with confidences from " + outputFile);
 			*/
+			/**
+			confidenceCalculator.computeCategoryConfidences(egc);
+			logger.info("Computed and added category confidences.");
+			outputFile = outputDirname + "test.collapsedgraph_confidences.xml";
+			XMLFileWriter.write(egc.toXML(), outputFile);			
+			logger.info("Wrote collapsed graph with confidences to " + outputFile);
 
+			//reading previously built graph from file
+			egc = new EntailmentGraphCollapsed(new File(outputFile));
+			logger.info("Read collapsed graph with confidences from " + outputFile);
+			*/
+		
 			// Send each email in test data + graph to node use case 2 and have it annotated
 			int countPositive = 0;
 			for (Interaction doc : docsTest) {
@@ -415,6 +426,19 @@ public class EvaluatorCategoryAnnotator {
 					countPositive = compareDecisionsForInteraction(countPositive,
 							doc, decisions, graph, matches);				
 				}
+				/*
+//				JCas cas;
+				cas = doc.createAndFillInputCAS();
+				use2 = new UseCaseTwoRunnerPrototype(lapForFragments, eda);
+				use2.annotateCategories(cas, egc);
+				logger.info("_________________________________________________________");
+				Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+				logger.info("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
+				CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
+				
+				countPositive = compareDecisionsForInteraction(countPositive,
+						doc, decisions);				
+				*/
 			}
 			
 			// Compute and print result	

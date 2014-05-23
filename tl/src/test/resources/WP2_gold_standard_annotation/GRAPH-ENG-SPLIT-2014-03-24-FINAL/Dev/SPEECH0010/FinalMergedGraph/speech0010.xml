@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="41">
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764618_75839896.txt" modality="TRUE" id ="13764618_75839896.txt_1_0">
+		<original_text>you have to go through the phone into charge somebody twenty dollars to do that</original_text>
+		<correct_text>you have to go through the phone and to charge somebody twenty dollars to do that </correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764619_76851542.txt" modality="FALSE" id ="13764619_76851542.txt_1_0">
+		<original_text>because I could n't travel your penalizing me a hundred and fifty dollars</original_text>
+		<correct_text>because i couldn't travel you're penalizing me a hundred and fifty dollars</correct_text>
+		<modifiers>a hundred and fifty dollarspoz=8 9 10 11 12</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764619_76851542.txt" modality="FALSE" id ="13764619_76851542.txt_1_1">
+		<original_text>because I could n't travel your penalizing me</original_text>
+		<correct_text>because i couldn't travel you're penalizing me</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764619_76851542.txt" modality="FALSE" id ="13764619_76851542.txt_2_0">
+		<original_text>because I was sick your penalizing me a hundred and fifty dollars</original_text>
+		<correct_text>because i was sick you're penalizing me a hundred and fifty dollars</correct_text>
+		<modifiers>a hundred and fifty dollarspoz=7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764619_76851542.txt" modality="FALSE" id ="13764619_76851542.txt_2_1">
+		<original_text>because I was sick your penalizing me</original_text>
+		<correct_text>because i was sick you're penalizing me</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764704_78235815.txt" modality="FALSE" id ="13764704_78235815.txt_1_0">
+		<original_text>i have to pay for another</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764768_77088303.txt" modality="TRUE" id ="13764768_77088303.txt_3_0">
+		<original_text>i have to pay ticket number switch</original_text>
+		<correct_text>i have to pay to get number switched</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="charges" focus="" implicit_context="" explicit_context="13764770_80323139.txt" modality="FALSE" id ="13764770_80323139.txt_1_0">
+		<original_text>i'm getting charged all this</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764798_81554761.txt" modality="FALSE" id ="13764798_81554761.txt_1_0">
+		<original_text>i'm being told we're gonna have to say a larger than fifty dollars</original_text>
+		<correct_text>i'm being told that we're gonna have to pay a hundred and fifty dollars</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764828_80888082.txt" modality="FALSE" id ="13764828_80888082.txt_1_0">
+		<original_text>so be additional one fifty per ticket plus the difference in the fare</original_text>
+		<correct_text>so it'll be additional one fifty per ticket plus the difference in the fare</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="fare" implicit_context="" explicit_context="13764829_81137701-2.txt" modality="FALSE" id ="13764829_81137701-2.txt_2_0">
+		<original_text>the fare was ridiculous</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764891_80929040.txt" modality="TRUE" id ="13764891_80929040.txt_1_0">
+		<original_text>i book for flights and i have to pay down to counseling</original_text>
+		<correct_text>i booked four flights and i have to pay now for canceling</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764915_80952486.txt" modality="FALSE" id ="13764915_80952486.txt_1_0">
+		<original_text>they wanna charge me a hundred and fifty dollars change the ticket</original_text>
+		<correct_text>they wanna charge me a hundred and fifty dollars to change the ticket</correct_text>
+		<modifiers>change the ticketpoz=9 10 11</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764915_80952486.txt" modality="FALSE" id ="13764915_80952486.txt_1_1">
+		<original_text>they wanna charge me a hundred and fifty dollars</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764915_80952486.txt" modality="TRUE" id ="13764915_80952486.txt_2_0">
+		<original_text>i can't believe that if someone is medically unable to fly you're gonna charge me as much as what the ticket costs</original_text>
+		<correct_text></correct_text>
+		<modifiers>medicallypoz=7;i can't believe thatpoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764915_80952486.txt" modality="TRUE" id ="13764915_80952486.txt_2_1">
+		<original_text>i can't believe that if someone is unable to fly you're gonna charge me as much as what the ticket costs</original_text>
+		<correct_text></correct_text>
+		<modifiers>i can't believe thatpoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764915_80952486.txt" modality="TRUE" id ="13764915_80952486.txt_2_2">
+		<original_text>if someone is medically unable to fly you're gonna charge me as much as what the ticket costs</original_text>
+		<correct_text></correct_text>
+		<modifiers>medicallypoz=7</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764915_80952486.txt" modality="TRUE" id ="13764915_80952486.txt_2_3">
+		<original_text>if someone is unable to fly you're gonna charge me as much as what the ticket costs</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="business" implicit_context="" explicit_context="13764928_80949951.txt" modality="FALSE" id ="13764928_80949951.txt_1_0">
+		<original_text>this is ridiculous to spend four hundred dollars then to give you and to um mean get business with no t . v</original_text>
+		<correct_text>this is ridiculous to spend four hundred dollars and to give you only get business with no tv</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="price" implicit_context="" explicit_context="13764932_80959680.txt" modality="FALSE" id ="13764932_80959680.txt_1_0">
+		<original_text>not at that price that's crazy</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="price" focus="" implicit_context="" explicit_context="13764957_83408162.txt" modality="FALSE" id ="13764957_83408162.txt_1_0">
+		<original_text>is gonna cost five hundred dollars more than what he originally paid</original_text>
+		<correct_text></correct_text>
+		<modifiers>than what he originally paidpoz=7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="price" focus="" implicit_context="" explicit_context="13764957_83408162.txt" modality="FALSE" id ="13764957_83408162.txt_1_1">
+		<original_text>is gonna cost five hundred dollars more</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764963_83589948.txt" modality="FALSE" id ="13764963_83589948.txt_1_0">
+		<original_text>it seems to me the pet penalty for planning ahead</original_text>
+		<correct_text>it seems to me you're paying penalty for planning ahead</correct_text>
+		<modifiers>it seems to mepoz=0 1 2 3</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764963_83589948.txt" modality="FALSE" id ="13764963_83589948.txt_1_1">
+		<original_text>the pet penalty for planning ahead</original_text>
+		<correct_text>you're paying penalty for planning ahead</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764963_83589948.txt" modality="FALSE" id ="13764963_83589948.txt_3_0">
+		<original_text>the further ahead you plan the worse your situation is</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764963_83589948.txt" modality="FALSE" id ="13764963_83589948.txt_4_0">
+		<original_text>the further ahead you purchase your tickets the worse your situation is</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764963_83589948.txt" modality="FALSE" id ="13764963_83589948.txt_5_0">
+		<original_text>the further ahead you pay your money the worse your situation is</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764979_83592124.txt" modality="FALSE" id ="13764979_83592124.txt_1_0">
+		<original_text>they're saying that uh they're gonna have to drop a hundred fifty dollars for a ticket</original_text>
+		<correct_text>they're saying that they're gonna have to drop a hundred and fifty dollars per ticket</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764991_83569080.txt" modality="FALSE" id ="13764991_83569080.txt_1_0">
+		<original_text>the three hundred dollars you wanna charge us for changing is totally ridiculous</original_text>
+		<correct_text></correct_text>
+		<modifiers>totallypoz=11</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13764991_83569080.txt" modality="FALSE" id ="13764991_83569080.txt_1_1">
+		<original_text>the three hundred dollars you wanna charge us for changing is ridiculous</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="fare" implicit_context="" explicit_context="13765016_84061176.txt" modality="FALSE" id ="13765016_84061176.txt_1_0">
+		<original_text>the round trip fare went to three hundred and forty dollars</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="fee" implicit_context="" explicit_context="13765021_83620635.txt" modality="FALSE" id ="13765021_83620635.txt_1_0">
+		<original_text>she didn't tell me anything about two twenty dollar ticketing fee</original_text>
+		<correct_text></correct_text>
+		<modifiers>two twenty dollarpoz=6 7 8</modifiers>
+	</node>
+	<node implicit_focus="" focus="fee" implicit_context="" explicit_context="13765021_83620635.txt" modality="FALSE" id ="13765021_83620635.txt_1_1">
+		<original_text>she didn't tell me anything about ticketing fee</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13765058_83609832.txt" modality="FALSE" id ="13765058_83609832.txt_1_0">
+		<original_text>i was just told us for the cost me a hundred fifty dollars a ticket to change my tickets</original_text>
+		<correct_text>i was just told it's gonna cost me a hundred fifty dollars a ticket to change my tickets</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="policy" implicit_context="" explicit_context="13765070_83669522.txt" modality="FALSE" id ="13765070_83669522.txt_1_0">
+		<original_text>you can't change policy over uh surcharge</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="allowance" focus="" implicit_context="" explicit_context="13765094_83491388.txt" modality="FALSE" id ="13765094_83491388.txt_1_0">
+		<original_text>you're not gonna give us any l also whatsoever on on the fact that we are uh connected to narnia</original_text>
+		<correct_text>you're not gonna give us any allowance whatsoever on the fact that we are connected to narnia</correct_text>
+		<modifiers>on on the fact that we are uh connected to narniapoz=9 10 11 12 13 14 15 16 17 18 19</modifiers>
+	</node>
+	<node implicit_focus="allowance" focus="" implicit_context="" explicit_context="13765094_83491388.txt" modality="FALSE" id ="13765094_83491388.txt_1_1">
+		<original_text>you're not gonna give us any l also whatsoever</original_text>
+		<correct_text>you're not gonna give us any allowance whatsoever</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13765113_83002763.txt" modality="TRUE" id ="13765113_83002763.txt_1_0">
+		<original_text>you can't tell her okay you can call back tomorrow and not say but it'll cost you an extra thirty or thirty five dollars</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13765118_84310358.txt" modality="FALSE" id ="13765118_84310358.txt_1_0">
+		<original_text>now they got didn't want to try to be another hundred and fifty something though</original_text>
+		<correct_text>now they god damn want to charge me another hundred and fifty something dollars</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13765160_84475968.txt" modality="FALSE" id ="13765160_84475968.txt_1_0">
+		<original_text>why on earth am my getting charge five dollars for thing i left leaning flight</original_text>
+		<correct_text>why on earth am i getting charged five dollars for a less convenient flight</correct_text>
+		<modifiers>for thing i left leaning flightpoz=9 10 11 12 13 14</modifiers>
+	</node>
+	<node implicit_focus="fee" focus="" implicit_context="" explicit_context="13765160_84475968.txt" modality="FALSE" id ="13765160_84475968.txt_1_1">
+		<original_text>why on earth am my getting charge five dollars</original_text>
+		<correct_text>why on earth am i getting charged five dollars</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="13764770_80323139.txt_1_0" source="13764618_75839896.txt_1_0" id="13764770_80323139.txt_1_0-13764618_75839896.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764619_76851542.txt_1_1" source="13764619_76851542.txt_1_0" id="13764619_76851542.txt_1_1-13764619_76851542.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764619_76851542.txt_2_0" source="13764619_76851542.txt_1_0" id="13764619_76851542.txt_2_0-13764619_76851542.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764619_76851542.txt_2_1" source="13764619_76851542.txt_1_1" id="13764619_76851542.txt_2_1-13764619_76851542.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764619_76851542.txt_2_1" source="13764619_76851542.txt_2_0" id="13764619_76851542.txt_2_1-13764619_76851542.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764619_76851542.txt_1_0" source="13764619_76851542.txt_2_0" id="13764619_76851542.txt_1_0-13764619_76851542.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764619_76851542.txt_1_1" source="13764619_76851542.txt_2_1" id="13764619_76851542.txt_1_1-13764619_76851542.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764704_78235815.txt_1_0" id="13764770_80323139.txt_1_0-13764704_78235815.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764768_77088303.txt_3_0" id="13764770_80323139.txt_1_0-13764768_77088303.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764798_81554761.txt_1_0" id="13764770_80323139.txt_1_0-13764798_81554761.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765118_84310358.txt_1_0" source="13764798_81554761.txt_1_0" id="13765118_84310358.txt_1_0-13764798_81554761.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764915_80952486.txt_1_1" source="13764798_81554761.txt_1_0" id="13764915_80952486.txt_1_1-13764798_81554761.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764828_80888082.txt_1_0" id="13764770_80323139.txt_1_0-13764828_80888082.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765118_84310358.txt_1_0" source="13764828_80888082.txt_1_0" id="13765118_84310358.txt_1_0-13764828_80888082.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764829_81137701-2.txt_2_0" id="13764770_80323139.txt_1_0-13764829_81137701-2.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764891_80929040.txt_1_0" id="13764770_80323139.txt_1_0-13764891_80929040.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764915_80952486.txt_1_1" source="13764915_80952486.txt_1_0" id="13764915_80952486.txt_1_1-13764915_80952486.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764915_80952486.txt_1_1" id="13764770_80323139.txt_1_0-13764915_80952486.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764798_81554761.txt_1_0" source="13764915_80952486.txt_1_1" id="13764798_81554761.txt_1_0-13764915_80952486.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765118_84310358.txt_1_0" source="13764915_80952486.txt_1_1" id="13765118_84310358.txt_1_0-13764915_80952486.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764915_80952486.txt_2_1" source="13764915_80952486.txt_2_0" id="13764915_80952486.txt_2_1-13764915_80952486.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764915_80952486.txt_2_2" source="13764915_80952486.txt_2_0" id="13764915_80952486.txt_2_2-13764915_80952486.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764915_80952486.txt_2_3" source="13764915_80952486.txt_2_1" id="13764915_80952486.txt_2_3-13764915_80952486.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764915_80952486.txt_2_3" source="13764915_80952486.txt_2_2" id="13764915_80952486.txt_2_3-13764915_80952486.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764915_80952486.txt_2_3" id="13764770_80323139.txt_1_0-13764915_80952486.txt_2_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764928_80949951.txt_1_0" id="13764770_80323139.txt_1_0-13764928_80949951.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701-2.txt_2_0" source="13764928_80949951.txt_1_0" id="13764829_81137701-2.txt_2_0-13764928_80949951.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764932_80959680.txt_1_0" id="13764770_80323139.txt_1_0-13764932_80959680.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701-2.txt_2_0" source="13764932_80959680.txt_1_0" id="13764829_81137701-2.txt_2_0-13764932_80959680.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764957_83408162.txt_1_1" source="13764957_83408162.txt_1_0" id="13764957_83408162.txt_1_1-13764957_83408162.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764957_83408162.txt_1_1" id="13764770_80323139.txt_1_0-13764957_83408162.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764963_83589948.txt_1_1" source="13764963_83589948.txt_1_0" id="13764963_83589948.txt_1_1-13764963_83589948.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764963_83589948.txt_1_1" source="13764963_83589948.txt_3_0" id="13764963_83589948.txt_1_1-13764963_83589948.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764963_83589948.txt_1_1" source="13764963_83589948.txt_4_0" id="13764963_83589948.txt_1_1-13764963_83589948.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764963_83589948.txt_5_0" source="13764963_83589948.txt_4_0" id="13764963_83589948.txt_5_0-13764963_83589948.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764963_83589948.txt_3_0" source="13764963_83589948.txt_4_0" id="13764963_83589948.txt_3_0-13764963_83589948.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764963_83589948.txt_1_1" source="13764963_83589948.txt_5_0" id="13764963_83589948.txt_1_1-13764963_83589948.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764991_83569080.txt_1_1" source="13764991_83569080.txt_1_0" id="13764991_83569080.txt_1_1-13764991_83569080.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13764991_83569080.txt_1_1" id="13764770_80323139.txt_1_0-13764991_83569080.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764829_81137701-2.txt_2_0" source="13764991_83569080.txt_1_1" id="13764829_81137701-2.txt_2_0-13764991_83569080.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13765016_84061176.txt_1_0" id="13764770_80323139.txt_1_0-13765016_84061176.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765021_83620635.txt_1_1" source="13765021_83620635.txt_1_0" id="13765021_83620635.txt_1_1-13765021_83620635.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13765058_83609832.txt_1_0" id="13764770_80323139.txt_1_0-13765058_83609832.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765118_84310358.txt_1_0" source="13765058_83609832.txt_1_0" id="13765118_84310358.txt_1_0-13765058_83609832.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765094_83491388.txt_1_1" source="13765094_83491388.txt_1_0" id="13765094_83491388.txt_1_1-13765094_83491388.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764770_80323139.txt_1_0" source="13765118_84310358.txt_1_0" id="13764770_80323139.txt_1_0-13765118_84310358.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764798_81554761.txt_1_0" source="13765118_84310358.txt_1_0" id="13764798_81554761.txt_1_0-13765118_84310358.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764915_80952486.txt_1_1" source="13765118_84310358.txt_1_0" id="13764915_80952486.txt_1_1-13765118_84310358.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765160_84475968.txt_1_1" source="13765160_84475968.txt_1_0" id="13765160_84475968.txt_1_1-13765160_84475968.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

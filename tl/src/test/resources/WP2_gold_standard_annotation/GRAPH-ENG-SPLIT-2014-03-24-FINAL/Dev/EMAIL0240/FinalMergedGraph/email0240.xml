@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="7">
+	<node implicit_focus="" focus="Seating" implicit_context="" explicit_context="183009.txt" modality="TRUE" id ="183009.txt_1_0">
+		<original_text>Seating could be more comfortable</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="seats" implicit_context="" explicit_context="190617.txt" modality="FALSE" id ="190617.txt_6_0">
+		<original_text>seats are stunningly uncomfortable</original_text>
+		<correct_text></correct_text>
+		<modifiers>stunninglypoz=2</modifiers>
+	</node>
+	<node implicit_focus="" focus="seats" implicit_context="" explicit_context="190617.txt" modality="FALSE" id ="190617.txt_6_1">
+		<original_text>seats are uncomfortable</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="seats" implicit_context="" explicit_context="212549.txt" modality="FALSE" id ="212549.txt_4_0">
+		<original_text>Ecomony seats not very comfortableGenerally</original_text>
+		<correct_text>Economy seats not very comfortable</correct_text>
+		<modifiers>verypoz=3;Ecomonypoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="seats" implicit_context="" explicit_context="212549.txt" modality="FALSE" id ="212549.txt_4_1">
+		<original_text>Ecomony seats not comfortableGenerally</original_text>
+		<correct_text>Economy seats not comfortable</correct_text>
+		<modifiers>Ecomonypoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="seats" implicit_context="" explicit_context="212549.txt" modality="FALSE" id ="212549.txt_4_2">
+		<original_text>seats not comfortableGenerally</original_text>
+		<correct_text>seats not comfortable</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="Seats" implicit_context="" explicit_context="411441.txt" modality="FALSE" id ="411441.txt_1_0">
+		<original_text>Seats need to be more comfortable</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="190617.txt_6_1" source="183009.txt_1_0" id="190617.txt_6_1-183009.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="212549.txt_4_2" source="183009.txt_1_0" id="212549.txt_4_2-183009.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="411441.txt_1_0" source="183009.txt_1_0" id="411441.txt_1_0-183009.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="190617.txt_6_1" source="190617.txt_6_0" id="190617.txt_6_1-190617.txt_6_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="183009.txt_1_0" source="190617.txt_6_1" id="183009.txt_1_0-190617.txt_6_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="212549.txt_4_2" source="190617.txt_6_1" id="212549.txt_4_2-190617.txt_6_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="411441.txt_1_0" source="190617.txt_6_1" id="411441.txt_1_0-190617.txt_6_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="212549.txt_4_1" source="212549.txt_4_0" id="212549.txt_4_1-212549.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="212549.txt_4_2" source="212549.txt_4_1" id="212549.txt_4_2-212549.txt_4_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="190617.txt_6_1" source="212549.txt_4_2" id="190617.txt_6_1-212549.txt_4_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="183009.txt_1_0" source="212549.txt_4_2" id="183009.txt_1_0-212549.txt_4_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="411441.txt_1_0" source="212549.txt_4_2" id="411441.txt_1_0-212549.txt_4_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="190617.txt_6_1" source="411441.txt_1_0" id="190617.txt_6_1-411441.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="212549.txt_4_2" source="411441.txt_1_0" id="212549.txt_4_2-411441.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="183009.txt_1_0" source="411441.txt_1_0" id="183009.txt_1_0-411441.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node id="0321.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0321.txt" implicit_context="" focus="promozioni" implicit_focus="">
+        <original_text>mi stanno tempestando di promozioni attivabili gratuitamente , ma tutte incompatibili con il mio piano telefonico</original_text>
+        <correct_text> </correct_text>
+        <modifiers>attivabili gratuitamentepoz=5 6;con il mio piano telefonicopoz=11 12 13 14 15;mi stanno tempestando di promozioni , mapoz=0 1 2 3 4 7 8</modifiers>
+    </node>
+    <node id="0321.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0321.txt" implicit_context="" focus="promozioni" implicit_focus="">
+        <original_text>mi stanno tempestando di promozioni , ma tutte incompatibili con il mio piano telefonico</original_text>
+        <correct_text> </correct_text>
+        <modifiers>con il mio piano telefonicopoz=11 12 13 14 15;mi stanno tempestando di promozioni , mapoz=0 1 2 3 4 7 8</modifiers>
+    </node>
+    <node id="0321.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0321.txt" implicit_context="" focus="promozioni" implicit_focus="">
+        <original_text>mi stanno tempestando di promozioni attivabili gratuitamente , ma tutte incompatibili</original_text>
+        <correct_text> </correct_text>
+        <modifiers>attivabili gratuitamentepoz=5 6;mi stanno tempestando di promozioni , mapoz=0 1 2 3 4 7 8</modifiers>
+    </node>
+    <node id="0321.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0321.txt" implicit_context="" focus="promozioni" implicit_focus="">
+        <original_text>attivabili gratuitamente tutte incompatibili con il mio piano telefonico</original_text>
+        <correct_text> </correct_text>
+        <modifiers>attivabili gratuitamentepoz=5 6;con il mio piano telefonicopoz=11 12 13 14 15</modifiers>
+    </node>
+    <node id="0321.txt_1_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0321.txt" implicit_context="" focus="promozioni" implicit_focus="">
+        <original_text>mi stanno tempestando di promozioni , ma tutte incompatibili</original_text>
+        <correct_text> </correct_text>
+        <modifiers>mi stanno tempestando di promozioni , mapoz=0 1 2 3 4 7 8</modifiers>
+    </node>
+    <node id="0321.txt_1_5" implicit_statement="FALSE" modality="FALSE" explicit_context="0321.txt" implicit_context="" focus="promozioni" implicit_focus="">
+        <original_text>tutte incompatibili con il mio piano telefonico</original_text>
+        <correct_text> </correct_text>
+        <modifiers>con il mio piano telefonicopoz=11 12 13 14 15</modifiers>
+    </node>
+    <node id="0321.txt_1_6" implicit_statement="FALSE" modality="FALSE" explicit_context="0321.txt" implicit_context="" focus="promozioni" implicit_focus="">
+        <original_text>attivabili gratuitamente tutte incompatibili</original_text>
+        <correct_text> </correct_text>
+        <modifiers>attivabili gratuitamentepoz=5 6</modifiers>
+    </node>
+    <node id="0321.txt_1_7" implicit_statement="FALSE" modality="FALSE" explicit_context="0321.txt" implicit_context="" focus="promozioni" implicit_focus="">
+        <original_text>tutte incompatibili</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0321.txt_1_0-0321.txt_1_1" source="0321.txt_1_0" target="0321.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_1" source="0321.txt_1_0" target="0321.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_2" source="0321.txt_1_0" target="0321.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_2" source="0321.txt_1_0" target="0321.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_3" source="0321.txt_1_0" target="0321.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_3" source="0321.txt_1_0" target="0321.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_2-0321.txt_1_4" source="0321.txt_1_2" target="0321.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_1-0321.txt_1_4" source="0321.txt_1_1" target="0321.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_1-0321.txt_1_4" source="0321.txt_1_1" target="0321.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_2-0321.txt_1_4" source="0321.txt_1_2" target="0321.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_4" source="0321.txt_1_0" target="0321.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_3-0321.txt_1_5" source="0321.txt_1_3" target="0321.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_1-0321.txt_1_5" source="0321.txt_1_1" target="0321.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_1-0321.txt_1_5" source="0321.txt_1_1" target="0321.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_3-0321.txt_1_5" source="0321.txt_1_3" target="0321.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_5" source="0321.txt_1_0" target="0321.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_3-0321.txt_1_6" source="0321.txt_1_3" target="0321.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_2-0321.txt_1_6" source="0321.txt_1_2" target="0321.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_2-0321.txt_1_6" source="0321.txt_1_2" target="0321.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_3-0321.txt_1_6" source="0321.txt_1_3" target="0321.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_6" source="0321.txt_1_0" target="0321.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_6-0321.txt_1_7" source="0321.txt_1_6" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_5-0321.txt_1_7" source="0321.txt_1_5" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_4-0321.txt_1_7" source="0321.txt_1_4" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_4-0321.txt_1_7" source="0321.txt_1_4" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_5-0321.txt_1_7" source="0321.txt_1_5" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_6-0321.txt_1_7" source="0321.txt_1_6" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_2-0321.txt_1_7" source="0321.txt_1_2" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_3-0321.txt_1_7" source="0321.txt_1_3" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_0-0321.txt_1_7" source="0321.txt_1_0" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0321.txt_1_1-0321.txt_1_7" source="0321.txt_1_1" target="0321.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,8 +1,8 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
-
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
 /*
@@ -196,6 +196,17 @@ public class EntailmentUnit{
 		}
 		return false;
 	}
+	
+	/** Returns true if the node was seen within the fragment graph defined by the input completeStatementText
+	 * Otherwise returns false
+	 * @param node
+	 * @param completeStatementText
+	 * @return
+	 */
+	public boolean isPartOfFragmentGraph(String completeStatementText){
+		if (completeStatementTexts.contains(completeStatementText)) return true;
+		return false;
+	}
 
 	
 	/******************************************************************************************
@@ -242,6 +253,20 @@ public class EntailmentUnit{
 		return text.trim().replaceAll(" +", " ");
 	}
 	
+
+	/******************************************************************************************
+	 * COMPARATORS
+	 * ****************************************************************************************/
+
+	/**
+	 * Comparator to sort equivalence classes in descending order by their number of interactions
+	 */
+	public static class TextComparator implements Comparator<EntailmentUnit> {
+	    @Override
+	    public int compare(EntailmentUnit nodeA, EntailmentUnit nodeB) {
+	        return nodeA.getText().compareTo(nodeB.getText());
+	    }
+	}
 
 	/******************************************************************************************
 	 * PRINT

@@ -20,7 +20,7 @@ import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
-import eu.excitementproject.eop.core.ImplCommonConfig;
+import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
@@ -134,7 +134,7 @@ public class UseCaseOneDemo {
 	
 		List<JCas> docs = new ArrayList<JCas>();
 		File dir = new File(dataDir);
-	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constuctor
+	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constructor
 
 		//File f;
 		JCas aJCas;

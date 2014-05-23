@@ -1,6 +1,10 @@
 package  eu.excitementproject.tl.structures.collapsedgraph;
 
+import java.util.Map;
+
 import org.jgrapht.graph.DefaultEdge;
+
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 
 
@@ -26,6 +30,8 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	EquivalenceClass source;
 	EquivalenceClass target;
 	
+	EdgeType edgeType;
+	
 	double confidence;
 	
 	/******************************************************************************************
@@ -40,11 +46,23 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	 *  (corresponding to decisions from various EDAs) 
 	 */
 	public EntailmentRelationCollapsed(EquivalenceClass source, EquivalenceClass target, double c) {
+		this(source, target, c, EdgeType.DIRECT); //by default assign "direct" edge type
+	}
+	
+
+	/**
+	 * @return the edgeType
+	 */
+	public EdgeType getEdgeType() {
+		return edgeType;
+	}
+
+	public EntailmentRelationCollapsed(EquivalenceClass source, EquivalenceClass target, double c, EdgeType edgeType) {
 		this.source = source;
 		this.target = target;
 		this.confidence = c;
+		this.edgeType = edgeType;
 	}
-
 	/******************************************************************************************
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
@@ -91,4 +109,16 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 		return s+"\n";
 	}	
 	
+	/******************************************************************************************
+	 * METHODS FOR INTERNAL TESTING PURPOSES
+	 * ****************************************************************************************/
+	/** Returns a string with the edge in DOT format for outputting the graph
+	 * @return the generated string
+	 */
+	public String toDOT(Map<String,String> nodeTextById){
+		String s = this.getSource().toDOT(nodeTextById)+ " -> "+this.getTarget().toDOT(nodeTextById);
+		s+= " [label="+this.getConfidence()+"]";
+		s+= " [color=blue]";
+		return s+"\n";
+	}	
 }

@@ -4,10 +4,11 @@
 package eu.excitementproject.tl.composition.nodematcher;
 
 import java.util.ArrayList;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import org.apache.log4j.Logger;
 
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -30,6 +31,8 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  *
  */
 public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
+	
+	static Logger logger = Logger.getLogger(NodeMatcherLuceneSimple.class.getName());
 	
 	private EntailmentGraphCollapsed entailmentGraph;
 	
@@ -73,6 +76,7 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 		List<PerNodeScore> scores = new ArrayList<PerNodeScore>();
 		for (EquivalenceClass ec : vertexSet) { //for each node in the entailment graph
 			double score = getNodeScore(mentionToBeFound, ec);	
+			logger.info("score for " + mentionToBeFound + "and " + ec.getLabel() + ": " + score);
 			if (score > 0) { //add non-zero scores to list
 				PerNodeScore perNodeScore = new PerNodeScore();
 				perNodeScore.setNode(ec);

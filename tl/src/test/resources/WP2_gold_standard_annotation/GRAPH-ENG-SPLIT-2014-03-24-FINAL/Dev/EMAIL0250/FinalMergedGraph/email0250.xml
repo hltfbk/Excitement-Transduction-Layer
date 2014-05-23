@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="6">
+	<node implicit_focus="" focus="seats" implicit_context="" explicit_context="19.txt" modality="FALSE" id ="19.txt_2_0">
+		<original_text>Solo seats in standard class</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="seating" implicit_context="" explicit_context="483394.txt" modality="FALSE" id ="483394.txt_4_0">
+		<original_text>Not enough seating at Stars Bridge</original_text>
+		<correct_text></correct_text>
+		<modifiers>at Stars Bridgepoz=3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="seating" implicit_context="" explicit_context="483394.txt" modality="FALSE" id ="483394.txt_4_1">
+		<original_text>Not enough seating</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="" implicit_context="" explicit_context="498974.txt" modality="FALSE" id ="498974.txt_3_0">
+		<original_text>lounge not enough seats</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="train" implicit_context="" explicit_context="9.txt" modality="FALSE" id ="9.txt_2_0">
+		<original_text>for each train indicate where to seat left or right</original_text>
+		<correct_text></correct_text>
+		<modifiers>left or rightpoz=7 8 9</modifiers>
+	</node>
+	<node implicit_focus="" focus="train" implicit_context="" explicit_context="9.txt" modality="FALSE" id ="9.txt_2_1">
+		<original_text>for each train indicate where to seat</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="483394.txt_4_1" source="483394.txt_4_0" id="483394.txt_4_1-483394.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="483394.txt_4_1" source="498974.txt_3_0" id="483394.txt_4_1-498974.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="9.txt_2_1" source="9.txt_2_0" id="9.txt_2_1-9.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

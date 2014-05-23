@@ -25,7 +25,7 @@ public class EvaluatorCategoryAnnotatorTest {
 			testlogger.info("Computing result for dataset.");
 			EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator();
 			double result = eca.runEvaluationOnTrainTestDataset(inputFilename, outputDirname, configFilename);
-
+			testlogger.info("result: " + result);
 			Assert.assertEquals(result, 0.5); 
 			
 		}

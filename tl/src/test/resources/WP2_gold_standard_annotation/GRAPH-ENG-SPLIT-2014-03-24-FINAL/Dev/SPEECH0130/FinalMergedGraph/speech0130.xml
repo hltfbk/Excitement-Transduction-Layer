@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="20">
+	<node implicit_focus="" focus="a call" implicit_context="" explicit_context="13764627_76353375.txt" modality="FALSE" id ="13764627_76353375.txt_1_0">
+		<original_text>it's impossible to make a call</original_text>
+		<correct_text>it's impossible to make a call</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="13764684_76477077.txt" modality="FALSE" id ="13764684_76477077.txt_1_0">
+		<original_text>this is the fifth call i have made trying to get my ticket</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="representative" focus="she" implicit_context="" explicit_context="13764766_78604096-3.txt" modality="FALSE" id ="13764766_78604096-3.txt_1_0">
+		<original_text>i thought she was very route</original_text>
+		<correct_text>i thought she was very rude</correct_text>
+		<modifiers>verypoz=4</modifiers>
+	</node>
+	<node implicit_focus="representative" focus="she" implicit_context="" explicit_context="13764766_78604096-3.txt" modality="FALSE" id ="13764766_78604096-3.txt_1_1">
+		<original_text>i thought she was route</original_text>
+		<correct_text>i thought she was rude</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="representative" focus="" implicit_context="" explicit_context="13764768_77088303.txt" modality="FALSE" id ="13764768_77088303.txt_1_0">
+		<original_text>your represent on the makes a mistake</original_text>
+		<correct_text>your representative makes a mistake</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="representative" focus="she" implicit_context="" explicit_context="13764768_77088303.txt" modality="FALSE" id ="13764768_77088303.txt_2_0">
+		<original_text>she makes a mistake</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="system" implicit_context="" explicit_context="13764776_82291713.txt" modality="FALSE" id ="13764776_82291713.txt_1_0">
+		<original_text>year automated system it's horrible</original_text>
+		<correct_text>your automated system is horrible</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764776_82291713.txt" modality="TRUE" id ="13764776_82291713.txt_3_0">
+		<original_text>i should not have to call three times to make sure my advantage numbers on my flight tomorrow</original_text>
+		<correct_text>i should not have to call three times to make sure my advantage number is on my flight tomorrow</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="communication" implicit_context="" explicit_context="13764787_80854454-2.txt" modality="FALSE" id ="13764787_80854454-2.txt_1_0">
+		<original_text>I hate this lack of communication</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="service" focus="" implicit_context="" explicit_context="13764800_80670011-2.txt" modality="FALSE" id ="13764800_80670011-2.txt_1_0">
+		<original_text>i'm frustrated with whoever continues to give me a crappy answer</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="agent" implicit_context="" explicit_context="13764858_82887000-2.txt" modality="FALSE" id ="13764858_82887000-2.txt_1_0">
+		<original_text>the agent would you know hung up on me</original_text>
+		<correct_text>the agent you know hung up on me</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="representative" focus="she" implicit_context="" explicit_context="13764858_82887000.txt" modality="FALSE" id ="13764858_82887000.txt_1_0">
+		<original_text>she hunk up on me again</original_text>
+		<correct_text>she hung up on me again</correct_text>
+		<modifiers>againpoz=5</modifiers>
+	</node>
+	<node implicit_focus="representative" focus="she" implicit_context="" explicit_context="13764858_82887000.txt" modality="FALSE" id ="13764858_82887000.txt_1_1">
+		<original_text>she hunk up on me</original_text>
+		<correct_text>she hung up on me</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="representative" focus="" implicit_context="" explicit_context="13764993_83585107.txt" modality="FALSE" id ="13764993_83585107.txt_1_0">
+		<original_text>the guy was absolutely rude</original_text>
+		<correct_text></correct_text>
+		<modifiers>absolutelypoz=3</modifiers>
+	</node>
+	<node implicit_focus="representative" focus="" implicit_context="" explicit_context="13764993_83585107.txt" modality="FALSE" id ="13764993_83585107.txt_1_1">
+		<original_text>the guy was rude</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="service" focus="" implicit_context="" explicit_context="13765001_83599251.txt" modality="FALSE" id ="13765001_83599251.txt_1_0">
+		<original_text>different people say different things</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="service" implicit_context="" explicit_context="13765054_84130967.txt" modality="FALSE" id ="13765054_84130967.txt_1_0">
+		<original_text>why for customer service there's not a phone number</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="service" focus="" implicit_context="" explicit_context="13765175_85245455.txt" modality="FALSE" id ="13765175_85245455.txt_1_0">
+		<original_text>i've been on hold for a really long time</original_text>
+		<correct_text></correct_text>
+		<modifiers>reallypoz=6</modifiers>
+	</node>
+	<node implicit_focus="service" focus="" implicit_context="" explicit_context="13765175_85245455.txt" modality="FALSE" id ="13765175_85245455.txt_1_1">
+		<original_text>i've been on hold for a long time</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="service" focus="" implicit_context="" explicit_context="13765177_84384451.txt" modality="FALSE" id ="13765177_84384451.txt_1_0">
+		<original_text>it was it twenty nine minute wait</original_text>
+		<correct_text>it was a twenty nine minutes wait</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="13764627_76353375.txt_1_0" source="13764684_76477077.txt_1_0" id="13764627_76353375.txt_1_0-13764684_76477077.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764766_78604096-3.txt_1_1" source="13764766_78604096-3.txt_1_0" id="13764766_78604096-3.txt_1_1-13764766_78604096-3.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764993_83585107.txt_1_0" source="13764766_78604096-3.txt_1_0" id="13764993_83585107.txt_1_0-13764766_78604096-3.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764993_83585107.txt_1_1" source="13764766_78604096-3.txt_1_1" id="13764993_83585107.txt_1_1-13764766_78604096-3.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764768_77088303.txt_2_0" source="13764768_77088303.txt_1_0" id="13764768_77088303.txt_2_0-13764768_77088303.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764768_77088303.txt_1_0" source="13764768_77088303.txt_2_0" id="13764768_77088303.txt_1_0-13764768_77088303.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764993_83585107.txt_1_1" source="13764858_82887000-2.txt_1_0" id="13764993_83585107.txt_1_1-13764858_82887000-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764858_82887000.txt_1_1" source="13764858_82887000-2.txt_1_0" id="13764858_82887000.txt_1_1-13764858_82887000-2.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764858_82887000.txt_1_1" source="13764858_82887000.txt_1_0" id="13764858_82887000.txt_1_1-13764858_82887000.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764993_83585107.txt_1_0" source="13764858_82887000.txt_1_0" id="13764993_83585107.txt_1_0-13764858_82887000.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764993_83585107.txt_1_1" source="13764858_82887000.txt_1_1" id="13764993_83585107.txt_1_1-13764858_82887000.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764858_82887000-2.txt_1_0" source="13764858_82887000.txt_1_1" id="13764858_82887000-2.txt_1_0-13764858_82887000.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764993_83585107.txt_1_1" source="13764993_83585107.txt_1_0" id="13764993_83585107.txt_1_1-13764993_83585107.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764766_78604096-3.txt_1_0" source="13764993_83585107.txt_1_0" id="13764766_78604096-3.txt_1_0-13764993_83585107.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764766_78604096-3.txt_1_1" source="13764993_83585107.txt_1_1" id="13764766_78604096-3.txt_1_1-13764993_83585107.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764627_76353375.txt_1_0" source="13765054_84130967.txt_1_0" id="13764627_76353375.txt_1_0-13765054_84130967.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765175_85245455.txt_1_1" source="13765175_85245455.txt_1_0" id="13765175_85245455.txt_1_1-13765175_85245455.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765175_85245455.txt_1_1" source="13765177_84384451.txt_1_0" id="13765175_85245455.txt_1_1-13765177_84384451.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

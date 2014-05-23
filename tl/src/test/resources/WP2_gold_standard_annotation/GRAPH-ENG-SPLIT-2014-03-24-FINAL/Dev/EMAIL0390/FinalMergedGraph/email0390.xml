@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="13">
+	<node implicit_focus="" focus="first aid" implicit_context="" explicit_context="179281.txt" modality="FALSE" id ="179281.txt_2_0">
+		<original_text>simple first aid kit at Stars Bridge station</original_text>
+		<correct_text></correct_text>
+		<modifiers>simplepoz=0;at Stars Bridge stationpoz=4 5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="first aid" implicit_context="" explicit_context="179281.txt" modality="FALSE" id ="179281.txt_2_1">
+		<original_text>first aid kit at Stars Bridge station</original_text>
+		<correct_text></correct_text>
+		<modifiers>at Stars Bridge stationpoz=4 5 6 7</modifiers>
+	</node>
+	<node implicit_focus="" focus="first aid" implicit_context="" explicit_context="179281.txt" modality="FALSE" id ="179281.txt_2_2">
+		<original_text>simple first aid kit</original_text>
+		<correct_text></correct_text>
+		<modifiers>simplepoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="first aid" implicit_context="" explicit_context="179281.txt" modality="FALSE" id ="179281.txt_2_3">
+		<original_text>first aid kit</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="taxi" implicit_context="" explicit_context="193822.txt" modality="FALSE" id ="193822.txt_4_0">
+		<original_text>taxi service through Quasigo not available</original_text>
+		<correct_text></correct_text>
+		<modifiers>through Quasigopoz=2 3</modifiers>
+	</node>
+	<node implicit_focus="" focus="taxi" implicit_context="" explicit_context="193822.txt" modality="FALSE" id ="193822.txt_4_1">
+		<original_text>taxi service not available</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="taxi" implicit_context="" explicit_context="461540.txt" modality="FALSE" id ="461540.txt_4_0">
+		<original_text>better taxi service at the other end</original_text>
+		<correct_text></correct_text>
+		<modifiers>at the other endpoz=3 4 5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="taxi" implicit_context="" explicit_context="461540.txt" modality="FALSE" id ="461540.txt_4_1">
+		<original_text>better taxi service</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="smoking" implicit_context="" explicit_context="522262.txt" modality="TRUE" id ="522262.txt_1_0">
+		<original_text>I would like a smoking area</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="trip" implicit_context="" explicit_context="52781.txt" modality="FALSE" id ="52781.txt_12_0">
+		<original_text>Absolutely ruins the notion of a leisurely trip</original_text>
+		<correct_text></correct_text>
+		<modifiers>Absolutelypoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="trip" implicit_context="" explicit_context="52781.txt" modality="FALSE" id ="52781.txt_12_1">
+		<original_text>ruins the notion of a leisurely trip</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="connections" implicit_context="" explicit_context="92454.txt" modality="TRUE" id ="92454.txt_5_0">
+		<original_text>You should have more connections into europe</original_text>
+		<correct_text></correct_text>
+		<modifiers>into europepoz=5 6</modifiers>
+	</node>
+	<node implicit_focus="" focus="connections" implicit_context="" explicit_context="92454.txt" modality="TRUE" id ="92454.txt_5_1">
+		<original_text>You should have more connections</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="179281.txt_2_1" source="179281.txt_2_0" id="179281.txt_2_1-179281.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="179281.txt_2_2" source="179281.txt_2_0" id="179281.txt_2_2-179281.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="179281.txt_2_3" source="179281.txt_2_1" id="179281.txt_2_3-179281.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="179281.txt_2_3" source="179281.txt_2_2" id="179281.txt_2_3-179281.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="193822.txt_4_1" source="193822.txt_4_0" id="193822.txt_4_1-193822.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="461540.txt_4_0" source="193822.txt_4_0" id="461540.txt_4_0-193822.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="461540.txt_4_1" source="193822.txt_4_1" id="461540.txt_4_1-193822.txt_4_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="461540.txt_4_1" source="461540.txt_4_0" id="461540.txt_4_1-461540.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="52781.txt_12_1" source="52781.txt_12_0" id="52781.txt_12_1-52781.txt_12_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="92454.txt_5_1" source="92454.txt_5_0" id="92454.txt_5_1-92454.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.composition.graphmerger;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,11 +27,10 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  *
  */
 public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
-
+	
 	public AutomateWP2ProcedureGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -49,6 +49,8 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	@Override
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
 			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+		
+		logger.info("Adding fragment graph:\n"+fragmentGraph.toString());
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
 		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph);
@@ -96,22 +98,19 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	
 	private EntailmentGraphRaw mergeFragmentGraphs(EntailmentGraphRaw workGraph, Hashtable<Integer, Set<EntailmentUnit>> newFragmentGraphNodes, Hashtable<Integer, Set<EntailmentUnit>> oldFragmentGraphNodes, EntailmentUnit newBaseStatement,  EntailmentUnit workGraphBaseStatement) throws GraphMergerException{
 		//Check if there is entailment between the two base statements
-		// There might be an existing entailment edge because the two base statements were present in the work graph before
-		if (!workGraph.isEntailmentInAnyDirection(newBaseStatement, workGraphBaseStatement)){
-			// If there's no existing entailment, check if there is entailment between the base statements
-			Set<EntailmentRelation> edgesToAdd = getEntailmentRelations(workGraphBaseStatement, newBaseStatement);
-			if (edgesToAdd.isEmpty()) return workGraph; // empty set = no entailment, i.e. we are done  - there's nothing else to merge (return the current work graph)
-			
-			// add the entailment relation(s) between the 2 base statements
-			for (EntailmentRelation edge : edgesToAdd){
-				workGraph.addEdge(edge.getSource(), edge.getTarget(), edge);
-			}
-			
-		}
+		Set<EntailmentRelation> edgesToAdd = mergeBaseStatements(workGraph, newBaseStatement, workGraphBaseStatement);
+		if (edgesToAdd.isEmpty()) return workGraph; // empty set = no entailment, i.e. we are done  - there's nothing else to merge (return the current work graph)
+		
+		// add the entailment relation(s) between the 2 base statements
+		for (EntailmentRelation edge : edgesToAdd){
+			workGraph.addEdge(edge.getSource(), edge.getTarget(), edge);
+		}			
+
 		
 		// If there was an existing entailment edge, or if we just found that there is entailment in either direction between the 2 base statements
 		// Now we need to look at the direction of the entailment and check in this direction for 1st-level nodes
 		// And then propagate for the upper-level nodes
+//		logger.info("Checking entailment on upper levels");
 		
 		// check if both graph have 1-level nodes (maybe one of the 2 fragment graphs only has one node (base statement = complete statement))
 		if (!oldFragmentGraphNodes.keySet().contains(1)) return workGraph; // no 1-level in "old fr.graph" => no need to continue merging
@@ -138,6 +137,18 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	}
 	
 
+	protected Set<EntailmentRelation> mergeBaseStatements(EntailmentGraphRaw workGraph, EntailmentUnit newBaseStatement, EntailmentUnit workGraphBaseStatement) throws GraphMergerException{
+		//Check if there is entailment between the two base statements
+		// There might be an existing entailment edge because the two base statements were present in the work graph before
+		Set<EntailmentRelation> edgesToAdd = new HashSet<EntailmentRelation>();
+		if (!workGraph.isEntailmentInAnyDirection(newBaseStatement, workGraphBaseStatement)){
+			// If there's no existing entailment, check if there is entailment between the base statements
+//			logger.info("Checking entailment between base statements");
+			edgesToAdd = getEntailmentRelations(workGraphBaseStatement, newBaseStatement);
+		}
+		return edgesToAdd;
+	}
+	
 	/**
 	 * This method is called when entailment relation A->B was detected between 2 base statements.
 	 * It receives a work graph and two base statements - one from the work graph, and the other from the fragment graph that is currently being merged with the work graph

@@ -15,7 +15,7 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
  * @author LiliKotlerman
  *
  */
-public class RandomEDA implements EDABasic<RandomTEDecision>{
+public class RandomEDA implements EDABasic<ProbabilisticTEDecision>{
 
 	private Random generator;
 	
@@ -41,9 +41,9 @@ public class RandomEDA implements EDABasic<RandomTEDecision>{
 		
 	}
 
-	public RandomTEDecision process(JCas aCas) {
+	public ProbabilisticTEDecision process(JCas aCas) {
 		
-		return new RandomTEDecision(generator.nextDouble());
+		return new ProbabilisticTEDecision(generator.nextDouble());
 	}
 
 	public void shutdown() {

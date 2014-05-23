@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0266.txt_1_0" implicit_statement="FALSE" modality="TRUE" explicit_context="0266.txt" implicit_context="" focus="contatare" implicit_focus="">
+        <original_text>non riesco piu ha contatare il 444 x parlare con l operatore</original_text>
+        <correct_text>non riesco più a contattare il 444 per parlare con l'operatore</correct_text>
+        <modifiers>il 444poz=5 6;x parlare conpoz=7 8 9</modifiers>
+    </node>
+    <node id="0266.txt_1_1" implicit_statement="FALSE" modality="TRUE" explicit_context="0266.txt" implicit_context="" focus="contatare" implicit_focus="">
+        <original_text>non riesco piu ha contatare x parlare con l operatore</original_text>
+        <correct_text>non riesco più a contattare per parlare con l'operatore</correct_text>
+        <modifiers>x parlare conpoz=7 8 9</modifiers>
+    </node>
+    <node id="0266.txt_1_2" implicit_statement="FALSE" modality="TRUE" explicit_context="0266.txt" implicit_context="" focus="contatare" implicit_focus="">
+        <original_text>non riesco piu ha contatare il 444 l operatore</original_text>
+        <correct_text>non riesco più a contattare il 444 per l'operatore</correct_text>
+        <modifiers>il 444poz=5 6</modifiers>
+    </node>
+    <node id="0266.txt_1_3" implicit_statement="FALSE" modality="TRUE" explicit_context="0266.txt" implicit_context="" focus="contatare" implicit_focus="">
+        <original_text>non riesco piu ha contatare l operatore</original_text>
+        <correct_text>non riesco più a contattare l'operatore</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0266.txt_1_0-0266.txt_1_1" source="0266.txt_1_0" target="0266.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0266.txt_1_0-0266.txt_1_1" source="0266.txt_1_0" target="0266.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0266.txt_1_0-0266.txt_1_2" source="0266.txt_1_0" target="0266.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0266.txt_1_0-0266.txt_1_2" source="0266.txt_1_0" target="0266.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0266.txt_1_2-0266.txt_1_3" source="0266.txt_1_2" target="0266.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0266.txt_1_1-0266.txt_1_3" source="0266.txt_1_1" target="0266.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0266.txt_1_1-0266.txt_1_3" source="0266.txt_1_1" target="0266.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0266.txt_1_2-0266.txt_1_3" source="0266.txt_1_2" target="0266.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0266.txt_1_0-0266.txt_1_3" source="0266.txt_1_0" target="0266.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="6">
+    <node id="0271.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0271.txt" implicit_context="" focus="soldi" implicit_focus="">
+        <original_text>Per non parlare dei soldi che rubate per la tariffa da 15 cent al minuto per chiamate voce</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Per non parlare deipoz=0 1 2 3;da 15 cent al minuto per chiamate vocepoz=10 11 12 13 14 15 16 17;per la tariffapoz=7 8 9</modifiers>
+    </node>
+    <node id="0271.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0271.txt" implicit_context="" focus="soldi" implicit_focus="">
+        <original_text>soldi che rubate per la tariffa da 15 cent al minuto per chiamate voce</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da 15 cent al minuto per chiamate vocepoz=10 11 12 13 14 15 16 17;per la tariffapoz=7 8 9</modifiers>
+    </node>
+    <node id="0271.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0271.txt" implicit_context="" focus="soldi" implicit_focus="">
+        <original_text>Per non parlare dei soldi che rubate per la tariffa</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Per non parlare deipoz=0 1 2 3;per la tariffapoz=7 8 9</modifiers>
+    </node>
+    <node id="0271.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0271.txt" implicit_context="" focus="soldi" implicit_focus="">
+        <original_text>soldi che rubate per la tariffa</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per la tariffapoz=7 8 9</modifiers>
+    </node>
+    <node id="0271.txt_1_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0271.txt" implicit_context="" focus="soldi" implicit_focus="">
+        <original_text>Per non parlare dei soldi che rubate</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Per non parlare deipoz=0 1 2 3</modifiers>
+    </node>
+    <node id="0271.txt_1_5" implicit_statement="FALSE" modality="FALSE" explicit_context="0271.txt" implicit_context="" focus="soldi" implicit_focus="">
+        <original_text>soldi che rubate</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0271.txt_1_0-0271.txt_1_1" source="0271.txt_1_0" target="0271.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_0-0271.txt_1_1" source="0271.txt_1_0" target="0271.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_0-0271.txt_1_2" source="0271.txt_1_0" target="0271.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_0-0271.txt_1_2" source="0271.txt_1_0" target="0271.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_2-0271.txt_1_3" source="0271.txt_1_2" target="0271.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_1-0271.txt_1_3" source="0271.txt_1_1" target="0271.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_1-0271.txt_1_3" source="0271.txt_1_1" target="0271.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_2-0271.txt_1_3" source="0271.txt_1_2" target="0271.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_0-0271.txt_1_3" source="0271.txt_1_0" target="0271.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_2-0271.txt_1_4" source="0271.txt_1_2" target="0271.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_2-0271.txt_1_4" source="0271.txt_1_2" target="0271.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_0-0271.txt_1_4" source="0271.txt_1_0" target="0271.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_4-0271.txt_1_5" source="0271.txt_1_4" target="0271.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_3-0271.txt_1_5" source="0271.txt_1_3" target="0271.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_3-0271.txt_1_5" source="0271.txt_1_3" target="0271.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_4-0271.txt_1_5" source="0271.txt_1_4" target="0271.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_2-0271.txt_1_5" source="0271.txt_1_2" target="0271.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_0-0271.txt_1_5" source="0271.txt_1_0" target="0271.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_1_1-0271.txt_1_5" source="0271.txt_1_1" target="0271.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

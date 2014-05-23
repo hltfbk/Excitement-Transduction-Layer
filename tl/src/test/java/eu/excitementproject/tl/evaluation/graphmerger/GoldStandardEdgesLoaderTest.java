@@ -9,6 +9,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
@@ -19,12 +20,12 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 public class GoldStandardEdgesLoaderTest {
 
-	@Test
+	@Ignore @Test
 	public void test() {
 		Logger.getRootLogger().setLevel(Level.INFO); 
-		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader();
+		GoldStandardEdgesLoader loader = new GoldStandardEdgesLoader(true);
 		try {
-			loader.addAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open");
+			loader.loadAllAnnotations("./src/test/resources/WP2_gold_standard_annotation/NICE_open", false);
 
 	/*		try {
 				EntailmentGraphRaw gr = loader.getRawGraph();
@@ -35,9 +36,9 @@ public class GoldStandardEdgesLoaderTest {
 				e.printStackTrace();
 			}		*/		
 			
-			loader = new GoldStandardEdgesLoader();
+			loader = new GoldStandardEdgesLoader(true);
 			String annotationFilename = "./src/test/resources/WP2_gold_standard_annotation/_annotationExample.xml";			
-			loader.addAnnotationsFromFile(annotationFilename);
+			loader.addAnnotationsFromFile(annotationFilename, false);
 			try {
 				ClusterStatistics.processCluster(new File(annotationFilename));
 				EntailmentGraphRaw gr = loader.getRawGraph();

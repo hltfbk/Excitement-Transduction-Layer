@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="15">
+	<node implicit_focus="food" focus="This" implicit_context="" explicit_context="137621.txt" modality="TRUE" id ="137621.txt_4_0">
+		<original_text>This really has to be fixed</original_text>
+		<correct_text></correct_text>
+		<modifiers>reallypoz=1</modifiers>
+	</node>
+	<node implicit_focus="food" focus="This" implicit_context="" explicit_context="137621.txt" modality="" id ="137621.txt_4_1">
+		<original_text>This has to be fixed</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="train" focus="it" implicit_context="" explicit_context="193730.txt" modality="FALSE" id ="193730.txt_1_0">
+		<original_text>it is too expensive</original_text>
+		<correct_text></correct_text>
+		<modifiers>toopoz=2</modifiers>
+	</node>
+	<node implicit_focus="train" focus="it" implicit_context="" explicit_context="193730.txt" modality="FALSE" id ="193730.txt_1_1">
+		<original_text>it is expensive</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="its" implicit_context="" explicit_context="255958.txt" modality="FALSE" id ="255958.txt_2_0">
+		<original_text>its poor</original_text>
+		<correct_text>it's poor</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="its" implicit_context="" explicit_context="255958.txt" modality="FALSE" id ="255958.txt_3_0">
+		<original_text>its limited</original_text>
+		<correct_text>it's limited</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="its" implicit_context="" explicit_context="255958.txt" modality="FALSE" id ="255958.txt_4_0">
+		<original_text>its overpriced</original_text>
+		<correct_text>it's overpriced</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="they" implicit_context="" explicit_context="27.txt" modality="FALSE" id ="27.txt_3_0">
+		<original_text>they Are slow</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="Meal" focus="It" implicit_context="" explicit_context="30724.txt" modality="FALSE" id ="30724.txt_4_0">
+		<original_text>It was not sufficient</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="food" focus="its" implicit_context="" explicit_context="379399.txt" modality="FALSE" id ="379399.txt_2_0">
+		<original_text>its cold</original_text>
+		<correct_text>it's cold</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="food" focus="its" implicit_context="" explicit_context="379399.txt" modality="FALSE" id ="379399.txt_3_0">
+		<original_text>its boring</original_text>
+		<correct_text>it's boring</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="it" implicit_context="" explicit_context="429450.txt" modality="FALSE" id ="429450.txt_6_0">
+		<original_text>currently it is a disgrace</original_text>
+		<correct_text></correct_text>
+		<modifiers>currentlypoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="it" implicit_context="" explicit_context="429450.txt" modality="FALSE" id ="429450.txt_6_1">
+		<original_text>it is a disgrace</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="food" focus="it" implicit_context="" explicit_context="513573.txt" modality="FALSE" id ="513573.txt_3_0">
+		<original_text>very little of it</original_text>
+		<correct_text></correct_text>
+		<modifiers>verypoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="it" implicit_context="" explicit_context="513573.txt" modality="FALSE" id ="513573.txt_3_1">
+		<original_text>little of it</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="137621.txt_4_1" source="137621.txt_4_0" id="137621.txt_4_1-137621.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="30724.txt_4_0" source="137621.txt_4_1" id="30724.txt_4_0-137621.txt_4_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="193730.txt_1_1" source="193730.txt_1_0" id="193730.txt_1_1-193730.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="255958.txt_4_0" source="193730.txt_1_1" id="255958.txt_4_0-193730.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="30724.txt_4_0" source="255958.txt_3_0" id="30724.txt_4_0-255958.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="193730.txt_1_1" source="255958.txt_4_0" id="193730.txt_1_1-255958.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="429450.txt_6_1" source="429450.txt_6_0" id="429450.txt_6_1-429450.txt_6_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="513573.txt_3_1" source="513573.txt_3_0" id="513573.txt_3_1-513573.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

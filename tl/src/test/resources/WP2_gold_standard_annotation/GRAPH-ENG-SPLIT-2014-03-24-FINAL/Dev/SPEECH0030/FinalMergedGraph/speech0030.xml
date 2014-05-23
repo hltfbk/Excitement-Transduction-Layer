@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="14">
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13764787_80854454-2.txt" modality="FALSE" id ="13764787_80854454-2.txt_3_0">
+		<original_text>I come over here to catch seven fifty six flags it's now been changed to nine five</original_text>
+		<correct_text>i come over here to catch seven fifty six flight that's now been changed to nine five</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="itinerary" focus="" implicit_context="" explicit_context="13764796_82293716.txt" modality="FALSE" id ="13764796_82293716.txt_1_0">
+		<original_text>they change the to area life without really imparting to see if that was going to work press</original_text>
+		<correct_text>they changed the itinerary on us without really inquiring to see if that was going to work for us</correct_text>
+		<modifiers>without really imparting to see if that was going to work presspoz=6 7 8 9 10 11 12 13 14 15 16 17</modifiers>
+	</node>
+	<node implicit_focus="itinerary" focus="" implicit_context="" explicit_context="13764796_82293716.txt" modality="FALSE" id ="13764796_82293716.txt_1_1">
+		<original_text>they change the to area life</original_text>
+		<correct_text>they changed the itinerary on us</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="13764807_81565659.txt" modality="FALSE" id ="13764807_81565659.txt_1_0">
+		<original_text>she can't put my ticket that i just buy like a couple months ago</original_text>
+		<correct_text>she canceled my ticket that i just bought like a couple of months ago</correct_text>
+		<modifiers>that i just buypoz=5 6 7 8;like a couple months agopoz=9 10 11 12 13</modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="13764807_81565659.txt" modality="FALSE" id ="13764807_81565659.txt_1_1">
+		<original_text>she can't put my ticket that i just buy</original_text>
+		<correct_text>she canceled my ticket that i just bought</correct_text>
+		<modifiers>that i just buypoz=5 6 7 8</modifiers>
+	</node>
+	<node implicit_focus="" focus="ticket" implicit_context="" explicit_context="13764807_81565659.txt" modality="FALSE" id ="13764807_81565659.txt_1_2">
+		<original_text>she can't put my ticket</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13764816_82295687.txt" modality="FALSE" id ="13764816_82295687.txt_2_0">
+		<original_text>they put me in a three o'clock flight</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="date" focus="" implicit_context="" explicit_context="13764823_81589603.txt" modality="FALSE" id ="13764823_81589603.txt_1_0">
+		<original_text>the departure they just the along date and when i had but</original_text>
+		<correct_text>the departure date is the wrong date than what i had booked</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="flight" implicit_context="" explicit_context="13765048_83661432.txt" modality="FALSE" id ="13765048_83661432.txt_1_0">
+		<original_text>i've been bounced around from flight to flight to flight</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13765205_85955838.txt" modality="TRUE" id ="13765205_85955838.txt_1_0">
+		<original_text>i cannot get a confirm play change in the first class</original_text>
+		<correct_text>i cannot get a confirmed flight change in the first class</correct_text>
+		<modifiers>confirmpoz=4;in the first classpoz=7 8 9 10</modifiers>
+	</node>
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13765205_85955838.txt" modality="TRUE" id ="13765205_85955838.txt_1_1">
+		<original_text>i cannot get a play change in the first class</original_text>
+		<correct_text>i cannot get a flight change in the first class</correct_text>
+		<modifiers>in the first classpoz=7 8 9 10</modifiers>
+	</node>
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13765205_85955838.txt" modality="TRUE" id ="13765205_85955838.txt_1_2">
+		<original_text>i cannot get a confirm play change</original_text>
+		<correct_text>i cannot get a confirmed flight change</correct_text>
+		<modifiers>confirmpoz=4</modifiers>
+	</node>
+	<node implicit_focus="flight" focus="" implicit_context="" explicit_context="13765205_85955838.txt" modality="TRUE" id ="13765205_85955838.txt_1_3">
+		<original_text>i cannot get a play change</original_text>
+		<correct_text>i cannot get a flight change</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="flight" focus="time" implicit_context="" explicit_context="13765262_83075324.txt" modality="FALSE" id ="13765262_83075324.txt_1_0">
+		<original_text>the time to change dramatically</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="13764796_82293716.txt_1_1" source="13764787_80854454-2.txt_3_0" id="13764796_82293716.txt_1_1-13764787_80854454-2.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764796_82293716.txt_1_1" source="13764796_82293716.txt_1_0" id="13764796_82293716.txt_1_1-13764796_82293716.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764807_81565659.txt_1_1" source="13764807_81565659.txt_1_0" id="13764807_81565659.txt_1_1-13764807_81565659.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764807_81565659.txt_1_2" source="13764807_81565659.txt_1_1" id="13764807_81565659.txt_1_2-13764807_81565659.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764796_82293716.txt_1_1" source="13764816_82295687.txt_2_0" id="13764796_82293716.txt_1_1-13764816_82295687.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765205_85955838.txt_1_1" source="13765205_85955838.txt_1_0" id="13765205_85955838.txt_1_1-13765205_85955838.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765205_85955838.txt_1_2" source="13765205_85955838.txt_1_0" id="13765205_85955838.txt_1_2-13765205_85955838.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765205_85955838.txt_1_3" source="13765205_85955838.txt_1_1" id="13765205_85955838.txt_1_3-13765205_85955838.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13765205_85955838.txt_1_3" source="13765205_85955838.txt_1_2" id="13765205_85955838.txt_1_3-13765205_85955838.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

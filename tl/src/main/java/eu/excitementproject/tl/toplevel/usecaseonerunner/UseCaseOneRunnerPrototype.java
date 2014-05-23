@@ -14,6 +14,7 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.uima.jcas.JCas;
 
+import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
@@ -39,6 +40,7 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphException;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -57,7 +59,10 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	FragmentGraphGenerator fragGen;
 	GraphMerger graphMerger;
 	GraphOptimizer collapseGraph;
-		
+
+	int count = 0;
+	int count_2 = 0;
+	
 	private final static Logger logger = Logger.getLogger(UseCaseOneRunnerPrototype.class.getName());
 	
 	// output path used for outputting graphs to files
@@ -84,6 +89,20 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 	
 	
+	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda, 
+			FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator, 
+			FragmentGraphGenerator fragmentGraphGenerator, 
+			GraphMerger graphMerger, GraphOptimizer graphOptimizer) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
+		this.lap = lap;
+		this.eda = eda;
+
+		fragAnot = fragmentAnnotator;
+		modAnot = modifierAnnotator;
+		fragGen = fragmentGraphGenerator;
+		this.graphMerger = graphMerger;
+		collapseGraph = graphOptimizer;
+	}
+
 	private void initInterfaces() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
 		
 		fragAnot = new SentenceAsFragmentAnnotator(lap);
@@ -139,7 +158,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 */	
 	
 	/**
-	 * Builds a raw entailment graph from a set of user interactions
+	 * Builds a raw entailment graph from a set of user interactions without any threshold applied at merge phase
 	 * 
 	 * @param docs -- a set of user interactions as JCas objects
 	 *  
@@ -150,6 +169,24 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	 */
 	@Override
 	public EntailmentGraphRaw buildRawGraph(List<JCas> docs) 
+			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
+		
+		graphMerger.setEntailmentConfidenceThreshold(null); //make sure no threshold is applied
+		return buildRaw(docs);
+	}
+	
+	/**
+	 * Builds a raw entailment graph from a set of user interactions
+	 * 
+	 * @param docs -- a set of user interactions as JCas objects
+	 *  
+	 * @return an raw entailment graph (the multigraph with all edges and nodes)
+	 * @throws FragmentAnnotatorException 
+	 * @throws ModifierAnnotatorException 
+	 * @throws LAPException 
+	 */
+	
+	private EntailmentGraphRaw buildRaw(List<JCas> docs) 
 			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
 		
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>(); 
@@ -163,11 +200,45 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 				//TODO: debug why ModdifierAnnotatorException is raised on NICE data with BIUTEE
 			}
 		}
-		
+				
 		inspectGraph(fgs);
 
+/*		// uncomment to get a printout of all the nodes in the fragment graphs
+		int i = 1;
+		int j = 1;
+		for (FragmentGraph fg : fgs){
+			for (EntailmentUnitMention eum : fg.vertexSet()){
+				System.out.println(i+" "+j+"\t"+eum.getInteractionId()+"\t"+eum.getTextWithoutDoubleSpaces());
+				j++;
+			}
+			i++;
+		}
+		System.in.read();
+*/	
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}
+	
+	/**
+	 * Builds a raw entailment graph from a set of user interactions, using a confidence threshold when adding edges
+	 * 
+	 * @param docs -- a set of user interactions as JCas objects
+	 * @param confidenceThreshold -- threshold on entailment confidence. Edges will be added to the graph only if entailment decision confidence is >= threshold  
+	 *  
+	 * @return an raw entailment graph (the multigraph with all edges and nodes)
+	 * @throws FragmentAnnotatorException 
+	 * @throws ModifierAnnotatorException 
+	 * @throws LAPException 
+	 */
+
+	public EntailmentGraphRaw buildRawGraph(List<JCas> docs, double confidenceThreshold) 
+			throws GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, LAPException, IOException{
+		
+		graphMerger.setEntailmentConfidenceThreshold(confidenceThreshold);
+		return buildRaw(docs);
+		
+	}	
+	
+	
 	
 	/**
 	 * @param f -- a file containing a serialized raw entailment graph
@@ -306,6 +377,10 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			
 			for(FragmentGraph fg : fgs) {
 				if ( fg != null ) {
+					
+					count_2 += fg.vertexSet().size();
+					logger.info("FG_NODES: " + fg.getInteractionId() + " -- " + fg.vertexSet().size());
+					
 					logger.info(fg.toString());
 					if (outputPath != null) {
 						fg.toDOT(outputPath+"/fragment_graph_" + i + ".dot.txt");
@@ -324,6 +399,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		} else {
 			logger.info("The set of fragment graphs is null");
 		}
+		
+		logger.info("NUMBER_OF_FG_NODES: " + count_2);
 	}
 
 	/**
@@ -348,6 +425,12 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 
 
 	protected void annotateCAS(JCas aJCas) throws FragmentAnnotatorException, ModifierAnnotatorException {
+				
+		count += Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size());
+		
+		System.out.println("INFO:NR_OF_NODES = " + Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size())); 
+		System.out.println("INFO:NR_OF_NODES_CUMULATIVE = " + count); 
+		
 		fragAnot.annotateFragments(aJCas);
 		modAnot.annotateModifiers(aJCas);
 	}

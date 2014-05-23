@@ -6,6 +6,8 @@ package eu.excitementproject.tl.composition.graphmerger;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.lap.LAPException;
@@ -28,9 +30,12 @@ Constructor (Thus, they are not defined in the interface). Also, any
 additional configurable parameters of this module implementation
 should be clearly exposed in the Constructor.
 
- * @author Lili
+ * @author Lili Kotlerman
  */
 public abstract class AbstractGraphMerger implements GraphMerger{
+
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.composition.graphmerger");
+	Double entailmentConfidenceThreshold = null;
 
 	private final CachedLAPAccess lap;
 	private final EDABasic<?> eda;
@@ -70,7 +75,8 @@ should be clearly exposed in the Constructor.
 	}
 
 	
-	/** Checks for entailment (in both directions) between nodeA and nodeB. If there is entailment in any direction, corresponding EntailmentRelation(s) will be returned. 
+	/** Checks for entailment (in both directions) between nodeA and nodeB. If there is entailment in any direction, corresponding EntailmentRelation(s) will be returned.
+	 * The yes/no decision on entailment takes into considerartion the value of entailmentConfideneThreshold, if defined.   
 	 * @param workGraph
 	 * @param nodeA
 	 * @param nodeB
@@ -106,9 +112,9 @@ should be clearly exposed in the Constructor.
 	}
 
 	
-	/*
-	 * viv@fbk: added lap parameter
-	 */			
+	
+	 // viv@fbk: added lap parameter
+	 			
 	protected EntailmentRelation getRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode) throws GraphMergerException{	
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
 		try {
@@ -118,7 +124,14 @@ should be clearly exposed in the Constructor.
 		}
 	}
 
+	private boolean isSufficientConfidence(double confidence){
+		if (entailmentConfidenceThreshold==null) return true; //if entailmentConfidenceThreshold is not defined, then any confidence is sufficient to add an edge
+		if (confidence >= entailmentConfidenceThreshold) return true; // if confidence >= threshold, then it is sufficient 
+		return false; // otherwise - it's not sufficient
+	}
+	
 	/** Return the corresponding EntailmentRelation if there is entailment (DecisionLabel.Entailment) candidateEntailingNode -> candidateEntailedNode
+	 * and the confidence is above entailmentConfidenceThreshold (if provided)
 	 * Return null otherwise 
 	 * @param candidateEntailingNode
 	 * @param candidateEntailedNode
@@ -128,9 +141,26 @@ should be clearly exposed in the Constructor.
 	protected EntailmentRelation getEntailmentRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode) throws GraphMergerException{	
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
 		EntailmentRelation r = getRelation(candidateEntailingNode, candidateEntailedNode);
-		if (r.getLabel().equals(DecisionLabel.Entailment)) return r;
+		logger.info("\t'"+candidateEntailingNode.getTextWithoutDoubleSpaces() +"'\t->\t'"+candidateEntailedNode.getTextWithoutDoubleSpaces()+"'\t"+r.getLabel().toString());
+		if (r.getLabel().is(DecisionLabel.Entailment)) {
+			if (isSufficientConfidence(r.getConfidence()))  return r;			
+		}
 		return null;
 	}
 
+	/**
+	 * @return the entailmentConfidenceThreshold
+	 */
+	public Double getEntailmentConfidenceThreshold() {
+		return entailmentConfidenceThreshold;
+	}
 
+	/**
+	 * @param entailmentConfidenceThreshold the entailmentConfidenceThreshold to set
+	 */
+	@Override
+	public void setEntailmentConfidenceThreshold(Double entailmentConfidenceThreshold) {
+		this.entailmentConfidenceThreshold = entailmentConfidenceThreshold;
+	}
+		
 }

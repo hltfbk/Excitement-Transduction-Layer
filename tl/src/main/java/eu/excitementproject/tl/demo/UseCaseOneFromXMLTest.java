@@ -16,7 +16,7 @@ import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
-import eu.excitementproject.eop.core.ImplCommonConfig;
+import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
@@ -42,7 +42,8 @@ public class UseCaseOneFromXMLTest {
 		BasicConfigurator.configure(); 
 		Logger.getRootLogger().setLevel(Level.INFO); 
 
-		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml");		
+		File configFile = new File("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml");
+
 		CommonConfig config = null;
 		CachedLAPAccess lap;
 		EDABasic<?> eda;
@@ -56,7 +57,7 @@ public class UseCaseOneFromXMLTest {
 //		};
 		
 		// with small example - Gil
-		String[] files = {"./src/test/resources/omq_testing/for_fragments.xml",};
+		String[] files = {"./src/test/resources/omq_testing/four_fragments.xml",};
 		
 		File f;
 
