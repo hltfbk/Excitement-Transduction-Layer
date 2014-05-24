@@ -50,7 +50,7 @@ public class KeywordBasedFragmentAnnotatorTest {
 			FragmentAnnotator frAnnot = new KeywordBasedFragmentAnnotator(lap); 
 
 
-			File f = new File("./src/test/resources/WP2_public_data_XML/keywordAnnotations_1.xml"); 		
+			File f = new File("./src/test/resources/WP2_public_data_XML/keywordAnnotations.xml"); 		
 
 			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
 			testlogger.info("The test file `" + f.getPath() + "'has " + iList.size() + " interactions in it."); 
