@@ -1,0 +1,144 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing								
+	it is too expensive	[193730.txt_1_0]						
+	its overpriced	[255958.txt_4_0]						
+								
+collapsed node #2 : 3 entailment unit(s) before editing								
+	It was not sufficient	[30724.txt_4_0]						
+	its limited	[255958.txt_3_0]						
+	little of it	[513573.txt_3_1]						
+								
+collapsed node #3 : 2 entailment unit(s) before editing								
+	This really has to be fixed	[137621.txt_4_0]						
+	currently it is a disgrace	[429450.txt_6_0]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing								
+	its boring	[379399.txt_3_0]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	they Are slow	[27.txt_3_0]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	very little of it	[513573.txt_3_0]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	its cold	[379399.txt_2_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	its poor	[255958.txt_2_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+its overpriced	2	->	its limited	3	No	0	0	
+its limited	3	->	its overpriced	2	No	0	0	
+								
+node pair #2:								
+its overpriced	2	->	currently it is a disgrace	2	No	0	0	
+currently it is a disgrace	2	->	its overpriced	2	No	0	0	
+								
+node pair #3:								
+its overpriced	2	->	its boring	1	No	0	0	
+its boring	1	->	its overpriced	2	No	0	0	
+								
+node pair #4:								
+its overpriced	2	->	they Are slow	1	No	0	0	
+they Are slow	1	->	its overpriced	2	No	0	0	
+								
+node pair #5:								
+its overpriced	2	->	very little of it	1	No	0	0	
+very little of it	1	->	its overpriced	2	No	0	0	
+								
+node pair #6:								
+its overpriced	2	->	its cold	1	No	0	0	
+its cold	1	->	its overpriced	2	No	0	0	
+								
+node pair #7:								
+its overpriced	2	->	its poor	1	No	0	0	
+its poor	1	->	its overpriced	2	No	0	0	
+								
+node pair #8:								
+currently it is a disgrace	2	->	its limited	3	Yes	0	0	
+its limited	3	->	currently it is a disgrace	2	No	0	0	
+								
+node pair #9:								
+its limited	3	->	its boring	1	No	0	0	
+its boring	1	->	its limited	3	No	0	0	
+								
+node pair #10:								
+its limited	3	->	they Are slow	1	No	0	0	
+they Are slow	1	->	its limited	3	No	0	0	
+								
+node pair #11:								
+very little of it	1	->	its limited	3	Yes	1	1	
+its limited	3	->	very little of it	1	No	-1	0	
+								
+node pair #12:								
+its limited	3	->	its cold	1	No	0	0	
+its cold	1	->	its limited	3	No	0	0	
+								
+node pair #13:								
+its limited	3	->	its poor	1	No	0	1	
+its poor	1	->	its limited	3	No	0	0	
+								
+node pair #14:								
+currently it is a disgrace	2	->	its boring	1	No	0	0	
+its boring	1	->	currently it is a disgrace	2	No	0	0	
+								
+node pair #15:								
+currently it is a disgrace	2	->	they Are slow	1	No	0	0	
+they Are slow	1	->	currently it is a disgrace	2	No	0	0	
+								
+node pair #16:								
+currently it is a disgrace	2	->	very little of it	1	No	0	0	
+very little of it	1	->	currently it is a disgrace	2	No	0	0	
+								
+node pair #17:								
+currently it is a disgrace	2	->	its cold	1	No	0	0	
+its cold	1	->	currently it is a disgrace	2	No	0	0	
+								
+node pair #18:								
+currently it is a disgrace	2	->	its poor	1	No	0	1	
+its poor	1	->	currently it is a disgrace	2	No	0	0	
+								
+node pair #19:								
+its boring	1	->	they Are slow	1	No	0	1	"when smth is boring, it's slow. But I'm not sure here"
+they Are slow	1	->	its boring	1	No	0	0	
+								
+node pair #20:								
+its boring	1	->	very little of it	1	No	0	0	
+very little of it	1	->	its boring	1	No	0	0	
+								
+node pair #21:								
+its boring	1	->	its cold	1	No	0	0	
+its cold	1	->	its boring	1	No	0	0	
+								
+node pair #22:								
+its boring	1	->	its poor	1	No	0	1	"Hesitate: maybe ""its poor"" does not express overall dissatisfaction with the quality of ""it"". "
+its poor	1	->	its boring	1	No	0	0	
+								
+node pair #23:								
+they Are slow	1	->	very little of it	1	No	0	0	
+very little of it	1	->	they Are slow	1	No	0	0	
+								
+node pair #24:								
+they Are slow	1	->	its cold	1	No	0	0	
+its cold	1	->	they Are slow	1	No	0	0	
+								
+node pair #25:								
+they Are slow	1	->	its poor	1	No	0	1	"Hesitate: maybe ""its poor"" does not express overall dissatisfaction with ""it"". "
+its poor	1	->	they Are slow	1	No	0	0	
+								
+node pair #26:								
+very little of it	1	->	its cold	1	No	0	0	
+its cold	1	->	very little of it	1	No	0	0	
+								
+node pair #27:								
+very little of it	1	->	its poor	1	No	0	1	
+its poor	1	->	very little of it	1	No	0	0	
+								
+node pair #28:								
+its cold	1	->	its poor	1	No	0	0	"Here I feel more like ""no"", since ""cold"" itself does not express dissatisfaction. But since we're in dissatisfaction context, I hesitate. On the other hand, in dissatisfaction context any statement should entail ""it's poor""…"
+its poor	1	->	its cold	1	No	0	0	

@@ -199,13 +199,16 @@ public class EquivalenceClass {
 	 * @return the generated string
 	 */
 	public String toDOT(){
-		String s = "\""+label.trim().replaceAll(" +", " ")+" (Total: "+this.getInteractionIds().size()+" interaction(s)):";
+		String s = "\""+label.trim().replaceAll(" +", " ")+" ["+this.getEntailmentUnits().size() +"]";
+		s+="\"";
+		
+/*		String s = "\""+label.trim().replaceAll(" +", " ")+" (Total: "+this.getInteractionIds().size()+" interaction(s)):";
 		for (EntailmentUnit eu : entailmentUnits){
 			//if (eu.getText().equals(label)) continue;
 			s+="\\n"+eu.getTextWithoutDoubleSpaces()+" ("+eu.getInteractionIds().size()+" interaction(s))";			
 		}
 		s+="\"";
-		return s;
+*/		return s;
 	}
 	
 
