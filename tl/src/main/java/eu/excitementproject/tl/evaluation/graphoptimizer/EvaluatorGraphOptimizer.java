@@ -14,6 +14,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
@@ -182,4 +183,14 @@ public class EvaluatorGraphOptimizer {
 		return false;
 	}
 	
+	public static EntailmentGraphRaw getDecollapsedGraph(EntailmentGraphCollapsed collapsedGraph){
+		EntailmentGraphRaw rg = new EntailmentGraphRaw();
+		for (EntailmentRelation edge : getAllEntailmentRelations(collapsedGraph)){
+			EntailmentUnit src = edge.getSource();
+			EntailmentUnit tgt = edge.getTarget();
+			rg.addVertex(src); rg.addVertex(tgt);
+			rg.addEdge(src, tgt, edge);
+		}
+		return rg;
+	}
 }

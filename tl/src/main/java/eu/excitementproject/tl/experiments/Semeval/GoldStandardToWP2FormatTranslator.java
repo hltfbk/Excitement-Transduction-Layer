@@ -15,6 +15,7 @@ import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 public class GoldStandardToWP2FormatTranslator {
@@ -94,6 +95,39 @@ public class GoldStandardToWP2FormatTranslator {
 		}
 	}
 	
+	public static boolean createWP2xml(String xmlFilename, EntailmentGraphRaw graph, Map<String,Set<String>> textToIdsMap, Map<String,String> nodeContentById){
+		
+		try {
+			String s = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<F_entailment_graph problem=\"no\" nodeNum=\""+String.valueOf(graph.vertexSet().size())+"\">\n";
+			//create node lines
+			for (EntailmentUnit node : graph.vertexSet()){
+				for (String id : textToIdsMap.get(node.getText())){
+					s+=nodeContentById.get(id);
+				}
+			}
+			
+			if (!graph.edgeSet().isEmpty()){ // if graph has edges
+				// add all edges from the graph
+				
+				// graph.applyTransitiveClosure(true); // un-comment if want transitive closure edges marked as "closure"
+				
+				// add edges to the file
+				for (EntailmentRelation edge : graph.edgeSet()){
+					s+=getWP2edge(edge, textToIdsMap);
+				}			
+			}
+			
+			s+="</F_entailment_graph>\n";
+			BufferedWriter writer = new BufferedWriter(new FileWriter(xmlFilename));
+			writer.write(s);
+			writer.close();
+			return true;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 	public static void createWP2Data(String gsAnnotationsDir){
 		File gsDir = new File(gsAnnotationsDir);
 		for(String clusterAnnotationDir: gsDir.list()){

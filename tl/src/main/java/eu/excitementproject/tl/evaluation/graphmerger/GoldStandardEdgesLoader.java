@@ -2,6 +2,7 @@ package eu.excitementproject.tl.evaluation.graphmerger;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -10,6 +11,12 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
@@ -17,6 +24,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+
+
+
+
+
+
 
 
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -51,6 +65,8 @@ public class GoldStandardEdgesLoader {
 
 	protected Map<String,EntailmentRelation> edges;
 	protected Map<String,String> nodeTextById;
+	protected Map<String,String> nodeContentById;
+	
 	/**
 	 * @return the nodeTextById
 	 */
@@ -95,6 +111,7 @@ public class GoldStandardEdgesLoader {
 		setMergedFileSuffix(withClosure);
 		edges = new HashMap<String,EntailmentRelation>();
 		nodeTextById = new HashMap<String,String>(); //[id] [text]
+		nodeContentById = new HashMap<String,String>(); //[id] [content]		
 		this.nodesOfInterest = nodesOfInterest;
 	}
 
@@ -233,7 +250,7 @@ public class GoldStandardEdgesLoader {
 					
 					// add nodes to the dictionary nodeTextById
 					for (int temp = 0; temp < nodes.getLength(); temp++) {    
-						Node xmlNode = nodes.item(temp);     
+						Node xmlNode = nodes.item(temp); 
 
 						Element nodeElement = (Element) xmlNode;
 						String id = nodeElement.getAttribute("id");
@@ -245,7 +262,8 @@ public class GoldStandardEdgesLoader {
 				       			if (nodesOfInterest!=null){
 				       				if (!nodesOfInterest.contains(text)) continue; // don't add nodes which are not of interest, if nodesOfInterest is not null
 				       			}
-							   	nodeTextById.put(id, text);				       			
+							   	nodeTextById.put(id, text);	
+							   	nodeContentById.put(id, "\t"+nodeToString(xmlNode));
 				       			//if (id.endsWith("_0")) System.out.println(text);
 				       			logger.debug("\t"+id+"\t"+text);
 				       		}
@@ -300,6 +318,10 @@ public class GoldStandardEdgesLoader {
 
    //	Methods for internal testing purposes
 	
+	public Map<String, String> getNodeContentById() {
+		return nodeContentById;
+	}
+
 	/** Generates a single string, which contains the gold standard edges in DOT format for visualization
 	 * @return the generated string
 	 */
@@ -419,7 +441,7 @@ public class GoldStandardEdgesLoader {
 					
 					// add nodes to the dictionary nodeTextById
 					for (int temp = 0; temp < nodes.getLength(); temp++) {    
-						Node xmlNode = nodes.item(temp);     
+						Node xmlNode = nodes.item(temp);  
 
 						Element nodeElement = (Element) xmlNode;
 						String id = nodeElement.getAttribute("id");
@@ -429,6 +451,7 @@ public class GoldStandardEdgesLoader {
 				       		if (child.getNodeName().equals("original_text")){
 							   	String text = child.getTextContent();
 							   	nodeTextById.put(id, text);	
+							   	nodeContentById.put(id, "\t"+nodeToString(xmlNode));
 							   	idsInThisFG.add(id);
 				       			logger.debug("\t"+id+"\t"+text);
 				       		}
@@ -486,5 +509,17 @@ public class GoldStandardEdgesLoader {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());
 				}		
 	}	
-	
+
+	private String nodeToString(Node node) {
+		StringWriter sw = new StringWriter();
+		try {
+		 Transformer t = TransformerFactory.newInstance().newTransformer();
+		 t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+		 t.setOutputProperty(OutputKeys.INDENT, "yes");
+		 t.transform(new DOMSource(node), new StreamResult(sw));
+		} catch (TransformerException te) {
+		 System.out.println("nodeToString Transformer Exception");
+		}
+		return sw.toString();
+		}
 }
