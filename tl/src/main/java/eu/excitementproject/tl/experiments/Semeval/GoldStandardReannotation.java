@@ -509,7 +509,7 @@ public class GoldStandardReannotation {
 		
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 		
-		String clusterName = "EMAIL0390";		
+		String clusterName = "EMAIL0010";		
 	//	String clusterName = "SPEECH0080";		
 
 	//	String set = "Test";
@@ -565,8 +565,35 @@ public class GoldStandardReannotation {
 
 			tr.loadReannotatedCollapsedGraph(txtFileReannotated, true);
 			
-			GoldStandardToWP2FormatTranslator.createWP2xml(txtFileReannotated.getAbsolutePath().replace(".txt", ".xml"), EvaluatorGraphOptimizer.getDecollapsedGraph(tr.ourCg), tr.textToIdsMap, tr.nodeContentById);
+			EntailmentGraphRaw decollapsedGraph = EvaluatorGraphOptimizer.getDecollapsedGraph(tr.ourCg);
+			GoldStandardToWP2FormatTranslator.createWP2xml(txtFileReannotated.getAbsolutePath().replace(".txt", "PlusClosure.xml"), decollapsedGraph, tr.textToIdsMap, tr.nodeContentById);
 		
+			System.out.println("Statistics:");
+			System.out.println("Cluster \t Nodes in FGs \t Edges in FGs \t coll nodes \t meta-nodes \t Avg size of meta-node \t Coll Edges \t raw Nodes \t raw Edges");			
+			System.out.print(clusterName+"\t");
+			System.out.print(tr.rfg.vertexSet().size()+"\t");
+			System.out.print(tr.rfg.edgeSet().size()+"\t");
+			System.out.print(tr.ourCg.vertexSet().size()+"\t");
+			
+			int metaNodes = 0;
+			double metaSize = 0;
+			for (EquivalenceClass eq : tr.ourCg.vertexSet()){
+				int size = eq.getEntailmentUnits().size();
+				if (size>1){
+					metaNodes++;
+					metaSize+=size;
+				}
+			}
+			if (metaNodes>0) metaSize/= metaNodes;
+
+			System.out.print(metaNodes+"\t");
+			System.out.print(metaSize+"\t");
+			
+			
+			System.out.print(tr.ourCg.edgeSet().size()+"\t");
+			System.out.print(decollapsedGraph.vertexSet().size()+"\t");
+			System.out.println(decollapsedGraph.edgeSet().size());
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

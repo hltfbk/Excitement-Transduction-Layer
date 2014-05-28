@@ -49,13 +49,15 @@ public class ConvertWP2PublicData {
 		// File names will be determined by "interaction name" (processWP2Data()), or 
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 //		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
-		dir = Paths.get("./src/test/resources/WP2_public_data/NICE_open/");
+		
+		String cluster="EMAIL0390";
+		dir = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_test/"+cluster+"/FragmentGraphs");
 
 		
 //		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag");
 //		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media"); 
-		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag"); 
-
+	//	outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag"); 
+		outputdir = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_test/"+cluster);
 		
 		// Actual call: use this for "per-fragment" XMI saving 
 		totalcount += processWP2DataPerFragment(dir, outputdir, "EN"); 
