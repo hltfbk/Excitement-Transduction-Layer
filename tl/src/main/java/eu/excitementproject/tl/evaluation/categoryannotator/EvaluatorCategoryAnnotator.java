@@ -3,7 +3,11 @@ package eu.excitementproject.tl.evaluation.categoryannotator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -76,6 +80,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
+import eu.excitementproject.tl.structures.search.PerNodeScore;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
@@ -129,7 +134,7 @@ public class EvaluatorCategoryAnnotator {
 	static int minTokenOccurrenceInCategories = 2;
     
 	static boolean tfidf = true;
-    static boolean LuceneSearch = true;
+    static boolean LuceneSearch = false;
     
     static int setup = 0;
     
@@ -139,9 +144,13 @@ public class EvaluatorCategoryAnnotator {
     static boolean trainEDA = false;
     static boolean processTrainingData = false;
 
-    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction    
+//    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction    
+    static String scoreCombination = "vsm"; //how to combine the scores for different fragments to a final score for the interaction    
 
+    static PrintWriter writer; 
+    	
 	public static void main(String[] args) {
+		
 		String inputFoldername = "./src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
 		String outputGraphFoldername = "./src/test/resources/sample_graphs/"; //output directory (for generated entailment graph)
 		String categoriesFilename = inputFoldername + "omq_public_categories.xml"; 
@@ -157,19 +166,38 @@ public class EvaluatorCategoryAnnotator {
 		EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setup);
 		
 		try {
-			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+			//eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
 			eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		writer.close();
 	}
 
 	EvaluatorCategoryAnnotator(int setup) {
 		setup(setup);		
+		try {
+			writer = new PrintWriter("C:/Temp/debugging"+System.currentTimeMillis()+".txt", "UTF-8");
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 
 	EvaluatorCategoryAnnotator() {
 		setup(1);		
+		try {
+			writer = new PrintWriter("C:/Temp/debugging"+System.currentTimeMillis()+".txt", "UTF-8");
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 	
 	/**
@@ -249,13 +277,18 @@ public class EvaluatorCategoryAnnotator {
 		} 			
 	}
 
-
-	/** OLD Method --> don't use; TODO: update or delete! 
-	 * @throws EntailmentGraphRawException */
-	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename, double thresholdForOptimizing) {
+	/**
+	 * 
+	 * @param inputFilename
+	 * @param outputDirname
+	 * @param configFilename
+	 * @return
+	 * @throws IOException 
+	 */
+	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename) throws IOException {
 		
+		@SuppressWarnings("unused")
 		UseCaseOneRunnerPrototype use1;
-		UseCaseTwoRunnerPrototype use2;
 		
 		// Read in all emails with their associated categories and split into train/test set
 		logger.info("Reading input " + inputFilename);
@@ -300,7 +333,21 @@ public class EvaluatorCategoryAnnotator {
 			eda.initialize(config);
 			logger.info("Initialized config.");
 			logger.info("LAP: " + lapForFragments.getComponentName());
-						
+
+			double threshold = 0.99;
+			
+			use1 = new UseCaseOneRunnerPrototype(lapForFragments, eda, 
+		    		fragmentAnnotatorForGraphBuilding, modifierAnnotator, 
+		    		fragmentGraphGenerator, graphMerger, graphOptimizer);
+			EntailmentGraphCollapsed graph = use1.buildCollapsedGraph(docsTrain, threshold);
+			logger.info("Built collapsed graph.");
+			
+			confidenceCalculator.computeCategoryConfidences(graph);
+			String outputFile = outputDirname + "/test.graph.xml";
+			XMLFileWriter.write(graph.toXML(), outputFile);			
+			graph = new EntailmentGraphCollapsed(new File(outputFile));
+
+			/**
 			//building fragment graphs
 			JCas cas = CASUtils.createNewInputCas();
 			List<Interaction> graphDocs = new ArrayList<Interaction>();
@@ -328,6 +375,19 @@ public class EvaluatorCategoryAnnotator {
 			XMLFileWriter.write(egc.toXML(), outputFile);					
 
 			//adding combined category confidences
+			confidenceCalculator.computeCategoryConfidences(graph);
+			logger.info("Computed and added category confidences.");
+			outputFile = outputDirname + "test.collapsedgraph_confidences.xml";
+			//XMLFileWriter.write(egc.toXML(), outputFile);			
+			//logger.info("Wrote collapsed graph with confidences to " + outputFile);
+			*/
+
+			/**
+			//reading previously built graph from file
+			egc = new EntailmentGraphCollapsed(new File(outputFile));
+			logger.info("Read collapsed graph with confidences from " + outputFile);
+			*/
+			/**
 			confidenceCalculator.computeCategoryConfidences(egc);
 			logger.info("Computed and added category confidences.");
 			outputFile = outputDirname + "test.collapsedgraph_confidences.xml";
@@ -337,10 +397,36 @@ public class EvaluatorCategoryAnnotator {
 			//reading previously built graph from file
 			egc = new EntailmentGraphCollapsed(new File(outputFile));
 			logger.info("Read collapsed graph with confidences from " + outputFile);
-
+			*/
+		
 			// Send each email in test data + graph to node use case 2 and have it annotated
 			int countPositive = 0;
 			for (Interaction doc : docsTest) {
+				/*
+				JCas cas;
+				cas = doc.createAndFillInputCAS();
+				use2 = new UseCaseTwoRunnerPrototype(lapForFragments, eda);
+				use2.annotateCategories(cas, graph);
+				*/
+				JCas cas = doc.createAndFillInputCAS();
+				fragmentAnnotatorForNewInput.annotateFragments(cas);
+				modifierAnnotator.annotateModifiers(cas);
+				//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+				Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
+				if (null != fragmentGraphs) {
+					logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+					Set<NodeMatch> matches = getMatches(graph, fragmentGraphs);	
+					//add category annotation to CAS
+					categoryAnnotator.addCategoryAnnotation(cas, matches);
+					logger.info("_________________________________________________________");
+					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+					logger.info("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
+					CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
+					
+					countPositive = compareDecisionsForInteraction(countPositive,
+							doc, decisions, graph, matches);				
+				}
+				/*
 //				JCas cas;
 				cas = doc.createAndFillInputCAS();
 				use2 = new UseCaseTwoRunnerPrototype(lapForFragments, eda);
@@ -352,6 +438,7 @@ public class EvaluatorCategoryAnnotator {
 				
 				countPositive = compareDecisionsForInteraction(countPositive,
 						doc, decisions);				
+				*/
 			}
 			
 			// Compute and print result	
@@ -366,7 +453,7 @@ public class EvaluatorCategoryAnnotator {
 			| FragmentGraphGeneratorException 
 			| ConfidenceCalculatorException 
 			| NodeMatcherException 
-			| CategoryAnnotatorException | DataReaderException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
+			| CategoryAnnotatorException | DataReaderException | EntailmentGraphCollapsedException | TransformerException e) {
 			e.printStackTrace();
 			return -1;
 		}
@@ -382,8 +469,8 @@ public class EvaluatorCategoryAnnotator {
 	 * @return
 	 */
 	private int compareDecisionsForInteraction(int countPositive,
-			Interaction doc, Set<CategoryDecision> decisions) {
-		return compareDecisionsForInteraction(countPositive, doc, decisions, "N/A");
+			Interaction doc, Set<CategoryDecision> decisions, EntailmentGraphCollapsed graph, Set<NodeMatch> matches) {
+		return compareDecisionsForInteraction(countPositive, doc, decisions, "N/A", graph, matches);
 	}
 	
 	/**
@@ -396,13 +483,14 @@ public class EvaluatorCategoryAnnotator {
 	 * @return
 	 */
 	private int compareDecisionsForInteraction(int countPositive,
-			Interaction doc, Set<CategoryDecision> decisions, String mostProbableCat) {
+			Interaction doc, Set<CategoryDecision> decisions, String mostProbableCat, 
+			EntailmentGraphCollapsed graph, Set<NodeMatch> matches) {
 		String bestCat = "";
 		logger.info("Number of decisions for interaction "+doc.getInteractionId()+": " + decisions.size());
-		bestCat = computeBestCat(decisions, mostProbableCat, doc.getCategory());
-		logger.info("Correct category: " + doc.getCategory());
+		bestCat = computeBestCat(decisions, mostProbableCat, doc.getCategories(), graph, matches);
+		logger.info("Correct category: " + doc.getCategoryString());
 		logger.info("Best category: " + bestCat);
-		if (doc.getCategory().equals(bestCat)) {
+		if ((new HashSet<String>(Arrays.asList(doc.getCategories())).contains(bestCat))) { //adapted to deal with multiple categories
 			countPositive++;
 		} 
 		return countPositive;
@@ -411,12 +499,18 @@ public class EvaluatorCategoryAnnotator {
 	/**
 	 * Computes the best category given the set of category decisions. 
 	 * 
+	 * In the "sum" implementation, we simply add up all confidences for a particular category, 
+	 * and pick the category with the highest overall score to be the best. 
+	 * 
+	 * In the "vsm" implementation we combine the scores based on the vector space model. 
+	 * 
 	 * @param doc
 	 * @param decisions
 	 * @param mostProbableCat
 	 * @return
 	 */
-	private String computeBestCat(Set<CategoryDecision> decisions, String mostProbableCat, String correctCat) {
+	private String computeBestCat(Set<CategoryDecision> decisions, String mostProbableCat, 
+			String[] correctCats, EntailmentGraphCollapsed graph, Set<NodeMatch> matches) {
 		logger.debug("Computing best category");
 		logger.debug("Number of decisions: " + decisions.size());
 		String bestCat;
@@ -432,6 +526,84 @@ public class EvaluatorCategoryAnnotator {
 				sum += decision.getConfidence();
 				categoryScores.put(category, sum);
 			}
+		} else if (scoreCombination.equals("vsm")) { //vector space model
+			//collect mention tf in query
+			HashMap<String,Integer> tfQueryMap = new HashMap<String,Integer>();
+			int count = 0;
+			for (NodeMatch match : matches) { //for each matching mention
+				String mentionText = match.getMention().getTextWithoutDoubleSpaces();
+				count = 1;
+				if (tfQueryMap.containsKey(mentionText)) {
+					count += tfQueryMap.get(mentionText); 
+				}
+				tfQueryMap.put(mentionText, count);
+			}
+			logger.debug("Collected tf for queries " + tfQueryMap.size());
+			
+			writer.println("Collected tf for queries:");
+			for (String query : tfQueryMap.keySet()) {
+				writer.println(query + " : " + tfQueryMap.get(query));
+			}
+			
+			HashMap<String,Double[]> categoryCosine = new HashMap<String,Double[]>();
+			double N = graph.getNumberOfCategories(); //overall number of categories
+			double sumQ2 = 0.0;
+			
+			for (NodeMatch match : matches) { //for each matching mention				
+
+				//get best-matching node for this mention
+				double maxScore = 0;
+				EquivalenceClass bestNode = null;
+				for (PerNodeScore perNodeScore : match.getScores()) {
+					double score = perNodeScore.getScore();
+					if (maxScore < score) {
+						maxScore = score;
+						bestNode = perNodeScore.getNode();
+					}
+				}
+				
+				writer.println("bestNode for match "+match.getMention().getTextWithoutDoubleSpaces()
+						+": " + bestNode.getLabel());
+				
+				//retrieve tfidf for "document" (category)
+				Map<String,Double> tfidfScoresForCategories = bestNode.getCategoryConfidences();
+				
+				//compute tfidf for query
+				double n = bestNode.getCategoryConfidences().size();
+				double idfForQuery = Math.log(N/n);
+				writer.println("number of category confidences on best node: " + n);
+				writer.println("idfForquery: " + idfForQuery);
+
+				//compute sums for computing cosine similarity of the query to each of the categories
+				Double[] cosineValues;
+				double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces());
+				double Q = tfForQuery*idfForQuery;
+				sumQ2 += Math.pow(Q, 2); //this part does not depend on the category!
+				
+				for (String category : bestNode.getCategoryConfidences().keySet()) { //for each category associated to this node
+					cosineValues = new Double[2];
+					double D = tfidfScoresForCategories.get(category);
+					double sumQD = Q*D;
+					double sumD2 = Math.pow(D, 2);
+					
+					if (categoryCosine.containsKey(category)) {
+						sumQD += categoryCosine.get(category)[0];
+						sumD2 += categoryCosine.get(category)[1];
+					}
+					cosineValues[0] = sumQD;
+					cosineValues[1] = sumD2;
+					categoryCosine.put(category, cosineValues);
+				}
+			}
+
+			//annotate category confidences in CAS based on cosine similarity (per document, not per mention!)
+			for (String category : categoryCosine.keySet()) { //for each matching EG node for this mention
+				Double[] cosineValues = categoryCosine.get(category);
+				writer.println("cosine values for category " + category + ": " + cosineValues[0] + ", " + cosineValues[1] + ", " + sumQ2);
+				Double cosQD = cosineValues[0] / ((Math.sqrt(cosineValues[1]) * Math.sqrt(sumQ2)));
+				categoryScores.put(category, cosQD.floatValue());					
+				writer.println(category + " : " + cosQD.floatValue());
+			}			
 		}
 		
 		// get the category with the highest value
@@ -442,12 +614,23 @@ public class EvaluatorCategoryAnnotator {
 		if (sortedMap.size() > 0) {
 			bestCat = sortedMap.keySet().iterator().next().toString();
 			logger.info("Best category: " + bestCat);
-			if (categoryScores.keySet().contains(correctCat)) logger.info("Computed confidence for correct category: " + categoryScores.get(correctCat));
-			else logger.info("Computed confidence for correct category: N/A");
+			writer.println("best category: " + bestCat + ", value: " + sortedMap.get(bestCat));
+			Set<String> correctCategories = new HashSet<String>(Arrays.asList(correctCats));
+			if (correctCategories.size() > 1) logger.warn("Contains more than one category!");
+			for (String correctCat : correctCategories) {
+				if (categoryScores.keySet().contains(correctCat)) {
+					logger.info("Computed confidence for correct category ("+correctCat+"): " + categoryScores.get(correctCat));
+					writer.println("Computed confidence for correct category ("+correctCat+"): " + categoryScores.get(correctCat));
+				}
+				else {
+					logger.info("Computed confidence for correct category ("+correctCat+"): N/A");
+					writer.println("Computed confidence for correct category ("+correctCat+"): N/A");
+				}
+			}
 		} else bestCat = mostProbableCat;
 		return bestCat;
 	}
-	
+		
 	/**
 	 * Runs three-fold cross-validation on the files found in the input directory. This directory must contain
 	 * exactly three email files (named "omq_public_[123]_emails.xml") plus exactly one TH pair file for each of these email
@@ -575,8 +758,16 @@ public class EvaluatorCategoryAnnotator {
 				int countPositive = 0;
 				
 				for (Interaction interaction : testDocs) {
-					JCas cas = annotateInteraction(graph, interaction);	
-					
+					JCas cas = interaction.createAndFillInputCAS();
+					fragmentAnnotatorForNewInput.annotateFragments(cas);
+					modifierAnnotator.annotateModifiers(cas);
+					//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+					Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
+					//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+					Set<NodeMatch> matches = getMatches(graph, fragmentGraphs);	
+					//add category annotation to CAS
+					categoryAnnotator.addCategoryAnnotation(cas, matches);
+
 					//print CAS category
 					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
@@ -586,14 +777,23 @@ public class EvaluatorCategoryAnnotator {
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
 		
 					countPositive = compareDecisionsForInteraction(countPositive,
-							interaction, decisions, mostProbableCat);				
+							interaction, decisions, mostProbableCat, graph, matches);				
 				}
 		    	logger.info("Count positive: " + countPositive);
-			    double accuracyInThisFold = ((double)countPositive / (double)testDocs.size());
+		    	double countTotal = countTotalNumberOfCategories(testDocs);
+			    double accuracyInThisFold = ((double)countPositive / countTotal);
 			    foldAccuracies.put(i, accuracyInThisFold);
 		    }	
 		    printResult(numberOfFolds, foldAccuracies);
 	    }			
+	}
+
+	private double countTotalNumberOfCategories(List<Interaction> testDocs) {
+		double count = 0;
+		for (Interaction i : testDocs) {
+			count += i.getCategories().length;
+		}
+		return count;
 	}
 
 	/**
@@ -640,6 +840,7 @@ public class EvaluatorCategoryAnnotator {
 
 	}
 
+	@SuppressWarnings("unused")
 	private Set<Interaction> reduceTrainingDataSize(
 			Set<Interaction> trainingDocs, int i) {
 		Set<Interaction> interactions = new HashSet<Interaction>();
@@ -668,6 +869,7 @@ public class EvaluatorCategoryAnnotator {
 	    }
 	    logger.info("Overall accurracy: " + (sumAccuracies / (double)numberOfFolds));
 	}
+	
 
 	/**
 	 * Annotate interaction using entailment graph
@@ -682,32 +884,32 @@ public class EvaluatorCategoryAnnotator {
 	 * @throws NodeMatcherException
 	 * @throws CategoryAnnotatorException
 	 */
-	private JCas annotateInteraction(EntailmentGraphCollapsed graph,
-			Interaction interaction) throws LAPException,
+	private Set<NodeMatch> getMatches(EntailmentGraphCollapsed graph,
+			Set<FragmentGraph> fragmentGraphs) throws LAPException,
 			FragmentAnnotatorException, ModifierAnnotatorException,
 			FragmentGraphGeneratorException, NodeMatcherException,
 			CategoryAnnotatorException {
-		JCas cas = interaction.createAndFillInputCAS();
-		fragmentAnnotatorForNewInput.annotateFragments(cas);
-		modifierAnnotator.annotateModifiers(cas);
-		//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-		Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
-		//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
-		
 		//call node matcher on each fragment graph
-		for (FragmentGraph fragmentGraph: fragmentGraphs) {
+		Set<NodeMatch> matches = new HashSet<NodeMatch>();
+		System.out.println("fragmentsGraphs: " + fragmentGraphs);
+		writer.println(fragmentGraphs.size() + "FGs");
+		List<FragmentGraph> fgList = new ArrayList<FragmentGraph>();
+		for (FragmentGraph fg : fragmentGraphs) {
+			fgList.add(fg);
+		}
+//		Collections.sort(fgList);
+		for (FragmentGraph fragmentGraph: fgList) {
 			logger.info("fragment graph: " + fragmentGraph.getCompleteStatement());
-			Set<NodeMatch> matches; 
+			writer.println("FG: " + fragmentGraph.getCompleteStatement());
 			if (LuceneSearch) {
-				matches = nodeMatcherWithIndex.findMatchingNodesInGraph(fragmentGraph);
+				matches.addAll(nodeMatcherWithIndex.findMatchingNodesInGraph(fragmentGraph));
 			} else {
-				matches = nodeMatcher.findMatchingNodesInGraph(fragmentGraph);
+				nodeMatcher = new NodeMatcherLongestOnly(graph);
+				matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 			}
 			logger.info("matches: " + matches.size());
-			//add category annotation to CAS
-			categoryAnnotator.addCategoryAnnotation(cas, matches);
 		}
-		return cas;
+		return matches;
 	}
 
 	/**
@@ -718,14 +920,17 @@ public class EvaluatorCategoryAnnotator {
 	 */
 	private String computeMostFrequentCategory(
 			List<Interaction> trainingDocs) {
-		Map<String, Float> categoryOccurrences = new HashMap<String,Float>();
+		Map<String, Float> categoryOccurrences = new HashMap<String, Float>();
 		for (Interaction interaction : trainingDocs) {
-			String cat = interaction.getCategory();
+			String[] cats = interaction.getCategories();
 			float occ = 1;
-			if (categoryOccurrences.containsKey(cat)) {
-				occ += categoryOccurrences.get(cat);
+			Set<String> catsSet = new HashSet<String>(Arrays.asList(cats));
+			for (String cat : catsSet) {
+				if (categoryOccurrences.containsKey(cat)) {
+					occ += categoryOccurrences.get(cat);
+				}
+				categoryOccurrences.put(cat, occ);
 			}
-			categoryOccurrences.put(cat, occ);
 		}
 		ValueComparator bvc =  new ValueComparator(categoryOccurrences);
 		Map<String,Float> sortedMap = new TreeMap<String,Float>(bvc);
@@ -772,6 +977,7 @@ public class EvaluatorCategoryAnnotator {
 	 * @return
 	 * @throws Exception 
 	 */
+	@SuppressWarnings("unused")
 	private EntailmentGraphCollapsed buildGraph(List<Interaction> graphDocs, File mergedGraphFile, int minOccurrence) throws Exception {
 		EntailmentGraphRaw egr = new EntailmentGraphRaw();
 		if (readMergedGraphFromFile) {
@@ -913,6 +1119,7 @@ public class EvaluatorCategoryAnnotator {
 	 * @throws Exception 
 	 */
 	public void runIncrementalEvaluation(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
+		
 		List<Double> accuracyPerRun = new ArrayList<Double>();
 		String documentsFilename = inputDataFoldername + "omq_public_1_emails.xml"; //TODO: replace 1 by "all" at some point
 		JCas cas = CASUtils.createNewInputCas();
@@ -924,6 +1131,14 @@ public class EvaluatorCategoryAnnotator {
 		logger.info("Reading documents from " + documentsFilename);	    		
 		List<Interaction> docs = new ArrayList<Interaction>();
 		docs.addAll(InteractionReader.readInteractionXML(new File(documentsFilename)));
+        Collections.sort(docs);
+        
+        /*
+        for (Interaction i : docs) {
+        	System.out.println(i.getInteractionId());
+        }
+        */
+        
 		Set<FragmentGraph> fgs = buildFragmentGraphs(docs, cas);
 		HashMap<String,Integer> tokenOccurrences = computeTokenOccurrences(fgs);
 
@@ -944,7 +1159,7 @@ public class EvaluatorCategoryAnnotator {
 		//Iterate through interactions, annotate each using existing graph and then add interaction to graph 
 		for (Interaction doc : docs) {	
 			logger.info("Processing doument " + run + " out of " + docs.size());
-			if (run > 15) break; //TODO: Remove (debugging only)
+			//if (run > 50) break; //TODO: Remove (debugging only)
 			//Annotate document and compare to manual annotation
 			logger.info("graph contains " + egc.vertexSet().size() + " nodes ");
 			mostProbableCat = computeMostFrequentCategory(egc); //compute most frequent category in graph
@@ -957,19 +1172,45 @@ public class EvaluatorCategoryAnnotator {
 				nodeMatcher = new NodeMatcherLongestOnly(egc);
 			}
 			
+			//Annotate interaction using graph
 			logger.info("annotating interaction " + doc.getInteractionId());
-			cas = annotateInteraction(egc, doc); //annotate interaction using graph
+			cas = doc.createAndFillInputCAS();
+			fragmentAnnotatorForNewInput.annotateFragments(cas);
+			modifierAnnotator.annotateModifiers(cas);
+			//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+			Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
+			//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+			writer.println(doc.getInteractionId() + " : ");
+			writer.println(fragmentGraphs.size() + " fragment graphs ");
+			Set<NodeMatch> matches = getMatches(egc, fragmentGraphs);	
+			writer.println(egc.vertexSet().size() + " nodes in graph");
+			writer.println(matches.size() + " matches");
+			for (NodeMatch nm : matches) {
+				writer.println("... " + nm.getMention());
+				writer.println("... " + nm.getScores().size());
+			}
+			
+			//add category annotation to CAS
+			categoryAnnotator.addCategoryAnnotation(cas, matches);
+
 	    	//Compare automatic to manual annotation
+			writer.println(cas.getDocumentText() + "");
+			writer.println(CASUtils.getCategoryAnnotationsInCAS(cas).size() + " category annotations");
+			
 			Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+			writer.println(decisions.size() + " decisions ");
+			
 			countPositive = compareDecisionsForInteraction(countPositive,
-					doc, decisions, mostProbableCat);	
+					doc, decisions, mostProbableCat, egc, matches);
+			
+			writer.println(doc.getInteractionId() + " : " + countPositive);
+			
 			double accuracy = (double) countPositive / (double) run;
 			logger.info("Accuracy in run " + run + ": " + accuracy);
 			accuracyPerRun.add(accuracy);
 			run++;
 			
 			//Add document to existing graph
-			Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
 			if (setup == 0) {
 				for (FragmentGraph fg : fragmentGraphs) { //just add the statement, no EDA call
 					egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
@@ -1009,6 +1250,7 @@ public class EvaluatorCategoryAnnotator {
 			//3. store graph in resources
 	}
 
+	@SuppressWarnings("unused")
 	private static Set<String> getGermaNetLexicon() throws LAPException, FragmentAnnotatorException, FileNotFoundException, XMLStreamException, IOException {
 		// check token annotation is there or not 
 		germanet = new GermaNet("D:/DFKI/EXCITEMENT/Linguistic Analysis/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML");

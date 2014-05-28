@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Ignore;
+//import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitementproject.eop.lap.LAPException;

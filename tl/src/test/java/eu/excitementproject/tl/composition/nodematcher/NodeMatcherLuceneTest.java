@@ -20,7 +20,7 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.search.NodeMatch;
-import eu.excitementproject.tl.structures.search.PerNodeScore;
+//import eu.excitementproject.tl.structures.search.PerNodeScore;
 
 public class NodeMatcherLuceneTest {
 

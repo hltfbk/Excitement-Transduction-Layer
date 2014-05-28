@@ -216,6 +216,7 @@ public class GoldStandardReannotation {
 		return pairId;
 	}
 	
+	@SuppressWarnings("unused")
 	private void createTxtForReannotation(EntailmentGraphCollapsed cg, File txtFile) throws EntailmentGraphCollapsedException, IOException{
 			if (cg==null){
 				System.out.println("Collapsed graph not loaded. Exiting.");
@@ -479,6 +480,7 @@ public class GoldStandardReannotation {
 			}			
 		}
 	
+	@SuppressWarnings("unused")
 	private boolean generateCollapsedGraphForFixedNodes(File inputFile) throws EntailmentGraphCollapsedException, IOException{
 		if (rg==null){
 			System.out.println("Raw graph not loaded. Exiting.");

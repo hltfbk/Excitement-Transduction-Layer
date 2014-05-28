@@ -15,7 +15,7 @@ import org.apache.lucene.util.Version;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.CategoryAnnotation;
-import eu.excitement.type.tl.CategoryDecision;
+//import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
@@ -51,7 +51,7 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorExcepti
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
+//import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
@@ -125,6 +125,7 @@ public class DemoUseCase2OMQGerman {
 		
 		long start = System.currentTimeMillis();
 		String xmlGraphFilename = xmlGraphFoldername + xmlDataFilename.replace(".xml", "") + "_graph.xml";
+		@SuppressWarnings("unused")
 		EntailmentGraphCollapsed graph = buildGraph(xmlGraphFilename);
 		long end = System.currentTimeMillis();
 		logger.info("Building graph took " + ((double)(end-start))/60000.0 + " minutes.");
@@ -140,6 +141,7 @@ public class DemoUseCase2OMQGerman {
 */			
 	}
 
+	@SuppressWarnings("unused")
 	private static JCas annotateIncomingEmail(EntailmentGraphCollapsed graph, String text)
 			throws LAPException, FragmentAnnotatorException,
 			ModifierAnnotatorException, FragmentGraphGeneratorException,

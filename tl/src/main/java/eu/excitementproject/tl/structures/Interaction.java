@@ -17,10 +17,10 @@ import eu.excitementproject.tl.laputils.CASUtils;
  */
 
 /**
- * @author Gil (modified by Kathrin to include relevantText)
+ * @author Gil (modified by Kathrin to include relevantText and to allow several categories)
  *
  */
-public class Interaction {
+public class Interaction implements Comparable<Interaction> {
 
 	/**
 	 * Constructor for the data type. This constructor is "full" one. 
@@ -42,7 +42,12 @@ public class Interaction {
 		this.provider= provider; 
 		this.interactionString = interactionString; 	
 		this.relevantText = null;
-		this.category = category; 
+		this.categoryString = category;
+		if (category == null) {
+			this.categories = null;
+		} else {
+			this.categories = category.split(",");
+		}
 		if (keywords == null) {
 			this.keywords = null;
 		} else {
@@ -52,7 +57,7 @@ public class Interaction {
 
 
 	/**
-	 * Constructor for the data type. This constructor is "full" one. 
+	 * Constructor for the data type. This constructor is "full" one (including relevantText). 
 	 * 
 	 * @param interactionString Whole interaction as one string. 
 	 * @param relevantText relevant text within the full string
@@ -62,7 +67,7 @@ public class Interaction {
 	 * @param category
 	 * @param keywords -- an array of keywords for the interaction 
 	 */
-	public Interaction(String interactionString, String relevantText, String langID, String interactionId, String category, String channel, String provider, String keywords)
+	public Interaction(String interactionString, String relevantText, String langID, String interactionId, String category, String channel, String provider, String keywords) 
 	{
 		this.lang = langID; 
 		this.interactionId = interactionId; 
@@ -70,7 +75,12 @@ public class Interaction {
 		this.provider= provider; 
 		this.interactionString = interactionString; 	
 		this.relevantText = relevantText;
-		this.category = category; 
+		this.categoryString = category;
+		if (category == null) {
+			this.categories = null;
+		} else {
+			this.categories = category.split(",");
+		}
 		if (keywords == null) {
 			this.keywords = null;
 		} else {
@@ -166,7 +176,7 @@ public class Interaction {
 		aJCas.reset(); 
 		aJCas.setDocumentLanguage(this.lang); 
 		aJCas.setDocumentText(this.interactionString); 
-		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.category);
+		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.categoryString);
 		CASUtils.addTLKeywords(aJCas, this.keywords);
 		
 		// TODO : do we need to add category metadata information 
@@ -188,7 +198,7 @@ public class Interaction {
 		} else {
 			aJCas.setDocumentText(this.interactionString); 
 		}
-		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.category);
+		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.categoryString);
 		CASUtils.addTLKeywords(aJCas, this.keywords);
 	}
 
@@ -236,14 +246,22 @@ public class Interaction {
 		return provider; 
 	}
 	
-	/** public getter for the category value 
+	/** public getter for the category value (String)
 	 * @return category 
 	 */
-	public final String getCategory()
+	public final String getCategoryString()
 	{
-		return category; 
+		return categoryString; 
 	}
 	
+	/** public getter for the category value (Array)
+	 * @return category 
+	 */
+	public final String[] getCategories()
+	{
+		return categories; 
+	}
+
 	public final String getInteractionId()
 	{
 		return interactionId; 
@@ -272,7 +290,12 @@ public class Interaction {
 	private final String interactionId; 
 	private final String channel; 
 	private final String provider; 
-	private final String category;
-	
+	private final String categoryString;
+	private final String[] categories;
 	private final String[] keywords;
+
+	@Override
+	public int compareTo(Interaction o) {
+		return this.interactionId.compareTo(o.interactionId);
+	}
 }

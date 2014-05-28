@@ -89,6 +89,20 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 	
 	
+	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda, 
+			FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator, 
+			FragmentGraphGenerator fragmentGraphGenerator, 
+			GraphMerger graphMerger, GraphOptimizer graphOptimizer) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
+		this.lap = lap;
+		this.eda = eda;
+
+		fragAnot = fragmentAnnotator;
+		modAnot = modifierAnnotator;
+		fragGen = fragmentGraphGenerator;
+		this.graphMerger = graphMerger;
+		collapseGraph = graphOptimizer;
+	}
+
 	private void initInterfaces() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
 		
 		fragAnot = new SentenceAsFragmentAnnotator(lap);
@@ -418,6 +432,6 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		System.out.println("INFO:NR_OF_NODES_CUMULATIVE = " + count); 
 		
 		fragAnot.annotateFragments(aJCas);
-//		modAnot.annotateModifiers(aJCas);
+		modAnot.annotateModifiers(aJCas);
 	}
 }

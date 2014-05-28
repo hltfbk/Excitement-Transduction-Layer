@@ -155,13 +155,21 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 */
 				// if one Region includes the other
 				
-//				logger.info("Comparing fragments: \n\t\tfrag: " + getCoveredSpan(frag) + "\n\t\tf: " + getCoveredSpan(f));
-				
+				logger.info("Comparing fragments: \n\t\tfrag: " + getCoveredSpan(frag) + "\n\t\tf: " + getCoveredSpan(f));
+						
 				if (frag.containsAll(f)) {
 					newFrags.remove(f);
 					newFrags.add(frag);
 					change = true;
-//					logger.info("\tCHANGED f with frag");
+					logger.info("\tCHANGED f with frag");
+				} else {
+					if (f.containsAll(frag)) {
+						newFrags.remove(frag);
+						newFrags.add(f);
+						change = true;
+						logger.info("\tCHANGED frag with f");
+					}
+				
 				}
 			}
 			if (! change) {

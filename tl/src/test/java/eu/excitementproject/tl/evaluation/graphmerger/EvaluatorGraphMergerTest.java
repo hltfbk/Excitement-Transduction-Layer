@@ -7,7 +7,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import eu.excitementproject.tl.demo.DemoUseCase1NICEEnglish;
+//import eu.excitementproject.tl.demo.DemoUseCase1NICEEnglish;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 
 public class EvaluatorGraphMergerTest {
