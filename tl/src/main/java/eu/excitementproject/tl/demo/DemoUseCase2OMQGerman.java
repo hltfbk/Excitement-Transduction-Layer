@@ -3,6 +3,7 @@ package eu.excitementproject.tl.demo;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -235,25 +236,27 @@ public class DemoUseCase2OMQGerman {
 				
 			//build fragment graphs from input data and merge them
 			Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
-			JCas cas = CASUtils.createNewInputCas();
 			eda.initialize(config);
 			GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
 			EntailmentGraphRaw egr = null;
 			for(Interaction i: docs) {
-				i.fillInputCAS(cas, relevantTextProvided); 
-				fragAnot.annotateFragments(cas);
-				if (cas.getAnnotationIndex(FragmentAnnotation.type).size() > 0) {
-					modAnot.annotateModifiers(cas);
-					logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-					fgs  = fragGen.generateFragmentGraphs(cas);
-					logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
-					egr = graphMerger.mergeGraphs(fgs, egr);
-					logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
-					String xmlMergedGraphFilename = xmlGraphFoldername + xmlDataFilename.replace(".xml", "") + "_merged_graph.xml";
-					XMLFileWriter.write(egr.toXML(), xmlMergedGraphFilename);			
-					logger.info("Wrote to file " + xmlMergedGraphFilename);
-				} else {
-					logger.error("No fragment annotation found!");
+				List<JCas> cases = i.createAndFillInputCASes(relevantTextProvided); 
+				for (int j=0; j<cases.size(); j++) {
+					JCas cas = cases.get(j);
+					fragAnot.annotateFragments(cas);
+					if (cas.getAnnotationIndex(FragmentAnnotation.type).size() > 0) {
+						modAnot.annotateModifiers(cas);
+						logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+						fgs  = fragGen.generateFragmentGraphs(cas);
+						logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
+						egr = graphMerger.mergeGraphs(fgs, egr);
+						logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
+						String xmlMergedGraphFilename = xmlGraphFoldername + xmlDataFilename.replace(".xml", "") + "_merged_graph.xml";
+						XMLFileWriter.write(egr.toXML(), xmlMergedGraphFilename);			
+						logger.info("Wrote to file " + xmlMergedGraphFilename);
+					} else {
+						logger.error("No fragment annotation found!");
+					}
 				}
 			}
 			

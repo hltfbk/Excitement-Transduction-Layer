@@ -136,7 +136,7 @@ public class EvaluatorCategoryAnnotator {
 	static boolean tfidf = true;
     static boolean LuceneSearch = false;
     
-    static int setup = 0;
+    static int setup = 1;
     
     static boolean readGraphFromFile = false;
     static boolean readMergedGraphFromFile = false;
@@ -144,6 +144,8 @@ public class EvaluatorCategoryAnnotator {
     static boolean trainEDA = false;
     static boolean processTrainingData = false;
 
+    static boolean relevantTextProvided = true;
+    
 //    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction    
     static String scoreCombination = "vsm"; //how to combine the scores for different fragments to a final score for the interaction    
 
@@ -151,8 +153,8 @@ public class EvaluatorCategoryAnnotator {
     	
 	public static void main(String[] args) {
 		
-		String inputFoldername = "./src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
-		String outputGraphFoldername = "./src/test/resources/sample_graphs/"; //output directory (for generated entailment graph)
+		String inputFoldername = "src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
+		String outputGraphFoldername = "src/test/resources/sample_graphs/"; //output directory (for generated entailment graph)
 		String categoriesFilename = inputFoldername + "omq_public_categories.xml"; 
 		
 		/*
@@ -1014,9 +1016,7 @@ public class EvaluatorCategoryAnnotator {
 			LAPException, TransformerException, EntailmentGraphRawException {
 		logger.info("Initialized config.");
 		
-		JCas cas = CASUtils.createNewInputCas();
-		
-		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, cas);
+		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs);
 		
 		if (setup == 0) {
 			int count = 0; 
@@ -1060,18 +1060,24 @@ public class EvaluatorCategoryAnnotator {
 		return egr; 
 	}
 
-	private Set<FragmentGraph> buildFragmentGraphs(List<Interaction> graphDocs,
-			JCas cas) throws FragmentAnnotatorException,
+	private Set<FragmentGraph> buildFragmentGraphs(List<Interaction> graphDocs) throws FragmentAnnotatorException,
 			ModifierAnnotatorException, FragmentGraphGeneratorException {
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
 		for(Interaction i: graphDocs) {
-			logger.info("relevantText: " + i.getRelevantText());
-			if (i.getRelevantText() == null) System.err.println("No relevant text found in interaction " + i.getInteractionId());
-			i.fillInputCAS(cas); 
-			fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
-			modifierAnnotator.annotateModifiers(cas);
-			logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-			fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
+			List<JCas> cases;
+			try {
+				cases = i.createAndFillInputCASes(relevantTextProvided);
+				for (int j=0; j<cases.size(); j++) {
+					JCas cas = cases.get(j);
+					fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
+					modifierAnnotator.annotateModifiers(cas);
+					logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+					fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
+				}			
+			} catch (LAPException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		logger.info("Built fragment graphs: " +fgs.size()+ " graphs.");
 		return fgs;
@@ -1139,7 +1145,7 @@ public class EvaluatorCategoryAnnotator {
         }
         */
         
-		Set<FragmentGraph> fgs = buildFragmentGraphs(docs, cas);
+		Set<FragmentGraph> fgs = buildFragmentGraphs(docs);
 		HashMap<String,Integer> tokenOccurrences = computeTokenOccurrences(fgs);
 
 		//Initialize graph with category texts (assuming they are available beforehand)

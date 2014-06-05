@@ -32,7 +32,7 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  */
 public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	
-	static Logger logger = Logger.getLogger(NodeMatcherLuceneSimple.class.getName());
+	static Logger logger = Logger.getLogger(NodeMatcherLongestOnly.class.getName());
 	
 	private EntailmentGraphCollapsed entailmentGraph;
 	

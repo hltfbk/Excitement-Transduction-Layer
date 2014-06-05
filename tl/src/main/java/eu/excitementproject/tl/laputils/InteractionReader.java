@@ -1,27 +1,30 @@
 package eu.excitementproject.tl.laputils;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node; 
-import org.xml.sax.SAXException;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.structures.Interaction;
+import eu.excitementproject.tl.structures.RelevantText;
 
 /**
  * 
@@ -110,7 +113,7 @@ public final class InteractionReader {
 			
 			NodeList texts = oneInteraction.getElementsByTagName("text");
 			String interactionText = "";
-			String relevantText = "";
+			List<RelevantText> relevantTexts = new ArrayList<RelevantText>();
 			
 			if (texts.item(0).getChildNodes().getLength() == 1) { //the usual case: just one text  
 				interactionText = oneInteraction.getElementsByTagName("text").item(0).getFirstChild().getNodeValue(); 				
@@ -121,7 +124,11 @@ public final class InteractionReader {
 					Node childNode = children.item(k);
 					interactionText += childNode.getTextContent();
 					if (childNode.getNodeName().equals("relevantText")) {
-						relevantText += childNode.getTextContent(); 
+						RelevantText relevantText = new RelevantText();
+						relevantText.setText(childNode.getTextContent());
+						Element e = (Element)childNode;
+						relevantText.setGoldCategory(e.getAttribute("goldCategory"));
+						relevantTexts.add(relevantText);
 					}
 				}
 			}			
@@ -151,7 +158,7 @@ public final class InteractionReader {
 				interactionId = idval.getNodeValue(); 
 			}
 			
-			Interaction interaction = new Interaction(interactionText, relevantText, lang, interactionId, category, channel, provider, keywords); 
+			Interaction interaction = new Interaction(interactionText, relevantTexts, lang, interactionId, category, channel, provider, keywords); 
 
 			interactionList.add(interaction); 			
 		}
