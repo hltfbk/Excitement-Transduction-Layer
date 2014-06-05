@@ -265,8 +265,8 @@ public class InteractionReaderTest {
 		File f = new File("./src/test/resources/WP2_public_data_XML/OMQ/omq_public_1_emails.xml"); 		
 		try {
 			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
-			assertTrue(iList.get(0).getRelevantText().startsWith("Ich habe jetzt einen neuen PC mit Windows7 und"));			
-			assertTrue(iList.get(0).getRelevantText().endsWith("kompatibel."));
+			assertTrue(iList.get(0).getRelevantTexts().get(0).getText().startsWith("Ich habe jetzt einen neuen PC mit Windows7 und"));			
+			assertTrue(iList.get(0).getRelevantTexts().get(0).getText().endsWith("kompatibel."));
 		}
 		catch (Exception e)
 		{
