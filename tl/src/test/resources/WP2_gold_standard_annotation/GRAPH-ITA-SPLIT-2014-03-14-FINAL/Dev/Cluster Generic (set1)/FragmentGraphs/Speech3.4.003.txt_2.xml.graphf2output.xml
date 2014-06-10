@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="Speech3.4.003.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech3.4.003.txt" implicit_context="" focus="444" implicit_focus="">
+        <original_text>A volte mi si blocca il 444</original_text>
+        <correct_text> </correct_text>
+        <modifiers>A voltepoz=0 1</modifiers>
+    </node>
+    <node id="Speech3.4.003.txt_2_1" implicit_statement="FALSE" modality="FALSE" explicit_context="Speech3.4.003.txt" implicit_context="" focus="444" implicit_focus="">
+        <original_text>mi si blocca il 444</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="Speech3.4.003.txt_2_0-Speech3.4.003.txt_2_1" source="Speech3.4.003.txt_2_0" target="Speech3.4.003.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="Speech3.4.003.txt_2_0-Speech3.4.003.txt_2_1" source="Speech3.4.003.txt_2_0" target="Speech3.4.003.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

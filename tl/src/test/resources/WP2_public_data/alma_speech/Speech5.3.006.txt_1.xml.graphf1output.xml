@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="6">
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="Speech5.3.006.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.3.006.txt_1_0">
+        <original_text>TELEFONIAX molte volte e ’ una delusione per la consegna dei cellulari richiesti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>molte voltepoz=1 2;per la consegna dei cellularipoz=7 8 9 10 11;richiestipoz=12</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="Speech5.3.006.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.3.006.txt_1_1">
+        <original_text>TELEFONIAX e ’ una delusione per la consegna dei cellulari richiesti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per la consegna dei cellularipoz=7 8 9 10 11;richiestipoz=12</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="Speech5.3.006.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.3.006.txt_1_2">
+        <original_text>TELEFONIAX molte volte e ’ una delusione per la consegna dei cellulari</original_text>
+        <correct_text> </correct_text>
+        <modifiers>molte voltepoz=1 2;per la consegna dei cellularipoz=7 8 9 10 11</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="Speech5.3.006.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.3.006.txt_1_3">
+        <original_text>TELEFONIAX e ’ una delusione per la consegna dei cellulari</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per la consegna dei cellularipoz=7 8 9 10 11</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="Speech5.3.006.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.3.006.txt_1_4">
+        <original_text>TELEFONIAX molte volte e ’ una delusione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>molte voltepoz=1 2</modifiers>
+    </node>
+    <node implicit_focus="" focus="TELEFONIAX" implicit_context="" explicit_context="Speech5.3.006.txt" modality="FALSE" implicit_statement="FALSE" id="Speech5.3.006.txt_1_5">
+        <original_text>TELEFONIAX e ’ una delusione</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="Speech5.3.006.txt_1_1" source="Speech5.3.006.txt_1_0" id="Speech5.3.006.txt_1_0-Speech5.3.006.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_1" source="Speech5.3.006.txt_1_0" id="Speech5.3.006.txt_1_0-Speech5.3.006.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_2" source="Speech5.3.006.txt_1_0" id="Speech5.3.006.txt_1_0-Speech5.3.006.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_2" source="Speech5.3.006.txt_1_0" id="Speech5.3.006.txt_1_0-Speech5.3.006.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_3" source="Speech5.3.006.txt_1_2" id="Speech5.3.006.txt_1_2-Speech5.3.006.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_3" source="Speech5.3.006.txt_1_1" id="Speech5.3.006.txt_1_1-Speech5.3.006.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_3" source="Speech5.3.006.txt_1_1" id="Speech5.3.006.txt_1_1-Speech5.3.006.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_3" source="Speech5.3.006.txt_1_2" id="Speech5.3.006.txt_1_2-Speech5.3.006.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_3" source="Speech5.3.006.txt_1_0" id="Speech5.3.006.txt_1_0-Speech5.3.006.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_4" source="Speech5.3.006.txt_1_2" id="Speech5.3.006.txt_1_2-Speech5.3.006.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_4" source="Speech5.3.006.txt_1_2" id="Speech5.3.006.txt_1_2-Speech5.3.006.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_4" source="Speech5.3.006.txt_1_0" id="Speech5.3.006.txt_1_0-Speech5.3.006.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_5" source="Speech5.3.006.txt_1_4" id="Speech5.3.006.txt_1_4-Speech5.3.006.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_5" source="Speech5.3.006.txt_1_3" id="Speech5.3.006.txt_1_3-Speech5.3.006.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_5" source="Speech5.3.006.txt_1_3" id="Speech5.3.006.txt_1_3-Speech5.3.006.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_5" source="Speech5.3.006.txt_1_4" id="Speech5.3.006.txt_1_4-Speech5.3.006.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_5" source="Speech5.3.006.txt_1_2" id="Speech5.3.006.txt_1_2-Speech5.3.006.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_5" source="Speech5.3.006.txt_1_0" id="Speech5.3.006.txt_1_0-Speech5.3.006.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech5.3.006.txt_1_5" source="Speech5.3.006.txt_1_1" id="Speech5.3.006.txt_1_1-Speech5.3.006.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

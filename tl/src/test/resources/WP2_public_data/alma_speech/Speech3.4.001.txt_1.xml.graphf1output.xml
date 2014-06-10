@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node implicit_focus="" focus="PROMOCONTEGGIO" implicit_context="" explicit_context="Speech3.4.001.txt" modality="TRUE" implicit_statement="FALSE" id="Speech3.4.001.txt_1_0">
+        <original_text>da ieri che tento il PROMOCONTEGGIO e mi dice che non sono iscritto</original_text>
+        <correct_text> </correct_text>
+        <modifiers>che tento il PROMOCONTEGGIO epoz=2 3 4 5 6;da ieripoz=0 1</modifiers>
+    </node>
+    <node implicit_focus="" focus="PROMOCONTEGGIO" implicit_context="" explicit_context="Speech3.4.001.txt" modality="TRUE" implicit_statement="FALSE" id="Speech3.4.001.txt_1_1">
+        <original_text>da ieri mi dice che non sono iscritto</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da ieri chepoz=0 1</modifiers>
+    </node>
+    <node implicit_focus="" focus="PROMOCONTEGGIO" implicit_context="" explicit_context="Speech3.4.001.txt" modality="TRUE" implicit_statement="FALSE" id="Speech3.4.001.txt_1_2">
+        <original_text>tento il PROMOCONTEGGIO e mi dice che non sono iscritto</original_text>
+        <correct_text> </correct_text>
+        <modifiers>che tento il PROMOCONTEGGIO epoz=2 3 4 5 6</modifiers>
+    </node>
+    <node implicit_focus="" focus="PROMOCONTEGGIO" implicit_context="" explicit_context="Speech3.4.001.txt" modality="" implicit_statement="FALSE" id="Speech3.4.001.txt_1_3">
+        <original_text>mi dice che non sono iscritto</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge target="Speech3.4.001.txt_1_1" source="Speech3.4.001.txt_1_0" id="Speech3.4.001.txt_1_0-Speech3.4.001.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech3.4.001.txt_1_1" source="Speech3.4.001.txt_1_0" id="Speech3.4.001.txt_1_0-Speech3.4.001.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech3.4.001.txt_1_2" source="Speech3.4.001.txt_1_0" id="Speech3.4.001.txt_1_0-Speech3.4.001.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech3.4.001.txt_1_2" source="Speech3.4.001.txt_1_0" id="Speech3.4.001.txt_1_0-Speech3.4.001.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech3.4.001.txt_1_3" source="Speech3.4.001.txt_1_2" id="Speech3.4.001.txt_1_2-Speech3.4.001.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech3.4.001.txt_1_3" source="Speech3.4.001.txt_1_1" id="Speech3.4.001.txt_1_1-Speech3.4.001.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge target="Speech3.4.001.txt_1_3" source="Speech3.4.001.txt_1_1" id="Speech3.4.001.txt_1_1-Speech3.4.001.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech3.4.001.txt_1_3" source="Speech3.4.001.txt_1_2" id="Speech3.4.001.txt_1_2-Speech3.4.001.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge target="Speech3.4.001.txt_1_3" source="Speech3.4.001.txt_1_0" id="Speech3.4.001.txt_1_0-Speech3.4.001.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="0155.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0155.txt" implicit_context="" focus="pagare" implicit_focus="">
+        <original_text>devo pagare x un servizio che non mi avete mai attivato</original_text>
+        <correct_text>devo pagare per un servizio che non mi avete mai attivato</correct_text>
+        <modifiers>che non mi avetepoz=5 6 7 8</modifiers>
+    </node>
+    <node id="0155.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0155.txt" implicit_context="" focus="pagare" implicit_focus="">
+        <original_text>devo pagare x un servizio mai attivato</original_text>
+        <correct_text>devo pagare per un servizio mai attivato</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0155.txt_1_0-0155.txt_1_1" source="0155.txt_1_0" target="0155.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0155.txt_1_0-0155.txt_1_1" source="0155.txt_1_0" target="0155.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

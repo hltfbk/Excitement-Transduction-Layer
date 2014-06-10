@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<provider>OMQ</provider>
+<channel>email</channel>
+<language>DE</language>
+<interactions>
+
+
+		<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>160</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>57</category>
+		<keyword>Specificationsheet,Textbausteine,angezeigt,Sprechblase</keyword>
+		</metadata>
+		<text><![CDATA[Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen. Dieser
+ist nun abgesprungen! Danke für eine solch toll funtionierende Technik ich bin stinkesauer!
+Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen! Ich bitte um eine Antwort die nicht wieder
+21 Tage dauert!
+
+    ]]></text>
+		</interaction>
+	
+	
+	
+		<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>339</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>57</category>
+		<keyword>detailsheet,Calibri-Texte,Sprechblasen,ersetzt</keyword>
+		</metadata>
+		<text><![CDATA[auf meinem detailsheet http://www.rhein-main-versand.de sind seit gestern
+abend einige Calibri-Texte durch blaue Sprechblasen(?!) ersetzt, u.a. auch das
+Impressum - im lokalen specificationsheet-creator erscheinen die texte aber korrekt und bereit
+zur Freischaltung - würde mich riesig freuenm, wenn Sie die blauen Sprechblasen
+wieder durch die entsprechenden Texte ersetzen könnten :)
+
+    ]]></text>
+		</interaction>
+	
+	<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>286</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>57</category>
+		<keyword>verwalten,Sammlungen,Buttons,Auswahl</keyword>
+		</metadata>
+		<text><![CDATA[>
+Sehr geehrte Damen und Herren, 
+
+leider kann ich ab heute nicht mehr meine Sammlungen verwalten.
+Es tut sich bei Auswahl des entsprechenden Buttons gar nichts mehr.
+
+Können Sie diesen Fehler beheben?
+
+Mit freundlichen Grüßen
+
+Kruksel Gueney
+
+    ]]></text>
+	</interaction>
+	
+	
+	
+	<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>535</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>84</category>
+		<keyword>Kartenleser,eingelesen,Schedulingview,erscheinen,Bestellnummernfelder</keyword>
+		</metadata>
+		<text><![CDATA[>
+Zieht man bei der Version 13 Daten und Prozesse, die mit dem selben Kartenleser eingelesen
+wurden, per Mouse in das Schedulingview, erscheinen die Prozess-Dateien entweder gar nicht
+oder ohne die Bestellnummernfelder, die mit den Daten importiert wurden. 
+Es ist uns erst nach mehrfachem Versuch geglückt, die Daten sowie die Prozesse mit 
+Bestellnummer in ein neues Projekt zu laden.
+
+    ]]></text>
+	</interaction>
+	
+	
+	<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>358</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>84</category>
+		<keyword>Bestellnummernzeile,leer,CASH-Erstellungen, DAT-Verfahren, importieren</keyword>
+		</metadata>
+		<text><![CDATA[>
+Hallo ans Team,
+ich bin (immer noch) begeisterter Anwender des Sfc 2008/2009 neo, daher brauche ich normalerweise keine neue Version. Neugierig geworden habe ich jetzt die neueste Version aufgespielt. Leider kann ich wie bislang problemlos möglich keine CASH-Erstellungen im DAT-Verfahren importieren, die Bestellnummernzeile bleibt leer (ZD-Aufnahmen funktionieren). 8-stellige Bestellnummern importiert er nur als Ascii (was natürlich bei CWVEMX-Dateien mit 8-stelliger Bestellnummer wie von Solarmobile-Datenscannern katastrophal ist).. Was mache ich verkehrt? Bei Sfc 2008/2009 war alles problemlos möglich..(natürlich kein CWVEMX-Dateiimport)
+Herzlichen Dank für eine Antwort und nochmals Glückwunsch zum wirklich fantastiscvhen SfC 2008/2009 !!
+
+Beste Grüße
+Emil Bagg
+
+    ]]></text>
+	</interaction>
+	
+	
+	<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>159</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>84</category>
+		<keyword>Verkaufsobjekte,zuordnen,Bestellnummer,Prozessbestellnummern,sehen</keyword>
+		</metadata>
+		<text><![CDATA[>
+Installation Produkte im OFFICE Katalog WH firstclass - Umstieg von Produkte im IT und OFFICE Katalog 12 firstclass. Aktuell sind beide Versionen installiert. Unter der neuen Version 14 gelingt es nicht, Verkaufsobjekte eine Bestellnummer zu zuordnen ("normale" XLS-Statistiken in der separaten Bestellnummernzeile o.k. und unter der Version 12 sind auch die Prozessbestellnummern zu sehen)
+Was ist anders als in der Version 12.
+PC mit Windows 7 prof, Temtech-Scanner, die Prozesse (npf-Dateien) stammen von Solarmobile DFT-H63.
+Soeben entdeckt: Import von Salesdateien ohne Bestellnummer - PSEarch runtergeladen
+
+    ]]></text>
+	</interaction>
+	
+	
+	
+	<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>195</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>32</category>
+		<keyword>Brennversuch,Fehlermeldung,wmembank.dll</keyword>
+		</metadata>
+		<text><![CDATA[>
+
+Leider habe ich jetzt Produkte im IT u. OFFICE Katalog 13 Firstclass.
+Einige Artikelprozesse habe ich auch brennen können. Beim letzte Brennversuch kam aber folgende
+Fehlermeldung:
+Problem in Klasse "wmembank.dll" (Suchadresse:Ox83708447) an Adresse 6x8e80fcre
+Was  kann ich tun? Ich habe versucht das Programm zu reparieren, kein Erfolg. Die Daten
+auf Produkte  ...10, welches sich noch auf dem Computer befindet ist offensichtlich nicht
+möglich um sie dort zu brenne.
+
+    ]]></text>
+	</interaction>
+	
+	<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>300</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>32</category>
+		<keyword>gebrannt,Fehlermeldung,wmembank.dll</keyword>
+		</metadata>
+		<text><![CDATA[>
+
+Nachdem ein paarmal die DVD`s richtig gebrannt sind kommt jetzt nach einiger Zeit immer folgende Fehlermeldung:
+Problem in Klasse "wmembank.dll" (Suchadresse:Ox28111570) an Adresse 6x8e80fcre
+Was kann ich unternehmen?
+Warum kann ich die Produkte auf die noch bestehende Produkte im IT.......9 nicht übertragen. Dort lief alles besser!
+
+    ]]></text>
+	</interaction>
+	
+	<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>272</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>32</category>
+		<keyword>brennen,Produktpreview,Fehler,wmembank.dll</keyword>
+		</metadata>
+		<text><![CDATA[>
+
+Habe mehrmals versucht meine Produktpreview zu brennen bei dem Disc Image kommt jedesmal Fehler.
+Problem in Klasse "wmembank.dll" (Ladeadresse:7X0f4d0124)
+an Adresse Ox6ffcre Exception 6Xd3382563
+ACCESS_FORBIDDEN. Habe Fehlerprotokoll auch gesendet.
+
+Habe das programm neu und 1. mal versucht zu brennen.
+verschlüsselung läuft ca. 2 Std.
+
+Ist mir bei meiner Vorversion Warehouse 12 nicht passiert.
+habe Produkte,Prozesse und Statistiken verwendet.
+
+    ]]></text>
+	</interaction>
+
+</interactions>
+</dataset>

@@ -5,7 +5,7 @@
 target/
 tl/target/
 tl/src/test/outputs/
-tl/src/test/resources/
+#tl/src/test/resources/
 *~
 
 # Package Files #

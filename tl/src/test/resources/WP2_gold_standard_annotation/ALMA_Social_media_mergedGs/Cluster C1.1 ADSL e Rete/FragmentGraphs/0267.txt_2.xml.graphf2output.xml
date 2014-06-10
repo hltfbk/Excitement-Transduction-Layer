@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node id="0267.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0267.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>a Cerignola FG metà della città non riceve segnale TELEFONIAX dalle 19 di ieri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a Cerignola FG metà della cittàpoz=0 1 2 3 4 5;TELEFONIAXpoz=9;dalle 19 di ieripoz=10 11 12 13</modifiers>
+    </node>
+    <node id="0267.txt_2_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0267.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>non riceve segnale TELEFONIAX dalle 19 di ieri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>TELEFONIAXpoz=9;dalle 19 di ieripoz=10 11 12 13</modifiers>
+    </node>
+    <node id="0267.txt_2_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0267.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>a Cerignola FG metà della città non riceve segnale dalle 19 di ieri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a Cerignola FG metà della cittàpoz=0 1 2 3 4 5;dalle 19 di ieripoz=10 11 12 13</modifiers>
+    </node>
+    <node id="0267.txt_2_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0267.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>a Cerignola FG metà della città non riceve segnale TELEFONIAX</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a Cerignola FG metà della cittàpoz=0 1 2 3 4 5;TELEFONIAXpoz=9</modifiers>
+    </node>
+    <node id="0267.txt_2_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0267.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>non riceve segnale dalle 19 di ieri</original_text>
+        <correct_text> </correct_text>
+        <modifiers>dalle 19 di ieripoz=10 11 12 13</modifiers>
+    </node>
+    <node id="0267.txt_2_5" implicit_statement="FALSE" modality="FALSE" explicit_context="0267.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>non riceve segnale TELEFONIAX</original_text>
+        <correct_text> </correct_text>
+        <modifiers>TELEFONIAXpoz=9</modifiers>
+    </node>
+    <node id="0267.txt_2_6" implicit_statement="FALSE" modality="FALSE" explicit_context="0267.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>a Cerignola FG metà della città non riceve segnale</original_text>
+        <correct_text> </correct_text>
+        <modifiers>a Cerignola FG metà della cittàpoz=0 1 2 3 4 5</modifiers>
+    </node>
+    <node id="0267.txt_2_7" implicit_statement="FALSE" modality="FALSE" explicit_context="0267.txt" implicit_context="" focus="segnale" implicit_focus="">
+        <original_text>non riceve segnale</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0267.txt_2_0-0267.txt_2_1" source="0267.txt_2_0" target="0267.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_1" source="0267.txt_2_0" target="0267.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_2" source="0267.txt_2_0" target="0267.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_2" source="0267.txt_2_0" target="0267.txt_2_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_3" source="0267.txt_2_0" target="0267.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_3" source="0267.txt_2_0" target="0267.txt_2_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_2-0267.txt_2_4" source="0267.txt_2_2" target="0267.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_1-0267.txt_2_4" source="0267.txt_2_1" target="0267.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_1-0267.txt_2_4" source="0267.txt_2_1" target="0267.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_2-0267.txt_2_4" source="0267.txt_2_2" target="0267.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_4" source="0267.txt_2_0" target="0267.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_3-0267.txt_2_5" source="0267.txt_2_3" target="0267.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_1-0267.txt_2_5" source="0267.txt_2_1" target="0267.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_1-0267.txt_2_5" source="0267.txt_2_1" target="0267.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_3-0267.txt_2_5" source="0267.txt_2_3" target="0267.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_5" source="0267.txt_2_0" target="0267.txt_2_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_3-0267.txt_2_6" source="0267.txt_2_3" target="0267.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_2-0267.txt_2_6" source="0267.txt_2_2" target="0267.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_2-0267.txt_2_6" source="0267.txt_2_2" target="0267.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_3-0267.txt_2_6" source="0267.txt_2_3" target="0267.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_6" source="0267.txt_2_0" target="0267.txt_2_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_6-0267.txt_2_7" source="0267.txt_2_6" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_5-0267.txt_2_7" source="0267.txt_2_5" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_4-0267.txt_2_7" source="0267.txt_2_4" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_4-0267.txt_2_7" source="0267.txt_2_4" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_5-0267.txt_2_7" source="0267.txt_2_5" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_6-0267.txt_2_7" source="0267.txt_2_6" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_2-0267.txt_2_7" source="0267.txt_2_2" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_3-0267.txt_2_7" source="0267.txt_2_3" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_0-0267.txt_2_7" source="0267.txt_2_0" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0267.txt_2_1-0267.txt_2_7" source="0267.txt_2_1" target="0267.txt_2_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collapsedGraph>
+	<equivalenceClassNode label="needs      large luggage space ">
+		<entailmentUnit level="0"
+			text="    little baggage space           ">
+			<completeStatement text="too little baggage space on trains " />
+			<entailmentUnitMention categoryId="" level="0"
+				text="    little baggage space           " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+		<entailmentUnit level="0"
+			text="       confortable except luggage space ">
+			<completeStatement text="Almost confortable except luggage space " />
+			<entailmentUnitMention categoryId="" level="0"
+				text="       confortable except luggage space " />
+			<interactionId id="475555.txt" />
+		</entailmentUnit>
+		<entailmentUnit level="0" text="needs      large luggage space ">
+			<completeStatement text="needs more large luggage space " />
+			<entailmentUnitMention categoryId="" level="0"
+				text="needs      large luggage space " />
+			<interactionId id="415044.txt" />
+		</entailmentUnit>
+	</equivalenceClassNode>
+	<equivalenceClassNode label="needs more large luggage space ">
+		<entailmentUnit level="1"
+			text="Almost confortable except luggage space ">
+			<completeStatement text="Almost confortable except luggage space " />
+			<entailmentUnitMention categoryId="" level="1"
+				text="Almost confortable except luggage space " />
+			<interactionId id="475555.txt" />
+		</entailmentUnit>
+		<entailmentUnit level="1" text="needs more large luggage space ">
+			<completeStatement text="needs more large luggage space " />
+			<entailmentUnitMention categoryId="" level="1"
+				text="needs more large luggage space " />
+			<interactionId id="415044.txt" />
+		</entailmentUnit>
+		<entailmentUnit level="1"
+			text="too little baggage space           ">
+			<completeStatement text="too little baggage space on trains " />
+			<entailmentUnitMention categoryId="" level="1"
+				text="too little baggage space           " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+		<entailmentUnit level="1"
+			text="    little baggage space on trains ">
+			<completeStatement text="too little baggage space on trains " />
+			<entailmentUnitMention categoryId="" level="1"
+				text="    little baggage space on trains " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+	</equivalenceClassNode>
+	<equivalenceClassNode label="Not enough seating                 ">
+		<entailmentUnit level="0"
+			text="not enough        toilets                 ">
+			<completeStatement text="not enough ladies toilets at Stars Bridge " />
+			<entailmentUnitMention categoryId="" level="0"
+				text="not enough        toilets                 " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+		<entailmentUnit level="0"
+			text="Not enough seating                 ">
+			<completeStatement text="Not enough seating at Stars Bridge " />
+			<entailmentUnitMention categoryId="" level="0"
+				text="Not enough seating                 " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+	</equivalenceClassNode>
+	<equivalenceClassNode label="Not enough seating at Stars Bridge ">
+		<entailmentUnit level="1"
+			text="not enough        toilets at Stars Bridge ">
+			<completeStatement text="not enough ladies toilets at Stars Bridge " />
+			<entailmentUnitMention categoryId="" level="1"
+				text="not enough        toilets at Stars Bridge " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+		<entailmentUnit level="1"
+			text="not enough ladies toilets                 ">
+			<completeStatement text="not enough ladies toilets at Stars Bridge " />
+			<entailmentUnitMention categoryId="" level="1"
+				text="not enough ladies toilets                 " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+		<entailmentUnit level="1"
+			text="Not enough seating at Stars Bridge ">
+			<completeStatement text="Not enough seating at Stars Bridge " />
+			<entailmentUnitMention categoryId="" level="1"
+				text="Not enough seating at Stars Bridge " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+	</equivalenceClassNode>
+	<equivalenceClassNode label="Increase leg room ">
+		<entailmentUnit level="0" text="Increase leg room ">
+			<completeStatement text="Increase leg room " />
+			<entailmentUnitMention categoryId="" level="0"
+				text="Increase leg room " />
+			<interactionId id="213033.txt" />
+		</entailmentUnit>
+	</equivalenceClassNode>
+	<equivalenceClassNode label="too little baggage space on trains ">
+		<entailmentUnit level="2"
+			text="too little baggage space on trains ">
+			<completeStatement text="too little baggage space on trains " />
+			<entailmentUnitMention categoryId="" level="2"
+				text="too little baggage space on trains " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+	</equivalenceClassNode>
+	<equivalenceClassNode label="not enough ladies toilets at Stars Bridge ">
+		<entailmentUnit level="2"
+			text="not enough ladies toilets at Stars Bridge ">
+			<completeStatement text="not enough ladies toilets at Stars Bridge " />
+			<entailmentUnitMention categoryId="" level="2"
+				text="not enough ladies toilets at Stars Bridge " />
+			<interactionId id="483394.txt" />
+		</entailmentUnit>
+	</equivalenceClassNode>
+	<entailmentRelationCollapsedEdge
+		confidence="1.0" source="needs more large luggage space " target="needs      large luggage space " />
+	<entailmentRelationCollapsedEdge
+		confidence="1.0" source="Not enough seating at Stars Bridge " target="Not enough seating                 " />
+	<entailmentRelationCollapsedEdge
+		confidence="1.0" source="too little baggage space on trains " target="needs more large luggage space " />
+	<entailmentRelationCollapsedEdge
+		confidence="1.0" source="not enough ladies toilets at Stars Bridge "
+		target="Not enough seating at Stars Bridge " />
+</collapsedGraph>

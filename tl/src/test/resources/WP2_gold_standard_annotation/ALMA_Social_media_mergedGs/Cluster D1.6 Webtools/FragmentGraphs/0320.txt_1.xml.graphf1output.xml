@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0320.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0320.txt" implicit_context="" focus="TUO 444" implicit_focus="">
+        <original_text>a me TUO 444 bon funziona da giorni</original_text>
+        <correct_text>a me Tuo 444 non funziona da giorni</correct_text>
+        <modifiers>da giornipoz=6 7;a mepoz=0 1</modifiers>
+    </node>
+    <node id="0320.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0320.txt" implicit_context="" focus="TUO 444" implicit_focus="">
+        <original_text>a me TUO 444 bon funziona</original_text>
+        <correct_text>a me Tuo 444 non funziona</correct_text>
+        <modifiers>a mepoz=0 1</modifiers>
+    </node>
+    <node id="0320.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0320.txt" implicit_context="" focus="TUO 444" implicit_focus="">
+        <original_text>TUO 444 bon funziona da giorni</original_text>
+        <correct_text>Tuo 444 non funziona da giorni</correct_text>
+        <modifiers>da giornipoz=6 7</modifiers>
+    </node>
+    <node id="0320.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0320.txt" implicit_context="" focus="TUO 444" implicit_focus="">
+        <original_text>TUO 444 bon funziona</original_text>
+        <correct_text>Tuo 444 non funziona</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0320.txt_1_0-0320.txt_1_1" source="0320.txt_1_0" target="0320.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0320.txt_1_0-0320.txt_1_1" source="0320.txt_1_0" target="0320.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0320.txt_1_0-0320.txt_1_2" source="0320.txt_1_0" target="0320.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0320.txt_1_0-0320.txt_1_2" source="0320.txt_1_0" target="0320.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0320.txt_1_2-0320.txt_1_3" source="0320.txt_1_2" target="0320.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0320.txt_1_1-0320.txt_1_3" source="0320.txt_1_1" target="0320.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0320.txt_1_1-0320.txt_1_3" source="0320.txt_1_1" target="0320.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0320.txt_1_2-0320.txt_1_3" source="0320.txt_1_2" target="0320.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0320.txt_1_0-0320.txt_1_3" source="0320.txt_1_0" target="0320.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
