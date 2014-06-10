@@ -1,1 +1,0 @@
-Lili: This is a tmp folder with the modified EDA configuration files for NICE experiments on my local machine. 

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="0127.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0127.txt" implicit_context="" focus="navigazione" implicit_focus="">
-        <original_text>il telefono quasi inutilizzabile per la navigazione</original_text>
-        <correct_text>il telefono è quasi inutilizzabile per la navigazione</correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

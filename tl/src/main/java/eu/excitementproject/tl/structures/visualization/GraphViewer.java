@@ -112,15 +112,15 @@ public class GraphViewer {
 	public static void main(String[] argv) {
 
 		// something just to try, without parameters
-		GraphViewer.drawRandomGraph();
-/*		
+//		GraphViewer.drawRandomGraph();
+		
 		// visualize a specific graph (could be either FragmentGraph, EntailmentGraphRaw, or EntailmentGraphCollapsed
 		try{
-			EntailmentGraphCollapsed g = new EntailmentGraphCollapsed(new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/collapsed_graph.xml"));
+			EntailmentGraphCollapsed g = new EntailmentGraphCollapsed(new File("./src/test/outputs/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/EditDistanceEDA_NonLexRes_IT.xml0.9500000000000004_collapsedGraph.xml"));
 			GraphViewer.drawGraph(g);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-*/		
+		
 	}
 }

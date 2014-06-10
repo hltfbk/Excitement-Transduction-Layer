@@ -1,1 +1,0 @@
-- more organization in the lounge areas for each train indicate where to seat left or right, the tickets are not always checked at the gates.

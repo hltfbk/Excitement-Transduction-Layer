@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="0206.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0206.txt" implicit_context="" focus="444" implicit_focus="">
-        <original_text>ho problemi x contattare il 444</original_text>
-        <correct_text>ho problemi per contattare il 444</correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

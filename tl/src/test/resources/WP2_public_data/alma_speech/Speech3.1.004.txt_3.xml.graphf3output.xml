@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node implicit_focus="" focus="tariffe" implicit_context="" explicit_context="Speech3.1.004.txt" modality="FALSE" implicit_statement="FALSE" id="Speech3.1.004.txt_3_0">
-        <original_text>le tariffe sul roaming europeo sono più convenienti delle tariffe italiane</original_text>
-        <correct_text> </correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>
