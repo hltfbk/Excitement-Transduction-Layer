@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<provider>OMQ</provider>
+<channel>email</channel>
+<language>DE</language>
+  <interactions>
+    <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>1</id>
+                <author></author>
+                <date>2013-06-20</date>
+                <category>86</category>
+				<keyword>Quicktimeplayer,erstellte,DVD,abspielen</keyword>
+    </metadata>
+	<text>
+		Quicktimeplayer kann die erstellte DVD nicht abspielen.
+	</text>	
+	</interaction>
+	   <interaction>
+	<metadata>
+                <businessScenario>multimedia software developer</businessScenario>
+                <dataSource></dataSource>
+                <id>2</id>
+                <author></author>
+                <date>2013-06-23</date>
+                <category>86</category>
+				<keyword>Film,DVD-Player</keyword>
+    </metadata>
+	<text>
+		DVD-Player spielt Film nicht ab.
+	</text>	
+	</interaction>
+</interactions>
+</dataset>

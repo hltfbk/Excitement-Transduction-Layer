@@ -1,0 +1,3563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset 	xmlns="http://www.excitement-project.eu"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.excitement-project.eu dataset.xsd">
+	<provider>ALMA</provider>
+	<channel>social</channel>
+	<language>IT</language>
+	<interactions>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0001</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Vorrei sapere come mai oggi non è possibile accedere al concorso DIVERTITI E OTTIENI su 444.it. Non carica i dati di login oppure, se li carica, dà errore quando si accede al gioco! Che delusione :(</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0002</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>servizio TELEFONIAX HOME è andato bene il primo anno compiuto da pochi giorni poi la linea ha fatto schifo.ora ritornata con TELEFONIAW la linea  va' benissimo.mai più cambierò.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0003</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve, io avrei un problema: Non riesco ad accedere al servizio di Gaming Online di POWER GAME PLUS. Ho seguito tutte le guide che voi proponete su TELEFONIAX LABORATORIO per aprire le porte al router. Ma è tutto vano. Non è un problema di console e nemmeno di gioco perchè provandola da mio zio con la sua connessione avendo un altro operatore funziona che è un piacere. Ho provato a chiamare un operatore ma il vostro servizio clienti sembra funzionare poco. Posso essere seguito qui?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0004</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Le vostre reti in questi giorni fanno schifo al quadrato..oggi ho problemi a inviare messaggi solo verso alcuni numeri che non ricevono messaggi solo da me..mentre con altri funziona perfettamente -.- bha</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0005</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>TELEFONIAX sta cercando di truffarmi dopo aver manomesso la centralina telefonica ed avermi privato del telefono di casa; mi ha mandato la TELEFONIAX CONSOLLE che non ho mai chiesto, ho dovuto rispedirgliela ancora imballata, ora continua a mandarmi bollette e raccomandate anche se non ho mai firmato nulla nè mai usufruito del loro servizio</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0006</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ciao ho TELEFONIAX da ormai 10 anni volevo sapere cm mai in questi gg  mi da problemi di rete 3G ce la rete ke va e viene troppo spesso a volte mi da nessun servizio.... Sapete dirmi il xke??please</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0007</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>siete veramente scarsi come azzienda grazie a voi per2  e mezzo non cio piu avuto internet e dopo 1 mese vi siete accorti che la mia  CONSOLLE non andava piu  svegli eehh ora lo ripresa nuova e ci vuole 1 altra settimana per riavere l'dsl  guasi 3 mesi eehhh..... complimenti e oltre tutto non avete altri contratti per i clienti TELEFONIAX che dal 2009 che ci sono  e solo per quelli che passano da TELEFONIAW alla TELEFONIAX perche quando abbiamo fatto il passaggio il cliente non lo aiutate neanche un po ecco  non mi sembra giusto perche il cliente  viene prima di tutto  siete veramente una vergogna !!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0008</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>complimenti! Da 2 gg non ho la linea adsl a casa mia e i vs operatori mi prendono in giro con test che non danno esiti. L'attesa per parlare con voi è infinita. Siete proprio caduti in stile! Ero vs cliente dal 2007, ma negli ultimi 2 mesi ho avuto + problemi che nei rimanenti 4 anni. Presto riceverete la mia disdetta!  </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0009</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro...è passato ormai un mese e ancora non mi è stato accreditato nulla. Ho chiamato il vostro servizio clienti che ha fatto la segnalazione e mi aveva garantito che l'avrei ricevuto nel giro di 72 ore. Queste ore sono passate. Devo pensare che si tratti di una bufala??? Cordiali saluti.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0010</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Grazie per non aver risposto al mio post! E' due volte che vi chiamo e mi date suggerimenti inutili neanche fossi una deficiente! Mi avete limitato la velocità della internet key e una vostra collega per risolvere il problema mi suggerisce di togliere la spunta su non in linea se è messa, oppure di reinstallare la chiavetta! Forse non avete capito il vero problema!? Si collega ad internet ma poi le pagine web non sono disponibili! Continuerò a chiamarvi fino a quando non decidete di ripristinarmi la velocità COME PRIMA cioè 7.2! Altrimenti chiedo di ricaricare voi la mia chiavetta il prossimo mese, visto che mi avete dato 'punizione' una settimana a questa NON velocità, oppure passero per altre vie! Mi sono stancata, non vi prendete le vostre responsabilità!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0011</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Problema con l'offerta PROMOSMART SENZA CONFINI + ... mi addebita i costi degli sms a numeri TELEFONIAX...PERCHE?????</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0012</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ho problemi con la TELEFONIAX CONSOLLE 2.. il mio pc rileva la rete wifi ma non riesco a connettermi pur inserendo la wpa2 corretta.. help!!! </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0013</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>e' da ieri mattina 06/01/2012 che non c'e' piu' segnale a morgex in valle d'aosta. Possibile che in piu' di 24 ore TELEFONIAX non sia in grado di ri-garantire la copertura della sua rete ??! Gia' la qualita' del segnale per quanto riguarda le chiavette internet era bassa (diciamo pure scadente) e spesso avere una connessione UMTS e' difficile ma almeno la copertura per i cellulari mi sarei aspettato che foste in grado di garantirla</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0014</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Vergogna. Sono cliente da piu'di 10 anni e nelle ultime 2 settimane ho avuto solo problemi con la PROMOSMART SENZA CONFINI. Chiamo e richiamo e invece di cercarr di risolvere il problema mi mettete in attesa e addirittura mi buttate giu' la linea. Non e' serio. Io cambio operatore. Se la vostra politica per i vostri clienti LUI 20 e' questa, beh vergognatevi!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0015</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>AVETE UN SERVIZIO CLIENTI CHE FA SCHIFO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! dopo aver chiamato più e più  volte (c.ca 12), essere stata indirizzata a servizi diversi, aver dovuto mandare messaggi di conferma , pare mai arrivati, aver ricaricato, aver richiamato dopo un mese...aver richiamato dopo 3 mesi....aver richiamato dopo 6 mesi perchè il servizio richiesto NON era stato effettuato, cosa mi sento dire?????????????????????????? deve andare  in un centro a comprare una nuova SIM.........?!??!??!?!?!?!?!?!? ma vergognatevi</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0016</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Nessuno vi ha chiesto di attivarmi un abbonamento! non l'ho chiesto non lo voglio non mi avete detto quanto costa non ci sono indicazioni per come fare a disattivarlo!! mi sa tanto di truffa!!! vi faccio un casino che non ne avete idea ladri miserabili </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0017</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>A PROPOSITO DI PROMOZIONI: Argomento: tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile. E' una situazione assolutamente scandalosa. Non mi sarei mai aspettato un disservizio simile da TELEFONIAX Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato (con 4500 punti TELEFONIAX SMILE) 20 giorni fa .... e non ho ancora notizie!!!!  Nessuno della TELEFONIAX può darmi qualche maggior informazione? è da dicembre che vago su internet x avere qualche notizia. Vorrei poi sapere se la memoria è espandibile "fino" a 32 GB (quindi i 16 GB installati e aggiunta di scheda da 16 GB) o "di ulteriori" 32 GB (quindi i 16 GB installati e aggiunta di scheda da 32 GB per complessivi 48 GB); qualcuno mi da questa informazione?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0018</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>OTTIENI PER SEMPRE - PROMOCONTEGGIO Ci vorrebbe una denuncia al servizo consumatori........ Sul sito non si riesce ad entrare.......... Siamo spiacenti, si è verificato un errore.  Errore: TTAE9327473452 Quando non sietre in grado di gestire le cose tramite internet non fatele!!!!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0019</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>scusate a me sono spariti ben 907 punti TELEFONIAX ABC ho fatto la segnalazione, chiamato il 444 ecc ecc ecc.. ad oggi non so ancora a che punto sia la mia pratica e il ri-accredito punti.. seriamente a breve penso cambierò operatore.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0020</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it mi si apre solo la versione mobile potete risolvere? Grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0021</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>cosa aspettiamo a sistemare i problemi di ricezione nelcomune di Noventa padovana? E' da 15 giorni che chi ha la chiavetta non riesce a connettersi, che non si ricevono telefonate e non si riesce a telefonare e gli sms sono diventati un bel ricordo.... Dopo svariate chiamate al servizio clienti e segnalazioni, non ne siamo ancora usciti.... La cosa grave è che chi paga gli abbonamenti per la connessione dati non può usufruire del servizio, e chi deve fare o ricevere una semplice telefonata o sms, non può contare sulla rete... Che dite, ci diamo una mossa a sistemare il problema? Saluti da un cliente storico e alquanto scocciato.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0022</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Non vi sembra ke l'offerta PROMOCONTEGGIO sia un po ingannevole? Perkè non c'è specificato subito ke il prezzo offerta di 14 euro è il costo mensile? Qualke buontempone puo credere ke sia il prezzo intero del prodotto :-)</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0023</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ma che PROMOCONTEGGIO è i questo.....MAI una buona offerta x navigare in internet con lo smartphone.....la TELEFONIAX l'unico operatore con cui navigare dal cellulare è costosissimo !! E in 2 anni si è passati dai 50 cent al giorno x navigare fino a mezzanotte, a 2,5O euro !!! ASSURDO</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0024</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Il sito TELEFONIAX e' veramente un grande SCHIFO! navigarci e' come esser in un labirinto...non trovi mai cosa stai cercando!..oltre che ad esser lento...se poi hai la "fortuna" di trovare cosa cercavi...magicamente ti appare "404 Not FoundThe requested URL /export/Carta_super_messaggi_1000.html was not found on this server."  COMPLIMENTONI!!!!! Anno nuovo...compagnia telefonica nuova! TELEFONIAH arrivo!!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0025</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Non vorrei essere ripetitiva e diventare volgare e cattiva, ma è quasi mezzora che sto aspettando di parlare con un operatore dopo aver letto una mail inviatami da voi in cui dicevate di aver provato a contattarmi più volte sul cellulare, cosa non vera dato che non ho ricevuto chiamate dal vostro call center. inoltre il problema per cui da tre giorni passo molto tempo al telefono va avanti da agosto!! </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0026</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ho avuto dei problemi con il servizio clienti.Da ieri ad oggi ho tel 10 volte e il 10 operatore mi ha detto di recarmi ad un centro TELEFONIAX DUE nella mia città,assurdo!Avete personale non preparato..credo che passerò ad un altro operatore...sono vostra cliente da più di 10 anni!E' il probl è una semplice configurazione mms!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0027</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Buongiorno, Vorrei gentilmente essere contattato per  problemi di connessione ADSL . Sono alcuni giorni che la rete non va  Grazie.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0028</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Oggi ho sperimentato l'assistenza tecnica di TELEFONIAX adsl , devo dire molto molto molto scadente. Anzi , gli segnali un problema dovuto al modem e ti dicono che devi pagare l'assistenza. Altra offerta di TELEFONIAX " pagate i nostri disservizi " senza parlare dei modi dell'operatore.... No comment</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0029</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>non funziona il PROMOCONTEGGIO TELEFONIAX ABC</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0030</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>il mio rimborso non e' ancora arrivato  e'quasi 1 anno che lo aspetto ed e' passato gia' 2 mesi da quando mi sono rivolta a voi senza nessun risultato cosa posso pensare di TELEFONIAX ? N pratica 5C9-v3tev-4184-grazie.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0031</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Deluso, delusissimo dal trattamento ricevuto da TELEFONIAX per un semplice passaggio da un'offerta ad un'altra con TELEFONIAX CONSOLLE. Non sottoscriverò mai più nulla con TELEFONIAX.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0032</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>non è un problema solo mio ma di molti, il segnale 3g non c'è quasi x niente e molto spesso è difficile chiamare o mandare mess..</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0033</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Il nuovo sito TELEFONIAX è poco agevole, non mi piace per niente!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0034</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Come mai sul sito della TELEFONIAX non riesco ad attivare la ABC con i punti? mi dice errore applicazione</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0035</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma perchè il sito TELEFONIAX è lentissimo? mi fa innervosire. E poi non c'è la chat. Ma è possibile? La mia linea funziona perfettamente, tutti i siti si aprono molto velocemente.. E' un mese che voglio provare a consultare nel dettaglio le mie spese ma a questo punto desisto...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0036</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>fate qualkosaaaaa!!!nel mio paese e' da mesi che i telefonini funzionano malissimo,stiamo senza campo per giorni e ora tutti i telefoni  si sentono con una voce metallica che impedisce di capire,segnaliamo al 444 e ci vien detto che provvederanno ,o addiritura che non ci son state altre segnalazioni del disservizio,mentre noi continuiamo a segnalare........</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0037</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Cara TELEFONIAX...mi puoi gentilmente spiegare perchè nel mio paese Santulussurgiu stai creando problemi??? I cellulari per tutto il paese non ricevono più il tuo segnale! Perchèèèèè?????</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0038</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>l'aplicazione TUO 444 non funziona più???</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0039</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Dall 8 dicembre che chiamo tutti i giorni il 444 che nessuno di voi da una degna assistenza .. E fate compilare form inutili..E oggi m chiamate per sapere se voglio mettere TELEFONIAX a casa ahaha allora ve le cercate... Ridicoli. </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0040</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>scusate ma state avendo problemi sul 3g?sono circa 3 ore che fatica a connettersi anche con il massimo della rete...e ora è sparita anche quella!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0041</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>VERGOGNA !!!!!!!!!!!!!!!!! E' da 11 gg che ci avete lasciato senza linea telefonica, gravissimo disagio per la ns azienda, e non volete mandarci neanche un tecnico...................................ma qualcuno ne risponderà !!!!!!!!!!!!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0042</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Oggi provo a salvare il video in formato non hd ed a caricarlo sul tubo... tutto ciò perché TELEFONIAX it mi sta mantenendo la linea provvisoria(la chiavetta che funziona male) in attesa dell'attivazione dell'adsl da ben 4 mesi quando doveva essere attivata ad ottobre 2011. Mi sono sempre trovata benissimo con loro per la telefonia mobile ma ora sono proprio arrabbiata! E sono anche venuta a sapere che altri utenti hanno aspettato anche 8 mesi!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0043</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Buonasera .... nonostante vi abbia scritto quì, riscritto quì su vostra richiesta, inviato mail all'ufficio 5 di Padova, tentato di chiamare l'assistenza, parlato più volte con il 444.... parlato con chi mi ha fatto il contratto, ancora buio completo da TELEFONIAX. Non riesco a contattare nessun tecnico per istallare la CONSOLLE 2 (come richiesto sul contratto). Sono talmente deluso che domani disdirrò il contratto relativo alla pratica 40091661 mai partito. UNA IMMENSA DELUSIONE </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0044</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>cara TELEFONIAX vedi invece di migliorare il servizio adsl che fa pietà. Ogni giorno sparisce la linea sia sul pc che sul telefono e si stan già lamentando in troppi..</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0045</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Dopo mesi ho riattivato la vostra scheda dati.... connessione lentissima, meglio che continuo ad utilizzare la chiavetta TELEFONIAK anche se con la loro ho molti problemi di copertura che non risolvono mai....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0046</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ciao,zona Ferrara problemi di connessione sia io che la mia vicina,linea telefonica assente sia in entrata che in uscita da circa 15 minuti,ho provato ad inserire la chiavetta al pc ma neppure quella funzionava,ora pare che su CONSOLLE tenga botta...so che mi avevato attivato un'offerta di navigazione gratuita in caso di guasti tecnici quindi vorrei sapere se la connessione é free oppure no ma comuinque non capisco perché neppure con chiave inserita al pc non partiva O.o chiedo di essere contattata in pvt se é possibile</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0047</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>CI provo... ma in tutta onestà ho perso un pò la fiducia in quello che consideravo uno dei due operatori top a livello nazionale. Il sito è confusionale e non  si riesce ad avere una vera assistenza ne al 444 ne al serizio clienti telefonico. Il mio problema (dopo 20 min di telefonata) non è stato risolto, devo praticamente arrangiarmi... il Vs agente è sparito ( alla faccia della paventata assistenza personale proposta prima della firma del contratto. Buffone! ) Inoltre il contratto firmato in base ai vantaggi a cui avevo diritto passando fisso e mobile, può essere rescisso senza penali dato che non ho ciò per cui sono passato a TELEFONIAX ?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0048</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>buongiorno la mia chiavetta non si connette posso sapere il perche </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0049</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX , ed un mio vicino ha lo stesso problema.  La connessione si apre ma poi riesco solo a trasmettere senza ricevere indietro i dati.  Qualcuno sa dirmi se per caso c'e' qualche problema a monte , negli impianti TELEFONIAX o simili ?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0050</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Siete solo una truffa come sociietà, mi avete fatto un contratto senza che io avessi copertura di rete, vergognatevi siete da denuncia penale</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0051</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Stupitemi risolvendo il mio problema che dura da più di un mese!!! Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone!!!! E nessuno sa dirmi niente!!!! Credevo che TELEFONIAX fosse una compagnia seria!!! Delusione!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0052</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>c'è un grosso problema nel nuovo sito 444.it; avete perso per strada i dati anagrafici e degli ordini sotto la voce NEGOZIO. Visto che al 444 è impossibile riuscire a parlare con qualcuno di competente (che sappia almeno che se ricarico online posso scaricare la ricevuta di tale ricarica, cosa che ora non è piu' possibile!!) a chi mi devo rivolgere?  Se volete chiamarmi vi spiego...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0053</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>scusatemi...ma è più di dieci giorni che ho problemi con la rete wi fi e per contattarvi devo stre più di dieci minuti in attesa. E alla fine, per non aspettare fino a chissà quando, non rieso a parlare con nesuno. E intanto io continuo a rimanere con i miei problemi. Ma come devo fare????</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0054</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>prima sul sito TELEFONIAX, quando cioè era agevole, spesso si trovavano promozioni gratuite "speciale per te", ora nemmeno l'ombra. Oltretutto da 2 anni non riesco a chiamare il serv clienti dal mio telefono. Questo problema è stato segnalato più volte sia qui che agli operatori. Le risp sono: la sim va bene, quindi nn ci sono problemi. Provi a sostituire la sim, costa solo 8 euro.  Cioè dovrei spendere 8 euro senza avere la certezza che il problema possa risolversi.. cioè assurdo</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0055</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>anche io o lo stesso problema non riesco a chiamare il 444 dopo svariate segnalazioni son sempre di punto  a capo</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0056</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>assistenza pessima, quasi due giorni per rispondere al form, ed inoltre vi prendete 5 giorni per riattivare la copertura di interi paesi. no commenti!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0057</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>sono passata da TELEFONIAJ a TELEFONIAX che schifo non riescono ancora a risolvermi i problemi con adsl e portabilità numero sanno solo dirmi faremo la segnalazione di segnalazioni ne ho fatte tante ora rivoglio navigare e parlare a tel senza problemi e mi sa che la soluzione è disdire per insolvenza con la TELEFONIAX che frode </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0058</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Scandaloso il servizio trasferimento punti!! Cerco di trasferire 3000 punti dal mio numero telefonico da oltre 15gg ma non vengono trasferiti. Oggi scade il catalogo premi, ho aperto una segnalazione del problema in data 26/03/2012 ma per gestirla credo ci voglia Albert Einstein. Consiglio alla TELEFONIAX di spendere meno soldi per la pubblicità per dare lavoro a tecnici competenti! W la TELEFONIAX prrrrrrrrrrrrrrr</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0059</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>é da più di un mese che cerco di attivare la promozione PROMOSMART SENZA CONFINI + ma non siete ancora riusciti ad attivarmela nonostante il problema sia stato osservato anche dal vostro reparto tecnico. Quindi mi trovo senza nessuna promozione attiva e senza la possibiltà di utilizzare internet. La vostra ultima risposta è stata che devo attendere fino a fine mese, cioè la stessa cosa che avete detto anche il mese scorso. Sicuramente saranno problemi isolati perche senò penso che non avreste molti clienti. Ma anche se isolato penso meriti comunque attenzione da parte vostra e soprattutto rapidità nel intervenire e risolvere un vostro disservizio.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0060</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Scusate ma perchè non riesco ad accedere all'area reclami di TELEFONIAX ABC? Sul sito va tutto tranne quello. E' più di mezz'ora che provo e non carica i miei dati...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0061</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>avete dei problemi sul sito...sono LUI 20 ho 283 punti eppure quando faccio il login mi dice che nn sono iscritto al programma TELEFONIAX ABC</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0062</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>buonasera oggi dopo due mesi mi è stata tolta la vecchia linea telefonica e attivata quella nuova insieme alla internet key ma la linea adsl non funziona ancora è normale o cè qualcosa che non va?  attendo risposta graze...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0063</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Senza ADSL e senza telefono in attesa di portabilita' e assistenza. Grazie TELEFONIAX!!! Vergogna!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0064</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Mi vien da piangere, possibile che nn riusciate a risolvere un problema legato all'impossibilita' di chiamare il 444????? Son due anni ormai, ma che cavolo!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0065</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ASSURDO!!! sono cliente TELEFONIAX ABC 5 regolarmente iscritta al sito TELEFONIAX, eppure non è possibile attivare la promo sugli sms per un mese verso tutti!!!! Per favore fate qualcosa</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0066</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>buongiorno, non riesco ad accedere al mio conto online. dopo essermi loggata clicco sul link accedi al conto e vengo rimandata a una pagina sul sociale: cosa devo fare? grazie  Martina </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0067</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ciao..non so se siete in grado di fornirmi voi questa risposta ma io ci provo lo stesso...ho portato il 7 aprile al centro TELEFONIAX di vicenza il mio MOBILEA Y perchè non funzionava bene la lettura della sd....generalmente quanto tempo ci vuole per poter riavere il mio cell????ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono!!!Grazie....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0068</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Non ho mai avuto tanti problemi con un operatore telefonico come in questo momento! TELEFONIAX mi ha delusoooo! sono 2 e dico due mesi che non posso ricevere telefonate e quelle che faccio sono disturbatissime! non parliamo poi di internet!  E che cavolo!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0069</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Attese snervanti, tecnici e operatrici altamente incompetenti, contratti e canoni tutt'altro che trasparenti....V.V. TELEFONIAX VERGOGNOSA!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0070</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>catalogo premi nuovo semplicemtne ridicolo  .. forse dopo 15 anni vi saluto </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0071</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ho ricevuto in regalo la ACCESSO SEMPLICE ma non funziona o meglio non viene lettada nessun pos e quindi non posso usarla. come faccio? </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0072</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Cliente TELEFONIAX dal 5 gennaio 2012..... PENTITISSIMO !!! Non si riesce a comunicare, la linea c'è e non c'è, il 3G va e viene, a volte risulto spento quando non lo sono.... insomma, la copertura in zona Rho-Fiera ( a 700 mt dai padiglioni! ) è una cosa pietosa ! Purtroppo non ho dato retta ad una azienda a me attigua che mi dicevano dovessero uscire in cortile per riuscire a telefonare col cellulare.... Avete forse ridotto i segnali per vendere i Booster ???  Pensavo fosse una delle compagnie telefoniche migliori ma mi sbagliavo..... Appena riesco a capire sul macchinoso sito quali siano le penali da pagare ci faccio un pensierino e ADDIO TELEFONIAX....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0073</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Non ce la faccio più con voi..... Pessimi, pessimi.... assolutamente pessimi. Aspetto un rimborso da mesi, intanto la chiavetta non funziona, io vi faccio causa, vi giuro.......</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0074</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>caro TELEFONIAX, sto ancora aspettando il rimborso del 2008 che non posso neanche chiamare 444 più perchè loro non mi possono rispondere a causa della pratica che era troppo avanti con il tempo. Allora a chi devo chiedere i miei soldi eppure sono stato il vostro cliente da +10 anni, grazie.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0075</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Buongiorno sono cliente TELEFONIAX dal 23 dicembre 2011 e ancora oggi 21 aprile 2012 non riesco a ricevere alcuna telefonata con la TELEFONIAX CONSOLLE.ho fatto più di tredici segnalazioni e tre anche su facebook.Nessuno mi sa dire quanto dovrò ancora aspettare ,il più delle volte non mi rispondono neanche.In fase di attivazione mi era stato garantito che il mio disagio si sarebbe protratto al massimo per una decina di giorni.Ho pagato anche una fattura e settimana scorsa mi è arrivato un assegno di33,28euro a titolo di rimborso canone ADSL.Apprezzo il vostro gesto,ma possibile che non avete sistemi anche legali per velocizzare queste pratiche.A me farebbe più piacere uscire da questa situazione al più presto invece che ricevere rimborsi.In attesa di una vostra sollecita risposta vi auguro una buona giornata.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0076</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Sono un felice possessore di MOBILEA Everything W brandizzato TELEFONIAX. Anzi, sono un QUASI felice possessore di Everything W. Dico quasi perchè gli aggiornamenti da parte vostra NON ARRIVANO MAI. Tutti i cellulari MOBILED Phone del mondo hanno ricevuto, ormai tre mesi fa (se la memoria non mi inganna) un aggiornamento che ha portato il telefono alla versione 7.10.8107, e NESSUN TERMINALE TELEFONIAX HA RICEVUTO L'AGGIORNAMENTO. Qualche giorno fa è uscito un aggiornamento firmware direttamente da MOBILEA che corregge un grave bug relativo alla ricezione degli sms, e ancora una volta NESSUN TERMINALE TELEFONIAX HA RICEVUTO L'AGGIORNAMENTO. Sono, a questo punto, un cliente MOBILED Phone estremamente soddisfatto nel complesso, ma anche un cliente TELEFONIAX estremamente INSODDISFATTO dalla vostra politica di aggiornamenti (per non parlare poi dei prezzi da furto dei piani dati e delle soglie ridicole imposte...500MB al mese, ma per favore...)</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0077</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Fino a li c'ero arrivato, infatti protesto per il loro scarsissimo impegno in termini di rilascio degli aggiornamenti: in caso di brandizzazione l'aggiornamento passa attraverso l'operatore, ergo è compito loro rilasciarlo, cosa che non hanno fatto.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0078</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ciao Linda,sicura?allora l'operatrice del 444 nn è competente x nulla!il punto viene restituito?buona giornata!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0079</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Incredibile dal mio MOBILEE non funziona neppure il link al servizio clienti. Provo dal PC e se va stappo un altro tavernello.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0080</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ma la sim non funziona se la inserisco in un telefono!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0081</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Non riesco a disattivare il rinnovo automatico 200X+ dalla mia area servizi. Quando prenderete dei webmaster competenti??? Potete disattivarmela voi?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0082</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve,  oramai è quasi più di una settimana che il segnale di rete del mio cellulare non prende per niente bene, non è un problema del cellulare ma delle rete TELEFONIAX. Spero che ci sia una spiegazione, e che il problema si risolva al più presto!! Questo problema si sta verificando anche ad altre persone mie coetanee, e se non si interviene al più presto faremo un cambio, e abbandoneremo la TELEFONIAX. Grazie! </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0083</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>TELEFONIAX... QUALCUNO SI DEGNA DI CHIEDERSI COME MAI DAL COMUNE DI CERANO (NO) CI SI CONTINUA A LAMENTARE DEL SEGNALE, ORMAI INESISTENTE O BISOGNA SEMPRE FARE DA SE E CAMBIARE OPERATORE?????  ... deve attendere 72 ore non è una risposta, sono 15 giorni che la Vs rete va sempre peggio....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0084</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Mi sento fortunata, perchè domenica ho chiamato due volte il 444 e mi hanno risposto in due minuti. Peccato che abbia dovuto fare la seconda telefonata perchè la prima operatrice era un'inetta.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0085</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Caro Signor TELEFONIAX, ma lei lo sa che i suoi operatori del call center rispondono in base a ciò che in quel momento suggerisce loro l'intuito (o presunto tale) e non in base ad una reale conoscenza delle problematiche?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0086</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ragazzi, la vostra APP della TELEFONIAX ACCESSOSEMPLICE, non mi funziona. Continua a crashare ogni volta che la apro. :(</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0087</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Nessuna risposta.. ogni anno la stessa storia... nessuna offerta per i vecchi clienti, ma come faccio la richiesta per la portabilità ecco che TELEFONIAX torna sui suoi passi in ginocchio.. pregando il caro vecchio utente di rimanere a fronte di mille promozioni. (spesso anche più vantaggiose di quelle che avevo richiesto io) che assurda logica... allora lunedì faccio la richiesta.. ad orecchio ci sentiamo martedì con la proposta......</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0088</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Mi lamentavo di questo giusto oggi! le promozioni sono solo per i nuovi clienti e al 444 ci manca poco che ti rispondano "se non ti sta bene, te ne puoi anche andare..."</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0089</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>il servizio online di registrazione non funziona, il codice di sblocco della rete non me lo date. Il benvenuto per essere passata a TELEFONIAX consiste nel non poter utilizzare il cellulare? Con la mail che mi avete mandato non risolvo niente! Possiamo vedere di fare qualcosa?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0090</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>na nuova barzelletta TELEFONIAX??? in data 12 aprile chiamo la TELEFONIAX perché loro mi dicono che la linea adsl è attiva, ma io non riesco a navigare... anzi la mia TELEFONIAXCONSOLLE2 l'icona adsl è ancora disattivata. mi dicono che ci saranno voluti max 3 giorni visto che è dal 27 gennaio 2012 che aspetto l'attivazione. oggi (dopo tante segnalazioni) mi chiamano(altro che 3 giorni  a me risultano passati 15 giorni).... dicono che non esiste nessun problema e che quando andrò a casa posso navigare tranquillamente con la mia adsl. il prob e che il problema persiste ancora... che faccio vi tolgo il rid? perché sono stanco delle vostre prese in giro</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0091</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ad inizio mese ho contattato il 444 per un disallineamento del credito, verificato anche da loro, di circa 40euro tra il 393 ed il dettaglio delle spese. Poi ho ricontattato successivamente almeno un altra volta a settimana, ma la segnalazione è ancora aperta, e sto ancora aspettando che il servizio tecnico, o chi per lui, mi contatti per verificare l'incongruenza ed eventualmente sistemare la cosa. Quali sono all'incirca i tempi di risposta? 72 ore o giorni? Si contano solo i lavorativi? (giusto per sapere qualcosa di più) Confido nella vostra costante attenzione da sempre dimostrata.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0092</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Vorrei sapere se la TELEFONIAX considera realmente le esigenze dei propri clienti visto che è da parechi giorni che tento di contattare un operatore. Ieri ho pure mandato la segnalazione via web per essere contattata, ancora nulla. Prossimo passo, rivolgermi alla federazione dei consumatori e cambiare operatore. Non si danno questi disservizi ai clienti.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0093</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>continuo ad avere problemi con il trasferimento punti,ancora attendo la vostra chiamata......chiamo al 444 e non risolvono il mio problema...........</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0094</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma perché dite di segnalare quando non chiamate???? io ho segnalato 2 giorni fa... e questa segnalazione è come se non fosse mai stata fatta.... nessuno mi ha chiamato</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0095</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>È da ieri che nella mia zona la TELEFONIAX non prende..bello schifo!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0096</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>buona sera venerdì vi ho fatto la segnalazione che nella mia zona internet e lento con l'internet key ma non e stato risolto niente anzi e peggio di prima per favore sistemate il problema non posso andare avanti cosi e da una settimana che e cosi....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0097</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Parlare con un operatore è impossibile, ho effettuato una ricarica online e non mi è ancora stata accreditata. pessimo servizio.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0098</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>secondo me non tornerai mai in TELEFONIAX... è risaputo che ha tariffe alte rispetto agli altri e un servizio che fa pena!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0099</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>quando mi rispondete alle mie telefonate è messaggi che nn riesco a collegarmi dal giorno 20/4 cn la chiavetta </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0100</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve a tutti!!!! Vorrei dire che a me da molti giorni l'app. TUO 444 per PC ..non funziona...mi dice NON DISPONIBILE...anche a voi?? se si sapete quando riprenderà il Servizio?? Grazie a tutti!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0101</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>penso passerò a TELEFONIAH oggi pomeriggio, le offerte per navigare ad internet da cellulare sono PENOSE</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0102</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Abito in Valle Stura e vi dico una cosa: adesso siamo veramente stanchi di non avere la copertura per più di 24 ore ogni volta che piove o che tira un po' di vento. Io e tutta la mia famiglia passeremo a TELEFONIAH al più presto e credo che quasi tutta la valle farà la stessa cosa. Siete degli incompetenti.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0103</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>sono TELEFONIAX da 15 anni, ho 3 numeri attivi (che intendo disdire entro un paio di giorni) e da due anni problemi con adsl che "assistenti" alla clientela e "tecnici" non sono in grado di risolvere... ho cambiato ben 3 CONSOLLE ma nulla di che... sono venuti due tecnici (in giorni diversi da quelli richiesti) ma ancora nulla. Siete dei succhiasoldi e intendo rivolgermi a un'associazione consumatori e a enti che mi tuteleranno in tutto quanto successo e documentato.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0104</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>State facendo acqua da tutte le parti,ero TELEFONIAX da 10 anni,ma una ragazza che come me non lavora e non puo gestire delle spese esagerate,8 euro a settimana di internet per 2 g quando la TELEFONIAK le fa a 9 euro al mese di internet illimitato,e non parliamo delle chiamate numero preferito e chi come me questo numero non c'e la.....nessuna promozione valida era meglio quando c''era la SENZA CONFINI con 0.50 centesimi....e poer non parlare quando mentre stai al cell cade la linea e non prende piu per mezz'ore intere!!!!Non ho piu parole....acqa da tutte le parti!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0105</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>vorrei segnalare che alcuni giorni la ricarica online con paypal non funziona e vedo che anche da facebook non va. Essendo un servizio molto utile chiedo informazioni sui tempi di sistemazione del problema. Grazie.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0106</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Sono tre giorni che provo ad registrarmi sul sito ma mi da errore e di riprovare piu tardi ! Ci sono problemi ? Grazie  </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0107</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text> negli ultimi giorni non mi va internet con il 3g sul mio MOBILEE ma mi funziona solo con il wifi.... pago l'abbonamento ogni mese i mega x la navigazione ce li ho tutti...perché non funziona se ho campo pieno?=</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0108</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Vorrei sapere se il sito è quello ufficiale di TELEFONIAX.Se si, vorrei dire che mi sono stufato di voi: sono un vostro cliente da lungo tempo e dalla bassa velocità in Internet ( meno di 1 Mb ) alla bassa udibilità del telefono fisso, stò veramente pensando di lasciarvi.Sapete chi sono,contattatemi !!Mi farete contento.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0109</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ore di attesa x info!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! pessimo servizio!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0110</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma è possibile che non si sappia quando verrà risolta la mia pratica? Al 444 non sanno dirmi quando verrà risolto il problema! cosa devo fare?? ho anche fatto due reclami e mi è stato detto di attendere. la pratica è stata aperta direttamente al 444 ma non si sa quando verrà risolta. grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0111</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>salve avrei dei problemi con la TELEFONIAX CONSOLLE</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0112</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>le ragazze del call center dovrebbero imparare un pò di educazione. se ti chiamano per delle promozioni e tu rispondi che al momento non sei disponibile ad ascoltarle, non dovrebbero sbattere il telefono in faccia. penso che un pò di educazione non ha mai fatto male a nessuno!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0113</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>non riesco a parlare con operatore..(ho fatto overdose inutile di  "inno alla gioia..")..ho necessità di parlare con Voi!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0114</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve! Non riesco ad usare TUO 444...appena effettuo il Login mi dice "nessuna SIM associata" e sono registrata in TELEFONIAX e ho fatto anche l'accesso....potete aiutarmi?  Possibile perchè la portabilità del numero in TELEFONIAX non è ancora avvenuto?  Grazie!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0115</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>52 minuti di attesa al 444 per parlare cn un operatore!!!!!SCANDALOSO</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0116</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ciao a tutti/e fate sempre attenzione quando comprate nuove schede telefoniche presso rivenditori TELEFONIAX (ma anche con gli altri), che vi appioppano promozioni non richieste e se non la usate subito vi scalano il credito pagato (5/10 euro)anche senza usufruire della promo o aver mai utilizzato la skeda. Addirittura nel mio caso ho anche credito negativo senza aver mai fatto nemmeno una chiamata o inviato sms ed io che credevo di aver ricevuto traffico gratuito da TELEFONIAX ("LE SUE FRASI SONO PREZIOSE")per invogliarmi a restare con TELEFONIAX. Anche se la TELEFONIAX non è presa in causa direttamente ci sono tanti suoi venditori che fanno di tutto per vincere le campagne pubblicitarie che la TELEFONIAX propone..... come dal medico(anke se nn tutti) che ti prescre il farmaco proposto dai rappresentanti per ottenere viaggi, computer e quant'altro (vedi striscia la notizia e le Iene). E dire che ho anche TELEFONIAXHOME..... che delusione.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0117</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ho disdetto a ottobre e avrei dovuto pagare solo la bolletta relativa all'ultimo bimestre di consumo settemebre-ottobre. Non solo: l'anno scorso, pur richiedendola non mi hanno mai voluto/potuto attivare la linea telefonica in casa e così sono stato costretto ad avere in casa solo la disponibilità di traffico di rete! A ottobre scorso, dopo la disdetta, ho dovuto pure pagare 40€ per la restituzione della TELEFONIAX CONSOLLE (scatola integra, cavi, libretti e quant'altro!) Invece poi a gennaio altro addebito, poi a marzo, poi a maggio... Continuano imperterriti a prendersi questi soldi del mio vecchio abbonamento, senza esistere più il consumo effettivo, nonostante avessero ricevuto, nel mese di ottobre stesso, la mia raccomandata con la disdetta del contratto... Non ho parole e sto adendo le vie legali.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0118</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>è bello vendere ma assistenza niente io dal 20/4 aspetto ancora la vostra assistenza dopo tante telefonate tante parole ma fatti niente operatori che si inventano tante cose mai un operatore valido x il mio problema nn riesco a collegarmi cn la chiavetta </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0119</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>e' da 4 gg che cerco di mettermi in cottatto con un vostro operatore.. ma neanche a pagarlo..... !!!!! che devo fareeeE????? ho problemi con CELLULARE WEB,,,,... mi si rinnova la promozione settimanalmente (scaricandomi Euro 3,00 dal credito)... ma il contattore non si azzera.... ripartendo sempre da 415.000 kb, avendo una soglia massima di 512.000 kb!!!! Praticamente vi sto SOLO regalando i miei soldi, senza poter navigare dall' MOBILEE (sono costretta a bloccare la rete)...che devo fareeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee???? ho cercato di conttattarvi in ogni modo, inviando anche una 30na di sms "chiamami" al 444.... che dite... cambio telefoniaaaa dopo 15 anni....???? anche x il nr di casa???????? attendo notizie!!!!! entro...diciamo ...SUBITO! </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0120</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ho problemi di linea su Belmonte Calabro prov. di Cosenza da una settimana , premetto che la zona è poco coporta  e i problemi ci sono quasi sempre . Avendo due numeri TELEFONIAX come posso fare ? In attesa di risposta , un saluto e grazie anticipatamente !!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0121</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>è possibile che nn riuscite a risolvere il mio problema cn tante telefonate tanti messaggi dal 20/4 nn riesco a collegarmi cn la chiavetta è questa è assistenza(operatori zero---è inutile poi dire del 444 che è un odissea)ok aspetto fino a domani poi cambio operatore,a comunque i soldi ve li siete presi senza risolvere il problema dal cc.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0122</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ancora problemi con la TELEFONIAX CONSOLLE???? Ormai sono mesi che non funziona!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0123</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Il servizio clienti NON dà risposte, qualche possibilità di averne su FB???? il 16 aprile ho inviato fax con copia del mio contratto - su VOSTRA ESPLICITA RICHIESTA - e non ne ho più saputo niente, NONOSTANTE i miei ripetuti "appelli" in proposito. Ho scritto: ma solo il silenzio assoluto mi ha risposto! W TELEFONIAX!!! Nonostante la mia buona volontà e propositi, resto sempre più DELUSA...  Ottimista per natura, state riuscendo a farmi perdere ogni fiducia nelle promesse fatte dai vostri operatori! Grazie per la vostra inefficienza, pochi riuscirebbero ad essere alla vostra altezza!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0124</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ciao linda , sono da gennaio che ho problemi con il 444 non riesco piu ha contattare l operatore posso stare tutto il giorno x una settimana intera a qualsiasi ora che non mi da nessun esito rimane la musica e la voce guida la preghiamo di attendere la preghiamo di attendere , nonostante le mie segnalazioni sono sempre di punto a capo .grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0125</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>che problema c'è con il servizio di registrazione al sito? mi dà sempre errore</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0126</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Se non ho campo non posso usare internet (per cui pago) e di conseguenza  le app. Invio la segnalazione tramite facebook. Speriamo si risolva presto . L'ultima volta ho avuto assenza di servizio per 5 giorni. Grazie.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0127</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ciao a tutti, Io ho 1 MOBILEE 4 e da una settimana abbondante ho la rete 3g che è lentissima, il che rende il telefono quasi inutilizzabile per la navigazione...l'apertura delle pagine è stralenta e molto spesso si blocca...  qualcuno mi sa dire da cosa può essere provocato il problema??  la stessa cosa sta succedendoanche al mio fidanzato perciò dubito che sia un problema del telefono....  Grazieeee</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0128</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ho cercato su internet e ho letto che questi maledetti nascondono l'opzione "parla con un operatore" dietro le mille opzioni del 444! io ho premuto numero a caso e dopo un po' sono arrivata all'opzione dell'operatore, ma ovviamente dopo dieci minuti di attesa nessuno si è fatto vivo e ho riattaccato</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0129</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve, scrivo in merito al traffico internet del mio cellulare. Mi sono accorta di alcune incongruenze sulla fatturazione internet, poichè a seguito di una ricarica, il mio credito risultava diminuito. A tal proposito, mi sono recata sulla mia pagina TELEFONIAX per controllare il mio credito e traffico e, in questa occasioni mi sono accorta che il credito scalato riguardava degli accessi internet tariffati a 1€ circa per ogni accesso.  E' in questo momento, che mi sono attivata per controllare i mesi precedenti.  Premetto che ho attiva la SENZA CONFINI On e che usufruisco regolarmente del traffico internet tariffato a 30 centesimi al giorno. Di fatti, controllando, i miei ingressi intermnet a 30 cent sono corretti, ma quelli tariffati a 1 euro non so a cosa attribuirli. Alcuni degli accessi ad 1 euro, oltretutto, sono stati effettuati in orari in cui io ero già a letto e più volte, effettuati alla medesima ora, ingressi multipli.  Chiedo perciò assistenza a riguardo e, dato che la cifra è abbastanza onerosa, chiedo, se possibile, il rimborso, non avendo usufruito di questo servizio.  Allego file contenente date e ora di accesso e costo. Sottolineati in verde, gli accessi multipli.  Con la presente ringrazio e porgo distinti saluti. </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0130</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve, non riesco ad attivare CELLULARE WEB per il mio telefono, quando chiamo dice che e attivato ma non riesco ad andare su internet e non mi funziona neanche MERCURIO. quindi come faccio ad attivarlo?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0131</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ho enormi problemi di ricezione con mio MODELLOA1 s i9000, mi potete aiutare? non partono nemmeno le chiamate e non riesco a ricevere le chiamate in entrata</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0132</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Io (che non ho MODELLOA1) a volte non ricevo le telefonate perché agli altri il mio telefono risulta spento anche se in realtà è accesso e la ricezione piena. Quando provo a chiamare (ripeto che la ricezione è piena) mi dice "Solo Emergenze". Ho esposto il problema a TELEFONIAX e mi hanno risposto: "Nella sua zona succede sola a un'altra persona, quindi sarà un problema passeggero che ancora noi non prendiamo in considerazione...".</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0133</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>20 ore senza linea. Riattivata solo dopo mia chiamata. La scusa è stata che l'operatore era a fine turno e non ha finio l'operazione..... Imbecille ! E dire che avevo chiesto che non durasse oltre le 3 ore dato che al nr mobile è collegato un impianto di allarme dell' azienda.... Come classificare il servizio ottenuto ? Direi che ho ricevuto un servizio da CIALTRONI.....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0134</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ciao scusate ma ho problemi questa mattina col vostro servizio.. per cortesia vorrei sapere per quale motivo non mi si connette via internet utilizzando il servizio WAP e dà parecchio inoltre tutto che non riesco più a comunicare con l'assistenza clienti, sè chiamo rimango in attesa x ore ed ore........ AIUUUUUTO!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0135</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Operatori scostumati licenziateli...ti trannano anche male e ti rispondono male....TELEFONIAX PESSIMA </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0136</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io sono da gennaio che non riesco a contattare il 444 , e nonostante le mie segnalazioni son di punto a capo !</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0137</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Vorrei un'informazione. Ho la TELEFONIAX CONSOLLE, e anche se nelle ore diurne non ho problemi, dalle 20:00 riscontro rallentamenti e spesso la connessione va e viene. Come mai?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0138</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Siete solo ridicoli. So bene che questo post verra' cancellato a breve, ma quelle poche persone che lo leggeranno, voglio proprio sapere che ne pensano. Togliete la PROMORIACCREDITO a tutti. Con la scusa dell'abbassamento dei costi di interconnessione, la togliete...e poi farete esattamente come i petrolieri. I costi calano alla fonte (per voi calo dei costi di interconnessione) ma le tariffe non scendono. Siete la compagnia con le peggiori offerte in italia, economicamente parlando. E togliete l'unica cosa che ci permetteva di spendere un po' di meno. Tanto le tariffe non le calerete, vogliamo scommettere..? Ma tanto la gente non capisce...il servizio e' superiore a quasi tutti gli altri operatori, e quindi capisco perfettamente chi si affida a voi per questo. Ma come prezzi.. Oltretutto, un virtuale che si appoggia a voi, poste mobile, propone tariffe con minuti ilimitati a un prezzo irrisosio..e voi..? Ci spremete come limoni. Grazie mille.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0139</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Perkè non cercate di risolvere il problema del login sul sito?Esce sempre errore di caricamento.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0140</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>il vostro sito non funziona!! se si volesse giocare a "TELEFONIAX ABC" non carica i dati di accesso!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0141</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ciao,scusate ho problemi con la mia TELEFONIAX CONSOLLE 1, continuo a perdere la connessione.....sia con il cavo sia con wifi,lampeggia normalmente...io spengo e riaccendo e dopo un po di pazienza appare la schermata che mi dice di connettermi......ma io ho internet illimitato!! mah!! e questo va avanti da almeno 3 giorni..........grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0142</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>la TELEFONIAX non risolve i problemi.. non ha la gente in grado di risolvere i problemo.. xo alla fine ti sanno dire ADESSO LE STO INVIANDO UN MESSAGGIO KOSI PUOI VALUTARE IL MIO SERVIZIO DA 0 a 9.. PESSSSIIIIMMI OPERATORI TELEFONIAX it</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0143</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ho chiamato varie volte per segnalarvi il problema con la velocità internet della mia linea adsl, pago per una velocità di 7 mega ma non arriva nemmeno a 1 mega (è già troppo se arriva a 0.30)...ora chiedo a voi che devo fare? sono stanca di dover chiamare ogni volta per lo stesso problema...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0144</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Due problemi: oggi non riesco ad accedere al forum di TELEFONIAX LABORATORIO. Clicco su Login e non succede niente!!!! La seconda cosa: ho problemi con il Bluetooth del  mio MOBILEG Sonic. A chi posso chiedere aiuto?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0145</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Penso che la TELEFONIAX CONSOLLE non funziona mai e maneggia a me quando ho pensato di prenderla</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0146</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ho appena finito di parlare con un operatore che mi ha detto che non verrà attivata,perchè ci sono statii dei disservizi che non riescono a spiegare(come al solito).Un'altra fregatura.Ormai TELEFONIAX assume solo operatori stranieri che comprendono poco la lingua italiana e quindi succede che chiami per ricevere un chiarimento e questi operatori non sono in grado di dartelo.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0147</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>la TELEFONIAX oggi nn risponde piu' ai post...mi da tanto di fregatura...e un'azieda come la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0148</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>La promozione mi e' stata attivata il 17 maggio ma non funziona! I minuti vengono regolarmente scalati ma insieme ad essi viene scalato anche il credito!! Mi e' stato fatto poco fa' un  riaccredito di quanto avevo speso ma mi e' stato detto che sara' difficile ricevere ulteriori riaccrediti e cmq continuero' a pagare perche' nonostante il reset della sim la  promo non funziona. Che faccio????</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0149</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Le vostre Internet Key sono PIETOSE: lentissime, ogni cinque minuti si disconnettono, e il tutto per la modica cifra di 20 euro mensili! Per non parlare della vostra assistenza clienti, che definire incompetente suonerebbe come un complimento.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0150</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>I punti ABC mi sono stati accreditati la terza volta che sono passata al pvt, ma rimane il fatto che il 90% delle volte che mi devo recare al pvt per offerte o altro non attivabili online o per telefono mi dicono di ripassare perché la connessione non funziona, il che è ridicolo. E' come se mi recassi in un negozio di abbigliamento che il 90% delle volte non ha capi di vestiario disponibili. Intanto ho deciso che mai e poi mai attiverò un abbonamento ADSL con voi, perché il fatto che sia sempre down nei vostri stessi negozi è indicativo. Oggi intanto io non riesco a passare al pvt (e anche se passassi non ho garanzie sul fatto che il sistema abbia ancora problemi). Come faccio con l'offerta sulla TELEFONIAX ACCESSO SEMPLICE, che scade appunto oggi e di cui non ho potuto usufruire?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0151</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>il sito TELEFONIAX.it ha dei grossi problemi. Stamattina volevo registrarmi ma non ho ricevuto il codice di sblocco per sms. Clicco su "Reinvia" e mi esce questo messaggio assurdo: "Gentile cliente, hai superato il numero giornaliero di richieste gestibili via SMS sul numero di telefono indicato. Potrai nuovamente farti inviare i dati desiderati via SMS a partire da domani." Allora clicco su "Hai bisogno di aiuto?" oppure su "Richiedi supporto chat" e mi richiede nuovamente il codice di sblocco... Ma allora?? come faccio ad avere assistenza? Mah...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0152</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>chiedo scusa ma la risposta ke mi è stata fornita è generica sul recesso anticipato dal mio contratto;la mia domanda si riferiva al recesso avendo ricevuto l'sms relativo alla rimodulazione delle tariffe all'estero. mi potete aiutare visto ke il call center su 3 chiamate ha fornito 3 info differenti??</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0153</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>cara TELEFONIAX sinceramente mi sono rotto anke se nonostante abbia cambiato la CONSOLLE ke era difettosa,la linea adsl manca ogni 2-3 giorni e mi sn stufato di spegnere e riaccendere la CONSOLLE xfar in modo ke rifunzionasse e nn ditemi di inserire la internet key xke la linea è fissa e sto pagando per la rete fissa 24h al giorno nn per poke ore! io col telefono ci lavoro e nn devo perdere clienti xke magari mi accorgo dopo ore ke nn mi kiama nessuno xmancanza di linea! basta!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0154</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>fare contratti con TELEFONIAX finisce con litigi tramite avvocato!! solo problemi!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0155</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>perchè devo pagare x un servizio che non mi avete mai attivato? se voi non mi avete mai attivato la linea in casa, e io non ho mai potuto usare la vostra linea, al punto di dover nuovamente cambiare operatore, perchè ora mi tocca pagare per le vostre mancanze?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0156</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ieri ho pagato come ogni settimana il mio piano tariffario, oggi mi avete disattivato l'offerta PROMOSMART SENZA CONFINI senza nessun preavviso per "superamento dei limiti previsti dalle condizioni generali della promozione", chiamando il 444 mi è stato detto esattamente quello scritto nel messaggio che mi è arrivato da voi, senza nessuna delucidazione su quali parametri si parli, dato che quell'offerta non ne ha. Parlando con altre persone TELEFONIAX ho scoperto che anche a loro è successa la stessa identica cosa, dubito che abbiamo tutti superato questi ipotetici limiti nello stesso preciso momento, e ovviamente essendo troppo vecchia l'offerta è impossibile attivarla di nuovo. è giusto far sì che non si possa più attivare un offerta se questa è vecchia, ma è altrettanto giusto disattivarla senza preavviso a determinati utenti?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0157</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>è da ieri che non riesco ne a telefonare ne a ricevere nella zona di arzignano (VI) che succede?????????</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0158</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>sono settimane che aspetto una risposta, dopo aver compilato il form del Servizio Clienti, riguardante l'iscrizione a TELEFONIAX ABC. Numero segnalazione Zoa-9h8ar-10497</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0159</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>E' scandaloso che sia praticamente impossibile parlare con un operatore del centro assistenza 444. Questa volta dove avete nascosto la voce nel menù? Io e il mio paese (Castrignano Dei Greci, Lecce) siamo senza copertura di rete da 3 giorni ormai e pur compilando quel modulo che mi avete suggerito non è cambiato nulla! Non sono neanche stato contattato per l'assistenza. Chi pagherà per questo enorme disservizio? Quando verrà sistemata la situazione? CHI E' INCARICATO A DARCI QUESTE RISPOSTE?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0160</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ciao a tutti..  ho un MOBILEH k2 con la PROMOSMART SENZA CONFINI + x sms e internet..solo che da una settimana a questa parte la connessione dal cellulare non funziona... al 444 hanno provato a mandarmi i parametri per riconfigurare ma non è cambiato nulla...nel centro TELEFONIAX mi hanno consigliato di mettere e togliere la batteria...   Ho provato a connettermi anche da un altro smart phone e non funziona, quindi non è un problema di cellulare. Avete consigli?   Grazie mille</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0161</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>assurda  la TELEFONIAX  mi cambiano promozione  senza un mio permesso mah !!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0162</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>è troppo cara la TELEFONIAX</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0163</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>buon giorno !!!! ho riscontrato problemi nel configurare la rete wii-fii con la TELEFONIAX CONSOLLE con il mio MOBILE-E....qualcuno può spiegare....? </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0164</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>sconsiglio TELEFONIAX HOME  e lenta e rimani senza linea sempre ho due anni di adsl  con problemi mi anno  rubato  2 anni di bollettini e ancora oggi la linea va male</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0165</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>dopo 8 anni, addio TELEFONIAX! mi avete spillato abbastanza soldi...  operatori ai call center totalmente incompetenti e tariffe decisamente troppo alte... dopo l'ultima fregatura ho detto basta! datevi una regolata! </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0166</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>anche oggi manca la rete TELEFONIAX a DOMUS DE MARIA (CA) CI SIAMO STUFATI CREDO PROPRIO CHE CAMBIERò OPERATORE......</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0167</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>PROBLEMA! la TELEFONIAX non mi fa inviare i messaggi, pur avendo credito e pur prendendo!  Che devo fare?  Inoltre scrive all' amico a cui ho scritto che non ho credito. </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0168</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io mi sono stancato che ogni 3 4 giorni internet non funziona... ogni volta mi date la stessa procedure che non serve a niente e dopo ritorna magicamente da solo.... x andare in internet devo chiamare sempre il 444? non mi gusta!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0169</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve volevo informare mancanza di linea nel paese 36053 (vicenza) da un paio di giorni ...ovviamente a tutti i telefoni cellulari </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0170</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>E' incredibile la vostra mancanza di professionalità nello stipulare contratti che siete i primi a non rispettare. Sto inviando una mail al servizio clienti e spero che abbiate almeno la decenza di annullare tutto senza penali ... e la gente dovrebbe usare i vostri DISSERVIZI per lavorare??????????????!!!!!!!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0171</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>scandaloso è un mese che cerco di contattare l'assistenza 444 per l'adsl e non risponde nessuno! attese di 45 minuti e cade la linea!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0172</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve , ormai più di due mesi fa ( 16/03/2012) ho firmato un contratto con un vostro agente per avere la TELEFONIAX CONSOLLE, convinta di poter usufruire del servizio in breve tempo( secondo il vostro agente avrei avuto la CONSOLLE e il servizio attivo in pochi giorni, anzi ha tanto insistito per farmi firmare in fretta convincendomi che avrei avuto un sacco di vantaggi). Dopo circa un mese ho ricevuto la TELEFONIAX CONSOLLE ma ancora oggi aspetto che il servizio mi venga attivato. Sarebbe bene che formaste i vostri agenti non solo per vendere, ma per seguire il cliente anche dopo aver firmato il contratto. Sono veramente insoddisfatta del servizio vista soprattutto la scortesia con cui il caro agente ha risposto alla richiesta di informazioni sul ritardo dell'attivazione. Confido almeno in una vostra risposta.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0173</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Da tempo il vostro customer care del 444 conferma che l'applicazione TUO 444 ha un BUG. Da oltre un mese non funziona. Ho eliminato e poi reinstallato l'applicazione vari volte, ma nulla da fare.  Come pensa di risolvere il problema la TELEFONIAX ?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0174</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>......Un Grandissimo Disservizio o una Pessima Gestione Commerciale....Ben 3-4 mesi x sapere che non arrivava MOBILEF 3.... xchè bloccato l'ordine!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0175</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io sono una ex cliente, avevo un contrato per 2 anni, ho inviato una lettera per informare di non voler rinnovarlo, primo mi hanno tagliato la linea prima de la fine del contrato e poi adesso mi he arrivato  una letera di un abocato, que debo pagare una fattura, che non so di che cosa è... forse non mi avevano spiegato que dovevo mandar in dietro la chiavetta,....comunque, è imposibile avere informazione...come si fà a parlare con la segreteria telef.  mi sento molto delusa.....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0176</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>In data 15/2/2012, tramite operatore, ho registrato e sottoscritto il passaggio dal mio vecchio gestore telefonico per aderire alla vostra  offerta per la TELEFONIAX CONSOLLE 2 ( maledico ogni santo giorno quella mattina ..  ). Da allora un calvario ed un disservizio unico. Ad oggi sono senza telefono e DSL, il vecchio gestore ( col quale mi trovavo bene ) mi ha disattivato la linea e voi non mi avete ancora fornito il servizio. Sono mesi che chiamo il 444 e mi viene detto che gli operatori fanno un sollecito. E' vergognoso che nessuno risolva il mio problema, causato dalla vostra inefficienza. Mi trovo "ostaggio" della vostra incompetenza, impossibilitato a ricevere telefonate e limitato nel lavoro. Vorrei sapere chi mi risarcirà del danno subito? Ho scoperto con mio sdegno che non esiste un "responsabile" a cui fare riferimento, nessuna mail per scrivere, le segnalazioni fatte sul sito non hanno risposta, così come quelle telefoniche. </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0177</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Durante la giornata di oggi, ho parlato 2 volte l'operatore TELEFONIAX, per un problema tecnico (almeno credo) con il cellulare.  Ieri ho fatto l'abbonamento a SEMPLICE 200X+ - messaggi, chiamate e internet... abbonamento di 20 euro al mese, che non sono pochi. In ogni caso se si paga per un servizio, si ha il diritto di ricevere un buon servizio.  Continua a darmi "Nessuna Connessione attiva" e, quando gli gira, "connessione inattiva" e io continuo ad aver pagato 20 euro e a stare senza Internet, senza WhatsApp e senza la possibilità di capire il motivo. Nessuno dei due operatori è stato in grado di risolvere il problema, ma si sono limitati a dirmi che le impostazioni erano tutte corrette e a mandarmi il messaggio di impostazione WAP (che io ho eseguito ma senza risultati). Qualcuno può aiutarmi? Magari un operatore o qualcuno che ci è passato? Grazie.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0178</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>la mia internet kei rimane connessa ma non riesco a navigare </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0179</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Cara TELEFONIAX e' una settimana che continuo ad avere problemi con internet visto che ogni settimana si rinnova internet mobile senza poterla usare normalmente vorrei avere assistenza ps in wifi tutto ok</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0180</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve, non ho ancora avuto conferme sull'apertura della vostra segnalazione ai tecnici, è possibile avere un riscontro?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0181</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>No, il form ha funzionato, infatti ieri mi avete chiamato e avete constatato che la linea non c'e. La sua collega ha detto che avrebbe aperto un ticket e che mi sarebbe arrivato un messaggio o una email di conferma, ma per ora non abbiamo ricevuto nulla</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0182</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ancora nessuna informazione o notizia riguardo i due MOBILEF ordinati....ma che cavolo di storia è!! Ma se voi mettete in catalogo un premio in data 23 marzo, lo rendete quindi disponibile alla richiesta e dovresti, quindi, essere pronti a fronteggiare tale richiesta!!! E invece sono come dissolti nel vuoto!!!!! TELEFONIAX VERGOGNATI!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0183</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Scusate ma in zona Ancona avete problemi di linea? Mi va e viene da venerdì scorso, ieri gli sms mi arrivavano ore dopo rispetto a quando me li inviavano, persino i vostri del +393 e del credito dopo la chiamata.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0184</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve vi ho mandato stamane una segnalazione riguardo un premio ordinato presso un negozio TELEFONIAX DUE ancora non pervenuto, dopo quanto tempo riceverò una risposta? grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0185</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Buondì, vorrei disattivare una scheda e chiedere la restituzione del credito con bonifico bancario. Visto che il vostro numero di fax non funziona, come posso fare?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0186</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Con la rete mobile non si riesce a contattarVi, sono già state aperte delle segnalazioni già ieri sera ed era tutto risolto, stamattina niente, linea inesistente, impossibile inviare e ricevere chiamate e nemmeno sms IDEM!!!! senza telefono x due giorni... adesso farò anche questa... grazie Sara;)</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0187</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>No grazie, tra un po' cambierò gestore. Avete i prezzi più alti in assoluto, siete scandalosi voi e le vostre finte offerte.. Bye</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0188</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ribadisco ke limitare l'acquisto a ki ha carta di credito con conto bancario è veramente vergognoso! potevate utilizzare benissimo la ACCESSO SEMPLICE visto ke i possessori sono vostri clienti e avete documenti e tutto se volete denunciarli! INVECE NIENTE! VERGOGNATEVI</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0189</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>A me dispiace dire certe cose ma nell'ultimo periodo mi delude molto la TELEFONIAX...poi le offerte non sono granche'...tipo un offerta con internet illimitato e messaggi illimitati verso TELEFONIAX non esiste...la TELEFONIAH ne ha parecchie di questo tipo...se la TELEFONIAX vuol essere la migliore sulla piazza con un buon servizio deve saper accontentare i clienti e capire le loro necessita' e non “tirarli in giro “...le persone queste cose le vedono e non mi stupisco che tante persone di mia conoscenza che avevano TELEFONIAX sono passate a TELEFONIAH o altri operatori...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0190</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve, io ho chiesto la portabilità in TELEFONIAX, ma nn ancora mi è stata effettuata, come faccio a sapere se ci sono problemi?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0191</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>E' da due giorni che a casa mia non ricevo più segnale di rete TELEFONIAX. Potete aiutrmi? Grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0192</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Servirebbe anche a me, quello del commerciale, visto che non mi ricontattano dopo che ho mandato vari reclami (E-MAIL) dal sito!!! Ma cosa state a fare?????? >>>>>>>>PER ''VENDERE'' CI SIETE SUBITO, QUANDO SI TRATTA DI RISOLVERE UN PROBLEMA DOVE SIETE!!???>>>>>>>></text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0193</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>buongiorno vorrei sapere che numero devo fare x chiedere assistenza ... visto che nel mio paese sono 3 gioni che la TELEFONIAX non ha campo e sta causando veri disagi .....grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0194</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Credo che il servizio offerto dalla TELEFONIAX dal suo centro assistenza 444 e dal servizio qualità  sia il peggiore sul mercato, solo al 444 ho trovato tanta incompetenza e superficialità da parte degli operatori...una vergogna...GRAZIE TELEFONIAX</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0195</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>dopo svariate segnalazioni ... non è cambiato nulla ... TELEFONIAX non ha provveduto a risistemare la linea che ci tiene isolati da circa una settimana .... è una cosa insobbortabile ... sicuramente cambieremo tutti gestori ...Grazie x l'interessamento e la sollecitazione x risolvere il problema </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0196</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Trovo vergognoso che a quasi un anno dalla disattivazione di TELEFONIAX HOME non ci siano ancora stati restituiti i 100 euro di deposito cauzionale dopo ripetuti solleciti. Inviperiti, abbiamo disdetto TELEFONIAX su entrambi i cellulari (dopo anni in cui eravamo clienti) e stiamo consigliando a tutti quelli che conosciamo di non fare TELEFONIAX nè sul cellulare nè per casa. Ci rivolgeremo ad un avvocato e all'unione consumatori anche per una questione di principio. Cento euro non sono briciole. Non capisco come mai non fidelizziate il vostro cliente, ma anzi lo prendiate in giro. Mi era stato detto che per un errore non era partito l'assegno. Questo è successo tre mesi fa, poi il nulla. </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0197</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Buongiorno TELEFONIAX FB Team, devo a mio malincuore segnalare la scortesia di una operatrice del Call Center che dopo anni di cliente TELEFONIAX mi ha fatto venir voglia di non esserlo più. Sintetizzando volevo spiegazioni su un addebito di 29,- di traffico dati in roaming, premetto ero sulla Nave da Palermo a Napoli e il mio MOBILE-E si è agganciato sulla rete MARETUO. A bordo non vi erano indicazioni sulle tariffe e modalità di roaming ne tantomeno l'azienda in questione quando li ho contattati mi han risposto. Comunque l'operatrice TELEFONIAX mi ha risposto: Lei ha un ha un MOBILE-E quindi deve sapere che si connette sempre ad internet la tariffa per il roaming dati è 6 euro per MB lei non ha disabilitato il roaming quindi ha avuto questo addebito il tutto con un tono come a dire: Sono affari suoi non mi scocci! Io lo so che i 29 euro sono andati a MARETUO e non volevo i soldi indietro ma da cliente dal 2004 non ho mai ricevuto una risposta del genere, c'è sempre una prima volta ma esiste anche la cortesia.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0198</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>a chi possi rivolgermi se l'adsl promessa non funziona sono tre giorni senza telefono e senza internet, bediamo se domani riesco a faggiungere qualcuno, francamente sono un pò deluso topo tante promesse</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0199</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>non riesco ad utilizzare il vostro form del servizio di clienti.... mi da sempre errore.  Ho ricevuto pochi giorni fa la vostra nota di credito per una fattura dell'importo di 413,00 euro. Pero' non ho ancora avuto il rimborso di tale somma. In attesa di riscontro.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0200</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve, zona Varese non c'è segnale TELEFONIAX! E' qualche problema di rete Vostro o dipende da mia Sim?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0201</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Pessimo pessimo serviZio...dal 1 maggio che ho problemi con una fattura errata..e ancora non mi e' stato risolto il problema..anzi vengo contattato per problemi amministrativi.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0202</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>E' possibile che ci siano dei problemi di accesso e gestione sul sito di TELEFONIAX? Alcune pagine non le apre e si disconnette.. non riesco a togliere alcune promozioni se non per telefono e non riesco a vedere le mie promozioni in essere. Al telefono non riesco a parlare con nessuno... e pensare che ho aderito alla promozione di internet e telefono!! Che sia un pazzo?.....se qualcuno è in ascolto help me!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0203</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Il vostro customer care è imbarazzante, dovreste vergognarvi di offrire un servizio di così scarsa qualità!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0204</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ed alla prima fattura TELEFONIAX per il mio MOBILEF i primi problemi. Mi hanno addebitato 3 canoni per il dispositivo mobile e devo ancora capire in base a quale vincolo contrattuale. Il canone relativo al servizio WEB VELOCE non rispetta quanto previsto dal contratto. La fattura non è per nulla dettagliata e per capire cosa mi hanno addebitato ho dovuto perdere ore al telefono ed alla fine tramite calcoli assurdi ci sono arrivato da solo perchè l'assistenza è stata a dir poco inidonea. Mi dispiace ma non abbiamo iniziato per niente bene. Mi sa che bloccherò il pagamento con le prossime fatture se non si ristabilisce un rapporto cliente-fornitore basato sulla fiducia e sulla trasparenza. Grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0205</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Pensa che io sto pagando senza manco ricevere fattura! E son settimane che sono al telefono col call center, ultimo contatto 28 maggio: "la richiamo domani sig. Dolce". Mai più sentiti. Tanto il pagamento è stato effettuato. Vergogna!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0206</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ciao vi scrivo queste righe xche sono incavolato nero , e da gennaio che vi faccio le segnalazioni che ho problemi x contattare il 444 , ogni volta che chiamo il 444 digito tasto 1 poi 9 e poi 2  x l assistenza , mi rimane la voce guida con la musica la preghiamo di attendere  posso stare tutto il giorno e tentare di chiamare a qualsiasi ora del giorno senza concludere niente , tipo ora che ci sono 32 minuti tentando .senza esito e questo mi accade ogni giorno e qualsiasi ora del giorno che io tenti , mettetemi apposto questo diservizio ho cambiero gestore , e non chiedetemi di rifare segnalazioni xche ve le ho fatte da gennaio fino a ora .grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0207</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Per fortuna che avete attivato un 444 su twitter: servizio rapido, operatore efficiente e cortese. Tutt'altra cosa il 444 telefonico: informazioni errate e contraddittorie, operatori scortesi e sbrigativi. </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0208</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>aspetto per sei mesi che mi diano ADSL, ovviamente dopo che m'avevano assicurato non ci fossero problemi... navigo o telefono MALE per sei mesi con la chiavetta da voi fornita... improvvisamente, una mattina, senza essere avvisata... mi ritrovo senza telefono e senza internet... e ancora MI DITE CHE NON MI APPLICHERETE LA PENALEEEEEEE?????????????? MA SIETE IMPAZZITI? la penale a me?????? e perché? almeno abbiate il buon gusto di non nominarla nemmeno!!!!!   SEGUE LETTERA DEL NOSTRO AVVOCATO CON RICHIESTA DANNI! E SARA' UNA RICHIESTA NOTEVOLE.... </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0209</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Buongiorno! Faccio presente che mi ha appena chiamato un vostro operatore per delle promozioni che è stato molto, molto, molto maleducato e indisponente! Già non mi piacete come azienda se poi questo è il tono e la cultura dei vostri collaboratori parlerò sempre e solo male di voi, predicando il sabotaggio alla vostra compagnia!  </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0210</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve! Segnalo ancora una volta i problemi di ricezione del segnale per la zona di Cagliari! Quando avrete novità in proposito? Non è possibile avere un segnale altalenante da 3 settimane!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0211</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Salve sono una vostra cliente da circa 7 anni,in queste ultime settimane ho riscontrato problemi con il mio piano tariffario in quando carico il cellulare e dopo 1 giorno non ho più credito senza effettuare chiamate,a chi mi devo rivolgere?grazie</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0212</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>la ricezione è pessima è sempre al minimo e quando parlo a telefono con qualcuno non capisco una parola perchè va via il segnale.... per non parlare del fatto che mi hanno fatto la SENZA CONFINI+ dicendo che i messaggi erano gratuiti verso tutti i TELEFONIAX mentre è solo verso un numero preferito TELEFONIAX.... mi pento di essere passato a TELEFONIAX e se il segnale sarà ancora così nelle prossime settimane farò un nuovo passaggio verso un'altro operatore!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0213</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Buongiorno. Vi scrivo per spiegarvi una cosa molto spiacevole.  Mia madre ad aprile ha sottoscritto un contratto con la vostra società (cambiando quindi il vecchio operatore) presso un punto vendita mobile situato all'Ipercoop di Arezzo. In data 24.05.12 un vostro addetto telefonicamente ha chiesto conferma del passaggio da TELEFONIAW a TELEFONIAX dopodichè a mia madre è stata immediamente staccata la linea senza alcun preavviso. Da quel giorno si ritrova senza alcuna linea fissa, quindi oltre tale mancanza deve sopportare maggior costi per l'utilizzo del telefono cellulare, e senza trovare da parte di qualcuno un minimo di aiuto per risolvere il problema. Ha chiamato anche il 444 e gli è stato risposto che a loro non gliene frega niente. Ora mi dico vi sembra una cosa normale? A chi dobbiamo rivolgerci per risolvere il problema? Oltretutto avete già inviato una fattura, ma per cosa scusate??!!! E per finire un consiglio ... scegliete meglio i vostri collaboratori.  Attendo una vostra cordiale risposta.  Saluti Annalisa.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0214</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Buongiorno, da stamattina che i nostri telefonini non hanno linea, che tipo ti problema c'è? </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0215</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>due settimane senza connessione 3g a casa e a volte scompare anche la linea telefonica....chiamato 444 ma nessun risultato...peccato che i 3 euro a settimana per due telefoni li prendono sempre puntuali!!!! Per non parlare della chiavetta!!! Servizio scadente...perdere due clienti non e' tanto ma la cattiva pubblicita'ne attirera' molti di piu'....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0216</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>quanto ci vuole per sistemare il problema su Genova? è da stamattina che non ho linea internet sul cell</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0217</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato che vergogna il n. 444 non risponde </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0218</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>è dal 17/5/2012 che aspetto la portabilità e a tutt'oggi non ho ancora risolto il problema! stò maledendo il giorno in cui sono passato a TELEFONIAX! potete suggerirmi un  percorso per risolvere il problema ? Vi ringrazio anticipatamente! resto in attesa Vs indicazioni. Mario Rossi</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0219</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ancora nessuna informazione o notizia riguardo i due MOBILEF ordinati a casa mia in data 21 aprile e in data 5 maggio....ma che cavolo di storia è!! Ma se voi mettete in catalogo un premio in data 23 marzo, lo rendete quindi disponibile alla richiesta e dovresti, quindi, essere pronti a fronteggiare tale richiesta!!! E invece sono come dissolti nel vuoto!!!!! TELEFONIAX VERGOGNATI!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0220</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ultimo conto TELEFONIAX da 228 euro. mi hanno deattivato la opzione CELLULARE WEB a 10 da mesi senza avvisarmi. Ora basta, cambio operatore. Grazie per l'onestà, tirate avanti cosi, vi auguro tanti nuovi consumatori increduli come me.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0221</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Complimenti anche oggi avete fornito un servizio penoso alla nostra azienda.... Invece di spendere soldi x gli spot perché non sistemate le linee telefoniche!! C'è un sacco di gente che si lamenta del servizio voce rete fissa..,,Ci sarà un motivo????????  Grazie del quotidiano disservizio</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0222</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>15 minuti di attesa e ancora non risponde nessuno! fate pena!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0223</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>LO SO!!! e queste offerte sono una rapina legalizzata ;) ma le guardate le offerte delle concorrenti ???  volevo sapere se ci sono speranze di avere la PROMOTESSERA AUTUNNALE o devo cambiare operatore per averla!! non girare intorno alla mia domanda ;) grazie buon lavoro:)</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0224</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Da 30 minuti e 39 secondi in attesa di ricevere risposta dall'assistenza, ogni mese rogne con la PROMO ABC, sito inaccessibile. Sono davvero stanca! Dopo 10 anni è la volta buona che cambio operatore!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0225</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Anche io la penso come Alberto , si da più importanza ai nuovi anziché ai vecchi clienti ...Così facendo ci saranno più persone che cambieranno operatore ...Per non parlare delle offerte ..Quelle della TELEFONIAX sono le "più salate" in assoluto...Quando riavremo la vecchia ed adorata PROMOTESSERA AUTUNNALE ?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0226</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>salve a tutti, volevo sapere se qualcuno di voi ha ricevuto, qualche regalo per il gioco OTTIENI PER SEMPRE, per qanto mi riguarda, ho speso 200 punti inutilmente, e dei 10 € di ricarica vinti  non li ho mai visti ciao </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0227</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Sono cliente TELEFONIAX da 5 anni, non ho mai avuto problemi ed ho anche ricevuto tante promozioni. Ultimamente però non riesco a trovare un piano telefonico adatto a me, hanno costi elevati soprattutto per le opzioni internet...valuto l'opzione di cambiare gestore.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0228</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>venerdi' scorso ho provato a disattivare CELLULARE WEB con diversi messaggi di "la sua richiesta e' in fase di elaborazione". Domenica mattina ho rimesso la sim nel telefono (vivo all'estero) e un " simpatico" messaggio mi avvertiva che la promozione era stata rinnovata, nonostante l'avessi cancellata venerdi'.  Ho provato a collegarmi al sito ieri, con cintuinui messaggi di errore. Sono cliente TELEFONIAX da oltre 12 anni e una cosa cosi' non me la sarei aspettata. Se non avessi controllato per sicurezza, CELLULARE WEB si sarebbe rinnovata fino ad esaurimento credito! Rivoglio il mio credito e risarcimento</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0229</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Compilare moduli per farmi contenta e stare zitta? Ancora nessun contatto da voi e la promozione E' ANCORA ATTIVA nonostante averla disattivata ieri. Mi RIFIUTO di chiamare il 444 dall'estero: il vostro sistema non funziona, risolvetela voi, non vedo perche' io debba spendere soldi per una chiamata dall'estero</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0230</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Costretta da TELEFONIAX a cambiare gestore telefonico per i continui disservizi della zona di Nettuno (Roma)...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0231</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Il problema è che oggi ho attivato la TELEFONIAX CIRCLE ma invece di attivarmi la TELEFONIAX CIRCLE mi avete attivato la PROMOSMART SENZA CONFINI+. Io avevo la SENZA CONFINI ON (che giustamente è stata disattivata) ma ho deciso di passare a TELEFONIAX CIRCLE per i 100 sms verso altri operatori. Sarebbe il caso rimediaste all'errore, non è colpa mia se i link di attivazione della TELEFONIAX CIRCLE rimandano alla PROMOSMART SENZA CONFINI+ che, tra l'altro, voi stessi dite non è più attivabile!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0232</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Sto odiando la connessione per MOBILEL! 3 euro a settimana gia' son troppi in più ho una connessione stra-stra-lenta!!!! </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0233</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ciao bella...mi stanno facendo impazzire per una disdetta!! ora faccio partire la lettera dell'avvocato, non se ne può più! il mio problema è con la TELEFONIAX CONSOLLE (adsl)</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0234</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>agnone (is) siamo senza segnale a volte per giorni interi inutili le segnalazione fatte in almeno 5 anni telefonate solo per le vostre offerte ...... altro australiani siete diventati troppo ITALIANI !!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0235</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Spero dopo tutte le chiamate al 444 che domani internet sul cel funzioni nn essendo a casa a quell'ora.... e vedere di che si tratta. Scusate se lo dico ma è scandaloso pagare il servizio e nell' ultimo mese essere senza internet per più di 15 giorni... nn sò cosa mi trattiene a cambiare gestore... se succede di nuovo nn avrò dubbi !!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0236</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma chi lo fa il sito TELEFONIAX!? è possibile che non funzioni mai niente?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0237</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>un PROMOCONTEGGIO scandaloso! non funziona la prenotazione!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0238</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ringrazio TELEFONIAX per il disagio che mi sta provocando dopo la sospensione in uscita della linea ora e stata disattivata del tutto creandomi disagio per un fattura sbagliata da 40€ ogni due mesi non fa 90,99€ a casa mia.....segnalato già suo tempo ma senza riscontro anzi dava pagata dalla pagina e ora dice da pagare senza modifica di tale fattura assurdo come lavori TELEFONIAX </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0239</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma che cosa sta succedendo?? è da ieri sera che io non riesco più a chiamare e mandare messaggi e ho tutte le tacche???  PS: abito in valle d'aosta e non solo l'unica con sto problema!! </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0240</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ed ho già provveduto a disdire la TELEFONIAX CONSOLLE prima ancora che arrivasse, per colpa dei Vostri operatori che cercano di truffare in tutti i modi il cliente ignaro che, fino a prova contraria, vi da soldi veri....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0241</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Da febbraio chiamo l'assistenza per i disservizi sull'adsl (connettività assente e telefono non funzionante). Prima il problema era continuo e durava parecchio e a tutte le ore, ora dopo mesi di telefonate e CONSOLLE sostituita il problema é piú rado e in orari meno convenzionali ma ancora non risolto. Ieri mancata connettività dalle 23,30 circa fino all'1,24 di questa notte e avant'ieri piú o meno gli stessi orari... Comincio a pensare che non sia casuale, e spero di non sentir parlare di penali o sciocchezze del genere quando riceverete la mia raccomandata per la cessazione del contratto a causa di disservizi...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0242</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma non funziona l'offerta PROMOCONTEGGIO!!!!!!!!!!!!!!!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0243</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>in due anni con TELEFONIAX il telefono di casa non ha mai funzionato! e il primo anno nemmeno l adsl....  e giù a chiamare  e lamentarsi.....per questo son passata a TELEFONIAW... vabbè stendiamo un velo pietoso..</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0244</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>buongiorno, sono da campo san martino prov. di pd, ed è da alcune ore ke ho problemi con la Vs. rete x cellulare???  cosa succede?? aspetto Vs. sollecita risposta! grazie.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0245</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Pessimi!!! più di mezz'ora che cerco di parlare con un operatore!!! PESSIMI!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0246</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma scusate perchè PROMOCONTEGGIO non funziona????</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0247</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Sono diventati con le tariffe troppo cari confronto gli altri operatori!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0248</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Ormai La TELEFONIAX Mette Offerte Inutile e Sciocche E' Meglio La TELEFONIAH .</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0249</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Bella TELEFONIAX aspetto ancora il rimborso del credito bravi bravi</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0250</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>anzi no vado all'associazione consumatori per farmi le mie ragioni e poi vedremo chi ha torno o ragione........mi avete staccato la linea??? anche in entrata? senza un preavviso telefonico? neache date il tempo alla gente di organizzarsi che togliete la linea crendo disagio al cliente bravi bravi TELEFONIAX i miei complimenti non avete un minimo di criterio solo mandare fatture errare in piu non modificate tale fatture in piu sulla pagina del 444 fai da te sezione conti a me risultava pagata poi per magia torna la scritta non pagata....cioè funziona bene il vostro servizio......portare un amico in TELEFONIAX??? dico di no all'amico non passare a TELEFONIAX dopo la mia vicenda senza fine</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0251</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>come devo fare un reclamo verso un operatore maleducato?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0252</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>A Courmayeur (AO) e zone limitrofe da giorni non funzionano i cellulari TELEFONIAX, mio compreso. Non si riesce a inviare/ricevere sms e chiamate. </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0253</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Delinquenti truffatori , avviso a tutti gli utenti..se avete in mente di passare a TELEFONIAX HOME , girate i tacchi e fuggite.servizio pessimo e operatori 444 che inventano risposte e non capiscono nemmeno bene l'italiano.delinquenti</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0254</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Sono 15 giorni che ci state prendendo in giro, voi avete i nostri soldi ma noi del telefono acquistato e pagato non abbiamo notizie... TELEFONIAX vergognatevi</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0255</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>gli operatori del 444 sono  solo buoni a predere in giro i clienti e a raccontare bugie su bugie...lavorano solo x prendersi i soldi..ma andate via licenziatevi....non siete buoni a nulla...mettetevi vergogna...ù</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0256</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>sono passati 13 giorni dalla data di scadenza indicata da TELEFONIAX per l'accredito dei punti....ancora nulla...che sia la solita presa in giro???</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0257</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Volevo solo segnalare che ci sono dei problemi sul sito.....non riesco a richiedere un premio per i clienti TELEFONIAX LUI 20 (ovvero la CELLULARE WEB 4 settimane)  messaggio che appare "Generic application error" e ovviamente è possibile richiederlo solo dal sito e non chiamando il 53737......</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0258</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>cara di TELEFONIAX vi ho mandato un email esponendovi i miei problemi , che da quasi un mese non riesco piu a contatare il 444 , dopo svariate segnalazioni finalmente un operatore ha fatto la segnalazione ma tuttora son sempre di punto e acapo , oggi ho inviato al 444 un sms chiamami , ma dopo svariate tentativi nessuno ma chiamato , e per lo piu mi e arrivato un sms dicendomi che mi avete contatato ma non ho risposto . vi faccio presente che ho il cellulare acceso e non ho ricevuto nessuna chiamata ,e il cellulare e anche sotto copertura , non capisco xche questi diservizi da parte vostra ,son deluso dalla TELEFONIAX</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0259</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>caro marcello....purtroppo e' cosi....LA TELEFONIAX....ti dico che sono da febbraio 2011 cha mando delle raccomandate spendendo dei soldi....ma nessuno mi chiama anzi mi hanno chiamato solo una volta e siamo a gennaio 2012 tu hai sentito qualcuno????DEVO DIRE CHE SONO DEGLI INCAPACI.....manco capisci quello che ti dicono al telefono.....gente che non sa parlare l'italiano...ma dai e' una vergogna.....ma io ho risolto....NON PAGO!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0260</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>E meglio a pagare in più per avere una linea sicura è veloce , io sono passata da TELEFONIAK ha TELEFONIAX è stato un disastro , ho fatto un sbaglio enorme , questa linea è troppo lenta è ti portano in giro sempre con le offerte .</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0261</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Visto che mi continuate a cancellare il post ve lo scrivo anche qui.....vI consiglio vivamente di cambiare il CRM che usate nella vostra azienda, o di usarlo meglio. VIsto l'ennesimo disguido da voi causatomi nel pagamento di una bolletta (PER CASINI VOSTRI E NN MIEI!!) procederò quanto prima a disdire il mio contratto con voi...e a farvi tutta la pubblicità più negativa che mi sarà possibile, il tutto in maniera gratuita!! A NON RIVEDERCI MAI PIU!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0262</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Non servono queste pubblicità ingannevoli quando poi stai mesi e mesi senza ADSL in attesa che un tizio vestito da tecnico ti sistemi la linea o la "CONSOLLE" attraverso il telefono ... </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0263</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io ho adsl CONSOLLE 2 e il computer è lento a navigare con 7 gb,era piu veloce con la chiavetta,poi il telefono fisso non sempre funziona ci vuole la chiavetta inserita nella adsl altrimenti non chiamo e non ricevo.Sono già stanca di tutto x me è una fregatura.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0264</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>invece di fare concorsi, provate a concentrarvi sul dare seguito in tempi brevi ai prodotti strombazzati nelle pubblicità e nelle promozioni... e provate a soddisfare meglio le richieste di clienti abbonati a TELEFONIAX da oltre 10 anni. provate ad esempio a non rispondere in modo ridicolo alle lamentele... Ci guadagnate sicuramente in immagine.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0265</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>A me non rispondono nemmeno qui su fb... Ora ho kiamato x sapere dove sono finiti i miei punti e l'operatrice mi ha messo in attesa e poi mi fa: la posso rikiamare io a breve che ora non riesko a vedere x via di un disservizio??? Bhooooooooooooooo aspettiamo che mi richiami io ho fatto la foto alla pagina del sito x nn riskiare ke mi mettono i punti ke vogliono loro... almeno ho una prova di quanto dicevo...!!! Ma io romperò i maroni xè rivoglio i miei puntiiiiiiiii.....!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0266</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>mamma mia quanti diservizi ,io e da gennaio che non riesco piu ha contatare il 444 x parlare con l operatore ,nonostante abbia fatto la segnalazione son sempre di punto a capo,non ricevo piu offerte ,e neanche piu vengo contatato !</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0267</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ragazzi la linea TELEFONIAX sta dando un sacco di problemi:  a Cerignola FG metà della città non riceve segnale TELEFONIAX dalle 19 di ieri fate qualcosa avete stancando</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0268</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Non ci credo! Ho aderito ad un'offerta simile di TELEFONIAX anni fa e QUANTO PROMESSO nell'offerta commerciale NON E' MAI STATO MANTENUTO malgrado diversi solleciti.. a Roma la chiamano "sola"..</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0269</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>sono ladri autorizzati..io non sto ancora usufruendo della nuova linea e gia' mi hanno fatto pagare 2 bollette..vergogna..</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0270</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>la TELEFONIAX non la vuole più nessuno non parliamo della CONSOLLE ke da un sacco di problemi...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0271</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Un amico?Io non vi presenterei nemmeno al mio peggior nemico!Siete dei ruba soldi a tradimento..e anche quando uno ha credito mandate 40 messaggi al giorno di credito insufficiente!Per non parlare dei soldi che rubate per la tariffa da 15 cent al minuto per chiamate voce...ogni ricarica dite che è valida per un mese....invece ogni ricarica rubate soldi...!Appena capito in un centro commerciale passo a TELEFONIAH o TELEFONIAK.Vogliamo parlare dell' impossibilita' di avere assistenza voce?!INVECE DI MIGLIORARE CON IL TEMPO SIETE DRASTICAMENTE PEGGIORATI!VERGONGNA!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0272</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io ankora aspetto il mio bonus di PROMOAGGIUNGI UNA PERSONA....MA IO DIKO MA KEKAVOLO VI è SUCCESSO PRIMA ERAVATE UNICI ORA INVECE INVECE DI ESSERE AL PRIMO POSTO STATE FACENDO PASSI INDIETRO.... SIETE UN DISASTRO ED IO SONO KON TELEFONIAX DA PIU DI 10 ANNI....MI SA KE è PROPIO ORA DI KAMBIARE OPERATORE</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0273</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>per questo i sistemi telematici TELEFONIAX vanno a rilento!!!!!! credevo fosse un problema tecnico!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0274</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>questo gruppo è nato per dare voce a un problema che assilla un'intera valle da circa 3 anni, ogni volta che piove scompare il segnale per giorni, è possibile che la cara TELEFONIAX it non riesca a risolvere il problema una volta per tutte???</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0275</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>BOICOTTATE TELEFONIAX!!! Sarà di certo una fregatura, come solo TELEFONIAX sa dare. Ne so qualcosa perchè ad ottobre 2011 ho aderito alla PROMODUE GIORNI per l'acquisto di un MODELLOA1 Tab con abbonamento internet incluso a 24€ al mese. Alla prima fattura (bimestrale) 78€, quindi 39€/mese. Chiamo il 444 e l'operatrice (peraltro molto arrogante e superficiale) dice che non conosce questa promozione, mi richiama dopo avre fatto verifiche e mi dice che le risulta che la fatturazione è ok, che se volevo saperne di più dovevo contattarvi tramite sito internet. Ma non lo poteva fare lei??Cosa ci stanno a fare lì???. VERGOGNATEVI!! MERITATE TUTTE LE MULTE CHE LA AGCOM VI DA, E ANCHE DI PIU'!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0276</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>TELEFONIAX sono da gennaio che vi faccio segnalazioni su segnalazioni sia qua che altrove , dicendovi che ho problemi x contatare il 444 ,posso stare tutto il giorno e tutti i giorni che il 444 non mi funziona , nonostante le mie sollecitazioni ,noto che sono ancora di punto e acapo !</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0277</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>I vostri servizi sono PESSIMI, specialmente le internet key. La vostra assistenza clienti lascia decisamente a desiderare, non si riesce mai a trovare qualcuno competente.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0278</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>e  le promozioni fanno schifo</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0279</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>TELEFONIAX è troppo cara cambierò operatore</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0280</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>anke oggi niente telefoo..aspettero la prossima settimana,se non ricevero il mio premio andro x via legale!CAMBIERO OPERATORE!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0281</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Questa persona mi ha detto che la TELEFONIAX ha grossi problemi nella zona di cogorno in provincia di genova da tempo we che dovrebbero risolversi circa verso il 6 febbraio !!!! Allo ra evitate per favore di chiamarmi con delle proposte assurde che non mi interessano e soprattutto non gasarevi dicendo che siete il leader della telefonia mondiale .....e' come minimo penoso che una compagnia nojn avvisi la clientela di un problema cosi' grave e non rimborsi i clienti ,dei gigabyte sprecati ;qs operatore umano sarebbe da premiare almeno mi ha detto lle cose come stanno evitandomi di sprecare tempo ...e cosiì per usufruire di intenete e per lavoro sono all'internet cafè .PRO GETTO NON USARE TELEFONIAX SINI A CHE NON DIVENTA UNA DITTAC SERIA</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0282</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io ho messo una lamentela in bacheca e me l'hanno cancellata! bel modo di avere i feed back di tutti i clienti... comunque di operatori ce ne sono tanti... mi guarderò un po' intorno e vedrò... tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione e dice di riprovare più tardi.. io sono paziente ma poi mi stanco .. e dato che di soldi gliene diamo anche troppi il servizio dovrebbe essere impeccabile.. invece c'è un tale menefreghismo.. e pensare che ho fatto passare tutta la mia famiglia a TELEFONIAX!! Siamo in 5 e saranno 5 TELEFONIAX che se ne vanno e grazie al passaparola anche di più..</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0283</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma il nuovo sito della TELEFONIAX l'avete fatto fare dagli stessi che rispondono al 444? ma vi rendete conto che state perdendo clienti perchè siete circondati da incompetenti? e soprattutto ancora aspetto di  sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata... secondo me è ora che cominciate ad ascoltare i vostri clienti.... siamo abbastanza in tanti ad essere alquanto stufi......</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0284</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0285</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io sono da 6 gennaio che non riesco piu ha contatare il 444, nonostante le mie segnalazioni fatte da un altro numero sono sempre di punto e acapo , eper lo piu me stato detto che non ci son problemi nel contatare il 444 hanno visto che e tutto aposto , e io che continuo sempre a qualsiasi ora del giorno e ogni giorno a non riuscire ha contatare il 444 posso stare anche anni cosi senza riuscire nell operazione ,percarita di male in peggio .</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0286</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ALLA FACCIA DEGLI OLTRE 10 ANNI DI FEDELTà! recita 1 vostro spot" per te che sei TELEFONIAX da tanto tempo c'è sempre qualcosa in in più". Bè IO SONO CLIENTE DA OLTRE 10 ANNI!10 ANNI DI FEDELTà.MA 1 VOLTA I CLIENTI LI TRATTAVATE MEGLIO. ANCHE QUEST'ANNO COME LO SCORSO ANNO NEL GIORNO DEL MIO COMPLEANNO IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME!COSA CHE INVECE AVVENIVA SEMPRE E CON MOLTA PREMURA IN TUTTI GLI ANNI PRIMA AVVISANDOMI PER EMAIL O PER SMS DEL REGALO. molto delusa</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0287</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>infatti, servizio pessimo, io sono ancora in attesa di un rimborso per una truffa subita dalla TELEFONIAX, inj cui la TELEFONIAX è l'inadempiente del contratto, ma dei miei soldi ancora nessuna traccia</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0288</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>i premi fanno davvero schifo,</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0289</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>anche io ho un problemino con TELEFONIAX!! chiamo con il mio telefono al 444  moltissime volte,  x  l'assistenza clienti , al mio numero non risponde nessuno!! provo con un'altro numero sempre TELEFONIAX  e mi rispondono dopo qualche squillo. e non è un caso xche sono settimane che provo.. che schifo mi sa che cambio gestore!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0290</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>TELEFONIAX, mi spiace.. ma sei sempre troppo cara... non misuri le esigenze dei clienti, e spari 20,00...o 15,00 come fossero noccioline.. la piu competitiva è TELEFONIAK.la PROMOTUTTO COMPRESO a 9 euro, e il prezzo ribassato a tale costo a coloro che sono gia' clienti. un giga di internet 150 min, e 150 sms. anche Tim, che è l'operatore piu' caro in assoluto, perchè del gruppo TELEFONIAW  si è allineata alle esigenze della crisi, TELEFONIAX, non è che tu sei piu bella.. 15,00.. mi pago quasi due volte la PROMOTUTTO COMPRESO. ciao ciao. pensaci..</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0291</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Avete veramente complicato la vita!!! NON posso da giorni ricaricare, NON funziona niente, sempre e solo "siamo spiacenti ...!!!  insomma se questo e per voi " semplice e intuitivo" ...!!! allora ditelo!! io sono stufa!!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0292</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Mi piacerebbe parlare con qualcuno della customer care di TELEFONIAX!!! Ho mandato una raccomandata due mesi fa con una segnalazione e non ho ancora ricevuto nessun feedback!!! Alla faccia della tanto blasonata "attenzione al cliente"!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0293</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ho problemi di linea con il cellulare e non so perche</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0294</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Quindi va di moda alla TELEFONIAX non prevedere le situazioni! Siamo ancora in attesa della linea telefonica in provincia di Frosinone! Vergogna</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0295</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>vergogna...mi hanno inviato un MODELLOA2 s fondo di magazzino, usato e con una montagna di pixel bruciati. Alla mia richiesta di sostituzione hanno risposto che dovevo mandarlo in assistenza.  Cliente dal 1998! </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0296</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Sto ancora aspettando che qualcuno si degni di chiamarmi per dirmi dov'è finito sto benedetto MODELLOA2, dopo aver fatto continue segnalazioni e reclami! Bella organizzazione! Che almeno mi rimborsino!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0297</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io aspetto ancora l'offerta PROMOCONTEGGIO dei mess.....e la nuova opzione dei mess gratis con widget non funziona più...........</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0298</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io ho solo avuto problemi con  la TELEFONIAX...soprattutto col telefono di casa!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0299</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>la TELEFONIAX ormai non è più conveniente e non è nemmeno competitiva rispetto agli altri operatori!! la TELEFONIAX ABC è una bufala...lasciatevelo dire da uno che è TELEFONIAX LUI 20!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0300</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>che delusione sta TELEFONIAX... premi inutili, tariffe e promo non ne parliamo.... mah....!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0301</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Io mi concentrerei piuttosto su alcuni problemi base che avete..come l' insufficienza del servizio assistenza voce.Oppure anomalie che avete sui messaggi di notifica di credito insufficiente.</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0302</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>E' una vergogna... Prezzi insostenibili... Devo navigare con la kiavetta, non vorrei abbandonare TELEFONIAX, ma mi state costrincendo... 7 GB al mese 39 € ma NON VI VERGOGNATE??? TELEFONIAH 10 GB al mese 24 € ; TELEFONIAJ 10 GB al mese 20 € ; TELEFONIAZ 15 GB al mese 19 € ; TELEFONIAK 10 GB al mese 15 € ; TELEFONIAX 7 GB al mese 39 € LADRISSIMI... OGGI HO PROVATO LA KEY TELEFONIAH, VA BENISSIMO E IL COSTO E' BUONO, SE ENTRO MARTEDI NON RICEVO UN'OFFERTA EQUA DA VOI DI TELEFONIAX VADO AL CENTRO TELEFONIAH CON LA MIA FAMIGLIA E PASSIAMO TUTTI A TELEFONIAH... 7 SIM VOCE E 2 SIM DATI... </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0303</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>AIUTO RIACCREDITO , chiamatela AIUTO RIACCREDITO , se x voi TELEFONIAX questa si chiama AIUTO RIACCREDITO ,carissima e bisogna restituire il doppio , ma fatene una vergogna , come le tariffe siete cari , e sempre con problemi , senza poi dire che ai clienti non fate piu offerte regalo ,lasciate la gente con problemi, fatte solo publicita televisive ,e tante altre cavolate , e non vi preocupate dei clienti , o di fare promo competitive o promozioni da attirarvi i clienti , visto la crisi e visto che la gente a poki soldi. svegliatevi ho perderete clienti giorno x giorno</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0304</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>bravi!!casting,promozioni,regali e poi noi da 15 giorni senza linea ai cell,chiamando ogni giorno per sentirci dire:"la linea la ripristinano domani alle 15,o alle 10,o in serata"ogni giorno una scusa diversa..paesi interi senza copertura TELEFONIAX,ma i soldi delle promizioni sn la prima cosa ke ti scalano,che importa se il cell non puoi usarlo..e c'è chi si permette il lusso di rispondere male al tel..ma bravi,complimenti alla TELEFONIAX...ma vergognatevi!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0305</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>TELEFONIAX it, ma al di là di queste risposte standard, in concreto cosa fate? A casa mia siamo senza telefono da due mesi in attesa dell'attivazione della vostra maledetta linea telefonica e al di là di queste risposte diplomatiche non c'è stato nulla di concreto, però siete stati pronti a emettere fattura immediatamente, addebitando peraltro su una carta di credito utilizzata per pagare un contratto telefonico mobile 3 anni fa, nonostante sia stato indicato come pagamento il rid... Tutte cose abbastanza illegali... ma procedete pure con la diplomazia...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0306</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>ma che bugia...i vostri operatori non sanno nulla e nel sito giri solo a vuoto...un disservizio,attendo l'adsl dal 19 febbraio e non so perché non sia ancora attiva..."problemi tecnici"...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0307</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Io attendo il trasloco della linea adsl dal 2 febbraio ma ancora niente,ho fatto un sacco di segnalazioni al 444, all' 911232911 e anche sul sito ma niente! :-/</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0308</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io ho richiesto adsl ad agosto e tre mesi fa mi hanno mandato la pratica in cancellazione e sono tre mesi che sto senza internet servizio adsl mai attivato.... in più ho dovuto mandare disdetta per chiudere il contratto e devo pure restituire la CONSOLLE oltretutto.... tutti questi danni e nessuno ti si fila... mi hanno chiuso la pratica e nemmeno una telefonata mi hanno fatto, ho dovuto chiamare io.... vergogna.... promettete cose che non potrete mai far ottenere.... grazie per il tempo che mi avete fatto perdere stando senza internet a rincorrere ogni minimo movimento della mia pratica sperando mese dopo mese che venisse attivata.... SIETE PROPRIO UNA DELUSIONE!!!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0309</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>.....una linea telefonica mai attivata......per un loro disservizio....dopo un anno mi vedo arrivare la penale......</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0310</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Mi state facendo impazzire..... con le linee ritardate settimane, date chiavette che vanno male e in più promettete connessioni con le offerte nuove tramite 3G che sono pietose ....</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0311</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Imbarazzanti voi e la gente che mandate in giro a fregare le persone...perchè di fregatura si parla...una chiavetta per navigare su internet.. che ha smesso di funzionare dopo 1 settimana...connettività adsl quasi sempre assente...mille cavilli burocratici per far funzionare sia internet che il telefono di casa...alle domande poste vengono fornite risposte superficiali ed evasive: "Manterrò il mio numero di telefono fisso vecchio passando a TELEFONIAX o dovrò cambiarlo?" risposta "no ci mancherebbe lei manterrà il suo numero di telefono"...TROPPO...oggi provo a chiamare a casa..mi dà numero inesistente..e toh..SORPRESA! Numero di telefono fisso cambiato... Per non parlare del famoso "ribaltamento della presa"..."DOVETE SOLO INVERTIRE DUE CAVI"...non mi sembra proprio dato che basta guardare su internet per capire che le cose stanno diversamente...e serve necessariamente un tecnico. Complimenti!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0312</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>io ho chiamato la TELEFONIAX per fare il contratto x  la TELEFONIAX CONSOLLE 1 poco prima che uscisse la 2 e devo cioè a dicembre, la CONSOLLE mi è arrivata subito ma aimèèèè la linea mi è arrivata 5 giorni fà... e indovinate un pò nemmeno funziona -.- perchè so che appena si accende la luce fissa della rete si dovrebbe spegnere quella della internet key, cosa che non avviene...ho chiamato il 444 almeno 10 volte ma nessun operatore a risolto il problema anzi mi hann fatto solo uscire pazzo: accendila, spegnila, riavviala..io di certo la boletta non la pago...</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0313</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>TELEFONIAX it sto facendo segnalazioni da 1 mese ...ma non è mai stato risolto nulla</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0314</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Invece di scrivere idiozie,attivatemi l'adsl...è praticamente impossibile riuscire a sapere dal call center perché sono due mesi che un servizio non viene attivato...che pessimo servizio,ho detto a tutti i miei conoscenti di non aderire a promozioni TELEFONIAX</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0315</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>non fate la TELEFONIAX e solo una fregatura e prezzi alle stelle meglio la TELEFONIAK</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0316</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Viene ripetuto perchè è da 6 mesi che mi fatturate una linea che non funziona. Che perdo tempo dietro al vostro servizio "assistenza" che chiude le segnalazioni senza neanche darsi la pena di verificare che l'intervento sia andato a buon fine e che addirittura si permette di riattaccare (dopo un'attesa di media 15 min per parlare con un operatore). Che dite, si può essere esasperati?</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0317</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>Possibile che dal 16 marzo non siate ancora riusciti a risolvere la problematica che non mi consente di utilizzare il mio profilo sul 444.it???  Inutile che abbiate un servizio di Chiamami se poi non richiamate! Inoltre sono estremamente irritanti le indagini sulla qualità del servizio quando quello che testate è solo la cortesia e la capacità di risposta degli operatori e non l'effettiva risoluzione della problematica contestata. Meglio che vi diate una mossa a mio avviso e lavoriate soprattutto su come non far "migrare" i vostri Clienti, soprattutto quelli che sono con voi da oltre 15 anni </text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0318</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>nonostante i miei solleciti sono 3 mesi ke i servizi TELEFONIAX sim non funzionano</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0319</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>si è vero, anche a me TUO 444 dà un sacco di problemi, prima con widget andavo una favola, ora sono piu' le volte che non si apre che quelle che funziona e poi ho scoperto che io mando un messaggio alle 12 di oggi e al destinatario arriva il giorno dopo!!!! OSCENO!!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0320</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>peccato che a me TUO 444 bon funziona da giorni e giorni dicendo che  il servizio non è disponibile e bisogna controllare la connessione..mah....e comunque perchè non fate offerte e piani convenienti come anni fa??Sto pensando di passare ad altro..con voi ogni ricarica svanisce in pochissimo tempo!!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0321</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>mi stanno tempestando di promozioni attivabili gratuitamente, ma tutte incompatibili con il mio piano telefonico...semplicemente ridicolo!</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0322</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>k tristezza con queste promozioni k fanno ci rubano un sacco di soldi...ci stanno mettendo alle strette di kambiare gestore...scusami potresti spiegarmi in kosa konsiste la PROMOTUTTO COMPRESO????</text>
+		</interaction>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0323</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>da circa 3 mesi ho fatto il contratto con TELEFONIAX,sono stato costretto a pagare 50€ di attivazione che ancora non ho ed a giorni mi dovrebbe arrivare anche la fattura del bimestre gennaio-febbraio........aspetto fino a lunedì poi mi comporterò di conseguenza.....al 444 risponde del personale incompetente.........</text>
+		</interaction>
+	</interactions>
+</dataset>

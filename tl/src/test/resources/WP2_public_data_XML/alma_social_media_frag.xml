@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset 	xmlns="http://www.excitement-project.eu"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.excitement-project.eu dataset.xsd">
+	<provider>ALMA</provider>
+	<channel>social</channel>
+	<language>IT</language>
+	<interactions>
+		<interaction>
+			<metadata>
+				<businessScenario>mobile service provider</businessScenario>
+				<dataSource>TELEFONIAX</dataSource>
+				<id>0005</id>
+				<author></author>
+				<date>2012-12-31</date>
+				<category>not categorized yet</category>
+			</metadata>
+			<text>TELEFONIAX sta cercando di truffarmi dopo aver manomesso la centralina telefonica ed avermi privato del telefono di casa. Mi ha mandato la TELEFONIAX CONSOLLE che non ho mai chiesto, ho dovuto rispedirgliela ancora imballata. Ora continua a mandarmi bollette e raccomandate anche se non ho mai firmato nulla nè mai usufruito del loro servizio</text>
+		</interaction>
+	</interactions>
+</dataset>

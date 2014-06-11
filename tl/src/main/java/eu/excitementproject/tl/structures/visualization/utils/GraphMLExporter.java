@@ -247,7 +247,8 @@ public class GraphMLExporter<V, E>
                 handler.startElement("", "", "data", attr);
 
                 // Content for <data>
-                String edgeLabel = edgeLabelProvider.getEdgeName(e);
+//                String edgeLabel = edgeLabelProvider.getEdgeName(e);
+                String edgeLabel = "";
                 handler.characters(
                     edgeLabel.toCharArray(),
                     0,
