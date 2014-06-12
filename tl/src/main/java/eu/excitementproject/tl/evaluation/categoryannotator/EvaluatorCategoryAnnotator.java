@@ -289,7 +289,6 @@ public class EvaluatorCategoryAnnotator {
 	 */
 	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename) throws IOException {
 		
-		@SuppressWarnings("unused")
 		UseCaseOneRunnerPrototype use1;
 		
 		// Read in all emails with their associated categories and split into train/test set
