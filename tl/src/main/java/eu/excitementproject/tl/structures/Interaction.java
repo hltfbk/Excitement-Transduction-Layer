@@ -3,6 +3,7 @@ package eu.excitementproject.tl.structures;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPException;
@@ -23,6 +24,8 @@ import eu.excitementproject.tl.laputils.CASUtils;
  *
  */
 public class Interaction implements Comparable<Interaction> {
+	
+	static Logger logger = Logger.getLogger(Interaction.class.getName());
 
 	/**
 	 * Constructor for the data type. This constructor is "full" one. 
@@ -178,13 +181,21 @@ public class Interaction implements Comparable<Interaction> {
 	{		
 		List<JCas> cases = new ArrayList<JCas>();
 		if (relevantTextProvided) {
-			for (int i=0; i<this.relevantTexts.size(); i++) {
-				JCas aJCas = CASUtils.createNewInputCas(); 
-				aJCas.setDocumentLanguage(this.lang); 
-				aJCas.setDocumentText(this.relevantTexts.get(i).getText());
-				CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.relevantTexts.get(i).getGoldCategory());
-				CASUtils.addTLKeywords(aJCas, this.keywords);
-				cases.add(aJCas);
+			logger.info("Number of relevant texts: " + relevantTexts.size());
+			for (int i=0; i<this.relevantTexts.size(); i++) { //dealing with multiple relevant texts in the same interaction
+				RelevantText relevantText = relevantTexts.get(i);
+				String[] categories = relevantText.getGoldCategory().split(",");
+				if (categories.length > 2) {
+				}
+				logger.info("Number of categories assigned to relevant text: " + categories.length);
+				for (int j=0; j<categories.length; j++) { //dealing with multiple categories assigned to the same relevant text
+					JCas aJCas = CASUtils.createNewInputCas(); 
+					aJCas.setDocumentLanguage(this.lang); 
+					aJCas.setDocumentText(relevantText.getText());
+					CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, categories[j]);
+					CASUtils.addTLKeywords(aJCas, this.keywords);
+					cases.add(aJCas);
+				}
 			}
 		} else {
 			JCas aJCas = CASUtils.createNewInputCas(); 
