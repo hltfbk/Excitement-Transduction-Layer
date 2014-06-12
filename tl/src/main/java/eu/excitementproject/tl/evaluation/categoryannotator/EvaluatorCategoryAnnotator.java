@@ -83,7 +83,6 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
-import eu.excitementproject.tl.toplevel.usecasetworunner.UseCaseTwoRunnerPrototype;
 
 /**
  * 
@@ -168,12 +167,13 @@ public class EvaluatorCategoryAnnotator {
 		EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setup);
 		
 		try {
-			//eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
-			eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+			//eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		writer.close();
+		logger.info("Finished evaluation");
 	}
 
 	EvaluatorCategoryAnnotator(int setup) {
@@ -760,24 +760,44 @@ public class EvaluatorCategoryAnnotator {
 				int countPositive = 0;
 				
 				for (Interaction interaction : testDocs) {
-					JCas cas = interaction.createAndFillInputCAS();
-					fragmentAnnotatorForNewInput.annotateFragments(cas);
-					modifierAnnotator.annotateModifiers(cas);
-					//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-					Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
-					//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+					logger.info("-----------------------------------------------------");
+					logger.info("Processing test interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
+					JCas casInteraction = interaction.createAndFillInputCAS();
+					List<JCas> casesRelevantTexts = interaction.createAndFillInputCASes(relevantTextProvided);
+					logger.info("Number of cases: " + casesRelevantTexts.size());
+					Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
+					for (int l=0; l<casesRelevantTexts.size(); l++) {
+						JCas cas = casesRelevantTexts.get(l);
+						logger.info("category: " + CASUtils.getTLMetaData(cas).getCategory());
+						fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
+						modifierAnnotator.annotateModifiers(cas);
+						logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+						fragmentGraphs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
+						//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+					}
+						
 					Set<NodeMatch> matches = getMatches(graph, fragmentGraphs);	
+					
+					for (NodeMatch match : matches) {
+						for (PerNodeScore score : match.getScores()) {
+							logger.info("match score for "+score.getNode().getLabel()+": " + score.getNode().getCategoryConfidences().keySet());
+						}
+					}
+
 					//add category annotation to CAS
-					categoryAnnotator.addCategoryAnnotation(cas, matches);
+					categoryAnnotator.addCategoryAnnotation(casInteraction, matches);
 
 					//print CAS category
 					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
 			    	//Compare automatic to manual annotation
 					logger.info("annotating interaction " + interaction.getInteractionId());
-			//		logger.info("interaction text: " + interaction.getInteractionString());
-					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
-		
+				//		logger.info("interaction text: " + interaction.getInteractionString());
+					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(casInteraction);
+
+					for (CategoryDecision catDec : decisions) 
+						logger.info("decision" + catDec.getCategoryId() + " : " + catDec.getConfidence());
+										
 					countPositive = compareDecisionsForInteraction(countPositive,
 							interaction, decisions, mostProbableCat, graph, matches);				
 				}
@@ -890,7 +910,7 @@ public class EvaluatorCategoryAnnotator {
 			Set<FragmentGraph> fragmentGraphs) throws LAPException,
 			FragmentAnnotatorException, ModifierAnnotatorException,
 			FragmentGraphGeneratorException, NodeMatcherException,
-			CategoryAnnotatorException {
+			CategoryAnnotatorException {		
 		//call node matcher on each fragment graph
 		Set<NodeMatch> matches = new HashSet<NodeMatch>();
 		System.out.println("fragmentsGraphs: " + fragmentGraphs);
@@ -1063,12 +1083,23 @@ public class EvaluatorCategoryAnnotator {
 	private Set<FragmentGraph> buildFragmentGraphs(List<Interaction> graphDocs) throws FragmentAnnotatorException,
 			ModifierAnnotatorException, FragmentGraphGeneratorException {
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
-		for(Interaction i: graphDocs) {
+		for(Interaction interaction: graphDocs) {
+			logger.info("-----------------------------------------------------");
+			logger.info("Processing graph interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
 			List<JCas> cases;
 			try {
-				cases = i.createAndFillInputCASes(relevantTextProvided);
+				cases = interaction.createAndFillInputCASes(relevantTextProvided);
+				if (cases.size() < 1) { //if no relevant text(s), create cas from complete text
+					JCas cas = interaction.createAndFillInputCAS();
+					cases.add(cas);
+				}
 				for (int j=0; j<cases.size(); j++) {
 					JCas cas = cases.get(j);
+					logger.info("category: " + CASUtils.getTLMetaData(cas).getCategory());
+					if (CASUtils.getTLMetaData(cas).getCategory().contains(",")) {
+						logger.info("Category contains comma in EvaluatorCategoryANnotation.buildFragmentGraphs");
+						System.exit(0);
+					}
 					fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
 					modifierAnnotator.annotateModifiers(cas);
 					logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
