@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:temporal="http:///eu/excitement/type/temporal.ecore"
+	xmlns:cas="http:///uima/cas.ecore"
+	xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore"
+	xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore"
+	xmlns:entailment="http:///eu/excitement/type/entailment.ecore"
+	xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore"
+	xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore"
+	xmlns:alignment="http:///eu/excitement/type/alignment.ecore"
+	xmlns:semanticrole="http:///eu/excitement/type/semanticrole.ecore"
+	xmlns:tcas="http:///uima/tcas.ecore" xmlns:predicatetruth="http:///eu/excitement/type/predicatetruth.ecore"
+	xmlns:xmi="http://www.omg.org/XMI" xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore"
+	xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore"
+	xmlns:tl="http:///eu/excitement/type/tl.ecore"
+	xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore"
+	xmi:version="2.0">
+	<cas:NULL xmi:id="0" />
+	<cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView"
+		mimeType="text"
+		sofaString="Better at reception-Stars Bridge needs to improve ; not enough space ;often long queu - lounge : coffee machines not always working ; variation and quality of food ; not enough seats ...hope this can help . Thanks  " />
+	<tcas:DocumentAnnotation xmi:id="8" sofa="1"
+		begin="0" end="215" language="en" />
+	<tl:Metadata xmi:id="13" sofa="1" begin="0" end="215"
+		interactionId="498974.txt" />
+	<tl:DeterminedFragment xmi:id="24" sofa="1"
+		begin="88" end="131" text="lounge : coffee machines not always working "
+		fragParts="33" />
+	<tl:DeterminedFragment xmi:id="37" sofa="1"
+		begin="52" end="68" text="not enough space " fragParts="46" />
+	<tl:DeterminedFragment xmi:id="50" sofa="1"
+		begin="88" end="182" text="lounge not enough seats " fragParts="62 66 70 74" />
+	<tl:FragmentPart xmi:id="74" sofa="1" begin="177" end="182" />
+	<tl:FragmentPart xmi:id="70" sofa="1" begin="170" end="176" />
+	<tl:FragmentPart xmi:id="66" sofa="1" begin="113" end="116" />
+	<tl:FragmentPart xmi:id="62" sofa="1" begin="88" end="94" />
+	<tl:FragmentPart xmi:id="46" sofa="1" begin="52" end="68" />
+	<tl:FragmentPart xmi:id="33" sofa="1" begin="88" end="131" />
+	<cas:View sofa="1" members="8 13 24 37 50" />
+</xmi:XMI>
