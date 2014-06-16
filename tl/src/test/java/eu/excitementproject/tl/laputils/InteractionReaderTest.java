@@ -2,6 +2,7 @@ package eu.excitementproject.tl.laputils;
 
 import static org.junit.Assert.*;
 
+
 import java.io.File;
 import java.util.List;
 
@@ -274,6 +275,46 @@ public class InteractionReaderTest {
 		}	
 
 		testlogger.info("testing of readInteractionXML() with relevant text: Okay"); 	
+    }
+    
+    @Test
+    public void test_multiple_categories() {
+    	
+		BasicConfigurator.resetConfiguration(); 
+		BasicConfigurator.configure(); 
+		Logger.getRootLogger().setLevel(Level.INFO);   
+		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+
+		File f = new File("./src/test/resources/WP2_public_data_XML/omq_public_multiple_cats_for_test.xml"); 		
+		try {
+			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
+			for (Interaction i : iList) {
+				if (i.getInteractionId().equals("138"))	{
+					assertTrue(i.getRelevantTexts().size() == 1);			
+					assertTrue(i.getCategories().length == 1);			
+					assertTrue(i.getCategoryString().startsWith("116"));			
+				} else if (i.getInteractionId().equals("609"))	{
+					assertTrue(i.getRelevantTexts().size() == 1);			
+					assertTrue(i.getCategories().length == 2);			
+					assertTrue(i.getCategoryString().startsWith("100"));			
+				} else if (i.getInteractionId().equals("312"))	{
+					assertTrue(i.getRelevantTexts().size() == 2);			
+					assertTrue(i.getCategories().length == 2);			
+					assertTrue(i.getCategoryString().endsWith("106"));			
+				} else if (i.getInteractionId().equals("602"))	{
+					assertTrue(i.getRelevantTexts().size() == 2);			
+					assertTrue(i.getCategories().length == 2);			
+					assertTrue(i.getCategoryString().startsWith("100"));			
+				}
+			}					
+		}
+		catch (Exception e)
+		{
+			fail(e.getMessage()); 
+		}	
+
+		testlogger.info("testing of readInteractionXML() with multiple categories: Okay"); 	
+    	
     }
 
 }
