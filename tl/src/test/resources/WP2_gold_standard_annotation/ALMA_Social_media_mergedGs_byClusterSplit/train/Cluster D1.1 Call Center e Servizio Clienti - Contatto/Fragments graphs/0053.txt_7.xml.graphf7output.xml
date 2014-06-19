@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="0053.txt_7_0" implicit_statement="FALSE" modality="TRUE" explicit_context="0053.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
-        <original_text>non rieso a parlare con nesuno</original_text>
-        <correct_text>non riesco a parlare con nessuno</correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>

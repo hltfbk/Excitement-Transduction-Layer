@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<F_entailment_graph nodeNum="1">
-    <node id="0264.txt_1_0" implicit_statement="TRUE" modality="FALSE" explicit_context="0264.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
-        <original_text>provate a soddisfare meglio le richieste di clienti</original_text>
-        <correct_text>provate a soddisfare meglio le richieste dei clienti</correct_text>
-        <modifiers></modifiers>
-    </node>
-</F_entailment_graph>
