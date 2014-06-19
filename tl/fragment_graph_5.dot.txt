@@ -1,3 +1,2 @@
 digraph rawGraph {
-"Wie gehe ich weiter vor?" -> "Wie gehe ich vor?" [label=1] [color=green]
 }
