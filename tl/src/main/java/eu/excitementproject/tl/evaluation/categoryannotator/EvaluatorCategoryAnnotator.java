@@ -148,6 +148,7 @@ public class EvaluatorCategoryAnnotator {
 //    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction    
     static String scoreCombination = "vsm"; //how to combine the scores for different fragments to a final score for the interaction    
 
+	static File temp; 
     static PrintWriter writer; 
     	
 	public static void main(String[] args) {
@@ -179,26 +180,34 @@ public class EvaluatorCategoryAnnotator {
 	EvaluatorCategoryAnnotator(int setup) {
 		setup(setup);		
 		try {
-			writer = new PrintWriter("C:/Temp/debugging"+System.currentTimeMillis()+".txt", "UTF-8");
+			 temp = File.createTempFile("debugging"+System.currentTimeMillis()+".txt", ".tmp");
+			 writer = new PrintWriter(temp, "UTF-8");
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (UnsupportedEncodingException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
 	EvaluatorCategoryAnnotator() {
 		setup(1);		
 		try {
-			writer = new PrintWriter("C:/Temp/debugging"+System.currentTimeMillis()+".txt", "UTF-8");
+			 temp = File.createTempFile("debugging"+System.currentTimeMillis()+".txt", ".tmp");
+			 writer = new PrintWriter(temp, "UTF-8");
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (UnsupportedEncodingException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
