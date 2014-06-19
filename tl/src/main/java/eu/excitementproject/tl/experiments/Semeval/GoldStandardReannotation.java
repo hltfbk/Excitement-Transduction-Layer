@@ -65,17 +65,33 @@ public class GoldStandardReannotation {
 */
 
 	private Relation getRelation(EquivalenceClass nodeA, EquivalenceClass nodeB){
+
+		
 		// Note: in a collapsed graph there can be 1 edge (in either direction) or no edge
 		//		 but after editing collapsed nodes, there can be bidirectional entailments between collapsed nodes
-		//		 This happens when EU-members of the nodes were placed under one collapsed node in the original annotaiton  
+		//		 This happens when EU-members of the nodes were placed under one collapsed node in the original annotaiton  		
+
+		// Note2: after editing FGs, there can be cases where nodes are not found in WP2 annotation (initial collapsed graph)
 		
 		boolean ab=false;
 		boolean ba=false;
 		
 		for (EntailmentUnit a : nodeA.getEntailmentUnits()){
 			for (EntailmentUnit b : nodeB.getEntailmentUnits()){
-				if (rg.isEntailment(a, b)) ab = true;
-				if (rg.isEntailment(b, a)) ba = true;
+				boolean isOK = true;
+				if (!rg.containsVertex(a)) {
+					isOK = false;
+					System.err.println("Warning: node <<"+a.getText()+">> was not found in WP2-annotaited graph.");
+				}
+				if (!rg.containsVertex(b)) {
+					isOK = false;
+					System.err.println("Warning: node <<"+b.getText()+">> was not found in WP2-annotaited graph.");
+				}
+				
+				if (isOK){
+					if (rg.isEntailment(a, b)) ab = true;
+					if (rg.isEntailment(b, a)) ba = true;					
+				}
 			}
 		}
 		
@@ -280,7 +296,7 @@ public class GoldStandardReannotation {
 				}
 				else{
 					if (!wp2eus.contains(eu.getText())){
-						System.err.println("ERROR: <<"+eu.getText()+">> is not found in the raw graph.");
+						System.err.println("ERROR: <<"+eu.getText()+">> is not found in the FGs.");
 						cons = false;						
 					}
 					else closedList.add(eu.getText());
@@ -294,7 +310,7 @@ public class GoldStandardReannotation {
 			System.out.println("WARNING:");			
 			System.out.println("The following "+wp2eus.size()+" EUs from the fragment graphs are not present in the updated nodes:");
 			for (String s : wp2eus){
-				System.out.println(" - "+s);
+				System.out.println(" - <<"+s+">> "+ textToIdsMap.get(s));
 			}
 		}
 		return cons;
@@ -511,19 +527,21 @@ public class GoldStandardReannotation {
 		
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 		
-		String clusterName = "EMAIL0010";		
+		String clusterName = "Cluster D1.4 Servizio Comm e Postvendita"; //"EMAIL0410";		
 	//	String clusterName = "SPEECH0080";		
 
 	//	String set = "Test";
 		String set = "Dev";
 		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
+		// File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
+		
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
 			return;
 		}
 			
-	/*	// create txt file for original WP2 annotation
+		// create txt file for original WP2 annotation
 		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");		
 		try {
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -531,10 +549,11 @@ public class GoldStandardReannotation {
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
 		
-/*		
-		// create txt file for updated collapsed nodes		
+
+				
+/*		// create txt file for updated collapsed nodes		
 		try {
 			File txtFileUp = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt");
 			tr.loadClusterGraph(clusterAnnotationsDir);
@@ -555,8 +574,10 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 */
-		// load final re-annotated graph 		
+
+/*		// load final re-annotated graph 		
 		boolean bFinal = true; // which filename to load: true for the one with cluster name as its name (the very final one)
 		try {
 			File txtFileReannotated;
@@ -574,7 +595,12 @@ public class GoldStandardReannotation {
 			System.out.println("Cluster \t Nodes in FGs \t Edges in FGs \t coll nodes \t meta-nodes \t Avg size of meta-node \t Coll Edges \t raw Nodes \t raw Edges");			
 			System.out.print(clusterName+"\t");
 			System.out.print(tr.rfg.vertexSet().size()+"\t");
-			System.out.print(tr.rfg.edgeSet().size()+"\t");
+			
+			int fgYesEdges = 0;
+			for (EntailmentRelation e: tr.rfg.edgeSet()){
+				if (e.getTEdecision().getDecision().is(DecisionLabel.Entailment)) fgYesEdges++;
+			}
+			System.out.print(fgYesEdges+"\t");
 			System.out.print(tr.ourCg.vertexSet().size()+"\t");
 			
 			int metaNodes = 0;
@@ -600,7 +626,7 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-
+*/
 	}
 
 }

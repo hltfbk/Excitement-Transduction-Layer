@@ -34,6 +34,8 @@ should be clearly exposed in the Constructor.
  */
 public abstract class AbstractGraphMerger implements GraphMerger{
 
+	public int edaCalls = 0;
+	
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.composition.graphmerger");
 	Double entailmentConfidenceThreshold = null;
 
@@ -51,6 +53,7 @@ should be clearly exposed in the Constructor.
 	public AbstractGraphMerger(CachedLAPAccess lap, EDABasic<?> eda) throws GraphMergerException{
 		this.lap=lap;
 		this.eda=eda;
+		edaCalls=0;
 	}
 
 	@Override
@@ -116,12 +119,17 @@ should be clearly exposed in the Constructor.
 	 // viv@fbk: added lap parameter
 	 			
 	protected EntailmentRelation getRelation(EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode) throws GraphMergerException{	
+		edaCalls++;
 		// check only one direction: candidateEntailingNode -> candidateEntailedNode
 		try {
 			return new EntailmentRelation(candidateEntailingNode, candidateEntailedNode, this.getEda(), this.lap);
 		} catch (EntailmentGraphRawException e) {
 			throw new GraphMergerException(e.getMessage());
 		}
+	}
+
+	public int getEdaCallsNumber() {
+		return edaCalls;
 	}
 
 	private boolean isSufficientConfidence(double confidence){

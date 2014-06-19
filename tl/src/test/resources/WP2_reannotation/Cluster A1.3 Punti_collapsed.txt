@@ -1,0 +1,470 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 1 entailment unit(s) before editing
+	a me sono spariti ben 907 punti TELEFONIAX ABC	[0019.txt_2_0]
+
+collapsed node #2 : 1 entailment unit(s) before editing
+	a me sono spariti 907 punti TELEFONIAX ABC	[0019.txt_2_1]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	ad oggi non so ancora a che punto sia il ri - accredito punti	[0019.txt_1_2]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	[0019.txt_1_1]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	[0019.txt_1_0]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	Scandaloso il servizio trasferimento punti	[0058.txt_1_0]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	Scandaloso il trasferimento punti	[0058.txt_1_1]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	non so a che punto sia la mia pratica e il ri - accredito punti	[0019.txt_1_5]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	non so ancora a che punto sia il ri - accredito punti	[0019.txt_1_6]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	non so ancora a che punto sia la mia pratica e il ri - accredito punti	[0019.txt_1_3]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	ad oggi non so a che punto sia il ri - accredito punti	[0019.txt_1_4]
+
+collapsed node #12 : 1 entailment unit(s) before editing
+	non so a che punto sia il ri - accredito punti	[0019.txt_1_7]
+
+collapsed node #13 : 1 entailment unit(s) before editing
+	a me sono spariti punti TELEFONIAX ABC	[0019.txt_2_2]
+
+collapsed node #14 : 1 entailment unit(s) before editing
+	problemi con il trasferimento punti	[0093.txt_1_0]
+
+collapsed node #15 : 1 entailment unit(s) before editing
+	per l'accredito dei punti ancora nulla	[0256.txt_2_0]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	Yes	1
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	-1
+
+node pair #2:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	0
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #3:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #4:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #5:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+Scandaloso il servizio trasferimento punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #6:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	Scandaloso il trasferimento punti	1	No	0
+Scandaloso il trasferimento punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #7:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #8:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	0
+non so ancora a che punto sia il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #9:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #10:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	0
+ad oggi non so a che punto sia il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #11:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	non so a che punto sia il ri - accredito punti	1	No	0
+non so a che punto sia il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #12:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	a me sono spariti punti TELEFONIAX ABC	1	Yes	1
+a me sono spariti punti TELEFONIAX ABC	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	-1
+
+node pair #13:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #14:
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #15:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	0
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #16:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #17:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #18:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+Scandaloso il servizio trasferimento punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #19:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	Scandaloso il trasferimento punti	1	No	0
+Scandaloso il trasferimento punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #20:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #21:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	0
+non so ancora a che punto sia il ri - accredito punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #22:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #23:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	0
+ad oggi non so a che punto sia il ri - accredito punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #24:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	non so a che punto sia il ri - accredito punti	1	No	0
+non so a che punto sia il ri - accredito punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #25:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	a me sono spariti punti TELEFONIAX ABC	1	Yes	1
+a me sono spariti punti TELEFONIAX ABC	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	-1
+
+node pair #26:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #27:
+a me sono spariti 907 punti TELEFONIAX ABC	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	a me sono spariti 907 punti TELEFONIAX ABC	1	No	0
+
+node pair #28:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #29:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	Yes	1
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #30:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+Scandaloso il servizio trasferimento punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	0
+
+node pair #31:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	Scandaloso il trasferimento punti	1	No	0
+Scandaloso il trasferimento punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	0
+
+node pair #32:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #33:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	Yes	1
+non so ancora a che punto sia il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #34:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #35:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	Yes	1
+ad oggi non so a che punto sia il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #36:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	non so a che punto sia il ri - accredito punti	1	Yes	1
+non so a che punto sia il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #37:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	0
+
+node pair #38:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	0
+
+node pair #39:
+ad oggi non so ancora a che punto sia il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	ad oggi non so ancora a che punto sia il ri - accredito punti	1	No	0
+
+node pair #40:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	Yes	1
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #41:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+Scandaloso il servizio trasferimento punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #42:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il trasferimento punti	1	No	0
+Scandaloso il trasferimento punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #43:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	Yes	1
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #44:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	-1
+non so ancora a che punto sia il ri - accredito punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #45:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #46:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	Yes	1
+ad oggi non so a che punto sia il ri - accredito punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #47:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	non so a che punto sia il ri - accredito punti	1	Yes	1
+non so a che punto sia il ri - accredito punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #48:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #49:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #50:
+ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	ad oggi non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #51:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+Scandaloso il servizio trasferimento punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #52:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il trasferimento punti	1	No	0
+Scandaloso il trasferimento punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #53:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	Yes	1
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #54:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	Yes	1
+non so ancora a che punto sia il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #55:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	Yes	1
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #56:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	Yes	1
+ad oggi non so a che punto sia il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #57:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	non so a che punto sia il ri - accredito punti	1	Yes	1
+non so a che punto sia il ri - accredito punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #58:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #59:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #60:
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #61:
+Scandaloso il servizio trasferimento punti	1	->	Scandaloso il trasferimento punti	1	Yes	1
+Scandaloso il trasferimento punti	1	->	Scandaloso il servizio trasferimento punti	1	No	-1
+
+node pair #62:
+Scandaloso il servizio trasferimento punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+
+node pair #63:
+Scandaloso il servizio trasferimento punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	0
+non so ancora a che punto sia il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+
+node pair #64:
+Scandaloso il servizio trasferimento punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+
+node pair #65:
+Scandaloso il servizio trasferimento punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	0
+ad oggi non so a che punto sia il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+
+node pair #66:
+Scandaloso il servizio trasferimento punti	1	->	non so a che punto sia il ri - accredito punti	1	No	0
+non so a che punto sia il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+
+node pair #67:
+Scandaloso il servizio trasferimento punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+
+node pair #68:
+Scandaloso il servizio trasferimento punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+
+node pair #69:
+Scandaloso il servizio trasferimento punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	Scandaloso il servizio trasferimento punti	1	No	0
+
+node pair #70:
+Scandaloso il trasferimento punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il trasferimento punti	1	No	0
+
+node pair #71:
+Scandaloso il trasferimento punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	0
+non so ancora a che punto sia il ri - accredito punti	1	->	Scandaloso il trasferimento punti	1	No	0
+
+node pair #72:
+Scandaloso il trasferimento punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il trasferimento punti	1	No	0
+
+node pair #73:
+Scandaloso il trasferimento punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	0
+ad oggi non so a che punto sia il ri - accredito punti	1	->	Scandaloso il trasferimento punti	1	No	0
+
+node pair #74:
+Scandaloso il trasferimento punti	1	->	non so a che punto sia il ri - accredito punti	1	No	0
+non so a che punto sia il ri - accredito punti	1	->	Scandaloso il trasferimento punti	1	No	0
+
+node pair #75:
+Scandaloso il trasferimento punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	Scandaloso il trasferimento punti	1	No	0
+
+node pair #76:
+Scandaloso il trasferimento punti	1	->	problemi con il trasferimento punti	1	Yes	0
+problemi con il trasferimento punti	1	->	Scandaloso il trasferimento punti	1	No	0
+
+node pair #77:
+Scandaloso il trasferimento punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	Scandaloso il trasferimento punti	1	No	0
+
+node pair #78:
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	-1
+non so ancora a che punto sia il ri - accredito punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #79:
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	Yes	1
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #80:
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	-1
+ad oggi non so a che punto sia il ri - accredito punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #81:
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	non so a che punto sia il ri - accredito punti	1	Yes	1
+non so a che punto sia il ri - accredito punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #82:
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #83:
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #84:
+non so a che punto sia la mia pratica e il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	non so a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #85:
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	Yes	1
+non so ancora a che punto sia il ri - accredito punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #86:
+non so ancora a che punto sia il ri - accredito punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	-1
+ad oggi non so a che punto sia il ri - accredito punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #87:
+non so ancora a che punto sia il ri - accredito punti	1	->	non so a che punto sia il ri - accredito punti	1	Yes	1
+non so a che punto sia il ri - accredito punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #88:
+non so ancora a che punto sia il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	0
+
+node pair #89:
+non so ancora a che punto sia il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	0
+
+node pair #90:
+non so ancora a che punto sia il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	non so ancora a che punto sia il ri - accredito punti	1	No	0
+
+node pair #91:
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	-1
+ad oggi non so a che punto sia il ri - accredito punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #92:
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	non so a che punto sia il ri - accredito punti	1	Yes	1
+non so a che punto sia il ri - accredito punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	-1
+
+node pair #93:
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #94:
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #95:
+non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0
+
+node pair #96:
+ad oggi non so a che punto sia il ri - accredito punti	1	->	non so a che punto sia il ri - accredito punti	1	Yes	1
+non so a che punto sia il ri - accredito punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	-1
+
+node pair #97:
+ad oggi non so a che punto sia il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	0
+
+node pair #98:
+ad oggi non so a che punto sia il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	0
+
+node pair #99:
+ad oggi non so a che punto sia il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	ad oggi non so a che punto sia il ri - accredito punti	1	No	0
+
+node pair #100:
+non so a che punto sia il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+a me sono spariti punti TELEFONIAX ABC	1	->	non so a che punto sia il ri - accredito punti	1	No	0
+
+node pair #101:
+non so a che punto sia il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	non so a che punto sia il ri - accredito punti	1	No	0
+
+node pair #102:
+per l'accredito dei punti ancora nulla	1	->	non so a che punto sia il ri - accredito punti	1	Yes	0
+non so a che punto sia il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+
+node pair #103:
+a me sono spariti punti TELEFONIAX ABC	1	->	problemi con il trasferimento punti	1	No	0
+problemi con il trasferimento punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+
+node pair #104:
+a me sono spariti punti TELEFONIAX ABC	1	->	per l'accredito dei punti ancora nulla	1	No	0
+per l'accredito dei punti ancora nulla	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0
+
+node pair #105:
+per l'accredito dei punti ancora nulla	1	->	problemi con il trasferimento punti	1	Yes	0
+problemi con il trasferimento punti	1	->	per l'accredito dei punti ancora nulla	1	No	0
+

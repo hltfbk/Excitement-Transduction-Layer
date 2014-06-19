@@ -4,12 +4,14 @@ import java.io.IOException;
 
 //import javax.xml.transform.TransformerException;
 
+
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 //import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
+import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;

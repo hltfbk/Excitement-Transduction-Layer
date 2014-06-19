@@ -24,7 +24,9 @@ import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.NoEdaGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
@@ -50,6 +52,7 @@ import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 
 @SuppressWarnings("unused")
 public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
+	
 	
 	CachedLAPAccess lap = null;
 	EDABasic<?> eda = null;
@@ -114,7 +117,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 //		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 //		fragGen = new FragmentGraphNoNegGeneratorFromCAS();
 
-		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
+		graphMerger = new AllPairsGraphMerger(lap, eda); //AutomateWP2ProcedureGraphMerger(lap, eda);
 		collapseGraph = new SimpleGraphOptimizer();
 	}
 	
@@ -433,5 +436,9 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		
 		fragAnot.annotateFragments(aJCas);
 		modAnot.annotateModifiers(aJCas);
+	}
+	
+	public int getEdaCallsNumber(){
+		return graphMerger.getEdaCallsNumber();
 	}
 }

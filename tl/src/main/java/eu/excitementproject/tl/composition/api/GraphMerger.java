@@ -86,4 +86,7 @@ public interface GraphMerger {
 	 * @param entailmentConfidenceThreshold the entailmentConfidenceThreshold to set
 	 */
 	public void setEntailmentConfidenceThreshold(Double entailmentConfidenceThreshold);
+
+
+	public int getEdaCallsNumber();
 }

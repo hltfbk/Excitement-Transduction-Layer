@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Die Punkte lösen mein Problem leider nicht." -> "Die Punkte lösen mein Problem nicht." [label=1] [color=green]
+}

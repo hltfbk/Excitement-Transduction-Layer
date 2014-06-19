@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="6">
+    <node id="0049.txt_1_0" implicit_statement="FALSE" modality="TRUE" explicit_context="0049.txt" implicit_context="" focus="navigare" implicit_focus="">
+        <original_text>da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX</original_text>
+        <correct_text>da domenica non riesco più a navigare con la chiavetta TelefoniaX</correct_text>
+        <modifiers>TELEFONIAXpoz=10;con la chiavettapoz=7 8 9;da domenicapoz=0 1</modifiers>
+    </node>
+    <node id="0049.txt_1_1" implicit_statement="FALSE" modality="TRUE" explicit_context="0049.txt" implicit_context="" focus="navigare" implicit_focus="">
+        <original_text>da domenica non iesco piu' a navigare con la chiavetta</original_text>
+        <correct_text>da domenica non riesco più a navigare con la chiavetta</correct_text>
+        <modifiers>con la chiavettapoz=7 8 9;da domenicapoz=0 1</modifiers>
+    </node>
+    <node id="0049.txt_1_2" implicit_statement="FALSE" modality="TRUE" explicit_context="0049.txt" implicit_context="" focus="navigare" implicit_focus="">
+        <original_text>non iesco piu' a navigare con la chiavetta TELEFONIAX</original_text>
+        <correct_text>non riesco più a navigare con la chiavetta TelefoniaX</correct_text>
+        <modifiers>TELEFONIAXpoz=10;con la chiavettapoz=7 8 9</modifiers>
+    </node>
+    <node id="0049.txt_1_3" implicit_statement="FALSE" modality="TRUE" explicit_context="0049.txt" implicit_context="" focus="navigare" implicit_focus="">
+        <original_text>da domenica non iesco piu' a navigare</original_text>
+        <correct_text>da domenica non riesco più a navigare</correct_text>
+        <modifiers>da domenicapoz=0 1</modifiers>
+    </node>
+    <node id="0049.txt_1_4" implicit_statement="FALSE" modality="TRUE" explicit_context="0049.txt" implicit_context="" focus="navigare" implicit_focus="">
+        <original_text>non iesco piu' a navigare con la chiavetta</original_text>
+        <correct_text>non riesco più a navigare con la chiavetta</correct_text>
+        <modifiers>con la chiavettapoz=7 8 9</modifiers>
+    </node>
+    <node id="0049.txt_1_5" implicit_statement="FALSE" modality="TRUE" explicit_context="0049.txt" implicit_context="" focus="navigare" implicit_focus="">
+        <original_text>non iesco piu' a navigare</original_text>
+        <correct_text>non riesco più a navigare</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0049.txt_1_0-0049.txt_1_1" source="0049.txt_1_0" target="0049.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_0-0049.txt_1_1" source="0049.txt_1_0" target="0049.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_0-0049.txt_1_2" source="0049.txt_1_0" target="0049.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_0-0049.txt_1_2" source="0049.txt_1_0" target="0049.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_1-0049.txt_1_3" source="0049.txt_1_1" target="0049.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_1-0049.txt_1_3" source="0049.txt_1_1" target="0049.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_0-0049.txt_1_3" source="0049.txt_1_0" target="0049.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_2-0049.txt_1_4" source="0049.txt_1_2" target="0049.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_1-0049.txt_1_4" source="0049.txt_1_1" target="0049.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_1-0049.txt_1_4" source="0049.txt_1_1" target="0049.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_2-0049.txt_1_4" source="0049.txt_1_2" target="0049.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_0-0049.txt_1_4" source="0049.txt_1_0" target="0049.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_4-0049.txt_1_5" source="0049.txt_1_4" target="0049.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_3-0049.txt_1_5" source="0049.txt_1_3" target="0049.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_3-0049.txt_1_5" source="0049.txt_1_3" target="0049.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_4-0049.txt_1_5" source="0049.txt_1_4" target="0049.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_1-0049.txt_1_5" source="0049.txt_1_1" target="0049.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_2-0049.txt_1_5" source="0049.txt_1_2" target="0049.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0049.txt_1_0-0049.txt_1_5" source="0049.txt_1_0" target="0049.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

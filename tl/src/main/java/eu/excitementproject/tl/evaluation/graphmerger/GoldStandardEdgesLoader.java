@@ -340,7 +340,13 @@ public class GoldStandardEdgesLoader {
 			g.addVertex(getGoldStandardNode(v)); // the EUs should be the same as created when adding edges to the "edges" attribute of the class 
 		}
 		for (EntailmentRelation e : edges.values()){
-			g.addEdge(e.getSource(), e.getTarget(), e);
+			if(g.containsVertex(e.getSource())&&(g.containsVertex(e.getTarget()))){ 
+				g.addEdge(e.getSource(), e.getTarget(), e);
+			}
+			else{
+				if(!g.containsVertex(e.getSource())) System.out.println("ERROR: The raw graph's vertex "+e.getSource()+"is not present in the corresponding FGs");
+				if(!g.containsVertex(e.getTarget())) System.out.println("ERROR: The raw graph's vertex "+e.getTarget()+"is not present in the corresponding FGs");
+			}
 		}
 		return g;
 	}
@@ -479,9 +485,10 @@ public class GoldStandardEdgesLoader {
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
 						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, type);
 						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
+						System.out.println(edges.size()+"  "+edges);
 					}
 					
-			//		System.out.println(">>>>>Loading FG's positive edges");
+					System.out.println(">>>>>Loaded FG's positive edges "+edges.size());
 					EntailmentGraphRaw rfg = getFragmentGraph(idsInThisFG);
 					
 					// now add all "NO" edges - we're inside a FG, so for each pair of nodes, if it's not "yes" then it's "no"

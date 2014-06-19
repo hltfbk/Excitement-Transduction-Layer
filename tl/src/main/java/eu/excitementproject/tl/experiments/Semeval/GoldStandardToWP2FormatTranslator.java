@@ -30,7 +30,7 @@ public class GoldStandardToWP2FormatTranslator {
 		String s="";
 		String targetText = edge.getTarget().getText();
 		String sourceText = edge.getSource().getText();
-		System.out.print("Edge: "+edge.toString()+"\t");
+	//	System.out.print("Edge: "+edge.toString()+"\t");
 		int i=0;
 		for (String tgtId : textToIdsMap.get(targetText)){
 			for (String srcId: textToIdsMap.get(sourceText)){
@@ -43,7 +43,7 @@ public class GoldStandardToWP2FormatTranslator {
 				i++;
 			}
 		}			
-		System.out.println(String.valueOf(i)+"\twp2 edges.");
+	//	System.out.println(String.valueOf(i)+"\twp2 edges.");
 		return s;
 	}
 	
@@ -134,22 +134,22 @@ public class GoldStandardToWP2FormatTranslator {
 			try {
 				File f = new File(gsAnnotationsDir+"/"+clusterAnnotationDir);
 				if (f.isDirectory()){
-					System.out.println(f.getName().toUpperCase());
+				//	System.out.println(f.getName().toUpperCase());
 					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader(false); //load the original data only		
 					gsloader.setExcludeSelfLoops(false); // do not exclude self-loops (edges between nodes with the same text are present in the GS, while in our graph these nodes become a single nodes and such edges are self-loops)
 					// load merge-graph annotations	
 					// clusterAnnotationDir should contain a folder called "FinalMergedGraph" with a single xml file with annotations
 					File clusterAnnotationMergedGraphDir = new File (gsAnnotationsDir+"/"+clusterAnnotationDir+"/"+"FinalMergedGraph");
-					System.out.println(clusterAnnotationMergedGraphDir.getAbsolutePath());
+				//	System.out.println(clusterAnnotationMergedGraphDir.getAbsolutePath());
 					if (clusterAnnotationMergedGraphDir.isDirectory()){
 						for (File annotationFile : clusterAnnotationMergedGraphDir.listFiles()){
 							if (gsloader.isValidMergedFile(annotationFile.getName())){
 								gsloader.addAnnotationsFromFile(annotationFile.getPath(), false);
-								System.out.println(f.getName().toUpperCase()+" GS LOADED");
+								// System.out.println(f.getName().toUpperCase()+" GS LOADED");
 								if (createWP2xml(annotationFile, new File(gsAnnotationsDir+"/"+clusterAnnotationDir+"/FinalMergedGraph/"+annotationFile.getName().replace(".xml", "PlusClosure.xml")), gsloader)){
-									System.out.println(f.getName().toUpperCase()+" CLOSURE XML IS CREATED");									
+								//	System.out.println(f.getName().toUpperCase()+" CLOSURE XML IS CREATED");									
 								}
-								else System.out.println(f.getName().toUpperCase()+" CLOSURE XML COULD NOT BE CREATED");
+							//	else System.out.println(f.getName().toUpperCase()+" CLOSURE XML COULD NOT BE CREATED");
 							}
 						}
 					}	
