@@ -1,3 +1,2 @@
 digraph rawGraph {
-"Ein sehr groﬂes Fenster erscheint." -> "Ein groﬂes Fenster erscheint." [label=1] [color=green]
 }
