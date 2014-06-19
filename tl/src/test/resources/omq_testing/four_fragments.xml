@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<provider>OMQ</provider>
+<channel>email</channel>
+<language>DE</language>
+<interactions>
+	
+	<interaction>
+		<metadata>
+		<businessScenario>multimedia software developer</businessScenario>
+		<dataSource></dataSource>
+		<id>378</id>
+		<author></author>
+		<date>2013-10-14</date>
+		<category>57</category>
+		<keyword>Ablaufmarker,Ablauf,Exportroutine,Vorschaufenster,Schrift,Filemenü</keyword>
+		</metadata>
+		<text><![CDATA[Hallo, ich habe 3 Fragen zu "Sales firstclass WH Neo":
+1. Im Übersichts-Modus habe ich mit dem Ablaufmarker (blaue Linie mit Beginn- und Endmarkierung) einen Teil des Ablaufes markiert. Die Exportroutine exportiert aber den gesamten Ablauf, also auch das was außerhalb des Ablaufmarkers ist. Ist das ein Programmfehler (bei "Sales firstclass 2008" wird nur korrekt der Ablaufteil zwischen dem Beginn- und Endzeiger gebrannt)?
+2. Im Exportmodus ist die Schrift im kleinen Vorschaufenster im Filemenü immer identisch mit der Schrift der Überschriftzeile vom Untermenü. Wie kann ich diese Verknüpfung lösen, oder ist das ein Programmfehler?
+3. Gibt es eine vollständige Anleitung, evtl. zum herunterladen oder zu bestellen?
+M.f.G. Miraculix
+    ]]></text>
+	</interaction>
+</interactions>
+</dataset>

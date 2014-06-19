@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<provider>OMQ</provider>
+<channel>email</channel>
+<language>DE</language>
+<interactions>
+<interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>138</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>116</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo!
+
+Ich benutze Analysity Statistiken Studio 19. ]]>
+<relevantText goldCategory="116"><![CDATA[Wenn ich eine Datei durchrechnen will, erscheint folgende Fehlermeldung: 
+
+"Das Smartcard-Device ´Microsoft Scancreator` kann dieses Format nicht erstellen! -Grund: Die aktuell genutzte Gerätekennung ist nicht innerhalb des erlaubten Bereichs für Ihr System."]]></relevantText><![CDATA[
+
+Durchrechnen lässt die Datei sich so nicht.
+
+Was muß ich tun?!
+
+Mit freundlichen Grüßen,
+
+Frank Geiges
+
+    ]]>
+        </text>
+      </interaction>
+<interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>609</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>100,104</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo
+habe volgendes problem
+ich möchte einen neuen aktivierungscod esrsellen
+doch erläst mich nicht 
+]]>
+<relevantText goldCategory="100,104"><![CDATA[nach der eingabe der sernr sagt er mir ich soll es erst regestrieren 
+mache ich dann sagt er
+Die von Ihnen eingebene Seriennummer wurde bereits genutzt. Vermutlich haben Sie sich bereits registriert. Ein erneutes Registrieren ist nicht nötig.]]></relevantText><![CDATA[
+Doch ich kann kein updat erstellen und der gleichen
+habe das produkt
+S-56111-83538-36726-57484-10467
+Abläufe im OFFICE Katalog
+
+    ]]>
+        </text>
+      </interaction>
+<interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>312</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>31,106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo liebes Warehouse-Team!
+
+]]>
+<relevantText goldCategory="31"><![CDATA[Habe mit der 9 fachen Brenngeschwindigkeit beim Abspielen
+auf den DVD-Brenner Probleme.]]></relevantText><![CDATA[
+Wenn ich nach dem Erstellen der Produktpreview auf das Symbol
+"Brennen" gehe, macht ein Fenster auf mit dem Hinweis
+"Brenngeschwindigkeit" 4x.
+Lege ich dann eine DVD ein, öffnet sich ein Fenster mit
+9 - 16 facher Brenngeschwindigkeit und ich kann keine
+niedrigere Geschwindigkeit eingeben.
+]]>
+<relevantText goldCategory="106"><![CDATA[Wie kann ich die niedrigere Brenngeschwindigkeit beibehalten, denn hierbei macht mir mein DVD-Brenner keine Probleme.]]></relevantText><![CDATA[
+
+Mit freundlichen Grüßen
+
+Martin Guckloch
+
+    ]]>
+        </text>
+      </interaction>
+<interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>602</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>100,57</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo mein Name ist Jessica Grosmann. Ich habe mir am Freitag, den 12.4.11 den SpecsManager 11 Ultimate gekauft und am selben Tag auch installiert und registriert. ]]>
+<relevantText goldCategory="100"><![CDATA[Leider musste ich feststellen das mein Konto anscheinend nicht eingerichtet wurde und ich habe mich deshalb selbst noch einmal auf ihrer Seite registriert. Als ich dann meinen SpecsManager 11 registrieren wollte, wurde dies geblockt mit der Meldung das dieses Produkt schon registriet sei und ich es nicht zweimal registrieren brauche.]]></relevantText><![CDATA[ Ich würde Sie daher bitten dies richtigzustellen, dass heißt die Regiestrierung zurückzustellen oder mir den Account zu nennen, bei dem es registriert ist. Meine Seriennummer lautet: P5-34748-52366-80540-26476-84177-73426 . ]]>
+<relevantText goldCategory="57"><![CDATA[Desweiteren habe ich noch ein Softwareproblem und zwar funktioniert die Sheetviewervorschau nicht.]]></relevantText><![CDATA[ Es öffnet sich zwar ein kleines weißes Fenster, aber nichts ist darauf zu sehen und im unteren linken Eck flackert : "res://ffwindow.dll/cntstop.htm" dieser Link und meine CPU Auslastung geht auf 100 %. Ich hoffe, Sie können mir helfen. Für ein schnelle Antwort wäre ich sehr dankbar. Jessica Grosmann
+
+    ]]>
+        </text>
+      </interaction>
+</interactions>
+</dataset>

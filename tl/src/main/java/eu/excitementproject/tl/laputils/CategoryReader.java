@@ -25,6 +25,7 @@ import org.xml.sax.SAXException;
 //import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.structures.Interaction;
+import eu.excitementproject.tl.structures.RelevantText;
 
 /**
  * 
@@ -132,7 +133,11 @@ public final class CategoryReader {
 					Attr attr = (Attr) attributes.item(k);
 					if (attr.getNodeName().equals("id")) categoryId = attr.getNodeValue();
 				}				
-				Interaction category = new Interaction(categoryText, categoryText, lang, "c_"+categoryId, categoryId, channel, provider, null); 
+				RelevantText relevantText = new RelevantText();
+				relevantText.setText(categoryText);
+				relevantText.setGoldCategory(categoryId);
+				List<RelevantText> relevantTexts = new ArrayList<RelevantText>();
+				Interaction category = new Interaction(categoryText, relevantTexts, lang, "c_"+categoryId, categoryId, channel, provider, null); 
 				interactionList.add(category); 			
 			}						
 		}

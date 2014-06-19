@@ -1,7 +1,10 @@
 package eu.excitementproject.tl.structures;
 
-import org.apache.uima.jcas.JCas;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.laputils.CASUtils;
@@ -21,6 +24,8 @@ import eu.excitementproject.tl.laputils.CASUtils;
  *
  */
 public class Interaction implements Comparable<Interaction> {
+	
+	static Logger logger = Logger.getLogger(Interaction.class.getName());
 
 	/**
 	 * Constructor for the data type. This constructor is "full" one. 
@@ -41,7 +46,7 @@ public class Interaction implements Comparable<Interaction> {
 		this.channel = channel; 
 		this.provider= provider; 
 		this.interactionString = interactionString; 	
-		this.relevantText = null;
+		this.relevantTexts = null;
 		this.categoryString = category;
 		if (category == null) {
 			this.categories = null;
@@ -67,14 +72,14 @@ public class Interaction implements Comparable<Interaction> {
 	 * @param category
 	 * @param keywords -- an array of keywords for the interaction 
 	 */
-	public Interaction(String interactionString, String relevantText, String langID, String interactionId, String category, String channel, String provider, String keywords) 
+	public Interaction(String interactionString, List<RelevantText> relevantTexts, String langID, String interactionId, String category, String channel, String provider, String keywords) 
 	{
 		this.lang = langID; 
 		this.interactionId = interactionId; 
 		this.channel = channel; 
 		this.provider= provider; 
 		this.interactionString = interactionString; 	
-		this.relevantText = relevantText;
+		this.relevantTexts = relevantTexts;
 		this.categoryString = category;
 		if (category == null) {
 			this.categories = null;
@@ -166,6 +171,41 @@ public class Interaction implements Comparable<Interaction> {
 		return aJCas; 
 	}
 	
+
+	/**
+	 * This method returns a list of CASes, one for each relevant text in the interaction, filled with the information of this Interaction. 
+	 * 
+	 * @return List<JCas> a list of JCASes for this Interaction.  
+	 */
+	public List<JCas> createAndFillInputCASes(boolean relevantTextProvided) throws LAPException
+	{		
+		List<JCas> cases = new ArrayList<JCas>();
+		if (relevantTextProvided) {
+			logger.info("Number of relevant texts: " + relevantTexts.size());
+			for (int i=0; i<this.relevantTexts.size(); i++) { //dealing with multiple relevant texts in the same interaction
+				RelevantText relevantText = relevantTexts.get(i);
+				String[] categories = relevantText.getGoldCategory().split(",");
+				if (categories.length > 2) {
+				}
+				logger.info("Number of categories assigned to relevant text: " + categories.length);
+				for (int j=0; j<categories.length; j++) { //dealing with multiple categories assigned to the same relevant text
+					JCas aJCas = CASUtils.createNewInputCas(); 
+					aJCas.setDocumentLanguage(this.lang); 
+					aJCas.setDocumentText(relevantText.getText());
+					CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, categories[j]);
+					CASUtils.addTLKeywords(aJCas, this.keywords);
+					cases.add(aJCas);
+				}
+			}
+		} else {
+			JCas aJCas = CASUtils.createNewInputCas(); 
+			this.fillInputCAS(aJCas);
+			cases.add(aJCas);
+		}
+		return cases;
+	}
+	
+	
 	/**
 	 * This methods gets one JCAS, cleans it up, and fill it with this Interaction. set language ID and CAS text by the information of this Interaction.
 	 * 
@@ -189,6 +229,7 @@ public class Interaction implements Comparable<Interaction> {
 	 * @param aJCas
 	 * @param relevantText, if true: set document text to relevant text only
 	 */
+	/*
 	public void fillInputCAS(JCas aJCas, boolean relevantTextProvided)
 	{
 		aJCas.reset(); 
@@ -200,7 +241,7 @@ public class Interaction implements Comparable<Interaction> {
 		}
 		CASUtils.addTLMetaData(aJCas, this.interactionId, this.channel, this.provider, null, null, null, this.categoryString);
 		CASUtils.addTLKeywords(aJCas, this.keywords);
-	}
+	}*/
 
 	/**
 	 * public getter for interaction string 
@@ -216,9 +257,9 @@ public class Interaction implements Comparable<Interaction> {
 	 * @return the relevant text. 
 	 * 
 	 */
-	public final String getRelevantText()
+	public final List<RelevantText> getRelevantTexts()
 	{
-		return relevantText; 
+		return relevantTexts; 
 	}
 	/**
 	 * public getter for language ID 
@@ -273,9 +314,9 @@ public class Interaction implements Comparable<Interaction> {
 	private final String interactionString; 
 	
 	/**
-	 *  Relevant text as String: Optional value, can be null. 
+	 *  Relevant texts as RelevantText-s: Optional value, can be null. 
 	 */
-	private final String relevantText; 
+	private final List<RelevantText> relevantTexts; 
 	
 	/**
 	 * language ID: Obligatory metadata. cannot be null.  
