@@ -129,7 +129,7 @@ public class EvaluatorCategoryAnnotator {
 	//CHOOSE CONFIGURATION:
 	
 	static double thresholdForOptimizing = 0.8;
-	static int minTokenOccurrence = 5;
+	static int minTokenOccurrence = 2;
 	static int minTokenOccurrenceInCategories = 2;
     
 	static boolean tfidf = true;
@@ -145,8 +145,8 @@ public class EvaluatorCategoryAnnotator {
 
     static boolean relevantTextProvided = true;
     
-//    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction    
-    static String scoreCombination = "vsm"; //how to combine the scores for different fragments to a final score for the interaction    
+    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction    
+//    static String scoreCombination = "vsm"; //how to combine the scores for different fragments to a final score for the interaction    
 
 	static File temp; 
     static PrintWriter writer; 
@@ -180,7 +180,7 @@ public class EvaluatorCategoryAnnotator {
 	EvaluatorCategoryAnnotator(int setup) {
 		setup(setup);		
 		try {
-			 temp = File.createTempFile("debugging"+System.currentTimeMillis()+".txt", ".tmp");
+			 temp = File.createTempFile("debugging"+System.currentTimeMillis(), ".tmp");
 			 writer = new PrintWriter(temp, "UTF-8");
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
@@ -730,11 +730,12 @@ public class EvaluatorCategoryAnnotator {
 	    			*/	  
 				}
 				logger.info("Graph set of fold "+i+" now contains " + graphDocs.size() + " documents");
+	    		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(), minTokenOccurrence);
 
 	    		//Add category texts
-	    		graphDocs.addAll(CategoryReader.readCategoryXML(new File(categoriesFilename)));
+	    		graphDocs = CategoryReader.readCategoryXML(new File(categoriesFilename));
 	    		logger.info("added " + graphDocs.size() + " categories");
-	    		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(), minTokenOccurrenceInCategories);
+	    		egr = buildRawGraph(graphDocs, mergedGraphFile, egr, minTokenOccurrenceInCategories);
 	    		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
 	    		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
 	    		graph = buildCollapsedGraphWithCategoryInfo(egr);
@@ -770,8 +771,9 @@ public class EvaluatorCategoryAnnotator {
 				for (Interaction interaction : testDocs) {
 					logger.info("-----------------------------------------------------");
 					logger.info("Processing test interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
+					writer.println("Processing test interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
 					JCas casInteraction = interaction.createAndFillInputCAS();
-					List<JCas> casesRelevantTexts = interaction.createAndFillInputCASes(relevantTextProvided);
+					List<JCas> casesRelevantTexts = interaction.createAndFillInputCASes(false);
 					logger.info("Number of cases: " + casesRelevantTexts.size());
 					Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
 					for (int l=0; l<casesRelevantTexts.size(); l++) {
@@ -938,6 +940,7 @@ public class EvaluatorCategoryAnnotator {
 				matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 			}
 			logger.info("matches: " + matches.size());
+			for (NodeMatch match : matches) writer.println("nodematch: " + match);
 		}
 		return matches;
 	}
@@ -1072,7 +1075,7 @@ public class EvaluatorCategoryAnnotator {
 			}
 			logger.info("fgs contains " + fgs.size() + " fgs");
 			logger.info("fgsreduced contains " + fgsReduced.size() + " fgs");
-			egr = graphMerger.mergeGraphs(fgsReduced, new EntailmentGraphRaw());
+			egr = graphMerger.mergeGraphs(fgsReduced, egr);
 			logger.info("Merged graph: " +egr.vertexSet().size()+ " nodes");
 			for (FragmentGraph fg : fgsRest) {
 				for (EntailmentUnitMention eum : fg.vertexSet()) {
@@ -1183,9 +1186,11 @@ public class EvaluatorCategoryAnnotator {
         	System.out.println(i.getInteractionId());
         }
         */
+        Set<FragmentGraph> allFgs = new HashSet<FragmentGraph>();
         
 		Set<FragmentGraph> fgs = buildFragmentGraphs(docs);
-		HashMap<String,Integer> tokenOccurrences = computeTokenOccurrences(fgs);
+		allFgs.addAll(fgs);
+		HashMap<String,Integer> tokenOccurrences = computeTokenOccurrences(allFgs);
 
 		//Initialize graph with category texts (assuming they are available beforehand)
 		List<Interaction> graphDocs = new ArrayList<Interaction>(); 
@@ -1224,6 +1229,11 @@ public class EvaluatorCategoryAnnotator {
 			modifierAnnotator.annotateModifiers(cas);
 			//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 			Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
+			
+			allFgs.addAll(fragmentGraphs);
+			tokenOccurrences = computeTokenOccurrences(allFgs);
+			writer.println("fragmentGraphs: " + fragmentGraphs.iterator().next().getCompleteStatement());
+			
 			//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
 			writer.println(doc.getInteractionId() + " : ");
 			writer.println(fragmentGraphs.size() + " fragment graphs ");
@@ -1262,7 +1272,7 @@ public class EvaluatorCategoryAnnotator {
 				}
 			} else {
 				for (FragmentGraph fg : fragmentGraphs) { //if token occurrence is above threshold, merge it into graph
-					if (tokenOccurrences.get(fg.getCompleteStatement().getTextWithoutDoubleSpaces().toLowerCase()) > minTokenOccurrence) {
+					if (tokenOccurrences.get(fg.getCompleteStatement().getTextWithoutDoubleSpaces().toLowerCase()) >= minTokenOccurrence) {
 						logger.info("Merging " + fg.getCompleteStatement());
 						egr = graphMerger.mergeGraphs(fg, egr); 
 					} else { //if it's below the threshold, just add it
