@@ -1,0 +1,260 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 2 entailment unit(s) before editing
+	I wd hav liked a vegan meal	[427028.txt_1_0]
+	vegan food would be awesome	[184748.txt_1_0]
+
+collapsed node #2 : 1 entailment unit(s) before editing
+	I was provided with a very mediocre vegetarian dinner	[429450.txt_1_0]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	I was provided with a very mediocre dinner	[429450.txt_1_1]
+
+collapsed node #4 : 2 entailment unit(s) before editing
+	Better vegetarian food	[32676.txt_1_0]
+	I was provided with a mediocre vegetarian dinner	[429450.txt_1_2]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	Veggie meal too small	[277071.txt_6_0]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	I was provided with a mediocre dinner	[429450.txt_1_3]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	you do not seem to offer any vegetarian food options in the cafe	[532098.txt_1_0]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	you could make it much easier to order vegetarian food when booking first class	[64004.txt_1_0]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	you could make it much easier to order vegetarian food when booking	[64004.txt_1_2]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	you could make it easier to order vegetarian food when booking first class	[64004.txt_1_1]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	you could make it easier to order vegetarian food when booking	[64004.txt_1_3]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+I wd hav liked a vegan meal	2	->	I was provided with a very mediocre vegetarian dinner	1	No	0
+I was provided with a very mediocre vegetarian dinner	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #2:
+I wd hav liked a vegan meal	2	->	I was provided with a very mediocre dinner	1	No	0
+I was provided with a very mediocre dinner	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #3:
+I wd hav liked a vegan meal	2	->	Better vegetarian food	2	No	0
+Better vegetarian food	2	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #4:
+I wd hav liked a vegan meal	2	->	Veggie meal too small	1	No	0
+Veggie meal too small	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #5:
+I wd hav liked a vegan meal	2	->	I was provided with a mediocre dinner	1	No	0
+I was provided with a mediocre dinner	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #6:
+I wd hav liked a vegan meal	2	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+you do not seem to offer any vegetarian food options in the cafe	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #7:
+I wd hav liked a vegan meal	2	->	you could make it much easier to order vegetarian food when booking first class	1	No	0
+you could make it much easier to order vegetarian food when booking first class	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #8:
+I wd hav liked a vegan meal	2	->	you could make it much easier to order vegetarian food when booking	1	No	0
+you could make it much easier to order vegetarian food when booking	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #9:
+I wd hav liked a vegan meal	2	->	you could make it easier to order vegetarian food when booking first class	1	No	0
+you could make it easier to order vegetarian food when booking first class	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #10:
+I wd hav liked a vegan meal	2	->	you could make it easier to order vegetarian food when booking	1	No	0
+you could make it easier to order vegetarian food when booking	1	->	I wd hav liked a vegan meal	2	No	0
+
+node pair #11:
+I was provided with a very mediocre vegetarian dinner	1	->	I was provided with a very mediocre dinner	1	Yes	1
+I was provided with a very mediocre dinner	1	->	I was provided with a very mediocre vegetarian dinner	1	No	-1
+
+node pair #12:
+I was provided with a very mediocre vegetarian dinner	1	->	Better vegetarian food	2	Yes	1
+Better vegetarian food	2	->	I was provided with a very mediocre vegetarian dinner	1	No	-1
+
+node pair #13:
+I was provided with a very mediocre vegetarian dinner	1	->	Veggie meal too small	1	No	0
+Veggie meal too small	1	->	I was provided with a very mediocre vegetarian dinner	1	No	0
+
+node pair #14:
+I was provided with a very mediocre vegetarian dinner	1	->	I was provided with a mediocre dinner	1	Yes	1
+I was provided with a mediocre dinner	1	->	I was provided with a very mediocre vegetarian dinner	1	No	-1
+
+node pair #15:
+I was provided with a very mediocre vegetarian dinner	1	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+you do not seem to offer any vegetarian food options in the cafe	1	->	I was provided with a very mediocre vegetarian dinner	1	No	0
+
+node pair #16:
+I was provided with a very mediocre vegetarian dinner	1	->	you could make it much easier to order vegetarian food when booking first class	1	No	0
+you could make it much easier to order vegetarian food when booking first class	1	->	I was provided with a very mediocre vegetarian dinner	1	No	0
+
+node pair #17:
+I was provided with a very mediocre vegetarian dinner	1	->	you could make it much easier to order vegetarian food when booking	1	No	0
+you could make it much easier to order vegetarian food when booking	1	->	I was provided with a very mediocre vegetarian dinner	1	No	0
+
+node pair #18:
+I was provided with a very mediocre vegetarian dinner	1	->	you could make it easier to order vegetarian food when booking first class	1	No	0
+you could make it easier to order vegetarian food when booking first class	1	->	I was provided with a very mediocre vegetarian dinner	1	No	0
+
+node pair #19:
+I was provided with a very mediocre vegetarian dinner	1	->	you could make it easier to order vegetarian food when booking	1	No	0
+you could make it easier to order vegetarian food when booking	1	->	I was provided with a very mediocre vegetarian dinner	1	No	0
+
+node pair #20:
+I was provided with a very mediocre dinner	1	->	Better vegetarian food	2	No	-1
+Better vegetarian food	2	->	I was provided with a very mediocre dinner	1	No	-1
+
+node pair #21:
+I was provided with a very mediocre dinner	1	->	Veggie meal too small	1	No	0
+Veggie meal too small	1	->	I was provided with a very mediocre dinner	1	No	0
+
+node pair #22:
+I was provided with a very mediocre dinner	1	->	I was provided with a mediocre dinner	1	Yes	1
+I was provided with a mediocre dinner	1	->	I was provided with a very mediocre dinner	1	No	-1
+
+node pair #23:
+I was provided with a very mediocre dinner	1	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+you do not seem to offer any vegetarian food options in the cafe	1	->	I was provided with a very mediocre dinner	1	No	0
+
+node pair #24:
+I was provided with a very mediocre dinner	1	->	you could make it much easier to order vegetarian food when booking first class	1	No	0
+you could make it much easier to order vegetarian food when booking first class	1	->	I was provided with a very mediocre dinner	1	No	0
+
+node pair #25:
+I was provided with a very mediocre dinner	1	->	you could make it much easier to order vegetarian food when booking	1	No	0
+you could make it much easier to order vegetarian food when booking	1	->	I was provided with a very mediocre dinner	1	No	0
+
+node pair #26:
+I was provided with a very mediocre dinner	1	->	you could make it easier to order vegetarian food when booking first class	1	No	0
+you could make it easier to order vegetarian food when booking first class	1	->	I was provided with a very mediocre dinner	1	No	0
+
+node pair #27:
+I was provided with a very mediocre dinner	1	->	you could make it easier to order vegetarian food when booking	1	No	0
+you could make it easier to order vegetarian food when booking	1	->	I was provided with a very mediocre dinner	1	No	0
+
+node pair #28:
+Better vegetarian food	2	->	Veggie meal too small	1	No	0
+Veggie meal too small	1	->	Better vegetarian food	2	No	0
+
+node pair #29:
+Better vegetarian food	2	->	I was provided with a mediocre dinner	1	Yes	1
+I was provided with a mediocre dinner	1	->	Better vegetarian food	2	No	-1
+
+node pair #30:
+Better vegetarian food	2	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+you do not seem to offer any vegetarian food options in the cafe	1	->	Better vegetarian food	2	No	0
+
+node pair #31:
+Better vegetarian food	2	->	you could make it much easier to order vegetarian food when booking first class	1	No	0
+you could make it much easier to order vegetarian food when booking first class	1	->	Better vegetarian food	2	No	0
+
+node pair #32:
+Better vegetarian food	2	->	you could make it much easier to order vegetarian food when booking	1	No	0
+you could make it much easier to order vegetarian food when booking	1	->	Better vegetarian food	2	No	0
+
+node pair #33:
+Better vegetarian food	2	->	you could make it easier to order vegetarian food when booking first class	1	No	0
+you could make it easier to order vegetarian food when booking first class	1	->	Better vegetarian food	2	No	0
+
+node pair #34:
+Better vegetarian food	2	->	you could make it easier to order vegetarian food when booking	1	No	0
+you could make it easier to order vegetarian food when booking	1	->	Better vegetarian food	2	No	0
+
+node pair #35:
+Veggie meal too small	1	->	I was provided with a mediocre dinner	1	No	0
+I was provided with a mediocre dinner	1	->	Veggie meal too small	1	No	0
+
+node pair #36:
+Veggie meal too small	1	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+you do not seem to offer any vegetarian food options in the cafe	1	->	Veggie meal too small	1	No	0
+
+node pair #37:
+Veggie meal too small	1	->	you could make it much easier to order vegetarian food when booking first class	1	No	0
+you could make it much easier to order vegetarian food when booking first class	1	->	Veggie meal too small	1	No	0
+
+node pair #38:
+Veggie meal too small	1	->	you could make it much easier to order vegetarian food when booking	1	No	0
+you could make it much easier to order vegetarian food when booking	1	->	Veggie meal too small	1	No	0
+
+node pair #39:
+Veggie meal too small	1	->	you could make it easier to order vegetarian food when booking first class	1	No	0
+you could make it easier to order vegetarian food when booking first class	1	->	Veggie meal too small	1	No	0
+
+node pair #40:
+Veggie meal too small	1	->	you could make it easier to order vegetarian food when booking	1	No	0
+you could make it easier to order vegetarian food when booking	1	->	Veggie meal too small	1	No	0
+
+node pair #41:
+I was provided with a mediocre dinner	1	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+you do not seem to offer any vegetarian food options in the cafe	1	->	I was provided with a mediocre dinner	1	No	0
+
+node pair #42:
+I was provided with a mediocre dinner	1	->	you could make it much easier to order vegetarian food when booking first class	1	No	0
+you could make it much easier to order vegetarian food when booking first class	1	->	I was provided with a mediocre dinner	1	No	0
+
+node pair #43:
+I was provided with a mediocre dinner	1	->	you could make it much easier to order vegetarian food when booking	1	No	0
+you could make it much easier to order vegetarian food when booking	1	->	I was provided with a mediocre dinner	1	No	0
+
+node pair #44:
+I was provided with a mediocre dinner	1	->	you could make it easier to order vegetarian food when booking first class	1	No	0
+you could make it easier to order vegetarian food when booking first class	1	->	I was provided with a mediocre dinner	1	No	0
+
+node pair #45:
+I was provided with a mediocre dinner	1	->	you could make it easier to order vegetarian food when booking	1	No	0
+you could make it easier to order vegetarian food when booking	1	->	I was provided with a mediocre dinner	1	No	0
+
+node pair #46:
+you do not seem to offer any vegetarian food options in the cafe	1	->	you could make it much easier to order vegetarian food when booking first class	1	No	0
+you could make it much easier to order vegetarian food when booking first class	1	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+
+node pair #47:
+you do not seem to offer any vegetarian food options in the cafe	1	->	you could make it much easier to order vegetarian food when booking	1	No	0
+you could make it much easier to order vegetarian food when booking	1	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+
+node pair #48:
+you do not seem to offer any vegetarian food options in the cafe	1	->	you could make it easier to order vegetarian food when booking first class	1	No	0
+you could make it easier to order vegetarian food when booking first class	1	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+
+node pair #49:
+you do not seem to offer any vegetarian food options in the cafe	1	->	you could make it easier to order vegetarian food when booking	1	No	0
+you could make it easier to order vegetarian food when booking	1	->	you do not seem to offer any vegetarian food options in the cafe	1	No	0
+
+node pair #50:
+you could make it much easier to order vegetarian food when booking first class	1	->	you could make it much easier to order vegetarian food when booking	1	No	1
+you could make it much easier to order vegetarian food when booking	1	->	you could make it much easier to order vegetarian food when booking first class	1	No	-1
+
+node pair #51:
+you could make it much easier to order vegetarian food when booking first class	1	->	you could make it easier to order vegetarian food when booking first class	1	Yes	1
+you could make it easier to order vegetarian food when booking first class	1	->	you could make it much easier to order vegetarian food when booking first class	1	No	-1
+
+node pair #52:
+you could make it much easier to order vegetarian food when booking first class	1	->	you could make it easier to order vegetarian food when booking	1	No	1
+you could make it easier to order vegetarian food when booking	1	->	you could make it much easier to order vegetarian food when booking first class	1	No	-1
+
+node pair #53:
+you could make it much easier to order vegetarian food when booking	1	->	you could make it easier to order vegetarian food when booking first class	1	No	-1
+you could make it easier to order vegetarian food when booking first class	1	->	you could make it much easier to order vegetarian food when booking	1	No	-1
+
+node pair #54:
+you could make it much easier to order vegetarian food when booking	1	->	you could make it easier to order vegetarian food when booking	1	No	1
+you could make it easier to order vegetarian food when booking	1	->	you could make it much easier to order vegetarian food when booking	1	No	-1
+
+node pair #55:
+you could make it easier to order vegetarian food when booking first class	1	->	you could make it easier to order vegetarian food when booking	1	No	1
+you could make it easier to order vegetarian food when booking	1	->	you could make it easier to order vegetarian food when booking first class	1	No	-1
+

@@ -1,0 +1,1270 @@
+﻿Node caption	Entailment Unit	EU_id					Node_check	Comments	
+									
+collapsed node #1 : 2 entailment unit(s) before editing							empty		
+									
+collapsed node #2 : 2 entailment unit(s) before editing							ok		
+	noi del telefono acquistato non abbiamo notizie	[0254.txt_1_0]							
+	noi del telefono pagato non abbiamo notizie	[0254.txt_2_0]							
+									
+collapsed node #3 : 1 entailment unit(s) before editing							ok		
+	mi hanno inviato un MODELLOA2 con pixel bruciati	[0295.txt_2_1]							
+									
+collapsed node #4 : 1 entailment unit(s) before editing							ok		
+	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	[0295.txt_2_0]							
+									
+collapsed node #5 : 1 entailment unit(s) before editing							ok		
+	non funziona neppure il link al servizio clienti	[0079.txt_1_1]							
+									
+collapsed node #6 : 1 entailment unit(s) before editing							ok		
+	ho problemi con il Bluetooth	[0144.txt_2_1]							
+									
+collapsed node #7 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #8 : 1 entailment unit(s) before editing							ok		
+	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	[0051.txt_1_0]							
+									
+collapsed node #9 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #10 : 1 entailment unit(s) before editing							ok		
+	continuo ad aspettare il mio smartphone	[0051.txt_1_1]							
+									
+collapsed node #11 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #12 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #13 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #14 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #15 : 1 entailment unit(s) before editing							ok		
+	la sim non funziona	[0080.txt_1_3]						-se la inserisco in un telefono- is the only modifier	Modifier modified in FG, and direct edge created
+									
+collapsed node #16 : 1 entailment unit(s) before editing							ok		
+	dal mio MOBILEE non funziona neppure il link al servizio clienti	[0079.txt_1_0]							
+									
+collapsed node #17 : 1 entailment unit(s) before editing							ok		
+	ho problemi con il Bluetooth del mio MOBILEG Sonic	[0144.txt_2_0]							
+									
+collapsed node #18 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #19 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #20 : 1 entailment unit(s) before editing							ok		
+	la sim non funziona se la inserisco in un telefono	[0080.txt_1_0]							
+									
+collapsed node #21 : 1 entailment unit(s) before editing							ok		
+	scarsissimo impegno in termini di rilascio degli aggiornamenti	[0077.txt_1_0]							
+									
+collapsed node #22 : 1 entailment unit(s) before editing							ok		
+	gli aggiornamenti da parte vostra NON ARRIVANO MAI	[0076.txt_1_0]							
+									
+collapsed node #23 : 1 entailment unit(s) before editing							ok		
+	mi hanno inviato un MODELLOA2 usato	[0295.txt_1_1]							
+									
+collapsed node #24 : 1 entailment unit(s) before editing							empty		
+									
+collapsed node #25 : 1 entailment unit(s) before editing							ok		
+	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	[0295.txt_1_0]							
+									
+									
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments	
+									
+node pair #1:									
+noi del telefono pagato non abbiamo notizie	2	->	del telefono pagato non abbiamo notizie	2	Yes	2			
+del telefono pagato non abbiamo notizie	2	->	noi del telefono pagato non abbiamo notizie	2	No	-2			
+									
+node pair #2:									
+del telefono pagato non abbiamo notizie	2	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #3:									
+del telefono pagato non abbiamo notizie	2	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #4:									
+del telefono pagato non abbiamo notizie	2	->	non funziona neppure il link al servizio clienti	1	No	0			
+non funziona neppure il link al servizio clienti	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #5:									
+del telefono pagato non abbiamo notizie	2	->	ho problemi con il Bluetooth	1	No	0			
+ho problemi con il Bluetooth	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #6:									
+del telefono pagato non abbiamo notizie	2	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #7:									
+del telefono pagato non abbiamo notizie	2	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #8:									
+del telefono pagato non abbiamo notizie	2	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+dal mio MOBILEE non funziona neppure il link	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #9:									
+del telefono pagato non abbiamo notizie	2	->	continuo ad aspettare il mio smartphone	1	No	0			
+continuo ad aspettare il mio smartphone	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #10:									
+del telefono pagato non abbiamo notizie	2	->	non funziona il link al servizio clienti	1	No	0			
+non funziona il link al servizio clienti	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #11:									
+del telefono pagato non abbiamo notizie	2	->	non funziona neppure il link	1	No	0			
+non funziona neppure il link	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #12:									
+del telefono pagato non abbiamo notizie	2	->	dal mio MOBILEE non funziona il link	1	No	0			
+dal mio MOBILEE non funziona il link	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #13:									
+del telefono pagato non abbiamo notizie	2	->	non funziona il link	1	No	0			
+non funziona il link	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #14:									
+del telefono pagato non abbiamo notizie	2	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #15:									
+del telefono pagato non abbiamo notizie	2	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #16:									
+del telefono pagato non abbiamo notizie	2	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #17:									
+del telefono pagato non abbiamo notizie	2	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #18:									
+del telefono pagato non abbiamo notizie	2	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #19:									
+del telefono pagato non abbiamo notizie	2	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #20:									
+del telefono pagato non abbiamo notizie	2	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #21:									
+del telefono pagato non abbiamo notizie	2	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #22:									
+del telefono pagato non abbiamo notizie	2	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #23:									
+del telefono pagato non abbiamo notizie	2	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #24:									
+del telefono pagato non abbiamo notizie	2	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #25:									
+noi del telefono pagato non abbiamo notizie	2	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #26:									
+noi del telefono pagato non abbiamo notizie	2	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #27:									
+noi del telefono pagato non abbiamo notizie	2	->	non funziona neppure il link al servizio clienti	1	No	0			
+non funziona neppure il link al servizio clienti	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #28:									
+noi del telefono pagato non abbiamo notizie	2	->	ho problemi con il Bluetooth	1	No	0			
+ho problemi con il Bluetooth	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #29:									
+noi del telefono pagato non abbiamo notizie	2	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #30:									
+noi del telefono pagato non abbiamo notizie	2	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #31:									
+noi del telefono pagato non abbiamo notizie	2	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+dal mio MOBILEE non funziona neppure il link	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #32:									
+noi del telefono pagato non abbiamo notizie	2	->	continuo ad aspettare il mio smartphone	1	No	0			
+continuo ad aspettare il mio smartphone	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #33:									
+noi del telefono pagato non abbiamo notizie	2	->	non funziona il link al servizio clienti	1	No	0			
+non funziona il link al servizio clienti	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #34:									
+noi del telefono pagato non abbiamo notizie	2	->	non funziona neppure il link	1	No	0			
+non funziona neppure il link	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #35:									
+noi del telefono pagato non abbiamo notizie	2	->	dal mio MOBILEE non funziona il link	1	No	0			
+dal mio MOBILEE non funziona il link	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #36:									
+noi del telefono pagato non abbiamo notizie	2	->	non funziona il link	1	No	0			
+non funziona il link	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #37:									
+noi del telefono pagato non abbiamo notizie	2	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #38:									
+noi del telefono pagato non abbiamo notizie	2	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #39:									
+noi del telefono pagato non abbiamo notizie	2	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #40:									
+noi del telefono pagato non abbiamo notizie	2	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #41:									
+noi del telefono pagato non abbiamo notizie	2	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #42:									
+noi del telefono pagato non abbiamo notizie	2	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #43:									
+noi del telefono pagato non abbiamo notizie	2	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #44:									
+noi del telefono pagato non abbiamo notizie	2	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #45:									
+noi del telefono pagato non abbiamo notizie	2	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #46:									
+noi del telefono pagato non abbiamo notizie	2	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #47:									
+noi del telefono pagato non abbiamo notizie	2	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	noi del telefono pagato non abbiamo notizie	2	No	0			
+									
+node pair #48:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	Yes	1			
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	-1			
+									
+node pair #49:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+non funziona neppure il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #50:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	ho problemi con il Bluetooth	1	No	0			
+ho problemi con il Bluetooth	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #51:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #52:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #53:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+dal mio MOBILEE non funziona neppure il link	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #54:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+continuo ad aspettare il mio smartphone	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #55:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	non funziona il link al servizio clienti	1	No	0			
+non funziona il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #56:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	non funziona neppure il link	1	No	0			
+non funziona neppure il link	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #57:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+dal mio MOBILEE non funziona il link	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #58:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	non funziona il link	1	No	0			
+non funziona il link	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #59:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #60:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #61:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #62:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #63:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #64:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #65:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #66:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #67:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #68:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #69:									
+mi hanno inviato un MODELLOA2 con pixel bruciati	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	mi hanno inviato un MODELLOA2 con pixel bruciati	1	No	0			
+									
+node pair #70:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+non funziona neppure il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #71:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	ho problemi con il Bluetooth	1	No	0			
+ho problemi con il Bluetooth	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #72:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #73:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #74:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+dal mio MOBILEE non funziona neppure il link	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #75:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+continuo ad aspettare il mio smartphone	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #76:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	non funziona il link al servizio clienti	1	No	0			
+non funziona il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #77:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	non funziona neppure il link	1	No	0			
+non funziona neppure il link	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #78:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+dal mio MOBILEE non funziona il link	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #79:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	non funziona il link	1	No	0			
+non funziona il link	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #80:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #81:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #82:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #83:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #84:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #85:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #86:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #87:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #88:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #89:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #90:									
+mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati	1	No	0			
+									
+node pair #91:									
+non funziona neppure il link al servizio clienti	1	->	ho problemi con il Bluetooth	1	No	0			
+ho problemi con il Bluetooth	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #92:									
+non funziona neppure il link al servizio clienti	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	-1			
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #93:									
+non funziona neppure il link al servizio clienti	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #94:									
+non funziona neppure il link al servizio clienti	1	->	dal mio MOBILEE non funziona neppure il link	1	No	-1			
+dal mio MOBILEE non funziona neppure il link	1	->	non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #95:									
+non funziona neppure il link al servizio clienti	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+continuo ad aspettare il mio smartphone	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #96:									
+non funziona neppure il link al servizio clienti	1	->	non funziona il link al servizio clienti	1	Yes	1			
+non funziona il link al servizio clienti	1	->	non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #97:									
+non funziona neppure il link al servizio clienti	1	->	non funziona neppure il link	1	Yes	1			
+non funziona neppure il link	1	->	non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #98:									
+non funziona neppure il link al servizio clienti	1	->	dal mio MOBILEE non funziona il link	1	No	-1			
+dal mio MOBILEE non funziona il link	1	->	non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #99:									
+non funziona neppure il link al servizio clienti	1	->	non funziona il link	1	Yes	1			
+non funziona il link	1	->	non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #100:									
+non funziona neppure il link al servizio clienti	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #101:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	non funziona neppure il link al servizio clienti	1	Yes	1			
+non funziona neppure il link al servizio clienti	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #102:									
+non funziona neppure il link al servizio clienti	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #103:									
+non funziona neppure il link al servizio clienti	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #104:									
+non funziona neppure il link al servizio clienti	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #105:									
+non funziona neppure il link al servizio clienti	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #106:									
+non funziona neppure il link al servizio clienti	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #107:									
+non funziona neppure il link al servizio clienti	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #108:									
+non funziona neppure il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #109:									
+non funziona neppure il link al servizio clienti	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #110:									
+non funziona neppure il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #111:									
+ho problemi con il Bluetooth	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #112:									
+ho problemi con il Bluetooth	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #113:									
+ho problemi con il Bluetooth	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+dal mio MOBILEE non funziona neppure il link	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #114:									
+ho problemi con il Bluetooth	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+continuo ad aspettare il mio smartphone	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #115:									
+ho problemi con il Bluetooth	1	->	non funziona il link al servizio clienti	1	No	0			
+non funziona il link al servizio clienti	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #116:									
+ho problemi con il Bluetooth	1	->	non funziona neppure il link	1	No	0			
+non funziona neppure il link	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #117:									
+ho problemi con il Bluetooth	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+dal mio MOBILEE non funziona il link	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #118:									
+ho problemi con il Bluetooth	1	->	non funziona il link	1	No	0			
+non funziona il link	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #119:									
+ho problemi con il Bluetooth	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #120:									
+ho problemi con il Bluetooth	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #121:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	ho problemi con il Bluetooth	1	Yes	1			
+ho problemi con il Bluetooth	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	-1			
+									
+node pair #122:									
+ho problemi con il Bluetooth	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #123:									
+ho problemi con il Bluetooth	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #124:									
+ho problemi con il Bluetooth	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #125:									
+ho problemi con il Bluetooth	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #126:									
+ho problemi con il Bluetooth	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #127:									
+ho problemi con il Bluetooth	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #128:									
+ho problemi con il Bluetooth	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #129:									
+ho problemi con il Bluetooth	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	ho problemi con il Bluetooth	1	No	0			
+									
+node pair #130:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #131:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	dal mio MOBILEE non funziona neppure il link	1	No	-1			
+dal mio MOBILEE non funziona neppure il link	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	-1			
+									
+node pair #132:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+continuo ad aspettare il mio smartphone	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #133:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	non funziona il link al servizio clienti	1	Yes	1			
+non funziona il link al servizio clienti	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	-1			
+									
+node pair #134:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	non funziona neppure il link	1	No	-1			
+non funziona neppure il link	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	-1			
+									
+node pair #135:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	dal mio MOBILEE non funziona il link	1	Yes	1			
+dal mio MOBILEE non funziona il link	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	-1			
+									
+node pair #136:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	non funziona il link	1	Yes	1			
+non funziona il link	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	-1			
+									
+node pair #137:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #138:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	Yes	1			
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #139:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #140:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #141:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #142:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #143:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #144:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #145:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #146:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #147:									
+dal mio MOBILEE non funziona il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	dal mio MOBILEE non funziona il link al servizio clienti	1	No	0			
+									
+node pair #148:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+dal mio MOBILEE non funziona neppure il link	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #149:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	continuo ad aspettare il mio smartphone	1	Yes	1			
+continuo ad aspettare il mio smartphone	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	-1			
+									
+node pair #150:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	non funziona il link al servizio clienti	1	No	0			
+non funziona il link al servizio clienti	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #151:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	non funziona neppure il link	1	No	0			
+non funziona neppure il link	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #152:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+dal mio MOBILEE non funziona il link	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #153:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	non funziona il link	1	No	0			
+non funziona il link	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #154:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #155:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #156:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #157:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #158:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #159:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #160:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #161:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #162:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #163:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #164:									
+Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #165:									
+dal mio MOBILEE non funziona neppure il link	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+continuo ad aspettare il mio smartphone	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #166:									
+dal mio MOBILEE non funziona neppure il link	1	->	non funziona il link al servizio clienti	1	No	-1			
+non funziona il link al servizio clienti	1	->	dal mio MOBILEE non funziona neppure il link	1	No	-1			
+									
+node pair #167:									
+dal mio MOBILEE non funziona neppure il link	1	->	non funziona neppure il link	1	Yes	1			
+non funziona neppure il link	1	->	dal mio MOBILEE non funziona neppure il link	1	No	-1			
+									
+node pair #168:									
+dal mio MOBILEE non funziona neppure il link	1	->	dal mio MOBILEE non funziona il link	1	Yes	1			
+dal mio MOBILEE non funziona il link	1	->	dal mio MOBILEE non funziona neppure il link	1	No	-1			
+									
+node pair #169:									
+dal mio MOBILEE non funziona neppure il link	1	->	non funziona il link	1	Yes	1			
+non funziona il link	1	->	dal mio MOBILEE non funziona neppure il link	1	No	-1			
+									
+node pair #170:									
+dal mio MOBILEE non funziona neppure il link	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #171:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	dal mio MOBILEE non funziona neppure il link	1	Yes	1			
+dal mio MOBILEE non funziona neppure il link	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #172:									
+dal mio MOBILEE non funziona neppure il link	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #173:									
+dal mio MOBILEE non funziona neppure il link	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #174:									
+dal mio MOBILEE non funziona neppure il link	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #175:									
+dal mio MOBILEE non funziona neppure il link	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #176:									
+dal mio MOBILEE non funziona neppure il link	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #177:									
+dal mio MOBILEE non funziona neppure il link	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #178:									
+dal mio MOBILEE non funziona neppure il link	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #179:									
+dal mio MOBILEE non funziona neppure il link	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #180:									
+dal mio MOBILEE non funziona neppure il link	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	dal mio MOBILEE non funziona neppure il link	1	No	0			
+									
+node pair #181:									
+continuo ad aspettare il mio smartphone	1	->	non funziona il link al servizio clienti	1	No	0			
+non funziona il link al servizio clienti	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #182:									
+continuo ad aspettare il mio smartphone	1	->	non funziona neppure il link	1	No	0			
+non funziona neppure il link	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #183:									
+continuo ad aspettare il mio smartphone	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+dal mio MOBILEE non funziona il link	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #184:									
+continuo ad aspettare il mio smartphone	1	->	non funziona il link	1	No	0			
+non funziona il link	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #185:									
+continuo ad aspettare il mio smartphone	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #186:									
+continuo ad aspettare il mio smartphone	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #187:									
+continuo ad aspettare il mio smartphone	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #188:									
+continuo ad aspettare il mio smartphone	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #189:									
+continuo ad aspettare il mio smartphone	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #190:									
+continuo ad aspettare il mio smartphone	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #191:									
+continuo ad aspettare il mio smartphone	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #192:									
+continuo ad aspettare il mio smartphone	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #193:									
+continuo ad aspettare il mio smartphone	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #194:									
+continuo ad aspettare il mio smartphone	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #195:									
+continuo ad aspettare il mio smartphone	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	continuo ad aspettare il mio smartphone	1	No	0			
+									
+node pair #196:									
+non funziona il link al servizio clienti	1	->	non funziona neppure il link	1	No	-1			
+non funziona neppure il link	1	->	non funziona il link al servizio clienti	1	No	-1			
+									
+node pair #197:									
+non funziona il link al servizio clienti	1	->	dal mio MOBILEE non funziona il link	1	No	-1			
+dal mio MOBILEE non funziona il link	1	->	non funziona il link al servizio clienti	1	No	-1			
+									
+node pair #198:									
+non funziona il link al servizio clienti	1	->	non funziona il link	1	Yes	1			
+non funziona il link	1	->	non funziona il link al servizio clienti	1	No	-1			
+									
+node pair #199:									
+non funziona il link al servizio clienti	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #200:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	non funziona il link al servizio clienti	1	Yes	1			
+non funziona il link al servizio clienti	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #201:									
+non funziona il link al servizio clienti	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #202:									
+non funziona il link al servizio clienti	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #203:									
+non funziona il link al servizio clienti	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #204:									
+non funziona il link al servizio clienti	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #205:									
+non funziona il link al servizio clienti	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #206:									
+non funziona il link al servizio clienti	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #207:									
+non funziona il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #208:									
+non funziona il link al servizio clienti	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #209:									
+non funziona il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	non funziona il link al servizio clienti	1	No	0			
+									
+node pair #210:									
+non funziona neppure il link	1	->	dal mio MOBILEE non funziona il link	1	No	-1			
+dal mio MOBILEE non funziona il link	1	->	non funziona neppure il link	1	No	-1			
+									
+node pair #211:									
+non funziona neppure il link	1	->	non funziona il link	1	Yes	1			
+non funziona il link	1	->	non funziona neppure il link	1	No	-1			
+									
+node pair #212:									
+non funziona neppure il link	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #213:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	non funziona neppure il link	1	Yes	1			
+non funziona neppure il link	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #214:									
+non funziona neppure il link	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #215:									
+non funziona neppure il link	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #216:									
+non funziona neppure il link	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #217:									
+non funziona neppure il link	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #218:									
+non funziona neppure il link	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #219:									
+non funziona neppure il link	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #220:									
+non funziona neppure il link	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #221:									
+non funziona neppure il link	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #222:									
+non funziona neppure il link	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	non funziona neppure il link	1	No	0			
+									
+node pair #223:									
+dal mio MOBILEE non funziona il link	1	->	non funziona il link	1	Yes	1			
+non funziona il link	1	->	dal mio MOBILEE non funziona il link	1	No	-1			
+									
+node pair #224:									
+dal mio MOBILEE non funziona il link	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #225:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	dal mio MOBILEE non funziona il link	1	Yes	1			
+dal mio MOBILEE non funziona il link	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #226:									
+dal mio MOBILEE non funziona il link	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #227:									
+dal mio MOBILEE non funziona il link	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #228:									
+dal mio MOBILEE non funziona il link	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #229:									
+dal mio MOBILEE non funziona il link	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #230:									
+dal mio MOBILEE non funziona il link	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #231:									
+dal mio MOBILEE non funziona il link	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #232:									
+dal mio MOBILEE non funziona il link	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #233:									
+dal mio MOBILEE non funziona il link	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #234:									
+dal mio MOBILEE non funziona il link	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	dal mio MOBILEE non funziona il link	1	No	0			
+									
+node pair #235:									
+non funziona il link	1	->	la sim non funziona	1	No	0			
+la sim non funziona	1	->	non funziona il link	1	No	0			
+									
+node pair #236:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	non funziona il link	1	Yes	1			
+non funziona il link	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	-1			
+									
+node pair #237:									
+non funziona il link	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	non funziona il link	1	No	0			
+									
+node pair #238:									
+non funziona il link	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	non funziona il link	1	No	0			
+									
+node pair #239:									
+non funziona il link	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	non funziona il link	1	No	0			
+									
+node pair #240:									
+non funziona il link	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	non funziona il link	1	No	0			
+									
+node pair #241:									
+non funziona il link	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	non funziona il link	1	No	0			
+									
+node pair #242:									
+non funziona il link	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	non funziona il link	1	No	0			
+									
+node pair #243:									
+non funziona il link	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	non funziona il link	1	No	0			
+									
+node pair #244:									
+non funziona il link	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	non funziona il link	1	No	0			
+									
+node pair #245:									
+non funziona il link	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	non funziona il link	1	No	0			
+									
+node pair #246:									
+la sim non funziona	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	la sim non funziona	1	No	0			
+									
+node pair #247:									
+la sim non funziona	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	la sim non funziona	1	No	0			
+									
+node pair #248:									
+la sim non funziona se la inserisco	1	->	la sim non funziona	1	Yes	1			
+la sim non funziona	1	->	la sim non funziona se la inserisco	1	No	-1			
+									
+node pair #249:									
+la sim non funziona in un telefono	1	->	la sim non funziona	1	Yes	1			
+la sim non funziona	1	->	la sim non funziona in un telefono	1	No	-1			
+									
+node pair #250:									
+la sim non funziona se la inserisco in un telefono	1	->	la sim non funziona	1	Yes	1			
+la sim non funziona	1	->	la sim non funziona se la inserisco in un telefono	1	No	-1			
+									
+node pair #251:									
+la sim non funziona	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	la sim non funziona	1	No	0			
+									
+node pair #252:									
+la sim non funziona	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	la sim non funziona	1	No	0			
+									
+node pair #253:									
+la sim non funziona	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	la sim non funziona	1	No	0			
+									
+node pair #254:									
+la sim non funziona	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	la sim non funziona	1	No	0			
+									
+node pair #255:									
+la sim non funziona	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	la sim non funziona	1	No	0			
+									
+node pair #256:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #257:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #258:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #259:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #260:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #261:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #262:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #263:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #264:									
+dal mio MOBILEE non funziona neppure il link al servizio clienti	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	dal mio MOBILEE non funziona neppure il link al servizio clienti	1	No	0			
+									
+node pair #265:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	la sim non funziona se la inserisco	1	No	0			
+la sim non funziona se la inserisco	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+									
+node pair #266:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	la sim non funziona in un telefono	1	No	0			
+la sim non funziona in un telefono	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+									
+node pair #267:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+la sim non funziona se la inserisco in un telefono	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+									
+node pair #268:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+									
+node pair #269:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+									
+node pair #270:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+									
+node pair #271:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+									
+node pair #272:									
+ho problemi con il Bluetooth del mio MOBILEG Sonic	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	ho problemi con il Bluetooth del mio MOBILEG Sonic	1	No	0			
+									
+node pair #273:									
+la sim non funziona se la inserisco	1	->	la sim non funziona in un telefono	1	No	-1			
+la sim non funziona in un telefono	1	->	la sim non funziona se la inserisco	1	No	-1			
+									
+node pair #274:									
+la sim non funziona se la inserisco in un telefono	1	->	la sim non funziona se la inserisco	1	Yes	1			
+la sim non funziona se la inserisco	1	->	la sim non funziona se la inserisco in un telefono	1	No	-1			
+									
+node pair #275:									
+la sim non funziona se la inserisco	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	la sim non funziona se la inserisco	1	No	0			
+									
+node pair #276:									
+la sim non funziona se la inserisco	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	la sim non funziona se la inserisco	1	No	0			
+									
+node pair #277:									
+la sim non funziona se la inserisco	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	la sim non funziona se la inserisco	1	No	0			
+									
+node pair #278:									
+la sim non funziona se la inserisco	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	la sim non funziona se la inserisco	1	No	0			
+									
+node pair #279:									
+la sim non funziona se la inserisco	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	la sim non funziona se la inserisco	1	No	0			
+									
+node pair #280:									
+la sim non funziona se la inserisco in un telefono	1	->	la sim non funziona in un telefono	1	Yes	1			
+la sim non funziona in un telefono	1	->	la sim non funziona se la inserisco in un telefono	1	No	-1			
+									
+node pair #281:									
+la sim non funziona in un telefono	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	la sim non funziona in un telefono	1	No	0			
+									
+node pair #282:									
+la sim non funziona in un telefono	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	la sim non funziona in un telefono	1	No	0			
+									
+node pair #283:									
+la sim non funziona in un telefono	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	la sim non funziona in un telefono	1	No	0			
+									
+node pair #284:									
+la sim non funziona in un telefono	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	la sim non funziona in un telefono	1	No	0			
+									
+node pair #285:									
+la sim non funziona in un telefono	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	la sim non funziona in un telefono	1	No	0			
+									
+node pair #286:									
+la sim non funziona se la inserisco in un telefono	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+									
+node pair #287:									
+la sim non funziona se la inserisco in un telefono	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+									
+node pair #288:									
+la sim non funziona se la inserisco in un telefono	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+									
+node pair #289:									
+la sim non funziona se la inserisco in un telefono	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+									
+node pair #290:									
+la sim non funziona se la inserisco in un telefono	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	la sim non funziona se la inserisco in un telefono	1	No	0			
+									
+node pair #291:									
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+									
+node pair #292:									
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+									
+node pair #293:									
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+									
+node pair #294:									
+scarsissimo impegno in termini di rilascio degli aggiornamenti	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	scarsissimo impegno in termini di rilascio degli aggiornamenti	1	No	0			
+									
+node pair #295:									
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+mi hanno inviato un MODELLOA2 usato	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+									
+node pair #296:									
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	gli aggiornamenti NON ARRIVANO MAI	1	Yes	1			
+gli aggiornamenti NON ARRIVANO MAI	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	-1			
+									
+node pair #297:									
+gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	gli aggiornamenti da parte vostra NON ARRIVANO MAI	1	No	0			
+									
+node pair #298:									
+mi hanno inviato un MODELLOA2 usato	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			
+gli aggiornamenti NON ARRIVANO MAI	1	->	mi hanno inviato un MODELLOA2 usato	1	No	0			
+									
+node pair #299:									
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	mi hanno inviato un MODELLOA2 usato	1	Yes	1			
+mi hanno inviato un MODELLOA2 usato	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	-1			
+									
+node pair #300:									
+gli aggiornamenti NON ARRIVANO MAI	1	->	mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	No	0			
+mi hanno inviato un MODELLOA2 s fondo di magazzino , usato	1	->	gli aggiornamenti NON ARRIVANO MAI	1	No	0			

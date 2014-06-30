@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="6">
+    <node id="0043.txt_1_0" implicit_statement="FALSE" modality="TRUE" explicit_context="0043.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>Non riesco a contattare nessun tecnico per istallare la CONSOLLE 2</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per la CONSOLLE 2poz=6 8 9 10;istallarepoz=7;nessun tecnicopoz=4 5</modifiers>
+    </node>
+    <node id="0043.txt_1_1" implicit_statement="FALSE" modality="TRUE" explicit_context="0043.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>Non riesco a contattare nessun tecnico per la CONSOLLE 2</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per la CONSOLLE 2poz=6 8 9 10;nessun tecnicopoz=4 5</modifiers>
+    </node>
+    <node id="0043.txt_1_2" implicit_statement="FALSE" modality="TRUE" explicit_context="0043.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>Non riesco a contattare per istallare la CONSOLLE 2</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per la CONSOLLE 2poz=6 8 9 10;istallarepoz=7</modifiers>
+    </node>
+    <node id="0043.txt_1_3" implicit_statement="FALSE" modality="TRUE" explicit_context="0043.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>Non riesco a contattare nessun tecnico</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nessun tecnicopoz=4 5</modifiers>
+    </node>
+    <node id="0043.txt_1_4" implicit_statement="FALSE" modality="TRUE" explicit_context="0043.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>Non riesco a contattare per la CONSOLLE 2</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per la CONSOLLE 2poz=6 8 9 10</modifiers>
+    </node>
+    <node id="0043.txt_1_5" implicit_statement="FALSE" modality="TRUE" explicit_context="0043.txt" implicit_context="" focus="contattare" implicit_focus="">
+        <original_text>Non riesco a contattare</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0043.txt_1_0-0043.txt_1_1" source="0043.txt_1_0" target="0043.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_0-0043.txt_1_1" source="0043.txt_1_0" target="0043.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_0-0043.txt_1_2" source="0043.txt_1_0" target="0043.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_0-0043.txt_1_2" source="0043.txt_1_0" target="0043.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_1-0043.txt_1_3" source="0043.txt_1_1" target="0043.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_1-0043.txt_1_3" source="0043.txt_1_1" target="0043.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_0-0043.txt_1_3" source="0043.txt_1_0" target="0043.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_2-0043.txt_1_4" source="0043.txt_1_2" target="0043.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_1-0043.txt_1_4" source="0043.txt_1_1" target="0043.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_1-0043.txt_1_4" source="0043.txt_1_1" target="0043.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_2-0043.txt_1_4" source="0043.txt_1_2" target="0043.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_0-0043.txt_1_4" source="0043.txt_1_0" target="0043.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_4-0043.txt_1_5" source="0043.txt_1_4" target="0043.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_3-0043.txt_1_5" source="0043.txt_1_3" target="0043.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_3-0043.txt_1_5" source="0043.txt_1_3" target="0043.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_4-0043.txt_1_5" source="0043.txt_1_4" target="0043.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_1-0043.txt_1_5" source="0043.txt_1_1" target="0043.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_2-0043.txt_1_5" source="0043.txt_1_2" target="0043.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0043.txt_1_0-0043.txt_1_5" source="0043.txt_1_0" target="0043.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

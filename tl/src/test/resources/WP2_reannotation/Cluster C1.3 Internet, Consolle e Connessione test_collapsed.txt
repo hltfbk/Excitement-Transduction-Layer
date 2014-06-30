@@ -1,0 +1,472 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 2 entailment unit(s) before editing
+	la connessione non funziona	[ItaSpeech0080.txt_1_0]
+	non funziona la connessione	[ItaSpeech0010.txt_1_1]
+
+collapsed node #2 : 2 entailment unit(s) before editing
+	La connessione internet non funziona	[ItaSpeech0021.txt_1_0]
+	non funziona la connessione internet	[ItaSpeech0074.txt_1_0]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	non riesco ad avere la connessione sul telefono	[ItaSpeech0131.txt_1_1]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	non riesco ad avere la connessione sul mio telefono	[ItaSpeech0131.txt_1_0]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	ho un problema con la connessione	[ItaSpeech0052.txt_1_3]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	ho un problema con la connessione di casa mia	[ItaSpeech0052.txt_1_2]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	non riesco ad accedere a internet dal cellulare	[ItaSpeech0099.txt_1_1]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	non riesco ad accedere a internet dal mio cellulare	[ItaSpeech0099.txt_1_0]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	ho un problema con la connessione da venerdì scorso	[ItaSpeech0052.txt_1_1]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	internet è lento	[ItaSpeech0061.txt_1_0]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	ho un problema con la connessione di casa mia da venerdì scorso	[ItaSpeech0052.txt_1_0]
+
+collapsed node #12 : 1 entailment unit(s) before editing
+	non funziona più la connessione	[ItaSpeech0010.txt_1_0]
+
+collapsed node #13 : 1 entailment unit(s) before editing
+	La connessione è lenta	[ItaSpeech0005.txt_1_0]
+
+collapsed node #14 : 1 entailment unit(s) before editing
+	la connessione internet non si attiva	[ItaSpeech0019.txt_1_1]
+
+collapsed node #15 : 1 entailment unit(s) before editing
+	la connessione internet non mi si attiva	[ItaSpeech0019.txt_1_0]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+non funziona la connessione internet	2	->	la connessione non funziona	2	Yes	0
+la connessione non funziona	2	->	non funziona la connessione internet	2	No	0
+
+node pair #2:
+la connessione non funziona	2	->	non riesco ad avere la connessione sul telefono	1	No	0
+non riesco ad avere la connessione sul telefono	1	->	la connessione non funziona	2	No	0
+
+node pair #3:
+la connessione non funziona	2	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+non riesco ad avere la connessione sul mio telefono	1	->	la connessione non funziona	2	No	0
+
+node pair #4:
+la connessione non funziona	2	->	ho un problema con la connessione	1	No	0
+ho un problema con la connessione	1	->	la connessione non funziona	2	No	0
+
+node pair #5:
+la connessione non funziona	2	->	ho un problema con la connessione di casa mia	1	No	0
+ho un problema con la connessione di casa mia	1	->	la connessione non funziona	2	No	0
+
+node pair #6:
+la connessione non funziona	2	->	non riesco ad accedere a internet dal cellulare	1	No	0
+non riesco ad accedere a internet dal cellulare	1	->	la connessione non funziona	2	No	0
+
+node pair #7:
+la connessione non funziona	2	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+non riesco ad accedere a internet dal mio cellulare	1	->	la connessione non funziona	2	No	0
+
+node pair #8:
+la connessione non funziona	2	->	ho un problema con la connessione da venerdì scorso	1	No	0
+ho un problema con la connessione da venerdì scorso	1	->	la connessione non funziona	2	No	0
+
+node pair #9:
+la connessione non funziona	2	->	internet è lento	1	No	0
+internet è lento	1	->	la connessione non funziona	2	No	0
+
+node pair #10:
+la connessione non funziona	2	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	la connessione non funziona	2	No	0
+
+node pair #11:
+non funziona più la connessione	1	->	la connessione non funziona	2	Yes	1
+la connessione non funziona	2	->	non funziona più la connessione	1	No	-1
+
+node pair #12:
+la connessione non funziona	2	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	la connessione non funziona	2	No	0
+
+node pair #13:
+la connessione internet non si attiva	1	->	la connessione non funziona	2	Yes	0
+la connessione non funziona	2	->	la connessione internet non si attiva	1	No	0
+
+node pair #14:
+la connessione non funziona	2	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	la connessione non funziona	2	No	0
+
+node pair #15:
+non funziona la connessione internet	2	->	non riesco ad avere la connessione sul telefono	1	No	0
+non riesco ad avere la connessione sul telefono	1	->	non funziona la connessione internet	2	No	0
+
+node pair #16:
+non funziona la connessione internet	2	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+non riesco ad avere la connessione sul mio telefono	1	->	non funziona la connessione internet	2	No	0
+
+node pair #17:
+non funziona la connessione internet	2	->	ho un problema con la connessione	1	Yes	0
+ho un problema con la connessione	1	->	non funziona la connessione internet	2	No	0
+
+node pair #18:
+non funziona la connessione internet	2	->	ho un problema con la connessione di casa mia	1	No	0
+ho un problema con la connessione di casa mia	1	->	non funziona la connessione internet	2	No	0
+
+node pair #19:
+non funziona la connessione internet	2	->	non riesco ad accedere a internet dal cellulare	1	No	0
+non riesco ad accedere a internet dal cellulare	1	->	non funziona la connessione internet	2	No	0
+
+node pair #20:
+non funziona la connessione internet	2	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+non riesco ad accedere a internet dal mio cellulare	1	->	non funziona la connessione internet	2	No	0
+
+node pair #21:
+non funziona la connessione internet	2	->	ho un problema con la connessione da venerdì scorso	1	No	0
+ho un problema con la connessione da venerdì scorso	1	->	non funziona la connessione internet	2	No	0
+
+node pair #22:
+non funziona la connessione internet	2	->	internet è lento	1	No	0
+internet è lento	1	->	non funziona la connessione internet	2	No	0
+
+node pair #23:
+non funziona la connessione internet	2	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	non funziona la connessione internet	2	No	0
+
+node pair #24:
+non funziona la connessione internet	2	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	non funziona la connessione internet	2	No	0
+
+node pair #25:
+non funziona la connessione internet	2	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	non funziona la connessione internet	2	No	0
+
+node pair #26:
+la connessione internet non si attiva	1	->	non funziona la connessione internet	2	Yes	0
+non funziona la connessione internet	2	->	la connessione internet non si attiva	1	No	0
+
+node pair #27:
+non funziona la connessione internet	2	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	non funziona la connessione internet	2	No	0
+
+node pair #28:
+non riesco ad avere la connessione sul mio telefono	1	->	non riesco ad avere la connessione sul telefono	1	Yes	1
+non riesco ad avere la connessione sul telefono	1	->	non riesco ad avere la connessione sul mio telefono	1	No	-1
+
+node pair #29:
+non riesco ad avere la connessione sul telefono	1	->	ho un problema con la connessione	1	No	0
+ho un problema con la connessione	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #30:
+non riesco ad avere la connessione sul telefono	1	->	ho un problema con la connessione di casa mia	1	No	0
+ho un problema con la connessione di casa mia	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #31:
+non riesco ad accedere a internet dal cellulare	1	->	non riesco ad avere la connessione sul telefono	1	Yes	0
+non riesco ad avere la connessione sul telefono	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+
+node pair #32:
+non riesco ad avere la connessione sul telefono	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+non riesco ad accedere a internet dal mio cellulare	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #33:
+non riesco ad avere la connessione sul telefono	1	->	ho un problema con la connessione da venerdì scorso	1	No	0
+ho un problema con la connessione da venerdì scorso	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #34:
+non riesco ad avere la connessione sul telefono	1	->	internet è lento	1	No	0
+internet è lento	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #35:
+non riesco ad avere la connessione sul telefono	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #36:
+non riesco ad avere la connessione sul telefono	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #37:
+non riesco ad avere la connessione sul telefono	1	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #38:
+non riesco ad avere la connessione sul telefono	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #39:
+non riesco ad avere la connessione sul telefono	1	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	non riesco ad avere la connessione sul telefono	1	No	0
+
+node pair #40:
+non riesco ad avere la connessione sul mio telefono	1	->	ho un problema con la connessione	1	No	0
+ho un problema con la connessione	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #41:
+non riesco ad avere la connessione sul mio telefono	1	->	ho un problema con la connessione di casa mia	1	No	0
+ho un problema con la connessione di casa mia	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #42:
+non riesco ad avere la connessione sul mio telefono	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+non riesco ad accedere a internet dal cellulare	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #43:
+non riesco ad accedere a internet dal mio cellulare	1	->	non riesco ad avere la connessione sul mio telefono	1	Yes	0
+non riesco ad avere la connessione sul mio telefono	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+
+node pair #44:
+non riesco ad avere la connessione sul mio telefono	1	->	ho un problema con la connessione da venerdì scorso	1	No	0
+ho un problema con la connessione da venerdì scorso	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #45:
+non riesco ad avere la connessione sul mio telefono	1	->	internet è lento	1	No	0
+internet è lento	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #46:
+non riesco ad avere la connessione sul mio telefono	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #47:
+non riesco ad avere la connessione sul mio telefono	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #48:
+non riesco ad avere la connessione sul mio telefono	1	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #49:
+non riesco ad avere la connessione sul mio telefono	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #50:
+non riesco ad avere la connessione sul mio telefono	1	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	non riesco ad avere la connessione sul mio telefono	1	No	0
+
+node pair #51:
+ho un problema con la connessione di casa mia	1	->	ho un problema con la connessione	1	Yes	1
+ho un problema con la connessione	1	->	ho un problema con la connessione di casa mia	1	No	-1
+
+node pair #52:
+ho un problema con la connessione	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+non riesco ad accedere a internet dal cellulare	1	->	ho un problema con la connessione	1	No	0
+
+node pair #53:
+ho un problema con la connessione	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+non riesco ad accedere a internet dal mio cellulare	1	->	ho un problema con la connessione	1	No	0
+
+node pair #54:
+ho un problema con la connessione da venerdì scorso	1	->	ho un problema con la connessione	1	Yes	1
+ho un problema con la connessione	1	->	ho un problema con la connessione da venerdì scorso	1	No	-1
+
+node pair #55:
+internet è lento	1	->	ho un problema con la connessione	1	Yes	0
+ho un problema con la connessione	1	->	internet è lento	1	No	0
+
+node pair #56:
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	ho un problema con la connessione	1	Yes	1
+ho un problema con la connessione	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	-1
+
+node pair #57:
+ho un problema con la connessione	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	ho un problema con la connessione	1	No	0
+
+node pair #58:
+La connessione è lenta	1	->	ho un problema con la connessione	1	Yes	0
+ho un problema con la connessione	1	->	La connessione è lenta	1	No	0
+
+node pair #59:
+la connessione internet non si attiva	1	->	ho un problema con la connessione	1	Yes	0
+ho un problema con la connessione	1	->	la connessione internet non si attiva	1	No	0
+
+node pair #60:
+ho un problema con la connessione	1	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	ho un problema con la connessione	1	No	0
+
+node pair #61:
+ho un problema con la connessione di casa mia	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+non riesco ad accedere a internet dal cellulare	1	->	ho un problema con la connessione di casa mia	1	No	0
+
+node pair #62:
+ho un problema con la connessione di casa mia	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+non riesco ad accedere a internet dal mio cellulare	1	->	ho un problema con la connessione di casa mia	1	No	0
+
+node pair #63:
+ho un problema con la connessione di casa mia	1	->	ho un problema con la connessione da venerdì scorso	1	No	-1
+ho un problema con la connessione da venerdì scorso	1	->	ho un problema con la connessione di casa mia	1	No	-1
+
+node pair #64:
+ho un problema con la connessione di casa mia	1	->	internet è lento	1	No	0
+internet è lento	1	->	ho un problema con la connessione di casa mia	1	No	0
+
+node pair #65:
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	ho un problema con la connessione di casa mia	1	Yes	1
+ho un problema con la connessione di casa mia	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	-1
+
+node pair #66:
+ho un problema con la connessione di casa mia	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	ho un problema con la connessione di casa mia	1	No	0
+
+node pair #67:
+ho un problema con la connessione di casa mia	1	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	ho un problema con la connessione di casa mia	1	No	0
+
+node pair #68:
+ho un problema con la connessione di casa mia	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	ho un problema con la connessione di casa mia	1	No	0
+
+node pair #69:
+la connessione internet non mi si attiva	1	->	ho un problema con la connessione di casa mia	1	Yes	0
+ho un problema con la connessione di casa mia	1	->	la connessione internet non mi si attiva	1	No	0
+
+node pair #70:
+non riesco ad accedere a internet dal mio cellulare	1	->	non riesco ad accedere a internet dal cellulare	1	Yes	1
+non riesco ad accedere a internet dal cellulare	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	-1
+
+node pair #71:
+non riesco ad accedere a internet dal cellulare	1	->	ho un problema con la connessione da venerdì scorso	1	No	0
+ho un problema con la connessione da venerdì scorso	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+
+node pair #72:
+non riesco ad accedere a internet dal cellulare	1	->	internet è lento	1	No	0
+internet è lento	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+
+node pair #73:
+non riesco ad accedere a internet dal cellulare	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+
+node pair #74:
+non riesco ad accedere a internet dal cellulare	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+
+node pair #75:
+non riesco ad accedere a internet dal cellulare	1	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+
+node pair #76:
+non riesco ad accedere a internet dal cellulare	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+
+node pair #77:
+non riesco ad accedere a internet dal cellulare	1	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	non riesco ad accedere a internet dal cellulare	1	No	0
+
+node pair #78:
+non riesco ad accedere a internet dal mio cellulare	1	->	ho un problema con la connessione da venerdì scorso	1	No	0
+ho un problema con la connessione da venerdì scorso	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+
+node pair #79:
+non riesco ad accedere a internet dal mio cellulare	1	->	internet è lento	1	No	0
+internet è lento	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+
+node pair #80:
+non riesco ad accedere a internet dal mio cellulare	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+
+node pair #81:
+non riesco ad accedere a internet dal mio cellulare	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+
+node pair #82:
+non riesco ad accedere a internet dal mio cellulare	1	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+
+node pair #83:
+non riesco ad accedere a internet dal mio cellulare	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+
+node pair #84:
+non riesco ad accedere a internet dal mio cellulare	1	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	non riesco ad accedere a internet dal mio cellulare	1	No	0
+
+node pair #85:
+ho un problema con la connessione da venerdì scorso	1	->	internet è lento	1	No	0
+internet è lento	1	->	ho un problema con la connessione da venerdì scorso	1	No	0
+
+node pair #86:
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	ho un problema con la connessione da venerdì scorso	1	Yes	1
+ho un problema con la connessione da venerdì scorso	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	-1
+
+node pair #87:
+ho un problema con la connessione da venerdì scorso	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	ho un problema con la connessione da venerdì scorso	1	No	0
+
+node pair #88:
+ho un problema con la connessione da venerdì scorso	1	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	ho un problema con la connessione da venerdì scorso	1	No	0
+
+node pair #89:
+ho un problema con la connessione da venerdì scorso	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	ho un problema con la connessione da venerdì scorso	1	No	0
+
+node pair #90:
+la connessione internet non mi si attiva	1	->	ho un problema con la connessione da venerdì scorso	1	Yes	0
+ho un problema con la connessione da venerdì scorso	1	->	la connessione internet non mi si attiva	1	No	0
+
+node pair #91:
+internet è lento	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	internet è lento	1	No	0
+
+node pair #92:
+internet è lento	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	internet è lento	1	No	0
+
+node pair #93:
+internet è lento	1	->	La connessione è lenta	1	Yes	0
+La connessione è lenta	1	->	internet è lento	1	No	0
+
+node pair #94:
+internet è lento	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	internet è lento	1	No	0
+
+node pair #95:
+internet è lento	1	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	internet è lento	1	No	0
+
+node pair #96:
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	non funziona più la connessione	1	No	0
+non funziona più la connessione	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+
+node pair #97:
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+
+node pair #98:
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+
+node pair #99:
+ho un problema con la connessione di casa mia da venerdì scorso	1	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	ho un problema con la connessione di casa mia da venerdì scorso	1	No	0
+
+node pair #100:
+non funziona più la connessione	1	->	La connessione è lenta	1	No	0
+La connessione è lenta	1	->	non funziona più la connessione	1	No	0
+
+node pair #101:
+non funziona più la connessione	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	non funziona più la connessione	1	No	0
+
+node pair #102:
+la connessione internet non mi si attiva	1	->	non funziona più la connessione	1	Yes	0
+non funziona più la connessione	1	->	la connessione internet non mi si attiva	1	No	0
+
+node pair #103:
+La connessione è lenta	1	->	la connessione internet non si attiva	1	No	0
+la connessione internet non si attiva	1	->	La connessione è lenta	1	No	0
+
+node pair #104:
+La connessione è lenta	1	->	la connessione internet non mi si attiva	1	No	0
+la connessione internet non mi si attiva	1	->	La connessione è lenta	1	No	0
+
+node pair #105:
+la connessione internet non mi si attiva	1	->	la connessione internet non si attiva	1	Yes	1
+la connessione internet non si attiva	1	->	la connessione internet non mi si attiva	1	No	-1
+

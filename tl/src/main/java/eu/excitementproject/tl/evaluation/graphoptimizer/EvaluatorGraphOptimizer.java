@@ -185,10 +185,15 @@ public class EvaluatorGraphOptimizer {
 	
 	public static EntailmentGraphRaw getDecollapsedGraph(EntailmentGraphCollapsed collapsedGraph){
 		EntailmentGraphRaw rg = new EntailmentGraphRaw();
+		
+		for (EquivalenceClass n : collapsedGraph.vertexSet()){
+			for (EntailmentUnit eu : n.getEntailmentUnits())
+			rg.addVertex(eu); 
+		}
+		
 		for (EntailmentRelation edge : getAllEntailmentRelations(collapsedGraph)){
 			EntailmentUnit src = edge.getSource();
 			EntailmentUnit tgt = edge.getTarget();
-			rg.addVertex(src); rg.addVertex(tgt);
 			rg.addEdge(src, tgt, edge);
 		}
 		return rg;

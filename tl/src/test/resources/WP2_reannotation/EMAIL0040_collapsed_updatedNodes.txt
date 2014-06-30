@@ -1,0 +1,222 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 2 entailment unit(s) before editing
+	Food quantity has declined over time	[57576.txt_2_0]
+	the portions are getting smaller	[305036.txt_3_3]
+
+collapsed node #2 : 2 entailment unit(s) before editing
+	food portions are absurdly small	[399686.txt_1_2]
+	food portions are insultingly small	[399686.txt_2_2]
+
+collapsed node #3 : 5 entailment unit(s) before editing
+	I wished the food would be more consistant in terms of quantity	[305036.txt_2_0]
+	It could be improved by making the portions of the meals larger	[77304.txt_2_0]
+	food is finished too early	[193730.txt_4_0]
+	food portions are small	[399686.txt_1_3, 399686.txt_2_3]
+	more food	[193730.txt_7_0]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	the portions are getting rather smaller	[305036.txt_3_1]
+
+collapsed node #5 : 2 entailment unit(s) before editing
+	Standard magnum food portions are absurdly small	[399686.txt_1_0]
+	Standard magnum food portions are insultingly small	[399686.txt_2_0]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	the portions are getting rather smaller each time	[305036.txt_3_0]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	drink quantity has declined over time	[57576.txt_4_0]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	Standard magnum food portions are small	[399686.txt_1_1, 399686.txt_2_1]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	Bigger salads	[428613.txt_3_0]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	the portions are getting smaller each time	[305036.txt_3_2]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+the portions are getting smaller	2	->	food portions are absurdly small	2	No	0
+food portions are absurdly small	2	->	the portions are getting smaller	2	No	0
+
+node pair #2:
+the portions are getting smaller	2	->	more food	5	Yes	0
+more food	5	->	the portions are getting smaller	2	No	0
+
+node pair #3:
+the portions are getting smaller	2	->	the portions are getting rather smaller	1	Yes	-1
+the portions are getting rather smaller	1	->	the portions are getting smaller	2	Yes	1
+
+node pair #4:
+the portions are getting smaller	2	->	Standard magnum food portions are absurdly small	2	No	0
+Standard magnum food portions are absurdly small	2	->	the portions are getting smaller	2	No	0
+
+node pair #5:
+the portions are getting rather smaller each time	1	->	the portions are getting smaller	2	Yes	1
+the portions are getting smaller	2	->	the portions are getting rather smaller each time	1	No	-1
+
+node pair #6:
+drink quantity has declined over time	1	->	the portions are getting smaller	2	Yes	0
+the portions are getting smaller	2	->	drink quantity has declined over time	1	No	0
+
+node pair #7:
+the portions are getting smaller	2	->	Standard magnum food portions are small	1	No	0
+Standard magnum food portions are small	1	->	the portions are getting smaller	2	No	0
+
+node pair #8:
+the portions are getting smaller	2	->	Bigger salads	1	No	0
+Bigger salads	1	->	the portions are getting smaller	2	No	0
+
+node pair #9:
+the portions are getting smaller	2	->	the portions are getting smaller each time	1	Yes	-1
+the portions are getting smaller each time	1	->	the portions are getting smaller	2	Yes	1
+
+node pair #10:
+food portions are absurdly small	2	->	more food	5	Yes	2
+more food	5	->	food portions are absurdly small	2	No	-2
+
+node pair #11:
+food portions are absurdly small	2	->	the portions are getting rather smaller	1	No	0
+the portions are getting rather smaller	1	->	food portions are absurdly small	2	No	0
+
+node pair #12:
+Standard magnum food portions are absurdly small	2	->	food portions are absurdly small	2	Yes	2
+food portions are absurdly small	2	->	Standard magnum food portions are absurdly small	2	No	-2
+
+node pair #13:
+food portions are absurdly small	2	->	the portions are getting rather smaller each time	1	No	0
+the portions are getting rather smaller each time	1	->	food portions are absurdly small	2	No	0
+
+node pair #14:
+food portions are absurdly small	2	->	drink quantity has declined over time	1	No	0
+drink quantity has declined over time	1	->	food portions are absurdly small	2	No	0
+
+node pair #15:
+food portions are absurdly small	2	->	Standard magnum food portions are small	1	No	-2
+Standard magnum food portions are small	1	->	food portions are absurdly small	2	No	-2
+
+node pair #16:
+food portions are absurdly small	2	->	Bigger salads	1	No	0
+Bigger salads	1	->	food portions are absurdly small	2	No	0
+
+node pair #17:
+food portions are absurdly small	2	->	the portions are getting smaller each time	1	No	0
+the portions are getting smaller each time	1	->	food portions are absurdly small	2	No	0
+
+node pair #18:
+the portions are getting rather smaller	1	->	more food	5	Yes	0
+more food	5	->	the portions are getting rather smaller	1	No	0
+
+node pair #19:
+Standard magnum food portions are absurdly small	2	->	more food	5	Yes	2
+more food	5	->	Standard magnum food portions are absurdly small	2	No	-2
+
+node pair #20:
+the portions are getting rather smaller each time	1	->	more food	5	Yes	0
+more food	5	->	the portions are getting rather smaller each time	1	No	0
+
+node pair #21:
+drink quantity has declined over time	1	->	more food	5	Yes	0
+more food	5	->	drink quantity has declined over time	1	No	0
+
+node pair #22:
+Standard magnum food portions are small	1	->	more food	5	Yes	1
+more food	5	->	Standard magnum food portions are small	1	No	-1
+
+node pair #23:
+Bigger salads	1	->	more food	5	Yes	0
+more food	5	->	Bigger salads	1	No	0
+
+node pair #24:
+the portions are getting smaller each time	1	->	more food	5	Yes	0
+more food	5	->	the portions are getting smaller each time	1	No	0
+
+node pair #25:
+the portions are getting rather smaller	1	->	Standard magnum food portions are absurdly small	2	No	0
+Standard magnum food portions are absurdly small	2	->	the portions are getting rather smaller	1	No	0
+
+node pair #26:
+the portions are getting rather smaller each time	1	->	the portions are getting rather smaller	1	Yes	1
+the portions are getting rather smaller	1	->	the portions are getting rather smaller each time	1	No	-1
+
+node pair #27:
+drink quantity has declined over time	1	->	the portions are getting rather smaller	1	Yes	0
+the portions are getting rather smaller	1	->	drink quantity has declined over time	1	No	0
+
+node pair #28:
+the portions are getting rather smaller	1	->	Standard magnum food portions are small	1	No	0
+Standard magnum food portions are small	1	->	the portions are getting rather smaller	1	No	0
+
+node pair #29:
+the portions are getting rather smaller	1	->	Bigger salads	1	No	0
+Bigger salads	1	->	the portions are getting rather smaller	1	No	0
+
+node pair #30:
+the portions are getting rather smaller	1	->	the portions are getting smaller each time	1	Yes	-1
+the portions are getting smaller each time	1	->	the portions are getting rather smaller	1	Yes	-1
+
+node pair #31:
+Standard magnum food portions are absurdly small	2	->	the portions are getting rather smaller each time	1	No	0
+the portions are getting rather smaller each time	1	->	Standard magnum food portions are absurdly small	2	No	0
+
+node pair #32:
+Standard magnum food portions are absurdly small	2	->	drink quantity has declined over time	1	No	0
+drink quantity has declined over time	1	->	Standard magnum food portions are absurdly small	2	No	0
+
+node pair #33:
+Standard magnum food portions are absurdly small	2	->	Standard magnum food portions are small	1	Yes	2
+Standard magnum food portions are small	1	->	Standard magnum food portions are absurdly small	2	No	-2
+
+node pair #34:
+Standard magnum food portions are absurdly small	2	->	Bigger salads	1	No	0
+Bigger salads	1	->	Standard magnum food portions are absurdly small	2	No	0
+
+node pair #35:
+Standard magnum food portions are absurdly small	2	->	the portions are getting smaller each time	1	No	0
+the portions are getting smaller each time	1	->	Standard magnum food portions are absurdly small	2	No	0
+
+node pair #36:
+the portions are getting rather smaller each time	1	->	drink quantity has declined over time	1	No	0
+drink quantity has declined over time	1	->	the portions are getting rather smaller each time	1	No	0
+
+node pair #37:
+the portions are getting rather smaller each time	1	->	Standard magnum food portions are small	1	No	0
+Standard magnum food portions are small	1	->	the portions are getting rather smaller each time	1	No	0
+
+node pair #38:
+the portions are getting rather smaller each time	1	->	Bigger salads	1	No	0
+Bigger salads	1	->	the portions are getting rather smaller each time	1	No	0
+
+node pair #39:
+the portions are getting rather smaller each time	1	->	the portions are getting smaller each time	1	Yes	1
+the portions are getting smaller each time	1	->	the portions are getting rather smaller each time	1	No	-1
+
+node pair #40:
+drink quantity has declined over time	1	->	Standard magnum food portions are small	1	No	0
+Standard magnum food portions are small	1	->	drink quantity has declined over time	1	No	0
+
+node pair #41:
+drink quantity has declined over time	1	->	Bigger salads	1	No	0
+Bigger salads	1	->	drink quantity has declined over time	1	No	0
+
+node pair #42:
+drink quantity has declined over time	1	->	the portions are getting smaller each time	1	Yes	0
+the portions are getting smaller each time	1	->	drink quantity has declined over time	1	No	0
+
+node pair #43:
+Standard magnum food portions are small	1	->	Bigger salads	1	No	0
+Bigger salads	1	->	Standard magnum food portions are small	1	No	0
+
+node pair #44:
+Standard magnum food portions are small	1	->	the portions are getting smaller each time	1	No	0
+the portions are getting smaller each time	1	->	Standard magnum food portions are small	1	No	0
+
+node pair #45:
+Bigger salads	1	->	the portions are getting smaller each time	1	No	0
+the portions are getting smaller each time	1	->	Bigger salads	1	No	0
+

@@ -1,0 +1,82 @@
+﻿Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 1 entailment unit(s) before editing								
+	a me sono spariti ben 907 punti TELEFONIAX ABC	[0019.txt_2_0]						
+								
+collapsed node #2 : 1 entailment unit(s) before editing								
+	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	[0019.txt_1_0]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing								
+	Scandaloso il servizio trasferimento punti	[0058.txt_1_0]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing								
+	a me sono spariti punti TELEFONIAX ABC	[0019.txt_2_2]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	problemi con il trasferimento punti	[0093.txt_1_0]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	per l'accredito dei punti ancora nulla	[0256.txt_2_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0	0	
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0	0	
+								
+node pair #2:								
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	Scandaloso il servizio trasferimento punti	1	No	0	0	
+Scandaloso il servizio trasferimento punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0	0	
+								
+node pair #3:								
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	a me sono spariti punti TELEFONIAX ABC	1	Yes	1	1	
+a me sono spariti punti TELEFONIAX ABC	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	-1	0	
+								
+node pair #4:								
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	problemi con il trasferimento punti	1	No	0	0	
+problemi con il trasferimento punti	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0	0	
+								
+node pair #5:								
+a me sono spariti ben 907 punti TELEFONIAX ABC	1	->	per l'accredito dei punti ancora nulla	1	No	0	0	
+per l'accredito dei punti ancora nulla	1	->	a me sono spariti ben 907 punti TELEFONIAX ABC	1	No	0	0	
+								
+node pair #6:								
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0	0	
+Scandaloso il servizio trasferimento punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0	0	
+								
+node pair #7:								
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0	0	
+a me sono spariti punti TELEFONIAX ABC	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0	0	
+								
+node pair #8:								
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	problemi con il trasferimento punti	1	No	0	0	
+problemi con il trasferimento punti	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0	0	
+								
+node pair #9:								
+ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	->	per l'accredito dei punti ancora nulla	1	No	0	0	
+per l'accredito dei punti ancora nulla	1	->	ad oggi non so ancora a che punto sia la mia pratica e il ri - accredito punti	1	No	0	0	
+								
+node pair #10:								
+Scandaloso il servizio trasferimento punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0	0	
+a me sono spariti punti TELEFONIAX ABC	1	->	Scandaloso il servizio trasferimento punti	1	No	0	0	
+								
+node pair #11:								
+Scandaloso il servizio trasferimento punti	1	->	problemi con il trasferimento punti	1	Yes	0	1	
+problemi con il trasferimento punti	1	->	Scandaloso il servizio trasferimento punti	1	No	0	0	
+								
+node pair #12:								
+Scandaloso il servizio trasferimento punti	1	->	per l'accredito dei punti ancora nulla	1	No	0	0	
+per l'accredito dei punti ancora nulla	1	->	Scandaloso il servizio trasferimento punti	1	No	0	0	
+								
+node pair #13:								
+a me sono spariti punti TELEFONIAX ABC	1	->	problemi con il trasferimento punti	1	No	0	0	
+problemi con il trasferimento punti	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0	0	
+								
+node pair #14:								
+a me sono spariti punti TELEFONIAX ABC	1	->	per l'accredito dei punti ancora nulla	1	No	0	0	
+per l'accredito dei punti ancora nulla	1	->	a me sono spariti punti TELEFONIAX ABC	1	No	0	0	
+								
+node pair #15:								
+per l'accredito dei punti ancora nulla	1	->	problemi con il trasferimento punti	1	Yes	0	0	
+problemi con il trasferimento punti	1	->	per l'accredito dei punti ancora nulla	1	No	0	0	

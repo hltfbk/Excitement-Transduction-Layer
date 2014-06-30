@@ -1,0 +1,1961 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 2 entailment unit(s) before editing
+	l'aplicazione TUO 444 non funziona più	[0038.txt_1_0]
+	l'app . TUO 444 . . non funziona	[0100.txt_1_10]
+
+collapsed node #2 : 3 entailment unit(s) before editing
+	APP , non mi funziona	[0086.txt_1_1]
+	l'aplicazione non funziona più	[0038.txt_1_1]
+	l'app . . . non funziona	[0100.txt_1_11]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	TUO 444 bon funziona	[0320.txt_1_3]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	TUO 444 bon funziona da giorni	[0320.txt_1_2]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	[0086.txt_1_0]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	a me TUO 444 bon funziona	[0320.txt_1_1]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	a me TUO 444 bon funziona da giorni	[0320.txt_1_0]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	i sistemi telematici vanno a rilento	[0273.txt_1_1]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	da molti giorni l'app . TUO 444 per PC . . non funziona	[0100.txt_1_0]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	A me non rispondono nemmeno qui su fb	[0265.txt_1_0]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	i sistemi TELEFONIAX vanno a rilento	[0273.txt_1_2]
+
+collapsed node #12 : 1 entailment unit(s) before editing
+	da molti giorni l'app . per PC . . non funziona	[0100.txt_1_1]
+
+collapsed node #13 : 1 entailment unit(s) before editing
+	A me non rispondono	[0265.txt_1_1]
+
+collapsed node #14 : 1 entailment unit(s) before editing
+	i sistemi vanno a rilento	[0273.txt_1_3]
+
+collapsed node #15 : 1 entailment unit(s) before editing
+	a me TUO 444 dà un sacco di problemi	[0319.txt_7_0]
+
+collapsed node #16 : 1 entailment unit(s) before editing
+	a me TUO 444 dà problemi	[0319.txt_7_1]
+
+collapsed node #17 : 1 entailment unit(s) before editing
+	i sistemi telematici TELEFONIAX vanno a rilento	[0273.txt_1_0]
+
+collapsed node #18 : 1 entailment unit(s) before editing
+	l'app . per PC . . non funziona	[0100.txt_1_8]
+
+collapsed node #19 : 1 entailment unit(s) before editing
+	da giorni l'app . . . non funziona	[0100.txt_1_9]
+
+collapsed node #20 : 1 entailment unit(s) before editing
+	l'app . TUO 444 per PC . . non funziona	[0100.txt_1_6]
+
+collapsed node #21 : 1 entailment unit(s) before editing
+	da giorni l'app . TUO 444 . . non funziona	[0100.txt_1_7]
+
+collapsed node #22 : 1 entailment unit(s) before editing
+	da giorni l'app . per PC . . non funziona	[0100.txt_1_4]
+
+collapsed node #23 : 1 entailment unit(s) before editing
+	da molti giorni l'app . . . non funziona	[0100.txt_1_5]
+
+collapsed node #24 : 1 entailment unit(s) before editing
+	da giorni l'app . TUO 444 per PC . . non funziona	[0100.txt_1_2]
+
+collapsed node #25 : 1 entailment unit(s) before editing
+	da molti giorni l'app . TUO 444 . . non funziona	[0100.txt_1_3]
+
+collapsed node #26 : 1 entailment unit(s) before editing
+	Non riesco ad usare TUO 444	[0114.txt_1_0]
+
+collapsed node #27 : 1 entailment unit(s) before editing
+	non riesco a chiamare il 444	[0055.txt_1_0]
+
+collapsed node #28 : 1 entailment unit(s) before editing
+	l'applicazione ha un BUG	[0173.txt_1_1]
+
+collapsed node #29 : 1 entailment unit(s) before editing
+	l'applicazione TUO 444 ha un BUG	[0173.txt_1_0]
+
+collapsed node #30 : 1 entailment unit(s) before editing
+	non funziona	[0173.txt_2_1]
+
+collapsed node #31 : 1 entailment unit(s) before editing
+	Da oltre un mese non funziona	[0173.txt_2_0]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+l'app . TUO 444 . . non funziona	2	->	APP , non mi funziona	3	Yes	2
+APP , non mi funziona	3	->	l'app . TUO 444 . . non funziona	2	No	-2
+
+node pair #2:
+l'app . TUO 444 . . non funziona	2	->	TUO 444 bon funziona	1	No	0
+TUO 444 bon funziona	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #3:
+l'app . TUO 444 . . non funziona	2	->	TUO 444 bon funziona da giorni	1	No	0
+TUO 444 bon funziona da giorni	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #4:
+l'app . TUO 444 . . non funziona	2	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #5:
+l'app . TUO 444 . . non funziona	2	->	a me TUO 444 bon funziona	1	No	0
+a me TUO 444 bon funziona	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #6:
+l'app . TUO 444 . . non funziona	2	->	a me TUO 444 bon funziona da giorni	1	No	0
+a me TUO 444 bon funziona da giorni	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #7:
+l'app . TUO 444 . . non funziona	2	->	i sistemi telematici vanno a rilento	1	No	0
+i sistemi telematici vanno a rilento	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #8:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	Yes	1
+l'app . TUO 444 . . non funziona	2	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #9:
+l'app . TUO 444 . . non funziona	2	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #10:
+l'app . TUO 444 . . non funziona	2	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #11:
+l'app . TUO 444 . . non funziona	2	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+da molti giorni l'app . per PC . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	No	-1
+
+node pair #12:
+l'app . TUO 444 . . non funziona	2	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #13:
+l'app . TUO 444 . . non funziona	2	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #14:
+l'app . TUO 444 . . non funziona	2	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #15:
+l'app . TUO 444 . . non funziona	2	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #16:
+l'app . TUO 444 . . non funziona	2	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #17:
+l'app . TUO 444 . . non funziona	2	->	l'app . per PC . . non funziona	1	Yes	-1
+l'app . per PC . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	No	-1
+
+node pair #18:
+l'app . TUO 444 . . non funziona	2	->	da giorni l'app . . . non funziona	1	Yes	-1
+da giorni l'app . . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	No	-1
+
+node pair #19:
+l'app . TUO 444 per PC . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	Yes	1
+l'app . TUO 444 . . non funziona	2	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #20:
+da giorni l'app . TUO 444 . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	Yes	1
+l'app . TUO 444 . . non funziona	2	->	da giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #21:
+l'app . TUO 444 . . non funziona	2	->	da giorni l'app . per PC . . non funziona	1	No	-1
+da giorni l'app . per PC . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	No	-1
+
+node pair #22:
+l'app . TUO 444 . . non funziona	2	->	da molti giorni l'app . . . non funziona	1	No	-1
+da molti giorni l'app . . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	No	-1
+
+node pair #23:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	Yes	1
+l'app . TUO 444 . . non funziona	2	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #24:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	l'app . TUO 444 . . non funziona	2	Yes	1
+l'app . TUO 444 . . non funziona	2	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #25:
+l'app . TUO 444 . . non funziona	2	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #26:
+l'app . TUO 444 . . non funziona	2	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #27:
+l'app . TUO 444 . . non funziona	2	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #28:
+l'app . TUO 444 . . non funziona	2	->	l'applicazione TUO 444 ha un BUG	1	Yes	0
+l'applicazione TUO 444 ha un BUG	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #29:
+l'app . TUO 444 . . non funziona	2	->	non funziona	1	No	0
+non funziona	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #30:
+l'app . TUO 444 . . non funziona	2	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	l'app . TUO 444 . . non funziona	2	No	0
+
+node pair #31:
+APP , non mi funziona	3	->	TUO 444 bon funziona	1	No	0
+TUO 444 bon funziona	1	->	APP , non mi funziona	3	No	0
+
+node pair #32:
+APP , non mi funziona	3	->	TUO 444 bon funziona da giorni	1	No	0
+TUO 444 bon funziona da giorni	1	->	APP , non mi funziona	3	No	0
+
+node pair #33:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	-1
+
+node pair #34:
+APP , non mi funziona	3	->	a me TUO 444 bon funziona	1	No	0
+a me TUO 444 bon funziona	1	->	APP , non mi funziona	3	No	0
+
+node pair #35:
+APP , non mi funziona	3	->	a me TUO 444 bon funziona da giorni	1	No	0
+a me TUO 444 bon funziona da giorni	1	->	APP , non mi funziona	3	No	0
+
+node pair #36:
+APP , non mi funziona	3	->	i sistemi telematici vanno a rilento	1	No	0
+i sistemi telematici vanno a rilento	1	->	APP , non mi funziona	3	No	0
+
+node pair #37:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #38:
+APP , non mi funziona	3	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	APP , non mi funziona	3	No	0
+
+node pair #39:
+APP , non mi funziona	3	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	APP , non mi funziona	3	No	0
+
+node pair #40:
+da molti giorni l'app . per PC . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #41:
+APP , non mi funziona	3	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	APP , non mi funziona	3	No	0
+
+node pair #42:
+APP , non mi funziona	3	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	APP , non mi funziona	3	No	0
+
+node pair #43:
+APP , non mi funziona	3	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	APP , non mi funziona	3	No	0
+
+node pair #44:
+APP , non mi funziona	3	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	APP , non mi funziona	3	No	0
+
+node pair #45:
+APP , non mi funziona	3	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	APP , non mi funziona	3	No	0
+
+node pair #46:
+l'app . per PC . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	l'app . per PC . . non funziona	1	No	-1
+
+node pair #47:
+da giorni l'app . . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	da giorni l'app . . . non funziona	1	No	-1
+
+node pair #48:
+l'app . TUO 444 per PC . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #49:
+da giorni l'app . TUO 444 . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	da giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #50:
+da giorni l'app . per PC . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	da giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #51:
+da molti giorni l'app . . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	da molti giorni l'app . . . non funziona	1	No	-1
+
+node pair #52:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #53:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	APP , non mi funziona	3	Yes	1
+APP , non mi funziona	3	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #54:
+APP , non mi funziona	3	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	APP , non mi funziona	3	No	0
+
+node pair #55:
+APP , non mi funziona	3	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	APP , non mi funziona	3	No	0
+
+node pair #56:
+APP , non mi funziona	3	->	l'applicazione ha un BUG	1	Yes	0
+l'applicazione ha un BUG	1	->	APP , non mi funziona	3	No	0
+
+node pair #57:
+APP , non mi funziona	3	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	APP , non mi funziona	3	No	0
+
+node pair #58:
+APP , non mi funziona	3	->	non funziona	1	No	0
+non funziona	1	->	APP , non mi funziona	3	No	0
+
+node pair #59:
+APP , non mi funziona	3	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	APP , non mi funziona	3	No	0
+
+node pair #60:
+TUO 444 bon funziona da giorni	1	->	TUO 444 bon funziona	1	Yes	1
+TUO 444 bon funziona	1	->	TUO 444 bon funziona da giorni	1	No	-1
+
+node pair #61:
+TUO 444 bon funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #62:
+a me TUO 444 bon funziona	1	->	TUO 444 bon funziona	1	Yes	1
+TUO 444 bon funziona	1	->	a me TUO 444 bon funziona	1	No	-1
+
+node pair #63:
+a me TUO 444 bon funziona da giorni	1	->	TUO 444 bon funziona	1	Yes	1
+TUO 444 bon funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	-1
+
+node pair #64:
+TUO 444 bon funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+i sistemi telematici vanno a rilento	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #65:
+TUO 444 bon funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #66:
+TUO 444 bon funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #67:
+TUO 444 bon funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #68:
+TUO 444 bon funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+da molti giorni l'app . per PC . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #69:
+TUO 444 bon funziona	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #70:
+TUO 444 bon funziona	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #71:
+TUO 444 bon funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #72:
+TUO 444 bon funziona	1	->	a me TUO 444 dà problemi	1	Yes	0
+a me TUO 444 dà problemi	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #73:
+TUO 444 bon funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #74:
+TUO 444 bon funziona	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #75:
+TUO 444 bon funziona	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #76:
+TUO 444 bon funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #77:
+TUO 444 bon funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #78:
+TUO 444 bon funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #79:
+TUO 444 bon funziona	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #80:
+TUO 444 bon funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #81:
+TUO 444 bon funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #82:
+TUO 444 bon funziona	1	->	Non riesco ad usare TUO 444	1	Yes	0
+Non riesco ad usare TUO 444	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #83:
+non riesco a chiamare il 444	1	->	TUO 444 bon funziona	1	Yes	0
+TUO 444 bon funziona	1	->	non riesco a chiamare il 444	1	No	0
+
+node pair #84:
+TUO 444 bon funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #85:
+TUO 444 bon funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #86:
+TUO 444 bon funziona	1	->	non funziona	1	No	0
+non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #87:
+TUO 444 bon funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	TUO 444 bon funziona	1	No	0
+
+node pair #88:
+TUO 444 bon funziona da giorni	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #89:
+TUO 444 bon funziona da giorni	1	->	a me TUO 444 bon funziona	1	No	-1
+a me TUO 444 bon funziona	1	->	TUO 444 bon funziona da giorni	1	No	-1
+
+node pair #90:
+a me TUO 444 bon funziona da giorni	1	->	TUO 444 bon funziona da giorni	1	Yes	1
+TUO 444 bon funziona da giorni	1	->	a me TUO 444 bon funziona da giorni	1	No	-1
+
+node pair #91:
+TUO 444 bon funziona da giorni	1	->	i sistemi telematici vanno a rilento	1	No	0
+i sistemi telematici vanno a rilento	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #92:
+TUO 444 bon funziona da giorni	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #93:
+TUO 444 bon funziona da giorni	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #94:
+TUO 444 bon funziona da giorni	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #95:
+TUO 444 bon funziona da giorni	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+da molti giorni l'app . per PC . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #96:
+TUO 444 bon funziona da giorni	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #97:
+TUO 444 bon funziona da giorni	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #98:
+TUO 444 bon funziona da giorni	1	->	a me TUO 444 dà un sacco di problemi	1	Yes	0
+a me TUO 444 dà un sacco di problemi	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #99:
+TUO 444 bon funziona da giorni	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #100:
+TUO 444 bon funziona da giorni	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #101:
+TUO 444 bon funziona da giorni	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #102:
+TUO 444 bon funziona da giorni	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #103:
+TUO 444 bon funziona da giorni	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #104:
+TUO 444 bon funziona da giorni	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #105:
+TUO 444 bon funziona da giorni	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #106:
+TUO 444 bon funziona da giorni	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #107:
+TUO 444 bon funziona da giorni	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #108:
+TUO 444 bon funziona da giorni	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #109:
+TUO 444 bon funziona da giorni	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #110:
+TUO 444 bon funziona da giorni	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #111:
+TUO 444 bon funziona da giorni	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #112:
+TUO 444 bon funziona da giorni	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #113:
+TUO 444 bon funziona da giorni	1	->	non funziona	1	No	0
+non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #114:
+TUO 444 bon funziona da giorni	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	TUO 444 bon funziona da giorni	1	No	0
+
+node pair #115:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	a me TUO 444 bon funziona	1	No	0
+a me TUO 444 bon funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #116:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+a me TUO 444 bon funziona da giorni	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #117:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+i sistemi telematici vanno a rilento	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #118:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #119:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #120:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #121:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+da molti giorni l'app . per PC . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #122:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #123:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #124:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #125:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #126:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #127:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	l'app . per PC . . non funziona	1	Yes	0
+l'app . per PC . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #128:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	da giorni l'app . . . non funziona	1	Yes	0
+da giorni l'app . . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #129:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #130:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #131:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #132:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #133:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #134:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #135:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #136:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #137:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #138:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #139:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	non funziona	1	No	0
+non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #140:
+APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	APP della TELEFONIAX ACCESSOSEMPLICE , non mi funziona	1	No	0
+
+node pair #141:
+a me TUO 444 bon funziona da giorni	1	->	a me TUO 444 bon funziona	1	Yes	1
+a me TUO 444 bon funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	-1
+
+node pair #142:
+a me TUO 444 bon funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+i sistemi telematici vanno a rilento	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #143:
+a me TUO 444 bon funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #144:
+a me TUO 444 bon funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #145:
+a me TUO 444 bon funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #146:
+a me TUO 444 bon funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+da molti giorni l'app . per PC . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #147:
+a me TUO 444 bon funziona	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #148:
+a me TUO 444 bon funziona	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #149:
+a me TUO 444 bon funziona	1	->	a me TUO 444 dà un sacco di problemi	1	Yes	0
+a me TUO 444 dà un sacco di problemi	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #150:
+a me TUO 444 bon funziona	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #151:
+a me TUO 444 bon funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #152:
+a me TUO 444 bon funziona	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #153:
+a me TUO 444 bon funziona	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #154:
+a me TUO 444 bon funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #155:
+a me TUO 444 bon funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #156:
+a me TUO 444 bon funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #157:
+a me TUO 444 bon funziona	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #158:
+a me TUO 444 bon funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #159:
+a me TUO 444 bon funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #160:
+a me TUO 444 bon funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #161:
+a me TUO 444 bon funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #162:
+a me TUO 444 bon funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #163:
+a me TUO 444 bon funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #164:
+a me TUO 444 bon funziona	1	->	non funziona	1	No	0
+non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #165:
+a me TUO 444 bon funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	a me TUO 444 bon funziona	1	No	0
+
+node pair #166:
+a me TUO 444 bon funziona da giorni	1	->	i sistemi telematici vanno a rilento	1	No	0
+i sistemi telematici vanno a rilento	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #167:
+a me TUO 444 bon funziona da giorni	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #168:
+a me TUO 444 bon funziona da giorni	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #169:
+a me TUO 444 bon funziona da giorni	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #170:
+a me TUO 444 bon funziona da giorni	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+da molti giorni l'app . per PC . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #171:
+a me TUO 444 bon funziona da giorni	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #172:
+a me TUO 444 bon funziona da giorni	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #173:
+a me TUO 444 bon funziona da giorni	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #174:
+a me TUO 444 bon funziona da giorni	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #175:
+a me TUO 444 bon funziona da giorni	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #176:
+a me TUO 444 bon funziona da giorni	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #177:
+a me TUO 444 bon funziona da giorni	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #178:
+a me TUO 444 bon funziona da giorni	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #179:
+a me TUO 444 bon funziona da giorni	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #180:
+a me TUO 444 bon funziona da giorni	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #181:
+a me TUO 444 bon funziona da giorni	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #182:
+a me TUO 444 bon funziona da giorni	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #183:
+a me TUO 444 bon funziona da giorni	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #184:
+a me TUO 444 bon funziona da giorni	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #185:
+a me TUO 444 bon funziona da giorni	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #186:
+a me TUO 444 bon funziona da giorni	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #187:
+a me TUO 444 bon funziona da giorni	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #188:
+a me TUO 444 bon funziona da giorni	1	->	non funziona	1	No	0
+non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #189:
+a me TUO 444 bon funziona da giorni	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	a me TUO 444 bon funziona da giorni	1	No	0
+
+node pair #190:
+i sistemi telematici vanno a rilento	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #191:
+i sistemi telematici vanno a rilento	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #192:
+i sistemi telematici vanno a rilento	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	-1
+i sistemi TELEFONIAX vanno a rilento	1	->	i sistemi telematici vanno a rilento	1	No	-1
+
+node pair #193:
+i sistemi telematici vanno a rilento	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+da molti giorni l'app . per PC . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #194:
+i sistemi telematici vanno a rilento	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #195:
+i sistemi telematici vanno a rilento	1	->	i sistemi vanno a rilento	1	Yes	1
+i sistemi vanno a rilento	1	->	i sistemi telematici vanno a rilento	1	No	-1
+
+node pair #196:
+i sistemi telematici vanno a rilento	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #197:
+i sistemi telematici vanno a rilento	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #198:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	i sistemi telematici vanno a rilento	1	Yes	1
+i sistemi telematici vanno a rilento	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	-1
+
+node pair #199:
+i sistemi telematici vanno a rilento	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #200:
+i sistemi telematici vanno a rilento	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #201:
+i sistemi telematici vanno a rilento	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #202:
+i sistemi telematici vanno a rilento	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #203:
+i sistemi telematici vanno a rilento	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #204:
+i sistemi telematici vanno a rilento	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #205:
+i sistemi telematici vanno a rilento	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #206:
+i sistemi telematici vanno a rilento	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #207:
+i sistemi telematici vanno a rilento	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #208:
+i sistemi telematici vanno a rilento	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #209:
+i sistemi telematici vanno a rilento	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #210:
+i sistemi telematici vanno a rilento	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #211:
+i sistemi telematici vanno a rilento	1	->	non funziona	1	No	0
+non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #212:
+i sistemi telematici vanno a rilento	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	i sistemi telematici vanno a rilento	1	No	0
+
+node pair #213:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+A me non rispondono nemmeno qui su fb	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #214:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #215:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	Yes	1
+da molti giorni l'app . per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #216:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #217:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #218:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #219:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #220:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #221:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	l'app . per PC . . non funziona	1	Yes	1
+l'app . per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #222:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . . . non funziona	1	Yes	1
+da giorni l'app . . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #223:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	Yes	1
+l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #224:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	Yes	1
+da giorni l'app . TUO 444 . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #225:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	Yes	1
+da giorni l'app . per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #226:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	Yes	1
+da molti giorni l'app . . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #227:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	Yes	1
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #228:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	Yes	1
+da molti giorni l'app . TUO 444 . . non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #229:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #230:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #231:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #232:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #233:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #234:
+da molti giorni l'app . TUO 444 per PC . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	da molti giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #235:
+A me non rispondono nemmeno qui su fb	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+i sistemi TELEFONIAX vanno a rilento	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #236:
+A me non rispondono nemmeno qui su fb	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+da molti giorni l'app . per PC . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #237:
+A me non rispondono nemmeno qui su fb	1	->	A me non rispondono	1	Yes	1
+A me non rispondono	1	->	A me non rispondono nemmeno qui su fb	1	No	-1
+
+node pair #238:
+A me non rispondono nemmeno qui su fb	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #239:
+A me non rispondono nemmeno qui su fb	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #240:
+A me non rispondono nemmeno qui su fb	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #241:
+A me non rispondono nemmeno qui su fb	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #242:
+A me non rispondono nemmeno qui su fb	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #243:
+A me non rispondono nemmeno qui su fb	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #244:
+A me non rispondono nemmeno qui su fb	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #245:
+A me non rispondono nemmeno qui su fb	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #246:
+A me non rispondono nemmeno qui su fb	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #247:
+A me non rispondono nemmeno qui su fb	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #248:
+A me non rispondono nemmeno qui su fb	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #249:
+A me non rispondono nemmeno qui su fb	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #250:
+A me non rispondono nemmeno qui su fb	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #251:
+A me non rispondono nemmeno qui su fb	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #252:
+A me non rispondono nemmeno qui su fb	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #253:
+A me non rispondono nemmeno qui su fb	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #254:
+A me non rispondono nemmeno qui su fb	1	->	non funziona	1	No	0
+non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #255:
+A me non rispondono nemmeno qui su fb	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	A me non rispondono nemmeno qui su fb	1	No	0
+
+node pair #256:
+i sistemi TELEFONIAX vanno a rilento	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+da molti giorni l'app . per PC . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #257:
+i sistemi TELEFONIAX vanno a rilento	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #258:
+i sistemi TELEFONIAX vanno a rilento	1	->	i sistemi vanno a rilento	1	Yes	1
+i sistemi vanno a rilento	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	-1
+
+node pair #259:
+i sistemi TELEFONIAX vanno a rilento	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #260:
+i sistemi TELEFONIAX vanno a rilento	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #261:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	i sistemi TELEFONIAX vanno a rilento	1	Yes	1
+i sistemi TELEFONIAX vanno a rilento	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	-1
+
+node pair #262:
+i sistemi TELEFONIAX vanno a rilento	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #263:
+i sistemi TELEFONIAX vanno a rilento	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #264:
+i sistemi TELEFONIAX vanno a rilento	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #265:
+i sistemi TELEFONIAX vanno a rilento	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #266:
+i sistemi TELEFONIAX vanno a rilento	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #267:
+i sistemi TELEFONIAX vanno a rilento	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #268:
+i sistemi TELEFONIAX vanno a rilento	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #269:
+i sistemi TELEFONIAX vanno a rilento	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #270:
+i sistemi TELEFONIAX vanno a rilento	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #271:
+i sistemi TELEFONIAX vanno a rilento	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #272:
+i sistemi TELEFONIAX vanno a rilento	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #273:
+i sistemi TELEFONIAX vanno a rilento	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #274:
+i sistemi TELEFONIAX vanno a rilento	1	->	non funziona	1	No	0
+non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #275:
+i sistemi TELEFONIAX vanno a rilento	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	i sistemi TELEFONIAX vanno a rilento	1	No	0
+
+node pair #276:
+da molti giorni l'app . per PC . . non funziona	1	->	A me non rispondono	1	No	0
+A me non rispondono	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #277:
+da molti giorni l'app . per PC . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #278:
+da molti giorni l'app . per PC . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #279:
+da molti giorni l'app . per PC . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #280:
+da molti giorni l'app . per PC . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #281:
+da molti giorni l'app . per PC . . non funziona	1	->	l'app . per PC . . non funziona	1	Yes	1
+l'app . per PC . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #282:
+da molti giorni l'app . per PC . . non funziona	1	->	da giorni l'app . . . non funziona	1	Yes	1
+da giorni l'app . . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #283:
+da molti giorni l'app . per PC . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #284:
+da molti giorni l'app . per PC . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	-1
+da giorni l'app . TUO 444 . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #285:
+da molti giorni l'app . per PC . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	Yes	1
+da giorni l'app . per PC . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #286:
+da molti giorni l'app . per PC . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	Yes	1
+da molti giorni l'app . . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #287:
+da molti giorni l'app . per PC . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #288:
+da molti giorni l'app . per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+da molti giorni l'app . TUO 444 . . non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #289:
+da molti giorni l'app . per PC . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #290:
+da molti giorni l'app . per PC . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #291:
+da molti giorni l'app . per PC . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #292:
+da molti giorni l'app . per PC . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #293:
+da molti giorni l'app . per PC . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #294:
+da molti giorni l'app . per PC . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	da molti giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #295:
+A me non rispondono	1	->	i sistemi vanno a rilento	1	No	0
+i sistemi vanno a rilento	1	->	A me non rispondono	1	No	0
+
+node pair #296:
+A me non rispondono	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	A me non rispondono	1	No	0
+
+node pair #297:
+A me non rispondono	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	A me non rispondono	1	No	0
+
+node pair #298:
+A me non rispondono	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	A me non rispondono	1	No	0
+
+node pair #299:
+A me non rispondono	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #300:
+A me non rispondono	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #301:
+A me non rispondono	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #302:
+A me non rispondono	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #303:
+A me non rispondono	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #304:
+A me non rispondono	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #305:
+A me non rispondono	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #306:
+A me non rispondono	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #307:
+A me non rispondono	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	A me non rispondono	1	No	0
+
+node pair #308:
+A me non rispondono	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	A me non rispondono	1	No	0
+
+node pair #309:
+A me non rispondono	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	A me non rispondono	1	No	0
+
+node pair #310:
+A me non rispondono	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	A me non rispondono	1	No	0
+
+node pair #311:
+A me non rispondono	1	->	non funziona	1	No	0
+non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #312:
+A me non rispondono	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	A me non rispondono	1	No	0
+
+node pair #313:
+i sistemi vanno a rilento	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+a me TUO 444 dà un sacco di problemi	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #314:
+i sistemi vanno a rilento	1	->	a me TUO 444 dà problemi	1	No	0
+a me TUO 444 dà problemi	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #315:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	i sistemi vanno a rilento	1	Yes	1
+i sistemi vanno a rilento	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	-1
+
+node pair #316:
+i sistemi vanno a rilento	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #317:
+i sistemi vanno a rilento	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #318:
+i sistemi vanno a rilento	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #319:
+i sistemi vanno a rilento	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #320:
+i sistemi vanno a rilento	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #321:
+i sistemi vanno a rilento	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #322:
+i sistemi vanno a rilento	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #323:
+i sistemi vanno a rilento	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #324:
+i sistemi vanno a rilento	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #325:
+i sistemi vanno a rilento	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #326:
+i sistemi vanno a rilento	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #327:
+i sistemi vanno a rilento	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #328:
+i sistemi vanno a rilento	1	->	non funziona	1	No	0
+non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #329:
+i sistemi vanno a rilento	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	i sistemi vanno a rilento	1	No	0
+
+node pair #330:
+a me TUO 444 dà un sacco di problemi	1	->	a me TUO 444 dà problemi	1	Yes	1
+a me TUO 444 dà problemi	1	->	a me TUO 444 dà un sacco di problemi	1	No	-1
+
+node pair #331:
+a me TUO 444 dà un sacco di problemi	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #332:
+a me TUO 444 dà un sacco di problemi	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #333:
+a me TUO 444 dà un sacco di problemi	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #334:
+a me TUO 444 dà un sacco di problemi	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #335:
+a me TUO 444 dà un sacco di problemi	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #336:
+a me TUO 444 dà un sacco di problemi	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #337:
+a me TUO 444 dà un sacco di problemi	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #338:
+a me TUO 444 dà un sacco di problemi	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #339:
+a me TUO 444 dà un sacco di problemi	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #340:
+a me TUO 444 dà un sacco di problemi	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #341:
+a me TUO 444 dà un sacco di problemi	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #342:
+a me TUO 444 dà un sacco di problemi	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #343:
+a me TUO 444 dà un sacco di problemi	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #344:
+a me TUO 444 dà un sacco di problemi	1	->	non funziona	1	No	0
+non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #345:
+a me TUO 444 dà un sacco di problemi	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	a me TUO 444 dà un sacco di problemi	1	No	0
+
+node pair #346:
+a me TUO 444 dà problemi	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #347:
+a me TUO 444 dà problemi	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #348:
+a me TUO 444 dà problemi	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #349:
+a me TUO 444 dà problemi	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #350:
+a me TUO 444 dà problemi	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #351:
+a me TUO 444 dà problemi	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #352:
+a me TUO 444 dà problemi	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #353:
+a me TUO 444 dà problemi	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #354:
+a me TUO 444 dà problemi	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #355:
+Non riesco ad usare TUO 444	1	->	a me TUO 444 dà problemi	1	Yes	0
+a me TUO 444 dà problemi	1	->	Non riesco ad usare TUO 444	1	No	0
+
+node pair #356:
+a me TUO 444 dà problemi	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #357:
+a me TUO 444 dà problemi	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #358:
+a me TUO 444 dà problemi	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #359:
+a me TUO 444 dà problemi	1	->	non funziona	1	No	0
+non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #360:
+a me TUO 444 dà problemi	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	a me TUO 444 dà problemi	1	No	0
+
+node pair #361:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	l'app . per PC . . non funziona	1	No	0
+l'app . per PC . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #362:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	da giorni l'app . . . non funziona	1	No	0
+da giorni l'app . . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #363:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+l'app . TUO 444 per PC . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #364:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+da giorni l'app . TUO 444 . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #365:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+da giorni l'app . per PC . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #366:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	da molti giorni l'app . . . non funziona	1	No	0
+da molti giorni l'app . . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #367:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #368:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+da molti giorni l'app . TUO 444 . . non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #369:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #370:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #371:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #372:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #373:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	non funziona	1	No	0
+non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #374:
+i sistemi telematici TELEFONIAX vanno a rilento	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	i sistemi telematici TELEFONIAX vanno a rilento	1	No	0
+
+node pair #375:
+l'app . per PC . . non funziona	1	->	da giorni l'app . . . non funziona	1	No	-1
+da giorni l'app . . . non funziona	1	->	l'app . per PC . . non funziona	1	No	-1
+
+node pair #376:
+l'app . TUO 444 per PC . . non funziona	1	->	l'app . per PC . . non funziona	1	Yes	1
+l'app . per PC . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #377:
+l'app . per PC . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	-1
+da giorni l'app . TUO 444 . . non funziona	1	->	l'app . per PC . . non funziona	1	No	-1
+
+node pair #378:
+da giorni l'app . per PC . . non funziona	1	->	l'app . per PC . . non funziona	1	Yes	1
+l'app . per PC . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #379:
+l'app . per PC . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	No	-1
+da molti giorni l'app . . . non funziona	1	->	l'app . per PC . . non funziona	1	No	-1
+
+node pair #380:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	l'app . per PC . . non funziona	1	Yes	1
+l'app . per PC . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #381:
+l'app . per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+da molti giorni l'app . TUO 444 . . non funziona	1	->	l'app . per PC . . non funziona	1	No	-1
+
+node pair #382:
+l'app . per PC . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	l'app . per PC . . non funziona	1	No	0
+
+node pair #383:
+l'app . per PC . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	l'app . per PC . . non funziona	1	No	0
+
+node pair #384:
+l'app . per PC . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	l'app . per PC . . non funziona	1	No	0
+
+node pair #385:
+l'app . per PC . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	l'app . per PC . . non funziona	1	No	0
+
+node pair #386:
+l'app . per PC . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	l'app . per PC . . non funziona	1	No	0
+
+node pair #387:
+l'app . per PC . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	l'app . per PC . . non funziona	1	No	0
+
+node pair #388:
+da giorni l'app . . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . . . non funziona	1	No	-1
+
+node pair #389:
+da giorni l'app . TUO 444 . . non funziona	1	->	da giorni l'app . . . non funziona	1	Yes	1
+da giorni l'app . . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #390:
+da giorni l'app . per PC . . non funziona	1	->	da giorni l'app . . . non funziona	1	Yes	1
+da giorni l'app . . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #391:
+da molti giorni l'app . . . non funziona	1	->	da giorni l'app . . . non funziona	1	Yes	1
+da giorni l'app . . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	No	-1
+
+node pair #392:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . . . non funziona	1	Yes	1
+da giorni l'app . . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #393:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	da giorni l'app . . . non funziona	1	Yes	1
+da giorni l'app . . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #394:
+da giorni l'app . . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	da giorni l'app . . . non funziona	1	No	0
+
+node pair #395:
+da giorni l'app . . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	da giorni l'app . . . non funziona	1	No	0
+
+node pair #396:
+da giorni l'app . . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	da giorni l'app . . . non funziona	1	No	0
+
+node pair #397:
+da giorni l'app . . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	da giorni l'app . . . non funziona	1	No	0
+
+node pair #398:
+da giorni l'app . . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	da giorni l'app . . . non funziona	1	No	0
+
+node pair #399:
+da giorni l'app . . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	da giorni l'app . . . non funziona	1	No	0
+
+node pair #400:
+l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	-1
+da giorni l'app . TUO 444 . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #401:
+l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	-1
+da giorni l'app . per PC . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #402:
+l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	No	-1
+da molti giorni l'app . . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #403:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	Yes	1
+l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #404:
+l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+da molti giorni l'app . TUO 444 . . non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #405:
+l'app . TUO 444 per PC . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #406:
+l'app . TUO 444 per PC . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #407:
+l'app . TUO 444 per PC . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #408:
+l'app . TUO 444 per PC . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #409:
+l'app . TUO 444 per PC . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #410:
+l'app . TUO 444 per PC . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #411:
+da giorni l'app . TUO 444 . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	-1
+da giorni l'app . per PC . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #412:
+da giorni l'app . TUO 444 . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	No	-1
+da molti giorni l'app . . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #413:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	Yes	1
+da giorni l'app . TUO 444 . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #414:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	Yes	1
+da giorni l'app . TUO 444 . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #415:
+da giorni l'app . TUO 444 . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #416:
+da giorni l'app . TUO 444 . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #417:
+da giorni l'app . TUO 444 . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #418:
+da giorni l'app . TUO 444 . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #419:
+da giorni l'app . TUO 444 . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #420:
+da giorni l'app . TUO 444 . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	da giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #421:
+da giorni l'app . per PC . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	No	-1
+da molti giorni l'app . . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #422:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	Yes	1
+da giorni l'app . per PC . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #423:
+da giorni l'app . per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+da molti giorni l'app . TUO 444 . . non funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	-1
+
+node pair #424:
+da giorni l'app . per PC . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #425:
+da giorni l'app . per PC . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #426:
+da giorni l'app . per PC . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #427:
+da giorni l'app . per PC . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #428:
+da giorni l'app . per PC . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #429:
+da giorni l'app . per PC . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	da giorni l'app . per PC . . non funziona	1	No	0
+
+node pair #430:
+da molti giorni l'app . . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	No	-1
+
+node pair #431:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	da molti giorni l'app . . . non funziona	1	Yes	1
+da molti giorni l'app . . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+
+node pair #432:
+da molti giorni l'app . . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	da molti giorni l'app . . . non funziona	1	No	0
+
+node pair #433:
+da molti giorni l'app . . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	da molti giorni l'app . . . non funziona	1	No	0
+
+node pair #434:
+da molti giorni l'app . . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	da molti giorni l'app . . . non funziona	1	No	0
+
+node pair #435:
+da molti giorni l'app . . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	da molti giorni l'app . . . non funziona	1	No	0
+
+node pair #436:
+da molti giorni l'app . . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	da molti giorni l'app . . . non funziona	1	No	0
+
+node pair #437:
+da molti giorni l'app . . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	da molti giorni l'app . . . non funziona	1	No	0
+
+node pair #438:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	-1
+da molti giorni l'app . TUO 444 . . non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	-1
+
+node pair #439:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #440:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #441:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #442:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #443:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #444:
+da giorni l'app . TUO 444 per PC . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	da giorni l'app . TUO 444 per PC . . non funziona	1	No	0
+
+node pair #445:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+Non riesco ad usare TUO 444	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #446:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #447:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #448:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #449:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	non funziona	1	No	0
+non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #450:
+da molti giorni l'app . TUO 444 . . non funziona	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	da molti giorni l'app . TUO 444 . . non funziona	1	No	0
+
+node pair #451:
+Non riesco ad usare TUO 444	1	->	non riesco a chiamare il 444	1	No	0
+non riesco a chiamare il 444	1	->	Non riesco ad usare TUO 444	1	No	0
+
+node pair #452:
+Non riesco ad usare TUO 444	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	Non riesco ad usare TUO 444	1	No	0
+
+node pair #453:
+Non riesco ad usare TUO 444	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	Non riesco ad usare TUO 444	1	No	0
+
+node pair #454:
+Non riesco ad usare TUO 444	1	->	non funziona	1	No	0
+non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+
+node pair #455:
+Non riesco ad usare TUO 444	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	Non riesco ad usare TUO 444	1	No	0
+
+node pair #456:
+non riesco a chiamare il 444	1	->	l'applicazione ha un BUG	1	No	0
+l'applicazione ha un BUG	1	->	non riesco a chiamare il 444	1	No	0
+
+node pair #457:
+non riesco a chiamare il 444	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+l'applicazione TUO 444 ha un BUG	1	->	non riesco a chiamare il 444	1	No	0
+
+node pair #458:
+non riesco a chiamare il 444	1	->	non funziona	1	No	0
+non funziona	1	->	non riesco a chiamare il 444	1	No	0
+
+node pair #459:
+non riesco a chiamare il 444	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	non riesco a chiamare il 444	1	No	0
+
+node pair #460:
+l'applicazione TUO 444 ha un BUG	1	->	l'applicazione ha un BUG	1	Yes	1
+l'applicazione ha un BUG	1	->	l'applicazione TUO 444 ha un BUG	1	No	-1
+
+node pair #461:
+l'applicazione ha un BUG	1	->	non funziona	1	No	0
+non funziona	1	->	l'applicazione ha un BUG	1	No	0
+
+node pair #462:
+l'applicazione ha un BUG	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	l'applicazione ha un BUG	1	No	0
+
+node pair #463:
+l'applicazione TUO 444 ha un BUG	1	->	non funziona	1	No	0
+non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+
+node pair #464:
+l'applicazione TUO 444 ha un BUG	1	->	Da oltre un mese non funziona	1	No	0
+Da oltre un mese non funziona	1	->	l'applicazione TUO 444 ha un BUG	1	No	0
+
+node pair #465:
+Da oltre un mese non funziona	1	->	non funziona	1	Yes	1
+non funziona	1	->	Da oltre un mese non funziona	1	No	-1
+

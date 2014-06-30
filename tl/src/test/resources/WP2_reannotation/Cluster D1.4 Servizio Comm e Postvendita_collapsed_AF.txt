@@ -1,0 +1,303 @@
+﻿Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 1 entailment unit(s) before editing							ok	
+	attesa che un tizio vestito da tecnico ti sistemi la linea	[0262.txt_2_0]						
+								
+collapsed node #2 : 1 entailment unit(s) before editing							modified	
+	a mia madre è stata staccata la linea	[0213.txt_2_3]						ID text modified
+								
+collapsed node #3 : 1 entailment unit(s) before editing							ok	
+	servizio che fa pena	[0098.txt_2_0]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing							empty	
+								
+collapsed node #5 : 1 entailment unit(s) before editing							ok	
+	a mia madre è stata immediamente staccata la linea	[0213.txt_2_2]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing							ok	
+	lasciate la gente con problemi	[0303.txt_2_0]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing							ok	
+	Pessima Gestione Commerciale	[0174.txt_1_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing							modified	
+	a mia madre è stata staccata la linea senza alcun preavviso	[0213.txt_2_1]						ID text modified
+								
+collapsed node #9 : 1 entailment unit(s) before editing							ok	
+	non mi rispondono	[0067.txt_1_1]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing							ok	
+	a mia madre è stata immediamente staccata la linea senza alcun preavviso	[0213.txt_2_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing							ok	
+	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	[0067.txt_1_0]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing							ok	
+	non vi preocupate dei clienti	[0303.txt_3_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	staccata la linea	1	No	0		
+staccata la linea	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #2:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	servizio che fa pena	1	No	0		
+servizio che fa pena	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #3:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	attesa che un tecnico ti sistemi la linea	1	Yes	1		
+attesa che un tecnico ti sistemi la linea	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	-1		
+								
+node pair #4:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	a mia madre è stata immediamente staccata la linea	1	No	0		
+a mia madre è stata immediamente staccata la linea	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #5:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	lasciate la gente con problemi	1	No	0		
+lasciate la gente con problemi	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #6:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	Pessima Gestione Commerciale	1	No	0		
+Pessima Gestione Commerciale	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #7:								
+staccata la linea senza alcun preavviso	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	Yes	0		
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	staccata la linea senza alcun preavviso	1	No	0		
+								
+node pair #8:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	non mi rispondono	1	No	0		
+non mi rispondono	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #9:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	0		
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #10:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #11:								
+attesa che un tizio vestito da tecnico ti sistemi la linea	1	->	non vi preocupate dei clienti	1	No	0		
+non vi preocupate dei clienti	1	->	attesa che un tizio vestito da tecnico ti sistemi la linea	1	No	0		
+								
+node pair #12:								
+staccata la linea	1	->	servizio che fa pena	1	No	0		
+servizio che fa pena	1	->	staccata la linea	1	No	0		
+								
+node pair #13:								
+staccata la linea	1	->	attesa che un tecnico ti sistemi la linea	1	Yes	0		
+attesa che un tecnico ti sistemi la linea	1	->	staccata la linea	1	No	0		
+								
+node pair #14:								
+a mia madre è stata immediamente staccata la linea	1	->	staccata la linea	1	Yes	1		
+staccata la linea	1	->	a mia madre è stata immediamente staccata la linea	1	No	-1		
+								
+node pair #15:								
+staccata la linea	1	->	lasciate la gente con problemi	1	Yes	0		
+lasciate la gente con problemi	1	->	staccata la linea	1	No	0		
+								
+node pair #16:								
+staccata la linea	1	->	Pessima Gestione Commerciale	1	No	0		
+Pessima Gestione Commerciale	1	->	staccata la linea	1	No	0		
+								
+node pair #17:								
+staccata la linea senza alcun preavviso	1	->	staccata la linea	1	Yes	1		
+staccata la linea	1	->	staccata la linea senza alcun preavviso	1	No	-1		
+								
+node pair #18:								
+non mi rispondono	1	->	staccata la linea	1	Yes	0		
+staccata la linea	1	->	non mi rispondono	1	No	0		
+								
+node pair #19:								
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	staccata la linea	1	Yes	1		
+staccata la linea	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	-1		
+								
+node pair #20:								
+staccata la linea	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	staccata la linea	1	No	0		
+								
+node pair #21:								
+staccata la linea	1	->	non vi preocupate dei clienti	1	No	0		
+non vi preocupate dei clienti	1	->	staccata la linea	1	No	0		
+								
+node pair #22:								
+servizio che fa pena	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+attesa che un tecnico ti sistemi la linea	1	->	servizio che fa pena	1	No	0		
+								
+node pair #23:								
+servizio che fa pena	1	->	a mia madre è stata immediamente staccata la linea	1	No	0		
+a mia madre è stata immediamente staccata la linea	1	->	servizio che fa pena	1	No	0		
+								
+node pair #24:								
+servizio che fa pena	1	->	lasciate la gente con problemi	1	No	0		
+lasciate la gente con problemi	1	->	servizio che fa pena	1	No	0		
+								
+node pair #25:								
+servizio che fa pena	1	->	Pessima Gestione Commerciale	1	No	0		
+Pessima Gestione Commerciale	1	->	servizio che fa pena	1	No	0		
+								
+node pair #26:								
+servizio che fa pena	1	->	staccata la linea senza alcun preavviso	1	No	0		
+staccata la linea senza alcun preavviso	1	->	servizio che fa pena	1	No	0		
+								
+node pair #27:								
+servizio che fa pena	1	->	non mi rispondono	1	No	0		
+non mi rispondono	1	->	servizio che fa pena	1	No	0		
+								
+node pair #28:								
+servizio che fa pena	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	0		
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	servizio che fa pena	1	No	0		
+								
+node pair #29:								
+servizio che fa pena	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	servizio che fa pena	1	No	0		
+								
+node pair #30:								
+non vi preocupate dei clienti	1	->	servizio che fa pena	1	Yes	0		
+servizio che fa pena	1	->	non vi preocupate dei clienti	1	No	0		
+								
+node pair #31:								
+attesa che un tecnico ti sistemi la linea	1	->	a mia madre è stata immediamente staccata la linea	1	No	0		
+a mia madre è stata immediamente staccata la linea	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+								
+node pair #32:								
+attesa che un tecnico ti sistemi la linea	1	->	lasciate la gente con problemi	1	Yes	0		
+lasciate la gente con problemi	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+								
+node pair #33:								
+attesa che un tecnico ti sistemi la linea	1	->	Pessima Gestione Commerciale	1	No	0		
+Pessima Gestione Commerciale	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+								
+node pair #34:								
+attesa che un tecnico ti sistemi la linea	1	->	staccata la linea senza alcun preavviso	1	No	0		
+staccata la linea senza alcun preavviso	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+								
+node pair #35:								
+attesa che un tecnico ti sistemi la linea	1	->	non mi rispondono	1	No	0		
+non mi rispondono	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+								
+node pair #36:								
+attesa che un tecnico ti sistemi la linea	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	0		
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+								
+node pair #37:								
+attesa che un tecnico ti sistemi la linea	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+								
+node pair #38:								
+attesa che un tecnico ti sistemi la linea	1	->	non vi preocupate dei clienti	1	No	0		
+non vi preocupate dei clienti	1	->	attesa che un tecnico ti sistemi la linea	1	No	0		
+								
+node pair #39:								
+a mia madre è stata immediamente staccata la linea	1	->	lasciate la gente con problemi	1	No	0		
+lasciate la gente con problemi	1	->	a mia madre è stata immediamente staccata la linea	1	No	0		
+								
+node pair #40:								
+a mia madre è stata immediamente staccata la linea	1	->	Pessima Gestione Commerciale	1	No	0		
+Pessima Gestione Commerciale	1	->	a mia madre è stata immediamente staccata la linea	1	No	0		
+								
+node pair #41:								
+a mia madre è stata immediamente staccata la linea	1	->	staccata la linea senza alcun preavviso	1	No	-1		
+staccata la linea senza alcun preavviso	1	->	a mia madre è stata immediamente staccata la linea	1	No	-1		
+								
+node pair #42:								
+a mia madre è stata immediamente staccata la linea	1	->	non mi rispondono	1	No	0		
+non mi rispondono	1	->	a mia madre è stata immediamente staccata la linea	1	No	0		
+								
+node pair #43:								
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	a mia madre è stata immediamente staccata la linea	1	Yes	1		
+a mia madre è stata immediamente staccata la linea	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	-1		
+								
+node pair #44:								
+a mia madre è stata immediamente staccata la linea	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	a mia madre è stata immediamente staccata la linea	1	No	0		
+								
+node pair #45:								
+a mia madre è stata immediamente staccata la linea	1	->	non vi preocupate dei clienti	1	No	0		
+non vi preocupate dei clienti	1	->	a mia madre è stata immediamente staccata la linea	1	No	0		
+								
+node pair #46:								
+lasciate la gente con problemi	1	->	Pessima Gestione Commerciale	1	No	0		
+Pessima Gestione Commerciale	1	->	lasciate la gente con problemi	1	No	0		
+								
+node pair #47:								
+lasciate la gente con problemi	1	->	staccata la linea senza alcun preavviso	1	No	0		
+staccata la linea senza alcun preavviso	1	->	lasciate la gente con problemi	1	No	0		
+								
+node pair #48:								
+lasciate la gente con problemi	1	->	non mi rispondono	1	No	0		
+non mi rispondono	1	->	lasciate la gente con problemi	1	No	0		
+								
+node pair #49:								
+lasciate la gente con problemi	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	0		
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	lasciate la gente con problemi	1	No	0		
+								
+node pair #50:								
+lasciate la gente con problemi	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	lasciate la gente con problemi	1	No	0		
+								
+node pair #51:								
+non vi preocupate dei clienti	1	->	lasciate la gente con problemi	1	Yes	0		
+lasciate la gente con problemi	1	->	non vi preocupate dei clienti	1	No	0		
+								
+node pair #52:								
+Pessima Gestione Commerciale	1	->	staccata la linea senza alcun preavviso	1	No	0		
+staccata la linea senza alcun preavviso	1	->	Pessima Gestione Commerciale	1	No	0		
+								
+node pair #53:								
+Pessima Gestione Commerciale	1	->	non mi rispondono	1	No	0		
+non mi rispondono	1	->	Pessima Gestione Commerciale	1	No	0		
+								
+node pair #54:								
+Pessima Gestione Commerciale	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	0		
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	Pessima Gestione Commerciale	1	No	0		
+								
+node pair #55:								
+Pessima Gestione Commerciale	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	Pessima Gestione Commerciale	1	No	0		
+								
+node pair #56:								
+Pessima Gestione Commerciale	1	->	non vi preocupate dei clienti	1	No	0		
+non vi preocupate dei clienti	1	->	Pessima Gestione Commerciale	1	No	0		
+								
+node pair #57:								
+staccata la linea senza alcun preavviso	1	->	non mi rispondono	1	No	0		
+non mi rispondono	1	->	staccata la linea senza alcun preavviso	1	No	0		
+								
+node pair #58:								
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	staccata la linea senza alcun preavviso	1	Yes	1		
+staccata la linea senza alcun preavviso	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	-1		
+								
+node pair #59:								
+staccata la linea senza alcun preavviso	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	staccata la linea senza alcun preavviso	1	No	0		
+								
+node pair #60:								
+staccata la linea senza alcun preavviso	1	->	non vi preocupate dei clienti	1	No	0		
+non vi preocupate dei clienti	1	->	staccata la linea senza alcun preavviso	1	No	0		
+								
+node pair #61:								
+non mi rispondono	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	0		
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	non mi rispondono	1	No	0		
+								
+node pair #62:								
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	non mi rispondono	1	Yes	1		
+non mi rispondono	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	-1		
+								
+node pair #63:								
+non mi rispondono	1	->	non vi preocupate dei clienti	1	Yes	0		
+non vi preocupate dei clienti	1	->	non mi rispondono	1	No	0		
+								
+node pair #64:								
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	0		
+								
+node pair #65:								
+a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	->	non vi preocupate dei clienti	1	No	0		
+non vi preocupate dei clienti	1	->	a mia madre è stata immediamente staccata la linea senza alcun preavviso	1	No	0		
+								
+node pair #66:								
+ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	->	non vi preocupate dei clienti	1	No	0		
+non vi preocupate dei clienti	1	->	ho provato a scrivere alla mail del servizio post vendita della TELEFONIAX ma non mi rispondono	1	No	0		

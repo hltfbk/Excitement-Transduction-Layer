@@ -3,10 +3,10 @@
     <node id="0187.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0187.txt" implicit_context="" focus="prezzi" implicit_focus="">
         <original_text>Avete i prezzi più alti in assoluto</original_text>
         <correct_text> </correct_text>
-        <modifiers>in assolutopoz=5 6</modifiers>
+        <modifiers>i più in assolutopoz=</modifiers>
     </node>
     <node id="0187.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0187.txt" implicit_context="" focus="prezzi" implicit_focus="">
-        <original_text>Avete i prezzi più alti</original_text>
+        <original_text>Avete prezzi alti</original_text>
         <correct_text> </correct_text>
         <modifiers> </modifiers>
     </node>

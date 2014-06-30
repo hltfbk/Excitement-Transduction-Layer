@@ -3,20 +3,20 @@
     <node id="0213.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0213.txt" implicit_context="" focus="linea" implicit_focus="">
         <original_text>a mia madre è stata immediamente staccata la linea senza alcun preavviso</original_text>
         <correct_text> </correct_text>
-        <modifiers>a mia madre è stata immediamentepoz=0 1 2 3 4 5;senza alcun preavvisopoz=9 10 11</modifiers>
+        <modifiers>immediamentepoz=;senza alcun preavvisopoz=9 10 11</modifiers>
     </node>
     <node id="0213.txt_2_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0213.txt" implicit_context="" focus="linea" implicit_focus="">
-        <original_text>staccata la linea senza alcun preavviso</original_text>
+        <original_text>a mia madre è stata staccata la linea senza alcun preavviso</original_text>
         <correct_text> </correct_text>
         <modifiers>senza alcun preavvisopoz=9 10 11</modifiers>
     </node>
     <node id="0213.txt_2_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0213.txt" implicit_context="" focus="linea" implicit_focus="">
         <original_text>a mia madre è stata immediamente staccata la linea</original_text>
         <correct_text> </correct_text>
-        <modifiers>a mia madre è stata immediamentepoz=0 1 2 3 4 5</modifiers>
+        <modifiers>immediamentepoz=</modifiers>
     </node>
     <node id="0213.txt_2_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0213.txt" implicit_context="" focus="linea" implicit_focus="">
-        <original_text>staccata la linea</original_text>
+        <original_text>a mia madre è stata staccata la linea</original_text>
         <correct_text> </correct_text>
         <modifiers> </modifiers>
     </node>

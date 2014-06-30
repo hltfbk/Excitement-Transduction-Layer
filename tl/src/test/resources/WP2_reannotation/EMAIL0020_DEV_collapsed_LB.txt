@@ -1,0 +1,759 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 11 entailment unit(s) before editing							modified	
+	Catering is aweful	[242866.txt_1_0]						
+	Food is awful	[201627.txt_1_1]						
+	Food looked awful	[85654.txt_1_0]						
+	The food Is of awful quality	[455758.txt_2_0]						
+	The food is awful	[25105.txt_1_0]						
+	The food is disgusting	[440557.txt_8_1]						
+	food is execrable	[190617.txt_5_1]						
+	food was awful	[112459.txt_1_2]						
+	food was terrible	[187987.txt_3_1]						
+	it tasted aweful	[365365.txt_4_0]						
+	quality of food are very low standard	[500967.txt_1_2]						added -very- to the text
+	quality of food could be much better	[492015.txt_1_0]						quality of not a modifier
+	Food is really weak	[137621.txt_1_0]						
+	Food is very disappointing	[265496.txt_1_0]						
+	Improvements in food are greatly needed	[223945.txt_1_0]						
+	food Was basically inedible	[253572.txt_3_0]						basically not a modifier
+	food was very bad	[365365.txt_1_0]						
+								
+								
+								
+								
+collapsed node #2 : 26 entailment unit(s) before editing							modified	
+	Bad food	[285041.txt_1_0]						
+	Better food	"[179281.txt_1_1, 217842.txt_1_0]"						
+	Better food needed	[313632.txt_1_1]						
+	Food could be better	"[117345.txt_1_0, 296739.txt_1_0, 267457.txt_1_0, 391610.txt_1_0]"						
+	Food is bad	[180338.txt_1_0]						
+	Food is disappointing	[265496.txt_1_1]						
+	Food is weak	[137621.txt_1_1]						
+	Improve the food that you offer	[196037.txt_1_0]						
+	Improvements in food are needed	[223945.txt_1_1]						
+	Quasigo can offer better food	[38751.txt_3_0]						
+	Sell better food	[151992.txt_1_0]						
+	There 's no normal food	[242866.txt_6_1]						
+	Time for the food improved	[215790.txt_2_0]						
+	quality of food are low standard	[500967.txt_1_3]						added -quality of- to the text
+	food can be improved	[162340.txt_1_0]						
+	food could be better	[273791.txt_1_1]						REMOVED 492015.txt_1_3 quality of not a modifier
+	food could be improved	[253572.txt_1_0]						
+	food is not good	[296422.txt_1_1]						
+	food is sub standard	[169586.txt_1_0]						
+	food not great	[196991.txt_1_0]						
+	food was bad	[365365.txt_1_1]						
+	improve the food	[255958.txt_1_0]						
+	quality of food limited	[530848.txt_4_0]						
+	the meals were not good dishes	[413572.txt_1_0]						
+	quality of food could be better	[492015.txt_1_1]						
+	Food not brilliant	[420195.txt_1_0]						
+								
+								
+collapsed node #3 : 3 entailment unit(s) before editing							modified	
+	Food fat	[406369.txt_13_1]						
+	Food heavy	[406369.txt_14_1]						
+								
+								
+collapsed node #4 : 6 entailment unit(s) before editing							empty	
+								
+collapsed node #5 : 2 entailment unit(s) before editing							modified	
+	quality of food at the bar are low standard	[500967.txt_1_1]						
+								
+								
+collapsed node #6 : 4 entailment unit(s) before editing							modified	
+	Food too fat	[406369.txt_13_0]						
+	Food too heavy	[406369.txt_14_0]						
+								
+collapsed node #7 : 11 entailment unit(s) before editing							modified	
+	Food on the train is awful	[201627.txt_1_0]						
+	food in all classes is execrable	[190617.txt_5_0]						
+	The food on board is disgusting	[440557.txt_8_0]						
+	food available on board was terrible	[187987.txt_3_0]						
+								
+								
+collapsed node #8 : 1 entailment unit(s) before editing							ok	
+	on board food is v . unhealthy	[149639.txt_1_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing							ok	
+	Meal served did not accord with menu provided	[189492.txt_5_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing							ok	
+	I always get the same tasteless food	[32676.txt_5_0]						the same not a modifier
+								
+collapsed node #11 : 1 entailment unit(s) before editing							ok	
+	Better food at Stars Bridge station	[179281.txt_1_0]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing							ok	
+	Fresher food	[186709.txt_2_1]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing							ok	
+	food in the undercroft bar was awful	[112459.txt_1_0]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing							empty	
+								
+collapsed node #15 : 1 entailment unit(s) before editing							ok	
+	food could be better in business	[273791.txt_1_0]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing							ok	
+	quality of food at the bar are very low standard	[500967.txt_1_0]						quality of not a modifier
+								
+collapsed node #17 : 1 entailment unit(s) before editing							ok	
+	Bigger portion of food	[162010.txt_1_0]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing							empty	
+								
+								
+collapsed node #19 : 1 entailment unit(s) before editing							new	
+	Better food in the lounge	[152552.txt_1_0]						
+								
+collapsed node #20 : 1 entailment unit(s) before editing							new	
+	the food sold in the buffet is sub standard	[418508.txt_1_0]						
+								
+collapsed node #21 : 1 entailment unit(s) before editing							new	
+	food is unhealthy	[149639.txt_1_3]						
+								
+collapsed node #22 : 1 entailment unit(s) before editing							new	
+	Better food on the train needed	[313632.txt_1_0]						
+								
+collapsed node #23 : 1 entailment unit(s) before editing							new	
+	There 's no normal food anywhere	[242866.txt_6_0]						
+								
+collapsed node #24 : 1 entailment unit(s) before editing							new	
+	food is as always not good	[296422.txt_1_0]						
+								
+collapsed node #25 : 1 entailment unit(s) before editing							new	
+	food is v . unhealthy	[149639.txt_1_1]						
+								
+collapsed node #26 : 1 entailment unit(s) before editing							new	
+	on board food is unhealthy	[149639.txt_1_2]						
+								
+collapsed node #27 : 1 entailment unit(s) before editing							new	
+	Fresher food in the dining car	[186709.txt_2_0]						
+								
+collapsed node #28 : 1 entailment unit(s) before editing							new	
+	food in the bar was awful	[112459.txt_1_1]						
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+Food is awful	11	->	Bad food	26	Yes	0		
+Bad food	26	->	Food is awful	11	No			
+								
+node pair #2:								
+Food is awful	11	->	Food fat	3	No	0		
+Food fat	3	->	Food is awful	11	No	0		
+								
+node pair #3:								
+Food is awful	11	->	food could be much better	6	No	0		
+food could be much better	6	->	Food is awful	11	No	0		
+								
+node pair #4:								
+Food is awful	11	->	quality of food could be much better	2	No	0		
+quality of food could be much better	2	->	Food is awful	11	No	0		
+								
+node pair #5:								
+Food is awful	11	->	Food too fat	4	No	0		
+Food too fat	4	->	Food is awful	11	No	0		
+								
+node pair #6:								
+food was very bad	11	->	Food is awful	11	Yes	6		
+Food is awful	11	->	food was very bad	11	No			
+								
+node pair #7:								
+Food is awful	11	->	on board food is v . unhealthy	1	No	0		
+on board food is v . unhealthy	1	->	Food is awful	11	No	0		
+								
+node pair #8:								
+Food is awful	11	->	Meal served did not accord with menu provided	1	No	0		
+Meal served did not accord with menu provided	1	->	Food is awful	11	No	0		
+								
+node pair #9:								
+Food is awful	11	->	I always get the same tasteless food	1	No	0		
+I always get the same tasteless food	1	->	Food is awful	11	No	0		
+								
+node pair #10:								
+Food is awful	11	->	Better food at Stars Bridge station	1	No	0		
+Better food at Stars Bridge station	1	->	Food is awful	11	No	0		
+								
+node pair #11:								
+Food is awful	11	->	Fresher food	1	No	0		
+Fresher food	1	->	Food is awful	11	No	0		
+								
+node pair #12:								
+food in the undercroft bar was awful	1	->	Food is awful	11	Yes	1		
+Food is awful	11	->	food in the undercroft bar was awful	1	No			
+								
+node pair #13:								
+Food is awful	11	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	Food is awful	11	No	0		
+								
+node pair #14:								
+Food is awful	11	->	food could be better in business	1	No	0		
+food could be better in business	1	->	Food is awful	11	No	0		
+								
+node pair #15:								
+Food is awful	11	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	Food is awful	11	No	0		
+								
+node pair #16:								
+Food is awful	11	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	Food is awful	11	No	0		
+								
+node pair #17:								
+Food is awful	11	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	Food is awful	11	No	0		
+								
+node pair #18:								
+Food fat	3	->	Bad food	26	Yes	0		
+Bad food	26	->	Food fat	3	No			
+								
+node pair #19:								
+food could be much better	6	->	Bad food	26	Yes	6		
+Bad food	26	->	food could be much better	6	No			
+								
+node pair #20:								
+quality of food could be much better	2	->	Bad food	26	Yes	2		
+Bad food	26	->	quality of food could be much better	2	No			
+								
+node pair #21:								
+Bad food	26	->	Food too fat	4	No	0		
+Food too fat	4	->	Bad food	26	No	0		
+								
+node pair #22:								
+food was very bad	11	->	Bad food	26	Yes	4		
+Bad food	26	->	food was very bad	11	No			
+								
+node pair #23:								
+Bad food	26	->	on board food is v . unhealthy	1	No	0		
+on board food is v . unhealthy	1	->	Bad food	26	No	0		
+								
+node pair #24:								
+Meal served did not accord with menu provided	1	->	Bad food	26	Yes	0		
+Bad food	26	->	Meal served did not accord with menu provided	1	No			
+								
+node pair #25:								
+Bad food	26	->	I always get the same tasteless food	1	No	0		
+I always get the same tasteless food	1	->	Bad food	26	No	0		
+								
+node pair #26:								
+Better food at Stars Bridge station	1	->	Bad food	26	Yes	1		
+Bad food	26	->	Better food at Stars Bridge station	1	No			
+								
+node pair #27:								
+Fresher food	1	->	Bad food	26	Yes	0		
+Bad food	26	->	Fresher food	1	No			
+								
+node pair #28:								
+Bad food	26	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	Bad food	26	No	0		
+								
+node pair #29:								
+I always get tasteless food	1	->	Bad food	26	Yes	0		
+Bad food	26	->	I always get tasteless food	1	No			
+								
+node pair #30:								
+food could be better in business	1	->	Bad food	26	Yes	1		
+Bad food	26	->	food could be better in business	1	No			
+								
+node pair #31:								
+quality of food at the bar are very low standard	1	->	Bad food	26	Yes	1		
+Bad food	26	->	quality of food at the bar are very low standard	1	No			
+								
+node pair #32:								
+Bigger portion of food	1	->	Bad food	26	Yes	0		
+Bad food	26	->	Bigger portion of food	1	No			
+								
+node pair #33:								
+Food not brilliant	1	->	Bad food	26	Yes	0		
+Bad food	26	->	Food not brilliant	1	No			
+								
+node pair #34:								
+Food fat	3	->	food could be much better	6	No	0		
+food could be much better	6	->	Food fat	3	No	0		
+								
+node pair #35:								
+Food fat	3	->	quality of food could be much better	2	No	0		
+quality of food could be much better	2	->	Food fat	3	No	0		
+								
+node pair #36:								
+Food too fat	4	->	Food fat	3	Yes	4		
+Food fat	3	->	Food too fat	4	No			
+								
+node pair #37:								
+Food fat	3	->	food was very bad	11	No	0		
+food was very bad	11	->	Food fat	3	No	0		
+								
+node pair #38:								
+on board food is v . unhealthy	1	->	Food fat	3	Yes	1		
+Food fat	3	->	on board food is v . unhealthy	1	No			
+								
+node pair #39:								
+Food fat	3	->	Meal served did not accord with menu provided	1	No	0		
+Meal served did not accord with menu provided	1	->	Food fat	3	No	0		
+								
+node pair #40:								
+Food fat	3	->	I always get the same tasteless food	1	No	0		
+I always get the same tasteless food	1	->	Food fat	3	No	0		
+								
+node pair #41:								
+Food fat	3	->	Better food at Stars Bridge station	1	No	0		
+Better food at Stars Bridge station	1	->	Food fat	3	No	0		
+								
+node pair #42:								
+Food fat	3	->	Fresher food	1	No	0		
+Fresher food	1	->	Food fat	3	No	0		
+								
+node pair #43:								
+Food fat	3	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	Food fat	3	No	0		
+								
+node pair #44:								
+Food fat	3	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	Food fat	3	No	0		
+								
+node pair #45:								
+Food fat	3	->	food could be better in business	1	No	0		
+food could be better in business	1	->	Food fat	3	No	0		
+								
+node pair #46:								
+Food fat	3	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	Food fat	3	No	0		
+								
+node pair #47:								
+Food fat	3	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	Food fat	3	No	0		
+								
+node pair #48:								
+Food fat	3	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	Food fat	3	No	0		
+								
+node pair #49:								
+quality of food could be much better	2	->	food could be much better	6	Yes	3		
+food could be much better	6	->	quality of food could be much better	2	No			
+								
+node pair #50:								
+Food too fat	4	->	food could be much better	6	Yes	0		
+food could be much better	6	->	Food too fat	4	No			
+								
+node pair #51:								
+food was very bad	11	->	food could be much better	6	Yes	0		
+food could be much better	6	->	food was very bad	11	No			
+								
+node pair #52:								
+food could be much better	6	->	on board food is v . unhealthy	1	No	0		
+on board food is v . unhealthy	1	->	food could be much better	6	No	0		
+								
+node pair #53:								
+food could be much better	6	->	Meal served did not accord with menu provided	1	No	0		
+Meal served did not accord with menu provided	1	->	food could be much better	6	No	0		
+								
+node pair #54:								
+I always get the same tasteless food	1	->	food could be much better	6	Yes	0		
+food could be much better	6	->	I always get the same tasteless food	1	No			
+								
+node pair #55:								
+Better food at Stars Bridge station	1	->	food could be much better	6	Yes	0		
+food could be much better	6	->	Better food at Stars Bridge station	1	No			
+								
+node pair #56:								
+food could be much better	6	->	Fresher food	1	No	0		
+Fresher food	1	->	food could be much better	6	No	0		
+								
+node pair #57:								
+food could be much better	6	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	food could be much better	6	No	0		
+								
+node pair #58:								
+food could be much better	6	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	food could be much better	6	No	0		
+								
+node pair #59:								
+food could be better in business	1	->	food could be much better	6	Yes	0		
+food could be much better	6	->	food could be better in business	1	No			
+								
+node pair #60:								
+quality of food at the bar are very low standard	1	->	food could be much better	6	Yes	1		
+food could be much better	6	->	quality of food at the bar are very low standard	1	No			
+								
+node pair #61:								
+food could be much better	6	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	food could be much better	6	No	0		
+								
+node pair #62:								
+food could be much better	6	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	food could be much better	6	No	0		
+								
+node pair #63:								
+quality of food could be much better	2	->	Food too fat	4	No	0		
+Food too fat	4	->	quality of food could be much better	2	No	0		
+								
+node pair #64:								
+quality of food could be much better	2	->	food was very bad	11	No	0		
+food was very bad	11	->	quality of food could be much better	2	No	0		
+								
+node pair #65:								
+on board food is v . unhealthy	1	->	quality of food could be much better	2	Yes	0		
+quality of food could be much better	2	->	on board food is v . unhealthy	1	No			
+								
+node pair #66:								
+quality of food could be much better	2	->	Meal served did not accord with menu provided	1	No	0		
+Meal served did not accord with menu provided	1	->	quality of food could be much better	2	No	0		
+								
+node pair #67:								
+quality of food could be much better	2	->	I always get the same tasteless food	1	No	0		
+I always get the same tasteless food	1	->	quality of food could be much better	2	No	0		
+								
+node pair #68:								
+quality of food could be much better	2	->	Better food at Stars Bridge station	1	No	0		
+Better food at Stars Bridge station	1	->	quality of food could be much better	2	No	0		
+								
+node pair #69:								
+quality of food could be much better	2	->	Fresher food	1	No	0		
+Fresher food	1	->	quality of food could be much better	2	No	0		
+								
+node pair #70:								
+food in the undercroft bar was awful	1	->	quality of food could be much better	2	Yes	0		
+quality of food could be much better	2	->	food in the undercroft bar was awful	1	No			
+								
+node pair #71:								
+quality of food could be much better	2	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	quality of food could be much better	2	No	0		
+								
+node pair #72:								
+quality of food could be much better	2	->	food could be better in business	1	No	0		
+food could be better in business	1	->	quality of food could be much better	2	No	0		
+								
+node pair #73:								
+quality of food at the bar are very low standard	1	->	quality of food could be much better	2	Yes	1		
+quality of food could be much better	2	->	quality of food at the bar are very low standard	1	No			
+								
+node pair #74:								
+quality of food could be much better	2	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	quality of food could be much better	2	No	0		
+								
+node pair #75:								
+quality of food could be much better	2	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	quality of food could be much better	2	No	0		
+								
+node pair #76:								
+Food too fat	4	->	food was very bad	11	No	0		
+food was very bad	11	->	Food too fat	4	No	0		
+								
+node pair #77:								
+on board food is v . unhealthy	1	->	Food too fat	4	Yes	2		
+Food too fat	4	->	on board food is v . unhealthy	1	No			
+								
+node pair #78:								
+Food too fat	4	->	Meal served did not accord with menu provided	1	No	0		
+Meal served did not accord with menu provided	1	->	Food too fat	4	No	0		
+								
+node pair #79:								
+Food too fat	4	->	I always get the same tasteless food	1	No	0		
+I always get the same tasteless food	1	->	Food too fat	4	No	0		
+								
+node pair #80:								
+Food too fat	4	->	Better food at Stars Bridge station	1	No	0		
+Better food at Stars Bridge station	1	->	Food too fat	4	No	0		
+								
+node pair #81:								
+Food too fat	4	->	Fresher food	1	No	0		
+Fresher food	1	->	Food too fat	4	No	0		
+								
+node pair #82:								
+Food too fat	4	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	Food too fat	4	No	0		
+								
+node pair #83:								
+Food too fat	4	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	Food too fat	4	No	0		
+								
+node pair #84:								
+Food too fat	4	->	food could be better in business	1	No	0		
+food could be better in business	1	->	Food too fat	4	No	0		
+								
+node pair #85:								
+Food too fat	4	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	Food too fat	4	No	0		
+								
+node pair #86:								
+Food too fat	4	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	Food too fat	4	No	0		
+								
+node pair #87:								
+Food too fat	4	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	Food too fat	4	No	0		
+								
+node pair #88:								
+food was very bad	11	->	on board food is v . unhealthy	1	No	0		
+on board food is v . unhealthy	1	->	food was very bad	11	No	0		
+								
+node pair #89:								
+food was very bad	11	->	Meal served did not accord with menu provided	1	No	0		
+Meal served did not accord with menu provided	1	->	food was very bad	11	No	0		
+								
+node pair #90:								
+food was very bad	11	->	I always get the same tasteless food	1	No	0		
+I always get the same tasteless food	1	->	food was very bad	11	No	0		
+								
+node pair #91:								
+food was very bad	11	->	Better food at Stars Bridge station	1	No	0		
+Better food at Stars Bridge station	1	->	food was very bad	11	No	0		
+								
+node pair #92:								
+food was very bad	11	->	Fresher food	1	Yes	1		
+Fresher food	1	->	food was very bad	11	No			
+								
+node pair #93:								
+food in the undercroft bar was awful	1	->	food was very bad	11	Yes	1		
+food was very bad	11	->	food in the undercroft bar was awful	1	No			
+								
+node pair #94:								
+food was very bad	11	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	food was very bad	11	No	0		
+								
+node pair #95:								
+food was very bad	11	->	food could be better in business	1	No	0		
+food could be better in business	1	->	food was very bad	11	No	0		
+								
+node pair #96:								
+food was very bad	11	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	food was very bad	11	No	0		
+								
+node pair #97:								
+food was very bad	11	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	food was very bad	11	No	0		
+								
+node pair #98:								
+food was very bad	11	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	food was very bad	11	No	0		
+								
+node pair #99:								
+on board food is v . unhealthy	1	->	Meal served did not accord with menu provided	1	No	0		
+Meal served did not accord with menu provided	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #100:								
+on board food is v . unhealthy	1	->	I always get the same tasteless food	1	No	0		
+I always get the same tasteless food	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #101:								
+on board food is v . unhealthy	1	->	Better food at Stars Bridge station	1	No	0		
+Better food at Stars Bridge station	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #102:								
+on board food is v . unhealthy	1	->	Fresher food	1	No	0		
+Fresher food	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #103:								
+on board food is v . unhealthy	1	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #104:								
+on board food is v . unhealthy	1	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #105:								
+on board food is v . unhealthy	1	->	food could be better in business	1	No	0		
+food could be better in business	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #106:								
+on board food is v . unhealthy	1	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #107:								
+on board food is v . unhealthy	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #108:								
+on board food is v . unhealthy	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	on board food is v . unhealthy	1	No	0		
+								
+node pair #109:								
+Meal served did not accord with menu provided	1	->	I always get the same tasteless food	1	No	0		
+I always get the same tasteless food	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #110:								
+Meal served did not accord with menu provided	1	->	Better food at Stars Bridge station	1	No	0		
+Better food at Stars Bridge station	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #111:								
+Meal served did not accord with menu provided	1	->	Fresher food	1	No	0		
+Fresher food	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #112:								
+Meal served did not accord with menu provided	1	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #113:								
+Meal served did not accord with menu provided	1	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #114:								
+Meal served did not accord with menu provided	1	->	food could be better in business	1	No	0		
+food could be better in business	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #115:								
+Meal served did not accord with menu provided	1	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #116:								
+Meal served did not accord with menu provided	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #117:								
+Meal served did not accord with menu provided	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	Meal served did not accord with menu provided	1	No	0		
+								
+node pair #118:								
+I always get the same tasteless food	1	->	Better food at Stars Bridge station	1	No	0		
+Better food at Stars Bridge station	1	->	I always get the same tasteless food	1	No	0		
+								
+node pair #119:								
+I always get the same tasteless food	1	->	Fresher food	1	No	0		
+Fresher food	1	->	I always get the same tasteless food	1	No	0		
+								
+node pair #120:								
+I always get the same tasteless food	1	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	I always get the same tasteless food	1	No	0		
+								
+node pair #121:								
+I always get the same tasteless food	1	->	I always get tasteless food	1	Yes	1		
+I always get tasteless food	1	->	I always get the same tasteless food	1	No			
+								
+node pair #122:								
+I always get the same tasteless food	1	->	food could be better in business	1	No	0		
+food could be better in business	1	->	I always get the same tasteless food	1	No	0		
+								
+node pair #123:								
+I always get the same tasteless food	1	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	I always get the same tasteless food	1	No	0		
+								
+node pair #124:								
+I always get the same tasteless food	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	I always get the same tasteless food	1	No	0		
+								
+node pair #125:								
+I always get the same tasteless food	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	I always get the same tasteless food	1	No	0		
+								
+node pair #126:								
+Better food at Stars Bridge station	1	->	Fresher food	1	No	0		
+Fresher food	1	->	Better food at Stars Bridge station	1	No	0		
+								
+node pair #127:								
+Better food at Stars Bridge station	1	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	Better food at Stars Bridge station	1	No	0		
+								
+node pair #128:								
+Better food at Stars Bridge station	1	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	Better food at Stars Bridge station	1	No	0		
+								
+node pair #129:								
+Better food at Stars Bridge station	1	->	food could be better in business	1	No	0		
+food could be better in business	1	->	Better food at Stars Bridge station	1	No	0		
+								
+node pair #130:								
+Better food at Stars Bridge station	1	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	Better food at Stars Bridge station	1	No	0		
+								
+node pair #131:								
+Better food at Stars Bridge station	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	Better food at Stars Bridge station	1	No	0		
+								
+node pair #132:								
+Better food at Stars Bridge station	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	Better food at Stars Bridge station	1	No	0		
+								
+node pair #133:								
+Fresher food	1	->	food in the undercroft bar was awful	1	No	0		
+food in the undercroft bar was awful	1	->	Fresher food	1	No	0		
+								
+node pair #134:								
+Fresher food	1	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	Fresher food	1	No	0		
+								
+node pair #135:								
+Fresher food	1	->	food could be better in business	1	No	0		
+food could be better in business	1	->	Fresher food	1	No	0		
+								
+node pair #136:								
+Fresher food	1	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	Fresher food	1	No	0		
+								
+node pair #137:								
+Fresher food	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	Fresher food	1	No	0		
+								
+node pair #138:								
+Fresher food	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	Fresher food	1	No	0		
+								
+node pair #139:								
+food in the undercroft bar was awful	1	->	I always get tasteless food	1	No	0		
+I always get tasteless food	1	->	food in the undercroft bar was awful	1	No	0		
+								
+node pair #140:								
+food in the undercroft bar was awful	1	->	food could be better in business	1	No	0		
+food could be better in business	1	->	food in the undercroft bar was awful	1	No	0		
+								
+node pair #141:								
+food in the undercroft bar was awful	1	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	food in the undercroft bar was awful	1	No	0		
+								
+node pair #142:								
+food in the undercroft bar was awful	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	food in the undercroft bar was awful	1	No	0		
+								
+node pair #143:								
+food in the undercroft bar was awful	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	food in the undercroft bar was awful	1	No	0		
+								
+node pair #144:								
+I always get tasteless food	1	->	food could be better in business	1	No	0		
+food could be better in business	1	->	I always get tasteless food	1	No	0		
+								
+node pair #145:								
+I always get tasteless food	1	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	I always get tasteless food	1	No	0		
+								
+node pair #146:								
+I always get tasteless food	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	I always get tasteless food	1	No	0		
+								
+node pair #147:								
+I always get tasteless food	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	I always get tasteless food	1	No	0		
+								
+node pair #148:								
+food could be better in business	1	->	quality of food at the bar are very low standard	1	No	0		
+quality of food at the bar are very low standard	1	->	food could be better in business	1	No	0		
+								
+node pair #149:								
+food could be better in business	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	food could be better in business	1	No	0		
+								
+node pair #150:								
+food could be better in business	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	food could be better in business	1	No	0		
+								
+node pair #151:								
+quality of food at the bar are very low standard	1	->	Bigger portion of food	1	No	0		
+Bigger portion of food	1	->	quality of food at the bar are very low standard	1	No	0		
+								
+node pair #152:								
+quality of food at the bar are very low standard	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	quality of food at the bar are very low standard	1	No	0		
+								
+node pair #153:								
+Bigger portion of food	1	->	Food not brilliant	1	No	0		
+Food not brilliant	1	->	Bigger portion of food	1	No	0		

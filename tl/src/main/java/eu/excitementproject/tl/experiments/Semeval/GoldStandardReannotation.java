@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import eu.excitementproject.eop.biutee.utilities.preprocess.NewNormalizerBasedTextPreProcessor;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -27,7 +28,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 @SuppressWarnings("all")
 public class GoldStandardReannotation {
-	
+		
 	private enum Relation{
 		BIDIR,
 		AB,
@@ -42,13 +43,16 @@ public class GoldStandardReannotation {
 	EntailmentGraphCollapsed ourCg = null;
 	Map<String,Set<String>> textToIdsMap = null;
 	Map<String,String> nodeContentById = null;
-	
+	Set<String> newNodes = new HashSet<String>();
+
 	private void clearData(){
 		rg = null;
 		wp2cg = null;
 		rfg = null;	
 		ourCg = null;
-		textToIdsMap = null;		
+		textToIdsMap = null;	
+		nodeContentById = null;
+		newNodes = new HashSet<String>();
 	}
 	
 /*	private int getWP2Relation(EquivalenceClass nodeA, EquivalenceClass nodeB){
@@ -81,11 +85,11 @@ public class GoldStandardReannotation {
 				boolean isOK = true;
 				if (!rg.containsVertex(a)) {
 					isOK = false;
-					System.err.println("Warning: node <<"+a.getText()+">> was not found in WP2-annotaited graph.");
+					newNodes.add(a.getText());
 				}
 				if (!rg.containsVertex(b)) {
 					isOK = false;
-					System.err.println("Warning: node <<"+b.getText()+">> was not found in WP2-annotaited graph.");
+					newNodes.add(b.getText());
 				}
 				
 				if (isOK){
@@ -518,94 +522,67 @@ public class GoldStandardReannotation {
 		return false; 
 	}
 	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {		
-		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
-//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
-		
-		GoldStandardReannotation tr = new GoldStandardReannotation();
-		
-		String clusterName = "Cluster D1.4 Servizio Comm e Postvendita"; //"EMAIL0410";		
-	//	String clusterName = "SPEECH0080";		
 
-	//	String set = "Test";
-		String set = "Dev";
-		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
-		// File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
-		
-		if (!clusterAnnotationsDir.exists()) {
-			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
-			return;
-		}
-			
-		// create txt file for original WP2 annotation
-		File txtFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt");		
+	public void step1CreateFileForEditingNodes(String filename, File clusterAnnotationsDir){
 		try {
-			tr.loadClusterGraph(clusterAnnotationsDir);
-			tr.createTxtForReannotation(tr.wp2cg,txtFile);
+			File txtFile = new File(filename);
+			loadClusterGraph(clusterAnnotationsDir);
+			createTxtForReannotation(wp2cg,txtFile);
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
+		}		
+	}
 
-				
-/*		// create txt file for updated collapsed nodes		
+	public void step2CreateFileForEdgeAnnotation(String filename, String fixedNodesFilename, File clusterAnnotationsDir){
 		try {
-			File txtFileUp = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt");
-			tr.loadClusterGraph(clusterAnnotationsDir);
-			//tr.translateFromXml(tr.wp2cg,txtFile);
-
-			File fixedNodesFile = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_Reconciled.txt");
-			if (tr.generateCollapsedGraphForFixedNodes(fixedNodesFile)){
-				if(tr.areNodesConsistent()){
-					tr.createTxtForReannotation(tr.ourCg, txtFileUp);
+			File txtFileUp = new File(filename);
+			loadClusterGraph(clusterAnnotationsDir);
+			File fixedNodesFile = new File(fixedNodesFilename);
+			if (generateCollapsedGraphForFixedNodes(fixedNodesFile)){
+				if(areNodesConsistent()){
+					createTxtForReannotation(ourCg, txtFileUp);
+					System.out.println("==========");
+					for (String nodeText : newNodes){
+						System.err.println("Warning: node <<"+nodeText+">> was not found in WP2-annotated graph.");
+					}
 					System.out.println("Updated file generated.");
 				}
 				else{
 					System.err.println("Nodes are not consistent, no updated file was generated.");
 				}				
-			}
-		
+			}	
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}		
+	}
 
-*/
+	public void step3LoadAnnotatedFile(String filename, File clusterAnnotationsDir, String clusterName){
+		try{
+			File txtFileReannotated = new File(filename);
+			loadFragmentGraphs(clusterAnnotationsDir);
 
-/*		// load final re-annotated graph 		
-		boolean bFinal = true; // which filename to load: true for the one with cluster name as its name (the very final one)
-		try {
-			File txtFileReannotated;
-			if (bFinal)	txtFileReannotated = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+".txt");
-			else 	txtFileReannotated = new File(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes_Reconciled.txt");
-			tr.loadFragmentGraphs(clusterAnnotationsDir);
-			//tr.translateFromXml(tr.wp2cg,txtFile);
-
-			tr.loadReannotatedCollapsedGraph(txtFileReannotated, true);
+			loadReannotatedCollapsedGraph(txtFileReannotated, true);
 			
-			EntailmentGraphRaw decollapsedGraph = EvaluatorGraphOptimizer.getDecollapsedGraph(tr.ourCg);
-			GoldStandardToWP2FormatTranslator.createWP2xml(txtFileReannotated.getAbsolutePath().replace(".txt", "PlusClosure.xml"), decollapsedGraph, tr.textToIdsMap, tr.nodeContentById);
+			EntailmentGraphRaw decollapsedGraph = EvaluatorGraphOptimizer.getDecollapsedGraph(ourCg);
+			GoldStandardToWP2FormatTranslator.createWP2xml(txtFileReannotated.getAbsolutePath().replace(".txt", "PlusClosure.xml"), decollapsedGraph, textToIdsMap, nodeContentById);
 		
 			System.out.println("Statistics:");
 			System.out.println("Cluster \t Nodes in FGs \t Edges in FGs \t coll nodes \t meta-nodes \t Avg size of meta-node \t Coll Edges \t raw Nodes \t raw Edges");			
 			System.out.print(clusterName+"\t");
-			System.out.print(tr.rfg.vertexSet().size()+"\t");
+			System.out.print(rfg.vertexSet().size()+"\t");
 			
 			int fgYesEdges = 0;
-			for (EntailmentRelation e: tr.rfg.edgeSet()){
+			for (EntailmentRelation e: rfg.edgeSet()){
 				if (e.getTEdecision().getDecision().is(DecisionLabel.Entailment)) fgYesEdges++;
 			}
 			System.out.print(fgYesEdges+"\t");
-			System.out.print(tr.ourCg.vertexSet().size()+"\t");
+			System.out.print(ourCg.vertexSet().size()+"\t");
 			
 			int metaNodes = 0;
 			double metaSize = 0;
-			for (EquivalenceClass eq : tr.ourCg.vertexSet()){
+			for (EquivalenceClass eq : ourCg.vertexSet()){
 				int size = eq.getEntailmentUnits().size();
 				if (size>1){
 					metaNodes++;
@@ -618,15 +595,57 @@ public class GoldStandardReannotation {
 			System.out.print(metaSize+"\t");
 			
 			
-			System.out.print(tr.ourCg.edgeSet().size()+"\t");
+			System.out.print(ourCg.edgeSet().size()+"\t");
 			System.out.print(decollapsedGraph.vertexSet().size()+"\t");
 			System.out.println(decollapsedGraph.edgeSet().size());
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
-*/
+		} 		
+	}
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {		
+		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer";
+//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer";
+		
+		GoldStandardReannotation tr = new GoldStandardReannotation();
+		
+		String clusterName = "EMAIL0020_TEST"; //"EMAIL0410";		
+	//	String clusterName = "SPEECH0080";		
+
+		String set = "Test";
+	//	String set = "Dev";
+		
+//		String suffix = "Reconciled";
+//		String suffix = "LB";
+		String suffix = "AF";
+		
+		
+				
+	//	File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
+		 File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
+		
+		if (!clusterAnnotationsDir.exists()) {
+			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
+			return;
+		}
+		
+		
+		// Step1: create txt file for editing original WP2 collapsed nodes
+	//	tr.step1CreateFileForEditingNodes(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt", clusterAnnotationsDir);
+
+		// Step2 : create txt file for edge annotation, using updated collapsed nodes
+	//	tr.step2CreateFileForEdgeAnnotation(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt", tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_"+suffix+".txt", clusterAnnotationsDir);
+		
+
+		// Step3 : load final re-annotated graph, check for consistency, calculate statistics and create wp2-format file 		
+		tr.step3LoadAnnotatedFile(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+".txt", clusterAnnotationsDir, clusterName);
+
 	}
 
 }

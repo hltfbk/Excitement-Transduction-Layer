@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="0068.txt_1_0" implicit_statement="FALSE" modality="TRUE" explicit_context="0068.txt" implicit_context="" focus="telefonate" implicit_focus="">
+        <original_text>due mesi che non posso ricevere telefonate</original_text>
+        <correct_text> </correct_text>
+        <modifiers>due mesipoz=0 1</modifiers>
+    </node>
+    <node id="0068.txt_1_1" implicit_statement="FALSE" modality="TRUE" explicit_context="0068.txt" implicit_context="" focus="telefonate" implicit_focus="">
+        <original_text>che non posso ricevere telefonate</original_text>
+        <correct_text>non posso ricevere telefonate</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0068.txt_1_0-0068.txt_1_1" source="0068.txt_1_0" target="0068.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0068.txt_1_0-0068.txt_1_1" source="0068.txt_1_0" target="0068.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

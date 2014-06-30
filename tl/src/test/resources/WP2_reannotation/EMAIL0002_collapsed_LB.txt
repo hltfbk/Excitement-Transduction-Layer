@@ -1,0 +1,1843 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing							ok	
+	More choice of drink	[237090.txt_2_0]						
+	better drinks selection	[522350.txt_3_0]						
+								
+collapsed node #2 : 2 entailment unit(s) before editing							modified	
+	There should be a proper expresso machine ,	[418508.txt_5_1]						"they ask for a better machine, implying that indeed there is an expresso machine (clear also from the whole fragment)"
+								
+								
+collapsed node #3 : 2 entailment unit(s) before editing							modified	
+	there is no more champagne on offer	[305036.txt_1_0]						
+	You could bring back champagne	[63301.txt_1_1]						
+								
+collapsed node #4 : 2 entailment unit(s) before editing							modified	
+	There should be a good english tea	[418508.txt_8_0]						
+								
+								
+collapsed node #5 : 1 entailment unit(s) before editing							ok	
+	have bigger mugs for coffee	[38058.txt_14_0]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing							ok	
+	have bigger mugs for tea	[38058.txt_13_0]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing							ok	
+	no more pre - dinner drink	[153220.txt_3_0]						pre-dinner is different from welcome
+								
+collapsed node #8 : 1 entailment unit(s) before editing							modified	
+	drink was terrible	[187987.txt_4_1]						
+	quality of drinks are very low standard	[500967.txt_6_2]						text modified
+								
+collapsed node #9 : 1 entailment unit(s) before editing							ok	
+	drink available on board was terrible	[187987.txt_4_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing							ok	
+	wine selection poor	[423204.txt_3_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing							ok	
+	A trolley serving coffee would be a welcome addition to the economy section	[228464.txt_1_0]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing							ok	??? offered: there are no drinks in general or offered (free)?
+	No drinks offered	[15589.txt_5_0]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing							ok	welcome not necessarily pre-dinner
+	Bring back the welcome drink	[446414.txt_3_0]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing							empty	
+								
+collapsed node #15 : 1 entailment unit(s) before editing							ok	
+	coffee would be a welcome addition	[228464.txt_1_2]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing							ok	
+	quality of drinks at the bar are low standard	[500967.txt_6_1]						
+								
+collapsed node #17 : 1 entailment unit(s) before editing							ok	
+	coffee would be a welcome addition to the economy section	[228464.txt_1_1]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing							ok	
+	quality of drinks are low standard	[500967.txt_6_3]						text modified
+								
+collapsed node #19 : 1 entailment unit(s) before editing							ok	
+	tea would be a welcome addition to the economy section	[228464.txt_2_1]						
+								
+collapsed node #20 : 1 entailment unit(s) before editing							ok	
+	A trolley serving tea would be a welcome addition to the economy section	[228464.txt_2_0]						
+								
+collapsed node #21 : 1 entailment unit(s) before editing							ok	
+	There should be real milk , not fake prepackaged junk	[418508.txt_10_0]						
+								
+collapsed node #22 : 1 entailment unit(s) before editing							ok	
+	There should be real milk ,	[418508.txt_10_1]						
+								
+collapsed node #23 : 1 entailment unit(s) before editing							ok	
+	You could bring back champagne in leisure select	[63301.txt_1_0]						
+								
+collapsed node #24 : 1 entailment unit(s) before editing							ok	
+	There should be a proper expresso machine , not that horrible nespresso	[418508.txt_5_0]						
+								
+collapsed node #25 : 1 entailment unit(s) before editing							ok	
+	drink quality has declined over time	[57576.txt_3_0]						
+								
+collapsed node #26 : 1 entailment unit(s) before editing							empty	
+								
+collapsed node #27 : 1 entailment unit(s) before editing							empty	
+								
+collapsed node #28 : 1 entailment unit(s) before editing							empty	
+								
+collapsed node #29 : 1 entailment unit(s) before editing							ok	
+	quality of drinks at the bar are very low standard	[500967.txt_6_0]						
+								
+collapsed node #30 : 1 entailment unit(s) before editing							ok	
+	there is no champagne on offer	[305036.txt_1_1]						
+								
+collapsed node #31 : 1 entailment unit(s) before editing							new	
+	tea would be a welcome addition	[228464.txt_2_2]						
+								
+collapsed node #32 : 1 entailment unit(s) before editing							new	
+	fresh coffee is nicer than instant coffee	[327783.txt_4_0]						
+								
+								
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+fresh coffee is nicer than instant coffee	2	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	fresh coffee is nicer than instant coffee	2	No			
+								
+node pair #2:								
+there is no champagne	2	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	there is no champagne	2	No			
+								
+node pair #3:								
+tea would be a welcome addition	2	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	tea would be a welcome addition	2	No			
+								
+node pair #4:								
+More choice of drink	2	->	have bigger mugs for coffee	1	No	0		
+have bigger mugs for coffee	1	->	More choice of drink	2	No	0		
+								
+node pair #5:								
+More choice of drink	2	->	have bigger mugs for tea	1	No	0		
+have bigger mugs for tea	1	->	More choice of drink	2	No	0		
+								
+node pair #6:								
+no more pre - dinner drink	1	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	no more pre - dinner drink	1	No			
+								
+node pair #7:								
+More choice of drink	2	->	drink was terrible	1	No	0		
+drink was terrible	1	->	More choice of drink	2	No	0		
+								
+node pair #8:								
+More choice of drink	2	->	drink available on board was terrible	1	No	0		
+drink available on board was terrible	1	->	More choice of drink	2	No	0		
+								
+node pair #9:								
+wine selection poor	1	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	wine selection poor	1	No			
+								
+node pair #10:								
+More choice of drink	2	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	More choice of drink	2	No	0		
+								
+node pair #11:								
+No drinks offered	1	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	No drinks offered	1	No			
+								
+node pair #12:								
+Bring back the welcome drink	1	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	Bring back the welcome drink	1	No			
+								
+node pair #13:								
+More choice of drink	2	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	More choice of drink	2	No	0		
+								
+node pair #14:								
+coffee would be a welcome addition	1	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	coffee would be a welcome addition	1	No			
+								
+node pair #15:								
+More choice of drink	2	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	More choice of drink	2	No	0		
+								
+node pair #16:								
+More choice of drink	2	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	More choice of drink	2	No	0		
+								
+node pair #17:								
+More choice of drink	2	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	More choice of drink	2	No	0		
+								
+node pair #18:								
+More choice of drink	2	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	More choice of drink	2	No	0		
+								
+node pair #19:								
+More choice of drink	2	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	More choice of drink	2	No	0		
+								
+node pair #20:								
+More choice of drink	2	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	More choice of drink	2	No	0		
+								
+node pair #21:								
+"There should be real milk ,"	1	->	More choice of drink	2	Yes	0		
+More choice of drink	2	->	"There should be real milk ,"	1	No			
+								
+node pair #22:								
+More choice of drink	2	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	More choice of drink	2	No	0		
+								
+node pair #23:								
+More choice of drink	2	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	More choice of drink	2	No	0		
+								
+node pair #24:								
+More choice of drink	2	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	More choice of drink	2	No	0		
+								
+node pair #25:								
+More choice of drink	2	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	More choice of drink	2	No	0		
+								
+node pair #26:								
+More choice of drink	2	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	More choice of drink	2	No	0		
+								
+node pair #27:								
+More choice of drink	2	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	More choice of drink	2	No	0		
+								
+node pair #28:								
+More choice of drink	2	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	More choice of drink	2	No	0		
+								
+node pair #29:								
+More choice of drink	2	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	More choice of drink	2	No	0		
+								
+node pair #30:								
+fresh coffee is nicer than instant coffee	2	->	there is no champagne	2	No	0		
+there is no champagne	2	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #31:								
+fresh coffee is nicer than instant coffee	2	->	tea would be a welcome addition	2	No	0		
+tea would be a welcome addition	2	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #32:								
+fresh coffee is nicer than instant coffee	2	->	have bigger mugs for coffee	1	No	0		
+have bigger mugs for coffee	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #33:								
+fresh coffee is nicer than instant coffee	2	->	have bigger mugs for tea	1	No	0		
+have bigger mugs for tea	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #34:								
+fresh coffee is nicer than instant coffee	2	->	no more pre - dinner drink	1	No	0		
+no more pre - dinner drink	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #35:								
+fresh coffee is nicer than instant coffee	2	->	drink was terrible	1	No	0		
+drink was terrible	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #36:								
+fresh coffee is nicer than instant coffee	2	->	drink available on board was terrible	1	No	0		
+drink available on board was terrible	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #37:								
+fresh coffee is nicer than instant coffee	2	->	wine selection poor	1	No	0		
+wine selection poor	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #38:								
+fresh coffee is nicer than instant coffee	2	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #39:								
+fresh coffee is nicer than instant coffee	2	->	No drinks offered	1	No	0		
+No drinks offered	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #40:								
+fresh coffee is nicer than instant coffee	2	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #41:								
+fresh coffee is nicer than instant coffee	2	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #42:								
+fresh coffee is nicer than instant coffee	2	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #43:								
+fresh coffee is nicer than instant coffee	2	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #44:								
+fresh coffee is nicer than instant coffee	2	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #45:								
+fresh coffee is nicer than instant coffee	2	->	drinks are low standard	1	Yes	0		
+drinks are low standard	1	->	fresh coffee is nicer than instant coffee	2	No			
+								
+node pair #46:								
+fresh coffee is nicer than instant coffee	2	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #47:								
+fresh coffee is nicer than instant coffee	2	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #48:								
+fresh coffee is nicer than instant coffee	2	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #49:								
+fresh coffee is nicer than instant coffee	2	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #50:								
+fresh coffee is nicer than instant coffee	2	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #51:								
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	fresh coffee is nicer than instant coffee	2	Yes	1		
+fresh coffee is nicer than instant coffee	2	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No			
+								
+node pair #52:								
+fresh coffee is nicer than instant coffee	2	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #53:								
+fresh coffee is nicer than instant coffee	2	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #54:								
+fresh coffee is nicer than instant coffee	2	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #55:								
+fresh coffee is nicer than instant coffee	2	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #56:								
+fresh coffee is nicer than instant coffee	2	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #57:								
+fresh coffee is nicer than instant coffee	2	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	fresh coffee is nicer than instant coffee	2	No	0		
+								
+node pair #58:								
+there is no champagne	2	->	tea would be a welcome addition	2	No	0		
+tea would be a welcome addition	2	->	there is no champagne	2	No	0		
+								
+node pair #59:								
+there is no champagne	2	->	have bigger mugs for coffee	1	No	0		
+have bigger mugs for coffee	1	->	there is no champagne	2	No	0		
+								
+node pair #60:								
+there is no champagne	2	->	have bigger mugs for tea	1	No	0		
+have bigger mugs for tea	1	->	there is no champagne	2	No	0		
+								
+node pair #61:								
+there is no champagne	2	->	no more pre - dinner drink	1	No	0		
+no more pre - dinner drink	1	->	there is no champagne	2	No	0		
+								
+node pair #62:								
+there is no champagne	2	->	drink was terrible	1	No	0		
+drink was terrible	1	->	there is no champagne	2	No	0		
+								
+node pair #63:								
+there is no champagne	2	->	drink available on board was terrible	1	No	0		
+drink available on board was terrible	1	->	there is no champagne	2	No	0		
+								
+node pair #64:								
+there is no champagne	2	->	wine selection poor	1	Yes	0		
+wine selection poor	1	->	there is no champagne	2	No			
+								
+node pair #65:								
+there is no champagne	2	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	there is no champagne	2	No	0		
+								
+node pair #66:								
+there is no champagne	2	->	No drinks offered	1	No	0		
+No drinks offered	1	->	there is no champagne	2	No	0		
+								
+node pair #67:								
+there is no champagne	2	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	there is no champagne	2	No	0		
+								
+node pair #68:								
+there is no champagne	2	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	there is no champagne	2	No	0		
+								
+node pair #69:								
+there is no champagne	2	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	there is no champagne	2	No	0		
+								
+node pair #70:								
+there is no champagne	2	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	there is no champagne	2	No	0		
+								
+node pair #71:								
+there is no champagne	2	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	there is no champagne	2	No	0		
+								
+node pair #72:								
+there is no champagne	2	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	there is no champagne	2	No	0		
+								
+node pair #73:								
+there is no champagne	2	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	there is no champagne	2	No	0		
+								
+node pair #74:								
+there is no champagne	2	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	there is no champagne	2	No	0		
+								
+node pair #75:								
+there is no champagne	2	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	there is no champagne	2	No	0		
+								
+node pair #76:								
+there is no champagne	2	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	there is no champagne	2	No	0		
+								
+node pair #77:								
+You could bring back champagne in leisure select	1	->	there is no champagne	2	Yes	1		
+there is no champagne	2	->	You could bring back champagne in leisure select	1	No			
+								
+node pair #78:								
+there is no champagne	2	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	there is no champagne	2	No	0		
+								
+node pair #79:								
+there is no champagne	2	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	there is no champagne	2	No	0		
+								
+node pair #80:								
+there is no champagne	2	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	there is no champagne	2	No	0		
+								
+node pair #81:								
+there is no more champagne	1	->	there is no champagne	2	Yes	1		
+there is no champagne	2	->	there is no more champagne	1	No			
+								
+node pair #82:								
+there is no more champagne on offer	1	->	there is no champagne	2	Yes	1		
+there is no champagne	2	->	there is no more champagne on offer	1	No			
+								
+node pair #83:								
+there is no champagne	2	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	there is no champagne	2	No	0		
+								
+node pair #84:								
+there is no champagne on offer	1	->	there is no champagne	2	Yes	1		
+there is no champagne	2	->	there is no champagne on offer	1	No			
+								
+node pair #85:								
+tea would be a welcome addition	2	->	have bigger mugs for coffee	1	No	0		
+have bigger mugs for coffee	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #86:								
+tea would be a welcome addition	2	->	have bigger mugs for tea	1	No	0		
+have bigger mugs for tea	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #87:								
+tea would be a welcome addition	2	->	no more pre - dinner drink	1	No	0		
+no more pre - dinner drink	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #88:								
+tea would be a welcome addition	2	->	drink was terrible	1	No	0		
+drink was terrible	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #89:								
+tea would be a welcome addition	2	->	drink available on board was terrible	1	No	0		
+drink available on board was terrible	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #90:								
+tea would be a welcome addition	2	->	wine selection poor	1	No	0		
+wine selection poor	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #91:								
+tea would be a welcome addition	2	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #92:								
+tea would be a welcome addition	2	->	No drinks offered	1	No	0		
+No drinks offered	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #93:								
+tea would be a welcome addition	2	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #94:								
+tea would be a welcome addition	2	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #95:								
+tea would be a welcome addition	2	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #96:								
+tea would be a welcome addition	2	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #97:								
+tea would be a welcome addition	2	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #98:								
+tea would be a welcome addition	2	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #99:								
+tea would be a welcome addition to the economy section	1	->	tea would be a welcome addition	2	Yes	1		
+tea would be a welcome addition	2	->	tea would be a welcome addition to the economy section	1	No			
+								
+node pair #100:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	tea would be a welcome addition	2	Yes	1		
+tea would be a welcome addition	2	->	A trolley serving tea would be a welcome addition to the economy section	1	No			
+								
+node pair #101:								
+tea would be a welcome addition	2	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #102:								
+tea would be a welcome addition	2	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #103:								
+tea would be a welcome addition	2	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #104:								
+tea would be a welcome addition	2	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #105:								
+tea would be a welcome addition	2	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #106:								
+tea would be a welcome addition	2	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #107:								
+tea would be a welcome addition	2	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #108:								
+tea would be a welcome addition	2	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #109:								
+tea would be a welcome addition	2	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #110:								
+tea would be a welcome addition	2	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	tea would be a welcome addition	2	No	0		
+								
+node pair #111:								
+have bigger mugs for coffee	1	->	have bigger mugs for tea	1	No	0		
+have bigger mugs for tea	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #112:								
+have bigger mugs for coffee	1	->	no more pre - dinner drink	1	No	0		
+no more pre - dinner drink	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #113:								
+have bigger mugs for coffee	1	->	drink was terrible	1	No	0		
+drink was terrible	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #114:								
+have bigger mugs for coffee	1	->	drink available on board was terrible	1	No	0		
+drink available on board was terrible	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #115:								
+have bigger mugs for coffee	1	->	wine selection poor	1	No	0		
+wine selection poor	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #116:								
+have bigger mugs for coffee	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #117:								
+have bigger mugs for coffee	1	->	No drinks offered	1	No	0		
+No drinks offered	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #118:								
+have bigger mugs for coffee	1	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #119:								
+have bigger mugs for coffee	1	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #120:								
+have bigger mugs for coffee	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #121:								
+have bigger mugs for coffee	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #122:								
+have bigger mugs for coffee	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #123:								
+have bigger mugs for coffee	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #124:								
+have bigger mugs for coffee	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #125:								
+have bigger mugs for coffee	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #126:								
+have bigger mugs for coffee	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #127:								
+have bigger mugs for coffee	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #128:								
+have bigger mugs for coffee	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #129:								
+have bigger mugs for coffee	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #130:								
+have bigger mugs for coffee	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #131:								
+have bigger mugs for coffee	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #132:								
+have bigger mugs for coffee	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #133:								
+have bigger mugs for coffee	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #134:								
+have bigger mugs for coffee	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #135:								
+have bigger mugs for coffee	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	have bigger mugs for coffee	1	No	0		
+								
+node pair #136:								
+have bigger mugs for tea	1	->	no more pre - dinner drink	1	No	0		
+no more pre - dinner drink	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #137:								
+have bigger mugs for tea	1	->	drink was terrible	1	No	0		
+drink was terrible	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #138:								
+have bigger mugs for tea	1	->	drink available on board was terrible	1	No	0		
+drink available on board was terrible	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #139:								
+have bigger mugs for tea	1	->	wine selection poor	1	No	0		
+wine selection poor	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #140:								
+have bigger mugs for tea	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #141:								
+have bigger mugs for tea	1	->	No drinks offered	1	No	0		
+No drinks offered	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #142:								
+have bigger mugs for tea	1	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #143:								
+have bigger mugs for tea	1	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #144:								
+have bigger mugs for tea	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #145:								
+have bigger mugs for tea	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #146:								
+have bigger mugs for tea	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #147:								
+have bigger mugs for tea	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #148:								
+have bigger mugs for tea	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #149:								
+have bigger mugs for tea	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #150:								
+have bigger mugs for tea	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #151:								
+have bigger mugs for tea	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #152:								
+have bigger mugs for tea	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #153:								
+have bigger mugs for tea	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #154:								
+have bigger mugs for tea	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #155:								
+have bigger mugs for tea	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #156:								
+have bigger mugs for tea	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #157:								
+have bigger mugs for tea	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #158:								
+have bigger mugs for tea	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #159:								
+have bigger mugs for tea	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	have bigger mugs for tea	1	No	0		
+								
+node pair #160:								
+no more pre - dinner drink	1	->	drink was terrible	1	No	0		
+drink was terrible	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #161:								
+no more pre - dinner drink	1	->	drink available on board was terrible	1	No	0		
+drink available on board was terrible	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #162:								
+no more pre - dinner drink	1	->	wine selection poor	1	No	0		
+wine selection poor	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #163:								
+no more pre - dinner drink	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #164:								
+no more pre - dinner drink	1	->	No drinks offered	1	No	0		
+No drinks offered	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #165:								
+no more pre - dinner drink	1	->	Bring back the welcome drink	1	Yes	0		
+Bring back the welcome drink	1	->	no more pre - dinner drink	1	No			
+								
+node pair #166:								
+no more pre - dinner drink	1	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #167:								
+no more pre - dinner drink	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #168:								
+no more pre - dinner drink	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #169:								
+no more pre - dinner drink	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #170:								
+no more pre - dinner drink	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #171:								
+no more pre - dinner drink	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #172:								
+no more pre - dinner drink	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #173:								
+no more pre - dinner drink	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #174:								
+no more pre - dinner drink	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #175:								
+no more pre - dinner drink	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #176:								
+no more pre - dinner drink	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #177:								
+no more pre - dinner drink	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #178:								
+no more pre - dinner drink	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #179:								
+no more pre - dinner drink	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #180:								
+no more pre - dinner drink	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #181:								
+no more pre - dinner drink	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #182:								
+no more pre - dinner drink	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	no more pre - dinner drink	1	No	0		
+								
+node pair #183:								
+drink available on board was terrible	1	->	drink was terrible	1	Yes	1		
+drink was terrible	1	->	drink available on board was terrible	1	No			
+								
+node pair #184:								
+drink was terrible	1	->	wine selection poor	1	No	0		
+wine selection poor	1	->	drink was terrible	1	No	0		
+								
+node pair #185:								
+drink was terrible	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	drink was terrible	1	No	0		
+								
+node pair #186:								
+drink was terrible	1	->	No drinks offered	1	No	0		
+No drinks offered	1	->	drink was terrible	1	No	0		
+								
+node pair #187:								
+drink was terrible	1	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	drink was terrible	1	No	0		
+								
+node pair #188:								
+drink was terrible	1	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	drink was terrible	1	No	0		
+								
+node pair #189:								
+drink was terrible	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	drink was terrible	1	No	0		
+								
+node pair #190:								
+drink was terrible	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	drink was terrible	1	No	0		
+								
+node pair #191:								
+drink was terrible	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	drink was terrible	1	No	0		
+								
+node pair #192:								
+drink was terrible	1	->	drinks are low standard	1	Yes	0		
+drinks are low standard	1	->	drink was terrible	1	No			
+								
+node pair #193:								
+drink was terrible	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	drink was terrible	1	No	0		
+								
+node pair #194:								
+drink was terrible	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	drink was terrible	1	No	0		
+								
+node pair #195:								
+drink was terrible	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	drink was terrible	1	No	0		
+								
+node pair #196:								
+drink was terrible	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	drink was terrible	1	No	0		
+								
+node pair #197:								
+drink was terrible	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	drink was terrible	1	No	0		
+								
+node pair #198:								
+drink was terrible	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	drink was terrible	1	No	0		
+								
+node pair #199:								
+drink was terrible	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	drink was terrible	1	No	0		
+								
+node pair #200:								
+drink was terrible	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	drink was terrible	1	No	0		
+								
+node pair #201:								
+drink was terrible	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	drink was terrible	1	No	0		
+								
+node pair #202:								
+drink was terrible	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	drink was terrible	1	No	0		
+								
+node pair #203:								
+drink was terrible	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	drink was terrible	1	No	0		
+								
+node pair #204:								
+drink was terrible	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	drink was terrible	1	No	0		
+								
+node pair #205:								
+drink available on board was terrible	1	->	wine selection poor	1	No	0		
+wine selection poor	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #206:								
+drink available on board was terrible	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #207:								
+drink available on board was terrible	1	->	No drinks offered	1	No	0		
+No drinks offered	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #208:								
+drink available on board was terrible	1	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #209:								
+drink available on board was terrible	1	->	quality of drinks are low standard	1	Yes	0		
+quality of drinks are low standard	1	->	drink available on board was terrible	1	No			
+								
+node pair #210:								
+drink available on board was terrible	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #211:								
+drink available on board was terrible	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #212:								
+drink available on board was terrible	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #213:								
+drink available on board was terrible	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #214:								
+drink available on board was terrible	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #215:								
+drink available on board was terrible	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #216:								
+drink available on board was terrible	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #217:								
+drink available on board was terrible	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #218:								
+drink available on board was terrible	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #219:								
+drink available on board was terrible	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #220:								
+drink available on board was terrible	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #221:								
+drink available on board was terrible	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #222:								
+drink available on board was terrible	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #223:								
+drink available on board was terrible	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #224:								
+drink available on board was terrible	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #225:								
+drink available on board was terrible	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	drink available on board was terrible	1	No	0		
+								
+node pair #226:								
+wine selection poor	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+A trolley serving coffee would be a welcome addition to the economy section	1	->	wine selection poor	1	No	0		
+								
+node pair #227:								
+wine selection poor	1	->	No drinks offered	1	No	0		
+No drinks offered	1	->	wine selection poor	1	No	0		
+								
+node pair #228:								
+wine selection poor	1	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	wine selection poor	1	No	0		
+								
+node pair #229:								
+wine selection poor	1	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	wine selection poor	1	No	0		
+								
+node pair #230:								
+wine selection poor	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	wine selection poor	1	No	0		
+								
+node pair #231:								
+wine selection poor	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	wine selection poor	1	No	0		
+								
+node pair #232:								
+wine selection poor	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	wine selection poor	1	No	0		
+								
+node pair #233:								
+wine selection poor	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	wine selection poor	1	No	0		
+								
+node pair #234:								
+wine selection poor	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	wine selection poor	1	No	0		
+								
+node pair #235:								
+wine selection poor	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	wine selection poor	1	No	0		
+								
+node pair #236:								
+wine selection poor	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	wine selection poor	1	No	0		
+								
+node pair #237:								
+wine selection poor	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	wine selection poor	1	No	0		
+								
+node pair #238:								
+wine selection poor	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	wine selection poor	1	No	0		
+								
+node pair #239:								
+wine selection poor	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	wine selection poor	1	No	0		
+								
+node pair #240:								
+wine selection poor	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	wine selection poor	1	No	0		
+								
+node pair #241:								
+wine selection poor	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	wine selection poor	1	No	0		
+								
+node pair #242:								
+wine selection poor	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	wine selection poor	1	No	0		
+								
+node pair #243:								
+wine selection poor	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	wine selection poor	1	No	0		
+								
+node pair #244:								
+wine selection poor	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	wine selection poor	1	No	0		
+								
+node pair #245:								
+wine selection poor	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	wine selection poor	1	No	0		
+								
+node pair #246:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	No drinks offered	1	No	0		
+No drinks offered	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #247:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #248:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #249:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	coffee would be a welcome addition	1	Yes	1		
+coffee would be a welcome addition	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No			
+								
+node pair #250:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #251:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	coffee would be a welcome addition to the economy section	1	Yes	1		
+coffee would be a welcome addition to the economy section	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No			
+								
+node pair #252:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #253:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #254:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #255:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #256:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #257:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #258:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #259:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #260:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #261:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #262:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #263:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #264:								
+A trolley serving coffee would be a welcome addition to the economy section	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	A trolley serving coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #265:								
+No drinks offered	1	->	Bring back the welcome drink	1	No	0		
+Bring back the welcome drink	1	->	No drinks offered	1	No	0		
+								
+node pair #266:								
+No drinks offered	1	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	No drinks offered	1	No	0		
+								
+node pair #267:								
+No drinks offered	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	No drinks offered	1	No	0		
+								
+node pair #268:								
+No drinks offered	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	No drinks offered	1	No	0		
+								
+node pair #269:								
+No drinks offered	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	No drinks offered	1	No	0		
+								
+node pair #270:								
+No drinks offered	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	No drinks offered	1	No	0		
+								
+node pair #271:								
+No drinks offered	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	No drinks offered	1	No	0		
+								
+node pair #272:								
+No drinks offered	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	No drinks offered	1	No	0		
+								
+node pair #273:								
+No drinks offered	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	No drinks offered	1	No	0		
+								
+node pair #274:								
+No drinks offered	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	No drinks offered	1	No	0		
+								
+node pair #275:								
+No drinks offered	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	No drinks offered	1	No	0		
+								
+node pair #276:								
+No drinks offered	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	No drinks offered	1	No	0		
+								
+node pair #277:								
+No drinks offered	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	No drinks offered	1	No	0		
+								
+node pair #278:								
+No drinks offered	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	No drinks offered	1	No	0		
+								
+node pair #279:								
+No drinks offered	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	No drinks offered	1	No	0		
+								
+node pair #280:								
+No drinks offered	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	No drinks offered	1	No	0		
+								
+node pair #281:								
+No drinks offered	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	No drinks offered	1	No	0		
+								
+node pair #282:								
+No drinks offered	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	No drinks offered	1	No	0		
+								
+node pair #283:								
+Bring back the welcome drink	1	->	quality of drinks are low standard	1	No	0		
+quality of drinks are low standard	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #284:								
+Bring back the welcome drink	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #285:								
+Bring back the welcome drink	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #286:								
+Bring back the welcome drink	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #287:								
+Bring back the welcome drink	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #288:								
+Bring back the welcome drink	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #289:								
+Bring back the welcome drink	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #290:								
+Bring back the welcome drink	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #291:								
+Bring back the welcome drink	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #292:								
+Bring back the welcome drink	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #293:								
+Bring back the welcome drink	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #294:								
+Bring back the welcome drink	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #295:								
+Bring back the welcome drink	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #296:								
+Bring back the welcome drink	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #297:								
+Bring back the welcome drink	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #298:								
+Bring back the welcome drink	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #299:								
+Bring back the welcome drink	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	Bring back the welcome drink	1	No	0		
+								
+node pair #300:								
+quality of drinks are low standard	1	->	coffee would be a welcome addition	1	No	0		
+coffee would be a welcome addition	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #301:								
+quality of drinks at the bar are low standard	1	->	quality of drinks are low standard	1	Yes	1		
+quality of drinks are low standard	1	->	quality of drinks at the bar are low standard	1	No			
+								
+node pair #302:								
+quality of drinks are low standard	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #303:								
+quality of drinks are low standard	1	->	drinks are low standard	1	Yes	1		
+drinks are low standard	1	->	quality of drinks are low standard	1	No			
+								
+node pair #304:								
+quality of drinks are low standard	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #305:								
+quality of drinks are low standard	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #306:								
+quality of drinks are low standard	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #307:								
+quality of drinks are low standard	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #308:								
+quality of drinks are low standard	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #309:								
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	quality of drinks are low standard	1	Yes	0		
+quality of drinks are low standard	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No			
+								
+node pair #310:								
+drink quality has declined over time	1	->	quality of drinks are low standard	1	Yes	0		
+quality of drinks are low standard	1	->	drink quality has declined over time	1	No			
+								
+node pair #311:								
+quality of drinks are low standard	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #312:								
+quality of drinks are low standard	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #313:								
+quality of drinks are low standard	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #314:								
+quality of drinks at the bar are very low standard	1	->	quality of drinks are low standard	1	Yes	1		
+quality of drinks are low standard	1	->	quality of drinks at the bar are very low standard	1	No			
+								
+node pair #315:								
+quality of drinks are low standard	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	quality of drinks are low standard	1	No	0		
+								
+node pair #316:								
+coffee would be a welcome addition	1	->	quality of drinks at the bar are low standard	1	No	0		
+quality of drinks at the bar are low standard	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #317:								
+coffee would be a welcome addition to the economy section	1	->	coffee would be a welcome addition	1	Yes	1		
+coffee would be a welcome addition	1	->	coffee would be a welcome addition to the economy section	1	No			
+								
+node pair #318:								
+coffee would be a welcome addition	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #319:								
+coffee would be a welcome addition	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #320:								
+coffee would be a welcome addition	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #321:								
+coffee would be a welcome addition	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #322:								
+coffee would be a welcome addition	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #323:								
+coffee would be a welcome addition	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #324:								
+coffee would be a welcome addition	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #325:								
+coffee would be a welcome addition	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #326:								
+coffee would be a welcome addition	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #327:								
+coffee would be a welcome addition	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #328:								
+coffee would be a welcome addition	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #329:								
+coffee would be a welcome addition	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #330:								
+coffee would be a welcome addition	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	coffee would be a welcome addition	1	No	0		
+								
+node pair #331:								
+quality of drinks at the bar are low standard	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+coffee would be a welcome addition to the economy section	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #332:								
+quality of drinks at the bar are low standard	1	->	drinks are low standard	1	Yes	1		
+drinks are low standard	1	->	quality of drinks at the bar are low standard	1	No			
+								
+node pair #333:								
+quality of drinks at the bar are low standard	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #334:								
+quality of drinks at the bar are low standard	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #335:								
+quality of drinks at the bar are low standard	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #336:								
+quality of drinks at the bar are low standard	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #337:								
+quality of drinks at the bar are low standard	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #338:								
+quality of drinks at the bar are low standard	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #339:								
+quality of drinks at the bar are low standard	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #340:								
+quality of drinks at the bar are low standard	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #341:								
+quality of drinks at the bar are low standard	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #342:								
+quality of drinks at the bar are low standard	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #343:								
+quality of drinks at the bar are very low standard	1	->	quality of drinks at the bar are low standard	1	Yes	1		
+quality of drinks at the bar are low standard	1	->	quality of drinks at the bar are very low standard	1	No			
+								
+node pair #344:								
+quality of drinks at the bar are low standard	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	quality of drinks at the bar are low standard	1	No	0		
+								
+node pair #345:								
+coffee would be a welcome addition to the economy section	1	->	drinks are low standard	1	No	0		
+drinks are low standard	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #346:								
+coffee would be a welcome addition to the economy section	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #347:								
+coffee would be a welcome addition to the economy section	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #348:								
+coffee would be a welcome addition to the economy section	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #349:								
+coffee would be a welcome addition to the economy section	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #350:								
+coffee would be a welcome addition to the economy section	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #351:								
+coffee would be a welcome addition to the economy section	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #352:								
+coffee would be a welcome addition to the economy section	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #353:								
+coffee would be a welcome addition to the economy section	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #354:								
+coffee would be a welcome addition to the economy section	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #355:								
+coffee would be a welcome addition to the economy section	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #356:								
+coffee would be a welcome addition to the economy section	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #357:								
+coffee would be a welcome addition to the economy section	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	coffee would be a welcome addition to the economy section	1	No	0		
+								
+node pair #358:								
+drinks are low standard	1	->	tea would be a welcome addition to the economy section	1	No	0		
+tea would be a welcome addition to the economy section	1	->	drinks are low standard	1	No	0		
+								
+node pair #359:								
+drinks are low standard	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+A trolley serving tea would be a welcome addition to the economy section	1	->	drinks are low standard	1	No	0		
+								
+node pair #360:								
+drinks are low standard	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	drinks are low standard	1	No	0		
+								
+node pair #361:								
+drinks are low standard	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	drinks are low standard	1	No	0		
+								
+node pair #362:								
+drinks are low standard	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	drinks are low standard	1	No	0		
+								
+node pair #363:								
+drinks are low standard	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	drinks are low standard	1	No	0		
+								
+node pair #364:								
+drinks are low standard	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	drinks are low standard	1	No	0		
+								
+node pair #365:								
+drink quality has declined	1	->	drinks are low standard	1	Yes	0		
+drinks are low standard	1	->	drink quality has declined	1	No			
+								
+node pair #366:								
+drinks are low standard	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	drinks are low standard	1	No	0		
+								
+node pair #367:								
+drinks are low standard	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	drinks are low standard	1	No	0		
+								
+node pair #368:								
+quality of drinks at the bar are very low standard	1	->	drinks are low standard	1	Yes	1		
+drinks are low standard	1	->	quality of drinks at the bar are very low standard	1	No			
+								
+node pair #369:								
+drinks are low standard	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	drinks are low standard	1	No	0		
+								
+node pair #370:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	tea would be a welcome addition to the economy section	1	Yes	1		
+tea would be a welcome addition to the economy section	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No			
+								
+node pair #371:								
+tea would be a welcome addition to the economy section	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #372:								
+tea would be a welcome addition to the economy section	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #373:								
+tea would be a welcome addition to the economy section	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #374:								
+tea would be a welcome addition to the economy section	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #375:								
+tea would be a welcome addition to the economy section	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #376:								
+tea would be a welcome addition to the economy section	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #377:								
+tea would be a welcome addition to the economy section	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #378:								
+tea would be a welcome addition to the economy section	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #379:								
+tea would be a welcome addition to the economy section	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #380:								
+tea would be a welcome addition to the economy section	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #381:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+"There should be real milk , not fake prepackaged junk"	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #382:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	"There should be real milk ,"	1	No	0		
+"There should be real milk ,"	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #383:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #384:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #385:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #386:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #387:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #388:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #389:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #390:								
+A trolley serving tea would be a welcome addition to the economy section	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	A trolley serving tea would be a welcome addition to the economy section	1	No	0		
+								
+node pair #391:								
+"There should be real milk , not fake prepackaged junk"	1	->	"There should be real milk ,"	1	Yes	1		
+"There should be real milk ,"	1	->	"There should be real milk , not fake prepackaged junk"	1	No			
+								
+node pair #392:								
+"There should be real milk , not fake prepackaged junk"	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+								
+node pair #393:								
+"There should be real milk , not fake prepackaged junk"	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+								
+node pair #394:								
+"There should be real milk , not fake prepackaged junk"	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+								
+node pair #395:								
+"There should be real milk , not fake prepackaged junk"	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+								
+node pair #396:								
+"There should be real milk , not fake prepackaged junk"	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+								
+node pair #397:								
+"There should be real milk , not fake prepackaged junk"	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+								
+node pair #398:								
+"There should be real milk , not fake prepackaged junk"	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+								
+node pair #399:								
+"There should be real milk , not fake prepackaged junk"	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	"There should be real milk , not fake prepackaged junk"	1	No	0		
+								
+node pair #400:								
+"There should be real milk ,"	1	->	You could bring back champagne in leisure select	1	No	0		
+You could bring back champagne in leisure select	1	->	"There should be real milk ,"	1	No	0		
+								
+node pair #401:								
+"There should be real milk ,"	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	"There should be real milk ,"	1	No	0		
+								
+node pair #402:								
+"There should be real milk ,"	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	"There should be real milk ,"	1	No	0		
+								
+node pair #403:								
+"There should be real milk ,"	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	"There should be real milk ,"	1	No	0		
+								
+node pair #404:								
+"There should be real milk ,"	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	"There should be real milk ,"	1	No	0		
+								
+node pair #405:								
+"There should be real milk ,"	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	"There should be real milk ,"	1	No	0		
+								
+node pair #406:								
+"There should be real milk ,"	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	"There should be real milk ,"	1	No	0		
+								
+node pair #407:								
+"There should be real milk ,"	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	"There should be real milk ,"	1	No	0		
+								
+node pair #408:								
+You could bring back champagne in leisure select	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	You could bring back champagne in leisure select	1	No	0		
+								
+node pair #409:								
+You could bring back champagne in leisure select	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	You could bring back champagne in leisure select	1	No	0		
+								
+node pair #410:								
+You could bring back champagne in leisure select	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	You could bring back champagne in leisure select	1	No	0		
+								
+node pair #411:								
+You could bring back champagne in leisure select	1	->	there is no more champagne	1	Yes	0		
+there is no more champagne	1	->	You could bring back champagne in leisure select	1	No			
+								
+node pair #412:								
+You could bring back champagne in leisure select	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	You could bring back champagne in leisure select	1	No	0		
+								
+node pair #413:								
+You could bring back champagne in leisure select	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	You could bring back champagne in leisure select	1	No	0		
+								
+node pair #414:								
+You could bring back champagne in leisure select	1	->	there is no champagne on offer	1	Yes	0		
+there is no champagne on offer	1	->	You could bring back champagne in leisure select	1	No			
+								
+node pair #415:								
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	drink quality has declined over time	1	No	0		
+drink quality has declined over time	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+								
+node pair #416:								
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	drink quality has declined	1	No	0		
+drink quality has declined	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+								
+node pair #417:								
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+								
+node pair #418:								
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+								
+node pair #419:								
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+								
+node pair #420:								
+"There should be a proper expresso machine , not that horrible nespresso"	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	"There should be a proper expresso machine , not that horrible nespresso"	1	No	0		
+								
+node pair #421:								
+drink quality has declined over time	1	->	drink quality has declined	1	Yes	1		
+drink quality has declined	1	->	drink quality has declined over time	1	No			
+								
+node pair #422:								
+drink quality has declined over time	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	drink quality has declined over time	1	No	0		
+								
+node pair #423:								
+drink quality has declined over time	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	drink quality has declined over time	1	No	0		
+								
+node pair #424:								
+drink quality has declined over time	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	drink quality has declined over time	1	No	0		
+								
+node pair #425:								
+drink quality has declined over time	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	drink quality has declined over time	1	No	0		
+								
+node pair #426:								
+drink quality has declined	1	->	there is no more champagne	1	No	0		
+there is no more champagne	1	->	drink quality has declined	1	No	0		
+								
+node pair #427:								
+drink quality has declined	1	->	there is no more champagne on offer	1	No	0		
+there is no more champagne on offer	1	->	drink quality has declined	1	No	0		
+								
+node pair #428:								
+drink quality has declined	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	drink quality has declined	1	No	0		
+								
+node pair #429:								
+drink quality has declined	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	drink quality has declined	1	No	0		
+								
+node pair #430:								
+there is no more champagne on offer	1	->	there is no more champagne	1	Yes	1		
+there is no more champagne	1	->	there is no more champagne on offer	1	No			
+								
+node pair #431:								
+there is no more champagne	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	there is no more champagne	1	No	0		
+								
+node pair #432:								
+there is no more champagne	1	->	there is no champagne on offer	1	No	-1		
+there is no champagne on offer	1	->	there is no more champagne	1	No	-1		
+								
+node pair #433:								
+there is no more champagne on offer	1	->	quality of drinks at the bar are very low standard	1	No	0		
+quality of drinks at the bar are very low standard	1	->	there is no more champagne on offer	1	No	0		
+								
+node pair #434:								
+there is no more champagne on offer	1	->	there is no champagne on offer	1	Yes	1		
+there is no champagne on offer	1	->	there is no more champagne on offer	1	No			
+								
+node pair #435:								
+quality of drinks at the bar are very low standard	1	->	there is no champagne on offer	1	No	0		
+there is no champagne on offer	1	->	quality of drinks at the bar are very low standard	1	No	0		

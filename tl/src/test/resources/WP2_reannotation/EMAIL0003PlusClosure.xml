@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="13">
+	<node explicit_context="427028.txt" focus="meal" id="427028.txt_1_0" implicit_context="" implicit_focus="" modality="TRUE">
+        <original_text>I wd hav liked a vegan meal</original_text>
+        <correct_text>I would have liked a vegan meal</correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="184748.txt" focus="food" id="184748.txt_1_0" implicit_context="" implicit_focus="" modality="TRUE">
+        <original_text>vegan food would be awesome</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="429450.txt" focus="dinner" id="429450.txt_1_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>I was provided with a very mediocre vegetarian dinner</original_text>
+        <correct_text> </correct_text>
+        <modifiers>vegetarianpoz=7;verypoz=5</modifiers>
+    </node>
+	<node explicit_context="429450.txt" focus="dinner" id="429450.txt_1_1" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>I was provided with a very mediocre dinner</original_text>
+        <correct_text> </correct_text>
+        <modifiers>verypoz=5</modifiers>
+    </node>
+	<node explicit_context="429450.txt" focus="dinner" id="429450.txt_1_2" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>I was provided with a mediocre vegetarian dinner</original_text>
+        <correct_text> </correct_text>
+        <modifiers>vegetarianpoz=7</modifiers>
+    </node>
+	<node explicit_context="32676.txt" focus="food" id="32676.txt_1_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>Better vegetarian food</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="277071.txt" focus="meal" id="277071.txt_6_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>Veggie meal too small</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="429450.txt" focus="dinner" id="429450.txt_1_3" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>I was provided with a mediocre dinner</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="532098.txt" focus="food" id="532098.txt_1_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>you do not seem to offer any vegetarian food options in the cafe</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="64004.txt" focus="food" id="64004.txt_1_0" implicit_context="" implicit_focus="" modality="TRUE">
+        <original_text>you could make it much easier to order vegetarian food when booking first class</original_text>
+        <correct_text> </correct_text>
+        <modifiers>muchpoz=4;first classpoz=12 13</modifiers>
+    </node>
+	<node explicit_context="64004.txt" focus="food" id="64004.txt_1_2" implicit_context="" implicit_focus="" modality="TRUE">
+        <original_text>you could make it much easier to order vegetarian food when booking</original_text>
+        <correct_text> </correct_text>
+        <modifiers>muchpoz=4</modifiers>
+    </node>
+	<node explicit_context="64004.txt" focus="food" id="64004.txt_1_1" implicit_context="" implicit_focus="" modality="TRUE">
+        <original_text>you could make it easier to order vegetarian food when booking first class</original_text>
+        <correct_text> </correct_text>
+        <modifiers>first classpoz=12 13</modifiers>
+    </node>
+	<node explicit_context="64004.txt" focus="food" id="64004.txt_1_3" implicit_context="" implicit_focus="" modality="TRUE">
+        <original_text>you could make it easier to order vegetarian food when booking</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<edge target="429450.txt_1_2" source="32676.txt_1_0" id="429450.txt_1_2-32676.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32676.txt_1_0" source="429450.txt_1_0" id="32676.txt_1_0-429450.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="429450.txt_1_2" source="32676.txt_1_0" id="429450.txt_1_2-32676.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="64004.txt_1_3" source="64004.txt_1_0" id="64004.txt_1_3-64004.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32676.txt_1_0" source="429450.txt_1_2" id="32676.txt_1_0-429450.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="64004.txt_1_3" source="64004.txt_1_2" id="64004.txt_1_3-64004.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="429450.txt_1_3" source="429450.txt_1_2" id="429450.txt_1_3-429450.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="427028.txt_1_0" source="184748.txt_1_0" id="427028.txt_1_0-184748.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="429450.txt_1_3" source="429450.txt_1_0" id="429450.txt_1_3-429450.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="64004.txt_1_2" source="64004.txt_1_0" id="64004.txt_1_2-64004.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="429450.txt_1_3" source="32676.txt_1_0" id="429450.txt_1_3-32676.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="427028.txt_1_0" source="184748.txt_1_0" id="427028.txt_1_0-184748.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="184748.txt_1_0" source="427028.txt_1_0" id="184748.txt_1_0-427028.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="184748.txt_1_0" source="427028.txt_1_0" id="184748.txt_1_0-427028.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="64004.txt_1_3" source="64004.txt_1_1" id="64004.txt_1_3-64004.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="32676.txt_1_0" source="429450.txt_1_2" id="32676.txt_1_0-429450.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="64004.txt_1_1" source="64004.txt_1_0" id="64004.txt_1_1-64004.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="429450.txt_1_1" source="429450.txt_1_0" id="429450.txt_1_1-429450.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="429450.txt_1_2" source="429450.txt_1_0" id="429450.txt_1_2-429450.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="429450.txt_1_3" source="429450.txt_1_1" id="429450.txt_1_3-429450.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

@@ -1,0 +1,45 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 4 entailment unit(s) before editing
+	Seating is cramped	[317673.txt_1_1]
+	make some space in seats	[72187.txt_2_0]
+	seats are small	[327999.txt_1_1]
+	service would improve with more seating space	[317673.txt_16_0]
+
+collapsed node #2 : 2 entailment unit(s) before editing
+	Seating is very cramped	[317673.txt_1_0]
+	seats are too small	[327999.txt_1_0]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	Spaces between seats are narrow	[443092.txt_1_1]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	Spaces between seats are very narrow	[443092.txt_1_0]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+seats are small	4	->	seats are too small	2	Yes	-2
+seats are too small	2	->	seats are small	4	Yes	2
+
+node pair #2:
+Spaces between seats are narrow	1	->	seats are small	4	Yes	0
+seats are small	4	->	Spaces between seats are narrow	1	No	0
+
+node pair #3:
+Spaces between seats are very narrow	1	->	seats are small	4	Yes	0
+seats are small	4	->	Spaces between seats are very narrow	1	No	0
+
+node pair #4:
+seats are too small	2	->	Spaces between seats are narrow	1	No	0
+Spaces between seats are narrow	1	->	seats are too small	2	No	0
+
+node pair #5:
+Spaces between seats are very narrow	1	->	seats are too small	2	Yes	0
+seats are too small	2	->	Spaces between seats are very narrow	1	No	0
+
+node pair #6:
+Spaces between seats are very narrow	1	->	Spaces between seats are narrow	1	Yes	1
+Spaces between seats are narrow	1	->	Spaces between seats are very narrow	1	No	-1
+
