@@ -615,7 +615,7 @@ public class GoldStandardReannotation {
 		
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 		
-		String clusterName = "EMAIL0020_TEST"; //"EMAIL0410";		
+		String clusterName = "Cluster A2.1Tariffe e promozioni test"; //"EMAIL0410";		
 	//	String clusterName = "SPEECH0080";		
 
 		String set = "Test";
@@ -627,8 +627,8 @@ public class GoldStandardReannotation {
 		
 		
 				
-	//	File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
-		 File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
+	//	 File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
 		
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
@@ -640,11 +640,11 @@ public class GoldStandardReannotation {
 	//	tr.step1CreateFileForEditingNodes(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt", clusterAnnotationsDir);
 
 		// Step2 : create txt file for edge annotation, using updated collapsed nodes
-	//	tr.step2CreateFileForEdgeAnnotation(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt", tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_"+suffix+".txt", clusterAnnotationsDir);
+		tr.step2CreateFileForEdgeAnnotation(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt", tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_"+suffix+".txt", clusterAnnotationsDir);
 		
 
 		// Step3 : load final re-annotated graph, check for consistency, calculate statistics and create wp2-format file 		
-		tr.step3LoadAnnotatedFile(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+".txt", clusterAnnotationsDir, clusterName);
+	//	tr.step3LoadAnnotatedFile(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+".txt", clusterAnnotationsDir, clusterName);
 
 	}
 

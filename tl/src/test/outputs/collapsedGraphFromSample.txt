@@ -1,5 +1,5 @@
 digraph collapsedGraph {
-"Disappointed with legroom [2]""Food was bad. [2]""Food was really bad. [1]""a little more leg room would have been perfect [1]""Disappointed with the amount of legroom compared with other trains [1]""Disappointed with legroom compared with other trains [1]""Disappointed with the amount of legroom [1]""Food was really bad. [1]" -> "Food was bad. [2]" [label=1.0] [color=blue]
+"Food was bad. [2]""Disappointed with legroom [2]""Food was really bad. [1]""a little more leg room would have been perfect [1]""Disappointed with the amount of legroom compared with other trains [1]""Disappointed with legroom compared with other trains [1]""Disappointed with the amount of legroom [1]""Food was really bad. [1]" -> "Food was bad. [2]" [label=1.0] [color=blue]
 "a little more leg room would have been perfect [1]" -> "Disappointed with legroom [2]" [label=1.0] [color=blue]
 "Disappointed with the amount of legroom compared with other trains [1]" -> "Disappointed with legroom compared with other trains [1]" [label=1.0] [color=blue]
 "Disappointed with the amount of legroom compared with other trains [1]" -> "Disappointed with the amount of legroom [1]" [label=1.0] [color=blue]
