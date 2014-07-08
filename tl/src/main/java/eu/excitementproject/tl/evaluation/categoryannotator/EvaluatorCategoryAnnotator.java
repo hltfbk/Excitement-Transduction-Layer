@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -132,10 +133,13 @@ public class EvaluatorCategoryAnnotator {
 	static int minTokenOccurrence = 2;
 	static int minTokenOccurrenceInCategories = 2;
     
-	static boolean tfidf = true;
+	static String method = "tfidf_sum"; //add up TFIDF scores
+	//static String method = "vsm"; //Vector Space Model
+	//static String method = "bayes"; //Naive Bayes 
+	//static String method = "bayes_log"; //Naive Bayes with logarithm
     static boolean LuceneSearch = false;
     
-    static int setup = 1;
+    static int setup = 0;
     
     static boolean readGraphFromFile = false;
     static boolean readMergedGraphFromFile = false;
@@ -145,9 +149,6 @@ public class EvaluatorCategoryAnnotator {
 
     static boolean relevantTextProvided = true;
     
-    static String scoreCombination = "sum"; //how to combine the scores for different fragments to a final score for the interaction    
-//    static String scoreCombination = "vsm"; //how to combine the scores for different fragments to a final score for the interaction    
-
 	static File temp; 
     static PrintWriter writer; 
     	
@@ -219,7 +220,7 @@ public class EvaluatorCategoryAnnotator {
 	private void setup(int i) {
 		try {
 			switch(i){
-	        	case 0: //simple tfidf (no EDA use --> graph with non-connected nodes)
+	        	case 0: //no EDA use --> graph with non-connected nodes
 	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
 	        		lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE()); //lap = new MaltParserDE();
 	        		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
@@ -227,7 +228,7 @@ public class EvaluatorCategoryAnnotator {
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(method);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
 	        	case 1: //TIE with base configuration (inflection only)
@@ -242,8 +243,9 @@ public class EvaluatorCategoryAnnotator {
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(0.6);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(method);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
 	        	case 2: //TIE with base configuration + GermaNet 
@@ -259,7 +261,7 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphOptimizer = new SimpleGraphOptimizer();// new GlobalGraphOptimizer(); --> don't use
-		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(method);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
 	        	case 99: //TIE with base configuration (inflection only) and sentences as fragments
@@ -275,7 +277,7 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(tfidf);
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(method);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
 			}
@@ -525,7 +527,8 @@ public class EvaluatorCategoryAnnotator {
 		logger.debug("Number of decisions: " + decisions.size());
 		String bestCat;
 		HashMap<String,Float> categoryScores = new HashMap<String,Float>();
-		if (scoreCombination.equals("sum")) {
+		HashMap<String,BigDecimal> categoryScoresBigDecimal = new HashMap<String,BigDecimal>();
+		if (method.equals("tfidf_sum")) {
 			for (CategoryDecision decision: decisions) {
 				String category = decision.getCategoryId();
 				float sum = 0; //the sum of scores for a particular category 
@@ -536,7 +539,96 @@ public class EvaluatorCategoryAnnotator {
 				sum += decision.getConfidence();
 				categoryScores.put(category, sum);
 			}
-		} else if (scoreCombination.equals("vsm")) { //vector space model
+		} else if (method.startsWith("bayes")) { //Naive Bayes 
+			HashMap<String,BigDecimal> preliminaryCategoryScores = new HashMap<String,BigDecimal>();
+			for (NodeMatch nodeMatch : matches) { //for each matching mention in the document
+				int numberOfScores = nodeMatch.getScores().size();
+				if (numberOfScores > 1) {
+					logger.error("Bayes not implemented for more than 1 per node score!");
+					System.exit(1);
+				}
+				for (PerNodeScore score : nodeMatch.getScores()) { 
+					//for each matching EG node for this mention --> should be 1 at this point!
+					EquivalenceClass E = score.getNode();
+					//category confidences on node
+					Map<String, Double> categoryConfidencesOnNode = E.getCategoryConfidences();
+					logger.info("Category confidences on node: " + categoryConfidencesOnNode);
+					try { 
+						if (method.equals("bayes")) { //multiply all values P(w_j|c_i) for j = 1..V (vocabulary size)
+							for (String category : categoryConfidencesOnNode.keySet()) {	
+								BigDecimal product = new BigDecimal("1");
+								if (preliminaryCategoryScores.containsKey(category)) {
+									product = preliminaryCategoryScores.get(category); //read product in case we've stored a product from a previous node
+								}
+								product = product.multiply(new BigDecimal(categoryConfidencesOnNode.get(category)));
+								preliminaryCategoryScores.put(category, product);
+							}
+						} else if (method.equals("bayes_log")) {
+							for (String category : categoryConfidencesOnNode.keySet()) {	
+								BigDecimal log_sum = new BigDecimal("0");
+								if (preliminaryCategoryScores.containsKey(category)) {
+									log_sum = preliminaryCategoryScores.get(category); //read log sum in case we've stored it from a previous node
+								}
+								log_sum = log_sum.add(new BigDecimal(categoryConfidencesOnNode.get(category)));
+								preliminaryCategoryScores.put(category, log_sum);
+							}							
+						} else {
+							logger.error("Implementation missing for method " + method);
+							System.exit(1);							
+						}
+					} catch (NullPointerException e) {
+						logger.error("Missing category confidences. Run ConfidenceCalculator on graph!");
+						System.exit(1);
+					}					
+				}				
+			}
+			logger.info("preliminaryCategoryScores: " + preliminaryCategoryScores);
+			//calculate P(c_i|W) = P(c_i) x PRODUCT_j=1..V (P(w_j|c_i)
+			//PRODUCT is already stored in preliminaryCategoryScores
+			for (String category : preliminaryCategoryScores.keySet()) {	
+				//estimate the priors from the sample: Math.log((double)count/knowledgeBase.n)
+				BigDecimal finalConfidence = null;
+				if (method.equals("bayes")) { //multiply prior with product
+					BigDecimal prior = 
+							new BigDecimal(graph.getGraphStatistics().getNumberOfMentionsPerCategory().get(category) 
+	//						/ graph.getGraphStatistics().getTotalNumberOfMentions()  //can be ignored, as it's the same value for all categories
+									);
+					finalConfidence =  prior.multiply(preliminaryCategoryScores.get(category));
+				} else if (method.equals("bayes_log")) { //sum up prior and log sum
+					BigDecimal prior = new BigDecimal(Math.log(
+						(double) graph.getGraphStatistics().getNumberOfMentionsPerCategory().get(category) 
+						/ (double) graph.getGraphStatistics().getTotalNumberOfMentions())); 
+					finalConfidence = prior.add(preliminaryCategoryScores.get(category));
+				}
+				categoryScoresBigDecimal.put(category, finalConfidence);
+			}
+			logger.info("category scores big decimal: " + categoryScoresBigDecimal);
+
+			// get the category with the highest value
+			ValueComparatorBigDecimal bvc =  new ValueComparatorBigDecimal(categoryScoresBigDecimal);
+			Map<String,BigDecimal> sortedMapBigDecimal = new TreeMap<String,BigDecimal>(bvc);
+			sortedMapBigDecimal.putAll(categoryScoresBigDecimal);
+			logger.info("category scores:  " + sortedMapBigDecimal);
+			if (sortedMapBigDecimal.size() > 0) {
+				bestCat = sortedMapBigDecimal.keySet().iterator().next().toString();
+				logger.info("Best category: " + bestCat);
+				writer.println("best category: " + bestCat + ", value: " + sortedMapBigDecimal.get(bestCat));
+				Set<String> correctCategories = new HashSet<String>(Arrays.asList(correctCats));
+				if (correctCategories.size() > 1) logger.warn("Contains more than one category!");
+				for (String correctCat : correctCategories) {
+					if (categoryScores.keySet().contains(correctCat)) {
+						logger.info("Computed confidence for correct category ("+correctCat+"): " + categoryScores.get(correctCat));
+						writer.println("Computed confidence for correct category ("+correctCat+"): " + categoryScores.get(correctCat));
+					}
+					else {
+						logger.info("Computed confidence for correct category ("+correctCat+"): N/A");
+						writer.println("Computed confidence for correct category ("+correctCat+"): N/A");
+					}
+				}
+			} else bestCat = mostProbableCat;
+			return bestCat;
+
+		} else if (method.equals("vsm")) { //vector space model
 			//collect mention tf in query
 			HashMap<String,Integer> tfQueryMap = new HashMap<String,Integer>();
 			int count = 0;
@@ -734,7 +826,7 @@ public class EvaluatorCategoryAnnotator {
 
 	    		//Add category texts
 	    		graphDocs = CategoryReader.readCategoryXML(new File(categoriesFilename));
-	    		logger.info("added " + graphDocs.size() + " categories");
+	    		logger.info("Added " + graphDocs.size() + " categories");
 	    		egr = buildRawGraph(graphDocs, mergedGraphFile, egr, minTokenOccurrenceInCategories);
 	    		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
 	    		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
@@ -805,8 +897,7 @@ public class EvaluatorCategoryAnnotator {
 				//		logger.info("interaction text: " + interaction.getInteractionString());
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(casInteraction);
 
-					for (CategoryDecision catDec : decisions) 
-						logger.info("decision" + catDec.getCategoryId() + " : " + catDec.getConfidence());
+				//	for (CategoryDecision catDec : decisions) logger.debug("decision" + catDec.getCategoryId() + " : " + catDec.getConfidence());
 										
 					countPositive = compareDecisionsForInteraction(countPositive,
 							interaction, decisions, mostProbableCat, graph, matches);				
@@ -1342,5 +1433,22 @@ class ValueComparator implements Comparator<String> {
 	        return 1;
 		}
 		return 0;
+    }
+}
+
+class ValueComparatorBigDecimal implements Comparator<String> {
+
+    Map<String, BigDecimal> base;
+    public ValueComparatorBigDecimal(Map<String, BigDecimal> base) {
+        this.base = base;
+    }
+    
+    public int compare(String a, String b) {
+    	if (base.get(a).equals(base.get(b))) {
+            //if both have the same value, decide based on key:
+    		return a.compareTo(b);
+    	} 
+    	if (base.get(a).min(base.get(b)) == base.get(a)) return 1;
+    	else return -1;		
     }
 }
