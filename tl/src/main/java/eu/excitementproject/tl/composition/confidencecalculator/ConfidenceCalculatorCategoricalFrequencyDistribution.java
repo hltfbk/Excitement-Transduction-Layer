@@ -4,9 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
+import eu.excitementproject.tl.structures.collapsedgraph.GraphStatistics;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
@@ -30,20 +33,24 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 public class ConfidenceCalculatorCategoricalFrequencyDistribution extends AbstractConfidenceCalculator {
 	
-	boolean tfidf = true; 
+	static Logger logger = Logger.getLogger(ConfidenceCalculatorCategoricalFrequencyDistribution.class); 
+
+	String method = "tfidf_sum"; //or "simple"
 	
 	public ConfidenceCalculatorCategoricalFrequencyDistribution() {
-		this.tfidf = true;
+		this.method = "tfidf_sum";
 	}
 
-	public ConfidenceCalculatorCategoricalFrequencyDistribution(boolean tfidf) {
-		this.tfidf = tfidf;
+	public ConfidenceCalculatorCategoricalFrequencyDistribution(String method) {
+		this.method = method;
 	}
 	
 	@Override
 	public void computeCategoryConfidences(EntailmentGraphCollapsed graph)
 			throws ConfidenceCalculatorException {
 
+		GraphStatistics graphStatistics = computeGraphStatistics(graph);
+		
 		Set<EquivalenceClass> nodes = graph.vertexSet();	
 		
 		for (EquivalenceClass node : nodes) { //for each node in the graph
@@ -65,23 +72,94 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 					categoryFrequencyDistributionOnNode.put(categoryMention, tf);
 				}
 			}
+			
 			//compute combined category confidences for this node
 			Map<String,Double> categoryConfidences = new HashMap<String,Double>();
 			int N = graph.getNumberOfCategories(); //overall number of categories
 			double score = 0;
-			for (String category : categoryFrequencyDistributionOnNode.keySet()) {	
-				double tf = categoryFrequencyDistributionOnNode.get(category);
-				if (tfidf) {
-					double n = categoryFrequencyDistributionOnNode.size(); //number of "documents" containing the "term" --> number of different categories in the node
-					double idf = Math.log(N/n);
-					score = tf*idf;
-				} else {
-				  score = tf / (double) sumMentions;
+			
+			if (method.equals("bayes")) { //maximum likelihood estimates based on frequency in data: P(w|c)
+				for (String category : graphStatistics.getNumberOfMentionsPerCategory().keySet()) { //for all existing categories
+					double tf = 0.0;
+					if (categoryFrequencyDistributionOnNode.containsKey(category)) {
+						tf = categoryFrequencyDistributionOnNode.get(category);
+					}
+					double smoothingParameter = 1.0; //Laplace smoothing --> apply Laplace estimation by assuming a uniform distribution over all words
+					/* double smoothingParameter = 0.1; 					
+					P(w|c) = (count(w,c)+1) / count(c) + vocabulary_size
+					count(w,c) --> how often does category appear in node
+					count(c) --> how often does category appear in graph */
+					score = (tf+smoothingParameter) / (graphStatistics.getNumberOfMentionsPerCategory().get(category) + graphStatistics.getTotalNumberOfMentions());
+					logger.info("Bayes score for category " + category + " : " + score);
+					logger.info("tf: " + tf);
+					categoryConfidences.put(category, score);
+				}	
+			} else if (method.equals("bayes_log")) { //maximum likelihood estimates based on frequency in data: P(w|c)
+					for (String category : graphStatistics.getNumberOfMentionsPerCategory().keySet()) { //for all existing categories
+						double tf = 0.0;
+						if (categoryFrequencyDistributionOnNode.containsKey(category)) {
+							tf = categoryFrequencyDistributionOnNode.get(category);
+						}
+						double smoothingParameter = 1.0; //Laplace smoothing --> apply Laplace estimation by assuming a uniform distribution over all words
+						/* double smoothingParameter = 0.1; 					
+						P(w|c) = (count(w,c)+1) / count(c) + vocabulary_size
+						count(w,c) --> how often does category appear in node
+						count(c) --> how often does category appear in graph */
+						//estimate log likelihoods
+						//logLikelihood = Math.log((count+1.0)/(featureOccurrencesInCategory.get(category)+knowledgeBase.d)); --> Implementation by Vasilis Vryniotis 
+						double loglikelihood = Math.log((tf+smoothingParameter) / (graphStatistics.getNumberOfMentionsPerCategory().get(category) + graphStatistics.getTotalNumberOfNodes()));
+						categoryConfidences.put(category, loglikelihood);
+					}	
+					logger.debug("categoryConfidences: " + categoryConfidences);
+			} else {
+				for (String category : categoryFrequencyDistributionOnNode.keySet()) {	//for all categories in the node				
+					double tf = categoryFrequencyDistributionOnNode.get(category);
+					if (method.equals("tfidf_sum")) {
+						double n = categoryFrequencyDistributionOnNode.size(); //number of "documents" containing the "term" --> number of different categories in the node
+						double idf = Math.log(N/n);
+						score = tf*idf;
+					} else if (method.equals("simple")) {
+						score = tf / (double) sumMentions;
+					} else {
+						logger.error("Method for confidence calculation not defined: " + method);
+						System.exit(1);
+					}
+					categoryConfidences.put(category, score);
 				}
-				categoryConfidences.put(category, score);
 			}
 			//add confidence scores to node
 			node.setCategoryConfidences(categoryConfidences);
 		}
+	}
+
+	private GraphStatistics computeGraphStatistics(
+			EntailmentGraphCollapsed graph) {
+		//compute number of mentions per category (for graph statistics)
+		GraphStatistics graphStatistics = new GraphStatistics();
+		Set<EquivalenceClass> nodes = graph.vertexSet();	
+		int totalNumberOfMentions = 0;
+		Map<String,Integer> numberOfMentionsPerCategory = new HashMap<String,Integer>(); //for graph statistics
+				
+		for (EquivalenceClass node : nodes) { //for each node in the graph
+			Set<EntailmentUnit> eus = node.getEntailmentUnits();			
+			for (EntailmentUnit eu : eus) {	//for each entailment unit in the node		
+				for (EntailmentUnitMention mentionOnNode : eu.getMentions()) { //for each entailment unit mention
+					totalNumberOfMentions++; //count total number of mentions
+					String categoryMention = mentionOnNode.getCategoryId();
+					int categoryCount = 0;
+					if (numberOfMentionsPerCategory.containsKey(categoryMention)) {
+						categoryCount = numberOfMentionsPerCategory.get(categoryMention);
+					}
+					categoryCount++;
+					numberOfMentionsPerCategory.put(categoryMention, categoryCount); //count number of mentions per category
+				}
+			}
+		}
+		graphStatistics.setNumberOfMentionsPerCategory(numberOfMentionsPerCategory);
+		graphStatistics.setTotalNumberOfMentions(totalNumberOfMentions);
+		graphStatistics.setTotalNumberOfNodes(graph.getNumberOfEquivalenceClasses());
+		graph.setGraphStatistics(graphStatistics);
+
+		return graphStatistics;
 	}
 }
