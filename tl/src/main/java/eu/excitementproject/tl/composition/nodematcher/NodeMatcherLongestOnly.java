@@ -4,6 +4,7 @@
 package eu.excitementproject.tl.composition.nodematcher;
 
 import java.util.ArrayList;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -76,8 +77,8 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 		List<PerNodeScore> scores = new ArrayList<PerNodeScore>();
 		for (EquivalenceClass ec : vertexSet) { //for each node in the entailment graph
 			double score = getNodeScore(mentionToBeFound, ec);	
-			logger.info("score for " + mentionToBeFound + "and " + ec.getLabel() + ": " + score);
 			if (score > 0) { //add non-zero scores to list
+				logger.debug("score for " + mentionToBeFound + "and " + ec.getLabel() + ": " + score);				
 				PerNodeScore perNodeScore = new PerNodeScore();
 				perNodeScore.setNode(ec);
 				perNodeScore.setScore(score);
