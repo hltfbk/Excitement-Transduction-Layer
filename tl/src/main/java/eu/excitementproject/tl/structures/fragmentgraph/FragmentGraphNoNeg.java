@@ -79,7 +79,7 @@ public class FragmentGraphNoNeg extends FragmentGraph {
 	private Set<ModifierAnnotation> modifiers;
 	private int negationPos = -1;
 
-	private String negationPattern = "(no|non|not|n't|kein|nein|nessun|nessuna|nessuno)";
+	private String negationPattern = "(no|non|not|n't|kein|keine|keinen|nein|nessun|nessuna|nessuno)";
 	
 	/**
 	 * Default constructor
