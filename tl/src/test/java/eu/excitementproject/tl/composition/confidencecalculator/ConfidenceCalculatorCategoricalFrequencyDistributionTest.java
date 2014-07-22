@@ -36,7 +36,11 @@ public class ConfidenceCalculatorCategoricalFrequencyDistributionTest {
 			testlogger.info("Creating collapsed entailment graph from sample graph."); 			
 			EntailmentGraphCollapsed entailmentGraph = cgg.optimizeGraph(rawGraph);
 			testlogger.info("Adding confidence scores to graph.");
-			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution("simple");
+			char[] method = new char[3];
+			method[0] = 'n';
+			method[1] = 'n';
+			method[2] = 'n';
+			ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution(method);
 			cc.computeCategoryConfidences(entailmentGraph);		
 			testlogger.info(entailmentGraph);
 			testlogger.info("Reading nodes from updated graph.");
