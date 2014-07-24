@@ -134,24 +134,32 @@ public class EvaluatorCategoryAnnotator {
 	static int minTokenOccurrence = 1; //minimum occurrence of an EMAIL token for the corresponding node to be merged into the graph
 	static int minTokenOccurrenceInCategories = 1; //minimum occurrence of a CATEGORY token for the corresponding node to be merged into the graph
     
-	/* SMART notation for tf-idf variants */
-	// Query (email) weighting:
-	static char termFrequencyQuery = 'n'; // n (natural), l (logarithm)
-	static char documentFrequencyQuery = 'n'; // n (no), t (idf)
+	/* SMART notation for tf-idf variants, as in Manning et al., chapter 6, p.128 */
+	// Query (email) weighting: --> relevant when categorizing new emails
+	static char termFrequencyQuery = 'b'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
+	static char documentFrequencyQuery = 'd'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
 	static char normalizationQuery = 'n'; // n (none), c (cosine)
-	// Document (category) weighting:
+	// Document (category) weighting: --> relevant when building the graph
 	static char termFrequencyDocument = 'n'; // n (natural), l (logarithm)
-	static char documentFrequencyDocument = 't'; // n (no), t (idf)
+	static char documentFrequencyDocument = 'n'; // n (no), t (idf)
 	static char normalizationDocument = 'n'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
 	
-	//INFO: Best current configuration (with no EDA: nnn/ntn --> acc. in fold 1: 0.56, 131+)
+	//INFO: Evaluating different TFIDF-configurations (with no EDA): bd[nc].n[nt]n
+	//ndn.ntn --> acc. in fold 1: 0.56, 131+ (corresponds to the original "tfidf_sum" implementation!)
+	//ldn.ntn --> acc. in fold 1: 0.57, 133+
+	//bdn.ntn --> acc. in fold 1: 0.58, 135+
+	//bnn.ntn --> acc. in fold 1: 0.53, 123+
+	//btn.ntn --> acc. in fold 1: 0.53, 123+
+	//bdc.ntn --> acc. in fold 1: 0.58, 135+ 
+	//bdn.ltn --> acc. in fold 1: 0.54, 126+
+	//bdn.nnn --> acc. in fold 1: 0.58, 135+
+	//bdn.nnc --> acc. in fold 1: 0.49, 114+
+	//bdn.nnn with vsm --> acc. in fold 1: 0.38, 89+ (TODO: find out why)
 
 	static char[] methodDocument = new char[3]; 
 	
-//	static String method = "tfidf_vsm";
-	static String method = "tfidf_sum"; //add up TFIDF scores, as in the "overlap score measure" described by Manning et al. (2008), p. 119 (TFIDF scores of terms occurring several times in the document are added up several times)	
-	//static String method = "tfidf_cosine"; //Vector Space Model as described by Manning et al. (2008), p. 123f. 
-	//static String method = "wfidf_cosine"; //Vector Space Model with sublinear tf scaling, as described by Manning et al. (2008), p. 126f. 
+//	static String method = "tfidf_vsm"; //Vector Space Model as described by Manning et al. (2008), p. 123f. 
+	static String method = "tfidf"; //add up TFIDF scores, as in the "overlap score measure" described by Manning et al. (2008), p. 119 (TFIDF scores of terms occurring several times in the document are added up several times)	
 	
 	//static String method = "bayes"; //Naive Bayes 
 	//static String method = "bayes_log"; //Naive Bayes with logarithm
@@ -174,9 +182,6 @@ public class EvaluatorCategoryAnnotator {
     static PrintWriter writer; 
     	
 	public static void main(String[] args) {
-		methodDocument[0] = termFrequencyDocument;
-		methodDocument[1] = documentFrequencyDocument;
-		methodDocument[2] = normalizationDocument;
 		
 		String inputFoldername = "src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
 		String outputGraphFoldername = "src/test/resources/sample_graphs/"; //output directory (for generated entailment graph)
@@ -242,6 +247,9 @@ public class EvaluatorCategoryAnnotator {
 	 * @param i
 	 */
 	private void setup(int i) {
+		methodDocument[0] = termFrequencyDocument;
+		methodDocument[1] = documentFrequencyDocument;
+		methodDocument[2] = normalizationDocument;
 		try {
 			switch(i){
 	        	case 0: //no EDA use --> graph with non-connected nodes
@@ -538,12 +546,9 @@ public class EvaluatorCategoryAnnotator {
 	}
 
 	/**
-	 * Computes the best category given the set of category decisions. 
-	 * 
-	 * In the "sum" implementation, we simply add up all confidences for a particular category, 
-	 * and pick the category with the highest overall score to be the best. 
-	 * 
-	 * In the "vsm" implementation we combine the scores based on the vector space model. 
+	 * Computes the best category given the set of category decisions, based on the defined method.
+	 * Currently, two different methods have been implemented: TFIDF-based category ranking and
+	 * a Naive Bayes classifier. 
 	 * 
 	 * @param doc
 	 * @param decisions
@@ -555,7 +560,7 @@ public class EvaluatorCategoryAnnotator {
 		logger.debug("Computing best category");
 		logger.debug("Number of decisions: " + decisions.size());
 		HashMap<String,BigDecimal> categoryScoresBigDecimal = new HashMap<String,BigDecimal>();
-		if (method.equals("tfidf_sum")) { 
+		if (method.equals("tfidf_sum")) {  //corresponds to the "ndn.ntn" TFIDF-variant
 			for (CategoryDecision decision: decisions) {
 				String category = decision.getCategoryId();
 				BigDecimal sum = new BigDecimal("0"); //the sum of scores for a particular category 
@@ -566,6 +571,8 @@ public class EvaluatorCategoryAnnotator {
 				sum = sum.add(new BigDecimal(decision.getConfidence()));
 				categoryScoresBigDecimal.put(category, sum);
 			}
+			logger.info("category scores big decimal in tfidf_sum: " + categoryScoresBigDecimal);
+			
 		} else if (method.startsWith("bayes")) { //Naive Bayes 
 			HashMap<String,BigDecimal> preliminaryCategoryScores = new HashMap<String,BigDecimal>();
 			for (NodeMatch nodeMatch : matches) { //for each matching mention in the document
@@ -623,7 +630,8 @@ public class EvaluatorCategoryAnnotator {
 			}
 			logger.info("category scores big decimal: " + categoryScoresBigDecimal);
 
-		} else if (method.equals("tfidf")) { //vector space model TODO: adapt to SMART notation
+		} else if (method.startsWith("tfidf")) { //TFIDF-based classification (query = new email; documents = categories)
+			int numberOfAddedUpValues = 0;
 			//collect mention tf in query
 			HashMap<String,Integer> tfQueryMap = new HashMap<String,Integer>();
 			int count = 0;
@@ -635,90 +643,99 @@ public class EvaluatorCategoryAnnotator {
 				}
 				tfQueryMap.put(mentionText, count);
 			}
-			logger.debug("Collected tf for queries " + tfQueryMap.size());
-			
+			logger.debug("Collected tf for queries " + tfQueryMap.size());			
 			writer.println("Collected tf for queries:");
 			for (String query : tfQueryMap.keySet()) {
 				writer.println(query + " : " + tfQueryMap.get(query));
 			}
 			
+			//Collect query cosine values for each category
 			HashMap<String,Double[]> queryCosineValuesPerCategory = new HashMap<String,Double[]>();
 			double N = graph.getNumberOfCategories(); //overall number of categories
 			double sumQ2 = 0.0;
+			Set<String> processedMentions = new HashSet<String>();
+			int countDecisions = 0;
 			
-			for (NodeMatch match : matches) { //for each matching mention				
-
-				//get best-matching node for this mention
-				EquivalenceClass bestNode = getBestMatchingNode(match);
-				
-				//retrieve tfidf for "document" (category)
-				Map<String,Double> tfidfScoresForCategories = bestNode.getCategoryConfidences();
-				
-				//compute tfidf for query TODO: LOOKS WRONG! CHECK AGAIN 
-				double df = bestNode.getCategoryConfidences().size(); //number of categories associated to the mention
-				//if category assigned to the mention is not part of the node yet, add 1:
-				//if (!bestNode.getCategoryConfidences().keySet().contains(match.getMention().getCategoryId())) n++;				
-				
-				double idfForQuery = 1; 
-				if (documentFrequencyQuery == 'l') idfForQuery = Math.log(N/df);
-				writer.println("number of category confidences on best node: " + df);
-				writer.println("idfForquery: " + idfForQuery);
-
-				//compute sums for computing cosine similarity of the query to each of the categories
-				Double[] queryCosineValues;
-				
-				double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 
-				if (termFrequencyQuery == 'l') { //logarithm
-					tfForQuery = 1 + Math.log(tfForQuery); // = "wf-idf"
-				} else if (termFrequencyQuery == 'b') { //boolean
-					if (tfForQuery > 0) tfForQuery = 1;
-					//TODO: Include non-matching terms of the query!! 
-				}
-				
-				double scoreForQuery = tfForQuery*idfForQuery;
-				
-				//VECTOR SPACE MODEL!!
-				
-				if (method.endsWith("_vsm")) {
-				
-					double Q = 0.0;
-					sumQ2 += Math.pow(Q, 2); //this part does not depend on the category!
-					
-					for (String category : bestNode.getCategoryConfidences().keySet()) { //for each category associated to this node
-						queryCosineValues = new Double[2];
-						double D = tfidfScoresForCategories.get(category);
-						double sumQD = Q*D;
-						double sumD2 = Math.pow(D, 2);
-						
-						if (queryCosineValuesPerCategory.containsKey(category)) {
-							sumQD += queryCosineValuesPerCategory.get(category)[0];
-							sumD2 += queryCosineValuesPerCategory.get(category)[1];
-						}
-						queryCosineValues[0] = sumQD;
-						queryCosineValues[1] = sumD2;
-						queryCosineValuesPerCategory.put(category, queryCosineValues);
+			BigDecimal overallSum = new BigDecimal("0");
+			
+			for (NodeMatch match : matches) { //for each matching mention	
+				String mentionText = match.getMention().getTextWithoutDoubleSpaces();
+				if (!processedMentions.contains(mentionText)) { //make sure to process each mention text only once!
+					processedMentions.add(mentionText);
+					//get best-matching node for this mention
+					EquivalenceClass bestNode = getBestMatchingNode(match);				
+					//retrieve tfidf for "document" (category)
+					Map<String,Double> tfidfScoresForCategories = bestNode.getCategoryConfidences();				
+					//compute tfidf for query TODO: LOOKS WRONG! CHECK AGAIN 
+					double df = bestNode.getCategoryConfidences().size(); //number of categories associated to the mention
+					//if category assigned to the mention is not part of the node yet, add 1:
+					//if (!bestNode.getCategoryConfidences().keySet().contains(match.getMention().getCategoryId())) n++;								
+					double idfForQuery = 1; 
+					if (documentFrequencyQuery =='d') idfForQuery = 1/df;
+					if (documentFrequencyQuery == 'l') idfForQuery = Math.log(N/df);
+					writer.println("number of category confidences on best node: " + df);
+					writer.println("idfForquery: " + idfForQuery);
+					//compute sums for computing cosine similarity of the query to each of the categories
+					Double[] queryCosineValues;				
+					double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 
+					countDecisions += (tfForQuery*df);
+					if (termFrequencyQuery == 'l') { //logarithm
+						tfForQuery = 1 + Math.log(tfForQuery); // = "wf-idf"
+					} else if (termFrequencyQuery == 'b') { //boolean
+						if (tfForQuery > 0) tfForQuery = 1;
+						//TODO: Include non-matching terms of the query? 
 					}
-				} else { //SIMPLE TF_IDF
-					for (String category : bestNode.getCategoryConfidences().keySet()) { //for each category associated to this node
-						double D = tfidfScoresForCategories.get(category);
-						BigDecimal sumScore = new BigDecimal(scoreForQuery*D);
-						
-						if (categoryScoresBigDecimal.containsKey(category)) {
-							sumScore = categoryScoresBigDecimal.get(category).add(sumScore);
-						}
-						categoryScoresBigDecimal.put(category, sumScore);
-					}
+					double scoreForQuery = tfForQuery*idfForQuery;
 					
+					//VECTOR SPACE MODEL		
+					if (method.endsWith("_vsm")) { //TODO: check implementation again
+						double Q = scoreForQuery;
+						sumQ2 += Math.pow(Q, 2); //this part does not depend on the category!
+						for (String category : bestNode.getCategoryConfidences().keySet()) { //for each category associated to this node
+							queryCosineValues = new Double[2];
+							double D = tfidfScoresForCategories.get(category);
+							double sumQD = Q*D;
+							double sumD2 = Math.pow(D, 2);						
+							if (queryCosineValuesPerCategory.containsKey(category)) {
+								sumQD += queryCosineValuesPerCategory.get(category)[0];
+								sumD2 += queryCosineValuesPerCategory.get(category)[1];
+							}
+							queryCosineValues[0] = sumQD;
+							queryCosineValues[1] = sumD2;
+							queryCosineValuesPerCategory.put(category, queryCosineValues);
+						}
+					} else { //SIMPLE TF_IDF
+						for (String category : bestNode.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
+							numberOfAddedUpValues++;
+							double D = tfidfScoresForCategories.get(category); //category score in best-matching node
+							BigDecimal sumScore = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
+							overallSum = overallSum.add(sumScore);
+							if (categoryScoresBigDecimal.containsKey(category)) {
+								sumScore = categoryScoresBigDecimal.get(category).add(sumScore);
+							}
+							categoryScoresBigDecimal.put(category, sumScore);
+						}					
+					}
 				}
 			}
-	
-			for (String category : queryCosineValuesPerCategory.keySet()) { //for each matching EG node for this mention
-				if (method.endsWith("_vsm")) {
+			
+			logger.info("overallSum: " + overallSum);
+			logger.info("Number of node matches: " + matches.size());
+			logger.info("Number of added up Values: " + numberOfAddedUpValues);
+			logger.info("Number of processed mentions: " + processedMentions.size());
+			logger.info("Number of category decisions: " + countDecisions);
+			logger.info("Category scores big decimal in tfidf: " + categoryScoresBigDecimal);
+			
+			if (method.endsWith("_vsm")) {
+				for (String category : queryCosineValuesPerCategory.keySet()) { //for each matching EG node for this mention
 					//annotate category confidences in CAS based on cosine similarity (per document, not per mention!)
 					//cos = A x B / |A|x|B| = SUM_i=1..n[Ai x Bi] / (ROOT(SUM_i=1..n(Ai2)) x ROOT(SUM_i=1..n(Bi2)))
 					Double[] queryCosineValuesForCategory = queryCosineValuesPerCategory.get(category);
+					Double sumQD = queryCosineValuesForCategory[0];
+					Double sumD2 = queryCosineValuesForCategory[1];
 					writer.println("cosine values for category " + category + ": " + queryCosineValuesForCategory[0] + ", " + queryCosineValuesForCategory[1] + ", " + sumQ2);
-					BigDecimal cosQD = new BigDecimal(queryCosineValuesForCategory[0]).divide(new BigDecimal(Math.sqrt(queryCosineValuesForCategory[1]) * Math.sqrt(sumQ2)), MathContext.DECIMAL128);
+					logger.info("cosine values for category " + category + ": " + queryCosineValuesForCategory[0] + ", " + queryCosineValuesForCategory[1] + ", " + sumQ2);
+					BigDecimal cosQD = new BigDecimal(sumQD).divide(new BigDecimal(Math.sqrt(sumD2) * Math.sqrt(sumQ2)), MathContext.DECIMAL128);
 					categoryScoresBigDecimal.put(category, cosQD);					
 					writer.println(category + " : " + cosQD);
 				}
@@ -951,12 +968,14 @@ public class EvaluatorCategoryAnnotator {
 					
 					for (NodeMatch match : matches) {
 						for (PerNodeScore score : match.getScores()) {
-							logger.info("match score for "+score.getNode().getLabel()+": " + score.getNode().getCategoryConfidences().keySet());
+							logger.info("match score for "+score.getNode().getLabel()+": " + score.getNode().getCategoryConfidences());
 						}
 					}
 
 					//add category annotation to CAS
 					categoryAnnotator.addCategoryAnnotation(casInteraction, matches);
+					
+					
 
 					//print CAS category
 					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);

@@ -35,11 +35,11 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 	
 	static Logger logger = Logger.getLogger(ConfidenceCalculatorCategoricalFrequencyDistribution.class); 
 
-	static char termFrequencyDocument; //= 'l'; // n (natural), l (logarithm)
-	static char documentFrequencyDocument;  //= 't'; // n (no), t (idf)
-	static char normalizationDocument; // = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
+	static char termFrequencyDocument = 'n'; //= 'l'; // n (natural), l (logarithm)
+	static char documentFrequencyDocument = 'n';  //= 't'; // n (no), t (idf)
+	static char normalizationDocument = 'n'; // = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
 
-	String method; // = "tfidf_sum"; //or "simple"
+	String method = "tfidf"; // = "tfidf" or "bayes"
 	
 	public ConfidenceCalculatorCategoricalFrequencyDistribution() {
 	}
@@ -58,6 +58,10 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 	
 	public ConfidenceCalculatorCategoricalFrequencyDistribution(String method) {
 		this.method = method;
+		logger.info("termFrequencyDocument:" + termFrequencyDocument);
+		logger.info("documentFrequencyDocument:" + documentFrequencyDocument);
+		logger.info("normalizationDocument:" + normalizationDocument);
+		System.exit(1);
 	}
 
 	@Override
@@ -141,7 +145,7 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 							if (tf > 0) termFrequency = 1 + Math.log(tf); //sublinear tf scaling
 							break;
 						default: 
-							logger.error("Method for confidence calculation not defined: " + method);
+							logger.error("Method for confidence calculation not defined: " + method + " variant " + termFrequencyDocument+documentFrequencyDocument+normalizationDocument);
 							System.exit(1);
 					}
 					
@@ -153,7 +157,7 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 						documentFrequency = Math.log(N/n);
 						break;
 					default: 
-						logger.error("Method for confidence calculation not defined: " + method);
+						logger.error("Method for confidence calculation not defined: " + method + " variant " + termFrequencyDocument+documentFrequencyDocument+normalizationDocument);
 						System.exit(1);
 					}
 					
