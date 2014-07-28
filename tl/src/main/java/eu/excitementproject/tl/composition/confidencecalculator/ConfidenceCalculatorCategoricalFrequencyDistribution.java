@@ -35,16 +35,35 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 	
 	static Logger logger = Logger.getLogger(ConfidenceCalculatorCategoricalFrequencyDistribution.class); 
 
-	String method = "tfidf_sum"; //or "simple"
+	static char termFrequencyDocument = 'n'; //= 'l'; // n (natural), l (logarithm)
+	static char documentFrequencyDocument = 'n';  //= 't'; // n (no), t (idf)
+	static char normalizationDocument = 'n'; // = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
+
+	String method = "tfidf"; // = "tfidf" or "bayes"
 	
 	public ConfidenceCalculatorCategoricalFrequencyDistribution() {
-		this.method = "tfidf_sum";
 	}
 
-	public ConfidenceCalculatorCategoricalFrequencyDistribution(String method) {
-		this.method = method;
+	public ConfidenceCalculatorCategoricalFrequencyDistribution(char[] methodTfIdf) {
+		method = "tfidf";
+		if (methodTfIdf.length != 3) {
+			logger.error("SMART notation not complete!");
+			System.exit(1);	
+		} else {
+			termFrequencyDocument = methodTfIdf[0];
+			documentFrequencyDocument = methodTfIdf[1];
+			normalizationDocument = methodTfIdf[2];
+		}
 	}
 	
+	public ConfidenceCalculatorCategoricalFrequencyDistribution(String method) {
+		this.method = method;
+		logger.info("termFrequencyDocument:" + termFrequencyDocument);
+		logger.info("documentFrequencyDocument:" + documentFrequencyDocument);
+		logger.info("normalizationDocument:" + normalizationDocument);
+		System.exit(1);
+	}
+
 	@Override
 	public void computeCategoryConfidences(EntailmentGraphCollapsed graph)
 			throws ConfidenceCalculatorException {
@@ -52,6 +71,7 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		GraphStatistics graphStatistics = computeGraphStatistics(graph);
 		
 		Set<EquivalenceClass> nodes = graph.vertexSet();	
+		HashMap<String,Double> sumOfSquaredScoresPerCategory = new HashMap<String,Double>();
 		
 		for (EquivalenceClass node : nodes) { //for each node in the graph
 			int sumMentions = 0;
@@ -111,24 +131,66 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 						categoryConfidences.put(category, loglikelihood);
 					}	
 					logger.debug("categoryConfidences: " + categoryConfidences);
-			} else {
+			} else if (method.equals("tfidf")) {
+				double termFrequency = 0.0; 
+				double documentFrequency = 0.0;
 				for (String category : categoryFrequencyDistributionOnNode.keySet()) {	//for all categories in the node				
 					double tf = categoryFrequencyDistributionOnNode.get(category);
-					if (method.equals("tfidf_sum")) {
-						double n = categoryFrequencyDistributionOnNode.size(); //number of "documents" containing the "term" --> number of different categories in the node
-						double idf = Math.log(N/n);
-						score = tf*idf;
-					} else if (method.equals("simple")) {
-						score = tf / (double) sumMentions;
-					} else {
-						logger.error("Method for confidence calculation not defined: " + method);
+					double n = categoryFrequencyDistributionOnNode.size(); //number of "documents" containing the "term" --> number of different categories in the node								
+					switch (termFrequencyDocument) {
+						case 'n': 
+							termFrequency = tf;
+							break;
+						case 'l': 
+							if (tf > 0) termFrequency = 1 + Math.log(tf); //sublinear tf scaling
+							break;
+						default: 
+							logger.error("Method for confidence calculation not defined: " + method + " variant " + termFrequencyDocument+documentFrequencyDocument+normalizationDocument);
+							System.exit(1);
+					}
+					
+					switch (documentFrequencyDocument) {
+					case 'n': 
+						documentFrequency = 1;
+						break;
+					case 't': 
+						documentFrequency = Math.log(N/n);
+						break;
+					default: 
+						logger.error("Method for confidence calculation not defined: " + method + " variant " + termFrequencyDocument+documentFrequencyDocument+normalizationDocument);
 						System.exit(1);
 					}
+					
+					score = termFrequency * documentFrequency; 
+					
+//					} else if (method.equals("simple")) {
+//						score = tf / (double) sumMentions;
 					categoryConfidences.put(category, score);
+					
+					double scoreSquare = score*score;
+					
+					if (sumOfSquaredScoresPerCategory.containsKey(category)) {
+						scoreSquare += sumOfSquaredScoresPerCategory.get(category);
+					}
+					sumOfSquaredScoresPerCategory.put(category, scoreSquare);					
 				}
 			}
 			//add confidence scores to node
 			node.setCategoryConfidences(categoryConfidences);
+		}
+		
+		switch (normalizationDocument) {
+		case 'c': 
+			for (EquivalenceClass node : nodes) { //for each node in the graph
+				Map<String,Double> categoryConfidences = node.getCategoryConfidences();
+				Map<String,Double> categoryConfidencesNormalized = new HashMap<String,Double>();
+				for (String category : categoryConfidences.keySet()) {
+					double confidence = categoryConfidences.get(category);
+					double confidenceNormalized = confidence * Math.sqrt(sumOfSquaredScoresPerCategory.get(category));
+					categoryConfidencesNormalized.put(category, confidenceNormalized);
+				}
+				node.setCategoryConfidences(categoryConfidencesNormalized);
+			}
 		}
 	}
 
