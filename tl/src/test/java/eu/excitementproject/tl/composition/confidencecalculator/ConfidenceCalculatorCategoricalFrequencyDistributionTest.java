@@ -63,5 +63,4 @@ public class ConfidenceCalculatorCategoricalFrequencyDistributionTest {
 			fail(e.getMessage()); 
 		}
 	}
-
 }

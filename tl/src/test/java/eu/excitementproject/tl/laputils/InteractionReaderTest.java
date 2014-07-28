@@ -2,7 +2,6 @@ package eu.excitementproject.tl.laputils;
 
 import static org.junit.Assert.*;
 
-
 import java.io.File;
 import java.util.List;
 
@@ -316,5 +315,4 @@ public class InteractionReaderTest {
 		testlogger.info("testing of readInteractionXML() with multiple categories: Okay"); 	
     	
     }
-
 }

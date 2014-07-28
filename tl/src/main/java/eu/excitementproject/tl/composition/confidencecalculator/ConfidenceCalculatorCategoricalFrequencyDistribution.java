@@ -58,15 +58,13 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 	
 	public ConfidenceCalculatorCategoricalFrequencyDistribution(String method) {
 		this.method = method;
-		logger.info("termFrequencyDocument:" + termFrequencyDocument);
-		logger.info("documentFrequencyDocument:" + documentFrequencyDocument);
-		logger.info("normalizationDocument:" + normalizationDocument);
-		System.exit(1);
 	}
 
 	@Override
 	public void computeCategoryConfidences(EntailmentGraphCollapsed graph)
 			throws ConfidenceCalculatorException {
+		
+		logger.info("Method: " + method);
 
 		GraphStatistics graphStatistics = computeGraphStatistics(graph);
 		
@@ -74,7 +72,6 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		HashMap<String,Double> sumOfSquaredScoresPerCategory = new HashMap<String,Double>();
 		
 		for (EquivalenceClass node : nodes) { //for each node in the graph
-			int sumMentions = 0;
 			//map collecting the different categories and how often their occur on this node
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode 
 				= new HashMap<String, Integer>();
@@ -82,7 +79,6 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			for (EntailmentUnit eu : eus) {	//for each entailment unit in the node		
 				for (EntailmentUnitMention mentionOnNode : eu.getMentions()) { 
 					//for each mention associated to the entailment unit
-					sumMentions++; 
 					String categoryMention = mentionOnNode.getCategoryId();
 					int tf = 0; //how often does the "term" occur in the "document" --> how often does category occur on the node
 					if (categoryFrequencyDistributionOnNode.containsKey(categoryMention)) {

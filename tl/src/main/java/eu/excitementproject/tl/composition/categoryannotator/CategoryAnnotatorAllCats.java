@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPException;
@@ -49,6 +50,7 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  *
  */
 public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
+	static Logger logger = Logger.getLogger(CategoryAnnotatorAllCats.class); 
 	
 	GraphStatistics graphStatistics = null;
 	
@@ -76,8 +78,11 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 			for (PerNodeScore score : scores) { //for each matching EG node for this mention
 				EquivalenceClass E = score.getNode();
 				double C = score.getScore(); //score telling us how well this node matches the mentionInCAS
+				logger.info("E: " + E.getLabel());
+				logger.info("C: " + C);
 				//category confidences on node
 				Map<String, Double> categoryConfidencesOnNode = E.getCategoryConfidences();
+				logger.info("Number of category confidences on node: " + categoryConfidencesOnNode.size());
 				try {
 					for (String category : categoryConfidencesOnNode.keySet()) {	
 						double confidence = categoryConfidencesOnNode.get(category);
