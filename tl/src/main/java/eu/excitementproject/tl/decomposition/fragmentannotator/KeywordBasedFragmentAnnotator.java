@@ -356,7 +356,7 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	private Set<Region> getFragment(String word, int begin, int end,
 			JCas aJCas) {
 		
-//		logger.info("\tbuildling fragment around " + word + " (" + begin + "," + end + ")");
+		logger.info("\tbuildling fragment around " + word + " (" + begin + "," + end + ")");
 		
 //		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, begin, end);
 		List<Dependency> deps = getRelevantDependencies(aJCas, begin, end);
@@ -377,7 +377,8 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 				
 				logger.info("\t\tdependency: (" + d.getGovernor().getCoveredText() + "," + d.getDependent().getCoveredText() + ") => " + d.getDependencyType());
 				
-				if (d.getGovernor().getCoveredText().matches(word)) {
+//				if (d.getGovernor().getCoveredText().matches(word)) {
+				if (d.getGovernor().getCoveredText().equals(word)) {
 					Token t = d.getDependent();
 					Set<Region> newSpans = getFragment(t.getCoveredText(), t.getBegin(), t.getEnd(), aJCas);
 					if (newSpans != null && newSpans.size() > 0) {

@@ -3,27 +3,18 @@
   <groupId>eu.excitementproject</groupId>
   <artifactId>tl</artifactId>
   <version>1.0.7-snapshot</version>
+  <!-- Version convention. 
+    1.  Major We will generally not change this, unless we make heavy change. 
+    0.  Minor version. We will use 0, for during 2014 
+    x.  release number; for now we use Month number. (e.g. 1.0.6 June version, 1.0.7 July version ...)
+  -->
   <dependencies>
-  	<dependency>
-  		<groupId>eu.excitementproject</groupId>
-  		<artifactId>lap</artifactId>
-  		<version>1.1.1</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>eu.excitementproject</groupId>
-  		<artifactId>core</artifactId>
-  		<version>1.1.1</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>eu.excitementproject</groupId>
-  		<artifactId>biutee</artifactId>
-  		<version>1.1.1</version>
-  	</dependency>  	
-  	<dependency>
-  		<groupId>eu.excitementproject</groupId>
-  		<artifactId>globalgraphoptimizer</artifactId>
-  		<version>1.1.1</version>
-  	</dependency>
+
+    <!-- We are loading the jGraph related dependency *before* depending on EOP.
+    EOP lexical miner actually depends on an older version of jgrapht.
+    We depend on jgrapht before EOP to resolve this. Note that, this also means, 
+    we can't reliably use lexicalminer within TL code. but I guess this is okay
+    since we won't generate wikipedia resource within TL. - Gil, July, 2014  -->
   	<dependency>
   		<groupId>net.sf.jgrapht</groupId>
   		<artifactId>jgrapht</artifactId>
@@ -33,6 +24,28 @@
   		<groupId>jgraph</groupId>
   		<artifactId>jgraph</artifactId>
   		<version>5.13.0.0</version>
+  	</dependency>
+
+    <!-- EOP dependency  -->
+  	<dependency>
+  		<groupId>eu.excitementproject</groupId>
+  		<artifactId>lap</artifactId>
+  		<version>1.1.3</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>eu.excitementproject</groupId>
+  		<artifactId>core</artifactId>
+  		<version>1.1.3</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>eu.excitementproject</groupId>
+  		<artifactId>biutee</artifactId>
+  		<version>1.1.3</version>
+  	</dependency>  	
+  	<dependency>
+  		<groupId>eu.excitementproject</groupId>
+  		<artifactId>globalgraphoptimizer</artifactId>
+  		<version>1.1.3</version>
   	</dependency>
   	
 	<!-- TreeTagger related dependencies --> 

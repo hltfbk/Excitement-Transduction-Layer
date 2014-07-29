@@ -2,7 +2,7 @@ package eu.excitementproject.tl.laputils;
 
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.eop.lap.lappoc.ExampleLAPAE;
+import eu.excitementproject.eop.lap.implbase.ExampleLAPAE;
 
 /**
  * 

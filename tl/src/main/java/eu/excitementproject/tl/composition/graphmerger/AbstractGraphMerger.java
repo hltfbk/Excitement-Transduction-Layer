@@ -4,8 +4,8 @@
 package eu.excitementproject.tl.composition.graphmerger;
 
 import java.util.HashSet;
-import java.util.Set;
 
+import java.util.Set;
 import org.apache.log4j.Logger;
 
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -162,5 +162,4 @@ should be clearly exposed in the Constructor.
 	public void setEntailmentConfidenceThreshold(Double entailmentConfidenceThreshold) {
 		this.entailmentConfidenceThreshold = entailmentConfidenceThreshold;
 	}
-		
 }

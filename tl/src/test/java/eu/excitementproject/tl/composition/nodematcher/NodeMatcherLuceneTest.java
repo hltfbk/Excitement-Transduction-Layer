@@ -2,6 +2,7 @@ package eu.excitementproject.tl.composition.nodematcher;
 
 import static org.junit.Assert.fail;
 
+
 import java.io.File;
 import java.util.Set;
 
@@ -20,7 +21,6 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.search.NodeMatch;
-//import eu.excitementproject.tl.structures.search.PerNodeScore;
 
 public class NodeMatcherLuceneTest {
 
