@@ -426,7 +426,7 @@ a volte scompare anche la linea telefonica	1	->	non ricevo le telefonate	5	No	0	
 								
 node pair #23:								
 non ricevo le telefonate	5	->	sono senza telefono	2	No	0	0	
-sono senza telefono	2	->	non ricevo le telefonate	5	No	0	1	
+sono senza telefono	2	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #24:								
 non ricevo le telefonate	5	->	scompare anche la linea telefonica	1	No	0	0	
@@ -442,7 +442,7 @@ Siamo ancora in attesa della linea	1	->	non ricevo le telefonate	5	No	0	0
 								
 node pair #27:								
 non ricevo le telefonate	5	->	Siamo ancora in attesa della linea telefonica in provincia di Frosinone	1	No	0	0	
-Siamo ancora in attesa della linea telefonica in provincia di Frosinone	1	->	non ricevo le telefonate	5	No	0	1	
+Siamo ancora in attesa della linea telefonica in provincia di Frosinone	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #28:								
 non ricevo le telefonate	5	->	il telefono non sempre funziona	1	No	0	0	
@@ -462,7 +462,7 @@ E' da 15 giorni che gli sms sono diventati un bel ricordo	1	->	non ricevo le tel
 								
 node pair #32:								
 non ricevo le telefonate	5	->	Siamo ancora in attesa della linea telefonica	1	No	0	0	
-Siamo ancora in attesa della linea telefonica	1	->	non ricevo le telefonate	5	No	0	1	
+Siamo ancora in attesa della linea telefonica	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #33:								
 non ricevo le telefonate	5	->	gli sms sono diventati un bel ricordo	1	No	0	0	
@@ -474,7 +474,7 @@ noi da 15 giorni senza linea ai cell	1	->	non ricevo le telefonate	5	No	0	1	dubb
 								
 node pair #35:								
 non ricevo le telefonate	5	->	con TELEFONIAX il telefono non ha mai funzionato	1	No	0	0	
-con TELEFONIAX il telefono non ha mai funzionato	1	->	non ricevo le telefonate	5	No	0	1	
+con TELEFONIAX il telefono non ha mai funzionato	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #36:								
 non ricevo le telefonate	5	->	A Courmayeur ( AO ) e zone limitrofe da giorni non funzionano i cellulari TELEFONIAX	1	No	0	0	
@@ -482,11 +482,11 @@ A Courmayeur ( AO ) e zone limitrofe da giorni non funzionano i cellulari TELEFO
 								
 node pair #37:								
 non ricevo le telefonate	5	->	in due anni con TELEFONIAX il telefono non ha mai funzionato	1	No	0	0	
-in due anni con TELEFONIAX il telefono non ha mai funzionato	1	->	non ricevo le telefonate	5	No	0	1	
+in due anni con TELEFONIAX il telefono non ha mai funzionato	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #38:								
 non ricevo le telefonate	5	->	con TELEFONIAX il telefono di casa non ha mai funzionato	1	No	0	0	
-con TELEFONIAX il telefono di casa non ha mai funzionato	1	->	non ricevo le telefonate	5	No	0	1	
+con TELEFONIAX il telefono di casa non ha mai funzionato	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #39:								
 non ricevo le telefonate	5	->	il telefono quasi inutilizzabile per la navigazione	1	No	0	0	
@@ -502,7 +502,7 @@ non ricevo le telefonate	5	->	è difficile mandare mess	2	No	0	0
 								
 node pair #42:								
 non ricevo le telefonate	5	->	in due anni con TELEFONIAX il telefono di casa non ha mai funzionato	1	No	0	0	
-in due anni con TELEFONIAX il telefono di casa non ha mai funzionato	1	->	non ricevo le telefonate	5	No	0	1	
+in due anni con TELEFONIAX il telefono di casa non ha mai funzionato	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #43:								
 E' da 15 giorni che non si ricevono telefonate	1	->	non ricevo le telefonate	5	Yes	1	1	
@@ -526,7 +526,7 @@ una linea mai attivata . . . . . . per un loro disservizio	1	->	non ricevo le te
 								
 node pair #48:								
 non ricevo le telefonate	5	->	una linea telefonica mai attivata . . . . . .	1	No	0	0	
-una linea telefonica mai attivata . . . . . .	1	->	non ricevo le telefonate	5	No	0	1	
+una linea telefonica mai attivata . . . . . .	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #49:								
 non ricevo le telefonate	5	->	molto spesso è difficile chiamare	1	No	0	0	
@@ -534,7 +534,7 @@ molto spesso è difficile chiamare	1	->	non ricevo le telefonate	5	No	0	0
 								
 node pair #50:								
 non ricevo le telefonate	5	->	una linea telefonica mai attivata . . . . . . per un loro disservizio	1	No	0	0	
-una linea telefonica mai attivata . . . . . . per un loro disservizio	1	->	non ricevo le telefonate	5	No	0	1	
+una linea telefonica mai attivata . . . . . . per un loro disservizio	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #51:								
 non ricevo le telefonate	5	->	è difficile chiamare	1	Yes	0	0	
@@ -566,15 +566,15 @@ non ricevo le telefonate	5	->	linea telefonica assente in entrata da circa 15 mi
 								
 node pair #58:								
 non ricevo le telefonate	5	->	A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	->	non ricevo le telefonate	5	No	0	1	
+A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #59:								
 non ricevo le telefonate	5	->	siamo senza telefono da due mesi in attesa dell'attivazione	1	No	0	0	
-siamo senza telefono da due mesi in attesa dell'attivazione	1	->	non ricevo le telefonate	5	No	0	1	
+siamo senza telefono da due mesi in attesa dell'attivazione	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #60:								
 non ricevo le telefonate	5	->	A casa mia siamo senza telefono in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo senza telefono in attesa dell'attivazione	1	->	non ricevo le telefonate	5	No	0	1	
+A casa mia siamo senza telefono in attesa dell'attivazione	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #61:								
 non ricevo le telefonate	5	->	gli sms mi arrivavano ore dopo rispetto a quando me li inviavano	1	No	0	0	
@@ -598,7 +598,7 @@ non riescono ancora a risolvermi i problemi con portabilità	1	->	non ricevo le 
 								
 node pair #66:								
 non ricevo le telefonate	5	->	siamo senza telefono in attesa dell'attivazione	1	No	0	0	
-siamo senza telefono in attesa dell'attivazione	1	->	non ricevo le telefonate	5	No	0	1	
+siamo senza telefono in attesa dell'attivazione	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #67:								
 non ricevo le telefonate	5	->	A casa mia siamo da due mesi in attesa dell'attivazione	1	No	0	0	
@@ -698,7 +698,7 @@ Segnalo problemi di ricezione del segnale	1	->	non ricevo le telefonate	5	No	0	0
 								
 node pair #91:								
 non ricevo le telefonate	5	->	sono tre giorni senza telefono	1	No	0	0	
-sono tre giorni senza telefono	1	->	non ricevo le telefonate	5	No	0	1	
+sono tre giorni senza telefono	1	->	non ricevo le telefonate	5	No	0	0	
 								
 node pair #92:								
 non ricevo le telefonate	5	->	da stamattina che i nostri telefonini non hanno linea	1	No	0	0	
@@ -1377,7 +1377,7 @@ noi senza linea ai cell	2	->	una linea mai attivata . . . . . .	1	Yes	0	0
 una linea mai attivata . . . . . .	1	->	noi senza linea ai cell	2	No	0	0	
 								
 node pair #261:								
-noi senza linea ai cell	2	->	ho problemi di ricezione	2	No	0	0	
+noi senza linea ai cell	2	->	ho problemi di ricezione	2	No	0	1	
 ho problemi di ricezione	2	->	noi senza linea ai cell	2	No	0	0	
 								
 node pair #262:								
@@ -1662,7 +1662,7 @@ a volte scompare anche la linea telefonica	1	->	non riesco a telefonare	5	No	0	1
 								
 node pair #332:								
 non riesco a telefonare	5	->	sono senza telefono	2	No	0	0	
-sono senza telefono	2	->	non riesco a telefonare	5	No	0	1	
+sono senza telefono	2	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #333:								
 non riesco a telefonare	5	->	scompare anche la linea telefonica	1	No	0	0	
@@ -1678,7 +1678,7 @@ Siamo ancora in attesa della linea	1	->	non riesco a telefonare	5	No	0	0
 								
 node pair #336:								
 non riesco a telefonare	5	->	Siamo ancora in attesa della linea telefonica in provincia di Frosinone	1	No	0	0	
-Siamo ancora in attesa della linea telefonica in provincia di Frosinone	1	->	non riesco a telefonare	5	No	0	1	
+Siamo ancora in attesa della linea telefonica in provincia di Frosinone	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #337:								
 non riesco a telefonare	5	->	il telefono non sempre funziona	1	No	0	0	
@@ -1698,7 +1698,7 @@ E' da 15 giorni che gli sms sono diventati un bel ricordo	1	->	non riesco a tele
 								
 node pair #341:								
 non riesco a telefonare	5	->	Siamo ancora in attesa della linea telefonica	1	No	0	0	
-Siamo ancora in attesa della linea telefonica	1	->	non riesco a telefonare	5	No	0	1	
+Siamo ancora in attesa della linea telefonica	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #342:								
 non riesco a telefonare	5	->	gli sms sono diventati un bel ricordo	1	No	0	0	
@@ -1762,7 +1762,7 @@ una linea mai attivata . . . . . . per un loro disservizio	1	->	non riesco a tel
 								
 node pair #357:								
 non riesco a telefonare	5	->	una linea telefonica mai attivata . . . . . .	1	No	0	0	
-una linea telefonica mai attivata . . . . . .	1	->	non riesco a telefonare	5	No	0	1	
+una linea telefonica mai attivata . . . . . .	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #358:								
 non riesco a telefonare	5	->	molto spesso è difficile chiamare	1	Yes	0	0	
@@ -1770,7 +1770,7 @@ molto spesso è difficile chiamare	1	->	non riesco a telefonare	5	No	0	0
 								
 node pair #359:								
 non riesco a telefonare	5	->	una linea telefonica mai attivata . . . . . . per un loro disservizio	1	No	0	0	
-una linea telefonica mai attivata . . . . . . per un loro disservizio	1	->	non riesco a telefonare	5	No	0	1	
+una linea telefonica mai attivata . . . . . . per un loro disservizio	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #360:								
 non riesco a telefonare	5	->	è difficile chiamare	1	Yes	0	0	
@@ -1802,15 +1802,15 @@ linea telefonica assente in entrata da circa 15 minuti	1	->	non riesco a telefon
 								
 node pair #367:								
 non riesco a telefonare	5	->	A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	->	non riesco a telefonare	5	No	0	1	
+A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #368:								
 non riesco a telefonare	5	->	siamo senza telefono da due mesi in attesa dell'attivazione	1	No	0	0	
-siamo senza telefono da due mesi in attesa dell'attivazione	1	->	non riesco a telefonare	5	No	0	1	
+siamo senza telefono da due mesi in attesa dell'attivazione	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #369:								
 non riesco a telefonare	5	->	A casa mia siamo senza telefono in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo senza telefono in attesa dell'attivazione	1	->	non riesco a telefonare	5	No	0	1	
+A casa mia siamo senza telefono in attesa dell'attivazione	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #370:								
 non riesco a telefonare	5	->	gli sms mi arrivavano ore dopo rispetto a quando me li inviavano	1	No	0	0	
@@ -1834,7 +1834,7 @@ non riescono ancora a risolvermi i problemi con portabilità	1	->	non riesco a t
 								
 node pair #375:								
 non riesco a telefonare	5	->	siamo senza telefono in attesa dell'attivazione	1	No	0	0	
-siamo senza telefono in attesa dell'attivazione	1	->	non riesco a telefonare	5	No	0	1	
+siamo senza telefono in attesa dell'attivazione	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #376:								
 non riesco a telefonare	5	->	A casa mia siamo da due mesi in attesa dell'attivazione	1	No	0	0	
@@ -1934,7 +1934,7 @@ Segnalo problemi di ricezione del segnale	1	->	non riesco a telefonare	5	No	0	0
 								
 node pair #400:								
 non riesco a telefonare	5	->	sono tre giorni senza telefono	1	No	0	0	
-sono tre giorni senza telefono	1	->	non riesco a telefonare	5	No	0	1	
+sono tre giorni senza telefono	1	->	non riesco a telefonare	5	No	0	0	
 								
 node pair #401:								
 non riesco a telefonare	5	->	da stamattina che i nostri telefonini non hanno linea	1	No	0	0	
@@ -3806,7 +3806,7 @@ ieri gli sms mi arrivavano ore dopo rispetto a quando me li inviavano	1	->	linea
 								
 node pair #868:								
 linea telefonica assente in uscita	1	->	siamo in attesa dell'attivazione	1	No	0	0	
-siamo in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	1	
+siamo in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	0	
 								
 node pair #869:								
 linea telefonica assente in uscita	1	->	non riescono ancora a risolvermi i problemi con portabilità	1	No	0	0	
@@ -3814,19 +3814,19 @@ non riescono ancora a risolvermi i problemi con portabilità	1	->	linea telefoni
 								
 node pair #870:								
 linea telefonica assente in uscita	1	->	siamo senza telefono in attesa dell'attivazione	1	No	0	0	
-siamo senza telefono in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	1	
+siamo senza telefono in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	0	
 								
 node pair #871:								
 linea telefonica assente in uscita	1	->	A casa mia siamo da due mesi in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo da due mesi in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	1	
+A casa mia siamo da due mesi in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	0	
 								
 node pair #872:								
 linea telefonica assente in uscita	1	->	A casa mia siamo in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	1	
+A casa mia siamo in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	0	
 								
 node pair #873:								
 linea telefonica assente in uscita	1	->	siamo da due mesi in attesa dell'attivazione	1	No	0	0	
-siamo da due mesi in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	1	
+siamo da due mesi in attesa dell'attivazione	1	->	linea telefonica assente in uscita	1	No	0	0	
 								
 node pair #874:								
 linea telefonica assente in uscita	1	->	la TELEFONIAX non mi fa inviare i messaggi , pur avendo credito	1	No	0	0	
@@ -4058,7 +4058,7 @@ Siamo ancora in attesa della linea in provincia di Frosinone	1	->	io non riesco 
 								
 node pair #931:								
 io non riesco più mandare messaggi	1	->	E' da 15 giorni che gli sms sono diventati un bel ricordo	1	No	0	0	
-E' da 15 giorni che gli sms sono diventati un bel ricordo	1	->	io non riesco più mandare messaggi	1	No	0	0	
+E' da 15 giorni che gli sms sono diventati un bel ricordo	1	->	io non riesco più mandare messaggi	1	No	0	1	
 								
 node pair #932:								
 io non riesco più mandare messaggi	1	->	Siamo ancora in attesa della linea telefonica	1	No	0	0	
@@ -4166,7 +4166,7 @@ linea telefonica assente in entrata da circa 15 minuti	1	->	io non riesco più m
 								
 node pair #958:								
 io non riesco più mandare messaggi	1	->	A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	->	io non riesco più mandare messaggi	1	No	0	1	
+A casa mia siamo senza telefono da due mesi in attesa dell'attivazione	1	->	io non riesco più mandare messaggi	1	No	0	0	
 								
 node pair #959:								
 io non riesco più mandare messaggi	1	->	siamo senza telefono da due mesi in attesa dell'attivazione	1	No	0	0	
@@ -4174,7 +4174,7 @@ siamo senza telefono da due mesi in attesa dell'attivazione	1	->	io non riesco p
 								
 node pair #960:								
 io non riesco più mandare messaggi	1	->	A casa mia siamo senza telefono in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo senza telefono in attesa dell'attivazione	1	->	io non riesco più mandare messaggi	1	No	0	1	
+A casa mia siamo senza telefono in attesa dell'attivazione	1	->	io non riesco più mandare messaggi	1	No	0	0	
 								
 node pair #961:								
 io non riesco più mandare messaggi	1	->	gli sms mi arrivavano ore dopo rispetto a quando me li inviavano	1	No	0	0	
@@ -4190,7 +4190,7 @@ ieri gli sms mi arrivavano ore dopo rispetto a quando me li inviavano	1	->	io no
 								
 node pair #964:								
 io non riesco più mandare messaggi	1	->	siamo in attesa dell'attivazione	1	No	0	0	
-siamo in attesa dell'attivazione	1	->	io non riesco più mandare messaggi	1	No	0	1	
+siamo in attesa dell'attivazione	1	->	io non riesco più mandare messaggi	1	No	0	0	
 								
 node pair #965:								
 io non riesco più mandare messaggi	1	->	non riescono ancora a risolvermi i problemi con portabilità	1	No	0	0	
@@ -5277,7 +5277,7 @@ scompare la linea telefonica	1	->	una linea mai attivata . . . . . .	1	No	0	0
 una linea mai attivata . . . . . .	1	->	scompare la linea telefonica	1	No	0	0	
 								
 node pair #1236:								
-scompare la linea telefonica	1	->	ho problemi di ricezione	2	No	0	0	
+scompare la linea telefonica	1	->	ho problemi di ricezione	2	No	0	1	
 ho problemi di ricezione	2	->	scompare la linea telefonica	1	No	0	0	
 								
 node pair #1237:								
@@ -8445,7 +8445,7 @@ a volte scompare la linea telefonica	1	->	una linea mai attivata . . . . . .	1	N
 una linea mai attivata . . . . . .	1	->	a volte scompare la linea telefonica	1	No	0	0	
 								
 node pair #2028:								
-a volte scompare la linea telefonica	1	->	ho problemi di ricezione	2	No	0	0	
+a volte scompare la linea telefonica	1	->	ho problemi di ricezione	2	No	0	1	
 ho problemi di ricezione	2	->	a volte scompare la linea telefonica	1	No	0	0	
 								
 node pair #2029:								
@@ -8777,7 +8777,7 @@ a volte scompare anche la linea telefonica	1	->	una linea mai attivata . . . . .
 una linea mai attivata . . . . . .	1	->	a volte scompare anche la linea telefonica	1	No	0	0	
 								
 node pair #2111:								
-a volte scompare anche la linea telefonica	1	->	ho problemi di ricezione	2	No	0	0	
+a volte scompare anche la linea telefonica	1	->	ho problemi di ricezione	2	No	0	1	
 ho problemi di ricezione	2	->	a volte scompare anche la linea telefonica	1	No	0	0	
 								
 node pair #2112:								
@@ -9429,7 +9429,7 @@ scompare anche la linea telefonica	1	->	una linea mai attivata . . . . . .	1	No	
 una linea mai attivata . . . . . .	1	->	scompare anche la linea telefonica	1	No	0	0	
 								
 node pair #2274:								
-scompare anche la linea telefonica	1	->	ho problemi di ricezione	2	No	0	0	
+scompare anche la linea telefonica	1	->	ho problemi di ricezione	2	No	0	1	
 ho problemi di ricezione	2	->	scompare anche la linea telefonica	1	No	0	0	
 								
 node pair #2275:								
@@ -12449,7 +12449,7 @@ noi da 15 giorni senza linea ai cell	1	->	una linea mai attivata . . . . . .	1	Y
 una linea mai attivata . . . . . .	1	->	noi da 15 giorni senza linea ai cell	1	No	0	0	
 								
 node pair #3029:								
-noi da 15 giorni senza linea ai cell	1	->	ho problemi di ricezione	2	No	0	0	
+noi da 15 giorni senza linea ai cell	1	->	ho problemi di ricezione	2	No	0	1	
 ho problemi di ricezione	2	->	noi da 15 giorni senza linea ai cell	1	No	0	0	
 								
 node pair #3030:								
@@ -17442,7 +17442,7 @@ sono tre giorni senza telefono	1	->	ho problemi di ricezione	2	No	0	0
 								
 node pair #4277:								
 ho problemi di ricezione	2	->	da stamattina che i nostri telefonini non hanno linea	1	No	0	0	
-da stamattina che i nostri telefonini non hanno linea	1	->	ho problemi di ricezione	2	No	0	0	
+da stamattina che i nostri telefonini non hanno linea	1	->	ho problemi di ricezione	2	No	0	1	
 								
 node pair #4278:								
 ho problemi di ricezione	2	->	ho problemi di linea con il cellulare	1	No	0	0	
@@ -17474,7 +17474,7 @@ nel mio paese i telefonini funzionano malissimo	1	->	ho problemi di ricezione	2	
 								
 node pair #4285:								
 ho problemi di ricezione	2	->	il mio telefono risulta spento anche se in realtà è accesso	1	No	0	0	
-il mio telefono risulta spento anche se in realtà è accesso	1	->	ho problemi di ricezione	2	No	0	0	
+il mio telefono risulta spento anche se in realtà è accesso	1	->	ho problemi di ricezione	2	No	0	1	
 								
 node pair #4286:								
 non riesco a ricevere nella zona di arzignano ( VI )	1	->	ho problemi di ricezione	2	Yes	0	1	
@@ -18818,7 +18818,7 @@ ieri gli sms mi arrivavano ore dopo rispetto a quando me li inviavano	1	->	linea
 								
 node pair #4621:								
 linea telefonica assente in entrata	1	->	siamo in attesa dell'attivazione	1	No	0	0	
-siamo in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	1	
+siamo in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	0	
 								
 node pair #4622:								
 linea telefonica assente in entrata	1	->	non riescono ancora a risolvermi i problemi con portabilità	1	No	0	0	
@@ -18826,19 +18826,19 @@ non riescono ancora a risolvermi i problemi con portabilità	1	->	linea telefoni
 								
 node pair #4623:								
 linea telefonica assente in entrata	1	->	siamo senza telefono in attesa dell'attivazione	1	No	0	0	
-siamo senza telefono in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	1	
+siamo senza telefono in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	0	
 								
 node pair #4624:								
 linea telefonica assente in entrata	1	->	A casa mia siamo da due mesi in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo da due mesi in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	1	
+A casa mia siamo da due mesi in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	0	
 								
 node pair #4625:								
 linea telefonica assente in entrata	1	->	A casa mia siamo in attesa dell'attivazione	1	No	0	0	
-A casa mia siamo in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	1	
+A casa mia siamo in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	0	
 								
 node pair #4626:								
 linea telefonica assente in entrata	1	->	siamo da due mesi in attesa dell'attivazione	1	No	0	0	
-siamo da due mesi in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	1	
+siamo da due mesi in attesa dell'attivazione	1	->	linea telefonica assente in entrata	1	No	0	0	
 								
 node pair #4627:								
 linea telefonica assente in entrata	1	->	la TELEFONIAX non mi fa inviare i messaggi , pur avendo credito	1	No	0	0	

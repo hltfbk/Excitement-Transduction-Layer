@@ -19,8 +19,24 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 public class GoldStandardToWP2FormatTranslator {
+	protected int nodeNum;
+	protected int edgeNum;
+	
+		public GoldStandardToWP2FormatTranslator() {
+		super();
+		nodeNum=0;
+		edgeNum=0;
+	}
+		
+	public int getNodeNum() {
+			return nodeNum;
+		}
 
-	private static String getWP2edge(EntailmentRelation edge, Map<String,Set<String>> textToIdsMap){
+	public int getEdgeNum() {
+			return edgeNum;
+		}
+
+	private String getWP2edge(EntailmentRelation edge, Map<String,Set<String>> textToIdsMap){
 /*		Output example
 		<edge target="413572.txt_1_0" source="112459.txt_1_2" id="413572.txt_1_0-112459.txt_1_2">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
@@ -40,6 +56,7 @@ public class GoldStandardToWP2FormatTranslator {
 				if (edge.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) s+= "\t\t<entailment type=\"clousure\">yes</entailment>\n";
 				else s+= "\t\t<entailment type=\"direct\">yes</entailment>\n";
 				s+="\t</edge>\n";
+				edgeNum++;
 				i++;
 			}
 		}			
@@ -47,7 +64,7 @@ public class GoldStandardToWP2FormatTranslator {
 		return s;
 	}
 	
-	private static boolean createWP2xml(File annotationFile, File newFile, GoldStandardEdgesLoader gsloader){
+	private boolean createWP2xml(File annotationFile, File newFile, GoldStandardEdgesLoader gsloader){
 		boolean hasEdges = true;
 		try {
 			String s = "";
@@ -95,7 +112,7 @@ public class GoldStandardToWP2FormatTranslator {
 		}
 	}
 	
-	public static boolean createWP2xml(String xmlFilename, EntailmentGraphRaw graph, Map<String,Set<String>> textToIdsMap, Map<String,String> nodeContentById){
+	public boolean createWP2xml(String xmlFilename, EntailmentGraphRaw graph, Map<String,Set<String>> textToIdsMap, Map<String,String> nodeContentById){
 		
 		try {
 			String s = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<F_entailment_graph problem=\"no\" nodeNum=\""+String.valueOf(graph.vertexSet().size())+"\">\n";
@@ -103,6 +120,7 @@ public class GoldStandardToWP2FormatTranslator {
 			for (EntailmentUnit node : graph.vertexSet()){
 				for (String id : textToIdsMap.get(node.getText())){
 					s+=nodeContentById.get(id);
+					nodeNum++;
 				}
 			}
 			
@@ -128,7 +146,7 @@ public class GoldStandardToWP2FormatTranslator {
 		}
 	}
 
-	public static void createWP2Data(String gsAnnotationsDir){
+	public void createWP2Data(String gsAnnotationsDir){
 		File gsDir = new File(gsAnnotationsDir);
 		for(String clusterAnnotationDir: gsDir.list()){
 			try {
@@ -172,9 +190,8 @@ public class GoldStandardToWP2FormatTranslator {
 	//	String gsAnnotationsDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
 		String gsAnnotationsDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
 		
-		
-		createWP2Data(gsAnnotationsDir);
-		
+		GoldStandardToWP2FormatTranslator t = new GoldStandardToWP2FormatTranslator();
+		t.createWP2Data(gsAnnotationsDir);
 	}
 
 }

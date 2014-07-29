@@ -64,6 +64,7 @@ public class GoldStandardEdgesLoader {
 	
 
 	protected Map<String,EntailmentRelation> edges;
+	protected int numOfEdges; //to count the number of ALL edges in an annotated graph, including "duplicate" edges with the same source/target text, but different id
 	protected Map<String,String> nodeTextById;
 	protected Map<String,String> nodeContentById;
 	
@@ -72,6 +73,10 @@ public class GoldStandardEdgesLoader {
 	 */
 	public Map<String, String> getNodeTextById() {
 		return nodeTextById;
+	}
+
+	public int getNumOfEdges() {
+		return numOfEdges;
 	}
 
 	Set<String> nodesOfInterest;
@@ -110,6 +115,7 @@ public class GoldStandardEdgesLoader {
 	public GoldStandardEdgesLoader(Set<String> nodesOfInterest, boolean withClosure) {
 		setMergedFileSuffix(withClosure);
 		edges = new HashMap<String,EntailmentRelation>();
+		numOfEdges = 0;
 		nodeTextById = new HashMap<String,String>(); //[id] [text]
 		nodeContentById = new HashMap<String,String>(); //[id] [content]		
 		this.nodesOfInterest = nodesOfInterest;
@@ -273,6 +279,7 @@ public class GoldStandardEdgesLoader {
 					// load all the edges
 					NodeList entailmentRelationList = doc.getElementsByTagName("edge");
 					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
+						numOfEdges ++;
 						Node er = entailmentRelationList.item(temp);     
 						er.getNodeName();     
 						Element erElement = (Element) er;
@@ -466,7 +473,8 @@ public class GoldStandardEdgesLoader {
 					
 					// load all the "YES" edges
 					NodeList entailmentRelationList = doc.getElementsByTagName("edge");
-					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
+					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {
+						numOfEdges++;
 						Node er = entailmentRelationList.item(temp);     
 						er.getNodeName();     
 						Element erElement = (Element) er;

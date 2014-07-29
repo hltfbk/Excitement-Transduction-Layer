@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="18">
+	<node explicit_context="ItaSpeech0050.txt" focus="promozione" id="ItaSpeech0050.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non riesco a togliere la promozione che ho adesso</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0051.txt" focus="promozione" id="ItaSpeech0051.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non riesco a disattivare la promozione attuale</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0076.txt" focus="promozione" id="ItaSpeech0076.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>pago questa promozione più di altri clienti</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0113.txt" focus="promozione" id="ItaSpeech0113.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non voglio che mi cambiate la promozione</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0100.txt" focus="promozione" id="ItaSpeech0100.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>mi cambiate la promozione ma a me va bene quella che ho</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0111.txt" focus="promozione" id="ItaSpeech0111.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>la promozione si trasformerà in un'altra ma io non voglio</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0088.txt" focus="promozione" id="ItaSpeech0088.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>cambiate la promozione ma io non ho chiesto questo</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0037.txt" focus="promozione" id="ItaSpeech0037.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>L'assistenza mi ha detto che la mia promozione non esiste ma non è vero</original_text>
+        <correct_text> </correct_text>
+        <modifiers>miapoz=6</modifiers>
+    </node>
+	<node explicit_context="ItaSpeech0037.txt" focus="promozione" id="ItaSpeech0037.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>L'assistenza mi ha detto che la promozione non esiste ma non è vero</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="ItaSpeech0008.txt" focus="promozione" id="ItaSpeech0008.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non ho chiesto di attivarmi questa promozione</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0036.txt" focus="promozione" id="ItaSpeech0036.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>la promozione è diversa da quella che ho scelto</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0064.txt" focus="promozione" id="ItaSpeech0064.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non riesco a vedere la promozione</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="ItaSpeech0064.txt" focus="promozione" id="ItaSpeech0064.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non riesco a vedere la promozione per i punti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>per i puntipoz=6 7 8</modifiers>
+    </node>
+	<node explicit_context="ItaSpeech0018.txt" focus="promozione" id="ItaSpeech0018.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>Non riesco ad attivare la promozione</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0062.txt" focus="promozione" id="ItaSpeech0062.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non riesco ad attivare la promozione</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="ItaSpeech0044.txt" focus="promozione" id="ItaSpeech0044.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non ho mai detto di disattivare la promozione</original_text>
+        <correct_text> </correct_text>
+        <modifiers>maipoz=2</modifiers>
+    </node>
+	<node explicit_context="ItaSpeech0044.txt" focus="promozione" id="ItaSpeech0044.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non ho detto di disattivare la promozione</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="ItaSpeech0029.txt" focus="promozione" id="ItaSpeech0029.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<edge target="ItaSpeech0088.txt_1_0" source="ItaSpeech0100.txt_1_0" id="ItaSpeech0088.txt_1_0-ItaSpeech0100.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0037.txt_1_1" source="ItaSpeech0037.txt_1_0" id="ItaSpeech0037.txt_1_1-ItaSpeech0037.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0088.txt_1_0" source="ItaSpeech0111.txt_1_0" id="ItaSpeech0088.txt_1_0-ItaSpeech0111.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0111.txt_1_0" source="ItaSpeech0100.txt_1_0" id="ItaSpeech0111.txt_1_0-ItaSpeech0100.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0111.txt_1_0" source="ItaSpeech0113.txt_1_0" id="ItaSpeech0111.txt_1_0-ItaSpeech0113.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0050.txt_1_0" source="ItaSpeech0051.txt_1_0" id="ItaSpeech0050.txt_1_0-ItaSpeech0051.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0051.txt_1_0" source="ItaSpeech0050.txt_1_0" id="ItaSpeech0051.txt_1_0-ItaSpeech0050.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0050.txt_1_0" source="ItaSpeech0051.txt_1_0" id="ItaSpeech0050.txt_1_0-ItaSpeech0051.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0018.txt_1_0" source="ItaSpeech0062.txt_1_0" id="ItaSpeech0018.txt_1_0-ItaSpeech0062.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0008.txt_1_0" source="ItaSpeech0036.txt_1_0" id="ItaSpeech0008.txt_1_0-ItaSpeech0036.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0100.txt_1_0" source="ItaSpeech0111.txt_1_0" id="ItaSpeech0100.txt_1_0-ItaSpeech0111.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0018.txt_1_0" source="ItaSpeech0062.txt_1_0" id="ItaSpeech0018.txt_1_0-ItaSpeech0062.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0113.txt_1_0" source="ItaSpeech0111.txt_1_0" id="ItaSpeech0113.txt_1_0-ItaSpeech0111.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0113.txt_1_0" source="ItaSpeech0100.txt_1_0" id="ItaSpeech0113.txt_1_0-ItaSpeech0100.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0088.txt_1_0" source="ItaSpeech0036.txt_1_0" id="ItaSpeech0088.txt_1_0-ItaSpeech0036.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0100.txt_1_0" source="ItaSpeech0113.txt_1_0" id="ItaSpeech0100.txt_1_0-ItaSpeech0113.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0113.txt_1_0" source="ItaSpeech0100.txt_1_0" id="ItaSpeech0113.txt_1_0-ItaSpeech0100.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0064.txt_1_1" source="ItaSpeech0064.txt_1_0" id="ItaSpeech0064.txt_1_1-ItaSpeech0064.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0062.txt_1_0" source="ItaSpeech0018.txt_1_0" id="ItaSpeech0062.txt_1_0-ItaSpeech0018.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0111.txt_1_0" source="ItaSpeech0113.txt_1_0" id="ItaSpeech0111.txt_1_0-ItaSpeech0113.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0100.txt_1_0" source="ItaSpeech0113.txt_1_0" id="ItaSpeech0100.txt_1_0-ItaSpeech0113.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0051.txt_1_0" source="ItaSpeech0050.txt_1_0" id="ItaSpeech0051.txt_1_0-ItaSpeech0050.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0111.txt_1_0" source="ItaSpeech0100.txt_1_0" id="ItaSpeech0111.txt_1_0-ItaSpeech0100.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0044.txt_1_1" source="ItaSpeech0044.txt_1_0" id="ItaSpeech0044.txt_1_1-ItaSpeech0044.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0113.txt_1_0" source="ItaSpeech0111.txt_1_0" id="ItaSpeech0113.txt_1_0-ItaSpeech0111.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0062.txt_1_0" source="ItaSpeech0018.txt_1_0" id="ItaSpeech0062.txt_1_0-ItaSpeech0018.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0088.txt_1_0" source="ItaSpeech0113.txt_1_0" id="ItaSpeech0088.txt_1_0-ItaSpeech0113.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="ItaSpeech0100.txt_1_0" source="ItaSpeech0111.txt_1_0" id="ItaSpeech0100.txt_1_0-ItaSpeech0111.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

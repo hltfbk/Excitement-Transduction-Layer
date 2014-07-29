@@ -111,7 +111,7 @@ collapsed node #37 : 1 entailment unit(s) before editing							ok
 	non riesco piu ha contatare il 444 x parlare con l operatore	[0266.txt_1_0]							
 									
 collapsed node #38 : 1 entailment unit(s) before editing							modified		
-	non riesco piu ha contatare il 444 l operatore	[0266.txt_1_2]						ID MODIFIED	x parlare con l operatore nuvo modificatore
+	non riesco piu ha contatare il 444	[0266.txt_1_2]						ID MODIFIED	x parlare con l operatore nuvo modificatore
 	non riesco piu a contatare il 444	[0258.txt_1_1]						from node #1	
 	non riesco piu ha contatare il 444	[0285.txt_1_2]						from node #88	
 									

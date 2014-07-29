@@ -44,6 +44,7 @@ public class GoldStandardReannotation {
 	Map<String,Set<String>> textToIdsMap = null;
 	Map<String,String> nodeContentById = null;
 	Set<String> newNodes = new HashSet<String>();
+	int numFGedges = 0;
 
 	private void clearData(){
 		rg = null;
@@ -53,6 +54,7 @@ public class GoldStandardReannotation {
 		textToIdsMap = null;	
 		nodeContentById = null;
 		newNodes = new HashSet<String>();
+		numFGedges = 0;
 	}
 	
 /*	private int getWP2Relation(EquivalenceClass nodeA, EquivalenceClass nodeB){
@@ -148,6 +150,8 @@ public class GoldStandardReannotation {
 			System.out.println(gsClusterDir.getName().toUpperCase());
 			gsFGloader.loadFGrawGraph(gsClusterDir.getAbsolutePath()); //load only FGs
 		}
+
+		numFGedges = gsFGloader.getNumOfEdges();
 		rfg = gsFGloader.getRawGraph();
 		
 		nodeContentById = gsFGloader.getNodeContentById();
@@ -466,8 +470,8 @@ public class GoldStandardReannotation {
 					isConsistent = false;
 					System.err.println("Edge added into Fragment Graph: "+ e);	
 					EntailmentRelationCollapsed edge = ourCg.getEdge(ourCg.getVertex(e.getSource().getText()), ourCg.getVertex(e.getTarget().getText()));
-					if (edge!=null) System.err.println("	from collapsed edge: "+ edge);
-					else System.err.println("	as part of collapsed node: "+ ourCg.getVertex(e.getSource().getText()));
+					if (edge!=null) System.err.println("from collapsed edge: "+ edge);
+					else System.err.println("as part of collapsed node: "+ ourCg.getVertex(e.getSource().getText()));
 				}
 			}
 		}
@@ -558,51 +562,69 @@ public class GoldStandardReannotation {
 		}		
 	}
 
-	public void step3LoadAnnotatedFile(String filename, File clusterAnnotationsDir, String clusterName){
+	public String step3LoadAnnotatedFile(String filename, File clusterAnnotationsDir, String clusterName){
+		String res=clusterName+"\t";
 		try{
 			File txtFileReannotated = new File(filename);
 			loadFragmentGraphs(clusterAnnotationsDir);
 
-			loadReannotatedCollapsedGraph(txtFileReannotated, true);
-			
+			boolean isConsistent = loadReannotatedCollapsedGraph(txtFileReannotated, true);
+			if (!isConsistent) {
+				res+="NOT CONSISTENT\n";
+				return res;
+			}
+				
 			EntailmentGraphRaw decollapsedGraph = EvaluatorGraphOptimizer.getDecollapsedGraph(ourCg);
-			GoldStandardToWP2FormatTranslator.createWP2xml(txtFileReannotated.getAbsolutePath().replace(".txt", "PlusClosure.xml"), decollapsedGraph, textToIdsMap, nodeContentById);
+			GoldStandardToWP2FormatTranslator trToWp2 = new GoldStandardToWP2FormatTranslator();
+			trToWp2.createWP2xml(txtFileReannotated.getAbsolutePath().replace(".txt", "PlusClosure.xml"), decollapsedGraph, textToIdsMap, nodeContentById);
 		
 			System.out.println("Statistics:");
-			System.out.println("Cluster \t Nodes in FGs \t Edges in FGs \t coll nodes \t meta-nodes \t Avg size of meta-node \t Coll Edges \t raw Nodes \t raw Edges");			
-			System.out.print(clusterName+"\t");
-			System.out.print(rfg.vertexSet().size()+"\t");
+			System.out.println("Cluster \t All nodes in FGs \t All edges in FGs \t All nodes in WP2 graph \t All edges in WP2 graph \t Distinct-text nodes in FGs \t Distinct-text edges in FGs \t coll nodes \t meta-nodes \t Avg size of meta-node \t All meta-nodes sizes \t Coll Edges \t Distinct-text merged graph nodes \t Distinct-text merged graph edges");			
+
+			res+=nodeContentById.size()+"\t";
+			res+=numFGedges+"\t";
+			res+=trToWp2.getNodeNum()+"\t";
+			res+=trToWp2.getEdgeNum()+"\t";
+
+			res+=rfg.vertexSet().size()+"\t";
+			
+			
 			
 			int fgYesEdges = 0;
 			for (EntailmentRelation e: rfg.edgeSet()){
 				if (e.getTEdecision().getDecision().is(DecisionLabel.Entailment)) fgYesEdges++;
 			}
-			System.out.print(fgYesEdges+"\t");
-			System.out.print(ourCg.vertexSet().size()+"\t");
+			res+=fgYesEdges+"\t";
+			res+=ourCg.vertexSet().size()+"\t";
 			
 			int metaNodes = 0;
 			double metaSize = 0;
+			String sizes="";
 			for (EquivalenceClass eq : ourCg.vertexSet()){
-				int size = eq.getEntailmentUnits().size();
+				Integer size = eq.getEntailmentUnits().size();
 				if (size>1){
 					metaNodes++;
 					metaSize+=size;
+					sizes+=size.toString()+"  "; 
 				}
 			}
 			if (metaNodes>0) metaSize/= metaNodes;
 
-			System.out.print(metaNodes+"\t");
-			System.out.print(metaSize+"\t");
+			res+=metaNodes+"\t";
+			res+=metaSize+"\t";
+			res+=sizes+"\t";
 			
 			
-			System.out.print(ourCg.edgeSet().size()+"\t");
-			System.out.print(decollapsedGraph.vertexSet().size()+"\t");
-			System.out.println(decollapsedGraph.edgeSet().size());
+			res+=ourCg.edgeSet().size()+"\t";
+			res+=decollapsedGraph.vertexSet().size()+"\t";
+			res+=decollapsedGraph.edgeSet().size()+"\n";
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 		
+		} 	
+		System.out.println(res);
+		return res;
 	}
 	
 	
@@ -615,20 +637,56 @@ public class GoldStandardReannotation {
 		
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 		
-		String clusterName = "Cluster A2.1Tariffe e promozioni test"; //"EMAIL0410";		
+		String[] single = {"Cluster D1.1 Call Center e Servizio Clienti - Contatto"};
+		
+		String[] devsetEn = {"EMAIL0001",
+		                     "EMAIL0002",
+		                     "EMAIL0003",
+		                     "EMAIL0010",
+		                     "EMAIL0020_DEV",
+		                     "EMAIL0030",
+		                     "EMAIL0110",
+		                     "EMAIL0120",
+		                     "EMAIL0130",
+		                     "EMAIL0140",
+		                     "EMAIL0220",
+		                     "EMAIL0230",
+		                     "EMAIL0240",
+		                     "EMAIL0250",
+		                     "EMAIL0320",
+		                     "EMAIL0340",
+		                     "EMAIL0380",
+		                     "EMAIL0390",
+		                     "EMAIL0410"};
+		
+	String[] testsetEn = {"EMAIL0020_TEST",
+		"EMAIL0040",
+		"EMAIL0050",
+		"EMAIL0060",
+		"EMAIL0210",
+		"EMAIL0310",
+		"EMAIL0330",
+		"EMAIL0350",
+		"EMAIL0360",
+		"EMAIL0370"};
+	
+	//	String clusterName = "EMAIL0002";		
 	//	String clusterName = "SPEECH0080";		
 
-		String set = "Test";
-	//	String set = "Dev";
+	String stat="";
+	for (String clusterName : single){
+		//	String set = "Test";
+		 String set = "Dev";
 		
 //		String suffix = "Reconciled";
 //		String suffix = "LB";
 		String suffix = "AF";
+//		String suffix = "lk";
 		
 		
 				
 		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
-	//	 File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
+//		 File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
 		
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
@@ -640,12 +698,14 @@ public class GoldStandardReannotation {
 	//	tr.step1CreateFileForEditingNodes(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed.txt", clusterAnnotationsDir);
 
 		// Step2 : create txt file for edge annotation, using updated collapsed nodes
-		tr.step2CreateFileForEdgeAnnotation(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt", tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_"+suffix+".txt", clusterAnnotationsDir);
+	//	tr.step2CreateFileForEdgeAnnotation(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_updatedNodes.txt", tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+"_collapsed_"+suffix+".txt", clusterAnnotationsDir);
 		
 
 		// Step3 : load final re-annotated graph, check for consistency, calculate statistics and create wp2-format file 		
-	//	tr.step3LoadAnnotatedFile(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+".txt", clusterAnnotationsDir, clusterName);
-
+		stat+=tr.step3LoadAnnotatedFile(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+".txt", clusterAnnotationsDir, clusterName);
+		
+		}
+	System.out.println(stat);
 	}
 
 }
