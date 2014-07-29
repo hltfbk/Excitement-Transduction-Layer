@@ -2,7 +2,6 @@ package eu.excitementproject.tl.laputils;
 
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.eop.lap.implbase.ExampleLAPAE;
 
 /**
  * 
@@ -13,7 +12,7 @@ import eu.excitementproject.eop.lap.implbase.ExampleLAPAE;
  * @author Gil
  *
  */
-public class LemmaLevelLapDE extends ExampleLAPAE implements LAPAccess {
+public class LemmaLevelLapDE extends LemmaLevelLapEN implements LAPAccess {
 
 	public LemmaLevelLapDE() throws LAPException
 	{
