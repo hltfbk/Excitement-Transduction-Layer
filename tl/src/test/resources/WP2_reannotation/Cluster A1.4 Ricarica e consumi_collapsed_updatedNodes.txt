@@ -1,0 +1,1183 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 1 entailment unit(s) before editing
+	NON posso ricaricare	[0291.txt_1_1]
+
+collapsed node #2 : 1 entailment unit(s) before editing
+	non mi è ancora stata accreditata	[0097.txt_2_0]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	NON posso da giorni ricaricare	[0291.txt_1_0]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	la ricarica con paypal non funziona	[0105.txt_1_1]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	la ricarica online non funziona	[0105.txt_1_2]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	la ricarica non funziona	[0105.txt_1_3]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	la ricarica online con paypal non funziona	[0105.txt_1_0]
+
+collapsed node #8 : 2 entailment unit(s) before editing
+	ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	[0009.txt_1_19]
+	ricarica vinti non li ho mai visti	[0226.txt_1_1]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	da facebook non va	[0105.txt_5_0]
+
+collapsed node #10 : 2 entailment unit(s) before editing
+	dei 10 € di ricarica vinti non li ho mai visti	[0226.txt_1_0]
+	ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	[0009.txt_1_13]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	è da 6 mesi che mi fatturate una linea che non funziona	[0316.txt_1_0]
+
+collapsed node #12 : 1 entailment unit(s) before editing
+	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	[0009.txt_1_5]
+
+collapsed node #13 : 1 entailment unit(s) before editing
+	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	[0009.txt_1_12]
+
+collapsed node #14 : 1 entailment unit(s) before editing
+	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	[0009.txt_1_2]
+
+collapsed node #15 : 1 entailment unit(s) before editing
+	mi fatturate una linea che non funziona	[0316.txt_1_1]
+
+collapsed node #16 : 1 entailment unit(s) before editing
+	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	[0009.txt_1_3]
+
+collapsed node #17 : 1 entailment unit(s) before editing
+	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	[0009.txt_1_9]
+
+collapsed node #18 : 1 entailment unit(s) before editing
+	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	[0009.txt_1_6]
+
+collapsed node #19 : 1 entailment unit(s) before editing
+	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	[0009.txt_1_7]
+
+collapsed node #20 : 1 entailment unit(s) before editing
+	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	[0009.txt_1_15]
+
+collapsed node #21 : 1 entailment unit(s) before editing
+	anomalie che avete sui messaggi di notifica di credito insufficiente	[0301.txt_2_0]
+
+collapsed node #22 : 1 entailment unit(s) before editing
+	anomalie che avete sui messaggi di notifica	[0301.txt_2_1]
+
+collapsed node #23 : 1 entailment unit(s) before editing
+	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	[0009.txt_1_1]
+
+collapsed node #24 : 1 entailment unit(s) before editing
+	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	[0009.txt_1_0]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+NON posso ricaricare	1	->	non mi è ancora stata accreditata	1	No	0
+non mi è ancora stata accreditata	1	->	NON posso ricaricare	1	No	0
+
+node pair #2:
+NON posso da giorni ricaricare	1	->	NON posso ricaricare	1	Yes	1
+NON posso ricaricare	1	->	NON posso da giorni ricaricare	1	No	-1
+
+node pair #3:
+NON posso ricaricare	1	->	la ricarica con paypal non funziona	1	No	0
+la ricarica con paypal non funziona	1	->	NON posso ricaricare	1	No	0
+
+node pair #4:
+NON posso ricaricare	1	->	la ricarica online non funziona	1	No	0
+la ricarica online non funziona	1	->	NON posso ricaricare	1	No	0
+
+node pair #5:
+NON posso ricaricare	1	->	la ricarica non funziona	1	No	0
+la ricarica non funziona	1	->	NON posso ricaricare	1	No	0
+
+node pair #6:
+NON posso ricaricare	1	->	la ricarica online con paypal non funziona	1	No	0
+la ricarica online con paypal non funziona	1	->	NON posso ricaricare	1	No	0
+
+node pair #7:
+NON posso ricaricare	1	->	ricarica vinti non li ho mai visti	2	No	0
+ricarica vinti non li ho mai visti	2	->	NON posso ricaricare	1	No	0
+
+node pair #8:
+da facebook non va	1	->	NON posso ricaricare	1	Yes	0
+NON posso ricaricare	1	->	da facebook non va	1	No	0
+
+node pair #9:
+NON posso ricaricare	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+dei 10 € di ricarica vinti non li ho mai visti	2	->	NON posso ricaricare	1	No	0
+
+node pair #10:
+NON posso ricaricare	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	NON posso ricaricare	1	No	0
+
+node pair #11:
+NON posso ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #12:
+NON posso ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #13:
+NON posso ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #14:
+NON posso ricaricare	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	NON posso ricaricare	1	No	0
+
+node pair #15:
+NON posso ricaricare	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #16:
+NON posso ricaricare	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #17:
+NON posso ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #18:
+NON posso ricaricare	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #19:
+NON posso ricaricare	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #20:
+NON posso ricaricare	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	NON posso ricaricare	1	No	0
+
+node pair #21:
+NON posso ricaricare	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	NON posso ricaricare	1	No	0
+
+node pair #22:
+NON posso ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #23:
+NON posso ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	NON posso ricaricare	1	No	0
+
+node pair #24:
+non mi è ancora stata accreditata	1	->	NON posso da giorni ricaricare	1	No	0
+NON posso da giorni ricaricare	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #25:
+non mi è ancora stata accreditata	1	->	la ricarica con paypal non funziona	1	No	0
+la ricarica con paypal non funziona	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #26:
+non mi è ancora stata accreditata	1	->	la ricarica online non funziona	1	No	0
+la ricarica online non funziona	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #27:
+non mi è ancora stata accreditata	1	->	la ricarica non funziona	1	No	0
+la ricarica non funziona	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #28:
+non mi è ancora stata accreditata	1	->	la ricarica online con paypal non funziona	1	No	0
+la ricarica online con paypal non funziona	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #29:
+ricarica vinti non li ho mai visti	2	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	ricarica vinti non li ho mai visti	2	No	0
+
+node pair #30:
+non mi è ancora stata accreditata	1	->	da facebook non va	1	No	0
+da facebook non va	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #31:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+
+node pair #32:
+non mi è ancora stata accreditata	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #33:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #34:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #35:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #36:
+non mi è ancora stata accreditata	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #37:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #38:
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #39:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #40:
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #41:
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #42:
+non mi è ancora stata accreditata	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #43:
+non mi è ancora stata accreditata	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	non mi è ancora stata accreditata	1	No	0
+
+node pair #44:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #45:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	non mi è ancora stata accreditata	1	Yes	0
+non mi è ancora stata accreditata	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #46:
+NON posso da giorni ricaricare	1	->	la ricarica con paypal non funziona	1	No	0
+la ricarica con paypal non funziona	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #47:
+NON posso da giorni ricaricare	1	->	la ricarica online non funziona	1	No	0
+la ricarica online non funziona	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #48:
+NON posso da giorni ricaricare	1	->	la ricarica non funziona	1	No	0
+la ricarica non funziona	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #49:
+NON posso da giorni ricaricare	1	->	la ricarica online con paypal non funziona	1	No	0
+la ricarica online con paypal non funziona	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #50:
+NON posso da giorni ricaricare	1	->	ricarica vinti non li ho mai visti	2	No	0
+ricarica vinti non li ho mai visti	2	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #51:
+NON posso da giorni ricaricare	1	->	da facebook non va	1	No	0
+da facebook non va	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #52:
+NON posso da giorni ricaricare	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+dei 10 € di ricarica vinti non li ho mai visti	2	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #53:
+NON posso da giorni ricaricare	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #54:
+NON posso da giorni ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #55:
+NON posso da giorni ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #56:
+NON posso da giorni ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #57:
+NON posso da giorni ricaricare	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #58:
+NON posso da giorni ricaricare	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #59:
+NON posso da giorni ricaricare	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #60:
+NON posso da giorni ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #61:
+NON posso da giorni ricaricare	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #62:
+NON posso da giorni ricaricare	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #63:
+NON posso da giorni ricaricare	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #64:
+NON posso da giorni ricaricare	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #65:
+NON posso da giorni ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #66:
+NON posso da giorni ricaricare	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	NON posso da giorni ricaricare	1	No	0
+
+node pair #67:
+la ricarica con paypal non funziona	1	->	la ricarica online non funziona	1	No	-1
+la ricarica online non funziona	1	->	la ricarica con paypal non funziona	1	No	-1
+
+node pair #68:
+la ricarica con paypal non funziona	1	->	la ricarica non funziona	1	Yes	1
+la ricarica non funziona	1	->	la ricarica con paypal non funziona	1	No	-1
+
+node pair #69:
+la ricarica online con paypal non funziona	1	->	la ricarica con paypal non funziona	1	Yes	1
+la ricarica con paypal non funziona	1	->	la ricarica online con paypal non funziona	1	No	-1
+
+node pair #70:
+la ricarica con paypal non funziona	1	->	ricarica vinti non li ho mai visti	2	No	0
+ricarica vinti non li ho mai visti	2	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #71:
+la ricarica con paypal non funziona	1	->	da facebook non va	1	No	0
+da facebook non va	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #72:
+la ricarica con paypal non funziona	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+dei 10 € di ricarica vinti non li ho mai visti	2	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #73:
+la ricarica con paypal non funziona	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #74:
+la ricarica con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #75:
+la ricarica con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #76:
+la ricarica con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #77:
+la ricarica con paypal non funziona	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #78:
+la ricarica con paypal non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #79:
+la ricarica con paypal non funziona	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #80:
+la ricarica con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #81:
+la ricarica con paypal non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #82:
+la ricarica con paypal non funziona	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #83:
+la ricarica con paypal non funziona	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #84:
+la ricarica con paypal non funziona	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #85:
+la ricarica con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #86:
+la ricarica con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica con paypal non funziona	1	No	0
+
+node pair #87:
+la ricarica online non funziona	1	->	la ricarica non funziona	1	Yes	1
+la ricarica non funziona	1	->	la ricarica online non funziona	1	No	-1
+
+node pair #88:
+la ricarica online con paypal non funziona	1	->	la ricarica online non funziona	1	Yes	1
+la ricarica online non funziona	1	->	la ricarica online con paypal non funziona	1	No	-1
+
+node pair #89:
+la ricarica online non funziona	1	->	ricarica vinti non li ho mai visti	2	No	0
+ricarica vinti non li ho mai visti	2	->	la ricarica online non funziona	1	No	0
+
+node pair #90:
+la ricarica online non funziona	1	->	da facebook non va	1	No	0
+da facebook non va	1	->	la ricarica online non funziona	1	No	0
+
+node pair #91:
+la ricarica online non funziona	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+dei 10 € di ricarica vinti non li ho mai visti	2	->	la ricarica online non funziona	1	No	0
+
+node pair #92:
+la ricarica online non funziona	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	la ricarica online non funziona	1	No	0
+
+node pair #93:
+la ricarica online non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #94:
+la ricarica online non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #95:
+la ricarica online non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #96:
+la ricarica online non funziona	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	la ricarica online non funziona	1	No	0
+
+node pair #97:
+la ricarica online non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #98:
+la ricarica online non funziona	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #99:
+la ricarica online non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #100:
+la ricarica online non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #101:
+la ricarica online non funziona	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #102:
+la ricarica online non funziona	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	la ricarica online non funziona	1	No	0
+
+node pair #103:
+la ricarica online non funziona	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	la ricarica online non funziona	1	No	0
+
+node pair #104:
+la ricarica online non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #105:
+la ricarica online non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online non funziona	1	No	0
+
+node pair #106:
+la ricarica online con paypal non funziona	1	->	la ricarica non funziona	1	Yes	1
+la ricarica non funziona	1	->	la ricarica online con paypal non funziona	1	No	-1
+
+node pair #107:
+la ricarica non funziona	1	->	ricarica vinti non li ho mai visti	2	No	0
+ricarica vinti non li ho mai visti	2	->	la ricarica non funziona	1	No	0
+
+node pair #108:
+la ricarica non funziona	1	->	da facebook non va	1	No	0
+da facebook non va	1	->	la ricarica non funziona	1	No	0
+
+node pair #109:
+la ricarica non funziona	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+dei 10 € di ricarica vinti non li ho mai visti	2	->	la ricarica non funziona	1	No	0
+
+node pair #110:
+la ricarica non funziona	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	la ricarica non funziona	1	No	0
+
+node pair #111:
+la ricarica non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #112:
+la ricarica non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #113:
+la ricarica non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #114:
+la ricarica non funziona	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	la ricarica non funziona	1	No	0
+
+node pair #115:
+la ricarica non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #116:
+la ricarica non funziona	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #117:
+la ricarica non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #118:
+la ricarica non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #119:
+la ricarica non funziona	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #120:
+la ricarica non funziona	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	la ricarica non funziona	1	No	0
+
+node pair #121:
+la ricarica non funziona	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	la ricarica non funziona	1	No	0
+
+node pair #122:
+la ricarica non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #123:
+la ricarica non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica non funziona	1	No	0
+
+node pair #124:
+la ricarica online con paypal non funziona	1	->	ricarica vinti non li ho mai visti	2	No	0
+ricarica vinti non li ho mai visti	2	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #125:
+la ricarica online con paypal non funziona	1	->	da facebook non va	1	No	0
+da facebook non va	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #126:
+la ricarica online con paypal non funziona	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+dei 10 € di ricarica vinti non li ho mai visti	2	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #127:
+la ricarica online con paypal non funziona	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #128:
+la ricarica online con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #129:
+la ricarica online con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #130:
+la ricarica online con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #131:
+la ricarica online con paypal non funziona	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #132:
+la ricarica online con paypal non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #133:
+la ricarica online con paypal non funziona	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #134:
+la ricarica online con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #135:
+la ricarica online con paypal non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #136:
+la ricarica online con paypal non funziona	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #137:
+la ricarica online con paypal non funziona	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #138:
+la ricarica online con paypal non funziona	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #139:
+la ricarica online con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #140:
+la ricarica online con paypal non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	la ricarica online con paypal non funziona	1	No	0
+
+node pair #141:
+ricarica vinti non li ho mai visti	2	->	da facebook non va	1	No	0
+da facebook non va	1	->	ricarica vinti non li ho mai visti	2	No	0
+
+node pair #142:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	ricarica vinti non li ho mai visti	2	Yes	2
+ricarica vinti non li ho mai visti	2	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	-2
+
+node pair #143:
+ricarica vinti non li ho mai visti	2	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	ricarica vinti non li ho mai visti	2	No	0
+
+node pair #144:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #145:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #146:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #147:
+ricarica vinti non li ho mai visti	2	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	ricarica vinti non li ho mai visti	2	No	0
+
+node pair #148:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #149:
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #150:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #151:
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #152:
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #153:
+ricarica vinti non li ho mai visti	2	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	ricarica vinti non li ho mai visti	2	No	0
+
+node pair #154:
+ricarica vinti non li ho mai visti	2	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	ricarica vinti non li ho mai visti	2	No	0
+
+node pair #155:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #156:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ricarica vinti non li ho mai visti	2	Yes	1
+ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #157:
+da facebook non va	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+dei 10 € di ricarica vinti non li ho mai visti	2	->	da facebook non va	1	No	0
+
+node pair #158:
+da facebook non va	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	da facebook non va	1	No	0
+
+node pair #159:
+da facebook non va	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #160:
+da facebook non va	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #161:
+da facebook non va	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #162:
+da facebook non va	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	da facebook non va	1	No	0
+
+node pair #163:
+da facebook non va	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #164:
+da facebook non va	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #165:
+da facebook non va	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #166:
+da facebook non va	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #167:
+da facebook non va	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #168:
+da facebook non va	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	da facebook non va	1	No	0
+
+node pair #169:
+da facebook non va	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	da facebook non va	1	No	0
+
+node pair #170:
+da facebook non va	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #171:
+da facebook non va	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	da facebook non va	1	No	0
+
+node pair #172:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+
+node pair #173:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	Yes	1
+dei 10 € di ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #174:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	-1
+
+node pair #175:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	-1
+
+node pair #176:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+
+node pair #177:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	Yes	1
+dei 10 € di ricarica vinti non li ho mai visti	2	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #178:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	-1
+
+node pair #179:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	-1
+
+node pair #180:
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	Yes	1
+dei 10 € di ricarica vinti non li ho mai visti	2	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #181:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	-1
+
+node pair #182:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+
+node pair #183:
+dei 10 € di ricarica vinti non li ho mai visti	2	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	No	0
+
+node pair #184:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	Yes	1
+dei 10 € di ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #185:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	dei 10 € di ricarica vinti non li ho mai visti	2	Yes	1
+dei 10 € di ricarica vinti non li ho mai visti	2	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #186:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #187:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #188:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #189:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	mi fatturate una linea che non funziona	1	Yes	1
+mi fatturate una linea che non funziona	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	-1
+
+node pair #190:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #191:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #192:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #193:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #194:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #195:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #196:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #197:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #198:
+è da 6 mesi che mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	è da 6 mesi che mi fatturate una linea che non funziona	1	No	0
+
+node pair #199:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #200:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #201:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #202:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #203:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #204:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #205:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #206:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #207:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #208:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #209:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #210:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #211:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #212:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #213:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #214:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #215:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #216:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #217:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #218:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #219:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #220:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #221:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #222:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #223:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #224:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #225:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #226:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #227:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #228:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #229:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #230:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #231:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #232:
+mi fatturate una linea che non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #233:
+mi fatturate una linea che non funziona	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #234:
+mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #235:
+mi fatturate una linea che non funziona	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #236:
+mi fatturate una linea che non funziona	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #237:
+mi fatturate una linea che non funziona	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #238:
+mi fatturate una linea che non funziona	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #239:
+mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #240:
+mi fatturate una linea che non funziona	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	mi fatturate una linea che non funziona	1	No	0
+
+node pair #241:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #242:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #243:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #244:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #245:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #246:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #247:
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #248:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #249:
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #250:
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #251:
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #252:
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #253:
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #254:
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #255:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #256:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #257:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #258:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #259:
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #260:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #261:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #262:
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #263:
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #264:
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #265:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #266:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #267:
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #268:
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+anomalie che avete sui messaggi di notifica	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+
+node pair #269:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #270:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+ho vinto una ricarica . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+
+node pair #271:
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	anomalie che avete sui messaggi di notifica	1	Yes	1
+anomalie che avete sui messaggi di notifica	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	-1
+
+node pair #272:
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+
+node pair #273:
+anomalie che avete sui messaggi di notifica di credito insufficiente	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica di credito insufficiente	1	No	0
+
+node pair #274:
+anomalie che avete sui messaggi di notifica	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+
+node pair #275:
+anomalie che avete sui messaggi di notifica	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	0
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	anomalie che avete sui messaggi di notifica	1	No	0
+
+node pair #276:
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	Yes	1
+Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato un mese e ancora non mi è stato accreditato nulla	1	->	Con il programma TELEFONIAX ABC ho vinto una ricarica da 10 euro . . . è passato ormai un mese e ancora non mi è stato accreditato nulla	1	No	-1
+

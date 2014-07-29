@@ -4,12 +4,14 @@ import java.io.IOException;
 
 //import javax.xml.transform.TransformerException;
 
+
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 //import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
+import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -40,12 +42,12 @@ public class ExpressExperimentNice extends AbstractExperiment {
 	 */
 	public static void main(String[] args) {
 
-//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
-		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
+		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_test/EMAIL0030/";
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ENG_reannotated/";
 		
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
@@ -53,14 +55,14 @@ public class ExpressExperimentNice extends AbstractExperiment {
 		System.out.println(tlDir);
 	//	System.out.println(System.getProperties());
 		
-	/*	ExperimentNice eTIEpos = new ExperimentNice(
+		ExpressExperimentNice eTIEpos = new ExpressExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 
 				dataDir, fileLimit, outDir,
 
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
-				);*/
+				);
 		
 
 	/*	ExperimentNice eTIEposRes = new ExperimentNice(
@@ -73,14 +75,14 @@ public class ExpressExperimentNice extends AbstractExperiment {
 				);*/
 
 				
-		ExpressExperimentNice eTIEparsedRes = new ExpressExperimentNice(
+		/*ExpressExperimentNice eTIEparsedRes = new ExpressExperimentNice(
 				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 
 				dataDir, fileLimit, outDir,
 				
 				MaltParserEN.class,
 				MaxEntClassificationEDA.class
-				);
+				);*/
 
 		
 
@@ -115,9 +117,9 @@ public class ExpressExperimentNice extends AbstractExperiment {
 		);
 */
 			
-		ExpressExperimentNice e = eTIEparsedRes; 
+		ExpressExperimentNice e = eTIEpos; 
 		
-		Double confidenceThreshold = 0.9;
+		Double confidenceThreshold = 0.0;
 		e.buildRawGraph(confidenceThreshold);
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.xml");

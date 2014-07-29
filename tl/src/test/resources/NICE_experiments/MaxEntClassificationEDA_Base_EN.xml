@@ -18,7 +18,7 @@
 	</section>
 	
 	<section name="eu.excitementproject.eop.core.MaxEntClassificationEDA">
-		<property name="modelFile">D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/MaxEntClassificationEDAModel_Base_EN</property>
+		<property name="modelFile">C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/MaxEntClassificationEDAModel_Base_EN</property>
 		<property name="trainDir">./target/EN/dev/</property>
 		<property name="testDir">./target/EN/test/</property>
 		<property name="classifier">10000,1</property>

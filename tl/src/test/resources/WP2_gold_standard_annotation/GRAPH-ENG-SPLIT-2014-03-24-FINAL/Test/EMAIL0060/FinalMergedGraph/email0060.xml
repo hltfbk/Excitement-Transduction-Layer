@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="6">
+	<node implicit_focus="" focus="food" implicit_context="" explicit_context="105536.txt" modality="FALSE" id ="105536.txt_5_0">
+		<original_text>food was not delivered properly</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="meal" implicit_context="" explicit_context="220190.txt" modality="FALSE" id ="220190.txt_1_0">
+		<original_text>our meal was not delivered with a smile</original_text>
+		<correct_text></correct_text>
+		<modifiers>ourpoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="meal" implicit_context="" explicit_context="220190.txt" modality="FALSE" id ="220190.txt_1_1">
+		<original_text>meal was not delivered with a smile</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="food" implicit_context="" explicit_context="326254.txt" modality="TRUE" id ="326254.txt_1_0">
+		<original_text>You could improve by bringuing food closer to me</original_text>
+		<correct_text>You could improve by bringing food closer to me</correct_text>
+		<modifiers>to mepoz=7 8</modifiers>
+	</node>
+	<node implicit_focus="" focus="food" implicit_context="" explicit_context="326254.txt" modality="TRUE" id ="326254.txt_1_1">
+		<original_text>You could improve by bringuing food closer</original_text>
+		<correct_text>You could improve by bringing food closer</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="food" implicit_context="" explicit_context="464852.txt" modality="FALSE" id ="464852.txt_1_0">
+		<original_text>Service food depends on who it is some better then others</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="220190.txt_1_1" source="220190.txt_1_0" id="220190.txt_1_1-220190.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="105536.txt_5_0" source="220190.txt_1_1" id="105536.txt_5_0-220190.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="326254.txt_1_1" source="326254.txt_1_0" id="326254.txt_1_1-326254.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="105536.txt_5_0" source="326254.txt_1_1" id="105536.txt_5_0-326254.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

@@ -1,0 +1,220 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing								
+	The space currently is too small	[423940.txt_5_0]						
+	not enough space	"[498974.txt_1_0, 327999.txt_4_0]"						
+								
+collapsed node #2 : 6 entailment unit(s) before editing								
+	More suitcase space	[478371.txt_1_0]						
+	There is not enough space for luggage	[469143.txt_1_0]						
+	Would welcome extra luggage space	[511484.txt_1_0]						
+	limited luggage space	[30.txt_3_1]						
+	needs more large luggage space	[415044.txt_1_0]						
+	too little baggage space	[483394.txt_1_3]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing								
+	Improve the space at Frowntown	[473384.txt_2_0]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing								
+	Almost confortable except luggage space	[475555.txt_1_0]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	limited luggage space so would not recommend if travelling with large	[30.txt_3_0]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	The space currently is poorly organised	[423940.txt_6_0]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	Improve the space	[473384.txt_2_1]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	More space would make a lot of difference	[505956.txt_1_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	too little space on trains	[483394.txt_1_1]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	too little baggage space on trains	[483394.txt_1_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+More suitcase space	6	->	not enough space	2	Yes	0	1	
+not enough space	2	->	More suitcase space	6	No	0	0	
+								
+node pair #2:								
+not enough space	2	->	Improve the space at Frowntown	1	No	0	0	
+Improve the space at Frowntown	1	->	not enough space	2	No	0	0	
+								
+node pair #3:								
+not enough space	2	->	Almost confortable except luggage space	1	No	0	0	
+Almost confortable except luggage space	1	->	not enough space	2	No	0	1	
+								
+node pair #4:								
+limited luggage space so would not recommend if travelling with large	1	->	not enough space	2	Yes	0	1	
+not enough space	2	->	limited luggage space so would not recommend if travelling with large	1	No	0	0	
+								
+node pair #5:								
+not enough space	2	->	The space currently is poorly organised	1	No	0	0	
+The space currently is poorly organised	1	->	not enough space	2	No	0	0	
+								
+node pair #6:								
+not enough space	2	->	Improve the space	1	Yes	0	1	
+Improve the space	1	->	not enough space	2	No	0	0	"improve does not mean ""not enough"", it can be better organized, etc"
+								
+node pair #7:								
+More space would make a lot of difference	1	->	not enough space	2	Yes	0	1	
+not enough space	2	->	More space would make a lot of difference	1	No	0	0	
+								
+node pair #8:								
+not enough space	2	->	too little space on trains	1	No	0	0	
+too little space on trains	1	->	not enough space	2	No	0	1	
+								
+node pair #9:								
+too little baggage space on trains	1	->	not enough space	2	Yes	0	1	
+not enough space	2	->	too little baggage space on trains	1	No	0	0	
+								
+node pair #10:								
+More suitcase space	6	->	Improve the space at Frowntown	1	No	0	0	
+Improve the space at Frowntown	1	->	More suitcase space	6	No	0	0	
+								
+node pair #11:								
+More suitcase space	6	->	Almost confortable except luggage space	1	No	0	0	
+Almost confortable except luggage space	1	->	More suitcase space	6	No	0	1	
+								
+node pair #12:								
+limited luggage space so would not recommend if travelling with large	1	->	More suitcase space	6	Yes	1	1	
+More suitcase space	6	->	limited luggage space so would not recommend if travelling with large	1	No	-1	0	
+								
+node pair #13:								
+More suitcase space	6	->	The space currently is poorly organised	1	No	0	0	
+The space currently is poorly organised	1	->	More suitcase space	6	No	0	0	
+								
+node pair #14:								
+More suitcase space	6	->	Improve the space	1	Yes	0	1	
+Improve the space	1	->	More suitcase space	6	No	0	0	
+								
+node pair #15:								
+More suitcase space	6	->	More space would make a lot of difference	1	Yes	0	0	"""a lot"" is not entailed"
+More space would make a lot of difference	1	->	More suitcase space	6	No	0	0	
+								
+node pair #16:								
+More suitcase space	6	->	too little space on trains	1	No	-1	0	
+too little space on trains	1	->	More suitcase space	6	No	-1	0	
+								
+node pair #17:								
+too little baggage space on trains	1	->	More suitcase space	6	Yes	1	1	
+More suitcase space	6	->	too little baggage space on trains	1	No	-1	0	
+								
+node pair #18:								
+Improve the space at Frowntown	1	->	Almost confortable except luggage space	1	No	0	0	
+Almost confortable except luggage space	1	->	Improve the space at Frowntown	1	No	0	0	
+								
+node pair #19:								
+Improve the space at Frowntown	1	->	limited luggage space so would not recommend if travelling with large	1	No	0	0	
+limited luggage space so would not recommend if travelling with large	1	->	Improve the space at Frowntown	1	No	0	0	
+								
+node pair #20:								
+Improve the space at Frowntown	1	->	The space currently is poorly organised	1	No	0	0	
+The space currently is poorly organised	1	->	Improve the space at Frowntown	1	No	0	0	
+								
+node pair #21:								
+Improve the space at Frowntown	1	->	Improve the space	1	Yes	1	1	
+Improve the space	1	->	Improve the space at Frowntown	1	No	-1	0	
+								
+node pair #22:								
+Improve the space at Frowntown	1	->	More space would make a lot of difference	1	No	0	0	
+More space would make a lot of difference	1	->	Improve the space at Frowntown	1	No	0	0	
+								
+node pair #23:								
+Improve the space at Frowntown	1	->	too little space on trains	1	No	0	0	Frowntown is a station
+too little space on trains	1	->	Improve the space at Frowntown	1	No	0	0	
+								
+node pair #24:								
+Improve the space at Frowntown	1	->	too little baggage space on trains	1	No	0	0	
+too little baggage space on trains	1	->	Improve the space at Frowntown	1	No	0	0	
+								
+node pair #25:								
+Almost confortable except luggage space	1	->	limited luggage space so would not recommend if travelling with large	1	No	0	0	
+limited luggage space so would not recommend if travelling with large	1	->	Almost confortable except luggage space	1	No	0	0	"""almost comfortable"" is not entailed"
+								
+node pair #26:								
+Almost confortable except luggage space	1	->	The space currently is poorly organised	1	No	0	0	"Hesitate here: it would entail ""luggage space is poorly organized"" and so maybe it should also entail ""the space is poorly organized"" in general…"
+The space currently is poorly organised	1	->	Almost confortable except luggage space	1	No	0	0	
+								
+node pair #27:								
+Almost confortable except luggage space	1	->	Improve the space	1	Yes	0	1	
+Improve the space	1	->	Almost confortable except luggage space	1	No	0	0	
+								
+node pair #28:								
+Almost confortable except luggage space	1	->	More space would make a lot of difference	1	No	0	0	"""a lot"" is not entailed"
+More space would make a lot of difference	1	->	Almost confortable except luggage space	1	No	0	0	
+								
+node pair #29:								
+Almost confortable except luggage space	1	->	too little space on trains	1	No	0	0	"Hesitate: is ""on trains"" given by the context?"
+too little space on trains	1	->	Almost confortable except luggage space	1	No	0	0	
+								
+node pair #30:								
+Almost confortable except luggage space	1	->	too little baggage space on trains	1	No	0	0	"Hesitate: is ""on trains"" given by the context?"
+too little baggage space on trains	1	->	Almost confortable except luggage space	1	No	0	0	
+								
+node pair #31:								
+limited luggage space so would not recommend if travelling with large	1	->	The space currently is poorly organised	1	No	0	0	
+The space currently is poorly organised	1	->	limited luggage space so would not recommend if travelling with large	1	No	0	0	
+								
+node pair #32:								
+limited luggage space so would not recommend if travelling with large	1	->	Improve the space	1	Yes	0	1	
+Improve the space	1	->	limited luggage space so would not recommend if travelling with large	1	No	0	0	
+								
+node pair #33:								
+limited luggage space so would not recommend if travelling with large	1	->	More space would make a lot of difference	1	Yes	0	0	"""a lot""is not entailed"
+More space would make a lot of difference	1	->	limited luggage space so would not recommend if travelling with large	1	No	0	0	
+								
+node pair #34:								
+limited luggage space so would not recommend if travelling with large	1	->	too little space on trains	1	No	0	0	"Hesitate: is ""on trains"" given by the context?"
+too little space on trains	1	->	limited luggage space so would not recommend if travelling with large	1	No	0	0	
+								
+node pair #35:								
+limited luggage space so would not recommend if travelling with large	1	->	too little baggage space on trains	1	No	0	0	"Hesitate: is ""on trains"" given by the context?"
+too little baggage space on trains	1	->	limited luggage space so would not recommend if travelling with large	1	No	0	0	
+								
+node pair #36:								
+The space currently is poorly organised	1	->	Improve the space	1	Yes	0	1	
+Improve the space	1	->	The space currently is poorly organised	1	No	0	0	"improve can mean ""make larger"" rather than ""organize it better"""
+								
+node pair #37:								
+The space currently is poorly organised	1	->	More space would make a lot of difference	1	No	0	0	
+More space would make a lot of difference	1	->	The space currently is poorly organised	1	No	0	0	
+								
+node pair #38:								
+The space currently is poorly organised	1	->	too little space on trains	1	No	0	0	
+too little space on trains	1	->	The space currently is poorly organised	1	No	0	0	
+								
+node pair #39:								
+The space currently is poorly organised	1	->	too little baggage space on trains	1	No	0	0	
+too little baggage space on trains	1	->	The space currently is poorly organised	1	No	0	0	
+								
+node pair #40:								
+More space would make a lot of difference	1	->	Improve the space	1	Yes	0	1	
+Improve the space	1	->	More space would make a lot of difference	1	No	0	0	
+								
+node pair #41:								
+Improve the space	1	->	too little space on trains	1	No	0	0	
+too little space on trains	1	->	Improve the space	1	No	0	1	
+								
+node pair #42:								
+too little baggage space on trains	1	->	Improve the space	1	Yes	0	1	
+Improve the space	1	->	too little baggage space on trains	1	No	0	0	
+								
+node pair #43:								
+More space would make a lot of difference	1	->	too little space on trains	1	No	0	0	"Hesitate: is ""on trains"" given by the context?"
+too little space on trains	1	->	More space would make a lot of difference	1	No	0	1	
+								
+node pair #44:								
+too little baggage space on trains	1	->	More space would make a lot of difference	1	Yes	0	1	
+More space would make a lot of difference	1	->	too little baggage space on trains	1	No	0	0	
+								
+node pair #45:								
+too little baggage space on trains	1	->	too little space on trains	1	Yes	1	1	
+too little space on trains	1	->	too little baggage space on trains	1	No	-1	0	

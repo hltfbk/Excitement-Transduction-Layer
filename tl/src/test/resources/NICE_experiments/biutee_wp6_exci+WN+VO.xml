@@ -1,22 +1,22 @@
 <configuration>
 
 	<section name = "rte_pairs_preprocess">
-		<property name = "easyfirst_stanford_pos_tagger">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/stanford-postagger-full-2008-09-28/models/bidirectional-wsj-0-18.tagger</property>
-		<property name = "stanford_ner_classifier_path">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/stanford-ner-2009-01-16/classifiers/ner-eng-ie.crf-3-all2008-distsim.ser.gz</property>		
-		<property name = "new_normalizer">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/BiuNormalizer/string_rules.txt</property>
+		<property name = "easyfirst_stanford_pos_tagger">C:/eop-resources-1.0.2/BIUTEE_Environment/third-party/stanford-postagger-full-2008-09-28/models/bidirectional-wsj-0-18.tagger</property>
+		<property name = "stanford_ner_classifier_path">C:/eop-resources-1.0.2/BIUTEE_Environment/third-party/stanford-ner-2009-01-16/classifiers/ner-eng-ie.crf-3-all2008-distsim.ser.gz</property>		
+		<property name = "new_normalizer">C:/eop-resources-1.0.2/BIUTEE_Environment/third-party/BiuNormalizer/string_rules.txt</property>
 		<property name = "coreferencer">ARKREF</property>
 		<property name = "easyfirst_host">localhost</property>
 		<property name = "easyfirst_port">8080</property>
 	</section>
 
 	<section name = "rte_pairs_train_and_test">
-		<property name = "lemmatizer_rule_file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/third-party/GATE-3.1/plugins/Tools/resources/morph/default.rul</property>
+		<property name = "lemmatizer_rule_file">C:/eop-resources-1.0.2/BIUTEE_Environment/third-party/GATE-3.1/plugins/Tools/resources/morph/default.rul</property>
 		<property name = "parser">EASYFIRST</property>
 		<property name = "threads">1</property>
-		<property name = "unigram_lidston_ser_file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/Reuters-PPD_unigram.ser</property>
+		<property name = "unigram_lidston_ser_file">C:/eop-resources-1.0.2/BIUTEE_Environment/workdir/Reuters-PPD_unigram.ser</property>
 
-		<property name = "search_model">D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/biutee+WN+VO+Syntactic_EN_exci/model_search_1.xml</property>
-		<property name = "predictions_model">D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/biutee+WN+VO+Syntactic_EN_exci/model_predictions_2.xml</property>
+		<property name = "search_model">C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/biutee+WN+VO+Syntactic_EN_exci/model_search_1.xml</property>
+		<property name = "predictions_model">C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/biutee+WN+VO+Syntactic_EN_exci/model_predictions_2.xml</property>
 
 		<!-- optional parameters -->
 		<property name = "dummy_prediction_classifier">false</property>
@@ -42,7 +42,7 @@
 	
 
 	<section name = "WNV2">
-		<property name = "wordnet-dir">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/data/WordNet/3.0/dict.wn.orig</property>
+		<property name = "wordnet-dir">C:/eop-resources-1.0.2/BIUTEE_Environment/data/WordNet/3.0/dict.wn.orig</property>
 		<property name = "useFirstSenseOnlyLeft">true</property>
 		<property name = "useFirstSenseOnlyRight">true</property>
 		<property name = "entailing-relations">SYNONYM,DERIVATIONALLY_RELATED,HYPERNYM,INSTANCE_HYPERNYM,MEMBER_HOLONYM,PART_HOLONYM,ENTAILMENT,SUBSTANCE_MERONYM</property>
@@ -64,21 +64,21 @@
 	
 
 	<section name = "Syntactic">
-		<property name = "syntactic_rules_file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/serializedRules.ser</property>
-		<property name = "annotation_rules_file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/serializedAnnotationRules.ser</property>
+		<property name = "syntactic_rules_file">C:/eop-resources-1.0.2/BIUTEE_Environment/workdir/serializedRules.ser</property>
+		<property name = "annotation_rules_file">C:/eop-resources-1.0.2/BIUTEE_Environment/workdir/serializedAnnotationRules.ser</property>
 		<property name = "do_annotations">true</property>
 	</section>
 
 
 
 	<section name = "catvarV2">
-		<property name = "catver-file-name">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/data/CatVar/catvar21</property>
+		<property name = "catver-file-name">C:/eop-resources-1.0.2/BIUTEE_Environment/data/CatVar/catvar21</property>
 	</section>
 
 
 	<section name = "VerbOceanV2">
 		<property name = "threshold">1</property>
-		<property name = "file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/data/VerbOcean/verbocean.unrefined.2004-05-20.txt</property>
+		<property name = "file">C:/eop-resources-1.0.2/BIUTEE_Environment/data/VerbOcean/verbocean.unrefined.2004-05-20.txt</property>
 		<property name = "allowedRelations">STRONGER_THAN</property>
 	</section>
 
@@ -166,7 +166,7 @@
 	</section>
 
 	<section name = "TruthTeller">
-		<property name = "annotation_rules_file">D:/EOPspace/eop-resources-1.0.2/BIUTEE_Environment/workdir/serializedAnnotationRules.ser</property>
+		<property name = "annotation_rules_file">C:/eop-resources-1.0.2/BIUTEE_Environment/workdir/serializedAnnotationRules.ser</property>
 		<property name = "conll_format_output_directory">annotatedSentences</property>
 		<property name = "do_annotations">true</property>
 	</section>

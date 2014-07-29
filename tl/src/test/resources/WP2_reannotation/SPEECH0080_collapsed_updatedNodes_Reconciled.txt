@@ -1,0 +1,111 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing							OK	
+	i've missed my connection through moonport	[13764888_80919841-2.txt_2_0]						
+	i've missed my flight through moonport	[13764888_80919841-2.txt_1_0]						
+								
+collapsed node #2 : 2 entailment unit(s) before editing							OK	
+	i've missed my connection	[13764888_80919841-2.txt_2_1]						
+	i've missed my flight	[13764888_80919841-2.txt_1_1]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing								
+	the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	[13764644_76379048.txt_1_0]					OK	???
+								
+collapsed node #4 : 1 entailment unit(s) before editing								
+	the flight was diverted stars bridge	[13764888_80919841-2.txt_3_0]					OK	
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	the flight was diverted	[13764888_80919841-2.txt_3_1]					OK	
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	i have to provide all of that stuff	[13764973_84033481.txt_1_0]					OK	???
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	it seems like it's indefinite when it's going to leave	[13764673_76463240.txt_2_0]					OK	
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+i've missed my flight through moonport	2	->	i've missed my flight	2	Yes	2	1	
+i've missed my flight	2	->	i've missed my flight through moonport	2	No		0	
+								
+node pair #2:								
+i've missed my flight through moonport	2	->	the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	No	0	0	
+the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	->	i've missed my flight through moonport	2	No	0	0	
+								
+node pair #3:								
+i've missed my flight through moonport	2	->	the flight was diverted stars bridge	1	No	0	0	
+the flight was diverted stars bridge	1	->	i've missed my flight through moonport	2	No	0	0	
+								
+node pair #4:								
+i've missed my flight through moonport	2	->	the flight was diverted	1	No	0	0	
+the flight was diverted	1	->	i've missed my flight through moonport	2	No	0	0	
+								
+node pair #5:								
+i've missed my flight through moonport	2	->	i have to provide all of that stuff	1	No	0	0	
+i have to provide all of that stuff	1	->	i've missed my flight through moonport	2	No	0	0	
+								
+node pair #6:								
+i've missed my flight through moonport	2	->	it seems like it's indefinite when it's going to leave	1	No	0	0	
+it seems like it's indefinite when it's going to leave	1	->	i've missed my flight through moonport	2	No	0	0	
+								
+node pair #7:								
+i've missed my flight	2	->	the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	No	0	0	
+the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	->	i've missed my flight	2	No	0	0	
+								
+node pair #8:								
+i've missed my flight	2	->	the flight was diverted stars bridge	1	No	0	0	
+the flight was diverted stars bridge	1	->	i've missed my flight	2	No	0	0	
+								
+node pair #9:								
+i've missed my flight	2	->	the flight was diverted	1	No	0	0	
+the flight was diverted	1	->	i've missed my flight	2	No	0	0	
+								
+node pair #10:								
+i've missed my flight	2	->	i have to provide all of that stuff	1	No	0	0	
+i have to provide all of that stuff	1	->	i've missed my flight	2	No	0	0	
+								
+node pair #11:								
+i've missed my flight	2	->	it seems like it's indefinite when it's going to leave	1	No	0	0	
+it seems like it's indefinite when it's going to leave	1	->	i've missed my flight	2	No	0	0	
+								
+node pair #12:								
+the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	->	the flight was diverted stars bridge	1	No	0	0	
+the flight was diverted stars bridge	1	->	the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	No	0	0	
+								
+node pair #13:								
+the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	->	the flight was diverted	1	No	0	0	
+the flight was diverted	1	->	the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	No	0	0	
+								
+node pair #14:								
+the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	->	i have to provide all of that stuff	1	No	0	0	
+i have to provide all of that stuff	1	->	the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	No	0	0	
+								
+node pair #15:								
+the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	->	it seems like it's indefinite when it's going to leave	1	No	0	0	
+it seems like it's indefinite when it's going to leave	1	->	the confirmation was for um the twentieth through the twenty fourth coming back friday mornings that was never said	1	No	0	0	
+								
+node pair #16:								
+the flight was diverted stars bridge	1	->	the flight was diverted	1	Yes	1	1	
+the flight was diverted	1	->	the flight was diverted stars bridge	1	No		0	
+								
+node pair #17:								
+the flight was diverted stars bridge	1	->	i have to provide all of that stuff	1	No	0	0	
+i have to provide all of that stuff	1	->	the flight was diverted stars bridge	1	No	0	0	
+								
+node pair #18:								
+the flight was diverted stars bridge	1	->	it seems like it's indefinite when it's going to leave	1	No	0	0	
+it seems like it's indefinite when it's going to leave	1	->	the flight was diverted stars bridge	1	No	0	0	
+								
+node pair #19:								
+the flight was diverted	1	->	i have to provide all of that stuff	1	No	0	0	
+i have to provide all of that stuff	1	->	the flight was diverted	1	No	0	0	
+								
+node pair #20:								
+the flight was diverted	1	->	it seems like it's indefinite when it's going to leave	1	No	0	0	
+it seems like it's indefinite when it's going to leave	1	->	the flight was diverted	1	No	0	0	
+								
+node pair #21:								
+i have to provide all of that stuff	1	->	it seems like it's indefinite when it's going to leave	1	No	0	0	
+it seems like it's indefinite when it's going to leave	1	->	i have to provide all of that stuff	1	No	0	0	

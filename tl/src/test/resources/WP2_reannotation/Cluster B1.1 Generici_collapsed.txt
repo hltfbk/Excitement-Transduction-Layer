@@ -1,0 +1,356 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 1 entailment unit(s) before editing
+	TELEFONIAX sta cercando di truffarmi	[0005.txt_2_0]
+
+collapsed node #2 : 1 entailment unit(s) before editing
+	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	[0318.txt_1_0]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	la TELEFONIAX ke prende in giro è una catastrofe	[0147.txt_2_3]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	la TELEFONIAX ke prende in giro i clieti è una catastrofe	[0147.txt_2_2]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	la TELEFONIAX ke prende in giro è davvero una catastrofe	[0147.txt_2_1]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	[0147.txt_2_0]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	promettete cose che non potrete mai far ottenere	[0308.txt_2_0]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	i servizi TELEFONIAX sim non funzionano	[0318.txt_1_2]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	sono 3 mesi ke i servizi non funzionano	[0318.txt_1_1]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	la TELEFONIAX e solo una fregatura	[0315.txt_1_0]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	la TELEFONIAX non risolve i problemi	[0142.txt_1_0]
+
+collapsed node #12 : 1 entailment unit(s) before editing
+	la TELEFONIAX e una fregatura	[0315.txt_1_1]
+
+collapsed node #13 : 1 entailment unit(s) before editing
+	i servizi non funzionano	[0318.txt_1_3]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+TELEFONIAX sta cercando di truffarmi	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #2:
+TELEFONIAX sta cercando di truffarmi	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #3:
+TELEFONIAX sta cercando di truffarmi	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #4:
+TELEFONIAX sta cercando di truffarmi	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #5:
+TELEFONIAX sta cercando di truffarmi	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #6:
+TELEFONIAX sta cercando di truffarmi	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+promettete cose che non potrete mai far ottenere	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #7:
+TELEFONIAX sta cercando di truffarmi	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+i servizi TELEFONIAX sim non funzionano	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #8:
+TELEFONIAX sta cercando di truffarmi	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+sono 3 mesi ke i servizi non funzionano	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #9:
+TELEFONIAX sta cercando di truffarmi	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #10:
+TELEFONIAX sta cercando di truffarmi	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #11:
+TELEFONIAX sta cercando di truffarmi	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #12:
+TELEFONIAX sta cercando di truffarmi	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	TELEFONIAX sta cercando di truffarmi	1	No	0
+
+node pair #13:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #14:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #15:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #16:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #17:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+promettete cose che non potrete mai far ottenere	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #18:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	i servizi TELEFONIAX sim non funzionano	1	Yes	1
+i servizi TELEFONIAX sim non funzionano	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	-1
+
+node pair #19:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	sono 3 mesi ke i servizi non funzionano	1	Yes	1
+sono 3 mesi ke i servizi non funzionano	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	-1
+
+node pair #20:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #21:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #22:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #23:
+sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	->	i servizi non funzionano	1	Yes	1
+i servizi non funzionano	1	->	sono 3 mesi ke i servizi TELEFONIAX sim non funzionano	1	No	-1
+
+node pair #24:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	Yes	1
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	-1
+
+node pair #25:
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	Yes	1
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	-1
+
+node pair #26:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	Yes	1
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	-1
+
+node pair #27:
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+promettete cose che non potrete mai far ottenere	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+
+node pair #28:
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+
+node pair #29:
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+sono 3 mesi ke i servizi non funzionano	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+
+node pair #30:
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+
+node pair #31:
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+
+node pair #32:
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+
+node pair #33:
+la TELEFONIAX ke prende in giro è una catastrofe	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	la TELEFONIAX ke prende in giro è una catastrofe	1	No	0
+
+node pair #34:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	-1
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	-1
+
+node pair #35:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	Yes	1
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	-1
+
+node pair #36:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+promettete cose che non potrete mai far ottenere	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+
+node pair #37:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+
+node pair #38:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+sono 3 mesi ke i servizi non funzionano	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+
+node pair #39:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+
+node pair #40:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+
+node pair #41:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+
+node pair #42:
+la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	la TELEFONIAX ke prende in giro i clieti è una catastrofe	1	No	0
+
+node pair #43:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	Yes	1
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	-1
+
+node pair #44:
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+promettete cose che non potrete mai far ottenere	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+
+node pair #45:
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+
+node pair #46:
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+sono 3 mesi ke i servizi non funzionano	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+
+node pair #47:
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+
+node pair #48:
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+
+node pair #49:
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+
+node pair #50:
+la TELEFONIAX ke prende in giro è davvero una catastrofe	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	la TELEFONIAX ke prende in giro è davvero una catastrofe	1	No	0
+
+node pair #51:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+promettete cose che non potrete mai far ottenere	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+
+node pair #52:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+
+node pair #53:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+sono 3 mesi ke i servizi non funzionano	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+
+node pair #54:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+
+node pair #55:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+
+node pair #56:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+
+node pair #57:
+la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe	1	No	0
+
+node pair #58:
+promettete cose che non potrete mai far ottenere	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+i servizi TELEFONIAX sim non funzionano	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+
+node pair #59:
+promettete cose che non potrete mai far ottenere	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+sono 3 mesi ke i servizi non funzionano	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+
+node pair #60:
+promettete cose che non potrete mai far ottenere	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+
+node pair #61:
+promettete cose che non potrete mai far ottenere	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+
+node pair #62:
+promettete cose che non potrete mai far ottenere	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+
+node pair #63:
+promettete cose che non potrete mai far ottenere	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	promettete cose che non potrete mai far ottenere	1	No	0
+
+node pair #64:
+i servizi TELEFONIAX sim non funzionano	1	->	sono 3 mesi ke i servizi non funzionano	1	No	-1
+sono 3 mesi ke i servizi non funzionano	1	->	i servizi TELEFONIAX sim non funzionano	1	No	-1
+
+node pair #65:
+i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #66:
+i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #67:
+i servizi TELEFONIAX sim non funzionano	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	i servizi TELEFONIAX sim non funzionano	1	No	0
+
+node pair #68:
+i servizi TELEFONIAX sim non funzionano	1	->	i servizi non funzionano	1	Yes	1
+i servizi non funzionano	1	->	i servizi TELEFONIAX sim non funzionano	1	No	-1
+
+node pair #69:
+sono 3 mesi ke i servizi non funzionano	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+la TELEFONIAX e solo una fregatura	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+
+node pair #70:
+sono 3 mesi ke i servizi non funzionano	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+
+node pair #71:
+sono 3 mesi ke i servizi non funzionano	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	sono 3 mesi ke i servizi non funzionano	1	No	0
+
+node pair #72:
+sono 3 mesi ke i servizi non funzionano	1	->	i servizi non funzionano	1	Yes	1
+i servizi non funzionano	1	->	sono 3 mesi ke i servizi non funzionano	1	No	-1
+
+node pair #73:
+la TELEFONIAX e solo una fregatura	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+la TELEFONIAX non risolve i problemi	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+
+node pair #74:
+la TELEFONIAX e solo una fregatura	1	->	la TELEFONIAX e una fregatura	1	Yes	1
+la TELEFONIAX e una fregatura	1	->	la TELEFONIAX e solo una fregatura	1	No	-1
+
+node pair #75:
+la TELEFONIAX e solo una fregatura	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	la TELEFONIAX e solo una fregatura	1	No	0
+
+node pair #76:
+la TELEFONIAX non risolve i problemi	1	->	la TELEFONIAX e una fregatura	1	No	0
+la TELEFONIAX e una fregatura	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+
+node pair #77:
+la TELEFONIAX non risolve i problemi	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	la TELEFONIAX non risolve i problemi	1	No	0
+
+node pair #78:
+la TELEFONIAX e una fregatura	1	->	i servizi non funzionano	1	No	0
+i servizi non funzionano	1	->	la TELEFONIAX e una fregatura	1	No	0
+

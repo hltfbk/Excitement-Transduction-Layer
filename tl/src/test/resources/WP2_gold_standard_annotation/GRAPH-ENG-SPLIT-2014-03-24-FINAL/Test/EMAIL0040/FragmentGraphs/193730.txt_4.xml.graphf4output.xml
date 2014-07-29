@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><F_entailment_graph nodeNum="1">    <node explicit_context="193730.txt" focus="food" id="193730.txt_4_0" implicit_context="" implicit_focus="" modality="FALSE">        <original_text>food is finished too early</original_text>        <correct_text> </correct_text>        <modifiers/>    </node></F_entailment_graph>

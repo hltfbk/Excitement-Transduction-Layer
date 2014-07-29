@@ -1,0 +1,1720 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing							split	
+	Chaotic check in	[277071.txt_1_1]						
+								
+collapsed node #2 : 2 entailment unit(s) before editing							ok	
+	Queues too long	[213508.txt_4_2]						
+	queues were too long	[156303.txt_1_2]						
+								
+collapsed node #3 : 3 entailment unit(s) before editing							modified	
+	Do n't let people not required to be in a queue	[473384.txt_7_0]						
+	Do n't let people not required to queue up	[473384.txt_8_0]						
+								
+collapsed node #30 :							new	out of node#3
+	Do n't let people not required to waste others time	[473384.txt_9_0]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing							ok	
+	Would welcome priority boarding for pushchairs	[511484.txt_2_0]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing							ok	
+	Chaotic check in at Moonport	[277071.txt_1_0]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing							ok	
+	too much queue at customs	[451113.txt_6_0]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing							ok	
+	The check in procedure at Frownville station was unclear	[317673.txt_4_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing							ok	
+	More space at check - in	[121566.txt_1_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing							ok	
+	Insufficient shopping opportunities once through security	[52781.txt_6_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing							ok	
+	it gets like a cattle market	[121566.txt_2_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing							ok	
+	better organization in controlling the passports in Stars Bridge	[217842.txt_7_0]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing							ok	
+	little space to queue	[431092.txt_2_0]						
+	It makes people tense	[423940.txt_11_0]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing							ok	
+	better organization in controlling the passports	[217842.txt_7_1]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing							ok	
+	improve boarding Stars Bridge	[7.txt_3_0]						
+								
+collapsed node #15 : 1 entailment unit(s) before editing							ok	
+	improve boarding	[7.txt_3_1]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing							ok	
+	The same for the space in Frowntown	[423940.txt_12_0]						
+								
+collapsed node #17 : 1 entailment unit(s) before editing							ok	
+	you have to wait longer as new people join the line from the sides	[423940.txt_2_0]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing							remove	"""too"" not a modifier"
+								
+collapsed node #19 : 1 entailment unit(s) before editing							added "too" - """too"" not a modifier"
+	Queues too long for something to eat	[213508.txt_4_1]						
+								
+collapsed node #20 : 1 entailment unit(s) before editing							empty	merged with node#12
+								
+collapsed node #21 : 1 entailment unit(s) before editing							ok	
+	slow	[277071.txt_4_1]						
+								
+collapsed node #22 : 1 entailment unit(s) before editing							ok	
+	Queues too long for something to eat at St Peter	[213508.txt_4_0]						
+								
+collapsed node #23 : 1 entailment unit(s) before editing							ok	
+	very slow	[277071.txt_4_0]						
+								
+collapsed node #24 : 1 entailment unit(s) before editing							ok	
+	Check in queues were too long today	[156303.txt_1_0]						
+								
+collapsed node #25 : 1 entailment unit(s) before editing							remove	"""too"" not a modifier"
+								
+collapsed node #26 : 1 entailment unit(s) before editing							ok	
+	Very slow through security	[431092.txt_1_0]						
+								
+collapsed node #27 : 1 entailment unit(s) before editing							ok	
+	Check in queues were too long	[156303.txt_1_1]						
+								
+collapsed node #28 : 1 entailment unit(s) before editing							ok	
+	slow through security	[431092.txt_1_1]						
+								
+collapsed node #29 : 1 entailment unit(s) before editing							ok	
+	Better queuing space in Stars Bridge between passport control and security	[423940.txt_1_0]					why no modifiers here???	
+								
+collapsed node #30 : 							new		taken from node#1	
+	The check in procedure was unclear	[317673.txt_4_1]						
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+Chaotic check in	2	->	Queues long	2	No	0		
+Queues long	2	->	Chaotic check in	2	No	0		
+								
+node pair #2:								
+Chaotic check in	2	->	Do n't let people not required to queue up	3	No	0		
+Do n't let people not required to queue up	3	->	Chaotic check in	2	No	0		
+								
+node pair #3:								
+Chaotic check in	2	->	Would welcome priority boarding for pushchairs	1	No	0		
+Would welcome priority boarding for pushchairs	1	->	Chaotic check in	2	No	0		
+								
+node pair #4:								
+Chaotic check in at Moonport	1	->	Chaotic check in	2	Yes	1		
+Chaotic check in	2	->	Chaotic check in at Moonport	1	No			
+								
+node pair #5:								
+Chaotic check in	2	->	too much queue at customs	1	No	0		
+too much queue at customs	1	->	Chaotic check in	2	No	0		
+								
+node pair #6:								
+The check in procedure at Frownville station was unclear	1	->	Chaotic check in	2	Yes	1		
+Chaotic check in	2	->	The check in procedure at Frownville station was unclear	1	No			
+								
+node pair #7:								
+Chaotic check in	2	->	More space at check - in	1	No	0		
+More space at check - in	1	->	Chaotic check in	2	No	0		
+								
+node pair #8:								
+Chaotic check in	2	->	Insufficient shopping opportunities once through security	1	No	0		
+Insufficient shopping opportunities once through security	1	->	Chaotic check in	2	No	0		
+								
+node pair #9:								
+Chaotic check in	2	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	Chaotic check in	2	No	0		
+								
+node pair #10:								
+Chaotic check in	2	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	Chaotic check in	2	No	0		
+								
+node pair #11:								
+Chaotic check in	2	->	little space to queue	1	No	0		
+little space to queue	1	->	Chaotic check in	2	No	0		
+								
+node pair #12:								
+Chaotic check in	2	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	Chaotic check in	2	No	0		
+								
+node pair #13:								
+Chaotic check in	2	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	Chaotic check in	2	No	0		
+								
+node pair #14:								
+Chaotic check in	2	->	improve boarding	1	No	0		
+improve boarding	1	->	Chaotic check in	2	No	0		
+								
+node pair #15:								
+Chaotic check in	2	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	Chaotic check in	2	No	0		
+								
+node pair #16:								
+Chaotic check in	2	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	Chaotic check in	2	No	0		
+								
+node pair #17:								
+Chaotic check in	2	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	Chaotic check in	2	No	0		
+								
+node pair #18:								
+Chaotic check in	2	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	Chaotic check in	2	No	0		
+								
+node pair #19:								
+Chaotic check in	2	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	Chaotic check in	2	No			
+								
+node pair #20:								
+Chaotic check in	2	->	slow	1	No	0		
+slow	1	->	Chaotic check in	2	No	0		
+								
+node pair #21:								
+Chaotic check in	2	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	Chaotic check in	2	No	0		
+								
+node pair #22:								
+Chaotic check in	2	->	very slow	1	No	0		
+very slow	1	->	Chaotic check in	2	No	0		
+								
+node pair #23:								
+Chaotic check in	2	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	Chaotic check in	2	No	0		
+								
+node pair #24:								
+Chaotic check in	2	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	Chaotic check in	2	No	0		
+								
+node pair #25:								
+Chaotic check in	2	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Chaotic check in	2	No	0		
+								
+node pair #26:								
+Chaotic check in	2	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Chaotic check in	2	No	0		
+								
+node pair #27:								
+Chaotic check in	2	->	slow through security	1	No	0		
+slow through security	1	->	Chaotic check in	2	No	0		
+								
+node pair #28:								
+Chaotic check in	2	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Chaotic check in	2	No	0		
+								
+node pair #29:								
+Do n't let people not required to queue up	3	->	Queues long	2	Yes	0		
+Queues long	2	->	Do n't let people not required to queue up	3	No			
+								
+node pair #30:								
+Queues long	2	->	Would welcome priority boarding for pushchairs	1	No	0		
+Would welcome priority boarding for pushchairs	1	->	Queues long	2	No	0		
+								
+node pair #31:								
+Queues long	2	->	Chaotic check in at Moonport	1	No	0		
+Chaotic check in at Moonport	1	->	Queues long	2	No	0		
+								
+node pair #32:								
+too much queue at customs	1	->	Queues long	2	Yes	0		
+Queues long	2	->	too much queue at customs	1	No			
+								
+node pair #33:								
+Queues long	2	->	The check in procedure at Frownville station was unclear	1	No	0		
+The check in procedure at Frownville station was unclear	1	->	Queues long	2	No	0		
+								
+node pair #34:								
+Queues long	2	->	More space at check - in	1	No	0		
+More space at check - in	1	->	Queues long	2	No	0		
+								
+node pair #35:								
+Queues long	2	->	Insufficient shopping opportunities once through security	1	No	0		
+Insufficient shopping opportunities once through security	1	->	Queues long	2	No	0		
+								
+node pair #36:								
+Queues long	2	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	Queues long	2	No	0		
+								
+node pair #37:								
+Queues long	2	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	Queues long	2	No	0		
+								
+node pair #38:								
+Queues long	2	->	little space to queue	1	No	0		
+little space to queue	1	->	Queues long	2	No	0		
+								
+node pair #39:								
+Queues long	2	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	Queues long	2	No	0		
+								
+node pair #40:								
+Queues long	2	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	Queues long	2	No	0		
+								
+node pair #41:								
+Queues long	2	->	improve boarding	1	No	0		
+improve boarding	1	->	Queues long	2	No	0		
+								
+node pair #42:								
+Queues long	2	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	Queues long	2	No	0		
+								
+node pair #43:								
+you have to wait longer as new people join the line from the sides	1	->	Queues long	2	Yes	0		
+Queues long	2	->	you have to wait longer as new people join the line from the sides	1	No			
+								
+node pair #44:								
+Queues long for something to eat at St Peter	1	->	Queues long	2	Yes	1		
+Queues long	2	->	Queues long for something to eat at St Peter	1	No			
+								
+node pair #45:								
+Queues long for something to eat	1	->	Queues long	2	Yes	1		
+Queues long	2	->	Queues long for something to eat	1	No			
+								
+node pair #46:								
+Queues long	2	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	Queues long	2	No			
+								
+node pair #47:								
+Queues long	2	->	slow	1	Yes	0		
+slow	1	->	Queues long	2	No			
+								
+node pair #48:								
+Queues too long for something to eat at St Peter	1	->	Queues long	2	Yes	1		
+Queues long	2	->	Queues too long for something to eat at St Peter	1	No			
+								
+node pair #49:								
+Queues long	2	->	very slow	1	No	0		
+very slow	1	->	Queues long	2	No	0		
+								
+node pair #50:								
+Check in queues were too long today	1	->	Queues long	2	Yes	1		
+Queues long	2	->	Check in queues were too long today	1	No			
+								
+node pair #51:								
+Check in queues were long	1	->	Queues long	2	Yes	1		
+Queues long	2	->	Check in queues were long	1	No			
+								
+node pair #52:								
+Queues long	2	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Queues long	2	No	0		
+								
+node pair #53:								
+Check in queues were too long	1	->	Queues long	2	Yes	1		
+Queues long	2	->	Check in queues were too long	1	No			
+								
+node pair #54:								
+slow through security	1	->	Queues long	2	Yes	0		
+Queues long	2	->	slow through security	1	No			
+								
+node pair #55:								
+Queues long	2	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Queues long	2	No	0		
+								
+node pair #56:								
+Do n't let people not required to queue up	3	->	Would welcome priority boarding for pushchairs	1	No	0		
+Would welcome priority boarding for pushchairs	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #57:								
+Do n't let people not required to queue up	3	->	Chaotic check in at Moonport	1	No	0		
+Chaotic check in at Moonport	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #58:								
+Do n't let people not required to queue up	3	->	too much queue at customs	1	No	0		
+too much queue at customs	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #59:								
+Do n't let people not required to queue up	3	->	The check in procedure at Frownville station was unclear	1	No	0		
+The check in procedure at Frownville station was unclear	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #60:								
+Do n't let people not required to queue up	3	->	More space at check - in	1	No	0		
+More space at check - in	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #61:								
+Do n't let people not required to queue up	3	->	Insufficient shopping opportunities once through security	1	No	0		
+Insufficient shopping opportunities once through security	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #62:								
+Do n't let people not required to queue up	3	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #63:								
+Do n't let people not required to queue up	3	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #64:								
+Do n't let people not required to queue up	3	->	little space to queue	1	No	0		
+little space to queue	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #65:								
+Do n't let people not required to queue up	3	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #66:								
+Do n't let people not required to queue up	3	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #67:								
+Do n't let people not required to queue up	3	->	improve boarding	1	No	0		
+improve boarding	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #68:								
+Do n't let people not required to queue up	3	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #69:								
+Do n't let people not required to queue up	3	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #70:								
+Do n't let people not required to queue up	3	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #71:								
+Do n't let people not required to queue up	3	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #72:								
+Do n't let people not required to queue up	3	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	Do n't let people not required to queue up	3	No			
+								
+node pair #73:								
+Do n't let people not required to queue up	3	->	slow	1	Yes	0		
+slow	1	->	Do n't let people not required to queue up	3	No			
+								
+node pair #74:								
+Do n't let people not required to queue up	3	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #75:								
+Do n't let people not required to queue up	3	->	very slow	1	No	0		
+very slow	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #76:								
+Do n't let people not required to queue up	3	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #77:								
+Do n't let people not required to queue up	3	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #78:								
+Do n't let people not required to queue up	3	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #79:								
+Do n't let people not required to queue up	3	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #80:								
+Do n't let people not required to queue up	3	->	slow through security	1	No	0		
+slow through security	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #81:								
+Do n't let people not required to queue up	3	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Do n't let people not required to queue up	3	No	0		
+								
+node pair #82:								
+Would welcome priority boarding for pushchairs	1	->	Chaotic check in at Moonport	1	No	0		
+Chaotic check in at Moonport	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #83:								
+Would welcome priority boarding for pushchairs	1	->	too much queue at customs	1	No	0		
+too much queue at customs	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #84:								
+Would welcome priority boarding for pushchairs	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+The check in procedure at Frownville station was unclear	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #85:								
+Would welcome priority boarding for pushchairs	1	->	More space at check - in	1	No	0		
+More space at check - in	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #86:								
+Would welcome priority boarding for pushchairs	1	->	Insufficient shopping opportunities once through security	1	No	0		
+Insufficient shopping opportunities once through security	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #87:								
+Would welcome priority boarding for pushchairs	1	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #88:								
+Would welcome priority boarding for pushchairs	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #89:								
+Would welcome priority boarding for pushchairs	1	->	little space to queue	1	No	0		
+little space to queue	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #90:								
+Would welcome priority boarding for pushchairs	1	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #91:								
+Would welcome priority boarding for pushchairs	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #92:								
+Would welcome priority boarding for pushchairs	1	->	improve boarding	1	Yes	0		
+improve boarding	1	->	Would welcome priority boarding for pushchairs	1	No			
+								
+node pair #93:								
+Would welcome priority boarding for pushchairs	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #94:								
+Would welcome priority boarding for pushchairs	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #95:								
+Would welcome priority boarding for pushchairs	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #96:								
+Would welcome priority boarding for pushchairs	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #97:								
+Would welcome priority boarding for pushchairs	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #98:								
+Would welcome priority boarding for pushchairs	1	->	slow	1	No	0		
+slow	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #99:								
+Would welcome priority boarding for pushchairs	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #100:								
+Would welcome priority boarding for pushchairs	1	->	very slow	1	No	0		
+very slow	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #101:								
+Would welcome priority boarding for pushchairs	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #102:								
+Would welcome priority boarding for pushchairs	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #103:								
+Would welcome priority boarding for pushchairs	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #104:								
+Would welcome priority boarding for pushchairs	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #105:								
+Would welcome priority boarding for pushchairs	1	->	slow through security	1	No	0		
+slow through security	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #106:								
+Would welcome priority boarding for pushchairs	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Would welcome priority boarding for pushchairs	1	No	0		
+								
+node pair #107:								
+Chaotic check in at Moonport	1	->	too much queue at customs	1	No	0		
+too much queue at customs	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #108:								
+Chaotic check in at Moonport	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+The check in procedure at Frownville station was unclear	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #109:								
+Chaotic check in at Moonport	1	->	More space at check - in	1	No	0		
+More space at check - in	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #110:								
+Chaotic check in at Moonport	1	->	Insufficient shopping opportunities once through security	1	No	0		
+Insufficient shopping opportunities once through security	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #111:								
+Chaotic check in at Moonport	1	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #112:								
+Chaotic check in at Moonport	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #113:								
+Chaotic check in at Moonport	1	->	little space to queue	1	No	0		
+little space to queue	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #114:								
+Chaotic check in at Moonport	1	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #115:								
+Chaotic check in at Moonport	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #116:								
+Chaotic check in at Moonport	1	->	improve boarding	1	No	0		
+improve boarding	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #117:								
+Chaotic check in at Moonport	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #118:								
+Chaotic check in at Moonport	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #119:								
+Chaotic check in at Moonport	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #120:								
+Chaotic check in at Moonport	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #121:								
+Chaotic check in at Moonport	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #122:								
+Chaotic check in at Moonport	1	->	slow	1	No	0		
+slow	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #123:								
+Chaotic check in at Moonport	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #124:								
+Chaotic check in at Moonport	1	->	very slow	1	No	0		
+very slow	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #125:								
+Chaotic check in at Moonport	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #126:								
+Chaotic check in at Moonport	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #127:								
+Chaotic check in at Moonport	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #128:								
+Chaotic check in at Moonport	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #129:								
+Chaotic check in at Moonport	1	->	slow through security	1	No	0		
+slow through security	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #130:								
+Chaotic check in at Moonport	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Chaotic check in at Moonport	1	No	0		
+								
+node pair #131:								
+too much queue at customs	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+The check in procedure at Frownville station was unclear	1	->	too much queue at customs	1	No	0		
+								
+node pair #132:								
+too much queue at customs	1	->	More space at check - in	1	No	0		
+More space at check - in	1	->	too much queue at customs	1	No	0		
+								
+node pair #133:								
+too much queue at customs	1	->	Insufficient shopping opportunities once through security	1	No	0		
+Insufficient shopping opportunities once through security	1	->	too much queue at customs	1	No	0		
+								
+node pair #134:								
+too much queue at customs	1	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	too much queue at customs	1	No	0		
+								
+node pair #135:								
+too much queue at customs	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	too much queue at customs	1	No	0		
+								
+node pair #136:								
+too much queue at customs	1	->	little space to queue	1	No	0		
+little space to queue	1	->	too much queue at customs	1	No	0		
+								
+node pair #137:								
+too much queue at customs	1	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	too much queue at customs	1	No	0		
+								
+node pair #138:								
+too much queue at customs	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	too much queue at customs	1	No	0		
+								
+node pair #139:								
+too much queue at customs	1	->	improve boarding	1	No	0		
+improve boarding	1	->	too much queue at customs	1	No	0		
+								
+node pair #140:								
+too much queue at customs	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	too much queue at customs	1	No	0		
+								
+node pair #141:								
+too much queue at customs	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	too much queue at customs	1	No	0		
+								
+node pair #142:								
+too much queue at customs	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	too much queue at customs	1	No	0		
+								
+node pair #143:								
+too much queue at customs	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	too much queue at customs	1	No	0		
+								
+node pair #144:								
+too much queue at customs	1	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	too much queue at customs	1	No			
+								
+node pair #145:								
+too much queue at customs	1	->	slow	1	Yes	0		
+slow	1	->	too much queue at customs	1	No			
+								
+node pair #146:								
+too much queue at customs	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	too much queue at customs	1	No	0		
+								
+node pair #147:								
+too much queue at customs	1	->	very slow	1	No	0		
+very slow	1	->	too much queue at customs	1	No	0		
+								
+node pair #148:								
+too much queue at customs	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	too much queue at customs	1	No	0		
+								
+node pair #149:								
+too much queue at customs	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	too much queue at customs	1	No	0		
+								
+node pair #150:								
+too much queue at customs	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	too much queue at customs	1	No	0		
+								
+node pair #151:								
+too much queue at customs	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	too much queue at customs	1	No	0		
+								
+node pair #152:								
+too much queue at customs	1	->	slow through security	1	No	0		
+slow through security	1	->	too much queue at customs	1	No	0		
+								
+node pair #153:								
+too much queue at customs	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	too much queue at customs	1	No	0		
+								
+node pair #154:								
+The check in procedure at Frownville station was unclear	1	->	More space at check - in	1	No	0		
+More space at check - in	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #155:								
+The check in procedure at Frownville station was unclear	1	->	Insufficient shopping opportunities once through security	1	No	0		
+Insufficient shopping opportunities once through security	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #156:								
+The check in procedure at Frownville station was unclear	1	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #157:								
+The check in procedure at Frownville station was unclear	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #158:								
+The check in procedure at Frownville station was unclear	1	->	little space to queue	1	No	0		
+little space to queue	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #159:								
+The check in procedure at Frownville station was unclear	1	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #160:								
+The check in procedure at Frownville station was unclear	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #161:								
+The check in procedure at Frownville station was unclear	1	->	improve boarding	1	No	0		
+improve boarding	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #162:								
+The check in procedure at Frownville station was unclear	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #163:								
+The check in procedure at Frownville station was unclear	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #164:								
+The check in procedure at Frownville station was unclear	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #165:								
+The check in procedure at Frownville station was unclear	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #166:								
+The check in procedure at Frownville station was unclear	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #167:								
+The check in procedure at Frownville station was unclear	1	->	slow	1	No	0		
+slow	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #168:								
+The check in procedure at Frownville station was unclear	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #169:								
+The check in procedure at Frownville station was unclear	1	->	very slow	1	No	0		
+very slow	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #170:								
+The check in procedure at Frownville station was unclear	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #171:								
+The check in procedure at Frownville station was unclear	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #172:								
+The check in procedure at Frownville station was unclear	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #173:								
+The check in procedure at Frownville station was unclear	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #174:								
+The check in procedure at Frownville station was unclear	1	->	slow through security	1	No	0		
+slow through security	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #175:								
+The check in procedure at Frownville station was unclear	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	The check in procedure at Frownville station was unclear	1	No	0		
+								
+node pair #176:								
+More space at check - in	1	->	Insufficient shopping opportunities once through security	1	No	0		
+Insufficient shopping opportunities once through security	1	->	More space at check - in	1	No	0		
+								
+node pair #177:								
+More space at check - in	1	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	More space at check - in	1	No	0		
+								
+node pair #178:								
+More space at check - in	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	More space at check - in	1	No	0		
+								
+node pair #179:								
+More space at check - in	1	->	little space to queue	1	Yes	0		
+little space to queue	1	->	More space at check - in	1	No			
+								
+node pair #180:								
+More space at check - in	1	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	More space at check - in	1	No	0		
+								
+node pair #181:								
+More space at check - in	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	More space at check - in	1	No	0		
+								
+node pair #182:								
+More space at check - in	1	->	improve boarding	1	No	0		
+improve boarding	1	->	More space at check - in	1	No	0		
+								
+node pair #183:								
+More space at check - in	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	More space at check - in	1	No	0		
+								
+node pair #184:								
+More space at check - in	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	More space at check - in	1	No	0		
+								
+node pair #185:								
+More space at check - in	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	More space at check - in	1	No	0		
+								
+node pair #186:								
+More space at check - in	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	More space at check - in	1	No	0		
+								
+node pair #187:								
+More space at check - in	1	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	More space at check - in	1	No			
+								
+node pair #188:								
+More space at check - in	1	->	slow	1	No	0		
+slow	1	->	More space at check - in	1	No	0		
+								
+node pair #189:								
+More space at check - in	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	More space at check - in	1	No	0		
+								
+node pair #190:								
+More space at check - in	1	->	very slow	1	No	0		
+very slow	1	->	More space at check - in	1	No	0		
+								
+node pair #191:								
+More space at check - in	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	More space at check - in	1	No	0		
+								
+node pair #192:								
+More space at check - in	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	More space at check - in	1	No	0		
+								
+node pair #193:								
+More space at check - in	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	More space at check - in	1	No	0		
+								
+node pair #194:								
+More space at check - in	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	More space at check - in	1	No	0		
+								
+node pair #195:								
+More space at check - in	1	->	slow through security	1	No	0		
+slow through security	1	->	More space at check - in	1	No	0		
+								
+node pair #196:								
+More space at check - in	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	More space at check - in	1	No	0		
+								
+node pair #197:								
+Insufficient shopping opportunities once through security	1	->	it gets like a cattle market	1	No	0		
+it gets like a cattle market	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #198:								
+Insufficient shopping opportunities once through security	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #199:								
+Insufficient shopping opportunities once through security	1	->	little space to queue	1	No	0		
+little space to queue	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #200:								
+Insufficient shopping opportunities once through security	1	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #201:								
+Insufficient shopping opportunities once through security	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #202:								
+Insufficient shopping opportunities once through security	1	->	improve boarding	1	No	0		
+improve boarding	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #203:								
+Insufficient shopping opportunities once through security	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #204:								
+Insufficient shopping opportunities once through security	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #205:								
+Insufficient shopping opportunities once through security	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #206:								
+Insufficient shopping opportunities once through security	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #207:								
+Insufficient shopping opportunities once through security	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #208:								
+Insufficient shopping opportunities once through security	1	->	slow	1	No	0		
+slow	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #209:								
+Insufficient shopping opportunities once through security	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #210:								
+Insufficient shopping opportunities once through security	1	->	very slow	1	No	0		
+very slow	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #211:								
+Insufficient shopping opportunities once through security	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #212:								
+Insufficient shopping opportunities once through security	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #213:								
+Insufficient shopping opportunities once through security	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #214:								
+Insufficient shopping opportunities once through security	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #215:								
+Insufficient shopping opportunities once through security	1	->	slow through security	1	No	0		
+slow through security	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #216:								
+Insufficient shopping opportunities once through security	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Insufficient shopping opportunities once through security	1	No	0		
+								
+node pair #217:								
+it gets like a cattle market	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+better organization in controlling the passports in Stars Bridge	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #218:								
+it gets like a cattle market	1	->	little space to queue	1	Yes	0		
+little space to queue	1	->	it gets like a cattle market	1	No			
+								
+node pair #219:								
+it gets like a cattle market	1	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #220:								
+it gets like a cattle market	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #221:								
+it gets like a cattle market	1	->	improve boarding	1	No	0		
+improve boarding	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #222:								
+it gets like a cattle market	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #223:								
+it gets like a cattle market	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #224:								
+it gets like a cattle market	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #225:								
+it gets like a cattle market	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #226:								
+it gets like a cattle market	1	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	it gets like a cattle market	1	No			
+								
+node pair #227:								
+it gets like a cattle market	1	->	slow	1	No	0		
+slow	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #228:								
+it gets like a cattle market	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #229:								
+it gets like a cattle market	1	->	very slow	1	No	0		
+very slow	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #230:								
+it gets like a cattle market	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #231:								
+it gets like a cattle market	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #232:								
+it gets like a cattle market	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #233:								
+it gets like a cattle market	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #234:								
+it gets like a cattle market	1	->	slow through security	1	No	0		
+slow through security	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #235:								
+it gets like a cattle market	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	it gets like a cattle market	1	No	0		
+								
+node pair #236:								
+better organization in controlling the passports in Stars Bridge	1	->	little space to queue	1	No	0		
+little space to queue	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #237:								
+better organization in controlling the passports in Stars Bridge	1	->	better organization in controlling the passports	1	Yes	1		
+better organization in controlling the passports	1	->	better organization in controlling the passports in Stars Bridge	1	No			
+								
+node pair #238:								
+better organization in controlling the passports in Stars Bridge	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #239:								
+better organization in controlling the passports in Stars Bridge	1	->	improve boarding	1	No	0		
+improve boarding	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #240:								
+better organization in controlling the passports in Stars Bridge	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #241:								
+better organization in controlling the passports in Stars Bridge	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #242:								
+better organization in controlling the passports in Stars Bridge	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #243:								
+better organization in controlling the passports in Stars Bridge	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #244:								
+better organization in controlling the passports in Stars Bridge	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #245:								
+better organization in controlling the passports in Stars Bridge	1	->	slow	1	No	0		
+slow	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #246:								
+better organization in controlling the passports in Stars Bridge	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #247:								
+better organization in controlling the passports in Stars Bridge	1	->	very slow	1	No	0		
+very slow	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #248:								
+better organization in controlling the passports in Stars Bridge	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #249:								
+better organization in controlling the passports in Stars Bridge	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #250:								
+better organization in controlling the passports in Stars Bridge	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #251:								
+better organization in controlling the passports in Stars Bridge	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #252:								
+better organization in controlling the passports in Stars Bridge	1	->	slow through security	1	No	0		
+slow through security	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #253:								
+better organization in controlling the passports in Stars Bridge	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	better organization in controlling the passports in Stars Bridge	1	No	0		
+								
+node pair #254:								
+little space to queue	1	->	better organization in controlling the passports	1	No	0		
+better organization in controlling the passports	1	->	little space to queue	1	No	0		
+								
+node pair #255:								
+little space to queue	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	little space to queue	1	No	0		
+								
+node pair #256:								
+little space to queue	1	->	improve boarding	1	No	0		
+improve boarding	1	->	little space to queue	1	No	0		
+								
+node pair #257:								
+little space to queue	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	little space to queue	1	No	0		
+								
+node pair #258:								
+little space to queue	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	little space to queue	1	No	0		
+								
+node pair #259:								
+little space to queue	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	little space to queue	1	No	0		
+								
+node pair #260:								
+little space to queue	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	little space to queue	1	No	0		
+								
+node pair #261:								
+little space to queue	1	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	little space to queue	1	No			
+								
+node pair #262:								
+little space to queue	1	->	slow	1	No	0		
+slow	1	->	little space to queue	1	No	0		
+								
+node pair #263:								
+little space to queue	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	little space to queue	1	No	0		
+								
+node pair #264:								
+little space to queue	1	->	very slow	1	No	0		
+very slow	1	->	little space to queue	1	No	0		
+								
+node pair #265:								
+little space to queue	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	little space to queue	1	No	0		
+								
+node pair #266:								
+little space to queue	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	little space to queue	1	No	0		
+								
+node pair #267:								
+little space to queue	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	little space to queue	1	No	0		
+								
+node pair #268:								
+little space to queue	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	little space to queue	1	No	0		
+								
+node pair #269:								
+little space to queue	1	->	slow through security	1	No	0		
+slow through security	1	->	little space to queue	1	No	0		
+								
+node pair #270:								
+Better queuing space in Stars Bridge between passport control and security	1	->	little space to queue	1	Yes	0		
+little space to queue	1	->	Better queuing space in Stars Bridge between passport control and security	1	No			
+								
+node pair #271:								
+better organization in controlling the passports	1	->	improve boarding Stars Bridge	1	No	0		
+improve boarding Stars Bridge	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #272:								
+better organization in controlling the passports	1	->	improve boarding	1	No	0		
+improve boarding	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #273:								
+better organization in controlling the passports	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #274:								
+better organization in controlling the passports	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #275:								
+better organization in controlling the passports	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #276:								
+better organization in controlling the passports	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #277:								
+better organization in controlling the passports	1	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	better organization in controlling the passports	1	No			
+								
+node pair #278:								
+better organization in controlling the passports	1	->	slow	1	No	0		
+slow	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #279:								
+better organization in controlling the passports	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #280:								
+better organization in controlling the passports	1	->	very slow	1	No	0		
+very slow	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #281:								
+better organization in controlling the passports	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #282:								
+better organization in controlling the passports	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #283:								
+better organization in controlling the passports	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #284:								
+better organization in controlling the passports	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #285:								
+better organization in controlling the passports	1	->	slow through security	1	No	0		
+slow through security	1	->	better organization in controlling the passports	1	No	0		
+								
+node pair #286:								
+Better queuing space in Stars Bridge between passport control and security	1	->	better organization in controlling the passports	1	Yes	0		
+better organization in controlling the passports	1	->	Better queuing space in Stars Bridge between passport control and security	1	No			
+								
+node pair #287:								
+improve boarding Stars Bridge	1	->	improve boarding	1	Yes	1		
+improve boarding	1	->	improve boarding Stars Bridge	1	No			
+								
+node pair #288:								
+improve boarding Stars Bridge	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #289:								
+improve boarding Stars Bridge	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #290:								
+improve boarding Stars Bridge	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #291:								
+improve boarding Stars Bridge	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #292:								
+improve boarding Stars Bridge	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #293:								
+improve boarding Stars Bridge	1	->	slow	1	No	0		
+slow	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #294:								
+improve boarding Stars Bridge	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #295:								
+improve boarding Stars Bridge	1	->	very slow	1	No	0		
+very slow	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #296:								
+improve boarding Stars Bridge	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #297:								
+improve boarding Stars Bridge	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #298:								
+improve boarding Stars Bridge	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #299:								
+improve boarding Stars Bridge	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #300:								
+improve boarding Stars Bridge	1	->	slow through security	1	No	0		
+slow through security	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #301:								
+improve boarding Stars Bridge	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	improve boarding Stars Bridge	1	No	0		
+								
+node pair #302:								
+improve boarding	1	->	The same for the space in Frowntown	1	No	0		
+The same for the space in Frowntown	1	->	improve boarding	1	No	0		
+								
+node pair #303:								
+improve boarding	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	improve boarding	1	No	0		
+								
+node pair #304:								
+improve boarding	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	improve boarding	1	No	0		
+								
+node pair #305:								
+improve boarding	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	improve boarding	1	No	0		
+								
+node pair #306:								
+improve boarding	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	improve boarding	1	No	0		
+								
+node pair #307:								
+improve boarding	1	->	slow	1	No	0		
+slow	1	->	improve boarding	1	No	0		
+								
+node pair #308:								
+improve boarding	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	improve boarding	1	No	0		
+								
+node pair #309:								
+improve boarding	1	->	very slow	1	No	0		
+very slow	1	->	improve boarding	1	No	0		
+								
+node pair #310:								
+improve boarding	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	improve boarding	1	No	0		
+								
+node pair #311:								
+improve boarding	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	improve boarding	1	No	0		
+								
+node pair #312:								
+improve boarding	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	improve boarding	1	No	0		
+								
+node pair #313:								
+improve boarding	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	improve boarding	1	No	0		
+								
+node pair #314:								
+improve boarding	1	->	slow through security	1	No	0		
+slow through security	1	->	improve boarding	1	No	0		
+								
+node pair #315:								
+improve boarding	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	improve boarding	1	No	0		
+								
+node pair #316:								
+The same for the space in Frowntown	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+you have to wait longer as new people join the line from the sides	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #317:								
+The same for the space in Frowntown	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #318:								
+The same for the space in Frowntown	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #319:								
+The same for the space in Frowntown	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #320:								
+The same for the space in Frowntown	1	->	slow	1	No	0		
+slow	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #321:								
+The same for the space in Frowntown	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #322:								
+The same for the space in Frowntown	1	->	very slow	1	No	0		
+very slow	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #323:								
+The same for the space in Frowntown	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #324:								
+The same for the space in Frowntown	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #325:								
+The same for the space in Frowntown	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #326:								
+The same for the space in Frowntown	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #327:								
+The same for the space in Frowntown	1	->	slow through security	1	No	0		
+slow through security	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #328:								
+The same for the space in Frowntown	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	The same for the space in Frowntown	1	No	0		
+								
+node pair #329:								
+you have to wait longer as new people join the line from the sides	1	->	Queues long for something to eat at St Peter	1	No	0		
+Queues long for something to eat at St Peter	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #330:								
+you have to wait longer as new people join the line from the sides	1	->	Queues long for something to eat	1	No	0		
+Queues long for something to eat	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #331:								
+you have to wait longer as new people join the line from the sides	1	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	you have to wait longer as new people join the line from the sides	1	No			
+								
+node pair #332:								
+you have to wait longer as new people join the line from the sides	1	->	slow	1	Yes	0		
+slow	1	->	you have to wait longer as new people join the line from the sides	1	No			
+								
+node pair #333:								
+you have to wait longer as new people join the line from the sides	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #334:								
+you have to wait longer as new people join the line from the sides	1	->	very slow	1	No	0		
+very slow	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #335:								
+you have to wait longer as new people join the line from the sides	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #336:								
+you have to wait longer as new people join the line from the sides	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #337:								
+you have to wait longer as new people join the line from the sides	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #338:								
+you have to wait longer as new people join the line from the sides	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #339:								
+you have to wait longer as new people join the line from the sides	1	->	slow through security	1	No	0		
+slow through security	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #340:								
+you have to wait longer as new people join the line from the sides	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	you have to wait longer as new people join the line from the sides	1	No	0		
+								
+node pair #341:								
+Queues long for something to eat at St Peter	1	->	Queues long for something to eat	1	Yes	1		
+Queues long for something to eat	1	->	Queues long for something to eat at St Peter	1	No			
+								
+node pair #342:								
+Queues long for something to eat at St Peter	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #343:								
+Queues long for something to eat at St Peter	1	->	slow	1	No	0		
+slow	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #344:								
+Queues too long for something to eat at St Peter	1	->	Queues long for something to eat at St Peter	1	Yes	1		
+Queues long for something to eat at St Peter	1	->	Queues too long for something to eat at St Peter	1	No			
+								
+node pair #345:								
+Queues long for something to eat at St Peter	1	->	very slow	1	No	0		
+very slow	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #346:								
+Queues long for something to eat at St Peter	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #347:								
+Queues long for something to eat at St Peter	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #348:								
+Queues long for something to eat at St Peter	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #349:								
+Queues long for something to eat at St Peter	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #350:								
+Queues long for something to eat at St Peter	1	->	slow through security	1	No	0		
+slow through security	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #351:								
+Queues long for something to eat at St Peter	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Queues long for something to eat at St Peter	1	No	0		
+								
+node pair #352:								
+Queues long for something to eat	1	->	It makes people tense	1	No	0		
+It makes people tense	1	->	Queues long for something to eat	1	No	0		
+								
+node pair #353:								
+Queues long for something to eat	1	->	slow	1	No	0		
+slow	1	->	Queues long for something to eat	1	No	0		
+								
+node pair #354:								
+Queues too long for something to eat at St Peter	1	->	Queues long for something to eat	1	Yes	1		
+Queues long for something to eat	1	->	Queues too long for something to eat at St Peter	1	No			
+								
+node pair #355:								
+Queues long for something to eat	1	->	very slow	1	Yes	0		
+very slow	1	->	Queues long for something to eat	1	No			
+								
+node pair #356:								
+Queues long for something to eat	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	Queues long for something to eat	1	No	0		
+								
+node pair #357:								
+Queues long for something to eat	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	Queues long for something to eat	1	No	0		
+								
+node pair #358:								
+Queues long for something to eat	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Queues long for something to eat	1	No	0		
+								
+node pair #359:								
+Queues long for something to eat	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Queues long for something to eat	1	No	0		
+								
+node pair #360:								
+Queues long for something to eat	1	->	slow through security	1	No	0		
+slow through security	1	->	Queues long for something to eat	1	No	0		
+								
+node pair #361:								
+Queues long for something to eat	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Queues long for something to eat	1	No	0		
+								
+node pair #362:								
+It makes people tense	1	->	slow	1	No	0		
+slow	1	->	It makes people tense	1	No	0		
+								
+node pair #363:								
+It makes people tense	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	It makes people tense	1	No	0		
+								
+node pair #364:								
+It makes people tense	1	->	very slow	1	No	0		
+very slow	1	->	It makes people tense	1	No	0		
+								
+node pair #365:								
+It makes people tense	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	It makes people tense	1	No	0		
+								
+node pair #366:								
+It makes people tense	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	It makes people tense	1	No	0		
+								
+node pair #367:								
+It makes people tense	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	It makes people tense	1	No	0		
+								
+node pair #368:								
+It makes people tense	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	It makes people tense	1	No	0		
+								
+node pair #369:								
+slow through security	1	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	slow through security	1	No			
+								
+node pair #370:								
+Better queuing space in Stars Bridge between passport control and security	1	->	It makes people tense	1	Yes	0		
+It makes people tense	1	->	Better queuing space in Stars Bridge between passport control and security	1	No			
+								
+node pair #371:								
+slow	1	->	Queues too long for something to eat at St Peter	1	No	0		
+Queues too long for something to eat at St Peter	1	->	slow	1	No	0		
+								
+node pair #372:								
+very slow	1	->	slow	1	Yes	1		
+slow	1	->	very slow	1	No			
+								
+node pair #373:								
+slow	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	slow	1	No	0		
+								
+node pair #374:								
+slow	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	slow	1	No	0		
+								
+node pair #375:								
+slow	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	slow	1	No	0		
+								
+node pair #376:								
+slow	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	slow	1	No	0		
+								
+node pair #377:								
+slow through security	1	->	slow	1	Yes	0		
+slow	1	->	slow through security	1	No			
+								
+node pair #378:								
+slow	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	slow	1	No	0		
+								
+node pair #379:								
+Queues too long for something to eat at St Peter	1	->	very slow	1	No	0		
+very slow	1	->	Queues too long for something to eat at St Peter	1	No	0		
+								
+node pair #380:								
+Queues too long for something to eat at St Peter	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	Queues too long for something to eat at St Peter	1	No	0		
+								
+node pair #381:								
+Queues too long for something to eat at St Peter	1	->	Check in queues were long	1	No	0		
+Check in queues were long	1	->	Queues too long for something to eat at St Peter	1	No	0		
+								
+node pair #382:								
+Queues too long for something to eat at St Peter	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Queues too long for something to eat at St Peter	1	No	0		
+								
+node pair #383:								
+Queues too long for something to eat at St Peter	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Queues too long for something to eat at St Peter	1	No	0		
+								
+node pair #384:								
+Queues too long for something to eat at St Peter	1	->	slow through security	1	No	0		
+slow through security	1	->	Queues too long for something to eat at St Peter	1	No	0		
+								
+node pair #385:								
+Queues too long for something to eat at St Peter	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Queues too long for something to eat at St Peter	1	No	0		
+								
+node pair #386:								
+very slow	1	->	Check in queues were too long today	1	No	0		
+Check in queues were too long today	1	->	very slow	1	No	0		
+								
+node pair #387:								
+Check in queues were long	1	->	very slow	1	Yes	0		
+very slow	1	->	Check in queues were long	1	No			
+								
+node pair #388:								
+Very slow through security	1	->	very slow	1	Yes	0		
+very slow	1	->	Very slow through security	1	No			
+								
+node pair #389:								
+very slow	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	very slow	1	No	0		
+								
+node pair #390:								
+very slow	1	->	slow through security	1	No	0		
+slow through security	1	->	very slow	1	No	0		
+								
+node pair #391:								
+very slow	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	very slow	1	No	0		
+								
+node pair #392:								
+Check in queues were too long today	1	->	Check in queues were long	1	Yes	1		
+Check in queues were long	1	->	Check in queues were too long today	1	No			
+								
+node pair #393:								
+Check in queues were too long today	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Check in queues were too long today	1	No	0		
+								
+node pair #394:								
+Check in queues were too long today	1	->	Check in queues were too long	1	Yes	1		
+Check in queues were too long	1	->	Check in queues were too long today	1	No			
+								
+node pair #395:								
+Check in queues were too long today	1	->	slow through security	1	No	0		
+slow through security	1	->	Check in queues were too long today	1	No	0		
+								
+node pair #396:								
+Check in queues were too long today	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Check in queues were too long today	1	No	0		
+								
+node pair #397:								
+Check in queues were long	1	->	Very slow through security	1	No	0		
+Very slow through security	1	->	Check in queues were long	1	No	0		
+								
+node pair #398:								
+Check in queues were too long	1	->	Check in queues were long	1	Yes	1		
+Check in queues were long	1	->	Check in queues were too long	1	No			
+								
+node pair #399:								
+Check in queues were long	1	->	slow through security	1	No	0		
+slow through security	1	->	Check in queues were long	1	No	0		
+								
+node pair #400:								
+Check in queues were long	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Check in queues were long	1	No	0		
+								
+node pair #401:								
+Very slow through security	1	->	Check in queues were too long	1	No	0		
+Check in queues were too long	1	->	Very slow through security	1	No	0		
+								
+node pair #402:								
+Very slow through security	1	->	slow through security	1	Yes	1		
+slow through security	1	->	Very slow through security	1	No			
+								
+node pair #403:								
+Very slow through security	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Very slow through security	1	No	0		
+								
+node pair #404:								
+Check in queues were too long	1	->	slow through security	1	No	0		
+slow through security	1	->	Check in queues were too long	1	No	0		
+								
+node pair #405:								
+Check in queues were too long	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	Check in queues were too long	1	No	0		
+								
+node pair #406:								
+slow through security	1	->	Better queuing space in Stars Bridge between passport control and security	1	No	0		
+Better queuing space in Stars Bridge between passport control and security	1	->	slow through security	1	No	0		

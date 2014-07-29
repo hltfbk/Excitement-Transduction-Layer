@@ -1,0 +1,39 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 1 entailment unit(s) before editing							OK	
+	you guys change my seat	[13764759_80299358.txt_1_0]						
+								
+collapsed node #2 : 1 entailment unit(s) before editing							OK	
+	there were no open seats	[13764829_81137701-2.txt_1_0]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing							remove-wrong modifier	???
+								
+collapsed node #4 : 1 entailment unit(s) before editing							OK	???
+	the seeds or so type together	[13764813_81567470.txt_1_0]						"""so"" not a modifier"
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+you guys change my seat	1	->	there were no open seats	1	No	0		
+there were no open seats	1	->	you guys change my seat	1	No	0		
+								
+node pair #2:								
+you guys change my seat	1	->	the seeds or type together	1	No	0		
+the seeds or type together	1	->	you guys change my seat	1	No	0		
+								
+node pair #3:								
+you guys change my seat	1	->	the seeds or so type together	1	No	0		
+the seeds or so type together	1	->	you guys change my seat	1	No	0		
+								
+node pair #4:								
+there were no open seats	1	->	the seeds or type together	1	No	0		
+the seeds or type together	1	->	there were no open seats	1	No	0		
+								
+node pair #5:								
+there were no open seats	1	->	the seeds or so type together	1	No	0		
+the seeds or so type together	1	->	there were no open seats	1	No	0		
+								
+node pair #6:								
+the seeds or so type together	1	->	the seeds or type together	1	Yes	1		
+the seeds or type together	1	->	the seeds or so type together	1	No			

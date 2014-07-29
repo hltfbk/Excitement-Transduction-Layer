@@ -53,23 +53,26 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		// Logger.getRootLogger().setLevel(Level.ERROR); 
 		
 		confidenceThresholds= new LinkedList<Double>();
-		for (double confidenceThreshold=0.5; confidenceThreshold<1; confidenceThreshold+=0.05){
+		for (double confidenceThreshold=0.5; confidenceThreshold<0.51; confidenceThreshold+=0.05){
 			confidenceThresholds.add(confidenceThreshold);
 		}
 		
 		results = new HashMap<String, Map<Double,EvaluationMeasures>>();
 	}
 	
-	public void printResults(){
+	public String printResults(){
+		String s="";
 		for (String setting : results.keySet()){
 			System.out.println();
-			for (double threshold : confidenceThresholds){
+			for (Double threshold : confidenceThresholds){
 				if (results.get(setting).containsKey(threshold)){
 					EvaluationMeasures res = results.get(setting).get(threshold);
-					System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());									
+					s += setting+"\t"+threshold.toString()+"\t"+res.getRecall().toString()+"\t"+res.getPrecision().toString()+"\t"+res.getF1().toString()+"\n";
+					System.out.println(s);	
 				}
 			}
 		}
+		return s;
 	}
 	
 	public void addResult(String setting, double threshold, EvaluationMeasures res){
@@ -228,5 +231,9 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		graph.removeAllEdges(workEdgesToRemove);
 		// evaluate the resulting graph
 		return evaluateRawGraph(graph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);
+	}
+	
+	public int getEdaCallsNumber(){
+		return this.useOne.getEdaCallsNumber();
 	}
 }

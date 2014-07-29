@@ -2,6 +2,7 @@ package eu.excitementproject.tl.evaluation.graphmerger;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -10,6 +11,12 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
@@ -17,6 +24,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+
+
+
+
+
+
 
 
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -50,12 +64,19 @@ public class GoldStandardEdgesLoader {
 	
 
 	protected Map<String,EntailmentRelation> edges;
+	protected int numOfEdges; //to count the number of ALL edges in an annotated graph, including "duplicate" edges with the same source/target text, but different id
 	protected Map<String,String> nodeTextById;
+	protected Map<String,String> nodeContentById;
+	
 	/**
 	 * @return the nodeTextById
 	 */
 	public Map<String, String> getNodeTextById() {
 		return nodeTextById;
+	}
+
+	public int getNumOfEdges() {
+		return numOfEdges;
 	}
 
 	Set<String> nodesOfInterest;
@@ -94,7 +115,9 @@ public class GoldStandardEdgesLoader {
 	public GoldStandardEdgesLoader(Set<String> nodesOfInterest, boolean withClosure) {
 		setMergedFileSuffix(withClosure);
 		edges = new HashMap<String,EntailmentRelation>();
+		numOfEdges = 0;
 		nodeTextById = new HashMap<String,String>(); //[id] [text]
+		nodeContentById = new HashMap<String,String>(); //[id] [content]		
 		this.nodesOfInterest = nodesOfInterest;
 	}
 
@@ -233,7 +256,7 @@ public class GoldStandardEdgesLoader {
 					
 					// add nodes to the dictionary nodeTextById
 					for (int temp = 0; temp < nodes.getLength(); temp++) {    
-						Node xmlNode = nodes.item(temp);     
+						Node xmlNode = nodes.item(temp); 
 
 						Element nodeElement = (Element) xmlNode;
 						String id = nodeElement.getAttribute("id");
@@ -245,7 +268,8 @@ public class GoldStandardEdgesLoader {
 				       			if (nodesOfInterest!=null){
 				       				if (!nodesOfInterest.contains(text)) continue; // don't add nodes which are not of interest, if nodesOfInterest is not null
 				       			}
-							   	nodeTextById.put(id, text);				       			
+							   	nodeTextById.put(id, text);	
+							   	nodeContentById.put(id, "\t"+nodeToString(xmlNode));
 				       			//if (id.endsWith("_0")) System.out.println(text);
 				       			logger.debug("\t"+id+"\t"+text);
 				       		}
@@ -255,6 +279,7 @@ public class GoldStandardEdgesLoader {
 					// load all the edges
 					NodeList entailmentRelationList = doc.getElementsByTagName("edge");
 					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
+						numOfEdges ++;
 						Node er = entailmentRelationList.item(temp);     
 						er.getNodeName();     
 						Element erElement = (Element) er;
@@ -300,6 +325,10 @@ public class GoldStandardEdgesLoader {
 
    //	Methods for internal testing purposes
 	
+	public Map<String, String> getNodeContentById() {
+		return nodeContentById;
+	}
+
 	/** Generates a single string, which contains the gold standard edges in DOT format for visualization
 	 * @return the generated string
 	 */
@@ -318,7 +347,13 @@ public class GoldStandardEdgesLoader {
 			g.addVertex(getGoldStandardNode(v)); // the EUs should be the same as created when adding edges to the "edges" attribute of the class 
 		}
 		for (EntailmentRelation e : edges.values()){
-			g.addEdge(e.getSource(), e.getTarget(), e);
+			if(g.containsVertex(e.getSource())&&(g.containsVertex(e.getTarget()))){ 
+				g.addEdge(e.getSource(), e.getTarget(), e);
+			}
+			else{
+				if(!g.containsVertex(e.getSource())) System.out.println("ERROR: The raw graph's vertex "+e.getSource()+"is not present in the corresponding FGs");
+				if(!g.containsVertex(e.getTarget())) System.out.println("ERROR: The raw graph's vertex "+e.getTarget()+"is not present in the corresponding FGs");
+			}
 		}
 		return g;
 	}
@@ -419,7 +454,7 @@ public class GoldStandardEdgesLoader {
 					
 					// add nodes to the dictionary nodeTextById
 					for (int temp = 0; temp < nodes.getLength(); temp++) {    
-						Node xmlNode = nodes.item(temp);     
+						Node xmlNode = nodes.item(temp);  
 
 						Element nodeElement = (Element) xmlNode;
 						String id = nodeElement.getAttribute("id");
@@ -429,6 +464,7 @@ public class GoldStandardEdgesLoader {
 				       		if (child.getNodeName().equals("original_text")){
 							   	String text = child.getTextContent();
 							   	nodeTextById.put(id, text);	
+							   	nodeContentById.put(id, "\t"+nodeToString(xmlNode));
 							   	idsInThisFG.add(id);
 				       			logger.debug("\t"+id+"\t"+text);
 				       		}
@@ -437,7 +473,8 @@ public class GoldStandardEdgesLoader {
 					
 					// load all the "YES" edges
 					NodeList entailmentRelationList = doc.getElementsByTagName("edge");
-					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
+					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {
+						numOfEdges++;
 						Node er = entailmentRelationList.item(temp);     
 						er.getNodeName();     
 						Element erElement = (Element) er;
@@ -456,9 +493,10 @@ public class GoldStandardEdgesLoader {
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
 						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, type);
 						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
+						System.out.println(edges.size()+"  "+edges);
 					}
 					
-			//		System.out.println(">>>>>Loading FG's positive edges");
+					System.out.println(">>>>>Loaded FG's positive edges "+edges.size());
 					EntailmentGraphRaw rfg = getFragmentGraph(idsInThisFG);
 					
 					// now add all "NO" edges - we're inside a FG, so for each pair of nodes, if it's not "yes" then it's "no"
@@ -486,5 +524,17 @@ public class GoldStandardEdgesLoader {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());
 				}		
 	}	
-	
+
+	private String nodeToString(Node node) {
+		StringWriter sw = new StringWriter();
+		try {
+		 Transformer t = TransformerFactory.newInstance().newTransformer();
+		 t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+		 t.setOutputProperty(OutputKeys.INDENT, "yes");
+		 t.transform(new DOMSource(node), new StreamResult(sw));
+		} catch (TransformerException te) {
+		 System.out.println("nodeToString Transformer Exception");
+		}
+		return sw.toString();
+		}
 }

@@ -1,0 +1,305 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 1 entailment unit(s) before editing
+	the departure they just the along date and when i had but	[13764823_81589603.txt_1_0]
+
+collapsed node #2 : 1 entailment unit(s) before editing
+	i cannot get a confirm play change in the first class	[13765205_85955838.txt_1_0]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	she can't put my ticket that i just buy	[13764807_81565659.txt_1_1]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	she can't put my ticket	[13764807_81565659.txt_1_2]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	i cannot get a confirm play change	[13765205_85955838.txt_1_2]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	the time to change dramatically	[13765262_83075324.txt_1_0]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	she can't put my ticket that i just buy like a couple months ago	[13764807_81565659.txt_1_0]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	they change the to area life without really imparting to see if that was going to work press	[13764796_82293716.txt_1_0]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	they change the to area life	[13764796_82293716.txt_1_1]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	I come over here to catch seven fifty six flags it's now been changed to nine five	[13764787_80854454-2.txt_3_0]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	i've been bounced around from flight to flight to flight	[13765048_83661432.txt_1_0]
+
+collapsed node #12 : 1 entailment unit(s) before editing
+	they put me in a three o'clock flight	[13764816_82295687.txt_2_0]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+the departure they just the along date and when i had but	1	->	i cannot get a confirm play change in the first class	1	No	0
+i cannot get a confirm play change in the first class	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #2:
+the departure they just the along date and when i had but	1	->	she can't put my ticket that i just buy	1	No	0
+she can't put my ticket that i just buy	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #3:
+the departure they just the along date and when i had but	1	->	she can't put my ticket	1	No	0
+she can't put my ticket	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #4:
+the departure they just the along date and when i had but	1	->	i cannot get a confirm play change	1	No	0
+i cannot get a confirm play change	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #5:
+the departure they just the along date and when i had but	1	->	the time to change dramatically	1	No	0
+the time to change dramatically	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #6:
+the departure they just the along date and when i had but	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+she can't put my ticket that i just buy like a couple months ago	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #7:
+the departure they just the along date and when i had but	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+they change the to area life without really imparting to see if that was going to work press	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #8:
+the departure they just the along date and when i had but	1	->	they change the to area life	1	No	0
+they change the to area life	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #9:
+the departure they just the along date and when i had but	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #10:
+the departure they just the along date and when i had but	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #11:
+the departure they just the along date and when i had but	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	the departure they just the along date and when i had but	1	No	0
+
+node pair #12:
+i cannot get a confirm play change in the first class	1	->	she can't put my ticket that i just buy	1	No	0
+she can't put my ticket that i just buy	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #13:
+i cannot get a confirm play change in the first class	1	->	she can't put my ticket	1	No	0
+she can't put my ticket	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #14:
+i cannot get a confirm play change in the first class	1	->	i cannot get a confirm play change	1	Yes	1
+i cannot get a confirm play change	1	->	i cannot get a confirm play change in the first class	1	No
+
+node pair #15:
+i cannot get a confirm play change in the first class	1	->	the time to change dramatically	1	No	0
+the time to change dramatically	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #16:
+i cannot get a confirm play change in the first class	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+she can't put my ticket that i just buy like a couple months ago	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #17:
+i cannot get a confirm play change in the first class	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+they change the to area life without really imparting to see if that was going to work press	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #18:
+i cannot get a confirm play change in the first class	1	->	they change the to area life	1	No	0
+they change the to area life	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #19:
+i cannot get a confirm play change in the first class	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #20:
+i cannot get a confirm play change in the first class	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #21:
+i cannot get a confirm play change in the first class	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	i cannot get a confirm play change in the first class	1	No	0
+
+node pair #22:
+she can't put my ticket that i just buy	1	->	she can't put my ticket	1	Yes	1
+she can't put my ticket	1	->	she can't put my ticket that i just buy	1	No
+
+node pair #23:
+she can't put my ticket that i just buy	1	->	i cannot get a confirm play change	1	No	0
+i cannot get a confirm play change	1	->	she can't put my ticket that i just buy	1	No	0
+
+node pair #24:
+she can't put my ticket that i just buy	1	->	the time to change dramatically	1	No	0
+the time to change dramatically	1	->	she can't put my ticket that i just buy	1	No	0
+
+node pair #25:
+she can't put my ticket that i just buy like a couple months ago	1	->	she can't put my ticket that i just buy	1	Yes	1
+she can't put my ticket that i just buy	1	->	she can't put my ticket that i just buy like a couple months ago	1	No
+
+node pair #26:
+she can't put my ticket that i just buy	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+they change the to area life without really imparting to see if that was going to work press	1	->	she can't put my ticket that i just buy	1	No	0
+
+node pair #27:
+she can't put my ticket that i just buy	1	->	they change the to area life	1	No	0
+they change the to area life	1	->	she can't put my ticket that i just buy	1	No	0
+
+node pair #28:
+she can't put my ticket that i just buy	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	she can't put my ticket that i just buy	1	No	0
+
+node pair #29:
+she can't put my ticket that i just buy	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	she can't put my ticket that i just buy	1	No	0
+
+node pair #30:
+she can't put my ticket that i just buy	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	she can't put my ticket that i just buy	1	No	0
+
+node pair #31:
+she can't put my ticket	1	->	i cannot get a confirm play change	1	No	0
+i cannot get a confirm play change	1	->	she can't put my ticket	1	No	0
+
+node pair #32:
+she can't put my ticket	1	->	the time to change dramatically	1	No	0
+the time to change dramatically	1	->	she can't put my ticket	1	No	0
+
+node pair #33:
+she can't put my ticket that i just buy like a couple months ago	1	->	she can't put my ticket	1	Yes	1
+she can't put my ticket	1	->	she can't put my ticket that i just buy like a couple months ago	1	No
+
+node pair #34:
+she can't put my ticket	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+they change the to area life without really imparting to see if that was going to work press	1	->	she can't put my ticket	1	No	0
+
+node pair #35:
+she can't put my ticket	1	->	they change the to area life	1	No	0
+they change the to area life	1	->	she can't put my ticket	1	No	0
+
+node pair #36:
+she can't put my ticket	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	she can't put my ticket	1	No	0
+
+node pair #37:
+she can't put my ticket	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	she can't put my ticket	1	No	0
+
+node pair #38:
+she can't put my ticket	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	she can't put my ticket	1	No	0
+
+node pair #39:
+i cannot get a confirm play change	1	->	the time to change dramatically	1	No	0
+the time to change dramatically	1	->	i cannot get a confirm play change	1	No	0
+
+node pair #40:
+i cannot get a confirm play change	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+she can't put my ticket that i just buy like a couple months ago	1	->	i cannot get a confirm play change	1	No	0
+
+node pair #41:
+i cannot get a confirm play change	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+they change the to area life without really imparting to see if that was going to work press	1	->	i cannot get a confirm play change	1	No	0
+
+node pair #42:
+i cannot get a confirm play change	1	->	they change the to area life	1	No	0
+they change the to area life	1	->	i cannot get a confirm play change	1	No	0
+
+node pair #43:
+i cannot get a confirm play change	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	i cannot get a confirm play change	1	No	0
+
+node pair #44:
+i cannot get a confirm play change	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	i cannot get a confirm play change	1	No	0
+
+node pair #45:
+i cannot get a confirm play change	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	i cannot get a confirm play change	1	No	0
+
+node pair #46:
+the time to change dramatically	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+she can't put my ticket that i just buy like a couple months ago	1	->	the time to change dramatically	1	No	0
+
+node pair #47:
+the time to change dramatically	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+they change the to area life without really imparting to see if that was going to work press	1	->	the time to change dramatically	1	No	0
+
+node pair #48:
+the time to change dramatically	1	->	they change the to area life	1	No	0
+they change the to area life	1	->	the time to change dramatically	1	No	0
+
+node pair #49:
+the time to change dramatically	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	the time to change dramatically	1	No	0
+
+node pair #50:
+the time to change dramatically	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	the time to change dramatically	1	No	0
+
+node pair #51:
+the time to change dramatically	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	the time to change dramatically	1	No	0
+
+node pair #52:
+she can't put my ticket that i just buy like a couple months ago	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+they change the to area life without really imparting to see if that was going to work press	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+
+node pair #53:
+she can't put my ticket that i just buy like a couple months ago	1	->	they change the to area life	1	No	0
+they change the to area life	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+
+node pair #54:
+she can't put my ticket that i just buy like a couple months ago	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+
+node pair #55:
+she can't put my ticket that i just buy like a couple months ago	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+
+node pair #56:
+she can't put my ticket that i just buy like a couple months ago	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	she can't put my ticket that i just buy like a couple months ago	1	No	0
+
+node pair #57:
+they change the to area life without really imparting to see if that was going to work press	1	->	they change the to area life	1	Yes	1
+they change the to area life	1	->	they change the to area life without really imparting to see if that was going to work press	1	No
+
+node pair #58:
+they change the to area life without really imparting to see if that was going to work press	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+
+node pair #59:
+they change the to area life without really imparting to see if that was going to work press	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+
+node pair #60:
+they change the to area life without really imparting to see if that was going to work press	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	they change the to area life without really imparting to see if that was going to work press	1	No	0
+
+node pair #61:
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	they change the to area life	1	Yes	0
+they change the to area life	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No
+
+node pair #62:
+they change the to area life	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	they change the to area life	1	No	0
+
+node pair #63:
+they put me in a three o'clock flight	1	->	they change the to area life	1	Yes	0
+they change the to area life	1	->	they put me in a three o'clock flight	1	No
+
+node pair #64:
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	i've been bounced around from flight to flight to flight	1	No	0
+i've been bounced around from flight to flight to flight	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+
+node pair #65:
+I come over here to catch seven fifty six flags it's now been changed to nine five	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	I come over here to catch seven fifty six flags it's now been changed to nine five	1	No	0
+
+node pair #66:
+i've been bounced around from flight to flight to flight	1	->	they put me in a three o'clock flight	1	No	0
+they put me in a three o'clock flight	1	->	i've been bounced around from flight to flight to flight	1	No	0
+

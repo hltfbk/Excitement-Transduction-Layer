@@ -3,11 +3,11 @@
     <node id="0217.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0217.txt" implicit_context="" focus="" implicit_focus="accredito">
         <original_text>ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato</original_text>
         <correct_text>ho caricato al bancomat il cellulare ma TELEFONIAX non l'ha accreditato</correct_text>
-        <modifiers>ho caricato al bancomat il cell mapoz=0 1 2 3 4 5 6</modifiers>
+        <modifiers>al bancomatpoz=</modifiers>
     </node>
     <node id="0217.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0217.txt" implicit_context="" focus="" implicit_focus="accredito">
-        <original_text>TELEFONIAX non l'ha accreditato</original_text>
-        <correct_text> </correct_text>
+        <original_text>ho caricato il cell ma TELEFONIAX non l'ha accreditato</original_text>
+        <correct_text>ho caricato il cellulare ma TELEFONIAX non l'ha accreditato</correct_text>
         <modifiers> </modifiers>
     </node>
     <edge id="0217.txt_1_0-0217.txt_1_1" source="0217.txt_1_0" target="0217.txt_1_1">
