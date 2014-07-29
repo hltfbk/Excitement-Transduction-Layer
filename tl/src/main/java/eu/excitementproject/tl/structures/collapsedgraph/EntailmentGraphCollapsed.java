@@ -62,6 +62,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	Set<String> textualInputs = null; //the textual inputs (complete statements), on which the entailment graph was built.
 	int numberOfEntailmentUnits; //the number of entailment units contained in the graph. This number is not necessarily the same as the number of nodes in the graph, since each equivalence class node corresponds to one or more entailment unit(s).
 
+	GraphStatistics graphStatistics = null;
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
@@ -74,6 +75,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		super(EntailmentRelationCollapsed.class);
 		numberOfEntailmentUnits = 0;
 		textualInputs = new HashSet<String>();
+		graphStatistics = new GraphStatistics();
 	}
 
 	
@@ -85,6 +87,10 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		super(EntailmentRelationCollapsed.class);
 		numberOfEntailmentUnits = 0;
 		textualInputs = new HashSet<String>();
+		int totalNumberOfMentions = 0;
+		Map<String,Integer> numberOfMentionsPerCategory = new HashMap<String,Integer>();
+		graphStatistics = new GraphStatistics();
+		
     	try {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -132,7 +138,17 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 						       		Element eumElement = (Element) child;
 						       		int eumLevel = Integer.valueOf(eumElement.getAttribute("level"));
 						       		EntailmentUnitMention m = new EntailmentUnitMention(eumElement.getAttribute("text"), eumLevel, eumElement.getAttribute("interactionId"));
-						       		m.setCategoryId(eumElement.getAttribute("categoryId"));
+						       		String categoryId = eumElement.getAttribute("categoryId");
+						       		//update number of mentions per category
+						       		int categoryCount = 0;
+									if (numberOfMentionsPerCategory.containsKey(categoryId)) {
+										categoryCount = numberOfMentionsPerCategory.get(categoryId);
+									}
+									categoryCount++;
+									totalNumberOfMentions++;
+									
+									numberOfMentionsPerCategory.put(categoryId, categoryCount);
+						       		m.setCategoryId(categoryId);
 						       		mentions.add(m);	       			
 					       		}
 							}		
@@ -151,6 +167,9 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 					this.addVertex(ec);					
 				}							
 			}
+			//create graph statistics
+			graphStatistics.setNumberOfMentionsPerCategory(numberOfMentionsPerCategory);
+			graphStatistics.setTotalNumberOfMentions(totalNumberOfMentions);
 			
 			// create and add edges
 			NodeList edgeList = doc.getElementsByTagName("entailmentRelationCollapsedEdge");
@@ -730,7 +749,17 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
         }
 	}
 	
- /*   *//**
+	public GraphStatistics getGraphStatistics() {
+		return graphStatistics;
+	}
+
+
+	public void setGraphStatistics(GraphStatistics graphStatistics) {
+		this.graphStatistics = graphStatistics;
+	}
+
+
+/*   *//**
 	 *  Removes all transitive closure edges from the graph.
 	 *//*
 	public void removeTransitiveClosure(){    

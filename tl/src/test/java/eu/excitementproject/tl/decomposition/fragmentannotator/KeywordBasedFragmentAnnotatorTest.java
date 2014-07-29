@@ -38,6 +38,16 @@ import eu.excitementproject.tl.structures.Interaction;
  */
 public class KeywordBasedFragmentAnnotatorTest {
 
+//	@Ignore 
+			// added by Gil. Slight parser change in EOP LAP 1.1.3 makes a strange error. 
+	        // Vivi, please take a look and re-initiated the test for us. 
+	        // the error comes with 
+	        //    dependency: (durch,Sprechblasen() => NK
+	        // 
+	        // (the above causes exception of "Unclosed group near index xx". )
+	        // I guess this might have caused by LAP tokenization error...  
+	        // Maybe exception treatment on "parenthesis" should changed... 
+	        // For now we can't fix LAP side yet, so, make something to patch such cases... 
 	@Test
 	public void test() {
 		BasicConfigurator.resetConfiguration(); 

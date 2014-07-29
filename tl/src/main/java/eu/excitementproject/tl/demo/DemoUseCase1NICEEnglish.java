@@ -1,6 +1,5 @@
 package eu.excitementproject.tl.demo;
 
-
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
