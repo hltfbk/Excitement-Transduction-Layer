@@ -64,7 +64,7 @@ public class GoldStandardEdgesLoader {
 	
 
 	protected Map<String,EntailmentRelation> edges;
-	protected int numOfEdges; //to count the number of ALL edges in an annotated graph, including "duplicate" edges with the same source/target text, but different id
+	protected int numFGedges; //to count the number of ALL edges in an annotated graph, including "duplicate" edges with the same source/target text, but different id
 	protected Map<String,String> nodeTextById;
 	protected Map<String,String> nodeContentById;
 	
@@ -75,8 +75,8 @@ public class GoldStandardEdgesLoader {
 		return nodeTextById;
 	}
 
-	public int getNumOfEdges() {
-		return numOfEdges;
+	public int getNumFGedges() {
+		return numFGedges;
 	}
 
 	Set<String> nodesOfInterest;
@@ -115,7 +115,7 @@ public class GoldStandardEdgesLoader {
 	public GoldStandardEdgesLoader(Set<String> nodesOfInterest, boolean withClosure) {
 		setMergedFileSuffix(withClosure);
 		edges = new HashMap<String,EntailmentRelation>();
-		numOfEdges = 0;
+		numFGedges = 0;
 		nodeTextById = new HashMap<String,String>(); //[id] [text]
 		nodeContentById = new HashMap<String,String>(); //[id] [content]		
 		this.nodesOfInterest = nodesOfInterest;
@@ -279,10 +279,12 @@ public class GoldStandardEdgesLoader {
 					// load all the edges
 					NodeList entailmentRelationList = doc.getElementsByTagName("edge");
 					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    
-						numOfEdges ++;
 						Node er = entailmentRelationList.item(temp);     
 						er.getNodeName();     
 						Element erElement = (Element) er;
+			
+						
+
 						String src = erElement.getAttribute("source");
 						if (!nodeTextById.containsKey(src)) {
 							// if nodesOfInterest==null, then we have a buggy behavior of the annotation file
@@ -408,36 +410,41 @@ public class GoldStandardEdgesLoader {
 	 * @param annotationsFolder
 	 * @throws GraphEvaluatorException
 	 */
-	public void loadFGrawGraph(String annotationsFolder) throws GraphEvaluatorException{
+	public String loadFGrawGraph(String annotationsFolder) throws GraphEvaluatorException{
+		String s="";
 		File clusterAnnotationDir = new File(annotationsFolder);
-		if (clusterAnnotationDir.isDirectory()){
-			
-		// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
-		// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
-		File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
-		if (clusterAnnotationFragmentGraphsDir.isDirectory()){
-			logger.info("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
-			int fgid=1;
-			for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
-				if (annotationFile.getName().endsWith(".xml")){
-					logger.debug("Fragment graph # "+fgid);
-							try {
-								ClusterStatistics.processCluster(annotationFile);
-							} catch (ParserConfigurationException | SAXException | IOException e) {							
-								e.printStackTrace();
-							}
-							addFGFromFile(annotationFile.getPath());
-					fgid++;
-				}
-			}							
+		if (clusterAnnotationDir.isDirectory()){		
+			// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
+			// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
+			File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
+			if (clusterAnnotationFragmentGraphsDir.isDirectory()){
+				logger.info("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
+				int fgid=1;
+				for (File annotationFile : clusterAnnotationFragmentGraphsDir.listFiles()){
+					if (annotationFile.getName().endsWith(".xml")){
+						logger.debug("Fragment graph # "+fgid);
+								try {
+									ClusterStatistics.processCluster(annotationFile);
+								} catch (ParserConfigurationException | SAXException | IOException e) {							
+									e.printStackTrace();
+								}
+								s+=addFGFromFile(annotationFile.getPath());
+						fgid++;
+					}
+				}							
+			}
+			else {
+				s+="The directory " + clusterAnnotationDir.getAbsolutePath()+" does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.\n";
+				System.err.print(s);				
+			}
 		}
-		else System.err.println("The directory " + clusterAnnotationDir +"does not contain the \"FragmentGraphs\" sub-directory with fragment graph annotations.");				
-		}
+		return s;
 	}
 	
-	public void addFGFromFile(String xmlAnnotationFilename) throws GraphEvaluatorException{		
+	public String addFGFromFile(String xmlAnnotationFilename) throws GraphEvaluatorException{		
 		// read all the nodes from xml annotation file and add them to the index 
-	   		try {
+	   		String s="";
+			try {
 	   			
 	   			Set<String> idsInThisFG = new HashSet<String>();
 	   			
@@ -474,29 +481,43 @@ public class GoldStandardEdgesLoader {
 					// load all the "YES" edges
 					NodeList entailmentRelationList = doc.getElementsByTagName("edge");
 					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {
-						numOfEdges++;
 						Node er = entailmentRelationList.item(temp);     
 						er.getNodeName();     
 						Element erElement = (Element) er;
+						
 						String src = erElement.getAttribute("source");
 						if (!idsInThisFG.contains(src)) {
 							// if nodesOfInterest==null, then we have a buggy behavior of the annotation file
 							// if nodesOfInterest!=null, then this is likely to be because src is not one of the nodesOfInterest, so no error message needed
+							s+=("WARNING! An edge in FG uses a wrong src node (node does not exist):"+src+"\n");
 							continue;
 						}
 						String tgt = erElement.getAttribute("target");
 						if (!idsInThisFG.contains(tgt)) {
+							s+=("WARNING! An edge in FG uses a wrong tgt node (node does not exist):"+tgt+"\n");
 							continue;
 						}
-						
+
+						NodeList features = erElement.getChildNodes();
+						for (int i =0; i<features.getLength(); i++){
+							if (features.item(i).getNodeName().equals("entailment")){
+								Element erEntailment = (Element) features.item(i);
+								if(erEntailment.getAttribute("type").equals(CLOSURE_EDGE_TYPE_STRING)) {
+									numFGedges ++;
+								}
+							}								
+						}							
+
 						EntailmentUnit sourceUnit = getGoldStandardNode(nodeTextById.get(src)); 
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
 						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, type);
 						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
 						System.out.println(edges.size()+"  "+edges);
+						System.out.print(numFGedges+" : ");
+						System.out.println(edges.keySet());
 					}
 					
-					System.out.println(">>>>>Loaded FG's positive edges "+edges.size());
+					System.out.println(">>>>>Loaded FG's positive edges "+numFGedges);
 					EntailmentGraphRaw rfg = getFragmentGraph(idsInThisFG);
 					
 					// now add all "NO" edges - we're inside a FG, so for each pair of nodes, if it's not "yes" then it's "no"
@@ -523,6 +544,7 @@ public class GoldStandardEdgesLoader {
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());
 				}		
+			return s;
 	}	
 
 	private String nodeToString(Node node) {

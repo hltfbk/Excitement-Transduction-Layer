@@ -2,7 +2,8 @@ Node caption	Entailment Unit	EU_id					Node_check	Comments
 								
 collapsed node #1 : 2 entailment unit(s) before editing								
 	The space currently is too small	[423940.txt_5_0]						
-	not enough space	"[498974.txt_1_0, 327999.txt_4_0]"						
+	not enough space	[498974.txt_1_0, 327999.txt_4_0]
+	too little space	[]						
 								
 collapsed node #2 : 6 entailment unit(s) before editing								
 	More suitcase space	[478371.txt_1_0]						
@@ -140,7 +141,7 @@ Almost confortable except luggage space	1	->	limited luggage space so would not 
 limited luggage space so would not recommend if travelling with large	1	->	Almost confortable except luggage space	1	No	0	0	"""almost comfortable"" is not entailed"
 								
 node pair #26:								
-Almost confortable except luggage space	1	->	The space currently is poorly organised	1	No	0	0	"Hesitate here: it would entail ""luggage space is poorly organized"" and so maybe it should also entail ""the space is poorly organized"" in general…"
+Almost confortable except luggage space	1	->	The space currently is poorly organised	1	No	0	0	"Hesitate here: it would entail ""luggage space is poorly organized"" and so maybe it should also entail ""the space is poorly organized"" in generalï¿½"
 The space currently is poorly organised	1	->	Almost confortable except luggage space	1	No	0	0	
 								
 node pair #27:								
