@@ -647,7 +647,7 @@ public class GoldStandardReannotation {
 		
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 		
-		String[] single = {"Cluster C1.2 Internet Key"};
+		String[] single = {"EMAIL0320"};
 		
 		String[] devsetEn = {"EMAIL0001",
 		                     "EMAIL0002",
@@ -684,9 +684,9 @@ public class GoldStandardReannotation {
 	//	String clusterName = "SPEECH0080";		
 
 	String stat="";
-	for (String clusterName : single){
-			//String set = "Test";
-		 String set = "Dev";
+	for (String clusterName : testsetEn){
+			String set = "Test";
+		// String set = "Dev";
 		
 //		String suffix = "Reconciled";
 //		String suffix = "LB";
@@ -695,10 +695,10 @@ public class GoldStandardReannotation {
 		
 		
 		// ITA		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
+//		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
 		
 		// ENG
-	//	File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
 		
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
