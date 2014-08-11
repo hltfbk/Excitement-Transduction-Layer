@@ -2,15 +2,12 @@ package eu.excitementproject.tl.experiments.NICE;
 
 import java.io.IOException;
 
+//import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 //import javax.xml.transform.TransformerException;
-
-
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-//import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
-import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
@@ -19,7 +16,7 @@ import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-//import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+//import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them

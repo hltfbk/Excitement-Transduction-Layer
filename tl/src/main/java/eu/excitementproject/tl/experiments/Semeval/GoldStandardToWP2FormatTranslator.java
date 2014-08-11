@@ -47,7 +47,6 @@ public class GoldStandardToWP2FormatTranslator {
 		String targetText = edge.getTarget().getText();
 		String sourceText = edge.getSource().getText();
 	//	System.out.print("Edge: "+edge.toString()+"\t");
-		int i=0;
 		for (String tgtId : textToIdsMap.get(targetText)){
 			for (String srcId: textToIdsMap.get(sourceText)){
 				if (srcId.equals(tgtId)) continue; // do not add edges with same src and tgt ids
@@ -57,7 +56,6 @@ public class GoldStandardToWP2FormatTranslator {
 				else s+= "\t\t<entailment type=\"direct\">yes</entailment>\n";
 				s+="\t</edge>\n";
 				edgeNum++;
-				i++;
 			}
 		}			
 	//	System.out.println(String.valueOf(i)+"\twp2 edges.");
