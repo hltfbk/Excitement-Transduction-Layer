@@ -12,13 +12,31 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	
 	
 	public DemoUseCase1NICEEnglish() {
-		
+				
+		// to run for a single cluster - can change the cluster name (can replace "test" with "train" for the train set)
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/train", 2000,
-				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/train",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/EMAIL0010/", 2000,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/EMAIL0010",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
+
+	/*	// to run for xmi-s of all test clusters (can replace "test" with "train" for the train set)
+		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/allClusters/", 2000,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/allClusters",
+				TreeTaggerEN.class,
+				MaxEntClassificationEDA.class
+				);*/
+
+	/*	// to run for xmi-s of all open clusters
+		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/all/", 2000,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_perFrag/all/",
+				TreeTaggerEN.class,
+				MaxEntClassificationEDA.class
+				);*/
+	
 	}
 	
 	public static void main(String[] argv) {
