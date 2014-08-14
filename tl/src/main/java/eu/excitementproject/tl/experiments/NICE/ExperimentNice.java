@@ -2,7 +2,7 @@ package eu.excitementproject.tl.experiments.NICE;
 
 import java.io.IOException;
 
-import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
+import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
@@ -10,7 +10,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 //import javax.xml.transform.TransformerException;
-import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
@@ -40,7 +40,7 @@ public class ExperimentNice extends AbstractExperiment {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String[] clusters = {"EMAIL0030", "EMAIL0010", "EMAIL0140", "EMAIL0230", "EMAIL0240", "EMAIL0320", "EMAIL0340", "EMAIL0380", "EMAIL0390"};
+		String[] clusters = {"EMAIL0001", "EMAIL0010"};
 		String ress = ""; 
 		for (String cluster : clusters){
 			ress+=cluster+"\n";
@@ -59,8 +59,8 @@ public class ExperimentNice extends AbstractExperiment {
 //			String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 
 //			String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
-			String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_test/"+cluster;
-			String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ENG_reannotated/";
+			String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/"+cluster;
+			String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/test/";
 			
 			int fileLimit = 1000000;
 			String outDir = dataDir.replace("resources", "outputs");
@@ -100,7 +100,7 @@ public class ExperimentNice extends AbstractExperiment {
 					);
 	*/		
 
-		/*	ExperimentNice eTIEposRes = new ExperimentNice(
+			ExperimentNice eTIEposRes = new ExperimentNice(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 
 					dataDir, fileLimit, outDir,
@@ -108,7 +108,7 @@ public class ExperimentNice extends AbstractExperiment {
 					TreeTaggerEN.class,
 					MaxEntClassificationEDA.class
 					);
-*/
+
 					
 	/*		ExperimentNice eTIEparsedRes = new ExperimentNice(
 					tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
@@ -122,7 +122,7 @@ public class ExperimentNice extends AbstractExperiment {
 			
 
 			
-			ExperimentNice eBIUTEE = new ExperimentNice(
+		/*	ExperimentNice eBIUTEE = new ExperimentNice(
 					tlDir+"src/test/resources/NICE_experiments/biutee.xml",
 //					tlDir+"src/test/resources/NICE_experiments/biutee.xml",
 					
@@ -130,7 +130,7 @@ public class ExperimentNice extends AbstractExperiment {
 					
 					BIUFullLAP.class,
 					BiuteeEDA.class
-					);
+					);*/
 		
 	/*		ExperimentNice EditDistBase = new ExperimentNice(
 					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
@@ -152,7 +152,7 @@ public class ExperimentNice extends AbstractExperiment {
 			);
 	*/
 				
-			ExperimentNice e = eBIUTEE; 
+			ExperimentNice e = eTIEposRes; 
 			e.buildRawGraph();
 			try {
 				e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");

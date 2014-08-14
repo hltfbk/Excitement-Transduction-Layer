@@ -1,0 +1,762 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 1 entailment unit(s) before editing								
+	Not enough special deals	[35.txt_2_0]						
+								
+collapsed node #2 : 2 entailment unit(s) before editing								
+	Lower the fares	[272237.txt_5_0]						
+	decrease your prices	[6.txt_7_0]						
+								
+collapsed node #3 : 3 entailment unit(s) before editing								
+	Prices are quite high on tickets	[387881.txt_1_0]						
+	Tickets are way too expensive	[0.txt_1_0]						
+	Tickets very expensive	[35.txt_1_2]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing								
+	Slightly cheaper tickets	[18.txt_1_0]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	cheaper standard tickets	[19.txt_3_2]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	cheaper tickets on friday	[19.txt_3_1]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	Cheap flexible tickets	[13.txt_1_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	cheaper standard tickets on friday	[19.txt_3_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	Same day cheap standby tickets	[13.txt_2_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	you must make cheaper tickets available at the last minute	[26.txt_1_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	Tickets always very expensive	[35.txt_1_0]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	price paid for a single journey at 200$	[11.txt_3_1]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing								
+	semi - flexible tickets that are cheaper	[12.txt_1_1]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing								
+	semi - flexible tickets that are much cheaper	[12.txt_1_0]						
+								
+collapsed node #15 : 1 entailment unit(s) before editing								
+	ticket prices can sometimes be too expensive	[2.txt_1_0]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing								
+	Tickets always expensive	[35.txt_1_1]						
+								
+collapsed node #17 : 1 entailment unit(s) before editing								
+	price paid for a single journey Moonport - Stars Bridge at 200$	[11.txt_3_0]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing								
+	make more offers for cheaper tickets	[5.txt_1_0]						
+								
+collapsed node #19 : 16 entailment unit(s) before editing								
+	Lower the price of the tickets	[3.txt_1_0]						
+	Prices are high on tickets	[387881.txt_1_1]						
+	Reduce ticket prices	[36.txt_1_0]						
+	Selling cheaper tickets	[24.txt_1_0]						
+	The tickets are expensive	[513573.txt_1_0]						
+	Ticket Prices are too high	[530848.txt_1_0]						
+	Ticket was expensive	[30.txt_1_0]						
+	Tickets are expensive	[0.txt_1_1]						
+	Tickets expensive	[35.txt_1_3]						
+	cheaper tickets	[18.txt_1_1, 19.txt_3_3]						
+	lower the price of ticket	[7.txt_1_0]						
+	tickets are expensive	[25.txt_1_1]						
+	tickets are too expensive	[25.txt_1_0]						
+	tickets not cheap	[34.txt_1_0]						
+	you must make cheaper tickets available	[26.txt_1_1]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+Not enough special deals	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	Not enough special deals	1	No	0	0	
+								
+node pair #2:								
+Not enough special deals	1	->	Tickets very expensive	3	No	0	0	
+Tickets very expensive	3	->	Not enough special deals	1	No	0	0	
+								
+node pair #3:								
+Not enough special deals	1	->	Slightly cheaper tickets	1	No	0	0	
+Slightly cheaper tickets	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #4:								
+Not enough special deals	1	->	cheaper standard tickets	1	No	0	0	
+cheaper standard tickets	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #5:								
+Not enough special deals	1	->	cheaper tickets on friday	1	No	0	0	
+cheaper tickets on friday	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #6:								
+Not enough special deals	1	->	Cheap flexible tickets	1	No	0	0	
+Cheap flexible tickets	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #7:								
+Not enough special deals	1	->	cheaper standard tickets on friday	1	No	0	0	
+cheaper standard tickets on friday	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #8:								
+Same day cheap standby tickets	1	->	Not enough special deals	1	Yes	0	1	
+Not enough special deals	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #9:								
+Not enough special deals	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+you must make cheaper tickets available at the last minute	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #10:								
+Not enough special deals	1	->	Tickets always very expensive	1	No	0	0	
+Tickets always very expensive	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #11:								
+Not enough special deals	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #12:								
+semi - flexible tickets that are cheaper	1	->	Not enough special deals	1	Yes	0	0	
+Not enough special deals	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+								
+node pair #13:								
+semi - flexible tickets that are much cheaper	1	->	Not enough special deals	1	Yes	0	0	
+Not enough special deals	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #14:								
+Not enough special deals	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #15:								
+Not enough special deals	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #16:								
+Not enough special deals	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	Not enough special deals	1	No	0	0	
+								
+node pair #17:								
+make more offers for cheaper tickets	1	->	Not enough special deals	1	Yes	0	1	
+Not enough special deals	1	->	make more offers for cheaper tickets	1	No	0	0	
+								
+node pair #18:								
+Not enough special deals	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	Not enough special deals	1	No	0	0	
+								
+node pair #19:								
+Tickets very expensive	3	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	Tickets very expensive	3	No	0	0	
+								
+node pair #20:								
+Slightly cheaper tickets	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #21:								
+cheaper standard tickets	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #22:								
+cheaper tickets on friday	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #23:								
+Cheap flexible tickets	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #24:								
+cheaper standard tickets on friday	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #25:								
+Same day cheap standby tickets	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #26:								
+you must make cheaper tickets available at the last minute	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #27:								
+Tickets always very expensive	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	Tickets always very expensive	1	No	0	0	
+								
+node pair #28:								
+price paid for a single journey at 200$	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	price paid for a single journey at 200$	1	No	0	0	
+								
+node pair #29:								
+semi - flexible tickets that are cheaper	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	semi - flexible tickets that are cheaper	1	No	0	0	
+								
+node pair #30:								
+semi - flexible tickets that are much cheaper	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #31:								
+ticket prices can sometimes be too expensive	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	ticket prices can sometimes be too expensive	1	No	0	0	
+								
+node pair #32:								
+Tickets always expensive	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	Tickets always expensive	1	No	0	0	
+								
+node pair #33:								
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+								
+node pair #34:								
+make more offers for cheaper tickets	1	->	Lower the fares	2	Yes	0	1	
+Lower the fares	2	->	make more offers for cheaper tickets	1	No	0	0	
+								
+node pair #35:								
+Lower the fares	2	->	cheaper tickets	16	Yes	0	0	
+cheaper tickets	16	->	Lower the fares	2	Yes	0	1	
+								
+node pair #36:								
+Slightly cheaper tickets	1	->	Tickets very expensive	3	Yes	0	0	
+Tickets very expensive	3	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #37:								
+cheaper standard tickets	1	->	Tickets very expensive	3	Yes	0	0	
+Tickets very expensive	3	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #38:								
+cheaper tickets on friday	1	->	Tickets very expensive	3	Yes	0	0	
+Tickets very expensive	3	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #39:								
+Tickets very expensive	3	->	Cheap flexible tickets	1	No	0	0	
+Cheap flexible tickets	1	->	Tickets very expensive	3	No	0	0	
+								
+node pair #40:								
+cheaper standard tickets on friday	1	->	Tickets very expensive	3	Yes	0	0	
+Tickets very expensive	3	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #41:								
+Tickets very expensive	3	->	Same day cheap standby tickets	1	No	0	0	
+Same day cheap standby tickets	1	->	Tickets very expensive	3	No	0	0	
+								
+node pair #42:								
+you must make cheaper tickets available at the last minute	1	->	Tickets very expensive	3	Yes	0	0	
+Tickets very expensive	3	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #43:								
+Tickets always very expensive	1	->	Tickets very expensive	3	Yes	1	1	
+Tickets very expensive	3	->	Tickets always very expensive	1	No	-1	0	
+								
+node pair #44:								
+Tickets very expensive	3	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	Tickets very expensive	3	No	0	0	
+								
+node pair #45:								
+Tickets very expensive	3	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	Tickets very expensive	3	No	0	0	
+								
+node pair #46:								
+semi - flexible tickets that are much cheaper	1	->	Tickets very expensive	3	Yes	0	1	
+Tickets very expensive	3	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #47:								
+ticket prices can sometimes be too expensive	1	->	Tickets very expensive	3	Yes	0	0	
+Tickets very expensive	3	->	ticket prices can sometimes be too expensive	1	No	0	0	
+								
+node pair #48:								
+Tickets very expensive	3	->	Tickets always expensive	1	No	-1	0	
+Tickets always expensive	1	->	Tickets very expensive	3	No	-1	0	
+								
+node pair #49:								
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	Tickets very expensive	3	Yes	0	0	
+Tickets very expensive	3	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+								
+node pair #50:								
+make more offers for cheaper tickets	1	->	Tickets very expensive	3	Yes	0	0	
+Tickets very expensive	3	->	make more offers for cheaper tickets	1	No	0	0	
+								
+node pair #51:								
+Tickets very expensive	3	->	cheaper tickets	16	Yes	3	1	
+cheaper tickets	16	->	Tickets very expensive	3	Yes	-3	0	
+								
+node pair #52:								
+Slightly cheaper tickets	1	->	cheaper standard tickets	1	No	0	0	
+cheaper standard tickets	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #53:								
+Slightly cheaper tickets	1	->	cheaper tickets on friday	1	No	0	0	
+cheaper tickets on friday	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #54:								
+Slightly cheaper tickets	1	->	Cheap flexible tickets	1	No	0	0	
+Cheap flexible tickets	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #55:								
+Slightly cheaper tickets	1	->	cheaper standard tickets on friday	1	No	0	0	
+cheaper standard tickets on friday	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #56:								
+Slightly cheaper tickets	1	->	Same day cheap standby tickets	1	No	0	0	
+Same day cheap standby tickets	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #57:								
+Slightly cheaper tickets	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+you must make cheaper tickets available at the last minute	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #58:								
+Slightly cheaper tickets	1	->	Tickets always very expensive	1	No	0	0	
+Tickets always very expensive	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #59:								
+Slightly cheaper tickets	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #60:								
+Slightly cheaper tickets	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #61:								
+Slightly cheaper tickets	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+semi - flexible tickets that are much cheaper	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #62:								
+Slightly cheaper tickets	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #63:								
+Slightly cheaper tickets	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #64:								
+Slightly cheaper tickets	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #65:								
+Slightly cheaper tickets	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	Slightly cheaper tickets	1	No	0	0	
+								
+node pair #66:								
+Slightly cheaper tickets	1	->	cheaper tickets	16	Yes	1	1	
+cheaper tickets	16	->	Slightly cheaper tickets	1	No	-1	0	
+								
+node pair #67:								
+cheaper standard tickets	1	->	cheaper tickets on friday	1	No	-1	0	
+cheaper tickets on friday	1	->	cheaper standard tickets	1	No	-1	0	
+								
+node pair #68:								
+cheaper standard tickets	1	->	Cheap flexible tickets	1	No	0	0	
+Cheap flexible tickets	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #69:								
+cheaper standard tickets on friday	1	->	cheaper standard tickets	1	Yes	1	1	
+cheaper standard tickets	1	->	cheaper standard tickets on friday	1	No	-1	0	
+								
+node pair #70:								
+cheaper standard tickets	1	->	Same day cheap standby tickets	1	No	0	0	
+Same day cheap standby tickets	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #71:								
+cheaper standard tickets	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+you must make cheaper tickets available at the last minute	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #72:								
+cheaper standard tickets	1	->	Tickets always very expensive	1	No	0	0	
+Tickets always very expensive	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #73:								
+cheaper standard tickets	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #74:								
+cheaper standard tickets	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #75:								
+cheaper standard tickets	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+semi - flexible tickets that are much cheaper	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #76:								
+cheaper standard tickets	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #77:								
+cheaper standard tickets	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #78:								
+cheaper standard tickets	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #79:								
+cheaper standard tickets	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	cheaper standard tickets	1	No	0	0	
+								
+node pair #80:								
+cheaper standard tickets	1	->	cheaper tickets	16	Yes	1	1	
+cheaper tickets	16	->	cheaper standard tickets	1	No	-1	0	
+								
+node pair #81:								
+cheaper tickets on friday	1	->	Cheap flexible tickets	1	No	0	0	
+Cheap flexible tickets	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #82:								
+cheaper standard tickets on friday	1	->	cheaper tickets on friday	1	Yes	1	1	
+cheaper tickets on friday	1	->	cheaper standard tickets on friday	1	No	-1	0	
+								
+node pair #83:								
+cheaper tickets on friday	1	->	Same day cheap standby tickets	1	No	0	0	
+Same day cheap standby tickets	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #84:								
+cheaper tickets on friday	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+you must make cheaper tickets available at the last minute	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #85:								
+cheaper tickets on friday	1	->	Tickets always very expensive	1	No	0	0	
+Tickets always very expensive	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #86:								
+cheaper tickets on friday	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #87:								
+cheaper tickets on friday	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #88:								
+cheaper tickets on friday	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+semi - flexible tickets that are much cheaper	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #89:								
+cheaper tickets on friday	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #90:								
+cheaper tickets on friday	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #91:								
+cheaper tickets on friday	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #92:								
+cheaper tickets on friday	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	cheaper tickets on friday	1	No	0	0	
+								
+node pair #93:								
+cheaper tickets on friday	1	->	cheaper tickets	16	Yes	1	1	
+cheaper tickets	16	->	cheaper tickets on friday	1	No	-1	0	
+								
+node pair #94:								
+Cheap flexible tickets	1	->	cheaper standard tickets on friday	1	No	0	0	
+cheaper standard tickets on friday	1	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #95:								
+Same day cheap standby tickets	1	->	Cheap flexible tickets	1	Yes	0	0	
+Cheap flexible tickets	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #96:								
+Cheap flexible tickets	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+you must make cheaper tickets available at the last minute	1	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #97:								
+Cheap flexible tickets	1	->	Tickets always very expensive	1	No	0	0	
+Tickets always very expensive	1	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #98:								
+Cheap flexible tickets	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #99:								
+semi - flexible tickets that are cheaper	1	->	Cheap flexible tickets	1	Yes	0	1	
+Cheap flexible tickets	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+								
+node pair #100:								
+semi - flexible tickets that are much cheaper	1	->	Cheap flexible tickets	1	Yes	0	1	
+Cheap flexible tickets	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #101:								
+Cheap flexible tickets	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #102:								
+Cheap flexible tickets	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #103:								
+Cheap flexible tickets	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #104:								
+Cheap flexible tickets	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #105:								
+Cheap flexible tickets	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	Cheap flexible tickets	1	No	0	0	
+								
+node pair #106:								
+cheaper standard tickets on friday	1	->	Same day cheap standby tickets	1	No	0	0	
+Same day cheap standby tickets	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #107:								
+cheaper standard tickets on friday	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+you must make cheaper tickets available at the last minute	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #108:								
+cheaper standard tickets on friday	1	->	Tickets always very expensive	1	No	0	0	
+Tickets always very expensive	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #109:								
+cheaper standard tickets on friday	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #110:								
+cheaper standard tickets on friday	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #111:								
+cheaper standard tickets on friday	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+semi - flexible tickets that are much cheaper	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #112:								
+cheaper standard tickets on friday	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #113:								
+cheaper standard tickets on friday	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #114:								
+cheaper standard tickets on friday	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #115:								
+cheaper standard tickets on friday	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	cheaper standard tickets on friday	1	No	0	0	
+								
+node pair #116:								
+cheaper standard tickets on friday	1	->	cheaper tickets	16	Yes	1	1	
+cheaper tickets	16	->	cheaper standard tickets on friday	1	No	-1	0	
+								
+node pair #117:								
+Same day cheap standby tickets	1	->	you must make cheaper tickets available at the last minute	1	No	0	1	
+you must make cheaper tickets available at the last minute	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #118:								
+Same day cheap standby tickets	1	->	Tickets always very expensive	1	No	0	0	
+Tickets always very expensive	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #119:								
+Same day cheap standby tickets	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #120:								
+Same day cheap standby tickets	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #121:								
+Same day cheap standby tickets	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+semi - flexible tickets that are much cheaper	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #122:								
+Same day cheap standby tickets	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #123:								
+Same day cheap standby tickets	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #124:								
+Same day cheap standby tickets	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #125:								
+Same day cheap standby tickets	1	->	make more offers for cheaper tickets	1	No	0	1	
+make more offers for cheaper tickets	1	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #126:								
+Same day cheap standby tickets	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	Same day cheap standby tickets	1	No	0	0	
+								
+node pair #127:								
+you must make cheaper tickets available at the last minute	1	->	Tickets always very expensive	1	No	0	0	
+Tickets always very expensive	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #128:								
+you must make cheaper tickets available at the last minute	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #129:								
+you must make cheaper tickets available at the last minute	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #130:								
+you must make cheaper tickets available at the last minute	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+semi - flexible tickets that are much cheaper	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #131:								
+you must make cheaper tickets available at the last minute	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #132:								
+you must make cheaper tickets available at the last minute	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #133:								
+you must make cheaper tickets available at the last minute	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #134:								
+you must make cheaper tickets available at the last minute	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	you must make cheaper tickets available at the last minute	1	No	0	0	
+								
+node pair #135:								
+you must make cheaper tickets available at the last minute	1	->	cheaper tickets	16	Yes	1	1	
+cheaper tickets	16	->	you must make cheaper tickets available at the last minute	1	No	-1	0	
+								
+node pair #136:								
+Tickets always very expensive	1	->	price paid for a single journey at 200$	1	No	0	0	
+price paid for a single journey at 200$	1	->	Tickets always very expensive	1	No	0	0	
+								
+node pair #137:								
+Tickets always very expensive	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	Tickets always very expensive	1	No	0	0	
+								
+node pair #138:								
+Tickets always very expensive	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+semi - flexible tickets that are much cheaper	1	->	Tickets always very expensive	1	No	0	0	
+								
+node pair #139:								
+Tickets always very expensive	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	Tickets always very expensive	1	No	0	0	
+								
+node pair #140:								
+Tickets always very expensive	1	->	Tickets always expensive	1	Yes	1	1	
+Tickets always expensive	1	->	Tickets always very expensive	1	No	-1	0	
+								
+node pair #141:								
+Tickets always very expensive	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	Tickets always very expensive	1	No	0	0	
+								
+node pair #142:								
+Tickets always very expensive	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	Tickets always very expensive	1	No	0	0	
+								
+node pair #143:								
+Tickets always very expensive	1	->	cheaper tickets	16	Yes	1	1	
+cheaper tickets	16	->	Tickets always very expensive	1	No	-1	0	
+								
+node pair #144:								
+price paid for a single journey at 200$	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+semi - flexible tickets that are cheaper	1	->	price paid for a single journey at 200$	1	No	0	0	
+								
+node pair #145:								
+price paid for a single journey at 200$	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+semi - flexible tickets that are much cheaper	1	->	price paid for a single journey at 200$	1	No	0	0	
+								
+node pair #146:								
+price paid for a single journey at 200$	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	price paid for a single journey at 200$	1	No	0	0	
+								
+node pair #147:								
+price paid for a single journey at 200$	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	price paid for a single journey at 200$	1	No	0	0	
+								
+node pair #148:								
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	price paid for a single journey at 200$	1	Yes	1	1	
+price paid for a single journey at 200$	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	-1	0	
+								
+node pair #149:								
+price paid for a single journey at 200$	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	price paid for a single journey at 200$	1	No	0	0	
+								
+node pair #150:								
+price paid for a single journey at 200$	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	price paid for a single journey at 200$	1	No	0	0	
+								
+node pair #151:								
+semi - flexible tickets that are much cheaper	1	->	semi - flexible tickets that are cheaper	1	Yes	1	1	
+semi - flexible tickets that are cheaper	1	->	semi - flexible tickets that are much cheaper	1	No	-1	0	
+								
+node pair #152:								
+semi - flexible tickets that are cheaper	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+								
+node pair #153:								
+semi - flexible tickets that are cheaper	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+								
+node pair #154:								
+semi - flexible tickets that are cheaper	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+								
+node pair #155:								
+semi - flexible tickets that are cheaper	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	semi - flexible tickets that are cheaper	1	No	0	0	
+								
+node pair #156:								
+semi - flexible tickets that are cheaper	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	semi - flexible tickets that are cheaper	1	No	0	0	
+								
+node pair #157:								
+semi - flexible tickets that are much cheaper	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+ticket prices can sometimes be too expensive	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #158:								
+semi - flexible tickets that are much cheaper	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #159:								
+semi - flexible tickets that are much cheaper	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #160:								
+semi - flexible tickets that are much cheaper	1	->	make more offers for cheaper tickets	1	Yes	0	0	
+make more offers for cheaper tickets	1	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #161:								
+semi - flexible tickets that are much cheaper	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	semi - flexible tickets that are much cheaper	1	No	0	0	
+								
+node pair #162:								
+ticket prices can sometimes be too expensive	1	->	Tickets always expensive	1	No	0	0	
+Tickets always expensive	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+								
+node pair #163:								
+ticket prices can sometimes be too expensive	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+								
+node pair #164:								
+ticket prices can sometimes be too expensive	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	ticket prices can sometimes be too expensive	1	No	0	0	
+								
+node pair #165:								
+ticket prices can sometimes be too expensive	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	ticket prices can sometimes be too expensive	1	No	0	0	
+								
+node pair #166:								
+Tickets always expensive	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	Tickets always expensive	1	No	0	0	
+								
+node pair #167:								
+Tickets always expensive	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	Tickets always expensive	1	No	0	0	
+								
+node pair #168:								
+Tickets always expensive	1	->	cheaper tickets	16	Yes	1	1	
+cheaper tickets	16	->	Tickets always expensive	1	No	-1	0	
+								
+node pair #169:								
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	make more offers for cheaper tickets	1	No	0	0	
+make more offers for cheaper tickets	1	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+								
+node pair #170:								
+price paid for a single journey Moonport - Stars Bridge at 200$	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	price paid for a single journey Moonport - Stars Bridge at 200$	1	No	0	0	
+								
+node pair #171:								
+make more offers for cheaper tickets	1	->	cheaper tickets	16	Yes	0	1	
+cheaper tickets	16	->	make more offers for cheaper tickets	1	No	0	0	
