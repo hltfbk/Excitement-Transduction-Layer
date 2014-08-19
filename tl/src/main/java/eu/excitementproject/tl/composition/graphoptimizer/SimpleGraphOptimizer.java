@@ -130,13 +130,8 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 		}
 		
 		// Step 3 - resolve transitivity violations
-		// no need to do it - as soon as we have no cycles, we have no transitivity violations
-		// since "transitivity violation" between "entailment" nodes is always a cycle
-		// (a -> b and b -> c, and then instead of a->c we have c->a)
-		// => if we only have "entailment" nodes, there's no need to resolve anything
-		// If we had "no-entailment" nodes, we could have violations like
-		// a-> and b->c, but a-not entails-c (with high confidence) - those should be resolves (not in this SimpleCollapseGraphGenerator) 
-		
+		// WE CAN HAVE "a -> b" and "b -> c", but the edge "a -> c" missing, denoting "no entailment", and then it's a violation! Can resolve by adding this missing edge
+		// If we have no-entailment edges, we can have explicit violations like this
 		
 		return collapsedGraph;
 	}

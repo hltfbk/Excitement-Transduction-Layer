@@ -91,6 +91,7 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 			}
 		}*/
 
+	
 		HashMap<String, Integer> nodeIndex = new HashMap<String, Integer>(); 
 		int i = 1;
 		for (EntailmentUnit node : workGraph.vertexSet()) {
@@ -144,7 +145,8 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 		}
 		for (AbstractOntologyGraph componnetGraph : componnetGraphs) {
 			for (AbstractRuleEdge componentEdge : componnetGraph.getEdges()) {
-				if (componentEdge.score() >= confidenceThreshold) { //TODO: do we need the threshold here? Should it be confidenceThreshold or just 0 (to retain only entailment edges)? 				
+				//if (componentEdge.score() >= confidenceThreshold) { //TODO: do we need the threshold here? Should it be confidenceThreshold or just 0 (to retain only entailment edges)? 				
+				if (componentEdge.score() > 0) { //TODO: do we need the threshold here? Should it be confidenceThreshold or just 0 (to retain only entailment edges)? 				
 					EntailmentUnit source = workGraph.getVertexWithText(componentEdge.from().description());
 					EntailmentUnit target=  workGraph.getVertexWithText(componentEdge.to().description());
 					EntailmentRelation edge = new EntailmentRelation(source, target, new TEDecisionWithConfidence(componentEdge.score(), DecisionLabel.Entailment));
@@ -158,15 +160,27 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 	}
 	
 	private Double detectConfidence(EntailmentGraphRaw workGraph, EntailmentUnit source, EntailmentUnit target, Double confidenceThreshold){
-		Double confidence = -0.9; // this will be our non-entailment confidence for missing edges 
+		Double confidence = -0.5; // this will be our non-entailment confidence for missing edges 
 		if (workGraph.containsEdge(source, target)) {
+
 			EntailmentRelation edge = workGraph.getEdge(source, target);
 			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)) {
-				 if (edge.getConfidence() > confidenceThreshold) confidence = edge.getConfidence(); // only if the original score is higher than the threshold, consider the edge entailing with the corresponding confidence. Otherwise treat it as if it's not present in the work graph. 
+				 if (edge.getConfidence() > confidenceThreshold) {
+					 confidence = edge.getConfidence(); // only if the original score is higher than the threshold, consider the edge entailing with the corresponding confidence. Otherwise treat it as if it's not present in the work graph. 
+					 if (confidence < 1) confidence/=2; // if it's not 1 (not a FG edge), use half-score, to ensure FG edges not changed
+				 }
 			}
 			else confidence = -1.0*edge.getConfidence();			
 		}
-		
+		else{
+			// We should return non-entailment most confident score (-1?) for missing edges from inside FGs
+			// Check: if src and tgt share a compete statement, then they belong to the same FG			
+			Set<String> minusSharedSet= new HashSet<String>(source.getCompleteStatementTexts());
+			minusSharedSet.removeAll(target.getCompleteStatementTexts());
+			if (source.getCompleteStatementTexts().size() != minusSharedSet.size()){ // i.e. if there were shared (removed) complete statements
+				confidence = -1.0;
+			}
+		}
 		return confidence;
 	}
 
