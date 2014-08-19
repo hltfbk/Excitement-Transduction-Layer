@@ -200,7 +200,6 @@ public class GoldStandardEdgesLoader {
 			
 			if (loadFragmentGraphs){
 				// go to the corresponding "FragmentGraphs" folder and load all the fragment graphs 
-				// important: the annotation of merge-step edges does not list nodes, which are not connected to other fragment graphs
 				File clusterAnnotationFragmentGraphsDir = new File (clusterAnnotationDir+"/"+"FragmentGraphs");
 				if (clusterAnnotationFragmentGraphsDir.isDirectory()){
 					logger.info("Loading fragment graph annotations for cluster "+clusterAnnotationDir);
@@ -410,7 +409,7 @@ public class GoldStandardEdgesLoader {
 	 * @param annotationsFolder
 	 * @throws GraphEvaluatorException
 	 */
-	public String loadFGrawGraph(String annotationsFolder) throws GraphEvaluatorException{
+	public String loadFGsRawGraph(String annotationsFolder) throws GraphEvaluatorException{
 		String s="";
 		File clusterAnnotationDir = new File(annotationsFolder);
 		if (clusterAnnotationDir.isDirectory()){		

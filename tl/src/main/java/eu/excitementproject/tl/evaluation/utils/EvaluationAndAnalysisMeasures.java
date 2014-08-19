@@ -29,7 +29,9 @@ public class EvaluationAndAnalysisMeasures extends EvaluationMeasures{
 		super(tp, fp, tn, fn);
 	}
 
-
+    public EvaluationAndAnalysisMeasures (EvaluationMeasures eval){
+    	super(eval.getTruePositives(), eval.getFalsePositives(), eval.getTrueNegatives(), eval.getFalseNegatives());
+    }
 
 	public EvaluationAndAnalysisMeasures(List<Integer> scores) {
 		super(scores);

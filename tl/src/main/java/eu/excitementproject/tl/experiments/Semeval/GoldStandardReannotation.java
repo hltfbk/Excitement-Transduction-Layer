@@ -151,7 +151,7 @@ public class GoldStandardReannotation {
 		if (gsClusterDir.isDirectory()){
 			
 			System.out.println(gsClusterDir.getName().toUpperCase());
-			String warnings = gsFGloader.loadFGrawGraph(gsClusterDir.getAbsolutePath()); //load only FGs\
+			String warnings = gsFGloader.loadFGsRawGraph(gsClusterDir.getAbsolutePath()); //load only FGs\
 			if (!warnings.isEmpty()) s+="Problems with cluster "+gsClusterDir.getName()+":\n"+warnings;
 		}
 
