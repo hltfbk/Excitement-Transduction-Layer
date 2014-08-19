@@ -94,24 +94,24 @@ public class ExperimentAlma extends AbstractExperiment {
 		for (double confidenceThreshold : e.confidenceThresholds){
 			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 			String setting = "raw without FG";
-			EvaluationAndAnalysisMeasures res = new EvaluationAndAnalysisMeasures(e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS));		
+			EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "raw with FG";
-			res = new EvaluationAndAnalysisMeasures(e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS));		
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "collapsed";
 			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
-			res = new EvaluationAndAnalysisMeasures(e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS));
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 
 			setting = "collapsed+closure";
 			cgr.applyTransitiveClosure(false);
-			res = new EvaluationAndAnalysisMeasures(e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS));
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 
@@ -120,24 +120,24 @@ public class ExperimentAlma extends AbstractExperiment {
 		for (double confidenceThreshold : e.confidenceThresholds){						
 			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
 			String setting = "plusClosure raw without FG";
-			EvaluationAndAnalysisMeasures res = new EvaluationAndAnalysisMeasures(e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS));		
+			EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure raw with FG";
-			res = new EvaluationAndAnalysisMeasures(e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS));		
+			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure collapsed";
 			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, true);
-			res = new EvaluationAndAnalysisMeasures(e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS));
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure collapsed+closure";
 			cgr.applyTransitiveClosure(false);
-			res = new EvaluationAndAnalysisMeasures(e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS));
+			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 		}

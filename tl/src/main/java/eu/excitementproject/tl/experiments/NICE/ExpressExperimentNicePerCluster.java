@@ -26,7 +26,6 @@ import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 //import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 //import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -193,7 +192,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 			//	if (threshold < confidenceThreshold) continue;
 				System.out.println("Before applying threshold "+ threshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 				String setting = clusterDir + "\t" +  "raw without FG";
-				EvaluationAndAnalysisMeasures res = new EvaluationAndAnalysisMeasures(e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS));		
+				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph, clustGS);
@@ -207,7 +206,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				
 				
 				setting = clusterDir + "\t" +  "raw with FG";
-				res = new EvaluationAndAnalysisMeasures(e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS));		
+				res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph, clustGS);
@@ -221,7 +220,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				
 				setting = clusterDir + "\t" +  "collapsed";
 				EntailmentGraphCollapsed cgr = e.collapseGraph(threshold, false);
-				res = new EvaluationAndAnalysisMeasures(e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS));
+				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr, clustGS);
@@ -235,7 +234,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 
 				setting = clusterDir + "\t" +  "collapsed+closure";
 				cgr.applyTransitiveClosure(false);
-				res = new EvaluationAndAnalysisMeasures(e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS));
+				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr, clustGS);

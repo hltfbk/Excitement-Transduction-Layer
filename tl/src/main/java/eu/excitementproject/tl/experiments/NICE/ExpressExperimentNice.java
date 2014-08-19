@@ -131,24 +131,24 @@ public class ExpressExperimentNice extends AbstractExperiment {
 		
 		System.out.println("With threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 		String setting = "raw without FG";
-		EvaluationAndAnalysisMeasures res = new EvaluationAndAnalysisMeasures(e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS));		
+		EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 		
 		setting = "raw with FG";
-		res = new EvaluationAndAnalysisMeasures(e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS));		
+		res = e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
 		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 		
 		setting = "collapsed";
 		EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
-		res = new EvaluationAndAnalysisMeasures(e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS));
+		res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 
 		setting = "collapsed+closure";
 		cgr.applyTransitiveClosure(false);
-		res = new EvaluationAndAnalysisMeasures(e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS));
+		res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 			

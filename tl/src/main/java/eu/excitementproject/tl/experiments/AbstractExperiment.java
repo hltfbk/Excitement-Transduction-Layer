@@ -65,13 +65,13 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	}
 	
 	public String printResults(){
-		String s = this.toString()+"\n";
+		String s = "";
 		for (String setting : results.keySet()){
 			System.out.println();
 			for (Double threshold : confidenceThresholds){
 				if (results.get(setting).containsKey(threshold)){
 					EvaluationAndAnalysisMeasures res = results.get(setting).get(threshold);
-					s += setting+"\t"+threshold.toString()+"\t"+res.getRecall().toString()+"\t"+res.getPrecision().toString()+"\t"+res.getF1().toString()+"\t"+res.getViolations().toString()+"\t"+res.getExtraFGedges().toString()+"\t"+res.getMissingFGedges().toString()+"\t"+res.getEdaCalls().toString()+"\n";
+					s += setting+"\t"+threshold.toString()+"\t"+res.getRecall().toString()+"\t"+res.getPrecision().toString()+"\t"+res.getF1().toString()+"\t"+res.getOverallEdges().toString()+"\t"+res.getViolations().toString()+"\t"+res.getExtraFGedges().toString()+"\t"+res.getMissingFGedges().toString()+"\t"+res.getEdaCalls().toString()+"\n";
 					System.out.println(s);	
 				}
 			}
@@ -81,7 +81,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	
 	@Override
 	public String toString(){
-		return "LAP: " +this.lap.getInstanceName()+";\tEDA: "+this.eda.getClass().getName()+
+		return "LAP: " +this.lap.getClass().getName()+";\tEDA: "+this.eda.getClass().getName()+
 				";\tMerger: "+this.useOne.getGraphMerger().getClass().getName()+
 				";\tOptimizer: "+this.m_optimizer.getClass().getName();
 	}
@@ -181,7 +181,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		}	
 	}	
 	
-	public EvaluationMeasures evaluateRawGraph(EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
+	public EvaluationAndAnalysisMeasures evaluateRawGraph(EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
 		if (isSingleClusterGS) loadGSCluster(graph, gsAnnotationsDir); 
 		else loadGSAll(graph, gsAnnotationsDir);
 		
@@ -194,7 +194,9 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 			if (!gsNodeTexts.contains(node.getTextWithoutDoubleSpaces())) nodesToRemove.add(node);
 		}
 		graph.removeAllVertices(nodesToRemove);				
-		return EvaluatorGraphMerger.evaluate(gsloader.getEdges(), graph.edgeSet(), includeFragmentGraphEdges);
+		EvaluationAndAnalysisMeasures eval = new EvaluationAndAnalysisMeasures(EvaluatorGraphMerger.evaluate(gsloader.getEdges(), graph.edgeSet(), includeFragmentGraphEdges));
+		eval.setOverallEdges(graph.edgeSet().size());
+		return eval;
 	}
 	
 	/** Excluding fragment graph edges is not available - for collapsed graph we don't keep track of the edges' origin, also logically it's not relevant for collapsed graph evaluation
@@ -202,7 +204,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	 * @param gsAnnotationsDir
 	 * @return
 	 */
-	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean isSingleClusterGS){			
+	public EvaluationAndAnalysisMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean isSingleClusterGS){			
 		// de-collapse the graph into the corresponding raw graph
 		EntailmentGraphRaw rawGraph = new EntailmentGraphRaw();
 		for (EntailmentRelation e : EvaluatorGraphOptimizer.getAllEntailmentRelations(graph)){
@@ -213,7 +215,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		return evaluateRawGraph(rawGraph, gsAnnotationsDir, true, isSingleClusterGS);
 	}
 	
-/*	public EvaluationMeasures evaluateCollapsedGraph(EntailmentGraphRaw rawGraph, EntailmentGraphCollapsed collapsedGraph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){		
+/*	public EvaluationAndAnalysisMeasures evaluateCollapsedGraph(EntailmentGraphRaw rawGraph, EntailmentGraphCollapsed collapsedGraph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){		
 		loadGS(rawGraph, gsAnnotationsDir);
 		//TODO Here preliminary cleaning will also be needed, unless we fix the inconsistency 		
 		return EvaluatorGraphOptimizer.evaluateDecollapsedGraph(gsloader.getEdges(), collapsedGraph, includeFragmentGraphEdges);
@@ -226,7 +228,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	 * @param includeFragmentGraphEdges - if true, the evaluation will consider all the edges in the raw graph; if false - fragment graph edges will be excluded from the evaluation 
 	 * @return
 	 */
-	public EvaluationMeasures evaluateRawGraph(double confidenceThreshold, EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
+	public EvaluationAndAnalysisMeasures evaluateRawGraph(double confidenceThreshold, EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
 		// remove edges with confidence < threshold
 		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
 		for (EntailmentRelation workEdge : graph.edgeSet()){
