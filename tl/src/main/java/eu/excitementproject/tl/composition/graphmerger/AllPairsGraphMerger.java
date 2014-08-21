@@ -57,12 +57,12 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
-		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph);
-		if (workGraph.isEmpty()) return new EntailmentGraphRaw(fragmentGraph);
+		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph, false);
+		if (workGraph.isEmpty()) return new EntailmentGraphRaw(fragmentGraph, false);
 		
 		 
 		// else - merge new fragment graph into work graph 		
-		workGraph.copyFragmentGraphNodesAndEdges(fragmentGraph);
+		workGraph.copyFragmentGraphNodesAndEntailingEdges(fragmentGraph);
 		
 		// find the node corresponding to the fragment graph's base statement in the work graph
 		EntailmentUnit newBaseStatement = workGraph.getVertexWithText(fragmentGraph.getBaseStatement().getText());

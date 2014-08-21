@@ -1,7 +1,6 @@
 package eu.excitementproject.tl.evaluation.fragmentannotator;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

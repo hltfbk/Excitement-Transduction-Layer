@@ -5,6 +5,9 @@ import java.io.IOException;
 
 //import javax.xml.transform.TransformerException;
 
+
+
+import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
@@ -15,14 +18,14 @@ import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 //import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 //import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
-import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
+import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 //import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 //import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -45,12 +48,13 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 	 */
 	public static void main(String[] args) {
 
-//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
-		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
+		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/test";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test";
+//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/test";
 		
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
@@ -59,86 +63,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 	//	System.out.println(System.getProperties());
 		
 
-		ExpressExperimentNicePerCluster eRand = new ExpressExperimentNicePerCluster(
-		tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
-
-		dataDir, fileLimit, outDir,
-
-		TreeTaggerEN.class, //not used, just some available LAP
-		RandomEDA.class 
-		);
 		
-		/*	ExpressExperimentNicePerCluster eProb = new ExpressExperimentNicePerCluster(
-				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
-
-				dataDir, fileLimit, outDir,
-
-				TreeTaggerEN.class, //not used, just some available LAP
-				ProbabilisticEDA.class // to assign desired probability go to the EDA code (hard-coded in the beginning)
-				);*/
-		
-		
-	/*	ExpressExperimentNicePerCluster eTIEpos = new ExpressExperimentNicePerCluster(
-				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
-
-				dataDir, fileLimit, outDir,
-
-				TreeTaggerEN.class,
-				MaxEntClassificationEDA.class
-				);
-		*/
-
-	/*	ExperimentNice eTIEposRes = new ExperimentNice(
-				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
-
-				dataDir, fileLimit, outDir,
-
-				TreeTaggerEN.class,
-				MaxEntClassificationEDA.class
-				);*/
-
-				
-	/*	ExpressExperimentNicePerCluster eTIEparsedRes = new ExpressExperimentNicePerCluster(
-				tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
-
-				dataDir, fileLimit, outDir,
-				
-				MaltParserEN.class,
-				MaxEntClassificationEDA.class
-				);
-*/
-		
-
-		
-	/*	ExperimentNice eBIUTEE = new ExperimentNice(
-				tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci.xml",
-//				tlDir+"src/test/resources/NICE_experiments/biutee.xml",
-				
-				dataDir, fileLimit, outDir,
-				
-				BIUFullLAP.class,
-				BiuteeEDA.class
-				);*/
-		
-/*		ExperimentNice EditDistBase = new ExperimentNice(
-				tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
-
-				dataDir, fileLimit, outDir,
-
-				TreeTaggerEN.class,
-				EditDistanceEDA.class
-				);		*/
-		
-		/*		//TODO: find what lap to use + find the conf files + what EDA to use (simple vs classifier)
-		Experiment eDKPro = new Experiment(
-		"D:/EOPspace/eop-resources-1.0.2/configuration-files/biutee.xml",
-
-		"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 19,
-		"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
-		???.class,
-		DKProSimilaritySimpleEDA.class
-		);
-*/
 /*			
 		File gsDir = new File(gsAnnotationsDir);
 		for (String clusterDir : gsDir.list()){
@@ -156,22 +81,9 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 
 		
 		
-	
-		ExpressExperimentNicePerCluster e = eRand; 
-		
-		Double confidenceThreshold = e.confidenceThresholds.get(0); // get(6) = 0.8
-		System.out.println("Threshold is "+confidenceThreshold);
-		e.buildRawGraph(confidenceThreshold);
-		try {
-			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.xml");
-			e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.dot");
-		} catch (IOException | EntailmentGraphRawException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
+			
 		boolean isSingleClusterGS = true;
-		
+		String results = "";
 		File gsDir = new File(gsAnnotationsDir);
 		for (String clusterDir : gsDir.list()){
 			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
@@ -179,32 +91,161 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 
-			double threshold = e.confidenceThresholds.get(0);
+		/*	ExpressExperimentNicePerCluster eRand = new ExpressExperimentNicePerCluster(
+					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+
+					dataDir+"/"+clusterDir, fileLimit, outDir,
+
+					TreeTaggerEN.class, //not used, just some available LAP
+					RandomEDA.class 
+					);*/
+
+			/*	ExpressExperimentNicePerCluster eProb = new ExpressExperimentNicePerCluster(
+			tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+
+			dataDir+"/"+clusterDir, fileLimit, outDir,
+
+			TreeTaggerEN.class, //not used, just some available LAP
+			ProbabilisticEDA.class // to assign desired probability go to the EDA code (hard-coded in the beginning)
+			);*/
+	
+	
+			ExpressExperimentNicePerCluster eTIEpos = new ExpressExperimentNicePerCluster(
+					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
+		
+					dataDir+"/"+clusterDir, fileLimit, outDir,
+		
+					TreeTaggerEN.class,
+					MaxEntClassificationEDA.class
+					);
+			
+		
+		/*	ExperimentNice eTIEposRes = new ExperimentNice(
+					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
+		
+					dataDir+"/"+clusterDir, fileLimit, outDir,
+		
+					TreeTaggerEN.class,
+					MaxEntClassificationEDA.class
+					);*/
+		
+					
+		/*	ExpressExperimentNicePerCluster eTIEparsedRes = new ExpressExperimentNicePerCluster(
+					tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
+		
+					dataDir+"/"+clusterDir, fileLimit, outDir,
+					
+					MaltParserEN.class,
+					MaxEntClassificationEDA.class
+					);
+		*/
+			
+		
+			
+		/*	ExperimentNice eBIUTEE = new ExperimentNice(
+					tlDir+"src/test/resources/NICE_experiments/biutee_wp6_exci.xml",
+		//			tlDir+"src/test/resources/NICE_experiments/biutee.xml",
+					
+					dataDir+"/"+clusterDir, fileLimit, outDir,
+					
+					BIUFullLAP.class,
+					BiuteeEDA.class
+					);*/
+			
+		/*		ExperimentNice EditDistBase = new ExperimentNice(
+					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
+		
+					dataDir+"/"+clusterDir, fileLimit, outDir,
+		
+					TreeTaggerEN.class,
+					EditDistanceEDA.class
+					);		*/
+			
+			/*		//TODO: find what lap to use + find the conf files + what EDA to use (simple vs classifier)
+			Experiment eDKPro = new Experiment(
+			"D:/EOPspace/eop-resources-1.0.2/configuration-files/biutee.xml",
+		
+			"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open", 19,
+			"/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS XMI/nice_email 1",
+			???.class,
+			DKProSimilaritySimpleEDA.class
+			);
+		*/
+			
+			
+			ExpressExperimentNicePerCluster e = eTIEpos; 
+			
+			Double confidenceThreshold = e.confidenceThresholds.get(8); // get(6) = 0.8
+			System.out.println("Threshold is "+confidenceThreshold);
+			e.buildRawGraph(confidenceThreshold);
+			try {
+				e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.xml");
+				e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+String.valueOf(confidenceThreshold)+"_rawGraph.dot");
+			} catch (IOException | EntailmentGraphRawException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		
+			
+			double threshold = confidenceThreshold;
 	//		for (double threshold : e.confidenceThresholds){
 			//	if (threshold < confidenceThreshold) continue;
 				System.out.println("Before applying threshold "+ threshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 				String setting = clusterDir + "\t" +  "raw without FG";
-				EvaluationMeasures res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				try {
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph);
+					res.setViolations(consistencyCheck.getViolations());
+					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
+				} catch (GraphEvaluatorException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				e.addResult(setting, threshold, res);
 				
-/*				setting = clusterDir + "\t" +  "raw with FG";
+				
+				setting = clusterDir + "\t" +  "raw with FG";
 				res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				try {
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph);
+					res.setViolations(consistencyCheck.getViolations());
+					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
+				} catch (GraphEvaluatorException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				e.addResult(setting, threshold, res);
-*/				
+				
 				setting = clusterDir + "\t" +  "collapsed";
 				EntailmentGraphCollapsed cgr = e.collapseGraph(threshold, false);
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				try {
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
+					res.setViolations(consistencyCheck.getViolations());
+					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
+				} catch (GraphEvaluatorException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				e.addResult(setting, threshold, res);
 
-/*				setting = clusterDir + "\t" +  "collapsed+closure";
+				setting = clusterDir + "\t" +  "collapsed+closure";
 				cgr.applyTransitiveClosure(false);
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				try {
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
+					res.setViolations(consistencyCheck.getViolations());
+					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
+				} catch (GraphEvaluatorException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				e.addResult(setting, threshold, res);
-*/
+
 	//		}
 
 	/*//		for (double threshold : e.confidenceThresholds){						
@@ -233,11 +274,13 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				e.addResult(setting, threshold, res);
 	//		}			
 */			
+				results+=e.printResults()+"\n";
 		}
 			
-		e.printResults();
 		
 		System.out.println("Done");
+		System.out.println(results);
+		
 		
 	}
 

@@ -118,7 +118,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 //		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 //		fragGen = new FragmentGraphNoNegGeneratorFromCAS();
 
-		graphMerger = new AllPairsGraphMerger(lap, eda); //AutomateWP2ProcedureGraphMerger(lap, eda);
+		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
 		collapseGraph = new SimpleGraphOptimizer();
 	}
 	
@@ -442,4 +442,27 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public int getEdaCallsNumber(){
 		return graphMerger.getEdaCallsNumber();
 	}
+
+
+	public CachedLAPAccess getLap() {
+		return lap;
+	}
+
+
+	public EDABasic<?> getEda() {
+		return eda;
+	}
+
+
+	public void setGraphMerger(GraphMerger graphMerger) {
+		this.graphMerger = graphMerger;
+	}
+
+
+	public GraphMerger getGraphMerger() {
+		return graphMerger;
+	}
+	
+	
+	
 }

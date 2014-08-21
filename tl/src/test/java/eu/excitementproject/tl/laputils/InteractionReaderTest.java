@@ -9,14 +9,12 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
-import org.junit.Ignore;
-//import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitement.type.tl.Metadata;
 import eu.excitementproject.tl.structures.Interaction;
 
-@Ignore
+//@Ignore
 public class InteractionReaderTest {
 	
 	@Test
@@ -107,9 +105,9 @@ public class InteractionReaderTest {
 		try {
 /*			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/450618.txt"); 
 			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/450618.txt_1.xml.graphf1output.xml"); 
-*/			// changed by Lili, 12.8.14
-			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/1.txt"); 
-			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/1.txt_1.xml.graphf1output.xml"); 
+*/			// changed by Lili, 21.8.14
+			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/11.txt"); 
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/11.txt_1.xml.graphf1output.xml"); 
 			JCas aJCas = CASUtils.createNewInputCas(); 
 			
 			InteractionReader.readWP2FragGraphDump(f1,  f2,  aJCas, "EN"); 
