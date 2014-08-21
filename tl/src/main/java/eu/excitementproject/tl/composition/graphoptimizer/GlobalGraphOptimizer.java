@@ -23,6 +23,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 /**
@@ -160,17 +161,20 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 	}
 	
 	private Double detectConfidence(EntailmentGraphRaw workGraph, EntailmentUnit source, EntailmentUnit target, Double confidenceThreshold){
-		Double confidence = -0.5; // this will be our non-entailment confidence for missing edges 
+		Double confidence = -0.9; // this will be our non-entailment confidence for missing edges 
 		if (workGraph.containsEdge(source, target)) {
 
 			EntailmentRelation edge = workGraph.getEdge(source, target);
 			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)) {
 				 if (edge.getConfidence() > confidenceThreshold) {
 					 confidence = edge.getConfidence(); // only if the original score is higher than the threshold, consider the edge entailing with the corresponding confidence. Otherwise treat it as if it's not present in the work graph. 
-					 if (confidence < 1) confidence/=2; // if it's not 1 (not a FG edge), use half-score, to ensure FG edges not changed
 				 }
+				 if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) confidence = 10000.0;
 			}
-			else confidence = -1.0*edge.getConfidence();			
+			else {
+				confidence = -1.0*edge.getConfidence();	
+				if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) confidence = -10000.0;
+			}
 		}
 		else{
 			// We should return non-entailment most confident score (-1?) for missing edges from inside FGs
@@ -186,4 +190,4 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 
 	protected UntypedPredicateGraphLearner graphLearner;
 	protected EdgeLearner edgeLearner;
-}
+} 

@@ -48,7 +48,7 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 		
 		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
 		for (EntailmentRelation workEdge : workGraph.edgeSet()){
-			if (!workEdge.getLabel().equals(DecisionLabel.Entailment)){
+			if (!workEdge.getLabel().is(DecisionLabel.Entailment)){
 				workEdgesToRemove.add(workEdge);
 			}
 			else{ // if this is an "entailment" edge

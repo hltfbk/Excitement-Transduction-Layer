@@ -195,7 +195,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph, clustGS);
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph);
 					res.setViolations(consistencyCheck.getViolations());
 					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
 				} catch (GraphEvaluatorException e1) {
@@ -209,7 +209,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				res = e.evaluateRawGraph(threshold, e.m_rawGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph, clustGS);
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph);
 					res.setViolations(consistencyCheck.getViolations());
 					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
 				} catch (GraphEvaluatorException e1) {
@@ -223,7 +223,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr, clustGS);
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
 					res.setViolations(consistencyCheck.getViolations());
 					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
 				} catch (GraphEvaluatorException e1) {
@@ -237,7 +237,7 @@ public class ExpressExperimentNicePerCluster extends AbstractExperiment {
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
 				System.out.println(setting+"\t"+threshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr, clustGS);
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
 					res.setViolations(consistencyCheck.getViolations());
 					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
 				} catch (GraphEvaluatorException e1) {

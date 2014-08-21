@@ -527,7 +527,7 @@ public class GoldStandardEdgesLoader {
 							EntailmentUnit targetUnit = rfg.getVertexWithText(nodeTextById.get(tid));
 							boolean foundYesEdges = false;
 							for (EntailmentRelation e : rfg.getAllEdges(sourceUnit, targetUnit)){
-								if (e.getLabel().equals(DecisionLabel.Entailment)) {
+								if (e.getLabel().is(DecisionLabel.Entailment)) {
 									foundYesEdges = true;
 									break;
 								}

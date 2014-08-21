@@ -119,6 +119,11 @@ public class EntailmentRelation extends DefaultEdge {
 		return edgeType;
 	}
 
+
+	public void setEdgeType(EdgeType edgeType) {
+		this.edgeType = edgeType;
+	}
+
 	/**
 	 * @return TEdecision
 	 */

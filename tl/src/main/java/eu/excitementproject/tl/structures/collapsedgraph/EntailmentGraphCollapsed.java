@@ -30,6 +30,7 @@ import org.xml.sax.SAXException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
@@ -78,6 +79,20 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		graphStatistics = new GraphStatistics();
 	}
 
+	/**
+	 * Create a collapsed graph with given nodes and edges
+	 * @param nodes
+	 * @param edges
+	 */
+	public EntailmentGraphCollapsed(Set<EquivalenceClass> nodes, Set<EntailmentRelationCollapsed> edges){
+		this();
+		for (EquivalenceClass node : nodes){
+			this.addVertex(node);  
+		}
+		for (EntailmentRelationCollapsed e : edges){
+			this.addEdge(e.getSource(), e.getTarget(), e);
+		}
+	}	
 	
 	/**
 	 * 

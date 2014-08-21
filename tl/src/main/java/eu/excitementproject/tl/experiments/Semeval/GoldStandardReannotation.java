@@ -197,7 +197,7 @@ public class GoldStandardReannotation {
 		for (EntailmentUnit src : source.getEntailmentUnits()){
 			for (EntailmentUnit tgt : target.getEntailmentUnits()){
 				for(EntailmentRelation edge : rfg.getAllEdges(src, tgt)){
-					if (edge.getLabel().equals(DecisionLabel.Entailment)) yesFge++;
+					if (edge.getLabel().is(DecisionLabel.Entailment)) yesFge++;
 					else noFge++;
 				}				
 			}
@@ -471,7 +471,7 @@ public class GoldStandardReannotation {
 			EntailmentUnit rs = rfg.getVertexWithText(e.getSource().getText());
 			EntailmentUnit rt = rfg.getVertexWithText(e.getTarget().getText());
 			for (EntailmentRelation fge : rfg.getAllEdges(rs, rt)){
-				if (fge.getLabel().equals(DecisionLabel.NonEntailment)){
+				if (fge.getLabel().is(DecisionLabel.NonEntailment)){
 					isConsistent = false;
 					System.err.println("Edge added into Fragment Graph: "+ e);	
 					EntailmentRelationCollapsed edge = ourCg.getEdge(ourCg.getVertex(e.getSource().getText()), ourCg.getVertex(e.getTarget().getText()));

@@ -45,7 +45,7 @@ public class EntailmentGraphRawTest {
 
 		FragmentGraph g = FragmentGraph.getSampleGraph();
 		
-		rawGraph = new EntailmentGraphRaw(g);
+		rawGraph = new EntailmentGraphRaw(g, false);
 		System.out.println("********************************\n Copy of a Fragment graph:\n"+rawGraph.toString());
 		
 		System.out.println("********************************\n Restore fragment graph from the raw graph:\n"+rawGraph.toString());
