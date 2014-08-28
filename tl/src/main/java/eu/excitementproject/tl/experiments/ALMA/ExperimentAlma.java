@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 
 //import javax.xml.transform.TransformerException;
 
+
 //import eu.excitementproject.eop.common.DecisionLabel;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
@@ -18,6 +19,7 @@ import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 /**
  * Class to load ALMA data, build the graphs and evaluate them
@@ -81,7 +83,7 @@ public class ExperimentAlma extends AbstractExperiment {
 // 		for the FakeEDA only -- set the returned decision to what we want
 //		((FakeEDA) e.eda).initialize(DecisionLabel.Unknown);
 		
-		e.buildRawGraph();
+		EntailmentGraphRaw rawGraph = e.buildRawGraph();
 		try {
 			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
 		} catch (EntailmentGraphRawException e1) {
@@ -92,19 +94,20 @@ public class ExperimentAlma extends AbstractExperiment {
 		boolean isSingleClusterGS = false;
 
 		for (double confidenceThreshold : e.confidenceThresholds){
-			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
+			EntailmentGraphRaw rawGraphWithThreshold = e.applyThreshold(rawGraph, confidenceThreshold);
+
 			String setting = "raw without FG";
-			EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+			EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(rawGraphWithThreshold, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "raw with FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
+			res = e.evaluateRawGraph(rawGraphWithThreshold, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "collapsed";
-			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
+			EntailmentGraphCollapsed cgr = e.collapseGraph(rawGraphWithThreshold);
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
@@ -115,22 +118,21 @@ public class ExperimentAlma extends AbstractExperiment {
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 
-		}
 
-		for (double confidenceThreshold : e.confidenceThresholds){						
-			System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
-			String setting = "plusClosure raw without FG";
-			EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+			EntailmentGraphRaw plusClosureRawGraph = e.getPlusClosureGraph(rawGraphWithThreshold);
+			
+			setting = "plusClosure raw without FG";
+			res = e.evaluateRawGraph(plusClosureRawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure raw with FG";
-			res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
+			res = e.evaluateRawGraph(plusClosureRawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
 			
 			setting = "plusClosure collapsed";
-			EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, true);
+			cgr = e.collapseGraph(plusClosureRawGraph);
 			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
 			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 			e.addResult(setting, confidenceThreshold, res);
