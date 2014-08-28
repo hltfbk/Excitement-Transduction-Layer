@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import javax.xml.transform.TransformerException;
 
@@ -212,7 +212,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		int j = 1;
 		for (FragmentGraph fg : fgs){
 			for (EntailmentUnitMention eum : fg.vertexSet()){
-				System.out.println(i+" "+j+"\t"+eum.getInteractionId()+"\t"+eum.getTextWithoutDoubleSpaces());
+				logger.info(i+" "+j+"\t"+eum.getInteractionId()+"\t"+eum.getTextWithoutDoubleSpaces());
 				j++;
 			}
 			i++;
@@ -432,8 +432,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 				
 		count += Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size());
 		
-		System.out.println("INFO:NR_OF_NODES = " + Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size())); 
-		System.out.println("INFO:NR_OF_NODES_CUMULATIVE = " + count); 
+		logger.info("INFO:NR_OF_NODES = " + Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size())); 
+		logger.info("INFO:NR_OF_NODES_CUMULATIVE = " + count); 
 		
 		fragAnot.annotateFragments(aJCas);
 		modAnot.annotateModifiers(aJCas);

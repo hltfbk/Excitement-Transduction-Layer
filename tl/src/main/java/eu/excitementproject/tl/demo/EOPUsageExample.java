@@ -21,6 +21,8 @@ import eu.excitementproject.tl.laputils.LemmaLevelLapIT;
 
 public class EOPUsageExample {
 
+	private static final Logger logger = Logger.getLogger(EOPUsageExample.class);
+
 	/**
 	 * This small example shows how you can access EDA and LAP from EOP. 
 	 * 
@@ -105,7 +107,7 @@ public class EOPUsageExample {
 			TEDecision d = meceda.process(edaInputCas); 
 			testlogger.info("TIE with English Basic Configuration."); 
 			testlogger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
-			//System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			//logger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
 			
 			// As you see, this ends up with Entailment, and you can see some score, if you look into the decision object. 
 			// All right. This was just one minute version. Maybe 10 min version would follow later on ... 
@@ -113,7 +115,7 @@ public class EOPUsageExample {
 		}
 		catch (Exception e)
 		{
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			System.exit(1); 
 		}
 
@@ -143,12 +145,12 @@ public class EOPUsageExample {
 			TEDecision d = meceda.process(edaInputCas); 
 			testlogger.info("TIE with German Basic Configuration."); 
 			testlogger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
-			//System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			//logger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
 			
 		}
 		catch (Exception e)
 		{
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			System.exit(1); 
 		}
 
@@ -177,12 +179,12 @@ public class EOPUsageExample {
 			TEDecision d = meceda.process(edaInputCas); 
 			testlogger.info("TIE with Italian Basic Configuration."); 
 			testlogger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
-			//System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			//logger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
 			
 		}
 		catch (Exception e)
 		{
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			System.exit(1); 
 		}
 		
@@ -218,7 +220,7 @@ public class EOPUsageExample {
 		}
 		catch (Exception e)
 		{
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			System.exit(1); 
 		}
 		
@@ -254,7 +256,7 @@ public class EOPUsageExample {
 		}
 		catch (Exception e)
 		{
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			System.exit(1); 
 		}		
 	}

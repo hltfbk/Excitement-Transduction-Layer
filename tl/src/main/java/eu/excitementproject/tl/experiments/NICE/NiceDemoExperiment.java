@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -20,6 +22,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  */
 public class NiceDemoExperiment  {
 
+	private static final Logger logger = Logger.getLogger(NiceDemoExperiment.class);
 
 	/**
 	 * @param args
@@ -43,7 +46,7 @@ public class NiceDemoExperiment  {
 			EntailmentGraphRaw out1 = new EntailmentGraphRaw(new File(o1+"raw_graph.xml"));
 			EntailmentGraphRaw out2 = new EntailmentGraphRaw(new File(o2+"raw_graph.xml"));
 			
-			System.out.println(EvaluatorGraphMerger.evaluate(out1.edgeSet(), out2.edgeSet(), false));
+			logger.info(EvaluatorGraphMerger.evaluate(out1.edgeSet(), out2.edgeSet(), false));
 			
 			Set<String> o1e = new HashSet<String>();			
 			Set<String> o2e = new HashSet<String>();
@@ -53,11 +56,11 @@ public class NiceDemoExperiment  {
 			for (EntailmentRelation edge : out2.edgeSet()){
 				if (!edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) o2e.add(EvaluatorGraphMerger.getSourceAndTargetString(edge));
 			}
-			System.out.println(o1e.size()+"\t"+o2e.size());
+			logger.info(o1e.size()+"\t"+o2e.size());
 			o1e.removeAll(o2e);
-			System.out.println(o1e.size());
+			logger.info(o1e.size());
 		/*	for (String e : o1e){
-				System.out.println(e);
+				logger.info(e);
 			}*/
 			
 				

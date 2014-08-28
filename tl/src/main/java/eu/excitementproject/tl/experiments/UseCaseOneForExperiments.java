@@ -31,6 +31,8 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 
 public class UseCaseOneForExperiments {
 
+	private final Logger logger = Logger.getLogger(this.getClass());
+
 	protected File configFile;
 	protected CommonConfig config = null;
 	protected CachedLAPAccess lap;
@@ -60,10 +62,10 @@ public class UseCaseOneForExperiments {
 			// if the directory does not exist, create it
 			if (!theDir.exists())
 			{
-		      System.out.println("creating directory: " + outputFolder);
+		      logger.info("creating directory: " + outputFolder);
 		      boolean result = theDir.mkdir();  
 		      if(result){    
-		         System.out.println("DIR created");  
+		         logger.info("DIR created");  
 		      } else {
 		    	  System.err.println("Could not create the output directory. No output files will be created."); 
 		    	  outputFolder=null;
@@ -134,7 +136,7 @@ public class UseCaseOneForExperiments {
 				docs.add(aJCas);
 			}
 		} catch (Exception e) {
-			System.out.println("Problems loading data from directory " + dataDir);
+			logger.info("Problems loading data from directory " + dataDir);
 			e.printStackTrace();
 		}
 		return docs;

@@ -57,9 +57,9 @@ public class EvaluatorGraphMerger {
 		}
 		
 		
-		System.out.println(correctlyAddedEdges+"\t"+evaluatedGraphEdges.size()+"\t"+excludedEdges.size());
+		logger.info(correctlyAddedEdges+"\t"+evaluatedGraphEdges.size()+"\t"+excludedEdges.size());
 		eval.setPrecision(correctlyAddedEdges/(evaluatedGraphEdges.size()-excludedEdges.size()));
-		System.out.println(correctlyAddedEdges+"\t"+goldStandardEdges.size()+"\t"+excludedEdges.size());
+		logger.info(correctlyAddedEdges+"\t"+goldStandardEdges.size()+"\t"+excludedEdges.size());
 		eval.setRecall(correctlyAddedEdges/(goldStandardEdges.size()-excludedEdges.size())); // assume that all fragment graph edges are present also in the gold standard
 */		
 

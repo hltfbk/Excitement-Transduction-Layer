@@ -367,10 +367,10 @@ public class EntailmentGraphRaw extends
 		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
 		
  /*		
-		System.out.println("----");
-		System.out.println(baseStatementNode);
-		System.out.println(completeStatementText);
-		System.out.println(baseStatementNode.completeStatementTexts);
+		logger.info("----");
+		logger.info(baseStatementNode);
+		logger.info(completeStatementText);
+		logger.info(baseStatementNode.completeStatementTexts);
  */
 		if (!baseStatementNode.completeStatementTexts.contains(completeStatementText)) throw new EntailmentGraphRawException("Base statement node \""+baseStatementNode.getText()+"\" does not correspond to the complete statement \""+ completeStatementText+"\"\n");
 		
@@ -863,12 +863,12 @@ public class EntailmentGraphRaw extends
                         String dbgSource = "The food is in need of a serious improvement";
                         if (v1.getTextWithoutDoubleSpaces().equals(dbgSource)){
                         	if (v3.getTextWithoutDoubleSpaces().equals(dbgTarget)){
-                        		System.out.println(v1);
-                        		System.out.println(v1.getTextWithoutDoubleSpaces());
-                        		System.out.println(v2);
-                        		System.out.println(v2.getTextWithoutDoubleSpaces());
-                        		System.out.println(v3);
-                        		System.out.println(v3.getTextWithoutDoubleSpaces());
+                        		logger.info(v1);
+                        		logger.info(v1.getTextWithoutDoubleSpaces());
+                        		logger.info(v2);
+                        		logger.info(v2.getTextWithoutDoubleSpaces());
+                        		logger.info(v3);
+                        		logger.info(v3.getTextWithoutDoubleSpaces());
                         		try {
 									System.in.read();
 								} catch (IOException e1) {

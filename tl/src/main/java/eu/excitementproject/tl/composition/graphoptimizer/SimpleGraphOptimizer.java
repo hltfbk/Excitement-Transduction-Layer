@@ -2,7 +2,7 @@ package eu.excitementproject.tl.composition.graphoptimizer;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import org.jgrapht.alg.CycleDetector;
 
@@ -25,7 +25,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  */
 public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 
-	private final static Logger logger = Logger.getLogger("eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer");
+	private final Logger logger = Logger.getLogger(SimpleGraphOptimizer.class);
 	
 	@Override
 	public EntailmentGraphCollapsed optimizeGraph(

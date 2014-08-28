@@ -60,7 +60,7 @@ public class TLClusteringResultsEvaluator extends ClusteringResultsEvaluator{
 				}
 				//System.out.print(clustName+" "+gsCluster+" : "+tmpGScluster.size()+ " ");
 				tmpGScluster.retainAll(evaluatedClusters.get(clustName));
-				//System.out.println(tmpGScluster.size());
+				//logger.info(tmpGScluster.size());
 				double candidateNominator = tmpGScluster.size();
 				if (maxNominator<candidateNominator) {
 					maxNominator=candidateNominator;

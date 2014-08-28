@@ -27,7 +27,7 @@ public class EvaluatorGraphMergerTest {
 			testlogger.info("Loaded "+loader.getEdges().size()+" gold standard edges.");
 /*			int i=1;		
 			for (EntailmentRelation edge : loader.getEdges){
-				System.out.println(i+": "+edge);
+				logger.info(i+": "+edge);
 				i++;
 			}
 */			

@@ -1121,7 +1121,7 @@ public class EvaluatorCategoryAnnotator {
 			CategoryAnnotatorException {		
 		//call node matcher on each fragment graph
 		Set<NodeMatch> matches = new HashSet<NodeMatch>();
-		System.out.println("fragmentsGraphs: " + fragmentGraphs);
+		logger.info("fragmentsGraphs: " + fragmentGraphs);
 		writer.println(fragmentGraphs.size() + "FGs");
 		List<FragmentGraph> fgList = new ArrayList<FragmentGraph>();
 		for (FragmentGraph fg : fragmentGraphs) {
@@ -1381,7 +1381,7 @@ public class EvaluatorCategoryAnnotator {
         
         /*
         for (Interaction i : docs) {
-        	System.out.println(i.getInteractionId());
+        	logger.info(i.getInteractionId());
         }
         */
         Set<FragmentGraph> allFgs = new HashSet<FragmentGraph>();
@@ -1486,7 +1486,7 @@ public class EvaluatorCategoryAnnotator {
 			XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
 		}
 		for (int i=1; i<accuracyPerRun.size(); i++) {
-			System.out.println(accuracyPerRun.get(i));
+			logger.info(accuracyPerRun.get(i));
 		}
 	}
 	

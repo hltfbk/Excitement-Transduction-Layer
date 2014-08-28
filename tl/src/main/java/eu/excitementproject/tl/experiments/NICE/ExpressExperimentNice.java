@@ -2,6 +2,8 @@ package eu.excitementproject.tl.experiments.NICE;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
+
 //import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 //import javax.xml.transform.TransformerException;
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
@@ -24,6 +26,8 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
  * 
  */
 public class ExpressExperimentNice extends AbstractExperiment {
+
+	private static final Logger logger = Logger.getLogger(ExpressExperimentNice.class);
 
 	public ExpressExperimentNice(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
@@ -49,8 +53,8 @@ public class ExpressExperimentNice extends AbstractExperiment {
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 		
-		System.out.println(tlDir);
-	//	System.out.println(System.getProperties());
+		logger.info(tlDir);
+	//	logger.info(System.getProperties());
 		
 		ExpressExperimentNice eTIEpos = new ExpressExperimentNice(
 				tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
@@ -129,31 +133,31 @@ public class ExpressExperimentNice extends AbstractExperiment {
 		boolean isSingleClusterGS = false;
 
 		
-		System.out.println("With threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
+		logger.info("With threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 		String setting = "raw without FG";
 		EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+		logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 		
 		setting = "raw with FG";
 		res = e.evaluateRawGraph(e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
-		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+		logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 		
 		setting = "collapsed";
 		EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
 		res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
-		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+		logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 
 		setting = "collapsed+closure";
 		cgr.applyTransitiveClosure(false);
 		res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
-		System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+		logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 		e.addResult(setting, confidenceThreshold, res);
 			
 		e.printResults();
-		System.out.println("Done");
+		logger.info("Done");
 		
 	}
 
