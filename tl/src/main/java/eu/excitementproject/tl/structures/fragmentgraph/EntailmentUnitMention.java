@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 import java.util.Iterator;
 import java.util.Set;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.cas.text.AnnotationIndex;
@@ -127,7 +127,7 @@ public class EntailmentUnitMention {
 			prev = f;
 		}
 		
-		System.out.println("Fragment text: " + frag.getText() + "\nWith spaces: " + text);
+		logger.info("Fragment text: " + frag.getText() + "\nWith spaces: " + text);
 
 		return text;
 	}

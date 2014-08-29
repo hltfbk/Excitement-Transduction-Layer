@@ -18,6 +18,8 @@ import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 
 public class ConvertWP2PublicData {
 
+	private static final Logger logger = Logger.getLogger(ConvertWP2PublicData.class);
+
 	/**
 	 * This class reads WP2 fragment graph dump data from the /test/resources directory, 
 	 * and generates InputCAS and store them as XMI (serialized CAS). 
@@ -56,7 +58,7 @@ public class ConvertWP2PublicData {
 		dir = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/FragmentGraphs");
 		dirInteractions = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/Interactions");
 
-		System.out.println(dir.toFile().getAbsolutePath());
+		logger.info(dir.toFile().getAbsolutePath());
 //		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag");
 //		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media"); 
 	//	outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag"); 
@@ -108,7 +110,7 @@ public class ConvertWP2PublicData {
 //		totalcount += processWP2Data(dir, outputdir, "IT"); 		
 //		}
 
-		System.out.println("In total: " + totalcount + " XMI files generated, over /target/ directories"); 
+		logger.info("In total: " + totalcount + " XMI files generated, over /target/ directories"); 
 	}
 	
 	/**
@@ -150,14 +152,14 @@ public class ConvertWP2PublicData {
 		try (DirectoryStream<Path> stream =
 			     Files.newDirectoryStream(dir, "*.txt")) {
 			    for (Path entry: stream) {
-			        System.out.println(entry.getFileName()); 
+			        logger.info(entry.getFileName()); 
 			        try (DirectoryStream<Path> xmlstream = Files.newDirectoryStream(dir, entry.getFileName() + "_" + "*.xml"))
 			        {
 			        	aJCas.reset(); 
 			        	for (Path xmlfile : xmlstream)
 			        	{			
 			        		// call the reader. Note that it loads multiple XML files (multiple fragments) with same interaction  
-			        		System.out.println("\t" + xmlfile.getFileName()) ;
+			        		logger.info("\t" + xmlfile.getFileName()) ;
 			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas, languageID); 			        		
 			        	}			        	
 			        	// Now the JCAS has one or more fragment annotations, and associated modifier annotations.  
@@ -166,7 +168,7 @@ public class ConvertWP2PublicData {
 			        	String outPathString = outputdir.toString() + "/" + entry.getFileName() + ".xmi";
 			        	Path xmiPath = Paths.get(outPathString); 
 			        	CASUtils.serializeToXmi(aJCas, xmiPath.toFile()); 		
-			        	System.out.println(xmiPath.toString() + " generated." );
+			        	logger.info(xmiPath.toString() + " generated." );
 			        	generated++; 
 			        }
 			        catch (DataIntegrityFail x)
@@ -185,7 +187,7 @@ public class ConvertWP2PublicData {
 		    System.err.println(x);
 		}		
 		
-		System.out.println("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
+		logger.info("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
 		return generated; 
 	}
 
@@ -227,14 +229,14 @@ public class ConvertWP2PublicData {
 		try (DirectoryStream<Path> stream =
 			     Files.newDirectoryStream(fromInteractions, "*.txt")) {
 			    for (Path entry: stream) {
-			        System.out.println(entry.getFileName()); 
+			        logger.info(entry.getFileName()); 
 			        try (DirectoryStream<Path> xmlstream = Files.newDirectoryStream(fromFGs, entry.getFileName() + "_" + "*.xml"))
 			        {
 			        	aJCas.reset(); 
 			        	for (Path xmlfile : xmlstream)
 			        	{			
 			        		// call the reader. Note that it loads multiple XML files (multiple fragments) with same interaction  
-			        		System.out.println("\t" + xmlfile.getFileName()) ;
+			        		logger.info("\t" + xmlfile.getFileName()) ;
 			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas, languageID); 			        		
 			        	}			        	
 			        	// Now the JCAS has one or more fragment annotations, and associated modifier annotations.  
@@ -243,7 +245,7 @@ public class ConvertWP2PublicData {
 			        	String outPathString = outputdir.toString() + "/" + entry.getFileName() + ".xmi";
 			        	Path xmiPath = Paths.get(outPathString); 
 			        	CASUtils.serializeToXmi(aJCas, xmiPath.toFile()); 		
-			        	System.out.println(xmiPath.toString() + " generated." );
+			        	logger.info(xmiPath.toString() + " generated." );
 			        	generated++; 
 			        }
 			        catch (DataIntegrityFail x)
@@ -262,7 +264,7 @@ public class ConvertWP2PublicData {
 		    System.err.println(x);
 		}		
 		
-		System.out.println("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
+		logger.info("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
 		return generated; 
 	}
 	
@@ -308,14 +310,14 @@ public class ConvertWP2PublicData {
 		try (DirectoryStream<Path> stream =
 			     Files.newDirectoryStream(dir, "*.txt")) {
 			    for (Path entry: stream) {
-			        System.out.println(entry.getFileName()); 
+			        logger.info(entry.getFileName()); 
 			        try (DirectoryStream<Path> xmlstream = Files.newDirectoryStream(dir, entry.getFileName() + "_" + "*.xml"))
 			        {
 			        	for (Path xmlfile : xmlstream)
 			        	{			
 				        	aJCas.reset();       		
 			        		// call the reader. Note that it loads multiple XML files (multiple fragments) with same interaction  
-			        		System.out.println("\t" + xmlfile.getFileName()) ;
+			        		logger.info("\t" + xmlfile.getFileName()) ;
 			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas, languageID); 			        		
 			        		
 				        	// Now the JCAS has one fragment annotations, and associated modifier annotations.  
@@ -324,7 +326,7 @@ public class ConvertWP2PublicData {
 				        	String outPathString = outputdir.toString() + "/" + xmlfile.getFileName() + ".xmi";
 				        	Path xmiPath = Paths.get(outPathString); 
 				        	CASUtils.serializeToXmi(aJCas, xmiPath.toFile()); 		
-				        	System.out.println(xmiPath.toString() + " generated." );
+				        	logger.info(xmiPath.toString() + " generated." );
 				        	generated++; 
 
 			        	}			        	
@@ -345,7 +347,7 @@ public class ConvertWP2PublicData {
 		    System.err.println(x);
 		}		
 		
-		System.out.println("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
+		logger.info("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
 		return generated; 
 	}
 
@@ -390,14 +392,14 @@ public class ConvertWP2PublicData {
 		try (DirectoryStream<Path> stream =
 			     Files.newDirectoryStream(fromInteractions, "*.txt")) {
 			    for (Path entry: stream) {
-			        System.out.println(entry.getFileName()); 
+			        logger.info(entry.getFileName()); 
 			        try (DirectoryStream<Path> xmlstream = Files.newDirectoryStream(fromFGs, entry.getFileName() + "_" + "*.xml"))
 			        {
 			        	for (Path xmlfile : xmlstream)
 			        	{			
 				        	aJCas.reset();       		
 			        		// call the reader. Note that it loads multiple XML files (multiple fragments) with same interaction  
-			        		System.out.println("\t" + xmlfile.getFileName()) ;
+			        		logger.info("\t" + xmlfile.getFileName()) ;
 			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas, languageID); 			        		
 			        		
 				        	// Now the JCAS has one fragment annotations, and associated modifier annotations.  
@@ -406,7 +408,7 @@ public class ConvertWP2PublicData {
 				        	String outPathString = outputdir.toString() + "/" + xmlfile.getFileName() + ".xmi";
 				        	Path xmiPath = Paths.get(outPathString); 
 				        	CASUtils.serializeToXmi(aJCas, xmiPath.toFile()); 		
-				        	System.out.println(xmiPath.toString() + " generated." );
+				        	logger.info(xmiPath.toString() + " generated." );
 				        	generated++; 
 
 			        	}			        	
@@ -427,7 +429,7 @@ public class ConvertWP2PublicData {
 		    System.err.println(x);
 		}		
 		
-		System.out.println("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
+		logger.info("In " + outputdir.toString() + " : " + generated + " XMI files generated"); 
 		return generated; 
 	}
 

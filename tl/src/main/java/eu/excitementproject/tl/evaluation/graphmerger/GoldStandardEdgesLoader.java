@@ -269,7 +269,7 @@ public class GoldStandardEdgesLoader {
 				       			}
 							   	nodeTextById.put(id, text);	
 							   	nodeContentById.put(id, "\t"+nodeToString(xmlNode));
-				       			//if (id.endsWith("_0")) System.out.println(text);
+				       			//if (id.endsWith("_0")) logger.info(text);
 				       			logger.debug("\t"+id+"\t"+text);
 				       		}
 				       	}
@@ -352,8 +352,8 @@ public class GoldStandardEdgesLoader {
 				g.addEdge(e.getSource(), e.getTarget(), e);
 			}
 			else{
-				if(!g.containsVertex(e.getSource())) System.out.println("ERROR: The raw graph's vertex "+e.getSource()+"is not present in the corresponding FGs");
-				if(!g.containsVertex(e.getTarget())) System.out.println("ERROR: The raw graph's vertex "+e.getTarget()+"is not present in the corresponding FGs");
+				if(!g.containsVertex(e.getSource())) logger.info("ERROR: The raw graph's vertex "+e.getSource()+"is not present in the corresponding FGs");
+				if(!g.containsVertex(e.getTarget())) logger.info("ERROR: The raw graph's vertex "+e.getTarget()+"is not present in the corresponding FGs");
 			}
 		}
 		return g;
@@ -364,13 +364,13 @@ public class GoldStandardEdgesLoader {
 		for (String id : nodeTextById.keySet()){
 			if (!idsOfInterest.contains(id)) continue;
 			g.addVertex(getGoldStandardNode(nodeTextById.get(id))); // the EUs should be the same as created when adding edges to the "edges" attribute of the class
-		//	System.out.println("Added node "+nodeTextById.get(id));
+		//	logger.info("Added node "+nodeTextById.get(id));
 		}
 		for (EntailmentRelation e : edges.values()){
 			try {
 				g.addEdge(e.getSource(), e.getTarget(), e);
 			} catch (IllegalArgumentException e1) {
-				// System.out.println("Edge not from current FG: "+ e);
+				// logger.info("Edge not from current FG: "+ e);
 			}
 		}
 		g.applyTransitiveClosure(false);
@@ -511,12 +511,12 @@ public class GoldStandardEdgesLoader {
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
 						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, type);
 						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
-						System.out.println(edges.size()+"  "+edges);
+						logger.info(edges.size()+"  "+edges);
 						System.out.print(numFGedges+" : ");
-						System.out.println(edges.keySet());
+						logger.info(edges.keySet());
 					}
 					
-					System.out.println(">>>>>Loaded FG's positive edges "+numFGedges);
+					logger.info(">>>>>Loaded FG's positive edges "+numFGedges);
 					EntailmentGraphRaw rfg = getFragmentGraph(idsInThisFG);
 					
 					// now add all "NO" edges - we're inside a FG, so for each pair of nodes, if it's not "yes" then it's "no"
@@ -535,7 +535,7 @@ public class GoldStandardEdgesLoader {
 							if (!foundYesEdges){ // if there's no "yes" edge between current src and tgt
 								EntailmentRelation noEdge = new EntailmentRelation(sourceUnit, targetUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.NonEntailment), type);
 								edges.put(noEdge.toString(),noEdge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case
-								System.out.println("\"NO\" EDGE ADDED: "+noEdge);
+								logger.info("\"NO\" EDGE ADDED: "+noEdge);
 							}
 						}
 					}
@@ -554,7 +554,7 @@ public class GoldStandardEdgesLoader {
 		 t.setOutputProperty(OutputKeys.INDENT, "yes");
 		 t.transform(new DOMSource(node), new StreamResult(sw));
 		} catch (TransformerException te) {
-		 System.out.println("nodeToString Transformer Exception");
+		 logger.info("nodeToString Transformer Exception");
 		}
 		return sw.toString();
 		}

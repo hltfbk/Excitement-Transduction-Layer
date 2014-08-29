@@ -11,6 +11,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.biutee.utilities.preprocess.NewNormalizerBasedTextPreProcessor;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
@@ -29,6 +31,8 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 @SuppressWarnings("all")
 public class GoldStandardReannotation {
+	
+	private final static Logger logger = Logger.getLogger(GoldStandardReannotation.class);
 		
 	private enum Relation{
 		BIDIR,
@@ -150,7 +154,7 @@ public class GoldStandardReannotation {
 		GoldStandardEdgesLoader gsFGloader = new GoldStandardEdgesLoader(false); //load the original data only		
 		if (gsClusterDir.isDirectory()){
 			
-			System.out.println(gsClusterDir.getName().toUpperCase());
+			logger.info(gsClusterDir.getName().toUpperCase());
 			String warnings = gsFGloader.loadFGsRawGraph(gsClusterDir.getAbsolutePath()); //load only FGs\
 			if (!warnings.isEmpty()) s+="Problems with cluster "+gsClusterDir.getName()+":\n"+warnings;
 		}
@@ -173,14 +177,14 @@ public class GoldStandardReannotation {
 	
 	private String loadClusterGraph(File gsClusterDir) throws GraphOptimizerException, GraphEvaluatorException{		
 		clearData();
-		System.out.println(gsClusterDir.getAbsolutePath());
+		logger.info(gsClusterDir.getAbsolutePath());
 		GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader(false); //load the original data only		
 		if (gsClusterDir.isDirectory()){
-			System.out.println(gsClusterDir.getName().toUpperCase());
+			logger.info(gsClusterDir.getName().toUpperCase());
 			gsloader.loadClusterAnnotations(gsClusterDir.getAbsolutePath(), true); //load FG + merged data
 		}
 				
-		System.out.println(gsloader.getEdges().size());
+		logger.info(gsloader.getEdges().size());
 		rg = gsloader.getRawGraph(); 
 		wp2cg = gsloader.getCollapsedGraph();
 		wp2cg.applyTransitiveClosure(false);
@@ -240,7 +244,7 @@ public class GoldStandardReannotation {
 	@SuppressWarnings("unused")
 	private void createTxtForReannotation(EntailmentGraphCollapsed cg, File txtFile) throws EntailmentGraphCollapsedException, IOException{
 			if (cg==null){
-				System.out.println("Collapsed graph not loaded. Exiting.");
+				logger.info("Collapsed graph not loaded. Exiting.");
 				return;
 			}
 			
@@ -273,7 +277,7 @@ public class GoldStandardReannotation {
 				}
 			}
 			writer.close();
-			System.out.println("Reannotaiton file "+txtFile+" created successfully.");
+			logger.info("Reannotaiton file "+txtFile+" created successfully.");
 	}
 	
 	private boolean isEmpty(String s){
@@ -312,10 +316,10 @@ public class GoldStandardReannotation {
 		// now check if there are EUs present in the FGs, but not listed in the update
 		wp2eus.removeAll(ourEus);
 		if (wp2eus.size()>0) {
-			System.out.println("WARNING:");			
-			System.out.println("The following "+wp2eus.size()+" EUs from the fragment graphs are not present in the updated nodes:");
+			logger.info("WARNING:");			
+			logger.info("The following "+wp2eus.size()+" EUs from the fragment graphs are not present in the updated nodes:");
 			for (String s : wp2eus){
-				System.out.println(" - <<"+s+">> "+ textToIdsMap.get(s));
+				logger.info(" - <<"+s+">> "+ textToIdsMap.get(s));
 			}
 		}
 		return cons;
@@ -336,11 +340,11 @@ public class GoldStandardReannotation {
 				// verify if the caption has editor's flag
 				String[] caption = line.split("\t");
 				if (caption.length<8) {
-					System.out.println(caption[0]);
-					System.out.println("No editor's flag specified for this node in column 8 (H). Loading nodes interrupted.");
+					logger.info(caption[0]);
+					logger.info("No editor's flag specified for this node in column 8 (H). Loading nodes interrupted.");
 					return false;
 				}
-				System.out.println(caption[0]+"\t...\t"+caption[7]);
+				logger.info(caption[0]+"\t...\t"+caption[7]);
 			}
 			
 			// start reading the contents of the node
@@ -392,7 +396,7 @@ public class GoldStandardReannotation {
 		if (checkNodesConsistency){ // worth checking that no collapsed nodes or single EUs were deleted by mistake
 			// to check again for nodes' consistency - need to load the raw graph 
 			if (rfg==null){
-				System.out.println("Fragment graphs not loaded, cannot check for the consistency of nodes. Exiting.");
+				logger.info("Fragment graphs not loaded, cannot check for the consistency of nodes. Exiting.");
 				reader.close();
 				return false;
 			}				
@@ -434,13 +438,13 @@ public class GoldStandardReannotation {
 		// if reached this point, the graph is loaded
 		
 		// now re-collapse the graph since there might be annotation of equivalent collapsed nodes through bidirectional edges
-		System.out.println("Loaded reannotation: nodes "+ourCg.vertexSet().size()+", edges "+ourCg.edgeSet().size());
+		logger.info("Loaded reannotation: nodes "+ourCg.vertexSet().size()+", edges "+ourCg.edgeSet().size());
 		EntailmentGraphRaw decollapsedGraph = EvaluatorGraphOptimizer.getDecollapsedGraph(ourCg);
 		SimpleGraphOptimizer collapser = new SimpleGraphOptimizer();
 		ourCg = collapser.optimizeGraph(decollapsedGraph, 0.0);
-		System.out.println("Re-collapsed reannotation: nodes "+ourCg.vertexSet().size()+", edges "+ourCg.edgeSet().size());
+		logger.info("Re-collapsed reannotation: nodes "+ourCg.vertexSet().size()+", edges "+ourCg.edgeSet().size());
 
-		System.out.println("Successfully processed "+ processedEdgePairs+" re-annotated edge pairs. Expected number of pairs = "+expectedPairs);
+		logger.info("Successfully processed "+ processedEdgePairs+" re-annotated edge pairs. Expected number of pairs = "+expectedPairs);
 		// consistency check for edges - all transitive closure edges should be explicitly present in the graph
 		// if not - smth is wrong
 		int addedEdges = ourCg.edgeSet().size();
@@ -455,7 +459,7 @@ public class GoldStandardReannotation {
 				}
 			}
 		}
-		if(isConsistent) System.out.println("  No transitivity violations in annotated edges"); 
+		if(isConsistent) logger.info("  No transitivity violations in annotated edges"); 
 			
 		// now check if added edges into fragment graphs
 		Set<EntailmentRelation> decollapsedEdges = EvaluatorGraphOptimizer.getAllEntailmentRelations(ourCg);
@@ -482,7 +486,7 @@ public class GoldStandardReannotation {
 		}
 		
 		if (isConsistent) {
-			System.out.println("No inconsistent edges added into FGs.\nThe graph is consistent. Congratulations :)");					
+			logger.info("No inconsistent edges added into FGs.\nThe graph is consistent. Congratulations :)");					
 		}
 		ourCg.toDOT("C:/Users/Lili/My Documents/_graphs/graph.dot.txt");
 		
@@ -512,7 +516,7 @@ public class GoldStandardReannotation {
 	@SuppressWarnings("unused")
 	private boolean generateCollapsedGraphForFixedNodes(File inputFile) throws EntailmentGraphCollapsedException, IOException{
 		if (rg==null){
-			System.out.println("Raw graph not loaded. Exiting.");
+			logger.info("Raw graph not loaded. Exiting.");
 			return false;
 		}
 		rg.applyTransitiveClosure(false);
@@ -524,7 +528,7 @@ public class GoldStandardReannotation {
 		reader.close();
 
 		if (success) {
-			System.out.println("Loaded "+ourCg.vertexSet().size()+" non-empty collapsed nodes");
+			logger.info("Loaded "+ourCg.vertexSet().size()+" non-empty collapsed nodes");
 			return true;
 		}
 		ourCg = null;
@@ -536,7 +540,7 @@ public class GoldStandardReannotation {
 		try {
 			File txtFile = new File(filename);
 			String s = loadClusterGraph(clusterAnnotationsDir);
-			System.out.println(s);
+			logger.info(s);
 			createTxtForReannotation(wp2cg,txtFile);
 		} catch (EntailmentGraphCollapsedException | IOException | GraphOptimizerException | GraphEvaluatorException e) {
 			// TODO Auto-generated catch block
@@ -548,16 +552,16 @@ public class GoldStandardReannotation {
 		try {
 			File txtFileUp = new File(filename);
 			String s = loadClusterGraph(clusterAnnotationsDir);
-			System.out.println(s);
+			logger.info(s);
 			File fixedNodesFile = new File(fixedNodesFilename);
 			if (generateCollapsedGraphForFixedNodes(fixedNodesFile)){
 				if(areNodesConsistent()){
 					createTxtForReannotation(ourCg, txtFileUp);
-					System.out.println("==========");
+					logger.info("==========");
 					for (String nodeText : newNodes){
 						System.err.println("Warning: node <<"+nodeText+">> was not found in WP2-annotated graph.");
 					}
-					System.out.println("Updated file generated.");
+					logger.info("Updated file generated.");
 				}
 				else{
 					System.err.println("Nodes are not consistent, no updated file was generated.");
@@ -586,8 +590,8 @@ public class GoldStandardReannotation {
 			GoldStandardToWP2FormatTranslator trToWp2 = new GoldStandardToWP2FormatTranslator();
 			trToWp2.createWP2xml(txtFileReannotated.getAbsolutePath().replace(".txt", "PlusClosure.xml"), decollapsedGraph, textToIdsMap, nodeContentById);
 		
-			System.out.println("Statistics:");
-			System.out.println("Cluster \t All nodes in FGs \t All edges in FGs \t All nodes in WP2 graph \t All edges in WP2 graph \t Distinct-text nodes in FGs \t Distinct-text edges in FGs \t Coll nodes \t meta-nodes \t Avg size of meta-node \t All meta-nodes sizes \t Coll Edges \t Distinct-text merged graph nodes \t Distinct-text merged graph edges");			
+			logger.info("Statistics:");
+			logger.info("Cluster \t All nodes in FGs \t All edges in FGs \t All nodes in WP2 graph \t All edges in WP2 graph \t Distinct-text nodes in FGs \t Distinct-text edges in FGs \t Coll nodes \t meta-nodes \t Avg size of meta-node \t All meta-nodes sizes \t Coll Edges \t Distinct-text merged graph nodes \t Distinct-text merged graph edges");			
 
 			res+=nodeContentById.size()+"\t";
 			res+=numFGedges+"\t";
@@ -605,7 +609,7 @@ public class GoldStandardReannotation {
 			res+=fgYesEdges+"\t";
 			res+=ourCg.vertexSet().size()+"\t";
 			
-		//	System.out.println(rfg.toString());
+		//	logger.info(rfg.toString());
 			
 			int metaNodes = 0;
 			double metaSize = 0;
@@ -633,7 +637,7 @@ public class GoldStandardReannotation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 	
-		System.out.println(res);
+		logger.info(res);
 		return res+fgWarnings;
 	}
 	
@@ -717,7 +721,7 @@ public class GoldStandardReannotation {
 		stat+=tr.step3LoadAnnotatedFile(tlDir+"/tl/src/test/resources/WP2_reannotation/"+clusterName+".txt", clusterAnnotationsDir, clusterName);
 		
 		}
-	System.out.println(stat);
+	logger.info(stat);
 	}
 
 }

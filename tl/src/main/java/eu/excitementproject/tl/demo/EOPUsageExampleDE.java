@@ -2,6 +2,7 @@ package eu.excitementproject.tl.demo;
 
 import java.io.File;
 
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.TEDecision;
@@ -13,7 +14,9 @@ import eu.excitementproject.eop.lap.dkpro.OpenNLPTaggerDE;
 import eu.excitementproject.tl.laputils.CASUtils;
 
 public class EOPUsageExampleDE {
-
+	
+	private static final Logger logger = Logger.getLogger(EOPUsageExampleDE.class);
+			
 	/**
 	 * This small example shows how you can access EDA and LAP from EOP. 
 	 * 
@@ -86,7 +89,7 @@ public class EOPUsageExampleDE {
 			
 			// Okay. Run. 
 			TEDecision d = meceda.process(edaInputCas); 
-			System.out.println(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
+			logger.info(d.getDecision().toString() + " with confidence score " + d.getConfidence()); 
 			
 			// As you see, this ends up with Entailment, and you can see some score, if you look into the decision object. 
 			// All right. This was just one minute version. Maybe 10 min version would follow later on ... 
@@ -94,7 +97,7 @@ public class EOPUsageExampleDE {
 		}
 		catch (Exception e)
 		{
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			System.exit(1); 
 		}
 	}

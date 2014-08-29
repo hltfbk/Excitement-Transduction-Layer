@@ -2,6 +2,10 @@ package eu.excitementproject.tl.experiments.NICE;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
+
+//import javax.xml.transform.TransformerException;
+import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -9,8 +13,6 @@ import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-//import javax.xml.transform.TransformerException;
-import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
@@ -26,6 +28,8 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
  * 
  */
 public class ExperimentNice extends AbstractExperiment {
+
+	private static final Logger logger = Logger.getLogger(ExperimentNice.class);
 
 	public ExperimentNice(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
@@ -66,8 +70,8 @@ public class ExperimentNice extends AbstractExperiment {
 			String outDir = dataDir.replace("resources", "outputs");
 
 			
-			System.out.println(tlDir);
-		//	System.out.println(System.getProperties());
+			logger.info(tlDir);
+		//	logger.info(System.getProperties());
 			
 
 			
@@ -166,70 +170,70 @@ public class ExperimentNice extends AbstractExperiment {
 
 			
 			//TODO Verify why FG edges are not found in the graph. Is it only for closure edges? -- solved for plusClosure data??? 
-		//	System.out.println(gr);
+		//	logger.info(gr);
 			
 			for (double confidenceThreshold : e.confidenceThresholds){
-				System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
+				logger.info("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 				String setting = "raw without FG "+cluster;
 				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, confidenceThreshold, res);
 				
 	/*			setting = "raw with FG";
 				res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, confidenceThreshold, res);
 				
 				setting = "collapsed";
 				EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
 				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, confidenceThreshold, res);
 
 				setting = "collapsed+closure";
 				cgr.applyTransitiveClosure(false);
 				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, confidenceThreshold, res);
 	*/
 			}
 
 			for (double confidenceThreshold : e.confidenceThresholds){						
-				System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
+				logger.info("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
 
 				String setting = "plusClosure raw without FG "+cluster;
 				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, confidenceThreshold, res);
 				
 				setting = "plusClosure raw with FG "+cluster;
 				res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, confidenceThreshold, res);
 				
 				EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, true);
 
 	/*			setting = "plusClosure collapsed";
 				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, confidenceThreshold, res);
 	*/			
 				setting = "plusClosure collapsed+closure "+cluster;
 				cgr.applyTransitiveClosure(false);
 				res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				e.addResult(setting, confidenceThreshold, res);
 			}
 			
 			
 			ress+=e.printResults()+"\n";
 			
-			System.out.println(e.getEdaCallsNumber());
-			System.out.println("Done");
+			logger.info(e.getEdaCallsNumber());
+			logger.info("Done");
 			
 		}
 		
-		System.out.println(ress);
+		logger.info(ress);
 	}
 
 }

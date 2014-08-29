@@ -4,6 +4,7 @@ import static org.junit.Assert.fail;
 
 import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import eu.excitementproject.eop.common.EDABasic;
@@ -17,6 +18,8 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 public class AutomateWP2ProcedureGraphMergerTest {
+	
+	private final Logger logger = Logger.getLogger(this.getClass());
 
 	@Test
 	public void test() {
@@ -28,15 +31,15 @@ public class AutomateWP2ProcedureGraphMergerTest {
 			GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,eda); 
 			
 			Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
-			System.out.println("**** Merging the following fragment graphs with  RandomEDA (complete statements printed) ****");			
+			logger.info("**** Merging the following fragment graphs with  RandomEDA (complete statements printed) ****");			
 			for (FragmentGraph fg : fragmentGraphs) {
-				System.out.println(fg.getCompleteStatement().getText());
+				logger.info(fg.getCompleteStatement().getText());
 			}
 			
-			System.out.println("Merged raw graph:");			
+			logger.info("Merged raw graph:");			
 			EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
-			System.out.println(rawGraph.isEmpty());
-			System.out.println(rawGraph.toString());
+			logger.info(rawGraph.isEmpty());
+			logger.info(rawGraph.toString());
 		} catch (LAPException | GraphMergerException e) {
 			e.printStackTrace();
 			fail(e.getMessage()); 

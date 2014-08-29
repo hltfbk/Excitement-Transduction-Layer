@@ -1,17 +1,16 @@
 package eu.excitementproject.tl.demo;
 
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
-
-import eu.excitementproject.eop.lap.LAPAccess;
-import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
-import eu.excitementproject.tl.laputils.CASUtils;
-
 //import org.apache.uima.jcas.JCas;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
+import eu.excitementproject.tl.laputils.CASUtils;
 
 /**
  * 
@@ -23,6 +22,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
  */
 public class LAPUsageExample {
 
+	private static final Logger logger = Logger.getLogger(LAPUsageExample.class);
+	
 	/**
 	 * @param args
 	 */
@@ -39,7 +40,7 @@ public class LAPUsageExample {
 		}
 		catch (LAPException e)
 		{
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			System.exit(1); 
 		}
 		
@@ -56,7 +57,7 @@ public class LAPUsageExample {
 		}
 		catch (LAPException e)
 		{
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 			System.exit(2); 			
 		}
 
@@ -93,9 +94,9 @@ public class LAPUsageExample {
 			String gPosStr = governor.getPos().getPosValue(); 
 
 			// and finally print the edge with full info 
-			System.out.println(dBegin + "-" + dEnd + " " + dTokenStr + "/" + dLemmaStr + "/" + dPosStr);
-			System.out.println("\t ---"+ dTypeStr + " --> "); 
-			System.out.println("\t " + gBegin + "-" + gEnd + " " + gTokenStr + "/" + gLemmaStr + "/" + gPosStr);
+			logger.info(dBegin + "-" + dEnd + " " + dTokenStr + "/" + dLemmaStr + "/" + dPosStr);
+			logger.info("\t ---"+ dTypeStr + " --> "); 
+			logger.info("\t " + gBegin + "-" + gEnd + " " + gTokenStr + "/" + gLemmaStr + "/" + gPosStr);
 		}
 	
 	}

@@ -7,20 +7,8 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
-import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
-import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMergerWithNonEntailments;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
-import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
-import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
-import eu.excitementproject.tl.experiments.AbstractExperiment;
-import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
-import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.common.DecisionLabel;
 //import javax.xml.transform.TransformerException;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
@@ -33,6 +21,18 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 //import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 //import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 import eu.excitementproject.eop.globalgraphoptimizer.defs.Pair;
+import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMergerWithNonEntailments;
+import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
+import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
+import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
+import eu.excitementproject.tl.experiments.AbstractExperiment;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
+import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -40,6 +40,8 @@ import eu.excitementproject.eop.globalgraphoptimizer.defs.Pair;
  * 
  */
 public class ExperimentNicePerCluster extends AbstractExperiment {
+
+	private static final Logger logger = Logger.getLogger(ExperimentNicePerCluster.class);
 
 	public ExperimentNicePerCluster(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
@@ -72,8 +74,8 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 		
-		System.out.println(tlDir);
-	//	System.out.println(System.getProperties());
+		logger.info(tlDir);
+	//	logger.info(System.getProperties());
 			
 		boolean isSingleClusterGS = true;
 		String ress = "";
@@ -82,7 +84,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 			String gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
 			File clustGS = new File(gsClusterDir);
 			if (!clustGS.isDirectory()) continue;
-			System.out.println(gsClusterDir);
+			logger.info(gsClusterDir);
 				
 			ExperimentNicePerCluster eTIEpos = new ExperimentNicePerCluster(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
@@ -121,10 +123,10 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 			}
 			
 			for (double confidenceThreshold : e.confidenceThresholds){
-				System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
+				logger.info("Before applying threshold "+ confidenceThreshold+": Edges in raw graph=" + e.m_rawGraph.edgeSet().size());
 				String setting = "raw without FG "+clusterDir;
 				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph);
 					res.setViolations(consistencyCheck.getViolations());
@@ -139,7 +141,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 				
 				setting = "raw with FG "+clusterDir;
 				res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph);
 					res.setViolations(consistencyCheck.getViolations());
@@ -156,7 +158,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 				setting = "collapsed "+clusterDir;
 				EntailmentGraphCollapsed cgr = e.collapseGraph(confidenceThreshold, false);
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
 					res.setViolations(consistencyCheck.getViolations());
@@ -176,7 +178,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 					cole.setEdgeType(EdgeType.UNKNOWN);
 				}
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
 					res.setViolations(consistencyCheck.getViolations());
@@ -193,11 +195,11 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 			}
 
 			for (double confidenceThreshold : e.confidenceThresholds){						
-				System.out.println("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
+				logger.info("Before applying threshold "+ confidenceThreshold+": Edges in raw graph with closure =" + e.m_rawGraph_plusClosure.edgeSet().size());
 
 				String setting = "plusClosure raw without FG "+clusterDir;
 				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph_plusClosure);
 					res.setViolations(consistencyCheck.getViolations());
@@ -213,7 +215,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 				
 				setting = "plusClosure raw with FG "+clusterDir;
 				res = e.evaluateRawGraph(confidenceThreshold, e.m_rawGraph_plusClosure, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(e.m_rawGraph_plusClosure);
 					res.setViolations(consistencyCheck.getViolations());
@@ -231,7 +233,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 
 				setting = "plusClosure collapsed "+ clusterDir;
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
 					res.setViolations(consistencyCheck.getViolations());
@@ -251,7 +253,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 					cole.setEdgeType(EdgeType.UNKNOWN);
 				}				
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				logger.info(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
 					res.setViolations(consistencyCheck.getViolations());
@@ -268,7 +270,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 			
 			ress+=e.printResults()+"\n";
 			
-			System.out.println("Done");
+			logger.info("Done");
 			try {
 				BufferedWriter outWriter = new BufferedWriter(new FileWriter(outDir+"/_NICE_experiment_results.txt"));
 				outWriter.write(e.toString()+"\n");
@@ -280,7 +282,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 			}
 		}
 		
-		System.out.println(ress);
+		logger.info(ress);
 	}
 
 }

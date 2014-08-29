@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
@@ -46,6 +48,9 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	
 	public static final boolean includeFragmentGraphEdges = true;
 	
+	private final Logger logger = Logger.getLogger(this.getClass());
+
+	
 	public AbstractExperiment(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) {
@@ -66,12 +71,12 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	public String printResults(){
 		String s = "";
 		for (String setting : results.keySet()){
-			System.out.println();
+			logger.info("");
 			for (Double threshold : confidenceThresholds){
 				if (results.get(setting).containsKey(threshold)){
 					EvaluationAndAnalysisMeasures res = results.get(setting).get(threshold);
 					s += setting+"\t"+threshold.toString()+"\t"+res.getRecall().toString()+"\t"+res.getPrecision().toString()+"\t"+res.getF1().toString()+"\t"+res.getOverallEdges().toString()+"\t"+res.getViolations().toString()+"\t"+res.getExtraFGedges().toString()+"\t"+res.getMissingFGedges().toString()+"\t"+res.getEdaCalls().toString()+"\n";
-					System.out.println(s);	
+					logger.info(s);	
 				}
 			}
 		}
@@ -286,7 +291,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 				}
 			}
 		}
-		if(isConsistent) System.out.println("  No transitivity violations in collapsed graph's edges"); 
+		if(isConsistent) logger.info("  No transitivity violations in collapsed graph's edges"); 
 		eval.setViolations(violations);
 		
 /*		// Now check if added edges into fragment graphs
@@ -376,7 +381,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		GoldStandardEdgesLoader gsFGloader = new GoldStandardEdgesLoader(false); //load the original data only		
 		if (gsDir.isDirectory()){
 			String warnings = gsFGloader.loadFGsRawGraph(gsDir.getAbsolutePath()); //load only FGs\
-			if (!warnings.isEmpty()) System.out.println("Problems with cluster "+gsDir.getName()+":\n"+warnings);
+			if (!warnings.isEmpty()) logger.info("Problems with cluster "+gsDir.getName()+":\n"+warnings);
 		}
 		rfg = gsFGloader.getRawGraph();
 	}*/
@@ -415,7 +420,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 				if (fge.isSameSourceAndTarget(e)) {
 					if (!e.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)){
 						if (!graph.isFragmentGraphEdge(e.getSource(), e.getTarget())){
-							System.out.println("Not marked FG edge: "+e);
+							logger.info("Not marked FG edge: "+e);
 							try {
 								System.in.read();
 							} catch (IOException e1) {
@@ -424,7 +429,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 							}														
 						}	
 						else if (!e.getEdgeType().equals(EdgeType.TRANSITIVE_CLOSURE)){
-							System.out.println("Decision obtained, though there is a FG edge: "+e);
+							logger.info("Decision obtained, though there is a FG edge: "+e);
 							try {
 								System.in.read();
 							} catch (IOException e1) {

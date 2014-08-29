@@ -29,6 +29,7 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import org.apache.log4j.Logger;
 import org.jgrapht.graph.AbstractGraph;
 
 import prefuse.Display;
@@ -80,6 +81,9 @@ public class GraphRenderer extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = -5893706476969287833L;
+	
+	private static final Logger logger = Logger.getLogger(GraphRenderer.class);
+
 	
 	private static final String graph = "graph";
 	private static final String nodes = "graph.nodes";
@@ -283,7 +287,7 @@ public class GraphRenderer extends JPanel {
 		
 		while(it.hasNext()) {
 			n = (Node) it.next(); 
-			System.out.println(n.toString());
+			logger.info(n.toString());
 		}
 	}
 
@@ -467,7 +471,7 @@ public class GraphRenderer extends JPanel {
 			dialog.setVisible(true);
 			dialog.dispose();
 
-			System.out.println("Label " + label[0] + " / " + c.getName());
+			logger.info("Label " + label[0] + " / " + c.getName());
 			
 			// return the label field selection
 			return label[0];
