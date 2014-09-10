@@ -3,6 +3,8 @@
  */
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
+import org.apache.uima.jcas.JCas;
+
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -18,7 +20,7 @@ Also, any additional configurable parameters of this module implementation shoul
  * If we decide to keep abstract implementations, they can hold the methods 
  * which we expect to be common for different implementations 
 
- * @author Lili
+ * @author Lili && vivi@fbk
  */
 public abstract class AbstractFragmentAnnotator implements FragmentAnnotator{
 
@@ -40,5 +42,5 @@ public abstract class AbstractFragmentAnnotator implements FragmentAnnotator{
 	}
 	
 	
-	
+	public abstract void annotateFragments(JCas aJCas) throws FragmentAnnotatorException ;
 }

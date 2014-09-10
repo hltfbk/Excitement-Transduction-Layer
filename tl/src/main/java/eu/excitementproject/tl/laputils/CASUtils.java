@@ -6,14 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-//import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
@@ -30,7 +28,6 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.InvalidXMLException;
 import org.apache.uima.util.XMLInputSource;
 import org.apache.uima.util.XMLSerializer;
-import org.uimafit.util.JCasUtil;
 import org.xml.sax.SAXException;
 
 import edu.stanford.nlp.util.StringUtils;
@@ -45,6 +42,7 @@ import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitement.type.tl.ModifierPart;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.PlatformCASProber;
+//import java.util.Set;
 
 /**
  * The class holds various small utility static methods that might be 
@@ -59,7 +57,6 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
 // TODO: [#C] set typepath convention for UIMAFit based CAS generation. 
 // TODO: [#C] Check UIMAFit CASUtil, and wrap some needed things.  
 
-@SuppressWarnings("unused")
 public final class CASUtils {
 	/**
 	 * <P>
@@ -347,7 +344,8 @@ public final class CASUtils {
 		ma.addToIndexes(); 
 
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
-		l.debug("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
+//		l.debug("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
+		l.info("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
 
 		// return Modifier Annotation itself, so the caller can easily make next 
 		// modifier that depends on this modifier annotation
@@ -638,9 +636,15 @@ public final class CASUtils {
 		}
 	}
 
+	/**
+	 * Add a set of keywords to the CAS object
+	 * 
+	 * @param aJCas CAS object
+	 * @param keywords an array of keywords that will be added as annotations
+	 */
 	public static void addTLKeywords(JCas aJCas, String[] keywords) {
 		
-		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.CASUtils");
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.CASUtils.addTLKeywords");
 		
 		if (keywords != null) {
 			
@@ -658,4 +662,5 @@ public final class CASUtils {
 			}
 		}
 	}
+
 }

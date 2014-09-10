@@ -12,9 +12,9 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.implbase.LAP_ImplBaseAE;
 
-public class DependencyLevelLapDE extends LAP_ImplBaseAE implements LAPAccess {
+public class DependencyLevelLapEN extends LAP_ImplBaseAE implements LAPAccess {
 
-	public DependencyLevelLapDE() throws LAPException
+	public DependencyLevelLapEN() throws LAPException
 	{
 		// 1) prepare AEs
 		AnalysisEngineDescription[] descArr = new AnalysisEngineDescription[3];
@@ -35,7 +35,7 @@ public class DependencyLevelLapDE extends LAP_ImplBaseAE implements LAPAccess {
 		initializeViews(descArr);
 
 		// 3) set lang ID
-		languageIdentifier = "IT"; // set languageIdentifer, this ID is needed for generateTHPair from String 
+		languageIdentifier = "EN"; // set languageIdentifer, this ID is needed for generateTHPair from String 
 	}	
 
 }

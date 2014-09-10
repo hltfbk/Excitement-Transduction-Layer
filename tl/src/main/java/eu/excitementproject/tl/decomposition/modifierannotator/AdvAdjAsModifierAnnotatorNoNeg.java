@@ -1,17 +1,15 @@
 package eu.excitementproject.tl.decomposition.modifierannotator;
 
 import java.util.Iterator;
-import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
-import org.uimafit.util.JCasUtil;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADV;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -19,7 +17,7 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.AnnotationUtils;
 
 /**
  * This class implements a simple "modifier annotator" implementation solely based on 
@@ -33,14 +31,18 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * @author Gil
  * 
  */
-public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
+public class AdvAdjAsModifierAnnotatorNoNeg extends AbstractModifierAnnotator {
 
-	public AdvAsModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
+	private int negationPos = -1;
+	
+	private Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator"); 
+	
+	public AdvAdjAsModifierAnnotatorNoNeg(LAPAccess lap) throws ModifierAnnotatorException
 	{
 		super(lap); 
 	}
 	
-	public AdvAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
+	public AdvAdjAsModifierAnnotatorNoNeg(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
 	{
 		super(lap, fragAnn); 
 	}
@@ -48,8 +50,6 @@ public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
 	@Override
 	public void annotateModifiers(JCas aJCas) throws ModifierAnnotatorException, FragmentAnnotatorException {
 		
-		Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator"); 
-
 		// check if it already has modifier annotations. If it is so, 
 		// we don't process this CAS and pass. 
 		AnnotationIndex<Annotation> modIndex = aJCas.getAnnotationIndex(ModifierAnnotation.type);
@@ -116,36 +116,15 @@ public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
 		}
 		
 		modLogger.info("Annotating TLmodifier annotations on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
-		int num_mods = 0; 
 
 		while(fragItr.hasNext()) {
 			FragmentAnnotation frag = (FragmentAnnotation) fragItr.next();
 		
-//			AnnotationIndex<Annotation> advIndex = aJCas.getAnnotationIndex(ADV.type);
-//			Iterator<Annotation> advItr = advIndex.iterator();
-	
-			List<ADV> listAdv = JCasUtil.selectCovered(aJCas, ADV.class, frag);
+			negationPos = AnnotationUtils.checkNegation(frag);
 			
-			if (listAdv != null && ! listAdv.isEmpty()) {
-				for (ADV adv: listAdv) {
-			
-					int begin = adv.getBegin(); 
-					int end = adv.getEnd(); 
-					CASUtils.Region[] r = new CASUtils.Region[1]; 
-					r[0] = new CASUtils.Region(begin,  end); 
-			
-					modLogger.info("Annotating the following as a modifier: " + adv.getCoveredText()); 
-					try {
-						CASUtils.annotateOneModifier(aJCas, r); 
-					} catch (LAPException e) {
-						throw new ModifierAnnotatorException("CASUtils reported exception while annotating Modifier, on sentence (" + begin + ","+ end, e );
-					}
-					num_mods++; 
-				}
-			}
-			modLogger.info("Annotated " + num_mods + " for fragment " + frag.getCoveredText());
-			num_mods = 0;
+			AnnotationUtils.addModifiers(aJCas, frag, negationPos, ADV.class);
+			AnnotationUtils.addModifiers(aJCas, frag, negationPos, ADJ.class);
 		}			
 	}
-
+	
 }

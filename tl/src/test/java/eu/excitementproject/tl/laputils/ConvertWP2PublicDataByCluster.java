@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.laputils;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.DirectoryIteratorException;
 import java.nio.file.DirectoryStream;
@@ -16,9 +17,9 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 
-public class ConvertWP2PublicData {
+public class ConvertWP2PublicDataByCluster {
 
-	private static final Logger logger = Logger.getLogger(ConvertWP2PublicData.class);
+	private static final Logger logger = Logger.getLogger(ConvertWP2PublicDataByCluster.class);
 
 	/**
 	 * This class reads WP2 fragment graph dump data from the /test/resources directory, 
@@ -31,7 +32,7 @@ public class ConvertWP2PublicData {
 	 * 
 	 * @param args no arguments will be processed 
 	 * 
-	 * @author Gil 
+	 * @author Gil / Vivi@fbk
 	 */
 	public static void main(String[] args) {
 
@@ -53,62 +54,28 @@ public class ConvertWP2PublicData {
 		// File names will be determined by "interaction name" (processWP2Data()), or 
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 		
-		String cluster="train/EMAIL0410";		
-		dir = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/FragmentGraphs");
-		dirInteractions = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/Interactions");
+		String outputDirName = "./target/WP2_public_data_CAS_XMI/ALMA_social_media";
 		
+		String clustersDirName = "./src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test/";
+		File clustersDir = new File(clustersDirName);
+		
+		for(String cluster: clustersDir.list()) {
+			
+			dir = Paths.get(clustersDirName + "/" + cluster + "/FragmentGraphs");
+			dirInteractions = Paths.get(clustersDirName + "/" + cluster + "/Interactions");
+		
+			logger.info(dir.toFile().getAbsolutePath());
+			outputdir = Paths.get(outputDirName);
+			outputdirPerFrag = Paths.get(outputDirName + "/" + cluster);
+		
+			// Actual call: use this for "per-fragment" XMI saving 
+			totalcount += processWP2DataPerFragment(dir, dirInteractions, outputdirPerFrag, "IT"); 
+		
+			// Actual call: Use this, for "per-interaction" XMI saving. 
+			totalcount += processWP2Data(dir, dirInteractions, outputdir, "IT"); 
 
-		logger.info(dir.toFile().getAbsolutePath());
-//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag");
-//		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media"); 
-	//	outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag"); 
-
-		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open/"+cluster);
-		outputdirPerFrag = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/"+cluster);
-		
-		// Actual call: use this for "per-fragment" XMI saving 
-		totalcount += processWP2DataPerFragment(dir, dirInteractions, outputdirPerFrag, "EN"); 
-		
-		// Actual call: Use this, for "per-interaction" XMI saving. 
-		totalcount += processWP2Data(dir, dirInteractions, outputdir, "EN"); 
-
-		// end of "processWP2DataPerFragment()" example. 
-	
-		//
-		// The following codes will process WP2 open data directory and 
-		// generate all interactions as XMI (per interaction) on /target/ dir. 
-		// 
-		
-//		// Let's build NICE e-mail data. 
-//		{
-//		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_1/");
-//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_1"); 
-//
-//		totalcount += processWP2Data(dir, outputdir, "EN"); 
-//		
-//		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_2/");
-//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_2"); 
-//		totalcount += processWP2Data(dir, outputdir, "EN"); 
-//
-//		dir = Paths.get("./src/test/resources/WP2_public_data/nice_email_3/");
-//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_email_3"); 
-//		totalcount += processWP2Data(dir, outputdir, "EN"); 
-//
-//		dir = Paths.get("./src/test/resources/WP2_public_data/nice_speech/");
-//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/nice_speech"); 
-//		totalcount += processWP2Data(dir, outputdir, "EN"); 	
-//		}
-//
-//		// and for ALMAwave 
-//		{
-//		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
-//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/alma_social_media"); 
-//		totalcount += processWP2Data(dir, outputdir, "IT"); 		
-//
-//		dir = Paths.get("./src/test/resources/WP2_public_data/alma_speech/");
-//		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/alma_speech"); 
-//		totalcount += processWP2Data(dir, outputdir, "IT"); 		
-//		}
+			logger.info("Cummulative count: " + totalcount + " XMI files generated, over /target/ directories"); 
+		}
 
 		logger.info("In total: " + totalcount + " XMI files generated, over /target/ directories"); 
 	}

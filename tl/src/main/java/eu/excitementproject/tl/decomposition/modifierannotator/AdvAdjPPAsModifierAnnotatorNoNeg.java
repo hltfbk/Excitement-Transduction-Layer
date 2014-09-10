@@ -1,7 +1,9 @@
 package eu.excitementproject.tl.decomposition.modifierannotator;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.cas.text.AnnotationIndex;
@@ -9,9 +11,11 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADV;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PP;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -19,7 +23,8 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.AnnotationUtils;
+import eu.excitementproject.tl.laputils.CASUtils.Region;
 
 /**
  * This class implements a simple "modifier annotator" implementation solely based on 
@@ -33,14 +38,18 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * @author Gil
  * 
  */
-public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
+public class AdvAdjPPAsModifierAnnotatorNoNeg extends AbstractModifierAnnotator {
 
-	public AdvAsModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
+	private int negationPos = -1;
+	
+	private Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator"); 
+	
+	public AdvAdjPPAsModifierAnnotatorNoNeg(LAPAccess lap) throws ModifierAnnotatorException
 	{
 		super(lap); 
 	}
 	
-	public AdvAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
+	public AdvAdjPPAsModifierAnnotatorNoNeg(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
 	{
 		super(lap, fragAnn); 
 	}
@@ -48,8 +57,6 @@ public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
 	@Override
 	public void annotateModifiers(JCas aJCas) throws ModifierAnnotatorException, FragmentAnnotatorException {
 		
-		Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator"); 
-
 		// check if it already has modifier annotations. If it is so, 
 		// we don't process this CAS and pass. 
 		AnnotationIndex<Annotation> modIndex = aJCas.getAnnotationIndex(ModifierAnnotation.type);
@@ -107,45 +114,77 @@ public class AdvAsModifierAnnotator extends AbstractModifierAnnotator {
 				fragItr = fragIndex.iterator();
 				
 				if (!fragItr.hasNext()) {
-					throw new ModifierAnnotatorException("The CAS had no fragment annotations, and the fragment annotator " + this.fragAnn.getClass().getName() + " could not create any");					
+					modLogger.info("The CAS had no fragment annotations, and the fragment annotator " + this.fragAnn.getClass().getName() + " could not create any");					
 				}
 								
 			} else {
-				throw new ModifierAnnotatorException("The CAS had no fragment annotations, and the ModifierAnnotator instance had no fragment annotator to create some.");
+				modLogger.info("The CAS had no fragment annotations, and the ModifierAnnotator instance had no fragment annotator to create some.");
 			}
 		}
 		
 		modLogger.info("Annotating TLmodifier annotations on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
-		int num_mods = 0; 
 
 		while(fragItr.hasNext()) {
 			FragmentAnnotation frag = (FragmentAnnotation) fragItr.next();
 		
-//			AnnotationIndex<Annotation> advIndex = aJCas.getAnnotationIndex(ADV.type);
-//			Iterator<Annotation> advItr = advIndex.iterator();
-	
-			List<ADV> listAdv = JCasUtil.selectCovered(aJCas, ADV.class, frag);
+			negationPos = AnnotationUtils.checkNegation(frag);
 			
-			if (listAdv != null && ! listAdv.isEmpty()) {
-				for (ADV adv: listAdv) {
-			
-					int begin = adv.getBegin(); 
-					int end = adv.getEnd(); 
-					CASUtils.Region[] r = new CASUtils.Region[1]; 
-					r[0] = new CASUtils.Region(begin,  end); 
-			
-					modLogger.info("Annotating the following as a modifier: " + adv.getCoveredText()); 
-					try {
-						CASUtils.annotateOneModifier(aJCas, r); 
-					} catch (LAPException e) {
-						throw new ModifierAnnotatorException("CASUtils reported exception while annotating Modifier, on sentence (" + begin + ","+ end, e );
-					}
-					num_mods++; 
-				}
-			}
-			modLogger.info("Annotated " + num_mods + " for fragment " + frag.getCoveredText());
-			num_mods = 0;
+			AnnotationUtils.addModifiers(aJCas, frag, negationPos, ADV.class);
+			AnnotationUtils.addModifiers(aJCas, frag, negationPos, ADJ.class);
+			addPPModifiers(aJCas, frag, negationPos);
 		}			
 	}
+	
+	
 
+	
+	/**
+	 * Annotates PP phrases as modifiers, if dependency information is available
+	 * 
+ 	 * @param aJCas a CAS object
+	 * @param frag a fragment annotation in the given CAS object
+	 * @param negationPos the position of the negation in the fragment (-1 if there is none)
+	 * @throws ModifierAnnotatorException 
+	 */
+	public void addPPModifiers(JCas aJCas, FragmentAnnotation frag, int negationPos) throws ModifierAnnotatorException {
+		Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator:addPPModifiers");
+
+		Collection<Dependency> dependencies = JCasUtil.select(aJCas, Dependency.class);
+		if (dependencies != null && !dependencies.isEmpty()) {
+			
+			List<? extends Annotation> listMods = JCasUtil.selectCovered(aJCas, PP.class, frag);
+			int num_mods = 0;
+		
+			if (listMods != null && ! listMods.isEmpty()) {
+				modLogger.info("PPs found!");
+
+				for (Annotation a: listMods) {
+
+					modLogger.info("Adding phrase for PP " + a.getCoveredText());
+					if (! AnnotationUtils.inNegationScope(a.getBegin(), frag, negationPos)) {
+
+						annotatePPModifier(aJCas, a);
+						num_mods++;
+					} else {
+						modLogger.info("Potential modifier is or is in scope of a negation: " + a.getCoveredText());
+					}
+				}
+			}
+			modLogger.info("Annotated " + num_mods + " PP modifiers for fragment " + frag.getCoveredText());
+			num_mods = 0;
+		}
+	}
+	
+	
+	private void annotatePPModifier(JCas aJCas, Annotation a) {
+		
+		System.out.println("Adding one PP modifier for " + a.getCoveredText());
+		
+		Set<Region> pp = AnnotationUtils.getPhraseRegion(aJCas, a);
+		
+		if (pp != null && pp.size() > 0) {
+			AnnotationUtils.annotatePhraseModifier(aJCas, pp);
+		}
+	}
+	
 }
