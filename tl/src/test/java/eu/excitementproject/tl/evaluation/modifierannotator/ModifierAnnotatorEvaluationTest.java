@@ -22,9 +22,21 @@ public class ModifierAnnotatorEvaluationTest {
 		try {
 			EvaluationMeasures eval = ModifierAnnotatorEvaluator.evaluateModifiers(
 //					"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 
-					"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media", 
-					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator", 
-					"IT");
+//					"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media", 
+//					"target/WP2_public_data_CAS_XMI/ALMA_social_media",
+					
+					"src/test/resources/WP2_public_data_CAS_XMI/NICE_open/all/",
+
+//					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator",
+//					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotatorNoNeg",
+//					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjAsModifierAnnotatorNoNeg",
+					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjPPAsModifierAnnotatorNoNeg",
+//					"eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator",
+//					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator",
+					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator",
+
+//					"IT");
+					"EN");
 			
 			logger.info(eval.toString());
 			
