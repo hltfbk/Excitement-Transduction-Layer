@@ -9,6 +9,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -22,6 +23,7 @@ import eu.excitementproject.tl.structures.Interaction;
 
 public class FragmentAndModifierMatchCounterTest {
 
+	@Ignore
 	@Test
 	public void test() {
 		

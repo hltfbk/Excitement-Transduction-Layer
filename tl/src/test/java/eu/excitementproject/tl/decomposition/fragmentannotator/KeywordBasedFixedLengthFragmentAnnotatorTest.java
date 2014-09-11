@@ -43,7 +43,8 @@ import eu.excitementproject.tl.structures.Interaction;
  */
 public class KeywordBasedFixedLengthFragmentAnnotatorTest {
 
-	
+
+	@Ignore
 	@Test
 	public void test_xmi() {
 		BasicConfigurator.resetConfiguration(); 
