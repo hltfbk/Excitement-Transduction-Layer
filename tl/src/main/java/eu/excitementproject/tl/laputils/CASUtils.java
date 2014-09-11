@@ -80,11 +80,11 @@ public final class CASUtils {
 		} 
 		catch (InvalidXMLException e)
 		{
-			throw new LAPException("AE descriptor is not a valid XML", e);			
+			throw new LAPException("AE descriptor is not a valid XML, or unable to find the XML file /desc/TLDummyAE.xml in the Jar! (Wrong Jar configuration?) ", e);			
 		}
 		catch (ResourceInitializationException e)
 		{
-			throw new LAPException("Unable to initialize the AE", e); 
+			throw new LAPException("Unable to initialize the AE.", e); 
 		}		
 
 		try {
@@ -92,7 +92,7 @@ public final class CASUtils {
 		}
 		catch (ResourceInitializationException e)
 		{
-			throw new LAPException("Unable to create new JCas", e); 
+			throw new LAPException("Unable to create new JCas.", e); 
 		}
 		
 		return a; 
