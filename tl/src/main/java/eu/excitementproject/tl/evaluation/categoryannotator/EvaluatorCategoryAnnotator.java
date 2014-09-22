@@ -186,8 +186,8 @@ public class EvaluatorCategoryAnnotator {
     	
 	public static void main(String[] args) {
 		
-		String inputFoldername = "src/test/resources/WP2_public_data_XML/OMQ/"; //dataset to be evaluated
-		String outputGraphFoldername = "src/test/resources/sample_graphs/"; //output directory (for generated entailment graph)
+		String inputFoldername = "src/test/resources/OMQ/emails/"; //dataset to be evaluated
+		String outputGraphFoldername = "src/test/resources/OMQ/graphs/"; //output directory (for generated entailment graph)
 		String categoriesFilename = inputFoldername + "omq_public_categories.xml"; 
 		
 		/*
