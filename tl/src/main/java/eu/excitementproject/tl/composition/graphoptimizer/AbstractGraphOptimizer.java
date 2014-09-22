@@ -37,7 +37,7 @@ public abstract class AbstractGraphOptimizer implements GraphOptimizer{
 		double n = 0.0;
 		
 		for (EntailmentRelation edge : workGrap.edgeSet()){
-			if (edge.getLabel().equals(DecisionLabel.Entailment)){
+			if (edge.getLabel().is(DecisionLabel.Entailment)){
 				sum+=edge.getConfidence();
 				n++;
 			}

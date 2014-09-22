@@ -85,7 +85,7 @@ public final class CategoryReader {
 			throw new DataReaderException("unable to access the input file", ioe);
 		}	
 		
-		System.out.println("Processing file ...");
+		logger.info("Processing file ...");
 		
 		// open the document <dataset> (top) 
 		Element dataset = dom.getDocumentElement(); 

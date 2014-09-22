@@ -12,8 +12,8 @@ public class SemevalStuff {
 	//	String gsAnnotationsDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Test";
 	
 	//	GoldStandardAnalyzer.getStatistics(gsAnnotationsDir);
-		
-		GoldStandardToWP2FormatTranslator.createWP2Data(gsAnnotationsDir);
+		GoldStandardToWP2FormatTranslator t = new GoldStandardToWP2FormatTranslator();
+		t.createWP2Data(gsAnnotationsDir);
 		
 	}
 	

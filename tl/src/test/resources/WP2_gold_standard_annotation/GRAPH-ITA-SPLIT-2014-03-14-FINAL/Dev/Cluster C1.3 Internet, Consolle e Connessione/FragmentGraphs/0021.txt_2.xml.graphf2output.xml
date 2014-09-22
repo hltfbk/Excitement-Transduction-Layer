@@ -3,11 +3,11 @@
     <node id="0021.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0021.txt" implicit_context="" focus="connessione dati" implicit_focus="">
         <original_text>chi paga gli abbonamenti per la connessione dati non può usufruire del servizio</original_text>
         <correct_text> </correct_text>
-        <modifiers>chi paga gli abbonamentipoz=0 1 2 3</modifiers>
+        <modifiers>chi paga gli abbonamenti per la connessione datipoz=</modifiers>
     </node>
     <node id="0021.txt_2_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0021.txt" implicit_context="" focus="connessione dati" implicit_focus="">
-        <original_text>per la connessione dati non può usufruire del servizio</original_text>
-        <correct_text>per la connessione dati non si può usufruire del servizio</correct_text>
+        <original_text>non può usufruire del servizio</original_text>
+        <correct_text>non si può usufruire del servizio</correct_text>
         <modifiers> </modifiers>
     </node>
     <edge id="0021.txt_2_0-0021.txt_2_1" source="0021.txt_2_0" target="0021.txt_2_1">

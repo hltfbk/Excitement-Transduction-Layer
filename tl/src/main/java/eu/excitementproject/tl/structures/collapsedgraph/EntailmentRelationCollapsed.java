@@ -109,6 +109,11 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 		return s+"\n";
 	}	
 	
+	public void setEdgeType(EdgeType edgeType) {
+		this.edgeType = edgeType;
+	}
+
+
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/

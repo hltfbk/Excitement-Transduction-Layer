@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="15">
+	<node implicit_focus="" focus="servers" implicit_context="" explicit_context="13764639_76379475.txt" modality="FALSE" id ="13764639_76379475.txt_1_0">
+		<original_text>we were disappointed with the servers the first time</original_text>
+		<correct_text></correct_text>
+		<modifiers>the first timepoz=6 7 8</modifiers>
+	</node>
+	<node implicit_focus="" focus="servers" implicit_context="" explicit_context="13764639_76379475.txt" modality="FALSE" id ="13764639_76379475.txt_1_1">
+		<original_text>we were disappointed with the servers</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="system" implicit_context="" explicit_context="13764740_77897146.txt" modality="FALSE" id ="13764740_77897146.txt_1_0">
+		<original_text>france a ridiculous system</original_text>
+		<correct_text>it's a ridiculous system</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="system" focus="it" implicit_context="" explicit_context="13764740_77897146.txt" modality="TRUE" id ="13764740_77897146.txt_2_0">
+		<original_text>they gotta do something about it</original_text>
+		<correct_text>you have got to do something about it</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="charges" focus="these" implicit_context="" explicit_context="13764770_80323139.txt" modality="FALSE" id ="13764770_80323139.txt_2_0">
+		<original_text>there is just it so many of these</original_text>
+		<correct_text>there is just so many of these</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="miles" implicit_context="" explicit_context="13764794_81531499.txt" modality="TRUE" id ="13764794_81531499.txt_1_0">
+		<original_text>you can't put my miles back at the my account</original_text>
+		<correct_text>you cannot put my miles back into my account</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="travel voucher" implicit_context="" explicit_context="13764800_80670011-3.txt" modality="TRUE" id ="13764800_80670011-3.txt_1_0">
+		<original_text>I should be able to consume out travel voucher whether i'm at the the ticket desk or whether i'm calling you over the phone</original_text>
+		<correct_text>I should be able to consume that travel voucher whether i'm at the ticket desk or whether i'm calling you over the phone</correct_text>
+		<modifiers>or whether i'm calling you over the phonepoz=16 17 18 19 20 21 22 23;whether i'm at the the ticket deskpoz=9 10 11 12 13 14 15</modifiers>
+	</node>
+	<node implicit_focus="" focus="travel voucher" implicit_context="" explicit_context="13764800_80670011-3.txt" modality="TRUE" id ="13764800_80670011-3.txt_1_1">
+		<original_text>I should be able to consume out travel voucher whether i'm at the the ticket desk</original_text>
+		<correct_text>I should be able to consume that travel voucher whether i'm at the ticket desk</correct_text>
+		<modifiers>whether i'm at the the ticket deskpoz=9 10 11 12 13 14 15</modifiers>
+	</node>
+	<node implicit_focus="" focus="travel voucher" implicit_context="" explicit_context="13764800_80670011-3.txt" modality="TRUE" id ="13764800_80670011-3.txt_1_2">
+		<original_text>I should be able to consume out travel voucher</original_text>
+		<correct_text>I should be able to consume that travel voucher</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="mile program" implicit_context="" explicit_context="13764880_80919718.txt" modality="FALSE" id ="13764880_80919718.txt_1_0">
+		<original_text>i don't at the point of having mile program when you you can't use it darn miles</original_text>
+		<correct_text>i don't get the point of having mile program when you can't use the darn miles</correct_text>
+		<modifiers>when you you can't use it darn milespoz=9 10 11 12 13 14 15 16</modifiers>
+	</node>
+	<node implicit_focus="" focus="mile program" implicit_context="" explicit_context="13764880_80919718.txt" modality="FALSE" id ="13764880_80919718.txt_1_1">
+		<original_text>i don't at the point of having mile program</original_text>
+		<correct_text>i don't get the point of having mile program</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="miles" implicit_context="" explicit_context="13764941_82755737-2.txt" modality="FALSE" id ="13764941_82755737-2.txt_1_0">
+		<original_text>i've been told nothing's available unless I give you a hundred thirty thousand miles</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="miles" implicit_context="" explicit_context="13764970_83405709.txt" modality="FALSE" id ="13764970_83405709.txt_1_0">
+		<original_text>with so many garden restrictions on these miles it becomes such a pain in the neck</original_text>
+		<correct_text>with so many god damn restrictions on these miles it becomes such a pain in the neck</correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="aircraft" implicit_context="" explicit_context="13765041_83666815.txt" modality="FALSE" id ="13765041_83666815.txt_2_0">
+		<original_text>there was a problem with the aircraft</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="boarding pass" implicit_context="" explicit_context="13765153_85271674.txt" modality="FALSE" id ="13765153_85271674.txt_1_0">
+		<original_text>i didn't get a boarding pass</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<edge target="13764639_76379475.txt_1_1" source="13764639_76379475.txt_1_0" id="13764639_76379475.txt_1_1-13764639_76379475.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764800_80670011-3.txt_1_1" source="13764800_80670011-3.txt_1_0" id="13764800_80670011-3.txt_1_1-13764800_80670011-3.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764800_80670011-3.txt_1_2" source="13764800_80670011-3.txt_1_1" id="13764800_80670011-3.txt_1_2-13764800_80670011-3.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="13764880_80919718.txt_1_1" source="13764880_80919718.txt_1_0" id="13764880_80919718.txt_1_1-13764880_80919718.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

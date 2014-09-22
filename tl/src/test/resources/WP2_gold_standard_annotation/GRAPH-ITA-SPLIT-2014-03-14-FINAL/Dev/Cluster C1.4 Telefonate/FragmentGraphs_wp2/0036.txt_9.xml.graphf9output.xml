@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0036.txt_9_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0036.txt" implicit_context="" focus="telefonini" implicit_focus="">
+        <original_text>nel mio paese e' da mesi che i telefonini funzionano malissimo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nel mio paesepoz=0 1 2;e' da mesi chepoz=3 4 5 6</modifiers>
+    </node>
+    <node id="0036.txt_9_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0036.txt" implicit_context="" focus="telefonini" implicit_focus="">
+        <original_text>e' da mesi che i telefonini funzionano malissimo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>e' da mesi chepoz=3 4 5 6</modifiers>
+    </node>
+    <node id="0036.txt_9_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0036.txt" implicit_context="" focus="telefonini" implicit_focus="">
+        <original_text>nel mio paese i telefonini funzionano malissimo</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nel mio paesepoz=0 1 2</modifiers>
+    </node>
+    <node id="0036.txt_9_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0036.txt" implicit_context="" focus="telefonini" implicit_focus="">
+        <original_text>i telefonini funzionano malissimo</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0036.txt_9_0-0036.txt_9_1" source="0036.txt_9_0" target="0036.txt_9_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0036.txt_9_0-0036.txt_9_1" source="0036.txt_9_0" target="0036.txt_9_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0036.txt_9_0-0036.txt_9_2" source="0036.txt_9_0" target="0036.txt_9_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0036.txt_9_0-0036.txt_9_2" source="0036.txt_9_0" target="0036.txt_9_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0036.txt_9_2-0036.txt_9_3" source="0036.txt_9_2" target="0036.txt_9_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0036.txt_9_1-0036.txt_9_3" source="0036.txt_9_1" target="0036.txt_9_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0036.txt_9_1-0036.txt_9_3" source="0036.txt_9_1" target="0036.txt_9_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0036.txt_9_2-0036.txt_9_3" source="0036.txt_9_2" target="0036.txt_9_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0036.txt_9_0-0036.txt_9_3" source="0036.txt_9_0" target="0036.txt_9_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

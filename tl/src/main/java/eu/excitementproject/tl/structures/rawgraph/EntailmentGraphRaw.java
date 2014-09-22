@@ -171,9 +171,10 @@ public class EntailmentGraphRaw extends
 	 * Initialize a work graph from a fragment graph
 	 * @param fg -- a fragment graph object
 	 */
-	public EntailmentGraphRaw(FragmentGraph fg) {
+	public EntailmentGraphRaw(FragmentGraph fg, boolean includeNonEntailingEdges) {
 		super(EntailmentRelation.class);
-		copyFragmentGraphNodesAndEdges(fg);
+		if (includeNonEntailingEdges) copyFragmentGraphNodesAndAllEdges(fg);
+		else copyFragmentGraphNodesAndEntailingEdges(fg);
 	}
 	
 	/**
@@ -209,10 +210,64 @@ public class EntailmentGraphRaw extends
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
 
-	public boolean isEntailment(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
-		if (getEdge(entailingNode, entailedNode)!=null) return true;
+	public boolean isFragmentGraphEdge(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
+		Set<EntailmentRelation> se = getAllEdges(entailingNode, entailedNode);
+		if (se==null) return false;
+		for (EntailmentRelation e : se){
+			if (e.getEdgeType().is(EdgeType.FRAGMENT_GRAPH)) return true;
+		}
 		return false;
 	}
+
+	/**
+	 * @param entailingNode
+	 * @param entailedNode
+	 * @return true if there is at least one entailing edge from entailingNode to entailedNode, and at least one non-entailing edge from entailingNode to entailedNode
+	 */
+	public boolean isConflict(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
+		if (entailingNode.equals(entailedNode)) return false; // if both nodes are the same, no conflict, they are always mutually entailing
+		Set<EntailmentRelation> se = getAllEdges(entailingNode, entailedNode);
+		if (se==null) return false;	// if no edges - no conflict
+		boolean isPositive = false;
+		boolean isNegative = false;
+		for (EntailmentRelation e : se){
+			if (e.getLabel().is(DecisionLabel.Entailment)) isPositive=true;
+			if (e.getLabel().is(DecisionLabel.NonEntailment)) isNegative = true;
+		}
+		if (isPositive && isNegative) return true; 
+		return false;
+	}
+	
+	
+	/**
+	 * @param entailingNode
+	 * @param entailedNode
+	 * @return true if there is at least one entailing edge from entailingNode to entailedNode
+	 */
+	public boolean isEntailment(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
+		if (entailingNode.equals(entailedNode)) return true; // if both nodes are the same
+		Set<EntailmentRelation> se = getAllEdges(entailingNode, entailedNode);
+		if (se==null) return false;		
+		for (EntailmentRelation e : se){
+			if (e.getLabel().is(DecisionLabel.Entailment)) return true;
+		}
+		return false;
+	}
+	
+    /**
+     * @param entailingNode
+     * @param entailedNode
+     * @return true if there are only entailing edge(s) from entailingNode to entailedNode, and no non-entailing ones
+     */
+    public boolean isEntailmentOnly(EntailmentUnit entailingNode, EntailmentUnit entailedNode) {
+		boolean isEntailment = isEntailment(entailingNode, entailedNode);
+		boolean isConflict = isConflict(entailingNode, entailedNode);
+		if (isEntailment){
+			if (!isConflict) return true; // if isEntailment, but no conflict - then only entailment edges are there
+		}
+		return false;
+	}
+
 
 	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
 		if (nodeA.equals(nodeB)) return true; // if both nodes are the same
@@ -231,14 +286,15 @@ public class EntailmentGraphRaw extends
 		return false;
 	}
 
-	/** Copies all nodes and edges (incl. transitive closure) from the input fragment graph to the raw entailment graph
-	 * @param fg - the inout fragment graph
+	/** Copies all nodes and entailing edges (incl. transitive closure) from the input fragment graph to the raw entailment graph
+	 * @param fg - the input fragment graph
 	 */
-	public void copyFragmentGraphNodesAndEdges(FragmentGraph fg){
+	public void copyFragmentGraphNodesAndEntailingEdges(FragmentGraph fg){
 		// first add transitive closure to the FG
 		fg.applyTransitiveClosure();
 		
-		// copy nodes (add if new, update mentions if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
+		
+		// copy nodes (add if new, update mentions and complete statements if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
 		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
 			this.addEntailmentUnitMention(fragmentGraphNode, fg.getCompleteStatement().getText());
 			}
@@ -248,6 +304,42 @@ public class EntailmentGraphRaw extends
 		}
 	}
 	
+	/** Copies all nodes and all edges (entailing, incl. transitive closure, and non-entailing) from the input fragment graph to the raw entailment graph
+	 * @param fg - the input fragment graph
+	 */
+	public void copyFragmentGraphNodesAndAllEdges(FragmentGraph fg){
+		// first add transitive closure to the FG
+		fg.applyTransitiveClosure();
+		
+		// copy nodes (add if new, update mentions and complete statements if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
+		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
+			this.addEntailmentUnitMention(fragmentGraphNode, fg.getCompleteStatement().getText());
+			}
+
+		for (FragmentGraphEdge fragmentGraphEdge : fg.edgeSet()){
+			this.addEdgeFromFragmentGraph(fragmentGraphEdge, fg);
+		}
+		
+		// add all non-entailment edges from FG explicitly into the graph 
+		for (EntailmentUnitMention src : fg.vertexSet()){
+			for(EntailmentUnitMention tgt : fg.vertexSet()){
+				if (src.equals(tgt)) continue;
+				if (!fg.containsEdge(src, tgt)){ // if a non-entailment is to be added
+					EntailmentUnit srcUnit = this.getVertexWithText(src.getText());
+					EntailmentUnit tgtUnit = this.getVertexWithText(tgt.getText());
+					EntailmentRelation e = new EntailmentRelation(srcUnit, tgtUnit, new TEDecisionWithConfidence(1.0, DecisionLabel.NonEntailment));
+					e.edgeType = EdgeType.FRAGMENT_GRAPH;
+					if (this.containsEdge(srcUnit,tgtUnit)){
+						Set<EntailmentRelation> edgesToRemove = new HashSet<EntailmentRelation>(this.getAllEdges(srcUnit, tgtUnit));
+						this.removeAllEdges(edgesToRemove);
+					}
+					this.addEdge(srcUnit, tgtUnit, e);
+				}
+			}
+		}
+		
+	}
+
 	/** The method gets an EntailmentUnitMention and either adds a new EntailmentUnit node or, if a relevant EntailmentUnit already exists in the graph, updates the list of its mentions  
 	 * @param mention - the EntailmentUnitMention to be added to the graph
 	 * @param completeStatementText - the text of the mention's complete statement
@@ -274,12 +366,12 @@ public class EntailmentGraphRaw extends
 	public Hashtable<Integer, Set<EntailmentUnit>> getFragmentGraphNodes(EntailmentUnit baseStatementNode, String completeStatementText) throws EntailmentGraphRawException {
 		Hashtable<Integer, Set<EntailmentUnit>> nodesByLevel = new Hashtable<Integer, Set<EntailmentUnit>>(); 
 		
-// /*		
-		System.out.println("----");
-		System.out.println(baseStatementNode);
-		System.out.println(completeStatementText);
-		System.out.println(baseStatementNode.completeStatementTexts);
-// */
+ /*		
+		logger.info("----");
+		logger.info(baseStatementNode);
+		logger.info(completeStatementText);
+		logger.info(baseStatementNode.completeStatementTexts);
+ */
 		if (!baseStatementNode.completeStatementTexts.contains(completeStatementText)) throw new EntailmentGraphRawException("Base statement node \""+baseStatementNode.getText()+"\" does not correspond to the complete statement \""+ completeStatementText+"\"\n");
 		
 		EntailmentUnit completeStatementNode = getVertexWithText(completeStatementText);
@@ -693,6 +785,7 @@ public class EntailmentGraphRaw extends
     private Double getBestDirectConfidence(EntailmentUnit source, EntailmentUnit target){
     	Double confidence = 0.0;
     	for (EntailmentRelation edge : this.getAllEdges(source, target)){
+    		if (edge.getLabel().is(DecisionLabel.NonEntailment)) continue; // don't consider the confidence of non-entailing edges
     		if (edge.getConfidence() > confidence) confidence = edge.getConfidence();
     	}
     	return confidence;
@@ -700,6 +793,7 @@ public class EntailmentGraphRaw extends
     
     /**
 	 *  Adds transitive closure edges to the graph. Only consider "entailment" edges!!! (currently we don't propagate non-entailment relation)
+	 *  Can add conflicts to the graph, if non-entailment decisions are present in it
 	 *  Based on org.jgrapht.alg.TransitiveClosure
 	 *  
 	 * @param changeTypeOfExistingEdges - if true, existing transitive closure edges will change their type to "TRANSITIVE_CLOSURE" 
@@ -740,16 +834,26 @@ public class EntailmentGraphRaw extends
                         EntailmentRelation e = this.getEdge(v1, v3);
                         if (e != null) {
                             // There is already an edge from v1 ---> v3
-                        	if (!changeTypeOfExistingEdges)	continue; 
                         	
-                        	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) { // if it's a closure edge already
-                        		if (e.getConfidence()>=confidence) continue; // and its confidence is >= current - skip
-                        		// if its confidence is lower than current, we want to update the edge with the current confidence, since we have a more confident transitive path from v1 to v3 now 
+                        	// Check if it's an entailment edge
+                        	if (this.isEntailmentOnly(v1, v3)){
+                            	if (!changeTypeOfExistingEdges)	{
+                            		continue; 
+                            	}
+                            	
+                            	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) { // if it's a closure edge already
+                            		if (e.getConfidence()>=confidence) continue; // and its confidence is >= current - skip
+                            		// if its confidence is lower than current, we want to update the edge with the current confidence, since we have a more confident transitive path from v1 to v3 now 
+                            	}
+                            	else{
+                                   	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
+                                	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type                        		
+                            	}                        		
                         	}
-                        	else{
-                               	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
-                            	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type                        		
-                        	}
+                        	
+                        	// else - if there is an edge, but it's a non-entailment edge, add a "conflicting" closure edge
+                        	// add it as an edge with EdgeType="TRANSITIVE_CLOSURE" and current confidence, no need to change anything, just proceed with the code
+                        		
                         }
                         
                         newEdgeTargets.put(v3,confidence);
@@ -759,12 +863,12 @@ public class EntailmentGraphRaw extends
                         String dbgSource = "The food is in need of a serious improvement";
                         if (v1.getTextWithoutDoubleSpaces().equals(dbgSource)){
                         	if (v3.getTextWithoutDoubleSpaces().equals(dbgTarget)){
-                        		System.out.println(v1);
-                        		System.out.println(v1.getTextWithoutDoubleSpaces());
-                        		System.out.println(v2);
-                        		System.out.println(v2.getTextWithoutDoubleSpaces());
-                        		System.out.println(v3);
-                        		System.out.println(v3.getTextWithoutDoubleSpaces());
+                        		logger.info(v1);
+                        		logger.info(v1.getTextWithoutDoubleSpaces());
+                        		logger.info(v2);
+                        		logger.info(v2.getTextWithoutDoubleSpaces());
+                        		logger.info(v3);
+                        		logger.info(v3.getTextWithoutDoubleSpaces());
                         		try {
 									System.in.read();
 								} catch (IOException e1) {
@@ -781,8 +885,7 @@ public class EntailmentGraphRaw extends
                 for (EntailmentUnit v3 : newEdgeTargets.keySet()) {
                     EntailmentRelation e = this.getEdge(v1, v3);
                 	if (e!=null){
-                    	this.removeAllEdges(v1, v3);                    	
-                		logger.info("Removed \"direct\" edge(s): "+ e.toString()+" to add a corresponding transitive closure edge");
+                    	this.removePositiveEdges(v1, v3);       // only remove "entailing" edges, leave "non-entailing" to allow detecting conflicts             	
                     }
                 	double confidence = newEdgeTargets.get(v3);
                 	EntailmentRelation closureEdge = new EntailmentRelation(v1, v3, new TEDecisionWithConfidence(confidence, DecisionLabel.Entailment), EdgeType.TRANSITIVE_CLOSURE);
@@ -793,7 +896,26 @@ public class EntailmentGraphRaw extends
         }
 	}	
 	
-    /**
+	/**
+     * Remove all positive (entailing) edges src --> tgt, but leave non-entailing src -/-> tgt
+     * @param src
+     * @param tgt
+     */
+    private void removePositiveEdges(EntailmentUnit src, EntailmentUnit tgt) {
+		Set<EntailmentRelation> alledges = new HashSet<EntailmentRelation>(this.getAllEdges(src, tgt));
+		for (EntailmentRelation e : alledges){
+			if (e.getLabel().is(DecisionLabel.Entailment)){
+        		logger.info("Removed \"direct\" edge: "+ e.toString()+" to add a corresponding transitive closure edge");
+				this.removeEdge(e);
+			}
+			else {
+				logger.info("Did not remove non-entailing \"direct\" edge: "+ e.toString()+", but a corresponding \"entailing\" transitive closure edge will be added");
+			}
+		}
+	}
+    
+    
+	/**
 	 *  Removes all transitive closure edges from the graph.
 	 *  Expected use - for internal testing purposes only
 	 */
@@ -836,6 +958,25 @@ public class EntailmentGraphRaw extends
 		removeAllEdges(edgesToRemove);
 	}
 	
+	/**
+	 * @return transitive reduction of the graph
+	 * Not tested yet!
+	 */
+	public EntailmentGraphRaw getTransitiveReduction(){   
+		EntailmentGraphRaw reduction = new EntailmentGraphRaw(this.vertexSet(), this.edgeSet());
+		for (EntailmentUnit x : reduction.vertexSet()){
+			for (EntailmentUnit y : reduction.vertexSet()){
+				if (x.equals(y)) continue;
+				for (EntailmentUnit z : reduction.vertexSet()){
+					if (x.equals(z)) continue;
+					if (y.equals(z)) continue;
+					if ((isEntailment(x, y))&&(isEntailment(y, z))) reduction.removeAllEdges(x, z);
+				}
+			}		
+		}
+		return reduction;
+	}
+
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/

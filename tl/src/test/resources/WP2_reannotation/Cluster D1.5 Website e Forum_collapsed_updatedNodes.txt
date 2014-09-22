@@ -1,0 +1,3416 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 2 entailment unit(s) before editing
+	il vostro sito non funziona	[0140.txt_1_0]
+	è possibile che non funzioni mai niente	[0236.txt_1_0]
+
+collapsed node #2 : 3 entailment unit(s) before editing
+	Non si riesce ad accedere al sito di TELEFONIAX . it	[0020.txt_1_4]
+	Sul sito non si riesce ad entrare	[0018.txt_1_0]
+	sito inaccessibile	[0224.txt_2_0]
+
+collapsed node #3 : 5 entailment unit(s) before editing
+	Volevo solo segnalare che ci sono dei problemi sul sito	[0257.txt_1_0]
+	avete dei problemi sul sito	[0061.txt_1_0]
+	il sito TELEFONIAX . it ha dei problemi	[0151.txt_1_1]
+	il sito non dasse qualche problema	[0284.txt_1_3]
+	problema sul sito	[0139.txt_1_1]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	problemi di accesso sul sito di TELEFONIAX	[0202.txt_6_0]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	esser lento	[0024.txt_8_0]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	[0020.txt_1_2]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	Non si riesce ad accedere al sito completo di TELEFONIAX . it	[0020.txt_1_1]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	[0020.txt_1_0]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	Il nuovo sito TELEFONIAX è poco agevole	[0033.txt_1_0]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	problema del login sul sito	[0139.txt_1_0]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	Il sito TELEFONIAX è poco agevole	[0033.txt_1_2]
+
+collapsed node #12 : 1 entailment unit(s) before editing
+	il sito TELEFONIAX è lentissimo	[0035.txt_1_0]
+
+collapsed node #13 : 1 entailment unit(s) before editing
+	non riesco ad accedere all'area reclami	[0060.txt_1_1]
+
+collapsed node #14 : 1 entailment unit(s) before editing
+	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	[0106.txt_1_0]
+
+collapsed node #15 : 1 entailment unit(s) before editing
+	problemi di gestione sul sito di TELEFONIAX	[0202.txt_7_0]
+
+collapsed node #16 : 1 entailment unit(s) before editing
+	Sono giorni che provo ad registrarmi sul sito ma mi da errore	[0106.txt_1_1]
+
+collapsed node #17 : 1 entailment unit(s) before editing
+	non riesco ad accedere all'area reclami di TELEFONIAX ABC	[0060.txt_1_0]
+
+collapsed node #18 : 1 entailment unit(s) before editing
+	Sono tre giorni che provo ad registrarmi ma mi da errore	[0106.txt_1_2]
+
+collapsed node #19 : 2 entailment unit(s) before editing
+	mi dà sempre errore	[0125.txt_1_0]
+	provo ad registrarmi sul sito ma mi da errore	[0106.txt_1_3]
+
+collapsed node #20 : 1 entailment unit(s) before editing
+	il sito TELEFONIAX . it ha dei grossi problemi	[0151.txt_1_0]
+
+collapsed node #21 : 1 entailment unit(s) before editing
+	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	[0144.txt_1_0]
+
+collapsed node #22 : 1 entailment unit(s) before editing
+	non riesco ad accedere al forum	[0144.txt_1_1]
+
+collapsed node #23 : 1 entailment unit(s) before editing
+	Sono giorni che provo ad registrarmi ma mi da errore	[0106.txt_1_4]
+
+collapsed node #24 : 1 entailment unit(s) before editing
+	provo ad registrarmi ma mi da errore	[0106.txt_1_6]
+
+collapsed node #25 : 1 entailment unit(s) before editing
+	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	[0284.txt_1_0]
+
+collapsed node #26 : 1 entailment unit(s) before editing
+	il sito non dasse qualche problema inspiegabile	[0284.txt_1_2]
+
+collapsed node #27 : 1 entailment unit(s) before editing
+	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	[0284.txt_1_1]
+
+collapsed node #28 : 1 entailment unit(s) before editing
+	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	[0282.txt_1_2]
+
+collapsed node #29 : 1 entailment unit(s) before editing
+	Il sito è confusionale	[0047.txt_1_0]
+
+collapsed node #30 : 1 entailment unit(s) before editing
+	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	[0282.txt_1_0]
+
+collapsed node #31 : 1 entailment unit(s) before editing
+	al sito ci sono problemi di connessione	[0282.txt_1_3]
+
+collapsed node #32 : 1 entailment unit(s) before editing
+	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	[0034.txt_1_0]
+
+collapsed node #33 : 1 entailment unit(s) before editing
+	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	[0034.txt_1_1]
+
+collapsed node #34 : 1 entailment unit(s) before editing
+	non trovi mai cosa stai cercando	[0024.txt_2_0]
+
+collapsed node #35 : 1 entailment unit(s) before editing
+	non trovi cosa stai cercando	[0024.txt_2_1]
+
+collapsed node #36 : 1 entailment unit(s) before editing
+	Il sito TELEFONIAX e' veramente un grande SCHIFO	[0024.txt_1_0]
+
+collapsed node #37 : 1 entailment unit(s) before editing
+	Il sito TELEFONIAX e' veramente un SCHIFO	[0024.txt_1_2]
+
+collapsed node #38 : 1 entailment unit(s) before editing
+	Alcune pagine non le apre	[0202.txt_2_0]
+
+collapsed node #39 : 1 entailment unit(s) before editing
+	Il sito TELEFONIAX e' un grande SCHIFO	[0024.txt_1_3]
+
+collapsed node #40 : 1 entailment unit(s) before editing
+	Il sito TELEFONIAX e' un SCHIFO	[0024.txt_1_6]
+
+collapsed node #41 : 1 entailment unit(s) before editing
+	si disconnette	[0202.txt_3_0]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+sito inaccessibile	3	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	sito inaccessibile	3	No	0
+
+node pair #2:
+il vostro sito non funziona	2	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	il vostro sito non funziona	2	No	0
+
+node pair #3:
+problemi di accesso sul sito di TELEFONIAX	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #4:
+il vostro sito non funziona	2	->	esser lento	1	No	0
+esser lento	1	->	il vostro sito non funziona	2	No	0
+
+node pair #5:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #6:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #7:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #8:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #9:
+il vostro sito non funziona	2	->	problema del login sul sito	1	No	0
+problema del login sul sito	1	->	il vostro sito non funziona	2	No	0
+
+node pair #10:
+Il sito TELEFONIAX è poco agevole	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #11:
+il sito TELEFONIAX è lentissimo	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #12:
+non riesco ad accedere all'area reclami	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #13:
+il vostro sito non funziona	2	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	il vostro sito non funziona	2	No	0
+
+node pair #14:
+il vostro sito non funziona	2	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	il vostro sito non funziona	2	No	0
+
+node pair #15:
+il vostro sito non funziona	2	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	il vostro sito non funziona	2	No	0
+
+node pair #16:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #17:
+il vostro sito non funziona	2	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	il vostro sito non funziona	2	No	0
+
+node pair #18:
+il vostro sito non funziona	2	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	il vostro sito non funziona	2	No	0
+
+node pair #19:
+il vostro sito non funziona	2	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	il vostro sito non funziona	2	No	0
+
+node pair #20:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #21:
+non riesco ad accedere al forum	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	non riesco ad accedere al forum	1	No	0
+
+node pair #22:
+il vostro sito non funziona	2	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	il vostro sito non funziona	2	No	0
+
+node pair #23:
+il vostro sito non funziona	2	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	il vostro sito non funziona	2	No	0
+
+node pair #24:
+il vostro sito non funziona	2	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	il vostro sito non funziona	2	No	0
+
+node pair #25:
+il vostro sito non funziona	2	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	il vostro sito non funziona	2	No	0
+
+node pair #26:
+il vostro sito non funziona	2	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	il vostro sito non funziona	2	No	0
+
+node pair #27:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #28:
+Il sito è confusionale	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	Il sito è confusionale	1	No	0
+
+node pair #29:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #30:
+al sito ci sono problemi di connessione	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #31:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #32:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	il vostro sito non funziona	2	Yes	0
+il vostro sito non funziona	2	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #33:
+il vostro sito non funziona	2	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	il vostro sito non funziona	2	No	0
+
+node pair #34:
+il vostro sito non funziona	2	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	il vostro sito non funziona	2	No	0
+
+node pair #35:
+il vostro sito non funziona	2	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	il vostro sito non funziona	2	No	0
+
+node pair #36:
+il vostro sito non funziona	2	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	il vostro sito non funziona	2	No	0
+
+node pair #37:
+il vostro sito non funziona	2	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	il vostro sito non funziona	2	No	0
+
+node pair #38:
+il vostro sito non funziona	2	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	il vostro sito non funziona	2	No	0
+
+node pair #39:
+il vostro sito non funziona	2	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	il vostro sito non funziona	2	No	0
+
+node pair #40:
+il vostro sito non funziona	2	->	si disconnette	1	No	0
+si disconnette	1	->	il vostro sito non funziona	2	No	0
+
+node pair #41:
+sito inaccessibile	3	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	sito inaccessibile	3	No	0
+
+node pair #42:
+sito inaccessibile	3	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+problemi di accesso sul sito di TELEFONIAX	1	->	sito inaccessibile	3	No	0
+
+node pair #43:
+sito inaccessibile	3	->	esser lento	1	No	0
+esser lento	1	->	sito inaccessibile	3	No	0
+
+node pair #44:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	sito inaccessibile	3	Yes	1
+sito inaccessibile	3	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	-1
+
+node pair #45:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	sito inaccessibile	3	Yes	1
+sito inaccessibile	3	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	-1
+
+node pair #46:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	sito inaccessibile	3	Yes	1
+sito inaccessibile	3	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	-1
+
+node pair #47:
+sito inaccessibile	3	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+Il nuovo sito TELEFONIAX è poco agevole	1	->	sito inaccessibile	3	No	0
+
+node pair #48:
+sito inaccessibile	3	->	problema del login sul sito	1	Yes	0
+problema del login sul sito	1	->	sito inaccessibile	3	No	0
+
+node pair #49:
+sito inaccessibile	3	->	Il sito TELEFONIAX è poco agevole	1	No	0
+Il sito TELEFONIAX è poco agevole	1	->	sito inaccessibile	3	No	0
+
+node pair #50:
+sito inaccessibile	3	->	il sito TELEFONIAX è lentissimo	1	No	0
+il sito TELEFONIAX è lentissimo	1	->	sito inaccessibile	3	No	0
+
+node pair #51:
+sito inaccessibile	3	->	non riesco ad accedere all'area reclami	1	Yes	0
+non riesco ad accedere all'area reclami	1	->	sito inaccessibile	3	No	0
+
+node pair #52:
+sito inaccessibile	3	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	sito inaccessibile	3	No	0
+
+node pair #53:
+sito inaccessibile	3	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	sito inaccessibile	3	No	0
+
+node pair #54:
+sito inaccessibile	3	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	sito inaccessibile	3	No	0
+
+node pair #55:
+sito inaccessibile	3	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	Yes	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	sito inaccessibile	3	No	0
+
+node pair #56:
+sito inaccessibile	3	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	sito inaccessibile	3	No	0
+
+node pair #57:
+sito inaccessibile	3	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	sito inaccessibile	3	No	0
+
+node pair #58:
+sito inaccessibile	3	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	sito inaccessibile	3	No	0
+
+node pair #59:
+sito inaccessibile	3	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	Yes	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	sito inaccessibile	3	No	0
+
+node pair #60:
+sito inaccessibile	3	->	non riesco ad accedere al forum	1	Yes	0
+non riesco ad accedere al forum	1	->	sito inaccessibile	3	No	0
+
+node pair #61:
+sito inaccessibile	3	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	sito inaccessibile	3	No	0
+
+node pair #62:
+sito inaccessibile	3	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	sito inaccessibile	3	No	0
+
+node pair #63:
+sito inaccessibile	3	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	sito inaccessibile	3	No	0
+
+node pair #64:
+sito inaccessibile	3	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	sito inaccessibile	3	No	0
+
+node pair #65:
+sito inaccessibile	3	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	sito inaccessibile	3	No	0
+
+node pair #66:
+sito inaccessibile	3	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	sito inaccessibile	3	No	0
+
+node pair #67:
+sito inaccessibile	3	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	sito inaccessibile	3	No	0
+
+node pair #68:
+sito inaccessibile	3	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	sito inaccessibile	3	No	0
+
+node pair #69:
+sito inaccessibile	3	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	sito inaccessibile	3	No	0
+
+node pair #70:
+sito inaccessibile	3	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	sito inaccessibile	3	No	0
+
+node pair #71:
+sito inaccessibile	3	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	sito inaccessibile	3	No	0
+
+node pair #72:
+sito inaccessibile	3	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	sito inaccessibile	3	No	0
+
+node pair #73:
+sito inaccessibile	3	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	sito inaccessibile	3	No	0
+
+node pair #74:
+sito inaccessibile	3	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	sito inaccessibile	3	No	0
+
+node pair #75:
+sito inaccessibile	3	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	sito inaccessibile	3	No	0
+
+node pair #76:
+sito inaccessibile	3	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	sito inaccessibile	3	No	0
+
+node pair #77:
+sito inaccessibile	3	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	sito inaccessibile	3	No	0
+
+node pair #78:
+sito inaccessibile	3	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	sito inaccessibile	3	No	0
+
+node pair #79:
+sito inaccessibile	3	->	si disconnette	1	No	0
+si disconnette	1	->	sito inaccessibile	3	No	0
+
+node pair #80:
+problemi di accesso sul sito di TELEFONIAX	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #81:
+problema sul sito	5	->	esser lento	1	No	0
+esser lento	1	->	problema sul sito	5	No	0
+
+node pair #82:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #83:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #84:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #85:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #86:
+problema del login sul sito	1	->	problema sul sito	5	Yes	1
+problema sul sito	5	->	problema del login sul sito	1	No	-1
+
+node pair #87:
+Il sito TELEFONIAX è poco agevole	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #88:
+il sito TELEFONIAX è lentissimo	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #89:
+non riesco ad accedere all'area reclami	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #90:
+problema sul sito	5	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	problema sul sito	5	No	0
+
+node pair #91:
+problemi di gestione sul sito di TELEFONIAX	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #92:
+problema sul sito	5	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	problema sul sito	5	No	0
+
+node pair #93:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #94:
+problema sul sito	5	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	problema sul sito	5	No	0
+
+node pair #95:
+problema sul sito	5	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	problema sul sito	5	No	0
+
+node pair #96:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	problema sul sito	5	Yes	1
+problema sul sito	5	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	-1
+
+node pair #97:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #98:
+non riesco ad accedere al forum	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	non riesco ad accedere al forum	1	No	0
+
+node pair #99:
+problema sul sito	5	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	problema sul sito	5	No	0
+
+node pair #100:
+problema sul sito	5	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	problema sul sito	5	No	0
+
+node pair #101:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	problema sul sito	5	Yes	1
+problema sul sito	5	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	-1
+
+node pair #102:
+il sito non dasse qualche problema inspiegabile	1	->	problema sul sito	5	Yes	1
+problema sul sito	5	->	il sito non dasse qualche problema inspiegabile	1	No	-1
+
+node pair #103:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	problema sul sito	5	Yes	1
+problema sul sito	5	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	-1
+
+node pair #104:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #105:
+Il sito è confusionale	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	Il sito è confusionale	1	No	0
+
+node pair #106:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #107:
+al sito ci sono problemi di connessione	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #108:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #109:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	problema sul sito	5	Yes	0
+problema sul sito	5	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #110:
+problema sul sito	5	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	problema sul sito	5	No	0
+
+node pair #111:
+problema sul sito	5	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	problema sul sito	5	No	0
+
+node pair #112:
+problema sul sito	5	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	problema sul sito	5	No	0
+
+node pair #113:
+problema sul sito	5	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	problema sul sito	5	No	0
+
+node pair #114:
+problema sul sito	5	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	problema sul sito	5	No	0
+
+node pair #115:
+problema sul sito	5	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	problema sul sito	5	No	0
+
+node pair #116:
+problema sul sito	5	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	problema sul sito	5	No	0
+
+node pair #117:
+problema sul sito	5	->	si disconnette	1	No	0
+si disconnette	1	->	problema sul sito	5	No	0
+
+node pair #118:
+problemi di accesso sul sito di TELEFONIAX	1	->	esser lento	1	No	0
+esser lento	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #119:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	problemi di accesso sul sito di TELEFONIAX	1	Yes	0
+problemi di accesso sul sito di TELEFONIAX	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #120:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	problemi di accesso sul sito di TELEFONIAX	1	Yes	0
+problemi di accesso sul sito di TELEFONIAX	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #121:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	problemi di accesso sul sito di TELEFONIAX	1	Yes	0
+problemi di accesso sul sito di TELEFONIAX	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #122:
+problemi di accesso sul sito di TELEFONIAX	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+Il nuovo sito TELEFONIAX è poco agevole	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #123:
+problemi di accesso sul sito di TELEFONIAX	1	->	problema del login sul sito	1	Yes	0
+problema del login sul sito	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #124:
+problemi di accesso sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+Il sito TELEFONIAX è poco agevole	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #125:
+problemi di accesso sul sito di TELEFONIAX	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+il sito TELEFONIAX è lentissimo	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #126:
+problemi di accesso sul sito di TELEFONIAX	1	->	non riesco ad accedere all'area reclami	1	No	0
+non riesco ad accedere all'area reclami	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #127:
+problemi di accesso sul sito di TELEFONIAX	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #128:
+problemi di accesso sul sito di TELEFONIAX	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #129:
+problemi di accesso sul sito di TELEFONIAX	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #130:
+problemi di accesso sul sito di TELEFONIAX	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #131:
+problemi di accesso sul sito di TELEFONIAX	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #132:
+problemi di accesso sul sito di TELEFONIAX	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #133:
+problemi di accesso sul sito di TELEFONIAX	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	Yes	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #134:
+problemi di accesso sul sito di TELEFONIAX	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #135:
+problemi di accesso sul sito di TELEFONIAX	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #136:
+problemi di accesso sul sito di TELEFONIAX	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #137:
+problemi di accesso sul sito di TELEFONIAX	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #138:
+problemi di accesso sul sito di TELEFONIAX	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #139:
+problemi di accesso sul sito di TELEFONIAX	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #140:
+problemi di accesso sul sito di TELEFONIAX	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #141:
+problemi di accesso sul sito di TELEFONIAX	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #142:
+problemi di accesso sul sito di TELEFONIAX	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #143:
+problemi di accesso sul sito di TELEFONIAX	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #144:
+problemi di accesso sul sito di TELEFONIAX	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #145:
+problemi di accesso sul sito di TELEFONIAX	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #146:
+problemi di accesso sul sito di TELEFONIAX	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #147:
+problemi di accesso sul sito di TELEFONIAX	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #148:
+problemi di accesso sul sito di TELEFONIAX	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #149:
+problemi di accesso sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #150:
+problemi di accesso sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #151:
+problemi di accesso sul sito di TELEFONIAX	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #152:
+problemi di accesso sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #153:
+problemi di accesso sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #154:
+problemi di accesso sul sito di TELEFONIAX	1	->	si disconnette	1	No	0
+si disconnette	1	->	problemi di accesso sul sito di TELEFONIAX	1	No	0
+
+node pair #155:
+esser lento	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	esser lento	1	No	0
+
+node pair #156:
+esser lento	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	esser lento	1	No	0
+
+node pair #157:
+esser lento	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	esser lento	1	No	0
+
+node pair #158:
+esser lento	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+Il nuovo sito TELEFONIAX è poco agevole	1	->	esser lento	1	No	0
+
+node pair #159:
+esser lento	1	->	problema del login sul sito	1	No	0
+problema del login sul sito	1	->	esser lento	1	No	0
+
+node pair #160:
+esser lento	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+Il sito TELEFONIAX è poco agevole	1	->	esser lento	1	No	0
+
+node pair #161:
+esser lento	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+il sito TELEFONIAX è lentissimo	1	->	esser lento	1	No	0
+
+node pair #162:
+esser lento	1	->	non riesco ad accedere all'area reclami	1	No	0
+non riesco ad accedere all'area reclami	1	->	esser lento	1	No	0
+
+node pair #163:
+esser lento	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	esser lento	1	No	0
+
+node pair #164:
+esser lento	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	esser lento	1	No	0
+
+node pair #165:
+esser lento	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	esser lento	1	No	0
+
+node pair #166:
+esser lento	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	esser lento	1	No	0
+
+node pair #167:
+esser lento	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	esser lento	1	No	0
+
+node pair #168:
+esser lento	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	esser lento	1	No	0
+
+node pair #169:
+esser lento	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	esser lento	1	No	0
+
+node pair #170:
+esser lento	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	esser lento	1	No	0
+
+node pair #171:
+esser lento	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	esser lento	1	No	0
+
+node pair #172:
+esser lento	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	esser lento	1	No	0
+
+node pair #173:
+esser lento	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	esser lento	1	No	0
+
+node pair #174:
+esser lento	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	esser lento	1	No	0
+
+node pair #175:
+esser lento	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	esser lento	1	No	0
+
+node pair #176:
+esser lento	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	esser lento	1	No	0
+
+node pair #177:
+esser lento	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	esser lento	1	No	0
+
+node pair #178:
+esser lento	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	esser lento	1	No	0
+
+node pair #179:
+esser lento	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	esser lento	1	No	0
+
+node pair #180:
+esser lento	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	esser lento	1	No	0
+
+node pair #181:
+esser lento	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	esser lento	1	No	0
+
+node pair #182:
+esser lento	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	esser lento	1	No	0
+
+node pair #183:
+esser lento	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	esser lento	1	No	0
+
+node pair #184:
+esser lento	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	esser lento	1	No	0
+
+node pair #185:
+esser lento	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	esser lento	1	No	0
+
+node pair #186:
+esser lento	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	esser lento	1	No	0
+
+node pair #187:
+esser lento	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	esser lento	1	No	0
+
+node pair #188:
+esser lento	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	esser lento	1	No	0
+
+node pair #189:
+esser lento	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	esser lento	1	No	0
+
+node pair #190:
+esser lento	1	->	si disconnette	1	No	0
+si disconnette	1	->	esser lento	1	No	0
+
+node pair #191:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	-1
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	-1
+
+node pair #192:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	Yes	1
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	-1
+
+node pair #193:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #194:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	problema del login sul sito	1	Yes	0
+problema del login sul sito	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #195:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+Il sito TELEFONIAX è poco agevole	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #196:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+il sito TELEFONIAX è lentissimo	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #197:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	non riesco ad accedere all'area reclami	1	Yes	0
+non riesco ad accedere all'area reclami	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #198:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #199:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #200:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #201:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	Yes	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #202:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #203:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #204:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	Yes	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #205:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	Yes	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #206:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	non riesco ad accedere al forum	1	Yes	0
+non riesco ad accedere al forum	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #207:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #208:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #209:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #210:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #211:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #212:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #213:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #214:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #215:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #216:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #217:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #218:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #219:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #220:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #221:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #222:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #223:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #224:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #225:
+Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	->	si disconnette	1	No	0
+si disconnette	1	->	Non si riesce ad accedere dal cellulare al sito di TELEFONIAX . it	1	No	0
+
+node pair #226:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	Yes	1
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	-1
+
+node pair #227:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #228:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	problema del login sul sito	1	Yes	0
+problema del login sul sito	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #229:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+Il sito TELEFONIAX è poco agevole	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #230:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+il sito TELEFONIAX è lentissimo	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #231:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	non riesco ad accedere all'area reclami	1	Yes	0
+non riesco ad accedere all'area reclami	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #232:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #233:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #234:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #235:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	Yes	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #236:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #237:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #238:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	Yes	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #239:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	Yes	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #240:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	non riesco ad accedere al forum	1	Yes	0
+non riesco ad accedere al forum	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #241:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #242:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #243:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #244:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #245:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #246:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #247:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #248:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #249:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #250:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #251:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #252:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #253:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #254:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #255:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #256:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #257:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #258:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #259:
+Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	->	si disconnette	1	No	0
+si disconnette	1	->	Non si riesce ad accedere al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #260:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #261:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	problema del login sul sito	1	Yes	0
+problema del login sul sito	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #262:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+Il sito TELEFONIAX è poco agevole	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #263:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+il sito TELEFONIAX è lentissimo	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #264:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	non riesco ad accedere all'area reclami	1	Yes	0
+non riesco ad accedere all'area reclami	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #265:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #266:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #267:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #268:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	Yes	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #269:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #270:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #271:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	Yes	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #272:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	Yes	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #273:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	non riesco ad accedere al forum	1	Yes	0
+non riesco ad accedere al forum	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #274:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #275:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #276:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #277:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #278:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #279:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #280:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #281:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #282:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #283:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #284:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #285:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #286:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #287:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #288:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #289:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #290:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #291:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #292:
+Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	->	si disconnette	1	No	0
+si disconnette	1	->	Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX . it	1	No	0
+
+node pair #293:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	problema del login sul sito	1	No	0
+problema del login sul sito	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #294:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX è poco agevole	1	Yes	1
+Il sito TELEFONIAX è poco agevole	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	-1
+
+node pair #295:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+il sito TELEFONIAX è lentissimo	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #296:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	non riesco ad accedere all'area reclami	1	No	0
+non riesco ad accedere all'area reclami	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #297:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #298:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #299:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #300:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #301:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #302:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #303:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	Yes	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #304:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #305:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #306:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #307:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #308:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #309:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #310:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #311:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #312:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #313:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #314:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #315:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	Yes	0
+Il nuovo sito TELEFONIAX è poco agevole	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #316:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #317:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #318:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #319:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #320:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #321:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #322:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #323:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #324:
+Il nuovo sito TELEFONIAX è poco agevole	1	->	si disconnette	1	No	0
+si disconnette	1	->	Il nuovo sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #325:
+problema del login sul sito	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+Il sito TELEFONIAX è poco agevole	1	->	problema del login sul sito	1	No	0
+
+node pair #326:
+problema del login sul sito	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+il sito TELEFONIAX è lentissimo	1	->	problema del login sul sito	1	No	0
+
+node pair #327:
+problema del login sul sito	1	->	non riesco ad accedere all'area reclami	1	No	0
+non riesco ad accedere all'area reclami	1	->	problema del login sul sito	1	No	0
+
+node pair #328:
+problema del login sul sito	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	problema del login sul sito	1	No	0
+
+node pair #329:
+problema del login sul sito	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	problema del login sul sito	1	No	0
+
+node pair #330:
+problema del login sul sito	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	problema del login sul sito	1	No	0
+
+node pair #331:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	problema del login sul sito	1	Yes	0
+problema del login sul sito	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #332:
+problema del login sul sito	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	problema del login sul sito	1	No	0
+
+node pair #333:
+problema del login sul sito	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	problema del login sul sito	1	No	0
+
+node pair #334:
+problema del login sul sito	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	problema del login sul sito	1	No	0
+
+node pair #335:
+problema del login sul sito	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	problema del login sul sito	1	No	0
+
+node pair #336:
+problema del login sul sito	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	problema del login sul sito	1	No	0
+
+node pair #337:
+problema del login sul sito	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	problema del login sul sito	1	No	0
+
+node pair #338:
+problema del login sul sito	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	problema del login sul sito	1	No	0
+
+node pair #339:
+problema del login sul sito	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	problema del login sul sito	1	No	0
+
+node pair #340:
+problema del login sul sito	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	problema del login sul sito	1	No	0
+
+node pair #341:
+problema del login sul sito	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	problema del login sul sito	1	No	0
+
+node pair #342:
+problema del login sul sito	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	problema del login sul sito	1	No	0
+
+node pair #343:
+problema del login sul sito	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	problema del login sul sito	1	No	0
+
+node pair #344:
+problema del login sul sito	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	problema del login sul sito	1	No	0
+
+node pair #345:
+problema del login sul sito	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	problema del login sul sito	1	No	0
+
+node pair #346:
+problema del login sul sito	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	problema del login sul sito	1	No	0
+
+node pair #347:
+problema del login sul sito	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	problema del login sul sito	1	No	0
+
+node pair #348:
+problema del login sul sito	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	problema del login sul sito	1	No	0
+
+node pair #349:
+problema del login sul sito	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	problema del login sul sito	1	No	0
+
+node pair #350:
+problema del login sul sito	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	problema del login sul sito	1	No	0
+
+node pair #351:
+problema del login sul sito	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	problema del login sul sito	1	No	0
+
+node pair #352:
+problema del login sul sito	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	problema del login sul sito	1	No	0
+
+node pair #353:
+problema del login sul sito	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	problema del login sul sito	1	No	0
+
+node pair #354:
+problema del login sul sito	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	problema del login sul sito	1	No	0
+
+node pair #355:
+problema del login sul sito	1	->	si disconnette	1	No	0
+si disconnette	1	->	problema del login sul sito	1	No	0
+
+node pair #356:
+il sito TELEFONIAX è lentissimo	1	->	Il sito TELEFONIAX è poco agevole	1	Yes	0
+Il sito TELEFONIAX è poco agevole	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #357:
+Il sito TELEFONIAX è poco agevole	1	->	non riesco ad accedere all'area reclami	1	No	0
+non riesco ad accedere all'area reclami	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #358:
+Il sito TELEFONIAX è poco agevole	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #359:
+Il sito TELEFONIAX è poco agevole	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #360:
+Il sito TELEFONIAX è poco agevole	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #361:
+Il sito TELEFONIAX è poco agevole	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #362:
+Il sito TELEFONIAX è poco agevole	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #363:
+Il sito TELEFONIAX è poco agevole	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #364:
+Il sito TELEFONIAX è poco agevole	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #365:
+Il sito TELEFONIAX è poco agevole	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #366:
+Il sito TELEFONIAX è poco agevole	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #367:
+Il sito TELEFONIAX è poco agevole	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #368:
+Il sito TELEFONIAX è poco agevole	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #369:
+Il sito TELEFONIAX è poco agevole	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #370:
+Il sito TELEFONIAX è poco agevole	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #371:
+Il sito TELEFONIAX è poco agevole	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #372:
+Il sito TELEFONIAX è poco agevole	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #373:
+Il sito TELEFONIAX è poco agevole	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #374:
+Il sito TELEFONIAX è poco agevole	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #375:
+Il sito TELEFONIAX è poco agevole	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #376:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Il sito TELEFONIAX è poco agevole	1	Yes	0
+Il sito TELEFONIAX è poco agevole	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #377:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Il sito TELEFONIAX è poco agevole	1	Yes	0
+Il sito TELEFONIAX è poco agevole	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #378:
+Il sito TELEFONIAX è poco agevole	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #379:
+Il sito TELEFONIAX è poco agevole	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #380:
+Il sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #381:
+Il sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #382:
+Il sito TELEFONIAX è poco agevole	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #383:
+Il sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #384:
+Il sito TELEFONIAX è poco agevole	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #385:
+Il sito TELEFONIAX è poco agevole	1	->	si disconnette	1	No	0
+si disconnette	1	->	Il sito TELEFONIAX è poco agevole	1	No	0
+
+node pair #386:
+il sito TELEFONIAX è lentissimo	1	->	non riesco ad accedere all'area reclami	1	No	0
+non riesco ad accedere all'area reclami	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #387:
+il sito TELEFONIAX è lentissimo	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #388:
+il sito TELEFONIAX è lentissimo	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #389:
+il sito TELEFONIAX è lentissimo	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #390:
+il sito TELEFONIAX è lentissimo	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #391:
+il sito TELEFONIAX è lentissimo	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #392:
+il sito TELEFONIAX è lentissimo	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #393:
+il sito TELEFONIAX è lentissimo	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #394:
+il sito TELEFONIAX è lentissimo	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #395:
+il sito TELEFONIAX è lentissimo	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #396:
+il sito TELEFONIAX è lentissimo	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #397:
+il sito TELEFONIAX è lentissimo	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #398:
+il sito TELEFONIAX è lentissimo	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #399:
+il sito TELEFONIAX è lentissimo	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #400:
+il sito TELEFONIAX è lentissimo	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #401:
+il sito TELEFONIAX è lentissimo	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	Yes	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #402:
+il sito TELEFONIAX è lentissimo	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #403:
+il sito TELEFONIAX è lentissimo	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #404:
+il sito TELEFONIAX è lentissimo	1	->	al sito ci sono problemi di connessione	1	Yes	0
+al sito ci sono problemi di connessione	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #405:
+il sito TELEFONIAX è lentissimo	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #406:
+il sito TELEFONIAX è lentissimo	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #407:
+il sito TELEFONIAX è lentissimo	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #408:
+il sito TELEFONIAX è lentissimo	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #409:
+il sito TELEFONIAX è lentissimo	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #410:
+il sito TELEFONIAX è lentissimo	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #411:
+il sito TELEFONIAX è lentissimo	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #412:
+il sito TELEFONIAX è lentissimo	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #413:
+il sito TELEFONIAX è lentissimo	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #414:
+il sito TELEFONIAX è lentissimo	1	->	si disconnette	1	Yes	0
+si disconnette	1	->	il sito TELEFONIAX è lentissimo	1	No	0
+
+node pair #415:
+non riesco ad accedere all'area reclami	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #416:
+non riesco ad accedere all'area reclami	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #417:
+non riesco ad accedere all'area reclami	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #418:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	non riesco ad accedere all'area reclami	1	Yes	1
+non riesco ad accedere all'area reclami	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	-1
+
+node pair #419:
+non riesco ad accedere all'area reclami	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #420:
+non riesco ad accedere all'area reclami	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #421:
+non riesco ad accedere all'area reclami	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #422:
+non riesco ad accedere all'area reclami	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #423:
+non riesco ad accedere all'area reclami	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #424:
+non riesco ad accedere all'area reclami	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #425:
+non riesco ad accedere all'area reclami	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #426:
+non riesco ad accedere all'area reclami	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #427:
+non riesco ad accedere all'area reclami	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #428:
+non riesco ad accedere all'area reclami	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #429:
+non riesco ad accedere all'area reclami	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #430:
+non riesco ad accedere all'area reclami	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #431:
+non riesco ad accedere all'area reclami	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #432:
+non riesco ad accedere all'area reclami	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #433:
+non riesco ad accedere all'area reclami	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #434:
+non riesco ad accedere all'area reclami	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #435:
+non riesco ad accedere all'area reclami	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #436:
+non riesco ad accedere all'area reclami	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #437:
+non riesco ad accedere all'area reclami	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #438:
+non riesco ad accedere all'area reclami	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #439:
+non riesco ad accedere all'area reclami	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #440:
+non riesco ad accedere all'area reclami	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #441:
+non riesco ad accedere all'area reclami	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #442:
+non riesco ad accedere all'area reclami	1	->	si disconnette	1	No	0
+si disconnette	1	->	non riesco ad accedere all'area reclami	1	No	0
+
+node pair #443:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+problemi di gestione sul sito di TELEFONIAX	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #444:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	Yes	1
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #445:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #446:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	Yes	1
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #447:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	mi dà sempre errore	2	Yes	1
+mi dà sempre errore	2	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #448:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #449:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #450:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #451:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	Yes	1
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #452:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	provo ad registrarmi ma mi da errore	1	Yes	1
+provo ad registrarmi ma mi da errore	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #453:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #454:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #455:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #456:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #457:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #458:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #459:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #460:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #461:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #462:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #463:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #464:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #465:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #466:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #467:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #468:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #469:
+Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	->	si disconnette	1	No	0
+si disconnette	1	->	Sono tre giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #470:
+problemi di gestione sul sito di TELEFONIAX	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #471:
+problemi di gestione sul sito di TELEFONIAX	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #472:
+problemi di gestione sul sito di TELEFONIAX	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #473:
+problemi di gestione sul sito di TELEFONIAX	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #474:
+problemi di gestione sul sito di TELEFONIAX	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #475:
+problemi di gestione sul sito di TELEFONIAX	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #476:
+problemi di gestione sul sito di TELEFONIAX	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #477:
+problemi di gestione sul sito di TELEFONIAX	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #478:
+problemi di gestione sul sito di TELEFONIAX	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #479:
+problemi di gestione sul sito di TELEFONIAX	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #480:
+problemi di gestione sul sito di TELEFONIAX	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #481:
+problemi di gestione sul sito di TELEFONIAX	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #482:
+problemi di gestione sul sito di TELEFONIAX	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #483:
+problemi di gestione sul sito di TELEFONIAX	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #484:
+problemi di gestione sul sito di TELEFONIAX	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #485:
+problemi di gestione sul sito di TELEFONIAX	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #486:
+problemi di gestione sul sito di TELEFONIAX	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #487:
+problemi di gestione sul sito di TELEFONIAX	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #488:
+problemi di gestione sul sito di TELEFONIAX	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #489:
+problemi di gestione sul sito di TELEFONIAX	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #490:
+problemi di gestione sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #491:
+problemi di gestione sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #492:
+problemi di gestione sul sito di TELEFONIAX	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #493:
+problemi di gestione sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #494:
+problemi di gestione sul sito di TELEFONIAX	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #495:
+problemi di gestione sul sito di TELEFONIAX	1	->	si disconnette	1	No	0
+si disconnette	1	->	problemi di gestione sul sito di TELEFONIAX	1	No	0
+
+node pair #496:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #497:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	-1
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #498:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	mi dà sempre errore	2	Yes	1
+mi dà sempre errore	2	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #499:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #500:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #501:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #502:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	Yes	1
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #503:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	provo ad registrarmi ma mi da errore	1	Yes	1
+provo ad registrarmi ma mi da errore	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	-1
+
+node pair #504:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #505:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #506:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #507:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #508:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #509:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #510:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #511:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #512:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #513:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #514:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #515:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #516:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #517:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #518:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #519:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #520:
+Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	->	si disconnette	1	No	0
+si disconnette	1	->	Sono giorni che provo ad registrarmi sul sito ma mi da errore	1	No	0
+
+node pair #521:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #522:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	mi dà sempre errore	2	No	0
+mi dà sempre errore	2	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #523:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #524:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #525:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #526:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #527:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #528:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #529:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #530:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #531:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #532:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #533:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #534:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #535:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #536:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #537:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #538:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #539:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #540:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #541:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #542:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #543:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #544:
+non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	->	si disconnette	1	No	0
+si disconnette	1	->	non riesco ad accedere all'area reclami di TELEFONIAX ABC	1	No	0
+
+node pair #545:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	mi dà sempre errore	2	Yes	-1
+mi dà sempre errore	2	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	-1
+
+node pair #546:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #547:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #548:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #549:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	Yes	1
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	-1
+
+node pair #550:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	provo ad registrarmi ma mi da errore	1	Yes	1
+provo ad registrarmi ma mi da errore	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	-1
+
+node pair #551:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #552:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #553:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #554:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #555:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #556:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #557:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #558:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #559:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #560:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #561:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #562:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #563:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #564:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #565:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #566:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #567:
+Sono tre giorni che provo ad registrarmi ma mi da errore	1	->	si disconnette	1	No	0
+si disconnette	1	->	Sono tre giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #568:
+mi dà sempre errore	2	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	mi dà sempre errore	2	No	0
+
+node pair #569:
+mi dà sempre errore	2	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	mi dà sempre errore	2	No	0
+
+node pair #570:
+mi dà sempre errore	2	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	mi dà sempre errore	2	No	0
+
+node pair #571:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	mi dà sempre errore	2	Yes	-1
+mi dà sempre errore	2	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	-1
+
+node pair #572:
+mi dà sempre errore	2	->	provo ad registrarmi ma mi da errore	1	Yes	1
+provo ad registrarmi ma mi da errore	1	->	mi dà sempre errore	2	Yes	-1
+
+node pair #573:
+mi dà sempre errore	2	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	mi dà sempre errore	2	No	0
+
+node pair #574:
+mi dà sempre errore	2	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	mi dà sempre errore	2	No	0
+
+node pair #575:
+mi dà sempre errore	2	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	mi dà sempre errore	2	No	0
+
+node pair #576:
+mi dà sempre errore	2	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	mi dà sempre errore	2	No	0
+
+node pair #577:
+mi dà sempre errore	2	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	mi dà sempre errore	2	No	0
+
+node pair #578:
+mi dà sempre errore	2	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	mi dà sempre errore	2	No	0
+
+node pair #579:
+mi dà sempre errore	2	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	mi dà sempre errore	2	No	0
+
+node pair #580:
+mi dà sempre errore	2	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	mi dà sempre errore	2	No	0
+
+node pair #581:
+mi dà sempre errore	2	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	mi dà sempre errore	2	No	0
+
+node pair #582:
+mi dà sempre errore	2	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	mi dà sempre errore	2	No	0
+
+node pair #583:
+mi dà sempre errore	2	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	mi dà sempre errore	2	No	0
+
+node pair #584:
+mi dà sempre errore	2	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	mi dà sempre errore	2	No	0
+
+node pair #585:
+mi dà sempre errore	2	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	mi dà sempre errore	2	No	0
+
+node pair #586:
+mi dà sempre errore	2	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	mi dà sempre errore	2	No	0
+
+node pair #587:
+mi dà sempre errore	2	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	mi dà sempre errore	2	No	0
+
+node pair #588:
+mi dà sempre errore	2	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	mi dà sempre errore	2	No	0
+
+node pair #589:
+mi dà sempre errore	2	->	si disconnette	1	No	0
+si disconnette	1	->	mi dà sempre errore	2	No	0
+
+node pair #590:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #591:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	non riesco ad accedere al forum	1	No	0
+non riesco ad accedere al forum	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #592:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #593:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #594:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #595:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #596:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #597:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #598:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #599:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	Yes	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #600:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #601:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	Yes	0
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #602:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #603:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #604:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #605:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #606:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #607:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #608:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #609:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #610:
+il sito TELEFONIAX . it ha dei grossi problemi	1	->	si disconnette	1	No	0
+si disconnette	1	->	il sito TELEFONIAX . it ha dei grossi problemi	1	No	0
+
+node pair #611:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	non riesco ad accedere al forum	1	Yes	1
+non riesco ad accedere al forum	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	-1
+
+node pair #612:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #613:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #614:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #615:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #616:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #617:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #618:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #619:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #620:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #621:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #622:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #623:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #624:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #625:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #626:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #627:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #628:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #629:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #630:
+non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	->	si disconnette	1	No	0
+si disconnette	1	->	non riesco ad accedere al forum di TELEFONIAX LABORATORIO	1	No	0
+
+node pair #631:
+non riesco ad accedere al forum	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #632:
+non riesco ad accedere al forum	1	->	provo ad registrarmi ma mi da errore	1	No	0
+provo ad registrarmi ma mi da errore	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #633:
+non riesco ad accedere al forum	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #634:
+non riesco ad accedere al forum	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #635:
+non riesco ad accedere al forum	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #636:
+non riesco ad accedere al forum	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #637:
+non riesco ad accedere al forum	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #638:
+non riesco ad accedere al forum	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #639:
+non riesco ad accedere al forum	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #640:
+non riesco ad accedere al forum	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #641:
+non riesco ad accedere al forum	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #642:
+non riesco ad accedere al forum	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #643:
+non riesco ad accedere al forum	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #644:
+non riesco ad accedere al forum	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #645:
+non riesco ad accedere al forum	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #646:
+non riesco ad accedere al forum	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #647:
+non riesco ad accedere al forum	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #648:
+non riesco ad accedere al forum	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #649:
+non riesco ad accedere al forum	1	->	si disconnette	1	No	0
+si disconnette	1	->	non riesco ad accedere al forum	1	No	0
+
+node pair #650:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	provo ad registrarmi ma mi da errore	1	Yes	1
+provo ad registrarmi ma mi da errore	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	-1
+
+node pair #651:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #652:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #653:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #654:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #655:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #656:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #657:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #658:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #659:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #660:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #661:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #662:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #663:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #664:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #665:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #666:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #667:
+Sono giorni che provo ad registrarmi ma mi da errore	1	->	si disconnette	1	No	0
+si disconnette	1	->	Sono giorni che provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #668:
+provo ad registrarmi ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #669:
+provo ad registrarmi ma mi da errore	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+il sito non dasse qualche problema inspiegabile	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #670:
+provo ad registrarmi ma mi da errore	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #671:
+provo ad registrarmi ma mi da errore	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #672:
+provo ad registrarmi ma mi da errore	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #673:
+provo ad registrarmi ma mi da errore	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #674:
+provo ad registrarmi ma mi da errore	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #675:
+provo ad registrarmi ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #676:
+provo ad registrarmi ma mi da errore	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #677:
+provo ad registrarmi ma mi da errore	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #678:
+provo ad registrarmi ma mi da errore	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #679:
+provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #680:
+provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #681:
+provo ad registrarmi ma mi da errore	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #682:
+provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #683:
+provo ad registrarmi ma mi da errore	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #684:
+provo ad registrarmi ma mi da errore	1	->	si disconnette	1	No	0
+si disconnette	1	->	provo ad registrarmi ma mi da errore	1	No	0
+
+node pair #685:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	il sito non dasse qualche problema inspiegabile	1	Yes	1
+il sito non dasse qualche problema inspiegabile	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	-1
+
+node pair #686:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	Yes	1
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	-1
+
+node pair #687:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #688:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #689:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #690:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #691:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #692:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #693:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #694:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #695:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #696:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #697:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #698:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #699:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #700:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	->	si disconnette	1	No	0
+si disconnette	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #701:
+il sito non dasse qualche problema inspiegabile	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	-1
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	il sito non dasse qualche problema inspiegabile	1	No	-1
+
+node pair #702:
+il sito non dasse qualche problema inspiegabile	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #703:
+il sito non dasse qualche problema inspiegabile	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #704:
+il sito non dasse qualche problema inspiegabile	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #705:
+il sito non dasse qualche problema inspiegabile	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #706:
+il sito non dasse qualche problema inspiegabile	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #707:
+il sito non dasse qualche problema inspiegabile	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #708:
+il sito non dasse qualche problema inspiegabile	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #709:
+il sito non dasse qualche problema inspiegabile	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #710:
+il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #711:
+il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #712:
+il sito non dasse qualche problema inspiegabile	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #713:
+il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #714:
+il sito non dasse qualche problema inspiegabile	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #715:
+il sito non dasse qualche problema inspiegabile	1	->	si disconnette	1	No	0
+si disconnette	1	->	il sito non dasse qualche problema inspiegabile	1	No	0
+
+node pair #716:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #717:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #718:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #719:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #720:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #721:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #722:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #723:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #724:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #725:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #726:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #727:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #728:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #729:
+Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	->	si disconnette	1	No	0
+si disconnette	1	->	Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema	1	No	0
+
+node pair #730:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Il sito è confusionale	1	No	0
+Il sito è confusionale	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #731:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	Yes	1
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	-1
+
+node pair #732:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	al sito ci sono problemi di connessione	1	Yes	1
+al sito ci sono problemi di connessione	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	-1
+
+node pair #733:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #734:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #735:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #736:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #737:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #738:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #739:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #740:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #741:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #742:
+tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	->	si disconnette	1	Yes	0
+si disconnette	1	->	tutte le volte che devo collegarmi al sito ci sono problemi di connessione	1	No	0
+
+node pair #743:
+Il sito è confusionale	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Il sito è confusionale	1	No	0
+
+node pair #744:
+Il sito è confusionale	1	->	al sito ci sono problemi di connessione	1	No	0
+al sito ci sono problemi di connessione	1	->	Il sito è confusionale	1	No	0
+
+node pair #745:
+Il sito è confusionale	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Il sito è confusionale	1	No	0
+
+node pair #746:
+Il sito è confusionale	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Il sito è confusionale	1	No	0
+
+node pair #747:
+Il sito è confusionale	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	Il sito è confusionale	1	No	0
+
+node pair #748:
+Il sito è confusionale	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	Il sito è confusionale	1	No	0
+
+node pair #749:
+Il sito è confusionale	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Il sito è confusionale	1	No	0
+
+node pair #750:
+Il sito è confusionale	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Il sito è confusionale	1	No	0
+
+node pair #751:
+Il sito è confusionale	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Il sito è confusionale	1	No	0
+
+node pair #752:
+Il sito è confusionale	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Il sito è confusionale	1	No	0
+
+node pair #753:
+Il sito è confusionale	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Il sito è confusionale	1	No	0
+
+node pair #754:
+Il sito è confusionale	1	->	si disconnette	1	No	0
+si disconnette	1	->	Il sito è confusionale	1	No	0
+
+node pair #755:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	al sito ci sono problemi di connessione	1	Yes	1
+al sito ci sono problemi di connessione	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	-1
+
+node pair #756:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #757:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #758:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #759:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #760:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #761:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #762:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #763:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #764:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #765:
+tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	->	si disconnette	1	Yes	0
+si disconnette	1	->	tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione	1	No	0
+
+node pair #766:
+al sito ci sono problemi di connessione	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #767:
+al sito ci sono problemi di connessione	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #768:
+al sito ci sono problemi di connessione	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #769:
+al sito ci sono problemi di connessione	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #770:
+al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #771:
+al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #772:
+al sito ci sono problemi di connessione	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #773:
+al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #774:
+al sito ci sono problemi di connessione	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #775:
+al sito ci sono problemi di connessione	1	->	si disconnette	1	Yes	0
+si disconnette	1	->	al sito ci sono problemi di connessione	1	No	0
+
+node pair #776:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	Yes	1
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	-1
+
+node pair #777:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #778:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #779:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #780:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #781:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #782:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #783:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #784:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	->	si disconnette	1	No	0
+si disconnette	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti	1	No	0
+
+node pair #785:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	non trovi mai cosa stai cercando	1	No	0
+non trovi mai cosa stai cercando	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #786:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	non trovi cosa stai cercando	1	No	0
+non trovi cosa stai cercando	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #787:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #788:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #789:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #790:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #791:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #792:
+sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	->	si disconnette	1	No	0
+si disconnette	1	->	sul sito della TELEFONIAX non riesco ad attivare la ABCDEF	1	No	0
+
+node pair #793:
+non trovi mai cosa stai cercando	1	->	non trovi cosa stai cercando	1	Yes	1
+non trovi cosa stai cercando	1	->	non trovi mai cosa stai cercando	1	No	-1
+
+node pair #794:
+non trovi mai cosa stai cercando	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	non trovi mai cosa stai cercando	1	No	0
+
+node pair #795:
+non trovi mai cosa stai cercando	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	non trovi mai cosa stai cercando	1	No	0
+
+node pair #796:
+non trovi mai cosa stai cercando	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	non trovi mai cosa stai cercando	1	No	0
+
+node pair #797:
+non trovi mai cosa stai cercando	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	non trovi mai cosa stai cercando	1	No	0
+
+node pair #798:
+non trovi mai cosa stai cercando	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	non trovi mai cosa stai cercando	1	No	0
+
+node pair #799:
+non trovi mai cosa stai cercando	1	->	si disconnette	1	No	0
+si disconnette	1	->	non trovi mai cosa stai cercando	1	No	0
+
+node pair #800:
+non trovi cosa stai cercando	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	non trovi cosa stai cercando	1	No	0
+
+node pair #801:
+non trovi cosa stai cercando	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	non trovi cosa stai cercando	1	No	0
+
+node pair #802:
+non trovi cosa stai cercando	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	non trovi cosa stai cercando	1	No	0
+
+node pair #803:
+non trovi cosa stai cercando	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	non trovi cosa stai cercando	1	No	0
+
+node pair #804:
+non trovi cosa stai cercando	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	non trovi cosa stai cercando	1	No	0
+
+node pair #805:
+non trovi cosa stai cercando	1	->	si disconnette	1	No	0
+si disconnette	1	->	non trovi cosa stai cercando	1	No	0
+
+node pair #806:
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	Yes	1
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	-1
+
+node pair #807:
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+
+node pair #808:
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	Yes	1
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	-1
+
+node pair #809:
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	1
+Il sito TELEFONIAX e' un SCHIFO	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	-1
+
+node pair #810:
+Il sito TELEFONIAX e' veramente un grande SCHIFO	1	->	si disconnette	1	No	0
+si disconnette	1	->	Il sito TELEFONIAX e' veramente un grande SCHIFO	1	No	0
+
+node pair #811:
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Alcune pagine non le apre	1	No	0
+Alcune pagine non le apre	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+
+node pair #812:
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	-1
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	-1
+
+node pair #813:
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	1
+Il sito TELEFONIAX e' un SCHIFO	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	-1
+
+node pair #814:
+Il sito TELEFONIAX e' veramente un SCHIFO	1	->	si disconnette	1	No	0
+si disconnette	1	->	Il sito TELEFONIAX e' veramente un SCHIFO	1	No	0
+
+node pair #815:
+Alcune pagine non le apre	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Alcune pagine non le apre	1	No	0
+
+node pair #816:
+Alcune pagine non le apre	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+Il sito TELEFONIAX e' un SCHIFO	1	->	Alcune pagine non le apre	1	No	0
+
+node pair #817:
+Alcune pagine non le apre	1	->	si disconnette	1	No	0
+si disconnette	1	->	Alcune pagine non le apre	1	No	0
+
+node pair #818:
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	Il sito TELEFONIAX e' un SCHIFO	1	Yes	1
+Il sito TELEFONIAX e' un SCHIFO	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	-1
+
+node pair #819:
+Il sito TELEFONIAX e' un grande SCHIFO	1	->	si disconnette	1	No	0
+si disconnette	1	->	Il sito TELEFONIAX e' un grande SCHIFO	1	No	0
+
+node pair #820:
+Il sito TELEFONIAX e' un SCHIFO	1	->	si disconnette	1	No	0
+si disconnette	1	->	Il sito TELEFONIAX e' un SCHIFO	1	No	0
+

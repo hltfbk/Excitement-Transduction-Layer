@@ -9,12 +9,12 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
-//import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitement.type.tl.Metadata;
 import eu.excitementproject.tl.structures.Interaction;
 
+//@Ignore
 public class InteractionReaderTest {
 	
 	@Test
@@ -50,8 +50,10 @@ public class InteractionReaderTest {
 
 		testlogger.info("Reading interaction & fragment with single modifier"); 
 		try {
-			File f1 = new File("./src/test/resources/WP2_public_data/nice_email_1/100771.txt"); 
-			File f2 = new File("./src/test/resources/WP2_public_data/nice_email_1/100771.txt_1.xml.graphf1output.xml"); 
+			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/100771.txt"); 
+//			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/100771.txt_1.xml.graphf1output.xml"); 
+			// changed by Lili, 12.8.14
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/100771.txt_3.xml.graphf3output.xml"); 
 			JCas aJCas = CASUtils.createNewInputCas(); 
 			
 			InteractionReader.readWP2FragGraphDump(f1,  f2,  aJCas, "EN"); 
@@ -65,8 +67,10 @@ public class InteractionReaderTest {
 		testlogger.info("Reading interaction & fragment with two modifiers"); 
 
 		try {
-			File f1 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt"); 
-			File f2 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt_1.xml.graphf1output.xml"); 
+			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/427784.txt"); 
+//			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/427784.txt_1.xml.graphf1output.xml"); 
+			// replaced by Lili, 12.8.14
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/427784.txt_3.xml.graphf3output.xml"); 
 			JCas aJCas = CASUtils.createNewInputCas(); 
 			
 			InteractionReader.readWP2FragGraphDump(f1,  f2,  aJCas, "EN"); 
@@ -80,14 +84,14 @@ public class InteractionReaderTest {
 		testlogger.info("Reading multiple fragments, with one interaction, by calling the reader method multiple times"); 
 		
 		try {
-			File i = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt"); 
-			File g1 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt_1.xml.graphf1output.xml"); 
-			File g3 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt_3.xml.graphf3output.xml"); 
-			File g5 = new File("./src/test/resources/WP2_public_data/nice_email_1/427784.txt_5.xml.graphf5output.xml"); 
+			File i = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/427784.txt"); 
+		//	File g1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/427784.txt_1.xml.graphf1output.xml"); 
+			File g3 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/427784.txt_3.xml.graphf3output.xml"); 
+			File g5 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/427784.txt_5.xml.graphf5output.xml"); 
 
 			JCas aJCas = CASUtils.createNewInputCas(); 
-			
-			InteractionReader.readWP2FragGraphDump(i,  g1,  aJCas, "EN"); 
+			// commented out by Lili, 12.08.14 - this file does not exist in the open data
+		//	InteractionReader.readWP2FragGraphDump(i,  g1,  aJCas, "EN"); 
 			InteractionReader.readWP2FragGraphDump(i,  g3,  aJCas, "EN"); 
 			InteractionReader.readWP2FragGraphDump(i,  g5,  aJCas, "EN"); 
 			//CASUtils.dumpCAS(aJCas); 
@@ -99,8 +103,11 @@ public class InteractionReaderTest {
 
 		testlogger.info("Reading a fragment, with no modifiers"); 
 		try {
-			File f1 = new File("./src/test/resources/WP2_public_data/nice_email_1/450618.txt"); 
-			File f2 = new File("./src/test/resources/WP2_public_data/nice_email_1/450618.txt_1.xml.graphf1output.xml"); 
+/*			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/450618.txt"); 
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/450618.txt_1.xml.graphf1output.xml"); 
+*/			// changed by Lili, 21.8.14
+			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/11.txt"); 
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/11.txt_1.xml.graphf1output.xml"); 
 			JCas aJCas = CASUtils.createNewInputCas(); 
 			
 			InteractionReader.readWP2FragGraphDump(f1,  f2,  aJCas, "EN"); 

@@ -1,0 +1,3089 @@
+﻿Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing								
+	chi ha la chiavetta non riesce a connettersi	[0021.txt_3_1]						
+	la mia chiavetta non si connette	[0048.txt_1_0]						
+								
+collapsed node #2 : 2 entailment unit(s) before editing								
+	non iesco piu' a navigare	[0049.txt_1_5]						
+	non riesco a navigare	[0178.txt_1_1]						
+								
+collapsed node #3 : 2 entailment unit(s) before editing								
+	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	[0121.txt_1_0]						
+	nn riesco a collegarmi dal giorno 20 / 4 cn la chiavetta	[0099.txt_1_0]						
+								
+collapsed node #4 : 2 entailment unit(s) before editing								
+	dal 20 / 4 nn riesco a collegarmi	[0121.txt_1_2]						
+	nn riesco a collegarmi dal giorno 20 / 4	[0099.txt_1_2]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	ha smesso di funzionare	[0311.txt_4_1]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	date chiavette che vanno male	[0310.txt_1_0]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	ha smesso di funzionare dopo 1 settimana	[0311.txt_4_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	la chiavetta non funziona	[0073.txt_2_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	la qualita' del segnale era bassa	[0013.txt_2_1]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	[0013.txt_2_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	da domenica non iesco piu' a navigare	[0049.txt_1_3]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	non iesco piu' a navigare con la chiavetta TELEFONIAX	[0049.txt_1_2]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing								
+	nn riesco a collegarmi cn la chiavetta	[0099.txt_1_1, 0118.txt_4_0, 0121.txt_1_1]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing								
+	nn riesco a collegarmi	[0121.txt_1_3, 0099.txt_1_3, 0118.txt_4_1]						
+								
+collapsed node #15 : 1 entailment unit(s) before editing								
+	non iesco piu' a navigare con la chiavetta	[0049.txt_1_4]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing								
+	da domenica non iesco piu' a navigare con la chiavetta	[0049.txt_1_1]						
+								
+collapsed node #17 : 1 entailment unit(s) before editing								
+	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	[0049.txt_1_0]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing								
+	le pagine web non sono disponibili	[0010.txt_1_0]						
+								
+collapsed node #19 : 1 entailment unit(s) before editing								
+	Mi avete limitato la velocità della internet key	[0010.txt_2_0]						
+								
+collapsed node #20 : 1 entailment unit(s) before editing								
+	Mi avete limitato la velocità	[0010.txt_2_1]						
+								
+collapsed node #21 : 1 entailment unit(s) before editing								
+	telefono MALE con la chiavetta da voi fornita	[0208.txt_1_1]						
+								
+collapsed node #22 : 1 entailment unit(s) before editing								
+	telefono MALE per sei mesi	[0208.txt_1_4]						
+								
+collapsed node #23 : 1 entailment unit(s) before editing								
+	telefono MALE	[0208.txt_1_5]						
+								
+collapsed node #24 : 1 entailment unit(s) before editing								
+	Le vostre Internet Key sono PIETOSE	[0149.txt_1_0]						
+								
+collapsed node #25 : 1 entailment unit(s) before editing								
+	navigo MALE	[0208.txt_2_5]						
+								
+collapsed node #26 : 1 entailment unit(s) before editing								
+	lentissime	[0149.txt_3_0]						
+								
+collapsed node #27 : 1 entailment unit(s) before editing								
+	navigo MALE per sei mesi	[0208.txt_2_4]						
+								
+collapsed node #28 : 1 entailment unit(s) before editing								
+	navigo MALE con la chiavetta da voi fornita	[0208.txt_2_1]						
+								
+collapsed node #29 : 1 entailment unit(s) before editing								
+	navigo MALE per sei mesi con la chiavetta da voi fornita	[0208.txt_2_0]						
+								
+collapsed node #30 : 1 entailment unit(s) before editing								
+	telefono MALE per sei mesi con la chiavetta da voi fornita	[0208.txt_1_0]						
+								
+collapsed node #31 : 1 entailment unit(s) before editing								
+	I vostri servizi sono PESSIMI , specialmente le internet key	[0277.txt_7_0]						
+								
+collapsed node #32 : 1 entailment unit(s) before editing								
+	ogni cinque minuti si disconnettono	[0149.txt_2_0]						
+								
+collapsed node #33 : 1 entailment unit(s) before editing								
+	si disconnettono	[0149.txt_2_1]						
+								
+collapsed node #34 : 1 entailment unit(s) before editing								
+	internet e lento	[0096.txt_1_3]						
+								
+collapsed node #35 : 1 entailment unit(s) before editing								
+	nella mia zona internet e lento	[0096.txt_1_2]						
+								
+collapsed node #36 : 1 entailment unit(s) before editing								
+	internet e lento con l'internet key	[0096.txt_1_1]						
+								
+collapsed node #37 : 1 entailment unit(s) before editing								
+	nella mia zona internet e lento con l'internet key	[0096.txt_1_0]						
+								
+collapsed node #38 : 1 entailment unit(s) before editing								
+	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	[0021.txt_3_0]						
+								
+collapsed node #39 : 1 entailment unit(s) before editing								
+	la mia internet kei rimane connessa ma non riesco a navigare	[0178.txt_1_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+la mia chiavetta non si connette	2	->	non riesco a navigare	2	Yes	0	1	
+non riesco a navigare	2	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #2:								
+la mia chiavetta non si connette	2	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	la mia chiavetta non si connette	2	No	0	1	collegare <-> connettere
+								
+node pair #3:								
+la mia chiavetta non si connette	2	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+dal 20 / 4 nn riesco a collegarmi	2	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #4:								
+la mia chiavetta non si connette	2	->	ha smesso di funzionare	1	No	0	0	
+ha smesso di funzionare	1	->	la mia chiavetta non si connette	2	No	0	1	Non funzionare -> non connettere
+								
+node pair #5:								
+la mia chiavetta non si connette	2	->	date chiavette che vanno male	1	No	0	0	
+date chiavette che vanno male	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #6:								
+la mia chiavetta non si connette	2	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+ha smesso di funzionare dopo 1 settimana	1	->	la mia chiavetta non si connette	2	No	0	1	Non funzionare -> non connettere
+								
+node pair #7:								
+la mia chiavetta non si connette	2	->	la chiavetta non funziona	1	Yes	0	0	
+la chiavetta non funziona	1	->	la mia chiavetta non si connette	2	No	0	1	Non funzionare -> non connettere
+								
+node pair #8:								
+la mia chiavetta non si connette	2	->	la qualita' del segnale era bassa	1	No	0	0	
+la qualita' del segnale era bassa	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #9:								
+la mia chiavetta non si connette	2	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #10:								
+la mia chiavetta non si connette	2	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #11:								
+la mia chiavetta non si connette	2	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #12:								
+la mia chiavetta non si connette	2	->	nn riesco a collegarmi cn la chiavetta	1	No	0	1	connettere -> collegare
+nn riesco a collegarmi cn la chiavetta	1	->	la mia chiavetta non si connette	2	No	0	1	collegare -> connettere 
+								
+node pair #13:								
+la mia chiavetta non si connette	2	->	nn riesco a collegarmi	1	Yes	0	1	c'è almeno un caso in cui non riesco a collegarmi
+nn riesco a collegarmi	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #14:								
+la mia chiavetta non si connette	2	->	non iesco piu' a navigare con la chiavetta	1	No	0	1	connettere -> navigare
+non iesco piu' a navigare con la chiavetta	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #15:								
+la mia chiavetta non si connette	2	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #16:								
+la mia chiavetta non si connette	2	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #17:								
+la mia chiavetta non si connette	2	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #18:								
+la mia chiavetta non si connette	2	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #19:								
+la mia chiavetta non si connette	2	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #20:								
+la mia chiavetta non si connette	2	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #21:								
+la mia chiavetta non si connette	2	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #22:								
+la mia chiavetta non si connette	2	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #23:								
+la mia chiavetta non si connette	2	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #24:								
+la mia chiavetta non si connette	2	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #25:								
+la mia chiavetta non si connette	2	->	lentissime	1	No	0	0	
+lentissime	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #26:								
+la mia chiavetta non si connette	2	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #27:								
+la mia chiavetta non si connette	2	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #28:								
+la mia chiavetta non si connette	2	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #29:								
+la mia chiavetta non si connette	2	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #30:								
+la mia chiavetta non si connette	2	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #31:								
+la mia chiavetta non si connette	2	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #32:								
+la mia chiavetta non si connette	2	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #33:								
+la mia chiavetta non si connette	2	->	internet e lento	1	No	0	0	
+internet e lento	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #34:								
+la mia chiavetta non si connette	2	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #35:								
+la mia chiavetta non si connette	2	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #36:								
+la mia chiavetta non si connette	2	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #37:								
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	la mia chiavetta non si connette	2	Yes	1	1	
+la mia chiavetta non si connette	2	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	-1	0	
+								
+node pair #38:								
+la mia chiavetta non si connette	2	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	la mia chiavetta non si connette	2	No	0	0	
+								
+node pair #39:								
+non riesco a navigare	2	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	non riesco a navigare	2	No	0	1	No collegare -> no navigare; c'è almeno un caso in cui non riesco a navigare
+								
+node pair #40:								
+non riesco a navigare	2	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+dal 20 / 4 nn riesco a collegarmi	2	->	non riesco a navigare	2	No	0	1	No collegare -> no navigare; c'è almeno un caso in cui non riesco a navigare
+								
+node pair #41:								
+non riesco a navigare	2	->	ha smesso di funzionare	1	No	0	0	
+ha smesso di funzionare	1	->	non riesco a navigare	2	No	0	1	non funzionare -> non navigare; c'è almeno un caso in cui non riesco a navigare, ed è con la chiavetta
+								
+node pair #42:								
+non riesco a navigare	2	->	date chiavette che vanno male	1	No	0	0	
+date chiavette che vanno male	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #43:								
+non riesco a navigare	2	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+ha smesso di funzionare dopo 1 settimana	1	->	non riesco a navigare	2	No	0	1	non funzionare -> non navigare; c'è almeno un caso in cui non riesco a navigare, ed è con la chiavetta
+								
+node pair #44:								
+la chiavetta non funziona	1	->	non riesco a navigare	2	Yes	0	1	
+non riesco a navigare	2	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #45:								
+non riesco a navigare	2	->	la qualita' del segnale era bassa	1	No	0	0	
+la qualita' del segnale era bassa	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #46:								
+non riesco a navigare	2	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #47:								
+da domenica non iesco piu' a navigare	1	->	non riesco a navigare	2	Yes	1	1	
+non riesco a navigare	2	->	da domenica non iesco piu' a navigare	1	No	-1	0	
+								
+node pair #48:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	non riesco a navigare	2	Yes	1	1	
+non riesco a navigare	2	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+								
+node pair #49:								
+non riesco a navigare	2	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+nn riesco a collegarmi cn la chiavetta	1	->	non riesco a navigare	2	No	0	1	No collegare -> no navigare; c'è almeno un caso in cui non riesco a navigare
+								
+node pair #50:								
+non riesco a navigare	2	->	nn riesco a collegarmi	1	Yes	0	0	
+nn riesco a collegarmi	1	->	non riesco a navigare	2	No	0	1	No collegare -> no navigare; c'è almeno un caso in cui non riesco a navigare
+								
+node pair #51:								
+non iesco piu' a navigare con la chiavetta	1	->	non riesco a navigare	2	Yes	1	1	
+non riesco a navigare	2	->	non iesco piu' a navigare con la chiavetta	1	No	-1	0	
+								
+node pair #52:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	non riesco a navigare	2	Yes	1	1	
+non riesco a navigare	2	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	-1	0	
+								
+node pair #53:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	non riesco a navigare	2	Yes	1	1	
+non riesco a navigare	2	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+								
+node pair #54:								
+non riesco a navigare	2	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #55:								
+non riesco a navigare	2	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #56:								
+non riesco a navigare	2	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #57:								
+non riesco a navigare	2	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #58:								
+non riesco a navigare	2	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #59:								
+non riesco a navigare	2	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #60:								
+non riesco a navigare	2	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #61:								
+non riesco a navigare	2	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #62:								
+non riesco a navigare	2	->	lentissime	1	No	0	0	
+lentissime	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #63:								
+non riesco a navigare	2	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #64:								
+non riesco a navigare	2	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #65:								
+non riesco a navigare	2	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #66:								
+non riesco a navigare	2	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #67:								
+non riesco a navigare	2	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #68:								
+non riesco a navigare	2	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #69:								
+non riesco a navigare	2	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #70:								
+non riesco a navigare	2	->	internet e lento	1	No	0	0	
+internet e lento	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #71:								
+non riesco a navigare	2	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #72:								
+non riesco a navigare	2	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #73:								
+non riesco a navigare	2	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	non riesco a navigare	2	No	0	0	
+								
+node pair #74:								
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	non riesco a navigare	2	Yes	0	1	
+non riesco a navigare	2	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+								
+node pair #75:								
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	non riesco a navigare	2	Yes	1	1	
+non riesco a navigare	2	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	-1	0	
+								
+node pair #76:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	dal 20 / 4 nn riesco a collegarmi	2	Yes	2	1	
+dal 20 / 4 nn riesco a collegarmi	2	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	-2	0	
+								
+node pair #77:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	ha smesso di funzionare	1	No	0	0	
+ha smesso di funzionare	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #78:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	date chiavette che vanno male	1	No	0	0	
+date chiavette che vanno male	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #79:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+ha smesso di funzionare dopo 1 settimana	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #80:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	la chiavetta non funziona	1	No	0	0	
+la chiavetta non funziona	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #81:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	la qualita' del segnale era bassa	1	No	0	0	
+la qualita' del segnale era bassa	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #82:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #83:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #84:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #85:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	nn riesco a collegarmi cn la chiavetta	1	Yes	2	1	
+nn riesco a collegarmi cn la chiavetta	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	-2	0	
+								
+node pair #86:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	nn riesco a collegarmi	1	Yes	2	1	
+nn riesco a collegarmi	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	-2	0	
+								
+node pair #87:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	non iesco piu' a navigare con la chiavetta	1	No	0	1	no collegare -> no navigare;
+non iesco piu' a navigare con la chiavetta	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #88:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #89:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #90:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #91:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #92:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #93:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #94:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #95:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #96:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #97:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #98:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	lentissime	1	No	0	0	
+lentissime	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #99:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #100:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #101:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #102:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #103:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #104:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #105:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #106:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	internet e lento	1	No	0	0	
+internet e lento	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #107:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #108:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #109:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #110:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #111:								
+dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	dal 20 / 4 nn riesco a collegarmi cn la chiavetta	2	No	0	0	
+								
+node pair #112:								
+dal 20 / 4 nn riesco a collegarmi	2	->	ha smesso di funzionare	1	No	0	0	
+ha smesso di funzionare	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #113:								
+dal 20 / 4 nn riesco a collegarmi	2	->	date chiavette che vanno male	1	No	0	0	
+date chiavette che vanno male	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #114:								
+dal 20 / 4 nn riesco a collegarmi	2	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+ha smesso di funzionare dopo 1 settimana	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #115:								
+dal 20 / 4 nn riesco a collegarmi	2	->	la chiavetta non funziona	1	No	0	0	
+la chiavetta non funziona	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #116:								
+dal 20 / 4 nn riesco a collegarmi	2	->	la qualita' del segnale era bassa	1	No	0	0	
+la qualita' del segnale era bassa	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #117:								
+dal 20 / 4 nn riesco a collegarmi	2	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #118:								
+dal 20 / 4 nn riesco a collegarmi	2	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #119:								
+dal 20 / 4 nn riesco a collegarmi	2	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #120:								
+dal 20 / 4 nn riesco a collegarmi	2	->	nn riesco a collegarmi cn la chiavetta	1	No	-2	0	
+nn riesco a collegarmi cn la chiavetta	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	-2	0	
+								
+node pair #121:								
+dal 20 / 4 nn riesco a collegarmi	2	->	nn riesco a collegarmi	1	Yes	2	1	
+nn riesco a collegarmi	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	-2	0	
+								
+node pair #122:								
+dal 20 / 4 nn riesco a collegarmi	2	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+non iesco piu' a navigare con la chiavetta	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #123:								
+dal 20 / 4 nn riesco a collegarmi	2	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #124:								
+dal 20 / 4 nn riesco a collegarmi	2	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #125:								
+dal 20 / 4 nn riesco a collegarmi	2	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #126:								
+dal 20 / 4 nn riesco a collegarmi	2	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #127:								
+dal 20 / 4 nn riesco a collegarmi	2	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #128:								
+dal 20 / 4 nn riesco a collegarmi	2	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #129:								
+dal 20 / 4 nn riesco a collegarmi	2	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #130:								
+dal 20 / 4 nn riesco a collegarmi	2	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #131:								
+dal 20 / 4 nn riesco a collegarmi	2	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #132:								
+dal 20 / 4 nn riesco a collegarmi	2	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #133:								
+dal 20 / 4 nn riesco a collegarmi	2	->	lentissime	1	No	0	0	
+lentissime	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #134:								
+dal 20 / 4 nn riesco a collegarmi	2	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #135:								
+dal 20 / 4 nn riesco a collegarmi	2	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #136:								
+dal 20 / 4 nn riesco a collegarmi	2	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #137:								
+dal 20 / 4 nn riesco a collegarmi	2	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #138:								
+dal 20 / 4 nn riesco a collegarmi	2	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #139:								
+dal 20 / 4 nn riesco a collegarmi	2	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #140:								
+dal 20 / 4 nn riesco a collegarmi	2	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #141:								
+dal 20 / 4 nn riesco a collegarmi	2	->	internet e lento	1	No	0	0	
+internet e lento	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #142:								
+dal 20 / 4 nn riesco a collegarmi	2	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #143:								
+dal 20 / 4 nn riesco a collegarmi	2	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #144:								
+dal 20 / 4 nn riesco a collegarmi	2	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #145:								
+dal 20 / 4 nn riesco a collegarmi	2	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #146:								
+dal 20 / 4 nn riesco a collegarmi	2	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	dal 20 / 4 nn riesco a collegarmi	2	No	0	0	
+								
+node pair #147:								
+ha smesso di funzionare	1	->	date chiavette che vanno male	1	No	0	1	ha smesso di funzionare, quindi esiste un prima dove andava e un dopo dove non va: va male
+date chiavette che vanno male	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #148:								
+ha smesso di funzionare dopo 1 settimana	1	->	ha smesso di funzionare	1	Yes	1	1	
+ha smesso di funzionare	1	->	ha smesso di funzionare dopo 1 settimana	1	No	-1	0	
+								
+node pair #149:								
+ha smesso di funzionare	1	->	la chiavetta non funziona	1	No	0	1	smesso di funzionare -> non funziona
+la chiavetta non funziona	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #150:								
+ha smesso di funzionare	1	->	la qualita' del segnale era bassa	1	No	0	0	
+la qualita' del segnale era bassa	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #151:								
+ha smesso di funzionare	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #152:								
+ha smesso di funzionare	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #153:								
+ha smesso di funzionare	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #154:								
+ha smesso di funzionare	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	1	funzionare -> collegare
+nn riesco a collegarmi cn la chiavetta	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #155:								
+ha smesso di funzionare	1	->	nn riesco a collegarmi	1	No	0	1	funzionare -> collegare; c'è almeno un caso in cui non riesco a collegarmi
+nn riesco a collegarmi	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #156:								
+ha smesso di funzionare	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	1	non funzionare -> non navigare
+non iesco piu' a navigare con la chiavetta	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #157:								
+ha smesso di funzionare	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #158:								
+ha smesso di funzionare	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #159:								
+ha smesso di funzionare	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #160:								
+ha smesso di funzionare	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #161:								
+ha smesso di funzionare	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #162:								
+ha smesso di funzionare	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #163:								
+ha smesso di funzionare	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #164:								
+ha smesso di funzionare	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #165:								
+ha smesso di funzionare	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #166:								
+ha smesso di funzionare	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #167:								
+ha smesso di funzionare	1	->	lentissime	1	No	0	0	
+lentissime	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #168:								
+ha smesso di funzionare	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #169:								
+ha smesso di funzionare	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #170:								
+ha smesso di funzionare	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #171:								
+ha smesso di funzionare	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #172:								
+ha smesso di funzionare	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #173:								
+ha smesso di funzionare	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #174:								
+ha smesso di funzionare	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #175:								
+ha smesso di funzionare	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #176:								
+ha smesso di funzionare	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #177:								
+ha smesso di funzionare	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #178:								
+ha smesso di funzionare	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #179:								
+ha smesso di funzionare	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #180:								
+ha smesso di funzionare	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	ha smesso di funzionare	1	No	0	0	
+								
+node pair #181:								
+date chiavette che vanno male	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+ha smesso di funzionare dopo 1 settimana	1	->	date chiavette che vanno male	1	No	0	1	ha smesso di funzionare, quindi esiste un prima dove andava e un dopo dove non va: va male
+								
+node pair #182:								
+date chiavette che vanno male	1	->	la chiavetta non funziona	1	No	0	0	
+la chiavetta non funziona	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #183:								
+date chiavette che vanno male	1	->	la qualita' del segnale era bassa	1	No	0	0	
+la qualita' del segnale era bassa	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #184:								
+date chiavette che vanno male	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #185:								
+date chiavette che vanno male	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #186:								
+date chiavette che vanno male	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #187:								
+date chiavette che vanno male	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+nn riesco a collegarmi cn la chiavetta	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #188:								
+date chiavette che vanno male	1	->	nn riesco a collegarmi	1	No	0	0	
+nn riesco a collegarmi	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #189:								
+date chiavette che vanno male	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+non iesco piu' a navigare con la chiavetta	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #190:								
+date chiavette che vanno male	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #191:								
+date chiavette che vanno male	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #192:								
+date chiavette che vanno male	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #193:								
+date chiavette che vanno male	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #194:								
+date chiavette che vanno male	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #195:								
+date chiavette che vanno male	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #196:								
+date chiavette che vanno male	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #197:								
+date chiavette che vanno male	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #198:								
+Le vostre Internet Key sono PIETOSE	1	->	date chiavette che vanno male	1	Yes	0	1	
+date chiavette che vanno male	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #199:								
+date chiavette che vanno male	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #200:								
+date chiavette che vanno male	1	->	lentissime	1	No	0	0	
+lentissime	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #201:								
+date chiavette che vanno male	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #202:								
+date chiavette che vanno male	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #203:								
+date chiavette che vanno male	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #204:								
+date chiavette che vanno male	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #205:								
+date chiavette che vanno male	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	date chiavette che vanno male	1	No	0	1	
+								
+node pair #206:								
+date chiavette che vanno male	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #207:								
+date chiavette che vanno male	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #208:								
+date chiavette che vanno male	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #209:								
+date chiavette che vanno male	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #210:								
+date chiavette che vanno male	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #211:								
+date chiavette che vanno male	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #212:								
+date chiavette che vanno male	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #213:								
+date chiavette che vanno male	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	date chiavette che vanno male	1	No	0	0	
+								
+node pair #214:								
+ha smesso di funzionare dopo 1 settimana	1	->	la chiavetta non funziona	1	No	0	1	smesso di funzionare -> non funziona
+la chiavetta non funziona	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #215:								
+ha smesso di funzionare dopo 1 settimana	1	->	la qualita' del segnale era bassa	1	No	0	0	
+la qualita' del segnale era bassa	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #216:								
+ha smesso di funzionare dopo 1 settimana	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #217:								
+ha smesso di funzionare dopo 1 settimana	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #218:								
+ha smesso di funzionare dopo 1 settimana	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #219:								
+ha smesso di funzionare dopo 1 settimana	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	1	funzionare -> collegare
+nn riesco a collegarmi cn la chiavetta	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #220:								
+ha smesso di funzionare dopo 1 settimana	1	->	nn riesco a collegarmi	1	No	0	1	funzionare -> collegarec, 'è almeno un caso in cui non riesco a collegarmi
+nn riesco a collegarmi	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #221:								
+ha smesso di funzionare dopo 1 settimana	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	1	c'è almeno un caso in cui non riesco a navigare
+non iesco piu' a navigare con la chiavetta	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #222:								
+ha smesso di funzionare dopo 1 settimana	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #223:								
+ha smesso di funzionare dopo 1 settimana	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #224:								
+ha smesso di funzionare dopo 1 settimana	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #225:								
+ha smesso di funzionare dopo 1 settimana	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #226:								
+ha smesso di funzionare dopo 1 settimana	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #227:								
+ha smesso di funzionare dopo 1 settimana	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #228:								
+ha smesso di funzionare dopo 1 settimana	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #229:								
+ha smesso di funzionare dopo 1 settimana	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #230:								
+ha smesso di funzionare dopo 1 settimana	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #231:								
+ha smesso di funzionare dopo 1 settimana	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #232:								
+ha smesso di funzionare dopo 1 settimana	1	->	lentissime	1	No	0	0	
+lentissime	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #233:								
+ha smesso di funzionare dopo 1 settimana	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #234:								
+ha smesso di funzionare dopo 1 settimana	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #235:								
+ha smesso di funzionare dopo 1 settimana	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #236:								
+ha smesso di funzionare dopo 1 settimana	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #237:								
+ha smesso di funzionare dopo 1 settimana	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #238:								
+ha smesso di funzionare dopo 1 settimana	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #239:								
+ha smesso di funzionare dopo 1 settimana	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #240:								
+ha smesso di funzionare dopo 1 settimana	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #241:								
+ha smesso di funzionare dopo 1 settimana	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #242:								
+ha smesso di funzionare dopo 1 settimana	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #243:								
+ha smesso di funzionare dopo 1 settimana	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #244:								
+ha smesso di funzionare dopo 1 settimana	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #245:								
+ha smesso di funzionare dopo 1 settimana	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	ha smesso di funzionare dopo 1 settimana	1	No	0	0	
+								
+node pair #246:								
+la chiavetta non funziona	1	->	la qualita' del segnale era bassa	1	No	0	0	
+la qualita' del segnale era bassa	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #247:								
+la chiavetta non funziona	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #248:								
+la chiavetta non funziona	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #249:								
+la chiavetta non funziona	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #250:								
+la chiavetta non funziona	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	1	c'è almeno un caso in cui non riesco a collegarmi
+nn riesco a collegarmi cn la chiavetta	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #251:								
+la chiavetta non funziona	1	->	nn riesco a collegarmi	1	Yes	0	1	c'è almeno un caso in cui non riesco a collegarmi?
+nn riesco a collegarmi	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #252:								
+la chiavetta non funziona	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	1	c'è almeno un caso in cui non riesco a navigare
+non iesco piu' a navigare con la chiavetta	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #253:								
+la chiavetta non funziona	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #254:								
+la chiavetta non funziona	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #255:								
+la chiavetta non funziona	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #256:								
+la chiavetta non funziona	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #257:								
+la chiavetta non funziona	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #258:								
+la chiavetta non funziona	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #259:								
+la chiavetta non funziona	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #260:								
+la chiavetta non funziona	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #261:								
+la chiavetta non funziona	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #262:								
+la chiavetta non funziona	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #263:								
+la chiavetta non funziona	1	->	lentissime	1	No	0	0	
+lentissime	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #264:								
+la chiavetta non funziona	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #265:								
+la chiavetta non funziona	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #266:								
+la chiavetta non funziona	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #267:								
+la chiavetta non funziona	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #268:								
+la chiavetta non funziona	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #269:								
+la chiavetta non funziona	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #270:								
+la chiavetta non funziona	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #271:								
+la chiavetta non funziona	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #272:								
+la chiavetta non funziona	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #273:								
+la chiavetta non funziona	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #274:								
+la chiavetta non funziona	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #275:								
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	la chiavetta non funziona	1	Yes	0	0	non funzionare -> non connettere
+la chiavetta non funziona	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+								
+node pair #276:								
+la chiavetta non funziona	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	la chiavetta non funziona	1	No	0	0	
+								
+node pair #277:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	la qualita' del segnale era bassa	1	Yes	1	1	
+la qualita' del segnale era bassa	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	-1	0	
+								
+node pair #278:								
+la qualita' del segnale era bassa	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #279:								
+la qualita' del segnale era bassa	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #280:								
+la qualita' del segnale era bassa	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+nn riesco a collegarmi cn la chiavetta	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #281:								
+la qualita' del segnale era bassa	1	->	nn riesco a collegarmi	1	No	0	0	
+nn riesco a collegarmi	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #282:								
+la qualita' del segnale era bassa	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+non iesco piu' a navigare con la chiavetta	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #283:								
+la qualita' del segnale era bassa	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #284:								
+la qualita' del segnale era bassa	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #285:								
+la qualita' del segnale era bassa	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #286:								
+la qualita' del segnale era bassa	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #287:								
+la qualita' del segnale era bassa	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #288:								
+la qualita' del segnale era bassa	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #289:								
+la qualita' del segnale era bassa	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #290:								
+la qualita' del segnale era bassa	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #291:								
+la qualita' del segnale era bassa	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #292:								
+la qualita' del segnale era bassa	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #293:								
+la qualita' del segnale era bassa	1	->	lentissime	1	No	0	0	
+lentissime	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #294:								
+la qualita' del segnale era bassa	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #295:								
+la qualita' del segnale era bassa	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #296:								
+la qualita' del segnale era bassa	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #297:								
+la qualita' del segnale era bassa	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #298:								
+la qualita' del segnale era bassa	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #299:								
+la qualita' del segnale era bassa	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #300:								
+la qualita' del segnale era bassa	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #301:								
+la qualita' del segnale era bassa	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #302:								
+la qualita' del segnale era bassa	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #303:								
+la qualita' del segnale era bassa	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #304:								
+la qualita' del segnale era bassa	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #305:								
+la qualita' del segnale era bassa	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #306:								
+la qualita' del segnale era bassa	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	la qualita' del segnale era bassa	1	No	0	0	
+								
+node pair #307:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+da domenica non iesco piu' a navigare	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #308:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #309:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+nn riesco a collegarmi cn la chiavetta	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #310:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	nn riesco a collegarmi	1	No	0	0	
+nn riesco a collegarmi	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #311:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+non iesco piu' a navigare con la chiavetta	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #312:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #313:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #314:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #315:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #316:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #317:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #318:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #319:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #320:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #321:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #322:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	lentissime	1	No	0	0	
+lentissime	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #323:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #324:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #325:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #326:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #327:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #328:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #329:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #330:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #331:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #332:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #333:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #334:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #335:								
+la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	la qualita' del segnale per quanto riguarda le chiavette internet era bassa	1	No	0	0	
+								
+node pair #336:								
+da domenica non iesco piu' a navigare	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	da domenica non iesco piu' a navigare	1	No	-1	0	
+								
+node pair #337:								
+da domenica non iesco piu' a navigare	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+nn riesco a collegarmi cn la chiavetta	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #338:								
+da domenica non iesco piu' a navigare	1	->	nn riesco a collegarmi	1	Yes	0	0	no collegare -> no navigare;
+nn riesco a collegarmi	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #339:								
+da domenica non iesco piu' a navigare	1	->	non iesco piu' a navigare con la chiavetta	1	No	-1	0	
+non iesco piu' a navigare con la chiavetta	1	->	da domenica non iesco piu' a navigare	1	No	-1	0	
+								
+node pair #340:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	da domenica non iesco piu' a navigare	1	Yes	1	1	
+da domenica non iesco piu' a navigare	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	-1	0	
+								
+node pair #341:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	da domenica non iesco piu' a navigare	1	Yes	1	1	
+da domenica non iesco piu' a navigare	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+								
+node pair #342:								
+da domenica non iesco piu' a navigare	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #343:								
+da domenica non iesco piu' a navigare	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #344:								
+da domenica non iesco piu' a navigare	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #345:								
+da domenica non iesco piu' a navigare	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #346:								
+da domenica non iesco piu' a navigare	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #347:								
+da domenica non iesco piu' a navigare	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #348:								
+da domenica non iesco piu' a navigare	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #349:								
+da domenica non iesco piu' a navigare	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #350:								
+da domenica non iesco piu' a navigare	1	->	lentissime	1	No	0	0	
+lentissime	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #351:								
+da domenica non iesco piu' a navigare	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #352:								
+da domenica non iesco piu' a navigare	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #353:								
+da domenica non iesco piu' a navigare	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #354:								
+da domenica non iesco piu' a navigare	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #355:								
+da domenica non iesco piu' a navigare	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #356:								
+da domenica non iesco piu' a navigare	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #357:								
+da domenica non iesco piu' a navigare	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #358:								
+da domenica non iesco piu' a navigare	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #359:								
+da domenica non iesco piu' a navigare	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #360:								
+da domenica non iesco piu' a navigare	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #361:								
+da domenica non iesco piu' a navigare	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #362:								
+da domenica non iesco piu' a navigare	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #363:								
+da domenica non iesco piu' a navigare	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	da domenica non iesco piu' a navigare	1	No	0	0	
+								
+node pair #364:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	nn riesco a collegarmi cn la chiavetta	1	Yes	0	0	no collegare -> no navigare;
+nn riesco a collegarmi cn la chiavetta	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #365:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	nn riesco a collegarmi	1	Yes	0	0	no collegare -> no navigare;
+nn riesco a collegarmi	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #366:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	non iesco piu' a navigare con la chiavetta	1	Yes	1	1	
+non iesco piu' a navigare con la chiavetta	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+								
+node pair #367:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	-1	0	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+								
+node pair #368:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	Yes	1	1	
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+								
+node pair #369:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #370:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #371:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #372:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #373:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #374:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #375:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #376:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #377:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	lentissime	1	No	0	0	
+lentissime	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #378:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #379:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #380:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #381:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #382:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #383:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #384:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #385:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #386:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #387:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #388:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #389:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #390:								
+non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #391:								
+nn riesco a collegarmi cn la chiavetta	1	->	nn riesco a collegarmi	1	Yes	1	1	
+nn riesco a collegarmi	1	->	nn riesco a collegarmi cn la chiavetta	1	No	-1	0	
+								
+node pair #392:								
+non iesco piu' a navigare con la chiavetta	1	->	nn riesco a collegarmi cn la chiavetta	1	Yes	0	0	no collegare -> no navigare;
+nn riesco a collegarmi cn la chiavetta	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	1	no collegare -> no navigare;
+								
+node pair #393:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	nn riesco a collegarmi cn la chiavetta	1	Yes	0	0	no collegare -> no navigare;
+nn riesco a collegarmi cn la chiavetta	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #394:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	nn riesco a collegarmi cn la chiavetta	1	Yes	0	0	no collegare -> no navigare;
+nn riesco a collegarmi cn la chiavetta	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #395:								
+nn riesco a collegarmi cn la chiavetta	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #396:								
+nn riesco a collegarmi cn la chiavetta	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #397:								
+nn riesco a collegarmi cn la chiavetta	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #398:								
+nn riesco a collegarmi cn la chiavetta	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #399:								
+nn riesco a collegarmi cn la chiavetta	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #400:								
+nn riesco a collegarmi cn la chiavetta	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #401:								
+nn riesco a collegarmi cn la chiavetta	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #402:								
+nn riesco a collegarmi cn la chiavetta	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #403:								
+nn riesco a collegarmi cn la chiavetta	1	->	lentissime	1	No	0	0	
+lentissime	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #404:								
+nn riesco a collegarmi cn la chiavetta	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #405:								
+nn riesco a collegarmi cn la chiavetta	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #406:								
+nn riesco a collegarmi cn la chiavetta	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #407:								
+nn riesco a collegarmi cn la chiavetta	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #408:								
+nn riesco a collegarmi cn la chiavetta	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #409:								
+nn riesco a collegarmi cn la chiavetta	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #410:								
+nn riesco a collegarmi cn la chiavetta	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #411:								
+nn riesco a collegarmi cn la chiavetta	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #412:								
+nn riesco a collegarmi cn la chiavetta	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #413:								
+nn riesco a collegarmi cn la chiavetta	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #414:								
+nn riesco a collegarmi cn la chiavetta	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	nn riesco a collegarmi cn la chiavetta	1	No	0	0	
+								
+node pair #415:								
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	nn riesco a collegarmi cn la chiavetta	1	Yes	0	1	
+nn riesco a collegarmi cn la chiavetta	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+								
+node pair #416:								
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	nn riesco a collegarmi cn la chiavetta	1	Yes	0	0	Connettere <->collegare
+nn riesco a collegarmi cn la chiavetta	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+								
+node pair #417:								
+non iesco piu' a navigare con la chiavetta	1	->	nn riesco a collegarmi	1	Yes	0	0	no collegare -> no navigare;
+nn riesco a collegarmi	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #418:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	nn riesco a collegarmi	1	Yes	0	0	no collegare -> no navigare;
+nn riesco a collegarmi	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #419:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	nn riesco a collegarmi	1	Yes	0	0	
+nn riesco a collegarmi	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #420:								
+le pagine web non sono disponibili	1	->	nn riesco a collegarmi	1	Yes	0	0	Possono esserci vari motivi
+nn riesco a collegarmi	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #421:								
+nn riesco a collegarmi	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #422:								
+nn riesco a collegarmi	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #423:								
+nn riesco a collegarmi	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #424:								
+nn riesco a collegarmi	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #425:								
+nn riesco a collegarmi	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #426:								
+nn riesco a collegarmi	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #427:								
+nn riesco a collegarmi	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #428:								
+nn riesco a collegarmi	1	->	lentissime	1	No	0	0	
+lentissime	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #429:								
+nn riesco a collegarmi	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #430:								
+nn riesco a collegarmi	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #431:								
+nn riesco a collegarmi	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #432:								
+nn riesco a collegarmi	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #433:								
+nn riesco a collegarmi	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #434:								
+nn riesco a collegarmi	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #435:								
+nn riesco a collegarmi	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #436:								
+nn riesco a collegarmi	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #437:								
+nn riesco a collegarmi	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #438:								
+nn riesco a collegarmi	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #439:								
+nn riesco a collegarmi	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	nn riesco a collegarmi	1	No	0	0	
+								
+node pair #440:								
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	nn riesco a collegarmi	1	Yes	0	1	
+nn riesco a collegarmi	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+								
+node pair #441:								
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	nn riesco a collegarmi	1	Yes	0	0	Connettere → collegare
+nn riesco a collegarmi	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+								
+node pair #442:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	non iesco piu' a navigare con la chiavetta	1	Yes	1	1	
+non iesco piu' a navigare con la chiavetta	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	-1	0	
+								
+node pair #443:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	non iesco piu' a navigare con la chiavetta	1	Yes	1	1	
+non iesco piu' a navigare con la chiavetta	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+								
+node pair #444:								
+non iesco piu' a navigare con la chiavetta	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #445:								
+non iesco piu' a navigare con la chiavetta	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #446:								
+non iesco piu' a navigare con la chiavetta	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #447:								
+non iesco piu' a navigare con la chiavetta	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #448:								
+non iesco piu' a navigare con la chiavetta	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #449:								
+non iesco piu' a navigare con la chiavetta	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #450:								
+non iesco piu' a navigare con la chiavetta	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #451:								
+non iesco piu' a navigare con la chiavetta	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #452:								
+non iesco piu' a navigare con la chiavetta	1	->	lentissime	1	No	0	0	
+lentissime	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #453:								
+non iesco piu' a navigare con la chiavetta	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #454:								
+non iesco piu' a navigare con la chiavetta	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #455:								
+non iesco piu' a navigare con la chiavetta	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #456:								
+non iesco piu' a navigare con la chiavetta	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #457:								
+non iesco piu' a navigare con la chiavetta	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #458:								
+non iesco piu' a navigare con la chiavetta	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #459:								
+non iesco piu' a navigare con la chiavetta	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #460:								
+non iesco piu' a navigare con la chiavetta	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #461:								
+non iesco piu' a navigare con la chiavetta	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #462:								
+non iesco piu' a navigare con la chiavetta	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #463:								
+non iesco piu' a navigare con la chiavetta	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #464:								
+non iesco piu' a navigare con la chiavetta	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	non iesco piu' a navigare con la chiavetta	1	No	0	1	no collegare -> no navigare; c'è almeno un caso in cui non riesco a navigare: da 15 giorni
+								
+node pair #465:								
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	non iesco piu' a navigare con la chiavetta	1	Yes	0	1	
+non iesco piu' a navigare con la chiavetta	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+								
+node pair #466:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	Yes	1	1	
+da domenica non iesco piu' a navigare con la chiavetta	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	-1	0	
+								
+node pair #467:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #468:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #469:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #470:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #471:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #472:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #473:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #474:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #475:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	lentissime	1	No	0	0	
+lentissime	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #476:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #477:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #478:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #479:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #480:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #481:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #482:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #483:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #484:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #485:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #486:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #487:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #488:								
+da domenica non iesco piu' a navigare con la chiavetta	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	da domenica non iesco piu' a navigare con la chiavetta	1	No	0	0	
+								
+node pair #489:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	le pagine web non sono disponibili	1	No	0	0	
+le pagine web non sono disponibili	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #490:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #491:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #492:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #493:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #494:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #495:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #496:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #497:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	lentissime	1	No	0	0	
+lentissime	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #498:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #499:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #500:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #501:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #502:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #503:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #504:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #505:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #506:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #507:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #508:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #509:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #510:								
+da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	da domenica non iesco piu' a navigare con la chiavetta TELEFONIAX	1	No	0	0	
+								
+node pair #511:								
+le pagine web non sono disponibili	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+Mi avete limitato la velocità della internet key	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #512:								
+le pagine web non sono disponibili	1	->	Mi avete limitato la velocità	1	No	0	0	
+Mi avete limitato la velocità	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #513:								
+le pagine web non sono disponibili	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #514:								
+le pagine web non sono disponibili	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #515:								
+le pagine web non sono disponibili	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #516:								
+le pagine web non sono disponibili	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #517:								
+le pagine web non sono disponibili	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #518:								
+le pagine web non sono disponibili	1	->	lentissime	1	No	0	0	
+lentissime	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #519:								
+le pagine web non sono disponibili	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #520:								
+le pagine web non sono disponibili	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #521:								
+le pagine web non sono disponibili	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #522:								
+le pagine web non sono disponibili	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #523:								
+le pagine web non sono disponibili	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #524:								
+le pagine web non sono disponibili	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #525:								
+le pagine web non sono disponibili	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #526:								
+le pagine web non sono disponibili	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #527:								
+le pagine web non sono disponibili	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #528:								
+le pagine web non sono disponibili	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #529:								
+le pagine web non sono disponibili	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #530:								
+le pagine web non sono disponibili	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #531:								
+le pagine web non sono disponibili	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	le pagine web non sono disponibili	1	No	0	0	
+								
+node pair #532:								
+Mi avete limitato la velocità della internet key	1	->	Mi avete limitato la velocità	1	Yes	1	1	
+Mi avete limitato la velocità	1	->	Mi avete limitato la velocità della internet key	1	No	-1	0	
+								
+node pair #533:								
+Mi avete limitato la velocità della internet key	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #534:								
+Mi avete limitato la velocità della internet key	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #535:								
+Mi avete limitato la velocità della internet key	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #536:								
+Mi avete limitato la velocità della internet key	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #537:								
+Mi avete limitato la velocità della internet key	1	->	navigo MALE	1	No	0	1	
+navigo MALE	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #538:								
+Mi avete limitato la velocità della internet key	1	->	lentissime	1	No	0	0	
+lentissime	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #539:								
+Mi avete limitato la velocità della internet key	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #540:								
+Mi avete limitato la velocità della internet key	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #541:								
+Mi avete limitato la velocità della internet key	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #542:								
+Mi avete limitato la velocità della internet key	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #543:								
+Mi avete limitato la velocità della internet key	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #544:								
+Mi avete limitato la velocità della internet key	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #545:								
+Mi avete limitato la velocità della internet key	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #546:								
+Mi avete limitato la velocità della internet key	1	->	internet e lento	1	Yes	0	1	
+internet e lento	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #547:								
+Mi avete limitato la velocità della internet key	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #548:								
+Mi avete limitato la velocità della internet key	1	->	internet e lento con l'internet key	1	Yes	0	1	
+internet e lento con l'internet key	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #549:								
+Mi avete limitato la velocità della internet key	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #550:								
+Mi avete limitato la velocità della internet key	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #551:								
+Mi avete limitato la velocità della internet key	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	Mi avete limitato la velocità della internet key	1	No	0	0	
+								
+node pair #552:								
+Mi avete limitato la velocità	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE con la chiavetta da voi fornita	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #553:								
+Mi avete limitato la velocità	1	->	telefono MALE per sei mesi	1	No	0	0	
+telefono MALE per sei mesi	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #554:								
+Mi avete limitato la velocità	1	->	telefono MALE	1	No	0	0	
+telefono MALE	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #555:								
+Mi avete limitato la velocità	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #556:								
+Mi avete limitato la velocità	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #557:								
+Mi avete limitato la velocità	1	->	lentissime	1	No	0	0	
+lentissime	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #558:								
+Mi avete limitato la velocità	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #559:								
+Mi avete limitato la velocità	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #560:								
+Mi avete limitato la velocità	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #561:								
+Mi avete limitato la velocità	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #562:								
+Mi avete limitato la velocità	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #563:								
+Mi avete limitato la velocità	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #564:								
+Mi avete limitato la velocità	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #565:								
+Mi avete limitato la velocità	1	->	internet e lento	1	Yes	0	0	
+internet e lento	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #566:								
+Mi avete limitato la velocità	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #567:								
+Mi avete limitato la velocità	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #568:								
+Mi avete limitato la velocità	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #569:								
+Mi avete limitato la velocità	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #570:								
+Mi avete limitato la velocità	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	Mi avete limitato la velocità	1	No	0	0	
+								
+node pair #571:								
+telefono MALE con la chiavetta da voi fornita	1	->	telefono MALE per sei mesi	1	No	-1	0	
+telefono MALE per sei mesi	1	->	telefono MALE con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #572:								
+telefono MALE con la chiavetta da voi fornita	1	->	telefono MALE	1	Yes	1	1	
+telefono MALE	1	->	telefono MALE con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #573:								
+telefono MALE con la chiavetta da voi fornita	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #574:								
+telefono MALE con la chiavetta da voi fornita	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #575:								
+telefono MALE con la chiavetta da voi fornita	1	->	lentissime	1	No	0	0	
+lentissime	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #576:								
+telefono MALE con la chiavetta da voi fornita	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #577:								
+telefono MALE con la chiavetta da voi fornita	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #578:								
+telefono MALE con la chiavetta da voi fornita	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #579:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	telefono MALE con la chiavetta da voi fornita	1	Yes	1	1	
+telefono MALE con la chiavetta da voi fornita	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #580:								
+telefono MALE con la chiavetta da voi fornita	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #581:								
+telefono MALE con la chiavetta da voi fornita	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #582:								
+telefono MALE con la chiavetta da voi fornita	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #583:								
+telefono MALE con la chiavetta da voi fornita	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #584:								
+telefono MALE con la chiavetta da voi fornita	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #585:								
+telefono MALE con la chiavetta da voi fornita	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	dubbio
+								
+node pair #586:								
+telefono MALE con la chiavetta da voi fornita	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	dubbio
+								
+node pair #587:								
+telefono MALE con la chiavetta da voi fornita	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #588:								
+telefono MALE con la chiavetta da voi fornita	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	telefono MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #589:								
+telefono MALE per sei mesi	1	->	telefono MALE	1	Yes	1	1	
+telefono MALE	1	->	telefono MALE per sei mesi	1	No	-1	0	
+								
+node pair #590:								
+telefono MALE per sei mesi	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #591:								
+telefono MALE per sei mesi	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #592:								
+telefono MALE per sei mesi	1	->	lentissime	1	No	0	0	
+lentissime	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #593:								
+telefono MALE per sei mesi	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #594:								
+telefono MALE per sei mesi	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #595:								
+telefono MALE per sei mesi	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #596:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	telefono MALE per sei mesi	1	Yes	1	1	
+telefono MALE per sei mesi	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #597:								
+telefono MALE per sei mesi	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #598:								
+telefono MALE per sei mesi	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #599:								
+telefono MALE per sei mesi	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #600:								
+telefono MALE per sei mesi	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #601:								
+telefono MALE per sei mesi	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #602:								
+telefono MALE per sei mesi	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #603:								
+telefono MALE per sei mesi	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #604:								
+telefono MALE per sei mesi	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #605:								
+telefono MALE per sei mesi	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	telefono MALE per sei mesi	1	No	0	0	
+								
+node pair #606:								
+telefono MALE	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+Le vostre Internet Key sono PIETOSE	1	->	telefono MALE	1	No	0	0	
+								
+node pair #607:								
+telefono MALE	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	telefono MALE	1	No	0	0	
+								
+node pair #608:								
+telefono MALE	1	->	lentissime	1	No	0	0	
+lentissime	1	->	telefono MALE	1	No	0	0	
+								
+node pair #609:								
+telefono MALE	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	telefono MALE	1	No	0	0	
+								
+node pair #610:								
+telefono MALE	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	telefono MALE	1	No	0	0	
+								
+node pair #611:								
+telefono MALE	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	telefono MALE	1	No	0	0	
+								
+node pair #612:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	telefono MALE	1	Yes	1	1	
+telefono MALE	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #613:								
+telefono MALE	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	telefono MALE	1	No	0	0	
+								
+node pair #614:								
+telefono MALE	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	telefono MALE	1	No	0	0	
+								
+node pair #615:								
+telefono MALE	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	telefono MALE	1	No	0	0	
+								
+node pair #616:								
+telefono MALE	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	telefono MALE	1	No	0	0	dubbio
+								
+node pair #617:								
+telefono MALE	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	telefono MALE	1	No	0	0	dubbio
+								
+node pair #618:								
+telefono MALE	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	telefono MALE	1	No	0	0	dubbio
+								
+node pair #619:								
+telefono MALE	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	telefono MALE	1	No	0	0	dubbio
+								
+node pair #620:								
+telefono MALE	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	telefono MALE	1	No	0	0	
+								
+node pair #621:								
+telefono MALE	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	telefono MALE	1	No	0	0	
+								
+node pair #622:								
+Le vostre Internet Key sono PIETOSE	1	->	navigo MALE	1	No	0	0	
+navigo MALE	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #623:								
+Le vostre Internet Key sono PIETOSE	1	->	lentissime	1	No	0	0	
+lentissime	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #624:								
+Le vostre Internet Key sono PIETOSE	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #625:								
+Le vostre Internet Key sono PIETOSE	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #626:								
+Le vostre Internet Key sono PIETOSE	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #627:								
+Le vostre Internet Key sono PIETOSE	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #628:								
+Le vostre Internet Key sono PIETOSE	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	Yes	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	1	General → specific
+								
+node pair #629:								
+Le vostre Internet Key sono PIETOSE	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #630:								
+Le vostre Internet Key sono PIETOSE	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #631:								
+Le vostre Internet Key sono PIETOSE	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #632:								
+Le vostre Internet Key sono PIETOSE	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #633:								
+Le vostre Internet Key sono PIETOSE	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #634:								
+Le vostre Internet Key sono PIETOSE	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #635:								
+Le vostre Internet Key sono PIETOSE	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #636:								
+Le vostre Internet Key sono PIETOSE	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	Le vostre Internet Key sono PIETOSE	1	No	0	0	
+								
+node pair #637:								
+navigo MALE	1	->	lentissime	1	No	0	0	
+lentissime	1	->	navigo MALE	1	No	0	0	
+								
+node pair #638:								
+navigo MALE per sei mesi	1	->	navigo MALE	1	Yes	1	1	
+navigo MALE	1	->	navigo MALE per sei mesi	1	No	-1	0	
+								
+node pair #639:								
+navigo MALE con la chiavetta da voi fornita	1	->	navigo MALE	1	Yes	1	1	
+navigo MALE	1	->	navigo MALE con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #640:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	navigo MALE	1	Yes	1	1	
+navigo MALE	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #641:								
+navigo MALE	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	navigo MALE	1	No	0	0	
+								
+node pair #642:								
+navigo MALE	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	navigo MALE	1	No	0	0	
+								
+node pair #643:								
+navigo MALE	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	navigo MALE	1	No	0	0	
+								
+node pair #644:								
+navigo MALE	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	navigo MALE	1	No	0	0	
+								
+node pair #645:								
+navigo MALE	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	navigo MALE	1	No	0	1	Se internet è lento, registro una lentezza nel caricare pagine, perciò navigo male.
+								
+node pair #646:								
+navigo MALE	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	navigo MALE	1	No	0	1	Se internet è lento, registro una lentezza nel caricare pagine, perciò navigo male.
+								
+node pair #647:								
+navigo MALE	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	navigo MALE	1	No	0	1	Se internet è lento, registro una lentezza nel caricare pagine, perciò navigo male; c'è lameno un caso in cui navigo male: con la key
+								
+node pair #648:								
+navigo MALE	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	navigo MALE	1	No	0	1	Se internet è lento, registro una lentezza nel caricare pagine, perciò navigo male; c'è lameno un caso in cui navigo male: nella mia zona
+								
+node pair #649:								
+navigo MALE	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	navigo MALE	1	No	0	0	
+								
+node pair #650:								
+navigo MALE	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	navigo MALE	1	No	0	0	
+								
+node pair #651:								
+lentissime	1	->	navigo MALE per sei mesi	1	No	0	0	
+navigo MALE per sei mesi	1	->	lentissime	1	No	0	0	
+								
+node pair #652:								
+lentissime	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE con la chiavetta da voi fornita	1	->	lentissime	1	No	0	0	
+								
+node pair #653:								
+lentissime	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	lentissime	1	No	0	0	
+								
+node pair #654:								
+lentissime	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	lentissime	1	No	0	0	
+								
+node pair #655:								
+lentissime	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	lentissime	1	No	0	0	
+								
+node pair #656:								
+lentissime	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	lentissime	1	No	0	0	
+								
+node pair #657:								
+lentissime	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	lentissime	1	No	0	0	
+								
+node pair #658:								
+lentissime	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	lentissime	1	No	0	0	
+								
+node pair #659:								
+lentissime	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	lentissime	1	No	0	0	
+								
+node pair #660:								
+lentissime	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	lentissime	1	No	0	0	
+								
+node pair #661:								
+lentissime	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	lentissime	1	No	0	0	
+								
+node pair #662:								
+lentissime	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	lentissime	1	No	0	0	
+								
+node pair #663:								
+lentissime	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	lentissime	1	No	0	0	
+								
+node pair #664:								
+navigo MALE per sei mesi	1	->	navigo MALE con la chiavetta da voi fornita	1	No	-1	0	
+navigo MALE con la chiavetta da voi fornita	1	->	navigo MALE per sei mesi	1	No	-1	0	
+								
+node pair #665:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	navigo MALE per sei mesi	1	Yes	1	1	
+navigo MALE per sei mesi	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #666:								
+navigo MALE per sei mesi	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #667:								
+navigo MALE per sei mesi	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #668:								
+navigo MALE per sei mesi	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #669:								
+navigo MALE per sei mesi	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #670:								
+navigo MALE per sei mesi	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #671:								
+navigo MALE per sei mesi	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #672:								
+navigo MALE per sei mesi	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #673:								
+navigo MALE per sei mesi	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #674:								
+navigo MALE per sei mesi	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #675:								
+navigo MALE per sei mesi	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	navigo MALE per sei mesi	1	No	0	0	
+								
+node pair #676:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	navigo MALE con la chiavetta da voi fornita	1	Yes	1	1	
+navigo MALE con la chiavetta da voi fornita	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	-1	0	
+								
+node pair #677:								
+navigo MALE con la chiavetta da voi fornita	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #678:								
+navigo MALE con la chiavetta da voi fornita	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #679:								
+navigo MALE con la chiavetta da voi fornita	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #680:								
+navigo MALE con la chiavetta da voi fornita	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #681:								
+navigo MALE con la chiavetta da voi fornita	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #682:								
+navigo MALE con la chiavetta da voi fornita	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #683:								
+navigo MALE con la chiavetta da voi fornita	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #684:								
+navigo MALE con la chiavetta da voi fornita	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #685:								
+navigo MALE con la chiavetta da voi fornita	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #686:								
+navigo MALE con la chiavetta da voi fornita	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	navigo MALE con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #687:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #688:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #689:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #690:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #691:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #692:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #693:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #694:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #695:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #696:								
+navigo MALE per sei mesi con la chiavetta da voi fornita	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	navigo MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #697:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #698:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #699:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #700:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #701:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #702:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #703:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #704:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #705:								
+telefono MALE per sei mesi con la chiavetta da voi fornita	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	telefono MALE per sei mesi con la chiavetta da voi fornita	1	No	0	0	
+								
+node pair #706:								
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+ogni cinque minuti si disconnettono	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+								
+node pair #707:								
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	si disconnettono	1	No	0	0	
+si disconnettono	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+								
+node pair #708:								
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+								
+node pair #709:								
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+								
+node pair #710:								
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+								
+node pair #711:								
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+								
+node pair #712:								
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+								
+node pair #713:								
+I vostri servizi sono PESSIMI , specialmente le internet key	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	I vostri servizi sono PESSIMI , specialmente le internet key	1	No	0	0	
+								
+node pair #714:								
+ogni cinque minuti si disconnettono	1	->	si disconnettono	1	Yes	1	1	
+si disconnettono	1	->	ogni cinque minuti si disconnettono	1	No	-1	0	
+								
+node pair #715:								
+ogni cinque minuti si disconnettono	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+								
+node pair #716:								
+ogni cinque minuti si disconnettono	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+								
+node pair #717:								
+ogni cinque minuti si disconnettono	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+								
+node pair #718:								
+ogni cinque minuti si disconnettono	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+								
+node pair #719:								
+ogni cinque minuti si disconnettono	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+								
+node pair #720:								
+ogni cinque minuti si disconnettono	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	ogni cinque minuti si disconnettono	1	No	0	0	
+								
+node pair #721:								
+si disconnettono	1	->	internet e lento	1	No	0	0	
+internet e lento	1	->	si disconnettono	1	No	0	0	
+								
+node pair #722:								
+si disconnettono	1	->	nella mia zona internet e lento	1	No	0	0	
+nella mia zona internet e lento	1	->	si disconnettono	1	No	0	0	
+								
+node pair #723:								
+si disconnettono	1	->	internet e lento con l'internet key	1	No	0	0	
+internet e lento con l'internet key	1	->	si disconnettono	1	No	0	0	
+								
+node pair #724:								
+si disconnettono	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+nella mia zona internet e lento con l'internet key	1	->	si disconnettono	1	No	0	0	
+								
+node pair #725:								
+si disconnettono	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	si disconnettono	1	No	0	0	
+								
+node pair #726:								
+si disconnettono	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	si disconnettono	1	No	0	0	
+								
+node pair #727:								
+nella mia zona internet e lento	1	->	internet e lento	1	Yes	1	1	
+internet e lento	1	->	nella mia zona internet e lento	1	No	-1	0	
+								
+node pair #728:								
+internet e lento con l'internet key	1	->	internet e lento	1	Yes	1	1	
+internet e lento	1	->	internet e lento con l'internet key	1	No	-1	0	
+								
+node pair #729:								
+nella mia zona internet e lento con l'internet key	1	->	internet e lento	1	Yes	1	1	
+internet e lento	1	->	nella mia zona internet e lento con l'internet key	1	No	-1	0	
+								
+node pair #730:								
+internet e lento	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	internet e lento	1	No	0	0	
+								
+node pair #731:								
+internet e lento	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	internet e lento	1	No	0	0	
+								
+node pair #732:								
+nella mia zona internet e lento	1	->	internet e lento con l'internet key	1	No	-1	0	
+internet e lento con l'internet key	1	->	nella mia zona internet e lento	1	No	-1	0	
+								
+node pair #733:								
+nella mia zona internet e lento con l'internet key	1	->	nella mia zona internet e lento	1	Yes	1	1	
+nella mia zona internet e lento	1	->	nella mia zona internet e lento con l'internet key	1	No	-1	0	
+								
+node pair #734:								
+nella mia zona internet e lento	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	nella mia zona internet e lento	1	No	0	0	
+								
+node pair #735:								
+nella mia zona internet e lento	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	nella mia zona internet e lento	1	No	0	0	
+								
+node pair #736:								
+nella mia zona internet e lento con l'internet key	1	->	internet e lento con l'internet key	1	Yes	1	1	
+internet e lento con l'internet key	1	->	nella mia zona internet e lento con l'internet key	1	No	-1	0	
+								
+node pair #737:								
+internet e lento con l'internet key	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	internet e lento con l'internet key	1	No	0	0	
+								
+node pair #738:								
+internet e lento con l'internet key	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	internet e lento con l'internet key	1	No	0	0	
+								
+node pair #739:								
+nella mia zona internet e lento con l'internet key	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+								
+node pair #740:								
+nella mia zona internet e lento con l'internet key	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	nella mia zona internet e lento con l'internet key	1	No	0	0	
+								
+node pair #741:								
+E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	->	la mia internet kei rimane connessa ma non riesco a navigare	1	No	0	0	
+la mia internet kei rimane connessa ma non riesco a navigare	1	->	E' da 15 giorni che chi ha la chiavetta non riesce a connettersi	1	No	0	0	

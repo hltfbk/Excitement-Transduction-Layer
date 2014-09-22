@@ -1,0 +1,144 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 4 entailment unit(s) before editing
+	Aspetto un rimborso	[0073.txt_1_1]
+	il mio rimborso non e' ancora arrivato	[0030.txt_1_0]
+	io sono ancora in attesa di un rimborso	[0287.txt_1_2]
+	sto ancora aspettando il rimborso	[0074.txt_1_1]
+
+collapsed node #2 : 1 entailment unit(s) before editing
+	Aspetto un rimborso da mesi	[0073.txt_1_0]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	sto ancora aspettando il rimborso del 2008	[0074.txt_1_0]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	Rivoglio il mio risarcimento	[0228.txt_3_0]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	io sono ancora in attesa di un rimborso per una truffa subita	[0287.txt_1_0]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	Rivoglio il mio credito	[0228.txt_2_0]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	[0217.txt_1_0]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	ho caricato il cell ma TELEFONIAX non l'ha accreditato	[0217.txt_1_1]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+Aspetto un rimborso da mesi	1	->	Aspetto un rimborso	4	Yes	1
+Aspetto un rimborso	4	->	Aspetto un rimborso da mesi	1	No	-1
+
+node pair #2:
+sto ancora aspettando il rimborso del 2008	1	->	Aspetto un rimborso	4	Yes	1
+Aspetto un rimborso	4	->	sto ancora aspettando il rimborso del 2008	1	No	-1
+
+node pair #3:
+Aspetto un rimborso	4	->	Rivoglio il mio risarcimento	1	Yes	0
+Rivoglio il mio risarcimento	1	->	Aspetto un rimborso	4	No	0
+
+node pair #4:
+io sono ancora in attesa di un rimborso per una truffa subita	1	->	Aspetto un rimborso	4	Yes	1
+Aspetto un rimborso	4	->	io sono ancora in attesa di un rimborso per una truffa subita	1	No	-1
+
+node pair #5:
+Aspetto un rimborso	4	->	Rivoglio il mio credito	1	Yes	0
+Rivoglio il mio credito	1	->	Aspetto un rimborso	4	No	0
+
+node pair #6:
+Aspetto un rimborso	4	->	ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	->	Aspetto un rimborso	4	No	0
+
+node pair #7:
+Aspetto un rimborso	4	->	ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	->	Aspetto un rimborso	4	No	0
+
+node pair #8:
+Aspetto un rimborso da mesi	1	->	sto ancora aspettando il rimborso del 2008	1	Yes	0
+sto ancora aspettando il rimborso del 2008	1	->	Aspetto un rimborso da mesi	1	No	0
+
+node pair #9:
+Aspetto un rimborso da mesi	1	->	Rivoglio il mio risarcimento	1	Yes	0
+Rivoglio il mio risarcimento	1	->	Aspetto un rimborso da mesi	1	No	0
+
+node pair #10:
+io sono ancora in attesa di un rimborso per una truffa subita	1	->	Aspetto un rimborso da mesi	1	Yes	0
+Aspetto un rimborso da mesi	1	->	io sono ancora in attesa di un rimborso per una truffa subita	1	No	0
+
+node pair #11:
+Aspetto un rimborso da mesi	1	->	Rivoglio il mio credito	1	Yes	0
+Rivoglio il mio credito	1	->	Aspetto un rimborso da mesi	1	No	0
+
+node pair #12:
+Aspetto un rimborso da mesi	1	->	ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	->	Aspetto un rimborso da mesi	1	No	0
+
+node pair #13:
+Aspetto un rimborso da mesi	1	->	ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	->	Aspetto un rimborso da mesi	1	No	0
+
+node pair #14:
+sto ancora aspettando il rimborso del 2008	1	->	Rivoglio il mio risarcimento	1	Yes	0
+Rivoglio il mio risarcimento	1	->	sto ancora aspettando il rimborso del 2008	1	No	0
+
+node pair #15:
+io sono ancora in attesa di un rimborso per una truffa subita	1	->	sto ancora aspettando il rimborso del 2008	1	Yes	0
+sto ancora aspettando il rimborso del 2008	1	->	io sono ancora in attesa di un rimborso per una truffa subita	1	No	0
+
+node pair #16:
+sto ancora aspettando il rimborso del 2008	1	->	Rivoglio il mio credito	1	Yes	0
+Rivoglio il mio credito	1	->	sto ancora aspettando il rimborso del 2008	1	No	0
+
+node pair #17:
+sto ancora aspettando il rimborso del 2008	1	->	ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	->	sto ancora aspettando il rimborso del 2008	1	No	0
+
+node pair #18:
+sto ancora aspettando il rimborso del 2008	1	->	ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	->	sto ancora aspettando il rimborso del 2008	1	No	0
+
+node pair #19:
+io sono ancora in attesa di un rimborso per una truffa subita	1	->	Rivoglio il mio risarcimento	1	Yes	0
+Rivoglio il mio risarcimento	1	->	io sono ancora in attesa di un rimborso per una truffa subita	1	No	0
+
+node pair #20:
+Rivoglio il mio risarcimento	1	->	Rivoglio il mio credito	1	No	0
+Rivoglio il mio credito	1	->	Rivoglio il mio risarcimento	1	No	0
+
+node pair #21:
+Rivoglio il mio risarcimento	1	->	ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	->	Rivoglio il mio risarcimento	1	No	0
+
+node pair #22:
+Rivoglio il mio risarcimento	1	->	ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	->	Rivoglio il mio risarcimento	1	No	0
+
+node pair #23:
+io sono ancora in attesa di un rimborso per una truffa subita	1	->	Rivoglio il mio credito	1	Yes	0
+Rivoglio il mio credito	1	->	io sono ancora in attesa di un rimborso per una truffa subita	1	No	0
+
+node pair #24:
+io sono ancora in attesa di un rimborso per una truffa subita	1	->	ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	->	io sono ancora in attesa di un rimborso per una truffa subita	1	No	0
+
+node pair #25:
+io sono ancora in attesa di un rimborso per una truffa subita	1	->	ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	->	io sono ancora in attesa di un rimborso per una truffa subita	1	No	0
+
+node pair #26:
+ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	->	Rivoglio il mio credito	1	Yes	0
+Rivoglio il mio credito	1	->	ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+
+node pair #27:
+Rivoglio il mio credito	1	->	ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	No	0
+ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	->	Rivoglio il mio credito	1	No	0
+
+node pair #28:
+ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	->	ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	No	1
+ho caricato il cell ma TELEFONIAX non l'ha accreditato	1	->	ho caricato al bancomat il cell ma TELEFONIAX non l'ha accreditato	1	No	-1
+

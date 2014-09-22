@@ -78,6 +78,20 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 		graphStatistics = new GraphStatistics();
 	}
 
+	/**
+	 * Create a collapsed graph with given nodes and edges
+	 * @param nodes
+	 * @param edges
+	 */
+	public EntailmentGraphCollapsed(Set<EquivalenceClass> nodes, Set<EntailmentRelationCollapsed> edges){
+		this();
+		for (EquivalenceClass node : nodes){
+			this.addVertex(node);  
+		}
+		for (EntailmentRelationCollapsed e : edges){
+			this.addEdge(e.getSource(), e.getTarget(), e);
+		}
+	}	
 	
 	/**
 	 * 

@@ -9,12 +9,12 @@ import java.util.List;
 public class EvaluationMeasures {
 	Double recall;
 	Double precision;
-	
+		
 	// memorize for future analysis
-	int truePositives;
-	int falsePositives;
-	int trueNegatives;
-	int falseNegatives;
+	Integer truePositives;
+	Integer falsePositives;
+	Integer trueNegatives;
+	Integer falseNegatives;
 	
 	private void setRawNumbers(int tp, int fp, int tn, int fn){
 		truePositives=tp;
@@ -23,12 +23,19 @@ public class EvaluationMeasures {
 		falseNegatives=fn;
 	}
 	
+
+	
 	public EvaluationMeasures() {
 		this.recall = null;
 		this.precision = null;
+		this.truePositives = null;
+		this.falsePositives = null;
+		this.trueNegatives = null;
+		this.falseNegatives = null;
 	}
 
-	
+
+
 	public EvaluationMeasures(int tp, int fp, int tn, int fn) {
 		precision = 1.0 * tp / (tp + fp);
 		recall = 1.0 * tp / (tp + fn);
@@ -118,6 +125,5 @@ public class EvaluationMeasures {
 	public int getFalseNegatives() {
 		return falseNegatives;
 	}
-	
 	
 }

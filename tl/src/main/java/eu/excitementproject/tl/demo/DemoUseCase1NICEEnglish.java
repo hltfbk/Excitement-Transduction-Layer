@@ -12,13 +12,31 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 	
 	
 	public DemoUseCase1NICEEnglish() {
-		
+				
+		// to run for a single cluster - can change the cluster name (can replace "test" with "train" for the train set)
 		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/train", 2000,
-				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_byFrag_byClusterSplit/train",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/EMAIL0010/", 2000,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/EMAIL0010",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
 				);
+
+	/*	// to run for xmi-s of all test clusters (can replace "test" with "train" for the train set)
+		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/allClusters/", 2000,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_perFrag/test/allClusters",
+				TreeTaggerEN.class,
+				MaxEntClassificationEDA.class
+				);*/
+
+	/*	// to run for xmi-s of all open clusters
+		super("./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml",
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/all/", 2000,
+				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_open_perFrag/all/",
+				TreeTaggerEN.class,
+				MaxEntClassificationEDA.class
+				);*/
+	
 	}
 	
 	public static void main(String[] argv) {
@@ -33,13 +51,13 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 /*		File xmlFile = new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
 		try {
 			EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(xmlFile);
-			System.out.println("\nLoaded the graph from ./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
+			logger.info("\nLoaded the graph from ./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/first_10/collapsed_graph.xml");
 
-			System.out.println(graph.toString());
+			logger.info(graph.toString());
 			
-			System.out.println("\nThe number of nodes is: "+graph.getNumberOfEquivalenceClasses());
-			System.out.println("The overall number of entailment units is: "+graph.getNumberOfEntailmentUnits());
-			System.out.println("The number of (complete) textual inputs is: "+graph.getNumberOfTextualInputs());
+			logger.info("\nThe number of nodes is: "+graph.getNumberOfEquivalenceClasses());
+			logger.info("The overall number of entailment units is: "+graph.getNumberOfEntailmentUnits());
+			logger.info("The number of (complete) textual inputs is: "+graph.getNumberOfTextualInputs());
 			
 
 			// get some example entailment unit
@@ -49,41 +67,41 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 				euText = graph.vertexSet().iterator().next().getLabel();
 			}
 			
-			System.out.println("\nShow equivalent statements for \""+euText+"\":");
+			logger.info("\nShow equivalent statements for \""+euText+"\":");
 			int i=1;
 			for (EntailmentUnit eu : graph.getEquivalentEntailmentUnits(euText)){
-				System.out.println("\t"+i+") "+eu.getText());
+				logger.info("\t"+i+") "+eu.getText());
 				i++;
 			}
 			
-			System.out.println("\nShow entailing statements for \""+euText+"\":");
+			logger.info("\nShow entailing statements for \""+euText+"\":");
 			i=1;
 			for (EquivalenceClass node: graph.getEntailingEquivalenceClasses(euText)){
 				for (EntailmentUnit eu : node.getEntailmentUnits()){
-					System.out.println("\t"+i+") "+eu.getText());
+					logger.info("\t"+i+") "+eu.getText());
 					i++;
 				}
 			}
 			
-			System.out.println("\nShow entailed statements for \""+euText+"\":");
+			logger.info("\nShow entailed statements for \""+euText+"\":");
 			i=1;
 			for (EquivalenceClass node: graph.getEntailedEquivalenceClasses(euText)){
 				for (EntailmentUnit eu : node.getEntailmentUnits()){
-					System.out.println("\t"+i+") "+eu.getText());
+					logger.info("\t"+i+") "+eu.getText());
 					i++;
 				}
 			}
 			
-			System.out.println("\nShow relevant interaction ids for \""+euText+"\":");
+			logger.info("\nShow relevant interaction ids for \""+euText+"\":");
 			i=1;
 			for (String id: graph.getRelevantInteractionIDs(euText)){
 				System.out.print(id+"  ");
-				if (i%5==0) System.out.println();
+				if (i%5==0) logger.info();
 				i++;				
 			}
-			System.out.println();
+			logger.info();
 			
-			System.out.println("\nShow top-3 sorted nodes:");
+			logger.info("\nShow top-3 sorted nodes:");
 			i=1;
 			for (EquivalenceClass node: graph.sortNodesByNumberOfInteractions(3)){
 				System.out.print("  node#"+i+": "+node.toString());

@@ -6,12 +6,12 @@ import java.io.IOException;
 
 import javax.xml.transform.TransformerConfigurationException;
 
+import org.apache.log4j.Logger;
 import org.jgrapht.ext.IntegerEdgeNameProvider;
 import org.jgrapht.ext.IntegerNameProvider;
 import org.jgrapht.graph.AbstractBaseGraph;
 import org.jgrapht.graph.AbstractGraph;
 import org.xml.sax.SAXException;
-
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -26,6 +26,8 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 public class TLGraphMLExporter {
+
+	private static final Logger logger = Logger.getLogger(TLGraphMLExporter.class);
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void exportGraph(AbstractGraph graph, String filename) {
@@ -84,7 +86,7 @@ public class TLGraphMLExporter {
 		}
 		
 		if (!edgeAdded) {
-			System.out.println("ROOT node not necessary -- graph is already connected");
+			logger.info("ROOT node not necessary -- graph is already connected");
 			graph.removeVertex(root);
 		}
 		
@@ -98,13 +100,13 @@ public class TLGraphMLExporter {
 		if (graph.getClass() == EntailmentGraphRaw.class) {
 			((EntailmentGraphRaw) graph).addEdge((EntailmentUnit) source, (EntailmentUnit) target, 
 						new EntailmentRelation((EntailmentUnit) source, (EntailmentUnit) target, new TEDecisionWithConfidence(1.0,DecisionLabel.Entailment), EdgeType.INDUCED));
-			System.out.println("ADDED EDGE: " + ((EntailmentUnit) source).getTextWithoutDoubleSpaces() + " / " + ((EntailmentUnit) target).getTextWithoutDoubleSpaces());
+			logger.info("ADDED EDGE: " + ((EntailmentUnit) source).getTextWithoutDoubleSpaces() + " / " + ((EntailmentUnit) target).getTextWithoutDoubleSpaces());
 		} else if (graph.getClass() == EntailmentGraphCollapsed.class) {
 			((EntailmentGraphCollapsed) graph).addEdge((EquivalenceClass) source, (EquivalenceClass) target,
 						new EntailmentRelationCollapsed((EquivalenceClass) source, (EquivalenceClass) target, 1.0));
-			System.out.println("ADDED EDGE: " + ((EquivalenceClass) source).getLabel() + " / " + ((EquivalenceClass) target).getLabel());
+			logger.info("ADDED EDGE: " + ((EquivalenceClass) source).getLabel() + " / " + ((EquivalenceClass) target).getLabel());
 		} else {
-			System.out.println("Edge not added because of unknown graph type: " + graph.getClass().getCanonicalName());
+			logger.info("Edge not added because of unknown graph type: " + graph.getClass().getCanonicalName());
 		}
 		
 	}

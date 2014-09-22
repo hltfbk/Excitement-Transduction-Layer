@@ -1,13 +1,8 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.cas.text.AnnotationIndex;
@@ -23,9 +18,8 @@ import eu.excitement.type.tl.KeywordAnnotation;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
-import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.AnnotationUtils;
 import eu.excitementproject.tl.laputils.CASUtils.Region;
-import eu.excitementproject.tl.laputils.RegionUtils;
 
 /**
  * This class implements the keyword-based "fragment annotator". 
@@ -90,7 +84,7 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 				
 				for(KeywordAnnotation k: keywords) {
 
-					Set<Region> frags = makeOneFragment(aJCas, k);
+					Set<Region> frags = makeOneFragment(aJCas, k, 0);
 					if (frags != null && frags.size() >0 ) {
 						detFrags.add(frags);
 						num_frag++;
@@ -202,58 +196,30 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	 * @throws FragmentAnnotatorException
 	 */
 	private void annotateDeterminedFragments(JCas aJCas, Set<Set<Region>> detFrags) throws FragmentAnnotatorException{
-
-		for(Set<Region> frags: detFrags) {
-			if (frags != null && frags.size() > 0) {
-				// compress the spans (by concatenating adjacent portions) before generating the fragment annotation
-				frags = RegionUtils.compressRegions(frags);
-				logger.info("Adding fragment with Region: " + getCoveredSpan(frags));
-				CASUtils.Region[] r = new CASUtils.Region[frags.size()];
-				int i = 0;
-				for(Region s: frags) {
-					r[i++] = new CASUtils.Region(s.getBegin(), s.getEnd());
-				}
-				try {
-					CASUtils.annotateOneDeterminedFragment(aJCas, r);
-				} catch (LAPException e) {
-					throw new FragmentAnnotatorException("CASUtils reported exception while adding Fragment on keyword " + getCoveredText(aJCas,r) , e );									
-				}
-			}
+		for(Set<Region> frag: detFrags) {
+			AnnotationUtils.annotateDeterminedFragment(aJCas, frag);
 		}
 	}
 
-	
-	/**
-	 * return the text covered by an array of regions
-	 * 
-	 * @param aJCas
-	 * @param r
-	 * @return
-	 */
-	private String getCoveredText(JCas aJCas, Region[] r) {
-		String s = "";
-		
-		for(int i = 0; i < r.length; i++) {
-			s += aJCas.getDocumentText().substring(r[i].getBegin(), r[i].getEnd()) + " ";
-		}
-		
-		return s;
-	}
 
 	/**
 	 * Makes one fragment centered on a given keyword
 	 * 
 	 * @param aJCas
 	 * @param k
+	 * @param step -- because there are sometime circular dependencies, this parameter is used to control the number of calls 
 	 * @return
 	 */
-	private Set<Region> makeOneFragment(JCas aJCas, Annotation k) {
+	private Set<Region> makeOneFragment(JCas aJCas, Annotation k, int step) {
 
 		Set<Region> frags = null;
 		
-		if (isNorV(aJCas, k) && isGovernorInDeps(aJCas, k)) {
+		if (step > 2) 
+			return frags;
+		
+		if (isNorV(aJCas, k) && AnnotationUtils.isGovernorInDeps(aJCas, k)) {
 //		if (isNorV(aJCas, k) || (! isGovernorInDeps(aJCas, k))) {  // if it is noun or verb, or if the word does not have a governor, then expand it instead of trying to go up) 
-			frags = getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
+			frags = AnnotationUtils.getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
 		}
 
 		// start generating the fragment from one level up
@@ -262,43 +228,19 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 		// or if it is a noun or verb with no dependencies of its own, to avoid "unigram" fragments
 
 		if (frags == null || frags.size() == 0) {
-			Token t = getGovernor(k, aJCas);
+			Token t = AnnotationUtils.getGovernor(k, aJCas);
 
 			if (t != null && 
-					(! t.getCoveredText().matches(k.getCoveredText()))
+					(! t.getCoveredText().contentEquals(k.getCoveredText()))
 				) {
 				logger.info("building fragment with head token " + t.getCoveredText());
-				frags = makeOneFragment(aJCas, t);
+				frags = makeOneFragment(aJCas, t, step+1);
 			}
 		}
 		
 		return frags;
 	}
 	
-	
-	/**
-	 * Check if a given word (passed as an Annotation parameter) appears as governor in some dependency relation
-	 * (used to avoid having unigram fragments)
-	 *  
-	 * @param aJCas
-	 * @param k
-	 * @return true if it is governor at least once, false otherwise
-	 */
-	private boolean isGovernorInDeps(JCas aJCas, Annotation k) {
-		
-		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, k.getBegin(), k.getEnd());
-		
-		logger.info("Checking if " + k.getCoveredText() + " is governor in some dependencies");
-		
-		if (deps != null && deps.size() > 0) {
-			for (Dependency d: deps) {
-				if (d.getGovernor().getCoveredText().matches(k.getCoveredText())) 
-					return true;
-			}
-		}
-		
-		return false;
-	}
 
 	/**
 	 * Checks if a given word (passed as Annotation) in a text is a noun or verb
@@ -320,106 +262,5 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 		}
 		return false;
 	}
-
-	/**
-	 * get the governor (as in a dependency relation) for the given word
-	 * 
-	 * @param k -- a keyword annotation
-	 * @return -- the Token corresponding to the governor found, or null
-	 */
-	private Token getGovernor(Annotation k, JCas aJCas) {
-				
-		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, k.getBegin(), k.getEnd());
-				
-		if (deps != null && deps.size() > 0) {
-			for(Dependency d: deps) {
-//				if (d.getDependent().getCoveredText().matches(k.getCoveredText())) {
-				if (d.getDependent().getCoveredText().contains(k.getCoveredText())) {  // contains instead of matches for words separated by "-" (which the tokenizer will not split, even if sometimes it should
-					return d.getGovernor();
-				}
-			}
-		}
-		
-		return null;
-	}
-
-	
-	/**
-	 * create a text fragment by taking all dependents (recursively) of a given word
-	 * 
-	 * @param word -- the starting word for forming the fragment
-	 * @param begin -- beginning position of the word
-	 * @param end -- end position of the word
-	 * @param aJCas -- CAS object
-	 * @return a set of spans corresponding to the fragment. Maybe we could compress this by merging adjacent fragments
-	 */
-	private Set<Region> getFragment(String word, int begin, int end,
-			JCas aJCas) {
-		
-		logger.info("\tbuildling fragment around " + word + " (" + begin + "," + end + ")");
-		
-//		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, begin, end);
-		List<Dependency> deps = getRelevantDependencies(aJCas, begin, end);
-		
-		// create the spans sorted by their location in the text, so they can be properly concatenated
-		SortedSet<Region> spans = new TreeSet<Region>(new Comparator<Region>() {
-			public int compare(Region a, Region b) {
-				if (a.getBegin() < b.getBegin()) { return -1; }
-				if (a.getBegin() > b.getBegin()) { return 1; }
-				return 0;
-			}
-		});
-	
-		spans.add(new Region(begin,end));
-		
-		if (deps != null && deps.size() > 0) {
-			for(Dependency d: deps) {
-				
-				logger.info("\t\tdependency: (" + d.getGovernor().getCoveredText() + "," + d.getDependent().getCoveredText() + ") => " + d.getDependencyType());
-				
-//				if (d.getGovernor().getCoveredText().matches(word)) {
-				if (d.getGovernor().getCoveredText().equals(word)) {
-					Token t = d.getDependent();
-					Set<Region> newSpans = getFragment(t.getCoveredText(), t.getBegin(), t.getEnd(), aJCas);
-					if (newSpans != null && newSpans.size() > 0) {
-						spans.addAll(newSpans);
-					}
-				}
-			}
-		}
-				
-	
-// compress the spans only after overlap/redundancy check!		
-/*		if (spans.size() > 1) {
-			return compressSpans(spans);
-		}
-*/		
-		return spans;
-	}
-
-
-	// necessary because the begin/end of each dependency is the entire text, so we get all the dependencies in the text using selectCovering(...) while selectCovered(...) is too restrictive
-	private List<Dependency> getRelevantDependencies(JCas aJCas, int begin,	int end) {
-		
-		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, begin, end);
-		List<Dependency> relevantDeps = new ArrayList<Dependency>();
-		
-		for (Dependency d: deps) {
-			if ( ( ! d.getGovernor().getCoveredText().equals(d.getDependent().getCoveredText())) // this test is because of a strange dependency noted while using OMQ with MaltParser (im,im) => MNR
-					&&
-				 ( d.getDependent().getCoveredText().matches("\\w.*")) // avoid punctuation (at least starts with letter)
-					&&
-				 ( (d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end)
-				     || 
-				   (d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end))
-				) {
-				relevantDeps.add(d);
-			}
-		}
-		
-		return relevantDeps;
-	}
-
-
 
 }

@@ -17,3 +17,19 @@ bin/*
 #lap/bin/
 uima.log
 
+/fragment_graph_1.dot.txt
+/fragment_graph_1.xml
+/fragment_graph_2.dot.txt
+/fragment_graph_2.xml
+/fragment_graph_3.dot.txt
+/fragment_graph_3.xml
+/fragment_graph_4.dot.txt
+/fragment_graph_4.xml
+/fragment_graph_5.dot.txt
+/fragment_graph_5.xml
+/fragment_graph_6.dot.txt
+/fragment_graph_6.xml
+/fragment_graph_7.dot.txt
+/fragment_graph_7.xml
+/fragment_graph_8.dot.txt
+/fragment_graph_8.xml

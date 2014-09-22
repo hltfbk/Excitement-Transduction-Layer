@@ -1,32 +1,32 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
 import java.io.File;
-
 import java.util.Hashtable;
 import java.util.Set;
 
 import javax.xml.transform.TransformerException;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import static org.junit.Assert.fail;
-
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 public class EntailmentGraphRawTest {
 	
+	private final Logger logger = Logger.getLogger(this.getClass());
 
 	@Test
 	public void test() {
 		
-		System.out.println("\n\n=================================================================================================================================\n");
-		System.out.println("TESTING SAMPLE OUTPUT \n");
-		System.out.println("=================================================================================================================================\n");
+		logger.info("\n\n=================================================================================================================================\n");
+		logger.info("TESTING SAMPLE OUTPUT \n");
+		logger.info("=================================================================================================================================\n");
 		
 		EntailmentGraphRaw rawGraph = EntailmentGraphRaw.getSampleOuput(false);
-		System.out.println("********************************\n Non-random graph:\n"+rawGraph.toString());
+		logger.info("********************************\n Non-random graph:\n"+rawGraph.toString());
 		try {
 			XMLFileWriter.write(rawGraph.toXML(), "./src/test/outputs/sampleRawGraph.xml");			
 		} catch (EntailmentGraphRawException | TransformerException e) {
@@ -36,30 +36,30 @@ public class EntailmentGraphRawTest {
 
 		
 		rawGraph = EntailmentGraphRaw.getSampleOuput(true);
-		System.out.println("********************************\n Random graph:\n"+rawGraph.toString());
+		logger.info("********************************\n Random graph:\n"+rawGraph.toString());
 		
-		System.out.println("\n\n=================================================================================================================================\n");
-		System.out.println("TESTING public EntailmentGraphRaw(FragmentGraph fg) \n");
-		System.out.println("=================================================================================================================================\n");
+		logger.info("\n\n=================================================================================================================================\n");
+		logger.info("TESTING public EntailmentGraphRaw(FragmentGraph fg) \n");
+		logger.info("=================================================================================================================================\n");
 
 
 		FragmentGraph g = FragmentGraph.getSampleGraph();
 		
-		rawGraph = new EntailmentGraphRaw(g);
-		System.out.println("********************************\n Copy of a Fragment graph:\n"+rawGraph.toString());
+		rawGraph = new EntailmentGraphRaw(g, false);
+		logger.info("********************************\n Copy of a Fragment graph:\n"+rawGraph.toString());
 		
-		System.out.println("********************************\n Restore fragment graph from the raw graph:\n"+rawGraph.toString());
+		logger.info("********************************\n Restore fragment graph from the raw graph:\n"+rawGraph.toString());
 		Set<EntailmentUnit> bs = rawGraph.getBaseStatements();
 		for (EntailmentUnit eu : bs){
-			System.out.println(eu.getText());	
+			logger.info(eu.getText());	
 			for (String completeString : eu.completeStatementTexts){
-				System.out.println(completeString);	
+				logger.info(completeString);	
 				try {
 					Hashtable<Integer, Set<EntailmentUnit>> fgNodes = rawGraph.getFragmentGraphNodes(eu,completeString);
 					for (int level : fgNodes.keySet()){
-						System.out.println("\tlevel "+level);
+						logger.info("\tlevel "+level);
 						for (EntailmentUnit node : fgNodes.get(level)){
-							System.out.println("\t\t"+node.toString());
+							logger.info("\t\t"+node.toString());
 						}
 					}
 				} catch (EntailmentGraphRawException e) {
@@ -69,21 +69,21 @@ public class EntailmentGraphRawTest {
 			}
 		}
 
-		System.out.println("\n\n=================================================================================================================================\n");
-		System.out.println("TESTING XML SAVE/LOAD \n");
-		System.out.println("=================================================================================================================================\n");
+		logger.info("\n\n=================================================================================================================================\n");
+		logger.info("TESTING XML SAVE/LOAD \n");
+		logger.info("=================================================================================================================================\n");
 		rawGraph = EntailmentGraphRaw.getSampleOuput(false);
-		System.out.println("********************************\n Sample graph:\n"+rawGraph.toString());
+		logger.info("********************************\n Sample graph:\n"+rawGraph.toString());
 		
 		try {
 			String xmlFile = "./src/test/outputs/sampleRawGraph.xml";
 			EntailmentGraphRaw loadedGraph = new EntailmentGraphRaw(new File(xmlFile));
 			loadedGraph.toString();
 			for (EntailmentUnit eu : loadedGraph.vertexSet()){
-				System.out.println("\n"+eu.getText());
-				System.out.println(eu.getCompleteStatementTexts().size());
+				logger.info("\n"+eu.getText());
+				logger.info(eu.getCompleteStatementTexts().size());
 				for (String text: eu.getCompleteStatementTexts()){
-					System.out.println("  : "+text);					
+					logger.info("  : "+text);					
 				}
 			}
 		} catch (EntailmentGraphRawException e) {

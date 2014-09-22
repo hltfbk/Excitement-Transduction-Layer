@@ -1,0 +1,306 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing								
+	Ancora nessuna informazione riguardo i due MOBILEF	[0219.txt_1_2]						
+	Ancora nessuna notizia riguardo i due MOBILEF	[0219.txt_2_2]						
+								
+collapsed node #2 : 2 entailment unit(s) before editing								
+	Ancora nessuna informazione riguardo i due MOBILEF ordinati	[0219.txt_1_0]						
+	Ancora nessuna notizia riguardo i due MOBILEF ordinati	[0182.txt_1_0, 0219.txt_2_0]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing								
+	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	[0017.txt_2_41]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing								
+	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	[0017.txt_2_16]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	[0017.txt_2_13]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	[0017.txt_2_5]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	[0017.txt_2_4]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	tablet che non è ancora disponibile	[0017.txt_1_1]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	[0017.txt_1_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	[0017.txt_2_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	[0017.txt_2_29]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	[0017.txt_2_28]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Ancora nessuna notizia riguardo i due MOBILEF	2	Yes	2	1	
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	-2	0	
+								
+node pair #2:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #3:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #4:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #5:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #6:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #7:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	tablet che non è ancora disponibile	1	No	0	0	
+tablet che non è ancora disponibile	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #8:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #9:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #10:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #11:								
+Ancora nessuna notizia riguardo i due MOBILEF	2	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF	2	No	0	0	
+								
+node pair #12:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #13:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #14:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #15:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #16:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #17:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	tablet che non è ancora disponibile	1	No	0	0	
+tablet che non è ancora disponibile	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #18:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #19:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #20:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #21:								
+Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Ancora nessuna notizia riguardo i due MOBILEF ordinati	2	No	0	0	
+								
+node pair #22:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #23:								
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #24:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #25:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #26:								
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	tablet che non è ancora disponibile	1	No	0	0	
+tablet che non è ancora disponibile	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #27:								
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #28:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #29:								
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #30:								
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #31:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #32:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #33:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #34:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	tablet che non è ancora disponibile	1	No	0	0	
+tablet che non è ancora disponibile	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #35:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #36:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #37:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #38:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #39:								
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #40:								
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #41:								
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	tablet che non è ancora disponibile	1	No	0	0	
+tablet che non è ancora disponibile	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #42:								
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #43:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #44:								
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #45:								
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #46:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #47:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	tablet che non è ancora disponibile	1	No	0	0	
+tablet che non è ancora disponibile	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #48:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #49:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #50:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #51:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #52:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	tablet che non è ancora disponibile	1	No	0	0	
+tablet che non è ancora disponibile	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #53:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+								
+node pair #54:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #55:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #56:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #57:								
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	tablet che non è ancora disponibile	1	Yes	1	1	
+tablet che non è ancora disponibile	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	-1	0	
+								
+node pair #58:								
+tablet che non è ancora disponibile	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	tablet che non è ancora disponibile	1	No	0	0	
+								
+node pair #59:								
+tablet che non è ancora disponibile	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	tablet che non è ancora disponibile	1	No	0	0	
+								
+node pair #60:								
+tablet che non è ancora disponibile	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	tablet che non è ancora disponibile	1	No	0	0	
+								
+node pair #61:								
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+								
+node pair #62:								
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+								
+node pair #63:								
+tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	0	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	tablet TELEFONIAX SEMPLICE TAB 10 che non è ancora disponibile	1	No	0	0	
+								
+node pair #64:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #65:								
+Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	Yes	1	1	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato nel negozio TELEFONIAX di Venezia a fine novembre 2011 e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	
+								
+node pair #66:								
+Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	No	-1	0	
+Io lo avevo prenotato a fine novembre 2011 e poi materialmente ordinato e pagato . . . . e non ho ancora notizie !	1	->	Io lo avevo prenotato e poi materialmente ordinato e pagato 20 giorni fa . . . . e non ho ancora notizie !	1	No	-1	0	

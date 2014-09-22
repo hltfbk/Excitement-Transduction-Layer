@@ -1,0 +1,1492 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+
+collapsed node #1 : 2 entailment unit(s) before editing
+	non riesco a disattivare la promozione	[ItaSpeech0051.txt_1_1]
+	non riesco a togliere la promozione	[ItaSpeech0050.txt_1_1]
+
+collapsed node #2 : 2 entailment unit(s) before editing
+	non riesco a disattivare la promozione attuale	[ItaSpeech0051.txt_1_0]
+	non riesco a togliere la promozione che ho adesso	[ItaSpeech0050.txt_1_0]
+
+collapsed node #3 : 1 entailment unit(s) before editing
+	pago questa promozione più di altri clienti	[ItaSpeech0076.txt_1_0]
+
+collapsed node #4 : 1 entailment unit(s) before editing
+	pago questa promozione più di altri	[ItaSpeech0076.txt_1_1]
+
+collapsed node #5 : 1 entailment unit(s) before editing
+	la promozione si trasformerà ma non voglio	[ItaSpeech0111.txt_1_3]
+
+collapsed node #6 : 1 entailment unit(s) before editing
+	la promozione si trasformerà ma io non voglio	[ItaSpeech0111.txt_1_2]
+
+collapsed node #7 : 1 entailment unit(s) before editing
+	non voglio che cambiate la promozione	[ItaSpeech0113.txt_1_1]
+
+collapsed node #8 : 1 entailment unit(s) before editing
+	non voglio che mi cambiate la promozione	[ItaSpeech0113.txt_1_0]
+
+collapsed node #9 : 1 entailment unit(s) before editing
+	cambiate la promozione ma non ho chiesto questo	[ItaSpeech0088.txt_1_1]
+
+collapsed node #10 : 1 entailment unit(s) before editing
+	cambiate la promozione ma io non ho chiesto questo	[ItaSpeech0088.txt_1_0]
+
+collapsed node #11 : 1 entailment unit(s) before editing
+	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	[ItaSpeech0037.txt_1_0]
+
+collapsed node #12 : 1 entailment unit(s) before editing
+	L'assistenza mi ha detto che la promozione non esiste ma non è vero	[ItaSpeech0037.txt_1_1]
+
+collapsed node #13 : 1 entailment unit(s) before editing
+	non ho chiesto di attivarmi questa promozione	[ItaSpeech0008.txt_1_0]
+
+collapsed node #14 : 1 entailment unit(s) before editing
+	la promozione è diversa da quella che ho scelto	[ItaSpeech0036.txt_1_0]
+
+collapsed node #15 : 1 entailment unit(s) before editing
+	la promozione è diversa	[ItaSpeech0036.txt_1_1]
+
+collapsed node #16 : 1 entailment unit(s) before editing
+	non riesco a vedere la promozione	[ItaSpeech0064.txt_1_1]
+
+collapsed node #17 : 1 entailment unit(s) before editing
+	non riesco a vedere la promozione per i punti	[ItaSpeech0064.txt_1_0]
+
+collapsed node #18 : 1 entailment unit(s) before editing
+	non riesco ad attivare la promozione	[ItaSpeech0062.txt_1_0]
+
+collapsed node #19 : 1 entailment unit(s) before editing
+	mi cambiate la promozione ma va bene quella che ho	[ItaSpeech0100.txt_1_1]
+
+collapsed node #20 : 1 entailment unit(s) before editing
+	Non riesco ad attivare la promozione	[ItaSpeech0018.txt_1_0]
+
+collapsed node #21 : 1 entailment unit(s) before editing
+	mi cambiate la promozione ma a me va bene quella che ho	[ItaSpeech0100.txt_1_0]
+
+collapsed node #22 : 1 entailment unit(s) before editing
+	non ho mai detto di disattivare la promozione	[ItaSpeech0044.txt_1_0]
+
+collapsed node #23 : 1 entailment unit(s) before editing
+	non ho detto di disattivare la promozione	[ItaSpeech0044.txt_1_1]
+
+collapsed node #24 : 1 entailment unit(s) before editing
+	la promozione si trasformerà in un'altra ma io non voglio	[ItaSpeech0111.txt_1_0]
+
+collapsed node #25 : 1 entailment unit(s) before editing
+	la promozione si trasformerà in un'altra ma non voglio	[ItaSpeech0111.txt_1_1]
+
+collapsed node #26 : 1 entailment unit(s) before editing
+	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	[ItaSpeech0029.txt_1_0]
+
+collapsed node #27 : 1 entailment unit(s) before editing
+	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	[ItaSpeech0029.txt_1_1]
+
+
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+
+node pair #1:
+non riesco a disattivare la promozione attuale	2	->	non riesco a togliere la promozione	2	Yes	2
+non riesco a togliere la promozione	2	->	non riesco a disattivare la promozione attuale	2	No	-2
+
+node pair #2:
+non riesco a togliere la promozione	2	->	pago questa promozione più di altri clienti	1	No	0
+pago questa promozione più di altri clienti	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #3:
+non riesco a togliere la promozione	2	->	pago questa promozione più di altri	1	No	0
+pago questa promozione più di altri	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #4:
+non riesco a togliere la promozione	2	->	la promozione si trasformerà ma non voglio	1	No	0
+la promozione si trasformerà ma non voglio	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #5:
+non riesco a togliere la promozione	2	->	la promozione si trasformerà ma io non voglio	1	No	0
+la promozione si trasformerà ma io non voglio	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #6:
+non riesco a togliere la promozione	2	->	non voglio che cambiate la promozione	1	No	0
+non voglio che cambiate la promozione	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #7:
+non riesco a togliere la promozione	2	->	non voglio che mi cambiate la promozione	1	No	0
+non voglio che mi cambiate la promozione	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #8:
+non riesco a togliere la promozione	2	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+cambiate la promozione ma non ho chiesto questo	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #9:
+non riesco a togliere la promozione	2	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+cambiate la promozione ma io non ho chiesto questo	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #10:
+non riesco a togliere la promozione	2	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #11:
+non riesco a togliere la promozione	2	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #12:
+non riesco a togliere la promozione	2	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #13:
+non riesco a togliere la promozione	2	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #14:
+non riesco a togliere la promozione	2	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #15:
+non riesco a togliere la promozione	2	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #16:
+non riesco a togliere la promozione	2	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #17:
+non riesco a togliere la promozione	2	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #18:
+non riesco a togliere la promozione	2	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #19:
+non riesco a togliere la promozione	2	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #20:
+non riesco a togliere la promozione	2	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #21:
+non riesco a togliere la promozione	2	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #22:
+non riesco a togliere la promozione	2	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #23:
+non riesco a togliere la promozione	2	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #24:
+non riesco a togliere la promozione	2	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #25:
+non riesco a togliere la promozione	2	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #26:
+non riesco a togliere la promozione	2	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non riesco a togliere la promozione	2	No	0
+
+node pair #27:
+non riesco a disattivare la promozione attuale	2	->	pago questa promozione più di altri clienti	1	No	0
+pago questa promozione più di altri clienti	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #28:
+non riesco a disattivare la promozione attuale	2	->	pago questa promozione più di altri	1	No	0
+pago questa promozione più di altri	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #29:
+non riesco a disattivare la promozione attuale	2	->	la promozione si trasformerà ma non voglio	1	No	0
+la promozione si trasformerà ma non voglio	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #30:
+non riesco a disattivare la promozione attuale	2	->	la promozione si trasformerà ma io non voglio	1	No	0
+la promozione si trasformerà ma io non voglio	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #31:
+non riesco a disattivare la promozione attuale	2	->	non voglio che cambiate la promozione	1	No	0
+non voglio che cambiate la promozione	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #32:
+non riesco a disattivare la promozione attuale	2	->	non voglio che mi cambiate la promozione	1	No	0
+non voglio che mi cambiate la promozione	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #33:
+non riesco a disattivare la promozione attuale	2	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+cambiate la promozione ma non ho chiesto questo	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #34:
+non riesco a disattivare la promozione attuale	2	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+cambiate la promozione ma io non ho chiesto questo	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #35:
+non riesco a disattivare la promozione attuale	2	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #36:
+non riesco a disattivare la promozione attuale	2	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #37:
+non riesco a disattivare la promozione attuale	2	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #38:
+non riesco a disattivare la promozione attuale	2	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #39:
+non riesco a disattivare la promozione attuale	2	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #40:
+non riesco a disattivare la promozione attuale	2	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #41:
+non riesco a disattivare la promozione attuale	2	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #42:
+non riesco a disattivare la promozione attuale	2	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #43:
+non riesco a disattivare la promozione attuale	2	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #44:
+non riesco a disattivare la promozione attuale	2	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #45:
+non riesco a disattivare la promozione attuale	2	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #46:
+non riesco a disattivare la promozione attuale	2	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #47:
+non riesco a disattivare la promozione attuale	2	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #48:
+non riesco a disattivare la promozione attuale	2	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #49:
+non riesco a disattivare la promozione attuale	2	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #50:
+non riesco a disattivare la promozione attuale	2	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #51:
+non riesco a disattivare la promozione attuale	2	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non riesco a disattivare la promozione attuale	2	No	0
+
+node pair #52:
+pago questa promozione più di altri clienti	1	->	pago questa promozione più di altri	1	Yes	1
+pago questa promozione più di altri	1	->	pago questa promozione più di altri clienti	1	No	-1
+
+node pair #53:
+pago questa promozione più di altri clienti	1	->	la promozione si trasformerà ma non voglio	1	No	0
+la promozione si trasformerà ma non voglio	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #54:
+pago questa promozione più di altri clienti	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+la promozione si trasformerà ma io non voglio	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #55:
+pago questa promozione più di altri clienti	1	->	non voglio che cambiate la promozione	1	No	0
+non voglio che cambiate la promozione	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #56:
+pago questa promozione più di altri clienti	1	->	non voglio che mi cambiate la promozione	1	No	0
+non voglio che mi cambiate la promozione	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #57:
+pago questa promozione più di altri clienti	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+cambiate la promozione ma non ho chiesto questo	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #58:
+pago questa promozione più di altri clienti	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+cambiate la promozione ma io non ho chiesto questo	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #59:
+pago questa promozione più di altri clienti	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #60:
+pago questa promozione più di altri clienti	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #61:
+pago questa promozione più di altri clienti	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #62:
+pago questa promozione più di altri clienti	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #63:
+pago questa promozione più di altri clienti	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #64:
+pago questa promozione più di altri clienti	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #65:
+pago questa promozione più di altri clienti	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #66:
+pago questa promozione più di altri clienti	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #67:
+pago questa promozione più di altri clienti	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #68:
+pago questa promozione più di altri clienti	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #69:
+pago questa promozione più di altri clienti	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #70:
+pago questa promozione più di altri clienti	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #71:
+pago questa promozione più di altri clienti	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #72:
+pago questa promozione più di altri clienti	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #73:
+pago questa promozione più di altri clienti	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #74:
+pago questa promozione più di altri clienti	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #75:
+pago questa promozione più di altri clienti	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	pago questa promozione più di altri clienti	1	No	0
+
+node pair #76:
+pago questa promozione più di altri	1	->	la promozione si trasformerà ma non voglio	1	No	0
+la promozione si trasformerà ma non voglio	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #77:
+pago questa promozione più di altri	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+la promozione si trasformerà ma io non voglio	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #78:
+pago questa promozione più di altri	1	->	non voglio che cambiate la promozione	1	No	0
+non voglio che cambiate la promozione	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #79:
+pago questa promozione più di altri	1	->	non voglio che mi cambiate la promozione	1	No	0
+non voglio che mi cambiate la promozione	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #80:
+pago questa promozione più di altri	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+cambiate la promozione ma non ho chiesto questo	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #81:
+pago questa promozione più di altri	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+cambiate la promozione ma io non ho chiesto questo	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #82:
+pago questa promozione più di altri	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #83:
+pago questa promozione più di altri	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #84:
+pago questa promozione più di altri	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #85:
+pago questa promozione più di altri	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #86:
+pago questa promozione più di altri	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #87:
+pago questa promozione più di altri	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #88:
+pago questa promozione più di altri	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #89:
+pago questa promozione più di altri	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #90:
+pago questa promozione più di altri	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #91:
+pago questa promozione più di altri	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #92:
+pago questa promozione più di altri	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #93:
+pago questa promozione più di altri	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #94:
+pago questa promozione più di altri	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #95:
+pago questa promozione più di altri	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #96:
+pago questa promozione più di altri	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #97:
+pago questa promozione più di altri	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #98:
+pago questa promozione più di altri	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	pago questa promozione più di altri	1	No	0
+
+node pair #99:
+la promozione si trasformerà ma io non voglio	1	->	la promozione si trasformerà ma non voglio	1	Yes	1
+la promozione si trasformerà ma non voglio	1	->	la promozione si trasformerà ma io non voglio	1	No	-1
+
+node pair #100:
+la promozione si trasformerà ma non voglio	1	->	non voglio che cambiate la promozione	1	Yes	0
+non voglio che cambiate la promozione	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #101:
+la promozione si trasformerà ma non voglio	1	->	non voglio che mi cambiate la promozione	1	No	0
+non voglio che mi cambiate la promozione	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #102:
+cambiate la promozione ma non ho chiesto questo	1	->	la promozione si trasformerà ma non voglio	1	Yes	0
+la promozione si trasformerà ma non voglio	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #103:
+la promozione si trasformerà ma non voglio	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+cambiate la promozione ma io non ho chiesto questo	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #104:
+la promozione si trasformerà ma non voglio	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #105:
+la promozione si trasformerà ma non voglio	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #106:
+la promozione si trasformerà ma non voglio	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #107:
+la promozione si trasformerà ma non voglio	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #108:
+la promozione si trasformerà ma non voglio	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #109:
+la promozione si trasformerà ma non voglio	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #110:
+la promozione si trasformerà ma non voglio	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #111:
+la promozione si trasformerà ma non voglio	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #112:
+mi cambiate la promozione ma va bene quella che ho	1	->	la promozione si trasformerà ma non voglio	1	Yes	0
+la promozione si trasformerà ma non voglio	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #113:
+la promozione si trasformerà ma non voglio	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #114:
+la promozione si trasformerà ma non voglio	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #115:
+la promozione si trasformerà ma non voglio	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #116:
+la promozione si trasformerà ma non voglio	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #117:
+la promozione si trasformerà in un'altra ma io non voglio	1	->	la promozione si trasformerà ma non voglio	1	Yes	1
+la promozione si trasformerà ma non voglio	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	-1
+
+node pair #118:
+la promozione si trasformerà in un'altra ma non voglio	1	->	la promozione si trasformerà ma non voglio	1	Yes	1
+la promozione si trasformerà ma non voglio	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	-1
+
+node pair #119:
+la promozione si trasformerà ma non voglio	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #120:
+la promozione si trasformerà ma non voglio	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	la promozione si trasformerà ma non voglio	1	No	0
+
+node pair #121:
+la promozione si trasformerà ma io non voglio	1	->	non voglio che cambiate la promozione	1	No	0
+non voglio che cambiate la promozione	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #122:
+la promozione si trasformerà ma io non voglio	1	->	non voglio che mi cambiate la promozione	1	Yes	0
+non voglio che mi cambiate la promozione	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #123:
+la promozione si trasformerà ma io non voglio	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+cambiate la promozione ma non ho chiesto questo	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #124:
+cambiate la promozione ma io non ho chiesto questo	1	->	la promozione si trasformerà ma io non voglio	1	Yes	0
+la promozione si trasformerà ma io non voglio	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #125:
+la promozione si trasformerà ma io non voglio	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #126:
+la promozione si trasformerà ma io non voglio	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #127:
+la promozione si trasformerà ma io non voglio	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #128:
+la promozione si trasformerà ma io non voglio	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #129:
+la promozione si trasformerà ma io non voglio	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #130:
+la promozione si trasformerà ma io non voglio	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #131:
+la promozione si trasformerà ma io non voglio	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #132:
+la promozione si trasformerà ma io non voglio	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #133:
+la promozione si trasformerà ma io non voglio	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #134:
+la promozione si trasformerà ma io non voglio	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #135:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	la promozione si trasformerà ma io non voglio	1	Yes	0
+la promozione si trasformerà ma io non voglio	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #136:
+la promozione si trasformerà ma io non voglio	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #137:
+la promozione si trasformerà ma io non voglio	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #138:
+la promozione si trasformerà in un'altra ma io non voglio	1	->	la promozione si trasformerà ma io non voglio	1	Yes	1
+la promozione si trasformerà ma io non voglio	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	-1
+
+node pair #139:
+la promozione si trasformerà ma io non voglio	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	-1
+la promozione si trasformerà in un'altra ma non voglio	1	->	la promozione si trasformerà ma io non voglio	1	No	-1
+
+node pair #140:
+la promozione si trasformerà ma io non voglio	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #141:
+la promozione si trasformerà ma io non voglio	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	la promozione si trasformerà ma io non voglio	1	No	0
+
+node pair #142:
+non voglio che mi cambiate la promozione	1	->	non voglio che cambiate la promozione	1	Yes	1
+non voglio che cambiate la promozione	1	->	non voglio che mi cambiate la promozione	1	No	-1
+
+node pair #143:
+cambiate la promozione ma non ho chiesto questo	1	->	non voglio che cambiate la promozione	1	Yes	0
+non voglio che cambiate la promozione	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #144:
+non voglio che cambiate la promozione	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+cambiate la promozione ma io non ho chiesto questo	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #145:
+non voglio che cambiate la promozione	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #146:
+non voglio che cambiate la promozione	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #147:
+non voglio che cambiate la promozione	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #148:
+non voglio che cambiate la promozione	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #149:
+non voglio che cambiate la promozione	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #150:
+non voglio che cambiate la promozione	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #151:
+non voglio che cambiate la promozione	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #152:
+non voglio che cambiate la promozione	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #153:
+mi cambiate la promozione ma va bene quella che ho	1	->	non voglio che cambiate la promozione	1	Yes	0
+non voglio che cambiate la promozione	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #154:
+non voglio che cambiate la promozione	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #155:
+non voglio che cambiate la promozione	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #156:
+non voglio che cambiate la promozione	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #157:
+non voglio che cambiate la promozione	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #158:
+non voglio che cambiate la promozione	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #159:
+non voglio che cambiate la promozione	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #160:
+non voglio che cambiate la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #161:
+non voglio che cambiate la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non voglio che cambiate la promozione	1	No	0
+
+node pair #162:
+non voglio che mi cambiate la promozione	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+cambiate la promozione ma non ho chiesto questo	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #163:
+cambiate la promozione ma io non ho chiesto questo	1	->	non voglio che mi cambiate la promozione	1	Yes	0
+non voglio che mi cambiate la promozione	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #164:
+non voglio che mi cambiate la promozione	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #165:
+non voglio che mi cambiate la promozione	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #166:
+non voglio che mi cambiate la promozione	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #167:
+non voglio che mi cambiate la promozione	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #168:
+non voglio che mi cambiate la promozione	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #169:
+non voglio che mi cambiate la promozione	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #170:
+non voglio che mi cambiate la promozione	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #171:
+non voglio che mi cambiate la promozione	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #172:
+non voglio che mi cambiate la promozione	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #173:
+non voglio che mi cambiate la promozione	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #174:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non voglio che mi cambiate la promozione	1	Yes	0
+non voglio che mi cambiate la promozione	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #175:
+non voglio che mi cambiate la promozione	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #176:
+non voglio che mi cambiate la promozione	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #177:
+non voglio che mi cambiate la promozione	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #178:
+la promozione si trasformerà in un'altra ma non voglio	1	->	non voglio che mi cambiate la promozione	1	Yes	0
+non voglio che mi cambiate la promozione	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+
+node pair #179:
+non voglio che mi cambiate la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #180:
+non voglio che mi cambiate la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non voglio che mi cambiate la promozione	1	No	0
+
+node pair #181:
+cambiate la promozione ma io non ho chiesto questo	1	->	cambiate la promozione ma non ho chiesto questo	1	Yes	1
+cambiate la promozione ma non ho chiesto questo	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	-1
+
+node pair #182:
+cambiate la promozione ma non ho chiesto questo	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #183:
+cambiate la promozione ma non ho chiesto questo	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #184:
+cambiate la promozione ma non ho chiesto questo	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #185:
+cambiate la promozione ma non ho chiesto questo	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #186:
+cambiate la promozione ma non ho chiesto questo	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #187:
+cambiate la promozione ma non ho chiesto questo	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #188:
+cambiate la promozione ma non ho chiesto questo	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #189:
+cambiate la promozione ma non ho chiesto questo	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #190:
+mi cambiate la promozione ma va bene quella che ho	1	->	cambiate la promozione ma non ho chiesto questo	1	Yes	0
+cambiate la promozione ma non ho chiesto questo	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #191:
+cambiate la promozione ma non ho chiesto questo	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #192:
+cambiate la promozione ma non ho chiesto questo	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #193:
+cambiate la promozione ma non ho chiesto questo	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #194:
+cambiate la promozione ma non ho chiesto questo	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #195:
+cambiate la promozione ma non ho chiesto questo	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #196:
+cambiate la promozione ma non ho chiesto questo	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #197:
+cambiate la promozione ma non ho chiesto questo	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #198:
+cambiate la promozione ma non ho chiesto questo	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	cambiate la promozione ma non ho chiesto questo	1	No	0
+
+node pair #199:
+cambiate la promozione ma io non ho chiesto questo	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #200:
+cambiate la promozione ma io non ho chiesto questo	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #201:
+cambiate la promozione ma io non ho chiesto questo	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #202:
+cambiate la promozione ma io non ho chiesto questo	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #203:
+cambiate la promozione ma io non ho chiesto questo	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #204:
+cambiate la promozione ma io non ho chiesto questo	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #205:
+cambiate la promozione ma io non ho chiesto questo	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #206:
+cambiate la promozione ma io non ho chiesto questo	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #207:
+cambiate la promozione ma io non ho chiesto questo	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #208:
+cambiate la promozione ma io non ho chiesto questo	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #209:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	cambiate la promozione ma io non ho chiesto questo	1	Yes	0
+cambiate la promozione ma io non ho chiesto questo	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #210:
+cambiate la promozione ma io non ho chiesto questo	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #211:
+cambiate la promozione ma io non ho chiesto questo	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #212:
+cambiate la promozione ma io non ho chiesto questo	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #213:
+cambiate la promozione ma io non ho chiesto questo	1	->	la promozione si trasformerà in un'altra ma non voglio	1	Yes	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #214:
+cambiate la promozione ma io non ho chiesto questo	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #215:
+cambiate la promozione ma io non ho chiesto questo	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	cambiate la promozione ma io non ho chiesto questo	1	No	0
+
+node pair #216:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	Yes	1
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	-1
+
+node pair #217:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #218:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #219:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #220:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #221:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #222:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #223:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #224:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #225:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #226:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #227:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #228:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #229:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #230:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #231:
+L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	L'assistenza mi ha detto che la mia promozione non esiste ma non è vero	1	No	0
+
+node pair #232:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+non ho chiesto di attivarmi questa promozione	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #233:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #234:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #235:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #236:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #237:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #238:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #239:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #240:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #241:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #242:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #243:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #244:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #245:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #246:
+L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	L'assistenza mi ha detto che la promozione non esiste ma non è vero	1	No	0
+
+node pair #247:
+non ho chiesto di attivarmi questa promozione	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+la promozione è diversa da quella che ho scelto	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #248:
+non ho chiesto di attivarmi questa promozione	1	->	la promozione è diversa	1	No	0
+la promozione è diversa	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #249:
+non ho chiesto di attivarmi questa promozione	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #250:
+non ho chiesto di attivarmi questa promozione	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #251:
+non ho chiesto di attivarmi questa promozione	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #252:
+non ho chiesto di attivarmi questa promozione	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #253:
+non ho chiesto di attivarmi questa promozione	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #254:
+non ho chiesto di attivarmi questa promozione	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #255:
+non ho chiesto di attivarmi questa promozione	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #256:
+non ho chiesto di attivarmi questa promozione	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #257:
+non ho chiesto di attivarmi questa promozione	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #258:
+non ho chiesto di attivarmi questa promozione	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #259:
+non ho chiesto di attivarmi questa promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #260:
+non ho chiesto di attivarmi questa promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non ho chiesto di attivarmi questa promozione	1	No	0
+
+node pair #261:
+la promozione è diversa da quella che ho scelto	1	->	la promozione è diversa	1	Yes	1
+la promozione è diversa	1	->	la promozione è diversa da quella che ho scelto	1	No	-1
+
+node pair #262:
+la promozione è diversa da quella che ho scelto	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #263:
+la promozione è diversa da quella che ho scelto	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #264:
+la promozione è diversa da quella che ho scelto	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #265:
+la promozione è diversa da quella che ho scelto	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #266:
+la promozione è diversa da quella che ho scelto	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #267:
+la promozione è diversa da quella che ho scelto	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #268:
+la promozione è diversa da quella che ho scelto	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #269:
+la promozione è diversa da quella che ho scelto	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #270:
+la promozione è diversa da quella che ho scelto	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #271:
+la promozione è diversa da quella che ho scelto	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #272:
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	la promozione è diversa da quella che ho scelto	1	Yes	0
+la promozione è diversa da quella che ho scelto	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+
+node pair #273:
+la promozione è diversa da quella che ho scelto	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	la promozione è diversa da quella che ho scelto	1	No	0
+
+node pair #274:
+la promozione è diversa	1	->	non riesco a vedere la promozione	1	No	0
+non riesco a vedere la promozione	1	->	la promozione è diversa	1	No	0
+
+node pair #275:
+la promozione è diversa	1	->	non riesco a vedere la promozione per i punti	1	No	0
+non riesco a vedere la promozione per i punti	1	->	la promozione è diversa	1	No	0
+
+node pair #276:
+la promozione è diversa	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	la promozione è diversa	1	No	0
+
+node pair #277:
+la promozione è diversa	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	la promozione è diversa	1	No	0
+
+node pair #278:
+la promozione è diversa	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	la promozione è diversa	1	No	0
+
+node pair #279:
+la promozione è diversa	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	la promozione è diversa	1	No	0
+
+node pair #280:
+la promozione è diversa	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	la promozione è diversa	1	No	0
+
+node pair #281:
+la promozione è diversa	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	la promozione è diversa	1	No	0
+
+node pair #282:
+la promozione è diversa	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	la promozione è diversa	1	No	0
+
+node pair #283:
+la promozione è diversa	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	la promozione è diversa	1	No	0
+
+node pair #284:
+la promozione è diversa	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	la promozione è diversa	1	No	0
+
+node pair #285:
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	la promozione è diversa	1	Yes	0
+la promozione è diversa	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+
+node pair #286:
+non riesco a vedere la promozione per i punti	1	->	non riesco a vedere la promozione	1	Yes	1
+non riesco a vedere la promozione	1	->	non riesco a vedere la promozione per i punti	1	No	-1
+
+node pair #287:
+non riesco a vedere la promozione	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #288:
+non riesco a vedere la promozione	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #289:
+non riesco a vedere la promozione	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #290:
+non riesco a vedere la promozione	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #291:
+non riesco a vedere la promozione	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #292:
+non riesco a vedere la promozione	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #293:
+non riesco a vedere la promozione	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #294:
+non riesco a vedere la promozione	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #295:
+non riesco a vedere la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #296:
+non riesco a vedere la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non riesco a vedere la promozione	1	No	0
+
+node pair #297:
+non riesco a vedere la promozione per i punti	1	->	non riesco ad attivare la promozione	1	No	0
+non riesco ad attivare la promozione	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #298:
+non riesco a vedere la promozione per i punti	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #299:
+non riesco a vedere la promozione per i punti	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #300:
+non riesco a vedere la promozione per i punti	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #301:
+non riesco a vedere la promozione per i punti	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #302:
+non riesco a vedere la promozione per i punti	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #303:
+non riesco a vedere la promozione per i punti	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #304:
+non riesco a vedere la promozione per i punti	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #305:
+non riesco a vedere la promozione per i punti	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #306:
+non riesco a vedere la promozione per i punti	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non riesco a vedere la promozione per i punti	1	No	0
+
+node pair #307:
+non riesco ad attivare la promozione	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+mi cambiate la promozione ma va bene quella che ho	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #308:
+non riesco ad attivare la promozione	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #309:
+non riesco ad attivare la promozione	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #310:
+non riesco ad attivare la promozione	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #311:
+non riesco ad attivare la promozione	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #312:
+non riesco ad attivare la promozione	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #313:
+non riesco ad attivare la promozione	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #314:
+non riesco ad attivare la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #315:
+non riesco ad attivare la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non riesco ad attivare la promozione	1	No	0
+
+node pair #316:
+mi cambiate la promozione ma va bene quella che ho	1	->	Non riesco ad attivare la promozione	1	No	0
+Non riesco ad attivare la promozione	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #317:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	mi cambiate la promozione ma va bene quella che ho	1	Yes	1
+mi cambiate la promozione ma va bene quella che ho	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	-1
+
+node pair #318:
+mi cambiate la promozione ma va bene quella che ho	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #319:
+mi cambiate la promozione ma va bene quella che ho	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #320:
+mi cambiate la promozione ma va bene quella che ho	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #321:
+mi cambiate la promozione ma va bene quella che ho	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #322:
+mi cambiate la promozione ma va bene quella che ho	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #323:
+mi cambiate la promozione ma va bene quella che ho	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	mi cambiate la promozione ma va bene quella che ho	1	No	0
+
+node pair #324:
+Non riesco ad attivare la promozione	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+mi cambiate la promozione ma a me va bene quella che ho	1	->	Non riesco ad attivare la promozione	1	No	0
+
+node pair #325:
+Non riesco ad attivare la promozione	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	Non riesco ad attivare la promozione	1	No	0
+
+node pair #326:
+Non riesco ad attivare la promozione	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	Non riesco ad attivare la promozione	1	No	0
+
+node pair #327:
+Non riesco ad attivare la promozione	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	Non riesco ad attivare la promozione	1	No	0
+
+node pair #328:
+Non riesco ad attivare la promozione	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	Non riesco ad attivare la promozione	1	No	0
+
+node pair #329:
+Non riesco ad attivare la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	Non riesco ad attivare la promozione	1	No	0
+
+node pair #330:
+Non riesco ad attivare la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	Non riesco ad attivare la promozione	1	No	0
+
+node pair #331:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non ho mai detto di disattivare la promozione	1	No	0
+non ho mai detto di disattivare la promozione	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #332:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	non ho detto di disattivare la promozione	1	No	0
+non ho detto di disattivare la promozione	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #333:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #334:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	la promozione si trasformerà in un'altra ma non voglio	1	Yes	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #335:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #336:
+mi cambiate la promozione ma a me va bene quella che ho	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	mi cambiate la promozione ma a me va bene quella che ho	1	No	0
+
+node pair #337:
+non ho mai detto di disattivare la promozione	1	->	non ho detto di disattivare la promozione	1	Yes	1
+non ho detto di disattivare la promozione	1	->	non ho mai detto di disattivare la promozione	1	No	-1
+
+node pair #338:
+non ho mai detto di disattivare la promozione	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non ho mai detto di disattivare la promozione	1	No	0
+
+node pair #339:
+non ho mai detto di disattivare la promozione	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non ho mai detto di disattivare la promozione	1	No	0
+
+node pair #340:
+non ho mai detto di disattivare la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non ho mai detto di disattivare la promozione	1	No	0
+
+node pair #341:
+non ho mai detto di disattivare la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non ho mai detto di disattivare la promozione	1	No	0
+
+node pair #342:
+non ho detto di disattivare la promozione	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+la promozione si trasformerà in un'altra ma io non voglio	1	->	non ho detto di disattivare la promozione	1	No	0
+
+node pair #343:
+non ho detto di disattivare la promozione	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+la promozione si trasformerà in un'altra ma non voglio	1	->	non ho detto di disattivare la promozione	1	No	0
+
+node pair #344:
+non ho detto di disattivare la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	non ho detto di disattivare la promozione	1	No	0
+
+node pair #345:
+non ho detto di disattivare la promozione	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	non ho detto di disattivare la promozione	1	No	0
+
+node pair #346:
+la promozione si trasformerà in un'altra ma io non voglio	1	->	la promozione si trasformerà in un'altra ma non voglio	1	Yes	1
+la promozione si trasformerà in un'altra ma non voglio	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	-1
+
+node pair #347:
+la promozione si trasformerà in un'altra ma io non voglio	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+
+node pair #348:
+la promozione si trasformerà in un'altra ma io non voglio	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	la promozione si trasformerà in un'altra ma io non voglio	1	No	0
+
+node pair #349:
+la promozione si trasformerà in un'altra ma non voglio	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+
+node pair #350:
+la promozione si trasformerà in un'altra ma non voglio	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	No	0
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	la promozione si trasformerà in un'altra ma non voglio	1	No	0
+
+node pair #351:
+mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	->	mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	Yes	1
+mi è arrivato un messaggio che da una promozione diversa quella del pacchetto	1	->	mi è arrivato un messaggio che da una promozione diversa quella del mio pacchetto	1	No	-1
+

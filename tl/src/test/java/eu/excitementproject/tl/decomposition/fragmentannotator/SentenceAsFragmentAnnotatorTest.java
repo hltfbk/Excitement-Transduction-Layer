@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitement.type.tl.DeterminedFragment;
@@ -35,6 +36,7 @@ import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnno
  */
 public class SentenceAsFragmentAnnotatorTest {
 
+	@Ignore
 	@Test
 	public void test() {
 		BasicConfigurator.resetConfiguration(); 

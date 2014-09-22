@@ -7,19 +7,18 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 
 import javax.swing.JFrame;
-import javax.swing.JTabbedPane;
 
+import org.apache.log4j.Logger;
 import org.jgrapht.graph.AbstractGraph;
 
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
-@SuppressWarnings("unused")
 public class GraphViewer {
     
 	private static final Dimension DEFAULT_SIZE = new Dimension( 1000, 700 );
+
+	private static final Logger logger = Logger.getLogger(GraphViewer.class);
 
 	public static void drawRandomGraph() {
 		
@@ -31,7 +30,7 @@ public class GraphViewer {
     			EntailmentGraphRaw g = EntailmentGraphRaw.getSampleOuput(false);
 //    			EntailmentGraphCollapsed g = new EntailmentGraphCollapsed(new File("./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_1/collapsed_graph.xml"));
     		
-    			System.out.println("GRAPH:\n\n" + g.toString() + "\n\n");
+    			logger.info("GRAPH:\n\n" + g.toString() + "\n\n");
     			final GraphRenderer graphRenderer = new GraphRenderer(g);
     	
     			frame.setSize(DEFAULT_SIZE);

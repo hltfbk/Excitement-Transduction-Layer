@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -199,11 +199,11 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		for(ModifierAnnotation m: sma) {
 			ModifierAnnotation m_dp = m.getDependsOn();
 			if (m_dp != null && ! sma.contains(m_dp)) {
-				System.out.println("Modifiers not consistent");
+				logger.info("Modifiers not consistent");
 				return false;
 			}
 		}
-		System.out.println("Modifiers OK");
+		logger.info("Modifiers OK");
 		return true;
 	}
 
@@ -211,7 +211,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	protected void printAnnotations(Set<ModifierAnnotation> sma) {
 
 		for (Annotation a: sma) {
-			System.out.println("\t" + a.getCoveredText() + " / " + a.getClass());
+			logger.info("\t" + a.getCoveredText() + " / " + a.getClass());
 		}
 	}
 
@@ -236,7 +236,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		
 		for(Region r: RegionUtils.compressRegions(fragmentRegions)) {
 			
-			System.out.println("Fragment region: " + r.getBegin()  + " -- " + r.getEnd());
+			logger.info("Fragment region: " + r.getBegin()  + " -- " + r.getEnd());
 			mas.addAll(JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, r.getBegin(), r.getEnd()));
 		}
 		
@@ -408,7 +408,9 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 
 		try {
 			JCas aJCas = CASUtils.createNewInputCas(); 
-			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/107379.txt.xmi"); 
+//			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1/107379.txt.xmi");
+			// replaced by Lili, 12.8.2014
+			File f = new File("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open/all/15.txt.xmi"); 
 
 			// initiate the FragGraphGenerator... 
 			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
@@ -433,7 +435,7 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
     public static FragmentGraph getSampleGraph() {
 
     	for(FragmentGraph g : getSampleOutput()){				
-  //  		System.out.println("fragment graph: " + g.toString());
+  //  		logger.info("fragment graph: " + g.toString());
     		return g;
     	}
 		return null;

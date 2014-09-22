@@ -154,7 +154,7 @@ public class CASUtilsTest {
 			JCas anotherJCas = CASUtils.createNewInputCas(); 
 			CASUtils.deserializeFromXmi(anotherJCas, xmiIn); 
 			//CASUtils.dumpCAS(anotherJCas);
-			//System.out.println(anotherJCas.getDocumentText()); 
+			//logger.info(anotherJCas.getDocumentText()); 
 			//testlogger.info(anotherJCas.getDocumentText()); 
 		}
 		catch (Exception e)
