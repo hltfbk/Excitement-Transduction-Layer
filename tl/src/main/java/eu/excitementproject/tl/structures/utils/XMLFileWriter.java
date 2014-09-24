@@ -2,6 +2,7 @@ package eu.excitementproject.tl.structures.utils;
 
 import java.io.File;
 
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -18,7 +19,10 @@ public class XMLFileWriter {
 	public static void write(DOMSource source, String filename) throws TransformerException{
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
 		Transformer transformer = transformerFactory.newTransformer();
-
+		
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+		
 		File f = new File(filename);
 		StreamResult result = new StreamResult(f.toURI().getPath());
 
