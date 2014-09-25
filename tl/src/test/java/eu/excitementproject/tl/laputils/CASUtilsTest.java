@@ -25,7 +25,7 @@ import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.Metadata;
 import eu.excitementproject.eop.lap.LAPAccess;
-import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
+//import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 //import eu.excitementproject.tl.laputils.CASUtils.Region;
 public class CASUtilsTest {
 
@@ -49,7 +49,7 @@ public class CASUtilsTest {
 		// make sure we can use any LAP, like TreeTaggerEN 
 		// (checking that the CAS can hold/access generic LAP annotation types) 
 		LAPAccess l = null; 
-		l = new TreeTaggerEN(); 
+		l = new LemmaLevelLapEN(); 
 		l.addAnnotationOn(aJCas); 				
 		//  Dump the result... (if you want)  
 		//CASUtils.dumpCAS(aJCas);  
