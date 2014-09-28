@@ -1,11 +1,8 @@
 package eu.excitementproject.tl.experiments;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -40,8 +37,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	public GraphOptimizer m_optimizer = null;
 	public EntailmentGraphRaw m_rfg = null;
 	
-	public List<Double> confidenceThresholds;
-	public Map<String,Map<Double,EvaluationAndAnalysisMeasures>> results;
+	public ResultsContainer results;
 	
 	public static final boolean includeFragmentGraphEdges = true;
 	
@@ -53,28 +49,20 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 				edaClass);
 		
 		// Logger.getRootLogger().setLevel(Level.ERROR); 
-		
-		confidenceThresholds= new LinkedList<Double>();
-		for (double confidenceThreshold=0.5; confidenceThreshold<1.01; confidenceThreshold+=0.05){
-			confidenceThresholds.add(confidenceThreshold);
-		}
-		
-		results = new HashMap<String, Map<Double,EvaluationAndAnalysisMeasures>>();
+				
+		results = new ResultsContainer();
 	}
 	
 	public String printResults(){
-		String s = "";
-		for (String setting : results.keySet()){
-			System.out.println();
-			for (Double threshold : confidenceThresholds){
-				if (results.get(setting).containsKey(threshold)){
-					EvaluationAndAnalysisMeasures res = results.get(setting).get(threshold);
-					s += setting+"\t"+threshold.toString()+"\t"+res.getRecall().toString()+"\t"+res.getPrecision().toString()+"\t"+res.getF1().toString()+"\t"+res.getOverallEdges().toString()+"\t"+res.getViolations().toString()+"\t"+res.getExtraFGedges().toString()+"\t"+res.getMissingFGedges().toString()+"\t"+res.getEdaCalls().toString()+"\n";
-					System.out.println(s);	
-				}
-			}
-		}
-		return s;
+		return results.printResults();
+	}
+	
+	public String printErrorExamples(int limit){
+		return results.printErrorExamples(limit);
+	}	
+
+	public String printAvgResults(){
+		return results.printAvgResults();
 	}
 	
 	@Override
@@ -85,17 +73,14 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	}
 	
 	public void addResult(String setting, double threshold, EvaluationAndAnalysisMeasures res){
-		Map<Double,EvaluationAndAnalysisMeasures> resultsForSetting = new HashMap<Double,EvaluationAndAnalysisMeasures>();
-		if(results.containsKey(setting)) resultsForSetting = results.get(setting);
-		resultsForSetting.put(threshold, res);
-		results.put(setting, resultsForSetting);
+		results.addResult(setting, threshold, res);
 	}
 	
 	/**
 	 * @param confidenceThresholds the confidenceThresholds to set
 	 */
 	public void setConfidenceThresholds(List<Double> confidenceThresholds) {
-		this.confidenceThresholds = confidenceThresholds;
+		this.results.setConfidenceThresholds(confidenceThresholds);
 	}
 
 	public EntailmentGraphRaw getPlusClosureGraph(EntailmentGraphRaw graph){
@@ -153,6 +138,24 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	public EntailmentGraphCollapsed collapseGraph(EntailmentGraphRaw graph, Double threshold) {
 		try {
 			return m_optimizer.optimizeGraph(graph, threshold);
+		} catch (GraphOptimizerException e) {
+			e.printStackTrace();	
+			return null;
+		}
+	}
+
+	public EntailmentGraphCollapsed collapseGraph(EntailmentGraphRaw graph, GraphOptimizer optimizer) {
+		try {
+			return optimizer.optimizeGraph(graph);
+		} catch (GraphOptimizerException e) {
+			e.printStackTrace();	
+			return null;
+		}
+	}
+	
+	public EntailmentGraphCollapsed collapseGraph(EntailmentGraphRaw graph, Double threshold, GraphOptimizer optimizer) {
+		try {
+			return optimizer.optimizeGraph(graph, threshold);
 		} catch (GraphOptimizerException e) {
 			e.printStackTrace();	
 			return null;
@@ -218,15 +221,18 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		return eval;
 	}
 	
-	/** Excluding fragment graph edges is not available - for collapsed graph we don't keep track of the edges' origin, also logically it's not relevant for collapsed graph evaluation
-	 * @param graph
-	 * @param gsAnnotationsDir
-	 * @return
-	 */
-	public EvaluationAndAnalysisMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean isSingleClusterGS){			
+	public EvaluationAndAnalysisMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
 		// de-collapse the graph into the corresponding raw graph
 		EntailmentGraphRaw rawGraph = EvaluatorGraphOptimizer.getDecollapsedGraph(graph);
-		return evaluateRawGraph(rawGraph, gsAnnotationsDir, true, isSingleClusterGS);
+		if (!includeFragmentGraphEdges){
+			if (m_rfg!=null){
+				for (EntailmentRelation fgEdge : m_rfg.edgeSet()){
+					rawGraph.removeAllEdges(fgEdge.getSource(), fgEdge.getTarget());
+					rawGraph.addEdge(fgEdge.getSource(), fgEdge.getTarget(), fgEdge); // add edge with type FRAGMENT_GRAPH
+				}
+			}
+		}
+		return evaluateRawGraph(rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);
 	}
 	
 	public EntailmentGraphRaw applyThreshold(EntailmentGraphRaw graph, double confidenceThreshold){			
@@ -354,7 +360,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		for (EntailmentRelation edge : evaluatedRawGraph.edgeSet()){
 			if (evaluatedRawGraph.isConflict(edge.getSource(), edge.getTarget())) {
 				System.out.println("****"+violations.size()+" IS CONFLICT **** "+edge);
-				violations.add(edge.getSource()+"->"+edge.getTarget()); // if there is a non-entailing and an entailing edge between the same src and tgt
+				//violations.add(edge.getSource()+"->"+edge.getTarget()); // if there is a non-entailing and an entailing edge between the same src and tgt
 			}
 			else{
 				if (edge.getEdgeType().equals(EdgeType.TRANSITIVE_CLOSURE)) { // if this edge is a transitive closure edge, which was added in place of no edge in the evaluated graph
@@ -461,5 +467,9 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		return rfg;
 	}
 
+	
+	public List<Double> getConfidenceThresholds(){
+		return this.results.confidenceThresholds;
+	}
 }
 

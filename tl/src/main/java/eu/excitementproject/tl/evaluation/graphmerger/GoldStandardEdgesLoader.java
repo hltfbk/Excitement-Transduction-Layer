@@ -25,14 +25,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-
-
-
-
-
-
-
-
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
@@ -316,11 +308,20 @@ public class GoldStandardEdgesLoader {
 						}
 						EntailmentUnit targetUnit = getGoldStandardNode(nodeTextById.get(tgt));
 						EntailmentRelation edge = getGoldStandardEdge(sourceUnit, targetUnit, type);
-						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
+//						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case						
+						
+/*						//debug code
+						if (edges.containsKey("EMAIL0003PlusClosure.xml"+" "+CompareAnnotations.getString(edge))){
+							if (xmlAnnotationFilename.contains("0010")) logger.info("duplicate0010 \t"+xmlAnnotationFilename.split("FinalMergedGraph")[1].replace("\\","")+" "+CompareAnnotations.getString(edge));
+						}
+						edges.put(xmlAnnotationFilename.split("FinalMergedGraph")[1].replace("\\","")+" "+CompareAnnotations.getString(edge),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case												
+*/						
+						edges.put(edge.toString(),edge); // for some reason "equals" method of EntailmentRelation does not recognize the edges returned by getGoldStandardEdge(sourceUnit, targetUnit) for same source and target texts as equal, to overcome this we use map instead of set, with edge's toString() as keys, since toString() outputs will be equal in our case												
 					}
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					throw new GraphEvaluatorException("Problem loading annotations from file "+ xmlAnnotationFilename+ ".\n" + e.getMessage());
 				}		
+	   		logger.info("Edges size now, after cluser "+xmlAnnotationFilename+" : " + edges.size());
 	}	
 
 
