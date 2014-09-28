@@ -164,15 +164,15 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 	
 	
 	private Double detectConfidence(EntailmentGraphRaw workGraph, EntailmentUnit source, EntailmentUnit target, Double confidenceThreshold){
-		Double confidence = -0.9; // this will be our non-entailment confidence for missing edges 
+		Double confidence = -0.5; // this will be our non-entailment confidence for missing edges 
 		
 		if (workGraph.containsEdge(source, target)) {
 
 			EntailmentRelation edge = workGraph.getEdge(source, target);
 			System.out.println(edge);
 			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)) {
-				 if (edge.getConfidence() > confidenceThreshold) {
-					 confidence = edge.getConfidence(); // only if the original score is higher than the threshold, consider the edge entailing with the corresponding confidence. Otherwise treat it as if it's not present in the work graph. 
+				 if (edge.getConfidence() >= confidenceThreshold) {
+					 confidence = edge.getConfidence(); // only if the original score is >= than the threshold, consider the edge entailing with the corresponding confidence. Otherwise treat it as if it's not present in the work graph. 
 				 }
 				 if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) confidence = 10000.0;
 			}
