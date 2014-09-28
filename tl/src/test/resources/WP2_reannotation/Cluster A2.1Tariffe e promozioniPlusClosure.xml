@@ -25,6 +25,81 @@
         <correct_text>la telefoniax non è conveniente</correct_text>
         <modifiers> </modifiers>
     </node>
+	<node explicit_context="0101.txt" focus="offerte" id="0101.txt_1_3" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>le offerte sono PENOSE</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0278.txt" focus="promozioni" id="0278.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>le promozioni fanno schifo</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0087.txt" focus="offerta" id="0087.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>nessuna offerta per i vecchi clienti</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0088.txt" focus="promozioni" id="0088.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>le promozioni sono solo per i nuovi clienti</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0248.txt" focus="Offerte" id="0248.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>TELEFONIAX Mette Offerte Inutile</original_text>
+        <correct_text>TelefoniaX mette Offerte inutili</correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0248.txt" focus="Offerte" id="0248.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>TELEFONIAX Mette Offerte Sciocche</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0242.txt" focus="l'offerta" id="0242.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non funziona l'offerta</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0148.txt" focus="promozione" id="0148.txt_1_2" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>La promozione non funziona</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0299.txt" focus="TELEFONIAX" id="0299.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>la TELEFONIAX ormai non è più conveniente</original_text>
+        <correct_text>la telefoniax ormai non è più conveniente</correct_text>
+        <modifiers>ormai piùpoz=2</modifiers>
+    </node>
+	<node explicit_context="0299.txt" focus="TELEFONIAX" id="0299.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>la TELEFONIAX ormai non è nemmeno competitiva</original_text>
+        <correct_text>la TelefoniaX ormai non è nemmeno competitiva</correct_text>
+        <modifiers>ormaipoz=2</modifiers>
+    </node>
+	<node explicit_context="0189.txt" focus="offerte" id="0189.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>le offerte non sono granche'</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0023.txt" focus="offerta" id="0023.txt_1_2" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>MAI una buona offerta</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0104.txt" focus="promozione" id="0104.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>nessuna promozione valida</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0059.txt" focus="promozione" id="0059.txt_1_6" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="TRUE">
+        <original_text>cerco di attivare la promozione ma non siete ancora riusciti ad attivarmela</original_text>
+        <correct_text> </correct_text>
+        <modifiers>cerco di attivare mapoz=6 7 8 15</modifiers>
+    </node>
+	<node explicit_context="0065.txt" focus="promo" id="0065.txt_1_2" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="TRUE">
+        <original_text>non è possibile attivare la promo</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
 	<node explicit_context="0279.txt" focus="TELEFONIAX" id="0279.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
         <original_text>TELEFONIAX è troppo cara</original_text>
         <correct_text> </correct_text>
@@ -40,46 +115,6 @@
         <correct_text> </correct_text>
         <modifiers> </modifiers>
     </node>
-	<node explicit_context="0248.txt" focus="Offerte" id="0248.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>TELEFONIAX Mette Offerte Inutile</original_text>
-        <correct_text>TelefoniaX mette Offerte inutili</correct_text>
-        <modifiers/>
-    </node>
-	<node explicit_context="0248.txt" focus="Offerte" id="0248.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>TELEFONIAX Mette Offerte Sciocche</original_text>
-        <correct_text> </correct_text>
-        <modifiers/>
-    </node>
-	<node explicit_context="0299.txt" focus="TELEFONIAX" id="0299.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>la TELEFONIAX ormai non è più conveniente</original_text>
-        <correct_text>la telefoniax ormai non è più conveniente</correct_text>
-        <modifiers>ormai piùpoz=2</modifiers>
-    </node>
-	<node explicit_context="0299.txt" focus="TELEFONIAX" id="0299.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>la TELEFONIAX ormai non è nemmeno competitiva</original_text>
-        <correct_text>la TelefoniaX ormai non è nemmeno competitiva</correct_text>
-        <modifiers>ormaipoz=2</modifiers>
-    </node>
-	<node explicit_context="0242.txt" focus="l'offerta" id="0242.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>non funziona l'offerta</original_text>
-        <correct_text> </correct_text>
-        <modifiers> </modifiers>
-    </node>
-	<node explicit_context="0148.txt" focus="promozione" id="0148.txt_1_2" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>La promozione non funziona</original_text>
-        <correct_text> </correct_text>
-        <modifiers> </modifiers>
-    </node>
-	<node explicit_context="0220.txt" focus="opzione" id="0220.txt_1_2" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>mi hanno deattivato la opzione da mesi senza avvisarmi</original_text>
-        <correct_text> </correct_text>
-        <modifiers>da mesipoz=9 10</modifiers>
-    </node>
-	<node explicit_context="0228.txt" focus="promozione" id="0228.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>la promozione era stata rinnovata , nonostante l'avessi cancellata</original_text>
-        <correct_text> </correct_text>
-        <modifiers/>
-    </node>
 	<node explicit_context="0220.txt" focus="opzione" id="0220.txt_1_3" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
         <original_text>mi hanno deattivato la opzione senza avvisarmi</original_text>
         <correct_text> </correct_text>
@@ -90,18 +125,23 @@
         <correct_text> </correct_text>
         <modifiers>nessunpoz=8</modifiers>
     </node>
-	<node explicit_context="0189.txt" focus="offerte" id="0189.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>le offerte non sono granche'</original_text>
-        <correct_text> </correct_text>
-        <modifiers/>
-    </node>
-	<node explicit_context="0023.txt" focus="offerta" id="0023.txt_1_2" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>MAI una buona offerta</original_text>
+	<node explicit_context="0288.txt" focus="premi" id="0288.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>i premi fanno schifo</original_text>
         <correct_text> </correct_text>
         <modifiers> </modifiers>
     </node>
-	<node explicit_context="0104.txt" focus="promozione" id="0104.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>nessuna promozione valida</original_text>
+	<node explicit_context="0070.txt" focus="premi" id="0070.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>catalogo premi nuovo semplicemtne ridicolo</original_text>
+        <correct_text>il catalogo premi nuovo è semplicemente ridicolo</correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0220.txt" focus="opzione" id="0220.txt_1_2" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>mi hanno deattivato la opzione da mesi senza avvisarmi</original_text>
+        <correct_text> </correct_text>
+        <modifiers>da mesipoz=9 10</modifiers>
+    </node>
+	<node explicit_context="0228.txt" focus="promozione" id="0228.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>la promozione era stata rinnovata , nonostante l'avessi cancellata</original_text>
         <correct_text> </correct_text>
         <modifiers/>
     </node>
@@ -144,16 +184,6 @@
         <original_text>il 90% delle volte che mi devo recare al pvt per offerte o altro non attivabili online o per telefono mi dicono di ripassare perché la connessione non funziona</original_text>
         <correct_text> </correct_text>
         <modifiers>il 90% delle volte che mi devo recarepoz=0 1 2 3 4 5 6 7;perché la connessione non funzionapoz=24 25 26 27 28;per offerte o altro non attivabili online o per telefonopoz=10 11 12 13 14 15 16 17 18 19</modifiers>
-    </node>
-	<node explicit_context="0059.txt" focus="promozione" id="0059.txt_1_6" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="TRUE">
-        <original_text>cerco di attivare la promozione ma non siete ancora riusciti ad attivarmela</original_text>
-        <correct_text> </correct_text>
-        <modifiers>cerco di attivare mapoz=6 7 8 15</modifiers>
-    </node>
-	<node explicit_context="0065.txt" focus="promo" id="0065.txt_1_2" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="TRUE">
-        <original_text>non è possibile attivare la promo</original_text>
-        <correct_text> </correct_text>
-        <modifiers> </modifiers>
     </node>
 	<node explicit_context="0065.txt" focus="promo" id="0065.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="TRUE">
         <original_text>non è possibile attivare la promo sugli sms</original_text>
@@ -335,16 +365,6 @@
         <correct_text> </correct_text>
         <modifiers>nelle ultime 2 settimanepoz=0 1 2 3</modifiers>
     </node>
-	<node explicit_context="0101.txt" focus="offerte" id="0101.txt_1_3" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>le offerte sono PENOSE</original_text>
-        <correct_text> </correct_text>
-        <modifiers> </modifiers>
-    </node>
-	<node explicit_context="0278.txt" focus="promozioni" id="0278.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>le promozioni fanno schifo</original_text>
-        <correct_text> </correct_text>
-        <modifiers/>
-    </node>
 	<node explicit_context="0014.txt" focus="PROMOSMART SENZA CONFINI" id="0014.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
         <original_text>nelle ultime 2 settimane ho avuto solo problemi con la PROMOSMART SENZA CONFINI</original_text>
         <correct_text> </correct_text>
@@ -389,16 +409,6 @@
         <original_text>i premi fanno davvero schifo</original_text>
         <correct_text> </correct_text>
         <modifiers>davveropoz=3</modifiers>
-    </node>
-	<node explicit_context="0288.txt" focus="premi" id="0288.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>i premi fanno schifo</original_text>
-        <correct_text> </correct_text>
-        <modifiers> </modifiers>
-    </node>
-	<node explicit_context="0070.txt" focus="premi" id="0070.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>catalogo premi nuovo semplicemtne ridicolo</original_text>
-        <correct_text>il catalogo premi nuovo è semplicemente ridicolo</correct_text>
-        <modifiers/>
     </node>
 	<node explicit_context="0161.txt" focus="promozione" id="0161.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
         <original_text>mi cambiano promozione senza un mio permesso</original_text>
@@ -454,16 +464,6 @@
         <original_text>mi stanno tempestando di promozioni , ma tutte incompatibili</original_text>
         <correct_text> </correct_text>
         <modifiers>mi stanno tempestando di promozioni , mapoz=0 1 2 3 4 7 8</modifiers>
-    </node>
-	<node explicit_context="0087.txt" focus="offerta" id="0087.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>nessuna offerta per i vecchi clienti</original_text>
-        <correct_text> </correct_text>
-        <modifiers/>
-    </node>
-	<node explicit_context="0088.txt" focus="promozioni" id="0088.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
-        <original_text>le promozioni sono solo per i nuovi clienti</original_text>
-        <correct_text> </correct_text>
-        <modifiers/>
     </node>
 	<node explicit_context="0202.txt" focus="promozioni" id="0202.txt_4_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="TRUE">
         <original_text>non riesco a togliere promozioni se non per telefono</original_text>
@@ -670,663 +670,7 @@
         <correct_text> </correct_text>
         <modifiers>ANCORApoz=3</modifiers>
     </node>
-	<edge target="0189.txt_1_0" source="0223.txt_1_0" id="0189.txt_1_0-0223.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_4" source="0297.txt_1_1" id="0297.txt_1_4-0297.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0001.txt_1_3" source="0001.txt_1_0" id="0001.txt_1_3-0001.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0001.txt_1_6" source="0001.txt_1_2" id="0001.txt_1_6-0001.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0138.txt_1_0" id="0023.txt_1_2-0138.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_15" source="0031.txt_1_13" id="0031.txt_1_15-0031.txt_1_13">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0023.txt_1_1" id="0023.txt_1_2-0023.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0029.txt_1_0" source="0242.txt_1_0" id="0029.txt_1_0-0242.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_1" source="0071.txt_1_0" id="0242.txt_1_1-0071.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0011.txt_1_4" source="0011.txt_1_0" id="0011.txt_1_4-0011.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_2" source="0130.txt_1_1" id="0065.txt_1_2-0130.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0187.txt_1_1" source="0279.txt_1_0" id="0187.txt_1_1-0279.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0278.txt_1_0" id="0023.txt_1_2-0278.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0011.txt_1_4" source="0011.txt_1_2" id="0011.txt_1_4-0011.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0187.txt_1_1" source="0187.txt_1_0" id="0187.txt_1_1-0187.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0156.txt_1_1" source="0220.txt_1_0" id="0156.txt_1_1-0220.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_5" source="0031.txt_1_0" id="0031.txt_1_5-0031.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_2" source="0059.txt_1_0" id="0065.txt_1_2-0059.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_1" source="0242.txt_1_0" id="0148.txt_1_1-0242.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0070.txt_1_0" source="0300.txt_1_0" id="0070.txt_1_0-0300.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0322.txt_1_2" id="0104.txt_2_0-0322.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0119.txt_1_0" source="0130.txt_1_0" id="0119.txt_1_0-0130.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_0" source="0187.txt_1_0" id="0299.txt_2_0-0187.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0162.txt_1_0" source="0279.txt_1_0" id="0162.txt_1_0-0279.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_2" source="0242.txt_1_1" id="0148.txt_1_2-0242.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0229.txt_2_2" source="0229.txt_2_0" id="0229.txt_2_2-0229.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0288.txt_1_1" source="0070.txt_1_0" id="0288.txt_1_1-0070.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_1" source="0023.txt_1_0" id="0023.txt_1_1-0023.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0138.txt_1_0" id="0189.txt_1_0-0138.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_0" source="0246.txt_1_0" id="0242.txt_1_0-0246.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_1" source="0101.txt_1_0" id="0023.txt_1_1-0101.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_15" source="0031.txt_1_5" id="0031.txt_1_15-0031.txt_1_5">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0138.txt_1_0" id="0104.txt_2_0-0138.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0014.txt_1_2" source="0014.txt_1_0" id="0014.txt_1_2-0014.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0278.txt_1_0" source="0101.txt_1_3" id="0278.txt_1_0-0101.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0101.txt_1_3" id="0189.txt_1_0-0101.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0101.txt_1_3" id="0104.txt_2_0-0101.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_3" source="0059.txt_1_0" id="0059.txt_1_3-0059.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0288.txt_1_1" source="0288.txt_1_0" id="0288.txt_1_1-0288.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_1" source="0187.txt_1_1" id="0299.txt_1_1-0187.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0101.txt_1_1" id="0189.txt_1_0-0101.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_2" source="0059.txt_1_6" id="0065.txt_1_2-0059.txt_1_6">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0070.txt_1_0" source="0288.txt_1_0" id="0070.txt_1_0-0288.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_7" source="0297.txt_1_3" id="0297.txt_1_7-0297.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_2" source="0297.txt_1_0" id="0297.txt_1_2-0297.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_5" source="0283.txt_1_0" id="0283.txt_1_5-0283.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0248.txt_2_0" source="0248.txt_1_0" id="0248.txt_2_0-0248.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0162.txt_1_0" id="0299.txt_2_1-0162.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_2" source="0059.txt_1_6" id="0065.txt_1_2-0059.txt_1_6">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0187.txt_1_0" id="0299.txt_2_1-0187.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0162.txt_1_0" source="0302.txt_1_0" id="0162.txt_1_0-0302.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_2" source="0148.txt_1_1" id="0148.txt_1_2-0148.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0322.txt_1_2" source="0322.txt_1_0" id="0322.txt_1_2-0322.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_2" source="0059.txt_1_3" id="0065.txt_1_2-0059.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_2" source="0029.txt_1_0" id="0148.txt_1_2-0029.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_1" source="0299.txt_1_0" id="0299.txt_1_1-0299.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0029.txt_1_0" source="0242.txt_1_0" id="0029.txt_1_0-0242.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0272.txt_1_2" source="0272.txt_1_0" id="0272.txt_1_2-0272.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_1" source="0150.txt_1_0" id="0150.txt_1_1-0150.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_1" source="0065.txt_1_0" id="0065.txt_1_1-0065.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0104.txt_2_0" id="0023.txt_1_2-0104.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_2" source="0059.txt_1_0" id="0059.txt_1_2-0059.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0228.txt_1_0" source="0229.txt_2_2" id="0228.txt_1_0-0229.txt_2_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0101.txt_1_3" source="0138.txt_1_0" id="0101.txt_1_3-0138.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0278.txt_1_0" source="0248.txt_1_0" id="0278.txt_1_0-0248.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_1" source="0101.txt_1_1" id="0023.txt_1_1-0101.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0184.txt_1_2" source="0184.txt_1_0" id="0184.txt_1_2-0184.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_4_3" source="0229.txt_2_0" id="0202.txt_4_3-0229.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_2" source="0283.txt_1_0" id="0283.txt_1_2-0283.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_4" source="0150.txt_1_0" id="0150.txt_1_4-0150.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0070.txt_1_0" source="0288.txt_1_1" id="0070.txt_1_0-0288.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_4_3" source="0202.txt_4_2" id="0202.txt_4_3-0202.txt_4_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0220.txt_1_3" source="0156.txt_1_0" id="0220.txt_1_3-0156.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_0" source="0162.txt_1_0" id="0299.txt_1_0-0162.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0220.txt_1_1" source="0220.txt_1_0" id="0220.txt_1_1-0220.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_4_2" source="0229.txt_2_0" id="0202.txt_4_2-0229.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0014.txt_1_3" source="0014.txt_1_1" id="0014.txt_1_3-0014.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_7" source="0297.txt_1_0" id="0297.txt_1_7-0297.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0248.txt_1_0" source="0248.txt_2_0" id="0248.txt_1_0-0248.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0246.txt_1_0" source="0242.txt_1_0" id="0246.txt_1_0-0242.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_1" source="0148.txt_1_1" id="0242.txt_1_1-0148.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_7" source="0297.txt_1_1" id="0297.txt_1_7-0297.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0088.txt_1_0" source="0087.txt_1_0" id="0088.txt_1_0-0087.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_14" source="0031.txt_1_10" id="0031.txt_1_14-0031.txt_1_10">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0014.txt_1_3" source="0014.txt_1_0" id="0014.txt_1_3-0014.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0023.txt_1_1" id="0104.txt_2_0-0023.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0278.txt_1_0" source="0101.txt_1_0" id="0278.txt_1_0-0101.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_5" source="0283.txt_1_1" id="0283.txt_1_5-0283.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0101.txt_1_0" id="0023.txt_1_2-0101.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_5" source="0031.txt_1_1" id="0031.txt_1_5-0031.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_0" source="0299.txt_1_0" id="0299.txt_2_0-0299.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_3" source="0150.txt_1_0" id="0150.txt_1_3-0150.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_1" source="0299.txt_2_1" id="0299.txt_1_1-0299.txt_2_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0299.txt_2_0" id="0299.txt_2_1-0299.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_5" source="0150.txt_1_2" id="0150.txt_1_5-0150.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0288.txt_1_0" source="0300.txt_1_0" id="0288.txt_1_0-0300.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0321.txt_1_1" source="0321.txt_1_0" id="0321.txt_1_1-0321.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_3" source="0150.txt_1_1" id="0150.txt_1_3-0150.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_1" source="0148.txt_1_0" id="0148.txt_1_1-0148.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0246.txt_1_0" source="0029.txt_1_0" id="0246.txt_1_0-0029.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_0" source="0187.txt_1_0" id="0299.txt_1_0-0187.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0321.txt_1_4" source="0321.txt_1_2" id="0321.txt_1_4-0321.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0023.txt_1_2" id="0104.txt_2_0-0023.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0101.txt_1_3" source="0248.txt_1_0" id="0101.txt_1_3-0248.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_2" source="0242.txt_1_1" id="0148.txt_1_2-0242.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_1" source="0162.txt_1_0" id="0299.txt_1_1-0162.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0087.txt_1_0" source="0088.txt_1_0" id="0087.txt_1_0-0088.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_4_2" source="0229.txt_2_2" id="0202.txt_4_2-0229.txt_2_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_14" source="0031.txt_1_0" id="0031.txt_1_14-0031.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0023.txt_1_2" id="0189.txt_1_0-0023.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_1" source="0242.txt_1_0" id="0242.txt_1_1-0242.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_2" source="0148.txt_1_0" id="0148.txt_1_2-0148.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0322.txt_1_2" id="0023.txt_1_2-0322.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0022.txt_1_1" source="0022.txt_1_0" id="0022.txt_1_1-0022.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_0" source="0187.txt_1_1" id="0299.txt_1_0-0187.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0156.txt_1_1" source="0156.txt_1_0" id="0156.txt_1_1-0156.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0001.txt_1_6" source="0001.txt_1_3" id="0001.txt_1_6-0001.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_13" source="0031.txt_1_0" id="0031.txt_1_13-0031.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_1" source="0148.txt_1_0" id="0242.txt_1_1-0148.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_5" source="0150.txt_1_1" id="0150.txt_1_5-0150.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0101.txt_1_0" id="0104.txt_2_0-0101.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_0" source="0299.txt_1_0" id="0299.txt_2_0-0299.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0278.txt_1_0" id="0104.txt_2_0-0278.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_6" source="0059.txt_1_2" id="0059.txt_1_6-0059.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0101.txt_1_0" id="0189.txt_1_0-0101.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_5" source="0150.txt_1_0" id="0150.txt_1_5-0150.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0011.txt_1_4" source="0011.txt_1_1" id="0011.txt_1_4-0011.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_13" source="0031.txt_1_1" id="0031.txt_1_13-0031.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_6" source="0283.txt_1_2" id="0283.txt_1_6-0283.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0138.txt_1_1" id="0189.txt_1_0-0138.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_0" source="0029.txt_1_0" id="0242.txt_1_0-0029.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0220.txt_1_3" source="0156.txt_1_1" id="0220.txt_1_3-0156.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0156.txt_1_1" source="0220.txt_1_2" id="0156.txt_1_1-0220.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0279.txt_1_0" source="0162.txt_1_0" id="0279.txt_1_0-0162.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_4_3" source="0229.txt_2_2" id="0202.txt_4_3-0229.txt_2_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_2" source="0065.txt_1_1" id="0065.txt_1_2-0065.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_6" source="0283.txt_1_0" id="0283.txt_1_6-0283.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0321.txt_1_4" source="0321.txt_1_1" id="0321.txt_1_4-0321.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_6" source="0297.txt_1_2" id="0297.txt_1_6-0297.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0001.txt_1_6" source="0001.txt_1_0" id="0001.txt_1_6-0001.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0119.txt_1_0" source="0130.txt_1_1" id="0119.txt_1_0-0130.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0248.txt_1_0" source="0248.txt_2_0" id="0248.txt_1_0-0248.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_15" source="0031.txt_1_1" id="0031.txt_1_15-0031.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0011.txt_1_1" source="0011.txt_1_0" id="0011.txt_1_1-0011.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
 	<edge target="0225.txt_2_1" source="0225.txt_2_0" id="0225.txt_2_1-0225.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_7" source="0283.txt_1_3" id="0283.txt_1_7-0283.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0278.txt_1_0" source="0138.txt_1_0" id="0278.txt_1_0-0138.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_15" source="0031.txt_1_10" id="0031.txt_1_15-0031.txt_1_10">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0288.txt_1_1" source="0070.txt_1_0" id="0288.txt_1_1-0070.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0101.txt_1_1" id="0104.txt_2_0-0101.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0138.txt_1_1" id="0023.txt_1_2-0138.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_3" source="0297.txt_1_0" id="0297.txt_1_3-0297.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0279.txt_1_0" id="0299.txt_2_1-0279.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_14" source="0031.txt_1_2" id="0031.txt_1_14-0031.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0279.txt_1_0" source="0162.txt_1_0" id="0279.txt_1_0-0162.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_7" source="0283.txt_1_5" id="0283.txt_1_7-0283.txt_1_5">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_5" source="0031.txt_1_2" id="0031.txt_1_5-0031.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_4" source="0283.txt_1_2" id="0283.txt_1_4-0283.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0101.txt_1_3" source="0248.txt_2_0" id="0101.txt_1_3-0248.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0321.txt_1_4" source="0321.txt_1_0" id="0321.txt_1_4-0321.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0278.txt_1_0" source="0101.txt_1_1" id="0278.txt_1_0-0101.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0156.txt_1_1" source="0220.txt_1_3" id="0156.txt_1_1-0220.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0257.txt_2_1" source="0257.txt_2_0" id="0257.txt_2_1-0257.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0187.txt_1_1" id="0299.txt_2_1-0187.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0278.txt_1_0" source="0248.txt_2_0" id="0278.txt_1_0-0248.txt_2_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
@@ -1334,251 +678,7 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0283.txt_1_7" source="0283.txt_1_0" id="0283.txt_1_7-0283.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_7" source="0297.txt_1_2" id="0297.txt_1_7-0297.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0248.txt_2_0" id="0189.txt_1_0-0248.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0070.txt_1_0" source="0288.txt_1_1" id="0070.txt_1_0-0288.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0011.txt_1_2" source="0011.txt_1_0" id="0011.txt_1_2-0011.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0023.txt_1_0" id="0104.txt_2_0-0023.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0299.txt_1_1" id="0299.txt_2_1-0299.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_7" source="0283.txt_1_6" id="0283.txt_1_7-0283.txt_1_6">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_1" source="0029.txt_1_0" id="0242.txt_1_1-0029.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_1" source="0246.txt_1_0" id="0242.txt_1_1-0246.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_6" source="0065.txt_1_1" id="0059.txt_1_6-0065.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_0" source="0302.txt_1_0" id="0299.txt_1_0-0302.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0101.txt_1_1" id="0023.txt_1_2-0101.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0322.txt_1_0" id="0023.txt_1_2-0322.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_6" source="0065.txt_1_0" id="0059.txt_1_6-0065.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_5" source="0297.txt_1_1" id="0297.txt_1_5-0297.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0101.txt_1_3" source="0101.txt_1_1" id="0101.txt_1_3-0101.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0014.txt_1_3" source="0014.txt_1_2" id="0014.txt_1_3-0014.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_7" source="0297.txt_1_4" id="0297.txt_1_7-0297.txt_1_4">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0248.txt_2_0" source="0248.txt_1_0" id="0248.txt_2_0-0248.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0087.txt_1_0" source="0088.txt_1_0" id="0087.txt_1_0-0088.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0029.txt_1_0" source="0246.txt_1_0" id="0029.txt_1_0-0246.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_5" source="0150.txt_1_4" id="0150.txt_1_5-0150.txt_1_4">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0279.txt_1_0" source="0187.txt_1_1" id="0279.txt_1_0-0187.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0023.txt_1_0" id="0189.txt_1_0-0023.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_6" source="0065.txt_1_2" id="0059.txt_1_6-0065.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0162.txt_1_0" source="0187.txt_1_1" id="0162.txt_1_0-0187.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0023.txt_1_0" id="0023.txt_1_2-0023.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_1" source="0283.txt_1_0" id="0283.txt_1_1-0283.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0321.txt_1_2" source="0321.txt_1_0" id="0321.txt_1_2-0321.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0023.txt_1_1" id="0189.txt_1_0-0023.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0220.txt_1_2" source="0220.txt_1_0" id="0220.txt_1_2-0220.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0237.txt_1_0" source="0246.txt_1_0" id="0237.txt_1_0-0246.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0189.txt_1_0" id="0023.txt_1_2-0189.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_4" source="0297.txt_1_2" id="0297.txt_1_4-0297.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0101.txt_1_3" source="0101.txt_1_0" id="0101.txt_1_3-0101.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0223.txt_1_0" id="0023.txt_1_2-0223.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0189.txt_1_0" id="0023.txt_1_2-0189.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_10" source="0031.txt_1_0" id="0031.txt_1_10-0031.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0322.txt_1_0" id="0189.txt_1_0-0322.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0081.txt_1_3" source="0081.txt_1_1" id="0081.txt_1_3-0081.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_1" source="0279.txt_1_0" id="0299.txt_1_1-0279.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0101.txt_1_3" source="0138.txt_1_1" id="0101.txt_1_3-0138.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0156.txt_1_1" source="0220.txt_1_3" id="0156.txt_1_1-0220.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0223.txt_1_0" id="0104.txt_2_0-0223.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_5_2" source="0202.txt_5_0" id="0202.txt_5_2-0202.txt_5_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_6" source="0065.txt_1_2" id="0059.txt_1_6-0065.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0104.txt_2_0" id="0189.txt_1_0-0104.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_0" source="0279.txt_1_0" id="0299.txt_2_0-0279.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0278.txt_1_0" id="0189.txt_1_0-0278.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_0" source="0187.txt_1_1" id="0299.txt_2_0-0187.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_2" source="0071.txt_1_0" id="0148.txt_1_2-0071.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0189.txt_1_0" id="0104.txt_2_0-0189.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0220.txt_1_3" source="0220.txt_1_0" id="0220.txt_1_3-0220.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0246.txt_1_0" source="0029.txt_1_0" id="0246.txt_1_0-0029.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_1" source="0187.txt_1_0" id="0299.txt_1_1-0187.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0220.txt_1_3" source="0220.txt_1_1" id="0220.txt_1_3-0220.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0156.txt_1_1" source="0220.txt_1_1" id="0156.txt_1_1-0220.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_7" source="0283.txt_1_2" id="0283.txt_1_7-0283.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0081.txt_1_2" source="0081.txt_1_0" id="0081.txt_1_2-0081.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_4_2" source="0202.txt_4_0" id="0202.txt_4_2-0202.txt_4_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0104.txt_2_0" id="0023.txt_1_2-0104.txt_2_0">
+	<edge target="0278.txt_1_0" source="0101.txt_1_0" id="0278.txt_1_0-0101.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
@@ -1586,135 +686,43 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0202.txt_4_1" source="0202.txt_4_0" id="0202.txt_4_1-0202.txt_4_0">
+	<edge target="0202.txt_4_3" source="0202.txt_4_2" id="0202.txt_4_3-0202.txt_4_2">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0065.txt_1_2" source="0059.txt_1_2" id="0065.txt_1_2-0059.txt_1_2">
+	<edge target="0031.txt_1_14" source="0031.txt_1_0" id="0031.txt_1_14-0031.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0297.txt_1_1" source="0297.txt_1_0" id="0297.txt_1_1-0297.txt_1_0">
+	<edge target="0299.txt_2_1" source="0162.txt_1_0" id="0299.txt_2_1-0162.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0162.txt_1_0" source="0279.txt_1_0" id="0162.txt_1_0-0279.txt_1_0">
+	<edge target="0279.txt_1_0" source="0162.txt_1_0" id="0279.txt_1_0-0162.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0299.txt_1_1" source="0299.txt_2_0" id="0299.txt_1_1-0299.txt_2_0">
+	<edge target="0104.txt_2_0" source="0322.txt_1_0" id="0104.txt_2_0-0322.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0189.txt_1_0" source="0248.txt_1_0" id="0189.txt_1_0-0248.txt_1_0">
+	<edge target="0031.txt_1_13" source="0031.txt_1_0" id="0031.txt_1_13-0031.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0184.txt_1_2" source="0280.txt_2_0" id="0184.txt_1_2-0280.txt_2_0">
+	<edge target="0001.txt_1_3" source="0001.txt_1_0" id="0001.txt_1_3-0001.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0220.txt_1_3" source="0220.txt_1_2" id="0220.txt_1_3-0220.txt_1_2">
+	<edge target="0150.txt_1_5" source="0150.txt_1_3" id="0150.txt_1_5-0150.txt_1_3">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0081.txt_1_1" source="0081.txt_1_0" id="0081.txt_1_1-0081.txt_1_0">
+	<edge target="0065.txt_1_2" source="0059.txt_1_6" id="0065.txt_1_2-0059.txt_1_6">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0187.txt_1_1" source="0279.txt_1_0" id="0187.txt_1_1-0279.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0220.txt_1_2" source="0156.txt_1_0" id="0220.txt_1_2-0156.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_1" source="0246.txt_1_0" id="0148.txt_1_1-0246.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_6" source="0130.txt_1_0" id="0059.txt_1_6-0130.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0279.txt_1_0" source="0187.txt_1_1" id="0279.txt_1_0-0187.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0248.txt_1_0" id="0104.txt_2_0-0248.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_6" source="0297.txt_1_0" id="0297.txt_1_6-0297.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0248.txt_2_0" id="0023.txt_1_2-0248.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0162.txt_1_0" source="0187.txt_1_0" id="0162.txt_1_0-0187.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0104.txt_2_0" id="0189.txt_1_0-0104.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0081.txt_1_3" source="0081.txt_1_2" id="0081.txt_1_3-0081.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_0" source="0299.txt_2_0" id="0299.txt_1_0-0299.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0299.txt_1_0" id="0299.txt_2_1-0299.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0299.txt_1_1" id="0299.txt_2_1-0299.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_4_3" source="0202.txt_4_1" id="0202.txt_4_3-0202.txt_4_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_15" source="0031.txt_1_14" id="0031.txt_1_15-0031.txt_1_14">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_3" source="0283.txt_1_0" id="0283.txt_1_3-0283.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0187.txt_1_1" source="0302.txt_1_0" id="0187.txt_1_1-0302.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_2" source="0065.txt_1_0" id="0065.txt_1_2-0065.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_5" source="0283.txt_1_3" id="0283.txt_1_5-0283.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0288.txt_1_1" source="0300.txt_1_0" id="0288.txt_1_1-0300.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_4" source="0283.txt_1_0" id="0283.txt_1_4-0283.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0023.txt_1_2" source="0248.txt_1_0" id="0023.txt_1_2-0248.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0101.txt_1_3" source="0278.txt_1_0" id="0101.txt_1_3-0278.txt_1_0">
+	<edge target="0299.txt_1_1" source="0162.txt_1_0" id="0299.txt_1_1-0162.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
@@ -1722,15 +730,67 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0104.txt_2_0" source="0189.txt_1_0" id="0104.txt_2_0-0189.txt_1_0">
+	<edge target="0104.txt_2_0" source="0023.txt_1_2" id="0104.txt_2_0-0023.txt_1_2">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0150.txt_1_2" source="0150.txt_1_0" id="0150.txt_1_2-0150.txt_1_0">
+	<edge target="0189.txt_1_0" source="0101.txt_1_3" id="0189.txt_1_0-0101.txt_1_3">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0286.txt_1_1" source="0286.txt_1_0" id="0286.txt_1_1-0286.txt_1_0">
+	<edge target="0299.txt_1_0" source="0187.txt_1_1" id="0299.txt_1_0-0187.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_1" source="0148.txt_1_0" id="0148.txt_1_1-0148.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_3" source="0059.txt_1_0" id="0059.txt_1_3-0059.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0101.txt_1_0" id="0104.txt_2_0-0101.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_7" source="0297.txt_1_3" id="0297.txt_1_7-0297.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0001.txt_1_6" source="0001.txt_1_0" id="0001.txt_1_6-0001.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_7" source="0297.txt_1_6" id="0297.txt_1_7-0297.txt_1_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0288.txt_1_0" source="0300.txt_1_0" id="0288.txt_1_0-0300.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_5" source="0283.txt_1_0" id="0283.txt_1_5-0283.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0321.txt_1_2" source="0321.txt_1_0" id="0321.txt_1_2-0321.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0029.txt_1_0" source="0242.txt_1_0" id="0029.txt_1_0-0242.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_6" source="0065.txt_1_1" id="0059.txt_1_6-0065.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_1" source="0246.txt_1_0" id="0242.txt_1_1-0246.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_2" source="0065.txt_1_1" id="0065.txt_1_2-0065.txt_1_1">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
@@ -1738,11 +798,67 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
+	<edge target="0014.txt_1_3" source="0014.txt_1_0" id="0014.txt_1_3-0014.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_1" source="0242.txt_1_0" id="0148.txt_1_1-0242.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0279.txt_1_0" source="0187.txt_1_0" id="0279.txt_1_0-0187.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_2" source="0246.txt_1_0" id="0148.txt_1_2-0246.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0023.txt_1_2" id="0104.txt_2_0-0023.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_5_2" source="0202.txt_5_0" id="0202.txt_5_2-0202.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_4_2" source="0229.txt_2_2" id="0202.txt_4_2-0229.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_0" source="0279.txt_1_0" id="0299.txt_2_0-0279.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_4" source="0150.txt_1_2" id="0150.txt_1_4-0150.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
 	<edge target="0031.txt_1_15" source="0031.txt_1_0" id="0031.txt_1_15-0031.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0023.txt_1_2" source="0101.txt_1_3" id="0023.txt_1_2-0101.txt_1_3">
+	<edge target="0059.txt_1_6" source="0059.txt_1_0" id="0059.txt_1_6-0059.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0101.txt_1_1" id="0189.txt_1_0-0101.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0101.txt_1_3" source="0101.txt_1_0" id="0101.txt_1_3-0101.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_6" source="0065.txt_1_2" id="0059.txt_1_6-0065.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_2" source="0148.txt_1_1" id="0148.txt_1_2-0148.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0187.txt_1_1" source="0302.txt_1_0" id="0187.txt_1_1-0302.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
@@ -1754,227 +870,39 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0279.txt_1_0" source="0187.txt_1_0" id="0279.txt_1_0-0187.txt_1_0">
+	<edge target="0297.txt_1_7" source="0297.txt_1_1" id="0297.txt_1_7-0297.txt_1_1">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0014.txt_1_1" source="0014.txt_1_0" id="0014.txt_1_1-0014.txt_1_0">
+	<edge target="0023.txt_1_2" source="0322.txt_1_2" id="0023.txt_1_2-0322.txt_1_2">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0299.txt_2_0" source="0162.txt_1_0" id="0299.txt_2_0-0162.txt_1_0">
+	<edge target="0087.txt_1_0" source="0088.txt_1_0" id="0087.txt_1_0-0088.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0187.txt_1_1" source="0162.txt_1_0" id="0187.txt_1_1-0162.txt_1_0">
+	<edge target="0011.txt_1_4" source="0011.txt_1_1" id="0011.txt_1_4-0011.txt_1_1">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0031.txt_1_13" source="0031.txt_1_10" id="0031.txt_1_13-0031.txt_1_10">
+	<edge target="0248.txt_2_0" source="0248.txt_1_0" id="0248.txt_2_0-0248.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0101.txt_1_3" source="0278.txt_1_0" id="0101.txt_1_3-0278.txt_1_0">
+	<edge target="0104.txt_2_0" source="0023.txt_1_0" id="0104.txt_2_0-0023.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0278.txt_1_0" source="0101.txt_1_3" id="0278.txt_1_0-0101.txt_1_3">
+	<edge target="0156.txt_1_1" source="0220.txt_1_2" id="0156.txt_1_1-0220.txt_1_2">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0189.txt_1_0" source="0023.txt_1_2" id="0189.txt_1_0-0023.txt_1_2">
+	<edge target="0031.txt_1_10" source="0031.txt_1_0" id="0031.txt_1_10-0031.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0088.txt_1_0" source="0087.txt_1_0" id="0088.txt_1_0-0087.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_1" source="0148.txt_1_2" id="0242.txt_1_1-0148.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_3" source="0150.txt_1_2" id="0150.txt_1_3-0150.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_7" source="0297.txt_1_5" id="0297.txt_1_7-0297.txt_1_5">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0189.txt_1_0" source="0322.txt_1_2" id="0189.txt_1_0-0322.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0246.txt_1_0" source="0242.txt_1_0" id="0246.txt_1_0-0242.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_2" source="0246.txt_1_0" id="0148.txt_1_2-0246.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0138.txt_1_1" id="0104.txt_2_0-0138.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_1" source="0031.txt_1_0" id="0031.txt_1_1-0031.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_6" source="0059.txt_1_0" id="0059.txt_1_6-0059.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0071.txt_2_1" source="0071.txt_2_0" id="0071.txt_2_1-0071.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_6" source="0283.txt_1_3" id="0283.txt_1_6-0283.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0023.txt_1_2" id="0104.txt_2_0-0023.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0220.txt_1_3" source="0156.txt_1_1" id="0220.txt_1_3-0156.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0081.txt_1_3" source="0081.txt_1_0" id="0081.txt_1_3-0081.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0059.txt_1_6" source="0130.txt_1_1" id="0059.txt_1_6-0130.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0001.txt_1_2" source="0001.txt_1_0" id="0001.txt_1_2-0001.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_7" source="0297.txt_1_6" id="0297.txt_1_7-0297.txt_1_6">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_2" source="0031.txt_1_0" id="0031.txt_1_2-0031.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0322.txt_1_0" id="0104.txt_2_0-0322.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_6" source="0297.txt_1_3" id="0297.txt_1_6-0297.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_4" source="0150.txt_1_2" id="0150.txt_1_4-0150.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_5" source="0297.txt_1_3" id="0297.txt_1_5-0297.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0237.txt_1_0" source="0029.txt_1_0" id="0237.txt_1_0-0029.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0138.txt_1_1" source="0138.txt_1_0" id="0138.txt_1_1-0138.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_0" source="0302.txt_1_0" id="0299.txt_2_0-0302.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_1" source="0029.txt_1_0" id="0148.txt_1_1-0029.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0228.txt_1_0" source="0229.txt_2_0" id="0228.txt_1_0-0229.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0202.txt_4_3" source="0202.txt_4_0" id="0202.txt_4_3-0202.txt_4_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0150.txt_1_5" source="0150.txt_1_3" id="0150.txt_1_5-0150.txt_1_3">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0130.txt_1_1" source="0130.txt_1_0" id="0130.txt_1_1-0130.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_1" source="0299.txt_2_1" id="0299.txt_1_1-0299.txt_2_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_7" source="0283.txt_1_4" id="0283.txt_1_7-0283.txt_1_4">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_1" source="0302.txt_1_0" id="0299.txt_1_1-0302.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_4" source="0283.txt_1_1" id="0283.txt_1_4-0283.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0187.txt_1_1" source="0162.txt_1_0" id="0187.txt_1_1-0162.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0283.txt_1_7" source="0283.txt_1_1" id="0283.txt_1_7-0283.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0029.txt_1_0" source="0246.txt_1_0" id="0029.txt_1_0-0246.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_5" source="0297.txt_1_0" id="0297.txt_1_5-0297.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_2_1" source="0302.txt_1_0" id="0299.txt_2_1-0302.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0242.txt_1_1" source="0148.txt_1_2" id="0242.txt_1_1-0148.txt_1_2">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0297.txt_1_4" source="0297.txt_1_0" id="0297.txt_1_4-0297.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0104.txt_2_0" source="0248.txt_2_0" id="0104.txt_2_0-0248.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0299.txt_1_0" source="0299.txt_2_0" id="0299.txt_1_0-0299.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0278.txt_1_0" source="0138.txt_1_1" id="0278.txt_1_0-0138.txt_1_1">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0148.txt_1_2" source="0242.txt_1_0" id="0148.txt_1_2-0242.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0065.txt_1_2" source="0130.txt_1_0" id="0065.txt_1_2-0130.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0031.txt_1_15" source="0031.txt_1_2" id="0031.txt_1_15-0031.txt_1_2">
+	<edge target="0220.txt_1_2" source="0220.txt_1_0" id="0220.txt_1_2-0220.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
@@ -1982,7 +910,1079 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
+	<edge target="0246.txt_1_0" source="0242.txt_1_0" id="0246.txt_1_0-0242.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_1" source="0101.txt_1_1" id="0023.txt_1_1-0101.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0081.txt_1_2" source="0081.txt_1_0" id="0081.txt_1_2-0081.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_14" source="0031.txt_1_10" id="0031.txt_1_14-0031.txt_1_10">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_15" source="0031.txt_1_14" id="0031.txt_1_15-0031.txt_1_14">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_5" source="0283.txt_1_1" id="0283.txt_1_5-0283.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0081.txt_1_3" source="0081.txt_1_0" id="0081.txt_1_3-0081.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0101.txt_1_3" source="0138.txt_1_0" id="0101.txt_1_3-0138.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0279.txt_1_0" source="0187.txt_1_1" id="0279.txt_1_0-0187.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_4_2" source="0202.txt_4_0" id="0202.txt_4_2-0202.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_1" source="0187.txt_1_0" id="0299.txt_1_1-0187.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0278.txt_1_0" id="0189.txt_1_0-0278.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_0" source="0029.txt_1_0" id="0242.txt_1_0-0029.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_5" source="0031.txt_1_2" id="0031.txt_1_5-0031.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0220.txt_1_3" source="0220.txt_1_0" id="0220.txt_1_3-0220.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_4" source="0297.txt_1_0" id="0297.txt_1_4-0297.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0278.txt_1_0" source="0248.txt_1_0" id="0278.txt_1_0-0248.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0278.txt_1_0" id="0104.txt_2_0-0278.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_1" source="0299.txt_1_1" id="0299.txt_2_1-0299.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0278.txt_1_0" source="0138.txt_1_1" id="0278.txt_1_0-0138.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_4_2" source="0229.txt_2_0" id="0202.txt_4_2-0229.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_7" source="0297.txt_1_2" id="0297.txt_1_7-0297.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0011.txt_1_4" source="0011.txt_1_2" id="0011.txt_1_4-0011.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0088.txt_1_0" source="0087.txt_1_0" id="0088.txt_1_0-0087.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_1" source="0246.txt_1_0" id="0148.txt_1_1-0246.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0101.txt_1_0" id="0023.txt_1_2-0101.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0138.txt_1_1" id="0104.txt_2_0-0138.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0237.txt_1_0" source="0246.txt_1_0" id="0237.txt_1_0-0246.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_0" source="0246.txt_1_0" id="0242.txt_1_0-0246.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0248.txt_2_0" id="0189.txt_1_0-0248.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_2" source="0071.txt_1_0" id="0148.txt_1_2-0071.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_7" source="0283.txt_1_1" id="0283.txt_1_7-0283.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0101.txt_1_3" id="0023.txt_1_2-0101.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0104.txt_2_0" id="0023.txt_1_2-0104.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_1" source="0065.txt_1_0" id="0065.txt_1_1-0065.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0029.txt_1_0" source="0246.txt_1_0" id="0029.txt_1_0-0246.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_1" source="0187.txt_1_1" id="0299.txt_1_1-0187.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0189.txt_1_0" id="0104.txt_2_0-0189.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_5" source="0297.txt_1_3" id="0297.txt_1_5-0297.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0288.txt_1_1" source="0300.txt_1_0" id="0288.txt_1_1-0300.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0321.txt_1_1" source="0321.txt_1_0" id="0321.txt_1_1-0321.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0088.txt_1_0" source="0087.txt_1_0" id="0088.txt_1_0-0087.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0081.txt_1_3" source="0081.txt_1_2" id="0081.txt_1_3-0081.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0011.txt_1_2" source="0011.txt_1_0" id="0011.txt_1_2-0011.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0322.txt_1_2" id="0104.txt_2_0-0322.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_5" source="0031.txt_1_0" id="0031.txt_1_5-0031.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0229.txt_2_2" source="0229.txt_2_0" id="0229.txt_2_2-0229.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0023.txt_1_1" id="0023.txt_1_2-0023.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_1" source="0031.txt_1_0" id="0031.txt_1_1-0031.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0228.txt_1_0" source="0229.txt_2_2" id="0228.txt_1_0-0229.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0156.txt_1_1" source="0156.txt_1_0" id="0156.txt_1_1-0156.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_1" source="0148.txt_1_2" id="0242.txt_1_1-0148.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0101.txt_1_0" id="0189.txt_1_0-0101.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0162.txt_1_0" source="0187.txt_1_1" id="0162.txt_1_0-0187.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0278.txt_1_0" source="0248.txt_2_0" id="0278.txt_1_0-0248.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0220.txt_1_3" source="0156.txt_1_0" id="0220.txt_1_3-0156.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_1" source="0299.txt_2_0" id="0299.txt_1_1-0299.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0272.txt_1_2" source="0272.txt_1_0" id="0272.txt_1_2-0272.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0187.txt_1_1" source="0279.txt_1_0" id="0187.txt_1_1-0279.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0162.txt_1_0" source="0302.txt_1_0" id="0162.txt_1_0-0302.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_4_3" source="0229.txt_2_0" id="0202.txt_4_3-0229.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0279.txt_1_0" source="0162.txt_1_0" id="0279.txt_1_0-0162.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_0" source="0299.txt_1_0" id="0299.txt_2_0-0299.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_6" source="0059.txt_1_2" id="0059.txt_1_6-0059.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_4" source="0297.txt_1_2" id="0297.txt_1_4-0297.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0288.txt_1_1" source="0288.txt_1_0" id="0288.txt_1_1-0288.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_6" source="0297.txt_1_0" id="0297.txt_1_6-0297.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_4" source="0150.txt_1_0" id="0150.txt_1_4-0150.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0001.txt_1_2" source="0001.txt_1_0" id="0001.txt_1_2-0001.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0138.txt_1_1" source="0138.txt_1_0" id="0138.txt_1_1-0138.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_1" source="0023.txt_1_0" id="0023.txt_1_1-0023.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0101.txt_1_3" source="0278.txt_1_0" id="0101.txt_1_3-0278.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_2" source="0130.txt_1_1" id="0065.txt_1_2-0130.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0104.txt_2_0" id="0189.txt_1_0-0104.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0130.txt_1_1" source="0130.txt_1_0" id="0130.txt_1_1-0130.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0138.txt_1_0" id="0023.txt_1_2-0138.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_5" source="0150.txt_1_1" id="0150.txt_1_5-0150.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_7" source="0297.txt_1_5" id="0297.txt_1_7-0297.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0014.txt_1_3" source="0014.txt_1_1" id="0014.txt_1_3-0014.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_3" source="0150.txt_1_0" id="0150.txt_1_3-0150.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0101.txt_1_3" source="0248.txt_1_0" id="0101.txt_1_3-0248.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0011.txt_1_4" source="0011.txt_1_0" id="0011.txt_1_4-0011.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0156.txt_1_1" source="0220.txt_1_3" id="0156.txt_1_1-0220.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0101.txt_1_3" source="0248.txt_2_0" id="0101.txt_1_3-0248.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_1" source="0187.txt_1_1" id="0299.txt_2_1-0187.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_2" source="0242.txt_1_0" id="0148.txt_1_2-0242.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_1" source="0299.txt_1_1" id="0299.txt_2_1-0299.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_15" source="0031.txt_1_13" id="0031.txt_1_15-0031.txt_1_13">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_6" source="0297.txt_1_3" id="0297.txt_1_6-0297.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_1" source="0101.txt_1_0" id="0023.txt_1_1-0101.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0162.txt_1_0" source="0279.txt_1_0" id="0162.txt_1_0-0279.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_14" source="0031.txt_1_2" id="0031.txt_1_14-0031.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_3" source="0150.txt_1_1" id="0150.txt_1_3-0150.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_2" source="0242.txt_1_1" id="0148.txt_1_2-0242.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_4" source="0283.txt_1_2" id="0283.txt_1_4-0283.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0237.txt_1_0" source="0029.txt_1_0" id="0237.txt_1_0-0029.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_15" source="0031.txt_1_1" id="0031.txt_1_15-0031.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0322.txt_1_0" id="0023.txt_1_2-0322.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_1" source="0071.txt_1_0" id="0242.txt_1_1-0071.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0223.txt_1_0" id="0104.txt_2_0-0223.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0022.txt_1_1" source="0022.txt_1_0" id="0022.txt_1_1-0022.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_2" source="0029.txt_1_0" id="0148.txt_1_2-0029.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0014.txt_1_1" source="0014.txt_1_0" id="0014.txt_1_1-0014.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_4_3" source="0229.txt_2_2" id="0202.txt_4_3-0229.txt_2_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0257.txt_2_1" source="0257.txt_2_0" id="0257.txt_2_1-0257.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0104.txt_2_0" id="0023.txt_1_2-0104.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0023.txt_1_1" id="0104.txt_2_0-0023.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_5" source="0297.txt_1_0" id="0297.txt_1_5-0297.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0223.txt_1_0" id="0023.txt_1_2-0223.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_7" source="0283.txt_1_0" id="0283.txt_1_7-0283.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_7" source="0297.txt_1_4" id="0297.txt_1_7-0297.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0288.txt_1_1" source="0070.txt_1_0" id="0288.txt_1_1-0070.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0220.txt_1_3" source="0156.txt_1_1" id="0220.txt_1_3-0156.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_2" source="0283.txt_1_0" id="0283.txt_1_2-0283.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_6" source="0065.txt_1_0" id="0059.txt_1_6-0065.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_3" source="0150.txt_1_2" id="0150.txt_1_3-0150.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0081.txt_1_3" source="0081.txt_1_1" id="0081.txt_1_3-0081.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_4_3" source="0202.txt_4_1" id="0202.txt_4_3-0202.txt_4_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_6" source="0283.txt_1_3" id="0283.txt_1_6-0283.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0246.txt_1_0" source="0242.txt_1_0" id="0246.txt_1_0-0242.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0104.txt_2_0" id="0189.txt_1_0-0104.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_2" source="0065.txt_1_0" id="0065.txt_1_2-0065.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0001.txt_1_6" source="0001.txt_1_3" id="0001.txt_1_6-0001.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0228.txt_1_0" source="0229.txt_2_0" id="0228.txt_1_0-0229.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_1" source="0299.txt_1_0" id="0299.txt_2_1-0299.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0023.txt_1_2" id="0189.txt_1_0-0023.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0138.txt_1_1" id="0023.txt_1_2-0138.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0278.txt_1_0" source="0101.txt_1_3" id="0278.txt_1_0-0101.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0321.txt_1_4" source="0321.txt_1_1" id="0321.txt_1_4-0321.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0101.txt_1_3" id="0104.txt_2_0-0101.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_2" source="0148.txt_1_0" id="0148.txt_1_2-0148.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0248.txt_1_0" id="0023.txt_1_2-0248.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_15" source="0031.txt_1_2" id="0031.txt_1_15-0031.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_1" source="0299.txt_2_1" id="0299.txt_1_1-0299.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_2" source="0297.txt_1_0" id="0297.txt_1_2-0297.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0156.txt_1_1" source="0220.txt_1_1" id="0156.txt_1_1-0220.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0248.txt_1_0" id="0104.txt_2_0-0248.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0138.txt_1_0" id="0189.txt_1_0-0138.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_1" source="0302.txt_1_0" id="0299.txt_1_1-0302.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0081.txt_1_1" source="0081.txt_1_0" id="0081.txt_1_1-0081.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_3" source="0297.txt_1_0" id="0297.txt_1_3-0297.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0248.txt_2_0" id="0104.txt_2_0-0248.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_7" source="0283.txt_1_5" id="0283.txt_1_7-0283.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0070.txt_1_0" source="0288.txt_1_0" id="0070.txt_1_0-0288.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_1" source="0279.txt_1_0" id="0299.txt_2_1-0279.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0187.txt_1_1" source="0279.txt_1_0" id="0187.txt_1_1-0279.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_4" source="0297.txt_1_1" id="0297.txt_1_4-0297.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_0" source="0299.txt_2_0" id="0299.txt_1_0-0299.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_1" source="0283.txt_1_0" id="0283.txt_1_1-0283.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_5" source="0031.txt_1_1" id="0031.txt_1_5-0031.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_13" source="0031.txt_1_10" id="0031.txt_1_13-0031.txt_1_10">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0246.txt_1_0" source="0029.txt_1_0" id="0246.txt_1_0-0029.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_2" source="0059.txt_1_0" id="0059.txt_1_2-0059.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0321.txt_1_4" source="0321.txt_1_2" id="0321.txt_1_4-0321.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_15" source="0031.txt_1_5" id="0031.txt_1_15-0031.txt_1_5">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_2" source="0059.txt_1_6" id="0065.txt_1_2-0059.txt_1_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0184.txt_1_2" source="0280.txt_2_0" id="0184.txt_1_2-0280.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_0" source="0302.txt_1_0" id="0299.txt_2_0-0302.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0248.txt_1_0" source="0248.txt_2_0" id="0248.txt_1_0-0248.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_7" source="0283.txt_1_4" id="0283.txt_1_7-0283.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_2" source="0059.txt_1_2" id="0065.txt_1_2-0059.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_7" source="0283.txt_1_3" id="0283.txt_1_7-0283.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0322.txt_1_0" id="0189.txt_1_0-0322.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0162.txt_1_0" source="0279.txt_1_0" id="0162.txt_1_0-0279.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
 	<edge target="0299.txt_1_0" source="0279.txt_1_0" id="0299.txt_1_0-0279.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0220.txt_1_2" source="0156.txt_1_0" id="0220.txt_1_2-0156.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0087.txt_1_0" source="0088.txt_1_0" id="0087.txt_1_0-0088.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0156.txt_1_1" source="0220.txt_1_3" id="0156.txt_1_1-0220.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0248.txt_2_0" source="0248.txt_1_0" id="0248.txt_2_0-0248.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0070.txt_1_0" source="0288.txt_1_1" id="0070.txt_1_0-0288.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_7" source="0297.txt_1_0" id="0297.txt_1_7-0297.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_0" source="0299.txt_2_0" id="0299.txt_1_0-0299.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0189.txt_1_0" id="0023.txt_1_2-0189.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0278.txt_1_0" id="0023.txt_1_2-0278.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0223.txt_1_0" id="0189.txt_1_0-0223.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0101.txt_1_1" id="0104.txt_2_0-0101.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0220.txt_1_1" source="0220.txt_1_0" id="0220.txt_1_1-0220.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0187.txt_1_1" source="0162.txt_1_0" id="0187.txt_1_1-0162.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_2" source="0031.txt_1_0" id="0031.txt_1_2-0031.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_4_1" source="0202.txt_4_0" id="0202.txt_4_1-0202.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_5" source="0150.txt_1_0" id="0150.txt_1_5-0150.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_1" source="0150.txt_1_0" id="0150.txt_1_1-0150.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0011.txt_1_1" source="0011.txt_1_0" id="0011.txt_1_1-0011.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0248.txt_1_0" id="0189.txt_1_0-0248.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_1" source="0148.txt_1_2" id="0242.txt_1_1-0148.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_0" source="0187.txt_1_1" id="0299.txt_2_0-0187.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0279.txt_1_0" source="0187.txt_1_1" id="0279.txt_1_0-0187.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0220.txt_1_3" source="0220.txt_1_1" id="0220.txt_1_3-0220.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0101.txt_1_1" id="0023.txt_1_2-0101.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0101.txt_1_3" source="0278.txt_1_0" id="0101.txt_1_3-0278.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0322.txt_1_2" id="0189.txt_1_0-0322.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_2" source="0242.txt_1_1" id="0148.txt_1_2-0242.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_6" source="0283.txt_1_0" id="0283.txt_1_6-0283.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0014.txt_1_3" source="0014.txt_1_2" id="0014.txt_1_3-0014.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_6" source="0130.txt_1_0" id="0059.txt_1_6-0130.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0023.txt_1_1" id="0189.txt_1_0-0023.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0070.txt_1_0" source="0300.txt_1_0" id="0070.txt_1_0-0300.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0187.txt_1_1" source="0162.txt_1_0" id="0187.txt_1_1-0162.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_6" source="0283.txt_1_2" id="0283.txt_1_6-0283.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0138.txt_1_0" id="0104.txt_2_0-0138.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_1" source="0187.txt_1_0" id="0299.txt_2_1-0187.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_2" source="0150.txt_1_0" id="0150.txt_1_2-0150.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_1" source="0279.txt_1_0" id="0299.txt_1_1-0279.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0286.txt_1_1" source="0286.txt_1_0" id="0286.txt_1_1-0286.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_0" source="0187.txt_1_0" id="0299.txt_1_0-0187.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_6" source="0130.txt_1_1" id="0059.txt_1_6-0130.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0248.txt_1_0" source="0248.txt_2_0" id="0248.txt_1_0-0248.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0029.txt_1_0" source="0246.txt_1_0" id="0029.txt_1_0-0246.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_1" source="0148.txt_1_0" id="0242.txt_1_1-0148.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0202.txt_4_3" source="0202.txt_4_0" id="0202.txt_4_3-0202.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_1" source="0029.txt_1_0" id="0242.txt_1_1-0029.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0278.txt_1_0" source="0101.txt_1_3" id="0278.txt_1_0-0101.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_6" source="0297.txt_1_2" id="0297.txt_1_6-0297.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0059.txt_1_6" source="0065.txt_1_2" id="0059.txt_1_6-0065.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0162.txt_1_0" source="0187.txt_1_0" id="0162.txt_1_0-0187.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_0" source="0299.txt_1_0" id="0299.txt_2_0-0299.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_15" source="0031.txt_1_10" id="0031.txt_1_15-0031.txt_1_10">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_7" source="0283.txt_1_2" id="0283.txt_1_7-0283.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0119.txt_1_0" source="0130.txt_1_0" id="0119.txt_1_0-0130.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0246.txt_1_0" source="0029.txt_1_0" id="0246.txt_1_0-0029.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_0" source="0302.txt_1_0" id="0299.txt_1_0-0302.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0001.txt_1_6" source="0001.txt_1_2" id="0001.txt_1_6-0001.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_0" source="0162.txt_1_0" id="0299.txt_1_0-0162.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0220.txt_1_3" source="0156.txt_1_1" id="0220.txt_1_3-0156.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0321.txt_1_4" source="0321.txt_1_0" id="0321.txt_1_4-0321.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_1" source="0242.txt_1_0" id="0242.txt_1_1-0242.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0220.txt_1_3" source="0220.txt_1_2" id="0220.txt_1_3-0220.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_4" source="0283.txt_1_0" id="0283.txt_1_4-0283.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_1" source="0297.txt_1_0" id="0297.txt_1_1-0297.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_3" source="0283.txt_1_0" id="0283.txt_1_3-0283.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_1" source="0299.txt_2_1" id="0299.txt_1_1-0299.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0101.txt_1_3" source="0138.txt_1_1" id="0101.txt_1_3-0138.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_1_1" source="0299.txt_1_0" id="0299.txt_1_1-0299.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0070.txt_1_0" source="0288.txt_1_1" id="0070.txt_1_0-0288.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0029.txt_1_0" source="0242.txt_1_0" id="0029.txt_1_0-0242.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0297.txt_1_5" source="0297.txt_1_1" id="0297.txt_1_5-0297.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0184.txt_1_2" source="0184.txt_1_0" id="0184.txt_1_2-0184.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0031.txt_1_13" source="0031.txt_1_1" id="0031.txt_1_13-0031.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_0" source="0162.txt_1_0" id="0299.txt_2_0-0162.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0101.txt_1_3" source="0101.txt_1_1" id="0101.txt_1_3-0101.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_5" source="0283.txt_1_3" id="0283.txt_1_5-0283.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0278.txt_1_0" source="0138.txt_1_0" id="0278.txt_1_0-0138.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0189.txt_1_0" id="0023.txt_1_2-0189.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0014.txt_1_2" source="0014.txt_1_0" id="0014.txt_1_2-0014.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0288.txt_1_1" source="0070.txt_1_0" id="0288.txt_1_1-0070.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0138.txt_1_1" id="0189.txt_1_0-0138.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0023.txt_1_2" id="0189.txt_1_0-0023.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_2" source="0130.txt_1_0" id="0065.txt_1_2-0130.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_7" source="0283.txt_1_6" id="0283.txt_1_7-0283.txt_1_6">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0104.txt_2_0" source="0189.txt_1_0" id="0104.txt_2_0-0189.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_1" source="0302.txt_1_0" id="0299.txt_2_1-0302.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_5" source="0150.txt_1_2" id="0150.txt_1_5-0150.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0189.txt_1_0" source="0023.txt_1_0" id="0189.txt_1_0-0023.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0242.txt_1_1" source="0148.txt_1_1" id="0242.txt_1_1-0148.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_1" source="0299.txt_2_0" id="0299.txt_2_1-0299.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0299.txt_2_0" source="0187.txt_1_0" id="0299.txt_2_0-0187.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0023.txt_1_0" id="0023.txt_1_2-0023.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0283.txt_1_4" source="0283.txt_1_1" id="0283.txt_1_4-0283.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0023.txt_1_2" source="0248.txt_2_0" id="0023.txt_1_2-0248.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0322.txt_1_2" source="0322.txt_1_0" id="0322.txt_1_2-0322.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0150.txt_1_5" source="0150.txt_1_4" id="0150.txt_1_5-0150.txt_1_4">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_2" source="0059.txt_1_3" id="0065.txt_1_2-0059.txt_1_3">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0278.txt_1_0" source="0101.txt_1_1" id="0278.txt_1_0-0101.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0119.txt_1_0" source="0130.txt_1_1" id="0119.txt_1_0-0130.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0156.txt_1_1" source="0220.txt_1_0" id="0156.txt_1_1-0220.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0071.txt_2_1" source="0071.txt_2_0" id="0071.txt_2_1-0071.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0065.txt_1_2" source="0059.txt_1_0" id="0065.txt_1_2-0059.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0148.txt_1_1" source="0029.txt_1_0" id="0148.txt_1_1-0029.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0187.txt_1_1" source="0187.txt_1_0" id="0187.txt_1_1-0187.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>

@@ -221,7 +221,7 @@ charging points on train would be good	1	->	could do with more electricity point
 could do with more electricity points to charge laptop	1	->	charging points on train would be good	1	Yes	0	0	maybe not on train
 								
 node pair #32:								
-charging points on train would be good	1	->	Not much plugs	2	Yes	0	0	"no charging points does not entail ""there are some charging points"""
+charging points on train would be good	1	->	Not much plugs	2	Yes	0	1	"CHANGED no charging points does not entail ""there are some charging points"""
 Not much plugs	2	->	charging points on train would be good	1	No	0	0	
 								
 node pair #34:								
@@ -437,7 +437,7 @@ could do with more electricity points to charge laptop	1	->	Allocated carriages 
 Allocated carriages on certain trains for people travelling with dogs	1	->	could do with more electricity points to charge laptop	1	No	0	0	
 								
 node pair #89:								
-Phone charging points on train would be good	1	->	Not much plugs	2	Yes	0	0	"no does not entails ""there are some"""
+Phone charging points on train would be good	1	->	Not much plugs	2	Yes	0	1	"CHANGED: no does not entails ""there are some"""
 Not much plugs	2	->	Phone charging points on train would be good	1	No	0	0	
 								
 node pair #90:								

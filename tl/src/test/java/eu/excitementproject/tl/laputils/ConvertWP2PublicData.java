@@ -52,7 +52,7 @@ public class ConvertWP2PublicData {
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 //		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
 		
-		String cluster="train/EMAIL0410";
+		String cluster="test/EMAIL0320";
 		dir = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/FragmentGraphs");
 		dirInteractions = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/Interactions");
 
