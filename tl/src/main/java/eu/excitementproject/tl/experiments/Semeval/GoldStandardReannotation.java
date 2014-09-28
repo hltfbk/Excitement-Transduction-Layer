@@ -437,6 +437,7 @@ public class GoldStandardReannotation {
 		System.out.println("Loaded reannotation: nodes "+ourCg.vertexSet().size()+", edges "+ourCg.edgeSet().size());
 		EntailmentGraphRaw decollapsedGraph = EvaluatorGraphOptimizer.getDecollapsedGraph(ourCg);
 		SimpleGraphOptimizer collapser = new SimpleGraphOptimizer();
+		// some annotators 'merged' 2 equivalence classes by annotating them as entailing in both directions. To add all clique edges we have to collapse the graph
 		ourCg = collapser.optimizeGraph(decollapsedGraph, 0.0);
 		System.out.println("Re-collapsed reannotation: nodes "+ourCg.vertexSet().size()+", edges "+ourCg.edgeSet().size());
 
@@ -459,8 +460,10 @@ public class GoldStandardReannotation {
 			
 		// now check if added edges into fragment graphs
 		Set<EntailmentRelation> decollapsedEdges = EvaluatorGraphOptimizer.getAllEntailmentRelations(ourCg);
-		for (EntailmentRelation e : decollapsedEdges){
-			
+		Set<String> decollapsedEgdesStr = new HashSet<String>();
+		
+		for (EntailmentRelation e : decollapsedEdges){	
+			decollapsedEgdesStr.add(e.getSource().getText()+"->"+e.getTarget().getText());
 			// debug part
 			if (e.getSource().getText().equals("leg room is uncomfortable for someone of 187 cm")){
 				if (e.getTarget().getText().equals("leg room is abit uncomfortable")){
@@ -482,8 +485,25 @@ public class GoldStandardReannotation {
 		}
 		
 		if (isConsistent) {
-			System.out.println("No inconsistent edges added into FGs.\nThe graph is consistent. Congratulations :)");					
+			System.out.println("No inconsistent edges added into FGs.");					
+//			System.out.println("No inconsistent edges added into FGs.\nThe graph is consistent. Congratulations :)");					
 		}
+		
+		// Now check if edges were REMOVED from fragment graphs
+		for (EntailmentRelation fge : rfg.edgeSet()){
+			if (fge.getLabel().is(DecisionLabel.NonEntailment)) continue;
+			String es = fge.getSource().getText()+"->"+fge.getTarget().getText();
+			if (!decollapsedEgdesStr.contains(es)){
+				System.out.println("Edge <<"+ es +">> was removed from a FG!");
+				isConsistent = false;
+			}
+		}
+		
+		if (isConsistent) {
+			System.out.println("No edges removed from FGs.\nThe graph is consistent. Congratulations :)");					
+		}
+
+
 		ourCg.toDOT("C:/Users/Lili/My Documents/_graphs/graph.dot.txt");
 		
 		return true;
@@ -587,7 +607,14 @@ public class GoldStandardReannotation {
 			trToWp2.createWP2xml(txtFileReannotated.getAbsolutePath().replace(".txt", "PlusClosure.xml"), decollapsedGraph, textToIdsMap, nodeContentById);
 		
 			System.out.println("Statistics:");
-			System.out.println("Cluster \t All nodes in FGs \t All edges in FGs \t All nodes in WP2 graph \t All edges in WP2 graph \t Distinct-text nodes in FGs \t Distinct-text edges in FGs \t Coll nodes \t meta-nodes \t Avg size of meta-node \t All meta-nodes sizes \t Coll Edges \t Distinct-text merged graph nodes \t Distinct-text merged graph edges");			
+			System.out.println("Cluster \t Distinct orphan nodes \t All nodes in FGs \t All edges in FGs \t All nodes in WP2 graph \t All edges in WP2 graph \t Distinct-text nodes in FGs \t Distinct-text edges in FGs \t Coll nodes \t meta-nodes \t Avg size of meta-node \t All meta-nodes sizes \t Coll Edges \t Distinct-text merged graph nodes \t Distinct-text merged graph edges");			
+
+			int on = 0;
+			for (EntailmentUnit node : decollapsedGraph.vertexSet()){
+				if (decollapsedGraph.edgesOf(node).isEmpty()) on++;
+			}
+			
+			res+=on+"\t";
 
 			res+=nodeContentById.size()+"\t";
 			res+=numFGedges+"\t";
@@ -627,7 +654,19 @@ public class GoldStandardReannotation {
 			
 			res+=ourCg.edgeSet().size()+"\t";
 			res+=decollapsedGraph.vertexSet().size()+"\t";
-			res+=decollapsedGraph.edgeSet().size()+"\n";
+			res+=decollapsedGraph.edgeSet().size()+"\t";
+
+			Set<String> dedges = new HashSet<String>();
+			for (EntailmentRelation e : decollapsedGraph.edgeSet()){
+//				dedges.add(e.toString());
+				dedges.add(CompareAnnotations.getString(e));
+				if (clusterName.contains("0030")) System.out.println("0030 \t "+dedges.size()+" \t "+CompareAnnotations.getString(e));
+					
+			}
+			res+=dedges.size()+"\n";
+			
+			
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -647,7 +686,30 @@ public class GoldStandardReannotation {
 		
 		GoldStandardReannotation tr = new GoldStandardReannotation();
 		
-		String[] single = {"EMAIL0320"};
+		
+		String[] devsetIt = {"Cluster A1.1 Accrediti e rimborsi",
+							"Cluster A1.2 Piano tariffario e contratto",
+							"Cluster A1.3 Punti",
+							"Cluster A2.1Tariffe e promozioni",
+							"Cluster C1.2 Internet Key",
+							"Cluster C1.3 Internet, Consolle e Connessione",
+							"Cluster C1.4 Telefonate",
+							"Cluster D1.1 Call Center e Servizio Clienti - Contatto",
+							"Cluster D1.4 Servizio Comm e Postvendita",
+							"Cluster D1.5 Website e Forum",
+							"Cluster E1.1 Tablet",
+							"Cluster E1.2 Telefoni, smartphone e cellulari"};
+						//	"Cluster Generic (set1)"};
+		
+		
+		String[] testsetIt = {"Cluster A1.4 Ricarica e consumi",
+//							"Cluster A2.1Tariffe e promozioni test",
+							"Cluster B1.1 Generici"};
+						//	"Cluster C1.1 ADSL e Rete",
+						//	"Cluster C1.3 Internet, Consolle e Connessione test"};
+						//	"Cluster D1.2 Call Center e Servizio Clienti - Assistenza",
+						//	"Cluster D1.3 Call Center e Servizio Clienti - Servizio"};
+							//"Cluster D1.6 Webtools"};
 		
 		String[] devsetEn = {"EMAIL0001",
 		                     "EMAIL0002",
@@ -683,10 +745,12 @@ public class GoldStandardReannotation {
 	//	String clusterName = "EMAIL0002";		
 	//	String clusterName = "SPEECH0080";		
 
+	String[] single = {"EMAIL0390"};
+
 	String stat="";
-	for (String clusterName : testsetEn){
-			String set = "Test";
-		// String set = "Dev";
+	for (String clusterName : single){
+//		String set = "Test";
+		 String set = "Dev";
 		
 //		String suffix = "Reconciled";
 //		String suffix = "LB";

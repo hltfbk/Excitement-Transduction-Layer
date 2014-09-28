@@ -259,7 +259,7 @@ public class EntailmentUnit{
 	 * ****************************************************************************************/
 
 	/**
-	 * Comparator to sort equivalence classes in descending order by their number of interactions
+	 * Comparator to sort entailment units by their text in alphabetic order
 	 */
 	public static class TextComparator implements Comparator<EntailmentUnit> {
 	    @Override
