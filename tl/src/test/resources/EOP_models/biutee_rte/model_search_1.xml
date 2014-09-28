@@ -64,7 +64,7 @@
                 <value>50</value>
             </entry>
             <entry>
-                <key>VERB_OCEAN</key>
+                <key>CATVAR</key>
                 <value>51</value>
             </entry>
             <entry>
@@ -78,7 +78,7 @@
         <descriptionOfTraining>ScalingClassifier:
 minMap:
 1: 0.000000
-2: 4.000000
+2: 5.000000
 3: 0.000000
 4: 0.000000
 5: 0.000000
@@ -131,33 +131,33 @@ minMap:
 52: 0.000000
 maxMap:
 1: 1.000000
-2: 16.000000
-3: 0.000000
-4: 0.000000
-5: 0.000000
-6: 0.000000
-7: 30.238044
-8: 27.279889
-9: 72.858452
-10: 39.143694
-11: 2.000000
-12: 10.427790
-13: 0.000000
-14: 28.274270
-15: 7.773419
-16: 0.000000
+2: 32.000000
+3: 1.000000
+4: 1.000000
+5: 1.000000
+6: 1.000000
+7: 51.705038
+8: 42.025460
+9: 159.694807
+10: 41.110631
+11: 6.000000
+12: 76.046003
+13: 11.851111
+14: 41.272388
+15: 54.554395
+16: 1.000000
 17: 0.000000
-18: 51.000000
-19: 3.000000
+18: 68.000000
+19: 5.000000
 20: 1.000000
-21: 0.000000
-22: 16.476737
-23: 0.000000
-24: 1.000000
-25: 0.000000
+21: 19.184788
+22: 38.369575
+23: 1.000000
+24: 2.000000
+25: 1.000000
 26: 0.000000
-27: 0.000000
-28: 1.000000
+27: 1.000000
+28: 0.000000
 29: 0.000000
 30: 0.000000
 31: 0.000000
@@ -179,43 +179,43 @@ maxMap:
 47: 0.000000
 48: 0.000000
 49: 0.000000
-50: 1.386294
+50: 2.079442
 51: 0.693147
-52: 3.000000
+52: 6.000000
 Wrapping:
 Logistic regression.
 Parameters: regularization = 0.0 learning rate = 0.005
-Number of iterations = 3000
+Number of iterations = 388
 Features:
-C:13.9988
-HYPOTHESIS_MAIN_PREDICATE_IS_VERB: 4.7117
-INVERSE_HYPOTHESIS_LENGTH: -2.6009
-TASK_IR: 0.0500
-TASK_IE: 0.0500
-TASK_QA: 0.0500
-TASK_SUM: 0.0500
-INSERT_NAMED_ENTITY: 29.5321
-INSERT_CONTENT_VERB: 5.9930
-INSERT_CONTENT_WORD: 28.9556
-INSERT_NON_CONTENT_NON_EMPTY_WORD: 1.6344
-INSERT_EMPTY_WORD: 17.5243
-INSERT_NAMED_ENTITY_EXIST_IN_PAIR: 2.2717
-INSERT_CONTENT_VERB_EXIST_IN_PAIR: 0.0500
-INSERT_CONTENT_WORD_EXIST_IN_PAIR: 0.8718
+C:0.5882
+HYPOTHESIS_MAIN_PREDICATE_IS_VERB: 0.2338
+INVERSE_HYPOTHESIS_LENGTH: 2.8074
+TASK_IR: 0.1595
+TASK_IE: -0.2377
+TASK_QA: 0.5062
+TASK_SUM: 0.3102
+INSERT_NAMED_ENTITY: 6.1895
+INSERT_CONTENT_VERB: 1.0558
+INSERT_CONTENT_WORD: 8.0499
+INSERT_NON_CONTENT_NON_EMPTY_WORD: 3.3796
+INSERT_EMPTY_WORD: 0.0506
+INSERT_NAMED_ENTITY_EXIST_IN_PAIR: 0.0500
+INSERT_CONTENT_VERB_EXIST_IN_PAIR: 0.4236
+INSERT_CONTENT_WORD_EXIST_IN_PAIR: 0.4679
 INSERT_NON_CONTENT_NON_EMPTY_WORD_EXIST_IN_PAIR: 0.0500
 MOVE_ONLY_CHANGE_RELATION_STRONG: 0.0500
 MOVE_INTRODUCE_SURFACE_RELATION: 0.0500
-MOVE_NODE_CHANGE_CONTEXT: 0.0500
-MOVE_NODE_SAME_CONTEXT: 3.4084
-MOVE_TO_ROOT_IF_PT_PLUS_OR_MINUS: 9.8189
-SUBSTITUTION_MULTI_WORD_ADD_WORDS: 0.0500
-SUBSTITUTION_MULTI_WORD_ADD_WORDS_NAMED_ENTITY: 8.8630
-SUBSTITUTION_MULTI_WORD_REMOVE_WORDS: 0.0500
-SUBSTITUTION_FLIP_POS: 4.1325
+MOVE_NODE_CHANGE_CONTEXT: 1.1100
+MOVE_NODE_SAME_CONTEXT: 0.0500
+MOVE_TO_ROOT_IF_PT_PLUS_OR_MINUS: 0.1132
+SUBSTITUTION_MULTI_WORD_ADD_WORDS: 0.1938
+SUBSTITUTION_MULTI_WORD_ADD_WORDS_NAMED_ENTITY: 2.6313
+SUBSTITUTION_MULTI_WORD_REMOVE_WORDS: 0.2068
+SUBSTITUTION_FLIP_POS: 0.0500
 SUBSTITUTION_PARSER_ANTECEDENT: 0.0500
 SUBSTITUTION_COREFERENCE: 0.0500
 IS_A_COREFERENCE: 0.0500
-CHANGE_PREDICATE_TRUTH: 3.0168
+CHANGE_PREDICATE_TRUTH: 0.0500
 GAP_V1_COUNT_MISSING_NODES: 0.0500
 GAP_V2_MISSING_PREDICATES: 0.0500
 GAP_V2_ARGUMENT_HEAD_NOT_CONNECTED: 0.0500
@@ -238,71 +238,71 @@ GAP_BASELINE_V2_MISSING_LEMMA: 0.0500
 GAP_BASELINE_V2_MISSING_NODE: 0.0500
 GAP_BASELINE_V2_MISSING_RELATION: 0.0500
 WORDNET: 0.0500
-VERB_OCEAN: 5.2138
+CATVAR: 0.3281
 SYNTACTIC: 0.0500
-Accuracy on training set was: 0.6834</descriptionOfTraining>
+Accuracy on training set was: 0.7113</descriptionOfTraining>
         <nestedModel xsi:type="learningModelForLinearClassifierWithLeadingConstant">
             <classifierClassOfModel>eu.excitementproject.eop.biutee.classifiers.linearimplementations.LinearClassifierWithLeadingConstantLoadable</classifierClassOfModel>
             <parameters>
                 <entry>
                     <key>0</key>
-                    <value>13.998789280127584</value>
+                    <value>0.5882372907850716</value>
                 </entry>
                 <entry>
                     <key>2</key>
-                    <value>4.711704951252673</value>
+                    <value>0.2338442209109963</value>
                 </entry>
                 <entry>
                     <key>3</key>
-                    <value>-2.6009112387114426</value>
+                    <value>2.807439569636872</value>
                 </entry>
                 <entry>
                     <key>4</key>
-                    <value>0.05</value>
+                    <value>0.15947380059112748</value>
                 </entry>
                 <entry>
                     <key>5</key>
-                    <value>0.05</value>
+                    <value>-0.23766136792787854</value>
                 </entry>
                 <entry>
                     <key>6</key>
-                    <value>0.05</value>
+                    <value>0.5062242854977597</value>
                 </entry>
                 <entry>
                     <key>7</key>
-                    <value>0.05</value>
+                    <value>0.3102005726240632</value>
                 </entry>
                 <entry>
                     <key>8</key>
-                    <value>29.5320567819679</value>
+                    <value>6.189481668539749</value>
                 </entry>
                 <entry>
                     <key>9</key>
-                    <value>5.99302234818779</value>
+                    <value>1.055807483577627</value>
                 </entry>
                 <entry>
                     <key>10</key>
-                    <value>28.95564273705196</value>
+                    <value>8.049934143171976</value>
                 </entry>
                 <entry>
                     <key>11</key>
-                    <value>1.6344028112729019</value>
+                    <value>3.379621787143968</value>
                 </entry>
                 <entry>
                     <key>12</key>
-                    <value>17.5243107907301</value>
+                    <value>0.05058444729140432</value>
                 </entry>
                 <entry>
                     <key>13</key>
-                    <value>2.2716744094754886</value>
-                </entry>
-                <entry>
-                    <key>14</key>
                     <value>0.05</value>
                 </entry>
                 <entry>
+                    <key>14</key>
+                    <value>0.4235525862631803</value>
+                </entry>
+                <entry>
                     <key>15</key>
-                    <value>0.871849692195334</value>
+                    <value>0.4678831507202003</value>
                 </entry>
                 <entry>
                     <key>16</key>
@@ -318,31 +318,31 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
                 </entry>
                 <entry>
                     <key>19</key>
-                    <value>0.05</value>
+                    <value>1.1100151023874683</value>
                 </entry>
                 <entry>
                     <key>20</key>
-                    <value>3.408389963683972</value>
+                    <value>0.05</value>
                 </entry>
                 <entry>
                     <key>21</key>
-                    <value>9.818865446769916</value>
+                    <value>0.11317925107166318</value>
                 </entry>
                 <entry>
                     <key>22</key>
-                    <value>0.05</value>
+                    <value>0.19375093545979713</value>
                 </entry>
                 <entry>
                     <key>23</key>
-                    <value>8.863025002499057</value>
+                    <value>2.6313437381080518</value>
                 </entry>
                 <entry>
                     <key>24</key>
-                    <value>0.05</value>
+                    <value>0.2067709027572842</value>
                 </entry>
                 <entry>
                     <key>25</key>
-                    <value>4.132524327217548</value>
+                    <value>0.05</value>
                 </entry>
                 <entry>
                     <key>26</key>
@@ -358,7 +358,7 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
                 </entry>
                 <entry>
                     <key>29</key>
-                    <value>3.0167582530215062</value>
+                    <value>0.05</value>
                 </entry>
                 <entry>
                     <key>30</key>
@@ -450,7 +450,7 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
                 </entry>
                 <entry>
                     <key>52</key>
-                    <value>5.2138425185326644</value>
+                    <value>0.32806836326065525</value>
                 </entry>
                 <entry>
                     <key>53</key>
@@ -465,63 +465,63 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
             </entry>
             <entry>
                 <key>2</key>
-                <value>16.0</value>
+                <value>32.0</value>
             </entry>
             <entry>
                 <key>3</key>
-                <value>0.0</value>
+                <value>1.0</value>
             </entry>
             <entry>
                 <key>4</key>
-                <value>0.0</value>
+                <value>1.0</value>
             </entry>
             <entry>
                 <key>5</key>
-                <value>0.0</value>
+                <value>1.0</value>
             </entry>
             <entry>
                 <key>6</key>
-                <value>0.0</value>
+                <value>1.0</value>
             </entry>
             <entry>
                 <key>7</key>
-                <value>30.238044386741073</value>
+                <value>51.70503786607112</value>
             </entry>
             <entry>
                 <key>8</key>
-                <value>27.279888879398083</value>
+                <value>42.02545975010391</value>
             </entry>
             <entry>
                 <key>9</key>
-                <value>72.85845204894002</value>
+                <value>159.69480706898295</value>
             </entry>
             <entry>
                 <key>10</key>
-                <value>39.143694072120816</value>
+                <value>41.11063104748462</value>
             </entry>
             <entry>
                 <key>11</key>
-                <value>2.0</value>
+                <value>6.0</value>
             </entry>
             <entry>
                 <key>12</key>
-                <value>10.427790365049107</value>
+                <value>76.0460030141307</value>
             </entry>
             <entry>
                 <key>13</key>
-                <value>0.0</value>
+                <value>11.851111153014978</value>
             </entry>
             <entry>
                 <key>14</key>
-                <value>28.274269555537895</value>
+                <value>41.272387791154756</value>
             </entry>
             <entry>
                 <key>15</key>
-                <value>7.773418732134099</value>
+                <value>54.55439451979302</value>
             </entry>
             <entry>
                 <key>16</key>
-                <value>0.0</value>
+                <value>1.0</value>
             </entry>
             <entry>
                 <key>17</key>
@@ -529,11 +529,11 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
             </entry>
             <entry>
                 <key>18</key>
-                <value>51.0</value>
+                <value>68.0</value>
             </entry>
             <entry>
                 <key>19</key>
-                <value>3.0</value>
+                <value>5.0</value>
             </entry>
             <entry>
                 <key>20</key>
@@ -541,23 +541,23 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
             </entry>
             <entry>
                 <key>21</key>
-                <value>0.0</value>
+                <value>19.184787548672663</value>
             </entry>
             <entry>
                 <key>22</key>
-                <value>16.476737347570452</value>
+                <value>38.369575097345326</value>
             </entry>
             <entry>
                 <key>23</key>
-                <value>0.0</value>
-            </entry>
-            <entry>
-                <key>24</key>
                 <value>1.0</value>
             </entry>
             <entry>
+                <key>24</key>
+                <value>2.0</value>
+            </entry>
+            <entry>
                 <key>25</key>
-                <value>0.0</value>
+                <value>1.0</value>
             </entry>
             <entry>
                 <key>26</key>
@@ -565,11 +565,11 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
             </entry>
             <entry>
                 <key>27</key>
-                <value>0.0</value>
+                <value>1.0</value>
             </entry>
             <entry>
                 <key>28</key>
-                <value>1.0</value>
+                <value>0.0</value>
             </entry>
             <entry>
                 <key>29</key>
@@ -657,7 +657,7 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
             </entry>
             <entry>
                 <key>50</key>
-                <value>1.3862943611198906</value>
+                <value>2.0794415416798357</value>
             </entry>
             <entry>
                 <key>51</key>
@@ -665,7 +665,7 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
             </entry>
             <entry>
                 <key>52</key>
-                <value>3.0</value>
+                <value>6.0</value>
             </entry>
         </maxMap>
         <minMap>
@@ -675,7 +675,7 @@ Accuracy on training set was: 0.6834</descriptionOfTraining>
             </entry>
             <entry>
                 <key>2</key>
-                <value>4.0</value>
+                <value>5.0</value>
             </entry>
             <entry>
                 <key>3</key>
