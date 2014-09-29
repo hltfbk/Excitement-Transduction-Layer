@@ -42,5 +42,8 @@ public class LemmaLevelLapEN extends LAP_ImplBaseAE implements LAPAccess
 
 		// 3) set lang ID
 		languageIdentifier = "EN"; // set languageIdentifer, this ID is needed for generateTHPair from String 
+		
+		// force load model. 
+		this.generateSingleTHPairCAS("Hello world.", "Hello everyone."); 
 	}	
 }
