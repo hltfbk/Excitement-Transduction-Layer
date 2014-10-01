@@ -53,7 +53,7 @@ public class ConvertWP2PublicData {
 		// File names will be determined by "interaction name" (processWP2Data()), or 
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 		
-		String cluster="train/EMAIL0410";		
+		String cluster="test/EMAIL0320";
 		dir = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/FragmentGraphs");
 		dirInteractions = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/Interactions");
 		

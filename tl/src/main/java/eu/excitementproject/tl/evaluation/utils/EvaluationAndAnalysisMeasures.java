@@ -30,19 +30,19 @@ public class EvaluationAndAnalysisMeasures extends EvaluationMeasures{
 
 	
 
+	public EvaluationAndAnalysisMeasures(int tp, int recallDenominator,
+			int precisionDenominator) {
+		super(tp, recallDenominator, precisionDenominator);
+		init();
+	}
+
 	public EvaluationAndAnalysisMeasures(int tp, int fp, int tn, int fn) {
 		super(tp, fp, tn, fn);
 		init();
 	}
 
     public EvaluationAndAnalysisMeasures (EvaluationMeasures eval){
-    	super();
-    	super.falseNegatives=eval.falseNegatives;
-    	super.falsePositives = eval.falsePositives;
-    	super.trueNegatives = eval.trueNegatives;
-    	super.truePositives = eval.truePositives;
-    	super.precision = eval.precision;
-    	super.recall = eval.recall;
+    	super(eval);
     	init();
     }
 

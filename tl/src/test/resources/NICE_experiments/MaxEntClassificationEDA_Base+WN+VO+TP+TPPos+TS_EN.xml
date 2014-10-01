@@ -28,7 +28,7 @@
 			<property name="useFirstSenseOnlyLeft">false</property>
 			<property name="useFirstSenseOnlyRight">false</property>
 			<!-- Please update the file path to WordNet -->
-			<property name="wordNetFilesPath">D:/EOPspace/eop-resources-1.0.2/ontologies/EnglishWordNet-dict/</property>
+			<property name="wordNetFilesPath">C:/eop-resources-1.0.2/ontologies/EnglishWordNet-dict/</property>
 	</section>
 	
 	<section name="VerbOceanLexicalResource">
