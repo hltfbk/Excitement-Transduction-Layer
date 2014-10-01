@@ -197,7 +197,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		
 		for(JCas aJCas: docs) {
 			try {
-			//	annotateCAS(aJCas);
+				annotateCAS(aJCas);
 				fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
 			} catch (Exception e) {
 				logger.info("Cannot annotate modifiers and/or generate fragment graph. Skipping the problematic input.\n"+e);
