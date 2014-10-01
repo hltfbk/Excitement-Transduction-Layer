@@ -67,7 +67,7 @@ public class SentenceAsFragmentAnnotator extends AbstractFragmentAnnotator {
 			// throw exception, if still no sentence 
 			if (!sentItr.hasNext())
 			{
-				throw new FragmentAnnotatorException("Calling on LAPAccess " + this.getLap().getClass().getName() + " didn't added Sentence annotation. Cannot proceed."); 
+				throw new FragmentAnnotatorException("Calling on LAPAccess " + this.getLap().getClass().getName() + " didn't add Sentence annotation. Cannot proceed."); 
 			}
 
 		}

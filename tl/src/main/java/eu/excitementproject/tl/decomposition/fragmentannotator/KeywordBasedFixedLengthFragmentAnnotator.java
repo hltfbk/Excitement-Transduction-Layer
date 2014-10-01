@@ -11,6 +11,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.KeywordAnnotation;
@@ -54,34 +55,28 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 			logger.info("The CAS already has " + frgIndex.size() + " determined fragment annotation. Won't process this CAS."); 
 			return; 
 		}
-		
-		// check for keyword annotations
-		Collection<KeywordAnnotation> keywords = JCasUtil.select(aJCas, KeywordAnnotation.class);
-				
-		if (keywords != null && keywords.size() > 0) {
-		
-			logger.info("The text has " + keywords.size() + " keywords: " + getCoveredText(keywords));
-			logger.info("Annotating determined fragments on CAS using keywords. CAS Text is: \"" + aJCas.getDocumentText() + "\"."); 
 
-			Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
-			if (tokens == null || tokens.size() == 0) {
-				try {
-					this.getLap().addAnnotationOn(aJCas);
-				} catch (LAPException e) {
-					throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
-				}
+		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
+		if (tokens == null || tokens.size() == 0) {
+			try {
+				this.getLap().addAnnotationOn(aJCas);
+			} catch (LAPException e) {
+				throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
 			}
-			
-			
-			tokens = JCasUtil.select(aJCas, Token.class);
-			
-			if (tokens != null && tokens.size() > 0) {
-			
-/*				for(Token t: tokens) {
-					fragLogger.info("Token (just after LAP): " + t.getCoveredText());
-				}
-*/		
+		}
+		
+		tokens = JCasUtil.select(aJCas, Token.class);
+		
+		if (tokens != null && tokens.size() > 0) {
+
+			// check for keyword annotations
+			Collection<KeywordAnnotation> keywords = JCasUtil.select(aJCas, KeywordAnnotation.class);
 				
+			if (keywords != null && keywords.size() > 0) {
+		
+				logger.info("The text has " + keywords.size() + " keywords: " + getCoveredText(keywords));
+				logger.info("Annotating determined fragments on CAS using keywords. CAS Text is: \"" + aJCas.getDocumentText() + "\"."); 
+							
 				// depending on how the keyword annotation was done, there may be more than one keyword in a fragment;
 				// so the fragments must be filtered
 				Set<Region> detFrags = new HashSet<Region>();
@@ -98,8 +93,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 				// 	filter fragments to avoid duplicates (subsumed fragments)
 				detFrags = filterFragments(detFrags);
 				
-				// insert annotations
-				
+				//  insert annotations			
 				//	insert determined fragments as fragment parts if necessary!
 				annotateDeterminedFragments(aJCas, detFrags);
 			} else {
@@ -241,9 +235,11 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 		if (tokens == null || tokens.isEmpty()) {
 			logger.error("Null (or empty) tokens list!");
 		} else {
-			
-			int fragStart = addPrecedingTokens(aJCas, tokens.get(0), windowSize);
-			int fragEnd = addFollowingTokens(aJCas, tokens.get(tokens.size()-1), windowSize);
+
+			Sentence coveringSentence = (Sentence) JCasUtil.selectCovering(aJCas, Sentence.class, k.getBegin(), k.getEnd());
+
+			int fragStart = addPrecedingTokens(aJCas, tokens.get(0), windowSize, coveringSentence);
+			int fragEnd = addFollowingTokens(aJCas, tokens.get(tokens.size()-1), windowSize, coveringSentence);
 
 			logger.info("Fragment: " + aJCas.getDocumentText().substring(fragStart, fragEnd));
 			
@@ -254,65 +250,86 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 
 	
 	/**
-	 * Add following tokens (in the given window size) to the given keyword
+	 * Add following tokens to the given keyword within the given keyword and the keyword's sentence
+	 * Do not jump sentence boundaries
 	 * 
 	 * @param aJCas
 	 * @param k
 	 * @return
 	 */
-	private int addFollowingTokens(JCas aJCas, Annotation k, int count) {
+	private int addFollowingTokens(JCas aJCas, Annotation k, int count, Annotation sentence) {
 
 		int end = k.getEnd();
 		Annotation last = k;
 		// count only "proper" tokens, and compensate for skipped ones by adding more tokens
 		int skipped = 0;
+
 		
 		for (Annotation a: JCasUtil.selectFollowing(aJCas, Token.class, k, count)) {
-			if (a.getEnd() > end) {
-				end = a.getEnd();
-				last = a;
-			}
-			if (! a.getCoveredText().matches(".*\\w+.*")) {
-				skipped++;
+			if (isCoveredBy(a, sentence)) {
+				if (a.getEnd() > end) {
+					end = a.getEnd();
+					last = a;
+				}	
+				if (! a.getCoveredText().matches(".*\\w+.*")) {
+					skipped++;
+				}
 			}
 		}
 		
 		if (skipped > 0) {
-			return addFollowingTokens(aJCas, last, skipped);
+			return addFollowingTokens(aJCas, last, skipped, sentence);
 		}
 		
 		return end;
 	}
 
+
 	/**
-	 * Add preceding tokens (in the given window size) to the given keyword
+	 * Add preceding tokens to the given keyword within the given window and the keyword's sentence
 	 * 
 	 * @param aJCas
 	 * @param k
+	 * @param coveringSentence 
 	 * @return
 	 */
-	private int addPrecedingTokens(JCas aJCas, Annotation k, int count) {
+	private int addPrecedingTokens(JCas aJCas, Annotation k, int count, Sentence sentence) {
 
 		int start = k.getBegin();
 		Annotation first = k;
 		int skipped = 0;
 		
 		for (Annotation a: JCasUtil.selectPreceding(aJCas, Token.class, k, count)) {
-			if (a.getBegin() < start) {
-				start = a.getBegin();
-				first = a;
-			}
-			if (! a.getCoveredText().matches(".*\\w+.*")) {
-				skipped++;
+			if (isCoveredBy(k, sentence)) {
+				if (a.getBegin() < start) {
+					start = a.getBegin();
+					first = a;
+				}
+				if (! a.getCoveredText().matches(".*\\w+.*")) {
+					skipped++;
+				}
 			}
 		}
 		
 		if (skipped > 0) {
-			return addPrecedingTokens(aJCas, first, skipped);
+			return addPrecedingTokens(aJCas, first, skipped, sentence);
 		}
 		
 		return start;
 	}
 	
-			
+
+	
+	/**
+	 * Check if a given annotation is within the given sentence
+	 *  
+	 * @param a an annotation
+	 * @param sentence a sentence annotation
+	 * @return true if the annotation is within the scope of the sentence
+	 */
+	private boolean isCoveredBy(Annotation a, Annotation sentence) {
+		return ((sentence.getBegin() <= a.getBegin()) 
+				&& (a.getEnd() <= sentence.getEnd()));
+	}
+	
 }
