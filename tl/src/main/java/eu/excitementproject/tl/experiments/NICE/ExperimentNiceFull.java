@@ -39,9 +39,9 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
  * @author Lili Kotlerman
  * 
  */
-public class ExperimentNicePerCluster extends AbstractExperiment {
+public class ExperimentNiceFull extends AbstractExperiment {
 
-	public ExperimentNicePerCluster(String configFileName, String dataDir,
+	public ExperimentNiceFull(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
@@ -68,10 +68,10 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 		EDIT_DIST
 	}
 	
-	public static ExperimentNicePerCluster initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir){
+	public static ExperimentNiceFull initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir){
 		
 		if (edaName.equals(EdaName.BIUTEE)) {
-			return new ExperimentNicePerCluster(
+			return new ExperimentNiceFull(
 			tlDir+"src/test/resources/NICE_experiments/biutee.xml",
 			dataDir, fileLimit, outDir,			
 			BIUFullLAP.class,
@@ -81,7 +81,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 		}
 		
 		if (edaName.equals(EdaName.EDIT_DIST)) {
-			return new ExperimentNicePerCluster(
+			return new ExperimentNiceFull(
 					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class,
@@ -90,7 +90,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 		}
 
 		if (edaName.equals(EdaName.PROBABILISTIC)) {
-			return 	new ExperimentNicePerCluster(
+			return 	new ExperimentNiceFull(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class, //not used, just some available LAP
@@ -99,7 +99,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 		}
 
 		if (edaName.equals(EdaName.RANDOM)) {
-			return new ExperimentNicePerCluster(
+			return new ExperimentNiceFull(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class, //not used, just some available LAP
@@ -108,7 +108,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 		}
 
 		if (edaName.equals(EdaName.TIE_PARSE_RES)) {
-			return new ExperimentNicePerCluster(
+			return new ExperimentNiceFull(
 			tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 			dataDir, fileLimit, outDir,
 			MaltParserEN.class,
@@ -117,7 +117,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 		}
 		
 		if (edaName.equals(EdaName.TIE_POS)) {
-			return new ExperimentNicePerCluster(
+			return new ExperimentNiceFull(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class,
@@ -126,7 +126,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 		}
 		
 		if (edaName.equals(EdaName.TIE_POS_RES)) {
-			return new ExperimentNicePerCluster(
+			return new ExperimentNiceFull(
 			tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 			dataDir, fileLimit, outDir,
 			TreeTaggerEN.class,
@@ -175,7 +175,7 @@ public class ExperimentNicePerCluster extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 				
-			ExperimentNicePerCluster e = initExperiment(EdaName.TIE_POS, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
+			ExperimentNiceFull e = initExperiment(EdaName.TIE_POS, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
 			EntailmentGraphRaw rawGraph = e.buildRawGraph();
 				
 /*				Set<Pair<String, String>> entailings = new HashSet<Pair<String, String>>();

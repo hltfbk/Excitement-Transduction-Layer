@@ -50,9 +50,9 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
  * @author Lili Kotlerman
  * 
  */
-public class ExperimentNiceJNLE extends AbstractExperiment {
+public class ExperimentNice extends AbstractExperiment {
 
-	public ExperimentNiceJNLE(String configFileName, String dataDir,
+	public ExperimentNice(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
@@ -81,10 +81,10 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 		EDIT_DIST
 	}
 	
-	public static ExperimentNiceJNLE initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir){
+	public static ExperimentNice initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir){
 		
 		if (edaName.equals(EdaName.BIUTEE)) {
-			return new ExperimentNiceJNLE(
+			return new ExperimentNice(
 			tlDir+"src/test/resources/NICE_experiments/biutee.xml",
 			dataDir, fileLimit, outDir,			
 			BIUFullLAP.class,
@@ -94,7 +94,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 		}
 		
 		if (edaName.equals(EdaName.EDIT_DIST)) {
-			return new ExperimentNiceJNLE(
+			return new ExperimentNice(
 //					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
 					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_EN_nice.xml",
 					dataDir, fileLimit, outDir,
@@ -104,7 +104,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 		}
 
 		if (edaName.equals(EdaName.PROBABILISTIC)) {
-			return 	new ExperimentNiceJNLE(
+			return 	new ExperimentNice(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class, //not used, just some available LAP
@@ -113,7 +113,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 		}
 
 		if (edaName.equals(EdaName.RANDOM)) {
-			return new ExperimentNiceJNLE(
+			return new ExperimentNice(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class, //not used, just some available LAP
@@ -122,7 +122,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 		}
 
 		if (edaName.equals(EdaName.TIE_PARSE_RES)) {
-			return new ExperimentNiceJNLE(
+			return new ExperimentNice(
 			tlDir+"/src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO+TP+TPPos+TS_EN.xml",
 			dataDir, fileLimit, outDir,
 			MaltParserEN.class,
@@ -131,7 +131,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 		}
 		
 		if (edaName.equals(EdaName.TIE_POS)) {
-			return new ExperimentNiceJNLE(
+			return new ExperimentNice(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml",
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class,
@@ -140,7 +140,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 		}
 		
 		if (edaName.equals(EdaName.TIE_POS_RES)) {
-			return new ExperimentNiceJNLE(
+			return new ExperimentNice(
 			tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
 			dataDir, fileLimit, outDir,
 			TreeTaggerEN.class,
@@ -196,6 +196,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 //		EdaName[] names = {EdaName.TIE_POS_RES};	
 		EdaName[] names = {EdaName.EDIT_DIST};	
 //		EdaName[] names = {EdaName.BIUTEE, EdaName.TIE_POS_RES};	
+//		EdaName[] names = {EdaName.BIUTEE};	
 //		EdaName[] names = {EdaName.TIE_POS};	
 	
 	for(EdaName name : names)	
@@ -207,8 +208,8 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 				
-			ExperimentNiceJNLE e = initExperiment(name, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
-			EntailmentGraphRaw rawGraph = e.buildRawGraph();
+			ExperimentNice e = initExperiment(name, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
+			EntailmentGraphRaw rawGraph = e.buildRawGraph(0.95);
 				
 /*				Set<Pair<String, String>> entailings = new HashSet<Pair<String, String>>();
 				Set<Pair<String, String>> nonentailings = new HashSet<Pair<String, String>>();
