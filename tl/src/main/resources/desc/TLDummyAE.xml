@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>
-  <annotatorImplementationName>eu.excitementproject.eop.lap.DummyAE</annotatorImplementationName>
+  <annotatorImplementationName>eu.excitementproject.tl.laputils.DummyAE</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>TLDummyAE</name>
     <description>This AE descriptor exists for providing CAS that knows all TL types + EOP types. The AE does nothing.</description>
