@@ -104,7 +104,7 @@ public class EntailmentRelationCollapsed extends DefaultEdge {
 	 */
 	public String toDOT(){
 		String s = this.getSource().toDOT()+ " -> "+this.getTarget().toDOT();
-		s+= " [label="+this.getConfidence()+"]";
+	//	s+= " [label="+this.getConfidence()+"]";
 		s+= " [color=blue]";
 		return s+"\n";
 	}	

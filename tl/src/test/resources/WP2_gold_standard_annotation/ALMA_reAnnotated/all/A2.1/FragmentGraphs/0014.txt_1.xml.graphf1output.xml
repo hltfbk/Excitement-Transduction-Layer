@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0014.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0014.txt" implicit_context="" focus="PROMOSMART SENZA CONFINI" implicit_focus="">
+        <original_text>nelle ultime 2 settimane ho avuto solo problemi con la PROMOSMART SENZA CONFINI</original_text>
+        <correct_text> </correct_text>
+        <modifiers>solopoz=6;nelle ultime 2 settimanepoz=0 1 2 3</modifiers>
+    </node>
+    <node id="0014.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0014.txt" implicit_context="" focus="PROMOSMART SENZA CONFINI" implicit_focus="">
+        <original_text>nelle ultime 2 settimane ho avuto problemi con la PROMOSMART SENZA CONFINI</original_text>
+        <correct_text> </correct_text>
+        <modifiers>nelle ultime 2 settimanepoz=0 1 2 3</modifiers>
+    </node>
+    <node id="0014.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0014.txt" implicit_context="" focus="PROMOSMART SENZA CONFINI" implicit_focus="">
+        <original_text>ho avuto solo problemi con la PROMOSMART SENZA CONFINI</original_text>
+        <correct_text> </correct_text>
+        <modifiers>solopoz=6</modifiers>
+    </node>
+    <node id="0014.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0014.txt" implicit_context="" focus="PROMOSMART SENZA CONFINI" implicit_focus="">
+        <original_text>ho avuto problemi con la PROMOSMART SENZA CONFINI</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0014.txt_1_0-0014.txt_1_1" source="0014.txt_1_0" target="0014.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0014.txt_1_0-0014.txt_1_1" source="0014.txt_1_0" target="0014.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0014.txt_1_0-0014.txt_1_2" source="0014.txt_1_0" target="0014.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0014.txt_1_0-0014.txt_1_2" source="0014.txt_1_0" target="0014.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0014.txt_1_2-0014.txt_1_3" source="0014.txt_1_2" target="0014.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0014.txt_1_1-0014.txt_1_3" source="0014.txt_1_1" target="0014.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0014.txt_1_1-0014.txt_1_3" source="0014.txt_1_1" target="0014.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0014.txt_1_2-0014.txt_1_3" source="0014.txt_1_2" target="0014.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0014.txt_1_0-0014.txt_1_3" source="0014.txt_1_0" target="0014.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
