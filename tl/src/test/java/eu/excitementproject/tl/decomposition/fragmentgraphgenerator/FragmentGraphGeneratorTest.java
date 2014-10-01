@@ -10,6 +10,7 @@ import javax.swing.filechooser.FileFilter;
 
 import junit.framework.Assert;
 
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -19,6 +20,8 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 
 @SuppressWarnings("unused")
 public class FragmentGraphGeneratorTest {
+	
+	private final Logger logger = Logger.getLogger(this.getClass());
 
 	/**
 	 *  The test class tests FragmentGraphGenerator 
@@ -27,7 +30,7 @@ public class FragmentGraphGeneratorTest {
 	public void test() {
 		
 		try {
-			System.out.println("Testing the FragmentGraphGenerator");
+			logger.info("Testing the FragmentGraphGenerator");
 			
 			// first, call CASUtils to generate InputCAS examples. 		
 			CASUtils.generateExamples(); // the examples are stored in /target. 
@@ -65,33 +68,33 @@ public class FragmentGraphGeneratorTest {
 			// Test for example #1: Food was really bad 
 			Assert.assertNotNull(fgs_example1); 
 			Assert.assertTrue(fgs_example1.size() > 0);
-			System.out.println("\n________________\nFragment graphs for example 1: ");
+			logger.info("\n________________\nFragment graphs for example 1: ");
 			for(FragmentGraph f: fgs_example1) {
-				System.out.println(f.toString());
+				logger.info(f.toString());
 			}
 			
 			// Test for example #2: I didn't like the food 
 			Assert.assertNotNull(fgs_example2); 
 			Assert.assertTrue(fgs_example2.size() > 0);
-			System.out.println("\n________________\nFragment graphs for example 2: ");
+			logger.info("\n________________\nFragment graphs for example 2: ");
 			for(FragmentGraph f: fgs_example2) {
-				System.out.println(f.toString());
+				logger.info(f.toString());
 			}
 
 			// Test for example #3: a little more leg room would have been perfect
 			Assert.assertNotNull(fgs_example3); 
 			Assert.assertTrue(fgs_example3.size() > 0); 
-			System.out.println("\n________________\nFragment graphs for example 3: ");
+			logger.info("\n________________\nFragment graphs for example 3: ");
 			for(FragmentGraph f: fgs_example3) {
-				System.out.println(f.toString());
+				logger.info(f.toString());
 			}
 			
 			// Test for example #4: Disappointed with the amount of legroom compared with other trains 
 			Assert.assertNotNull(fgs_example4); 
 			Assert.assertTrue(fgs_example4.size() > 0); 
-			System.out.println("\n________________\nFragment graphs for example 4: ");
+			logger.info("\n________________\nFragment graphs for example 4: ");
 			for(FragmentGraph f: fgs_example4) {
-				System.out.println(f.toString());
+				logger.info(f.toString());
 			}
 			
 */				
@@ -105,12 +108,12 @@ public class FragmentGraphGeneratorTest {
 				}
 			};
 			
-			System.out.println("Processing directory " + dir.getName());
+			logger.info("Processing directory " + dir.getName());
 			
 			for(File f: dir.listFiles(filter)) {
 				// Read in inputCASes for the examples, and generate the FragmentGraphs 
 				
-				System.out.println("Processing fragments from file " + f.getName());
+				logger.info("Processing fragments from file " + f.getName());
 				
 				CASUtils.deserializeFromXmi(aJCas, f); 
 				Set<FragmentGraph> fgs_example = fragGen.generateFragmentGraphs(aJCas);
@@ -118,11 +121,11 @@ public class FragmentGraphGeneratorTest {
 //				Assert.assertNotNull(fgs_example); 
 //				Assert.assertTrue(fgs_example.size() > 0);
 				if (fgs_example == null || fgs_example.size() <= 0) {
-					System.out.println("\n________________\nNO fragment graphs for file " + f.getName());
+					logger.info("\n________________\nNO fragment graphs for file " + f.getName());
 				} else {
-					System.out.println("\n________________\nFragment graphs for file " + f.getName() + " (" + fgs_example.size() + ")");
+					logger.info("\n________________\nFragment graphs for file " + f.getName() + " (" + fgs_example.size() + ")");
 					for(FragmentGraph fg: fgs_example) {
-						System.out.println(fg.toString());
+						logger.info(fg.toString());
 					}
 				}
 			}

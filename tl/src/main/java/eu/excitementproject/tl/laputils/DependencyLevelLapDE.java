@@ -36,6 +36,9 @@ public class DependencyLevelLapDE extends LAP_ImplBaseAE implements LAPAccess {
 
 		// 3) set lang ID
 		languageIdentifier = "DE"; // set languageIdentifer, this ID is needed for generateTHPair from String 
+		
+		// force load model. 
+		this.generateSingleTHPairCAS("Hello world.", "Hello everyone."); 
 	}	
 
 }

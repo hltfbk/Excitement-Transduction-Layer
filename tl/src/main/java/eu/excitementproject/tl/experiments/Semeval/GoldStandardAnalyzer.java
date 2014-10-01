@@ -9,6 +9,8 @@ import java.util.HashSet;
 
 import javax.xml.transform.TransformerException;
 
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -21,6 +23,8 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
+
+	private static final Logger logger = Logger.getLogger(GoldStandardAnalyzer.class);
 
 	boolean presentFragmentGraphsAsSingleNode;
 	
@@ -97,17 +101,17 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 		for(String s: gsDir.list()){
 			File f = new File(gsAnnotationsDir+"/"+s);
 			if (f.isDirectory()){
-				System.out.println(f.getName().toUpperCase());
+				logger.info(f.getName().toUpperCase());
 				try {
 					GoldStandardEdgesLoader gsloader = new GoldStandardEdgesLoader(false); //load only the original data, no transitive closure added
 					gsloader.loadClusterAnnotations(f.getAbsolutePath(), false);
 					EntailmentGraphRaw r = gsloader.getRawGraph();
 					System.out.print("Raw graph.\nNumber of edges: ");
 					int origRawEdges = r.edgeSet().size();
-					System.out.println(origRawEdges);
+					logger.info(origRawEdges);
 					System.out.print("Number of nodes: ");
 					int origRawNodes = r.vertexSet().size();
-					System.out.println(origRawNodes);
+					logger.info(origRawNodes);
 					r.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_raw.dot.txt");
 					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_raw.xml");
 
@@ -115,10 +119,10 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 /*					r.removeTransitiveClosure();
 					System.out.print("Raw graph -MinusClosure.\nNumber of edges: ");
 					int noClosureRawEdges = r.edgeSet().size();
-					System.out.println(noClosureRawEdges);
+					logger.info(noClosureRawEdges);
 					System.out.print("Number of nodes: ");
 					int noClosureRawNodes = r.vertexSet().size(); 
-					System.out.println(noClosureRawNodes);
+					logger.info(noClosureRawNodes);
 					r.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawNoClosure.dot.txt");
 					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawNoClosure.xml");
 */
@@ -126,30 +130,30 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					r.applyTransitiveClosure(false);
 					System.out.print("Raw graph+Closure.\nNumber of edges: ");
 					int withClosureRawEdges = r.edgeSet().size(); 
-					System.out.println(withClosureRawEdges);
+					logger.info(withClosureRawEdges);
 					System.out.print("Number of nodes: ");
 					int withClosureRawNodes =r.vertexSet().size(); 
-					System.out.println(withClosureRawNodes);
+					logger.info(withClosureRawNodes);
 					r.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawClosure.dot.txt");
 					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawClosure.xml");
 
 					EntailmentGraphCollapsed c = gsloader.getCollapsedGraph();
 					System.out.print("Collapsed graph.\nNumber of edges: ");
 					int origCollapsedEdges = c.edgeSet().size(); 
-					System.out.println(origCollapsedEdges);
+					logger.info(origCollapsedEdges);
 					System.out.print("Number of nodes: ");
 					int origCollapsedNodes = c.vertexSet().size(); 
-					System.out.println(origCollapsedNodes);
+					logger.info(origCollapsedNodes);
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsed.xml");
 					
 	/*				c.removeTransitiveClosure();
 					System.out.print("Collapsed graph -MinusClosure.\nNumber of edges: ");
 					int noClosureCollapsedEdges = c.edgeSet().size(); 
-					System.out.println(noClosureCollapsedEdges);
+					logger.info(noClosureCollapsedEdges);
 					System.out.print("Number of nodes: ");
 					int noClosureCollapsedNodes = c.vertexSet().size(); 
-					System.out.println(noClosureCollapsedNodes);
+					logger.info(noClosureCollapsedNodes);
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedNoClosure.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedNoClosure.xml");
 */
@@ -157,10 +161,10 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					c.applyTransitiveClosure(true);
 					System.out.print("Collapsed graph + closure.\nNumber of edges: ");
 					int withClosureCollapsedEdges = c.edgeSet().size(); 
-					System.out.println(withClosureCollapsedEdges);
+					logger.info(withClosureCollapsedEdges);
 					System.out.print("Number of nodes: ");
 					int withClosureCollapsedNodes = c.vertexSet().size();
-					System.out.println(withClosureCollapsedNodes);
+					logger.info(withClosureCollapsedNodes);
 					c.toDOT("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.dot.txt", gsloader.getNodeTextById());
 					c.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_collapsedClosure.xml");
 					
@@ -175,7 +179,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 				}							
 			}
 		}
-		System.out.println(resSting);
+		logger.info(resSting);
 	}	
 	
 	/**
@@ -188,9 +192,9 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 			EntailmentGraphRaw gr = anal.getRawGraph();
 			gr.toDOT("./src/test/resources/WP2_gold_standard_annotation/NICE_open/rawCS.dot");
 			
-/*			System.out.println("Preparing CW clustrering input");
+/*			logger.info("Preparing CW clustrering input");
 			anal.getCWClustererInput("./src/test/resources/WP2_gold_standard_annotation/_big");
-			System.out.println("Done");
+			logger.info("Done");
 */			
 			EntailmentGraphCollapsed gc = anal.getCollapsedGraph();
 			gc.toDOT("./src/test/resources/WP2_gold_standard_annotation/NICE_open/collapsedCS.dot");

@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import eu.excitementproject.eop.common.EDAException;
@@ -29,12 +30,14 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 //import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 public class SimpleGraphOptimizerTest {
+	
+	private final Logger logger = Logger.getLogger(this.getClass());
 
 	@Test
 	public void test() {
 
 					try {
-						System.out.println("**** Test collapsed graph generator: merged graph ****");
+						logger.info("**** Test collapsed graph generator: merged graph ****");
 
 						CachedLAPAccess lap = new CachedLAPAccess(new TreeTaggerEN());
 //					EDABasic<?> eda = new RandomEDA();
@@ -49,28 +52,28 @@ public class SimpleGraphOptimizerTest {
 						GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,meceda); 
 						
 						Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
-						System.out.println("Merged raw graph:");			
+						logger.info("Merged raw graph:");			
 						EntailmentGraphRaw rawGraph = merger.mergeGraphs(fragmentGraphs);
-						System.out.println(rawGraph.toString());
+						logger.info(rawGraph.toString());
 						rawGraph.toDOT("./src/test/outputs/rawGraph.txt");
 						
-						System.out.println("**** Collapsing the the raw graph ****");
+						logger.info("**** Collapsing the the raw graph ****");
 						GraphOptimizer collapser = new SimpleGraphOptimizer();
 						EntailmentGraphCollapsed finalGraph = collapser.optimizeGraph(rawGraph);
-						System.out.println("Done:\n"+finalGraph.toString());
+						logger.info("Done:\n"+finalGraph.toString());
 						finalGraph.toDOT("./src/test/outputs/collapsedGraph.txt");
 						
-						System.out.println("**** Test collapsed graph generator: sample graph ****");
+						logger.info("**** Test collapsed graph generator: sample graph ****");
 						rawGraph = EntailmentGraphRaw.getSampleOuput(false);
-						System.out.println(rawGraph.toString());
+						logger.info(rawGraph.toString());
 						rawGraph.toDOT("./src/test/outputs/sampleRawGraph.txt");
-						System.out.println("**** Collapsing the the raw graph ****");
+						logger.info("**** Collapsing the the raw graph ****");
 						finalGraph = collapser.optimizeGraph(rawGraph, 0.2);
-						System.out.println("Done:\n"+finalGraph.toString());
+						logger.info("Done:\n"+finalGraph.toString());
 						finalGraph.toDOT("./src/test/outputs/collapsedGraphFromSample.txt");
 						
 						for (EquivalenceClass node : finalGraph.sortNodesByNumberOfInteractions(5)){
-							System.out.println(node.toString());
+							logger.info(node.toString());
 						}
 					} catch (ConfigurationException | EDAException | ComponentException |
 							GraphMergerException | IOException | GraphOptimizerException e) {

@@ -2,7 +2,7 @@ package eu.excitementproject.tl.decomposition.fragmentgraphgenerator;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;

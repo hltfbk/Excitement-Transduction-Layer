@@ -84,7 +84,7 @@ public final class InteractionReader {
 			throw new DataReaderException("unable to access the input file", ioe);
 		}	
 		
-		System.out.println("Processing file ...");
+		logger.info("Processing file ...");
 		
 		// open the document <dataset> (top) 
 		Element dataset = dom.getDocumentElement(); 
@@ -207,6 +207,7 @@ public final class InteractionReader {
 	public static void readWP2FragGraphDump(File interactionText, File graphsInXML, JCas aJCas, String languageID) throws DataReaderException, DataIntegrityFail
 	{
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+
 		
 		// read the interaction file whole as a string. 
 		String interactionString = ""; 
@@ -296,6 +297,13 @@ public final class InteractionReader {
 		int frag_start; 
 		int frag_end; 
 		CASUtils.Region[] r = null; 
+		
+		testlogger.info("File: " + interactionText.getName());
+		testlogger.info("\tcomparing: *" + interactionString + "* with text: *" + original_text + "*");
+
+		System.out.println("File: " + interactionText.getName());
+		System.out.println("\tcomparing: *" + interactionString + "* with text: *" + original_text + "*");
+
 		
 		// If this is not a simple "one-region" fragment ... 
 		if (!interactionString.contains(original_text))

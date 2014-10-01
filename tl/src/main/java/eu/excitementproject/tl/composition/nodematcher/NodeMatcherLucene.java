@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -152,8 +152,8 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		String queryText = mentionToBeFound.getTextWithoutDoubleSpaces();
 		String queryTextEscaped = QueryParser.escape(queryText); //make sure special chars like '?' are escaped
 		Query query = parser.parse(queryTextEscaped);
-		System.out.println("query: " + query);
-		System.out.println("analyzer: " + parser.getAnalyzer());
+		logger.info("query: " + query);
+		logger.info("analyzer: " + parser.getAnalyzer());
 		
 		Date start = new Date();
 		searcher.search(query, null, 100);
@@ -207,7 +207,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		logger.info("Indexing graph nodes to directory '" + indexPath + "'..."); 
 		Directory dir = FSDirectory.open(new File(indexPath));
 		IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_44, analyzer);
-		System.out.println("indexing analyzer: " + analyzer);
+		logger.info("indexing analyzer: " + analyzer);
 		 
 		 if (create) {
 			 // Create a new index in the directory, removing any
@@ -236,7 +236,7 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 			 for (EntailmentUnit eu : ec.getEntailmentUnits()) { //index entailment units
 				 String euText = eu.getTextWithoutDoubleSpaces();
 				 doc.add(new TextField("euText", euText, Store.YES));
-				 System.out.println("euText: " + doc.get("euText"));
+				 logger.info("euText: " + doc.get("euText"));
 				 doc.add(new TextField("label", label, Store.YES));
 			 }
 			 if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
@@ -267,11 +267,11 @@ public class NodeMatcherLucene extends AbstractNodeMatcher {
 		if (null != nodeMatch) {
 			List<PerNodeScore> perNodeScores = nodeMatch.getScores();
 			for (PerNodeScore perNodeScore : perNodeScores) {
-				System.out.println("Matching node in graph: " + perNodeScore.getNode().getLabel());
-				System.out.println("Score of the match: " + perNodeScore.getScore());
-				System.out.println("Category confidences: ");
+				logger.info("Matching node in graph: " + perNodeScore.getNode().getLabel());
+				logger.info("Score of the match: " + perNodeScore.getScore());
+				logger.info("Category confidences: ");
 				for (String category : perNodeScore.getNode().getCategoryConfidences().keySet()) {
-					System.out.println("category "+ category + ": " + perNodeScore.getNode().getCategoryConfidences().get(category));					
+					logger.info("category "+ category + ": " + perNodeScore.getNode().getCategoryConfidences().get(category));					
 				}
 				
 			}

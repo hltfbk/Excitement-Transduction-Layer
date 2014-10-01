@@ -136,7 +136,7 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 					EquivalenceClass targetVertex = new EquivalenceClass(workGraph.getVertex(componentEdge.to().description()));
 					EntailmentRelationCollapsed edge = new EntailmentRelationCollapsed(sourceVertex,targetVertex,componentEdge.score());
 					ret.addEdgeWithNodes(sourceVertex,targetVertex,edge);
-					System.out.println(sourceVertex+" -> "+targetVertex+" "+edge.getConfidence());
+					logger.info(sourceVertex+" -> "+targetVertex+" "+edge.getConfidence());
 		//		}
 			}
 		}*/

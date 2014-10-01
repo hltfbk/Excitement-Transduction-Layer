@@ -35,6 +35,8 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 
 public class UseCaseOneFromXMLTest {
 
+	private static final Logger logger = Logger.getLogger(UseCaseOneFromXMLTest.class);
+
 	public static void main(String[] argv){
 		
 		// turning on Log4J, with INFO level logs 
@@ -84,10 +86,10 @@ public class UseCaseOneFromXMLTest {
   		    // if the directory does not exist, create it
 		    if (!theDir.exists())
 		    {
-		      System.out.println("creating directory: " + outputFolder);
+		      logger.info("creating directory: " + outputFolder);
 		      boolean result = theDir.mkdir();  
 		      if(result){    
-		         System.out.println("DIR created");  
+		         logger.info("DIR created");  
 		     }
 		      else {
 		    	  System.err.println("Could not create the output directory. No output files will be created."); 

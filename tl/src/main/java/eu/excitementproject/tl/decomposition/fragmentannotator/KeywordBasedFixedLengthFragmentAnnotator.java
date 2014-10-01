@@ -31,7 +31,7 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
  */
 public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAnnotator {
 	
-	Logger logger = Logger.getLogger("eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator");
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator");
 
 	int windowSize = 3;
 	
@@ -127,7 +127,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 	
 	
 	
-	private String getCoveredText(Collection<?> annotations) {
+	public static String getCoveredText(Collection<?> annotations) {
 		String s = "";
 		for(Object a: annotations) {
 			s += ((Annotation) a).getCoveredText() + " ";
@@ -235,15 +235,21 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 
 		logger.info("Forming fragment for keyword: " + k.getCoveredText() + " (" + k.getBegin() + "," + k.getEnd() + ")");
 				
-//		List<Token> tokens = JCasUtil.selectCovered(aJCas, Token.class, k);
-		List<Token> tokens = JCasUtil.selectCovering(aJCas, Token.class, k.getBegin(), k.getEnd());
-				
-		int fragStart = addPrecedingTokens(aJCas, tokens.get(0), windowSize);
-		int fragEnd = addFollowingTokens(aJCas, tokens.get(tokens.size()-1), windowSize);
+		List<Token> tokens = JCasUtil.selectCovered(aJCas, Token.class, k);
+//		List<Token> tokens = JCasUtil.selectCovering(aJCas, Token.class, k.getBegin(), k.getEnd()); // this gave errors for interaction 0320.txt, focus "TUO 444"
+			
+		if (tokens == null || tokens.isEmpty()) {
+			logger.error("Null (or empty) tokens list!");
+		} else {
+			
+			int fragStart = addPrecedingTokens(aJCas, tokens.get(0), windowSize);
+			int fragEnd = addFollowingTokens(aJCas, tokens.get(tokens.size()-1), windowSize);
 
-		logger.info("Fragment: " + aJCas.getDocumentText().substring(fragStart, fragEnd));
-
-		return new Region(fragStart, fragEnd);
+			logger.info("Fragment: " + aJCas.getDocumentText().substring(fragStart, fragEnd));
+			
+			return new Region(fragStart, fragEnd);
+		}
+		return null;
 	}
 
 	

@@ -7,6 +7,7 @@ import java.util.Set;
 
 import junit.framework.Assert;
 
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 //import org.junit.Ignore;
 import org.junit.Test;
@@ -15,6 +16,8 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.laputils.CASUtils;
 
 public class FragmentGraphTest {
+
+	private final Logger logger = Logger.getLogger(this.getClass());
 
 	@Test
 	public void test(){
@@ -43,9 +46,9 @@ public class FragmentGraphTest {
 		// Test for example #1: Food was really bad 
 		Assert.assertNotNull(fgs_example1); 
 		Assert.assertTrue(fgs_example1.size() > 0);
-		System.out.println("\n________________\nFragment graphs for example 1: ");
+		logger.info("\n________________\nFragment graphs for example 1: ");
 		for(FragmentGraph fg: fgs_example1) {
-			System.out.println(fg.toString());
+			logger.info(fg.toString());
 		}
 		} catch (Exception e) {
 			e.printStackTrace();

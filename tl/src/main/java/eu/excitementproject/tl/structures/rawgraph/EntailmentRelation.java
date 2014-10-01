@@ -226,21 +226,21 @@ public class EntailmentRelation extends DefaultEdge {
 			lap.annotateSingleTHPairCAS(source.getTextWithoutDoubleSpaces(), target.getTextWithoutDoubleSpaces(), lap.workJCas);
 
 /*			// some printouts trying to understand why BIUTEE LAP fails
-			System.out.println("generateTHPairCAS:   "+lap.workJCas.getDocumentLanguage());
+			logger.info("generateTHPairCAS:   "+lap.workJCas.getDocumentLanguage());
 			Pair pairAnno = JCasUtil.selectSingle(lap.workJCas, Pair.class);
-			System.out.println("generateTHPairCAS:   "+pairAnno);
+			logger.info("generateTHPairCAS:   "+pairAnno);
 			Text textAnno = pairAnno.getText();
-			System.out.println("generateTHPairCAS:   <<"+textAnno.getCoveredText()+">>");
+			logger.info("generateTHPairCAS:   <<"+textAnno.getCoveredText()+">>");
 			Hypothesis hypothesisAnno = pairAnno.getHypothesis();
-			System.out.println("generateTHPairCAS:   <<"+hypothesisAnno.getCoveredText()+">>");
+			logger.info("generateTHPairCAS:   <<"+hypothesisAnno.getCoveredText()+">>");
 
 			try {
 				JCas textView = lap.workJCas.getView(LAP_ImplBase.TEXTVIEW);
 				Sentence textSentence = JCasUtil.selectSingle(textView, Sentence.class);
-				System.out.println("generateTHPairCAS:   "+textSentence.getCoveredText());
+				logger.info("generateTHPairCAS:   "+textSentence.getCoveredText());
 				JCas hypothesisView = lap.workJCas.getView(LAP_ImplBase.HYPOTHESISVIEW);
 				Sentence hypothesisSentence = JCasUtil.selectSingle(hypothesisView, Sentence.class);
-				System.out.println("generateTHPairCAS:   "+hypothesisSentence.getCoveredText());
+				logger.info("generateTHPairCAS:   "+hypothesisSentence.getCoveredText());
 			} catch (CASException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
