@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="17">
+	<node implicit_focus="" focus="snack" implicit_context="" explicit_context="153220.txt" modality="FALSE" id ="153220.txt_1_0">
+		<original_text>snack in your Standard Magnum class is ridiculous</original_text>
+		<correct_text></correct_text>
+		<modifiers>in your Standard Magnum classpoz=1 2 3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="snack" implicit_context="" explicit_context="153220.txt" modality="FALSE" id ="153220.txt_1_1">
+		<original_text>snack is ridiculous</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="15589.txt" modality="FALSE" id ="15589.txt_7_0">
+		<original_text>no snacks offered</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="228464.txt" modality="TRUE" id ="228464.txt_3_0">
+		<original_text>A trolley serving snacks would be a welcome addition to the economy section</original_text>
+		<correct_text></correct_text>
+		<modifiers>A trolley servingpoz=0 1 2;to the economy sectionpoz=9 10 11 12</modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="228464.txt" modality="TRUE" id ="228464.txt_3_1">
+		<original_text>snacks would be a welcome addition to the economy section</original_text>
+		<correct_text></correct_text>
+		<modifiers>to the economy sectionpoz=9 10 11 12</modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="228464.txt" modality="TRUE" id ="228464.txt_3_2">
+		<original_text>snacks would be a welcome addition</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="278254.txt" modality="FALSE" id ="278254.txt_1_0">
+		<original_text>Savory snacks in the waiting room in Moonport - horrible</original_text>
+		<correct_text></correct_text>
+		<modifiers>in Moonportpoz=6 7;Savorypoz=0;in the waiting roompoz=2 3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="278254.txt" modality="FALSE" id ="278254.txt_1_1">
+		<original_text>Savory snacks in the waiting room - horrible</original_text>
+		<correct_text></correct_text>
+		<modifiers>Savorypoz=0;in the waiting roompoz=2 3 4 5</modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="278254.txt" modality="FALSE" id ="278254.txt_1_2">
+		<original_text>Savory snacks - horrible</original_text>
+		<correct_text></correct_text>
+		<modifiers>Savorypoz=0</modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="278254.txt" modality="FALSE" id ="278254.txt_1_3">
+		<original_text>snacks - horrible</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="373217.txt" modality="TRUE" id ="373217.txt_1_0">
+		<original_text>Hot snacks would be an improvement as opposed to cold buffet items</original_text>
+		<correct_text></correct_text>
+		<modifiers>as opposed to cold buffet itemspoz=6 7 8 9 10 11</modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="373217.txt" modality="TRUE" id ="373217.txt_1_1">
+		<original_text>Hot snacks would be an improvement</original_text>
+		<correct_text></correct_text>
+		<modifiers> </modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="38058.txt" modality="FALSE" id ="38058.txt_8_0">
+		<original_text>have snacks available</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="411441.txt" modality="TRUE" id ="411441.txt_4_0">
+		<original_text>it would be better if there were staff walking around selling snacks</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="sandwiches" implicit_context="" explicit_context="428613.txt" modality="FALSE" id ="428613.txt_5_0">
+		<original_text>Low fat sandwiches</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="473655.txt" modality="FALSE" id ="473655.txt_2_0">
+		<original_text>List of available snacks</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="snacks" implicit_context="" explicit_context="56571.txt" modality="FALSE" id ="56571.txt_2_0">
+		<original_text>Offer a wider variety of snacks</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="153220.txt_1_1" source="153220.txt_1_0" id="153220.txt_1_1-153220.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="38058.txt_8_0" source="15589.txt_7_0" id="38058.txt_8_0-15589.txt_7_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="228464.txt_3_2" source="15589.txt_7_0" id="228464.txt_3_2-15589.txt_7_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="228464.txt_3_1" source="228464.txt_3_0" id="228464.txt_3_1-228464.txt_3_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="228464.txt_3_2" source="228464.txt_3_1" id="228464.txt_3_2-228464.txt_3_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="38058.txt_8_0" source="228464.txt_3_2" id="38058.txt_8_0-228464.txt_3_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="15589.txt_7_0" source="228464.txt_3_2" id="15589.txt_7_0-228464.txt_3_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="278254.txt_1_1" source="278254.txt_1_0" id="278254.txt_1_1-278254.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="278254.txt_1_2" source="278254.txt_1_1" id="278254.txt_1_2-278254.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="278254.txt_1_3" source="278254.txt_1_2" id="278254.txt_1_3-278254.txt_1_2">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="373217.txt_1_1" source="373217.txt_1_0" id="373217.txt_1_1-373217.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="56571.txt_2_0" source="373217.txt_1_1" id="56571.txt_2_0-373217.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="15589.txt_7_0" source="38058.txt_8_0" id="15589.txt_7_0-38058.txt_8_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="228464.txt_3_2" source="38058.txt_8_0" id="228464.txt_3_2-38058.txt_8_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="38058.txt_8_0" source="411441.txt_4_0" id="38058.txt_8_0-411441.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="228464.txt_3_2" source="411441.txt_4_0" id="228464.txt_3_2-411441.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="15589.txt_7_0" source="411441.txt_4_0" id="15589.txt_7_0-411441.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

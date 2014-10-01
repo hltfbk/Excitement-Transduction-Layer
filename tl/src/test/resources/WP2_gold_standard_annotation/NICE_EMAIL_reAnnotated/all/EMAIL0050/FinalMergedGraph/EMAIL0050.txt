@@ -1,0 +1,613 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing								
+	Expensive on - board snack items	[212549.txt_1_0]						
+	price of snacks in the bar - car	[340247.txt_1_0]						
+								
+collapsed node #2 : 2 entailment unit(s) before editing								
+	The costs of the onboard food were too high	[446030.txt_1_0]						
+	cheaper food on the train needed	[313632.txt_2_0]						
+								
+collapsed node #3 : 3 entailment unit(s) before editing								
+	Cheaper snack prices	[209734.txt_1_0]						
+	Expensive snack items	[212549.txt_1_1]						
+	price of snacks	[340247.txt_1_1]						
+								
+collapsed node #4 : 2 entailment unit(s) before editing								
+	beverage expensive	[330688.txt_7_1]						
+	drinks are just too expensive	[522262.txt_3_0]
+	The costs of the drinks were too high	[446030.txt_2_1]	
+								
+collapsed node #5 : 2 entailment unit(s) before editing								
+	The food Is outrageously expensive	[455758.txt_1_0]						
+	food ridiculously expensive	[330688.txt_6_0]						
+								
+collapsed node #6 : 7 entailment unit(s) before editing								
+	Cheaper catering needed	[142421.txt_5_0]						
+	Prices are high on food	[387881.txt_2_1]						
+	The food Is expensive	[455758.txt_1_1]						
+	The food is overpriced	[401238.txt_2_1]						
+	cheaper food needed	[313632.txt_2_1]						
+	food are just too expensive	[522262.txt_4_0]						
+	food expensive	[330688.txt_6_1]
+	The costs of the food were too high	[446030.txt_1_1]	
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	The kiosk food is overpriced	[401238.txt_2_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	on board food is overpriced for what it is	[149639.txt_5_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	The costs of the onboard drinks were too high	[446030.txt_2_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	Prices at the food bar are a bit expensive	[8262.txt_1_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	Prices are quite high on food	[387881.txt_2_0]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	Prices are a bit expensive	[8262.txt_1_2]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing								
+	Prices at the food bar are expensive	[8262.txt_1_1]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing								
+	prices for food / drink on board were excessive	[142421.txt_1_0]						
+								
+collapsed node #15 : 1 entailment unit(s) before editing								
+	Price are going up	[30786.txt_3_0]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing								
+	beverage ridiculously expensive	[330688.txt_7_0]						
+								
+collapsed node #17 : 1 entailment unit(s) before editing								
+	Prices are expensive	[8262.txt_1_3]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+price of snacks in the bar - car	2	->	cheaper food on the train needed	2	Yes	0	1	
+cheaper food on the train needed	2	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #2:								
+price of snacks in the bar - car	2	->	price of snacks	3	Yes	2	1	
+price of snacks	3	->	price of snacks in the bar - car	2	No	-2	0	
+								
+node pair #3:								
+price of snacks in the bar - car	2	->	beverage expensive	2	No	0	0	
+beverage expensive	2	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #4:								
+price of snacks in the bar - car	2	->	food ridiculously expensive	2	No	0	0	
+food ridiculously expensive	2	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #5:								
+price of snacks in the bar - car	2	->	food expensive	7	Yes	0	1	
+food expensive	7	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #6:								
+price of snacks in the bar - car	2	->	The kiosk food is overpriced	1	No	0	0	
+The kiosk food is overpriced	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #7:								
+price of snacks in the bar - car	2	->	on board food is overpriced for what it is	1	No	0	0	
+on board food is overpriced for what it is	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #8:								
+price of snacks in the bar - car	2	->	The costs of the onboard drinks were too high	1	No	0	0	
+The costs of the onboard drinks were too high	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #9:								
+price of snacks in the bar - car	2	->	Prices at the food bar are a bit expensive	1	No	0	0	
+Prices at the food bar are a bit expensive	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #10:								
+price of snacks in the bar - car	2	->	Prices are quite high on food	1	No	0	0	
+Prices are quite high on food	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #11:								
+price of snacks in the bar - car	2	->	Prices are a bit expensive	1	No	0	0	
+Prices are a bit expensive	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #12:								
+price of snacks in the bar - car	2	->	Prices at the food bar are expensive	1	Yes	0	1	
+Prices at the food bar are expensive	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #13:								
+price of snacks in the bar - car	2	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #14:								
+price of snacks in the bar - car	2	->	Price are going up	1	No	0	0	
+Price are going up	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #15:								
+price of snacks in the bar - car	2	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #16:								
+price of snacks in the bar - car	2	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	price of snacks in the bar - car	2	No	0	0	
+								
+node pair #17:								
+cheaper food on the train needed	2	->	price of snacks	3	No	0	0	
+price of snacks	3	->	cheaper food on the train needed	2	No	0	0	
+								
+node pair #18:								
+beverage expensive	2	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	beverage expensive	2	No	0	0	
+								
+node pair #19:								
+food ridiculously expensive	2	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #20:								
+cheaper food on the train needed	2	->	food expensive	7	Yes	1	1	
+food expensive	7	->	cheaper food on the train needed	2	Yes	-1	0	
+								
+node pair #21:								
+The kiosk food is overpriced	1	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #22:								
+cheaper food on the train needed	2	->	on board food is overpriced for what it is	1	No	0	0	
+on board food is overpriced for what it is	1	->	cheaper food on the train needed	2	No	0	1	
+								
+node pair #23:								
+The costs of the onboard drinks were too high	1	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #24:								
+Prices at the food bar are a bit expensive	1	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	Prices at the food bar are a bit expensive	1	No	0	0	
+								
+node pair #25:								
+Prices are quite high on food	1	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	Prices are quite high on food	1	No	0	0	
+								
+node pair #26:								
+Prices are a bit expensive	1	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	Prices are a bit expensive	1	No	0	0	
+								
+node pair #27:								
+Prices at the food bar are expensive	1	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	Prices at the food bar are expensive	1	No	0	0	
+								
+node pair #28:								
+cheaper food on the train needed	2	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	cheaper food on the train needed	2	No	0	0	
+								
+node pair #29:								
+cheaper food on the train needed	2	->	Price are going up	1	No	0	0	
+Price are going up	1	->	cheaper food on the train needed	2	No	0	0	
+								
+node pair #30:								
+beverage ridiculously expensive	1	->	cheaper food on the train needed	2	Yes	0	0	
+cheaper food on the train needed	2	->	beverage ridiculously expensive	1	No	0	0	
+								
+node pair #31:								
+cheaper food on the train needed	2	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	cheaper food on the train needed	2	No	0	0	
+								
+node pair #32:								
+price of snacks	3	->	beverage expensive	2	No	0	0	
+beverage expensive	2	->	price of snacks	3	No	0	0	
+								
+node pair #33:								
+price of snacks	3	->	food ridiculously expensive	2	No	0	0	
+food ridiculously expensive	2	->	price of snacks	3	No	0	0	
+								
+node pair #34:								
+price of snacks	3	->	food expensive	7	Yes	0	1	
+food expensive	7	->	price of snacks	3	No	0	0	
+								
+node pair #35:								
+price of snacks	3	->	The kiosk food is overpriced	1	No	0	0	
+The kiosk food is overpriced	1	->	price of snacks	3	No	0	0	
+								
+node pair #36:								
+price of snacks	3	->	on board food is overpriced for what it is	1	No	0	0	
+on board food is overpriced for what it is	1	->	price of snacks	3	No	0	0	
+								
+node pair #37:								
+price of snacks	3	->	The costs of the onboard drinks were too high	1	No	0	0	
+The costs of the onboard drinks were too high	1	->	price of snacks	3	No	0	0	
+								
+node pair #38:								
+price of snacks	3	->	Prices at the food bar are a bit expensive	1	No	0	0	
+Prices at the food bar are a bit expensive	1	->	price of snacks	3	No	0	0	
+								
+node pair #39:								
+price of snacks	3	->	Prices are quite high on food	1	No	0	0	
+Prices are quite high on food	1	->	price of snacks	3	No	0	0	
+								
+node pair #40:								
+price of snacks	3	->	Prices are a bit expensive	1	No	0	0	
+Prices are a bit expensive	1	->	price of snacks	3	No	0	0	
+								
+node pair #41:								
+price of snacks	3	->	Prices at the food bar are expensive	1	No	0	0	
+Prices at the food bar are expensive	1	->	price of snacks	3	No	0	0	
+								
+node pair #42:								
+price of snacks	3	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	price of snacks	3	No	0	0	
+								
+node pair #43:								
+price of snacks	3	->	Price are going up	1	No	0	0	
+Price are going up	1	->	price of snacks	3	No	0	0	
+								
+node pair #44:								
+price of snacks	3	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	price of snacks	3	No	0	0	
+								
+node pair #45:								
+price of snacks	3	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	price of snacks	3	No	0	0	
+								
+node pair #46:								
+beverage expensive	2	->	food ridiculously expensive	2	No	0	0	
+food ridiculously expensive	2	->	beverage expensive	2	No	0	0	
+								
+node pair #47:								
+beverage expensive	2	->	food expensive	7	Yes	0	0	
+food expensive	7	->	beverage expensive	2	No	0	0	
+								
+node pair #48:								
+beverage expensive	2	->	The kiosk food is overpriced	1	No	0	0	
+The kiosk food is overpriced	1	->	beverage expensive	2	No	0	0	
+								
+node pair #49:								
+beverage expensive	2	->	on board food is overpriced for what it is	1	No	0	0	
+on board food is overpriced for what it is	1	->	beverage expensive	2	No	0	0	
+								
+node pair #50:								
+The costs of the onboard drinks were too high	1	->	beverage expensive	2	Yes	0	1	
+beverage expensive	2	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #51:								
+beverage expensive	2	->	Prices at the food bar are a bit expensive	1	No	0	0	
+Prices at the food bar are a bit expensive	1	->	beverage expensive	2	No	0	0	
+								
+node pair #52:								
+beverage expensive	2	->	Prices are quite high on food	1	No	0	0	
+Prices are quite high on food	1	->	beverage expensive	2	No	0	0	
+								
+node pair #53:								
+beverage expensive	2	->	Prices are a bit expensive	1	No	0	0	
+Prices are a bit expensive	1	->	beverage expensive	2	No	0	0	
+								
+node pair #54:								
+beverage expensive	2	->	Prices at the food bar are expensive	1	Yes	0	0	
+Prices at the food bar are expensive	1	->	beverage expensive	2	No	0	0	
+								
+node pair #55:								
+beverage expensive	2	->	prices for food / drink on board were excessive	1	Yes	0	0	
+prices for food / drink on board were excessive	1	->	beverage expensive	2	No	0	1	
+								
+node pair #56:								
+beverage expensive	2	->	Price are going up	1	No	0	0	
+Price are going up	1	->	beverage expensive	2	No	0	0	
+								
+node pair #57:								
+beverage ridiculously expensive	1	->	beverage expensive	2	Yes	-1	1	
+beverage expensive	2	->	beverage ridiculously expensive	1	No	-1	0	
+								
+node pair #58:								
+beverage expensive	2	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	beverage expensive	2	No	0	0	
+								
+node pair #59:								
+food ridiculously expensive	2	->	food expensive	7	Yes	2	1	
+food expensive	7	->	food ridiculously expensive	2	No	-2	0	
+								
+node pair #60:								
+food ridiculously expensive	2	->	The kiosk food is overpriced	1	No	0	0	
+The kiosk food is overpriced	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #61:								
+food ridiculously expensive	2	->	on board food is overpriced for what it is	1	No	0	0	
+on board food is overpriced for what it is	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #62:								
+food ridiculously expensive	2	->	The costs of the onboard drinks were too high	1	No	0	0	
+The costs of the onboard drinks were too high	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #63:								
+food ridiculously expensive	2	->	Prices at the food bar are a bit expensive	1	No	0	0	
+Prices at the food bar are a bit expensive	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #64:								
+food ridiculously expensive	2	->	Prices are quite high on food	1	No	0	1	
+Prices are quite high on food	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #65:								
+food ridiculously expensive	2	->	Prices are a bit expensive	1	No	0	0	
+Prices are a bit expensive	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #66:								
+food ridiculously expensive	2	->	Prices at the food bar are expensive	1	Yes	0	0	
+Prices at the food bar are expensive	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #67:								
+food ridiculously expensive	2	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	food ridiculously expensive	2	No	0	1	
+								
+node pair #68:								
+food ridiculously expensive	2	->	Price are going up	1	No	0	0	
+Price are going up	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #69:								
+beverage ridiculously expensive	1	->	food ridiculously expensive	2	Yes	0	0	
+food ridiculously expensive	2	->	beverage ridiculously expensive	1	No	0	0	
+								
+node pair #70:								
+food ridiculously expensive	2	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	food ridiculously expensive	2	No	0	0	
+								
+node pair #71:								
+The kiosk food is overpriced	1	->	food expensive	7	Yes	1	1	
+food expensive	7	->	The kiosk food is overpriced	1	No	-1	0	
+								
+node pair #72:								
+on board food is overpriced for what it is	1	->	food expensive	7	Yes	0	1	
+food expensive	7	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #73:								
+The costs of the onboard drinks were too high	1	->	food expensive	7	Yes	0	0	
+food expensive	7	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #74:								
+Prices at the food bar are a bit expensive	1	->	food expensive	7	Yes	0	1	
+food expensive	7	->	Prices at the food bar are a bit expensive	1	No	0	0	
+								
+node pair #75:								
+Prices are quite high on food	1	->	food expensive	7	Yes	1	1	
+food expensive	7	->	Prices are quite high on food	1	No	-1	0	
+								
+node pair #76:								
+Prices are a bit expensive	1	->	food expensive	7	Yes	0	0	
+food expensive	7	->	Prices are a bit expensive	1	No	0	0	
+								
+node pair #77:								
+food expensive	7	->	Prices at the food bar are expensive	1	Yes	0	0	
+Prices at the food bar are expensive	1	->	food expensive	7	Yes	0	1	
+								
+node pair #78:								
+prices for food / drink on board were excessive	1	->	food expensive	7	Yes	0	1	
+food expensive	7	->	prices for food / drink on board were excessive	1	No	0	0	
+								
+node pair #79:								
+Price are going up	1	->	food expensive	7	Yes	0	0	
+food expensive	7	->	Price are going up	1	No	0	0	
+								
+node pair #80:								
+beverage ridiculously expensive	1	->	food expensive	7	Yes	0	0	
+food expensive	7	->	beverage ridiculously expensive	1	No	0	0	
+								
+node pair #81:								
+food expensive	7	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	food expensive	7	Yes	0	0	
+								
+node pair #82:								
+The kiosk food is overpriced	1	->	on board food is overpriced for what it is	1	No	0	0	
+on board food is overpriced for what it is	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #83:								
+The kiosk food is overpriced	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+The costs of the onboard drinks were too high	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #84:								
+The kiosk food is overpriced	1	->	Prices at the food bar are a bit expensive	1	No	0	0	
+Prices at the food bar are a bit expensive	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #85:								
+The kiosk food is overpriced	1	->	Prices are quite high on food	1	No	0	0	
+Prices are quite high on food	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #86:								
+The kiosk food is overpriced	1	->	Prices are a bit expensive	1	No	0	0	
+Prices are a bit expensive	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #87:								
+The kiosk food is overpriced	1	->	Prices at the food bar are expensive	1	Yes	0	0	
+Prices at the food bar are expensive	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #88:								
+The kiosk food is overpriced	1	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #89:								
+The kiosk food is overpriced	1	->	Price are going up	1	No	0	0	
+Price are going up	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #90:								
+The kiosk food is overpriced	1	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #91:								
+The kiosk food is overpriced	1	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	The kiosk food is overpriced	1	No	0	0	
+								
+node pair #92:								
+on board food is overpriced for what it is	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+The costs of the onboard drinks were too high	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #93:								
+on board food is overpriced for what it is	1	->	Prices at the food bar are a bit expensive	1	No	0	0	
+Prices at the food bar are a bit expensive	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #94:								
+on board food is overpriced for what it is	1	->	Prices are quite high on food	1	No	0	0	
+Prices are quite high on food	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #95:								
+on board food is overpriced for what it is	1	->	Prices are a bit expensive	1	No	0	0	
+Prices are a bit expensive	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #96:								
+on board food is overpriced for what it is	1	->	Prices at the food bar are expensive	1	No	0	0	
+Prices at the food bar are expensive	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #97:								
+on board food is overpriced for what it is	1	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #98:								
+on board food is overpriced for what it is	1	->	Price are going up	1	No	0	0	
+Price are going up	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #99:								
+on board food is overpriced for what it is	1	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #100:								
+on board food is overpriced for what it is	1	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	on board food is overpriced for what it is	1	No	0	0	
+								
+node pair #101:								
+The costs of the onboard drinks were too high	1	->	Prices at the food bar are a bit expensive	1	No	0	0	
+Prices at the food bar are a bit expensive	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #102:								
+The costs of the onboard drinks were too high	1	->	Prices are quite high on food	1	No	0	0	
+Prices are quite high on food	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #103:								
+The costs of the onboard drinks were too high	1	->	Prices are a bit expensive	1	No	0	0	
+Prices are a bit expensive	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #104:								
+The costs of the onboard drinks were too high	1	->	Prices at the food bar are expensive	1	Yes	0	0	
+Prices at the food bar are expensive	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #105:								
+The costs of the onboard drinks were too high	1	->	prices for food / drink on board were excessive	1	Yes	0	0	
+prices for food / drink on board were excessive	1	->	The costs of the onboard drinks were too high	1	No	0	1	
+								
+node pair #106:								
+The costs of the onboard drinks were too high	1	->	Price are going up	1	No	0	0	
+Price are going up	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #107:								
+The costs of the onboard drinks were too high	1	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #108:								
+The costs of the onboard drinks were too high	1	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	The costs of the onboard drinks were too high	1	No	0	0	
+								
+node pair #109:								
+Prices at the food bar are a bit expensive	1	->	Prices are quite high on food	1	Yes	0	0	
+Prices are quite high on food	1	->	Prices at the food bar are a bit expensive	1	No	0	0	
+								
+node pair #110:								
+Prices at the food bar are a bit expensive	1	->	Prices are a bit expensive	1	Yes	1	1	
+Prices are a bit expensive	1	->	Prices at the food bar are a bit expensive	1	No	-1	0	
+								
+node pair #111:								
+Prices at the food bar are a bit expensive	1	->	Prices at the food bar are expensive	1	Yes	1	1	
+Prices at the food bar are expensive	1	->	Prices at the food bar are a bit expensive	1	No	-1	0	
+								
+node pair #112:								
+Prices at the food bar are a bit expensive	1	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	Prices at the food bar are a bit expensive	1	No	0	0	
+								
+node pair #113:								
+Prices at the food bar are a bit expensive	1	->	Price are going up	1	No	0	0	
+Price are going up	1	->	Prices at the food bar are a bit expensive	1	No	0	0	
+								
+node pair #114:								
+Prices at the food bar are a bit expensive	1	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	Prices at the food bar are a bit expensive	1	No	0	0	
+								
+node pair #115:								
+Prices at the food bar are a bit expensive	1	->	Prices are expensive	1	Yes	1	1	
+Prices are expensive	1	->	Prices at the food bar are a bit expensive	1	No	-1	0	
+								
+node pair #116:								
+Prices are a bit expensive	1	->	Prices are quite high on food	1	Yes	0	0	
+Prices are quite high on food	1	->	Prices are a bit expensive	1	No	0	0	
+								
+node pair #117:								
+Prices are quite high on food	1	->	Prices at the food bar are expensive	1	No	0	0	
+Prices at the food bar are expensive	1	->	Prices are quite high on food	1	No	0	0	
+								
+node pair #118:								
+Prices are quite high on food	1	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	Prices are quite high on food	1	No	0	1	
+								
+node pair #119:								
+Prices are quite high on food	1	->	Price are going up	1	No	0	0	
+Price are going up	1	->	Prices are quite high on food	1	No	0	0	
+								
+node pair #120:								
+Prices are quite high on food	1	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	Prices are quite high on food	1	No	0	0	
+								
+node pair #121:								
+Prices are quite high on food	1	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	Prices are quite high on food	1	No	0	0	
+								
+node pair #122:								
+Prices are a bit expensive	1	->	Prices at the food bar are expensive	1	No	-1	0	
+Prices at the food bar are expensive	1	->	Prices are a bit expensive	1	No	-1	0	
+								
+node pair #123:								
+Prices are a bit expensive	1	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	Prices are a bit expensive	1	No	0	0	
+								
+node pair #124:								
+Prices are a bit expensive	1	->	Price are going up	1	No	0	0	
+Price are going up	1	->	Prices are a bit expensive	1	No	0	0	
+								
+node pair #125:								
+Prices are a bit expensive	1	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	Prices are a bit expensive	1	No	0	0	
+								
+node pair #126:								
+Prices are a bit expensive	1	->	Prices are expensive	1	Yes	1	1	
+Prices are expensive	1	->	Prices are a bit expensive	1	No	-1	0	
+								
+node pair #127:								
+Prices at the food bar are expensive	1	->	prices for food / drink on board were excessive	1	No	0	0	
+prices for food / drink on board were excessive	1	->	Prices at the food bar are expensive	1	No	0	0	
+								
+node pair #128:								
+Prices at the food bar are expensive	1	->	Price are going up	1	No	0	0	
+Price are going up	1	->	Prices at the food bar are expensive	1	No	0	0	
+								
+node pair #129:								
+beverage ridiculously expensive	1	->	Prices at the food bar are expensive	1	Yes	0	0	
+Prices at the food bar are expensive	1	->	beverage ridiculously expensive	1	No	0	0	
+								
+node pair #130:								
+Prices at the food bar are expensive	1	->	Prices are expensive	1	Yes	1	1	
+Prices are expensive	1	->	Prices at the food bar are expensive	1	No	-1	0	
+								
+node pair #131:								
+prices for food / drink on board were excessive	1	->	Price are going up	1	No	0	0	
+Price are going up	1	->	prices for food / drink on board were excessive	1	No	0	0	
+								
+node pair #132:								
+beverage ridiculously expensive	1	->	prices for food / drink on board were excessive	1	Yes	0	0	
+prices for food / drink on board were excessive	1	->	beverage ridiculously expensive	1	No	0	1	
+								
+node pair #133:								
+prices for food / drink on board were excessive	1	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	prices for food / drink on board were excessive	1	No	0	0	
+								
+node pair #134:								
+Price are going up	1	->	beverage ridiculously expensive	1	No	0	0	
+beverage ridiculously expensive	1	->	Price are going up	1	No	0	0	
+								
+node pair #135:								
+Price are going up	1	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	Price are going up	1	No	0	0	
+								
+node pair #136:								
+beverage ridiculously expensive	1	->	Prices are expensive	1	Yes	0	1	
+Prices are expensive	1	->	beverage ridiculously expensive	1	No	0	0	

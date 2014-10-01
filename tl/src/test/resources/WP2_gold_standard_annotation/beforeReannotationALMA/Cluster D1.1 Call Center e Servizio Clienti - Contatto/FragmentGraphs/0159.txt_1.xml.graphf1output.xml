@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="12">
+    <node id="0159.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>E' scandaloso che sia praticamente impossibile parlare con un operatore del centro assistenza 444</original_text>
+        <correct_text> </correct_text>
+        <modifiers>E' scandaloso che siapoz=0 1 2 3;praticamentepoz=4;con un operatorepoz=7 8 9;del centro assistenza 444poz=10 11 12 13</modifiers>
+    </node>
+    <node id="0159.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>praticamente impossibile parlare con un operatore del centro assistenza 444</original_text>
+        <correct_text> </correct_text>
+        <modifiers>praticamentepoz=4;con un operatorepoz=7 8 9;del centro assistenza 444poz=10 11 12 13</modifiers>
+    </node>
+    <node id="0159.txt_1_2" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>E' scandaloso che sia impossibile parlare con un operatore del centro assistenza 444</original_text>
+        <correct_text> </correct_text>
+        <modifiers>E' scandaloso che siapoz=0 1 2 3;con un operatorepoz=7 8 9;del centro assistenza 444poz=10 11 12 13</modifiers>
+    </node>
+    <node id="0159.txt_1_3" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>E' scandaloso che sia praticamente impossibile parlare con un operatore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>E' scandaloso che siapoz=0 1 2 3;praticamentepoz=4;con un operatorepoz=7 8 9</modifiers>
+    </node>
+    <node id="0159.txt_1_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>impossibile parlare con un operatore del centro assistenza 444</original_text>
+        <correct_text> </correct_text>
+        <modifiers>con un operatorepoz=7 8 9;del centro assistenza 444poz=10 11 12 13</modifiers>
+    </node>
+    <node id="0159.txt_1_5" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>praticamente impossibile parlare con un operatore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>praticamentepoz=4;con un operatorepoz=7 8 9</modifiers>
+    </node>
+    <node id="0159.txt_1_6" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>E' scandaloso che sia impossibile parlare con un operatore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>E' scandaloso che siapoz=0 1 2 3;con un operatorepoz=7 8 9</modifiers>
+    </node>
+    <node id="0159.txt_1_7" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>E' scandaloso che sia praticamente impossibile parlare</original_text>
+        <correct_text> </correct_text>
+        <modifiers>E' scandaloso che siapoz=0 1 2 3;praticamentepoz=4</modifiers>
+    </node>
+    <node id="0159.txt_1_8" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>impossibile parlare con un operatore</original_text>
+        <correct_text> </correct_text>
+        <modifiers>con un operatorepoz=7 8 9</modifiers>
+    </node>
+    <node id="0159.txt_1_9" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>praticamente impossibile parlare</original_text>
+        <correct_text> </correct_text>
+        <modifiers>praticamentepoz=4</modifiers>
+    </node>
+    <node id="0159.txt_1_10" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>E' scandaloso che sia impossibile parlare</original_text>
+        <correct_text> </correct_text>
+        <modifiers>E' scandaloso che siapoz=0 1 2 3</modifiers>
+    </node>
+    <node id="0159.txt_1_11" implicit_statement="FALSE" modality="FALSE" explicit_context="0159.txt" implicit_context="" focus="parlare" implicit_focus="">
+        <original_text>impossibile parlare</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0159.txt_1_0-0159.txt_1_1" source="0159.txt_1_0" target="0159.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_1" source="0159.txt_1_0" target="0159.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_2" source="0159.txt_1_0" target="0159.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_2" source="0159.txt_1_0" target="0159.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_3" source="0159.txt_1_0" target="0159.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_3" source="0159.txt_1_0" target="0159.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_2-0159.txt_1_4" source="0159.txt_1_2" target="0159.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_1-0159.txt_1_4" source="0159.txt_1_1" target="0159.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_1-0159.txt_1_4" source="0159.txt_1_1" target="0159.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_2-0159.txt_1_4" source="0159.txt_1_2" target="0159.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_4" source="0159.txt_1_0" target="0159.txt_1_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_5" source="0159.txt_1_3" target="0159.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_1-0159.txt_1_5" source="0159.txt_1_1" target="0159.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_1-0159.txt_1_5" source="0159.txt_1_1" target="0159.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_5" source="0159.txt_1_3" target="0159.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_5" source="0159.txt_1_0" target="0159.txt_1_5">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_6" source="0159.txt_1_3" target="0159.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_2-0159.txt_1_6" source="0159.txt_1_2" target="0159.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_2-0159.txt_1_6" source="0159.txt_1_2" target="0159.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_6" source="0159.txt_1_3" target="0159.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_6" source="0159.txt_1_0" target="0159.txt_1_6">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_7" source="0159.txt_1_3" target="0159.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_7" source="0159.txt_1_3" target="0159.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_7" source="0159.txt_1_0" target="0159.txt_1_7">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_6-0159.txt_1_8" source="0159.txt_1_6" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_5-0159.txt_1_8" source="0159.txt_1_5" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_4-0159.txt_1_8" source="0159.txt_1_4" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_4-0159.txt_1_8" source="0159.txt_1_4" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_5-0159.txt_1_8" source="0159.txt_1_5" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_6-0159.txt_1_8" source="0159.txt_1_6" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_2-0159.txt_1_8" source="0159.txt_1_2" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_8" source="0159.txt_1_3" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_8" source="0159.txt_1_0" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_1-0159.txt_1_8" source="0159.txt_1_1" target="0159.txt_1_8">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_7-0159.txt_1_9" source="0159.txt_1_7" target="0159.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_5-0159.txt_1_9" source="0159.txt_1_5" target="0159.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_5-0159.txt_1_9" source="0159.txt_1_5" target="0159.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_7-0159.txt_1_9" source="0159.txt_1_7" target="0159.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_9" source="0159.txt_1_3" target="0159.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_9" source="0159.txt_1_0" target="0159.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_1-0159.txt_1_9" source="0159.txt_1_1" target="0159.txt_1_9">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_7-0159.txt_1_10" source="0159.txt_1_7" target="0159.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_6-0159.txt_1_10" source="0159.txt_1_6" target="0159.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_6-0159.txt_1_10" source="0159.txt_1_6" target="0159.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_7-0159.txt_1_10" source="0159.txt_1_7" target="0159.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_10" source="0159.txt_1_3" target="0159.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_10" source="0159.txt_1_0" target="0159.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_2-0159.txt_1_10" source="0159.txt_1_2" target="0159.txt_1_10">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_10-0159.txt_1_11" source="0159.txt_1_10" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_9-0159.txt_1_11" source="0159.txt_1_9" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_8-0159.txt_1_11" source="0159.txt_1_8" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_8-0159.txt_1_11" source="0159.txt_1_8" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_9-0159.txt_1_11" source="0159.txt_1_9" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_10-0159.txt_1_11" source="0159.txt_1_10" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_6-0159.txt_1_11" source="0159.txt_1_6" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_7-0159.txt_1_11" source="0159.txt_1_7" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_3-0159.txt_1_11" source="0159.txt_1_3" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_0-0159.txt_1_11" source="0159.txt_1_0" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_2-0159.txt_1_11" source="0159.txt_1_2" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_5-0159.txt_1_11" source="0159.txt_1_5" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_1-0159.txt_1_11" source="0159.txt_1_1" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0159.txt_1_4-0159.txt_1_11" source="0159.txt_1_4" target="0159.txt_1_11">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
