@@ -364,7 +364,7 @@ public class GoldStandardReannotation {
 	private boolean loadReannotatedCollapsedGraph(File txtFileReannotated, boolean checkNodesConsistency) throws Exception{
 		ourCg = new EntailmentGraphCollapsed();		
 		BufferedReader reader = new BufferedReader(new FileReader(txtFileReannotated));
-		
+
 		String line = reader.readLine(); //caption line before all nodes
 		while (line!=null){
 			if (line.contains("Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments")) break;
@@ -503,8 +503,7 @@ public class GoldStandardReannotation {
 			System.out.println("No edges removed from FGs.\nThe graph is consistent. Congratulations :)");					
 		}
 
-
-		ourCg.toDOT("C:/Users/Lili/My Documents/_graphs/graph.dot.txt");
+		ourCg.toDOT("C:/Users/Lili/My Documents/_graphs/"+txtFileReannotated.getName()+"_graph.dot.txt");
 		
 		return true;
 	}
@@ -748,9 +747,9 @@ public class GoldStandardReannotation {
 	String[] single = {"EMAIL0390"};
 
 	String stat="";
-	for (String clusterName : single){
-//		String set = "Test";
-		 String set = "Dev";
+	for (String clusterName : testsetEn){
+		String set = "Test";
+//		 String set = "Dev";
 		
 //		String suffix = "Reconciled";
 //		String suffix = "LB";

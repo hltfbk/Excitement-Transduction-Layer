@@ -5,10 +5,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.xml.transform.TransformerException;
+
 import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
@@ -159,6 +162,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test";
 
+//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag_allinone";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag";
 
 // dev //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_all_dev";
@@ -191,7 +195,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 //	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
 //		EdaName[] names = {EdaName.TIE_POS_RES};	
 		EdaName[] names = {EdaName.EDIT_DIST};	
-//		EdaName[] names = {EdaName.BIUTEE};	
+//		EdaName[] names = {EdaName.BIUTEE, EdaName.TIE_POS_RES};	
 //		EdaName[] names = {EdaName.TIE_POS};	
 	
 	for(EdaName name : names)	
@@ -313,6 +317,16 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 				// now optimize the graph with global optimizer
 				setting =name +" " + "global-plusClosure-optimized-without-FG "+clusterDir;
 				globalOptimizedGraph = e.collapseGraph(plusClosureRawGraph, globalOptimizer);
+				
+				if (confidenceThreshold.equals(0.5)||(confidenceThreshold.equals(0.9500000000000004)))
+				try {
+					globalOptimizedGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_globalPlusClosure.xml");
+					globalOptimizedGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_globalPlusClosure.dot");
+				} catch (IOException | EntailmentGraphCollapsedException | TransformerException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}								
+				
 				System.out.println("### "+ setting+ "###");
 				res = e.evaluateCollapsedGraph(globalOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
 				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
@@ -377,6 +391,16 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 				}
 				System.out.println(cgr.toString());
 
+				if (confidenceThreshold.equals(0.5)||(confidenceThreshold.equals(0.9500000000000004)))
+				try {
+					cgr.toXML(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_cgr.xml");
+					cgr.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_cgr.dot");
+				} catch (IOException | EntailmentGraphCollapsedException | TransformerException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				
 /*				setting =name +" " + "clique-FG "+clusterDir; //plusClosure-collapsed+closure
 				System.out.println("### "+ setting+ "###");
 				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);
@@ -418,16 +442,7 @@ public class ExperimentNiceJNLE extends AbstractExperiment {
 						clique.removeAllEdges(edge.getSource(), edge.getTarget());
 						clique.addEdge(edge.getSource(), edge.getTarget(), edge);
 					}
-				}
-
-				try {
-					clique.toXML(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_clique.xml");
-					e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_clique.dot");
-				} catch (IOException | EntailmentGraphRawException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
+				}				
 				
 				globalOptimizedGraph = e.collapseGraph(clique, globalOptimizer);
 

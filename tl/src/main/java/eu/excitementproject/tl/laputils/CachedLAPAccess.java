@@ -19,9 +19,8 @@ import eu.excitement.type.entailment.Pair;
 import eu.excitement.type.entailment.Text;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.eop.lap.lappoc.LAP_ImplBase;
+import eu.excitementproject.eop.lap.implbase.LAP_ImplBase;
 import eu.excitementproject.tl.laputils.CASUtils; 
-
 import java.util.HashMap;
 //import java.util.Iterator;
 import java.util.Map;
