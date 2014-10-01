@@ -2,13 +2,14 @@ package eu.excitementproject.tl.laputils;
 
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-
+import eu.excitementproject.eop.lap.lappoc.LAP_ImplBaseAE;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
+
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.resource.ResourceInitializationException;
+
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
-import eu.excitementproject.eop.lap.implbase.LAP_ImplBaseAE;
 
 /**
  * 

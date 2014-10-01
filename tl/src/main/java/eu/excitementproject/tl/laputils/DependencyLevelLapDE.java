@@ -10,7 +10,7 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.eop.lap.implbase.LAP_ImplBaseAE;
+import eu.excitementproject.eop.lap.lappoc.LAP_ImplBaseAE;
 
 public class DependencyLevelLapDE extends LAP_ImplBaseAE implements LAPAccess {
 

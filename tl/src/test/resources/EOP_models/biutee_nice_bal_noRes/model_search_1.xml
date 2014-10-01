@@ -60,16 +60,8 @@
         <predefinedFeaturesNames_>GAP_BASELINE_V2_MISSING_RELATION</predefinedFeaturesNames_>
         <ruleBasesFeatures_>
             <entry>
-                <key>WORDNET</key>
-                <value>50</value>
-            </entry>
-            <entry>
-                <key>VERB_OCEAN</key>
-                <value>51</value>
-            </entry>
-            <entry>
                 <key>SYNTACTIC</key>
-                <value>52</value>
+                <value>50</value>
             </entry>
         </ruleBasesFeatures_>
     </featureVectorStructure>
@@ -127,8 +119,6 @@ minMap:
 48: 0.000000
 49: 0.000000
 50: 0.000000
-51: 0.000000
-52: 0.000000
 maxMap:
 1: 1.000000
 2: 23.000000
@@ -139,24 +129,24 @@ maxMap:
 7: 30.238044
 8: 40.851809
 9: 92.320855
-10: 45.721271
+10: 41.580833
 11: 2.000000
-12: 29.201203
-13: 8.169048
+12: 0.000000
+13: 13.071105
 14: 28.274270
 15: 29.201203
 16: 0.000000
 17: 0.000000
-18: 38.000000
-19: 3.000000
+18: 51.000000
+19: 9.000000
 20: 1.000000
 21: 0.000000
 22: 19.184788
 23: 0.000000
-24: 1.000000
-25: 1.000000
+24: 2.000000
+25: 0.000000
 26: 1.000000
-27: 1.000000
+27: 0.000000
 28: 2.000000
 29: 0.000000
 30: 0.000000
@@ -179,43 +169,41 @@ maxMap:
 47: 0.000000
 48: 0.000000
 49: 0.000000
-50: 1.386294
-51: 0.693147
-52: 3.000000
+50: 3.000000
 Wrapping:
 Logistic regression.
 Parameters: regularization = 0.0 learning rate = 0.005
 Number of iterations = 4000
 Features:
-C:26.1704
-HYPOTHESIS_MAIN_PREDICATE_IS_VERB: 8.3718
-INVERSE_HYPOTHESIS_LENGTH: 4.5171
+C:25.9643
+HYPOTHESIS_MAIN_PREDICATE_IS_VERB: 8.7820
+INVERSE_HYPOTHESIS_LENGTH: -2.4619
 TASK_IR: 0.0500
 TASK_IE: 0.0500
 TASK_QA: 0.0500
 TASK_SUM: 0.0500
-INSERT_NAMED_ENTITY: 33.2141
-INSERT_CONTENT_VERB: 10.6448
-INSERT_CONTENT_WORD: 71.5234
-INSERT_NON_CONTENT_NON_EMPTY_WORD: 21.6729
-INSERT_EMPTY_WORD: 6.3804
+INSERT_NAMED_ENTITY: 32.7884
+INSERT_CONTENT_VERB: 10.2332
+INSERT_CONTENT_WORD: 65.8890
+INSERT_NON_CONTENT_NON_EMPTY_WORD: 16.8363
+INSERT_EMPTY_WORD: 9.7624
 INSERT_NAMED_ENTITY_EXIST_IN_PAIR: 0.0500
 INSERT_CONTENT_VERB_EXIST_IN_PAIR: 0.0500
 INSERT_CONTENT_WORD_EXIST_IN_PAIR: 0.0500
-INSERT_NON_CONTENT_NON_EMPTY_WORD_EXIST_IN_PAIR: 8.9099
+INSERT_NON_CONTENT_NON_EMPTY_WORD_EXIST_IN_PAIR: 2.0708
 MOVE_ONLY_CHANGE_RELATION_STRONG: 0.0500
 MOVE_INTRODUCE_SURFACE_RELATION: 0.0500
 MOVE_NODE_CHANGE_CONTEXT: 0.0500
-MOVE_NODE_SAME_CONTEXT: 5.0269
-MOVE_TO_ROOT_IF_PT_PLUS_OR_MINUS: 3.8553
+MOVE_NODE_SAME_CONTEXT: 3.8793
+MOVE_TO_ROOT_IF_PT_PLUS_OR_MINUS: 0.0500
 SUBSTITUTION_MULTI_WORD_ADD_WORDS: 0.0500
-SUBSTITUTION_MULTI_WORD_ADD_WORDS_NAMED_ENTITY: 8.6462
+SUBSTITUTION_MULTI_WORD_ADD_WORDS_NAMED_ENTITY: 7.3772
 SUBSTITUTION_MULTI_WORD_REMOVE_WORDS: 0.0500
-SUBSTITUTION_FLIP_POS: 3.5453
-SUBSTITUTION_PARSER_ANTECEDENT: 7.7756
-SUBSTITUTION_COREFERENCE: 0.0945
-IS_A_COREFERENCE: 0.0959
-CHANGE_PREDICATE_TRUTH: 3.0066
+SUBSTITUTION_FLIP_POS: 2.9520
+SUBSTITUTION_PARSER_ANTECEDENT: 0.0500
+SUBSTITUTION_COREFERENCE: 15.4219
+IS_A_COREFERENCE: 0.0500
+CHANGE_PREDICATE_TRUTH: 0.0500
 GAP_V1_COUNT_MISSING_NODES: 0.0500
 GAP_V2_MISSING_PREDICATES: 0.0500
 GAP_V2_ARGUMENT_HEAD_NOT_CONNECTED: 0.0500
@@ -237,24 +225,22 @@ GAP_BASELINE_V1_MISSING_EDGE: 0.0500
 GAP_BASELINE_V2_MISSING_LEMMA: 0.0500
 GAP_BASELINE_V2_MISSING_NODE: 0.0500
 GAP_BASELINE_V2_MISSING_RELATION: 0.0500
-WORDNET: 0.0500
-VERB_OCEAN: 12.1786
 SYNTACTIC: 0.0500
-Accuracy on training set was: 0.6189</descriptionOfTraining>
+Accuracy on training set was: 0.6105</descriptionOfTraining>
         <nestedModel xsi:type="learningModelForLinearClassifierWithLeadingConstant">
             <classifierClassOfModel>eu.excitementproject.eop.biutee.classifiers.linearimplementations.LinearClassifierWithLeadingConstantLoadable</classifierClassOfModel>
             <parameters>
                 <entry>
                     <key>0</key>
-                    <value>26.170438477981662</value>
+                    <value>25.9643481873561</value>
                 </entry>
                 <entry>
                     <key>2</key>
-                    <value>8.37176414017077</value>
+                    <value>8.78197751501001</value>
                 </entry>
                 <entry>
                     <key>3</key>
-                    <value>4.517142541162089</value>
+                    <value>-2.461856701471425</value>
                 </entry>
                 <entry>
                     <key>4</key>
@@ -274,23 +260,23 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
                 </entry>
                 <entry>
                     <key>8</key>
-                    <value>33.21408534282383</value>
+                    <value>32.78839484537952</value>
                 </entry>
                 <entry>
                     <key>9</key>
-                    <value>10.644782271445616</value>
+                    <value>10.233168948379761</value>
                 </entry>
                 <entry>
                     <key>10</key>
-                    <value>71.52344295711143</value>
+                    <value>65.88900962079181</value>
                 </entry>
                 <entry>
                     <key>11</key>
-                    <value>21.67286005906286</value>
+                    <value>16.836335554209956</value>
                 </entry>
                 <entry>
                     <key>12</key>
-                    <value>6.380363673901031</value>
+                    <value>9.762429383075613</value>
                 </entry>
                 <entry>
                     <key>13</key>
@@ -306,7 +292,7 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
                 </entry>
                 <entry>
                     <key>16</key>
-                    <value>8.909885453597864</value>
+                    <value>2.070838995933777</value>
                 </entry>
                 <entry>
                     <key>17</key>
@@ -322,11 +308,11 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
                 </entry>
                 <entry>
                     <key>20</key>
-                    <value>5.026861874034843</value>
+                    <value>3.879262245747439</value>
                 </entry>
                 <entry>
                     <key>21</key>
-                    <value>3.8553334577544254</value>
+                    <value>0.05</value>
                 </entry>
                 <entry>
                     <key>22</key>
@@ -334,7 +320,7 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
                 </entry>
                 <entry>
                     <key>23</key>
-                    <value>8.646190827768436</value>
+                    <value>7.377170007010016</value>
                 </entry>
                 <entry>
                     <key>24</key>
@@ -342,23 +328,23 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
                 </entry>
                 <entry>
                     <key>25</key>
-                    <value>3.545252713683211</value>
+                    <value>2.952049560740003</value>
                 </entry>
                 <entry>
                     <key>26</key>
-                    <value>7.77556714394551</value>
+                    <value>0.05</value>
                 </entry>
                 <entry>
                     <key>27</key>
-                    <value>0.09447769152853923</value>
+                    <value>15.421906808200358</value>
                 </entry>
                 <entry>
                     <key>28</key>
-                    <value>0.09591056091521968</value>
+                    <value>0.05</value>
                 </entry>
                 <entry>
                     <key>29</key>
-                    <value>3.00661045730147</value>
+                    <value>0.05</value>
                 </entry>
                 <entry>
                     <key>30</key>
@@ -448,14 +434,6 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
                     <key>51</key>
                     <value>0.05</value>
                 </entry>
-                <entry>
-                    <key>52</key>
-                    <value>12.17856094713321</value>
-                </entry>
-                <entry>
-                    <key>53</key>
-                    <value>0.05</value>
-                </entry>
             </parameters>
         </nestedModel>
         <maxMap>
@@ -497,7 +475,7 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
             </entry>
             <entry>
                 <key>10</key>
-                <value>45.721270818863516</value>
+                <value>41.58083288853112</value>
             </entry>
             <entry>
                 <key>11</key>
@@ -505,11 +483,11 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
             </entry>
             <entry>
                 <key>12</key>
-                <value>29.201203210191643</value>
+                <value>0.0</value>
             </entry>
             <entry>
                 <key>13</key>
-                <value>8.169047821764389</value>
+                <value>13.07110536884043</value>
             </entry>
             <entry>
                 <key>14</key>
@@ -529,11 +507,11 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
             </entry>
             <entry>
                 <key>18</key>
-                <value>38.0</value>
+                <value>51.0</value>
             </entry>
             <entry>
                 <key>19</key>
-                <value>3.0</value>
+                <value>9.0</value>
             </entry>
             <entry>
                 <key>20</key>
@@ -553,11 +531,11 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
             </entry>
             <entry>
                 <key>24</key>
-                <value>1.0</value>
+                <value>2.0</value>
             </entry>
             <entry>
                 <key>25</key>
-                <value>1.0</value>
+                <value>0.0</value>
             </entry>
             <entry>
                 <key>26</key>
@@ -565,7 +543,7 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
             </entry>
             <entry>
                 <key>27</key>
-                <value>1.0</value>
+                <value>0.0</value>
             </entry>
             <entry>
                 <key>28</key>
@@ -657,14 +635,6 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
             </entry>
             <entry>
                 <key>50</key>
-                <value>1.3862943611198906</value>
-            </entry>
-            <entry>
-                <key>51</key>
-                <value>0.6931471805599453</value>
-            </entry>
-            <entry>
-                <key>52</key>
                 <value>3.0</value>
             </entry>
         </maxMap>
@@ -867,14 +837,6 @@ Accuracy on training set was: 0.6189</descriptionOfTraining>
             </entry>
             <entry>
                 <key>50</key>
-                <value>0.0</value>
-            </entry>
-            <entry>
-                <key>51</key>
-                <value>0.0</value>
-            </entry>
-            <entry>
-                <key>52</key>
                 <value>0.0</value>
             </entry>
         </minMap>

@@ -103,8 +103,8 @@
 	<section name = "transformations">
 		<!--<property name = "knowledge_resources">WORDNET,WIKIPEDIA,GEO,CATVAR,BAP,LIN_DEPENDENCY_ORIGINAL,LIN_PROXIMITY_ORIGINAL,LIN_DEPENDENCY_REUTERS,VERB_OCEAN,ORIG_DIRT,REVERB,BINARY_LIN,FRAMENET,SYNTACTIC</property>-->
 		<!--<property name = "multiword_resources">WORDNET,WIKIPEDIA,CATVAR,BAP,LIN_DEPENDENCY_ORIGINAL,LIN_PROXIMITY_ORIGINAL,LIN_DEPENDENCY_REUTERS,VERB_OCEAN</property>-->
-		<property name = "knowledge_resources">WORDNET,VERB_OCEAN,SYNTACTIC</property>
-		<property name = "multiword_resources">WORDNET,VERB_OCEAN</property>
+		<property name = "knowledge_resources">SYNTACTIC</property>
+		<property name = "multiword_resources"></property>
 		<property name = "stop_words">stopwords-Eyal.txt</property>
 	</section>
 

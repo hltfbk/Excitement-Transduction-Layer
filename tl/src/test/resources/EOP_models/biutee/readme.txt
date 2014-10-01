@@ -1,1 +1,1 @@
-biutee nice balanced no res (only SYN)
+biutee_nice_balanced_WN,VO,SYN
