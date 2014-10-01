@@ -58,8 +58,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	CachedLAPAccess lap = null;
 	EDABasic<?> eda = null;
 	
-	FragmentAnnotator fragAnot;
-	ModifierAnnotator modAnot;
+	FragmentAnnotator fragAnot = null;
+	ModifierAnnotator modAnot = null;
 	FragmentGraphGenerator fragGen;
 	GraphMerger graphMerger;
 	GraphOptimizer collapseGraph;
@@ -107,16 +107,12 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		collapseGraph = graphOptimizer;
 	}
 
+	/*
+	 * No default fragment and modifier annotators, such that they should be used only when really wanted
+	 */
 	private void initInterfaces() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
-		
-		fragAnot = new SentenceAsFragmentAnnotator(lap);
-//		fragAnot = new KeywordBasedFragmentAnnotator(lap);
-		
-		modAnot = new AdvAsModifierAnnotator(lap); 		
 
 		fragGen = new FragmentGraphGeneratorFromCAS();
-//		fragGen = new FragmentGraphLiteGeneratorFromCAS();
-//		fragGen = new FragmentGraphNoNegGeneratorFromCAS();
 
 		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
 		collapseGraph = new SimpleGraphOptimizer();
@@ -435,8 +431,11 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		logger.info("INFO:NR_OF_NODES = " + Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size())); 
 		logger.info("INFO:NR_OF_NODES_CUMULATIVE = " + count); 
 		
-		fragAnot.annotateFragments(aJCas);
-		modAnot.annotateModifiers(aJCas);
+		if (fragAnot != null)
+			fragAnot.annotateFragments(aJCas);
+		
+		if (modAnot != null)
+			modAnot.annotateModifiers(aJCas);
 	}
 	
 	public int getEdaCallsNumber(){
