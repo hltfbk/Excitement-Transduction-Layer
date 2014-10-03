@@ -44,7 +44,7 @@ import eu.excitementproject.tl.structures.Interaction;
 public class KeywordBasedFixedLengthFragmentAnnotatorTest {
 
 
-	@Ignore
+//	@Ignore
 	@Test
 	public void test_xmi() {
 		BasicConfigurator.resetConfiguration(); 
@@ -57,7 +57,7 @@ public class KeywordBasedFixedLengthFragmentAnnotatorTest {
 			FragmentAnnotator frAnnot = new KeywordBasedFixedLengthFragmentAnnotator(lap); 
 
 
-			File xmiIn = new File("target/WP2_public_data_CAS_XMI/ALMA_social_media/0320.txt.xmi");
+			File xmiIn = new File("src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media/0320.txt.xmi");
 //			File xmiIn = new File("target/WP2_public_data_CAS_XMI/ALMA_social_media/0202.txt.xmi");
 			
 			JCas goldJCas = CASUtils.createNewInputCas();
@@ -94,7 +94,8 @@ public class KeywordBasedFixedLengthFragmentAnnotatorTest {
 			modAnnot.annotateModifiers(aJCas);
 			
 		} catch (Exception e) {
-			fail(e.getMessage()); 
+//			fail(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 	

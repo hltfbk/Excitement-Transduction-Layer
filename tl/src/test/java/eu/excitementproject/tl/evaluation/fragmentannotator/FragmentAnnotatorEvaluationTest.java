@@ -12,9 +12,10 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 
+@SuppressWarnings("unused")
 public class FragmentAnnotatorEvaluationTest {
 
-	@Ignore
+//	@Ignore
 	@Test
 	public void test() {
 	
@@ -23,11 +24,8 @@ public class FragmentAnnotatorEvaluationTest {
 		
 		try {
 			EvaluationMeasures eval = FragmentAnnotatorEvaluator.evaluateFragments(
-//					"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 
-//					"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media",
-//					"target/WP2_public_data_CAS_XMI/ALMA_social_media",
 					
-					"src/test/resources/WP2_public_data_CAS_XMI/NICE_open/all/",
+					"src/test/resources/ALMA/XMIs/",
 					
 //					"eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator",
 					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator",
