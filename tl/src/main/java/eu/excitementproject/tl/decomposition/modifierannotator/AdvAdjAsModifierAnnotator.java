@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.decomposition.modifierannotator;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADV;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
@@ -17,34 +18,34 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
  * @author Gil
  * 
  */
-public class AdvAsModifierAnnotator extends POSbasedModifierAnnotator {
-
+public class AdvAdjAsModifierAnnotator extends POSbasedModifierAnnotator {
+			
 	@SuppressWarnings("unchecked")
-	public AdvAsModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
+	public AdvAdjAsModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
 	{
-		super(lap); 
-		addPOSClasses(ADV.class);
+		super(lap);
+		addPOSClasses(ADV.class, ADJ.class);
 	}
-
+	
 	@SuppressWarnings("unchecked")
-	public AdvAsModifierAnnotator(LAPAccess lap, boolean checkNegation) throws ModifierAnnotatorException
+	public AdvAdjAsModifierAnnotator(LAPAccess lap, boolean checkNegation) throws ModifierAnnotatorException
 	{
 		super(lap, checkNegation);
-		addPOSClasses(ADV.class);
+		addPOSClasses(ADV.class, ADJ.class);
 	}
-
+	
 	@SuppressWarnings("unchecked")
-	public AdvAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
+	public AdvAdjAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
 	{
 		super(lap, fragAnn);
-		addPOSClasses(ADV.class);
+		addPOSClasses(ADV.class, ADJ.class);
 	}
 
 	@SuppressWarnings("unchecked")
-	public AdvAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn, boolean checkNegation) throws ModifierAnnotatorException
+	public AdvAdjAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn, boolean checkNegation) throws ModifierAnnotatorException
 	{
 		super(lap, fragAnn, checkNegation);
-		addPOSClasses(ADV.class);
+		addPOSClasses(ADV.class, ADJ.class);
 	}
 	
 }

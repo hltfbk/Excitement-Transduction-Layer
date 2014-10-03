@@ -34,11 +34,17 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 	
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator");
 
-	int windowSize = 3;
+	int windowSize = 6;
 	
 	public KeywordBasedFixedLengthFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
 	{
 		super(l); 
+	}
+	
+	public KeywordBasedFixedLengthFragmentAnnotator(LAPAccess l, int windowSize) throws FragmentAnnotatorException
+	{
+		super(l); 
+		this.windowSize = windowSize;
 	}
 	
 	@Override
@@ -236,7 +242,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 			logger.error("Null (or empty) tokens list!");
 		} else {
 
-			Sentence coveringSentence = (Sentence) JCasUtil.selectCovering(aJCas, Sentence.class, k.getBegin(), k.getEnd());
+			Sentence coveringSentence = (Sentence) JCasUtil.selectCovering(aJCas, Sentence.class, k.getBegin(), k.getEnd()).get(0);
 
 			int fragStart = addPrecedingTokens(aJCas, tokens.get(0), windowSize, coveringSentence);
 			int fragEnd = addFollowingTokens(aJCas, tokens.get(tokens.size()-1), windowSize, coveringSentence);

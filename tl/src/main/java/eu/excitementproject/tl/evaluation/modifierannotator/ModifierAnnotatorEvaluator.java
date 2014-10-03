@@ -22,6 +22,7 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
 import eu.excitementproject.tl.decomposition.fragmentannotator.AbstractFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.modifierannotator.AbstractModifierAnnotator;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
+import eu.excitementproject.tl.evaluation.utils.EvaluationMeasuresMacro;
 import eu.excitementproject.tl.evaluation.utils.FragmentAndModifierMatchCounter;
 import eu.excitementproject.tl.laputils.AnnotationUtils;
 import eu.excitementproject.tl.laputils.CASUtils;
@@ -30,7 +31,7 @@ import eu.excitementproject.tl.structures.Interaction;
 public class ModifierAnnotatorEvaluator {
 
 	public static EvaluationMeasures evaluateModifiers(String xmiDir, String modifierAnnotator, String fragmentAnnotator, String language) 
-			throws LAPException, ModifierAnnotatorException, IOException{
+			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException{
 		
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator");
 		logger.setLevel(Level.INFO);
@@ -39,8 +40,32 @@ public class ModifierAnnotatorEvaluator {
 		
 		LAPAccess lap = initializeLAP(language);
 		FragmentAnnotator fragAnn = initializeFragmentAnnotator(fragmentAnnotator, lap);
-		AbstractModifierAnnotator modAnnot = initializeModifierAnnotator(modifierAnnotator, fragAnn, lap);
+		AbstractModifierAnnotator modAnn = initializeModifierAnnotator(modifierAnnotator, fragAnn, lap);
+		
+		return processXMIs(lap, fragAnn, modAnn, xmiDir);
+	}
+		
+	
+	public static EvaluationMeasures evaluateModifiers(String xmiDir, AbstractModifierAnnotator modAnn, FragmentAnnotator fragAnn, LAPAccess lap) 
+			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException {
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator");
+		logger.setLevel(Level.INFO);
+		
+		logger.info("Starting processing : \n\tdir: " + xmiDir + "\n\tmodifier annotator: " + modAnn.getClass() +  "\n\tfragment annotator: " + fragAnn.getClass()  + "\n\tLAP: " + lap.getClass());
+				
+		return processXMIs(lap, fragAnn, modAnn, xmiDir);		
+	}
+	
+	
+	public static EvaluationMeasures processXMIs(LAPAccess lap, FragmentAnnotator fragAnn, AbstractModifierAnnotator modAnn, String xmiDir) 
+			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException{
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator:processXMIs");
+		logger.setLevel(Level.INFO);
+		
 		List<Integer> counts = new ArrayList<Integer>(Arrays.asList(0,0,0,0)); // TP, FP, TN, FN
+		EvaluationMeasuresMacro emm = new EvaluationMeasuresMacro();
 		
 		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, false)) {
 			
@@ -65,19 +90,17 @@ public class ModifierAnnotatorEvaluator {
 				JCas sysJCas = in.createAndFillInputCAS();
 				
 				AnnotationUtils.transferAnnotations(goldJCas, sysJCas, KeywordAnnotation.class);
-				
-				try {
-					modAnnot.annotateModifiers(sysJCas);
-				} catch (ModifierAnnotatorException | FragmentAnnotatorException e) {
-					logger.info("Trouble annotating modifiers");
-					e.printStackTrace();
-				} 
+								
+				modAnn.annotateModifiers(sysJCas);
 			
-				counts = addScores(counts, FragmentAndModifierMatchCounter.countModifierCounts(sysJCas, goldJCas));
+				List<Integer> modCounts =  FragmentAndModifierMatchCounter.countModifierCounts(sysJCas, goldJCas);
+				counts = addScores(counts,modCounts);
+				emm.addScores(new EvaluationMeasures(modCounts));
 			}
 		}
 		
 		logger.info("Final counts: " + counts.toString());
+		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n");
 		
 		return new EvaluationMeasures(counts);
 	}
@@ -92,7 +115,7 @@ public class ModifierAnnotatorEvaluator {
 	}
 
 
-	private static AbstractModifierAnnotator initializeModifierAnnotator(
+	public static AbstractModifierAnnotator initializeModifierAnnotator(
 			String modifierAnnotator, FragmentAnnotator fragAnn, LAPAccess lap) {
 		AbstractModifierAnnotator modAnnot = null;
 		
@@ -115,7 +138,7 @@ public class ModifierAnnotatorEvaluator {
 	}
 
 	
-	private static AbstractFragmentAnnotator initializeFragmentAnnotator(
+	public static AbstractFragmentAnnotator initializeFragmentAnnotator(
 			String fragmentAnnotator, LAPAccess lap) {
 		AbstractFragmentAnnotator fragAnnot = null;
 		
@@ -137,10 +160,10 @@ public class ModifierAnnotatorEvaluator {
 		return fragAnnot;
 	}
 	
-	protected static LAPAccess initializeLAP(String language){
+	public static LAPAccess initializeLAP(String language){
 		
-//		String lapClassName = "eu.excitementproject.tl.laputils.LemmaLevelLap" + language.toUpperCase();
-		String lapClassName = "eu.excitementproject.tl.laputils.DependencyLevelLap" + language.toUpperCase();
+		String lapClassName = "eu.excitementproject.tl.laputils.LemmaLevelLap" + language.toUpperCase();
+//		String lapClassName = "eu.excitementproject.tl.laputils.DependencyLevelLap" + language.toUpperCase();
 
 		LAPAccess lap = null;
 		

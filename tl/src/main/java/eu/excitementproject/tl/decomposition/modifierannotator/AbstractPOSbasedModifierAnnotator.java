@@ -1,14 +1,13 @@
 package eu.excitementproject.tl.decomposition.modifierannotator;
 
 import java.util.Iterator;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ;
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADV;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.ModifierAnnotation;
@@ -31,21 +30,24 @@ import eu.excitementproject.tl.laputils.AnnotationUtils;
  * @author Gil
  * 
  */
-public class AdvAdjAsModifierAnnotatorNoNeg extends AbstractModifierAnnotator {
-
-	private int negationPos = -1;
+public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifierAnnotator {
 	
-	private Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator"); 
+	protected Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator"); 
 	
-	public AdvAdjAsModifierAnnotatorNoNeg(LAPAccess lap) throws ModifierAnnotatorException
+	protected Set<Class<? extends POS>> wantedClasses;
+	protected boolean checkNegation = false;
+	
+	public AbstractPOSbasedModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
 	{
 		super(lap); 
 	}
 	
-	public AdvAdjAsModifierAnnotatorNoNeg(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
+	public AbstractPOSbasedModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
 	{
 		super(lap, fragAnn); 
 	}
+	
+	protected abstract void addPOSClasses();
 	
 	@Override
 	public void annotateModifiers(JCas aJCas) throws ModifierAnnotatorException, FragmentAnnotatorException {
@@ -58,8 +60,6 @@ public class AdvAdjAsModifierAnnotatorNoNeg extends AbstractModifierAnnotator {
 			modLogger.info("The CAS already has " + modIndex.size() + " modifier annotations. Won't process this CAS."); 
 			return; 
 		}
-
-
 		
 		// check POS annotation is there or not 
 		AnnotationIndex<Annotation> posIndex = aJCas.getAnnotationIndex(POS.type);
@@ -85,7 +85,7 @@ public class AdvAdjAsModifierAnnotatorNoNeg extends AbstractModifierAnnotator {
 			// throw exception, if still no POS annotations in it 
 			if (!posItr.hasNext())
 			{
-				throw new ModifierAnnotatorException("Calling on LAPAccess " + this.getLap().getClass().getName() + " didn't added POS annotation. Cannot proceed."); 
+				throw new ModifierAnnotatorException("Calling on LAPAccess " + this.getLap().getClass().getName() + " didn't add POS annotations. Cannot proceed."); 
 			}
 		}
 		
@@ -99,7 +99,8 @@ public class AdvAdjAsModifierAnnotatorNoNeg extends AbstractModifierAnnotator {
 				try {
 					this.fragAnn.annotateFragments(aJCas);
 				} catch (FragmentAnnotatorException e) {
-					throw new FragmentAnnotatorException("Unable to annotate fragments on the input CAS", e);
+//					throw new FragmentAnnotatorException("Unable to annotate fragments on the input CAS", e);
+					modLogger.info("No fragment annotations were added on the input CAS");
 				}
 				
 				// all right. Fragments added. Try again
@@ -107,23 +108,38 @@ public class AdvAdjAsModifierAnnotatorNoNeg extends AbstractModifierAnnotator {
 				fragItr = fragIndex.iterator();
 				
 				if (!fragItr.hasNext()) {
-					throw new ModifierAnnotatorException("The CAS had no fragment annotations, and the fragment annotator " + this.fragAnn.getClass().getName() + " could not create any");					
+//					throw new ModifierAnnotatorException("The CAS had no fragment annotations, and the fragment annotator " + this.fragAnn.getClass().getName() + " could not create any");
+					modLogger.info("The CAS had no fragment annotations, and the fragment annotator " + this.fragAnn.getClass().getName() + " could not create any");
 				}
 								
 			} else {
-				throw new ModifierAnnotatorException("The CAS had no fragment annotations, and the ModifierAnnotator instance had no fragment annotator to create some.");
+//				throw new ModifierAnnotatorException("The CAS had no fragment annotations, and the ModifierAnnotator instance had no fragment annotator to create some.");
+				modLogger.info("The CAS had no fragment annotations, and the ModifierAnnotator instance had no fragment annotator to create some.");				
 			}
 		}
 		
+		addModifierAnnotations(fragItr, aJCas, checkNegation, wantedClasses);
+	}
+	
+	
+	protected void addModifierAnnotations(Iterator<Annotation> fragItr, JCas aJCas, boolean checkNegation, Set<Class<? extends POS>> POSclasses) throws ModifierAnnotatorException {
+		
 		modLogger.info("Annotating TLmodifier annotations on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
-
+		Integer negationPosition = -1;
+		
 		while(fragItr.hasNext()) {
 			FragmentAnnotation frag = (FragmentAnnotation) fragItr.next();
-		
-			negationPos = AnnotationUtils.checkNegation(frag);
-			
-			AnnotationUtils.addModifiers(aJCas, frag, negationPos, ADV.class);
-			AnnotationUtils.addModifiers(aJCas, frag, negationPos, ADJ.class);
+					
+			if (POSclasses != null) {
+				for(Class<? extends POS> cls: POSclasses) {
+					
+					if (checkNegation) {
+						negationPosition = AnnotationUtils.checkNegation(frag);
+					}
+					
+					AnnotationUtils.addModifiers(aJCas, frag, negationPosition, cls);
+				}
+			}
 		}			
 	}
 	

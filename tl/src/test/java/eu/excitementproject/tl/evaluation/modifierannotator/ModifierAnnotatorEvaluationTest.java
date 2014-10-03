@@ -8,13 +8,21 @@ import org.junit.Ignore;
 //import org.junit.Ignore;
 import org.junit.Test;
 
+import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjAsModifierAnnotator;
+import eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjPPAsModifierAnnotator;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
+import eu.excitementproject.tl.laputils.DependencyLevelLapEN;
 
+@SuppressWarnings("unused")
 public class ModifierAnnotatorEvaluationTest {
 	
-	@Ignore
+//	@Ignore
 	@Test
 	public void test() {
 	
@@ -22,23 +30,22 @@ public class ModifierAnnotatorEvaluationTest {
 		logger.setLevel(Level.INFO);
 		
 		try {
-			EvaluationMeasures eval = ModifierAnnotatorEvaluator.evaluateModifiers(
-//					"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 
-//					"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media", 
-//					"target/WP2_public_data_CAS_XMI/ALMA_social_media",
+			
+//			LAPAccess lap = ModifierAnnotatorEvaluator.initializeLAP("IT");
+			LAPAccess lap = new DependencyLevelLapEN(); 
 					
-					"src/test/resources/WP2_public_data_CAS_XMI/NICE_open/all/",
+			FragmentAnnotator fragAnn = new KeywordBasedFixedLengthFragmentAnnotator(lap, 5);
+			
+			EvaluationMeasures eval = ModifierAnnotatorEvaluator.evaluateModifiers(
+			
+//					"src/test/resources/ALMA/XMIs/",
+					"src/test/resources/NICE/XMIs/",
 
-//					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator",
-//					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotatorNoNeg",
-//					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjAsModifierAnnotatorNoNeg",
-					"eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjPPAsModifierAnnotatorNoNeg",
-//					"eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator",
-//					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator",
-					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator",
-
-//					"IT");
-					"EN");
+					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, true),
+					fragAnn,
+					lap
+					
+					);
 			
 			logger.info(eval.toString());
 			
@@ -48,10 +55,13 @@ public class ModifierAnnotatorEvaluationTest {
 		} catch (ModifierAnnotatorException e) {
 			logger.error("Error creating modifier annotator object");
 			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (FragmentAnnotatorException e) {
+			logger.error("Error creating fragment annotator object");
+			e.printStackTrace();
+		}catch (IOException e) {
 			logger.error("I/O error");
 			e.printStackTrace();
-		}
+		} 
 		
 	}
 }
