@@ -31,6 +31,9 @@ import de.tuebingen.uni.sfs.germanet.api.GermaNet;
 import de.tuebingen.uni.sfs.germanet.api.LexUnit;
 import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
+import eu.excitement.type.tl.DeterminedFragment;
+import eu.excitementproject.eop.alignmentedas.p1eda.P1EDATemplate;
+import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_DE;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
@@ -115,6 +118,7 @@ public class EvaluatorCategoryAnnotator {
     static CommonConfig config;
 	static String configFilename; //config file for EDA
 	static EDABasic<?> eda;
+	static P1EDATemplate alignmenteda;
     static FragmentAnnotator fragmentAnnotatorForGraphBuilding;
     static FragmentAnnotator fragmentAnnotatorForNewInput;
     static ModifierAnnotator modifierAnnotator;
@@ -169,13 +173,15 @@ public class EvaluatorCategoryAnnotator {
 	
     static boolean LuceneSearch = false;
     
-    static int setup = 0;
+    static int setup = 11;
     
     static boolean readGraphFromFile = false;
     static boolean readMergedGraphFromFile = false;
     
-    static boolean trainEDA = false;
-    static boolean processTrainingData = false;
+    static boolean trainEDA = true;
+    static boolean processTrainingData = true;
+    static File xmiDir;
+    static File modelBaseName;
 
     static boolean relevantTextProvided = true;
     
@@ -186,9 +192,13 @@ public class EvaluatorCategoryAnnotator {
     	
 	public static void main(String[] args) {
 		
-		String inputFoldername = "src/test/resources/OMQ/emails/"; //dataset to be evaluated
-		String outputGraphFoldername = "src/test/resources/OMQ/graphs/"; //output directory (for generated entailment graph)
+		String inputFoldername = "src/main/resources/exci/omq/emails/"; //dataset to be evaluated
+		String outputGraphFoldername = "src/main/resources/exci/omq/graphs/"; //output directory (for generated entailment graph)
 		String categoriesFilename = inputFoldername + "omq_public_categories.xml"; 
+		
+		xmiDir = new File(inputFoldername+"xmis/");
+		if (!xmiDir.exists()) xmiDir.mkdirs();
+		modelBaseName = new File(inputFoldername+"model");
 		
 		/*
 		try {
@@ -260,7 +270,7 @@ public class EvaluatorCategoryAnnotator {
 	        		lapForFragments = lapForDecisions;
 	        		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
-		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments, new SentenceAsFragmentAnnotator(lapForFragments)); 		
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -278,6 +288,22 @@ public class EvaluatorCategoryAnnotator {
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(0.6);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 11: //Alignment-based EDA 
+	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
+	        		lapForFragments = lapForDecisions;
+	        		configFilename = "./src/test/resources/EOP_models/fnr_de.model";
+	        		configFile = new File(configFilename);
+	        		alignmenteda = new FNR_DE(); 
+		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
+		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, alignmenteda);
 		    		graphMerger.setEntailmentConfidenceThreshold(0.6);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -321,6 +347,8 @@ public class EvaluatorCategoryAnnotator {
 		} catch (GraphMergerException e) {
 			e.printStackTrace();
 		} catch (LAPException e) {
+			e.printStackTrace();
+		} catch (EDAException e) {
 			e.printStackTrace();
 		} 			
 	}
@@ -377,15 +405,22 @@ public class EvaluatorCategoryAnnotator {
 			}
 			
 			setup(99);
-			eda.initialize(config);
+			if (setup == 11) alignmenteda.initialize(configFile);
+			else eda.initialize(config);
 			logger.info("Initialized config.");
 			logger.info("LAP: " + lapForFragments.getComponentName());
 
 			double threshold = 0.99;
 			
-			use1 = new UseCaseOneRunnerPrototype(lapForFragments, eda, 
+			if (setup == 11) {
+				use1 = new UseCaseOneRunnerPrototype(lapForFragments, alignmenteda, 
 		    		fragmentAnnotatorForGraphBuilding, modifierAnnotator, 
 		    		fragmentGraphGenerator, graphMerger, graphOptimizer);
+			} else {
+				use1 = new UseCaseOneRunnerPrototype(lapForFragments, eda, 
+			    		fragmentAnnotatorForGraphBuilding, modifierAnnotator, 
+			    		fragmentGraphGenerator, graphMerger, graphOptimizer);				
+			}
 			EntailmentGraphCollapsed graph = use1.buildCollapsedGraph(docsTrain, threshold);
 			logger.info("Built collapsed graph.");
 			
@@ -457,7 +492,9 @@ public class EvaluatorCategoryAnnotator {
 				*/
 				JCas cas = doc.createAndFillInputCAS();
 				fragmentAnnotatorForNewInput.annotateFragments(cas);
-				modifierAnnotator.annotateModifiers(cas);
+				if (cas.getAnnotationIndex(DeterminedFragment.type).size() > 0) {
+					modifierAnnotator.annotateModifiers(cas);
+				}
 				//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 				Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
 				if (null != fragmentGraphs) {
@@ -903,13 +940,18 @@ public class EvaluatorCategoryAnnotator {
 						edaTrainingFilename = inputDataFoldername + "omq_public_"+k+"_th.xml";
 						logger.info("Setting EDA training file " + edaTrainingFilename);	    
 						File trainingFile = new File(edaTrainingFilename); //training input file
-						File outputDir = new File("./target/DE/dev/"); // output dir as written in configuration!
+						File outputDir;
+						if (setup == 11) outputDir = xmiDir;
+						else outputDir = new File("./target/DE/dev/"); // output dir as written in configuration!
 						if (!outputDir.exists()) outputDir.mkdirs();
 						logger.info("Reading " + trainingFile.getCanonicalPath());
 						lapForDecisions.processRawInputFormat(trainingFile, outputDir); //process training data and store output
 						logger.info("Processing training data."); 
 					} // training data already exists
-					eda.startTraining(config); //train EDA (may take a some time)
+					if (setup == 11) {
+						alignmenteda.startTraining(xmiDir, modelBaseName); 
+					}
+					else eda.startTraining(config); //train EDA (may take a some time)
 					logger.info("Training completed."); 
 				} else { //add documents to graph creation set --> don't, dataset will be too large for graph building!
 					/*
@@ -975,7 +1017,9 @@ public class EvaluatorCategoryAnnotator {
 						JCas cas = casesRelevantTexts.get(l);
 						logger.info("category: " + CASUtils.getTLMetaData(cas).getCategory());
 						fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
-						modifierAnnotator.annotateModifiers(cas);
+						if (cas.getAnnotationIndex(DeterminedFragment.type).size() > 0) {
+							modifierAnnotator.annotateModifiers(cas);
+						}
 						logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 						fragmentGraphs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
 						//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
@@ -1257,7 +1301,8 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}			
 		} else { //merge graph --> takes a really long time and uses too much memory: TODO reduce number of fgs
-			eda.initialize(config);
+			if (setup == 11) alignmenteda.initialize(configFile);
+			else eda.initialize(config);
 			Set<FragmentGraph> fgsReduced = new HashSet<FragmentGraph>();
 			Set<FragmentGraph> fgsRest = new HashSet<FragmentGraph>();
 			String text = "";
@@ -1310,7 +1355,9 @@ public class EvaluatorCategoryAnnotator {
 						System.exit(0);
 					}
 					fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
-					modifierAnnotator.annotateModifiers(cas);
+					if (cas.getAnnotationIndex(DeterminedFragment.type).size() > 0) {
+						modifierAnnotator.annotateModifiers(cas);
+					}
 					logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 					fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
 				}			
