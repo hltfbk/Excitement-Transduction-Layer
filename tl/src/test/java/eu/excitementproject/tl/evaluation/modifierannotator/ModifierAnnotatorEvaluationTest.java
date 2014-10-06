@@ -22,7 +22,7 @@ import eu.excitementproject.tl.laputils.DependencyLevelLapEN;
 @SuppressWarnings("unused")
 public class ModifierAnnotatorEvaluationTest {
 	
-//	@Ignore
+	@Ignore
 	@Test
 	public void test() {
 	

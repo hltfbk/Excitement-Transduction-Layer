@@ -189,7 +189,7 @@ public class EvaluatorCategoryAnnotator {
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
     
-    static int setup = 11;
+    static int setup = 0;
     static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
 //  static String fragmentTypeName = "DF"; // DF = dpendency fragment
 //  static String fragmentTypeName = "TDF"; // TDF = token + dependency fragment
@@ -468,8 +468,10 @@ public class EvaluatorCategoryAnnotator {
 	 * @return
 	 * @throws IOException 
 	 */
-	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, String configFilename) throws IOException {
+	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, 
+			String configFilename, int setup) throws IOException {
 		
+		setup(setup);		
 		UseCaseOneRunnerPrototype use1;
 		
 		// Read in all emails with their associated categories and split into train/test set
@@ -511,8 +513,10 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}
 			
-			setup(99);
-			if (setup == 11) alignmenteda.initialize(configFile);
+			if (setup == 11) {
+				logger.error("Method not implemented for setup 11!");
+				System.exit(1);
+			}
 			else eda.initialize(config);
 			logger.info("Initialized config.");
 			logger.info("LAP: " + lapForFragments.getComponentName());
@@ -532,8 +536,9 @@ public class EvaluatorCategoryAnnotator {
 			logger.info("Built collapsed graph.");
 			
 			confidenceCalculator.computeCategoryConfidences(graph);
-			String outputFile = outputDirname + "/test.graph.xml";
-			XMLFileWriter.write(graph.toXML(), outputFile);			
+			String outputFile = outputDirname + "german_dummy_data_for_evaluator_test_graph.xml";
+			XMLFileWriter.write(graph.toXML(), outputFile);		
+			logger.info("Wrote collapsed graph to " + outputFile);
 			graph = new EntailmentGraphCollapsed(new File(outputFile));
 
 			/**
