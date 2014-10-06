@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.composition.graphoptimizer;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -160,14 +161,18 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 		return ret;
 	}
 	
+	
+	
 	private Double detectConfidence(EntailmentGraphRaw workGraph, EntailmentUnit source, EntailmentUnit target, Double confidenceThreshold){
-		Double confidence = -0.9; // this will be our non-entailment confidence for missing edges 
+		Double confidence = -0.5; // this will be our non-entailment confidence for missing edges 
+		
 		if (workGraph.containsEdge(source, target)) {
 
 			EntailmentRelation edge = workGraph.getEdge(source, target);
+			System.out.println(edge);
 			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)) {
-				 if (edge.getConfidence() > confidenceThreshold) {
-					 confidence = edge.getConfidence(); // only if the original score is higher than the threshold, consider the edge entailing with the corresponding confidence. Otherwise treat it as if it's not present in the work graph. 
+				 if (edge.getConfidence() >= confidenceThreshold) {
+					 confidence = edge.getConfidence(); // only if the original score is >= than the threshold, consider the edge entailing with the corresponding confidence. Otherwise treat it as if it's not present in the work graph. 
 				 }
 				 if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) confidence = 10000.0;
 			}
@@ -178,14 +183,19 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 		}
 		else{
 			// We should return non-entailment most confident score (-1?) for missing edges from inside FGs
-			// Check: if src and tgt share a compete statement, then they belong to the same FG			
+			// Check: if src and tgt share a compete statement, then they belong to the same FG	 - this is for cases when no-entailment FG edges are not explicit		
 			Set<String> minusSharedSet= new HashSet<String>(source.getCompleteStatementTexts());
 			minusSharedSet.removeAll(target.getCompleteStatementTexts());
 			if (source.getCompleteStatementTexts().size() != minusSharedSet.size()){ // i.e. if there were shared (removed) complete statements
-				confidence = -1.0;
+				confidence = -10000.0;
 			}
 		}
-		return confidence;
+		
+/*		// Note: -1 confidence is understood as "unavailable score"
+		if (confidence == TEDecision.CONFIDENCE_NOT_AVAILABLE) {
+			confidence = -0.9;
+		}
+*/		return confidence;
 	}
 
 	protected UntypedPredicateGraphLearner graphLearner;

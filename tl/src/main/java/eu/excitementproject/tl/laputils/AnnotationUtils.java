@@ -153,9 +153,13 @@ public final class AnnotationUtils {
 				int begin = a.getBegin(); 
 				int end = a.getEnd(); 
 
-				if (! isNegation(a.getCoveredText()) &&
-					! inNegationScope(begin, frag, negationPos)) {
-				
+//				if (! isNegation(a.getCoveredText()) &&
+//					! inNegationScope(begin, frag, negationPos)) {
+				if ( negationPos < 0 ||
+						( ! isNegation(a.getCoveredText()) &&
+						  ! inNegationScope(begin, frag, negationPos)) 
+					) {
+					
 					CASUtils.Region[] r = new CASUtils.Region[1]; 
 					r[0] = new CASUtils.Region(begin,  end); 
 	

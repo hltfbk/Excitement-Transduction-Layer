@@ -351,7 +351,11 @@ public class EntailmentGraphRaw extends
 			this.addVertex(newNode);
 		}
 		else{
-			node.addMention(mention, completeStatementText);
+			//Commented out: Tmp patch to have same text on separate nodes
+			//EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText);
+			//this.addVertex(newNode);			
+			
+			node.addMention(mention, completeStatementText);  
 		}
 	}
 	
