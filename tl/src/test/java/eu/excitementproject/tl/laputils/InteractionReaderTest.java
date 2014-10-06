@@ -229,7 +229,7 @@ public class InteractionReaderTest {
 		
 		// Lets read another file 
 		// Kathrin often changes the file, so don't test the content of this file 
-		f = new File("./src/test/resources/WP2_public_data_XML/OMQ_dummy_data_small.xml"); 		
+		f = new File("./src/test/resources/OMQ/test/OMQ_dummy_data_small.xml"); 		
 		try {
 			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
 			testlogger.info("The test file `" + f.getPath() + "'has " + iList.size() + " interactions in it."); 
@@ -269,7 +269,7 @@ public class InteractionReaderTest {
 		Logger.getRootLogger().setLevel(Level.INFO);   
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 
-		File f = new File("./src/test/resources/WP2_public_data_XML/OMQ/omq_public_1_emails.xml"); 		
+		File f = new File("./src/test/resources/OMQ/test/omq_public_1_emails.xml"); 		
 		try {
 			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
 			assertTrue(iList.get(0).getRelevantTexts().get(0).getText().startsWith("Wenn ich eine Datei durchrechnen will"));			
@@ -291,7 +291,7 @@ public class InteractionReaderTest {
 		Logger.getRootLogger().setLevel(Level.INFO);   
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 
-		File f = new File("./src/test/resources/WP2_public_data_XML/omq_public_multiple_cats_for_test.xml"); 		
+		File f = new File("./src/test/resources/OMQ/test/omq_public_multiple_cats_for_test.xml"); 		
 		try {
 			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
 			for (Interaction i : iList) {
