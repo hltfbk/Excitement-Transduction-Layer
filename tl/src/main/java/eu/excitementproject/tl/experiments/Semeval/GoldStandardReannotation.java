@@ -747,9 +747,9 @@ public class GoldStandardReannotation {
 	String[] single = {"EMAIL0390"};
 
 	String stat="";
-	for (String clusterName : testsetEn){
-		String set = "Test";
-//		 String set = "Dev";
+	for (String clusterName : devsetEn){
+//		String set = "Test";
+		 String set = "Dev";
 		
 //		String suffix = "Reconciled";
 //		String suffix = "LB";

@@ -1,0 +1,82 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 1 entailment unit(s) before editing							OK	
+	Not enough seating	[483394.txt_4_1]						
+								
+collapsed node #2 : 1 entailment unit(s) before editing							OK	
+	for each train indicate where to seat left or right	[9.txt_2_0]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing							OK	
+	for each train indicate where to seat	[9.txt_2_1]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing							OK	
+	lounge not enough seats	[498974.txt_3_0]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing							OK	
+	Solo seats in standard class	[19.txt_2_0]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing							OK	
+	Not enough seating at Stars Bridge	[483394.txt_4_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+Not enough seating	1	->	for each train indicate where to seat left or right	1	No	0	0	
+for each train indicate where to seat left or right	1	->	Not enough seating	1	No	0	0	
+								
+node pair #2:								
+Not enough seating	1	->	for each train indicate where to seat	1	No	0	0	
+for each train indicate where to seat	1	->	Not enough seating	1	No	0	0	
+								
+node pair #3:								
+lounge not enough seats	1	->	Not enough seating	1	Yes	0	1	
+Not enough seating	1	->	lounge not enough seats	1	No		0	
+								
+node pair #4:								
+Not enough seating	1	->	Solo seats in standard class	1	No	0	0	
+Solo seats in standard class	1	->	Not enough seating	1	No	0	0	
+								
+node pair #5:								
+Not enough seating at Stars Bridge	1	->	Not enough seating	1	Yes	1	1	
+Not enough seating	1	->	Not enough seating at Stars Bridge	1	No		0	
+								
+node pair #6:								
+for each train indicate where to seat left or right	1	->	for each train indicate where to seat	1	Yes	1	1	
+for each train indicate where to seat	1	->	for each train indicate where to seat left or right	1	No		0	
+								
+node pair #7:								
+for each train indicate where to seat left or right	1	->	lounge not enough seats	1	No	0	0	
+lounge not enough seats	1	->	for each train indicate where to seat left or right	1	No	0	0	
+								
+node pair #8:								
+for each train indicate where to seat left or right	1	->	Solo seats in standard class	1	No	0	0	
+Solo seats in standard class	1	->	for each train indicate where to seat left or right	1	No	0	0	
+								
+node pair #9:								
+for each train indicate where to seat left or right	1	->	Not enough seating at Stars Bridge	1	No	0	0	
+Not enough seating at Stars Bridge	1	->	for each train indicate where to seat left or right	1	No	0	0	
+								
+node pair #10:								
+for each train indicate where to seat	1	->	lounge not enough seats	1	No	0	0	
+lounge not enough seats	1	->	for each train indicate where to seat	1	No	0	0	
+								
+node pair #11:								
+for each train indicate where to seat	1	->	Solo seats in standard class	1	No	0	0	
+Solo seats in standard class	1	->	for each train indicate where to seat	1	No	0	0	
+								
+node pair #12:								
+for each train indicate where to seat	1	->	Not enough seating at Stars Bridge	1	No	0	0	
+Not enough seating at Stars Bridge	1	->	for each train indicate where to seat	1	No	0	0	
+								
+node pair #13:								
+lounge not enough seats	1	->	Solo seats in standard class	1	No	0	0	
+Solo seats in standard class	1	->	lounge not enough seats	1	No	0	0	
+								
+node pair #14:								
+lounge not enough seats	1	->	Not enough seating at Stars Bridge	1	No	0	0	
+Not enough seating at Stars Bridge	1	->	lounge not enough seats	1	No	0	0	
+								
+node pair #15:								
+Solo seats in standard class	1	->	Not enough seating at Stars Bridge	1	No	0	0	
+Not enough seating at Stars Bridge	1	->	Solo seats in standard class	1	No	0	0	
