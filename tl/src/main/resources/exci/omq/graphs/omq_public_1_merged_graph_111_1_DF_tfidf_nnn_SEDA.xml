@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="0" text="20    class">
+    <completeStatement text="20    class"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="20    class"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="20 neo">
+    <completeStatement text="20 neo"/>
+    <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="20 neo"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="81 Segmente">
+    <completeStatement text="81 Segmente"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="81 Segmente"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Ablauf stockt">
+    <completeStatement text="Ablauf stockt"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="Ablauf stockt"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Artikelpreview lässt">
+    <completeStatement text="Artikelpreview lässt"/>
+    <entailmentUnitMention categoryId="116" interactionId="581" level="0" text="Artikelpreview lässt"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Aufträge      durchrechnen">
+    <completeStatement text="Aufträge      durchrechnen"/>
+    <entailmentUnitMention categoryId="116" interactionId="125" level="0" text="Aufträge      durchrechnen"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Bearbeitung     Prozesse">
+    <completeStatement text="Bearbeitung     Prozesse"/>
+    <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="Bearbeitung     Prozesse"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="CRV       lade">
+    <completeStatement text="CRV       lade"/>
+    <entailmentUnitMention categoryId="116" interactionId="126" level="0" text="CRV       lade"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Datei lade">
+    <completeStatement text="Datei lade"/>
+    <entailmentUnitMention categoryId="116" interactionId="126" level="0" text="Datei lade"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Daten     Bestellnummer">
+    <completeStatement text="Daten     Bestellnummer"/>
+    <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="Daten     Bestellnummer"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Folgender Hinweis">
+    <completeStatement text="Folgender Hinweis"/>
+    <entailmentUnitMention categoryId="116" interactionId="139" level="0" text="Folgender Hinweis"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="GB class">
+    <completeStatement text="GB class"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="GB class"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Geräteerkennung liegt">
+    <completeStatement text="Geräteerkennung liegt"/>
+    <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="Geräteerkennung liegt"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Karte       class">
+    <completeStatement text="Karte       class"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="Karte       class"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Laboratory L">
+    <completeStatement text="Laboratory L"/>
+    <entailmentUnitMention categoryId="116" interactionId="141" level="0" text="Laboratory L"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="OFFICE Katalog">
+    <completeStatement text="OFFICE Katalog"/>
+    <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="OFFICE Katalog"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Produkt                                             zeigt">
+    <completeStatement text="Produkt                                             zeigt"/>
+    <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="Produkt                                             zeigt"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="SD HC">
+    <completeStatement text="SD HC"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="SD HC"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Salesdateien                                                                   importiert">
+    <completeStatement text="Salesdateien                                                                   importiert"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="Salesdateien                                                                   importiert"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Segmente  15f">
+    <completeStatement text="Segmente  15f"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="Segmente  15f"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Smartcard-Device  none">
+    <completeStatement text="Smartcard-Device  none"/>
+    <entailmentUnitMention categoryId="116" interactionId="139" level="0" text="Smartcard-Device  none"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Statistics            L">
+    <completeStatement text="Statistics            L"/>
+    <entailmentUnitMention categoryId="116" interactionId="141" level="0" text="Statistics            L"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Windows 7angegeben">
+    <completeStatement text="Windows 7angegeben"/>
+    <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="Windows 7angegeben"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="aktuell genutzte">
+    <completeStatement text="aktuell genutzte"/>
+    <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="aktuell genutzte"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="aktuelle          Gerätekennung">
+    <completeStatement text="aktuelle          Gerätekennung"/>
+    <entailmentUnitMention categoryId="116" interactionId="139" level="0" text="aktuelle          Gerätekennung"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="befindliche Artikelpreview">
+    <completeStatement text="befindliche Artikelpreview"/>
+    <entailmentUnitMention categoryId="116" interactionId="581" level="0" text="befindliche Artikelpreview"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="class 13">
+    <completeStatement text="class 13"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="class 13"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="durchrechnen      erstellen">
+    <completeStatement text="durchrechnen      erstellen"/>
+    <entailmentUnitMention categoryId="116" interactionId="141" level="0" text="durchrechnen      erstellen"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="erheblich komplizierter">
+    <completeStatement text="erheblich komplizierter"/>
+    <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="erheblich komplizierter"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="extrem langsam">
+    <completeStatement text="extrem langsam"/>
+    <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="extrem langsam"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="genutzte Geräteerkennung">
+    <completeStatement text="genutzte Geräteerkennung"/>
+    <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="genutzte Geräteerkennung"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="genutzte Gerätekennung">
+    <completeStatement text="genutzte Gerätekennung"/>
+    <entailmentUnitMention categoryId="116" interactionId="139" level="0" text="genutzte Gerätekennung"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="hängen bleiben">
+    <completeStatement text="hängen bleiben"/>
+    <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="hängen bleiben"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="importiert                          stockt">
+    <completeStatement text="importiert                          stockt"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="importiert                          stockt"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="importiert  kopiert">
+    <completeStatement text="importiert  kopiert"/>
+    <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="importiert  kopiert"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="langsam ausgeführt">
+    <completeStatement text="langsam ausgeführt"/>
+    <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="langsam ausgeführt"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="liegt nicht">
+    <completeStatement text="liegt nicht"/>
+    <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="liegt nicht"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="lässt                 starten">
+    <completeStatement text="lässt                 starten"/>
+    <entailmentUnitMention categoryId="116" interactionId="581" level="0" text="lässt                 starten"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="lässt      nicht">
+    <completeStatement text="lässt      nicht"/>
+    <entailmentUnitMention categoryId="116" interactionId="581" level="0" text="lässt      nicht"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="manuell             verschiebe">
+    <completeStatement text="manuell             verschiebe"/>
+    <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="manuell             verschiebe"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="schneller manuell">
+    <completeStatement text="schneller manuell"/>
+    <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="schneller manuell"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="stockend berechnet">
+    <completeStatement text="stockend berechnet"/>
+    <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="stockend berechnet"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="total stockend">
+    <completeStatement text="total stockend"/>
+    <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="total stockend"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="zeigt         Smartcad-Device">
+    <completeStatement text="zeigt         Smartcad-Device"/>
+    <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="zeigt         Smartcad-Device"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Übersicht                                     verschiebe">
+    <completeStatement text="Übersicht                                     verschiebe"/>
+    <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="Übersicht                                     verschiebe"/>
+  </entailmentUnitNode>
+</rawGraph>
