@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collapsedGraph>
+  <equivalenceClassNode label="kommt     Meldung">
+    <categoryConfidence category="66" confidence="1.0"/>
+    <categoryConfidence category="92" confidence="1.0"/>
+    <categoryConfidence category="70" confidence="1.0"/>
+    <entailmentUnit level="0" text="erscheint                                        Meldung">
+      <completeStatement text="erscheint                                        Meldung"/>
+      <entailmentUnitMention categoryId="66" interactionId="c_66" level="0" text="erscheint                                        Meldung"/>
+      <interactionId id="c_66"/>
+    </entailmentUnit>
+    <entailmentUnit level="0" text="kommt     Meldung">
+      <completeStatement text="kommt     Meldung"/>
+      <entailmentUnitMention categoryId="92" interactionId="c_92" level="0" text="kommt     Meldung"/>
+      <entailmentUnitMention categoryId="70" interactionId="c_70" level="0" text="kommt     Meldung"/>
+      <interactionId id="c_70"/>
+      <interactionId id="c_92"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="20    class">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="20    class">
+      <completeStatement text="20    class"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="20    class"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="20 neo">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="20 neo">
+      <completeStatement text="20 neo"/>
+      <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="20 neo"/>
+      <interactionId id="518"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="81 Segmente">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="81 Segmente">
+      <completeStatement text="81 Segmente"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="81 Segmente"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Ablauf stockt">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="Ablauf stockt">
+      <completeStatement text="Ablauf stockt"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="Ablauf stockt"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Artikelpreview lässt">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Artikelpreview lässt">
+      <completeStatement text="Artikelpreview lässt"/>
+      <entailmentUnitMention categoryId="116" interactionId="581" level="0" text="Artikelpreview lässt"/>
+      <interactionId id="581"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Aufträge      durchrechnen">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Aufträge      durchrechnen">
+      <completeStatement text="Aufträge      durchrechnen"/>
+      <entailmentUnitMention categoryId="116" interactionId="125" level="0" text="Aufträge      durchrechnen"/>
+      <interactionId id="125"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Bearbeitung     Prozesse">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="Bearbeitung     Prozesse">
+      <completeStatement text="Bearbeitung     Prozesse"/>
+      <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="Bearbeitung     Prozesse"/>
+      <interactionId id="518"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="CRV       lade">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="CRV       lade">
+      <completeStatement text="CRV       lade"/>
+      <entailmentUnitMention categoryId="116" interactionId="126" level="0" text="CRV       lade"/>
+      <interactionId id="126"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Datei lade">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Datei lade">
+      <completeStatement text="Datei lade"/>
+      <entailmentUnitMention categoryId="116" interactionId="126" level="0" text="Datei lade"/>
+      <interactionId id="126"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Daten     Bestellnummer">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <categoryConfidence category="55" confidence="1.0"/>
+    <entailmentUnit level="0" text="Daten     Bestellnummer">
+      <completeStatement text="Daten     Bestellnummer"/>
+      <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="Daten     Bestellnummer"/>
+      <entailmentUnitMention categoryId="55" interactionId="c_55" level="0" text="Daten     Bestellnummer"/>
+      <interactionId id="c_55"/>
+      <interactionId id="518"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Folgender Hinweis">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Folgender Hinweis">
+      <completeStatement text="Folgender Hinweis"/>
+      <entailmentUnitMention categoryId="116" interactionId="139" level="0" text="Folgender Hinweis"/>
+      <interactionId id="139"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="GB class">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="GB class">
+      <completeStatement text="GB class"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="GB class"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Geräteerkennung liegt">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Geräteerkennung liegt">
+      <completeStatement text="Geräteerkennung liegt"/>
+      <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="Geräteerkennung liegt"/>
+      <interactionId id="132"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Karte       class">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="Karte       class">
+      <completeStatement text="Karte       class"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="Karte       class"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Laboratory L">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Laboratory L">
+      <completeStatement text="Laboratory L"/>
+      <entailmentUnitMention categoryId="116" interactionId="141" level="0" text="Laboratory L"/>
+      <interactionId id="141"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="OFFICE Katalog">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="OFFICE Katalog">
+      <completeStatement text="OFFICE Katalog"/>
+      <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="OFFICE Katalog"/>
+      <interactionId id="132"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Produkt                                             zeigt">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Produkt                                             zeigt">
+      <completeStatement text="Produkt                                             zeigt"/>
+      <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="Produkt                                             zeigt"/>
+      <interactionId id="132"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="SD HC">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="SD HC">
+      <completeStatement text="SD HC"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="SD HC"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Salesdateien                                                                   importiert">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="Salesdateien                                                                   importiert">
+      <completeStatement text="Salesdateien                                                                   importiert"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="Salesdateien                                                                   importiert"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Segmente  15f">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="Segmente  15f">
+      <completeStatement text="Segmente  15f"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="Segmente  15f"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Smartcard-Device  none">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Smartcard-Device  none">
+      <completeStatement text="Smartcard-Device  none"/>
+      <entailmentUnitMention categoryId="116" interactionId="139" level="0" text="Smartcard-Device  none"/>
+      <interactionId id="139"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Statistics            L">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Statistics            L">
+      <completeStatement text="Statistics            L"/>
+      <entailmentUnitMention categoryId="116" interactionId="141" level="0" text="Statistics            L"/>
+      <interactionId id="141"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Windows 7angegeben">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Windows 7angegeben">
+      <completeStatement text="Windows 7angegeben"/>
+      <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="Windows 7angegeben"/>
+      <interactionId id="132"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="aktuell genutzte">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="aktuell genutzte">
+      <completeStatement text="aktuell genutzte"/>
+      <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="aktuell genutzte"/>
+      <interactionId id="132"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="aktuelle          Gerätekennung">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="aktuelle          Gerätekennung">
+      <completeStatement text="aktuelle          Gerätekennung"/>
+      <entailmentUnitMention categoryId="116" interactionId="139" level="0" text="aktuelle          Gerätekennung"/>
+      <interactionId id="139"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="befindliche Artikelpreview">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="befindliche Artikelpreview">
+      <completeStatement text="befindliche Artikelpreview"/>
+      <entailmentUnitMention categoryId="116" interactionId="581" level="0" text="befindliche Artikelpreview"/>
+      <interactionId id="581"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="class 13">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="class 13">
+      <completeStatement text="class 13"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="class 13"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="durchrechnen      erstellen">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="durchrechnen      erstellen">
+      <completeStatement text="durchrechnen      erstellen"/>
+      <entailmentUnitMention categoryId="116" interactionId="141" level="0" text="durchrechnen      erstellen"/>
+      <interactionId id="141"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="erheblich komplizierter">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="erheblich komplizierter">
+      <completeStatement text="erheblich komplizierter"/>
+      <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="erheblich komplizierter"/>
+      <interactionId id="518"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="extrem langsam">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="extrem langsam">
+      <completeStatement text="extrem langsam"/>
+      <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="extrem langsam"/>
+      <interactionId id="518"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="genutzte Geräteerkennung">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="genutzte Geräteerkennung">
+      <completeStatement text="genutzte Geräteerkennung"/>
+      <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="genutzte Geräteerkennung"/>
+      <interactionId id="132"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="genutzte Gerätekennung">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="genutzte Gerätekennung">
+      <completeStatement text="genutzte Gerätekennung"/>
+      <entailmentUnitMention categoryId="116" interactionId="139" level="0" text="genutzte Gerätekennung"/>
+      <interactionId id="139"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="hängen bleiben">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="hängen bleiben">
+      <completeStatement text="hängen bleiben"/>
+      <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="hängen bleiben"/>
+      <interactionId id="526"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="importiert                          stockt">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="importiert                          stockt">
+      <completeStatement text="importiert                          stockt"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="importiert                          stockt"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="importiert  kopiert">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="importiert  kopiert">
+      <completeStatement text="importiert  kopiert"/>
+      <entailmentUnitMention categoryId="79" interactionId="523" level="0" text="importiert  kopiert"/>
+      <interactionId id="523"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="langsam ausgeführt">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="langsam ausgeführt">
+      <completeStatement text="langsam ausgeführt"/>
+      <entailmentUnitMention categoryId="79" interactionId="518" level="0" text="langsam ausgeführt"/>
+      <interactionId id="518"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="liegt nicht">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="liegt nicht">
+      <completeStatement text="liegt nicht"/>
+      <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="liegt nicht"/>
+      <interactionId id="132"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="lässt                 starten">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="lässt                 starten">
+      <completeStatement text="lässt                 starten"/>
+      <entailmentUnitMention categoryId="116" interactionId="581" level="0" text="lässt                 starten"/>
+      <interactionId id="581"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="lässt      nicht">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="lässt      nicht">
+      <completeStatement text="lässt      nicht"/>
+      <entailmentUnitMention categoryId="116" interactionId="581" level="0" text="lässt      nicht"/>
+      <interactionId id="581"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="manuell             verschiebe">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="manuell             verschiebe">
+      <completeStatement text="manuell             verschiebe"/>
+      <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="manuell             verschiebe"/>
+      <interactionId id="526"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="schneller manuell">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="schneller manuell">
+      <completeStatement text="schneller manuell"/>
+      <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="schneller manuell"/>
+      <interactionId id="526"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="stockend berechnet">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="stockend berechnet">
+      <completeStatement text="stockend berechnet"/>
+      <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="stockend berechnet"/>
+      <interactionId id="526"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="total stockend">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="total stockend">
+      <completeStatement text="total stockend"/>
+      <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="total stockend"/>
+      <interactionId id="526"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="zeigt         Smartcad-Device">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="zeigt         Smartcad-Device">
+      <completeStatement text="zeigt         Smartcad-Device"/>
+      <entailmentUnitMention categoryId="116" interactionId="132" level="0" text="zeigt         Smartcad-Device"/>
+      <interactionId id="132"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Übersicht                                     verschiebe">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="Übersicht                                     verschiebe">
+      <completeStatement text="Übersicht                                     verschiebe"/>
+      <entailmentUnitMention categoryId="79" interactionId="526" level="0" text="Übersicht                                     verschiebe"/>
+      <interactionId id="526"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="12 meldet">
+    <categoryConfidence category="83" confidence="1.0"/>
+    <entailmentUnit level="0" text="12 meldet">
+      <completeStatement text="12 meldet"/>
+      <entailmentUnitMention categoryId="83" interactionId="c_83" level="0" text="12 meldet"/>
+      <interactionId id="c_83"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="27 erscheint">
+    <categoryConfidence category="56" confidence="1.0"/>
+    <entailmentUnit level="0" text="27 erscheint">
+      <completeStatement text="27 erscheint"/>
+      <entailmentUnitMention categoryId="56" interactionId="c_56" level="0" text="27 erscheint"/>
+      <interactionId id="c_56"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="7 installiert">
+    <categoryConfidence category="74" confidence="1.0"/>
+    <entailmentUnit level="0" text="7 installiert">
+      <completeStatement text="7 installiert"/>
+      <entailmentUnitMention categoryId="74" interactionId="c_74" level="0" text="7 installiert"/>
+      <interactionId id="c_74"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Altes Programm">
+    <categoryConfidence category="74" confidence="1.0"/>
+    <entailmentUnit level="0" text="Altes Programm">
+      <completeStatement text="Altes Programm"/>
+      <entailmentUnitMention categoryId="74" interactionId="c_74" level="0" text="Altes Programm"/>
+      <interactionId id="c_74"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="AutoSortSD Funktionen">
+    <categoryConfidence category="59" confidence="1.0"/>
+    <entailmentUnit level="0" text="AutoSortSD Funktionen">
+      <completeStatement text="AutoSortSD Funktionen"/>
+      <entailmentUnitMention categoryId="59" interactionId="c_59" level="0" text="AutoSortSD Funktionen"/>
+      <interactionId id="c_59"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Brennen bricht">
+    <categoryConfidence category="67" confidence="1.0"/>
+    <entailmentUnit level="0" text="Brennen bricht">
+      <completeStatement text="Brennen bricht"/>
+      <entailmentUnitMention categoryId="67" interactionId="c_67" level="0" text="Brennen bricht"/>
+      <interactionId id="c_67"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Code  4">
+    <categoryConfidence category="104" confidence="1.0"/>
+    <entailmentUnit level="0" text="Code  4">
+      <completeStatement text="Code  4"/>
+      <entailmentUnitMention categoryId="104" interactionId="c_104" level="0" text="Code  4"/>
+      <interactionId id="c_104"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Creator      Online">
+    <categoryConfidence category="57" confidence="1.0"/>
+    <entailmentUnit level="0" text="Creator      Online">
+      <completeStatement text="Creator      Online"/>
+      <entailmentUnitMention categoryId="57" interactionId="c_57" level="0" text="Creator      Online"/>
+      <interactionId id="c_57"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Cwvemx Dateien">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="Cwvemx Dateien">
+      <completeStatement text="Cwvemx Dateien"/>
+      <entailmentUnitMention categoryId="79" interactionId="c_79" level="0" text="Cwvemx Dateien"/>
+      <interactionId id="c_79"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="DATA Datei">
+    <categoryConfidence category="55" confidence="1.0"/>
+    <entailmentUnit level="0" text="DATA Datei">
+      <completeStatement text="DATA Datei"/>
+      <entailmentUnitMention categoryId="55" interactionId="c_55" level="0" text="DATA Datei"/>
+      <interactionId id="c_55"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="DVD Player">
+    <categoryConfidence category="31" confidence="1.0"/>
+    <entailmentUnit level="0" text="DVD Player">
+      <completeStatement text="DVD Player"/>
+      <entailmentUnitMention categoryId="31" interactionId="c_31" level="0" text="DVD Player"/>
+      <interactionId id="c_31"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Dateien stocken">
+    <categoryConfidence category="79" confidence="1.0"/>
+    <entailmentUnit level="0" text="Dateien stocken">
+      <completeStatement text="Dateien stocken"/>
+      <entailmentUnitMention categoryId="79" interactionId="c_79" level="0" text="Dateien stocken"/>
+      <interactionId id="c_79"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Diverse Fehlermeldungen">
+    <categoryConfidence category="112" confidence="1.0"/>
+    <entailmentUnit level="0" text="Diverse Fehlermeldungen">
+      <completeStatement text="Diverse Fehlermeldungen"/>
+      <entailmentUnitMention categoryId="112" interactionId="c_112" level="0" text="Diverse Fehlermeldungen"/>
+      <interactionId id="c_112"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="EM Kartenleser">
+    <categoryConfidence category="85" confidence="1.0"/>
+    <entailmentUnit level="0" text="EM Kartenleser">
+      <completeStatement text="EM Kartenleser"/>
+      <entailmentUnitMention categoryId="85" interactionId="c_85" level="0" text="EM Kartenleser"/>
+      <interactionId id="c_85"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Error Code">
+    <categoryConfidence category="104" confidence="1.0"/>
+    <entailmentUnit level="0" text="Error Code">
+      <completeStatement text="Error Code"/>
+      <entailmentUnitMention categoryId="104" interactionId="c_104" level="0" text="Error Code"/>
+      <interactionId id="c_104"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Export funktioniert">
+    <categoryConfidence category="97" confidence="1.0"/>
+    <entailmentUnit level="0" text="Export funktioniert">
+      <completeStatement text="Export funktioniert"/>
+      <entailmentUnitMention categoryId="97" interactionId="c_97" level="0" text="Export funktioniert"/>
+      <interactionId id="c_97"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Fehler              bzw">
+    <categoryConfidence category="101" confidence="1.0"/>
+    <entailmentUnit level="0" text="Fehler              bzw">
+      <completeStatement text="Fehler              bzw"/>
+      <entailmentUnitMention categoryId="101" interactionId="c_101" level="0" text="Fehler              bzw"/>
+      <interactionId id="c_101"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Fehler 9000">
+    <categoryConfidence category="73" confidence="1.0"/>
+    <entailmentUnit level="0" text="Fehler 9000">
+      <completeStatement text="Fehler 9000"/>
+      <entailmentUnitMention categoryId="73" interactionId="c_73" level="0" text="Fehler 9000"/>
+      <interactionId id="c_73"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Fehlercode     erscheint">
+    <categoryConfidence category="56" confidence="1.0"/>
+    <entailmentUnit level="0" text="Fehlercode     erscheint">
+      <completeStatement text="Fehlercode     erscheint"/>
+      <entailmentUnitMention categoryId="56" interactionId="c_56" level="0" text="Fehlercode     erscheint"/>
+      <interactionId id="c_56"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Fehlermeldung                         installation">
+    <categoryConfidence category="121" confidence="1.0"/>
+    <entailmentUnit level="0" text="Fehlermeldung                         installation">
+      <completeStatement text="Fehlermeldung                         installation"/>
+      <entailmentUnitMention categoryId="121" interactionId="c_121" level="0" text="Fehlermeldung                         installation"/>
+      <interactionId id="c_121"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Fehlermeldung                device">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="Fehlermeldung                device">
+      <completeStatement text="Fehlermeldung                device"/>
+      <entailmentUnitMention categoryId="116" interactionId="c_116" level="0" text="Fehlermeldung                device"/>
+      <interactionId id="c_116"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Fehlermeldung  1133">
+    <categoryConfidence category="121" confidence="1.0"/>
+    <entailmentUnit level="0" text="Fehlermeldung  1133">
+      <completeStatement text="Fehlermeldung  1133"/>
+      <entailmentUnitMention categoryId="121" interactionId="c_121" level="0" text="Fehlermeldung  1133"/>
+      <interactionId id="c_121"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Funktion  DynamicListing">
+    <categoryConfidence category="92" confidence="1.0"/>
+    <entailmentUnit level="0" text="Funktion  DynamicListing">
+      <completeStatement text="Funktion  DynamicListing"/>
+      <entailmentUnitMention categoryId="92" interactionId="c_92" level="0" text="Funktion  DynamicListing"/>
+      <interactionId id="c_92"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="IT   OFFICE">
+    <categoryConfidence category="33" confidence="1.0"/>
+    <entailmentUnit level="0" text="IT   OFFICE">
+      <completeStatement text="IT   OFFICE"/>
+      <entailmentUnitMention categoryId="33" interactionId="c_33" level="0" text="IT   OFFICE"/>
+      <interactionId id="c_33"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Import                    erfolgt">
+    <categoryConfidence category="84" confidence="1.0"/>
+    <entailmentUnit level="0" text="Import                    erfolgt">
+      <completeStatement text="Import                    erfolgt"/>
+      <entailmentUnitMention categoryId="84" interactionId="c_84" level="0" text="Import                    erfolgt"/>
+      <interactionId id="c_84"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Installation      Aktivierung">
+    <categoryConfidence category="111" confidence="1.0"/>
+    <entailmentUnit level="0" text="Installation      Aktivierung">
+      <completeStatement text="Installation      Aktivierung"/>
+      <entailmentUnitMention categoryId="111" interactionId="c_111" level="0" text="Installation      Aktivierung"/>
+      <interactionId id="c_111"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Interner Fehler">
+    <categoryConfidence category="101" confidence="1.0"/>
+    <entailmentUnit level="0" text="Interner Fehler">
+      <completeStatement text="Interner Fehler"/>
+      <entailmentUnitMention categoryId="101" interactionId="c_101" level="0" text="Interner Fehler"/>
+      <interactionId id="c_101"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Katalog     Salesfirstclass">
+    <categoryConfidence category="33" confidence="1.0"/>
+    <entailmentUnit level="0" text="Katalog     Salesfirstclass">
+      <completeStatement text="Katalog     Salesfirstclass"/>
+      <entailmentUnitMention categoryId="33" interactionId="c_33" level="0" text="Katalog     Salesfirstclass"/>
+      <interactionId id="c_33"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Meldung      Erstellung">
+    <categoryConfidence category="70" confidence="1.0"/>
+    <entailmentUnit level="0" text="Meldung      Erstellung">
+      <completeStatement text="Meldung      Erstellung"/>
+      <entailmentUnitMention categoryId="70" interactionId="c_70" level="0" text="Meldung      Erstellung"/>
+      <interactionId id="c_70"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Meldung   Fehler">
+    <categoryConfidence category="66" confidence="1.0"/>
+    <entailmentUnit level="0" text="Meldung   Fehler">
+      <completeStatement text="Meldung   Fehler"/>
+      <entailmentUnitMention categoryId="66" interactionId="c_66" level="0" text="Meldung   Fehler"/>
+      <interactionId id="c_66"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Online                                 Upload">
+    <categoryConfidence category="112" confidence="1.0"/>
+    <entailmentUnit level="0" text="Online                                 Upload">
+      <completeStatement text="Online                                 Upload"/>
+      <entailmentUnitMention categoryId="112" interactionId="c_112" level="0" text="Online                                 Upload"/>
+      <interactionId id="c_112"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Online Sammlung">
+    <categoryConfidence category="112" confidence="1.0"/>
+    <entailmentUnit level="0" text="Online Sammlung">
+      <completeStatement text="Online Sammlung"/>
+      <entailmentUnitMention categoryId="112" interactionId="c_112" level="0" text="Online Sammlung"/>
+      <interactionId id="c_112"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Originaldesign entspricht">
+    <categoryConfidence category="86" confidence="1.0"/>
+    <entailmentUnit level="0" text="Originaldesign entspricht">
+      <completeStatement text="Originaldesign entspricht"/>
+      <entailmentUnitMention categoryId="86" interactionId="c_86" level="0" text="Originaldesign entspricht"/>
+      <interactionId id="c_86"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="PDF Export">
+    <categoryConfidence category="97" confidence="1.0"/>
+    <entailmentUnit level="0" text="PDF Export">
+      <completeStatement text="PDF Export"/>
+      <entailmentUnitMention categoryId="97" interactionId="c_97" level="0" text="PDF Export"/>
+      <interactionId id="c_97"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Problem                                                                                       Zusatzprogramme">
+    <categoryConfidence category="111" confidence="1.0"/>
+    <entailmentUnit level="0" text="Problem                                                                                       Zusatzprogramme">
+      <completeStatement text="Problem                                                                                       Zusatzprogramme"/>
+      <entailmentUnitMention categoryId="111" interactionId="c_111" level="0" text="Problem                                                                                       Zusatzprogramme"/>
+      <interactionId id="c_111"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Produkt            meldet">
+    <categoryConfidence category="83" confidence="1.0"/>
+    <entailmentUnit level="0" text="Produkt            meldet">
+      <completeStatement text="Produkt            meldet"/>
+      <entailmentUnitMention categoryId="83" interactionId="c_83" level="0" text="Produkt            meldet"/>
+      <interactionId id="c_83"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Produkt Manager">
+    <categoryConfidence category="83" confidence="1.0"/>
+    <entailmentUnit level="0" text="Produkt Manager">
+      <completeStatement text="Produkt Manager"/>
+      <entailmentUnitMention categoryId="83" interactionId="c_83" level="0" text="Produkt Manager"/>
+      <interactionId id="c_83"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Programm startet">
+    <categoryConfidence category="110" confidence="1.0"/>
+    <entailmentUnit level="0" text="Programm startet">
+      <completeStatement text="Programm startet"/>
+      <entailmentUnitMention categoryId="110" interactionId="c_110" level="0" text="Programm startet"/>
+      <interactionId id="c_110"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Programme             installieren">
+    <categoryConfidence category="125" confidence="1.0"/>
+    <entailmentUnit level="0" text="Programme             installieren">
+      <completeStatement text="Programme             installieren"/>
+      <entailmentUnitMention categoryId="125" interactionId="c_125" level="0" text="Programme             installieren"/>
+      <interactionId id="c_125"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Prozessverwalter Treibers">
+    <categoryConfidence category="121" confidence="1.0"/>
+    <entailmentUnit level="0" text="Prozessverwalter Treibers">
+      <completeStatement text="Prozessverwalter Treibers"/>
+      <entailmentUnitMention categoryId="121" interactionId="c_121" level="0" text="Prozessverwalter Treibers"/>
+      <interactionId id="c_121"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Schriftart                                  entspricht">
+    <categoryConfidence category="86" confidence="1.0"/>
+    <entailmentUnit level="0" text="Schriftart                                  entspricht">
+      <completeStatement text="Schriftart                                  entspricht"/>
+      <entailmentUnitMention categoryId="86" interactionId="c_86" level="0" text="Schriftart                                  entspricht"/>
+      <interactionId id="c_86"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Speicheranfrage                                bzw">
+    <categoryConfidence category="33" confidence="1.0"/>
+    <entailmentUnit level="0" text="Speicheranfrage                                bzw">
+      <completeStatement text="Speicheranfrage                                bzw"/>
+      <entailmentUnitMention categoryId="33" interactionId="c_33" level="0" text="Speicheranfrage                                bzw"/>
+      <interactionId id="c_33"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Startzeiger zeigt">
+    <categoryConfidence category="63" confidence="1.0"/>
+    <entailmentUnit level="0" text="Startzeiger zeigt">
+      <completeStatement text="Startzeiger zeigt"/>
+      <entailmentUnitMention categoryId="63" interactionId="c_63" level="0" text="Startzeiger zeigt"/>
+      <interactionId id="c_63"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Ständige Aufforderung">
+    <categoryConfidence category="100" confidence="1.0"/>
+    <entailmentUnit level="0" text="Ständige Aufforderung">
+      <completeStatement text="Ständige Aufforderung"/>
+      <entailmentUnitMention categoryId="100" interactionId="c_100" level="0" text="Ständige Aufforderung"/>
+      <interactionId id="c_100"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Tage läuft">
+    <categoryConfidence category="83" confidence="1.0"/>
+    <entailmentUnit level="0" text="Tage läuft">
+      <completeStatement text="Tage läuft"/>
+      <entailmentUnitMention categoryId="83" interactionId="c_83" level="0" text="Tage läuft"/>
+      <interactionId id="c_83"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Temporäre Darstellungsprobleme">
+    <categoryConfidence category="57" confidence="1.0"/>
+    <entailmentUnit level="0" text="Temporäre Darstellungsprobleme">
+      <completeStatement text="Temporäre Darstellungsprobleme"/>
+      <entailmentUnitMention categoryId="57" interactionId="c_57" level="0" text="Temporäre Darstellungsprobleme"/>
+      <interactionId id="c_57"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Tiffey Blast">
+    <categoryConfidence category="72" confidence="1.0"/>
+    <entailmentUnit level="0" text="Tiffey Blast">
+      <completeStatement text="Tiffey Blast"/>
+      <entailmentUnitMention categoryId="72" interactionId="c_72" level="0" text="Tiffey Blast"/>
+      <interactionId id="c_72"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Unable           installation">
+    <categoryConfidence category="121" confidence="1.0"/>
+    <entailmentUnit level="0" text="Unable           installation">
+      <completeStatement text="Unable           installation"/>
+      <entailmentUnitMention categoryId="121" interactionId="c_121" level="0" text="Unable           installation"/>
+      <interactionId id="c_121"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Verschlüsseln      Bearbeiten">
+    <categoryConfidence category="33" confidence="1.0"/>
+    <entailmentUnit level="0" text="Verschlüsseln      Bearbeiten">
+      <completeStatement text="Verschlüsseln      Bearbeiten"/>
+      <entailmentUnitMention categoryId="33" interactionId="c_33" level="0" text="Verschlüsseln      Bearbeiten"/>
+      <interactionId id="c_33"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Verschlüsseln bricht">
+    <categoryConfidence category="32" confidence="1.0"/>
+    <entailmentUnit level="0" text="Verschlüsseln bricht">
+      <completeStatement text="Verschlüsseln bricht"/>
+      <entailmentUnitMention categoryId="32" interactionId="c_32" level="0" text="Verschlüsseln bricht"/>
+      <interactionId id="c_32"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Vorschau     Datenblatts">
+    <categoryConfidence category="101" confidence="1.0"/>
+    <entailmentUnit level="0" text="Vorschau     Datenblatts">
+      <completeStatement text="Vorschau     Datenblatts"/>
+      <entailmentUnitMention categoryId="101" interactionId="c_101" level="0" text="Vorschau     Datenblatts"/>
+      <interactionId id="c_101"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Warehouse Programme">
+    <categoryConfidence category="125" confidence="1.0"/>
+    <entailmentUnit level="0" text="Warehouse Programme">
+      <completeStatement text="Warehouse Programme"/>
+      <entailmentUnitMention categoryId="125" interactionId="c_125" level="0" text="Warehouse Programme"/>
+      <interactionId id="c_125"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="alternativen Treiber">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="alternativen Treiber">
+      <completeStatement text="alternativen Treiber"/>
+      <entailmentUnitMention categoryId="65" interactionId="c_65" level="0" text="alternativen Treiber"/>
+      <interactionId id="c_65"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="ausreichend Speicher">
+    <categoryConfidence category="60" confidence="1.0"/>
+    <entailmentUnit level="0" text="ausreichend Speicher">
+      <completeStatement text="ausreichend Speicher"/>
+      <entailmentUnitMention categoryId="60" interactionId="c_60" level="0" text="ausreichend Speicher"/>
+      <interactionId id="c_60"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="bricht                                   fehlgeschlagen">
+    <categoryConfidence category="32" confidence="1.0"/>
+    <entailmentUnit level="0" text="bricht                                   fehlgeschlagen">
+      <completeStatement text="bricht                                   fehlgeschlagen"/>
+      <entailmentUnitMention categoryId="32" interactionId="c_32" level="0" text="bricht                                   fehlgeschlagen"/>
+      <interactionId id="c_32"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="bzw      Vorschau">
+    <categoryConfidence category="101" confidence="1.0"/>
+    <entailmentUnit level="0" text="bzw      Vorschau">
+      <completeStatement text="bzw      Vorschau"/>
+      <entailmentUnitMention categoryId="101" interactionId="c_101" level="0" text="bzw      Vorschau"/>
+      <interactionId id="c_101"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="einwandfrei installiert">
+    <categoryConfidence category="77" confidence="1.0"/>
+    <entailmentUnit level="0" text="einwandfrei installiert">
+      <completeStatement text="einwandfrei installiert"/>
+      <entailmentUnitMention categoryId="77" interactionId="c_77" level="0" text="einwandfrei installiert"/>
+      <interactionId id="c_77"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="erscheint                                      Speicher">
+    <categoryConfidence category="60" confidence="1.0"/>
+    <entailmentUnit level="0" text="erscheint                                      Speicher">
+      <completeStatement text="erscheint                                      Speicher"/>
+      <entailmentUnitMention categoryId="60" interactionId="c_60" level="0" text="erscheint                                      Speicher"/>
+      <interactionId id="c_60"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="erscheint     Fehlermeldung">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <categoryConfidence category="80" confidence="1.0"/>
+    <categoryConfidence category="60" confidence="1.0"/>
+    <entailmentUnit level="0" text="erscheint     Fehlermeldung">
+      <completeStatement text="erscheint     Fehlermeldung"/>
+      <entailmentUnitMention categoryId="60" interactionId="c_60" level="0" text="erscheint     Fehlermeldung"/>
+      <entailmentUnitMention categoryId="116" interactionId="c_116" level="0" text="erscheint     Fehlermeldung"/>
+      <entailmentUnitMention categoryId="80" interactionId="c_80" level="0" text="erscheint     Fehlermeldung"/>
+      <interactionId id="c_60"/>
+      <interactionId id="c_116"/>
+      <interactionId id="c_80"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="erscheitn     Fehlermeldung">
+    <categoryConfidence category="121" confidence="1.0"/>
+    <entailmentUnit level="0" text="erscheitn     Fehlermeldung">
+      <completeStatement text="erscheitn     Fehlermeldung"/>
+      <entailmentUnitMention categoryId="121" interactionId="c_121" level="0" text="erscheitn     Fehlermeldung"/>
+      <interactionId id="c_121"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="erstellte DVD">
+    <categoryConfidence category="31" confidence="1.0"/>
+    <entailmentUnit level="0" text="erstellte DVD">
+      <completeStatement text="erstellte DVD"/>
+      <entailmentUnitMention categoryId="31" interactionId="c_31" level="0" text="erstellte DVD"/>
+      <interactionId id="c_31"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="finish installation">
+    <categoryConfidence category="121" confidence="1.0"/>
+    <entailmentUnit level="0" text="finish installation">
+      <completeStatement text="finish installation"/>
+      <entailmentUnitMention categoryId="121" interactionId="c_121" level="0" text="finish installation"/>
+      <interactionId id="c_121"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="folgende Meldung">
+    <categoryConfidence category="66" confidence="1.0"/>
+    <entailmentUnit level="0" text="folgende Meldung">
+      <completeStatement text="folgende Meldung"/>
+      <entailmentUnitMention categoryId="66" interactionId="c_66" level="0" text="folgende Meldung"/>
+      <interactionId id="c_66"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="funktioniert nicht">
+    <categoryConfidence category="97" confidence="1.0"/>
+    <entailmentUnit level="0" text="funktioniert nicht">
+      <completeStatement text="funktioniert nicht"/>
+      <entailmentUnitMention categoryId="97" interactionId="c_97" level="0" text="funktioniert nicht"/>
+      <interactionId id="c_97"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="kommt                               nicht">
+    <categoryConfidence category="92" confidence="1.0"/>
+    <entailmentUnit level="0" text="kommt                               nicht">
+      <completeStatement text="kommt                               nicht"/>
+      <entailmentUnitMention categoryId="92" interactionId="c_92" level="0" text="kommt                               nicht"/>
+      <interactionId id="c_92"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="kommt                      reagiert">
+    <categoryConfidence category="92" confidence="1.0"/>
+    <entailmentUnit level="0" text="kommt                      reagiert">
+      <completeStatement text="kommt                      reagiert"/>
+      <entailmentUnitMention categoryId="92" interactionId="c_92" level="0" text="kommt                      reagiert"/>
+      <interactionId id="c_92"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="kommt              Isotool">
+    <categoryConfidence category="92" confidence="1.0"/>
+    <entailmentUnit level="0" text="kommt              Isotool">
+      <completeStatement text="kommt              Isotool"/>
+      <entailmentUnitMention categoryId="92" interactionId="c_92" level="0" text="kommt              Isotool"/>
+      <interactionId id="c_92"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="meldet                                                              läuft">
+    <categoryConfidence category="83" confidence="1.0"/>
+    <entailmentUnit level="0" text="meldet                                                              läuft">
+      <completeStatement text="meldet                                                              läuft"/>
+      <entailmentUnitMention categoryId="83" interactionId="c_83" level="0" text="meldet                                                              läuft"/>
+      <interactionId id="c_83"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="nicht                    entspricht">
+    <categoryConfidence category="86" confidence="1.0"/>
+    <entailmentUnit level="0" text="nicht                    entspricht">
+      <completeStatement text="nicht                    entspricht"/>
+      <entailmentUnitMention categoryId="86" interactionId="c_86" level="0" text="nicht                    entspricht"/>
+      <interactionId id="c_86"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="nicht    registrieren">
+    <categoryConfidence category="104" confidence="1.0"/>
+    <entailmentUnit level="0" text="nicht    registrieren">
+      <completeStatement text="nicht    registrieren"/>
+      <entailmentUnitMention categoryId="104" interactionId="c_104" level="0" text="nicht    registrieren"/>
+      <interactionId id="c_104"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="nicht ausreichend">
+    <categoryConfidence category="60" confidence="1.0"/>
+    <entailmentUnit level="0" text="nicht ausreichend">
+      <completeStatement text="nicht ausreichend"/>
+      <entailmentUnitMention categoryId="60" interactionId="c_60" level="0" text="nicht ausreichend"/>
+      <interactionId id="c_60"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="smartcard device">
+    <categoryConfidence category="116" confidence="1.0"/>
+    <entailmentUnit level="0" text="smartcard device">
+      <completeStatement text="smartcard device"/>
+      <entailmentUnitMention categoryId="116" interactionId="c_116" level="0" text="smartcard device"/>
+      <interactionId id="c_116"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="startet nicht">
+    <categoryConfidence category="110" confidence="1.0"/>
+    <entailmentUnit level="0" text="startet nicht">
+      <completeStatement text="startet nicht"/>
+      <entailmentUnitMention categoryId="110" interactionId="c_110" level="0" text="startet nicht"/>
+      <interactionId id="c_110"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="to        installation">
+    <categoryConfidence category="121" confidence="1.0"/>
+    <entailmentUnit level="0" text="to        installation">
+      <completeStatement text="to        installation"/>
+      <entailmentUnitMention categoryId="121" interactionId="c_121" level="0" text="to        installation"/>
+      <interactionId id="c_121"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="unbegrenzt nutzbar">
+    <categoryConfidence category="83" confidence="1.0"/>
+    <entailmentUnit level="0" text="unbegrenzt nutzbar">
+      <completeStatement text="unbegrenzt nutzbar"/>
+      <entailmentUnitMention categoryId="83" interactionId="c_83" level="0" text="unbegrenzt nutzbar"/>
+      <interactionId id="c_83"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="ungültig                       bzw">
+    <categoryConfidence category="33" confidence="1.0"/>
+    <entailmentUnit level="0" text="ungültig                       bzw">
+      <completeStatement text="ungültig                       bzw"/>
+      <entailmentUnitMention categoryId="33" interactionId="c_33" level="0" text="ungültig                       bzw"/>
+      <interactionId id="c_33"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="zeigt                  an">
+    <categoryConfidence category="63" confidence="1.0"/>
+    <entailmentUnit level="0" text="zeigt                  an">
+      <completeStatement text="zeigt                  an"/>
+      <entailmentUnitMention categoryId="63" interactionId="c_63" level="0" text="zeigt                  an"/>
+      <interactionId id="c_63"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <entailmentRelationCollapsedEdge confidence="0.93" source="Fehlermeldung                         installation" target="Meldung   Fehler"/>
+  <entailmentRelationCollapsedEdge confidence="0.93" source="Diverse Fehlermeldungen" target="Meldung   Fehler"/>
+  <entailmentRelationCollapsedEdge confidence="0.93" source="Fehlermeldung  1133" target="Meldung   Fehler"/>
+  <entailmentRelationCollapsedEdge confidence="0.93" source="Fehlermeldung                device" target="Meldung   Fehler"/>
+  <entailmentRelationCollapsedEdge confidence="0.93" source="erscheint     Fehlermeldung" target="Meldung   Fehler"/>
+  <entailmentRelationCollapsedEdge confidence="0.93" source="erscheitn     Fehlermeldung" target="Meldung   Fehler"/>
+  <entailmentRelationCollapsedEdge confidence="0.9155" source="erscheint     Fehlermeldung" target="kommt     Meldung"/>
+  <entailmentRelationCollapsedEdge confidence="0.9505" source="startet nicht" target="kommt                               nicht"/>
+</collapsedGraph>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collapsedGraph>
+  <equivalenceClassNode label="Fenster">
+    <categoryConfidence category="100" confidence="3.0"/>
+    <entailmentUnit level="0" text="Fenster">
+      <completeStatement text="Fenster"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="Fenster"/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="Fenster"/>
+      <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="Fenster"/>
+      <interactionId id="2"/>
+      <interactionId id="4"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Gruß">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="Gruß">
+      <completeStatement text="Gruß"/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="0" text="Gruß"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Problem">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="Problem">
+      <completeStatement text="Problem"/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="0" text="Problem"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Punkte">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="Punkte">
+      <completeStatement text="Punkte"/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="0" text="Punkte"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="erscheint">
+    <categoryConfidence category="100" confidence="3.0"/>
+    <entailmentUnit level="0" text="erscheint">
+      <completeStatement text="erscheint"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="erscheint"/>
+      <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="erscheint"/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="erscheint"/>
+      <interactionId id="2"/>
+      <interactionId id="4"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="gehe">
+    <categoryConfidence category="100" confidence="1.0"/>
+    <entailmentUnit level="0" text="gehe">
+      <completeStatement text="gehe"/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="gehe"/>
+      <interactionId id="4"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="großes">
+    <categoryConfidence category="100" confidence="2.0"/>
+    <entailmentUnit level="0" text="großes">
+      <completeStatement text="großes"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="großes"/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="großes"/>
+      <interactionId id="4"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="lösen">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="lösen">
+      <completeStatement text="lösen"/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="0" text="lösen"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="nervt">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="nervt">
+      <completeStatement text="nervt"/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="0" text="nervt"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="tun">
+    <categoryConfidence category="100" confidence="1.0"/>
+    <entailmentUnit level="0" text="tun">
+      <completeStatement text="tun"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="tun"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+</collapsedGraph>

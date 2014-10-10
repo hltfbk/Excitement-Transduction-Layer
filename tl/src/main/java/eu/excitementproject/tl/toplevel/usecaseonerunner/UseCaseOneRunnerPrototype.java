@@ -140,7 +140,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
 		}
 		
-		inspectGraph(fgs);
+		//inspectGraph(fgs);
 				
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}

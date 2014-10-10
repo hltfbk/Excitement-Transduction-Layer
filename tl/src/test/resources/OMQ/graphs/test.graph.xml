@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collapsedGraph>
+  <equivalenceClassNode label="Das nervt.">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="Das nervt.">
+      <completeStatement text="Das nervt."/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="0" text="Das nervt."/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Die Punkte lösen mein Problem        nicht.">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="Die Punkte lösen mein Problem        nicht.">
+      <completeStatement text="Die Punkte lösen mein Problem leider nicht."/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="0" text="Die Punkte lösen mein Problem        nicht."/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Die Punkte lösen mein Problem leider nicht.">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="1" text="Die Punkte lösen mein Problem leider nicht.">
+      <completeStatement text="Die Punkte lösen mein Problem leider nicht."/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="1" text="Die Punkte lösen mein Problem leider nicht."/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Ein Fenster erscheint.">
+    <categoryConfidence category="100" confidence="1.0"/>
+    <entailmentUnit level="0" text="Ein Fenster erscheint.">
+      <completeStatement text="Ein Fenster erscheint."/>
+      <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="Ein Fenster erscheint."/>
+      <interactionId id="2"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Ein großes Fenster erscheint.">
+    <categoryConfidence category="100" confidence="2.0"/>
+    <entailmentUnit level="0" text="Ein großes Fenster erscheint.">
+      <completeStatement text="Ein sehr großes Fenster erscheint."/>
+      <completeStatement text="Ein großes Fenster erscheint."/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="Ein großes Fenster erscheint."/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="Ein      großes Fenster erscheint."/>
+      <interactionId id="4"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Ein sehr großes Fenster erscheint.">
+    <categoryConfidence category="100" confidence="1.0"/>
+    <entailmentUnit level="1" text="Ein sehr großes Fenster erscheint.">
+      <completeStatement text="Ein sehr großes Fenster erscheint."/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="1" text="Ein sehr großes Fenster erscheint."/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Gruß">
+    <categoryConfidence category="65" confidence="1.0"/>
+    <entailmentUnit level="0" text="Gruß">
+      <completeStatement text="Gruß"/>
+      <entailmentUnitMention categoryId="65" interactionId="413" level="0" text="Gruß"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Was soll ich tun?">
+    <categoryConfidence category="100" confidence="1.0"/>
+    <entailmentUnit level="0" text="Was soll ich tun?">
+      <completeStatement text="Was soll ich tun?"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="Was soll ich tun?"/>
+      <interactionId id="413"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Wie gehe ich        vor?">
+    <categoryConfidence category="100" confidence="1.0"/>
+    <entailmentUnit level="0" text="Wie gehe ich        vor?">
+      <completeStatement text="Wie gehe ich weiter vor?"/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="Wie gehe ich        vor?"/>
+      <interactionId id="4"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <equivalenceClassNode label="Wie gehe ich weiter vor?">
+    <categoryConfidence category="100" confidence="1.0"/>
+    <entailmentUnit level="1" text="Wie gehe ich weiter vor?">
+      <completeStatement text="Wie gehe ich weiter vor?"/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="1" text="Wie gehe ich weiter vor?"/>
+      <interactionId id="4"/>
+    </entailmentUnit>
+  </equivalenceClassNode>
+  <entailmentRelationCollapsedEdge confidence="1.0" source="Die Punkte lösen mein Problem leider nicht." target="Die Punkte lösen mein Problem        nicht."/>
+  <entailmentRelationCollapsedEdge confidence="1.0" source="Ein sehr großes Fenster erscheint." target="Ein großes Fenster erscheint."/>
+  <entailmentRelationCollapsedEdge confidence="1.0" source="Wie gehe ich weiter vor?" target="Wie gehe ich        vor?"/>
+</collapsedGraph>
