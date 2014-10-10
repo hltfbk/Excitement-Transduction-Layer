@@ -32,7 +32,7 @@ public class NodeMatcherLuceneTest {
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.composition.nodematcher.test"); 
 		
 		try {
-			String testGraphFilename = "src/test/resources/sample_graphs/german_dummy_data_for_evaluator_test_graph.xml";
+			String testGraphFilename = "src/test/resources/OMQ/graphs/german_dummy_data_for_evaluator_test_graph_sentence.xml";
 			File testGraphFile = new File(testGraphFilename);
 			testlogger.info("File " + testGraphFile.getAbsolutePath() + " exists? " + testGraphFile.exists());
 			testlogger.info("Reading in a sample entailment graph from " + testGraphFile.getAbsolutePath()); 

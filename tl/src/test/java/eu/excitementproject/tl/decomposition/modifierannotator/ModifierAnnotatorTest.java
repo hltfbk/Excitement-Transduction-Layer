@@ -65,8 +65,8 @@ public class ModifierAnnotatorTest {
 			FragmentAnnotator frAnnot = new KeywordBasedFixedLengthFragmentAnnotator(lap); 
 
 //			ModifierAnnotator modAnnot = new AdvAsModifierAnnotator(lap);
-//			ModifierAnnotator modAnnot = new AdvAdjAsModifierAnnotatorNoNeg(lap);
-			ModifierAnnotator modAnnot = new AdvAdjPPAsModifierAnnotatorNoNeg(lap); 
+//			ModifierAnnotator modAnnot = new AdvAdjAsModifierAnnotator(lap, true);
+			ModifierAnnotator modAnnot = new AdvAdjPPAsModifierAnnotator(lap, true); 
 
 
 //			File xmiIn = new File("target/WP2_public_data_CAS_XMI/ALMA_social_media/0320.txt.xmi");

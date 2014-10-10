@@ -39,7 +39,6 @@ import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragm
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
-import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphNoNegGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -141,7 +140,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 			fgs.addAll(fragGen.generateFragmentGraphs(aJCas));
 		}
 		
-		inspectGraph(fgs);
+		//inspectGraph(fgs);
 				
 		return graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
 	}

@@ -26,6 +26,7 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.fragmentannotator.AbstractFragmentAnnotator;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
+import eu.excitementproject.tl.evaluation.utils.EvaluationMeasuresMacro;
 import eu.excitementproject.tl.evaluation.utils.FragmentAndModifierMatchCounter;
 import eu.excitementproject.tl.laputils.AnnotationUtils;
 import eu.excitementproject.tl.laputils.CASUtils;
@@ -45,6 +46,7 @@ public class FragmentAnnotatorEvaluator {
 		LAPAccess lap = initializeLAP(language);
 		AbstractFragmentAnnotator fragAnnot = initializeAnnotator(fragmentAnnotator, lap);
 		List<Integer> counts = new ArrayList<Integer>(Arrays.asList(0,0,0,0)); // TP, FP, TN, FN
+		EvaluationMeasuresMacro emm = new EvaluationMeasuresMacro();
 		
 		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, false)) {
 			
@@ -81,11 +83,14 @@ public class FragmentAnnotatorEvaluator {
 								
 				fragAnnot.annotateFragments(sysJCas); 
 			
-				counts = addScores(counts, FragmentAndModifierMatchCounter.countFragmentCounts(sysJCas, goldJCas));
+				List<Integer> fragCounts =  FragmentAndModifierMatchCounter.countFragmentCounts(sysJCas, goldJCas);
+				counts = addScores(counts,fragCounts);
+				emm.addScores(new EvaluationMeasures(fragCounts));
 			}
 		}
 		
 		logger.info("Final counts: " + counts.toString());
+		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n");
 		
 		return new EvaluationMeasures(counts);
 	}
@@ -126,8 +131,8 @@ public class FragmentAnnotatorEvaluator {
 	
 	protected static LAPAccess initializeLAP(String language){
 		
-//		String lapClassName = "eu.excitementproject.tl.laputils.LemmaLevelLap" + language.toUpperCase();
-		String lapClassName = "eu.excitementproject.tl.laputils.DependencyLevelLap" + language.toUpperCase();
+		String lapClassName = "eu.excitementproject.tl.laputils.LemmaLevelLap" + language.toUpperCase();
+//		String lapClassName = "eu.excitementproject.tl.laputils.DependencyLevelLap" + language.toUpperCase();
 		LAPAccess lap = null;
 		
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.fragmentannotator.FragmentAnnotatorEvaluator:initializeLAP");

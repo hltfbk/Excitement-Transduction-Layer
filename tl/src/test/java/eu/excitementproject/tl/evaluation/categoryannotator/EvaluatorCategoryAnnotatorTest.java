@@ -18,13 +18,13 @@ public class EvaluatorCategoryAnnotatorTest {
 		
 		try {					
 			testlogger.info("Reading dataset for evaluation.");
-			String inputFilename = "./src/test/resources/WP2_public_data_XML/german_dummy_data_for_evaluator_test.xml"; //dataset to be evaluated
-			String outputDirname = "./src/test/outputs/"; //output directory (for generated entailment graph)
+			String inputFilename = "./src/test/resources/OMQ/test/german_dummy_data_for_evaluator_test.xml"; //dataset to be evaluated
+			String outputDirname = "./src/test/resources/OMQ/graphs/"; //output directory (for generated entailment graph)
 			String configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml"; //config file for EDA
 					
 			testlogger.info("Computing result for dataset.");
 			EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator();
-			double result = eca.runEvaluationOnTrainTestDataset(inputFilename, outputDirname, configFilename);
+			double result = eca.runEvaluationOnTrainTestDataset(inputFilename, outputDirname, configFilename, 0);
 			testlogger.info("result: " + result);
 			Assert.assertEquals(result, 0.5); 
 			
