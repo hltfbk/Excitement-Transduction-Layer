@@ -11,7 +11,7 @@ import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMergerWithNonEntailment;
+import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
@@ -43,7 +43,7 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 		m_optimizer = new SimpleGraphOptimizer();
 		
 		try {
-			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMergerWithNonEntailment(super.lap, super.eda));
+			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
 		} catch (GraphMergerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -154,9 +154,9 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 
 //	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
 //		EdaName[] names = {EdaName.TIE_POS_RES};	
-//		EdaName[] names = {EdaName.EDIT_DIST};	
+		EdaName[] names = {EdaName.EDIT_DIST};	
 //		EdaName[] names = {EdaName.BIUTEE, EdaName.TIE_POS_RES};	
-		EdaName[] names = {EdaName.BIUTEE};	
+//		EdaName[] names = {EdaName.BIUTEE};	
 //		EdaName[] names = {EdaName.TIE_POS_RES};	
 	
 	for(EdaName name : names)	

@@ -57,7 +57,7 @@ a configuration file means allowing other users to replicate the same experiment
 		<property name="ignoreCase">true</property>
 
 		<!-- Path to the stop word list -->
-		<property name="pathStopWordFile">C:/eop-resources-1.1.3/external-data/edit-distance/stopwords_EN.txt</property>
+		<property name="pathStopWordFile">eop-resources-1.1.3/external-data/edit-distance/stopwords_EN.txt</property>
 
 		<!-- Normalization type for the distance: [default|long] -->
 		<property name="normalizationType">default</property>
@@ -95,13 +95,13 @@ a configuration file means allowing other users to replicate the same experiment
 		<property name="ignoreCase">true</property>
 
 		<!-- Path to the stop word list -->
-		<property name="pathStopWordFile">C:/eop-resources-1.1.3/external-data/edit-distance/stopwords_EN.txt</property>
+		<property name="pathStopWordFile">eop-resources-1.1.3/external-data/edit-distance/stopwords_EN.txt</property>
 
 		<!-- Normalization type for the distance: [default|long] -->
 		<property name="normalizationType">default</property>
 	    
 	    <!-- The configuration to be used by the component: [basic|wordnet|wikipedia|wordnet,wikipedia] -->
-	    <property name="instances">basic</property>
+	    <property name="instances">wordnet</property>
 	    
 	     <!-- This configuration does not use any external resources -->
 		<subsection name="basic"/>
@@ -128,19 +128,19 @@ a configuration file means allowing other users to replicate the same experiment
 	
 		<!-- weights of the edit distance operations -->
 		<property name="match">0.0</property>
-		<property name="delete">1.0</property>
+		<property name="delete">0.0</property>
 		<property name="insert">1.0</property>
 		<property name="substitute">1.0</property>
 		
 		<!-- <property name="trainDir">/tmp/</property> -->
 		<property name="trainDir">C:/tmp/EN/dev/EDITS/</property> 
 		<!-- <property name="testDir">/tmp/</property> -->
-		<property name="testDir">/tmp/EN/test</property>
+		<property name="testDir">C:/tmp/EN/dev/EDITS/</property>
 		<!-- measure to be optimized: [accuracy|f1] -->
-		<property name="measure">f1</property>
+		<property name="measure">accuracy</property>
 		<!-- component to be used by EDA: [FixedWeightTokenEditDistance|FixedWeightLemmaEditDistance] 
 		FixedWeightLemmaEditDistance can be used only when the preprocessing pipeline provides lemmas-->
-	    <property name="components">eu.excitementproject.eop.core.component.distance.FixedWeightLemmaEditDistance</property>
+	    <property name="components">eu.excitementproject.eop.core.component.distance.FixedWeightTokenEditDistance</property>
 	
 	</section>
 	
@@ -150,9 +150,9 @@ a configuration file means allowing other users to replicate the same experiment
 	<section name="model">
 	
 	    <!-- threshold -->
-		<property name="threshold">0.875</property>
+		<property name="threshold">0.75</property>
 		<!-- the accuracy obtained on the training data set -->
-		<property name="trainingAccuracy">0.644878982633666</property>
+		<property name="trainingAccuracy">0.5938995215311005</property>
 		
 	</section>
 		

@@ -1,7 +1,6 @@
 package eu.excitementproject.tl.toplevel.usecaseonerunner;
 
 import java.io.BufferedWriter;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,6 +8,7 @@ import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import org.apache.log4j.Logger;
 
 import javax.xml.transform.TransformerException;
@@ -25,9 +25,11 @@ import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
-import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.LegacyAllPairsGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.NoEdaGraphMerger;
+import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
@@ -114,7 +116,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		fragGen = new FragmentGraphGeneratorFromCAS();
 
 		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
-		collapseGraph = new SimpleGraphOptimizer();
+		collapseGraph = new GlobalGraphOptimizer();
 	}
 	
 	/**

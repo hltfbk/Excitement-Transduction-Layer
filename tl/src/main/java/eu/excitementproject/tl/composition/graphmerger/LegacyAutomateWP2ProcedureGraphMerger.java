@@ -23,12 +23,13 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  * Note that in this implementation only "entailment" edges are added during the merge, while "non-entailment" edges are not added. 
  * I.e. absence of an edge in the merged graph should be interpreted as "no entailment"  
 
+ * This is now a legacy class, it produces a valid raw graph, but the graph may not be processed properly by a GraphOptimizer
  * @author Lili Kotlerman
  *
  */
-public class AutomateWP2ProcedureGraphMergerWithNonEntailment extends AbstractGraphMerger {
+public class LegacyAutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 	
-	public AutomateWP2ProcedureGraphMergerWithNonEntailment(CachedLAPAccess lap, EDABasic<?> eda)
+	public LegacyAutomateWP2ProcedureGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
 	}
@@ -58,7 +59,7 @@ public class AutomateWP2ProcedureGraphMergerWithNonEntailment extends AbstractGr
 		
 		 
 		// else - Implement the WP2 flow		
-		workGraph.copyFragmentGraphNodesAndAllEdges(fragmentGraph);
+		workGraph.copyFragmentGraphNodesAndEntailingEdges(fragmentGraph);
 		
 		// find the node corresponding to the fragment graph's base statement in the work graph
 		EntailmentUnit newBaseStatement = workGraph.getVertexWithText(fragmentGraph.getBaseStatement().getText());
