@@ -24,7 +24,7 @@ public class WP2ProcedureInduceClosureGraphMerger extends
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
 			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {		
 		workGraph = super.mergeGraphs(fragmentGraph, workGraph);
-		workGraph.applyTransitiveClosure(false);
+		workGraph.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		return workGraph;		
 	}
 	

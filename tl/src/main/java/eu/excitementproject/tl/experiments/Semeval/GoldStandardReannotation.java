@@ -534,7 +534,7 @@ public class GoldStandardReannotation {
 			System.out.println("Raw graph not loaded. Exiting.");
 			return false;
 		}
-		rg.applyTransitiveClosure(false);
+		rg.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		ourCg = new EntailmentGraphCollapsed();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(inputFile));

@@ -374,7 +374,7 @@ public class GoldStandardEdgesLoader {
 				// logger.info("Edge not from current FG: "+ e);
 			}
 		}
-		g.applyTransitiveClosure(false);
+		g.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		return g;
 	}
 
