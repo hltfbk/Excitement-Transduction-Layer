@@ -32,13 +32,15 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 			EntailmentGraphRaw workGraph)
 			throws GraphOptimizerException {
 		
-		return optimizeGraph(workGraph, getAverageConfidenceOfEntailment(workGraph));
+		return optimizeGraph(workGraph, 0.0);
 	}
 
 	@Override
 	public EntailmentGraphCollapsed optimizeGraph(
-			EntailmentGraphRaw workGraph, Double confidenceThreshold)
+			EntailmentGraphRaw graph, Double confidenceThreshold)
 			throws GraphOptimizerException {
+		
+		EntailmentGraphRaw workGraph = new EntailmentGraphRaw(graph.vertexSet(), graph.edgeSet());
 		
 		// Step 1 - clean up the work graph
 		
@@ -113,11 +115,11 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 			
 			if (source.equals(target)) continue; // if source and target of the work graph edge are both mapped to the same equivalence class - don't add this edge (this will be a loop)  
 			
-			double minConfidence = 100.0; 
+			double minConfidence = Double.MAX_VALUE; 
 			for (EntailmentRelationCollapsed existingEdge : collapsedGraph.getAllEdges(source, target)){
 				// actually, if this set of existing edges is not empty, there should be a single edge in this set, since we do not allow multiple edges between the same pair of (source,target) for the collapsed graph
 				if (existingEdge.getConfidence()<minConfidence){
-					minConfidence = existingEdge.getConfidence(); // update max confidence
+					minConfidence = existingEdge.getConfidence(); // update the confidence
 				}
 			}
 			// now if the candidate edge from the work graph has a higher confidence
@@ -153,23 +155,23 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 		// these vertices are to form one equivalence class
 		for (EntailmentUnit currentNode : cycleNodes){
 			if (closedList.contains(currentNode)) {
-				logger.info("Skipping node <<"+currentNode.getText()+">> since equivalence class with this node was already generated");
+				logger.debug("Skipping node <<"+currentNode.getText()+">> since equivalence class with this node was already generated");
 				continue; // if already generated an equivalence class with this node - no need to do it again
 			}
 			closedList.add(currentNode);
 			EquivalenceClass currentCycle = new EquivalenceClass(cycleDetector.findCyclesContainingVertex(currentNode));
-			logger.info("Current node: "+currentNode.getText());
-			logger.info(currentCycle.getEntailmentUnits().size()+" nodes in cycle:");
+			logger.debug("Current node: "+currentNode.getText());
+			logger.debug(currentCycle.getEntailmentUnits().size()+" nodes in cycle:");
 			for (EntailmentUnit nodeInCurrentCycle: currentCycle.getEntailmentUnits()){
 				closedList.add(nodeInCurrentCycle);
-				logger.info("-- "+nodeInCurrentCycle.getText());
+				logger.debug("-- "+nodeInCurrentCycle.getText());
 				// if a node in the current cycle was already seen as part of another cycle, 
 				// then the current and the previously found cycles of this node should be merged
 				EquivalenceClass previousRelatedCycle = getEquivalenceClass(cycles, nodeInCurrentCycle);
 				if (previousRelatedCycle!=null){ // if such previous cycle was found
 					if (previousRelatedCycle.toString().equals(currentCycle.toString())) continue; // if it's not the same cycle as the c
-					logger.info("\t>> found in another cycle of "+String.valueOf(previousRelatedCycle.getEntailmentUnits().size())+" entailment units");
-					logger.info("\t>> " +previousRelatedCycle+"\n");
+					logger.debug("\t>> found in another cycle of "+String.valueOf(previousRelatedCycle.getEntailmentUnits().size())+" entailment units");
+					logger.debug("\t>> " +previousRelatedCycle+"\n");
 					cycles.remove(previousRelatedCycle); // remove it from cycles
 					previousRelatedCycle.add(currentCycle.getEntailmentUnits()); // unite the previous one with the current one
 					cycles.add(previousRelatedCycle); // put the updated cycle back
