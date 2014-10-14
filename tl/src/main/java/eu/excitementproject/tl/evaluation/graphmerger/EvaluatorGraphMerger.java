@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
-import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
@@ -54,19 +53,26 @@ public class EvaluatorGraphMerger {
 		}
 		logger.info("GS size: "+gs.size()+" distinct, "+goldStandardEdges.size()+" overall.");
 		
+		int i = 0;
 		for (EntailmentRelation edge : evaluatedGraphEdges){
+			i++;
+			logger.debug("Evaluated edge #"+i+"\t"+edge.toString());			
 			if (!edge.getLabel().is(DecisionLabel.Entailment)) continue; // only evaluate entailment edges, ignore non-entailment edges, if any
 			if (!includeFragmentGraphEdges){
 				if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) {
 					fg.add(getSourceAndTargetString(edge));
+					logger.debug("\t This is a fragment graph edge, it will not be included.");			
 					continue; //add this edge to fragment graph edges list (fg), don't add to evaluated graph edges (ee)
 				}
 			}	
 			ee.add(getSourceAndTargetString(edge));
+			logger.debug("\t Edge added as: <<"+getSourceAndTargetString(edge)+">>");
+			logger.debug("\t Evaluated edges set is now of size: "+ee.size());			
 		}
-		logger.info("Evaluated edges: "+evaluatedGraphEdges.size()+" overall (including fragment graph edges)");
-		if (!includeFragmentGraphEdges) logger.info("Evaluated edges: "+ee.size()+ " distinct, excluding "+fg.size()+" fragment graph edges");
-		else logger.info("Evaluated edges: "+ee.size()+" distinct");
+		
+		logger.info("Evaluated edges: "+evaluatedGraphEdges.size()+" overall (including fragment graph edges and non-entailment edges)");
+		if (!includeFragmentGraphEdges) logger.info("Evaluated edges: "+ee.size()+ " distinct, excluding "+fg.size()+" fragment graph edges and non-entailment edges");
+		else logger.info("Evaluated edges: "+ee.size()+" distinct edges (excluding non-entailment edges)");
 		
 		// remove fg edges from the gold standard
 		if (!includeFragmentGraphEdges) {

@@ -109,7 +109,7 @@ a configuration file means allowing other users to replicate the same experiment
 		<!-- This configuration uses WordNet as an external resources -->
 		<subsection name="wordnet">
 			<!-- path of the WordNet files -->
-			<property name="path">eop-resources-1.1.3/ontologies/EnglishWordNet-dict/</property>
+			<property name="path">C:/eop-resources-1.1.3/ontologies/EnglishWordNet-dict/</property>
 		</subsection>
 		
 		<!-- This configuration uses Wikipedia as an external resources -->

@@ -23,10 +23,19 @@ public class ResultsContainer {
 		results = new HashMap<String, Map<Double,EvaluationAndAnalysisMeasures>>();
 		resultsForRecallPrecisionCurve = new HashMap<String, ValuesForRecallPrecisionCurve>();
 		confidenceThresholds= new LinkedList<Double>();
-		for (double confidenceThreshold=0.5; confidenceThreshold<1.01; confidenceThreshold+=0.05){
-			confidenceThresholds.add(confidenceThreshold);
+		for (double confidenceThreshold=0.0; confidenceThreshold<1.01; confidenceThreshold+=0.05){
+			confidenceThresholds.add(round(confidenceThreshold,2));
 		}
 		
+	}
+	
+	public static double round(double value, int places) {
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    long factor = (long) Math.pow(10, places);
+	    value = value * factor;
+	    long tmp = Math.round(value);
+	    return (double) tmp / factor;
 	}
 	
 	public void addResult(String setting, double threshold, EvaluationAndAnalysisMeasures res){
