@@ -1,10 +1,7 @@
 package eu.excitementproject.tl.toplevel.usecaseonerunner;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -17,7 +14,6 @@ import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.GraphMerger;
@@ -26,25 +22,16 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedEx
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.LegacyAllPairsGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.NoEdaGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
-import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
-import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
-import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphException;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -52,7 +39,7 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 
-@SuppressWarnings("unused")
+//@SuppressWarnings("unused")
 public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	
 	
@@ -115,8 +102,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 
 		fragGen = new FragmentGraphGeneratorFromCAS();
 
-		graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
-		collapseGraph = new SimpleGraphOptimizer();
+		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
+		collapseGraph = new GlobalGraphOptimizer();
 	}
 	
 	/**
