@@ -44,7 +44,7 @@ public abstract class AbstractGraphOptimizer implements GraphOptimizer{
 		}
 		
 		if (n>0) return sum/n;
-		return null;		
+		return 0.0;		
 	}	
 	
 	/** Returns the equivalence class from the imput set, which includes the input entailment unit

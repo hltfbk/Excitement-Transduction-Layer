@@ -115,8 +115,8 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 
 		fragGen = new FragmentGraphGeneratorFromCAS();
 
-		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
-		collapseGraph = new GlobalGraphOptimizer();
+		graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
+		collapseGraph = new SimpleGraphOptimizer();
 	}
 	
 	/**

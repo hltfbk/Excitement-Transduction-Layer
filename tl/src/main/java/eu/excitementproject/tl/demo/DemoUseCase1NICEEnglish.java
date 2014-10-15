@@ -15,7 +15,7 @@ public class DemoUseCase1NICEEnglish extends UseCaseOneDemo{
 				
 		// to run for a different cluster change the cluster name
 		super("./src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
-				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag/EMAIL0001", Integer.MAX_VALUE,
+				"./src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag/EMAIL0001", 100,
 				"./src/test/outputs/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFragg/EMAIL0001",
 				TreeTaggerEN.class,
 				MaxEntClassificationEDA.class
