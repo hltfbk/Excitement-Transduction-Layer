@@ -13,7 +13,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 public class WP2ProcedureInduceClosureGraphMerger extends
-		AutomateWP2ProcedureGraphMerger {
+		LegacyAutomateWP2ProcedureGraphMerger {
 
 	public WP2ProcedureInduceClosureGraphMerger(CachedLAPAccess lap,
 			EDABasic<?> eda) throws GraphMergerException {
@@ -24,7 +24,7 @@ public class WP2ProcedureInduceClosureGraphMerger extends
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
 			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {		
 		workGraph = super.mergeGraphs(fragmentGraph, workGraph);
-		workGraph.applyTransitiveClosure(false);
+		workGraph.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		return workGraph;		
 	}
 	

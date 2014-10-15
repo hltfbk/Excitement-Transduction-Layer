@@ -277,11 +277,12 @@ public class EntailmentRelation extends DefaultEdge {
 	/** Returns a string with the edge in DOT format for outputting the graph
 	 * @return the generated string
 	 */	public String toDOT(){
-		String s = "\""+this.getSource().getTextWithoutDoubleSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoubleSpaces()+"\"";
+		String s = "\""+this.getSource().toDOT()+"\" -> \""+this.getTarget().toDOT()+"\"";
 		s+= " [label="+this.getConfidence()+"]";
 		String color = "red";
 		if (this.getLabel().is(DecisionLabel.Entailment)) color="blue";
 		if (this.edgeType.is(EdgeType.FRAGMENT_GRAPH)) color = "green";		
+		if (this.getLabel().is(DecisionLabel.NonEntailment)) color = "red";		
 		s+= " [color="+color+"]";
 		return s+"\n";
 	}

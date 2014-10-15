@@ -42,7 +42,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawExceptio
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
@@ -238,7 +238,7 @@ public class DemoUseCase2OMQGerman {
 			//build fragment graphs from input data and merge them
 			Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
 			eda.initialize(config);
-			GraphMerger graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda);
+			GraphMerger graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lap, eda);
 			EntailmentGraphRaw egr = null;
 			for(Interaction i: docs) {
 				List<JCas> cases = i.createAndFillInputCASes(relevantTextProvided); 

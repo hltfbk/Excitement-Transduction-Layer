@@ -127,7 +127,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					r.toXML("D:/Lili/NICE dadasets/_finalSplitLili/all.collapsed.row/"+f.getName().toUpperCase()+"_rawNoClosure.xml");
 */
 					
-					r.applyTransitiveClosure(false);
+					r.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 					System.out.print("Raw graph+Closure.\nNumber of edges: ");
 					int withClosureRawEdges = r.edgeSet().size(); 
 					logger.info(withClosureRawEdges);

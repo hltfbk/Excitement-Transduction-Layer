@@ -28,7 +28,7 @@ public class AutomateWP2ProcedureGraphMergerTest {
 			CachedLAPAccess lap = new CachedLAPAccess(new TreeTaggerEN());
 			EDABasic<?> eda = new RandomEDA();
 			
-			GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,eda); 
+			GraphMerger merger = new LegacyAutomateWP2ProcedureGraphMerger(lap,eda); 
 			
 			Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
 			logger.info("**** Merging the following fragment graphs with  RandomEDA (complete statements printed) ****");			

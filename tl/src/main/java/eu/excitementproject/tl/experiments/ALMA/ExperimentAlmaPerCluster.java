@@ -9,10 +9,10 @@ import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.graphmerger.LegacyAllPairsGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMergerWithNonEntailments;
+import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMergerWithNonEntailment;
 import eu.excitementproject.tl.composition.graphmerger.NoEdaGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
@@ -58,7 +58,7 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 		try {
 //			super.useOne.setGraphMerger(new AllPairsGraphMerger(super.lap, super.eda));
 //			super.useOne.setGraphMerger(new AllPairsGraphMergerWithNonEntailments(super.lap, super.eda));
-			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMergerWithNonEntailment(super.lap, super.eda));
+			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
 //			super.useOne.setGraphMerger(new NoEdaGraphMerger(super.lap, super.eda));
 			
 		} catch (GraphMergerException e) {

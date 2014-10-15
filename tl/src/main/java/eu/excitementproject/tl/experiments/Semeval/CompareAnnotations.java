@@ -21,7 +21,7 @@ public class CompareAnnotations {
 
 			GoldStandardEdgesLoader gslAfter = new GoldStandardEdgesLoader(true);
 			gslAfter.setExcludeSelfLoops(false);
-			gslAfter.loadAllAnnotations("C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/all", false);
+			gslAfter.loadAllAnnotations("C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/NICE_reAnnotated/all", false);
 //			gslAfter.loadAllAnnotations("C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/WP2_gold_standard_annotation/ALMA_reAnnotated/all", true);
 			Set<EntailmentRelation> after = new HashSet<EntailmentRelation>(gslAfter.getEdges());
 			

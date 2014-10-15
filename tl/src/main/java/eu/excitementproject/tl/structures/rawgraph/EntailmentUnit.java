@@ -3,6 +3,7 @@ package eu.excitementproject.tl.structures.rawgraph;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
+
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
 /*
@@ -310,6 +311,11 @@ public class EntailmentUnit{
 		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level, null);
 		eum.setCategoryId(category);
 		setAttributes(eum, completeStatementText);
+	}
+
+
+	public String toDOT() {
+		return this.getTextWithoutDoubleSpaces();
 	}
 	
 

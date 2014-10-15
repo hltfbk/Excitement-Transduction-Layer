@@ -534,7 +534,7 @@ public class GoldStandardReannotation {
 			System.out.println("Raw graph not loaded. Exiting.");
 			return false;
 		}
-		rg.applyTransitiveClosure(false);
+		rg.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		ourCg = new EntailmentGraphCollapsed();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(inputFile));
@@ -747,7 +747,7 @@ public class GoldStandardReannotation {
 	String[] single = {"EMAIL0390"};
 
 	String stat="";
-	for (String clusterName : testsetEn){
+	for (String clusterName : testsetIt){
 		String set = "Test";
 //		 String set = "Dev";
 		
@@ -758,10 +758,10 @@ public class GoldStandardReannotation {
 		
 		
 		// ITA		
-//		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
 		
 		// ENG
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
+//		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
 		
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());
