@@ -43,7 +43,7 @@ public class EquivalenceClass {
 	public EquivalenceClass(EntailmentUnit eu) {
 		entailmentUnits = new HashSet<EntailmentUnit>();
 		entailmentUnits.add(eu);
-		label = eu.getText();
+		label = eu.getTextWithoutDoubleSpaces();
 	}	
 	
 	/**
@@ -59,12 +59,12 @@ public class EquivalenceClass {
 		String labelCandidate=""; 
 		for (EntailmentUnit candidateEntailmentUnit : entailmentUnits){
 			if (candidateEntailmentUnit.getNumberOfCompleteStatements()>frequency){
-				labelCandidate = candidateEntailmentUnit.getText();
+				labelCandidate = candidateEntailmentUnit.getTextWithoutDoubleSpaces();
 				frequency = candidateEntailmentUnit.getNumberOfCompleteStatements();
 			}
 			else if (candidateEntailmentUnit.getNumberOfCompleteStatements()==frequency){ // if current label has the same frequency as the candidate entailment unit
-				if (candidateEntailmentUnit.getText().length() < labelCandidate.length()) { // if the candidate text is shorter - make it the new label 
-					labelCandidate =  candidateEntailmentUnit.getText();
+				if (candidateEntailmentUnit.getTextWithoutDoubleSpaces().length() < labelCandidate.length()) { // if the candidate text is shorter - make it the new label 
+					labelCandidate =  candidateEntailmentUnit.getTextWithoutDoubleSpaces();
 				}
 			}
 		}
