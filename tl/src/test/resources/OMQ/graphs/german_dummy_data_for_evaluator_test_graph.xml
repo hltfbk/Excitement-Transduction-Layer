@@ -4,9 +4,9 @@
     <categoryConfidence category="100" confidence="3.0"/>
     <entailmentUnit level="0" text="Fenster">
       <completeStatement text="Fenster"/>
-      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="Fenster"/>
-      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="Fenster"/>
       <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="Fenster"/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="Fenster"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="Fenster"/>
       <interactionId id="2"/>
       <interactionId id="4"/>
       <interactionId id="413"/>
@@ -40,9 +40,9 @@
     <categoryConfidence category="100" confidence="3.0"/>
     <entailmentUnit level="0" text="erscheint">
       <completeStatement text="erscheint"/>
-      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="erscheint"/>
       <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="erscheint"/>
       <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="erscheint"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="erscheint"/>
       <interactionId id="2"/>
       <interactionId id="4"/>
       <interactionId id="413"/>
@@ -60,8 +60,8 @@
     <categoryConfidence category="100" confidence="2.0"/>
     <entailmentUnit level="0" text="großes">
       <completeStatement text="großes"/>
-      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="großes"/>
       <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="großes"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="großes"/>
       <interactionId id="4"/>
       <interactionId id="413"/>
     </entailmentUnit>

@@ -59,7 +59,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawExceptio
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
@@ -324,7 +324,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -340,7 +340,7 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, alignmenteda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, alignmenteda);
 		    		graphMerger.setEntailmentConfidenceThreshold(0.6);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -359,7 +359,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer();// new GlobalGraphOptimizer(); --> don't use
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -376,7 +376,7 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();

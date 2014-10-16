@@ -80,6 +80,22 @@
         <correct_text>mi hanno inviato un ModelloA2 di fondo di magazzino, usato</correct_text>
         <modifiers>s fondo di magazzino ,poz=5 6 7 8 9</modifiers>
     </node>
+	<edge target="0079.txt_1_1" source="0079.txt_1_0" id="0079.txt_1_1-0079.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0254.txt_1_0" source="0254.txt_2_0" id="0254.txt_1_0-0254.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0144.txt_2_1" source="0144.txt_2_0" id="0144.txt_2_1-0144.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0295.txt_1_1" source="0295.txt_1_0" id="0295.txt_1_1-0295.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
 	<edge target="0254.txt_2_0" source="0254.txt_1_0" id="0254.txt_2_0-0254.txt_1_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
@@ -88,35 +104,11 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="0254.txt_2_0" source="0254.txt_1_0" id="0254.txt_2_0-0254.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0254.txt_1_0" source="0254.txt_2_0" id="0254.txt_1_0-0254.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0295.txt_1_1" source="0295.txt_1_0" id="0295.txt_1_1-0295.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0144.txt_2_1" source="0144.txt_2_0" id="0144.txt_2_1-0144.txt_2_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0079.txt_1_1" source="0079.txt_1_0" id="0079.txt_1_1-0079.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
 	<edge target="0295.txt_2_1" source="0295.txt_2_0" id="0295.txt_2_1-0295.txt_2_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
 	<edge target="0051.txt_1_1" source="0051.txt_1_0" id="0051.txt_1_1-0051.txt_1_0">
-		<entailment_mod_insensitive> </entailment_mod_insensitive>
-		<entailment type="direct">yes</entailment>
-	</edge>
-	<edge target="0254.txt_1_0" source="0254.txt_2_0" id="0254.txt_1_0-0254.txt_2_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
