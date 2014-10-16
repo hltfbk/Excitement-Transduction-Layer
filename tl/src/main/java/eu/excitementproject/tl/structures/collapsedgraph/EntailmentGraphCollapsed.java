@@ -486,8 +486,12 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 				rootElement.appendChild(equivalenceClassNode);
  
 				// set label attribute to eu element
-				equivalenceClassNode.setAttribute("label",ec.getLabel());
+				equivalenceClassNode.setAttribute("label",ec.getLabel().replaceAll("\\s+", " "));
 				
+				// set numeu attribute to number of entailment units
+				equivalenceClassNode.setAttribute("numeu",ec.getEntailmentUnits().size()+"");
+				/* added by Kathrin 13/10/2014 to easily identify equivalence classes with more than one EU */
+
 				//add category confidences (use case 2)
 				if (null != ec.getCategoryConfidences()) {
 					for (String category : ec.getCategoryConfidences().keySet()) {
@@ -504,7 +508,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 					// EntailmentUnit elements
 					Element entailmentUnit = doc.createElement("entailmentUnit");
 					// set text attribute to eu element
-					entailmentUnit.setAttribute("text",eu.getText());
+					entailmentUnit.setAttribute("text",eu.getTextWithoutDoubleSpaces());
 					// set level attribute to eu element
 					entailmentUnit.setAttribute("level",String.valueOf(eu.getLevel()));
 
@@ -512,7 +516,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 					for (String csText : eu.getCompleteStatementTexts()){
 						// completeStatementText elements
 						Element completeStatementText = doc.createElement("completeStatement");
-						completeStatementText.setAttribute("text",csText);
+						completeStatementText.setAttribute("text",csText.replaceAll("\\s+", " "));
 						entailmentUnit.appendChild(completeStatementText);						
 					}
 
@@ -520,7 +524,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 					for (EntailmentUnitMention eum : eu.getMentions()){
 						// eu mentions elements
 						Element eumention = doc.createElement("entailmentUnitMention");
-						eumention.setAttribute("text",eum.getText());
+						eumention.setAttribute("text",eum.getTextWithoutDoubleSpaces());
 						eumention.setAttribute("interactionId",eum.getInteractionId());
 						eumention.setAttribute("categoryId",eum.getCategoryId());
 						eumention.setAttribute("level",String.valueOf(eum.getLevel()));						
