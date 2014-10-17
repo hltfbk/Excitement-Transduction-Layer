@@ -27,7 +27,7 @@ public class AllPairsGraphMergerTest {
 			CachedLAPAccess lap = new CachedLAPAccess(new TreeTaggerEN());
 			EDABasic<?> eda = new RandomEDA();
 			
-			GraphMerger merger = new AllPairsGraphMerger(lap,eda); 
+			GraphMerger merger = new LegacyAllPairsGraphMerger(lap,eda); 
 			
 			Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
 			logger.info("**** Merging the following fragment graphs with  RandomEDA (complete statements printed) ****");			

@@ -1,11 +1,11 @@
 package eu.excitementproject.tl.composition.graphoptimizer;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.log4j.Logger;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.TEDecision;
@@ -38,6 +38,8 @@ import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidenc
  */
 public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 
+	private final Logger logger = Logger.getLogger(GlobalGraphOptimizer.class);
+	
 	protected final static double DEFAULT_EDGE_COST = 0.5;
 	protected final static double DEFAULT_UNKNOWN_SCORE = 0;
 	
@@ -73,9 +75,11 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 		/* Commented out: 
 		 * Here we only add nodes connected by edges in the graph, and we consider all existing edges to denote entailment. 
 		 * We should 1) add "orphan" nodes, not connected with any other node.
-		 *           2) check whether edges hold ENTAILMENT relation or not  
-		 *           3) consider adding edges NOT present in the graph as non-entailment edges with some confidence.
-		 * In addition, we should consider all the edges with confidence < confidenceThreshold as non-entailment    
+		 *           2) add edge with pos or neg score for each pair of nodes, as follows
+		 *             - FG edges should become constraints (get very-very high score for entailing, low for non-entailing) 
+		 *             - check whether work graph edges hold ENTAILMENT relation or not and assign pos/neg score accordingly 
+		 *             - consider edges not present in the graph as non-entailment edges with some confidence.
+		 *             - consider all the edges with confidence < confidenceThreshold as non-entailment    
 		 */
 	/*	int i = 1;
 		for (EntailmentRelation entailmentRelation : workGraph.edgeSet()) {
@@ -101,7 +105,24 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 			RelationNode rNode = new RelationNode(i++,node.getText());
 			graph.addNode(rNode);
 		}
-		for (EntailmentRelation edge : workGraph.edgeSet()) {
+		
+		for (EntailmentUnit nodeA : workGraph.vertexSet()){
+			for (EntailmentUnit nodeB : workGraph.vertexSet()){
+				if (nodeA.equals(nodeB)) continue; // no self-loops
+				Double confidence = detectConfidence(workGraph, nodeA, nodeB, confidenceThreshold);
+				if (confidence == TEDecision.CONFIDENCE_NOT_AVAILABLE)
+					throw new GraphOptimizerException("Unavaliable score was detected.");
+				RelationNode sourceNode = new RelationNode(nodeIndex.get(nodeA.getText()),nodeA.getText());
+				RelationNode targetNode = new RelationNode(nodeIndex.get(nodeB.getText()),nodeB.getText());
+				try {
+					graph.addEdge(new RuleEdge(sourceNode, targetNode,confidence));
+				} catch (Exception e) {
+					throw new GraphOptimizerException("Problem when adding edge "+nodeA.getText()+" -> "+nodeB.getText()+" with confidence = "+confidence+".\n"+e);
+				}				
+			}
+		}
+		
+/*		for (EntailmentRelation edge : workGraph.edgeSet()) {
 			Double confidence = detectConfidence(workGraph, edge.getSource(), edge.getTarget(), confidenceThreshold);
 			if (confidence == TEDecision.CONFIDENCE_NOT_AVAILABLE)
 				throw new GraphOptimizerException("Unavaliable score was detected.");
@@ -113,7 +134,7 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 				throw new GraphOptimizerException("Problem when adding edge "+edge.getSource().getText()+" -> "+edge.getTarget().getText()+" with confidence = "+confidence+".\n"+e);
 			}
 		}
-		
+*/		
 		Set<AbstractOntologyGraph> componnetGraphs;
 		try {
 			componnetGraphs = graphLearner.learn(graph);
@@ -145,44 +166,83 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 		for (EntailmentUnit node : workGraph.vertexSet()){
 			tmpRawGraph.addVertex(node);
 		}
+		
 		for (AbstractOntologyGraph componnetGraph : componnetGraphs) {
 			for (AbstractRuleEdge componentEdge : componnetGraph.getEdges()) {
 				//if (componentEdge.score() >= confidenceThreshold) { //TODO: do we need the threshold here? Should it be confidenceThreshold or just 0 (to retain only entailment edges)? 				
-				if (componentEdge.score() > 0) { //TODO: do we need the threshold here? Should it be confidenceThreshold or just 0 (to retain only entailment edges)? 				
-					EntailmentUnit source = workGraph.getVertexWithText(componentEdge.from().description());
-					EntailmentUnit target=  workGraph.getVertexWithText(componentEdge.to().description());
-					EntailmentRelation edge = new EntailmentRelation(source, target, new TEDecisionWithConfidence(componentEdge.score(), DecisionLabel.Entailment));
+				if (componentEdge.score() >= 0) { //keep threshold of 0 (to retain only entailment edges).  I spotted negative scores for output edges, the question is whether to retain them (they are supposed to be part of consistent transitive graph), or remove, since they seem non-entailing 				
+					EntailmentUnit source = tmpRawGraph.getVertexWithText(componentEdge.from().description());
+					EntailmentUnit target = tmpRawGraph.getVertexWithText(componentEdge.to().description());
+					Double score = componentEdge.score();
+					if (score > 1) score = 1.0;
+					EntailmentRelation edge = new EntailmentRelation(source, target, new TEDecisionWithConfidence(score, DecisionLabel.Entailment));
 					tmpRawGraph.addEdge(source, target, edge);
 				}
 			}
 		}
+	
+		logger.debug(tmpRawGraph.toString());
 		
-		ret = new SimpleGraphOptimizer().optimizeGraph(tmpRawGraph, 0.0); //collapse paraphrasing nodes
+		// TMP PATCH TO RETURN REMOVED FG EDGES
+		for (EntailmentRelation edge : workGraph.edgeSet()){
+			if (!edge.getLabel().is(DecisionLabel.Entailment)) continue; // only return entailing FG edges
+			if (edge.getEdgeType().is(EdgeType.FRAGMENT_GRAPH)){
+				EntailmentUnit src = tmpRawGraph.getVertexWithText(edge.getSource().getText());
+				EntailmentUnit tgt = tmpRawGraph.getVertexWithText(edge.getTarget().getText());
+				tmpRawGraph.removeAllEdges(src, tgt);
+				EntailmentRelation e = new EntailmentRelation(src, tgt, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment));
+				tmpRawGraph.addEdge(src, tgt, e);
+			}
+		}				
+		tmpRawGraph.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
+		
+		// now turn the output raw graph into collapsed graph
+		ret = new SimpleGraphOptimizer().optimizeGraph(tmpRawGraph, -10000.0); //collapse paraphrasing nodes
+		
+		logger.debug("Collapsed:\n"+ret.toString());		
 		return ret;
 	}
 	
 	
 	
 	private Double detectConfidence(EntailmentGraphRaw workGraph, EntailmentUnit source, EntailmentUnit target, Double confidenceThreshold){
-		Double confidence = -0.5; // this will be our non-entailment confidence for missing edges 
+		Double confidence = null; // this will encode missing edges or edges with confidence < threshold
 		
-		if (workGraph.containsEdge(source, target)) {
-
-			EntailmentRelation edge = workGraph.getEdge(source, target);
-			System.out.println(edge);
-			if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)) {
-				 if (edge.getConfidence() >= confidenceThreshold) {
-					 confidence = edge.getConfidence(); // only if the original score is >= than the threshold, consider the edge entailing with the corresponding confidence. Otherwise treat it as if it's not present in the work graph. 
-				 }
-				 if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) confidence = 10000.0;
-			}
-			else {
-				confidence = -1.0*edge.getConfidence();	
-				if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) confidence = -10000.0;
+		if (workGraph.containsEdge(source, target)) {		
+			// look through all the edges src->tgt and select the most confident as the representative one 
+			for (EntailmentRelation edge : workGraph.getAllEdges(source, target)){
+				if(edge.getTEdecision().getDecision().is(DecisionLabel.Entailment)) {
+					 if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) {
+						 logger.debug("Adding edge "+source.getTextWithoutDoubleSpaces()+" -> "+target.getTextWithoutDoubleSpaces()+" with score: 10000.0");
+						 return 10000.0; // if there is a positive FG edge, no need to check for other edges
+					 }
+					 // if this is not a FG edge
+					 if (confidence==null) {
+						 if (edge.getConfidence() >= confidenceThreshold) confidence = edge.getConfidence();
+					 }
+					 else if (edge.getConfidence() >= Math.abs(confidence)) {
+						 confidence = edge.getConfidence(); // only if the original score is >= than the absolute value of the current confidence , consider the edge entailing with the corresponding confidence.
+					 }
+				}
+				
+				else { // if this is a non-entailment edge
+					if (edge.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) {
+						logger.debug("Adding edge "+source.getTextWithoutDoubleSpaces()+" -> "+target.getTextWithoutDoubleSpaces()+" with score: -10000.0");
+						return -10000.0; // if there is a negative FG edge, no need to check for other edges
+					}
+					// if this is not a FG edge			
+					if (confidence==null) {
+						if (edge.getConfidence() >= confidenceThreshold) confidence = -1.0 * edge.getConfidence();
+					}
+					else if (edge.getConfidence() >= Math.abs(confidence)) {
+						 confidence = -1.0 * edge.getConfidence(); // only if the original score is >= than the absolute value of the current confidence, consider the edge non-entailing with the corresponding negative confidence value.
+					}
+				}				
 			}
 		}
-		else{
-			// We should return non-entailment most confident score (-1?) for missing edges from inside FGs
+		// else return default non-entailing confidence (equal to -1.0*threshold)
+/*		else{
+			// We should return non-entailment score for missing edges from inside FGs
 			// Check: if src and tgt share a compete statement, then they belong to the same FG	 - this is for cases when no-entailment FG edges are not explicit		
 			Set<String> minusSharedSet= new HashSet<String>(source.getCompleteStatementTexts());
 			minusSharedSet.removeAll(target.getCompleteStatementTexts());
@@ -190,12 +250,16 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 				confidence = -10000.0;
 			}
 		}
+*/		
 		
-/*		// Note: -1 confidence is understood as "unavailable score"
+		if (confidence==null) confidence = -1.0 * AbstractGraphOptimizer.getAverageConfidenceOfEntailment(workGraph);
+		
+		// Note: -1 confidence is understood as "unavailable score"
 		if (confidence == TEDecision.CONFIDENCE_NOT_AVAILABLE) {
-			confidence = -0.9;
-		}
-*/		return confidence;
+			confidence = -0.99;
+		}		
+		logger.debug("Adding edge "+source.getTextWithoutDoubleSpaces()+" -> "+target.getTextWithoutDoubleSpaces()+" with score: "+confidence);		
+		return confidence;
 	}
 
 	protected UntypedPredicateGraphLearner graphLearner;

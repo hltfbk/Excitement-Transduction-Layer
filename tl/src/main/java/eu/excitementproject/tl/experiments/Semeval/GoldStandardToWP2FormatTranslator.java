@@ -81,7 +81,7 @@ public class GoldStandardToWP2FormatTranslator {
 			if (hasEdges){
 				// add all edges from the graph
 				EntailmentGraphRaw r = gsloader.getRawGraph();
-				r.applyTransitiveClosure(true);
+				r.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was true, now it is false, i.e. missing closure edges are added, but existing ones will not be marked as TRANSITIVE_CLOSURE
 				
 				// build a mapping from text to all its ids
 				Map<String,Set<String>> textToIdsMap = new HashMap<String, Set<String>>();

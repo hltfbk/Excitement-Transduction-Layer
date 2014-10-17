@@ -1,0 +1,1841 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 1 entailment unit(s) before editing								
+	Not much plugs to work	[445370.txt_2_0]						
+								
+collapsed node #2 : 1 entailment unit(s) before editing								
+	charging points on train would be good	[46653.txt_8_1]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing								
+	could do with more electricity points to charge laptop	[524160.txt_2_0]						
+								
+collapsed node #4 : 2 entailment unit(s) before editing								
+	Not much plugs	[445370.txt_2_1]						
+	could do with more electricity points	[524160.txt_2_1]						
+	charging points would be good	[46653.txt_8_2]						
+	need power supply	[189492.txt_1_1]						
+								
+collapsed node #5 : 2 entailment unit(s) before editing							empty	merged with node#4
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	Phone charging points on train would be good	[46653.txt_8_0]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	need power supply at every seat in business	[189492.txt_1_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	Passageway within train too narrow for people to get through with luggage	[30.txt_2_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	possibility to close the lights in the morning train	[3.txt_2_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	possibility to close the lights in the train	[3.txt_2_1]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	possibility to close the lights	[3.txt_2_2]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	better charging for electronics	[461540.txt_7_0]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing								
+	Passageway too narrow	[30.txt_2_3]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing								
+	Passageway within train too narrow	[30.txt_2_2]						
+								
+collapsed node #15 : 2 entailment unit(s) before editing								
+	Would be a plus if food was hot	[446012.txt_1_1]						
+	Would be a plus if food was warm	[446012.txt_2_1]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing								
+	Passageway too narrow for people to get through with luggage	[30.txt_2_1]						
+								
+collapsed node #17 : 2 entailment unit(s) before editing								
+	Would be a plus if food was hot in standard magnum	[446012.txt_1_0]						
+	Would be a plus if food was warm in standard magnum	[446012.txt_2_0]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing								
+	Allocated carriages for people travelling with dogs	[8.txt_2_1]						
+								
+collapsed node #19 : 1 entailment unit(s) before editing								
+	more organization in the lounge areas	[9.txt_1_0]						
+								
+collapsed node #20 : 1 entailment unit(s) before editing								
+	have kid - friendly coaches	[440663.txt_10_0]						
+								
+collapsed node #21 : 1 entailment unit(s) before editing								
+	Not much tables	[445370.txt_3_1]						
+								
+collapsed node #22 : 1 entailment unit(s) before editing								
+	Not much tables to work	[445370.txt_3_0]						
+								
+collapsed node #23 : 1 entailment unit(s) before editing								
+	More child friendly	[472607.txt_1_0]						
+								
+collapsed node #24 : 1 entailment unit(s) before editing								
+	timetable is not always accurate	[305036.txt_4_0]						
+								
+collapsed node #25 : 1 entailment unit(s) before editing								
+	better air - conditioning would make a lot of difference	[505956.txt_3_0]						
+								
+collapsed node #26 : 1 entailment unit(s) before editing								
+	train is often late	[305036.txt_5_1]						
+								
+collapsed node #27 : 1 entailment unit(s) before editing								
+	train is often very late	[305036.txt_5_0]						
+								
+collapsed node #28 : 1 entailment unit(s) before editing								
+	train is late	[305036.txt_5_3]						
+								
+collapsed node #29 : 1 entailment unit(s) before editing								
+	No considerations for the needs of passengers with small children	[330688.txt_1_0]						
+								
+collapsed node #30 : 1 entailment unit(s) before editing								
+	train is very late	[305036.txt_5_2]						
+								
+collapsed node #31 : 1 entailment unit(s) before editing								
+	Allocated carriages on certain trains for people travelling with dogs	[8.txt_2_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+Not much plugs to work	1	->	charging points on train would be good	1	Yes	0	0	"""not much"" means there are some plugs"
+charging points on train would be good	1	->	Not much plugs to work	1	Yes	0	0	
+								
+node pair #2:								
+Not much plugs to work	1	->	could do with more electricity points to charge laptop	1	Yes	0	0	
+could do with more electricity points to charge laptop	1	->	Not much plugs to work	1	Yes	0	1	
+								
+node pair #3:								
+Not much plugs to work	1	->	Not much plugs	2	Yes	1	1	
+Not much plugs	2	->	Not much plugs to work	1	No	-1	0	
+								
+node pair #5:								
+Phone charging points on train would be good	1	->	Not much plugs to work	1	Yes	0	0	
+Not much plugs to work	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #6:								
+need power supply at every seat in business	1	->	Not much plugs to work	1	Yes	0	0	"""to work"" is not entailed"
+Not much plugs to work	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #7:								
+Not much plugs to work	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+Passageway within train too narrow for people to get through with luggage	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #8:								
+Not much plugs to work	1	->	possibility to close the lights in the morning train	1	No	0	0	
+possibility to close the lights in the morning train	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #9:								
+Not much plugs to work	1	->	possibility to close the lights in the train	1	No	0	0	
+possibility to close the lights in the train	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #10:								
+Not much plugs to work	1	->	possibility to close the lights	1	No	0	0	
+possibility to close the lights	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #11:								
+Not much plugs to work	1	->	better charging for electronics	1	Yes	0	1	
+better charging for electronics	1	->	Not much plugs to work	1	No	0	0	electronics might be not for work
+								
+node pair #12:								
+Not much plugs to work	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #13:								
+Not much plugs to work	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #14:								
+Not much plugs to work	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	Not much plugs to work	1	No	0	0	
+								
+node pair #15:								
+Not much plugs to work	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #16:								
+Not much plugs to work	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	Not much plugs to work	1	No	0	0	
+								
+node pair #17:								
+Not much plugs to work	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #18:								
+Not much plugs to work	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #19:								
+Not much plugs to work	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #20:								
+Not much plugs to work	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #21:								
+Not much plugs to work	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #22:								
+Not much plugs to work	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #23:								
+Not much plugs to work	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #24:								
+Not much plugs to work	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #25:								
+Not much plugs to work	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #26:								
+Not much plugs to work	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #27:								
+Not much plugs to work	1	->	train is late	1	No	0	0	
+train is late	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #28:								
+Not much plugs to work	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #29:								
+Not much plugs to work	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #30:								
+Not much plugs to work	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Not much plugs to work	1	No	0	0	
+								
+node pair #31:								
+charging points on train would be good	1	->	could do with more electricity points to charge laptop	1	Yes	0	0	maybe not for laptop
+could do with more electricity points to charge laptop	1	->	charging points on train would be good	1	Yes	0	0	maybe not on train
+								
+node pair #32:								
+charging points on train would be good	1	->	Not much plugs	2	Yes	0	1	"CHANGED no charging points does not entail ""there are some charging points"""
+Not much plugs	2	->	charging points on train would be good	1	No	0	0	
+								
+node pair #34:								
+Phone charging points on train would be good	1	->	charging points on train would be good	1	Yes	1	1	
+charging points on train would be good	1	->	Phone charging points on train would be good	1	No	-1	0	
+								
+node pair #35:								
+need power supply at every seat in business	1	->	charging points on train would be good	1	Yes	0	1	
+charging points on train would be good	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #36:								
+charging points on train would be good	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+Passageway within train too narrow for people to get through with luggage	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #37:								
+charging points on train would be good	1	->	possibility to close the lights in the morning train	1	No	0	0	
+possibility to close the lights in the morning train	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #38:								
+charging points on train would be good	1	->	possibility to close the lights in the train	1	No	0	0	
+possibility to close the lights in the train	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #39:								
+charging points on train would be good	1	->	possibility to close the lights	1	No	0	0	
+possibility to close the lights	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #40:								
+charging points on train would be good	1	->	better charging for electronics	1	Yes	0	1	
+better charging for electronics	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #41:								
+charging points on train would be good	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #42:								
+charging points on train would be good	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #43:								
+charging points on train would be good	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	charging points on train would be good	1	No	0	0	
+								
+node pair #44:								
+charging points on train would be good	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #45:								
+charging points on train would be good	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	charging points on train would be good	1	No	0	0	
+								
+node pair #46:								
+charging points on train would be good	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #47:								
+charging points on train would be good	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #48:								
+charging points on train would be good	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #49:								
+charging points on train would be good	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #50:								
+charging points on train would be good	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #51:								
+charging points on train would be good	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #52:								
+charging points on train would be good	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #53:								
+charging points on train would be good	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #54:								
+charging points on train would be good	1	->	train is often late	1	No	0	0	
+train is often late	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #55:								
+charging points on train would be good	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #56:								
+charging points on train would be good	1	->	train is late	1	No	0	0	
+train is late	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #57:								
+charging points on train would be good	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #58:								
+charging points on train would be good	1	->	train is very late	1	No	0	0	
+train is very late	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #59:								
+charging points on train would be good	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	charging points on train would be good	1	No	0	0	
+								
+node pair #60:								
+could do with more electricity points to charge laptop	1	->	Not much plugs	2	Yes	1	1	
+Not much plugs	2	->	could do with more electricity points to charge laptop	1	No	-1	0	
+								
+node pair #62:								
+Phone charging points on train would be good	1	->	could do with more electricity points to charge laptop	1	Yes	0	0	
+could do with more electricity points to charge laptop	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #63:								
+need power supply at every seat in business	1	->	could do with more electricity points to charge laptop	1	Yes	0	0	
+could do with more electricity points to charge laptop	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #64:								
+could do with more electricity points to charge laptop	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+Passageway within train too narrow for people to get through with luggage	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #65:								
+could do with more electricity points to charge laptop	1	->	possibility to close the lights in the morning train	1	No	0	0	
+possibility to close the lights in the morning train	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #66:								
+could do with more electricity points to charge laptop	1	->	possibility to close the lights in the train	1	No	0	0	
+possibility to close the lights in the train	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #67:								
+could do with more electricity points to charge laptop	1	->	possibility to close the lights	1	No	0	0	
+possibility to close the lights	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #68:								
+could do with more electricity points to charge laptop	1	->	better charging for electronics	1	Yes	0	1	
+better charging for electronics	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #69:								
+could do with more electricity points to charge laptop	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #70:								
+could do with more electricity points to charge laptop	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #71:								
+could do with more electricity points to charge laptop	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #72:								
+could do with more electricity points to charge laptop	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #73:								
+could do with more electricity points to charge laptop	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #74:								
+could do with more electricity points to charge laptop	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #75:								
+could do with more electricity points to charge laptop	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #76:								
+could do with more electricity points to charge laptop	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #77:								
+could do with more electricity points to charge laptop	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #78:								
+could do with more electricity points to charge laptop	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #79:								
+could do with more electricity points to charge laptop	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #80:								
+could do with more electricity points to charge laptop	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #81:								
+could do with more electricity points to charge laptop	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #82:								
+could do with more electricity points to charge laptop	1	->	train is often late	1	No	0	0	
+train is often late	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #83:								
+could do with more electricity points to charge laptop	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #84:								
+could do with more electricity points to charge laptop	1	->	train is late	1	No	0	0	
+train is late	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #85:								
+could do with more electricity points to charge laptop	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #86:								
+could do with more electricity points to charge laptop	1	->	train is very late	1	No	0	0	
+train is very late	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #87:								
+could do with more electricity points to charge laptop	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	could do with more electricity points to charge laptop	1	No	0	0	
+								
+node pair #89:								
+Phone charging points on train would be good	1	->	Not much plugs	2	Yes	0	1	"CHANGED: no does not entails ""there are some"""
+Not much plugs	2	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #90:								
+need power supply at every seat in business	1	->	Not much plugs	2	Yes	0	1	"need at every seat suggests there are plugs at some seats, but that's not enough"
+Not much plugs	2	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #91:								
+Not much plugs	2	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+Passageway within train too narrow for people to get through with luggage	1	->	Not much plugs	2	No	0	0	
+								
+node pair #92:								
+Not much plugs	2	->	possibility to close the lights in the morning train	1	No	0	0	
+possibility to close the lights in the morning train	1	->	Not much plugs	2	No	0	0	
+								
+node pair #93:								
+Not much plugs	2	->	possibility to close the lights in the train	1	No	0	0	
+possibility to close the lights in the train	1	->	Not much plugs	2	No	0	0	
+								
+node pair #94:								
+Not much plugs	2	->	possibility to close the lights	1	No	0	0	
+possibility to close the lights	1	->	Not much plugs	2	No	0	0	
+								
+node pair #95:								
+Not much plugs	2	->	better charging for electronics	1	Yes	0	1	not much plugs suggests that the situation should be improved
+better charging for electronics	1	->	Not much plugs	2	No	0	0	"better does not entail ""more"", maybe more comfortable positioning is required, or faster charging etc"
+								
+node pair #96:								
+Not much plugs	2	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	Not much plugs	2	No	0	0	
+								
+node pair #97:								
+Not much plugs	2	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	Not much plugs	2	No	0	0	
+								
+node pair #98:								
+Not much plugs	2	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	Not much plugs	2	No	0	0	
+								
+node pair #99:								
+Not much plugs	2	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	Not much plugs	2	No	0	0	
+								
+node pair #100:								
+Not much plugs	2	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	Not much plugs	2	No	0	0	
+								
+node pair #101:								
+Not much plugs	2	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Not much plugs	2	No	0	0	
+								
+node pair #102:								
+Not much plugs	2	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Not much plugs	2	No	0	0	
+								
+node pair #103:								
+Not much plugs	2	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Not much plugs	2	No	0	0	
+								
+node pair #104:								
+Not much plugs	2	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Not much plugs	2	No	0	0	
+								
+node pair #105:								
+Not much plugs	2	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Not much plugs	2	No	0	0	
+								
+node pair #106:								
+Not much plugs	2	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Not much plugs	2	No	0	0	
+								
+node pair #107:								
+Not much plugs	2	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Not much plugs	2	No	0	0	
+								
+node pair #108:								
+Not much plugs	2	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Not much plugs	2	No	0	0	
+								
+node pair #109:								
+Not much plugs	2	->	train is often late	1	No	0	0	
+train is often late	1	->	Not much plugs	2	No	0	0	
+								
+node pair #110:								
+Not much plugs	2	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Not much plugs	2	No	0	0	
+								
+node pair #111:								
+Not much plugs	2	->	train is late	1	No	0	0	
+train is late	1	->	Not much plugs	2	No	0	0	
+								
+node pair #112:								
+Not much plugs	2	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Not much plugs	2	No	0	0	
+								
+node pair #113:								
+Not much plugs	2	->	train is very late	1	No	0	0	
+train is very late	1	->	Not much plugs	2	No	0	0	
+								
+node pair #114:								
+Not much plugs	2	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Not much plugs	2	No	0	0	
+								
+node pair #141:								
+Phone charging points on train would be good	1	->	need power supply at every seat in business	1	Yes	0	0	
+need power supply at every seat in business	1	->	Phone charging points on train would be good	1	Yes	0	0	
+								
+node pair #142:								
+Phone charging points on train would be good	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+Passageway within train too narrow for people to get through with luggage	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #143:								
+Phone charging points on train would be good	1	->	possibility to close the lights in the morning train	1	No	0	0	
+possibility to close the lights in the morning train	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #144:								
+Phone charging points on train would be good	1	->	possibility to close the lights in the train	1	No	0	0	
+possibility to close the lights in the train	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #145:								
+Phone charging points on train would be good	1	->	possibility to close the lights	1	No	0	0	
+possibility to close the lights	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #146:								
+Phone charging points on train would be good	1	->	better charging for electronics	1	Yes	0	1	
+better charging for electronics	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #147:								
+Phone charging points on train would be good	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #148:								
+Phone charging points on train would be good	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #149:								
+Phone charging points on train would be good	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #150:								
+Phone charging points on train would be good	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #151:								
+Phone charging points on train would be good	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #152:								
+Phone charging points on train would be good	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #153:								
+Phone charging points on train would be good	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #154:								
+Phone charging points on train would be good	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #155:								
+Phone charging points on train would be good	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #156:								
+Phone charging points on train would be good	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #157:								
+Phone charging points on train would be good	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #158:								
+Phone charging points on train would be good	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #159:								
+Phone charging points on train would be good	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #160:								
+Phone charging points on train would be good	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #161:								
+Phone charging points on train would be good	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #162:								
+Phone charging points on train would be good	1	->	train is late	1	No	0	0	
+train is late	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #163:								
+Phone charging points on train would be good	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #164:								
+Phone charging points on train would be good	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #165:								
+Phone charging points on train would be good	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Phone charging points on train would be good	1	No	0	0	
+								
+node pair #166:								
+need power supply at every seat in business	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+Passageway within train too narrow for people to get through with luggage	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #167:								
+need power supply at every seat in business	1	->	possibility to close the lights in the morning train	1	No	0	0	
+possibility to close the lights in the morning train	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #168:								
+need power supply at every seat in business	1	->	possibility to close the lights in the train	1	No	0	0	
+possibility to close the lights in the train	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #169:								
+need power supply at every seat in business	1	->	possibility to close the lights	1	No	0	0	
+possibility to close the lights	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #170:								
+need power supply at every seat in business	1	->	better charging for electronics	1	Yes	0	1	
+better charging for electronics	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #171:								
+need power supply at every seat in business	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #172:								
+need power supply at every seat in business	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #173:								
+need power supply at every seat in business	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #174:								
+need power supply at every seat in business	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #175:								
+need power supply at every seat in business	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #176:								
+need power supply at every seat in business	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #177:								
+need power supply at every seat in business	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #178:								
+need power supply at every seat in business	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #179:								
+need power supply at every seat in business	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #180:								
+need power supply at every seat in business	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #181:								
+need power supply at every seat in business	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #182:								
+need power supply at every seat in business	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #183:								
+need power supply at every seat in business	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #184:								
+need power supply at every seat in business	1	->	train is often late	1	No	0	0	
+train is often late	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #185:								
+need power supply at every seat in business	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #186:								
+need power supply at every seat in business	1	->	train is late	1	No	0	0	
+train is late	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #187:								
+need power supply at every seat in business	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #188:								
+need power supply at every seat in business	1	->	train is very late	1	No	0	0	
+train is very late	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #189:								
+need power supply at every seat in business	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	need power supply at every seat in business	1	No	0	0	
+								
+node pair #190:								
+Passageway within train too narrow for people to get through with luggage	1	->	possibility to close the lights in the morning train	1	No	0	0	
+possibility to close the lights in the morning train	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #191:								
+Passageway within train too narrow for people to get through with luggage	1	->	possibility to close the lights in the train	1	No	0	0	
+possibility to close the lights in the train	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #192:								
+Passageway within train too narrow for people to get through with luggage	1	->	possibility to close the lights	1	No	0	0	
+possibility to close the lights	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #193:								
+Passageway within train too narrow for people to get through with luggage	1	->	better charging for electronics	1	No	0	0	
+better charging for electronics	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #194:								
+Passageway within train too narrow for people to get through with luggage	1	->	Passageway too narrow	1	Yes	1	1	
+Passageway too narrow	1	->	Passageway within train too narrow for people to get through with luggage	1	No	-1	0	
+								
+node pair #195:								
+Passageway within train too narrow for people to get through with luggage	1	->	Passageway within train too narrow	1	Yes	1	1	
+Passageway within train too narrow	1	->	Passageway within train too narrow for people to get through with luggage	1	No	-1	0	
+								
+node pair #196:								
+Passageway within train too narrow for people to get through with luggage	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #197:								
+Passageway within train too narrow for people to get through with luggage	1	->	Passageway too narrow for people to get through with luggage	1	Yes	1	1	
+Passageway too narrow for people to get through with luggage	1	->	Passageway within train too narrow for people to get through with luggage	1	No	-1	0	
+								
+node pair #198:								
+Passageway within train too narrow for people to get through with luggage	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #199:								
+Passageway within train too narrow for people to get through with luggage	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #200:								
+Passageway within train too narrow for people to get through with luggage	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #201:								
+Passageway within train too narrow for people to get through with luggage	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #202:								
+Passageway within train too narrow for people to get through with luggage	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #203:								
+Passageway within train too narrow for people to get through with luggage	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #204:								
+Passageway within train too narrow for people to get through with luggage	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #205:								
+Passageway within train too narrow for people to get through with luggage	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #206:								
+Passageway within train too narrow for people to get through with luggage	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #207:								
+Passageway within train too narrow for people to get through with luggage	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #208:								
+Passageway within train too narrow for people to get through with luggage	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #209:								
+Passageway within train too narrow for people to get through with luggage	1	->	train is late	1	No	0	0	
+train is late	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #210:								
+Passageway within train too narrow for people to get through with luggage	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #211:								
+Passageway within train too narrow for people to get through with luggage	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #212:								
+Passageway within train too narrow for people to get through with luggage	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Passageway within train too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #213:								
+possibility to close the lights in the morning train	1	->	possibility to close the lights in the train	1	Yes	1	1	
+possibility to close the lights in the train	1	->	possibility to close the lights in the morning train	1	No	-1	0	
+								
+node pair #214:								
+possibility to close the lights in the morning train	1	->	possibility to close the lights	1	Yes	1	1	
+possibility to close the lights	1	->	possibility to close the lights in the morning train	1	No	-1	0	
+								
+node pair #215:								
+possibility to close the lights in the morning train	1	->	better charging for electronics	1	No	0	0	
+better charging for electronics	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #216:								
+possibility to close the lights in the morning train	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #217:								
+possibility to close the lights in the morning train	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #218:								
+possibility to close the lights in the morning train	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #219:								
+possibility to close the lights in the morning train	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #220:								
+possibility to close the lights in the morning train	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #221:								
+possibility to close the lights in the morning train	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #222:								
+possibility to close the lights in the morning train	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #223:								
+possibility to close the lights in the morning train	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #224:								
+possibility to close the lights in the morning train	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #225:								
+possibility to close the lights in the morning train	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #226:								
+possibility to close the lights in the morning train	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #227:								
+possibility to close the lights in the morning train	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #228:								
+possibility to close the lights in the morning train	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #229:								
+possibility to close the lights in the morning train	1	->	train is often late	1	No	0	0	
+train is often late	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #230:								
+possibility to close the lights in the morning train	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #231:								
+possibility to close the lights in the morning train	1	->	train is late	1	No	0	0	
+train is late	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #232:								
+possibility to close the lights in the morning train	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #233:								
+possibility to close the lights in the morning train	1	->	train is very late	1	No	0	0	
+train is very late	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #234:								
+possibility to close the lights in the morning train	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	possibility to close the lights in the morning train	1	No	0	0	
+								
+node pair #235:								
+possibility to close the lights in the train	1	->	possibility to close the lights	1	Yes	1	1	
+possibility to close the lights	1	->	possibility to close the lights in the train	1	No	-1	0	
+								
+node pair #236:								
+possibility to close the lights in the train	1	->	better charging for electronics	1	No	0	0	
+better charging for electronics	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #237:								
+possibility to close the lights in the train	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #238:								
+possibility to close the lights in the train	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #239:								
+possibility to close the lights in the train	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #240:								
+possibility to close the lights in the train	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #241:								
+possibility to close the lights in the train	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #242:								
+possibility to close the lights in the train	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #243:								
+possibility to close the lights in the train	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #244:								
+possibility to close the lights in the train	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #245:								
+possibility to close the lights in the train	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #246:								
+possibility to close the lights in the train	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #247:								
+possibility to close the lights in the train	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #248:								
+possibility to close the lights in the train	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #249:								
+possibility to close the lights in the train	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #250:								
+possibility to close the lights in the train	1	->	train is often late	1	No	0	0	
+train is often late	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #251:								
+possibility to close the lights in the train	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #252:								
+possibility to close the lights in the train	1	->	train is late	1	No	0	0	
+train is late	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #253:								
+possibility to close the lights in the train	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #254:								
+possibility to close the lights in the train	1	->	train is very late	1	No	0	0	
+train is very late	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #255:								
+possibility to close the lights in the train	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	possibility to close the lights in the train	1	No	0	0	
+								
+node pair #256:								
+possibility to close the lights	1	->	better charging for electronics	1	No	0	0	
+better charging for electronics	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #257:								
+possibility to close the lights	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #258:								
+possibility to close the lights	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #259:								
+possibility to close the lights	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	possibility to close the lights	1	No	0	0	
+								
+node pair #260:								
+possibility to close the lights	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #261:								
+possibility to close the lights	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	possibility to close the lights	1	No	0	0	
+								
+node pair #262:								
+possibility to close the lights	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #263:								
+possibility to close the lights	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #264:								
+possibility to close the lights	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #265:								
+possibility to close the lights	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #266:								
+possibility to close the lights	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #267:								
+possibility to close the lights	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #268:								
+possibility to close the lights	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #269:								
+possibility to close the lights	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #270:								
+possibility to close the lights	1	->	train is often late	1	No	0	0	
+train is often late	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #271:								
+possibility to close the lights	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #272:								
+possibility to close the lights	1	->	train is late	1	No	0	0	
+train is late	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #273:								
+possibility to close the lights	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #274:								
+possibility to close the lights	1	->	train is very late	1	No	0	0	
+train is very late	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #275:								
+possibility to close the lights	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	possibility to close the lights	1	No	0	0	
+								
+node pair #276:								
+better charging for electronics	1	->	Passageway too narrow	1	No	0	0	
+Passageway too narrow	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #277:								
+better charging for electronics	1	->	Passageway within train too narrow	1	No	0	0	
+Passageway within train too narrow	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #278:								
+better charging for electronics	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	better charging for electronics	1	No	0	0	
+								
+node pair #279:								
+better charging for electronics	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #280:								
+better charging for electronics	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	better charging for electronics	1	No	0	0	
+								
+node pair #281:								
+better charging for electronics	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #282:								
+better charging for electronics	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #283:								
+better charging for electronics	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #284:								
+better charging for electronics	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #285:								
+better charging for electronics	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #286:								
+better charging for electronics	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #287:								
+better charging for electronics	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #288:								
+better charging for electronics	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #289:								
+better charging for electronics	1	->	train is often late	1	No	0	0	
+train is often late	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #290:								
+better charging for electronics	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #291:								
+better charging for electronics	1	->	train is late	1	No	0	0	
+train is late	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #292:								
+better charging for electronics	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #293:								
+better charging for electronics	1	->	train is very late	1	No	0	0	
+train is very late	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #294:								
+better charging for electronics	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	better charging for electronics	1	No	0	0	
+								
+node pair #295:								
+Passageway within train too narrow	1	->	Passageway too narrow	1	Yes	1	1	
+Passageway too narrow	1	->	Passageway within train too narrow	1	No	-1	0	
+								
+node pair #296:								
+Passageway too narrow	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	Passageway too narrow	1	No	0	0	
+								
+node pair #297:								
+Passageway too narrow for people to get through with luggage	1	->	Passageway too narrow	1	Yes	1	1	
+Passageway too narrow	1	->	Passageway too narrow for people to get through with luggage	1	No	-1	0	
+								
+node pair #298:								
+Passageway too narrow	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	Passageway too narrow	1	No	0	0	
+								
+node pair #299:								
+Passageway too narrow	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #300:								
+Passageway too narrow	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #301:								
+Passageway too narrow	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #302:								
+Passageway too narrow	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #303:								
+Passageway too narrow	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #304:								
+Passageway too narrow	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #305:								
+Passageway too narrow	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #306:								
+Passageway too narrow	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #307:								
+Passageway too narrow	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #308:								
+Passageway too narrow	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #309:								
+Passageway too narrow	1	->	train is late	1	No	0	0	
+train is late	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #310:								
+Passageway too narrow	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #311:								
+Passageway too narrow	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #312:								
+Passageway too narrow	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Passageway too narrow	1	No	0	0	
+								
+node pair #313:								
+Passageway within train too narrow	1	->	Would be a plus if food was hot	2	No	0	0	
+Would be a plus if food was hot	2	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #314:								
+Passageway within train too narrow	1	->	Passageway too narrow for people to get through with luggage	1	No	-1	0	
+Passageway too narrow for people to get through with luggage	1	->	Passageway within train too narrow	1	No	-1	0	
+								
+node pair #315:								
+Passageway within train too narrow	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #316:								
+Passageway within train too narrow	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #317:								
+Passageway within train too narrow	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #318:								
+Passageway within train too narrow	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #319:								
+Passageway within train too narrow	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #320:								
+Passageway within train too narrow	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #321:								
+Passageway within train too narrow	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #322:								
+Passageway within train too narrow	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #323:								
+Passageway within train too narrow	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #324:								
+Passageway within train too narrow	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #325:								
+Passageway within train too narrow	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #326:								
+Passageway within train too narrow	1	->	train is late	1	No	0	0	
+train is late	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #327:								
+Passageway within train too narrow	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #328:								
+Passageway within train too narrow	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #329:								
+Passageway within train too narrow	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Passageway within train too narrow	1	No	0	0	
+								
+node pair #330:								
+Would be a plus if food was hot	2	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+Passageway too narrow for people to get through with luggage	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #331:								
+Would be a plus if food was hot in standard magnum	2	->	Would be a plus if food was hot	2	Yes	2	1	
+Would be a plus if food was hot	2	->	Would be a plus if food was hot in standard magnum	2	No	-2	0	
+								
+node pair #332:								
+Would be a plus if food was hot	2	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #333:								
+Would be a plus if food was hot	2	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #334:								
+Would be a plus if food was hot	2	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #335:								
+Would be a plus if food was hot	2	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #336:								
+Would be a plus if food was hot	2	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #337:								
+Would be a plus if food was hot	2	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #338:								
+Would be a plus if food was hot	2	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #339:								
+Would be a plus if food was hot	2	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #340:								
+Would be a plus if food was hot	2	->	train is often late	1	No	0	0	
+train is often late	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #341:								
+Would be a plus if food was hot	2	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #342:								
+Would be a plus if food was hot	2	->	train is late	1	No	0	0	
+train is late	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #343:								
+Would be a plus if food was hot	2	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #344:								
+Would be a plus if food was hot	2	->	train is very late	1	No	0	0	
+train is very late	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #345:								
+Would be a plus if food was hot	2	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Would be a plus if food was hot	2	No	0	0	
+								
+node pair #346:								
+Passageway too narrow for people to get through with luggage	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+Would be a plus if food was hot in standard magnum	2	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #347:								
+Passageway too narrow for people to get through with luggage	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #348:								
+Passageway too narrow for people to get through with luggage	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #349:								
+Passageway too narrow for people to get through with luggage	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #350:								
+Passageway too narrow for people to get through with luggage	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #351:								
+Passageway too narrow for people to get through with luggage	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #352:								
+Passageway too narrow for people to get through with luggage	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #353:								
+Passageway too narrow for people to get through with luggage	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #354:								
+Passageway too narrow for people to get through with luggage	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #355:								
+Passageway too narrow for people to get through with luggage	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #356:								
+Passageway too narrow for people to get through with luggage	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #357:								
+Passageway too narrow for people to get through with luggage	1	->	train is late	1	No	0	0	
+train is late	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #358:								
+Passageway too narrow for people to get through with luggage	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #359:								
+Passageway too narrow for people to get through with luggage	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #360:								
+Passageway too narrow for people to get through with luggage	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Passageway too narrow for people to get through with luggage	1	No	0	0	
+								
+node pair #361:								
+Would be a plus if food was hot in standard magnum	2	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+Allocated carriages for people travelling with dogs	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #362:								
+Would be a plus if food was hot in standard magnum	2	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #363:								
+Would be a plus if food was hot in standard magnum	2	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #364:								
+Would be a plus if food was hot in standard magnum	2	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #365:								
+Would be a plus if food was hot in standard magnum	2	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #366:								
+Would be a plus if food was hot in standard magnum	2	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #367:								
+Would be a plus if food was hot in standard magnum	2	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #368:								
+Would be a plus if food was hot in standard magnum	2	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #369:								
+Would be a plus if food was hot in standard magnum	2	->	train is often late	1	No	0	0	
+train is often late	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #370:								
+Would be a plus if food was hot in standard magnum	2	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #371:								
+Would be a plus if food was hot in standard magnum	2	->	train is late	1	No	0	0	
+train is late	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #372:								
+Would be a plus if food was hot in standard magnum	2	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #373:								
+Would be a plus if food was hot in standard magnum	2	->	train is very late	1	No	0	0	
+train is very late	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #374:								
+Would be a plus if food was hot in standard magnum	2	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Would be a plus if food was hot in standard magnum	2	No	0	0	
+								
+node pair #375:								
+Allocated carriages for people travelling with dogs	1	->	more organization in the lounge areas	1	No	0	0	
+more organization in the lounge areas	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #376:								
+Allocated carriages for people travelling with dogs	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #377:								
+Allocated carriages for people travelling with dogs	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #378:								
+Allocated carriages for people travelling with dogs	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #379:								
+Allocated carriages for people travelling with dogs	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #380:								
+Allocated carriages for people travelling with dogs	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #381:								
+Allocated carriages for people travelling with dogs	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #382:								
+Allocated carriages for people travelling with dogs	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #383:								
+Allocated carriages for people travelling with dogs	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #384:								
+Allocated carriages for people travelling with dogs	1	->	train is late	1	No	0	0	
+train is late	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #385:								
+Allocated carriages for people travelling with dogs	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #386:								
+Allocated carriages for people travelling with dogs	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Allocated carriages for people travelling with dogs	1	No	0	0	
+								
+node pair #387:								
+Allocated carriages on certain trains for people travelling with dogs	1	->	Allocated carriages for people travelling with dogs	1	Yes	1	1	
+Allocated carriages for people travelling with dogs	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	-1	0	
+								
+node pair #388:								
+more organization in the lounge areas	1	->	have kid - friendly coaches	1	No	0	0	
+have kid - friendly coaches	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #389:								
+more organization in the lounge areas	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #390:								
+more organization in the lounge areas	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #391:								
+more organization in the lounge areas	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #392:								
+more organization in the lounge areas	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #393:								
+more organization in the lounge areas	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #394:								
+more organization in the lounge areas	1	->	train is often late	1	No	0	0	
+train is often late	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #395:								
+more organization in the lounge areas	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #396:								
+more organization in the lounge areas	1	->	train is late	1	No	0	0	
+train is late	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #397:								
+more organization in the lounge areas	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #398:								
+more organization in the lounge areas	1	->	train is very late	1	No	0	0	
+train is very late	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #399:								
+more organization in the lounge areas	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	more organization in the lounge areas	1	No	0	0	
+								
+node pair #400:								
+have kid - friendly coaches	1	->	Not much tables	1	No	0	0	
+Not much tables	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #401:								
+have kid - friendly coaches	1	->	Not much tables to work	1	No	0	0	
+Not much tables to work	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #402:								
+have kid - friendly coaches	1	->	More child friendly	1	Yes	0	1	
+More child friendly	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #403:								
+have kid - friendly coaches	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #404:								
+have kid - friendly coaches	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #405:								
+have kid - friendly coaches	1	->	train is often late	1	No	0	0	
+train is often late	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #406:								
+have kid - friendly coaches	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #407:								
+have kid - friendly coaches	1	->	train is late	1	No	0	0	
+train is late	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #408:								
+No considerations for the needs of passengers with small children	1	->	have kid - friendly coaches	1	Yes	0	0	no request for special coaches
+have kid - friendly coaches	1	->	No considerations for the needs of passengers with small children	1	No	0	0	no coaches does not mean there's no consideration at all
+								
+node pair #409:								
+have kid - friendly coaches	1	->	train is very late	1	No	0	0	
+train is very late	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #410:								
+have kid - friendly coaches	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	have kid - friendly coaches	1	No	0	0	
+								
+node pair #411:								
+Not much tables to work	1	->	Not much tables	1	Yes	1	1	
+Not much tables	1	->	Not much tables to work	1	No	-1	0	
+								
+node pair #412:								
+Not much tables	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Not much tables	1	No	0	0	
+								
+node pair #413:								
+Not much tables	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Not much tables	1	No	0	0	
+								
+node pair #414:								
+Not much tables	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Not much tables	1	No	0	0	
+								
+node pair #415:								
+Not much tables	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Not much tables	1	No	0	0	
+								
+node pair #416:								
+Not much tables	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Not much tables	1	No	0	0	
+								
+node pair #417:								
+Not much tables	1	->	train is late	1	No	0	0	
+train is late	1	->	Not much tables	1	No	0	0	
+								
+node pair #418:								
+Not much tables	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Not much tables	1	No	0	0	
+								
+node pair #419:								
+Not much tables	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Not much tables	1	No	0	0	
+								
+node pair #420:								
+Not much tables	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Not much tables	1	No	0	0	
+								
+node pair #421:								
+Not much tables to work	1	->	More child friendly	1	No	0	0	
+More child friendly	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #422:								
+Not much tables to work	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #423:								
+Not much tables to work	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #424:								
+Not much tables to work	1	->	train is often late	1	No	0	0	
+train is often late	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #425:								
+Not much tables to work	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #426:								
+Not much tables to work	1	->	train is late	1	No	0	0	
+train is late	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #427:								
+Not much tables to work	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #428:								
+Not much tables to work	1	->	train is very late	1	No	0	0	
+train is very late	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #429:								
+Not much tables to work	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	Not much tables to work	1	No	0	0	
+								
+node pair #430:								
+More child friendly	1	->	timetable is not always accurate	1	No	0	0	
+timetable is not always accurate	1	->	More child friendly	1	No	0	0	
+								
+node pair #431:								
+More child friendly	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	More child friendly	1	No	0	0	
+								
+node pair #432:								
+More child friendly	1	->	train is often late	1	No	0	0	
+train is often late	1	->	More child friendly	1	No	0	0	
+								
+node pair #433:								
+More child friendly	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	More child friendly	1	No	0	0	
+								
+node pair #434:								
+More child friendly	1	->	train is late	1	No	0	0	
+train is late	1	->	More child friendly	1	No	0	0	
+								
+node pair #435:								
+No considerations for the needs of passengers with small children	1	->	More child friendly	1	Yes	0	1	no considerations means the situation should change
+More child friendly	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+								
+node pair #436:								
+More child friendly	1	->	train is very late	1	No	0	0	
+train is very late	1	->	More child friendly	1	No	0	0	
+								
+node pair #437:								
+More child friendly	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	More child friendly	1	No	0	0	
+								
+node pair #438:								
+timetable is not always accurate	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+better air - conditioning would make a lot of difference	1	->	timetable is not always accurate	1	No	0	0	
+								
+node pair #439:								
+train is often late	1	->	timetable is not always accurate	1	Yes	0	1	
+timetable is not always accurate	1	->	train is often late	1	No	0	0	"""not accurate"" maybe the train is not late but rather leaves before the scheduled time? Also ""often"" is not entailed"
+								
+node pair #440:								
+train is often very late	1	->	timetable is not always accurate	1	Yes	0	1	
+timetable is not always accurate	1	->	train is often very late	1	No	0	0	
+								
+node pair #441:								
+timetable is not always accurate	1	->	train is late	1	No	0	0	
+train is late	1	->	timetable is not always accurate	1	No	0	1	
+								
+node pair #442:								
+timetable is not always accurate	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	timetable is not always accurate	1	No	0	0	
+								
+node pair #443:								
+train is very late	1	->	timetable is not always accurate	1	Yes	0	1	
+timetable is not always accurate	1	->	train is very late	1	No	0	0	
+								
+node pair #444:								
+timetable is not always accurate	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	timetable is not always accurate	1	No	0	0	
+								
+node pair #445:								
+better air - conditioning would make a lot of difference	1	->	train is often late	1	No	0	0	
+train is often late	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+								
+node pair #446:								
+better air - conditioning would make a lot of difference	1	->	train is often very late	1	No	0	0	
+train is often very late	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+								
+node pair #447:								
+better air - conditioning would make a lot of difference	1	->	train is late	1	No	0	0	
+train is late	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+								
+node pair #448:								
+better air - conditioning would make a lot of difference	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+								
+node pair #449:								
+better air - conditioning would make a lot of difference	1	->	train is very late	1	No	0	0	
+train is very late	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+								
+node pair #450:								
+better air - conditioning would make a lot of difference	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	better air - conditioning would make a lot of difference	1	No	0	0	
+								
+node pair #451:								
+train is often very late	1	->	train is often late	1	Yes	1	1	
+train is often late	1	->	train is often very late	1	No	-1	0	
+								
+node pair #452:								
+train is often late	1	->	train is late	1	Yes	1	1	
+train is late	1	->	train is often late	1	No	-1	0	
+								
+node pair #453:								
+train is often late	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	train is often late	1	No	0	0	
+								
+node pair #454:								
+train is often late	1	->	train is very late	1	No	-1	0	
+train is very late	1	->	train is often late	1	No	-1	0	
+								
+node pair #455:								
+train is often late	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	train is often late	1	No	0	0	
+								
+node pair #456:								
+train is often very late	1	->	train is late	1	Yes	1	1	
+train is late	1	->	train is often very late	1	No	-1	0	
+								
+node pair #457:								
+train is often very late	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	train is often very late	1	No	0	0	
+								
+node pair #458:								
+train is often very late	1	->	train is very late	1	Yes	1	1	
+train is very late	1	->	train is often very late	1	No	-1	0	
+								
+node pair #459:								
+train is often very late	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	train is often very late	1	No	0	0	
+								
+node pair #460:								
+train is late	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+No considerations for the needs of passengers with small children	1	->	train is late	1	No	0	0	
+								
+node pair #461:								
+train is very late	1	->	train is late	1	Yes	1	1	
+train is late	1	->	train is very late	1	No	-1	0	
+								
+node pair #462:								
+train is late	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	train is late	1	No	0	0	
+								
+node pair #463:								
+No considerations for the needs of passengers with small children	1	->	train is very late	1	No	0	0	
+train is very late	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+								
+node pair #464:								
+No considerations for the needs of passengers with small children	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	No considerations for the needs of passengers with small children	1	No	0	0	
+								
+node pair #465:								
+train is very late	1	->	Allocated carriages on certain trains for people travelling with dogs	1	No	0	0	
+Allocated carriages on certain trains for people travelling with dogs	1	->	train is very late	1	No	0	0	

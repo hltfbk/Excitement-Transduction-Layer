@@ -7,6 +7,9 @@ import java.io.IOException;
 
 import javax.xml.transform.TransformerException;
 
+import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+import eu.excitementproject.eop.core.EditDistanceEDA;
+import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
@@ -14,10 +17,7 @@ import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
-import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMergerWithNonEntailments;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMergerWithNonEntailment;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
@@ -32,10 +32,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
 import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
-import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
-import eu.excitementproject.eop.core.EditDistanceEDA;
 //import javax.xml.transform.TransformerException;
-import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 //import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
@@ -63,7 +60,7 @@ public class ExperimentNice extends AbstractExperiment {
 		try {
 //			super.useOne.setGraphMerger(new AllPairsGraphMerger(super.lap, super.eda));
 //			super.useOne.setGraphMerger(new AllPairsGraphMergerWithNonEntailments(super.lap, super.eda));
-			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMergerWithNonEntailment(super.lap, super.eda));
+			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
 //			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
 		} catch (GraphMergerException e) {
 			// TODO Auto-generated catch block

@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-import javax.ws.rs.HEAD;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.TransformerException;
 
@@ -60,7 +59,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawExceptio
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
@@ -136,6 +135,8 @@ public class EvaluatorCategoryAnnotator {
 	static CategoryAnnotator categoryAnnotator;
 	static ConfidenceCalculator confidenceCalculator;
     static File configFile;
+//    static String pathToGermaNet = "D:/DFKI/EXCITEMENT/Linguistic Analysis/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML";
+    static String pathToGermaNet = "C:/germanet/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML";
 	static GermaNet germanet;
 	static Set<String> GermaNetLexicon; 
 	static String edaName; //configurated in setup()
@@ -189,26 +190,33 @@ public class EvaluatorCategoryAnnotator {
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
     
-    static int setup = 0;
-    static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
-//  static String fragmentTypeName = "DF"; // DF = dpendency fragment
-//  static String fragmentTypeName = "TDF"; // TDF = token + dependency fragment
+    static int setup = 110;
+    static String fragmentTypeNameGraph = "TF"; //for setup >= 110 this variable will be overwritten!
+//  static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
+ //   static String fragmentTypeName = "DF"; // DF = dpendency fragment
+//    static String fragmentTypeName = "TDF"; // TDF = token + dependency fragment
 //  static String fragmentTypeName = "SF"; //SF = sentence fragment
+  	static String fragmentTypeNameEval; //set automatically!
     
     static boolean readGraphFromFile = false;
-    static boolean readMergedGraphFromFile = false;
+    static boolean readMergedGraphFromFile = true;
+    static String inputMergedGraphFileName;
+    static File inputMergedGraphFile;
     
-    static boolean trainEDA = true;
-    static boolean processTrainingData = true;
+    static boolean trainEDA = false;
+    static boolean processTrainingData = false;
     static File xmiDir;
     static File modelBaseName;
 
     static boolean relevantTextProvided = true;
     
     static boolean bestNodeOnly = true;
+    static boolean buildTokenLemmaGraph = false;
+    static boolean skipEval = false;
     
 	static File temp; 
     static PrintWriter writer; 
+    static PrintWriter writerResult; 
     	
 	public static void main(String[] args) {
 		
@@ -237,6 +245,7 @@ public class EvaluatorCategoryAnnotator {
 			e.printStackTrace();
 		}
 		writer.close();
+		writerResult.close();
 		logger.info("Finished evaluation");
 	}
 
@@ -244,7 +253,9 @@ public class EvaluatorCategoryAnnotator {
 		setup(setup);		
 		try {
 			 temp = File.createTempFile("debugging"+System.currentTimeMillis(), ".tmp");
+			 logger.info("Created file at " + temp.getAbsolutePath());
 			 writer = new PrintWriter(temp, "UTF-8");
+			 writerResult = new PrintWriter(temp.getAbsolutePath().replace("debugging", "result"), "UTF-8");
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -260,8 +271,9 @@ public class EvaluatorCategoryAnnotator {
 	EvaluatorCategoryAnnotator() {
 		setup(1);		
 		try {
-			 temp = File.createTempFile("debugging"+System.currentTimeMillis()+".txt", ".tmp");
+			 temp = File.createTempFile("debugging"+System.currentTimeMillis(), ".tmp");
 			 writer = new PrintWriter(temp, "UTF-8");
+			 writerResult = new PrintWriter(temp.getAbsolutePath().replace("debugging", "result"), "UTF-8");
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -291,14 +303,13 @@ public class EvaluatorCategoryAnnotator {
 	        		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 	        		edaName = "NO EDA";
-	        		setLapAndFragemntAnnotator(fragmentTypeName);
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
-		    		break;
-		    	
+		    		break;    	
 		    	//Setup for TIE 
 	        	case 1: //TIE with base configuration (inflection only)
 	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
@@ -310,10 +321,10 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 	        		edaName = "TIE";
-	        		setLapAndFragemntAnnotator(fragmentTypeName);
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -329,7 +340,7 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, alignmenteda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, alignmenteda);
 		    		graphMerger.setEntailmentConfidenceThreshold(0.6);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -345,10 +356,10 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
 		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 	        		edaName = "TIE";
-	        		setLapAndFragemntAnnotator(fragmentTypeName);
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer();// new GlobalGraphOptimizer(); --> don't use
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -365,7 +376,7 @@ public class EvaluatorCategoryAnnotator {
 		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
@@ -374,78 +385,143 @@ public class EvaluatorCategoryAnnotator {
 		    	// Setups for SimpleEDA
 		    	// SimpleEDA is only locally available for Kathrin, Florian and Aleksandra 
 		    	// but it will be integrated in TL in October !
-//	        	case 101: //SimpleEDA, LEMMA + CONVERSION
-//	        		eda = new SimpleEDA(true);
-//	        		edaName = "SEDA";
-//	        		setLapAndFragemntAnnotator(fragmentTypeName);
-//		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-//		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-//		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-//		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
-//		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-//		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
-//		    		categoryAnnotator = new CategoryAnnotatorAllCats();
-//		    		break;
-//	        	case 102: //SimpleEDA, LEMMA + CONVERSION + GERMANET
-//	        		eda = new SimpleEDA(true, true, "C:/germanet/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML", false, "");
-//	        		edaName = "SEDA";
-//	        		setLapAndFragemntAnnotator(fragmentTypeName);
-//		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-//		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-//		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-//		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
-//		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-//		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
-//		    		categoryAnnotator = new CategoryAnnotatorAllCats();
-//		    		break;
-//	        	case 103: //SimpleEDA, LEMMA + CONVERSION + DERIVATION (2 derivation steps, no POS in query)
-//	        		eda = new SimpleEDA(true, true, 2);
-//	        		edaName = "SEDA";
-//	        		setLapAndFragemntAnnotator(fragmentTypeName);
-//		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-//		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-//		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-//		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
-//		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-//		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
-//		    		categoryAnnotator = new CategoryAnnotatorAllCats();
-//		    		break;
-//	        	case 104: //SimpleEDA, LEMMA + CONVERSION + DECOMPOSITION
-//	        		eda = new SimpleEDA(true, true);
-//	        		edaName = "SEDA";
-//	        		setLapAndFragemntAnnotator(fragmentTypeName);
-//		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-//		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-//		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-//		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
-//		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-//		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
-//		    		categoryAnnotator = new CategoryAnnotatorAllCats();
-//		    		break;
-//	        	case 105: //SimpleEDA, LEMMA + CONVERSION + DERIVATION + GERMANET 
-//	        		eda = new SimpleEDA(true, false, true, 2, true, "C:/germanet/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML", false, "");
-//	        		edaName = "SEDA";
-//	        		setLapAndFragemntAnnotator(fragmentTypeName);
-//		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-//		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-//		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-//		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
-//		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-//		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
-//		    		categoryAnnotator = new CategoryAnnotatorAllCats();
-//		    		break;
-//	        	case 106: //SimpleEDA, LEMMA + DECOMPOSITION + DERIVATION + GERMANET
-//	        		eda = new SimpleEDA(true, true, true, 2, true, "C:/germanet/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML", false, "");
-//	        		edaName = "SEDA";
-//	        		setLapAndFragemntAnnotator(fragmentTypeName);
-//		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-//		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-//		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-//		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
-//		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-//		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
-//		    		categoryAnnotator = new CategoryAnnotatorAllCats();
-//		    		break;
+		    		/*
+	        	case 101: //SimpleEDA, LEMMA + CONVERSION
+	        		eda = new SimpleEDA(true);
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 102: //SimpleEDA, LEMMA + CONVERSION + GERMANET
+	        		eda = new SimpleEDA(true, true, pathToGermaNet, false, "");
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 103: //SimpleEDA, LEMMA + CONVERSION + DERIVATION (2 derivation steps, no POS in query)
+	        		eda = new SimpleEDA(true, true, 2);
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 104: //SimpleEDA, LEMMA + CONVERSION + DECOMPOSITION
+	        		eda = new SimpleEDA(true, true);
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 105: //SimpleEDA, LEMMA + CONVERSION + DERIVATION + GERMANET 
+	        		eda = new SimpleEDA(true, false, true, 2, true, pathToGermaNet, false, "");
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 106: //SimpleEDA, LEMMA + DECOMPOSITION + DERIVATION + GERMANET
+	        		eda = new SimpleEDA(true, true, true, 2, true, pathToGermaNet, false, "");
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 110: //Read in 101 graph built on token fragments; add 101 graph for dependency fragments
+	        		readMergedGraphFromFile = true;
+	        		inputMergedGraphFileName = "src/main/resources/exci/omq/graphs/omq_public_FOLD_merged_graph_101_1_TF_tfidf_SEDA.xml";
+	        		eda = new SimpleEDA(true);
+	        		edaName = "SEDA";
+	        		fragmentTypeNameGraph = "DF";
+	        		fragmentTypeNameEval = "TDF";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 111: //Read in 101 graph built on tokens; add 106 graph for dependency-fragments 
+	        		readMergedGraphFromFile = true;
+	        		inputMergedGraphFileName = "src/main/resources/exci/omq/graphs/omq_public_FOLD_merged_graph_101_1_TF_tfidf_SEDA.xml";
+	        		eda = new SimpleEDA(true, true, true, 2, true, pathToGermaNet, false, "");
+	        		edaName = "SEDA";
+	        		fragmentTypeNameGraph = "DF";
+	        		fragmentTypeNameEval = "TDF";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 112: //Read in 101 graph built on tokens; add 104 graph for dependency-fragments 
+	        		readMergedGraphFromFile = true;
+	        		inputMergedGraphFileName = "src/main/resources/exci/omq/graphs/omq_public_FOLD_merged_graph_104_1_TF_tfidf_SEDA.xml";
+	        		eda = new SimpleEDA(true, true);
+	        		edaName = "SEDA";
+	        		fragmentTypeNameGraph = "DF";
+	        		fragmentTypeNameEval = "TDF";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 113: //Read in 106 graph built on DF; add 104 graph for TF
+	        		readMergedGraphFromFile = true;
+	        		inputMergedGraphFileName = "src/main/resources/exci/omq/graphs/omq_public_FOLD_merged_graph_106_1_DF_tfidf_SEDA.xml";
+	        		eda = new SimpleEDA(true, true);
+	        		edaName = "SEDA";
+	        		fragmentTypeNameGraph = "TF";
+	        		fragmentTypeNameEval = "TDF";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;*/
 			}
 		} catch (ModifierAnnotatorException | ConfigurationException e) {
 			e.printStackTrace();
@@ -610,13 +686,13 @@ public class EvaluatorCategoryAnnotator {
 				//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 				Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
 				if (null != fragmentGraphs) {
-					logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+					logger.debug("Number of fragment graphs: " + fragmentGraphs.size());
 					Set<NodeMatch> matches = getMatches(graph, fragmentGraphs);	
 					//add category annotation to CAS
 					categoryAnnotator.addCategoryAnnotation(cas, matches);
-					logger.info("_________________________________________________________");
+					logger.debug("_________________________________________________________");
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
-					logger.info("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
+					logger.debug("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
 					CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
 					countPositive = compareDecisionsForInteraction(countPositive,
@@ -691,8 +767,9 @@ public class EvaluatorCategoryAnnotator {
 			String cat = bestCats[i];
 			logger.info("Top " + i + " category: " + cat);
 			if (docCats.contains(cat)) { //adapted to deal with multiple categories
+				writerResult.append(doc.getInteractionId() + ": " + "C"  + docCats + ", A" + bestCats[i] + " CORRECT\n");
 				countPositive++;
-			} 
+			} else 	writerResult.append(doc.getInteractionId() + ": " + "C"  + docCats + ", A" + bestCats[i] + " WRONG\n");
 		}
 		return countPositive;
 	}
@@ -887,12 +964,12 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}
 			
-			logger.info("overallSum: " + overallSum);
-			logger.info("Number of node matches: " + matches.size());
-			logger.info("Number of added up Values: " + numberOfAddedUpValues);
-			logger.info("Number of processed mentions: " + processedMentions.size());
-			logger.info("Number of category decisions: " + countDecisions);
-			logger.info("Category scores big decimal in tfidf: " + categoryScoresBigDecimal);
+			logger.debug("overallSum: " + overallSum);
+			logger.debug("Number of node matches: " + matches.size());
+			logger.debug("Number of added up Values: " + numberOfAddedUpValues);
+			logger.debug("Number of processed mentions: " + processedMentions.size());
+			logger.debug("Number of category decisions: " + countDecisions);
+			logger.debug("Category scores big decimal in tfidf: " + categoryScoresBigDecimal);
 			
 			if (method.endsWith("_vsm")) {
 				for (String category : queryCosineValuesPerCategory.keySet()) { //for each matching EG node for this mention
@@ -1010,45 +1087,56 @@ public class EvaluatorCategoryAnnotator {
 	    
 	   	Map<Integer, Double> foldAccuracies = new HashMap<Integer, Double>();
 
-	   	List<Interaction> graphDocs = new ArrayList<Interaction>();
+	   	//Reading categories
+	   	List<Interaction> categoryDocs = new ArrayList<Interaction>();
+	   	categoryDocs = CategoryReader.readCategoryXML(new File(categoriesFilename));
+
+	   	List<Interaction> emailDocs = new ArrayList<Interaction>();
 		List<Interaction> testDocs = new ArrayList<Interaction>();
+		List<Interaction> graphDocs = new ArrayList<Interaction>();
 		String edaTrainingFilename;
 		
-//	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
-	    for (int i=1; i<=1; i++) { //Create a fold for each of the three input files
+	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
+//	    for (int i=2; i<=3; i++) { //Create one fold only
 	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
     		int k=j+1;
     		if (k>3)k-=3;
 	    	edaTrainingFilename = "";
-	    	graphDocs.clear();
+	    	emailDocs.clear();
 	    	testDocs.clear();
+	    	graphDocs.clear();
 	    	
 	    	//Add test documents
 			File testFile = new File(inputDataFoldername + "omq_public_"+i+"_emails.xml"); //TODO: replace?
 			logger.info("Reading test file " + testFile.getName());	    			
 			testDocs.addAll(InteractionReader.readInteractionXML(testFile));
 			logger.info("Test set of fold "+i+" now contains " + testDocs.size() + " documents");
-        	
+			
 			//For each fold, read entailment graph EG or generate it from training set
-	    	EntailmentGraphCollapsed graph;
+	    	EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed();
     		File graphFile = new File(outputGraphFoldername + "omq_public_"+i+"_collapsed_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeName + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
+    				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
     		File mergedGraphFile = new File(outputGraphFoldername + "omq_public_"+i+"_merged_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeName + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
+    				+ fragmentTypeNameEval + "_" + method + "_" + edaName + ".xml");
+    		
+    		//DEBUGGING
+    		//graphFile = new File(outputGraphFoldername + "omq_public_1_collapsed_graph_112_1_TDF_tfidf_nnn_SEDA_BACKUP.xml");
     		
     		String mostProbableCat;
 	    	if (readGraphFromFile) { // read graph
 	    		logger.info("Reading graph from " + graphFile.getAbsolutePath());
 	    		graph = new EntailmentGraphCollapsed(graphFile);
+	    		//graph = new EntailmentGraphCollapsed(new File("src/main/resources/exci/omq/graphs/omq_public_1_collapse_graph_6_1_tfidf_nnn_TDF_SEDA_LEMMA+DB2+GERMANET+SDEKOMPO+NEGATION+PARTIKEL.xml"));
+	    		//TODO: REMOVE; DEBUGGING ONLY
 				mostProbableCat = computeMostFrequentCategory(graph);
 				logger.info("Most frequent category in graph: " + mostProbableCat);
 	    	} else { // build graph
 	    		String graphDocumentsFilename = inputDataFoldername + "omq_public_"+j+"_emails.xml";
 				logger.info("Reading documents for graph building from " + graphDocumentsFilename);	    			
-				graphDocs.addAll(InteractionReader.readInteractionXML(new File(graphDocumentsFilename)));
-				logger.info("Graph set of fold "+i+" now contains " + graphDocs.size() + " documents");
+				emailDocs.addAll(InteractionReader.readInteractionXML(new File(graphDocumentsFilename)));
+				logger.info("Graph set of fold "+i+" now contains " + emailDocs.size() + " documents");
 				if (trainEDA) { // train EDA
 					if (processTrainingData) { //process training data
 						edaTrainingFilename = inputDataFoldername + "omq_public_"+k+"_th.xml";
@@ -1074,32 +1162,42 @@ public class EvaluatorCategoryAnnotator {
 	    			graphDocs.addAll(InteractionReader.readInteractionXML(new File(graphDocumentsFilename)));	
 	    			*/	  
 				}
-				logger.info("Graph set of fold "+i+" now contains " + graphDocs.size() + " documents");
-	    		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(), minTokenOccurrence);
+				//graphDocs = graphDocs.subList(1, 2); //TODO: REMOVE for real test!
+				logger.info("Graph set of fold "+i+" now contains " + emailDocs.size() + " documents");
+				EntailmentGraphRaw egr;
+				if (readMergedGraphFromFile) { //Read in a previously built merged graph
+					inputMergedGraphFile = new File(inputMergedGraphFileName.replaceAll("FOLD", ""+i));
+					logger.info("Reading merged graph from inputMergedGraphFile: "+ inputMergedGraphFile.getAbsolutePath());
+					egr = new EntailmentGraphRaw(inputMergedGraphFile);
+				}
+				else egr = new EntailmentGraphRaw();
+
+				//emailDocs = reduceTrainingDataSize(emailDocs, 20); //reduce the number of emails on which the graph is built
+				//logger.info("Reduced training set contains " +emailDocs.size()+ " documents.");
+			
+				//Add email texts
+				logger.info("Nummber of nodes: " + egr.vertexSet().size());
+				egr = buildRawGraph(emailDocs, mergedGraphFile, egr, minTokenOccurrence);
+				logger.info("Nummber of nodes: " + egr.vertexSet().size());
 
 	    		//Add category texts
-	    		graphDocs = CategoryReader.readCategoryXML(new File(categoriesFilename));
-	    		logger.info("Added " + graphDocs.size() + " categories");
-	    		egr = buildRawGraph(graphDocs, mergedGraphFile, egr, minTokenOccurrenceInCategories);
+	    		logger.info("Adding " + categoryDocs.size() + " categories");
+    			egr = buildRawGraph(categoryDocs, mergedGraphFile, egr, minTokenOccurrenceInCategories);
 	    		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
 	    		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
 	    		graph = buildCollapsedGraphWithCategoryInfo(egr);
 	    		logger.info("Number of nodes in collapsed graph: " + graph.vertexSet().size());
 	    		logger.info("Number of edges in collapsed graph: " + graph.edgeSet().size());
 	    		XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
-	    		
-				mostProbableCat = computeMostFrequentCategory(graphDocs);
-
-				//graphDocs = reduceTrainingDataSize(graphDocs, 20); //reduce the number of emails on which the graph is built
-				//logger.info("Reduced training set contains " +graphDocs.size()+ " documents.");
-			
-				logger.info("Building graph..."); 
-		    	logger.info("Writing collapsed graph to " + graphFile.getAbsolutePath()); 
-				XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
+	    		logger.info("Wrote graph to : " + graphFile.getAbsolutePath());
+	    			    		
+	    		graphDocs.addAll(emailDocs);
+	    		graphDocs.addAll(categoryDocs);
+	    		mostProbableCat = computeMostFrequentCategory(graphDocs);
 	    	}
 
 			logger.info("Collapsed graph " + graphFile.getAbsolutePath() + " contains " + graph.vertexSet().size() + " nodes and " + graph.edgeSet().size() + " edges");
-	    	
+			
 	    	//indexing graph nodes and initializing search
 			if (LuceneSearch) {
 				nodeMatcherWithIndex = new NodeMatcherLuceneSimple(graph, "./src/test/resources/Lucene_index/", new GermanAnalyzer(Version.LUCENE_44));
@@ -1114,38 +1212,49 @@ public class EvaluatorCategoryAnnotator {
 				System.exit(1);
 			}
 			
-	    	boolean skipEval = false;
 	    	if (!skipEval) {
 		    	//For each email E in the test set, send it to nodematcher / category annotator and have it annotated
 				int countPositive = 0;
-				
+				JCas casInteraction = CASUtils.createNewInputCas();
 				for (Interaction interaction : testDocs) {
 					logger.info("-----------------------------------------------------");
 					logger.info("Processing test interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
 					writer.println("Processing test interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
-					JCas casInteraction = interaction.createAndFillInputCAS();
+					interaction.fillInputCAS(casInteraction);	
+					logger.info("category: " + CASUtils.getTLMetaData(casInteraction).getCategory());
+					fragmentAnnotatorForNewInput.annotateFragments(casInteraction);
+					Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
+					if (casInteraction.getAnnotationIndex(DeterminedFragment.type).size() > 0) {
+						modifierAnnotator.annotateModifiers(casInteraction);
+					}
+					logger.debug("Adding fragment graphs for text: " + casInteraction.getDocumentText());
+					fragmentGraphs.addAll(fragmentGraphGenerator.generateFragmentGraphs(casInteraction));
+					//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+				
+					
+					/* REMOVED THIS PART, AS TESTING IS DONE ON THE COMPLETE TEXT
 					List<JCas> casesRelevantTexts = interaction.createAndFillInputCASes(false);
 					logger.info("Number of cases: " + casesRelevantTexts.size());
 					Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
 					for (int l=0; l<casesRelevantTexts.size(); l++) {
 						JCas cas = casesRelevantTexts.get(l);
 						logger.info("category: " + CASUtils.getTLMetaData(cas).getCategory());
-						fragmentAnnotatorForGraphBuilding.annotateFragments(cas);
+						fragmentAnnotatorForNewInput.annotateFragments(cas);
 						if (cas.getAnnotationIndex(DeterminedFragment.type).size() > 0) {
 							modifierAnnotator.annotateModifiers(cas);
 						}
 						logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
 						fragmentGraphs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
 						//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
-					}
+					}*/
 						
 					Set<NodeMatch> matches = getMatches(graph, fragmentGraphs);	
 					
-					logger.info("Number of matches: " + matches.size());
+					logger.debug("Number of matches: " + matches.size());
 					
 					for (NodeMatch match : matches) {
 						for (PerNodeScore score : match.getScores()) {
-							logger.info("match score for "+score.getNode().getLabel()+": " + score.getNode().getCategoryConfidences());
+							logger.debug("match score for "+score.getNode().getLabel()+": " + score.getNode().getCategoryConfidences());
 						}
 					}
 
@@ -1414,6 +1523,15 @@ public class EvaluatorCategoryAnnotator {
 					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
 				}
 			}			
+		}  else if (buildTokenLemmaGraph) {
+			//TODO: IMPLEMENT
+			for (FragmentGraph fg : fgs) {
+				String text = fg.getBaseStatement().getTextWithoutDoubleSpaces();
+				//get lemma of the text
+				//check if graph contains the lemma (check the label)
+				//if yes: add mention to this node
+				//if no: add new mention as new node to graph (use lemma as label)
+			}			
 		} else { //merge graph --> takes a really long time and uses too much memory: TODO reduce number of fgs
 			if (setup == 11) alignmenteda.initialize(configFile);
 			else eda.initialize(config);
@@ -1455,14 +1573,15 @@ public class EvaluatorCategoryAnnotator {
 			logger.info("-----------------------------------------------------");
 			logger.info("Processing graph interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
 			List<JCas> cases;
+			JCas cas;
 			try {
 				cases = interaction.createAndFillInputCASes(relevantTextProvided);
 				if (cases.size() < 1) { //if no relevant text(s), create cas from complete text
-					JCas cas = interaction.createAndFillInputCAS();
+					cas = interaction.createAndFillInputCAS();
 					cases.add(cas);
 				}
 				for (int j=0; j<cases.size(); j++) {
-					JCas cas = cases.get(j);
+					cas = cases.get(j);
 					logger.info("category: " + CASUtils.getTLMetaData(cas).getCategory());
 					if (CASUtils.getTLMetaData(cas).getCategory().contains(",")) {
 						logger.info("Category contains comma in EvaluatorCategoryANnotation.buildFragmentGraphs");
@@ -1472,7 +1591,7 @@ public class EvaluatorCategoryAnnotator {
 					if (cas.getAnnotationIndex(DeterminedFragment.type).size() > 0) {
 						modifierAnnotator.annotateModifiers(cas);
 					}
-					logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+					logger.debug("Adding fragment graphs for text: " + cas.getDocumentText());
 					fgs.addAll(fragmentGraphGenerator.generateFragmentGraphs(cas));
 				}			
 			} catch (LAPException e) {
@@ -1556,7 +1675,7 @@ public class EvaluatorCategoryAnnotator {
 		graphDocs.addAll(CategoryReader.readCategoryXML(new File(categoriesFilename)));
 		logger.info("added " + graphDocs.size() + " categories");
 		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + "_"
-				+ fragmentTypeName + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");	
+				+ fragmentTypeNameEval + "_" + method + "_" + edaName + ".xml");	
 		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(), minTokenOccurrenceInCategories);
 		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
 		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
@@ -1564,7 +1683,7 @@ public class EvaluatorCategoryAnnotator {
 		logger.info("Number of nodes in collapsed graph: " + egc.vertexSet().size());
 		logger.info("Number of edges in collapsed graph: " + egc.edgeSet().size());
 		File graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + "_"
-				+ fragmentTypeName + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
+				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
 		XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
 
 		//Iterate through interactions, annotate each using existing graph and then add interaction to graph 
@@ -1646,9 +1765,9 @@ public class EvaluatorCategoryAnnotator {
 			}
 			egc = buildCollapsedGraphWithCategoryInfo(egr);			
 			mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeName + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");	
+    				+ fragmentTypeNameEval + "_" + method + "_" + edaName + ".xml");	
 			graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeName + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
+    				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
 			XMLFileWriter.write(egr.toXML(), mergedGraphFile.getAbsolutePath());			
 			XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
 		}
@@ -1666,42 +1785,53 @@ public class EvaluatorCategoryAnnotator {
 	 * fragment name = "SF" for sentence fragments
 	 * @param fragmentTypeName - short name for fragments
 	 */
-	private void setLapAndFragemntAnnotator(String fragmentTypeName){
+	private void setLapAndFragmentAnnotator(String fragmentTypeNameGraph){
+		fragmentTypeNameEval = fragmentTypeNameGraph;
+		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
+	}
+	
+	/**
+	 * This method initializes CachedLapAccess and FragmentAnnotator
+	 * depending on passed short fragment name
+	 * fragment name = "TF" for token fragments
+	 * fragment name = "DF" for dependency fragments
+	 * fragment name = "TDF" for token and dependency fragments
+	 * fragment name = "SF" for sentence fragments
+	 * @param fragmentTypeName - short name for fragments
+	 */
+	private void setLapAndFragmentAnnotator(String fragmentTypeNameGraph, String fragmentTypeNameEval){
 		try{
-			if(fragmentTypeName.equalsIgnoreCase("TF")){
-	    		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//TreeTaggerDE()
-	    		lapForFragments = lapForDecisions;
+			if(fragmentTypeNameGraph.equalsIgnoreCase("TF")){
+				lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE());//TreeTaggerDE()
 	    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotator(lapForFragments, tokenPosFilter);
-	    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
-			}
-			else{
-				if(fragmentTypeName.equalsIgnoreCase("DF")){
-	        		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-	        		lapForFragments = lapForDecisions;
-	        		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotator(lapForFragments, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
-	        		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
-	    		}
-				else{
-					if(fragmentTypeName.equalsIgnoreCase("TDF")){
-		        		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-		        		lapForFragments = lapForDecisions;
-		        		fragmentAnnotatorForGraphBuilding = new TokenAndDependencyAsFragmentAnnotator(lapForFragments, tokenPosFilter, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
-		        		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
-		    		}
-					else{
-						if(fragmentTypeName.equalsIgnoreCase("SF")){
-			        		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-			        		lapForFragments = lapForDecisions;
-			        		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lapForFragments);
-			        		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
-			    		}
-					}
-				}
+			} else if(fragmentTypeNameGraph.equalsIgnoreCase("DF")){
+				lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
+        		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotator(lapForFragments, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
+        	} else if(fragmentTypeNameGraph.equalsIgnoreCase("TDF")){
+	    		lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
+        		fragmentAnnotatorForGraphBuilding = new TokenAndDependencyAsFragmentAnnotator(lapForFragments, tokenPosFilter, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
+        	} else if(fragmentTypeNameGraph.equalsIgnoreCase("SF")){
+		    	lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
+        		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lapForFragments);
+        	}
+			if(fragmentTypeNameEval.equalsIgnoreCase("TF")){
+				lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//TreeTaggerDE()
+				fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotator(lapForDecisions, tokenPosFilter);
+			} else if(fragmentTypeNameEval.equalsIgnoreCase("DF")){
+        		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
+        		fragmentAnnotatorForNewInput = new DependencyAsFragmentAnnotator(lapForDecisions, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
+	    	} else if(fragmentTypeNameEval.equalsIgnoreCase("TDF")){
+        		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
+        		fragmentAnnotatorForNewInput = new TokenAndDependencyAsFragmentAnnotator(lapForDecisions, tokenPosFilter, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
+		    } else if(fragmentTypeNameEval.equalsIgnoreCase("SF")){
+        		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
+        		fragmentAnnotatorForNewInput = new SentenceAsFragmentAnnotator(lapForDecisions);
 			}
 		} catch (FragmentAnnotatorException | LAPException e) {
 			e.printStackTrace();
 		} 			
 	}
+	
 	
 	/**
 	 * This creates, for each email in the dataset, an entailment graph (collapsed)
@@ -1718,7 +1848,7 @@ public class EvaluatorCategoryAnnotator {
 	@SuppressWarnings("unused")
 	private static Set<String> getGermaNetLexicon() throws LAPException, FragmentAnnotatorException, FileNotFoundException, XMLStreamException, IOException {
 		// check token annotation is there or not 
-		germanet = new GermaNet("D:/DFKI/EXCITEMENT/Linguistic Analysis/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML");
+		germanet = new GermaNet(pathToGermaNet);
 		Set<String> lexicon = new HashSet<String>(); 
 		List<LexUnit> lexunits = germanet.getLexUnits();
 		for (LexUnit lexunit : lexunits) {

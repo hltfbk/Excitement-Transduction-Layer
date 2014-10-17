@@ -86,7 +86,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	public EntailmentGraphRaw getPlusClosureGraph(EntailmentGraphRaw graph){
 		// create a copy of the evaluated graph to remove the edges and do the evaluations without affecting the original graph
 		EntailmentGraphRaw graphPlusClosure = new EntailmentGraphRaw(graph.vertexSet(), graph.edgeSet());
-		graphPlusClosure.applyTransitiveClosure(false);
+		graphPlusClosure.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		for (EntailmentRelation e : graphPlusClosure.edgeSet()){
 			if (!e.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) e.setEdgeType(EdgeType.UNKNOWN);
 		}
@@ -241,6 +241,8 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
 		for (EntailmentRelation workEdge : graphWithThreshold.edgeSet()){
 			if (workEdge.getEdgeType().is(EdgeType.FRAGMENT_GRAPH)) continue; // don't touch FG edges
+
+/*			// want to only retain entailment edges
 			if (!workEdge.getLabel().is(DecisionLabel.Entailment)){
 				workEdgesToRemove.add(workEdge);
 			}
@@ -249,6 +251,12 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 					workEdgesToRemove.add(workEdge);
 				}
 			}
+*/
+			// if we want to retain all types of edges
+			if(workEdge.getConfidence()<confidenceThreshold) {
+				workEdgesToRemove.add(workEdge);
+			}
+		
 		}
 		graphWithThreshold.removeAllEdges(workEdgesToRemove);
 		return graphWithThreshold;
@@ -356,7 +364,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		// if not - smth is wrong
 		Set<String> violations = new HashSet<String>();
 		System.out.print("Checking edges for consistency:");
-		evaluatedRawGraph.applyTransitiveClosure(false);
+		evaluatedRawGraph.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		for (EntailmentRelation edge : evaluatedRawGraph.edgeSet()){
 			if (evaluatedRawGraph.isConflict(edge.getSource(), edge.getTarget())) {
 				System.out.println("****"+violations.size()+" IS CONFLICT **** "+edge);
@@ -471,5 +479,25 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	public List<Double> getConfidenceThresholds(){
 		return this.results.confidenceThresholds;
 	}
+
+	protected static void compareClosureAndDecollapsed(Set<EntailmentRelation> closure, Set<EntailmentRelation> decollapsed){
+		Set<EntailmentRelation> gs = new HashSet<EntailmentRelation>(decollapsed);
+		for (EntailmentRelation e : decollapsed){
+			if (!e.getLabel().is(DecisionLabel.Entailment)){
+				gs.remove(e);
+			}
+		}
+		Set<EntailmentRelation> eval = new HashSet<EntailmentRelation>(closure); // it should play the role of the eval, since it contains FG edge type
+		for (EntailmentRelation e : closure){
+			if (!e.getLabel().is(DecisionLabel.Entailment)){
+				eval.remove(e);
+			}
+		}
+		
+		System.out.println("COMPARE CLOSURE TO DECOLLAPSED WITH FG ::"+EvaluatorGraphMerger.evaluate(gs, eval, true));
+		System.out.println("COMPARE CLOSURE TO DECOLLAPSED WITHOUT FG ::"+EvaluatorGraphMerger.evaluate(gs, eval, false));
+		
+	}
+
 }
 
