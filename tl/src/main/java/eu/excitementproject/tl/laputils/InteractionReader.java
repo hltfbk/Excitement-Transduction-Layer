@@ -22,6 +22,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
@@ -391,8 +392,11 @@ public final class InteractionReader {
 			s += " ]"; 
 			testlogger.debug(s); 
 		}
+		
+		FragmentAnnotation frag = null;
+		
 		try {
-			CASUtils.annotateOneDeterminedFragment(aJCas,  r); 
+			frag = CASUtils.annotateOneDeterminedFragment(aJCas,  r); 
 		}
 		catch (LAPException e)
 		{
@@ -416,6 +420,24 @@ public final class InteractionReader {
 				// Note that we need to convert the location to "Interaction" level index. 
 				// TODO : (or not?) (Known problem) note that if the fragment holds two same modifiers, this can lead to wrong match. 
 				// one solution would be using poz value... but that has its own problem. So for now, going this way. 
+				
+				// for non-contiguous fragments, the position of a modifier after the "gap" will be wrong 
+				// e.g.: 
+				// 
+				// The SOFA is
+				// "A trolley serving coffee tea and snacks would be a welcome addition to the economy section . "
+				// 
+				// The (non-contiguous) annotated fragment is
+				// "A trolley serving snacks would be a welcome addition to the economy section "
+
+				// There are two modifier annotations, one with start-end positions: 0-17, the other 53-75. 
+				// But the 53-75 position is relative to the beginning annotated fragment, without taking into account the gap.
+				// 
+				// That is why I change "original_text" to contain the gap (as spaces)
+			
+				if (frag != null)
+					original_text = (String) CASUtils.getCompleteTextFragment(frag);
+				
 				
 				int temp_begin=0;  // begin location on fragment
 				int temp_end=0;    // end location on frag 

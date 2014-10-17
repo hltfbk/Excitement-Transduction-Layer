@@ -82,7 +82,9 @@ public class ExperimentNiceFull extends AbstractExperiment {
 		
 		if (edaName.equals(EdaName.EDIT_DIST)) {
 			return new ExperimentNiceFull(
-					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
+//					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
+					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_EN_nice_linux.xml",
+
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class,
 					EditDistanceEDA.class
@@ -152,9 +154,10 @@ public class ExperimentNiceFull extends AbstractExperiment {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
-
+		String tlDir = "/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/";
+		
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test";
 //		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
@@ -175,7 +178,9 @@ public class ExperimentNiceFull extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 				
-			ExperimentNiceFull e = initExperiment(EdaName.TIE_POS, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
+//			ExperimentNiceFull e = initExperiment(EdaName.TIE_POS, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir);
+			ExperimentNiceFull e = initExperiment(EdaName.EDIT_DIST, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
+
 			EntailmentGraphRaw rawGraph = e.buildRawGraph();
 				
 /*				Set<Pair<String, String>> entailings = new HashSet<Pair<String, String>>();

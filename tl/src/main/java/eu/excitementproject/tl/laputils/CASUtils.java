@@ -35,6 +35,7 @@ import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.DeterminedFragment;
+import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.KeywordAnnotation;
 import eu.excitement.type.tl.Metadata;
@@ -223,7 +224,7 @@ public final class CASUtils {
 	 * @param aJCas
 	 * @param r
 	 */
-	static public void annotateOneAssumedFragment(JCas aJCas, Region[] r ) throws LAPException
+	static public FragmentAnnotation annotateOneAssumedFragment(JCas aJCas, Region[] r ) throws LAPException
 	{
 		// we will blindly follow the given region and add annotation. 
 		
@@ -253,6 +254,7 @@ public final class CASUtils {
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 		l.debug("Generated an AssummedFragment annotation. Fragment text is: " + fragText); 
 		
+		return af;
 	}
 	
 	/**
@@ -267,7 +269,7 @@ public final class CASUtils {
 	 * @param aJCas
 	 * @param r
 	 */
-	static public void annotateOneDeterminedFragment(JCas aJCas, Region[] r ) throws LAPException
+	static public FragmentAnnotation annotateOneDeterminedFragment(JCas aJCas, Region[] r ) throws LAPException
 	{
 		// we will blindly follow the given region and add annotation. 		
 		int leftmost = r[0].getBegin(); 
@@ -296,6 +298,7 @@ public final class CASUtils {
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 		l.debug("Generated a DeterminedFragment annotation. Fragment text is: " + fragText); 
 		
+		return df;
 	}
 
 	/**
@@ -663,4 +666,39 @@ public final class CASUtils {
 		}
 	}
 
+	
+	/**
+	 * Builds the text fragment -- when the fragment is made up of fragment parts, the in-between pieces
+	 * 							   will be blank spaces to allow for proper position computations later on
+	 * 							   (when removing modifiers for example)
+	 * @param frag -- a fragment annotation
+	 * @return the text (including spaces for missing non-contiguous pieces with respect to the full interaction text)
+	 */
+	public static CharSequence getCompleteTextFragment(FragmentAnnotation frag) {
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.CASUtils.getCompleteTextFragment");		
+
+		if (frag.getFragParts() == null || frag.getFragParts().size() == 0) {
+			return frag.getText();
+		}
+
+//		logger.info("Processing FragmentAnnotation for :" + frag.getCoveredText());
+		
+		String text = "";
+		FragmentPart f, prev = null;
+		for(int i = 0; i < frag.getFragParts().size(); i++) {
+			f = frag.getFragParts(i);
+			
+			if (prev != null) {
+				text += org.apache.commons.lang.StringUtils.rightPad(" ", f.getBegin() - prev.getEnd());
+			} 
+			text += f.getCoveredText();
+			prev = f;
+		}
+		
+		logger.info("Fragment text: " + frag.getText() + "\nWith spaces: " + text);
+
+		return text;
+	}
+	
 }

@@ -96,7 +96,9 @@ public class ExperimentNice extends AbstractExperiment {
 		if (edaName.equals(EdaName.EDIT_DIST)) {
 			return new ExperimentNice(
 //					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
-					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_EN_nice.xml",
+//					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_EN_nice.xml",
+					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_EN_nice_linux.xml",
+					
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class,
 					EditDistanceEDA.class
@@ -156,9 +158,10 @@ public class ExperimentNice extends AbstractExperiment {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
-
+		String tlDir = "/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/";
+		
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test";
 
