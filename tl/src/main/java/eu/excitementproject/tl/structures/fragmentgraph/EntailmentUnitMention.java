@@ -82,7 +82,7 @@ public class EntailmentUnitMention {
 		interactionId=getInteractionId(aJCas);
 		
 //		CharSequence chars = frag.getText();
-		CharSequence chars = getTextFragment(frag);
+		CharSequence chars = CASUtils.getCompleteTextFragment(frag);
 		for(ModifierAnnotation ma: FragmentGraph.getFragmentModifiers(aJCas, frag)) {
 			if (! mods.contains(ma)) {
 				logger.info("\t removing " + ma.getCoveredText());
@@ -100,37 +100,6 @@ public class EntailmentUnitMention {
 	}
 
 	
-	/**
-	 * Builds the text fragment -- when the fragment is made up of fragment parts, the in-between pieces
-	 * 							   will be blank spaces to allow for proper position computations later on
-	 * 							   (when removing modifiers for example)
-	 * @param frag -- a fragment annotation
-	 * @return the text (including spaces for missing non-contiguous pieces with respect to the full interaction text)
-	 */
-	private CharSequence getTextFragment(FragmentAnnotation frag) {
-		
-		if (frag.getFragParts() == null || frag.getFragParts().size() == 0) {
-			return frag.getText();
-		}
-
-//		logger.info("Processing FragmentAnnotation for :" + frag.getCoveredText());
-		
-		String text = "";
-		FragmentPart f, prev = null;
-		for(int i = 0; i < frag.getFragParts().size(); i++) {
-			f = frag.getFragParts(i);
-			
-			if (prev != null) {
-				text += StringUtils.rightPad(" ", f.getBegin() - prev.getEnd());
-			} 
-			text += f.getCoveredText();
-			prev = f;
-		}
-		
-		logger.info("Fragment text: " + frag.getText() + "\nWith spaces: " + text);
-
-		return text;
-	}
 
 	private Set<SimpleModifier> addModifiers(String textFragment,
 			Set<String> mods) {

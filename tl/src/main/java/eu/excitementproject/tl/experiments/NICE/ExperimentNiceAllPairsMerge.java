@@ -72,6 +72,7 @@ public class ExperimentNiceAllPairsMerge extends AbstractExperiment {
 		}
 		
 		if (edaName.equals(EdaName.EDIT_DIST)) {
+
 			return new ExperimentNiceAllPairsMerge(
 //					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
 					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_EN_nice.xml",
@@ -134,6 +135,7 @@ public class ExperimentNiceAllPairsMerge extends AbstractExperiment {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
 		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/Test2";
@@ -167,6 +169,7 @@ public class ExperimentNiceAllPairsMerge extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 				
+
 			ExperimentNiceAllPairsMerge e = initExperiment(name, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
 			EntailmentGraphRaw rawGraph = e.buildRawGraph();
 				

@@ -40,6 +40,8 @@ public class InteractionReaderTest {
 		// (maps     ^1st Telefonica, ^last Okay. ) 
 				
 	}
+	
+	
 	@Test 
 	public void test_reader2() {
 		
@@ -50,20 +52,21 @@ public class InteractionReaderTest {
 
 		testlogger.info("Reading interaction & fragment with single modifier"); 
 		try {
-			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/100771.txt"); 
+			File f1 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/228464.txt"); 
 //			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/100771.txt_1.xml.graphf1output.xml"); 
 			// changed by Lili, 12.8.14
-			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/100771.txt_3.xml.graphf3output.xml"); 
+			File f2 = new File("./src/test/resources/WP2_public_data/nice_open_email_reannotated/228464.txt_3.xml.graphf3output.xml"); 
 			JCas aJCas = CASUtils.createNewInputCas(); 
 			
 			InteractionReader.readWP2FragGraphDump(f1,  f2,  aJCas, "EN"); 
-			//CASUtils.dumpCAS(aJCas); 
+			CASUtils.dumpCAS(aJCas); 
 		}
 		catch (Exception e)
 		{
 			fail(e.getMessage()); 
 		}
 
+		
 		testlogger.info("Reading interaction & fragment with two modifiers"); 
 
 		try {

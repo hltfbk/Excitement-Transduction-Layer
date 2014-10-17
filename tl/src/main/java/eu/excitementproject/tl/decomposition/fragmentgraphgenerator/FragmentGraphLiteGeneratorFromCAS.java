@@ -25,9 +25,9 @@ public class FragmentGraphLiteGeneratorFromCAS extends
 				
 		for(Annotation a : text.getAnnotationIndex(DeterminedFragment.type)) {
 			logger.info("Processing fragment: " + a.getCoveredText());
-			if (!(a.getCoveredText().contains("Moonport") && a.getCoveredText().contains("Quasigo terminal"))) {
+//			if (!(a.getCoveredText().contains("Moonport") && a.getCoveredText().contains("Quasigo terminal"))) {
 				fgs.add(new FragmentGraphLite(text,(DeterminedFragment) a));
-			}
+//			}
 		}
 		return fgs;
 	}
