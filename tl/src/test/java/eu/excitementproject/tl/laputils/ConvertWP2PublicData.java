@@ -31,7 +31,7 @@ public class ConvertWP2PublicData {
 	 * 
 	 * @param args no arguments will be processed 
 	 * 
-	 * @author Gil 
+	 * @author Gil / Vivi@fbk / LiliKotlerman
 	 */
 	public static void main(String[] args) {
 
@@ -192,7 +192,8 @@ public class ConvertWP2PublicData {
 	}
 
 	/**
-	 * @param from Directory Path, that holds WP2 public data .txt and XML (They have to be in one directory) 
+	 * @param fromFGs Directory Path, that holds WP2 public data XML files  
+	 * @param fromInteractions Directory Path, that holds WP2 public data TXT files  
 	 * @param to Directory Path, where the new XMI files will be generated. 
 	 * @param langID language ID. WP2 frag-dump data does not have language ID. Thus we need this. 
 	 */
@@ -354,7 +355,8 @@ public class ConvertWP2PublicData {
 	/**
 	 * This method is roughly equal to processWP2Data() method, however, this version 
 	 * saves XMI files per-fragment, instead of per-interaction 
-	 * @param from Directory Path, that holds WP2 public data .txt and XML (They have to be in one directory) 
+	 * @param fromFGs Directory Path, that holds WP2 public data XML files  
+	 * @param fromInteractions Directory Path, that holds WP2 public data TXT files  
 	 * @param to Directory Path, where the new XMI files will be generated. 
 	 * @param langID language ID. WP2 frag-dump data does not have language ID. Thus we need this. 
 	 */
