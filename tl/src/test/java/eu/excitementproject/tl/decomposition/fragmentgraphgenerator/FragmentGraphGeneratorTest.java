@@ -43,7 +43,7 @@ public class FragmentGraphGeneratorTest {
 //			FragmentGraphGeneratorFromCAS fragGen = new FragmentGraphGeneratorFromCAS(); 
 			FragmentGraphLiteGeneratorFromCAS fragGen = new FragmentGraphLiteGeneratorFromCAS(); 
 
-			File file = new File("./src/test/resources/NICE/XMIs/EMAIL0001/228464.txt_3.xml.graphf3output.xml.xmi");
+			File file = new File("./src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/perFrag/test/EMAIL0001/228464.txt_3.xml.graphf3output.xml.xmi");
 			
 			// Read in inputCASes for the examples, and generate the FragmentGraphs 
 			CASUtils.deserializeFromXmi(aJCas, file); 

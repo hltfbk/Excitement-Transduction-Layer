@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="9">
+	<node explicit_context="107379.txt" focus="announcements" id="107379.txt_6_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>more targeted announcements</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="406369.txt" focus="announcements" id="406369.txt_1_1" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>micro announcements from the train manager too long</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="406369.txt" focus="announcements" id="406369.txt_1_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>micro announcements from the train manager much too long</original_text>
+        <correct_text> </correct_text>
+        <modifiers>muchpoz=6</modifiers>
+    </node>
+	<node explicit_context="107379.txt" focus="announcements" id="107379.txt_4_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>quieter announcements</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="440663.txt" focus="announcements" id="440663.txt_7_1" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>less announcements</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="406369.txt" focus="announcements" id="406369.txt_2_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>micro announcements from the train manager much too loud</original_text>
+        <correct_text> </correct_text>
+        <modifiers>muchpoz=6</modifiers>
+    </node>
+	<node explicit_context="440663.txt" focus="announcements" id="440663.txt_7_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>less announcements during the train ride</original_text>
+        <correct_text> </correct_text>
+        <modifiers>during the train ridepoz=2 3 4 5</modifiers>
+    </node>
+	<node explicit_context="406369.txt" focus="announcements" id="406369.txt_2_1" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>micro announcements from the train manager too loud</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="107379.txt" focus="announcements" id="107379.txt_9_0" implicit_context="" implicit_focus="" modality="FALSE">
+        <original_text>shorter announcements</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<edge target="406369.txt_2_1" source="406369.txt_2_0" id="406369.txt_2_1-406369.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_4_0" source="406369.txt_2_1" id="107379.txt_4_0-406369.txt_2_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_9_0" source="406369.txt_1_1" id="107379.txt_9_0-406369.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_6_0" source="440663.txt_7_0" id="107379.txt_6_0-440663.txt_7_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="406369.txt_1_1" source="406369.txt_1_0" id="406369.txt_1_1-406369.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_4_0" source="406369.txt_2_0" id="107379.txt_4_0-406369.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="440663.txt_7_1" source="440663.txt_7_0" id="440663.txt_7_1-440663.txt_7_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_6_0" source="406369.txt_1_1" id="107379.txt_6_0-406369.txt_1_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_6_0" source="406369.txt_1_0" id="107379.txt_6_0-406369.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_9_0" source="406369.txt_1_0" id="107379.txt_9_0-406369.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_6_0" source="107379.txt_9_0" id="107379.txt_6_0-107379.txt_9_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="107379.txt_6_0" source="440663.txt_7_1" id="107379.txt_6_0-440663.txt_7_1">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>
