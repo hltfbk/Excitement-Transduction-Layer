@@ -137,7 +137,7 @@ public class ExperimentNiceAllPairsMerge extends AbstractExperiment {
 	public static void main(String[] args) {
 
 		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/preFrag/test";
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/perFrag/test";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_reAnnotated/test";
 		
 		int fileLimit = Integer.MAX_VALUE;
