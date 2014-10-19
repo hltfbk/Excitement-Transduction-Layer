@@ -1,0 +1,176 @@
+\begin{verbatim}
+
+
+README file for cocluster
+
+
+USAGE
+        cocluster-'uname' [SWITCHES]
+
+
+DESCRIPTION
+        Implements three co-clustering algorithms (in C++):
+        information-theoretic co-clustering and two types of
+        minimum sum-squared residue co-clustering algorithms
+
+
+AUTHORS
+        Hyuk Cho
+        Copyright (c) 2005, 2006
+        Hyuk Cho, Yuqiang Guan, and Suvrit Sra
+        {hyukcho, yguan, suvrit}@cs.utexas.edu
+        Copyright (c) 2003, 2004
+
+
+REQUIRED SWITCHES
+        At least, the following switches are required: -A -C -I -R
+
+
+DESCRIPTION OF SWITCHES
+
+        -A  algorithmType  (REQUIRED)
+            specifies type of coclustering algorithm
+              e -- euclidean coclustering algorithm (DEFAULT)
+              i -- information theoretic coclustering algorithm
+              r -- minimim squared residue coclustering algorithm
+
+        -C  colClusterNum  (REQUIRED)
+            specifies number of column clusters (DEFAULT = 1)
+
+        -D  dumpLevel  [dumpAccessMode  dumpFilename]
+            specifies level of intermediate information dump
+            dumpLevel can be one of
+              0 -- minimal information (DEFAULT)
+              1 -- objective function value in Batch Update and minimal statistics
+              2 -- objective function value in local search and maximal statistics
+              3 -- maximal information in a specified file and minimal on stdout
+                   dumpAccessMode is required after '-D 3' and one of
+                     a -- append mode
+                     o -- output mode
+                   dumpFilename is required after '-D 3 a/o'
+
+        -E  outputEachClsuter
+            specifies detail ouputs in external cluster validattion section
+            outputEachCluster can be one of
+              0 -- don't output a confusion matrix and each cluster's statistics (DEFAULT)
+              1 -- output them in external cluster validation section
+
+        -I  inputMatrixType  inputFormatType  inputFilename  (REQUIRED)
+            specifies details of input matrix file
+            inputMatrixType can be one of
+              d -- dense (i.e., rectangle/square) matrix
+                   inputFormatType after '-I d' can be one of
+                     s -- dimension and matrix stored separately
+                     t -- both dimension and matrix stored together
+              s -- sparse matrix in CCS
+                   inputFormatType after '-I s' can be one of
+                     f -- tfn scaling
+                     x -- txx scaling
+
+        -J  oneWay
+            specifies to get one-way row/column clustering objective function values
+            oneWay can be one of
+              0 -- don't compute one-way objective function value(s) (DEFAULT)
+              1 -- compute one-way objective function value(s)
+
+        -K  classLabelSelection  classOffsetType  classLabelFilename
+            specifies details of class label file
+            classLabelSelection can be one of
+              b -- both row and column class labels
+              c -- column class labels
+              r -- row class labels
+            classOffsetType can be one of
+                     0 -- class label index starts from 0
+                     1 -- class label index starts from 1
+  
+        -M  smoothingType  [rowSmoothingMagnitude  colSmoothingMagnitude]
+            specifies details of smoothing techniques
+            smoothingType can be one of
+              a -- annealing of uniform smoothing (DEFAULT = 1)
+              h -- maximum entropy smoothing
+              n -- no smoothing (DEFAULT)
+              u -- uniform smoothing (DEFAULT = 0)
+                   smoothingMagnitude is required for '-M a/h/u'
+        -N  runNum
+            specifies number of runs to get averaged statistics (DEFAULT = 1)
+
+        -O  outputFileType  [outputLabelType  outputOffsetType]  outputAccessMode  outputFilename
+            specifies details of cocluster/objective/statistics file information
+            outputFileType can be one of
+              c -- output co-clusters
+                   outputLabelType is required after '-O c' and can be one of
+                     b -- each co-cluster block consisting of three rows like
+                            #rows #columns (in 1st row)
+                            list of row #s in (1,1)-th co-cluster (in 2nd row)
+                            list of column #s in (1,2)-th column co-cluster (in 3rd row)
+                            and so on
+                     s -- all co-clusters represented in a simple format of two rows like (DEFAULT)
+                            list of row cluster labels of all rows (in 1st row)
+                            list of column cluster labels of all columns (in 2nd row)
+                   outputOffsetType is required after '-O c b' and outputLabelType and can be one of
+                            0 -- cluster label index starts from 0
+                            1 -- cluster label index starts from 1
+              o -- output objective function value(s)
+              s -- output satistical information
+            outputAccessMode can be one of
+                                   a -- append mode, useful with '-N randomRunNum'
+                                   o -- output mode
+
+        -R  rowClusterNum  (REQUIRED)
+            specifies number of row clusters (DEFAULT = 1)
+
+        -S  seedingType  seedingLabelSelection  [seedingPertValue
+                                                 | (seedingOffsetType  numSeedingSet seedingFilename)
+                                                 | (numRowPermutation | numColPermutation)]
+            specifies details of initial cluster assignment
+            seedingType can be one of
+              f -- farthest apart assignment
+              m -- permute an initial random cluster vector
+                   numRowPermutation or/and numColPermutation is/are required after '-S m b/c/r'
+                            numRowPermutation  numColPermutation -- after '-S m b'
+                            numColPermutation -- after '-S m c'
+                            numRowPermutation -- after '-S m r'
+              p -- perturbates cluster centroids
+                   seedingPertValue is required after '-S p'
+              r -- random assignment (DEFAULT)
+              s -- read cluster labels from a seeding file
+                   seedingOffsetType is required after '-S s b/c/r' and one of
+                            0 -- seeding label index starts from 0
+                            1 -- seeding label index starts from 1
+                   numSeedingSet is required after '-S s b/c/r 0/1'
+                                   n -- positive integer (>=1)
+                   seedingFilename is required after '-S s b/c/r/ 0/1 n'
+            seedingLabelSelection can be one of
+                     b -- both row and column cluster labels
+                     c -- column cluster labels
+                     r -- row cluster labels
+
+        -T  thresholdType  rowThreshold  colThreshold
+            specifies details of threshold for either batch update or local search
+            thresholdType can be one of
+              b -- batch update (default = +0.001)
+              l -- local search (default = -1e-06)
+            Both rowThreshold and colThreshold are required.
+
+        -U  updateType  [updateSelection  |  (rowLocalSearchLength  colLocalSearchLength)]
+            specifies details of cluster-centroid-updating order in batch update or local search
+            updateType can be one of
+              b -- batch update
+                   updateSelection is required after '-U b' and can be one of
+                     0 -- single row and single column, respectively (DEFAULT)
+                     1 -- single row and single column, in batch mode
+                     2 -- single row or single column, flipping a pair coin
+                     3 -- multiple run of either row or column, flipping a pair coin
+              l -- local search
+                   rowLocalSearchLength (DEFAULT = 0) is required after 'l'
+                   colLocalSearchLength (DEFAULT = 0) is required after 'l' and rowLocalSearchLength
+                   To avoid empty row/column cluster(s), use -1 for row/colLocalSearchLength.
+
+        -X  anticorrelation
+            specifies to capture anti-correlated rows (by taking reverse of rows)
+            anticorrelation can be one of
+              0 -- don't capture anti-correlated rows (DEFAULT)
+              1 -- capture anti-correlated rows
+
+
+\end{verbatim}

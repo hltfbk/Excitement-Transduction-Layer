@@ -1,0 +1,234 @@
+package ac.biu.cs.nlp.protec.algorithms.clusteringTerms;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Set;
+
+import edu.uci.ics.jung.graph.DirectedGraph;
+
+
+import ac.biu.nlp.nlp.general.Pair;
+
+import com.aliasi.cluster.Dendrogram;
+import com.aliasi.cluster.HierarchicalClusterer;
+import com.aliasi.cluster.SingleLinkClusterer;
+import com.aliasi.cluster.CompleteLinkClusterer;
+
+import com.aliasi.util.Distance;
+
+public class LinkageGraphClusterer<V,E> {
+
+	/**
+	 * Performs Complete, Average or Single Link Clustering of a graph
+	 * @param args
+	 */
+
+	public class GraphDistance1<V> implements Distance<V>{
+		private DirectedGraph<V,E> graphToCluster;
+		public GraphDistance1(DirectedGraph<V,E> graph){
+			this.graphToCluster=graph;
+		}
+		@Override
+		public double distance(V nodeA, V nodeB) {
+			if (nodeA.equals(nodeB)) return 0;
+			double commonEdges=0;
+			for (E edge : graphToCluster.getEdges()){
+				if ((graphToCluster.getEndpoints(edge).contains(nodeA))&&(graphToCluster.getEndpoints(edge).contains(nodeB))){
+					commonEdges++;
+				}
+			}				
+			if (commonEdges>0) return 100-commonEdges;
+			else return 100;
+		}	
+	}
+	
+	public class GraphDistance<V> implements Distance<V>{
+		private DirectedGraph<V,E> graphToCluster;
+		public GraphDistance(DirectedGraph<V,E> graph){
+			this.graphToCluster=graph;
+		}
+		@Override
+		public double distance(V nodeA, V nodeB) {
+			if (nodeA.equals(nodeB)) return 0;
+			double commonEdges=0.0;
+			Collection<E> edgeSet = graphToCluster.findEdgeSet(nodeA, nodeB);
+			if (edgeSet!=null) commonEdges+=edgeSet.size();
+			edgeSet = graphToCluster.findEdgeSet(nodeB, nodeA); //reverse edge direction
+			if (edgeSet!=null) commonEdges+=edgeSet.size();
+
+			if (commonEdges>0) return 100-commonEdges;
+			else return 100;
+		}	
+		
+		public double minDistance(LinkedList<V> clusterA, LinkedList<V> clusterB){
+			double minDist = 100;
+			for (V nodeA : clusterA){
+				for (V nodeB: clusterB){
+					if (nodeA.equals(nodeB)) continue;
+					double dist = distance(nodeA,nodeB);
+					if (dist<minDist){
+						minDist=dist;
+					}
+				}
+			}
+			return minDist;
+		}
+		
+		public double maxDistance(LinkedList<V> clusterA, LinkedList<V> clusterB){
+			double maxDist = 0;
+			for (V nodeA : clusterA){
+				for (V nodeB: clusterB){
+					if (nodeA.equals(nodeB)) continue;
+					double dist = distance(nodeA,nodeB);
+					if (dist>maxDist){
+						maxDist=dist;
+					}
+				}
+			}
+			return maxDist;
+		}
+	
+		public double avgDistance(LinkedList<V> clusterA, LinkedList<V> clusterB){
+			double cnt = 0.0;
+			double distSum = 0.0;
+			for (V nodeA : clusterA){
+				for (V nodeB: clusterB){
+					if (nodeA.equals(nodeB)) continue;
+					double dist = distance(nodeA,nodeB);
+					distSum+=dist;
+					cnt++;
+				}
+			}
+			if (cnt==0) return 100;
+			return distSum/cnt;
+		}		
+		
+		public Pair<Integer> getClustersToMerge(Hashtable<Integer,LinkedList<V>> clusters, ClusteringType cType){
+			int clusterAid=0;
+			int clusterBid=0;
+			double bestDist = 100;
+			for (Integer cAid: clusters.keySet()){
+				for (Integer cBid : clusters.keySet()){
+					if (cAid==cBid) continue;
+					double dist = 200;
+					if (cType.equals(ClusteringType.AVERAGE_LINK)){
+						dist = avgDistance(clusters.get(cAid), clusters.get(cBid));
+					}
+					if (cType.equals(ClusteringType.SINGLE_LINK)){
+						dist = minDistance(clusters.get(cAid), clusters.get(cBid));
+					}
+					if (cType.equals(ClusteringType.COMPLETE_LINK)){
+						dist = maxDistance(clusters.get(cAid), clusters.get(cBid));
+					}
+					
+					if (dist<bestDist){
+						bestDist=dist;
+						clusterAid=cAid;
+						clusterBid=cBid;
+					}
+				}
+			}
+			
+			Pair<Integer> clustersToMerge = new Pair<Integer>(clusterAid,clusterBid);
+			return clustersToMerge;
+		}
+	}	
+	public enum ClusteringType {
+		COMPLETE_LINK,
+		AVERAGE_LINK,
+		SINGLE_LINK
+	}
+
+
+	private ClusteringType cType;
+	
+	private DirectedGraph<V,E> graph=null;
+	Integer K;
+
+	public LinkageGraphClusterer(Integer numberOfClusters, ClusteringType cType, DirectedGraph<V,E> graph) {
+		this.cType=cType;
+		this.graph=graph;
+		K=numberOfClusters;
+	}
+	
+	public Set<Set<V>> cluster1(){
+		System.out.print("Clustering...");
+		if (graph.equals(null)) return null;
+		Distance<V> distance = new GraphDistance<V>(graph);
+		Set<V> inputSet = new HashSet<V>();
+		for (V node : graph.getVertices()){
+			inputSet.add(node);
+		}
+		System.out.println(inputSet.size()+" nodes in the graph");
+
+		HierarchicalClusterer<V> clusterer;
+        if (cType.equals(ClusteringType.SINGLE_LINK)){
+        	clusterer = new SingleLinkClusterer<V>(2,distance);
+        }
+        else {
+            clusterer = new CompleteLinkClusterer<V>(distance);
+        }
+        Dendrogram<V> dgram = clusterer.hierarchicalCluster(inputSet);
+        System.out.println("Dendrogram done: "+dgram.size()+" clusters");
+        //Set<Set<V>> clustering = clusterer.cluster(inputSet);
+        if (K>dgram.size()) K=dgram.size();
+        Set<Set<V>> clustering = dgram.partitionK(K);
+        
+		return clustering;
+	}
+	
+	
+	public Set<Set<V>> cluster(){
+		System.out.print("Clustering...");
+		if (graph.equals(null)) return null;
+		GraphDistance<V> distance = new GraphDistance<V>(graph);
+		Hashtable<Integer,LinkedList<V>> clusters = new Hashtable<Integer, LinkedList<V>>();
+		int id=1;
+		for (V node : graph.getVertices()){
+			LinkedList<V> cluster = new LinkedList<V>();
+			cluster.add(node);
+			clusters.put(id,cluster);
+			id++;
+		}
+		
+		System.out.println(clusters.size()+" nodes in the graph");
+		
+		
+		while(clusters.size()>K){
+			System.out.print(K+":"+clusters.size()+"/ ");
+			Integer[] clustersToMerge = (Integer[])distance.getClustersToMerge(clusters, cType).toSet().toArray();
+			int cAid=clustersToMerge[0];
+			int cBid=clustersToMerge[1];
+			if (cAid+cBid==0) { // zero indexes are returned if there's nothing to merge
+				K = clusters.size();
+			}
+			else{
+				LinkedList<V> newCluster = new LinkedList<V>();
+				for (V node : clusters.get(cAid)){
+					newCluster.add(node);
+				}
+				for (V node : clusters.get(cBid)){
+					newCluster.add(node);
+				}
+				System.out.println(newCluster);
+				clusters.remove(cAid);
+				clusters.remove(cBid);
+				clusters.put(cAid, newCluster);
+			}
+		}
+
+		
+        Set<Set<V>> clustering = new LinkedHashSet<Set<V>>();
+        for(Integer clusterId: clusters.keySet()){
+        	Set<V> s = new HashSet<V>();
+        	for (V node : clusters.get(clusterId)){
+        		s.add(node);
+        	}
+        	clustering.add(s);
+        }     
+		return clustering;
+	}	
+}

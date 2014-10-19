@@ -1,0 +1,613 @@
+package ac.biu.cs.nlp.protec.eval;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
+
+import ac.biu.cs.nlp.protec.algorithms.clusteringTerms.chinesewhisper.ChWTermsRankedResultsLoader;
+import ac.biu.cs.nlp.protec.algorithms.clusteringTerms.weka.WekaResultsLoader;
+import ac.biu.cs.nlp.protec.experiments.niceReasonUnification.NiceDataOrganizer;
+import ac.biu.nlp.nlp.general.configuration.ConfigurationException;
+import ac.biu.nlp.nlp.instruments.lemmatizer.LemmatizerException;
+
+public class ClusteringEvaluator {
+
+	/**
+	 * @param args
+	 */
+
+	public static Map<String, LinkedList<String>> clustersPerReason;
+	public static Map<String, LinkedList<Integer>> reasonsPerCluster;
+	public static Map<String, LinkedList<Integer>> idsPerCluster;
+	public static Map<String,LinkedList<Integer>> clustersToEvaluateById;
+	public static Map<String,LinkedList<String>> clustersToEvaluate;
+
+		public static double calculateMAP(Map<String, LinkedList<Integer>> clustGS, Map<String, LinkedList<Integer>> clust){
+			double MAP=0.0;
+			for (String clustName : clust.keySet()){
+				MAP+=calculateAP(clustGS, clust.get(clustName));
+			}
+			MAP/=clust.size();
+			return MAP;
+		}
+
+		public static double calculateAP(Map<String, LinkedList<Integer>> clustGS, LinkedList<Integer> cluster){
+		
+		// define the most relevant GS cluster
+		double gsNumberOfRelevant = 0.0;
+		String gsClustName = "";
+		for (String candidateGsClustName : clustGS.keySet()){
+			LinkedList<Integer> candidateGScluster = new LinkedList<Integer>();
+			for (Integer x: clustGS.get(candidateGsClustName)){
+				candidateGScluster.add(x);
+			}
+			candidateGScluster.retainAll(cluster); //relevants - common for candidateGScluster and cluster
+			double candidateNumberOfRelevant = candidateGScluster.size();
+			if (gsNumberOfRelevant<candidateNumberOfRelevant) {
+				gsNumberOfRelevant=candidateNumberOfRelevant;
+				gsClustName=candidateGsClustName;
+			}
+		}
+		if(gsClustName.equals("")) return 0.0;
+		
+		double AP=0.0;
+		LinkedList<Integer> gsCluster = clustGS.get(gsClustName);
+		double relevantByCurrentRank=0.0;
+		double rank=0.0;
+		for (Integer x :  cluster){
+			rank++;
+			if (gsCluster.contains(x)){
+				relevantByCurrentRank++;
+				AP+=(relevantByCurrentRank/rank);
+			}
+		}
+		AP/=gsNumberOfRelevant;
+		
+		//test - the 2 numbers should be the same
+		if (relevantByCurrentRank!=gsNumberOfRelevant){
+			System.out.println(relevantByCurrentRank+" ; "+gsNumberOfRelevant);
+			System.out.println(cluster);
+			System.out.println(gsCluster);
+			System.out.println(gsClustName);
+		}
+		return AP;
+	}
+	
+	public static double calculatePurity(Map<String, LinkedList<Integer>> clustGS, Map<String, LinkedList<Integer>> clust){
+		double purity=0.0;
+		double denominator=0.0;
+		for (String clustName : clust.keySet()){
+			denominator += clust.get(clustName).size(); //the number of reasons in the cluster
+			double maxNominator = 0.0;
+			for (String gsCluster : clustGS.keySet()){
+				LinkedList<Integer> tmpGScluster = new LinkedList<Integer>();
+				for (Integer x: clustGS.get(gsCluster)){
+					tmpGScluster.add(x);
+				}
+				//System.out.print(clustName+" "+gsCluster+" : "+tmpGScluster.size()+ " ");
+				tmpGScluster.retainAll(clust.get(clustName));
+				//System.out.println(tmpGScluster.size());
+				double candidateNominator = tmpGScluster.size();
+				if (maxNominator<candidateNominator) maxNominator=candidateNominator;
+			}
+			purity += maxNominator;
+		}		
+		purity /= denominator;
+		return purity;
+	}	
+
+	public static double calculateRandIndex(Set<Integer> reasonIds, Map<String, LinkedList<Integer>> clustGS, Map<String, LinkedList<Integer>> clust){
+		double trueDecisions=0.0;
+		double falseDecisions = 0.0;
+		
+		for (Integer i : reasonIds){
+			for (Integer j : reasonIds){
+				if (i>=j) continue; // don't check the same pair twice
+				// check in GS whether reasons i and j are clustered together
+				boolean togetherInGS = false;
+				for (String gsCluster : clustGS.keySet()){
+					if((clustGS.get(gsCluster).contains(i))&&(clustGS.get(gsCluster).contains(j))){
+						togetherInGS=true;
+						break; // if seen together - no need to search in other clusters
+					}
+				}
+				// check in clusters that are evaluated whether reasons i and j are clustered together
+				boolean togetherInClustersToEvaluate = false;
+				for (String cluster : clust.keySet()){
+					if((clust.get(cluster).contains(i))&&(clust.get(cluster).contains(j))){
+						togetherInClustersToEvaluate=true;
+						break; // if seen together - no need to search in other clusters
+					}
+				}
+				// check whether the decision is the same or no
+				if (togetherInGS==togetherInClustersToEvaluate) trueDecisions++;
+				else falseDecisions++;
+			}
+		}
+		double randIndex = trueDecisions / (trueDecisions + falseDecisions);
+
+/*		double a = (trueDecisions+falseDecisions);
+		double b = (reasonIds.values().size()*(reasonIds.values().size()-1)/2);
+		System.out.println("RI test: " + a + " ; "+ b);
+*/		
+		return randIndex;
+	}	
+	
+
+	public static Map<String,Double> calculateMeasures(Set<Integer> reasonIds, Map<String, LinkedList<Integer>> clustGS, Map<String, LinkedList<Integer>> clust){
+
+		Map<String,Double> d = calculateTrueAndFalseDecisions(reasonIds, clustGS, clust);
+		Map<String,Double> measures = new Hashtable<String, Double>();
+		double tp = d.get("tp");
+		double fp = d.get("fp");
+		double tn = d.get("tn");
+		double fn = d.get("fn");
+		
+		double randIndex = (tp+tn)/(tp+tn+fp+fn);
+		measures.put("randIndex", randIndex);
+		
+		double P = tp/(tp+fp); // what out of our positives is really positive?
+		double R = tp/(tp+fn); // what out of real positives have we found?
+		measures.put("P", P);
+		measures.put("R", R);
+		
+		double beta =1.0;
+		double F = ((beta*beta + 1)*P*R) / (beta*beta*P + R);
+		measures.put("F1", F);
+		
+		beta = 2.0;
+		F = ((beta*beta + 1)*P*R) / (beta*beta*P + R);
+		measures.put("F2", F);
+			
+		beta = 0.5;
+		F = ((beta*beta + 1)*P*R) / (beta*beta*P + R);
+		measures.put("F0.5", F);
+	
+		return measures;
+	}	
+	
+	
+	public static Map<String,Double> calculateTrueAndFalseDecisions(Set<Integer> reasonIds, Map<String, LinkedList<Integer>> clustGS, Map<String, LinkedList<Integer>> clust){
+		double tp=0.0;
+		double tn=0.0;
+		double fp = 0.0;
+		double fn = 0.0;
+		
+		for (Integer i : reasonIds){
+			for (Integer j : reasonIds){
+				if (i>=j) continue; // don't check the same pair twice
+				// check in GS whether reasons i and j are clustered together
+				boolean togetherInGS = false;
+				for (String gsCluster : clustGS.keySet()){
+					if((clustGS.get(gsCluster).contains(i))&&(clustGS.get(gsCluster).contains(j))){
+						togetherInGS=true;
+						break; // if seen together - no need to search in other clusters
+					}
+				}
+				// check in clusters that are evaluated whether reasons i and j are clustered together
+				boolean togetherInClustersToEvaluate = false;
+				for (String cluster : clust.keySet()){
+					if((clust.get(cluster).contains(i))&&(clust.get(cluster).contains(j))){
+						togetherInClustersToEvaluate=true;
+						break; // if seen together - no need to search in other clusters
+					}
+				}
+				// check whether the decision is the same or no
+				if (togetherInGS==togetherInClustersToEvaluate){
+					if (togetherInClustersToEvaluate==true) tp++; //true positive (clustered the 2 together and it's correct)
+					else tn++; //true negative (did not cluster the 2 together and it's correct) 
+				}
+				else {
+					if (togetherInClustersToEvaluate==true) fp++; //false positive (clustered the 2 together and it's wrong)
+					else fn++; //false negative (did not cluster the 2 together and it's wrong) 
+				}
+			}
+		}
+		Map<String,Double> decisions = new Hashtable<String, Double>();
+		decisions.put("tp",tp);
+		decisions.put("fp",fp);
+		decisions.put("tn",tn);
+		decisions.put("fn",fn);
+		return decisions;
+	}	
+	
+	public static void main(String[] args) {
+		// TODO create some run() method with conf instead of main, run it from experiments
+		
+		try {
+			//load reasons and GS
+			NiceDataOrganizer data = new NiceDataOrganizer();
+//		dl.loadInitialTermsGraphWithGS("D:/NICE/nov2011/stream_results/GS_stream_2.txt");
+			data.loadInitialTermsGraphWithGS("D:/NICE/nov2011/citibank_results/GS_citibank_2.txt");
+			
+/*		boolean b_useExpansions=true;
+			GraphBuilder gb = new GraphBuilder(b_useExpansions,dl);
+			try {
+				gb.buildEntailmentGraphs(args[0],false);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}*/
+			
+/*		reasonsByTerm = dl.getReasonsByTerm();
+			reasonIdsByText = dl.getReasonIdsByText();
+			clustersPerReason = dl.getClustersPerReason();
+			reasonsPerCluster = dl.getReasonsPerCluster();
+			idsPerCluster = dl.getIdsPerCluster();
+			reasonsById=dl.getReasonsById();
+			termFrequencies=dl.getTermFrequencies();*/
+			
+			double reasonsNumber = data.getDocTextsById().size();
+			for(String term : data.getDocsByTermBeforeExpansion().keySet()){
+				double freq = data.getTermFrequenciesBeforeExpansion().get(term);
+				double percent = freq/reasonsNumber;
+				if (freq>1) System.out.println(term+"\t"+freq+"\t"+percent*100+"%");
+			}
+			
+			
+			/*	// test correctness
+			for (String clusterName : clustersGS.keySet()){
+				System.out.println(clusterName);
+				for (String reason : clustersGS.get(clusterName)){
+					System.out.print(reasonIds.get(reason)+", ");
+				}
+				System.out.println();
+				for (Integer reasonId : clustersGSById.get(clusterName)){
+					System.out.print(reasonId+", ");
+				}
+				System.out.println();
+			}*/
+			
+			try{
+			
+			/*	System.out.println("Weka terms:");
+				ResultsLoader res = new WekaTermGraphResultsLoader();
+				
+				res.loadResults(
+						"D:/NICE/nov2011/citibank_results/weka2_res.arff", 
+						reasonsByTerm, reasonIds);
+				clustersToEvaluateById= res.getClustersToEvaluateById();
+				clustersToEvaluate=res.getClustersToEvaluate();
+*/
+					
+			/*		for (String clustName : clustersToEvaluate.keySet()){
+						System.out.println(clustName);
+						for (String reason : clustersToEvaluate.get(clustName)){
+							System.out.println("\t"+reason);
+						}
+						System.in.read();
+					}*/
+					
+/*			System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+					System.out.println("RI    : "+calculateRandIndex(reasonIds, idsPerCluster, clustersToEvaluateById));
+				
+*/		
+/*			System.out.println("Chinese whispers:");
+				ResultsLoader res = new ChWTermsRankedResultsLoader();//new ChWResultsLoader();
+				
+				res.loadResults(
+						"D:/NICE/nov2011/citibank_results/tGraph_bapWN_stopwords/res.read", 
+						termFrequencies, reasonsByTerm, reasonsById);
+				clustersToEvaluateById= res.getClustersToEvaluateById();
+				clustersToEvaluate=res.getClustersToEvaluate();
+
+				
+					for (String clustName : clustersToEvaluate.keySet()){
+						String clustDisplayName ="";
+						for(String s : clustName.split(", ")){
+							if (reasonsByTerm.containsKey(s)){
+								clustDisplayName = s.toUpperCase() + ", " + clustDisplayName; 
+							}
+							else{
+								clustDisplayName = clustDisplayName + ", " +s;
+							}
+						}
+						System.out.println(clustersToEvaluate.get(clustName).size()+"\t"+clustDisplayName);
+						for (String reason : clustersToEvaluate.get(clustName)){
+							System.out.println("\t"+reason);
+						}
+						System.in.read();
+					}
+					
+				System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+				System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+				System.out.println("RI    : "+calculateRandIndex(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+				System.out.println("measures    : "+calculateMeasures(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+						System.out.println("MAP    : "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+				
+*/
+						System.out.println();
+						System.out.println("Chinese whispers tRes:");
+						ResultsLoader  res = new ChWTermsRankedResultsLoader();//new ChWResultsLoader();
+						res.loadResults(
+								"D:/NICE/nov2011/citibank_results/_gr0/tRes.read", 
+//							"D:/NICE/nov2011/stream_results/_gr0/tRes.read", 
+
+								data.getTermFrequenciesBeforeExpansion(), data.getDocsByTermBeforeExpansion(), data.getDocTextsById());
+						clustersToEvaluateById= res.getClustersToEvaluateById();
+						clustersToEvaluate=res.getClustersToEvaluate();
+
+						for (String clustName : clustersToEvaluate.keySet()){
+							String clustDisplayName ="";
+							for(String s : clustName.split(", ")){
+								if (data.getDocsByTermBeforeExpansion().containsKey(s)){
+									clustDisplayName = s.toUpperCase() + ", " + clustDisplayName; 
+								}
+								else{
+									clustDisplayName = clustDisplayName + ", " +s;
+								}
+							}
+							System.out.println(clustersToEvaluate.get(clustName).size()+"\t"+clustDisplayName);
+							for (String reason : clustersToEvaluate.get(clustName)){
+								System.out.println("\t"+reason);
+							}
+							//System.in.read();
+						}					
+						System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+						System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+						System.out.println("RI    : "+calculateRandIndex(data.getDocTextsById().keySet(), idsPerCluster, clustersToEvaluateById));
+						System.out.println("measures    : "+calculateMeasures(data.getDocTextsById().keySet(), idsPerCluster, clustersToEvaluateById));
+								System.out.println("MAP    : "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+											
+			
+/*							System.out.println();
+								System.out.println("Chinese whispers sRes:");
+								  res = new ChWSentenceResultsLoader();//new ChWResultsLoader();
+									res.loadResults(
+											"D:/NICE/nov2011/citibank_results/_gr3/sRes.read", 
+											termFrequencies, reasonsByTerm, reasonsById);
+									clustersToEvaluateById= res.getClustersToEvaluateById();
+									clustersToEvaluate=res.getClustersToEvaluate();
+									
+									System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+									System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+									System.out.println("RI    : "+calculateRandIndex(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+									System.out.println("measures    : "+calculateMeasures(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+											System.out.println("MAP    : "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+													
+											System.out.println();
+											System.out.println("Chinese whispers sRes2:");
+											  res = new ChWSentenceResultsLoader();//new ChWResultsLoader();
+												res.loadResults(
+														"D:/NICE/nov2011/citibank_results/_gr1/sRes2.read", 
+														termFrequencies, reasonsByTerm, reasonsById);
+												clustersToEvaluateById= res.getClustersToEvaluateById();
+												clustersToEvaluate=res.getClustersToEvaluate();
+												
+												System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+												System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+												System.out.println("RI    : "+calculateRandIndex(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+												System.out.println("measures    : "+calculateMeasures(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+														System.out.println("MAP    : "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+					*/														
+						/*			System.out.println("SingleLink terms:");
+				LinkageGraphClusterer<String, Integer> slClust = new LinkageGraphClusterer<String, Integer>(40,ClusteringType.SINGLE_LINK, gb.getTermEntailmentGraph()); 
+				 res = new ClusteringResultsLoader<String>(slClust.cluster(),NodeType.WORD);
+				
+				res.loadResults(
+						"",	termFrequencies, reasonsByTerm, reasonsById);
+				clustersToEvaluateById= res.getClustersToEvaluateById();
+				clustersToEvaluate=res.getClustersToEvaluate();
+			
+				for (String clustName : clustersToEvaluate.keySet()){
+					String clustDisplayName ="";
+					for(String s : clustName.split(", ")){
+						if (reasonsByTerm.containsKey(s)){
+							clustDisplayName = s.toUpperCase() + ", " + clustDisplayName; 
+						}
+						else{
+							clustDisplayName = clustDisplayName + ", " +s;
+						}
+					}
+					System.out.println(clustersToEvaluate.get(clustName).size()+"\t"+clustDisplayName);
+					for (String reason : clustersToEvaluate.get(clustName)){
+						System.out.println("\t"+reason);
+					}
+					System.in.read();
+				}
+				System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+				System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+				System.out.println("RI    : "+calculateRandIndex(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+				System.out.println("measures    : "+calculateMeasures(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+						System.out.println("MAP    : "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+					
+						*/		
+				
+														System.out.println();
+				System.out.println("\n\nweka clustered:");
+				res = new WekaResultsLoader();
+				
+				res.loadResults(
+						"D:/NICE/nov2011/citibank_results/_gr0/wekaClustRes.arff", 
+
+//					"D:/NICE/nov2011/stream_results/_gr0/wekaClust_res60.arff", 
+//					"D:/NICE/nov2011/stream_results/_gr0/wekaClust_res60.arff", 
+//					"D:/NICE/nov2011/stream_results/_gr0/wekaExp_res60.arff", 
+
+						data.getTermFrequenciesBeforeExpansion(),data.getDocsByTermBeforeExpansion(), data.getDocTextsById());
+				clustersToEvaluateById= res.getClustersToEvaluateById();
+				clustersToEvaluate=res.getClustersToEvaluate();
+
+					
+					for (String clustName : clustersToEvaluate.keySet()){
+						System.out.println(clustersToEvaluate.get(clustName).size()+"\t"+WekaResultsLoader.getClusterLabel(data.getDocsByTermBeforeExpansion(), clustersToEvaluateById.get(clustName)));
+						for (String reason : clustersToEvaluate.get(clustName)){
+							System.out.println("\t"+reason);
+						}
+					}
+					
+			System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+					System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+					System.out.println("RI    : "+calculateRandIndex(data.getDocTextsById().keySet(), idsPerCluster, clustersToEvaluateById));
+					System.out.println("measures    : "+calculateMeasures(data.getDocTextsById().keySet(), idsPerCluster, clustersToEvaluateById));
+					System.out.println("MAP    : "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+
+
+
+					System.out.println("\n\nweka expanded:");
+					res = new WekaResultsLoader();
+					
+					res.loadResults(
+							"D:/NICE/nov2011/citibank_results/_gr0/wekaExpRes.arff", 
+							data.getTermFrequenciesBeforeExpansion(),data.getDocsByTermBeforeExpansion(), data.getDocTextsById());
+					clustersToEvaluateById= res.getClustersToEvaluateById();
+					clustersToEvaluate=res.getClustersToEvaluate();
+
+						
+/*					for (String clustName : clustersToEvaluate.keySet()){
+							System.out.println(clustersToEvaluate.get(clustName).size()+"\t"+clustName);
+							for (String reason : clustersToEvaluate.get(clustName)){
+								System.out.println("\t"+reason);
+							}
+						}*/
+						
+					System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+						System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+						System.out.println("RI    : "+calculateRandIndex(data.getDocTextsById().keySet(), idsPerCluster, clustersToEvaluateById));
+						System.out.println("measures    : "+calculateMeasures(data.getDocTextsById().keySet(), idsPerCluster, clustersToEvaluateById));
+						System.out.println("MAP    : "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+			
+
+						
+						System.out.println("\n\nweka orig:");
+						res = new WekaResultsLoader();
+						
+						res.loadResults(
+								"D:/NICE/nov2011/citibank_results/_gr0/wekaRes.arff", 
+								data.getTermFrequenciesBeforeExpansion(),data.getDocsByTermBeforeExpansion(), data.getDocTextsById());
+						clustersToEvaluateById= res.getClustersToEvaluateById();
+						clustersToEvaluate=res.getClustersToEvaluate();
+
+							
+/*					for (String clustName : clustersToEvaluate.keySet()){
+								System.out.println(clustersToEvaluate.get(clustName).size()+"\t"+clustName);
+								for (String reason : clustersToEvaluate.get(clustName)){
+									System.out.println("\t"+reason);
+								}
+							}*/
+							
+						System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+							System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+							System.out.println("RI    : "+calculateRandIndex(data.getDocTextsById().keySet(), idsPerCluster, clustersToEvaluateById));
+							System.out.println("measures    : "+calculateMeasures(data.getDocTextsById().keySet(), idsPerCluster, clustersToEvaluateById));
+							System.out.println("MAP    : "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+
+						
+						/*			res.loadResults(
+							"D:/NICE/nov2011/citibank_results/wekaDataBap_60res.arff", 
+							termFrequencies,reasonsByTerm, reasonsById);
+					clustersToEvaluateById= res.getClustersToEvaluateById();
+					clustersToEvaluate=res.getClustersToEvaluate();
+
+						
+						for (String clustName : clustersToEvaluate.keySet()){
+							System.out.println(clustName);
+							for (String reason : clustersToEvaluate.get(clustName)){
+								System.out.println("\t"+reason);
+							}
+							//System.in.read();
+						}
+						
+						System.out.println("---------"+clustersToEvaluate.size()+ "------------");
+						System.out.println("Purity: "+calculatePurity(idsPerCluster, clustersToEvaluateById));
+						System.out.println("RI    : "+calculateRandIndex(reasonsById.keySet(), idsPerCluster, clustersToEvaluateById));
+						System.out.println("MAP: "+calculateMAP(idsPerCluster, clustersToEvaluateById));
+				*/
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}  	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+/*
+ * 
+ * 		// load GS
+
+			System.out.println("Evaluation started");
+			try {
+				Map<String, LinkedList<String>> clusters = new Map<String, LinkedList<String>>();
+				
+				String currCluster="";
+
+				BufferedReader reader = new BufferedReader(new FileReader("D:/NICE/nov2011/citibank_results/GS_stream_2.txt"));
+				String line = reader.readLine();	
+				int i=0;
+				while(line != null) {
+					
+				    String[] s = line.split("\t");
+			    	if (s.length==0) {
+			    		 line = reader.readLine();
+			    		 continue;
+			    	}
+				    System.out.println(s.length+"\t'"+s[0]+"'");
+				    if (!s[0].isEmpty()){
+				        currCluster=s[0];
+				    }
+				    else{
+				    	LinkedList<String> updatedList = clusters.get(currCluster);
+				    	if (updatedList==null) updatedList= new LinkedList<String>();
+				    	updatedList.add(s[1]);
+				        clusters.put(currCluster,updatedList);
+				    }   
+				   line = reader.readLine();
+				   i++;
+				}
+				reader.close();   
+
+				for (String x :clusters.keySet()){
+				    for (String reason : clusters.get(x)){
+				    	if (reasonIds.containsKey(reason))
+				    		System.out.println(x+"\t("+reason+")");
+				    	else
+				    		System.out.println("!!"+x+"\t("+reason+")");	
+				    }
+				}
+
+
+				for x in wordClusters:
+				    print x, wordClusters[x]
+
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+ */
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (LemmatizerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	} // end of main
+
+}

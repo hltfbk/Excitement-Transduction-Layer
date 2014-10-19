@@ -1,0 +1,227 @@
+package ac.biu.cs.nlp.protec.experiments.niceReasonUnification;
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.List;
+
+
+
+import ac.biu.cs.nlp.protec.data.AbstractDataOrganizer;
+import ac.biu.nlp.nlp.general.configuration.ConfigurationException;
+import ac.biu.nlp.nlp.general.configuration.ConfigurationFile;
+import ac.biu.nlp.nlp.general.configuration.ConfigurationParams;
+import ac.biu.nlp.nlp.instruments.lemmatizer.GateLemmatizer;
+import ac.biu.nlp.nlp.instruments.lemmatizer.LemmatizerException;
+import ac.biu.nlp.nlp.instruments.postagger.MaxentPosTagger;
+import ac.biu.nlp.nlp.instruments.postagger.PosTaggedToken;
+import ac.biu.nlp.nlp.instruments.postagger.PosTaggerException;
+import ac.biu.nlp.nlp.representation.UnsupportedPosTagStringException;
+
+public class NiceDataOrganizer extends AbstractDataOrganizer{
+
+	private String m_configurationFileName = "/PROTEC/protec-conf.xml";
+	
+	private void setConfigurationFileName(String configurationFileName){
+		m_configurationFileName=configurationFileName;
+	}
+	
+	public String getCnfigurationFileName(){
+		return m_configurationFileName;
+	}
+		
+	public void init(ConfigurationFile conf) throws ConfigurationException, LemmatizerException, MalformedURLException{
+		if(conf.isModuleExist("Preprocessing")){
+			ConfigurationParams params = conf.getModuleConfiguration("Preprocessing");
+			if(params.containsKey("filter_stopwords")) m_doFilterStopwords = params.getBoolean("filter_stopwords");
+			if(params.containsKey("stopwords_file")) m_stopwordsFilename = params.getString("stopwords_file");
+			if(params.containsKey("stopword_lessThan_Percent_threshold")) m_stopwordLessThanPercentThreshold = params.getDouble("stopword_lessThan_Percent_threshold");
+			if(params.containsKey("stopword_moreThan_Percent_threshold")) m_stopwordMoreThanPercentThreshold = params.getDouble("stopword_moreThan_Percent_threshold");
+		}
+		loadStopwords();
+		
+		if(conf.isModuleExist("Gate-lemmatizer")){
+			ConfigurationParams params = conf.getModuleConfiguration("Gate-lemmatizer");
+			if(params.containsKey("lemmatizer-rule-file")) m_gateRulesFilename = params.getString("lemmatizer-rule-file");						
+			m_lemmatizer = new GateLemmatizer(new File(m_gateRulesFilename).toURI().toURL());			
+		}	
+	}
+	
+	public NiceDataOrganizer(String configurationFileName) throws ConfigurationException, LemmatizerException, MalformedURLException{
+		setConfigurationFileName(configurationFileName);
+		init(new ConfigurationFile(m_configurationFileName));
+	}
+	
+	public NiceDataOrganizer() throws ConfigurationException, LemmatizerException, MalformedURLException{
+		init(new ConfigurationFile(m_configurationFileName));
+	}
+	
+	public void loadInitialTermsGraphWithGS(String docsAndGSFilename) {
+		/* format of the file:
+		* clusterName
+		* \t reasonA (docs are actiually sentences, each containing one reason)
+		* ...
+		* \t reasonX
+		* clusterName
+		* ...
+		*/
+		//If the same reason text is seen more than once in a cluster - it's treated as different reasons (get different ids)
+
+		setInputFile(docsAndGSFilename);
+		loadStopwords();	
+		
+
+		try {
+			m_posTagger = new MaxentPosTagger("D:/JARS/stanford-postagger-full-2008-06-06/models/bidirectional-wsj-0-18.tagger");
+			m_posTagger.init();	
+			
+			m_docIdsByText=new Hashtable<String, LinkedList<Integer>>();
+			m_docTextById=new Hashtable<Integer, String>();
+
+			m_docsPerCluster = new Hashtable<String, LinkedList<Integer>>();
+//			idsPerCluster = new Hashtable<String, LinkedList<Integer>>();
+			m_clustersPerDoc= new Hashtable<Integer, LinkedList<String>>();
+			String currCluster="";
+			Integer maxDocId=0;
+			BufferedReader reader = new BufferedReader(new FileReader(m_inputFile));
+			String line = reader.readLine();	
+			while(line != null) {
+				 String[] s = line.split("\t");
+			    	if (s.length==0) {
+			    		 line = reader.readLine();
+			    		 continue;
+			    	}
+				    
+			    	if (!s[0].isEmpty()){
+				        currCluster=s[0];
+				    }
+				    else{
+				    	//read one more doc (reason)
+				    	int currId = maxDocId;
+				    	String aDocText=s[1];
+				    	
+				    	boolean  needToCreateNewDoc=true;
+				    	// check if seen already
+				    	if(m_docIdsByText.containsKey(aDocText)){
+				    		// if seen already with some cluster - retrieve all possible ids
+				    		List<Integer> ids = m_docIdsByText.get(aDocText);
+				    		
+				    		// check if all these ids were used already with current cluster
+				    		// if yes - will need to create a new doc (reason)
+				    		// if no - no need to create new doc, just change currId
+				    		if (m_docsPerCluster.containsKey(currCluster))
+				    		{ //if smth was seen in the cluster at all
+					    		for (Integer id : ids){
+					    			List<Integer> docsInCurrCluster=m_docsPerCluster.get(currCluster);
+					    			if (!docsInCurrCluster.contains(id)){
+					    				currId=id;
+					    				needToCreateNewDoc=false;
+					    				break; //found unused id, no need to continue the for cycle
+					    			}
+					    		}
+				    		}
+				    		else{ //if the cluster is empty
+				    			needToCreateNewDoc=false;
+				    			currId=ids.get(0); // take the first id
+				    		}
+				    	}
+				    	else{ //if this doc text was never seen before
+				    		m_docIdsByText.put(aDocText,new LinkedList<Integer>());
+				    	}
+				    	
+				    	if (needToCreateNewDoc){ //if need to create new doc (reason) seen with any cluster - add a new doc, update maxDocId
+							m_clustersPerDoc.put(currId, new LinkedList<String>());
+							LinkedList<Integer> ids = m_docIdsByText.get(aDocText);
+							ids.add(currId);
+							m_docIdsByText.put(aDocText, ids);	
+							m_docTextById.put(currId, aDocText);
+							maxDocId++;
+				    	}
+				    	// add the doc to docsPerCluster
+				    	LinkedList<Integer> updatedDocsList = m_docsPerCluster.get(currCluster);
+				    	if (updatedDocsList==null) updatedDocsList= new LinkedList<Integer>();
+				    	updatedDocsList.add(currId);
+				        m_docsPerCluster.put(currCluster,updatedDocsList);
+
+/*				        // add doc to idsPerCluster
+				    	LinkedList<Integer> updatedIntList = idsPerCluster.get(currCluster);
+				    	if (updatedIntList==null) updatedIntList= new LinkedList<Integer>();
+				    	updatedIntList.add(currId);
+				        idsPerCluster.put(currCluster,updatedIntList);
+*/				    	
+				        // add the doc to clustersPerDoc
+				    	LinkedList<String> updatedClustersList = m_clustersPerDoc.get(aDocText);
+				    	if (updatedClustersList==null) updatedClustersList= new LinkedList<String>();
+				    	updatedClustersList.add(currCluster);
+				        m_clustersPerDoc.put(currId,updatedClustersList);
+				    } 				
+				line=reader.readLine();
+			}
+			System.out.println("Loaded "+maxDocId+" docs (reasons). (Distinct texts: "+ m_docIdsByText.size()+")");
+
+/////			docsByTermInit(NGRAMS_FILE);
+
+			for (Integer rId : m_docTextById.keySet()){
+				String document = m_docTextById.get(rId).toLowerCase().replace("#","").replace("@", "").replace("\"","");
+				m_posTagger.setTokenizedSentence(document);
+				m_posTagger.process();
+				String lemmatizedDocument=" ";
+				for (PosTaggedToken token: m_posTagger.getPosTaggedTokens()){
+					char shortPOS = token.getPartOfSpeech().toString().toLowerCase().charAt(0);
+					String tokenLemma= getLemma(token.getToken(), shortPOS);
+					lemmatizedDocument+=tokenLemma+" "; 
+				}
+				for (String ngram : m_originalDocsByTerm.keySet()){
+					if (lemmatizedDocument.contains(ngram+" ")&&lemmatizedDocument.contains(" "+ngram)){
+						int ngramCountInDocument=lemmatizedDocument.split(ngram+" ").length-1;
+						ngramCountInDocument+=lemmatizedDocument.split(" "+ngram).length-1;
+						ngramCountInDocument=(int)Math.floor(ngramCountInDocument / 2.0 + 0.5);
+						 		
+						updateOriginalDocsByTerm(ngram, rId,ngramCountInDocument);
+						if (!m_initialTermGraph.containsVertex(ngram)) {
+							m_initialTermGraph.addVertex(ngram);
+						//	if(isValidPOS(shortPOS)) System.out.println(tokenLemma); //uncomment me to get the list of unigrams
+						}	
+					}					
+				}
+			}
+			if(m_doFilterStopwords) filterStowords();
+			System.out.println();
+	/*			for (String term : initialTermsGraph.getVertices()){
+				System.out.println(term);
+			}*/
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (PosTaggerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (LemmatizerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedPosTagStringException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public void loadData(ConfigurationFile conf) {
+		// TODO take what's relevant from loadInitialTermsGraphWithGS, move other parts to initial term graph generation and remove the method loadInitialTermsGraphWithGS
+		
+	}	
+	
+}
