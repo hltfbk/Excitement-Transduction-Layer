@@ -136,8 +136,8 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 	 */
 	public static void main(String[] args) {
 		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/Test2";
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/preFrag/test";
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_reAnnotated/test";
 		
 		int fileLimit = Integer.MAX_VALUE;
 		String outDir = dataDir.replace("resources", "outputs");
