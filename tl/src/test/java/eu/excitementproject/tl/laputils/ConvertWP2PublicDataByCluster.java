@@ -45,12 +45,14 @@ public class ConvertWP2PublicDataByCluster extends ConvertWP2PublicData{
 		// File names will be determined by "interaction name" (processWP2Data()), or 
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 		
-//		String outputDirName = "./target/WP2_public_data_CAS_XMI/ALMA_social_media";
-		String outputDirName = "/home/nastase/Projects/eop/excitement-transduction-layer/Data_ALMA/ENT-GRAPH-ITA-REVISED-WP2_XMI/orig_dev";
+		String outputDirName = "./src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/all";
+//		String outputDirName = "/home/nastase/Projects/eop/excitement-transduction-layer/Data_ALMA/ENT-GRAPH-ITA-REVISED-WP2_XMI/orig_dev";
 		
-//		String clustersDirName = "./src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Test/";
-		String clustersDirName = "/home/nastase/Projects/eop/excitement-transduction-layer/Data_ALMA/ENT-GRAPH-ITA-REVISED-WP2/orig_dev";
+		String clustersDirName = "./src/test/resources/WP2_gold_standard_annotation/NICE_reAnnotated/all";
+//		String clustersDirName = "/home/nastase/Projects/eop/excitement-transduction-layer/Data_ALMA/ENT-GRAPH-ITA-REVISED-WP2/orig_dev";
 		File clustersDir = new File(clustersDirName);
+		
+		String language = "EN"; 
 		
 		for(String cluster: clustersDir.list()) {
 			
@@ -58,14 +60,14 @@ public class ConvertWP2PublicDataByCluster extends ConvertWP2PublicData{
 			dirInteractions = Paths.get(clustersDirName + "/" + cluster + "/Interactions");
 		
 			logger.info(dirFragmentGraphs.toFile().getAbsolutePath());
-			outputdir = Paths.get(outputDirName);
-			outputdirPerFrag = Paths.get(outputDirName + "/" + cluster);
+			outputdir = Paths.get(outputDirName+"_perInteraction/"+cluster);
+			outputdirPerFrag = Paths.get(outputDirName + "_perFrag/" + cluster);
 		
 			// Actual call: use this for "per-fragment" XMI saving 
-			totalcount += processWP2DataPerFragment(dirFragmentGraphs, dirInteractions, outputdirPerFrag, "IT"); 
+			totalcount += processWP2DataPerFragment(dirFragmentGraphs, dirInteractions, outputdirPerFrag, language); 
 		
 			// Actual call: Use this, for "per-interaction" XMI saving. 
-			totalcount += processWP2Data(dirFragmentGraphs, dirInteractions, outputdir, "IT"); 
+			totalcount += processWP2Data(dirFragmentGraphs, dirInteractions, outputdir, language); 
 
 			logger.info("Cummulative count: " + totalcount + " XMI files generated, over /target/ directories"); 
 		}

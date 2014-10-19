@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="0225.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0225.txt" implicit_context="" focus="importanza" implicit_focus="">
+        <original_text>si da più importanza ai nuovi anziché ai vecchi clienti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>anziché ai vecchi clientipoz=6 7 8 9</modifiers>
+    </node>
+    <node id="0225.txt_2_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0225.txt" implicit_context="" focus="importanza" implicit_focus="">
+        <original_text>si da più importanza ai nuovi</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0225.txt_2_0-0225.txt_2_1" source="0225.txt_2_0" target="0225.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0225.txt_2_0-0225.txt_2_1" source="0225.txt_2_0" target="0225.txt_2_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

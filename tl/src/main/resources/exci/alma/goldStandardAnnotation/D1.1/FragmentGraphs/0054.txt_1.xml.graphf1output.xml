@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="4">
+    <node id="0054.txt_1_0" implicit_statement="FALSE" modality="TRUE" explicit_context="0054.txt" implicit_context="" focus="chiamare" implicit_focus="">
+        <original_text>da 2 anni non riesco a chiamare il serv clienti dal mio telefono</original_text>
+        <correct_text>da 2 anni non riesco a chiamare il servizio clienti dal mio telefono</correct_text>
+        <modifiers>da 2 annipoz=0 1 2;dal mio telefonopoz=10 11 12</modifiers>
+    </node>
+    <node id="0054.txt_1_1" implicit_statement="FALSE" modality="TRUE" explicit_context="0054.txt" implicit_context="" focus="chiamare" implicit_focus="">
+        <original_text>non riesco a chiamare il serv clienti dal mio telefono</original_text>
+        <correct_text>non riesco a chiamare il servizio clienti dal mio telefono</correct_text>
+        <modifiers>dal mio telefonopoz=10 11 12</modifiers>
+    </node>
+    <node id="0054.txt_1_2" implicit_statement="FALSE" modality="TRUE" explicit_context="0054.txt" implicit_context="" focus="chiamare" implicit_focus="">
+        <original_text>da 2 anni non riesco a chiamare il serv clienti</original_text>
+        <correct_text>da 2 anni non riesco a chiamare il servizio clienti</correct_text>
+        <modifiers>da 2 annipoz=0 1 2</modifiers>
+    </node>
+    <node id="0054.txt_1_3" implicit_statement="FALSE" modality="TRUE" explicit_context="0054.txt" implicit_context="" focus="chiamare" implicit_focus="">
+        <original_text>non riesco a chiamare il serv clienti</original_text>
+        <correct_text>non riesco a chiamare il servizio clienti</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0054.txt_1_0-0054.txt_1_1" source="0054.txt_1_0" target="0054.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0054.txt_1_0-0054.txt_1_1" source="0054.txt_1_0" target="0054.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0054.txt_1_0-0054.txt_1_2" source="0054.txt_1_0" target="0054.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0054.txt_1_0-0054.txt_1_2" source="0054.txt_1_0" target="0054.txt_1_2">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0054.txt_1_2-0054.txt_1_3" source="0054.txt_1_2" target="0054.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0054.txt_1_1-0054.txt_1_3" source="0054.txt_1_1" target="0054.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0054.txt_1_1-0054.txt_1_3" source="0054.txt_1_1" target="0054.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0054.txt_1_2-0054.txt_1_3" source="0054.txt_1_2" target="0054.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0054.txt_1_0-0054.txt_1_3" source="0054.txt_1_0" target="0054.txt_1_3">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>
