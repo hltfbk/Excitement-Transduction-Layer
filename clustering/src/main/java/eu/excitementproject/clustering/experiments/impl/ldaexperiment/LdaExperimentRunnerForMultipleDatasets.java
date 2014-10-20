@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.excitementproject.clustering.experiments.impl.exp4;
+package eu.excitementproject.clustering.experiments.impl.ldaexperiment;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,20 +19,18 @@ import eu.excitementproject.eop.lap.biu.lemmatizer.LemmatizerException;
  * @author Lili Kotlerman
  *
  */
-public class ExpCombinedRunnerMultipleDatasets {
+public class LdaExperimentRunnerForMultipleDatasets {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
 	
 		String confDir = args[0]; //".configurations/biu/exp2_noExpansion";
 		String outdir = args[1];  //"./src/test/outputs/exp2_noExpansion";
 
-/*		
-		String confDir = "./configurations/biu/exp3_withWN_and_bap";
-		String outdir = "./src/test/outputs/exp3_withWN_and_bap";
-*/
 
 		String current;
 		try {
@@ -80,7 +78,7 @@ public class ExpCombinedRunnerMultipleDatasets {
 					writer_ignore.flush();
 					writer_top30Percent.flush();
 					expanWriter.flush();
-					ExpCombinedRunnerForSelectedConfigurations exp = new ExpCombinedRunnerForSelectedConfigurations(configurationFile.getAbsolutePath(), dataFile.getAbsolutePath());
+					LdaExperimentRunner exp = new LdaExperimentRunner(configurationFile.getAbsolutePath(), dataFile.getAbsolutePath());
 					writer.write(exp.aboutDataset());
 					writer_ignore.write(exp.aboutDataset());
 					writer_top30Percent.write(exp.aboutDataset());
@@ -111,6 +109,7 @@ public class ExpCombinedRunnerMultipleDatasets {
 			writer_ignore.close();
 			writer_top30Percent.close();
 			expanWriter.close();
+
 		} catch (ConfigurationFileDuplicateKeyException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

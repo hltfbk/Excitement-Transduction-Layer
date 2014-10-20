@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.excitementproject.clustering.experiments.impl.exp2;
+package eu.excitementproject.clustering.experiments.impl.ldaexperiment;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,13 +25,13 @@ import eu.excitementproject.eop.lap.biu.lemmatizer.LemmatizerException;
  * @author Lili Kotlerman
  *
  */
-public class ExpTwoRunner extends AbstractExperimentRunner {
+public class LdaExperimentRunner extends AbstractExperimentRunner {
 
-	public ExpTwoRunner(String configurationFileName) throws MalformedURLException, ConfigurationException, LemmatizerException{
+	public LdaExperimentRunner(String configurationFileName) throws MalformedURLException, ConfigurationException, LemmatizerException{
 		super(configurationFileName);
 	}
 
-	public ExpTwoRunner(String configurationFileName, String dataFilename) throws MalformedURLException, ConfigurationException, LemmatizerException{
+	public LdaExperimentRunner(String configurationFileName, String dataFilename) throws MalformedURLException, ConfigurationException, LemmatizerException{
 		super(configurationFileName, dataFilename);
 	}
 
@@ -315,7 +315,7 @@ public class ExpTwoRunner extends AbstractExperimentRunner {
 				
 		File annotationFile = new File(args[0]);
 		try {
-			ExpTwoRunner exp = new ExpTwoRunner(annotationFile.getAbsolutePath());
+			LdaExperimentRunner exp = new LdaExperimentRunner(annotationFile.getAbsolutePath());
 			BufferedWriter writer = new BufferedWriter(new FileWriter (new File(outdir+"/"+annotationFile.getName().replace(".xml", ".log.txt"))));
 			exp.runExperiment(args[0]);
 			writer.write(exp.printAllResults(0));

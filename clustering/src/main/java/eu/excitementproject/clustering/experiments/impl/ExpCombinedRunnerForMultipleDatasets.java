@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.excitementproject.clustering.experiments.impl.exp1;
+package eu.excitementproject.clustering.experiments.impl;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,30 +19,20 @@ import eu.excitementproject.eop.lap.biu.lemmatizer.LemmatizerException;
  * @author Lili Kotlerman
  *
  */
-public class ExpOneRunnerMultipleDatasets {
+public class ExpCombinedRunnerForMultipleDatasets {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	/*	String confDir = "./configurations/biu/exp1_noExpansion";
-		String outdir = "./src/test/outputs/exp1_noExpansion";*/
-
-
-/*		String confDir = "./configurations/biu/exp1_withWN";
-		String outdir = "./src/test/outputs/exp1_withWN";*/
 	
-		
-	/*	String confDir = "./configurations/biu/exp1_withWN_and_bap";
-		String outdir = "./src/test/outputs/exp1_withWN_and_bap";*/
-		
-		
-			// exp
 		String confDir = args[0]; //".configurations/biu/exp2_noExpansion";
 		String outdir = args[1];  //"./src/test/outputs/exp2_noExpansion";
 
+/*		
+		String confDir = "./configurations/biu/exp3_withWN_and_bap";
+		String outdir = "./src/test/outputs/exp3_withWN_and_bap";
+*/
 
 		String current;
 		try {
@@ -90,7 +80,7 @@ public class ExpOneRunnerMultipleDatasets {
 					writer_ignore.flush();
 					writer_top30Percent.flush();
 					expanWriter.flush();
-					ExpOneRunner exp = new ExpOneRunner(configurationFile.getAbsolutePath(), dataFile.getAbsolutePath());
+					ExpCombinedRunnerForSelectedConfigurations exp = new ExpCombinedRunnerForSelectedConfigurations(configurationFile.getAbsolutePath(), dataFile.getAbsolutePath());
 					writer.write(exp.aboutDataset());
 					writer_ignore.write(exp.aboutDataset());
 					writer_top30Percent.write(exp.aboutDataset());

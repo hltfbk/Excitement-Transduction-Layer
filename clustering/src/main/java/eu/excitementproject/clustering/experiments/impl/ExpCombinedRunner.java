@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.excitementproject.clustering.experiments.impl.exp4;
+package eu.excitementproject.clustering.experiments.impl;
 
 
 import java.io.BufferedWriter;
