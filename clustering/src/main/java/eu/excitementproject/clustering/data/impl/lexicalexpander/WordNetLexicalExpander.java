@@ -1,4 +1,4 @@
-package eu.excitementproject.clustering.data.impl;
+package eu.excitementproject.clustering.data.impl.lexicalexpander;
 
 import java.util.HashMap;
 import java.util.HashSet;

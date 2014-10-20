@@ -1,4 +1,4 @@
-package eu.excitementproject.clustering.data.impl;
+package eu.excitementproject.clustering.data.impl.textcollection;
 
 import java.net.MalformedURLException;
 

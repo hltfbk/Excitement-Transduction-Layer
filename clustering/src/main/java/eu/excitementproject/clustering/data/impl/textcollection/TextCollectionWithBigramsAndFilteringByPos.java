@@ -1,4 +1,4 @@
-package eu.excitementproject.clustering.data.impl;
+package eu.excitementproject.clustering.data.impl.textcollection;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -15,6 +14,7 @@ import java.util.Set;
 
 import eu.excitementproject.clustering.data.api.AbstractTextCollection;
 import eu.excitementproject.clustering.data.api.LexicalExpander;
+import eu.excitementproject.clustering.data.impl.lexicalexpander.WordNetLexicalExpander;
 import eu.excitementproject.eop.common.representation.partofspeech.BySimplerCanonicalPartOfSpeech;
 import eu.excitementproject.eop.common.representation.partofspeech.PartOfSpeech;
 import eu.excitementproject.eop.common.representation.partofspeech.SimplerCanonicalPosTag;
