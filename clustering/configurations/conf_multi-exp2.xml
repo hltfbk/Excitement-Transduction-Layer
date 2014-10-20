@@ -2,9 +2,9 @@
 
 <!DOCTYPE page [
 
-<!ENTITY experiment_name "exp2_noExpansion">
+<!ENTITY experiment_name "exp2_exp">
 
-<!ENTITY output_dir "../clustering/src/test/outputs/&experiment_name;">
+<!ENTITY output_dir "/home/ir/davidol/clustering/src/test/outputs/&experiment_name;">
 
 <!ENTITY lda_dir "&output_dir;/lda">
 <!ENTITY term_per_topic_probability_file "&lda_dir;/out.term_topic_prob.txt">
@@ -20,7 +20,7 @@
 
 <!-- ======== EXPERIMENT ========= -->
 <module name="Experiment">
-	<param name="expand">false</param>	
+	<param name="expand">true</param>	
 	<param name="output_directory">&output_dir;</param>	
 </module>
 
@@ -28,19 +28,19 @@
 <!-- ======== DATA & PREPROCESSING ========= -->
 
 <module name="Data">
-	<param name="data_dir">..\clustering\resources\textCollections</param>	
+	<param name="data_dir">/home/ir/davidol/clustering/resources/textCollections</param>	
 </module>
 
 <module name="Preprocessing">
 	<param name="filter_stopwords">true</param>	
-	<param name="stopwords_file">..\clustering\resources\non-topic-words_EN.txt</param>	
-	<param name="pos-tagger-model">D:/JARS/stanford-postagger-full-2008-09-28/models/left3words-wsj-0-18.tagger</param>
-		
+	<param name="stopwords_file">/home/ir/davidol/clustering/resources/non-topic-words_EN.txt</param>	
+	<param name="pos-tagger-model">stanford-postagger-full-2008-09-28/models/left3words-wsj-0-18.tagger</param>
+	
 </module>
 
 <module name="Gate-lemmatizer">
 	<param name="lemmatizer-class">org.BURST.NLP.impl.GateLemmatizer</param>
-	<param name="lemmatizer-rule-file">D:\JARS\GATE-3.1\plugins\Tools\resources\morph\default.rul</param>
+	<param name="lemmatizer-rule-file">GATE-3.1/plugins/Tools/resources/morph/default.rul</param>
 </module>
 
 <!-- ======== CLUSTERING ========= -->
@@ -64,14 +64,36 @@
 	<param name="num-of-threads">1</param>
 	<param name="num-of-iterations">1000</param>
 	<param name="optimize-interval">9999</param>
-	<param name="model-file">&mallet_model_file;</param>
-	<param name="pipe-file">C:/Users/Lili/Desktop/ukwac/ukwac.out.serializedPipe</param>
+	<param name="model-file">/home/ir/davidol/ldaTrain/outputs/mallet/ukwac.out.serializedModel</param>
+	<param name="pipe-file">/home/ir/davidol/ldaTrain/outputs/mallet/10_ukwac.out.serializedPipe</param>
 	<param name="verbose">-1</param>
+	<param name="model-output-dir">/home/ir/davidol/ldaTrain/outputs/</param>
 </module>
 
 <module name = "coclust">
-	<param name="coclust_dir">../clustering/coclustBIU/cocluster-.exe</param>
+	<param name="coclust_dir">/home/ir/davidol/clustering\coclustBIU</param>
 	<param name="matrix_dir">&output_dir;/dhillon</param>
+</module>
+
+<module name="knowledge-resource">
+    <param name="resource-name">dist-sim-bap</param>
+	<param name="top-n-rules">20</param>
+	<param name="l2r-redis-db-file">/home/ir/davidol/res/bap/similarity-l2r.rdb</param>
+	<param name="r2l-redis-db-file">/home/ir/davidol/res/bap/similarity-r2l.rdb</param>
+</module>
+
+
+
+<module name = "WN">
+	<param name="isCollapsed">true</param>
+	<param name="useFirstSenseOnlyLeft">true</param>
+	<param name="useFirstSenseOnlyRight">true</param>
+	<param name="entailing-relations">SYNONYM</param>
+	<param name="wordnet-dir">/home/ir/davidol/res/dict.wn.orig</param>
+	<param name="wordnet-depth">1</param>
+<!-- 	<param name="consider-sense-probability">false</param> -->
+	<param name="lemmatizer-module">Gate-lemmatizer</param>
+	<param name="wordnet dictionary implementation type">JWI</param>
 </module>
 
 </configuration>
