@@ -25,8 +25,6 @@ import eu.excitementproject.clustering.clustering.impl.kmedoids.TermsYClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToAllLdaTopicsByRelatednessClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToBestLdaTopicByModelClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToBestLdaTopicByRelatednessClusterer;
-import eu.excitementproject.clustering.clustering.impl.tc.DocumentByCategoryClusterer;
-import eu.excitementproject.clustering.clustering.impl.tc.DocumentByTopKCategoriesClusterer;
 import eu.excitementproject.clustering.clustering.impl.util.WeightCalculator.WeightType;
 import eu.excitementproject.clustering.experiments.api.AbstractExperimentRunner;
 import eu.excitementproject.eop.common.utilities.configuration.ConfigurationException;
@@ -168,22 +166,6 @@ public class ExpThreeRunner extends AbstractExperimentRunner {
 						
 						processResults(settingName, k, res);
 						
-						// now let's run TC-style clustering with the same term clusters 
-						settingName="Y-via-terms-top-K__+TC_"+weightType;
-						System.out.println("\n"+settingName+"\n");
-						System.out.println("********** "+k+" **********");
-						dClusterer = new DocumentByTopKCategoriesClusterer(m_textCollection, termClusters, weightType, WeightType.DF);
-						dClusterer.setNumberOfDocumentClusters(k); 
-						res = dClusterer.clusterDocuments(m_textCollection);						
-						resfile = m_out_dir+"/res/"+m_textCollection.getDatasetName()+"."+settingName+"."+String.valueOf(k)+".results.txt";
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile)));
-						resWriter.write(getDocumentClustersForPrint(res, true));
-						resWriter.close();	
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile.replace(".results.txt", ".resultsTop30Percent.txt"))));
-						resWriter.write(getDocumentClustersForPrint(cutOffClusters(res, topKPercentsToRetain), true));
-						resWriter.close();
-
-						processResults(settingName, k, res);
 						
 						// now let's try complete link with the same term clusters
 						settingName="Y-via-terms-top-K__+CompleteLink_"+weightType;
@@ -247,22 +229,6 @@ public class ExpThreeRunner extends AbstractExperimentRunner {
 						processResults(settingName, k, res);
 						
 						
-						// now let's run TC-style clustering with the same term clusters 
-						settingName="Y-via-terms-all__+TC"+weightType;
-						System.out.println("\n"+settingName+"\n");
-						System.out.println("********** "+k+" **********");
-						dClusterer = new DocumentByTopKCategoriesClusterer(m_textCollection, termClusters, weightType, WeightType.DF);
-						dClusterer.setNumberOfDocumentClusters(k);
-						res = dClusterer.clusterDocuments(m_textCollection);						
-						resfile = m_out_dir+"/res/"+m_textCollection.getDatasetName()+"."+settingName+"."+String.valueOf(k)+".results.txt";
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile)));
-						resWriter.write(getDocumentClustersForPrint(res, true));
-						resWriter.close();	
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile.replace(".results.txt", ".resultsTop30Percent.txt"))));
-						resWriter.write(getDocumentClustersForPrint(cutOffClusters(res, topKPercentsToRetain), true));
-						resWriter.close();
-						
-						processResults(settingName, k, res);
 						
 						if (termClusters.size()>=k){
 							// now let's try complete link with the same term clusters
@@ -342,22 +308,6 @@ public class ExpThreeRunner extends AbstractExperimentRunner {
 						processResults(settingName, k, res);
 						
 						
-						// now let's run top-K TC-style clustering with the same term clusters 
-						settingName="CW-via-terms + TC_"+weightType;
-						System.out.println("\n"+settingName+"\n");
-						System.out.println("********** "+k+" **********");
-						dClusterer = new DocumentByTopKCategoriesClusterer(m_textCollection, termClusters, weightType, WeightType.DF);
-						dClusterer.setNumberOfDocumentClusters(k);
-						res = dClusterer.clusterDocuments(m_textCollection);						
-						resfile = m_out_dir+"/res/"+m_textCollection.getDatasetName()+"."+settingName+"."+String.valueOf(k)+".results.txt";
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile)));
-						resWriter.write(getDocumentClustersForPrint(res, true));
-						resWriter.close();	
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile.replace(".results.txt", ".resultsTop30Percent.txt"))));
-						resWriter.write(getDocumentClustersForPrint(cutOffClusters(res, topKPercentsToRetain), true));
-						resWriter.close();
-
-						processResults(settingName, k, res);	
 						
 						if (termClusters.size()>=k){
 							// now let's try complete link with the same term clusters
@@ -420,22 +370,6 @@ public class ExpThreeRunner extends AbstractExperimentRunner {
 
 						processResults(settingName, k, res);	
 						
-						// now let's run top-K TC-style clustering with the same term clusters 
-						settingName="LDA-terms-byRel-best + TC_"+weightType;
-						System.out.println("\n"+settingName+"\n");
-						System.out.println("********** "+k+" **********");
-						dClusterer = new DocumentByTopKCategoriesClusterer(m_textCollection, termClusters, weightType, WeightType.DF);
-						dClusterer.setNumberOfDocumentClusters(k);
-						res = dClusterer.clusterDocuments(m_textCollection);						
-						resfile = m_out_dir+"/res/"+m_textCollection.getDatasetName()+"."+settingName+"."+String.valueOf(k)+".results.txt";
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile)));
-						resWriter.write(getDocumentClustersForPrint(res, true));
-						resWriter.close();	
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile.replace(".results.txt", ".resultsTop30Percent.txt"))));
-						resWriter.write(getDocumentClustersForPrint(cutOffClusters(res, topKPercentsToRetain), true));
-						resWriter.close();
-
-						processResults(settingName, k, res);	
 
 					}
 					
@@ -474,22 +408,6 @@ public class ExpThreeRunner extends AbstractExperimentRunner {
 						
 						
 						
-						// now let's run top-K TC-style clustering with the same term clusters 
-						settingName="LDA-terms-byModel-best + TC_"+weightType;
-						System.out.println("\n"+settingName+"\n");
-						System.out.println("********** "+k+" **********");
-						dClusterer = new DocumentByTopKCategoriesClusterer(m_textCollection, termClusters, weightType, WeightType.DF);
-						dClusterer.setNumberOfDocumentClusters(k);
-						res = dClusterer.clusterDocuments(m_textCollection);						
-						resfile = m_out_dir+"/res/"+m_textCollection.getDatasetName()+"."+settingName+"."+String.valueOf(k)+".results.txt";
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile)));
-						resWriter.write(getDocumentClustersForPrint(res, true));
-						resWriter.close();	
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile.replace(".results.txt", ".resultsTop30Percent.txt"))));
-						resWriter.write(getDocumentClustersForPrint(cutOffClusters(res, topKPercentsToRetain), true));
-						resWriter.close();
-
-						processResults(settingName, k, res);							
 					}
 				} catch (ClusteringException | IOException e) {
 						// TODO Auto-generated catch block

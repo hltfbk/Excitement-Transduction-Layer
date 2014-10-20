@@ -29,9 +29,6 @@ import eu.excitementproject.clustering.clustering.impl.kmedoids.TermsYClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.DocumentToBestLdaTopicClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToBestLdaTopicByLocalModelClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToBestLdaTopicByModelClusterer;
-import eu.excitementproject.clustering.clustering.impl.tc.DocumentByCategoryClusterer;
-import eu.excitementproject.clustering.clustering.impl.tc.DocumentByTopKCategoriesClusterer;
-import eu.excitementproject.clustering.clustering.impl.tc.DocumentByTopKCategoriesClustererWThreshold;
 import eu.excitementproject.clustering.clustering.impl.util.WeightCalculator.WeightType;
 import eu.excitementproject.clustering.experiments.api.AbstractExperimentRunner;
 import eu.excitementproject.eop.common.utilities.configuration.ConfigurationException;
@@ -387,22 +384,6 @@ public class ExpCombinedRunner extends AbstractExperimentRunner {
 						processResults(settingName, k, res);
 						
 						
-						// now let's run top-K TC-style clustering with the same term clusters 
-						settingName="CW-via-terms + TC_"+weightType;
-						System.out.println("\n"+settingName+"\n");
-						System.out.println("********** "+k+" **********");
-						dClusterer = new DocumentByTopKCategoriesClusterer(m_textCollection, termClusters, weightType, WeightType.DF);
-						dClusterer.setNumberOfDocumentClusters(k);
-						res = dClusterer.clusterDocuments(m_textCollection);						
-						resfile = m_out_dir+"/res/"+m_textCollection.getDatasetName()+"."+settingName+"."+String.valueOf(k)+".results.txt";
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile)));
-						resWriter.write(getDocumentClustersForPrint(res, true));
-						resWriter.close();	
-						resWriter = new BufferedWriter(new FileWriter(new File(resfile.replace(".results.txt", ".resultsTop30Percent.txt"))));
-						resWriter.write(getDocumentClustersForPrint(cutOffClusters(res, topKPercentsToRetain), true));
-						resWriter.close();
-
-						processResults(settingName, k, res);	
 																	
 						
 						if (termClusters.size()>=k){
