@@ -6,11 +6,9 @@ package eu.excitementproject.clustering.experiments.impl.exp3;
 
 import java.io.BufferedWriter;
 import java.io.File;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -18,18 +16,18 @@ import java.util.Map;
 import eu.excitementproject.clustering.clustering.api.DocumentClusterer;
 import eu.excitementproject.clustering.clustering.api.TermClusterer;
 import eu.excitementproject.clustering.clustering.exceptions.ClusteringException;
+import eu.excitementproject.clustering.clustering.impl.chinesewhispers.DocumentsAsConceptVectorsCWClusterer;
+import eu.excitementproject.clustering.clustering.impl.chinesewhispers.TermsCWClusterer;
 import eu.excitementproject.clustering.clustering.impl.completeLink.DocumentsAsConceptVectorsCompleteLinkClusterer;
 import eu.excitementproject.clustering.clustering.impl.completeLink.TermsCompleteLinkClusterer;
-import eu.excitementproject.clustering.clustering.impl.cw.DocumentsAsConceptVectorsCWClusterer;
-import eu.excitementproject.clustering.clustering.impl.cw.TermsCWClusterer;
+import eu.excitementproject.clustering.clustering.impl.kmedoids.DocumentsAsConceptVectorsYClusterer;
+import eu.excitementproject.clustering.clustering.impl.kmedoids.TermsYClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToAllLdaTopicsByRelatednessClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToBestLdaTopicByModelClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToBestLdaTopicByRelatednessClusterer;
 import eu.excitementproject.clustering.clustering.impl.tc.DocumentByCategoryClusterer;
 import eu.excitementproject.clustering.clustering.impl.tc.DocumentByTopKCategoriesClusterer;
 import eu.excitementproject.clustering.clustering.impl.util.WeightCalculator.WeightType;
-import eu.excitementproject.clustering.clustering.impl.yclust.DocumentsAsConceptVectorsYClusterer;
-import eu.excitementproject.clustering.clustering.impl.yclust.TermsYClusterer;
 import eu.excitementproject.clustering.experiments.api.AbstractExperimentRunner;
 import eu.excitementproject.eop.common.utilities.configuration.ConfigurationException;
 import eu.excitementproject.eop.lap.biu.lemmatizer.LemmatizerException;

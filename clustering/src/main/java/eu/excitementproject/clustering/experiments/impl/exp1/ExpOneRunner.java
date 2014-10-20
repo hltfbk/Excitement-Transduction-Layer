@@ -14,12 +14,12 @@ import java.util.Map;
 
 import eu.excitementproject.clustering.clustering.api.DocumentClusterer;
 import eu.excitementproject.clustering.clustering.exceptions.ClusteringException;
+import eu.excitementproject.clustering.clustering.impl.chinesewhispers.DocumentsAsTermVectorsCWClusterer;
 import eu.excitementproject.clustering.clustering.impl.coclustering.DhillonCoClusterer;
 import eu.excitementproject.clustering.clustering.impl.completeLink.DocumentsAsTermVectorsCompleteLinkClusterer;
-import eu.excitementproject.clustering.clustering.impl.cw.DocumentsAsTermVectorsCWClusterer;
+import eu.excitementproject.clustering.clustering.impl.kmedoids.DocumentsAsTermVectorsYClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.DocumentToBestLdaTopicClusterer;
 import eu.excitementproject.clustering.clustering.impl.util.WeightCalculator.WeightType;
-import eu.excitementproject.clustering.clustering.impl.yclust.DocumentsAsTermVectorsYClusterer;
 import eu.excitementproject.clustering.experiments.api.AbstractExperimentRunner;
 import eu.excitementproject.eop.common.utilities.configuration.ConfigurationException;
 import eu.excitementproject.eop.lap.biu.lemmatizer.LemmatizerException;

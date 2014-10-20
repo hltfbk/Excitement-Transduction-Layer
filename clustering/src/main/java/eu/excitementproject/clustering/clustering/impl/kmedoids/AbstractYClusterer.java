@@ -1,4 +1,4 @@
-package eu.excitementproject.clustering.legacy;
+package eu.excitementproject.clustering.clustering.impl.kmedoids;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -15,16 +15,16 @@ import eu.excitementproject.clustering.clustering.impl.util.WeightCalculator.Wei
  * @author Lili Kotlerman
  * 
  * Implementation of the Y-clustering algorithm by Hui Ye and Steve Young, "A clustering approach to semantic decoding." INTERSPEECH. 2006. *
- * 
+ * with some changes 
  */
-public abstract class LegacyAbstractYClustererUnsorted<T> {
+public abstract class AbstractYClusterer<T> {
 
-	int m_topKclusters = 10; // if set to a negative number, no cut-off will be applied in the final iteration     
+	protected int m_topKclusters = 10; // if set to a negative number, no cut-off will be applied in the final iteration     
 	boolean m_useExpandedCollection;
 	WeightType m_weightType;
 	double m_similarityThreshold; // similarity value, which is enough to assign a document to a class (required by the algorithm)  
 		
-	public LegacyAbstractYClustererUnsorted(boolean useExpandedCollection, WeightType weightType, Double similarityThreshold) {
+	public AbstractYClusterer(boolean useExpandedCollection, WeightType weightType, Double similarityThreshold) {
 		m_useExpandedCollection = useExpandedCollection;
 		m_weightType = weightType;
 		m_similarityThreshold = similarityThreshold;
@@ -44,11 +44,11 @@ public abstract class LegacyAbstractYClustererUnsorted<T> {
 	 */
 	protected abstract T getOutOfClassKey();
 
-	protected Map<T, List<T>> clusterElements(Set<T> elements, int topKClusters){
+	protected Map<T, Map<T,Double>> clusterElements(Set<T> elements, int topKClusters, boolean multi){
 
 		// step 1 - init
 		// assign maxT = number of elements / 2 (heuristic decision) - the max number of templates (cluster centroids) to generate in each pass
-		int maxT = elements.size()/2;
+		int maxT = elements.size(); // elements.size()/2;
 		
 		
 		// step 2 - init cont.
@@ -113,6 +113,7 @@ public abstract class LegacyAbstractYClustererUnsorted<T> {
 		// - assign each document to the nearest template
 		
 		templates = getSortedTemplates(clusteringResults, m_topKclusters);	
+		if (multi) return finalAssignmentMulti(elements, templates);
 		return finalAssignment(elements, templates);
 	}
 
@@ -138,7 +139,17 @@ public abstract class LegacyAbstractYClustererUnsorted<T> {
 		Map<T,List<T>> newResults = new HashMap<T, List<T>>(); 
 		for (T template : clusteringResults.keySet()){
 			T newTemplate = getClusterTemplate(clusteringResults.get(template));
-			newResults.put(newTemplate, new LinkedList<T>(clusteringResults.get(template)));
+			
+			LinkedList<T> cluster = new LinkedList<T>(clusteringResults.get(template));
+			
+			// if the same template was chosen before by another cluster, merge that cluster with the current cluster (without adding duplicates)
+			if (newResults.containsKey(newTemplate)){
+				for (T element : newResults.get(newTemplate)){
+					if (!cluster.contains(element)) cluster.add(element);
+				}
+			}
+				
+			newResults.put(newTemplate, cluster);
 		}
 		return newResults;
 	}
@@ -179,8 +190,8 @@ public abstract class LegacyAbstractYClustererUnsorted<T> {
 	}
 	
 	
-	public Map<T,List<T>> finalAssignment(Set<T> elements, List<T> templates){
-		Map<T,List<T>> finalResults = new HashMap<T, List<T>>();
+	public Map<T,Map<T,Double>> finalAssignment(Set<T> elements, List<T> templates){
+		Map<T,Map<T,Double>> finalResults = new HashMap<T, Map<T,Double>>();
 		for (T element : elements){ // assign to the template with the highest sim value
 			double maxSim = 0.0;
 			T bestTemplate = getOutOfClassKey(); // this T will be the key if none of the templates yields >0 similarity to the current document
@@ -199,13 +210,37 @@ public abstract class LegacyAbstractYClustererUnsorted<T> {
 			}
 			
 			// assign current element to the best template (add the element to the cluster with label = template
-			List<T> elementsInCluster = new LinkedList<T>();
+			Map<T,Double> elementsInCluster = new HashMap<T,Double>();
 			if (finalResults.containsKey(bestTemplate)) elementsInCluster=finalResults.get(bestTemplate);
-			elementsInCluster.add(element);
+			elementsInCluster.put(element,maxSim);
 			finalResults.put(bestTemplate, elementsInCluster);
 		}	
 		return finalResults;
 	}
 	
+	public Map<T,Map<T,Double>> finalAssignmentMulti(Set<T> elements, List<T> templates){		
+		Map<T,Map<T,Double>> finalResults = new HashMap<T, Map<T,Double>>();
+		for (T element : elements){ // assign to the template with sim value > threshold
+			boolean assigned = false;
+			for (T template : templates){	
+				double sim = getSimilarity(element, template);	
+				if (sim > m_similarityThreshold){
+					// assign current element to current template (add the element to the cluster with label = template
+					assigned=true;
+					Map<T,Double> elementsInCluster = new HashMap<T,Double>();
+					if (finalResults.containsKey(template)) elementsInCluster=finalResults.get(template);
+					elementsInCluster.put(element,sim);
+					finalResults.put(template, elementsInCluster);
+				}
+			}
+			if (!assigned) {
+				Map<T,Double> elementsInCluster = new HashMap<T,Double>();
+				if (finalResults.containsKey(getOutOfClassKey())) elementsInCluster=finalResults.get(getOutOfClassKey());
+				elementsInCluster.put(element,0.0);
+				finalResults.put(getOutOfClassKey(), elementsInCluster);				
+			}
+		}	
+		return finalResults;
+	}	
 
 }

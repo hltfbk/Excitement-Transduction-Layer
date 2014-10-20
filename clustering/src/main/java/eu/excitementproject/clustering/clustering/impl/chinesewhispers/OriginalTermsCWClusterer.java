@@ -1,4 +1,4 @@
-package eu.excitementproject.clustering.clustering.impl.cw;
+package eu.excitementproject.clustering.clustering.impl.chinesewhispers;
 
 
 import java.util.Set;

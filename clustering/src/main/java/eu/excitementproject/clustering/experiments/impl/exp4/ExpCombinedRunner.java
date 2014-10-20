@@ -6,11 +6,9 @@ package eu.excitementproject.clustering.experiments.impl.exp4;
 
 import java.io.BufferedWriter;
 import java.io.File;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -18,12 +16,16 @@ import java.util.Map;
 import eu.excitementproject.clustering.clustering.api.DocumentClusterer;
 import eu.excitementproject.clustering.clustering.api.TermClusterer;
 import eu.excitementproject.clustering.clustering.exceptions.ClusteringException;
+import eu.excitementproject.clustering.clustering.impl.chinesewhispers.DocumentsAsConceptVectorsCWClusterer;
+import eu.excitementproject.clustering.clustering.impl.chinesewhispers.OriginalTermsCWClusterer;
+import eu.excitementproject.clustering.clustering.impl.chinesewhispers.TermsCWClusterer;
 import eu.excitementproject.clustering.clustering.impl.coclustering.DhillonCoClusterer;
 import eu.excitementproject.clustering.clustering.impl.completeLink.DocumentsAsConceptVectorsCompleteLinkClusterer;
 import eu.excitementproject.clustering.clustering.impl.completeLink.DocumentsAsTermVectorsCompleteLinkClusterer;
-import eu.excitementproject.clustering.clustering.impl.cw.DocumentsAsConceptVectorsCWClusterer;
-import eu.excitementproject.clustering.clustering.impl.cw.OriginalTermsCWClusterer;
-import eu.excitementproject.clustering.clustering.impl.cw.TermsCWClusterer;
+import eu.excitementproject.clustering.clustering.impl.kmedoids.DocumentsAsConceptVectorsYClusterer;
+import eu.excitementproject.clustering.clustering.impl.kmedoids.DocumentsAsTermVectorsYClusterer;
+import eu.excitementproject.clustering.clustering.impl.kmedoids.OriginalTermsYClusterer;
+import eu.excitementproject.clustering.clustering.impl.kmedoids.TermsYClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.DocumentToBestLdaTopicClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToBestLdaTopicByLocalModelClusterer;
 import eu.excitementproject.clustering.clustering.impl.lda.TermToBestLdaTopicByModelClusterer;
@@ -31,10 +33,6 @@ import eu.excitementproject.clustering.clustering.impl.tc.DocumentByCategoryClus
 import eu.excitementproject.clustering.clustering.impl.tc.DocumentByTopKCategoriesClusterer;
 import eu.excitementproject.clustering.clustering.impl.tc.DocumentByTopKCategoriesClustererWThreshold;
 import eu.excitementproject.clustering.clustering.impl.util.WeightCalculator.WeightType;
-import eu.excitementproject.clustering.clustering.impl.yclust.DocumentsAsConceptVectorsYClusterer;
-import eu.excitementproject.clustering.clustering.impl.yclust.DocumentsAsTermVectorsYClusterer;
-import eu.excitementproject.clustering.clustering.impl.yclust.OriginalTermsYClusterer;
-import eu.excitementproject.clustering.clustering.impl.yclust.TermsYClusterer;
 import eu.excitementproject.clustering.experiments.api.AbstractExperimentRunner;
 import eu.excitementproject.eop.common.utilities.configuration.ConfigurationException;
 import eu.excitementproject.eop.common.utilities.configuration.ConfigurationFile;

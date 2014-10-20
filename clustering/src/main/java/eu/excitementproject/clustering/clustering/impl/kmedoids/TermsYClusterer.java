@@ -1,4 +1,4 @@
-package eu.excitementproject.clustering.clustering.impl.yclust;
+package eu.excitementproject.clustering.clustering.impl.kmedoids;
 
 import java.util.HashMap;
 import java.util.HashSet;
