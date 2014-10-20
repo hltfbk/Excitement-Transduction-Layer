@@ -1,0 +1,50 @@
+package ac.biu.cs.nlp.protec.data;
+
+import java.util.List;
+import java.util.Map;
+
+import ac.biu.nlp.nlp.general.configuration.ConfigurationFile;
+
+public interface DataOrganizer {
+
+	/**
+	 * @return A map of document ids (Integer) corresponding to each given text (String). <p> 
+	 * The assumption is that the same text may occur in several documents.
+	 */
+	public Map<String, ? extends List<Integer>> getDocIdsByText();
+
+	/**
+	 * @return A mapping of document id (Integer) to the corresponding document's text (String).
+	 */
+	public Map<Integer, String> getDocTextsById();
+
+	/**
+	 * @return A mapping with a list of gold-standard cluster names (String) corresponding to each document, represented by its id (Integer)
+	 */
+	public Map<Integer, ? extends List<String>> getGoldStandardClustersPerDoc();
+
+	/**
+	 * @return A mapping with a list of document ids (Integer) corresponding to each cluster name (String) in the gold-standard
+	 */
+	public Map<String, ? extends List<Integer>> getDocsPerGoldStandardCluster();
+
+	/**
+	 * @return A mapping which for each term (String) contains a map of document id (Integer) and the frequency (Integer) of the given term in the given document. <p>
+	 * The terms considered are only the terms occurring in the original document texts (without expansion)  
+	 */
+	public Map<String, Map<Integer, Integer>> getDocsByTermBeforeExpansion();
+
+	/**
+	 * @return A mapping which for each term (String) contains a map of document id (Integer) and the frequency (Integer) of the given term in the given document. <p>
+	 * The documents are expanded with additional terms.
+	 */
+	public Map<String, Map<Integer, Integer>> getDocsByTermAfterExpansion();
+	
+	/**
+	 * @return A mapping which for each term (String) contains its frequency (Integer) in the given set of documents before expansion.
+	 */
+	public Map<String, Integer> getTermFrequenciesBeforeExpansion();
+
+	public void loadData(ConfigurationFile conf);
+
+}

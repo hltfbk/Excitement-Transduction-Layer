@@ -1,0 +1,20 @@
+package ac.biu.cs.nlp.protec.algorithms.clusteringTerms;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Hashtable;
+import java.util.LinkedList;
+
+
+import ac.biu.cs.nlp.protec.data.DataOrganizer;
+import ac.biu.nlp.nlp.general.configuration.ConfigurationParams;
+
+/**
+ * Generates input for clustering tools
+ *
+ */
+public interface InputGenerator {
+	// 16.10.12 changed NiceDataOrganizer to more general DataOrganizer
+	public void generateInput(DataOrganizer data, ConfigurationParams params); 
+
+}
