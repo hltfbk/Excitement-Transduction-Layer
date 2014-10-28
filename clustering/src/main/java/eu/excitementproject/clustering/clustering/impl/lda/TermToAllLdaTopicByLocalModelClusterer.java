@@ -13,7 +13,7 @@ import eu.excitementproject.clustering.clustering.exceptions.ClusteringException
 import eu.excitementproject.clustering.data.api.TextCollection;
 
 public class TermToAllLdaTopicByLocalModelClusterer extends
-						TermToAllLdaTopicsByModelClusterer  {
+						TermToAllLdaTopicsClusterer  {
 
 	public TermToAllLdaTopicByLocalModelClusterer(TextCollection textCollection, String conf, File localModelFile) throws ClusteringException{
 		super(textCollection, conf, localModelFile);
