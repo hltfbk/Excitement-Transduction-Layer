@@ -37,7 +37,6 @@ public class DhillonCoClusterer implements CoClusterer {
 
 	private String m_termClusterIds;
 	private String m_documentClusterIds;
-//	private String m_inputForClustering; 
 	
 	Integer m_termClustersNumber;
 	Integer m_documentClustersNumber;

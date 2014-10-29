@@ -109,7 +109,7 @@ public class WordNetLexicalExpander extends AbstractLexicalExpander {
 				}				
 			}
 		}
-		System.out.println("[wn]: "+lemma+" : "+expansions.size()+" : "+expansions.keySet());
+	//	System.out.println("[wn]: "+lemma+" : "+expansions.size()+" : "+expansions.keySet());
 		return expansions;
 	}
 

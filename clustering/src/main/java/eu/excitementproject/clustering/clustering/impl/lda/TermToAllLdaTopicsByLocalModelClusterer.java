@@ -12,10 +12,10 @@ import eu.excitementproject.clustering.clustering.api.Clusterer;
 import eu.excitementproject.clustering.clustering.exceptions.ClusteringException;
 import eu.excitementproject.clustering.data.api.TextCollection;
 
-public class TermToBestLdaTopicByLocalModelClusterer extends
-						TermToBestLdaTopicClusterer  {
+public class TermToAllLdaTopicsByLocalModelClusterer extends
+						TermToAllLdaTopicsClusterer  {
 
-	public TermToBestLdaTopicByLocalModelClusterer(TextCollection textCollection, String conf, File localModelFile) throws ClusteringException{
+	public TermToAllLdaTopicsByLocalModelClusterer(TextCollection textCollection, String conf, File localModelFile) throws ClusteringException{
 		super(textCollection, conf, localModelFile);
 	}
 
@@ -56,5 +56,4 @@ public class TermToBestLdaTopicByLocalModelClusterer extends
 		
 		return res;		
 	}	
-
 }
