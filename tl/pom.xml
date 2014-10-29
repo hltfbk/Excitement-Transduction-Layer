@@ -52,6 +52,13 @@
          <artifactId>alignmentedas</artifactId>
          <version>1.1.4</version>
     </dependency>
+    
+    <!-- decompounder for german words -->
+	<dependency>
+    	<groupId>de.abelssoft</groupId>
+    	<artifactId>jwordsplitter</artifactId>
+    	<version>3.4</version>
+	</dependency>
   	
 	<!-- TreeTagger related dependencies --> 
 	<!-- You need to install TreeTagger;  please read /tl/src/scripts/treetagger/README.txt, and follow the instructions --> 
