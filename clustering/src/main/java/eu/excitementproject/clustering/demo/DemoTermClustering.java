@@ -98,9 +98,6 @@ public class DemoTermClustering extends AbstractDemoRunner {
 			File configurationFilename = new File(args[0]);
 			DemoTermClustering demo = new DemoTermClustering(configurationFilename.getAbsolutePath());
 			demo.runDemo(configurationFilename.getAbsolutePath());
-			demo.printAllResults(0);
-			demo.printResultsInTable(0);
-			demo.printRecallPrecisionCurvesData(0);
 		} catch (ClusteringException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
