@@ -4,10 +4,7 @@
 package eu.excitementproject.clustering.demo;
 
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -65,6 +62,17 @@ public class DemoBOW extends AbstractDemoRunner {
 		res = dCLClusterer.clusterDocuments(m_textCollection);						
 		processResults(settingName, k, res);
 
+		// LDA with local model
+		settingName="LDA-local-BOW"+weightType;
+		System.out.println("\n"+settingName+"\n");										
+		// create localLDAClusterer, whose constructor trains a local model for k topics and creates a term-prob file 
+		DocumentClusterer localLDAClusterer = new DocumentToBestLdaTopicClusterer(m_useExpandedCollection, m_textCollection, m_configurationFileName, k, weightType);
+		// cluster documents with that model
+		localLDAClusterer.setNumberOfDocumentClusters(k);
+		res = localLDAClusterer.clusterDocuments(m_textCollection);	
+		processResults(settingName, k, res);
+
+		
 		// Co-clustering into k document clusters using k term clusters 
 		settingName="Co-clustering-BOW-"+weightType;
 		System.out.println("\n"+settingName+"\n");
@@ -75,15 +83,6 @@ public class DemoBOW extends AbstractDemoRunner {
 		res = clusterer.clusterDocuments(m_textCollection);		
 		processResults(settingName, k, res);
 		
-		// LDA with local model
-		settingName="LDA-local-BOW"+weightType;
-		System.out.println("\n"+settingName+"\n");										
-		// create localLDAClusterer, whose constructor trains a local model for k topics and creates a term-prob file 
-		DocumentClusterer localLDAClusterer = new DocumentToBestLdaTopicClusterer(m_useExpandedCollection, m_textCollection, m_configurationFileName, k, weightType);
-		// cluster documents with that model
-		localLDAClusterer.setNumberOfDocumentClusters(k);
-		res = localLDAClusterer.clusterDocuments(m_textCollection);	
-		processResults(settingName, k, res);
 		
 	}
 
@@ -91,17 +90,14 @@ public class DemoBOW extends AbstractDemoRunner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String outdir = "./src/test/outputs/exp1_noExpansion";
-				
 		try {
-			File annotationFile = new File(args[0]);
-			DemoBOW exp = new DemoBOW(annotationFile.getAbsolutePath());
-			BufferedWriter writer = new BufferedWriter(new FileWriter (new File(outdir+"/"+annotationFile.getName().replace(".xml", ".log.txt"))));
-			exp.runDemo(args[0]);
-			writer.write(exp.printAllResults(0));
-			writer.write(exp.printRecallPrecisionCurvesData(0));
-			writer.close();
-		} catch (IOException | ClusteringException e) {
+			File configurationFilename = new File(args[0]);
+			DemoBOW demo = new DemoBOW(configurationFilename.getAbsolutePath());
+			demo.runDemo(configurationFilename.getAbsolutePath());
+			demo.printAllResults(0);
+			demo.printResultsInTable(0);
+			demo.printRecallPrecisionCurvesData(0);
+		} catch (ClusteringException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

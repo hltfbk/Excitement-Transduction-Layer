@@ -100,14 +100,13 @@ public class DemoBOC extends AbstractDemoRunner {
 	 */
 	public static void main(String[] args) {
 		try {
-			File annotationFile = new File(args[0]);
-			DemoBOC demo = new DemoBOC(annotationFile.getAbsolutePath());
-			BufferedWriter writer = new BufferedWriter(new FileWriter (new File(demo.m_out_dir+"/"+annotationFile.getName().replace(".xml", ".log.txt"))));
-			demo.runDemo(args[0]);
-			writer.write(demo.printAllResults(0));
-			writer.write(demo.printRecallPrecisionCurvesData(0));
-			writer.close();
-		} catch (IOException | ClusteringException e) {
+			File configurationFilename = new File(args[0]);
+			DemoBOC demo = new DemoBOC(configurationFilename.getAbsolutePath());
+			demo.runDemo(configurationFilename.getAbsolutePath());
+			demo.printAllResults(0);
+			demo.printResultsInTable(0);
+			demo.printRecallPrecisionCurvesData(0);
+		} catch (ClusteringException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

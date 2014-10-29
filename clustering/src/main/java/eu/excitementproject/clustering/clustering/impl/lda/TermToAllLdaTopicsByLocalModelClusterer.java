@@ -12,10 +12,10 @@ import eu.excitementproject.clustering.clustering.api.Clusterer;
 import eu.excitementproject.clustering.clustering.exceptions.ClusteringException;
 import eu.excitementproject.clustering.data.api.TextCollection;
 
-public class TermToAllLdaTopicByLocalModelClusterer extends
+public class TermToAllLdaTopicsByLocalModelClusterer extends
 						TermToAllLdaTopicsClusterer  {
 
-	public TermToAllLdaTopicByLocalModelClusterer(TextCollection textCollection, String conf, File localModelFile) throws ClusteringException{
+	public TermToAllLdaTopicsByLocalModelClusterer(TextCollection textCollection, String conf, File localModelFile) throws ClusteringException{
 		super(textCollection, conf, localModelFile);
 	}
 

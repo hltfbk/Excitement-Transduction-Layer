@@ -94,17 +94,14 @@ public class DemoTermClustering extends AbstractDemoRunner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String outdir = "./src/test/outputs/exp1_noExpansion";
-				
 		try {
-			File annotationFile = new File(args[0]);
-			DemoTermClustering exp = new DemoTermClustering(annotationFile.getAbsolutePath());
-			BufferedWriter writer = new BufferedWriter(new FileWriter (new File(outdir+"/"+annotationFile.getName().replace(".xml", ".log.txt"))));
-			exp.runDemo(args[0]);
-			writer.write(exp.printAllResults(0));
-			writer.write(exp.printRecallPrecisionCurvesData(0));
-			writer.close();
-		} catch (IOException | ClusteringException e) {
+			File configurationFilename = new File(args[0]);
+			DemoTermClustering demo = new DemoTermClustering(configurationFilename.getAbsolutePath());
+			demo.runDemo(configurationFilename.getAbsolutePath());
+			demo.printAllResults(0);
+			demo.printResultsInTable(0);
+			demo.printRecallPrecisionCurvesData(0);
+		} catch (ClusteringException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

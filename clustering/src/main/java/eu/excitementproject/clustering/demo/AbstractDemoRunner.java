@@ -19,8 +19,8 @@ import eu.excitementproject.clustering.clustering.api.Clusterer;
 import eu.excitementproject.clustering.clustering.exceptions.ClusteringException;
 import eu.excitementproject.clustering.data.api.LexicalExpander;
 import eu.excitementproject.clustering.data.api.TextCollection;
-import eu.excitementproject.clustering.data.impl.lexicalexpander.WordNetAndBapLexicalExpander;
-import eu.excitementproject.clustering.data.impl.textcollection.TextCollectionWithAllTokenLemmas;
+import eu.excitementproject.clustering.data.impl.lexicalexpander.WordNetLexicalExpander;
+import eu.excitementproject.clustering.data.impl.textcollection.TextCollectionWithBigramsAndFilteringByPos;
 import eu.excitementproject.clustering.eval.EvaluationValues;
 import eu.excitementproject.clustering.eval.MeanAveragePrecisionCalulator;
 import eu.excitementproject.clustering.eval.RecallMaxPrecisionCurve;
@@ -88,6 +88,8 @@ public abstract class AbstractDemoRunner {
 				}
 				if(params.containsKey("output_directory")) {
 					m_out_dir = params.getString("output_directory");
+					File dir = new File(m_out_dir);
+					if (!dir.exists()) dir.mkdir();
 					System.out.println("Outputs will be written to: "+m_out_dir);
 				}			
 			}
@@ -98,6 +100,11 @@ public abstract class AbstractDemoRunner {
 		try {
 			if (conf.isModuleExist("lda")){
 				ConfigurationParams params = conf.getModuleConfiguration("lda");
+				if(params.containsKey("lda_directory")) {
+					String sdir = params.getString("lda_directory");
+					File dir = new File(sdir);
+					if (!dir.exists()) dir.mkdir();
+				}							
 				if (params.containsKey("model-file")){
 					m_externalModelFilename = params.getString("model-file");
 					m_externalOutput = params.getString("model-output-dir");
@@ -108,14 +115,14 @@ public abstract class AbstractDemoRunner {
 		}
 		
 		try {
-			if (dataFilename==null) m_textCollection = new TextCollectionWithAllTokenLemmas(m_configurationFileName);
-			else m_textCollection = new TextCollectionWithAllTokenLemmas(m_configurationFileName, dataFilename);
+			if (dataFilename==null) m_textCollection = new TextCollectionWithBigramsAndFilteringByPos(m_configurationFileName);
+			else m_textCollection = new TextCollectionWithBigramsAndFilteringByPos(m_configurationFileName, dataFilename);
 			m_textCollection.loadNewCollection();
 			if (m_useExpandedCollection){
 				// load domain vocabulary (if provided)
 				if (dataFilename!=null) m_textCollection.setDomainVocabulary(dataFilename.replace(".txt","_domainVocab.txt"));
 				
-				m_lexicalExpander = new WordNetAndBapLexicalExpander(m_configurationFileName, m_textCollection);
+				m_lexicalExpander = new WordNetLexicalExpander(m_configurationFileName, m_textCollection);
 				m_textCollection.expandCollection(m_lexicalExpander);
 			}
 		} catch (ConfigurationException | MalformedURLException | LemmatizerException e) {
@@ -495,7 +502,7 @@ public abstract class AbstractDemoRunner {
 				Collections.sort(settings);		
 				List<Integer> kValues = new LinkedList<Integer>(m_resultsPerK_topPercent.keySet());
 				Collections.sort(kValues);
-				s+=("system \t k \t R \t P \t F1 \t Purity \n");
+				s+=("system \t k \t R \t P \t F1 \t Purity \t MAP \n");
 						
 				for (String setting : settings){
 					for (int k : kValues){
@@ -532,7 +539,7 @@ public abstract class AbstractDemoRunner {
 			Collections.sort(settings);		
 			List<Integer> kValues = new LinkedList<Integer>(m_resultsPerK.keySet());
 			Collections.sort(kValues);
-			s+=("system \t k \t R \t P \t F1 \t Purity \n");
+			s+=("system \t k \t R \t P \t F1 \t Purity \t MAP \n");
 					
 			for (String setting : settings){
 				for (int k : kValues){
