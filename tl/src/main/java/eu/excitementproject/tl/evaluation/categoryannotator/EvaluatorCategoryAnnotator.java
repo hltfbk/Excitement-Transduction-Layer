@@ -1189,7 +1189,6 @@ public class EvaluatorCategoryAnnotator {
 					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
 					EntailmentUnit aEU = egr.getVertexWithText(eum.getTextWithoutDoubleSpaces());
 					for(EntailmentUnit bEU : egr.vertexSet()){
-						System.out.println(bEU);
 						if(!egr.isEntailmentInAnyDirection(aEU, bEU)){
 							if(!bEU.getTextWithoutDoubleSpaces().equalsIgnoreCase(aEU.getTextWithoutDoubleSpaces()) 
 									&& bEU.getLemmatizedText().equalsIgnoreCase(aEU.getLemmatizedText())){
@@ -1200,7 +1199,6 @@ public class EvaluatorCategoryAnnotator {
 						}
 					}
 				}
-				System.exit(1);
 			}
 		} else { //merge graph --> takes a really long time and uses too much memory: TODO reduce number of fgs
 			if (setup == 11) alignmenteda.initialize(configFile);
