@@ -114,7 +114,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 
 public class EvaluatorCategoryAnnotator { 
 	
-	static Logger logger = Logger.getLogger(CopyOfEvaluatorCategoryAnnotator.class); 
+	static Logger logger = Logger.getLogger(EvaluatorCategoryAnnotator.class); 
     static long startTime = System.currentTimeMillis();
     static long endTime = 0;
     
@@ -238,7 +238,7 @@ public class EvaluatorCategoryAnnotator {
 			e1.printStackTrace();
 		}	
 	*/	
-		CopyOfEvaluatorCategoryAnnotator eca = new CopyOfEvaluatorCategoryAnnotator(setup);
+		EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setup);
 		
 		try {
 			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
