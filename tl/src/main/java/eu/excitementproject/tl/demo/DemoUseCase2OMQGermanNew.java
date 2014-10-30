@@ -123,7 +123,7 @@ public class DemoUseCase2OMQGermanNew {
 	static String xmlDataFoldername = "src/test/resources/OMQ/test/";
 	static String xmlDataFilename = "omq_public_1_emails.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
-	static String configFilename = "./src/test/resources/EOP_models/fnr_de.model";
+	static String configFilename = "./src/test/resources/EOP_models/omq/fnr_de_1.model";
 	static File configFile;
 
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGermanNew.class.getName());
