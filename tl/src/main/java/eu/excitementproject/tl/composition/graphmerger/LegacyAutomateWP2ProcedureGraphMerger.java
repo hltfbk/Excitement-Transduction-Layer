@@ -55,7 +55,7 @@ public class LegacyAutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
 		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph, false);
-		if (workGraph.isEmpty()) return new EntailmentGraphRaw(fragmentGraph, false);
+		if (workGraph.isEmpty()) return new EntailmentGraphRaw(fragmentGraph, false, workGraph.hasLemmatizedLabel());
 		
 		 
 		// else - Implement the WP2 flow		

@@ -43,7 +43,7 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman
+ * @author vivi@fbk & Lili Kotlerman & Aleksandra
  * 
  * The graph structure for the work graph. We call it EntailmentGraphRaw.
  * This graph grows by adding to it FragmentGraph-s by "merging"
@@ -68,6 +68,8 @@ public class EntailmentGraphRaw extends
 
 	
 	private static final long serialVersionUID = -3274655854206417667L;
+	
+	private boolean addLemmatizedLabel;
 	/*
 	 * To build the work graph we need to know the configuration,
 	 * and in particular the EDA and LAP to use (and possibly other stuff)
@@ -78,6 +80,15 @@ public class EntailmentGraphRaw extends
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
 
+	/**
+	 * Initialize an empty work graph, 
+	 * which will contain entailment units with lemmatized text of the mentions
+	 */
+	public EntailmentGraphRaw(boolean addLemmatizedLabel){
+		this();
+		this.addLemmatizedLabel = addLemmatizedLabel;
+	}
+	
 	public EntailmentGraphRaw(Set<EntailmentUnit> nodes, Set<EntailmentRelation> edges){
 		this();
 		for (EntailmentUnit node : nodes){
@@ -87,6 +98,7 @@ public class EntailmentGraphRaw extends
 			this.addEdge(e.getSource(), e.getTarget(), e);
 		}
 	}	
+	
 	/*
 	 * a constructor for initializing a graph from a (xml) file
 	 */
@@ -112,6 +124,10 @@ public class EntailmentGraphRaw extends
 
 				Element euElement = (Element) eu;
 				String text = euElement.getAttribute("text");
+				String lemmaLabel = euElement.getAttribute("lemmaLabel");
+				if(!lemmaLabel.isEmpty()){
+					this.addLemmatizedLabel = true;
+				}
 				Integer level = Integer.valueOf(euElement.getAttribute("level"));
 
 				Set<String> completeStatementTexts = new HashSet<String>();
@@ -135,8 +151,12 @@ public class EntailmentGraphRaw extends
 		       		}
 				}
 
-							       
-			    this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, level));
+				if(this.addLemmatizedLabel){			       
+					this.addVertex(new EntailmentUnit(text, lemmaLabel, completeStatementTexts, mentions, level));
+				}
+				else{
+					this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, level));
+				}
 			}
 			
 			
@@ -177,6 +197,14 @@ public class EntailmentGraphRaw extends
 		else copyFragmentGraphNodesAndEntailingEdges(fg);
 	}
 	
+	public EntailmentGraphRaw(FragmentGraph fg, boolean includeNonEntailingEdges, boolean addLemmatizedLabel) {
+		super(EntailmentRelation.class);
+		this.addLemmatizedLabel = addLemmatizedLabel;
+		if (includeNonEntailingEdges) copyFragmentGraphNodesAndAllEdges(fg);
+		else copyFragmentGraphNodesAndEntailingEdges(fg);
+	}
+	
+	
 	/**
 	 * Initialize an empty work graph
 	 */
@@ -202,6 +230,10 @@ public class EntailmentGraphRaw extends
 			if (node.isBaseStatement()) baseStatements.add(node);
 		}
 		return baseStatements;
+	}
+	
+	public boolean hasLemmatizedLabel(){
+		return this.addLemmatizedLabel;
 	}
 	
 	
@@ -347,7 +379,7 @@ public class EntailmentGraphRaw extends
 	public void addEntailmentUnitMention(EntailmentUnitMention mention, String completeStatementText){
 		EntailmentUnit node = this.getVertexWithText(mention.getText());
 		if (node==null) {
-			EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText);
+			EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText, this.addLemmatizedLabel);
 			this.addVertex(newNode);
 		}
 		else{
@@ -665,6 +697,10 @@ public class EntailmentGraphRaw extends
  
 						// set text attribute to eu element
 						entailmentUnitNode.setAttribute("text",eu.getText());
+						// set lemmaLabel attribute to eu element
+						if(eu.getLemmatizedText() != null){
+							entailmentUnitNode.setAttribute("lemmaLabel",eu.getLemmatizedText());
+						}
 						// set level attribute to eu element
 						entailmentUnitNode.setAttribute("level",String.valueOf(eu.getLevel()));
  
