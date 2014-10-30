@@ -114,7 +114,7 @@ public class DemoUseCase2OMQGermanNew {
 	static GermaNet germanet;
 	static Set<String> GermaNetLexicon; 
 	static GermanWordSplitter splitter;
-	static int derivSteps;
+	static int derivSteps = 2;
 	static boolean addLemmaLabel;
 	
 	static boolean keywordsProvided = true; //if true: input dataset contains keyword metadata
