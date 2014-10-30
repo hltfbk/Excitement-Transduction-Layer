@@ -41,7 +41,6 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
@@ -57,7 +56,6 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawExceptio
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
@@ -73,7 +71,6 @@ import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragm
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAndDependencyAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.experiments.OMQ.SimpleEDA_DE;
@@ -300,10 +297,6 @@ public class EvaluatorCategoryAnnotator {
 		try {
 			switch(i){
 	        	case 0: //no EDA use --> graph with non-connected nodes
-	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
-	        		lapForFragments = lapForDecisions;
-	        		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
-		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 	        		edaName = "NO EDA";
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
@@ -314,14 +307,10 @@ public class EvaluatorCategoryAnnotator {
 		    		break;    	
 		    	//Setup for TIE 
 	        	case 1: //TIE with base configuration (inflection only)
-	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
-	        		lapForFragments = lapForDecisions;
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
 	        		configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
 	        		eda = new MaxEntClassificationEDA();
-		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
-		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 	        		edaName = "TIE";
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
@@ -333,13 +322,9 @@ public class EvaluatorCategoryAnnotator {
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
 	        	case 11: //Alignment-based EDA 
-	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
-	        		lapForFragments = lapForDecisions;
 	        		configFilename = "./src/test/resources/EOP_models/fnr_de.model";
 	        		configFile = new File(configFilename);
 	        		alignmenteda = new FNR_DE(); 
-		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
-		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, alignmenteda);
@@ -349,14 +334,10 @@ public class EvaluatorCategoryAnnotator {
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
 	        	case 2: //TIE with base configuration + GermaNet 
-	        		lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//MaltParserDE();
-	        		lapForFragments = lapForDecisions;
 	    			configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN_DE.xml";;
 	        		configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
 	        		eda = new MaxEntClassificationEDA();
-		    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments);
-		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
 	        		edaName = "TIE";
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
@@ -367,24 +348,8 @@ public class EvaluatorCategoryAnnotator {
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
-	        	case 99: //TIE with base configuration (inflection only) and sentences as fragments
-	        		lapForDecisions = new CachedLAPAccess(new MaltParserDE());//MaltParserDE();
-	        		lapForFragments = lapForDecisions;
-	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
-	        		configFile = new File(configFilename);
-	        		config = new ImplCommonConfig(configFile);
-	        		eda = new MaxEntClassificationEDA();
-		    		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lapForFragments);
-		    		fragmentAnnotatorForNewInput = fragmentAnnotatorForGraphBuilding;
-		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
-		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
-		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
-		    		categoryAnnotator = new CategoryAnnotatorAllCats();
-		    		break;
 		    	
-			    	// SimpleEDA_DE SETUPS
+			    // SimpleEDA_DE SETUPS
 	        	case 101: //SimpleEDA_DE, LEMMA + CONVERSION
 	        		eda = new SimpleEDA_DE();
 	        		edaName = "SEDA";
@@ -403,7 +368,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -416,7 +381,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -429,7 +394,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -442,7 +407,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -456,7 +421,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -472,7 +437,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -490,7 +455,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -507,7 +472,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -524,7 +489,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph, fragmentTypeNameEval);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -535,11 +500,7 @@ public class EvaluatorCategoryAnnotator {
 			e.printStackTrace();
 		} catch (GraphMergerException e) {
 			e.printStackTrace();
-		} catch (LAPException e) {
-			e.printStackTrace();
 		} catch (EDAException e) {
-			e.printStackTrace();
-		} catch (FragmentAnnotatorException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -1237,7 +1198,9 @@ public class EvaluatorCategoryAnnotator {
 	private Set<FragmentGraph> buildFragmentGraphs(List<Interaction> graphDocs) throws FragmentAnnotatorException,
 			ModifierAnnotatorException, FragmentGraphGeneratorException {
 		Set<FragmentGraph> fgs = new HashSet<FragmentGraph>();	
+//		int count = 0; //TODO: REMOVE debugging only
 		for(Interaction interaction: graphDocs) {
+//			if (count > 50) break; count++; //TODO: REMOVE debugging only
 			logger.info("-----------------------------------------------------");
 			logger.info("Processing graph interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
 			List<JCas> cases;
