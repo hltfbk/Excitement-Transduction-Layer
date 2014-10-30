@@ -21,7 +21,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
 
 
 /**
- * @author vivi@fbk
+ * @author vivi@fbk & Aleksandra
  * 
  * Vertex class for the FragmentGraph, we call it EntailmentUnitMention
  * 
@@ -38,6 +38,7 @@ public class EntailmentUnitMention {
 	
 	Set<ModifierAnnotation> modifiers = null;
 
+	protected JCas cas;
 	protected String interactionId;
 	protected String text;
 	protected Set<SimpleModifier> modifiersText;
@@ -73,7 +74,7 @@ public class EntailmentUnitMention {
 	 * @param mods -- the modifiers included in this object 
 	 */
 	public EntailmentUnitMention(JCas aJCas, FragmentAnnotation frag, Set<ModifierAnnotation> mods) {
-		
+		cas = aJCas; 
 		modifiers = mods;
 		Set<String> modsText = new HashSet<String>();
 		level = mods.size();
@@ -113,7 +114,6 @@ public class EntailmentUnitMention {
 		}
 		return sms;
 	}
-	
 	
 	private String getCategoryId(JCas aJCas) {
 		
@@ -164,6 +164,9 @@ public class EntailmentUnitMention {
 */
 	}
 	
+	public JCas getJCas(){
+		return cas;
+	}
 	
 	public String getCategoryId(){
 		return categoryId;

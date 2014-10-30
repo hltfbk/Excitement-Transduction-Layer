@@ -25,7 +25,6 @@ import org.apache.lucene.util.Version;
 import org.apache.uima.jcas.JCas;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
-//import ag.simple.eda.SimpleEDA;
 import de.tuebingen.uni.sfs.germanet.api.GermaNet;
 import de.tuebingen.uni.sfs.germanet.api.LexUnit;
 import eu.excitement.type.tl.CategoryAnnotation;
@@ -192,16 +191,16 @@ public class EvaluatorCategoryAnnotator {
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
     
-    static int setup = 110;
+    static int setup = 0;
     static String fragmentTypeNameGraph = "TF"; //for setup >= 110 this variable will be overwritten!
 //  static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
  //   static String fragmentTypeName = "DF"; // DF = dpendency fragment
 //    static String fragmentTypeName = "TDF"; // TDF = token + dependency fragment
 //  static String fragmentTypeName = "SF"; //SF = sentence fragment
   	static String fragmentTypeNameEval; //set automatically!
-    
+  	
     static boolean readGraphFromFile = false;
-    static boolean readMergedGraphFromFile = true;
+    static boolean readMergedGraphFromFile = false;
     static String inputMergedGraphFileName;
     static File inputMergedGraphFile;
     
@@ -214,6 +213,7 @@ public class EvaluatorCategoryAnnotator {
     
     static boolean bestNodeOnly = true;
     static boolean buildTokenLemmaGraph = false;
+    static boolean addLemmaLabel = true;
     static boolean skipEval = false;
     
 	static File temp; 
@@ -391,7 +391,7 @@ public class EvaluatorCategoryAnnotator {
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-		    		graphMerger =  new AutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
@@ -639,7 +639,7 @@ public class EvaluatorCategoryAnnotator {
 			logger.info("Built fragment graphs.");
 			
 			//merging fragment graphs
-			EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
+			EntailmentGraphRaw egr = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw(addLemmaLabel));
 			String outputFile = outputDirname + "test.rawgraph.xml";
 			XMLFileWriter.write(egr.toXML(), outputFile);			
 			logger.info("Wrote raw graph to " + outputFile);
@@ -799,7 +799,7 @@ public class EvaluatorCategoryAnnotator {
 		String edaTrainingFilename;
 		
 	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
-//	    for (int i=2; i<=3; i++) { //Create one fold only
+//	    for (int i=2; i<=2; i++) { //Create one fold only
 	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
@@ -872,7 +872,7 @@ public class EvaluatorCategoryAnnotator {
 					logger.info("Reading merged graph from inputMergedGraphFile: "+ inputMergedGraphFile.getAbsolutePath());
 					egr = new EntailmentGraphRaw(inputMergedGraphFile);
 				}
-				else egr = new EntailmentGraphRaw();
+				else egr = new EntailmentGraphRaw(addLemmaLabel);
 
 				//emailDocs = reduceTrainingDataSize(emailDocs, 20); //reduce the number of emails on which the graph is built
 				//logger.info("Reduced training set contains " +emailDocs.size()+ " documents.");
@@ -1136,7 +1136,7 @@ public class EvaluatorCategoryAnnotator {
 	 */
 	@SuppressWarnings("unused")
 	private EntailmentGraphCollapsed buildGraph(List<Interaction> graphDocs, File mergedGraphFile, int minOccurrence) throws Exception {
-		EntailmentGraphRaw egr = new EntailmentGraphRaw();
+		EntailmentGraphRaw egr = new EntailmentGraphRaw(addLemmaLabel);
 		if (readMergedGraphFromFile) {
 			egr = new EntailmentGraphRaw(mergedGraphFile);
 		} else { //build fragment graphs from input data and merge them
@@ -1188,52 +1188,18 @@ public class EvaluatorCategoryAnnotator {
 					//add mention to raw graph
 					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
 					EntailmentUnit aEU = egr.getVertexWithText(eum.getTextWithoutDoubleSpaces());
-					//find units with the same lemma as the inserted mention
-					/* TODO: comment in once Aleksandra implementation is ready
 					for(EntailmentUnit bEU : egr.vertexSet()){
 						if(!egr.isEntailmentInAnyDirection(aEU, bEU)){
 							if(!bEU.getTextWithoutDoubleSpaces().equalsIgnoreCase(aEU.getTextWithoutDoubleSpaces()) 
-									&&bEU.getLabel().equalsIgnoreCase(aEU.getLabel()) 
-											){
+									&& bEU.getLemmatizedText().equalsIgnoreCase(aEU.getLemmatizedText())){
 								egr.addEdgeByInduction(aEU, bEU, DecisionLabel.Entailment, 0.98);
 								egr.addEdgeByInduction(bEU, aEU, DecisionLabel.Entailment, 0.98);
 								break;
 							}
 						}
-					}*/
+					}
 				}
 			}
-				
-			//use it, if fragments are only only dependencies
-//			boolean buildLemmaGraph = true;
-//			if (buildLemmaGraph){
-//				for (FragmentGraph fg1 : fgs) {
-//					for(EntailmentUnitMention eum: fg1.vertexSet()){
-//						//add mention to raw graph
-//						egr.addEntailmentUnitMention(eum, fg1.getCompleteStatement().getTextWithoutDoubleSpaces());
-//						EntailmentUnit aEU = egr.getVertexWithText(eum.getTextWithoutDoubleSpaces());
-//						//find units with the same lemma as the inserted mention
-//						List<String> aLemmas = Arrays.asList(aEU.getLabel().toLowerCase().split(" "));
-//						for(EntailmentUnit bEU : egr.vertexSet()){
-//							if(!egr.isEntailmentInAnyDirection(aEU, bEU)){
-//								if(!bEU.getTextWithoutDoubleSpaces().equalsIgnoreCase(aEU.getTextWithoutDoubleSpaces())){
-//									List<String> bLemmas = Arrays.asList(bEU.getLabel().toLowerCase().split(" "));
-//									boolean edgeAdded = false;
-//									if(aLemmas.containsAll(bLemmas)){
-//										egr.addEdgeByInduction(aEU, bEU, DecisionLabel.Entailment, 0.98);
-//										edgeAdded = true;
-//									}
-//									if(bLemmas.containsAll(aLemmas)){
-//										egr.addEdgeByInduction(bEU, aEU, DecisionLabel.Entailment, 0.98);
-//										edgeAdded = true;
-//									}
-//									if(edgeAdded) break;
-//								}
-//							}
-//						}
-//					}
-//				}
-//			}			
 		} else { //merge graph --> takes a really long time and uses too much memory: TODO reduce number of fgs
 			if (setup == 11) alignmenteda.initialize(configFile);
 			else eda.initialize(config);
@@ -1378,7 +1344,7 @@ public class EvaluatorCategoryAnnotator {
 		logger.info("added " + graphDocs.size() + " categories");
 		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + "_"
 				+ fragmentTypeNameEval + "_" + method + "_" + edaName + ".xml");	
-		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(), minTokenOccurrenceInCategories);
+		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(addLemmaLabel), minTokenOccurrenceInCategories);
 		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
 		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
 		EntailmentGraphCollapsed egc = buildCollapsedGraphWithCategoryInfo(egr);
