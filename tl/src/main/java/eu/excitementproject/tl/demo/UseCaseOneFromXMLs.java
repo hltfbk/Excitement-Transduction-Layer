@@ -9,6 +9,7 @@ import javax.xml.transform.TransformerException;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -42,5 +43,15 @@ public class UseCaseOneFromXMLs extends UseCaseOneRunnerPrototype {
 		
 		docs = DataUtils.loadXMLData(files);
 		graph = this.buildCollapsedGraph(docs);
+	}
+	
+	public void inspectResults() {
+		try {
+			this.inspectGraph(graph);
+		} catch (IOException | EntailmentGraphCollapsedException
+				| TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
