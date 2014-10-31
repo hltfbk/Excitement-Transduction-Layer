@@ -45,14 +45,17 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 public class ExperimentNiceWP2Merge extends AbstractExperiment {
 	
 	public String configFileName = "";
-	
-	public ExperimentNiceWP2Merge(String configFileName, String dataDir,
+	public String configFileFullName = "";
+
+	public ExperimentNiceWP2Merge(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
-		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 		
-		this.configFileName = configFileName;
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();		
+
 		m_optimizer = new SimpleGraphOptimizer();
 		
 		try {
@@ -165,7 +168,7 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 	 * @throws ConfigurationException 
 	 */
 	public static void main(String[] args) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
-		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+		String tlDir = "./";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/perFrag/test";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_reAnnotated/test";
 		

@@ -279,7 +279,7 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 	}
 	
 	public int getEdaCallsNumber(){
-		return this.getEdaCallsNumber();
+		return super.getEdaCallsNumber();
 	}
 	
 	/**

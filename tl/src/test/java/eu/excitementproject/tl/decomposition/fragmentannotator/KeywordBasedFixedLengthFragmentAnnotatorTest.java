@@ -57,8 +57,7 @@ public class KeywordBasedFixedLengthFragmentAnnotatorTest {
 			FragmentAnnotator frAnnot = new KeywordBasedFixedLengthFragmentAnnotator(lap); 
 
 
-			File xmiIn = new File("src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media/0320.txt.xmi");
-//			File xmiIn = new File("target/WP2_public_data_CAS_XMI/ALMA_social_media/0202.txt.xmi");
+			File xmiIn = new File("src/test/resources/ALMA/XMIs/0007.txt.xmi");
 			
 			JCas goldJCas = CASUtils.createNewInputCas();
 			CASUtils.deserializeFromXmi(goldJCas, xmiIn);

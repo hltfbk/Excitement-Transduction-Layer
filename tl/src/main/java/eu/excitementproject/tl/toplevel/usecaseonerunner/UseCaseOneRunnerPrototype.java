@@ -553,7 +553,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		if (!theDir.exists())
 		{
 			logger.info("creating directory: " + outputPath);
-			boolean result = theDir.mkdir();  
+			boolean result = theDir.mkdirs();  
 			if(result){    
 				logger.info("DIR created");  
 			} else {
