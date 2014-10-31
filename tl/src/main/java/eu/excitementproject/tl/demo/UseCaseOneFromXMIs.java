@@ -11,6 +11,7 @@ import org.apache.uima.jcas.JCas;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -33,5 +34,16 @@ public class UseCaseOneFromXMIs extends UseCaseOneRunnerPrototype {
 		
 		docs = DataUtils.loadData(dataDir, fileNumberLimit);
 		graph = this.buildCollapsedGraph(docs);
+	}	
+	
+	public void inspectResults() {
+		try {
+			this.inspectGraph(graph);
+		} catch (IOException | EntailmentGraphCollapsedException
+				| TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	
 }
