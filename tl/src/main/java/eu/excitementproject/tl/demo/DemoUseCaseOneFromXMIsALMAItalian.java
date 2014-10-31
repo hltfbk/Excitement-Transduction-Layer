@@ -9,7 +9,6 @@ import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -51,7 +50,7 @@ public class DemoUseCaseOneFromXMIsALMAItalian extends UseCaseOneFromXMIs {
 		try {
 
 			demoIT = new DemoUseCaseOneFromXMIsALMAItalian(configFileName, dataDir, fileNrLimit, outputFolder, lapClass, edaClass);
-			demoIT.inspectGraph(demoIT.graph);
+			demoIT.inspectResults();
 
 		} catch (ConfigurationException | NoSuchMethodException
 				| SecurityException | InstantiationException
@@ -60,7 +59,7 @@ public class DemoUseCaseOneFromXMIsALMAItalian extends UseCaseOneFromXMIs {
 				| FragmentAnnotatorException | ModifierAnnotatorException
 				| GraphMergerException | GraphOptimizerException
 				| FragmentGraphGeneratorException | IOException
-				| EntailmentGraphRawException | TransformerException | EntailmentGraphCollapsedException e) {
+				| EntailmentGraphRawException | TransformerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
