@@ -20,8 +20,8 @@ import eu.excitementproject.eop.core.utilities.dictionary.wordnet.WordNetRelatio
 
 /**
  * @author Lili Kotlerman
- * Expands using heuristic similar to that of 
  */
+
 public class WordNetLexicalExpander extends AbstractLexicalExpander {
 
 	private WordnetLexicalResource wn; 
@@ -38,10 +38,6 @@ public class WordNetLexicalExpander extends AbstractLexicalExpander {
 
 
 	private void init(ConfigurationFile conf) throws ConfigurationException {		
-/*		if(conf.isModuleExist("LexicalExpander")){
-			ConfigurationParams params = conf.getModuleConfiguration("LexicalExpander");
-		}
-*/		
 		if(conf.isModuleExist("WN")){
 			ConfigurationParams params = conf.getModuleConfiguration("WN");
 			try {
@@ -67,7 +63,7 @@ public class WordNetLexicalExpander extends AbstractLexicalExpander {
 	private HashMap<String,Double> getWordNetExpansions(String lemma, PartOfSpeech pos) throws LexicalResourceException{
 		HashMap<String,Double> expansions = new HashMap<String, Double>();
 
-		//	Get derivations and synonyms of the given term	
+		//	Set up the relations to extract	
 		Set<WordNetRelation> rel = new HashSet<WordNetRelation>();
 		rel.add(WordNetRelation.SYNONYM);
 		rel.add(WordNetRelation.DERIVATIONALLY_RELATED);
@@ -75,9 +71,8 @@ public class WordNetLexicalExpander extends AbstractLexicalExpander {
 		rel.add(WordNetRelation.HYPERNYM);		
 		rel.add(WordNetRelation.MEMBER_HOLONYM);
 		rel.add(WordNetRelation.MEMBER_MERONYM);
-				
-		// get synonyms and derivation of the given term
 		wn.setDefaultRelationSet(rel);
+
 		try {
 			for (LexicalRule<? extends WordnetRuleInfo> termSynDer : wn.getRulesForRight(lemma, pos)){			
 				expansions.put(replaceDigits(termSynDer.getLLemma().toLowerCase()), WN_CONFIDENCE);	
@@ -125,7 +120,6 @@ public class WordNetLexicalExpander extends AbstractLexicalExpander {
 		expansions.putAll(getUnfilteredExpansions(lemma,v));
 		expansions.putAll(getUnfilteredExpansions(lemma,a));
 		
-		//if (lemma.contains(" ")) System.out.println(lemma+" >> "+expansions);
 		return expansions;
 	}
 }

@@ -14,5 +14,5 @@ public interface LexicalExpander {
 
 	public HashMap<String,Double> getExpansions(String lemma) throws Exception;
 		
-	// add code to check whether original terms are connected in resources, even if not returned within top-k expansions
+	//TODO: add code to check whether original terms are connected in resources, even if not returned within top-k expansions
 }
