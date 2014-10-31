@@ -2,6 +2,7 @@ package eu.excitementproject.tl.toplevel.usecaseonerunner;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,6 +15,11 @@ import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.common.EDABasic;
+import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.configuration.CommonConfig;
+import eu.excitementproject.eop.common.exception.ComponentException;
+import eu.excitementproject.eop.common.exception.ConfigurationException;
+import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.api.GraphMerger;
@@ -29,8 +35,12 @@ import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
+import eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjAsModifierAnnotator;
+import eu.excitementproject.tl.edautils.EDAUtils;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
+import eu.excitementproject.tl.laputils.LAPUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphException;
@@ -43,9 +53,9 @@ import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	
 	
-	CachedLAPAccess lap = null;
-	EDABasic<?> eda = null;
-	
+	protected CachedLAPAccess lap = null;
+	protected EDABasic<?> eda = null;
+		
 	FragmentAnnotator fragAnot = null;
 	ModifierAnnotator modAnot = null;
 	FragmentGraphGenerator fragGen;
@@ -63,7 +73,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
 		this.lap = lap;
 		this.eda = eda;
-
+		
 		initInterfaces();
 	}
 	
@@ -76,10 +86,58 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		initInterfaces();
 	}
 	
-	public UseCaseOneRunnerPrototype() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
+	
+	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda, String outputPath, String setting) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
+		this.lap = lap;
+		this.eda = eda;
+		this.outputPath = outputPath;
+
+		if (setting.matches("default")) {
+			initDefaultInterfaces();	
+		}		
+	}
+
+	public UseCaseOneRunnerPrototype(String configFileName, String outputPath, Class<?> lapClass, Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
+	
+		File configFile = new File(configFileName);
+		CommonConfig config = new ImplCommonConfig(configFile);
+		
+		this.lap = LAPUtils.initializeLap(lapClass, config);
+		this.eda = EDAUtils.initializeEDA(edaClass, config);
+		this.outputPath = outputPath;
+
 		initInterfaces();
 	}
+
 	
+	public UseCaseOneRunnerPrototype(String configFileName, String outputPath, Class<?> lapClass, Class<?> edaClass, String setting) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
+		
+		File configFile = new File(configFileName);
+		CommonConfig config = new ImplCommonConfig(configFile);
+		
+		this.lap = LAPUtils.initializeLap(lapClass, config);
+		this.eda = EDAUtils.initializeEDA(edaClass, config);
+		this.outputPath = outputPath;
+
+		initDefaultInterfaces();
+	}
+	
+	
+	
+	public UseCaseOneRunnerPrototype(String configFileName, String outputPath, Class<?> lapClass, Class<?> edaClass, FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
+		
+		File configFile = new File(configFileName);
+		CommonConfig config = new ImplCommonConfig(configFile);
+		
+		this.lap = LAPUtils.initializeLap(lapClass, config);
+		this.eda = EDAUtils.initializeEDA(edaClass, config);
+		this.outputPath = outputPath;
+
+		this.fragAnot = fragmentAnnotator;
+		this.modAnot = modifierAnnotator;
+		
+		initInterfaces();
+	}
 	
 	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda, 
 			FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator, 
@@ -104,7 +162,30 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 
 		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
 		collapseGraph = new GlobalGraphOptimizer();
+		
+		prepareOutputFolder();
 	}
+	
+	
+	/*
+	 * Initialize default fragment and modifier annotators
+	 */
+	private void initDefaultInterfaces() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
+
+		
+		fragAnot = new KeywordBasedFixedLengthFragmentAnnotator(lap); 
+		
+		modAnot = new AdvAdjAsModifierAnnotator(lap, fragAnot);
+		
+		fragGen = new FragmentGraphGeneratorFromCAS();
+
+		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
+		collapseGraph = new GlobalGraphOptimizer();
+		
+		prepareOutputFolder();
+	}
+	
+	
 	
 	/**
 	 * Builds a raw entailment graph from a set of user interactions
@@ -440,6 +521,20 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		return eda;
 	}
 
+	
+	public void setFragmentAnnotator(FragmentAnnotator fragAnot) {
+		this.fragAnot = fragAnot;
+	}
+	
+	
+	public void setModifierAnnotator(ModifierAnnotator modAnot) {
+		this.modAnot = modAnot;
+	}
+	
+	public void setFragmentGraphGenerator(FragmentGraphGenerator fragGen) {
+		this.fragGen = fragGen;
+	}
+	
 
 	public void setGraphMerger(GraphMerger graphMerger) {
 		this.graphMerger = graphMerger;
@@ -450,6 +545,22 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		return graphMerger;
 	}
 	
-	
+
+	private void prepareOutputFolder() {
+
+		File theDir = new File(outputPath);
+		// 	if the directory does not exist, create it
+		if (!theDir.exists())
+		{
+			logger.info("creating directory: " + outputPath);
+			boolean result = theDir.mkdir();  
+			if(result){    
+				logger.info("DIR created");  
+			} else {
+				System.err.println("Could not create the output directory. No output files will be created."); 
+				outputPath=null;
+			}
+		}
+	}
 	
 }

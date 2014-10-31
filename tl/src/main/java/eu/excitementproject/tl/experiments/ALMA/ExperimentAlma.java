@@ -3,19 +3,31 @@ package eu.excitementproject.tl.experiments.ALMA;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
+import javax.xml.transform.TransformerException;
 
 //import javax.xml.transform.TransformerException;
 
 
+import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.exception.ComponentException;
+import eu.excitementproject.eop.common.exception.ConfigurationException;
 //import eu.excitementproject.eop.common.DecisionLabel;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
 //import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
+import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -28,12 +40,15 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
  */
 public class ExperimentAlma extends AbstractExperiment {
 
+	public String configFileName = "";
+	
 	public ExperimentAlma(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
-			Class<?> edaClass) {
+			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 		
+		this.configFileName = configFileName;
 		m_optimizer = new SimpleGraphOptimizer();
 	}
 
@@ -44,7 +59,7 @@ public class ExperimentAlma extends AbstractExperiment {
 	public static void main(String[] args) {
 
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
-		String tlDir = "/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/";
+		String tlDir = "./";
 
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/";
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_split/test/";
@@ -78,19 +93,32 @@ public class ExperimentAlma extends AbstractExperiment {
 		Class<?> lapClass = TreeTaggerIT.class;
 		
 		
-		ExperimentAlma e = new ExperimentAlma(conf, dataDir, fileLimit, outDir, lapClass, edaClass);
-		
-// 		for the FakeEDA only -- set the returned decision to what we want
-//		((FakeEDA) e.eda).initialize(DecisionLabel.Unknown);
-		
-		EntailmentGraphRaw rawGraph = e.buildRawGraph();
+		ExperimentAlma e = null;
+		EntailmentGraphRaw rawGraph = null;
 		try {
-			e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_rawGraph.xml");
-		} catch (EntailmentGraphRawException e1) {
+			e = new ExperimentAlma(conf, dataDir, fileLimit, outDir, lapClass, edaClass);
+			e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
+			rawGraph = e.buildRawGraph();
+
+//	 		for the FakeEDA only -- set the returned decision to what we want
+//			((FakeEDA) e.eda).initialize(DecisionLabel.Unknown);
+
+			e.m_rawGraph.toXML(outDir+"/"+e.configFileName +"_rawGraph.xml");
+
+		
+		} catch (ConfigurationException | NoSuchMethodException
+				| SecurityException | InstantiationException
+				| IllegalAccessException | IllegalArgumentException
+				| InvocationTargetException | EDAException | ComponentException
+				| FragmentAnnotatorException | ModifierAnnotatorException
+				| GraphMergerException | GraphOptimizerException
+				| FragmentGraphGeneratorException | IOException
+				| EntailmentGraphRawException | TransformerException e2) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e2.printStackTrace();
 		}
 		
+				
 		boolean isSingleClusterGS = false;
 
 		for (double confidenceThreshold : e.getConfidenceThresholds()){

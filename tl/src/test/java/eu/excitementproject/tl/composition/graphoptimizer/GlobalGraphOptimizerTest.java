@@ -27,6 +27,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
+@SuppressWarnings("unused")
 public class GlobalGraphOptimizerTest {
 	
 	private final Logger logger = Logger.getLogger(this.getClass());

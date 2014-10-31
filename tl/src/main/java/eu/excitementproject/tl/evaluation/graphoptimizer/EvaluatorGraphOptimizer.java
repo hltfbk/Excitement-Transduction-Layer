@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.evaluation.graphmerger.EvaluatorGraphMerger;
 import eu.excitementproject.tl.evaluation.utils.ExtendedEvaluationMeasures;
 import eu.excitementproject.tl.evaluation.utils.TLClusteringResultsEvaluator;
@@ -18,7 +19,6 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 /**
  * This class contains methods for evaluating graph optimizer results.
