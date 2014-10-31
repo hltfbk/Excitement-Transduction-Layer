@@ -10,7 +10,6 @@ import junit.framework.Assert;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.junit.Ignore;
-//import org.junit.Ignore;
 import org.junit.Test;
 
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
