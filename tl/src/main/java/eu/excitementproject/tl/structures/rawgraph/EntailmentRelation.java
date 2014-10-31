@@ -25,10 +25,10 @@ import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.edautils.RandomEDA;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 
 /**

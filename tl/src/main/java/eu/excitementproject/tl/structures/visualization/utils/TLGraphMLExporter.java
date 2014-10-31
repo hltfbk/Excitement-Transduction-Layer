@@ -14,6 +14,7 @@ import org.jgrapht.graph.AbstractGraph;
 import org.xml.sax.SAXException;
 
 import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -23,7 +24,6 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 public class TLGraphMLExporter {
 

@@ -25,7 +25,6 @@ import org.apache.lucene.util.Version;
 import org.apache.uima.jcas.JCas;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
-//import ag.simple.eda.SimpleEDA;
 import de.tuebingen.uni.sfs.germanet.api.GermaNet;
 import de.tuebingen.uni.sfs.germanet.api.LexUnit;
 import eu.excitement.type.tl.CategoryAnnotation;
@@ -33,7 +32,6 @@ import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.alignmentedas.p1eda.P1EDATemplate;
 import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_DE;
-import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
@@ -94,6 +92,7 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
+//import ag.simple.eda.SimpleEDA;
 
 /**
  * 
@@ -1163,6 +1162,7 @@ public class EvaluatorCategoryAnnotator {
 		return graph;
 	}
 
+	@SuppressWarnings("unused")
 	private EntailmentGraphRaw buildRawGraph(List<Interaction> graphDocs,
 			File mergedGraphFile, EntailmentGraphRaw egr, int minOccurrence)
 			throws FragmentAnnotatorException, ModifierAnnotatorException,

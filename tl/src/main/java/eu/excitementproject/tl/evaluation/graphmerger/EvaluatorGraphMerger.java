@@ -9,12 +9,12 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 
 import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 /**
  * This class contains methods for evaluating graph merger results.

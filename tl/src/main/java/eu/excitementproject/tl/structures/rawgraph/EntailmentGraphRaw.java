@@ -31,13 +31,13 @@ import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.edautils.TEDecisionByScore;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 

@@ -1,13 +1,22 @@
 package eu.excitementproject.tl.experiments;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.xml.transform.TransformerException;
+
+import org.apache.uima.jcas.JCas;
+
 import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.exception.ComponentException;
+import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -18,19 +27,21 @@ import eu.excitementproject.tl.evaluation.graphmerger.EvaluatorGraphMerger;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
+import eu.excitementproject.tl.laputils.DataUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
+import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
 /**
  * Class with methods for running experiments & evaluations
  * @author Lili Kotlerman
  *
  */
-public abstract class AbstractExperiment extends UseCaseOneForExperiments {
+public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 
 	public GoldStandardEdgesLoader gsloader = null;
 	public EntailmentGraphRaw m_rawGraph = null;
@@ -38,16 +49,21 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	public EntailmentGraphRaw m_rfg = null;
 	
 	public ResultsContainer results;
-	
+		
 	public static final boolean includeFragmentGraphEdges = true;
+	
+	public List<JCas> docs;
+	public EntailmentGraphCollapsed graph;
+		
 	
 	public AbstractExperiment(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
-			Class<?> edaClass) {
+			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
 		
-		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
-				edaClass);
+		super(configFileName, outputFolder, lapClass, edaClass);
 		
+		docs = DataUtils.loadData(dataDir, fileNumberLimit);
+		graph = this.buildCollapsedGraph(docs);		
 		// Logger.getRootLogger().setLevel(Level.ERROR); 
 				
 		results = new ResultsContainer();
@@ -68,7 +84,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	@Override
 	public String toString(){
 		return "LAP: " +this.lap.getClass().getName()+";\tEDA: "+this.eda.getClass().getName()+
-				";\tMerger: "+this.useOne.getGraphMerger().getClass().getName()+
+				";\tMerger: "+this.getGraphMerger().getClass().getName()+
 				";\tOptimizer: "+this.m_optimizer.getClass().getName();
 	}
 	
@@ -101,7 +117,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	 */
 	public EntailmentGraphRaw buildRawGraph() {
 		try {
-			m_rawGraph = this.useOne.buildRawGraph(this.docs);
+			m_rawGraph = this.buildRawGraph(this.docs);
 			m_rfg = getFragmetGraphsInRawGraph();
 			return m_rawGraph;
 		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
@@ -116,7 +132,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	 */
 	public EntailmentGraphRaw buildRawGraph(double confidenceThreshold) {
 		try {
-			m_rawGraph = this.useOne.buildRawGraph(this.docs, confidenceThreshold);
+			m_rawGraph = this.buildRawGraph(this.docs, confidenceThreshold);
 			m_rfg = getFragmetGraphsInRawGraph();
 			return m_rawGraph;
 		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
@@ -263,7 +279,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	}
 	
 	public int getEdaCallsNumber(){
-		return this.useOne.getEdaCallsNumber();
+		return this.getEdaCallsNumber();
 	}
 	
 	/**

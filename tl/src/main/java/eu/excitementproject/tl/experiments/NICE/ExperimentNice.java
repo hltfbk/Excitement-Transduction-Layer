@@ -4,10 +4,14 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 import javax.xml.transform.TransformerException;
 
 import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.exception.ComponentException;
+import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.EditDistanceEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
@@ -17,9 +21,15 @@ import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
+import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.edautils.ProbabilisticEDA;
+import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
@@ -30,17 +40,6 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationColla
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
-//import javax.xml.transform.TransformerException;
-//import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
-//import eu.excitementproject.eop.core.EditDistanceEDA;
-//import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
-//import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-//import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
-//import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
-//import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-//import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load NICE data, build the graphs and evaluate them
@@ -48,20 +47,23 @@ import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
  * 
  */
 public class ExperimentNice extends AbstractExperiment {
-
+	
+	public String configFileName = "";
+	
 	public ExperimentNice(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
-			Class<?> edaClass) {
+			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
 		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
-		
+	
+		this.configFileName = configFileName;
 		m_optimizer = new SimpleGraphOptimizer();
 		
 		try {
-//			super.useOne.setGraphMerger(new AllPairsGraphMerger(super.lap, super.eda));
-//			super.useOne.setGraphMerger(new AllPairsGraphMergerWithNonEntailments(super.lap, super.eda));
-			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
-//			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
+//			super.setGraphMerger(new AllPairsGraphMerger(super.lap, super.eda));
+//			super.setGraphMerger(new AllPairsGraphMergerWithNonEntailments(super.lap, super.eda));
+			super.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
+//			super.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
 		} catch (GraphMergerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,7 +80,7 @@ public class ExperimentNice extends AbstractExperiment {
 		EDIT_DIST
 	}
 	
-	public static ExperimentNice initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir){
+	public static ExperimentNice initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
 		
 		if (edaName.equals(EdaName.BIUTEE)) {
 			return new ExperimentNice(
@@ -157,13 +159,13 @@ public class ExperimentNice extends AbstractExperiment {
 	public static void main(String[] args) {
 //		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
-		String tlDir = "/home/nastase/Projects/eop/excitement-transduction-layer/Excitement-Transduction-Layer/tl/";
+		String tlDir = "./";
 		
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test";
 
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag_allinone";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag";
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/perFrag";
 
 // dev //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_all_dev";
 
@@ -172,13 +174,13 @@ public class ExperimentNice extends AbstractExperiment {
 //		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
 //		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/test";
 		
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/Test2";
+		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_reAnnotated/test";
 		
 // dev //		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/Dev";
 
 //		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/all/test";
 		
-		int fileLimit = 1000000;
+		int fileLimit = 10;
 		String outDir = dataDir.replace("resources", "outputs");
 
 		ResultsContainer combinedExperimet = new ResultsContainer(); 
@@ -208,31 +210,28 @@ public class ExperimentNice extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 				
-			ExperimentNice e = initExperiment(name, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
-			EntailmentGraphRaw rawGraph = e.buildRawGraph(0.95);
-				
-/*				Set<Pair<String, String>> entailings = new HashSet<Pair<String, String>>();
-				Set<Pair<String, String>> nonentailings = new HashSet<Pair<String, String>>();
-				for (EntailmentRelation fge : e.m_rfg.edgeSet()){
-					if (fge.getLabel().is(DecisionLabel.Entailment)){
-						entailings.add(new Pair<String, String>(fge.getSource().getText(), fge.getTarget().getText()));
-					}
-					else{
-						nonentailings.add(new Pair<String, String>(fge.getSource().getText(), fge.getTarget().getText()));
-					}
-				}
-				e.m_optimizer = new GlobalGraphOptimizer(entailings, nonentailings);
-				System.out.print(entailings);
-				System.out.print(nonentailings);
-*/
-				
+			ExperimentNice e = null;
+			EntailmentGraphRaw rawGraph = null;
 			try {
-				e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_rawGraph.xml");
-				e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_rawGraph.dot");
-			} catch (IOException | EntailmentGraphRawException e1) {
+				e = initExperiment(name, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir);
+				rawGraph = e.buildRawGraph(0.95);
+				
+				e.m_rawGraph.toXML(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.xml");
+				e.m_rawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.dot");
+				
+			} catch (ConfigurationException | NoSuchMethodException
+					| SecurityException | InstantiationException
+					| IllegalAccessException | IllegalArgumentException
+					| InvocationTargetException | EDAException
+					| ComponentException | FragmentAnnotatorException
+					| ModifierAnnotatorException | GraphMergerException
+					| GraphOptimizerException | FragmentGraphGeneratorException
+					| IOException | EntailmentGraphRawException
+					| TransformerException e2) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+				e2.printStackTrace();
+			} 
+			
 			
 			for (Double confidenceThreshold : e.getConfidenceThresholds()){
 				EntailmentGraphRaw rawGraphWithThreshold = e.applyThreshold(rawGraph, confidenceThreshold);
@@ -321,8 +320,8 @@ public class ExperimentNice extends AbstractExperiment {
 				
 				if (confidenceThreshold.equals(0.5)||(confidenceThreshold.equals(0.9500000000000004)))
 				try {
-					globalOptimizedGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_globalPlusClosure.xml");
-					globalOptimizedGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_globalPlusClosure.dot");
+					globalOptimizedGraph.toXML(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_globalPlusClosure.xml");
+					globalOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_globalPlusClosure.dot");
 				} catch (IOException | EntailmentGraphCollapsedException | TransformerException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -394,8 +393,8 @@ public class ExperimentNice extends AbstractExperiment {
 
 				if (confidenceThreshold.equals(0.5)||(confidenceThreshold.equals(0.9500000000000004)))
 				try {
-					cgr.toXML(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_cgr.xml");
-					cgr.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_cgr.dot");
+					cgr.toXML(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_cgr.xml");
+					cgr.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_cgr.dot");
 				} catch (IOException | EntailmentGraphCollapsedException | TransformerException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
