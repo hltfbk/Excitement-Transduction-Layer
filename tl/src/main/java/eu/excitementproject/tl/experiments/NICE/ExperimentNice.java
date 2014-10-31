@@ -48,15 +48,18 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  */
 public class ExperimentNice extends AbstractExperiment {
 	
+	public String configFileFullName = "";
 	public String configFileName = "";
 	
-	public ExperimentNice(String configFileName, String dataDir,
+	public ExperimentNice(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
-		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 	
-		this.configFileName = configFileName;
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+		
 		m_optimizer = new SimpleGraphOptimizer();
 		
 		try {
@@ -157,28 +160,10 @@ public class ExperimentNice extends AbstractExperiment {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
-//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
+
 		String tlDir = "./";
-		
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test";
-
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_EMAIL_TEST2_perFrag_allinone";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/perFrag";
-
-// dev //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_all_dev";
-
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_all/test";
-		
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/test";
-		
+		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/perFrag/test";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_reAnnotated/test";
-		
-// dev //		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/Dev";
-
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/all/test";
 		
 		int fileLimit = 10;
 		String outDir = dataDir.replace("resources", "outputs");

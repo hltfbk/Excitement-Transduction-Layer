@@ -53,9 +53,9 @@ public class ConvertWP2PublicData {
 		// File names will be determined by "interaction name" (processWP2Data()), or 
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 		
-		String cluster="test/EMAIL0320";
-		dir = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/FragmentGraphs");
-		dirInteractions = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/Interactions");
+		String cluster="Test/EMAIL0330";
+		dir = Paths.get("./src/test/resources/NICE/EMAIL-DATASET/"+cluster+"/FragmentGraphs");
+		dirInteractions = Paths.get("./src/test/resources/NICE/EMAIL-DATASET/"+cluster+"/Interactions");
 		
 
 		logger.info(dir.toFile().getAbsolutePath());
@@ -63,8 +63,8 @@ public class ConvertWP2PublicData {
 //		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media"); 
 	//	outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag"); 
 
-		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open/"+cluster);
-		outputdirPerFrag = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/"+cluster);
+		outputdir = Paths.get("./src/test/outputs/NICE_open/"+cluster);
+		outputdirPerFrag = Paths.get("./src/test/outputs/NICE_open_perFrag/"+cluster);
 		
 		// Actual call: use this for "per-fragment" XMI saving 
 		totalcount += processWP2DataPerFragment(dir, dirInteractions, outputdirPerFrag, "EN"); 

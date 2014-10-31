@@ -37,6 +37,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
  * @author Lili Kotlerman
  *
  */
+@SuppressWarnings("unused")
 public class NiceDemoExperiment  {
 
 	private static final Logger logger = Logger.getLogger(NiceDemoExperiment.class);
@@ -64,8 +65,8 @@ public class NiceDemoExperiment  {
 	 */
 	public static void main(String[] args) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, EntailmentGraphCollapsedException {
 		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
-        String inputsDir = "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_3";
-        String outputFolder = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3";
+        String inputsDir = "./src/test/resources/WP2_public_data_CAS_XMI/nice_speech";
+        String outputFolder = "./src/test/outputs/WP2_public_data_CAS_XMI/nice_speech";
                                        
         int fileNumberLimit = 33;
         
@@ -77,9 +78,11 @@ public class NiceDemoExperiment  {
 		EntailmentGraphCollapsed graph = demoEN.buildCollapsedGraph(docs);
 		demoEN.inspectGraph(graph);
                 
-
-		String o1 = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3/";
-		String o2 = "D:/LiliGit/Excitement-Transduction-Layer/tl/src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3_sort_out3/";
+/*
+ * 
+ * Commented out because of missing files
+		String o1 = "./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3/";
+		String o2 = "./src/test/outputs/WP2_public_data_CAS_XMI/nice_email_3_sort_out3/";
 		try {
 			EntailmentGraphRaw out1 = new EntailmentGraphRaw(new File(o1+"raw_graph.xml"));
 			EntailmentGraphRaw out2 = new EntailmentGraphRaw(new File(o2+"raw_graph.xml"));
@@ -97,16 +100,16 @@ public class NiceDemoExperiment  {
 			logger.info(o1e.size()+"\t"+o2e.size());
 			o1e.removeAll(o2e);
 			logger.info(o1e.size());
-		/*	for (String e : o1e){
-				logger.info(e);
-			}*/
+		//	for (String e : o1e){
+		//		logger.info(e);
+		//	}
 			
 				
 		} catch (EntailmentGraphRawException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+*/		
 	}
 
 }

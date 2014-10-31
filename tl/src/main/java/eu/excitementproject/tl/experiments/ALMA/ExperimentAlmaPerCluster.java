@@ -53,16 +53,19 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  * 
  */
 public class ExperimentAlmaPerCluster extends AbstractExperiment {
-
+	
+	public String configFileFullName = "";
 	public String configFileName = "";
 	
-	public ExperimentAlmaPerCluster(String configFileName, String dataDir,
+	public ExperimentAlmaPerCluster(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
-		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 		
-		this.configFileName = configFileName;
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+
 		m_optimizer = new SimpleGraphOptimizer();
 		
 		try {
@@ -132,19 +135,10 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
-//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
+
 		String tlDir = "./";
-		
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_trainTest_byClusterSplit/test";
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/test";
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/";
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_all/test";
-		
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/Dev";
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/test";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_EMAIL_reAnnotated/all/test";
+		String dataDir = tlDir+"src/test/resources/ALMA/XMIs";
+		String gsAnnotationsDir = tlDir+"src/test/resources/ALMA/ITA-DATASET-11.09.14/Dev";
 		
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
