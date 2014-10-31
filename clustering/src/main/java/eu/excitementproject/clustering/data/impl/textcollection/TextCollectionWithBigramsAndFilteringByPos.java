@@ -84,9 +84,6 @@ public class TextCollectionWithBigramsAndFilteringByPos extends AbstractTextColl
 			if(params.containsKey("pos-tagger-model")) {
 				try {
 					m_posTagger = new MaxentPosTagger(params.get("pos-tagger-model"));					
-//					m_posTagger = new MaxentPosTagger("D:/JARS/stanford-postagger-full-2008-09-28/models/left3words-wsj-0-18.tagger");
-//					m_posTagger = new MaxentPosTagger("D:/JARS_fat/stanford-postagger-full-2008-06-06/models/left3words-wsj-0-18.tagger");
-					
 					m_posTagger.init();
 					System.out.println("Init pos tagger");
 				} catch (PosTaggerException e) {
@@ -94,8 +91,6 @@ public class TextCollectionWithBigramsAndFilteringByPos extends AbstractTextColl
 					e.printStackTrace();
 				}							
 			}
-		//	if(params.containsKey("stopword_lessThan_Percent_threshold")) m_stopwordLessThanPercentThreshold = params.getDouble("stopword_lessThan_Percent_threshold");
-		//	if(params.containsKey("stopword_moreThan_Percent_threshold")) m_stopwordMoreThanPercentThreshold = params.getDouble("stopword_moreThan_Percent_threshold");
 		}
 		loadStopwords();
 		
@@ -105,16 +100,11 @@ public class TextCollectionWithBigramsAndFilteringByPos extends AbstractTextColl
 		}
 		
 		if(conf.isModuleExist("Gate-lemmatizer")){
-			System.out.println("1");
 			ConfigurationParams params = conf.getModuleConfiguration("Gate-lemmatizer");
-			System.out.println("***"+params.getClass().getName());
 			if(params.containsKey("lemmatizer-rule-file"))
 			{
-				System.out.println("###");
 				m_gateRulesFilename = params.getString("lemmatizer-rule-file");
 			}
-			System.out.println(params.keySet());
-			System.out.println(m_gateRulesFilename);
 			m_lemmatizer = new GateLemmatizer(new File(m_gateRulesFilename).toURI().toURL());
 			m_lemmatizer.init();
 		}	
@@ -213,40 +203,6 @@ public class TextCollectionWithBigramsAndFilteringByPos extends AbstractTextColl
 		return isStopwordTerm(word);
 	}
 
-	/*private boolean isAllStopwordNgram(String ngram){
-		if (isStopword(ngram)) return true; // if the whole ngram appears in stop words list - it's a stop word
-		for (String term : ngram.split(" ")){
-			if (!isStopword(term)) 	return false; // if at least one word is not a stop word - then this is not a stop-word ngram
-		}
-		return true;
-	}	*/
-	
-/*	// updated on 13/10/13 
-  	private boolean isNoiseNgram(String ngram){	
-		// if ngram is found in too little or too many documents - consider it noisy
-		int ngramFrequency=m_termDocumentFrequencies.get(ngram);
-		int docsNumber = m_docTextByDocId.size();
-		if(ngramFrequency>=docsNumber*m_stopwordMoreThanPercentThreshold) {
-			if(ngramFrequency<=docsNumber*m_stopwordLessThanPercentThreshold){
-				return true;
-			}
-		}
-		return false;
-	}
-*/	
-	
-/*	protected void filterStowords(){	
-		for (String ngram : m_termDocumentFrequencies.keySet()){
-			if (isStopwordNgram(ngram)){
-				m_docIdsByOriginalTerm.remove(ngram);
-				
-				m_docIdsByExpansionTerm.remove(ngram);
-			}
-		}
-		System.out.println(m_docIdsByOriginalTerm.size()+" different ngrams left after removing stopwords");
-	}
-*/	
-
 	protected boolean isValidBigram(String bigram, char posA, char posB){
 		// bigram is valid if 
 		// 1) both its words are not stopwords
@@ -280,8 +236,6 @@ public class TextCollectionWithBigramsAndFilteringByPos extends AbstractTextColl
 			if ((addLemma.endsWith("us"))&&(lemmaterm.endsWith("i"))) addLemma=lemmaterm; //fix strange cases when wifi->wifus, citi->citus, abu dhabi -> abu dhabus etc
 			lemma+=addLemma+" ";			
 		}
-		//m_lemmatizer.set(keyTokenLemma);
-		//m_lemmatizer.process();
 		return lemma.trim();			
 	}	
 	

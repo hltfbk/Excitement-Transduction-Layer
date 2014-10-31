@@ -279,26 +279,7 @@ public abstract class AbstractDemoRunner {
 		}
 		return clusteringResultsCutOff;
 	}
-	
-	/*protected void processResults(String settingName, Integer k, Map<String, List<Integer>> clusteringResults){
-		RecallPrecisionValues recallPrecisionPair; 
-		if (m_recallPrecisionResults.containsKey(settingName)) recallPrecisionPair = m_recallPrecisionResults.get(settingName);
-		else recallPrecisionPair = new RecallPrecisionValues(settingName);			
 		
-		if (!m_allResultsPerK.containsKey(k)) m_allResultsPerK.put(k, new HashMap<String,String>());			
-		Map<String,String> results = m_allResultsPerK.get(k);
-
-		Map<String,Double> eval = ClusteringResultsEvaluator.calculateRecallPrecisionFmeasuresAndRandIndex(m_textCollection.getDocTextsByDocId().keySet(), m_textCollection.getDocIdsPerGoldStandardCluster(), clusteringResults);
-		recallPrecisionPair.addResult(eval.get("R"),eval.get("P"));
-		System.out.println(eval);
-		double purity = ClusteringResultsEvaluator.calculatePurity(m_textCollection.getDocIdsPerGoldStandardCluster(), clusteringResults);
-		System.out.println("Putiry="+purity);					
-		m_recallPrecisionResults.put(settingName, recallPrecisionPair);
-		
-		results.put(settingName, resultsToString(eval)+"\t"+String.valueOf(purity));
-		m_allResultsPerK.put(k, results);
-	}*/
-	
 	protected String resultsToString(Map<String,Double> eval){		
 		return  String.valueOf(eval.get("R"))+"\t"+String.valueOf(eval.get("P"))+"\t"+String.valueOf(eval.get("F1"));
 	}

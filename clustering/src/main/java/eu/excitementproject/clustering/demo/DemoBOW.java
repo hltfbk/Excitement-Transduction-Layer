@@ -44,19 +44,26 @@ public class DemoBOW extends AbstractDemoRunner {
 		// K-medoids BOW clustering
 		String settingName="K-medoids-BOW-"+weightType;
 		System.out.println("\n"+settingName+"\n");
-
 		// for documents let's set the threshold = 0.7
 		double threshold = 0.7;
 		DocumentsKmedoidsClustererBOW dClusterer = new DocumentsKmedoidsClustererBOW(m_useExpandedCollection, weightType, threshold);
 		dClusterer.setNumberOfDocumentClusters(k);
 		Map<String, List<Integer>> res = dClusterer.clusterDocuments(m_textCollection);			
+		System.out.println("Results for "+res.size()+" output document clusters:");
 		processResults(settingName, k, res);
+		// the algorithm can output k+1 clusters, if there were documents that could not be assigned to any of the k main clusters
+		// if it is important to ensure k clusters in the final output, the following can be done:
+		if ((res.size()>k)&&(k>1)) { 
+			dClusterer.setNumberOfDocumentClusters(k-1);
+			res = dClusterer.clusterDocuments(m_textCollection);				
+			System.out.println("Results for "+res.size()+" output document clusters:");
+			processResults(settingName, k, res); //replace the results
+		}
 											
 											
 		// Complete link BOW clustering 
 		settingName="CompleteLink-BOW-"+weightType;
 		System.out.println("\n"+settingName+"\n");
-
 		DocumentsCompleteLinkClustererBOW dCLClusterer = new DocumentsCompleteLinkClustererBOW(m_useExpandedCollection, weightType);
 		dCLClusterer.setNumberOfDocumentClusters(k);
 		res = dCLClusterer.clusterDocuments(m_textCollection);						
@@ -70,13 +77,21 @@ public class DemoBOW extends AbstractDemoRunner {
 		// cluster documents with that model
 		localLDAClusterer.setNumberOfDocumentClusters(k);
 		res = localLDAClusterer.clusterDocuments(m_textCollection);	
+		System.out.println("Results for "+res.size()+" output document clusters:");
 		processResults(settingName, k, res);
+		// the algorithm can output k+1 clusters, if there were documents that could not be assigned to any of the k main clusters
+		// if it is important to ensure k clusters in the final output, the following can be done:
+		if ((res.size()>k)&&(k>1)) { 
+			dClusterer.setNumberOfDocumentClusters(k-1);
+			res = dClusterer.clusterDocuments(m_textCollection);				
+			System.out.println("Results for "+res.size()+" output document clusters:");
+			processResults(settingName, k, res); //replace the results
+		}
 
 		
 		// Co-clustering into k document clusters using k term clusters 
 		settingName="Co-clustering-BOW-"+weightType;
 		System.out.println("\n"+settingName+"\n");
-
 		DhillonCoClusterer clusterer = new DhillonCoClusterer(m_useExpandedCollection, m_textCollection, configurationFileName, weightType);
 		clusterer.setNumberOfTermClusters(k);
 		clusterer.setNumberOfDocumentClusters(k);	

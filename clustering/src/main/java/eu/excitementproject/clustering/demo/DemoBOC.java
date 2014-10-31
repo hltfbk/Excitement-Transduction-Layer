@@ -54,6 +54,14 @@ public class DemoBOC extends AbstractDemoRunner {
 		Map<String, List<String>> termClusters;
 		try {
 			termClusters = tClusterer.clusterTerms(m_textCollection);
+			System.out.println(termClusters.size()+" term clusters");
+			// the algorithm can output k+1 clusters, if there were terms that could not be assigned to any of the k main clusters
+			// if it is important to ensure k clusters in the final output, the following can be done:
+			if ((termClusters.size()>k)&&(k>1)) { 
+				tClusterer.setNumberOfTermClusters(k-1);
+				termClusters = tClusterer.clusterTerms(m_textCollection);				
+				System.out.println(termClusters.size()+" term clusters");
+			}
 		} catch (ClusteringException e) {
 			throw new ClusteringException("Cannot perform term clustering.\n"+e);
 		}
@@ -74,15 +82,22 @@ public class DemoBOC extends AbstractDemoRunner {
 		// K-medoids BOC clustering
 		String settingName="K-medoids-BOC(K-Medoids)-"+weightType;
 		System.out.println("\n"+settingName+"\n");
-
 		// for documents let's set the threshold = 0.7
 		double threshold = 0.7;
 		DocumentsKmedoidsClustererBOC dClusterer = new DocumentsKmedoidsClustererBOC(false, termClusters, weightType, threshold);
 		dClusterer.setNumberOfDocumentClusters(k);
 		dClusterer.setTopKFeatures(topKfeatures); 
 		Map<String, List<Integer>> res = dClusterer.clusterDocuments(m_textCollection);	
+		System.out.println("Results for "+res.size()+" output document clusters:");
 		processResults(settingName, k, res);
-											
+		// the algorithm can output k+1 clusters, if there were documents that could not be assigned to any of the k main clusters
+		// if it is important to ensure k clusters in the final output, the following can be done:
+		if ((res.size()>k)&&(k>1)) { 
+			dClusterer.setNumberOfDocumentClusters(k-1);
+			res = dClusterer.clusterDocuments(m_textCollection);				
+			System.out.println("Results for "+res.size()+" output document clusters:");
+			processResults(settingName, k, res); //replace the results
+		}
 											
 		// Complete link BOC clustering with the same term clusters (no top-K features cut-off applied)
 		settingName="CompleteLink-BOC(K-Medoids)-"+weightType;
@@ -91,6 +106,7 @@ public class DemoBOC extends AbstractDemoRunner {
 		DocumentsCompleteLinkClustererBOC dCLClusterer = new DocumentsCompleteLinkClustererBOC(false, termClusters, weightType);
 		dCLClusterer.setNumberOfDocumentClusters(k);
 		res = dCLClusterer.clusterDocuments(m_textCollection);						
+		System.out.println("Results for "+res.size()+" output document clusters:");
 		processResults(settingName, k, res);
 				
 	}
