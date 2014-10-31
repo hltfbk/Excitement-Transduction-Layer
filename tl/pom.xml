@@ -30,28 +30,35 @@
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>lap</artifactId>
-  		<version>1.1.4-SNAPSHOT</version>
+  		<version>1.1.4</version>
   	</dependency>
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>core</artifactId>
-  		<version>1.1.4-SNAPSHOT</version>
+  		<version>1.1.4</version>
   	</dependency>
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>biutee</artifactId>
-  		<version>1.1.4-SNAPSHOT</version>
+  		<version>1.1.4</version>
   	</dependency>  	
   	<dependency>
   		<groupId>eu.excitementproject</groupId>
   		<artifactId>globalgraphoptimizer</artifactId>
-  		<version>1.1.4-SNAPSHOT</version>
+  		<version>1.1.4</version>
   	</dependency>
-  	        <dependency>
-                <groupId>eu.excitementproject</groupId>
-                <artifactId>alignmentedas</artifactId>
-                <version>1.1.4-SNAPSHOT</version>
-        </dependency>
+    <dependency>
+         <groupId>eu.excitementproject</groupId>
+         <artifactId>alignmentedas</artifactId>
+         <version>1.1.4</version>
+    </dependency>
+    
+    <!-- decompounder for german words -->
+	<dependency>
+    	<groupId>de.abelssoft</groupId>
+    	<artifactId>jwordsplitter</artifactId>
+    	<version>3.4</version>
+	</dependency>
   	
 	<!-- TreeTagger related dependencies --> 
 	<!-- You need to install TreeTagger;  please read /tl/src/scripts/treetagger/README.txt, and follow the instructions --> 

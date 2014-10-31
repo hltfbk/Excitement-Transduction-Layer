@@ -55,7 +55,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
 		if (workGraph==null) workGraph = new EntailmentGraphRaw(fragmentGraph, true);
-		if (workGraph.isEmpty()) workGraph = new EntailmentGraphRaw(fragmentGraph, true);
+		if (workGraph.isEmpty()) workGraph = new EntailmentGraphRaw(fragmentGraph, true, workGraph.hasLemmatizedLabel());
 		
 		 
 		// else - merge new fragment graph into work graph 		

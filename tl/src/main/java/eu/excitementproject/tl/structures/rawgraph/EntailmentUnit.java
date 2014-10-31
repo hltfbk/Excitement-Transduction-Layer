@@ -4,6 +4,11 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.uima.cas.text.AnnotationIndex;
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
+
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
 /*
@@ -24,7 +29,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
  */
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman & Kathrin
+ * @author vivi@fbk & Lili Kotlerman & Kathrin & Aleksandra
  * 
  * The node for the work graph is an EntailmentUnit
  *
@@ -32,6 +37,8 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 public class EntailmentUnit{
 
 	protected String text;
+	
+	protected String lemmatizedText;
 	
 	protected Set<String> completeStatementTexts;
 	
@@ -52,7 +59,20 @@ public class EntailmentUnit{
 	 * @param completeStatementText	-- String holding the completeStatementText of the fragment graph, from which the current entailment unit mention is taken
 	 */
 	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText) {
-		setAttributes(eum, completeStatementText);
+		setAttributes(eum, completeStatementText, false);
+	}
+	
+	/**
+	 * Create a new entailment unit based on a single entailment unit mention
+	 * and can add a lemmatized text of the mentions text as entailment unit label
+	 * The entailment unit mention is assumed to originate from a fragment graph
+	 * 
+	 * @param eum -- the entailment unit mention
+	 * @param completeStatementText	-- String holding the completeStatementText of the fragment graph, from which the current entailment unit mention is taken
+	 * @param addLemmatizedText -- set to true if a lemmatized text of text mentions are to add as entailment unit label, otherwise false
+	 */
+	public EntailmentUnit(EntailmentUnitMention eum, String completeStatementText, boolean addLemmatizedText) {
+		setAttributes(eum, completeStatementText, addLemmatizedText);
 	}
 
 
@@ -70,9 +90,24 @@ public class EntailmentUnit{
 		this.mentions = mentions;
 		this.level = level;
 	}
-
-
 	
+	/** Constructor to create entailment units from xml files 
+	 * which contains entailment unit label
+	 * @param text
+	 * @param lemmatizedText
+	 * @param completeStatementTexts
+	 * @param mentions
+	 * @param level
+	 */
+	public EntailmentUnit(String text, String lemmatizedText, Set<String> completeStatementTexts,
+			Set<EntailmentUnitMention> mentions, int level) {
+		super();
+		this.text = text;
+		this.lemmatizedText = lemmatizedText;
+		this.completeStatementTexts = completeStatementTexts;
+		this.mentions = mentions;
+		this.level = level;
+	}
 	
 	/******************************************************************************************
 	 * SETTERS/GERRETS
@@ -81,11 +116,15 @@ public class EntailmentUnit{
 	/** Setter for all the attributes  
 	 * @param eum - entailment unit mention
 	 * @param completeStatementText - the text of the complete statement of the fragment graph from which the input entailment unit mention originated  
+	 * @param addLemmatizedText - set to true if a lemmatized text of text mentions are to add as entailment unit label, otherwise false
 	 */
-	private void setAttributes(EntailmentUnitMention eum, String completeStatementText){
+	private void setAttributes(EntailmentUnitMention eum, String completeStatementText, boolean addLemmatizedText){
 		mentions = new HashSet<EntailmentUnitMention>();
 		mentions.add(eum);
 		text = eum.getText();
+		if(addLemmatizedText){
+			lemmatizedText = lemmatize(text);
+		}
 		level = eum.getLevel();	
 		completeStatementTexts = new HashSet<String>();
 		completeStatementTexts.add(completeStatementText);		
@@ -124,6 +163,15 @@ public class EntailmentUnit{
 	 */
 	public String getText() {
 		return text;
+	}
+	
+	/**
+	 * 
+	 * @return -- the lemmatized text of the mentions if lemmas were set, otherwise return null
+	 */
+
+	public String getLemmatizedText(){
+		return lemmatizedText;
 	}
 	
 	/**
@@ -208,6 +256,33 @@ public class EntailmentUnit{
 		if (completeStatementTexts.contains(completeStatementText)) return true;
 		return false;
 	}
+	
+	/**
+	 * Returns lemmatized text of entailment unit text without double spaces
+	 * @param text -- text to lemmatize
+	 * @return
+	 */
+	private String lemmatize(String text){
+		String lemmatizedText = "";
+		EntailmentUnitMention eum = this.getMentions().iterator().next(); //only one mention must be lemmatized, because all mentions in unit has the same text
+		JCas aJCas = eum.getJCas();
+		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
+		for(Annotation annot : tokenIndex){
+			if(annot.getBegin() >= eum.getBegin() && annot.getEnd() <= eum.getEnd()){
+				if(!eum.getText().substring(annot.getBegin() - eum.getBegin()).toString().startsWith(" ")){
+					Token token = (Token) annot;
+					String lemma = token.getLemma().getValue();
+					
+					if(lemma.equalsIgnoreCase("@card@")) //TreeTagger returns often @card@ if no proper lemma for cardinalities is given
+						lemma = token.getCoveredText();
+					lemmatizedText += lemma + " ";
+				}
+			}
+		}
+		return lemmatizedText.trim();
+	}
+	
+	
 
 	
 	/******************************************************************************************
@@ -296,7 +371,7 @@ public class EntailmentUnit{
 	 */
 	public EntailmentUnit(String textFragment, int level, String completeStatementText) {
 		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level, null);
-		setAttributes(eum, completeStatementText);
+		setAttributes(eum, completeStatementText, false);
 	}
 	
 	/**
@@ -310,7 +385,7 @@ public class EntailmentUnit{
 	public EntailmentUnit(String textFragment, int level, String completeStatementText, String category) {
 		EntailmentUnitMention eum = new EntailmentUnitMention(textFragment, level, null);
 		eum.setCategoryId(category);
-		setAttributes(eum, completeStatementText);
+		setAttributes(eum, completeStatementText, false);
 	}
 
 

@@ -36,7 +36,7 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman
+ * @author vivi@fbk & Lili Kotlerman & Aleksandra
  *
  * The structure of the collapsed graph (cleaned up edges, clustered nodes in equivalence classes)
  * 
@@ -134,6 +134,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 						if (eu.getNodeName().equals("entailmentUnit")) { 
 							Element euElement = (Element) eu;
 							String text = euElement.getAttribute("text");
+							String lemmaLabel = euElement.getAttribute("lemmaLabel");
 							Integer level = Integer.valueOf(euElement.getAttribute("level"));
 	
 							Set<String> completeStatementTexts = new HashSet<String>();
@@ -166,7 +167,14 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 						       		mentions.add(m);	       			
 					       		}
 							}		
-					       	EntailmentUnit newEntailmentUnit = new EntailmentUnit(text, completeStatementTexts, mentions, level);
+					       	
+					       	EntailmentUnit newEntailmentUnit;
+					       	if(lemmaLabel.isEmpty()){			       
+					       		newEntailmentUnit = new EntailmentUnit(text, completeStatementTexts, mentions, level);
+							}
+							else{
+								newEntailmentUnit = new EntailmentUnit(text, lemmaLabel, completeStatementTexts, mentions, level);
+							}
 						    s_eu.add(newEntailmentUnit);
 						} else if (eu.getNodeName().equals("categoryConfidence")) { //added for use case 2
 							Element euElement = (Element) eu;
@@ -509,6 +517,10 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 					Element entailmentUnit = doc.createElement("entailmentUnit");
 					// set text attribute to eu element
 					entailmentUnit.setAttribute("text",eu.getTextWithoutDoubleSpaces());
+					// set lemmaLabel attribute to eu element
+					if(eu.getLemmatizedText() != null){
+						entailmentUnit.setAttribute("lemmaLabel",eu.getLemmatizedText());
+					}
 					// set level attribute to eu element
 					entailmentUnit.setAttribute("level",String.valueOf(eu.getLevel()));
 
