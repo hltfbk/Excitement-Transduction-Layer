@@ -5157,7 +5157,7 @@ scompare la linea telefonica	1	->	sono senza telefono	2	No	0	0
 sono senza telefono	2	->	scompare la linea telefonica	1	No	0	0	
 								
 node pair #1206:								
-scompare anche la linea telefonica	1	->	scompare la linea telefonica	1	Yes	1	0	
+scompare anche la linea telefonica	1	->	scompare la linea telefonica	1	Yes	1	1	
 scompare la linea telefonica	1	->	scompare anche la linea telefonica	1	No	-1	0	
 								
 node pair #1207:								

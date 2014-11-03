@@ -18315,7 +18315,7 @@ a quasi un anno non ci siano ancora stati restituiti i euro di deposito cauziona
 aspetto ancora il rimborso del credito	1	->	a quasi un anno non ci siano ancora stati restituiti i euro di deposito cauzionale dopo ripetuti solleciti	1	No	0	0		
 									
 node pair #4506:									
-a quasi un anno dalla disattivazione di TELEFONIAX HOME non ci siano ancora stati restituiti i 100 euro di deposito cauzionale dopo ripetuti solleciti	1	->	a quasi un anno dalla disattivazione di TELEFONIAX HOME non ci siano ancora stati restituiti i 100 euro di deposito cauzionale	1	Yes	1	0		
+a quasi un anno dalla disattivazione di TELEFONIAX HOME non ci siano ancora stati restituiti i 100 euro di deposito cauzionale dopo ripetuti solleciti	1	->	a quasi un anno dalla disattivazione di TELEFONIAX HOME non ci siano ancora stati restituiti i 100 euro di deposito cauzionale	1	Yes	1	1		
 a quasi un anno dalla disattivazione di TELEFONIAX HOME non ci siano ancora stati restituiti i 100 euro di deposito cauzionale	1	->	a quasi un anno dalla disattivazione di TELEFONIAX HOME non ci siano ancora stati restituiti i 100 euro di deposito cauzionale dopo ripetuti solleciti	1	No	-1	0		
 									
 node pair #4507:									

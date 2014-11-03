@@ -964,7 +964,7 @@ Service was a bit stressed out due to busy holiday travel	1	->	service was poor	
 service was poor	2	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
 								
 node pair #217:								
-Service was a bit stressed out due to busy holiday travel	1	->	Service was a bit stressed out today	1	No	-1	1	
+Service was a bit stressed out due to busy holiday travel	1	->	Service was a bit stressed out today	1	No	-1	0	
 Service was a bit stressed out today	1	->	Service was a bit stressed out due to busy holiday travel	1	No	-1	0	
 								
 node pair #218:								
@@ -1044,7 +1044,7 @@ Staff could have been a bit more friendly	1	->	service was poor	2	Yes	0	1
 service was poor	2	->	Staff could have been a bit more friendly	1	No	0	0	
 								
 node pair #237:								
-Staff could have been a bit more friendly	1	->	Service was a bit stressed out today	1	No	0	1	
+Staff could have been a bit more friendly	1	->	Service was a bit stressed out today	1	No	0	0	
 Service was a bit stressed out today	1	->	Staff could have been a bit more friendly	1	No	0	0	
 								
 node pair #238:								
@@ -1056,7 +1056,7 @@ Staff could have been a bit more friendly	1	->	Service was stressed out due to b
 Service was stressed out due to busy holiday travel	1	->	Staff could have been a bit more friendly	1	No	0	0	
 								
 node pair #240:								
-Staff could have been a bit more friendly	1	->	Service was a bit stressed out	1	No	0	1	
+Staff could have been a bit more friendly	1	->	Service was a bit stressed out	1	No	0	0	
 Service was a bit stressed out	1	->	Staff could have been a bit more friendly	1	No	0	0	
 								
 node pair #241:								
@@ -1500,7 +1500,7 @@ Service was stressed out today	1	->	Improve customer service experience at Frown
 Improve customer service experience at Frowntown	1	->	Service was stressed out today	1	No	0	0	
 								
 node pair #351:								
-Service was stressed out today	1	->	Service was stressed out due to busy holiday travel	1	No	-1	1	
+Service was stressed out today	1	->	Service was stressed out due to busy holiday travel	1	No	-1	0	
 Service was stressed out due to busy holiday travel	1	->	Service was stressed out today	1	No	-1	0	
 								
 node pair #352:								
@@ -1816,7 +1816,7 @@ Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Comple
 Complete lack of customer service	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	-1	0	
 								
 node pair #430:								
-service was poor on the trip	1	->	service was so poor	1	No	-1	1	
+service was poor on the trip	1	->	service was so poor	1	No	-1	0	
 service was so poor	1	->	service was poor on the trip	1	No	-1	0	
 								
 node pair #431:								
