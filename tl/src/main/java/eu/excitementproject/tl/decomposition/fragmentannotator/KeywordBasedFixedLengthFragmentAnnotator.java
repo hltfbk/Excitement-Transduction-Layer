@@ -81,7 +81,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 			if (keywords != null && keywords.size() > 0) {
 		
 				logger.info("The text has " + keywords.size() + " keywords: " + getCoveredText(keywords));
-				logger.info("Annotating determined fragments on CAS using keywords. CAS Text is: \"" + aJCas.getDocumentText() + "\"."); 
+				logger.info("Annotating determined fragments on CAS using keywords. \nCAS Text is: \"" + aJCas.getDocumentText() + "\"."); 
 							
 				// depending on how the keyword annotation was done, there may be more than one keyword in a fragment;
 				// so the fragments must be filtered
@@ -98,6 +98,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 				
 				// 	filter fragments to avoid duplicates (subsumed fragments)
 				detFrags = filterFragments(detFrags);
+				num_frag = detFrags.size();
 				
 				//  insert annotations			
 				//	insert determined fragments as fragment parts if necessary!
@@ -150,19 +151,21 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 		Set<Region> newFrags = new HashSet<Region>();
 		boolean change = false;
 		
+		logger.info("Filtering " + detFrags.size() + " fragments");
+		
 		for (Region frag : detFrags) {
 			change = false;
 			Set<Region> _newFrags = new HashSet<Region>(newFrags);
 			for (Region f: _newFrags) {
 				
+				logger.info("\tcomparing: " + f.toString() + " with " + frag.toString());
+				
 				// if the fragments intersect
-				if (((frag.getBegin() - f.getBegin()) * (f.getBegin() - frag.getEnd()) > 0) 
-						||
-						((frag.getBegin() - f.getEnd()) * (f.getEnd() - frag.getEnd()) > 0)) {
+				if (regionsIntersect(frag,f)) {
 					newFrags.remove(f);
 					newFrags.add(new Region(Math.min(frag.getBegin(), f.getBegin()), Math.max(frag.getEnd(), f.getEnd())));
 					change = true;
-//					logger.info("\tCombining fragments: \n\t\t(" + f.getBegin() + "," + f.getEnd() + ")\n\t\t(" + frag.getBegin() + "," + frag.getEnd() + ")" );
+					logger.info("\tCombining fragments: \n\t\t(" + f.getBegin() + "," + f.getEnd() + ")\n\t\t(" + frag.getBegin() + "," + frag.getEnd() + ") : => (" + Math.min(frag.getBegin(), f.getBegin()) + "," + Math.max(frag.getEnd(), f.getEnd()) + ")" );
 				}
 			}
 			if (! change) {
@@ -179,6 +182,19 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 	}
 
 
+	private boolean regionsIntersect(Region a, Region b) {
+		
+		return (
+				((a.getBegin() - b.getBegin()) * (a.getBegin() - b.getEnd()) < 0)
+				  ||
+				((a.getEnd() - b.getBegin()) * (a.getEnd() - b.getEnd()) < 0)
+				  ||
+				((b.getBegin() - a.getBegin()) * (b.getBegin() - a.getEnd()) < 0)
+				  ||
+				((b.getEnd() - a.getBegin()) * (b.getEnd() - a.getEnd()) < 0)
+				);
+	}
+	
 	/**
 	 * insert DeterminedFragment annotations in the CAS
 	 * 
@@ -243,7 +259,8 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 		} else {
 
 			Sentence coveringSentence = (Sentence) JCasUtil.selectCovering(aJCas, Sentence.class, k.getBegin(), k.getEnd()).get(0);
-
+			logger.info("Covering sentence boundaries: " + coveringSentence.getBegin() + " / " + coveringSentence.getEnd());
+			
 			int fragStart = addPrecedingTokens(aJCas, tokens.get(0), windowSize, coveringSentence);
 			int fragEnd = addFollowingTokens(aJCas, tokens.get(tokens.size()-1), windowSize, coveringSentence);
 
@@ -283,7 +300,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 			}
 		}
 		
-		if (skipped > 0) {
+		if (skipped > 0 && end < sentence.getEnd()) {
 			return addFollowingTokens(aJCas, last, skipped, sentence);
 		}
 		
@@ -306,7 +323,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 		int skipped = 0;
 		
 		for (Annotation a: JCasUtil.selectPreceding(aJCas, Token.class, k, count)) {
-			if (isCoveredBy(k, sentence)) {
+			if (isCoveredBy(a, sentence)) {
 				if (a.getBegin() < start) {
 					start = a.getBegin();
 					first = a;
@@ -317,7 +334,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 			}
 		}
 		
-		if (skipped > 0) {
+		if (skipped > 0 && start > sentence.getBegin()) {
 			return addPrecedingTokens(aJCas, first, skipped, sentence);
 		}
 		
@@ -334,6 +351,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 	 * @return true if the annotation is within the scope of the sentence
 	 */
 	private boolean isCoveredBy(Annotation a, Annotation sentence) {
+				
 		return ((sentence.getBegin() <= a.getBegin()) 
 				&& (a.getEnd() <= sentence.getEnd()));
 	}

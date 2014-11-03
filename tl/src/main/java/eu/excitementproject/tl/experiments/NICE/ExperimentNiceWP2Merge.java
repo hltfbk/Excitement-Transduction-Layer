@@ -4,6 +4,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+
+import javax.xml.transform.TransformerException;
 
 import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
@@ -11,9 +14,15 @@ import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
+import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.edautils.ProbabilisticEDA;
+import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
@@ -21,9 +30,10 @@ import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.experiments.ResultsContainer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.utils.ProbabilisticEDA;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.exception.ComponentException;
+import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.EditDistanceEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 
@@ -34,16 +44,22 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
  */
 public class ExperimentNiceWP2Merge extends AbstractExperiment {
 	
-	public ExperimentNiceWP2Merge(String configFileName, String dataDir,
+	public String configFileName = "";
+	public String configFileFullName = "";
+
+	public ExperimentNiceWP2Merge(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
-			Class<?> edaClass) {
-		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
+			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();		
+
 		m_optimizer = new SimpleGraphOptimizer();
 		
 		try {
-			super.useOne.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
+			super.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
 		} catch (GraphMergerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,7 +76,7 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 		EDIT_DIST
 	}
 	
-	public static ExperimentNiceWP2Merge initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir){
+	public static ExperimentNiceWP2Merge initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
 		
 		if (edaName.equals(EdaName.BIUTEE)) {
 			return new ExperimentNiceWP2Merge(
@@ -133,9 +149,26 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 	
 	/**
 	 * @param args
+	 * @throws TransformerException 
+	 * @throws EntailmentGraphRawException 
+	 * @throws IOException 
+	 * @throws FragmentGraphGeneratorException 
+	 * @throws GraphOptimizerException 
+	 * @throws GraphMergerException 
+	 * @throws ModifierAnnotatorException 
+	 * @throws FragmentAnnotatorException 
+	 * @throws ComponentException 
+	 * @throws EDAException 
+	 * @throws InvocationTargetException 
+	 * @throws IllegalArgumentException 
+	 * @throws IllegalAccessException 
+	 * @throws InstantiationException 
+	 * @throws SecurityException 
+	 * @throws NoSuchMethodException 
+	 * @throws ConfigurationException 
 	 */
-	public static void main(String[] args) {
-		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+	public static void main(String[] args) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+		String tlDir = "./";
 		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/NICE_reAnnotated/perFrag/test";
 		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/NICE_reAnnotated/test";
 		
@@ -187,8 +220,8 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 */
 				
 			try {
-				e.m_rawGraph.toXML(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_rawGraph.xml");
-				e.m_rawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_rawGraph.dot");
+				e.m_rawGraph.toXML(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.xml");
+				e.m_rawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.dot");
 			} catch (IOException | EntailmentGraphRawException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -203,8 +236,8 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 				EntailmentGraphRaw plusClosureRawGraph = e.getPlusClosureGraph(rawGraphWithThreshold);
 				EntailmentGraphCollapsed plusClosureCollapsedGraph = e.collapseGraph(plusClosureRawGraph);
 				try {
-					plusClosureRawGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_structureBased.dot");
-					plusClosureCollapsedGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_structureBased_collapsed.dot");
+					plusClosureRawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_structureBased.dot");
+					plusClosureCollapsedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_structureBased_collapsed.dot");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -238,7 +271,7 @@ public class ExperimentNiceWP2Merge extends AbstractExperiment {
 				EntailmentGraphCollapsed globalOptimizedGraph = e.collapseGraph(plusClosureRawGraph, globalOptimizer);
 				
 				try {
-					globalOptimizedGraph.toDOT(outDir+"/"+e.configFile.getName()+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local+global_structureBased_collapsed.dot");
+					globalOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local+global_structureBased_collapsed.dot");
 				} catch (IOException  e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

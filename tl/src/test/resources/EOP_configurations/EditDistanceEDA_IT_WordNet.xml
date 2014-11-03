@@ -62,16 +62,8 @@ a configuration file means allowing other users to replicate the same experiment
 		<!-- This configuration uses WordNet as an external resources -->
 		<subsection name="wordnet">
 			<!-- path of the WordNet files -->
-			<property name="path">C:/eop-resources-1.1.3/ontologies/ItalianWordNet-dict</property>
+			<property name="path">src/main/resources/ontologies/ItalianWordNet-dict</property>
 			<!-- for the DB version of itaWN: ../core/src/main/resources/configuration-file/ -->
-		</subsection>
-		
-		<!-- This configuration uses Wikipedia as an external resources -->
-		<subsection name="wikipedia">
-			<!-- connection to the Wikipedia data base -->
-			<property name="dbconnection">jdbc:mysql://nathrezim:3306/wikilexresita</property>
-			<property name="dbuser">root</property>
-			<property name="dbpasswd">nat_2k12</property>
 		</subsection>
 		
 	</section>	
@@ -92,17 +84,9 @@ a configuration file means allowing other users to replicate the same experiment
 		<!-- This configuration uses WordNet as an external resources -->
 		<subsection name="wordnet">
 			<!-- path of the WordNet files -->
-			<property name="path">C:/eop-resources-1.1.3/ontologies/ItalianWordNet-dict</property>
+			<property name="path">src/main/resources/ontologies/ItalianWordNet-dict</property>
 		</subsection>
-		
-		<!-- This configuration uses Wikipedia as an external resources -->
-		<subsection name="wikipedia">
-			<!-- connection to the Wikipedia data base -->
-			<property name="dbconnection">jdbc:mysql://nathrezim:3306/wikilexresita</property>
-			<property name="dbuser">root</property>
-			<property name="dbpasswd">nat_2k12</property>
-		</subsection>
-		
+				
 	</section>	
 		
 	
@@ -116,9 +100,9 @@ a configuration file means allowing other users to replicate the same experiment
 		<property name="substitute">1.0</property>
 		
 		<!-- <property name="trainDir">/tmp/</property> -->
-		<property name="trainDir">/tmp/eop-eda-exp/ALMA/dev/</property>
+		<property name="trainDir">/tmp/ALMA/dev/</property>
 		<!-- <property name="testDir">/tmp/</property> -->
-		<property name="testDir">/tmp/eop-eda-exp/ALMA/test/</property>
+		<property name="testDir">/tmp/ALMA/test/</property>
 		<!-- measure to be optimized: [accuracy|f1] -->
 		<property name="measure">accuracy</property>
 		<!-- component to be used by EDA: [FixedWeightTokenEditDistance|FixedWeightLemmaEditDistance] 

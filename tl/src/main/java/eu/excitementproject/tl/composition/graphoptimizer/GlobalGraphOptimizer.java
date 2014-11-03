@@ -20,12 +20,12 @@ import eu.excitementproject.eop.globalgraphoptimizer.graph.DirectedOntologyGraph
 import eu.excitementproject.eop.globalgraphoptimizer.graph.RelationNode;
 import eu.excitementproject.eop.globalgraphoptimizer.graph.RuleEdge;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 /**
  * @author Meni Adler & Lili Kotlerman
