@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE configuration>
+
+<configuration>
+
+	<section name="PlatformConfiguration">
+		<property name="activatedEDA">eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_IT</property>
+		<property name="language">IT</property>
+		<property name="activatedLAP">eu.excitementproject.eop.lap.dkpro.TreeTaggerIT</property>
+	</section>
+	
+	<section name="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_IT">
+		<property name="modelFile">/home/nastase/Projects/eop/RTEdata/ITA_Nov2014/P1EDA.model</property>
+		<property name="trainDir">/tmp/eop-eda-exp/P1EDA/ALMA/dev_mix_bal/</property>
+		<property name="testDir">/tmp/eop-eda-exp/P1EDA/ALMA/test_mix_bal/</property>
+	</section>
+
+</configuration>
