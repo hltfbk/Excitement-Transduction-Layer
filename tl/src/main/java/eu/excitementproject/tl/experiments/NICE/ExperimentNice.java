@@ -8,6 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import javax.xml.transform.TransformerException;
 
+import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN;
 import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
@@ -80,7 +81,8 @@ public class ExperimentNice extends AbstractExperiment {
 		TIE_POS_RES,
 		TIE_PARSE_RES,
 		BIUTEE,
-		EDIT_DIST
+		EDIT_DIST,
+		P1EDA
 	}
 	
 	public static ExperimentNice initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
@@ -152,6 +154,14 @@ public class ExperimentNice extends AbstractExperiment {
 			);
 		}
 	
+		if (edaName.equals(EdaName.P1EDA)) {
+			return new ExperimentNice(
+					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_EN.xml",
+					dataDir, fileLimit, outDir,
+					TreeTaggerEN.class,
+					FNR_EN.class
+					);
+		}
 		
 		return null;
 	}

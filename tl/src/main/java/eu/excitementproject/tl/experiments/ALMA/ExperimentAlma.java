@@ -61,14 +61,17 @@ public class ExperimentAlma extends AbstractExperiment {
 //		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
 		String tlDir = "./";
 
-		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/";
+		String dataDir = tlDir+"src/test/resources/XMIs";
+
+//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/";
 //		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_split/test/";
 //		String dataDir = tlDir+"target/ALMA_toy_test/data/";
 
 
 //		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs_byClusterSplit/test/";
-		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
+//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
 //		String gsAnnotationsDir = tlDir+"target/ALMA_toy_test/gold_standard/";		
+		String gsAnnotationsDir = tlDir+"src/test/resources/ALMA/ITA-DATASET-11.09.14/Test";
 		
 		int fileLimit = 1000;
 		String outDir = dataDir.replace("resources", "outputs");
