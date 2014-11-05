@@ -1,0 +1,913 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 6 entailment unit(s) before editing								
+	New updated train would be nice	[433561.txt_1_0]						
+	Time for the trains to be updated	[215790.txt_1_0]						
+	modernize the train	[72187.txt_1_0]						
+	trains could use some updating	[106746.txt_1_0]						
+	trains need refurbishment	[273791.txt_3_0]						
+								
+collapsed node #2 : 1 entailment unit(s) before editing								
+	trains are quite shabby	[273791.txt_2_0]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing								
+	consider an adults only quiet coach	[493530.txt_4_0]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing								
+	have quiet coaches	[440663.txt_9_0]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	trains are shabby	[273791.txt_2_1]						
+								
+collapsed node #6 : 2 entailment unit(s) before editing								
+	Quasigo is filthy	[190617.txt_1_0]						
+	The Quasigo train was dirty	[142421.txt_7_1]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	Quasigo is horrible	[190617.txt_2_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	Appalling crush to board train	[52781.txt_9_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	The interior of the train could be modernised	[401238.txt_7_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	The trains are badly lit	[440557.txt_2_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	The trains are drab	[440557.txt_1_0]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	The decor is pretty depressing	[440557.txt_5_0]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing								
+	The decor is depressing	[440557.txt_5_1]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing								
+	The Quasigo train was very tatty	[142421.txt_8_0]						
+								
+collapsed node #15 : 1 entailment unit(s) before editing								
+	The Quasigo train was tatty	[142421.txt_8_1]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing								
+	Cleaner interior	[522350.txt_1_0]						
+								
+collapsed node #17 : 1 entailment unit(s) before editing								
+	train too often delays	[109435.txt_4_0]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing								
+	train delays	[109435.txt_4_1]						
+								
+collapsed node #19 : 2 entailment unit(s) before editing								
+	Complete rip off	[169586.txt_4_0]						
+	Zero value for money	[169586.txt_3_0]						
+								
+collapsed node #20 : 1 entailment unit(s) before editing								
+	The Quasigo train was very dirty	[142421.txt_7_0]						
+								
+collapsed node #21 : 1 entailment unit(s) before editing								
+	rip off	[169586.txt_4_1]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+trains are quite shabby	1	->	modernize the train	6	Yes	0	1	
+modernize the train	6	->	trains are quite shabby	1	No	0	0	
+								
+node pair #2:								
+modernize the train	6	->	consider an adults only quiet coach	1	No	0	0	
+consider an adults only quiet coach	1	->	modernize the train	6	No	0	0	
+								
+node pair #3:								
+modernize the train	6	->	have quiet coaches	1	No	0	0	
+have quiet coaches	1	->	modernize the train	6	No	0	0	
+								
+node pair #4:								
+trains are shabby	1	->	modernize the train	6	Yes	0	1	
+modernize the train	6	->	trains are shabby	1	No	0	0	
+								
+node pair #5:								
+modernize the train	6	->	Quasigo is filthy	2	No	0	0	
+Quasigo is filthy	2	->	modernize the train	6	No	0	0	
+								
+node pair #6:								
+modernize the train	6	->	Quasigo is horrible	1	No	0	0	
+Quasigo is horrible	1	->	modernize the train	6	No	0	0	
+								
+node pair #7:								
+modernize the train	6	->	Appalling crush to board train	1	No	0	0	
+Appalling crush to board train	1	->	modernize the train	6	No	0	0	
+								
+node pair #8:								
+The interior of the train could be modernised	1	->	modernize the train	6	Yes	0	1	
+modernize the train	6	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #9:								
+modernize the train	6	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	modernize the train	6	No	0	0	
+								
+node pair #10:								
+modernize the train	6	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	modernize the train	6	No	0	1	
+								
+node pair #11:								
+modernize the train	6	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	modernize the train	6	No	0	1	
+								
+node pair #12:								
+modernize the train	6	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	modernize the train	6	No	0	1	
+								
+node pair #13:								
+The Quasigo train was very tatty	1	->	modernize the train	6	Yes	0	1	
+modernize the train	6	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #14:								
+The Quasigo train was tatty	1	->	modernize the train	6	Yes	0	1	
+modernize the train	6	->	The Quasigo train was tatty	1	No	0	0	
+								
+node pair #15:								
+modernize the train	6	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	modernize the train	6	No	0	0	
+								
+node pair #16:								
+modernize the train	6	->	train too often delays	1	No	0	0	
+train too often delays	1	->	modernize the train	6	No	0	0	
+								
+node pair #17:								
+modernize the train	6	->	train delays	1	No	0	0	
+train delays	1	->	modernize the train	6	No	0	0	
+								
+node pair #18:								
+modernize the train	6	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	modernize the train	6	No	0	0	
+								
+node pair #19:								
+modernize the train	6	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	modernize the train	6	No	0	0	
+								
+node pair #20:								
+modernize the train	6	->	rip off	1	No	0	0	
+rip off	1	->	modernize the train	6	No	0	0	
+								
+node pair #21:								
+trains are quite shabby	1	->	consider an adults only quiet coach	1	No	0	0	
+consider an adults only quiet coach	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #22:								
+trains are quite shabby	1	->	have quiet coaches	1	No	0	0	
+have quiet coaches	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #23:								
+trains are quite shabby	1	->	trains are shabby	1	Yes	1	1	
+trains are shabby	1	->	trains are quite shabby	1	No	-1	0	
+								
+node pair #24:								
+trains are quite shabby	1	->	Quasigo is filthy	2	No	0	0	
+Quasigo is filthy	2	->	trains are quite shabby	1	No	0	0	
+								
+node pair #25:								
+trains are quite shabby	1	->	Quasigo is horrible	1	No	0	0	
+Quasigo is horrible	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #26:								
+trains are quite shabby	1	->	Appalling crush to board train	1	No	0	0	
+Appalling crush to board train	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #27:								
+trains are quite shabby	1	->	The interior of the train could be modernised	1	No	0	0	
+The interior of the train could be modernised	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #28:								
+trains are quite shabby	1	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #29:								
+trains are quite shabby	1	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #30:								
+trains are quite shabby	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #31:								
+trains are quite shabby	1	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #32:								
+The Quasigo train was very tatty	1	->	trains are quite shabby	1	Yes	0	1	
+trains are quite shabby	1	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #33:								
+trains are quite shabby	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #34:								
+trains are quite shabby	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #35:								
+trains are quite shabby	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #36:								
+trains are quite shabby	1	->	train delays	1	No	0	0	
+train delays	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #37:								
+trains are quite shabby	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	trains are quite shabby	1	No	0	0	
+								
+node pair #38:								
+trains are quite shabby	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #39:								
+trains are quite shabby	1	->	rip off	1	No	0	0	
+rip off	1	->	trains are quite shabby	1	No	0	0	
+								
+node pair #40:								
+consider an adults only quiet coach	1	->	have quiet coaches	1	Yes	0	1	
+have quiet coaches	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #41:								
+consider an adults only quiet coach	1	->	trains are shabby	1	No	0	0	
+trains are shabby	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #42:								
+consider an adults only quiet coach	1	->	Quasigo is filthy	2	No	0	0	
+Quasigo is filthy	2	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #43:								
+consider an adults only quiet coach	1	->	Quasigo is horrible	1	No	0	0	
+Quasigo is horrible	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #44:								
+consider an adults only quiet coach	1	->	Appalling crush to board train	1	No	0	0	
+Appalling crush to board train	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #45:								
+consider an adults only quiet coach	1	->	The interior of the train could be modernised	1	No	0	0	
+The interior of the train could be modernised	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #46:								
+consider an adults only quiet coach	1	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #47:								
+consider an adults only quiet coach	1	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #48:								
+consider an adults only quiet coach	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #49:								
+consider an adults only quiet coach	1	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #50:								
+consider an adults only quiet coach	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #51:								
+consider an adults only quiet coach	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #52:								
+consider an adults only quiet coach	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #53:								
+consider an adults only quiet coach	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #54:								
+consider an adults only quiet coach	1	->	train delays	1	No	0	0	
+train delays	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #55:								
+consider an adults only quiet coach	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #56:								
+consider an adults only quiet coach	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #57:								
+consider an adults only quiet coach	1	->	rip off	1	No	0	0	
+rip off	1	->	consider an adults only quiet coach	1	No	0	0	
+								
+node pair #58:								
+have quiet coaches	1	->	trains are shabby	1	No	0	0	
+trains are shabby	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #59:								
+have quiet coaches	1	->	Quasigo is filthy	2	No	0	0	
+Quasigo is filthy	2	->	have quiet coaches	1	No	0	0	
+								
+node pair #60:								
+have quiet coaches	1	->	Quasigo is horrible	1	No	0	0	
+Quasigo is horrible	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #61:								
+have quiet coaches	1	->	Appalling crush to board train	1	No	0	0	
+Appalling crush to board train	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #62:								
+have quiet coaches	1	->	The interior of the train could be modernised	1	No	0	0	
+The interior of the train could be modernised	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #63:								
+have quiet coaches	1	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #64:								
+have quiet coaches	1	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #65:								
+have quiet coaches	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #66:								
+have quiet coaches	1	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #67:								
+have quiet coaches	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #68:								
+have quiet coaches	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #69:								
+have quiet coaches	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #70:								
+have quiet coaches	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #71:								
+have quiet coaches	1	->	train delays	1	No	0	0	
+train delays	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #72:								
+have quiet coaches	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	have quiet coaches	1	No	0	0	
+								
+node pair #73:								
+have quiet coaches	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #74:								
+have quiet coaches	1	->	rip off	1	No	0	0	
+rip off	1	->	have quiet coaches	1	No	0	0	
+								
+node pair #75:								
+trains are shabby	1	->	Quasigo is filthy	2	No	0	0	
+Quasigo is filthy	2	->	trains are shabby	1	No	0	0	
+								
+node pair #76:								
+trains are shabby	1	->	Quasigo is horrible	1	No	0	0	
+Quasigo is horrible	1	->	trains are shabby	1	No	0	0	
+								
+node pair #77:								
+trains are shabby	1	->	Appalling crush to board train	1	No	0	0	
+Appalling crush to board train	1	->	trains are shabby	1	No	0	0	
+								
+node pair #78:								
+trains are shabby	1	->	The interior of the train could be modernised	1	No	0	0	
+The interior of the train could be modernised	1	->	trains are shabby	1	No	0	0	
+								
+node pair #79:								
+trains are shabby	1	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	trains are shabby	1	No	0	0	
+								
+node pair #80:								
+trains are shabby	1	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	trains are shabby	1	No	0	0	
+								
+node pair #81:								
+trains are shabby	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	trains are shabby	1	No	0	0	
+								
+node pair #82:								
+trains are shabby	1	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	trains are shabby	1	No	0	0	
+								
+node pair #83:								
+The Quasigo train was very tatty	1	->	trains are shabby	1	Yes	0	1	
+trains are shabby	1	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #84:								
+The Quasigo train was tatty	1	->	trains are shabby	1	Yes	0	1	
+trains are shabby	1	->	The Quasigo train was tatty	1	No	0	0	
+								
+node pair #85:								
+trains are shabby	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	trains are shabby	1	No	0	0	
+								
+node pair #86:								
+trains are shabby	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	trains are shabby	1	No	0	0	
+								
+node pair #87:								
+trains are shabby	1	->	train delays	1	No	0	0	
+train delays	1	->	trains are shabby	1	No	0	0	
+								
+node pair #88:								
+trains are shabby	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	trains are shabby	1	No	0	0	
+								
+node pair #89:								
+trains are shabby	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	trains are shabby	1	No	0	0	
+								
+node pair #90:								
+trains are shabby	1	->	rip off	1	No	0	0	
+rip off	1	->	trains are shabby	1	No	0	0	
+								
+node pair #91:								
+Quasigo is filthy	2	->	Quasigo is horrible	1	Yes	0	0	
+Quasigo is horrible	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #92:								
+Quasigo is filthy	2	->	Appalling crush to board train	1	No	0	0	
+Appalling crush to board train	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #93:								
+Quasigo is filthy	2	->	The interior of the train could be modernised	1	No	0	0	
+The interior of the train could be modernised	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #94:								
+Quasigo is filthy	2	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #95:								
+Quasigo is filthy	2	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #96:								
+Quasigo is filthy	2	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #97:								
+Quasigo is filthy	2	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #98:								
+Quasigo is filthy	2	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #99:								
+Quasigo is filthy	2	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #100:								
+Quasigo is filthy	2	->	Cleaner interior	1	Yes	0	0	
+Cleaner interior	1	->	Quasigo is filthy	2	Yes	0	0	
+								
+node pair #101:								
+Quasigo is filthy	2	->	train too often delays	1	No	0	0	
+train too often delays	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #102:								
+Quasigo is filthy	2	->	train delays	1	No	0	0	
+train delays	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #103:								
+Quasigo is filthy	2	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #104:								
+The Quasigo train was very dirty	1	->	Quasigo is filthy	2	Yes	1	1	
+Quasigo is filthy	2	->	The Quasigo train was very dirty	1	No	-1	0	
+								
+node pair #105:								
+Quasigo is filthy	2	->	rip off	1	No	0	0	
+rip off	1	->	Quasigo is filthy	2	No	0	0	
+								
+node pair #106:								
+Quasigo is horrible	1	->	Appalling crush to board train	1	No	0	0	
+Appalling crush to board train	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #107:								
+Quasigo is horrible	1	->	The interior of the train could be modernised	1	No	0	0	
+The interior of the train could be modernised	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #108:								
+Quasigo is horrible	1	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #109:								
+Quasigo is horrible	1	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #110:								
+Quasigo is horrible	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #111:								
+Quasigo is horrible	1	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #112:								
+Quasigo is horrible	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #113:								
+Quasigo is horrible	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #114:								
+Quasigo is horrible	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #115:								
+Quasigo is horrible	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #116:								
+Quasigo is horrible	1	->	train delays	1	No	0	0	
+train delays	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #117:								
+Quasigo is horrible	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #118:								
+Quasigo is horrible	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #119:								
+Quasigo is horrible	1	->	rip off	1	No	0	0	
+rip off	1	->	Quasigo is horrible	1	No	0	0	
+								
+node pair #120:								
+Appalling crush to board train	1	->	The interior of the train could be modernised	1	No	0	0	
+The interior of the train could be modernised	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #121:								
+Appalling crush to board train	1	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #122:								
+Appalling crush to board train	1	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #123:								
+Appalling crush to board train	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #124:								
+Appalling crush to board train	1	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #125:								
+Appalling crush to board train	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #126:								
+Appalling crush to board train	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #127:								
+Appalling crush to board train	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #128:								
+Appalling crush to board train	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #129:								
+Appalling crush to board train	1	->	train delays	1	No	0	0	
+train delays	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #130:								
+Appalling crush to board train	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #131:								
+Appalling crush to board train	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #132:								
+Appalling crush to board train	1	->	rip off	1	No	0	0	
+rip off	1	->	Appalling crush to board train	1	No	0	0	
+								
+node pair #133:								
+The interior of the train could be modernised	1	->	The trains are badly lit	1	No	0	0	
+The trains are badly lit	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #134:								
+The interior of the train could be modernised	1	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #135:								
+The interior of the train could be modernised	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #136:								
+The interior of the train could be modernised	1	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #137:								
+The interior of the train could be modernised	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #138:								
+The interior of the train could be modernised	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #139:								
+The interior of the train could be modernised	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #140:								
+The interior of the train could be modernised	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #141:								
+The interior of the train could be modernised	1	->	train delays	1	No	0	0	
+train delays	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #142:								
+The interior of the train could be modernised	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #143:								
+The interior of the train could be modernised	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #144:								
+The interior of the train could be modernised	1	->	rip off	1	No	0	0	
+rip off	1	->	The interior of the train could be modernised	1	No	0	0	
+								
+node pair #145:								
+The trains are badly lit	1	->	The trains are drab	1	No	0	0	
+The trains are drab	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #146:								
+The trains are badly lit	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #147:								
+The trains are badly lit	1	->	The decor is depressing	1	No	0	0	
+The decor is depressing	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #148:								
+The trains are badly lit	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #149:								
+The trains are badly lit	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #150:								
+The trains are badly lit	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #151:								
+The trains are badly lit	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #152:								
+The trains are badly lit	1	->	train delays	1	No	0	0	
+train delays	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #153:								
+The trains are badly lit	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	The trains are badly lit	1	No	0	0	
+								
+node pair #154:								
+The trains are badly lit	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #155:								
+The trains are badly lit	1	->	rip off	1	No	0	0	
+rip off	1	->	The trains are badly lit	1	No	0	0	
+								
+node pair #156:								
+The trains are drab	1	->	The decor is pretty depressing	1	No	0	0	
+The decor is pretty depressing	1	->	The trains are drab	1	No	0	1	
+								
+node pair #157:								
+The trains are drab	1	->	The decor is depressing	1	Yes	0	0	
+The decor is depressing	1	->	The trains are drab	1	No	0	1	
+								
+node pair #158:								
+The trains are drab	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	The trains are drab	1	No	0	0	
+								
+node pair #159:								
+The trains are drab	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	The trains are drab	1	No	0	0	
+								
+node pair #160:								
+The trains are drab	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	The trains are drab	1	No	0	0	
+								
+node pair #161:								
+The trains are drab	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	The trains are drab	1	No	0	0	
+								
+node pair #162:								
+The trains are drab	1	->	train delays	1	No	0	0	
+train delays	1	->	The trains are drab	1	No	0	0	
+								
+node pair #163:								
+The trains are drab	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	The trains are drab	1	No	0	0	
+								
+node pair #164:								
+The trains are drab	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	The trains are drab	1	No	0	0	
+								
+node pair #165:								
+The trains are drab	1	->	rip off	1	No	0	0	
+rip off	1	->	The trains are drab	1	No	0	0	
+								
+node pair #166:								
+The decor is pretty depressing	1	->	The decor is depressing	1	Yes	1	1	
+The decor is depressing	1	->	The decor is pretty depressing	1	No	-1	0	
+								
+node pair #167:								
+The decor is pretty depressing	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	The decor is pretty depressing	1	No	0	0	
+								
+node pair #168:								
+The decor is pretty depressing	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	The decor is pretty depressing	1	No	0	0	
+								
+node pair #169:								
+The decor is pretty depressing	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	The decor is pretty depressing	1	No	0	0	
+								
+node pair #170:								
+The decor is pretty depressing	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	The decor is pretty depressing	1	No	0	0	
+								
+node pair #171:								
+The decor is pretty depressing	1	->	train delays	1	No	0	0	
+train delays	1	->	The decor is pretty depressing	1	No	0	0	
+								
+node pair #172:								
+The decor is pretty depressing	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	The decor is pretty depressing	1	No	0	0	
+								
+node pair #173:								
+The decor is pretty depressing	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	The decor is pretty depressing	1	No	0	0	
+								
+node pair #174:								
+The decor is pretty depressing	1	->	rip off	1	No	0	0	
+rip off	1	->	The decor is pretty depressing	1	No	0	0	
+								
+node pair #175:								
+The decor is depressing	1	->	The Quasigo train was very tatty	1	No	0	0	
+The Quasigo train was very tatty	1	->	The decor is depressing	1	No	0	0	
+								
+node pair #176:								
+The decor is depressing	1	->	The Quasigo train was tatty	1	No	0	0	
+The Quasigo train was tatty	1	->	The decor is depressing	1	No	0	0	
+								
+node pair #177:								
+The decor is depressing	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	The decor is depressing	1	No	0	0	
+								
+node pair #178:								
+The decor is depressing	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	The decor is depressing	1	No	0	0	
+								
+node pair #179:								
+The decor is depressing	1	->	train delays	1	No	0	0	
+train delays	1	->	The decor is depressing	1	No	0	0	
+								
+node pair #180:								
+The decor is depressing	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	The decor is depressing	1	No	0	0	
+								
+node pair #181:								
+The decor is depressing	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	The decor is depressing	1	No	0	0	
+								
+node pair #182:								
+The decor is depressing	1	->	rip off	1	No	0	0	
+rip off	1	->	The decor is depressing	1	No	0	0	
+								
+node pair #183:								
+The Quasigo train was very tatty	1	->	The Quasigo train was tatty	1	Yes	1	1	
+The Quasigo train was tatty	1	->	The Quasigo train was very tatty	1	No	-1	0	
+								
+node pair #184:								
+The Quasigo train was very tatty	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #185:								
+The Quasigo train was very tatty	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #186:								
+The Quasigo train was very tatty	1	->	train delays	1	No	0	0	
+train delays	1	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #187:								
+The Quasigo train was very tatty	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #188:								
+The Quasigo train was very tatty	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #189:								
+The Quasigo train was very tatty	1	->	rip off	1	No	0	0	
+rip off	1	->	The Quasigo train was very tatty	1	No	0	0	
+								
+node pair #190:								
+The Quasigo train was tatty	1	->	Cleaner interior	1	No	0	0	
+Cleaner interior	1	->	The Quasigo train was tatty	1	No	0	0	
+								
+node pair #191:								
+The Quasigo train was tatty	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	The Quasigo train was tatty	1	No	0	0	
+								
+node pair #192:								
+The Quasigo train was tatty	1	->	train delays	1	No	0	0	
+train delays	1	->	The Quasigo train was tatty	1	No	0	0	
+								
+node pair #193:								
+The Quasigo train was tatty	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	The Quasigo train was tatty	1	No	0	0	
+								
+node pair #194:								
+The Quasigo train was tatty	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	The Quasigo train was tatty	1	No	0	0	
+								
+node pair #195:								
+The Quasigo train was tatty	1	->	rip off	1	No	0	0	
+rip off	1	->	The Quasigo train was tatty	1	No	0	0	
+								
+node pair #196:								
+Cleaner interior	1	->	train too often delays	1	No	0	0	
+train too often delays	1	->	Cleaner interior	1	No	0	0	
+								
+node pair #197:								
+Cleaner interior	1	->	train delays	1	No	0	0	
+train delays	1	->	Cleaner interior	1	No	0	0	
+								
+node pair #198:								
+Cleaner interior	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	Cleaner interior	1	No	0	0	
+								
+node pair #199:								
+Cleaner interior	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	Cleaner interior	1	No	0	0	
+								
+node pair #200:								
+Cleaner interior	1	->	rip off	1	No	0	0	
+rip off	1	->	Cleaner interior	1	No	0	0	
+								
+node pair #201:								
+train too often delays	1	->	train delays	1	Yes	1	1	
+train delays	1	->	train too often delays	1	No	-1	0	
+								
+node pair #202:								
+train too often delays	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	train too often delays	1	No	0	0	
+								
+node pair #203:								
+train too often delays	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	train too often delays	1	No	0	0	
+								
+node pair #204:								
+train too often delays	1	->	rip off	1	No	0	0	
+rip off	1	->	train too often delays	1	No	0	0	
+								
+node pair #205:								
+train delays	1	->	Complete rip off	2	No	0	0	
+Complete rip off	2	->	train delays	1	No	0	0	
+								
+node pair #206:								
+train delays	1	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	train delays	1	No	0	0	
+								
+node pair #207:								
+train delays	1	->	rip off	1	No	0	0	
+rip off	1	->	train delays	1	No	0	0	
+								
+node pair #208:								
+Complete rip off	2	->	The Quasigo train was very dirty	1	No	0	0	
+The Quasigo train was very dirty	1	->	Complete rip off	2	No	0	0	
+								
+node pair #209:								
+Complete rip off	2	->	rip off	1	Yes	1	1	
+rip off	1	->	Complete rip off	2	No	-1	0	
+								
+node pair #210:								
+The Quasigo train was very dirty	1	->	rip off	1	No	0	0	
+rip off	1	->	The Quasigo train was very dirty	1	No	0	0	
