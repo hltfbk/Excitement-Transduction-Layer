@@ -1,0 +1,1840 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 2 entailment unit(s) before editing								
+	staff are arrogant	[169586.txt_7_1]						
+	staff are rude	[169586.txt_6_1]						
+								
+collapsed node #2 : 2 entailment unit(s) before editing								
+	spanish staff are arrogant	[169586.txt_7_0]						
+	spanish staff are rude	[169586.txt_6_0]						
+								
+collapsed node #3 : 2 entailment unit(s) before editing								
+	Staff could have been more friendly	[44805.txt_1_1]						
+	service would improve with friendlier staff	[317673.txt_17_1]						
+								
+collapsed node #4 : 2 entailment unit(s) before editing								
+	There was no one at Sunnyport who seemed interested in offering any adviceThe	[201646.txt_5_0]						
+	There was no one at Sunnyport who seemed interested in offering any help	[201646.txt_4_0]						
+								
+collapsed node #5 : 2 entailment unit(s) before editing								
+	staff not helpful to passengers	[317673.txt_5_2]						
+	the stuff is not helpful	[27.txt_2_3]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	staff not very helpful to passengers	[317673.txt_5_1]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	staff not very helpful to passengers asking for assistance	[317673.txt_5_0]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	Service was a bit stressed out today due to busy holiday travel	[57576.txt_13_0]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	Service was a bit stressed out due to busy holiday travel	[57576.txt_13_1]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	Staff could have been a bit more friendly	[44805.txt_1_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	the stuff in the ticket office is not helpful at all	[27.txt_2_0]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	the stuff is not helpful at all	[27.txt_2_2]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing								
+	the stuff in the ticket office is not helpful	[27.txt_2_1]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing								
+	Service was stressed out	[57576.txt_13_7]						
+								
+collapsed node #15 : 1 entailment unit(s) before editing								
+	Have longer opening hours	[23.txt_1_1]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing								
+	Security staff not friendly	[38751.txt_1_0]						
+								
+collapsed node #17 : 1 entailment unit(s) before editing								
+	Service was stressed out today	[57576.txt_13_6]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing								
+	Have longer opening hours on the phone lines	[23.txt_1_0]						
+								
+collapsed node #19 : 1 entailment unit(s) before editing								
+	service would improve with friendlier staff at Stars Bridge	[317673.txt_17_0]						
+								
+collapsed node #20 : 1 entailment unit(s) before editing								
+	Service was stressed out today due to busy holiday travel	[57576.txt_13_3]						
+								
+collapsed node #21 : 2 entailment unit(s) before editing								
+	Improve customer service experience	[473384.txt_1_1]						
+	service was poor	[105536.txt_1_3]						
+								
+collapsed node #22 : 1 entailment unit(s) before editing								
+	Service was a bit stressed out today	[57576.txt_13_2]						
+								
+collapsed node #23 : 1 entailment unit(s) before editing								
+	Improve customer service experience at Frowntown	[473384.txt_1_0]						
+								
+collapsed node #24 : 1 entailment unit(s) before editing								
+	Service was stressed out due to busy holiday travel	[57576.txt_13_5]						
+								
+collapsed node #25 : 1 entailment unit(s) before editing								
+	Service was a bit stressed out	[57576.txt_13_4]						
+								
+collapsed node #26 : 1 entailment unit(s) before editing								
+	Complete lack of customer service	[15589.txt_1_1]						
+								
+collapsed node #27 : 1 entailment unit(s) before editing								
+	service was poor on the trip	[105536.txt_1_1]						
+								
+collapsed node #28 : 1 entailment unit(s) before editing								
+	service was so poor	[105536.txt_1_2]						
+								
+collapsed node #29 : 1 entailment unit(s) before editing								
+	service was so poor on the trip	[105536.txt_1_0]						
+								
+collapsed node #30 : 1 entailment unit(s) before editing								
+	Complete lack of customer service between Stars Bridge and Sunnyport	[15589.txt_1_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+spanish staff are rude	2	->	staff are rude	2	Yes	2	1	
+staff are rude	2	->	spanish staff are rude	2	No	-2	0	
+								
+node pair #2:								
+staff are rude	2	->	Staff could have been more friendly	2	Yes	0	1	
+Staff could have been more friendly	2	->	staff are rude	2	No	0	0	
+								
+node pair #3:								
+staff are rude	2	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+There was no one at Sunnyport who seemed interested in offering any help	2	->	staff are rude	2	No	0	0	
+								
+node pair #4:								
+staff are rude	2	->	the stuff is not helpful	2	No	0	0	
+the stuff is not helpful	2	->	staff are rude	2	No	0	0	
+								
+node pair #5:								
+staff are rude	2	->	staff not very helpful to passengers	1	No	0	0	
+staff not very helpful to passengers	1	->	staff are rude	2	No	0	0	
+								
+node pair #6:								
+staff are rude	2	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+staff not very helpful to passengers asking for assistance	1	->	staff are rude	2	No	0	0	
+								
+node pair #7:								
+staff are rude	2	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out today due to busy holiday travel	1	->	staff are rude	2	No	0	0	
+								
+node pair #8:								
+staff are rude	2	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out due to busy holiday travel	1	->	staff are rude	2	No	0	0	
+								
+node pair #9:								
+staff are rude	2	->	Staff could have been a bit more friendly	1	No	0	0	
+Staff could have been a bit more friendly	1	->	staff are rude	2	No	0	0	
+								
+node pair #10:								
+staff are rude	2	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	staff are rude	2	No	0	0	
+								
+node pair #11:								
+staff are rude	2	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	staff are rude	2	No	0	0	
+								
+node pair #12:								
+staff are rude	2	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	staff are rude	2	No	0	0	
+								
+node pair #13:								
+staff are rude	2	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	staff are rude	2	No	0	0	
+								
+node pair #14:								
+staff are rude	2	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	staff are rude	2	No	0	0	
+								
+node pair #15:								
+staff are rude	2	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	staff are rude	2	No	0	0	
+								
+node pair #16:								
+staff are rude	2	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	staff are rude	2	No	0	0	
+								
+node pair #17:								
+staff are rude	2	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	staff are rude	2	No	0	0	
+								
+node pair #18:								
+staff are rude	2	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	staff are rude	2	No	0	0	
+								
+node pair #19:								
+staff are rude	2	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	staff are rude	2	No	0	0	
+								
+node pair #20:								
+staff are rude	2	->	service was poor	2	Yes	0	1	
+service was poor	2	->	staff are rude	2	No	0	0	
+								
+node pair #21:								
+staff are rude	2	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	staff are rude	2	No	0	0	
+								
+node pair #22:								
+staff are rude	2	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	staff are rude	2	No	0	0	
+								
+node pair #23:								
+staff are rude	2	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	staff are rude	2	No	0	0	
+								
+node pair #24:								
+staff are rude	2	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	staff are rude	2	No	0	0	
+								
+node pair #25:								
+staff are rude	2	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	staff are rude	2	No	0	0	
+								
+node pair #26:								
+staff are rude	2	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	staff are rude	2	No	0	0	
+								
+node pair #27:								
+staff are rude	2	->	service was so poor	1	No	0	0	
+service was so poor	1	->	staff are rude	2	No	0	0	
+								
+node pair #28:								
+staff are rude	2	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	staff are rude	2	No	0	0	
+								
+node pair #29:								
+staff are rude	2	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	staff are rude	2	No	0	0	
+								
+node pair #30:								
+spanish staff are rude	2	->	Staff could have been more friendly	2	Yes	0	1	
+Staff could have been more friendly	2	->	spanish staff are rude	2	No	0	0	
+								
+node pair #31:								
+spanish staff are rude	2	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+There was no one at Sunnyport who seemed interested in offering any help	2	->	spanish staff are rude	2	No	0	0	
+								
+node pair #32:								
+spanish staff are rude	2	->	the stuff is not helpful	2	No	0	0	
+the stuff is not helpful	2	->	spanish staff are rude	2	No	0	0	
+								
+node pair #33:								
+spanish staff are rude	2	->	staff not very helpful to passengers	1	No	0	0	
+staff not very helpful to passengers	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #34:								
+spanish staff are rude	2	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+staff not very helpful to passengers asking for assistance	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #35:								
+spanish staff are rude	2	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out today due to busy holiday travel	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #36:								
+spanish staff are rude	2	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out due to busy holiday travel	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #37:								
+spanish staff are rude	2	->	Staff could have been a bit more friendly	1	No	0	0	
+Staff could have been a bit more friendly	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #38:								
+spanish staff are rude	2	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #39:								
+spanish staff are rude	2	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #40:								
+spanish staff are rude	2	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #41:								
+spanish staff are rude	2	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #42:								
+spanish staff are rude	2	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #43:								
+spanish staff are rude	2	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #44:								
+spanish staff are rude	2	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #45:								
+spanish staff are rude	2	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #46:								
+spanish staff are rude	2	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #47:								
+spanish staff are rude	2	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #48:								
+spanish staff are rude	2	->	service was poor	2	Yes	0	1	
+service was poor	2	->	spanish staff are rude	2	No	0	0	
+								
+node pair #49:								
+spanish staff are rude	2	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #50:								
+spanish staff are rude	2	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #51:								
+spanish staff are rude	2	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #52:								
+spanish staff are rude	2	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #53:								
+spanish staff are rude	2	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #54:								
+spanish staff are rude	2	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #55:								
+spanish staff are rude	2	->	service was so poor	1	No	0	0	
+service was so poor	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #56:								
+spanish staff are rude	2	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #57:								
+spanish staff are rude	2	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	spanish staff are rude	2	No	0	0	
+								
+node pair #58:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Staff could have been more friendly	2	Yes	0	0	
+Staff could have been more friendly	2	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #59:								
+Staff could have been more friendly	2	->	the stuff is not helpful	2	No	0	0	
+the stuff is not helpful	2	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #60:								
+Staff could have been more friendly	2	->	staff not very helpful to passengers	1	No	0	0	
+staff not very helpful to passengers	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #61:								
+Staff could have been more friendly	2	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+staff not very helpful to passengers asking for assistance	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #62:								
+Staff could have been more friendly	2	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out today due to busy holiday travel	1	->	Staff could have been more friendly	2	No	0	1	
+								
+node pair #63:								
+Staff could have been more friendly	2	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out due to busy holiday travel	1	->	Staff could have been more friendly	2	No	0	1	
+								
+node pair #64:								
+Staff could have been a bit more friendly	1	->	Staff could have been more friendly	2	Yes	1	1	
+Staff could have been more friendly	2	->	Staff could have been a bit more friendly	1	No	-1	0	
+								
+node pair #65:								
+Staff could have been more friendly	2	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #66:								
+Staff could have been more friendly	2	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #67:								
+Staff could have been more friendly	2	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #68:								
+Staff could have been more friendly	2	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	Staff could have been more friendly	2	No	0	1	
+								
+node pair #69:								
+Staff could have been more friendly	2	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #70:								
+Security staff not friendly	1	->	Staff could have been more friendly	2	Yes	0	1	
+Staff could have been more friendly	2	->	Security staff not friendly	1	No	0	0	
+								
+node pair #71:								
+Staff could have been more friendly	2	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	Staff could have been more friendly	2	No	0	1	
+								
+node pair #72:								
+Staff could have been more friendly	2	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #73:								
+service would improve with friendlier staff at Stars Bridge	1	->	Staff could have been more friendly	2	Yes	1	1	
+Staff could have been more friendly	2	->	service would improve with friendlier staff at Stars Bridge	1	No	-1	0	
+								
+node pair #74:								
+Staff could have been more friendly	2	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	Staff could have been more friendly	2	No	0	1	
+								
+node pair #75:								
+Staff could have been more friendly	2	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #76:								
+Staff could have been more friendly	2	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	Staff could have been more friendly	2	No	0	1	
+								
+node pair #77:								
+Staff could have been more friendly	2	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #78:								
+Staff could have been more friendly	2	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	Staff could have been more friendly	2	No	0	1	
+								
+node pair #79:								
+Staff could have been more friendly	2	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	Staff could have been more friendly	2	No	0	1	
+								
+node pair #80:								
+Staff could have been more friendly	2	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #81:								
+Staff could have been more friendly	2	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #82:								
+Staff could have been more friendly	2	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #83:								
+Staff could have been more friendly	2	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #84:								
+Staff could have been more friendly	2	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Staff could have been more friendly	2	No	0	0	
+								
+node pair #85:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	the stuff is not helpful	2	Yes	0	1	
+the stuff is not helpful	2	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #86:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	staff not very helpful to passengers	1	No	0	0	
+staff not very helpful to passengers	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #87:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+staff not very helpful to passengers asking for assistance	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #88:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out today due to busy holiday travel	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #89:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out due to busy holiday travel	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #90:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Staff could have been a bit more friendly	1	No	0	0	
+Staff could have been a bit more friendly	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #91:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #92:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #93:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #94:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #95:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #96:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #97:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #98:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #99:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #100:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #101:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	service was poor	2	Yes	0	1	
+service was poor	2	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #102:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #103:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #104:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #105:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #106:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Complete lack of customer service	1	Yes	0	0	
+Complete lack of customer service	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #107:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #108:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	service was so poor	1	No	0	0	
+service was so poor	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #109:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #110:								
+There was no one at Sunnyport who seemed interested in offering any help	2	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	There was no one at Sunnyport who seemed interested in offering any help	2	No	0	0	
+								
+node pair #111:								
+staff not very helpful to passengers	1	->	the stuff is not helpful	2	Yes	1	1	
+the stuff is not helpful	2	->	staff not very helpful to passengers	1	No	-1	0	
+								
+node pair #112:								
+staff not very helpful to passengers asking for assistance	1	->	the stuff is not helpful	2	Yes	1	1	
+the stuff is not helpful	2	->	staff not very helpful to passengers asking for assistance	1	No	-1	0	
+								
+node pair #113:								
+the stuff is not helpful	2	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out today due to busy holiday travel	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #114:								
+the stuff is not helpful	2	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out due to busy holiday travel	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #115:								
+the stuff is not helpful	2	->	Staff could have been a bit more friendly	1	No	0	0	
+Staff could have been a bit more friendly	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #116:								
+the stuff in the ticket office is not helpful at all	1	->	the stuff is not helpful	2	Yes	1	1	
+the stuff is not helpful	2	->	the stuff in the ticket office is not helpful at all	1	No	-1	0	
+								
+node pair #117:								
+the stuff is not helpful at all	1	->	the stuff is not helpful	2	Yes	1	1	
+the stuff is not helpful	2	->	the stuff is not helpful at all	1	No	-1	0	
+								
+node pair #118:								
+the stuff in the ticket office is not helpful	1	->	the stuff is not helpful	2	Yes	1	1	
+the stuff is not helpful	2	->	the stuff in the ticket office is not helpful	1	No	-1	0	
+								
+node pair #119:								
+the stuff is not helpful	2	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #120:								
+the stuff is not helpful	2	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #121:								
+the stuff is not helpful	2	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #122:								
+the stuff is not helpful	2	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #123:								
+the stuff is not helpful	2	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #124:								
+the stuff is not helpful	2	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #125:								
+the stuff is not helpful	2	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #126:								
+the stuff is not helpful	2	->	service was poor	2	Yes	0	1	
+service was poor	2	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #127:								
+the stuff is not helpful	2	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #128:								
+the stuff is not helpful	2	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #129:								
+the stuff is not helpful	2	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #130:								
+the stuff is not helpful	2	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #131:								
+Complete lack of customer service	1	->	the stuff is not helpful	2	Yes	0	0	
+the stuff is not helpful	2	->	Complete lack of customer service	1	No	0	0	
+								
+node pair #132:								
+the stuff is not helpful	2	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #133:								
+the stuff is not helpful	2	->	service was so poor	1	No	0	0	
+service was so poor	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #134:								
+the stuff is not helpful	2	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	the stuff is not helpful	2	No	0	0	
+								
+node pair #135:								
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	the stuff is not helpful	2	Yes	0	0	
+the stuff is not helpful	2	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+								
+node pair #136:								
+staff not very helpful to passengers asking for assistance	1	->	staff not very helpful to passengers	1	Yes	1	1	
+staff not very helpful to passengers	1	->	staff not very helpful to passengers asking for assistance	1	No	-1	0	
+								
+node pair #137:								
+staff not very helpful to passengers	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out today due to busy holiday travel	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #138:								
+staff not very helpful to passengers	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out due to busy holiday travel	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #139:								
+staff not very helpful to passengers	1	->	Staff could have been a bit more friendly	1	No	0	0	
+Staff could have been a bit more friendly	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #140:								
+staff not very helpful to passengers	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #141:								
+staff not very helpful to passengers	1	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #142:								
+staff not very helpful to passengers	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #143:								
+staff not very helpful to passengers	1	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #144:								
+staff not very helpful to passengers	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #145:								
+staff not very helpful to passengers	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #146:								
+staff not very helpful to passengers	1	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #147:								
+staff not very helpful to passengers	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #148:								
+staff not very helpful to passengers	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #149:								
+staff not very helpful to passengers	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #150:								
+staff not very helpful to passengers	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #151:								
+staff not very helpful to passengers	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #152:								
+staff not very helpful to passengers	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #153:								
+staff not very helpful to passengers	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #154:								
+staff not very helpful to passengers	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #155:								
+staff not very helpful to passengers	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #156:								
+staff not very helpful to passengers	1	->	service was poor on the trip	1	Yes	0	0	
+service was poor on the trip	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #157:								
+staff not very helpful to passengers	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #158:								
+staff not very helpful to passengers	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #159:								
+staff not very helpful to passengers	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	staff not very helpful to passengers	1	No	0	0	
+								
+node pair #160:								
+staff not very helpful to passengers asking for assistance	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out today due to busy holiday travel	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #161:								
+staff not very helpful to passengers asking for assistance	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+Service was a bit stressed out due to busy holiday travel	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #162:								
+staff not very helpful to passengers asking for assistance	1	->	Staff could have been a bit more friendly	1	No	0	0	
+Staff could have been a bit more friendly	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #163:								
+staff not very helpful to passengers asking for assistance	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #164:								
+staff not very helpful to passengers asking for assistance	1	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #165:								
+staff not very helpful to passengers asking for assistance	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #166:								
+staff not very helpful to passengers asking for assistance	1	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #167:								
+staff not very helpful to passengers asking for assistance	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #168:								
+staff not very helpful to passengers asking for assistance	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #169:								
+staff not very helpful to passengers asking for assistance	1	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #170:								
+staff not very helpful to passengers asking for assistance	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #171:								
+staff not very helpful to passengers asking for assistance	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #172:								
+staff not very helpful to passengers asking for assistance	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #173:								
+staff not very helpful to passengers asking for assistance	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #174:								
+staff not very helpful to passengers asking for assistance	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #175:								
+staff not very helpful to passengers asking for assistance	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #176:								
+staff not very helpful to passengers asking for assistance	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #177:								
+staff not very helpful to passengers asking for assistance	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #178:								
+staff not very helpful to passengers asking for assistance	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #179:								
+staff not very helpful to passengers asking for assistance	1	->	service was poor on the trip	1	Yes	0	0	
+service was poor on the trip	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #180:								
+staff not very helpful to passengers asking for assistance	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #181:								
+staff not very helpful to passengers asking for assistance	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #182:								
+staff not very helpful to passengers asking for assistance	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	staff not very helpful to passengers asking for assistance	1	No	0	0	
+								
+node pair #183:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Service was a bit stressed out due to busy holiday travel	1	Yes	1	1	
+Service was a bit stressed out due to busy holiday travel	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #184:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Staff could have been a bit more friendly	1	No	0	1	
+Staff could have been a bit more friendly	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #185:								
+Service was a bit stressed out today due to busy holiday travel	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #186:								
+Service was a bit stressed out today due to busy holiday travel	1	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #187:								
+Service was a bit stressed out today due to busy holiday travel	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #188:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Service was stressed out	1	Yes	1	1	
+Service was stressed out	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #189:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #190:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #191:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Service was stressed out today	1	Yes	1	1	
+Service was stressed out today	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #192:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #193:								
+Service was a bit stressed out today due to busy holiday travel	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #194:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Service was stressed out today due to busy holiday travel	1	Yes	1	1	
+Service was stressed out today due to busy holiday travel	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #195:								
+Service was a bit stressed out today due to busy holiday travel	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #196:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Service was a bit stressed out today	1	Yes	1	1	
+Service was a bit stressed out today	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #197:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #198:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Service was stressed out due to busy holiday travel	1	Yes	1	1	
+Service was stressed out due to busy holiday travel	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #199:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Service was a bit stressed out	1	Yes	1	1	
+Service was a bit stressed out	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #200:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #201:								
+Service was a bit stressed out today due to busy holiday travel	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #202:								
+Service was a bit stressed out today due to busy holiday travel	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #203:								
+Service was a bit stressed out today due to busy holiday travel	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #204:								
+Service was a bit stressed out today due to busy holiday travel	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Service was a bit stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #205:								
+Service was a bit stressed out due to busy holiday travel	1	->	Staff could have been a bit more friendly	1	No	0	1	
+Staff could have been a bit more friendly	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #206:								
+Service was a bit stressed out due to busy holiday travel	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #207:								
+Service was a bit stressed out due to busy holiday travel	1	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #208:								
+Service was a bit stressed out due to busy holiday travel	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #209:								
+Service was a bit stressed out due to busy holiday travel	1	->	Service was stressed out	1	Yes	1	1	
+Service was stressed out	1	->	Service was a bit stressed out due to busy holiday travel	1	No	-1	0	
+								
+node pair #210:								
+Service was a bit stressed out due to busy holiday travel	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #211:								
+Service was a bit stressed out due to busy holiday travel	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #212:								
+Service was a bit stressed out due to busy holiday travel	1	->	Service was stressed out today	1	No	-1	0	
+Service was stressed out today	1	->	Service was a bit stressed out due to busy holiday travel	1	No	-1	0	
+								
+node pair #213:								
+Service was a bit stressed out due to busy holiday travel	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #214:								
+Service was a bit stressed out due to busy holiday travel	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #215:								
+Service was a bit stressed out due to busy holiday travel	1	->	Service was stressed out today due to busy holiday travel	1	No	-1	0	
+Service was stressed out today due to busy holiday travel	1	->	Service was a bit stressed out due to busy holiday travel	1	No	-1	0	
+								
+node pair #216:								
+Service was a bit stressed out due to busy holiday travel	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #217:								
+Service was a bit stressed out due to busy holiday travel	1	->	Service was a bit stressed out today	1	No	-1	0	
+Service was a bit stressed out today	1	->	Service was a bit stressed out due to busy holiday travel	1	No	-1	0	
+								
+node pair #218:								
+Service was a bit stressed out due to busy holiday travel	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #219:								
+Service was a bit stressed out due to busy holiday travel	1	->	Service was stressed out due to busy holiday travel	1	Yes	1	1	
+Service was stressed out due to busy holiday travel	1	->	Service was a bit stressed out due to busy holiday travel	1	No	-1	0	
+								
+node pair #220:								
+Service was a bit stressed out due to busy holiday travel	1	->	Service was a bit stressed out	1	Yes	1	1	
+Service was a bit stressed out	1	->	Service was a bit stressed out due to busy holiday travel	1	No	-1	0	
+								
+node pair #221:								
+Service was a bit stressed out due to busy holiday travel	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #222:								
+Service was a bit stressed out due to busy holiday travel	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #223:								
+Service was a bit stressed out due to busy holiday travel	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #224:								
+Service was a bit stressed out due to busy holiday travel	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #225:								
+Service was a bit stressed out due to busy holiday travel	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Service was a bit stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #226:								
+Staff could have been a bit more friendly	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+the stuff in the ticket office is not helpful at all	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #227:								
+Staff could have been a bit more friendly	1	->	the stuff is not helpful at all	1	No	0	0	
+the stuff is not helpful at all	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #228:								
+Staff could have been a bit more friendly	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+the stuff in the ticket office is not helpful	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #229:								
+Staff could have been a bit more friendly	1	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #230:								
+Staff could have been a bit more friendly	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #231:								
+Staff could have been a bit more friendly	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #232:								
+Staff could have been a bit more friendly	1	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #233:								
+Staff could have been a bit more friendly	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #234:								
+Staff could have been a bit more friendly	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #235:								
+Staff could have been a bit more friendly	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #236:								
+Staff could have been a bit more friendly	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #237:								
+Staff could have been a bit more friendly	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #238:								
+Staff could have been a bit more friendly	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #239:								
+Staff could have been a bit more friendly	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #240:								
+Staff could have been a bit more friendly	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #241:								
+Staff could have been a bit more friendly	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #242:								
+Staff could have been a bit more friendly	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #243:								
+Staff could have been a bit more friendly	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #244:								
+Staff could have been a bit more friendly	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #245:								
+Staff could have been a bit more friendly	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Staff could have been a bit more friendly	1	No	0	0	
+								
+node pair #246:								
+the stuff in the ticket office is not helpful at all	1	->	the stuff is not helpful at all	1	Yes	1	1	
+the stuff is not helpful at all	1	->	the stuff in the ticket office is not helpful at all	1	No	-1	0	
+								
+node pair #247:								
+the stuff in the ticket office is not helpful at all	1	->	the stuff in the ticket office is not helpful	1	Yes	1	1	
+the stuff in the ticket office is not helpful	1	->	the stuff in the ticket office is not helpful at all	1	No	-1	0	
+								
+node pair #248:								
+the stuff in the ticket office is not helpful at all	1	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #249:								
+the stuff in the ticket office is not helpful at all	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #250:								
+the stuff in the ticket office is not helpful at all	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #251:								
+the stuff in the ticket office is not helpful at all	1	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #252:								
+the stuff in the ticket office is not helpful at all	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #253:								
+the stuff in the ticket office is not helpful at all	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #254:								
+the stuff in the ticket office is not helpful at all	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #255:								
+the stuff in the ticket office is not helpful at all	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #256:								
+the stuff in the ticket office is not helpful at all	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #257:								
+the stuff in the ticket office is not helpful at all	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #258:								
+the stuff in the ticket office is not helpful at all	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #259:								
+the stuff in the ticket office is not helpful at all	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #260:								
+the stuff in the ticket office is not helpful at all	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #261:								
+the stuff in the ticket office is not helpful at all	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #262:								
+the stuff in the ticket office is not helpful at all	1	->	service was so poor	1	Yes	0	0	
+service was so poor	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #263:								
+the stuff in the ticket office is not helpful at all	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #264:								
+the stuff in the ticket office is not helpful at all	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	the stuff in the ticket office is not helpful at all	1	No	0	0	
+								
+node pair #265:								
+the stuff is not helpful at all	1	->	the stuff in the ticket office is not helpful	1	No	-1	0	
+the stuff in the ticket office is not helpful	1	->	the stuff is not helpful at all	1	No	-1	0	
+								
+node pair #266:								
+the stuff is not helpful at all	1	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #267:								
+the stuff is not helpful at all	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #268:								
+the stuff is not helpful at all	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #269:								
+the stuff is not helpful at all	1	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #270:								
+the stuff is not helpful at all	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #271:								
+the stuff is not helpful at all	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #272:								
+the stuff is not helpful at all	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #273:								
+the stuff is not helpful at all	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #274:								
+the stuff is not helpful at all	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #275:								
+the stuff is not helpful at all	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #276:								
+the stuff is not helpful at all	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #277:								
+the stuff is not helpful at all	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #278:								
+the stuff is not helpful at all	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #279:								
+the stuff is not helpful at all	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #280:								
+the stuff is not helpful at all	1	->	service was so poor	1	Yes	0	0	
+service was so poor	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #281:								
+the stuff is not helpful at all	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	the stuff is not helpful at all	1	No	0	0	
+								
+node pair #282:								
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	the stuff is not helpful at all	1	Yes	0	0	
+the stuff is not helpful at all	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+								
+node pair #283:								
+the stuff in the ticket office is not helpful	1	->	Service was stressed out	1	No	0	0	
+Service was stressed out	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #284:								
+the stuff in the ticket office is not helpful	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #285:								
+the stuff in the ticket office is not helpful	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #286:								
+the stuff in the ticket office is not helpful	1	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #287:								
+the stuff in the ticket office is not helpful	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #288:								
+the stuff in the ticket office is not helpful	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #289:								
+the stuff in the ticket office is not helpful	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #290:								
+the stuff in the ticket office is not helpful	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #291:								
+the stuff in the ticket office is not helpful	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #292:								
+the stuff in the ticket office is not helpful	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #293:								
+the stuff in the ticket office is not helpful	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #294:								
+the stuff in the ticket office is not helpful	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #295:								
+the stuff in the ticket office is not helpful	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #296:								
+the stuff in the ticket office is not helpful	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #297:								
+the stuff in the ticket office is not helpful	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #298:								
+the stuff in the ticket office is not helpful	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	the stuff in the ticket office is not helpful	1	No	0	0	
+								
+node pair #299:								
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	the stuff in the ticket office is not helpful	1	Yes	0	0	
+the stuff in the ticket office is not helpful	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+								
+node pair #300:								
+Service was stressed out	1	->	Have longer opening hours	1	No	0	0	
+Have longer opening hours	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #301:								
+Service was stressed out	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #302:								
+Service was stressed out today	1	->	Service was stressed out	1	Yes	1	1	
+Service was stressed out	1	->	Service was stressed out today	1	No	-1	0	
+								
+node pair #303:								
+Service was stressed out	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #304:								
+Service was stressed out	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #305:								
+Service was stressed out today due to busy holiday travel	1	->	Service was stressed out	1	Yes	1	1	
+Service was stressed out	1	->	Service was stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #306:								
+Service was stressed out	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Service was stressed out	1	No	0	0	
+								
+node pair #307:								
+Service was a bit stressed out today	1	->	Service was stressed out	1	Yes	1	1	
+Service was stressed out	1	->	Service was a bit stressed out today	1	No	-1	0	
+								
+node pair #308:								
+Service was stressed out	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #309:								
+Service was stressed out due to busy holiday travel	1	->	Service was stressed out	1	Yes	1	1	
+Service was stressed out	1	->	Service was stressed out due to busy holiday travel	1	No	-1	0	
+								
+node pair #310:								
+Service was a bit stressed out	1	->	Service was stressed out	1	Yes	1	1	
+Service was stressed out	1	->	Service was a bit stressed out	1	No	-1	0	
+								
+node pair #311:								
+Service was stressed out	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #312:								
+Service was stressed out	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #313:								
+Service was stressed out	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #314:								
+Service was stressed out	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #315:								
+Service was stressed out	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Service was stressed out	1	No	0	0	
+								
+node pair #316:								
+Have longer opening hours	1	->	Security staff not friendly	1	No	0	0	
+Security staff not friendly	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #317:								
+Have longer opening hours	1	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #318:								
+Have longer opening hours on the phone lines	1	->	Have longer opening hours	1	Yes	1	1	
+Have longer opening hours	1	->	Have longer opening hours on the phone lines	1	No	-1	0	
+								
+node pair #319:								
+Have longer opening hours	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #320:								
+Have longer opening hours	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #321:								
+Have longer opening hours	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Have longer opening hours	1	No	0	0	
+								
+node pair #322:								
+Have longer opening hours	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #323:								
+Have longer opening hours	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #324:								
+Have longer opening hours	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #325:								
+Have longer opening hours	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #326:								
+Have longer opening hours	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #327:								
+Have longer opening hours	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #328:								
+Have longer opening hours	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #329:								
+Have longer opening hours	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #330:								
+Have longer opening hours	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Have longer opening hours	1	No	0	0	
+								
+node pair #331:								
+Security staff not friendly	1	->	Service was stressed out today	1	No	0	0	
+Service was stressed out today	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #332:								
+Security staff not friendly	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #333:								
+Security staff not friendly	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #334:								
+Security staff not friendly	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #335:								
+Security staff not friendly	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Security staff not friendly	1	No	0	0	
+								
+node pair #336:								
+Security staff not friendly	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #337:								
+Security staff not friendly	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #338:								
+Security staff not friendly	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #339:								
+Security staff not friendly	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #340:								
+Security staff not friendly	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #341:								
+Security staff not friendly	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #342:								
+Security staff not friendly	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #343:								
+Security staff not friendly	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #344:								
+Security staff not friendly	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Security staff not friendly	1	No	0	0	
+								
+node pair #345:								
+Service was stressed out today	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+Have longer opening hours on the phone lines	1	->	Service was stressed out today	1	No	0	0	
+								
+node pair #346:								
+Service was stressed out today	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	Service was stressed out today	1	No	0	0	
+								
+node pair #347:								
+Service was stressed out today due to busy holiday travel	1	->	Service was stressed out today	1	Yes	1	1	
+Service was stressed out today	1	->	Service was stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #348:								
+Service was stressed out today	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Service was stressed out today	1	No	0	0	
+								
+node pair #349:								
+Service was a bit stressed out today	1	->	Service was stressed out today	1	Yes	1	1	
+Service was stressed out today	1	->	Service was a bit stressed out today	1	No	-1	0	
+								
+node pair #350:								
+Service was stressed out today	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Service was stressed out today	1	No	0	0	
+								
+node pair #351:								
+Service was stressed out today	1	->	Service was stressed out due to busy holiday travel	1	No	-1	0	
+Service was stressed out due to busy holiday travel	1	->	Service was stressed out today	1	No	-1	0	
+								
+node pair #352:								
+Service was stressed out today	1	->	Service was a bit stressed out	1	No	-1	0	
+Service was a bit stressed out	1	->	Service was stressed out today	1	No	-1	0	
+								
+node pair #353:								
+Service was stressed out today	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Service was stressed out today	1	No	0	0	
+								
+node pair #354:								
+Service was stressed out today	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Service was stressed out today	1	No	0	0	
+								
+node pair #355:								
+Service was stressed out today	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Service was stressed out today	1	No	0	0	
+								
+node pair #356:								
+Service was stressed out today	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Service was stressed out today	1	No	0	0	
+								
+node pair #357:								
+Service was stressed out today	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Service was stressed out today	1	No	0	0	
+								
+node pair #358:								
+Have longer opening hours on the phone lines	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+service would improve with friendlier staff at Stars Bridge	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #359:								
+Have longer opening hours on the phone lines	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #360:								
+Have longer opening hours on the phone lines	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #361:								
+Have longer opening hours on the phone lines	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #362:								
+Have longer opening hours on the phone lines	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #363:								
+Have longer opening hours on the phone lines	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #364:								
+Have longer opening hours on the phone lines	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #365:								
+Have longer opening hours on the phone lines	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #366:								
+Have longer opening hours on the phone lines	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #367:								
+Have longer opening hours on the phone lines	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #368:								
+Have longer opening hours on the phone lines	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #369:								
+Have longer opening hours on the phone lines	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Have longer opening hours on the phone lines	1	No	0	0	
+								
+node pair #370:								
+service would improve with friendlier staff at Stars Bridge	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+Service was stressed out today due to busy holiday travel	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #371:								
+service would improve with friendlier staff at Stars Bridge	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #372:								
+service would improve with friendlier staff at Stars Bridge	1	->	Service was a bit stressed out today	1	No	0	0	
+Service was a bit stressed out today	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #373:								
+service would improve with friendlier staff at Stars Bridge	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #374:								
+service would improve with friendlier staff at Stars Bridge	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #375:								
+service would improve with friendlier staff at Stars Bridge	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #376:								
+service would improve with friendlier staff at Stars Bridge	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #377:								
+service would improve with friendlier staff at Stars Bridge	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #378:								
+service would improve with friendlier staff at Stars Bridge	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #379:								
+service would improve with friendlier staff at Stars Bridge	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #380:								
+service would improve with friendlier staff at Stars Bridge	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	service would improve with friendlier staff at Stars Bridge	1	No	0	0	
+								
+node pair #381:								
+Service was stressed out today due to busy holiday travel	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #382:								
+Service was stressed out today due to busy holiday travel	1	->	Service was a bit stressed out today	1	No	-1	0	
+Service was a bit stressed out today	1	->	Service was stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #383:								
+Service was stressed out today due to busy holiday travel	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #384:								
+Service was stressed out today due to busy holiday travel	1	->	Service was stressed out due to busy holiday travel	1	Yes	1	1	
+Service was stressed out due to busy holiday travel	1	->	Service was stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #385:								
+Service was stressed out today due to busy holiday travel	1	->	Service was a bit stressed out	1	No	-1	0	
+Service was a bit stressed out	1	->	Service was stressed out today due to busy holiday travel	1	No	-1	0	
+								
+node pair #386:								
+Service was stressed out today due to busy holiday travel	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #387:								
+Service was stressed out today due to busy holiday travel	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #388:								
+Service was stressed out today due to busy holiday travel	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #389:								
+Service was stressed out today due to busy holiday travel	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #390:								
+Service was stressed out today due to busy holiday travel	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Service was stressed out today due to busy holiday travel	1	No	0	0	
+								
+node pair #391:								
+Service was a bit stressed out today	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Service was a bit stressed out today	1	No	0	0	
+								
+node pair #392:								
+Improve customer service experience at Frowntown	1	->	service was poor	2	Yes	1	1	
+service was poor	2	->	Improve customer service experience at Frowntown	1	No	-1	0	
+								
+node pair #393:								
+Service was stressed out due to busy holiday travel	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #394:								
+Service was a bit stressed out	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Service was a bit stressed out	1	No	0	0	
+								
+node pair #395:								
+Complete lack of customer service	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Complete lack of customer service	1	No	0	0	
+								
+node pair #396:								
+service was poor on the trip	1	->	service was poor	2	Yes	1	1	
+service was poor	2	->	service was poor on the trip	1	No	-1	0	
+								
+node pair #397:								
+service was so poor	1	->	service was poor	2	Yes	1	1	
+service was poor	2	->	service was so poor	1	No	-1	0	
+								
+node pair #398:								
+service was so poor on the trip	1	->	service was poor	2	Yes	1	1	
+service was poor	2	->	service was so poor on the trip	1	No	-1	0	
+								
+node pair #399:								
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	service was poor	2	Yes	0	1	
+service was poor	2	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+								
+node pair #400:								
+Service was a bit stressed out today	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+Improve customer service experience at Frowntown	1	->	Service was a bit stressed out today	1	No	0	0	
+								
+node pair #401:								
+Service was a bit stressed out today	1	->	Service was stressed out due to busy holiday travel	1	No	-1	0	
+Service was stressed out due to busy holiday travel	1	->	Service was a bit stressed out today	1	No	-1	0	
+								
+node pair #402:								
+Service was a bit stressed out today	1	->	Service was a bit stressed out	1	Yes	1	1	
+Service was a bit stressed out	1	->	Service was a bit stressed out today	1	No	-1	0	
+								
+node pair #403:								
+Service was a bit stressed out today	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Service was a bit stressed out today	1	No	0	0	
+								
+node pair #404:								
+Service was a bit stressed out today	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Service was a bit stressed out today	1	No	0	0	
+								
+node pair #405:								
+Service was a bit stressed out today	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Service was a bit stressed out today	1	No	0	0	
+								
+node pair #406:								
+Service was a bit stressed out today	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Service was a bit stressed out today	1	No	0	0	
+								
+node pair #407:								
+Service was a bit stressed out today	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Service was a bit stressed out today	1	No	0	0	
+								
+node pair #408:								
+Improve customer service experience at Frowntown	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+Service was stressed out due to busy holiday travel	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+								
+node pair #409:								
+Improve customer service experience at Frowntown	1	->	Service was a bit stressed out	1	No	0	0	
+Service was a bit stressed out	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+								
+node pair #410:								
+Improve customer service experience at Frowntown	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+								
+node pair #411:								
+Improve customer service experience at Frowntown	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+								
+node pair #412:								
+Improve customer service experience at Frowntown	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+								
+node pair #413:								
+Improve customer service experience at Frowntown	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+								
+node pair #414:								
+Improve customer service experience at Frowntown	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Improve customer service experience at Frowntown	1	No	0	0	
+								
+node pair #415:								
+Service was stressed out due to busy holiday travel	1	->	Service was a bit stressed out	1	No	-1	0	
+Service was a bit stressed out	1	->	Service was stressed out due to busy holiday travel	1	No	-1	0	
+								
+node pair #416:								
+Service was stressed out due to busy holiday travel	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #417:								
+Service was stressed out due to busy holiday travel	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #418:								
+Service was stressed out due to busy holiday travel	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #419:								
+Service was stressed out due to busy holiday travel	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #420:								
+Service was stressed out due to busy holiday travel	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Service was stressed out due to busy holiday travel	1	No	0	0	
+								
+node pair #421:								
+Service was a bit stressed out	1	->	Complete lack of customer service	1	No	0	0	
+Complete lack of customer service	1	->	Service was a bit stressed out	1	No	0	0	
+								
+node pair #422:								
+Service was a bit stressed out	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Service was a bit stressed out	1	No	0	0	
+								
+node pair #423:								
+Service was a bit stressed out	1	->	service was so poor	1	No	0	0	
+service was so poor	1	->	Service was a bit stressed out	1	No	0	0	
+								
+node pair #424:								
+Service was a bit stressed out	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Service was a bit stressed out	1	No	0	0	
+								
+node pair #425:								
+Service was a bit stressed out	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Service was a bit stressed out	1	No	0	0	
+								
+node pair #426:								
+Complete lack of customer service	1	->	service was poor on the trip	1	No	0	0	
+service was poor on the trip	1	->	Complete lack of customer service	1	No	0	0	
+								
+node pair #427:								
+Complete lack of customer service	1	->	service was so poor	1	No	0	1	
+service was so poor	1	->	Complete lack of customer service	1	No	0	0	
+								
+node pair #428:								
+Complete lack of customer service	1	->	service was so poor on the trip	1	No	0	0	
+service was so poor on the trip	1	->	Complete lack of customer service	1	No	0	0	
+								
+node pair #429:								
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	Complete lack of customer service	1	Yes	1	1	
+Complete lack of customer service	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	-1	0	
+								
+node pair #430:								
+service was poor on the trip	1	->	service was so poor	1	No	-1	0	
+service was so poor	1	->	service was poor on the trip	1	No	-1	0	
+								
+node pair #431:								
+service was so poor on the trip	1	->	service was poor on the trip	1	Yes	1	1	
+service was poor on the trip	1	->	service was so poor on the trip	1	No	-1	0	
+								
+node pair #432:								
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	service was poor on the trip	1	Yes	0	1	
+service was poor on the trip	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+								
+node pair #433:								
+service was so poor on the trip	1	->	service was so poor	1	Yes	1	1	
+service was so poor	1	->	service was so poor on the trip	1	No	-1	0	
+								
+node pair #434:								
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	service was so poor	1	Yes	0	1	
+service was so poor	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+								
+node pair #435:								
+service was so poor on the trip	1	->	Complete lack of customer service between Stars Bridge and Sunnyport	1	No	0	0	
+Complete lack of customer service between Stars Bridge and Sunnyport	1	->	service was so poor on the trip	1	No	0	1	
