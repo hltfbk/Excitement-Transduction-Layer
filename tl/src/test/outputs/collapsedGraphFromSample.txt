@@ -1,5 +1,5 @@
 digraph collapsedGraph {
-"Food was bad. [2]\nI didn't like the food.""Disappointed with legroom [2]\nmore leg room would have been perfect""Food was really bad. [1]""a little more leg room would have been perfect [1]""Disappointed with the amount of legroom compared with other trains [1]""Disappointed with legroom compared with other trains [1]""Disappointed with the amount of legroom [1]""Food was really bad. [1]" -> "Food was bad. [2]\nI didn't like the food." [color=blue]
+"Disappointed with legroom [2]\nmore leg room would have been perfect""Food was bad. [2]\nI didn't like the food.""Food was really bad. [1]""a little more leg room would have been perfect [1]""Disappointed with the amount of legroom compared with other trains [1]""Disappointed with legroom compared with other trains [1]""Disappointed with the amount of legroom [1]""Food was really bad. [1]" -> "Food was bad. [2]\nI didn't like the food." [color=blue]
 "a little more leg room would have been perfect [1]" -> "Disappointed with legroom [2]\nmore leg room would have been perfect" [color=blue]
 "Disappointed with the amount of legroom compared with other trains [1]" -> "Disappointed with legroom compared with other trains [1]" [color=blue]
 "Disappointed with the amount of legroom compared with other trains [1]" -> "Disappointed with the amount of legroom [1]" [color=blue]
