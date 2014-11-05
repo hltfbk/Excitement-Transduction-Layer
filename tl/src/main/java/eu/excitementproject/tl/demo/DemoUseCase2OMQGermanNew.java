@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
