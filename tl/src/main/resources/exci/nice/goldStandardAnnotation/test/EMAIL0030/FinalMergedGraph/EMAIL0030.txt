@@ -1,0 +1,552 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 3 entailment unit(s) before editing								
+	Food is really poor	[40604.txt_1_0]						
+	Food is very poor now	[310443.txt_1_0]						
+	The food offering is in need of a serious improvement	[429450.txt_5_0]						
+								
+collapsed node #2 : 15 entailment unit(s) before editing								
+	Better food	[43733.txt_1_0]						
+	Better food would be good	[461540.txt_1_0]						
+	Do n't like the food	[464663.txt_1_1]						
+	Food could be better	"[445827.txt_1_0, 92454.txt_1_3]"						
+	Food is poor	"[476365.txt_1_2]"						
+	Food is poor now	[310443.txt_1_1]						
+	Food need to be improved	[430935.txt_1_1]						
+	Improve the food	"[5436.txt_1_0, 379399.txt_1_0]"						
+	It would be good to have better food	[175519.txt_2_1]						
+	Poor food	[308568.txt_1_0]						
+	The food offering is in need of a improvement	[429450.txt_5_1]						
+	better food would be good	[46653.txt_9_1]						
+	food can be improved	[71011.txt_2_0]						
+	food is poor	[327258.txt_1_0]						
+	food was not as good as expected	[493530.txt_1_1]						
+								
+collapsed node #3 : 2 entailment unit(s) before editing								
+	food was awful	[480047.txt_1_0]						
+	the food is terrible	[513573.txt_2_0]						
+								
+collapsed node #4 : 2 entailment unit(s) before editing								
+	Food in Standard Magnum is poor	[476365.txt_1_1]						
+	food in standard magnum was not as good as expected	[493530.txt_1_0]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	Food in Standard Magnum is really poor	[476365.txt_1_0]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	Food could be a bit better	[92454.txt_1_2]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	Food could be better in standard leisure	[92454.txt_1_1]						
+								
+collapsed node #8 : 3 entailment unit(s) before editing								
+	Bring back the nice food	[446414.txt_1_0]						
+	Do n't like the new food	[464663.txt_1_0]						
+	Food seems to have gone downhill	[357315.txt_1_1]						
+								
+collapsed node #9 : 1 entailment unit(s) before editing								
+	It would be good to have better food in the buffet car	[175519.txt_2_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	Food is more or less the same every journey	[445533.txt_2_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	Food is more or less the same	[445533.txt_2_1]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	give us the option to pay for a better meal	[164111.txt_2_0]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing								
+	Food for lunch need to be improved	[430935.txt_1_0]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing								
+	Food in resto seems to have gone downhill	[357315.txt_1_0]						
+								
+collapsed node #15 : 1 entailment unit(s) before editing								
+	Food could be a bit better in standard leisure	[92454.txt_1_0]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing								
+	better food on train would be good	[46653.txt_9_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+Food is really poor	3	->	Poor food	15	Yes	3	1	
+Poor food	15	->	Food is really poor	3	No		0	
+								
+node pair #2:								
+food was awful	2	->	Food is really poor	3	Yes	0	1	
+Food is really poor	3	->	food was awful	2	No		0	
+								
+node pair #3:								
+Food is really poor	3	->	Food in Standard Magnum is poor	2	No	0	0	
+Food in Standard Magnum is poor	2	->	Food is really poor	3	No	0	0	"""really poor""=""very poor"""
+								
+node pair #4:								
+Food is really poor	3	->	Food in Standard Magnum is really poor	1	No	0	0	
+Food in Standard Magnum is really poor	1	->	Food is really poor	3	No	0	1	
+								
+node pair #5:								
+Food is really poor	3	->	Food could be a bit better	1	Yes	0	0	"""really poor"" does not entail ""a bit"" better"
+Food could be a bit better	1	->	Food is really poor	3	No		0	
+								
+node pair #6:								
+Food is really poor	3	->	Food could be better in standard leisure	1	No	0	0	
+Food could be better in standard leisure	1	->	Food is really poor	3	No	0	0	
+								
+node pair #7:								
+Food is really poor	3	->	Do n't like the new food	3	No	0	0	
+Do n't like the new food	3	->	Food is really poor	3	No	0	0	
+								
+node pair #8:								
+Food is really poor	3	->	It would be good to have better food in the buffet car	1	No	0	0	
+It would be good to have better food in the buffet car	1	->	Food is really poor	3	No	0	0	
+								
+node pair #9:								
+Food is really poor	3	->	Food is more or less the same every journey	1	No	0	0	
+Food is more or less the same every journey	1	->	Food is really poor	3	No	0	0	
+								
+node pair #10:								
+Food is really poor	3	->	Food is more or less the same	1	No	0	0	
+Food is more or less the same	1	->	Food is really poor	3	No	0	0	
+								
+node pair #11:								
+Food is really poor	3	->	give us the option to pay for a better meal	1	No	0	0	
+give us the option to pay for a better meal	1	->	Food is really poor	3	No	0	0	
+								
+node pair #12:								
+Food is really poor	3	->	Food for lunch need to be improved	1	No	0	0	
+Food for lunch need to be improved	1	->	Food is really poor	3	No	0	0	
+								
+node pair #13:								
+Food is really poor	3	->	Food in resto seems to have gone downhill	1	No	0	0	
+Food in resto seems to have gone downhill	1	->	Food is really poor	3	No	0	0	
+								
+node pair #14:								
+Food is really poor	3	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	Food is really poor	3	No	0	0	
+								
+node pair #15:								
+Food is really poor	3	->	better food on train would be good	1	Yes	0	0	
+better food on train would be good	1	->	Food is really poor	3	No		0	
+								
+node pair #16:								
+food was awful	2	->	Poor food	15	Yes	0	1	
+Poor food	15	->	food was awful	2	No		0	
+								
+node pair #17:								
+Food in Standard Magnum is poor	2	->	Poor food	15	Yes	2	1	
+Poor food	15	->	Food in Standard Magnum is poor	2	No		0	
+								
+node pair #18:								
+Food in Standard Magnum is really poor	1	->	Poor food	15	Yes	1	1	
+Poor food	15	->	Food in Standard Magnum is really poor	1	No		0	
+								
+node pair #19:								
+Food could be a bit better	1	->	Poor food	15	Yes	1	1	"""a bit better"" entails general dissatisfaction (to some extent) with the food "
+Poor food	15	->	Food could be a bit better	1	No		0	
+								
+node pair #20:								
+Food could be better in standard leisure	1	->	Poor food	15	Yes	1	1	
+Poor food	15	->	Food could be better in standard leisure	1	No		0	
+								
+node pair #21:								
+Do n't like the new food	3	->	Poor food	15	Yes	1	1	
+Poor food	15	->	Do n't like the new food	3	No		0	
+								
+node pair #22:								
+It would be good to have better food in the buffet car	1	->	Poor food	15	Yes	1	1	
+Poor food	15	->	It would be good to have better food in the buffet car	1	No		0	
+								
+node pair #23:								
+Food is more or less the same every journey	1	->	Poor food	15	Yes	0	0	
+Poor food	15	->	Food is more or less the same every journey	1	No		0	
+								
+node pair #24:								
+Food is more or less the same	1	->	Poor food	15	Yes	0	0	
+Poor food	15	->	Food is more or less the same	1	No		0	
+								
+node pair #25:								
+give us the option to pay for a better meal	1	->	Poor food	15	Yes	0	1	asking for an option to pay for a better meal means dissatisfaction with current meal
+Poor food	15	->	give us the option to pay for a better meal	1	No		0	
+								
+node pair #26:								
+Food for lunch need to be improved	1	->	Poor food	15	Yes	1	1	
+Poor food	15	->	Food for lunch need to be improved	1	No		0	
+								
+node pair #27:								
+Food in resto seems to have gone downhill	1	->	Poor food	15	Yes	0	1	
+Poor food	15	->	Food in resto seems to have gone downhill	1	No		0	
+								
+node pair #28:								
+Food could be a bit better in standard leisure	1	->	Poor food	15	Yes	1	1	
+Poor food	15	->	Food could be a bit better in standard leisure	1	No		0	
+								
+node pair #29:								
+Poor food	15	->	better food on train would be good	1	Yes	-1	0	
+better food on train would be good	1	->	Poor food	15	Yes	1	1	
+								
+node pair #30:								
+food was awful	2	->	Food in Standard Magnum is poor	2	No	0	0	
+Food in Standard Magnum is poor	2	->	food was awful	2	No	0	0	
+								
+node pair #31:								
+food was awful	2	->	Food in Standard Magnum is really poor	1	No	0	0	
+Food in Standard Magnum is really poor	1	->	food was awful	2	No	0	0	"""awful"" is stronger than ""really poor"" and so is not entailed here"
+								
+node pair #32:								
+food was awful	2	->	Food could be a bit better	1	No	0	0	"""awful"" does not entail a request to make the food just ""a bit"" better"
+Food could be a bit better	1	->	food was awful	2	No	0	0	
+								
+node pair #33:								
+food was awful	2	->	Food could be better in standard leisure	1	No	0	0	
+Food could be better in standard leisure	1	->	food was awful	2	No	0	0	
+								
+node pair #34:								
+food was awful	2	->	Do n't like the new food	3	No	0	0	
+Do n't like the new food	3	->	food was awful	2	No	0	0	
+								
+node pair #35:								
+food was awful	2	->	It would be good to have better food in the buffet car	1	No	0	0	
+It would be good to have better food in the buffet car	1	->	food was awful	2	No	0	0	
+								
+node pair #36:								
+food was awful	2	->	Food is more or less the same every journey	1	No	0	0	
+Food is more or less the same every journey	1	->	food was awful	2	No	0	0	
+								
+node pair #37:								
+food was awful	2	->	Food is more or less the same	1	No	0	0	
+Food is more or less the same	1	->	food was awful	2	No	0	0	
+								
+node pair #38:								
+food was awful	2	->	give us the option to pay for a better meal	1	Yes	0	0	
+give us the option to pay for a better meal	1	->	food was awful	2	No		0	
+								
+node pair #39:								
+food was awful	2	->	Food for lunch need to be improved	1	No	0	0	
+Food for lunch need to be improved	1	->	food was awful	2	No	0	0	
+								
+node pair #40:								
+food was awful	2	->	Food in resto seems to have gone downhill	1	No	0	0	
+Food in resto seems to have gone downhill	1	->	food was awful	2	No	0	0	
+								
+node pair #41:								
+food was awful	2	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	food was awful	2	No	0	0	
+								
+node pair #42:								
+food was awful	2	->	better food on train would be good	1	No	0	0	
+better food on train would be good	1	->	food was awful	2	No	0	0	
+								
+node pair #43:								
+Food in Standard Magnum is really poor	1	->	Food in Standard Magnum is poor	2	Yes	1	1	
+Food in Standard Magnum is poor	2	->	Food in Standard Magnum is really poor	1	No		0	
+								
+node pair #44:								
+Food in Standard Magnum is poor	2	->	Food could be a bit better	1	Yes	0	0	"""poor"" does not entail a request to make it just ""a bit"" better"
+Food could be a bit better	1	->	Food in Standard Magnum is poor	2	No		0	
+								
+node pair #45:								
+Food in Standard Magnum is poor	2	->	Food could be better in standard leisure	1	No	0	0	I assumed std magnum and std leisure to be differetn things
+Food could be better in standard leisure	1	->	Food in Standard Magnum is poor	2	No	0	0	
+								
+node pair #46:								
+Food in Standard Magnum is poor	2	->	Do n't like the new food	3	No	0	0	
+Do n't like the new food	3	->	Food in Standard Magnum is poor	2	No	0	0	
+								
+node pair #47:								
+Food in Standard Magnum is poor	2	->	It would be good to have better food in the buffet car	1	Yes	0	0	
+It would be good to have better food in the buffet car	1	->	Food in Standard Magnum is poor	2	No		0	
+								
+node pair #48:								
+Food in Standard Magnum is poor	2	->	Food is more or less the same every journey	1	No	0	0	
+Food is more or less the same every journey	1	->	Food in Standard Magnum is poor	2	No	0	0	
+								
+node pair #49:								
+Food in Standard Magnum is poor	2	->	Food is more or less the same	1	No	0	0	
+Food is more or less the same	1	->	Food in Standard Magnum is poor	2	No	0	0	
+								
+node pair #50:								
+Food in Standard Magnum is poor	2	->	give us the option to pay for a better meal	1	No	0	0	
+give us the option to pay for a better meal	1	->	Food in Standard Magnum is poor	2	No	0	0	
+								
+node pair #51:								
+Food in Standard Magnum is poor	2	->	Food for lunch need to be improved	1	Yes	0	0	
+Food for lunch need to be improved	1	->	Food in Standard Magnum is poor	2	No		0	
+								
+node pair #52:								
+Food in Standard Magnum is poor	2	->	Food in resto seems to have gone downhill	1	No	0	0	
+Food in resto seems to have gone downhill	1	->	Food in Standard Magnum is poor	2	No	0	0	
+								
+node pair #53:								
+Food in Standard Magnum is poor	2	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	Food in Standard Magnum is poor	2	No	0	0	
+								
+node pair #54:								
+Food in Standard Magnum is poor	2	->	better food on train would be good	1	Yes	0	1	"std magnum is a type of carrige, so it entails ""on train"""
+better food on train would be good	1	->	Food in Standard Magnum is poor	2	No		0	
+								
+node pair #55:								
+Food in Standard Magnum is really poor	1	->	Food could be a bit better	1	Yes	0	0	"really=very, it does not entail ""a bit"""
+Food could be a bit better	1	->	Food in Standard Magnum is really poor	1	No		0	
+								
+node pair #56:								
+Food in Standard Magnum is really poor	1	->	Food could be better in standard leisure	1	No	0	0	
+Food could be better in standard leisure	1	->	Food in Standard Magnum is really poor	1	No	0	0	
+								
+node pair #57:								
+Food in Standard Magnum is really poor	1	->	Do n't like the new food	3	No	0	0	
+Do n't like the new food	3	->	Food in Standard Magnum is really poor	1	No	0	0	
+								
+node pair #58:								
+Food in Standard Magnum is really poor	1	->	It would be good to have better food in the buffet car	1	Yes	0	0	
+It would be good to have better food in the buffet car	1	->	Food in Standard Magnum is really poor	1	No		0	
+								
+node pair #59:								
+Food in Standard Magnum is really poor	1	->	Food is more or less the same every journey	1	No	0	0	
+Food is more or less the same every journey	1	->	Food in Standard Magnum is really poor	1	No	0	0	
+								
+node pair #60:								
+Food in Standard Magnum is really poor	1	->	Food is more or less the same	1	No	0	0	
+Food is more or less the same	1	->	Food in Standard Magnum is really poor	1	No	0	0	
+								
+node pair #61:								
+Food in Standard Magnum is really poor	1	->	give us the option to pay for a better meal	1	No	0	0	
+give us the option to pay for a better meal	1	->	Food in Standard Magnum is really poor	1	No	0	0	
+								
+node pair #62:								
+Food in Standard Magnum is really poor	1	->	Food for lunch need to be improved	1	Yes	0	0	
+Food for lunch need to be improved	1	->	Food in Standard Magnum is really poor	1	No		0	
+								
+node pair #63:								
+Food in Standard Magnum is really poor	1	->	Food in resto seems to have gone downhill	1	No	0	0	
+Food in resto seems to have gone downhill	1	->	Food in Standard Magnum is really poor	1	No	0	0	
+								
+node pair #64:								
+Food in Standard Magnum is really poor	1	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	Food in Standard Magnum is really poor	1	No	0	0	
+								
+node pair #65:								
+Food in Standard Magnum is really poor	1	->	better food on train would be good	1	Yes	0	1	
+better food on train would be good	1	->	Food in Standard Magnum is really poor	1	No		0	
+								
+node pair #66:								
+Food could be a bit better	1	->	Food could be better in standard leisure	1	No	-1	0	
+Food could be better in standard leisure	1	->	Food could be a bit better	1	No	-1	0	
+								
+node pair #67:								
+Do n't like the new food	3	->	Food could be a bit better	1	Yes	0	0	"""a bit"" is not entailed"
+Food could be a bit better	1	->	Do n't like the new food	3	No		0	
+								
+node pair #68:								
+Food could be a bit better	1	->	It would be good to have better food in the buffet car	1	No	0	0	
+It would be good to have better food in the buffet car	1	->	Food could be a bit better	1	No	0	0	"""a bit"" is not entailed"
+								
+node pair #69:								
+Food is more or less the same every journey	1	->	Food could be a bit better	1	Yes	0	0	
+Food could be a bit better	1	->	Food is more or less the same every journey	1	No		0	
+								
+node pair #70:								
+Food could be a bit better	1	->	Food is more or less the same	1	No	0	0	
+Food is more or less the same	1	->	Food could be a bit better	1	No	0	0	
+								
+node pair #71:								
+Food could be a bit better	1	->	give us the option to pay for a better meal	1	No	0	0	
+give us the option to pay for a better meal	1	->	Food could be a bit better	1	No	0	0	"""a bit"" is not entailed"
+								
+node pair #72:								
+Food for lunch need to be improved	1	->	Food could be a bit better	1	Yes	0	0	
+Food could be a bit better	1	->	Food for lunch need to be improved	1	No		0	
+								
+node pair #73:								
+Food in resto seems to have gone downhill	1	->	Food could be a bit better	1	Yes	0	0	
+Food could be a bit better	1	->	Food in resto seems to have gone downhill	1	No		0	
+								
+node pair #74:								
+Food could be a bit better in standard leisure	1	->	Food could be a bit better	1	Yes	1	1	
+Food could be a bit better	1	->	Food could be a bit better in standard leisure	1	No		0	
+								
+node pair #75:								
+Food could be a bit better	1	->	better food on train would be good	1	Yes	0	0	
+better food on train would be good	1	->	Food could be a bit better	1	No		0	"""a bit"" is not entailed"
+								
+node pair #76:								
+Food could be better in standard leisure	1	->	Do n't like the new food	3	No	0	0	
+Do n't like the new food	3	->	Food could be better in standard leisure	1	No	0	0	
+								
+node pair #77:								
+Food could be better in standard leisure	1	->	It would be good to have better food in the buffet car	1	No	0	0	
+It would be good to have better food in the buffet car	1	->	Food could be better in standard leisure	1	No	0	0	
+								
+node pair #78:								
+Food could be better in standard leisure	1	->	Food is more or less the same every journey	1	No	0	0	
+Food is more or less the same every journey	1	->	Food could be better in standard leisure	1	No	0	0	
+								
+node pair #79:								
+Food could be better in standard leisure	1	->	Food is more or less the same	1	No	0	0	
+Food is more or less the same	1	->	Food could be better in standard leisure	1	No	0	0	
+								
+node pair #80:								
+Food could be better in standard leisure	1	->	give us the option to pay for a better meal	1	No	0	0	
+give us the option to pay for a better meal	1	->	Food could be better in standard leisure	1	No	0	0	
+								
+node pair #81:								
+Food could be better in standard leisure	1	->	Food for lunch need to be improved	1	No	0	0	
+Food for lunch need to be improved	1	->	Food could be better in standard leisure	1	No	0	0	
+								
+node pair #82:								
+Food could be better in standard leisure	1	->	Food in resto seems to have gone downhill	1	No	0	0	
+Food in resto seems to have gone downhill	1	->	Food could be better in standard leisure	1	No	0	0	
+								
+node pair #83:								
+Food could be a bit better in standard leisure	1	->	Food could be better in standard leisure	1	Yes	1	1	
+Food could be better in standard leisure	1	->	Food could be a bit better in standard leisure	1	No		0	
+								
+node pair #84:								
+Food could be better in standard leisure	1	->	better food on train would be good	1	Yes	0	1	"std leisure is a type of carrige, so it entails o""n train"""
+better food on train would be good	1	->	Food could be better in standard leisure	1	No		0	
+								
+node pair #85:								
+Do n't like the new food	3	->	It would be good to have better food in the buffet car	1	No	0	0	
+It would be good to have better food in the buffet car	1	->	Do n't like the new food	3	No	0	0	
+								
+node pair #86:								
+Do n't like the new food	3	->	Food is more or less the same every journey	1	No	0	0	
+Food is more or less the same every journey	1	->	Do n't like the new food	3	No	0	0	
+								
+node pair #87:								
+Do n't like the new food	3	->	Food is more or less the same	1	No	0	0	
+Food is more or less the same	1	->	Do n't like the new food	3	No	0	0	
+								
+node pair #88:								
+Do n't like the new food	3	->	give us the option to pay for a better meal	1	Yes	0	0	
+give us the option to pay for a better meal	1	->	Do n't like the new food	3	No		0	
+								
+node pair #89:								
+Do n't like the new food	3	->	Food for lunch need to be improved	1	No	0	0	
+Food for lunch need to be improved	1	->	Do n't like the new food	3	No	0	0	
+								
+node pair #90:								
+Food in resto seems to have gone downhill	1	->	Do n't like the new food	3	Yes	1	1	gone downhill = changed + the person does not like the changed (new) food
+Do n't like the new food	3	->	Food in resto seems to have gone downhill	1	No		0	
+								
+node pair #91:								
+Do n't like the new food	3	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	Do n't like the new food	3	No	0	0	
+								
+node pair #92:								
+Do n't like the new food	3	->	better food on train would be good	1	Yes	0	0	
+better food on train would be good	1	->	Do n't like the new food	3	No		0	
+								
+node pair #93:								
+Food is more or less the same every journey	1	->	It would be good to have better food in the buffet car	1	Yes	0	0	
+It would be good to have better food in the buffet car	1	->	Food is more or less the same every journey	1	No		0	
+								
+node pair #94:								
+It would be good to have better food in the buffet car	1	->	Food is more or less the same	1	No	0	0	
+Food is more or less the same	1	->	It would be good to have better food in the buffet car	1	No	0	0	
+								
+node pair #95:								
+It would be good to have better food in the buffet car	1	->	give us the option to pay for a better meal	1	No	0	1	buffet car is the place where one pays for a meal
+give us the option to pay for a better meal	1	->	It would be good to have better food in the buffet car	1	No	0	0	
+								
+node pair #96:								
+It would be good to have better food in the buffet car	1	->	Food for lunch need to be improved	1	No	0	0	
+Food for lunch need to be improved	1	->	It would be good to have better food in the buffet car	1	No	0	0	
+								
+node pair #97:								
+Food in resto seems to have gone downhill	1	->	It would be good to have better food in the buffet car	1	Yes	0	0	resto might refer to a restaurant at a station
+It would be good to have better food in the buffet car	1	->	Food in resto seems to have gone downhill	1	No		0	
+								
+node pair #98:								
+It would be good to have better food in the buffet car	1	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	It would be good to have better food in the buffet car	1	No	0	0	
+								
+node pair #99:								
+It would be good to have better food in the buffet car	1	->	better food on train would be good	1	Yes	0	1	
+better food on train would be good	1	->	It would be good to have better food in the buffet car	1	No		0	
+								
+node pair #100:								
+Food is more or less the same every journey	1	->	Food is more or less the same	1	Yes	1	1	
+Food is more or less the same	1	->	Food is more or less the same every journey	1	No		0	
+								
+node pair #101:								
+Food is more or less the same every journey	1	->	give us the option to pay for a better meal	1	Yes	0	0	
+give us the option to pay for a better meal	1	->	Food is more or less the same every journey	1	No		0	
+								
+node pair #102:								
+Food is more or less the same every journey	1	->	Food for lunch need to be improved	1	Yes	0	0	
+Food for lunch need to be improved	1	->	Food is more or less the same every journey	1	No		0	
+								
+node pair #103:								
+Food is more or less the same every journey	1	->	Food in resto seems to have gone downhill	1	No	0	0	
+Food in resto seems to have gone downhill	1	->	Food is more or less the same every journey	1	No	0	0	
+								
+node pair #104:								
+Food is more or less the same every journey	1	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	Food is more or less the same every journey	1	No	0	0	
+								
+node pair #105:								
+Food is more or less the same every journey	1	->	better food on train would be good	1	Yes	0	0	"I think the focus of the request is on variaty, not on general improvement of quality (though I hesitate, since ""every journey"" means ""while on train"", and the request is a request for improvement…)"
+better food on train would be good	1	->	Food is more or less the same every journey	1	No		0	
+								
+node pair #106:								
+Food is more or less the same	1	->	give us the option to pay for a better meal	1	Yes	0	0	
+give us the option to pay for a better meal	1	->	Food is more or less the same	1	No		0	
+								
+node pair #107:								
+Food is more or less the same	1	->	Food for lunch need to be improved	1	No	0	0	
+Food for lunch need to be improved	1	->	Food is more or less the same	1	No	0	0	
+								
+node pair #108:								
+Food is more or less the same	1	->	Food in resto seems to have gone downhill	1	No	0	0	
+Food in resto seems to have gone downhill	1	->	Food is more or less the same	1	No	0	0	
+								
+node pair #109:								
+Food is more or less the same	1	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	Food is more or less the same	1	No	0	0	
+								
+node pair #110:								
+Food is more or less the same	1	->	better food on train would be good	1	No	0	0	
+better food on train would be good	1	->	Food is more or less the same	1	No	0	0	
+								
+node pair #111:								
+give us the option to pay for a better meal	1	->	Food for lunch need to be improved	1	No	0	0	
+Food for lunch need to be improved	1	->	give us the option to pay for a better meal	1	No	0	0	
+								
+node pair #112:								
+give us the option to pay for a better meal	1	->	Food in resto seems to have gone downhill	1	No	0	0	
+Food in resto seems to have gone downhill	1	->	give us the option to pay for a better meal	1	No	0	1	"resto is a place where people pay for their meal, since it's gone downhill - better meal should be available there"
+								
+node pair #113:								
+give us the option to pay for a better meal	1	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	give us the option to pay for a better meal	1	No	0	0	
+								
+node pair #114:								
+give us the option to pay for a better meal	1	->	better food on train would be good	1	No	0	0	"""on train"" is not entailed"
+better food on train would be good	1	->	give us the option to pay for a better meal	1	No	0	0	
+								
+node pair #115:								
+Food in resto seems to have gone downhill	1	->	Food for lunch need to be improved	1	Yes	0	0	
+Food for lunch need to be improved	1	->	Food in resto seems to have gone downhill	1	No		0	
+								
+node pair #116:								
+Food for lunch need to be improved	1	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	Food for lunch need to be improved	1	No	0	0	
+								
+node pair #117:								
+Food for lunch need to be improved	1	->	better food on train would be good	1	Yes	0	0	"""on train"" not entailed (I don't think lunch is served / can be bought on train only)"
+better food on train would be good	1	->	Food for lunch need to be improved	1	No		0	
+								
+node pair #118:								
+Food in resto seems to have gone downhill	1	->	Food could be a bit better in standard leisure	1	No	0	0	
+Food could be a bit better in standard leisure	1	->	Food in resto seems to have gone downhill	1	No	0	0	
+								
+node pair #119:								
+Food in resto seems to have gone downhill	1	->	better food on train would be good	1	Yes	0	0	resto might be at the station
+better food on train would be good	1	->	Food in resto seems to have gone downhill	1	No		0	
+								
+node pair #120:								
+Food could be a bit better in standard leisure	1	->	better food on train would be good	1	Yes	0	1	
+better food on train would be good	1	->	Food could be a bit better in standard leisure	1	No		0	
