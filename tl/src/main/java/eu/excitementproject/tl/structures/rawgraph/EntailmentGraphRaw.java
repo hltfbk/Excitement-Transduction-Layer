@@ -623,6 +623,8 @@ public class EntailmentGraphRaw extends
 		return null;
 	}
 	
+
+	
 	
 	/**
 	 * @return true if the graph has no vertices (i.e. the graph is empty) 
@@ -1014,6 +1016,20 @@ public class EntailmentGraphRaw extends
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
 	
+	/**
+	 * Return the vertex (EntailmentUnit) with text equal to the given text, if it is found in the graph. 
+	 * Otherwise return null.
+	 * The case of the text is not ignored
+	 * @param text the text of the EntailmentUnit to be found
+	 * @return
+	 */
+	public EntailmentUnit getVertexWithExactText(String text){
+		for (EntailmentUnit eu : this.vertexSet()){
+			if (eu.getText().equals(text)) return eu;
+		}
+		return null;
+	}
+
 	/** Create an edge from sourceVertex to targetVertex using the random EDA 
 	 * No LAP is specified, which is not the case is real settings when EDA is always paired with its required LAP 
 	 * @param sourceVertex

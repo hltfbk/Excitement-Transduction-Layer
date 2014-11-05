@@ -873,7 +873,7 @@ Cleaner interior	1	->	rip off	1	No	0	0
 rip off	1	->	Cleaner interior	1	No	0	0	
 								
 node pair #201:								
-train too often delays	1	->	train delays	1	Yes	1	0	
+train too often delays	1	->	train delays	1	Yes	1	1	
 train delays	1	->	train too often delays	1	No	-1	0	
 								
 node pair #202:								
