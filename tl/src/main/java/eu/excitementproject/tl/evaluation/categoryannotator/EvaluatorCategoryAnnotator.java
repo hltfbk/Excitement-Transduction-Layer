@@ -137,7 +137,6 @@ public class EvaluatorCategoryAnnotator {
 	static GermaNet germanet;
 	static Set<String> GermaNetLexicon; 
 	static GermanWordSplitter splitter;
-	static int derivSteps;
 	static String edaName; //configurated in setup()
     
 	//CHOOSE CONFIGURATION:
@@ -181,6 +180,12 @@ public class EvaluatorCategoryAnnotator {
 	
     static boolean LuceneSearch = false;
    
+	static int derivSteps = 2;
+	static boolean useSynonymRelation = true;
+	static boolean useHypernymRelation = true;
+	static boolean useEntailsRelation = true;
+	static boolean useCausesRelation = true;
+    
     static List<String> tokenPosFilter = Arrays.asList(
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP",  "CARD"}); //"ADV" = adverb, "FM" = foreign language material
     static List<String> governorPosFilter = Arrays.asList(
@@ -306,7 +311,6 @@ public class EvaluatorCategoryAnnotator {
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;    	
-		    	//Setup for TIE 
 	        	case 1: //TIE with base configuration (inflection only)
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
 	        		configFile = new File(configFilename);
@@ -326,6 +330,8 @@ public class EvaluatorCategoryAnnotator {
 	        		configFilename = "./src/test/resources/EOP_models/fnr_de.model";
 	        		configFile = new File(configFilename);
 	        		alignmenteda = new FNR_DE(); 
+	        		edaName = "FNR_DE";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
 		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, alignmenteda);
@@ -364,7 +370,7 @@ public class EvaluatorCategoryAnnotator {
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;	
 	        	case 102: //SimpleEDA_DE, LEMMA + CONVERSION + GERMANET
-	        		eda = new SimpleEDA_DE(pathToGermaNet);
+	        		eda = new SimpleEDA_DE(pathToGermaNet, useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 	        		edaName = "SEDA";
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
@@ -403,7 +409,8 @@ public class EvaluatorCategoryAnnotator {
 		    		break;
 	        	case 105: //SimpleEDA_DE, LEMMA + CONVERSION + DERIVATION + GERMANET (2 derivation steps, no POS in query)
 	        		derivSteps = 2;
-	        		eda = new SimpleEDA_DE(derivSteps, pathToGermaNet);
+	        		eda = new SimpleEDA_DE(derivSteps, pathToGermaNet, 
+	        				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 	        		edaName = "SEDA";
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
@@ -417,7 +424,8 @@ public class EvaluatorCategoryAnnotator {
 	        	case 106: //SimpleEDA_DE, LEMMA + DECOMPOSITION + DERIVATION + GERMANET (2 derivation steps, no POS in query)
 	        		splitter = new GermanWordSplitter();
 	        		derivSteps = 2;
-	        		eda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet);
+	        		eda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet, 
+	        				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 	        		edaName = "SEDA";
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
@@ -449,7 +457,8 @@ public class EvaluatorCategoryAnnotator {
 	        		inputMergedGraphFileName = "src/main/resources/exci/omq/graphs/omq_public_FOLD_merged_graph_101_1_TF_tfidf_SEDA.xml";
 	        		splitter = new GermanWordSplitter();
 	        		derivSteps = 2;
-	        		eda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet);
+	        		eda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet, 
+	        				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 	        		edaName = "SEDA";
 	        		fragmentTypeNameGraph = "DF";
 	        		fragmentTypeNameEval = "TDF";
