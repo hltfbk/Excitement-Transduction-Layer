@@ -96,17 +96,7 @@ public class BapLexicalExpander extends AbstractLexicalExpander {
 	@Override
 	public HashMap<String, Double> getUnfilteredExpansions(String lemma) throws Exception {
 		HashMap<String, Double> expansions = new HashMap<String, Double>();
-
-	/*	PartOfSpeech n = new BySimplerCanonicalPartOfSpeech(SimplerCanonicalPosTag.NOUN);
-		PartOfSpeech v = new BySimplerCanonicalPartOfSpeech(SimplerCanonicalPosTag.VERB);
-		PartOfSpeech a = new BySimplerCanonicalPartOfSpeech(SimplerCanonicalPosTag.ADJECTIVE);
-*/
-			expansions.putAll(getUnfilteredExpansions(lemma,null));
-		/*	expansions.putAll(getExpansions(lemma,n));
-			expansions.putAll(getExpansions(lemma,v));
-			expansions.putAll(getExpansions(lemma,a)); */
-		
-	//	if (lemma.contains(" ")) System.out.println(lemma+" >> "+expansions);
+		expansions.putAll(getUnfilteredExpansions(lemma,null));
 		return expansions;
 	}
 }

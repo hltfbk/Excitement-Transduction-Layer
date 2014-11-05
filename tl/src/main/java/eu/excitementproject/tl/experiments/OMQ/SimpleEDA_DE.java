@@ -23,8 +23,6 @@ import eu.excitementproject.eop.core.component.lexicalknowledge.derivbase.DerivB
 import eu.excitementproject.eop.core.component.lexicalknowledge.dewakdistributional.GermanDistSim;
 import eu.excitementproject.eop.core.component.lexicalknowledge.germanet.GermaNetWrapper;
 import eu.excitementproject.eop.core.component.lexicalknowledge.transDm.GermanTransDmResource;
-import eu.excitementproject.tl.laputils.CachedLAPAccess;
-import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 
 /**
  * SimpleEDA_DE returns reliable entailment decisions for very short text fragments. 
@@ -46,7 +44,10 @@ public class SimpleEDA_DE implements EDABasic<ClassificationTEDecision> {
 	//TODO: replace by dkpro decompunder?
 	private GermanWordSplitter splitter;
 	//TODO: integrate similarity measure resources (GermanTransDmResource and GermanDistSim)
+	@SuppressWarnings("unused")
 	private GermanTransDmResource gtdm;
+	
+	@SuppressWarnings("unused")
 	private GermanDistSim gds;
 	private static Logger logger = Logger.getLogger("SimpleEDA_DE");
 	

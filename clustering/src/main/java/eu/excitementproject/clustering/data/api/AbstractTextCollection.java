@@ -35,19 +35,7 @@ public abstract class AbstractTextCollection implements TextCollection {
 	protected  Map<String, List<Integer>> m_docIdsPerGoldCluster = null;
 	protected  Map<Integer, List<String>> m_goldClustersPerDocId = null;
 	
-	protected PairMap<String, Double> m_termSemanticRelatednessMap = null; // [(term, term)] [relatedness confidence] 
-	
-/*	*//**
-	 * This map shows in how many different documents (original texts) each term occurs. The map should also contain the expansions, which did not occur in any original text, with zero frequency. 
-	 *//*
-	protected  Map<String, Integer> m_originalTermDocumentFrequencies = null; // values of DF (in how many original documents a term occurred)
-
-	*//**
-	 * This map shows in how many different documents (expanded texts) each term occurs. 
-	 *//*
-	protected  Map<String, Integer> m_expandedTermDocumentFrequencies = null; // values of DF (in how many expanded documents a term occurred)
-*/
-	
+	protected PairMap<String, Double> m_termSemanticRelatednessMap = null; // [(term, term)] [relatedness confidence] 	
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
@@ -158,14 +146,7 @@ public abstract class AbstractTextCollection implements TextCollection {
 		else{
 			termDocCounts.put(term, termDocCounts.get(term)+count);
 		}
-		m_originalTermsByDocId.put(docId, termDocCounts);
-		
-/*		int termFreq=1; //termFreq shows in how many different docs this term occurs
-		if (m_originalTermDocumentFrequencies.containsKey(term)){
-			termFreq+=m_originalTermDocumentFrequencies.get(term);
-		}
-		m_originalTermDocumentFrequencies.put(term, termFreq);
-*/	
+		m_originalTermsByDocId.put(docId, termDocCounts);		
 	}
 	
 	
@@ -208,13 +189,6 @@ public abstract class AbstractTextCollection implements TextCollection {
 			termDocValues.put(expansionTerm, getConfidence(termDocValues.get(expansionTerm),confidence));
 		}
 		m_expansionTermsByDocId.put(docId, termDocValues);
-
-/*		int termFreq=0; //termFreq shows in how many different docs this term occurs, should be initialized as 0 here since expansions are not seen (a priori) in any documents
-		if (m_originalTermDocumentFrequencies.containsKey(expansionTerm)){
-			termFreq+=m_originalTermDocumentFrequencies.get(expansionTerm);
-		}
-		m_originalTermDocumentFrequencies.put(expansionTerm, termFreq); // We add expansions to this map to have the whole dictionary. Terms not seen in any of the original texts will have zero frequency
-*/
 	}
 
 	/**

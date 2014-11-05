@@ -34,149 +34,57 @@ import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.demo.DemoUseCase1NICEEnglish;
+import eu.excitementproject.tl.demo.DemoUseCaseOneFromXMIsNICEEnglish;
+import eu.excitementproject.tl.edautils.EDAUtils;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
+import eu.excitementproject.tl.laputils.DataUtils;
+import eu.excitementproject.tl.laputils.LAPUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
 @SuppressWarnings("unused")
 public class UseCaseOneDemo {
 
-	private final Logger logger = Logger.getLogger(this.getClass());
-
-	protected File configFile;
-	protected CommonConfig config = null;
-	protected CachedLAPAccess lap;
-	protected EDABasic<?> eda;
-	protected UseCaseOneRunnerPrototype useOne;
-	protected EntailmentGraphCollapsed graph;
-	protected List<JCas> docs;
-	
-	public UseCaseOneDemo(String configFileName, String dataDir, int fileNumberLimit, String outputFolder, Class<?> lapClass, Class<?> edaClass) {
-		
-		// turning on Log4J, with INFO level logs 
-		BasicConfigurator.resetConfiguration(); 
-		BasicConfigurator.configure(); 
-		Logger.getRootLogger().setLevel(Level.INFO); 
-		
-		try {
-			configFile = new File(configFileName);
-			config = new ImplCommonConfig(configFile);
-			
-			docs = loadData(dataDir, fileNumberLimit);
-
-			initializeLap(lapClass);
-			initializeEDA(edaClass);
-
-			// prepare the output folder
-			File theDir = new File(outputFolder);
-			// if the directory does not exist, create it
-			if (!theDir.exists())
-			{
-		      logger.info("creating directory: " + outputFolder);
-		      boolean result = theDir.mkdir();  
-		      if(result){    
-		         logger.info("DIR created");  
-		      } else {
-		    	  System.err.println("Could not create the output directory. No output files will be created."); 
-		    	  outputFolder=null;
-		      }
-			}
-
-			// initialize use case one runner
-			useOne = new UseCaseOneRunnerPrototype(lap, eda, outputFolder);
-			
-			// build collapsed graph
-			graph = useOne.buildCollapsedGraph(docs);
-			
-		} catch (ConfigurationException | EDAException | ComponentException | TransformerException |
-				FragmentAnnotatorException | FragmentGraphGeneratorException | 
-				ModifierAnnotatorException | EntailmentGraphRawException | 
-				GraphMergerException | GraphOptimizerException | IOException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	private void initializeLap(Class<?> lapClass) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		// initialize the lap
-		LAPAccess lapAc = null;
-		if (lapClass.getName().contains("BIUFullLAP")){			
-			try {
-				//Constructor<?> lapClassConstructor = lapClass.getConstructor(CommonConfig.class);
-				//lapAc = (LAPAccess) lapClassConstructor.newInstance(config);
-				lapAc = new BIUFullLAP(config); 
-			} catch (ConfigurationException | LAPException e) {
-				e.printStackTrace();
-			}
-		}
-		else{ // if not BIUFullLAP
-			Constructor<?> lapClassConstructor = lapClass.getConstructor();
-			lapAc = (LAPAccess) lapClassConstructor.newInstance();
-		}
-
-		try {
-			lap = new CachedLAPAccess(lapAc);
-		} catch (LAPException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-	private void initializeEDA(Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException {
-		// initialize the eda			
-		Constructor<?> edaClassConstructor = edaClass.getConstructor();
-		eda = (EDABasic<?>) edaClassConstructor.newInstance();
-		eda.initialize(config);		
-	}
-
-
-	private List<JCas> loadData(String dataDir, int fileNumberLimit) {
-	
-		List<JCas> docs = new ArrayList<JCas>();
-		File dir = new File(dataDir);
-	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constructor
-
-		//File f;
-		JCas aJCas;
-
-		try {
-			int i =0;
-			for (File f : dir.listFiles()) {
-				i++; 
-				if (i>fileNumberLimit) break;
-				//		f = new File(name); 
-				aJCas = CASUtils.createNewInputCas(); 
-				CASUtils.deserializeFromXmi(aJCas, f); 
-				docs.add(aJCas);
-			}
-		} catch (Exception e) {
-			logger.info("Problems loading data from directory " + dataDir);
-			e.printStackTrace();
-		}
-		return docs;
-	}
-	
-	public void inspectResults() {
-		try {
-			useOne.inspectGraph(graph);
-		} catch (IOException | TransformerException | EntailmentGraphCollapsedException e) {
-			// TODO Auto-generated catch block
-			logger.info("Error inspecting results");
-			e.printStackTrace();
-		}
-	}
 		
 	public static void main(String[] argv) {
 		
 		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
-		String dataDir = "./src/test/resources/WP2_public_data_CAS_XMI/nice_email_1";
+		String dataDir = "./src/test/resources/NICE/XMIs/EMAIL0001";
 		String outputFolder = "./src/test/outputs/"+dataDir.replace(".\\src\\test\\resources\\","").replace("\\","/");
 		int fileNumberLimit = 4;
 		
-		UseCaseOneDemo demoEN = new UseCaseOneDemo(configFileName, dataDir, fileNumberLimit, outputFolder, TreeTaggerEN.class, MaxEntClassificationEDA.class);
-		demoEN.inspectResults();
+		Logger logger = Logger.getLogger(UseCaseOneDemo.class);
+
+		
+		BasicConfigurator.resetConfiguration(); 
+		BasicConfigurator.configure(); 
+		Logger.getRootLogger().setLevel(Level.INFO); 
+		
+			
+		UseCaseOneRunnerPrototype useOne;
+		try {
+			useOne = new UseCaseOneRunnerPrototype(configFileName, outputFolder, TreeTaggerEN.class, MaxEntClassificationEDA.class);
+			
+			
+			List<JCas> docs = DataUtils.loadData(dataDir, fileNumberLimit);
+
+			// build collapsed graph
+			EntailmentGraphCollapsed graph = useOne.buildCollapsedGraph(docs);
+			useOne.inspectGraph(graph);
+
+		} catch (ConfigurationException | NoSuchMethodException
+				| SecurityException | InstantiationException
+				| IllegalAccessException | IllegalArgumentException
+				| InvocationTargetException | EDAException | ComponentException
+				| FragmentAnnotatorException | ModifierAnnotatorException
+				| GraphMergerException | GraphOptimizerException | FragmentGraphGeneratorException | IOException | EntailmentGraphRawException | TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (EntailmentGraphCollapsedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

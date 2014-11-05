@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
@@ -375,4 +376,3 @@ public class DemoUseCase2OMQGermanNew {
 		catAnot = new CategoryAnnotatorAllCats();
 	}
 }
-
