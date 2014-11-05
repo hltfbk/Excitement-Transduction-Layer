@@ -464,16 +464,18 @@ public class GoldStandardReannotation {
 		
 		for (EntailmentRelation e : decollapsedEdges){	
 			decollapsedEgdesStr.add(e.getSource().getText()+"->"+e.getTarget().getText());
-			// debug part
-			if (e.getSource().getText().equals("leg room is uncomfortable for someone of 187 cm")){
-				if (e.getTarget().getText().equals("leg room is abit uncomfortable")){
+			
+			EntailmentUnit rs = rfg.getVertexWithExactText(e.getSource().getText());
+			EntailmentUnit rt = rfg.getVertexWithExactText(e.getTarget().getText());
+
+/*			// debug part
+			if (e.getSource().getText().equals("tickets are too expensive")){
+				if (e.getTarget().getText().equals("tickets are expensive")){
 					System.err.println("!!!! "+e);
 				}
 			} // end debug part
-			
-			EntailmentUnit rs = rfg.getVertexWithText(e.getSource().getText());
-			EntailmentUnit rt = rfg.getVertexWithText(e.getTarget().getText());
-			for (EntailmentRelation fge : rfg.getAllEdges(rs, rt)){
+*/			
+			for (EntailmentRelation fge : rfg.getAllEdges(rs, rt)){				
 				if (fge.getLabel().is(DecisionLabel.NonEntailment)){
 					isConsistent = false;
 					System.err.println("Edge added into Fragment Graph: "+ e);	
@@ -494,7 +496,7 @@ public class GoldStandardReannotation {
 			if (fge.getLabel().is(DecisionLabel.NonEntailment)) continue;
 			String es = fge.getSource().getText()+"->"+fge.getTarget().getText();
 			if (!decollapsedEgdesStr.contains(es)){
-				System.out.println("Edge <<"+ es +">> was removed from a FG!");
+				System.err.println("Not consistent: Edge <<"+ es +">> was removed from a FG.");
 				isConsistent = false;
 			}
 		}
@@ -505,7 +507,7 @@ public class GoldStandardReannotation {
 
 		ourCg.toDOT("C:/Users/Lili/My Documents/_graphs/"+txtFileReannotated.getName()+"_graph.dot.txt");
 		
-		return true;
+		return isConsistent;
 	}
 	
 		private EntailmentRelationCollapsed getReannotatedEdge(String line) throws Exception{
@@ -744,12 +746,12 @@ public class GoldStandardReannotation {
 	//	String clusterName = "EMAIL0002";		
 	//	String clusterName = "SPEECH0080";		
 
-	String[] single = {"EMAIL0390"};
+	String[] single = {"EMAIL0120"};
 
 	String stat="";
-	for (String clusterName : testsetIt){
-		String set = "Test";
-//		 String set = "Dev";
+	for (String clusterName : devsetIt){
+//		String set = "Test";
+		 String set = "Dev";
 		
 //		String suffix = "Reconciled";
 //		String suffix = "LB";

@@ -3236,7 +3236,7 @@ Food choice is sometimes weird	1	->	Hot meal on all trips	1	No	0	0
 Hot meal on all trips	1	->	Food choice is sometimes weird	1	No	0	0	
 								
 node pair #800:								
-Food is a bit boring	1	->	Food is boring	1	Yes	1	0	
+Food is a bit boring	1	->	Food is boring	1	Yes	1	1	
 Food is boring	1	->	Food is a bit boring	1	No	-1	0	
 								
 node pair #801:								
