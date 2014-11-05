@@ -8,6 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import javax.xml.transform.TransformerException;
 
+import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_IT;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
@@ -84,7 +85,8 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 		RANDOM,
 		PROBABILISTIC,
 		TIE_POS,
-		EDIT_DIST
+		EDIT_DIST,
+		P1EDA
 	}
 	
 	public static ExperimentAlmaPerCluster initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
@@ -126,7 +128,15 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 					MaxEntClassificationEDA.class
 					);
 		}
-			
+		
+		if (edaName.equals(EdaName.P1EDA)) {
+			return new ExperimentAlmaPerCluster(
+					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_IT.xml",
+					dataDir, fileLimit, outDir,
+					TreeTaggerIT.class,
+					FNR_IT.class
+					);
+		}
 		
 		return null;
 	}
@@ -155,7 +165,7 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 		File gsDir = new File(gsAnnotationsDir);
 
 //	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
-		EdaName[] names = {EdaName.EDIT_DIST};
+		EdaName[] names = {EdaName.P1EDA};
 //		EdaName[] names = {EdaName.TIE_POS};	
 	
 	for(EdaName name : names)	

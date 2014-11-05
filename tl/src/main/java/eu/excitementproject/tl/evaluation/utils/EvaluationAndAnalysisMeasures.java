@@ -16,11 +16,11 @@ public class EvaluationAndAnalysisMeasures extends EvaluationMeasures{
 	Integer overallEdges;		
 
 	public void init(){
-		this.violations = null;
-		this.extraFGedges = null;
-		this.missingFGedges = null;
-		this.edaCalls = null;
-		this.overallEdges=null;
+		this.violations = 0;
+		this.extraFGedges = 0;
+		this.missingFGedges = 0;
+		this.edaCalls = 0;
+		this.overallEdges=0;
 	}
 	
 	public EvaluationAndAnalysisMeasures() {
