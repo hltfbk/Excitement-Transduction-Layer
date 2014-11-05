@@ -142,6 +142,9 @@ public class DemoUseCase2OMQGermanNew {
 	static boolean bestNodeOnly = true; 
 	static char documentFrequencyQuery = 'd';
 	static char termFrequencyQuery = 'n';
+	
+	static double confidenceThresholdAlignment = 0.9;
+	static double confidenceThresholdSEDA = 0.9;
 
 	public static void main(String[] args) {
 		
@@ -176,7 +179,7 @@ public class DemoUseCase2OMQGermanNew {
 		EntailmentGraphCollapsed twoTokenCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed sentenceCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed finalCollapsedGraph = new EntailmentGraphCollapsed();
-		int blockSize = 100;
+		int blockSize = 2;
 		JCas cas = null;
 		try {
 			cas = CASUtils.createNewInputCas();
@@ -187,6 +190,7 @@ public class DemoUseCase2OMQGermanNew {
 		List<Interaction> interactionList = new ArrayList<Interaction>();
 		for (Interaction doc : docs) { //for each interaction
 			interactionList.add(doc);
+			if (interactionList.size() > 4) break; //TODO: Remove (Debugging!)
 		}
 		logger.info("Number of documents: " + interactionList.size());
 		int countFrags = 0;
@@ -201,7 +205,7 @@ public class DemoUseCase2OMQGermanNew {
 				int countPositive = 0;
 				int countProcessed = 0;
 				String mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(finalCollapsedGraph);
-				for (int j=i; j<((i+1)*blockSize) && j<interactionList.size(); j++) { //for each interaction in the current block
+				for (int j=i; j<(countBlocks*blockSize) && j<interactionList.size(); j++) { //for each interaction in the current block
 					countDocs++;
 					countProcessed++;
 					try {
@@ -226,57 +230,65 @@ public class DemoUseCase2OMQGermanNew {
 				accuracyPerBlock.put(countBlocks, new Double(accuracy));
 			}
 			/** Step 3: Extend graph with documents in current block */
-			for (int j=i; j<((i+1)*blockSize) && j<interactionList.size(); j++) { //for each interaction in the current block
+			Set<FragmentGraph> fragmentGraphsAllDependencies = new HashSet<FragmentGraph>();
+			Set<FragmentGraph> fragmentGraphsAllSentences = new HashSet<FragmentGraph>();
+			for (int j=i; j<(countBlocks*blockSize) && j<interactionList.size(); j++) { //for each interaction in the current block
 				Interaction doc = interactionList.get(j);
-				doc.fillInputCAS(cas);
 				/** Step 3a: Build token graph */
 				try {
-					fragAnotLemma.annotateFragments(cas);
-					Set<FragmentGraph> fragmentGraphs = fragGen.generateFragmentGraphs(cas);
-					for (FragmentGraph fg : fragmentGraphs) {
-						countFrags++;
-						logger.info("Merging " + fg.getCompleteStatement());
-						for(EntailmentUnitMention eum: fg.vertexSet()){
-							//add mention to raw graph
-							singleTokenGraph.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
-							EntailmentUnit aEU = singleTokenGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
-							for(EntailmentUnit bEU : singleTokenGraph.vertexSet()){
-								if(!singleTokenGraph.isEntailmentInAnyDirection(aEU, bEU)){
-									if(!bEU.getTextWithoutDoubleSpaces().equalsIgnoreCase(aEU.getTextWithoutDoubleSpaces()) 
-											&& bEU.getLemmatizedText().equalsIgnoreCase(aEU.getLemmatizedText())){
-										singleTokenGraph.addEdgeByInduction(aEU, bEU, DecisionLabel.Entailment, 0.98);
-										singleTokenGraph.addEdgeByInduction(bEU, aEU, DecisionLabel.Entailment, 0.98);
-										break;
+					//doc.fillInputCAS(cas);
+					List<JCas> cases = doc.createAndFillInputCASes(relevantTextProvided);
+					for (JCas casGraph : cases) {
+						fragAnotLemma.annotateFragments(casGraph);
+						Set<FragmentGraph> fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
+						for (FragmentGraph fg : fragmentGraphs) {
+							countFrags++;
+							logger.info("Merging " + fg.getCompleteStatement());
+							for(EntailmentUnitMention eum: fg.vertexSet()){
+								//add mention to raw graph
+								singleTokenGraph.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
+								EntailmentUnit aEU = singleTokenGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
+								for(EntailmentUnit bEU : singleTokenGraph.vertexSet()){
+									if(!singleTokenGraph.isEntailmentInAnyDirection(aEU, bEU)){
+										if(!bEU.getTextWithoutDoubleSpaces().equalsIgnoreCase(aEU.getTextWithoutDoubleSpaces()) 
+												&& bEU.getLemmatizedText().equalsIgnoreCase(aEU.getLemmatizedText())){
+											singleTokenGraph.addEdgeByInduction(aEU, bEU, DecisionLabel.Entailment, 0.98);
+											singleTokenGraph.addEdgeByInduction(bEU, aEU, DecisionLabel.Entailment, 0.98);
+											break;
+										}
 									}
 								}
 							}
 						}
+						/** Step3b: Build fragments for two-token dependency graph (calling SEDA) */
+						casGraph.reset();
+						doc.fillInputCAS(casGraph);
+						fragAnotDependency.annotateFragments(casGraph);
+						fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
+						fragmentGraphsAllDependencies.addAll(fragmentGraphs);
+						/** Step3c: Build fragments for sentence graph (calling alignment EDA) */
+						casGraph.reset();
+						doc.fillInputCAS(casGraph);
+						fragAnotSentence.annotateFragments(casGraph);
+						fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
+						fragmentGraphsAllSentences.addAll(fragmentGraphs);
 					}
-					/** Step3b: Build two-token dependency graph (calling SEDA) */
-					cas.reset();
-					doc.fillInputCAS(cas);
-					fragAnotDependency.annotateFragments(cas);
-					fragmentGraphs = fragGen.generateFragmentGraphs(cas);
-					graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, seda); 
-					graphMerger.setEntailmentConfidenceThreshold(0.51);
-					for (FragmentGraph fg : fragmentGraphs) {
-						logger.info("Merging " + fg.getCompleteStatement());
-						twoTokenGraph = graphMerger.mergeGraphs(fg, twoTokenGraph);
-					}
-					/** Step3c: Build sentence graph (calling alignment EDA) */
-					cas.reset();
-					doc.fillInputCAS(cas);
-					fragAnotSentence.annotateFragments(cas);
-					fragmentGraphs = fragGen.generateFragmentGraphs(cas);
-					graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, alignmenteda); 
-					for (FragmentGraph fg : fragmentGraphs) { 
-						logger.info("Merging " + fg.getCompleteStatement());
-						sentenceGraph = graphMerger.mergeGraphs(fg, sentenceGraph);
-					}
-				} catch (FragmentAnnotatorException | FragmentGraphGeneratorException | GraphMergerException | LAPException e) {
+				} catch (FragmentAnnotatorException | FragmentGraphGeneratorException | LAPException e) {
 					e.printStackTrace();
 					System.exit(1);
 				}
+				try {
+					/** Step3d: Merge fragments into two-token dependency graph (calling SEDA) */					
+					graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, seda);
+					graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdSEDA);
+					twoTokenGraph = graphMerger.mergeGraphs(fragmentGraphsAllDependencies, twoTokenGraph);
+					/** Step3e: Merge fragments into sentence graph (calling alignment EDA) */					
+					graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, alignmenteda); 
+					graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdAlignment);
+					sentenceGraph = graphMerger.mergeGraphs(fragmentGraphsAllSentences, sentenceGraph);					
+				} catch (GraphMergerException | LAPException e) {
+					e.printStackTrace();
+				} 
 			}
 			try {
 				finalCollapsedGraph = new EntailmentGraphCollapsed();
@@ -363,4 +375,3 @@ public class DemoUseCase2OMQGermanNew {
 		catAnot = new CategoryAnnotatorAllCats();
 	}
 }
-
