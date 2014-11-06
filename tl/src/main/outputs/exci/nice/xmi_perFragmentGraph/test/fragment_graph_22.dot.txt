@@ -1,0 +1,3 @@
+digraph rawGraph {
+"leg room in 2nd class is less than that of Thays trains" -> "leg room is less than that of Thays trains" [label=1] [color=green]
+}

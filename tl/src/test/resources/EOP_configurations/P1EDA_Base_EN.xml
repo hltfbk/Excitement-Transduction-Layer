@@ -13,7 +13,7 @@
 	
 <!--	<section name="eu.excitementproject.eop.alignmentedas.p1eda.instances.SimpleWordCoverageEN"> -->
 	<section name="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN">
-		<property name="modelFile">./src/test/resources/EOP_models/P1EDA_Base_EN.model</property>
+		<property name="modelFile">C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/P1EDA_Base_EN.model</property>
 		<property name="trainDir">/tmp/eop-eda-exp/tl/NICE/dev/</property>
 		<property name="testDir">/tmp/eop-eda-exp/tl/NICE/test/</property>
 	</section>
