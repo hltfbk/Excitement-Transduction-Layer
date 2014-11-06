@@ -1,8 +1,8 @@
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
-
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -53,8 +53,8 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorExcepti
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotator;
 //import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
@@ -102,6 +102,9 @@ public class DemoUseCase2OMQGerman {
 
 	static boolean keywordsProvided = true; //if true: input dataset contains keyword metadata
 	static boolean relevantTextProvided = false; //if true; input dataset contains relevantText annotation
+	
+	static List<String> tokenPosFilter = Arrays.asList(
+    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP",  "CARD"}); //"ADV" = adverb, "FM" = foreign language material
 	
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGerman.class.getName());
 
@@ -155,7 +158,7 @@ public class DemoUseCase2OMQGerman {
 		
 		//add fragment annotation
 //		FragmentAnnotator fa = new SentenceAsFragmentAnnotator(lap); 
-		FragmentAnnotator fa = new TokenAsFragmentAnnotatorForGerman(lap); 
+		FragmentAnnotator fa = new TokenAsFragmentAnnotator(lap, tokenPosFilter); 
 		fa.annotateFragments(cas);
 		
 		//add modifier annotation
@@ -289,7 +292,7 @@ public class DemoUseCase2OMQGerman {
 		} else { //sentence-based fragment annotation
 			lap = new CachedLAPAccess(new LemmaLevelLapDE()); 
 			//fragAnot = new SentenceAsFragmentAnnotator(lap);
-			fragAnot = new TokenAsFragmentAnnotatorForGerman(lap);
+			fragAnot = new TokenAsFragmentAnnotator(lap, tokenPosFilter);
 			logger.info("Using sentence-as-fragment annotator.");
 		}
 		modAnot = new AdvAsModifierAnnotator(lap); 		
