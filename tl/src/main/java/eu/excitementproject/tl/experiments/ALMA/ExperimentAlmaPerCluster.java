@@ -29,15 +29,11 @@ import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGrap
 import eu.excitementproject.tl.edautils.ProbabilisticEDA;
 import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
-import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.experiments.ResultsContainer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
-import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 //import javax.xml.transform.TransformerException;
 //import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
 //import eu.excitementproject.eop.core.EditDistanceEDA;
@@ -201,11 +197,21 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 				e2.printStackTrace();
 			} 
 				
-			
-			for (double confidenceThreshold : e.getConfidenceThresholds()){
+			// changed by Lili 6.11.14 to evaluate the same configurations as in NICE experiments
+			for (Double confidenceThreshold : e.getConfidenceThresholds()){
+				// apply threshold - this is the "local" graph for all-pairs merging
 				EntailmentGraphRaw rawGraphWithThreshold = e.applyThreshold(rawGraph, confidenceThreshold);
+				EntailmentGraphCollapsed rawGraphWithThresholdCollapsed = e.collapseGraph(rawGraphWithThreshold);
+
+				String setting =name +" " + "local-without-FG "+clusterDir;
+				try {
+					rawGraphWithThreshold.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_allPair.dot");
+					rawGraphWithThresholdCollapsed.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_allPair_collapsed.dot");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
-				String setting =name +" " + "raw-without-FG "+clusterDir;
 				System.out.println("### "+ setting+ "###");
 				System.out.println(rawGraphWithThreshold.toString());
 				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(rawGraphWithThreshold, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
@@ -214,24 +220,6 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(rawGraphWithThreshold);
 					res.setViolations(consistencyCheck.getViolations());
 					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
-					res.setMissingFGedges(consistencyCheck.getMissingFGedges());					
-					res.setEdaCalls(e.getEdaCallsNumber());
-				} catch (GraphEvaluatorException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				e.addResult(setting, confidenceThreshold, res);
-				combinedExperimet.addResult(setting, confidenceThreshold, res);
-				
-				setting =name +" " + "raw-with-FG "+clusterDir;
-				System.out.println("### "+ setting+ "###");
-				System.out.println(rawGraphWithThreshold.toString());
-				res = e.evaluateRawGraph(rawGraphWithThreshold, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(rawGraphWithThreshold);
-					res.setViolations(consistencyCheck.getViolations());
-					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
 					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
 					res.setEdaCalls(e.getEdaCallsNumber());
 
@@ -242,53 +230,21 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 				e.addResult(setting, confidenceThreshold, res);
 				combinedExperimet.addResult(setting, confidenceThreshold, res);
 
-				// now optimize the graph with global optimizer
-				setting =name +" " + "global-raw-optimized-FG "+clusterDir;
-				EntailmentGraphCollapsed globalOptimizedGraph = e.collapseGraph(rawGraphWithThreshold, globalOptimizer);
-				System.out.println("### "+ setting+ "###");
-				res = e.evaluateCollapsedGraph(globalOptimizedGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(globalOptimizedGraph);
-					res.setViolations(consistencyCheck.getViolations());
-					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
-					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
-					res.setEdaCalls(e.getEdaCallsNumber());
-				} catch (GraphEvaluatorException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}				
-				e.addResult(setting, confidenceThreshold, res);
-				combinedExperimet.addResult(setting, confidenceThreshold, res);
-
-	
-				// now get plusClosure graph for current m_rawGraph (with confidence threshold applied)
+				// now get plusClosure graph for current rawGraphWithThreshold  - this is the "localClosure" graph for wp2 merging
+				setting =name +" " + "localClosure-without-FG "+clusterDir;
 				EntailmentGraphRaw plusClosureRawGraph = e.getPlusClosureGraph(rawGraphWithThreshold);
-				
-				// now optimize the graph with global optimizer
-				setting =name +" " + "global-plusClosure-optimized-FG "+clusterDir;
-				globalOptimizedGraph = e.collapseGraph(plusClosureRawGraph, globalOptimizer);
-				System.out.println("### "+ setting+ "###");
-				res = e.evaluateCollapsedGraph(globalOptimizedGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				EntailmentGraphCollapsed plusClosureCollapsedGraph = e.collapseGraph(plusClosureRawGraph);
 				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(globalOptimizedGraph);
-					res.setViolations(consistencyCheck.getViolations());
-					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
-					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
-					res.setEdaCalls(e.getEdaCallsNumber());
-				} catch (GraphEvaluatorException e1) {
+					plusClosureRawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_allPairs.dot");
+					plusClosureCollapsedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_allPairs_collapsed.dot");
+				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}				
-				e.addResult(setting, confidenceThreshold, res);
-				combinedExperimet.addResult(setting, confidenceThreshold, res);
-
-
-				setting =name +" " + "plusClosure-raw-with-FG "+clusterDir;
+				}
+				
 				System.out.println("### "+ setting+ "###");
 				System.out.println(plusClosureRawGraph.toString());
-				res = e.evaluateRawGraph(plusClosureRawGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);		
+				res = e.evaluateRawGraph(plusClosureRawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
 				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
 					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(plusClosureRawGraph);
@@ -303,83 +259,24 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 				}
 				e.addResult(setting, confidenceThreshold, res);
 				combinedExperimet.addResult(setting, confidenceThreshold, res);
-
 				
-				setting =name +" " + "plusClosure-raw-without-FG "+clusterDir;
-				System.out.println("### "+ setting+ "###");
-				System.out.println(plusClosureRawGraph.toString());
-				res = e.evaluateRawGraph(plusClosureRawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				
+				// now optimize the local graph with global optimizer
+				setting =name +" " + "local+global-without-FG "+clusterDir;
+				EntailmentGraphCollapsed localGloballyOptimizedGraph = e.collapseGraph(rawGraphWithThreshold, globalOptimizer);
+				
 				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(rawGraphWithThreshold);
-					res.setViolations(consistencyCheck.getViolations());
-					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
-					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
-					res.setEdaCalls(e.getEdaCallsNumber());
-
-				} catch (GraphEvaluatorException e1) {
+					localGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local+global_allPairs_collapsed.dot");
+				} catch (IOException  e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}
-				e.addResult(setting, confidenceThreshold, res);
-				combinedExperimet.addResult(setting, confidenceThreshold, res);
+				}								
 				
-				EntailmentGraphCollapsed cgr = e.collapseGraph(plusClosureRawGraph);
-
-				setting =name +" " + "clique-FG "+clusterDir; //plusClosure-collapsed+closure
 				System.out.println("### "+ setting+ "###");
-				cgr.applyTransitiveClosure(false);
-				for (EntailmentRelationCollapsed cole : cgr.edgeSet()){
-					if (!cole.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) cole.setEdgeType(EdgeType.UNKNOWN);
-				}
-				System.out.println(cgr.toString());
-				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);
+				res = e.evaluateCollapsedGraph(localGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
 				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
-					res.setViolations(consistencyCheck.getViolations());
-					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
-					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
-					res.setEdaCalls(e.getEdaCallsNumber());
-				} catch (GraphEvaluatorException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				e.addResult(setting, confidenceThreshold, res);
-				combinedExperimet.addResult(setting, confidenceThreshold, res);
-
-			
-				setting =name +" " + "clique-without-FG "+clusterDir;
-				res = e.evaluateCollapsedGraph(cgr, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
-					res.setViolations(consistencyCheck.getViolations());
-					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
-					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
-					res.setEdaCalls(e.getEdaCallsNumber());
-				} catch (GraphEvaluatorException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				e.addResult(setting, confidenceThreshold, res);
-				combinedExperimet.addResult(setting, confidenceThreshold, res);
-				
-				// now optimize the graph with global optimizer
-				setting =name +" " + "global-clique-optimized-FG "+clusterDir;
-				EntailmentGraphRaw clique = EvaluatorGraphOptimizer.getDecollapsedGraph(cgr);
-				for (EntailmentRelation edge : rawGraphWithThreshold.edgeSet()){
-					if (edge.getEdgeType().is(EdgeType.FRAGMENT_GRAPH)){
-						clique.removeAllEdges(edge.getSource(), edge.getTarget());
-						clique.addEdge(edge.getSource(), edge.getTarget(), edge);
-					}
-				}
-				globalOptimizedGraph = e.collapseGraph(clique, globalOptimizer);
-				System.out.println("### "+ setting+ "###");
-				res = e.evaluateCollapsedGraph(globalOptimizedGraph, gsClusterDir, includeFragmentGraphEdges, isSingleClusterGS);
-				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(globalOptimizedGraph);
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(localGloballyOptimizedGraph);
 					res.setViolations(consistencyCheck.getViolations());
 					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
 					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
@@ -392,11 +289,22 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 				combinedExperimet.addResult(setting, confidenceThreshold, res);
 
 			
-				setting =name +" " + "global-clique-optimized-without-FG "+clusterDir;
-				res = e.evaluateCollapsedGraph(globalOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
+				// now optimize the localClosure graph with global optimizer
+				setting =name +" " + "localClosure+global-without-FG "+clusterDir;
+				EntailmentGraphCollapsed localClosureGloballyOptimizedGraph = e.collapseGraph(plusClosureRawGraph, globalOptimizer);
+				
+				try {
+					localClosureGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure+global_allPairs_collapsed.dot");
+				} catch (IOException  e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}								
+				
+				System.out.println("### "+ setting+ "###");
+				res = e.evaluateCollapsedGraph(localClosureGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
 				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
 				try {
-					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(cgr);
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(localClosureGloballyOptimizedGraph);
 					res.setViolations(consistencyCheck.getViolations());
 					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
 					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
@@ -404,12 +312,11 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 				} catch (GraphEvaluatorException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}
+				}				
 				e.addResult(setting, confidenceThreshold, res);
 				combinedExperimet.addResult(setting, confidenceThreshold, res);
 			
-			}
-			
+			}			
 
 			
 			ress+=e.printResults()+"\n";
