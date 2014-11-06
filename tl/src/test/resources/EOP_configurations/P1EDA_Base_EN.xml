@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE configuration>
+
+<configuration>
+
+	<section name="PlatformConfiguration">
+		<!-- <property name="activatedEDA">eu.excitementproject.eop.alignmentedas.p1eda.instances.SimpleWordCoverageEN</property> -->
+		<property name="activatedEDA">eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN</property>
+		<property name="language">EN</property>
+		<property name="activatedLAP">eu.excitementproject.eop.lap.dkpro.TreeTaggerEN</property>
+	</section>
+	
+<!--	<section name="eu.excitementproject.eop.alignmentedas.p1eda.instances.SimpleWordCoverageEN"> -->
+	<section name="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN">
+		<property name="modelFile">C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/test/resources/EOP_models/P1EDA_Base_EN.model</property>
+		<property name="trainDir">/tmp/eop-eda-exp/tl/NICE/dev/</property>
+		<property name="testDir">/tmp/eop-eda-exp/tl/NICE/test/</property>
+	</section>
+
+</configuration>

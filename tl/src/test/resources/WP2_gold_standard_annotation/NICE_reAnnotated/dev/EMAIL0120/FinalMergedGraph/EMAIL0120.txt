@@ -69,7 +69,6 @@ collapsed node #19 : 16 entailment unit(s) before editing
 	Tickets expensive	[35.txt_1_3]						
 	cheaper tickets	[18.txt_1_1, 19.txt_3_3]						
 	lower the price of ticket	[7.txt_1_0]						
-	tickets are expensive	[25.txt_1_1]						
 	tickets are too expensive	[25.txt_1_0]						
 	tickets not cheap	[34.txt_1_0]						
 	you must make cheaper tickets available	[26.txt_1_1]						

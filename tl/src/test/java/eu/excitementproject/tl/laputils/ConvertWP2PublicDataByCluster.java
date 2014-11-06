@@ -45,9 +45,9 @@ public class ConvertWP2PublicDataByCluster extends ConvertWP2PublicData{
 		// File names will be determined by "interaction name" (processWP2Data()), or 
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 		
-		String clustersDirName = "./src/test/resources/NICE/EMAIL-DATASET/Test";
+		String clustersDirName = "./src/main/resources/exci/alma/goldStandardAnnotation/dev";
 		
-		String outputDirName = "./src/test/outputs/NICE_reAnnotated/Test";
+		String outputDirName = "./src/test/outputs/alma/goldStandardAnnotation/dev";
 		File clustersDir = new File(clustersDirName);
 		
 		String language = "EN"; 

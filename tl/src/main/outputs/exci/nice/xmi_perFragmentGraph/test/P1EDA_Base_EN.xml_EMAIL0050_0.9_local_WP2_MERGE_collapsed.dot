@@ -1,0 +1,17 @@
+digraph collapsedGraph {
+"Cheaper catering needed [1]""Cheaper snack prices [1]""Expensive on-board snack items [1]""Expensive snack items [1]\nExpensive snack items""Price are going up [1]""Prices are quite high on food [1]\nPrices are quite high on food""Prices are high on food [1]\nPrices are high on food""Prices at the food bar are a bit expensive [1]""Prices at the food bar are expensive [1]\nPrices at the food bar are expensive""Prices are expensive [1]\nPrices are expensive""Prices are a bit expensive [1]\nPrices are a bit expensive""The food Is outrageously expensive [1]""The food Is expensive [1]\nThe food Is expensive""The kiosk food is overpriced [1]\nThe kiosk food is overpriced""The food is overpriced [1]\nThe food is overpriced""cheaper food on the train needed [1]""cheaper food needed [1]\ncheaper food needed""drinks are just too expensive [1]\ndrinks are just too expensive""drinks are expensive [1]\ndrinks are expensive""food are just too expensive [1]""food are expensive [1]\nfood are expensive""on board food is overpriced for what it is [1]\non board food is overpriced for what it is""price of snacks in the bar-car [1]""price of snacks [1]\nprice of snacks""prices for food/drink on board were excessive [1]""Expensive on-board snack items [1]" -> "Expensive snack items [1]\nExpensive snack items" [color=blue]
+"Prices are quite high on food [1]\nPrices are quite high on food" -> "Prices are high on food [1]\nPrices are high on food" [color=blue]
+"Prices at the food bar are a bit expensive [1]" -> "Prices at the food bar are expensive [1]\nPrices at the food bar are expensive" [color=blue]
+"Prices at the food bar are expensive [1]\nPrices at the food bar are expensive" -> "Prices are expensive [1]\nPrices are expensive" [color=blue]
+"Prices at the food bar are a bit expensive [1]" -> "Prices are a bit expensive [1]\nPrices are a bit expensive" [color=blue]
+"Prices are a bit expensive [1]\nPrices are a bit expensive" -> "Prices are expensive [1]\nPrices are expensive" [color=blue]
+"Prices at the food bar are a bit expensive [1]" -> "Prices are expensive [1]\nPrices are expensive" [color=blue]
+"The food Is outrageously expensive [1]" -> "The food Is expensive [1]\nThe food Is expensive" [color=blue]
+"The kiosk food is overpriced [1]\nThe kiosk food is overpriced" -> "The food is overpriced [1]\nThe food is overpriced" [color=blue]
+"cheaper food on the train needed [1]" -> "cheaper food needed [1]\ncheaper food needed" [color=blue]
+"Cheaper catering needed [1]" -> "cheaper food needed [1]\ncheaper food needed" [color=blue]
+"drinks are just too expensive [1]\ndrinks are just too expensive" -> "drinks are expensive [1]\ndrinks are expensive" [color=blue]
+"food are just too expensive [1]" -> "food are expensive [1]\nfood are expensive" [color=blue]
+"The food Is expensive [1]\nThe food Is expensive" -> "food are expensive [1]\nfood are expensive" [color=blue]
+"price of snacks in the bar-car [1]" -> "price of snacks [1]\nprice of snacks" [color=blue]
+}

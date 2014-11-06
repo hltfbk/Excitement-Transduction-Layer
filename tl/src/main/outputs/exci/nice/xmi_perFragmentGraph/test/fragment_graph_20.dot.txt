@@ -1,0 +1,3 @@
+digraph rawGraph {
+"more space seating for people having long legs" -> "more space seating" [label=1] [color=green]
+}
