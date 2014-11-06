@@ -147,8 +147,8 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 	public static void main(String[] args) {
 
 		String tlDir = "./";
-		String dataDir = tlDir+"src/test/resources/ALMA/XMIs";
-		String gsAnnotationsDir = tlDir+"src/test/resources/ALMA/ITA-DATASET-11.09.14/Dev";
+		String dataDir = tlDir+"src/main/resources/exci/alma/xmi_perFragmentGraph/";
+		String gsAnnotationsDir = tlDir+"src/main/resources/exci/alma/goldStandardAnnotation/Test/";
 		
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
