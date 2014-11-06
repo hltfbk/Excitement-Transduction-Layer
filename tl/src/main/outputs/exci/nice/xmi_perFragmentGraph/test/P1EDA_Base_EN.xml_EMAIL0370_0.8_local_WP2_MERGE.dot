@@ -1,0 +1,13 @@
+digraph rawGraph {
+"less announcements during the train ride";"less announcements";"micro announcements from the train manager much too loud";"micro announcements from the train manager too loud";"micro announcements from the train manager much too long";"micro announcements from the train manager too long";"more targeted announcements";"quieter announcements";"shorter announcements";"less announcements during the train ride" -> "less announcements" [label=1.0] [color=green]
+"micro announcements from the train manager much too loud" -> "micro announcements from the train manager too loud" [label=1.0] [color=green]
+"micro announcements from the train manager too loud" -> "micro announcements from the train manager much too loud" [label=1.0] [color=red]
+"micro announcements from the train manager much too long" -> "micro announcements from the train manager too long" [label=1.0] [color=green]
+"micro announcements from the train manager too long" -> "micro announcements from the train manager much too long" [label=1.0] [color=red]
+"micro announcements from the train manager too loud" -> "micro announcements from the train manager too long" [label=0.8690682127965582] [color=blue]
+"micro announcements from the train manager too long" -> "micro announcements from the train manager too loud" [label=0.8690682127965582] [color=blue]
+"micro announcements from the train manager much too loud" -> "micro announcements from the train manager much too long" [label=0.8724848564882526] [color=blue]
+"micro announcements from the train manager much too long" -> "micro announcements from the train manager much too loud" [label=0.8724848564882526] [color=blue]
+"micro announcements from the train manager much too loud" -> "micro announcements from the train manager too long" [label=0.8724848564882526] [color=blue]
+"micro announcements from the train manager much too long" -> "micro announcements from the train manager too loud" [label=0.8724848564882526] [color=blue]
+}

@@ -19,6 +19,8 @@ import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -49,13 +51,26 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 	public EntailmentGraphRaw m_rfg = null;
 	
 	public ResultsContainer results;
-		
-	public static final boolean includeFragmentGraphEdges = true;
-	
+	public MergerType mergerType = null;		
 	public List<JCas> docs;
 	public EntailmentGraphCollapsed graph;
 		
+	public enum EdaName{
+		RANDOM,
+		PROBABILISTIC,
+		TIE_POS,
+		TIE_POS_RES,
+		TIE_PARSE_RES,
+		BIUTEE,
+		EDIT_DIST,
+		P1EDA
+	}
 	
+	public enum MergerType{
+		ALL_PAIRS_MERGE,
+		WP2_MERGE
+	}
+
 	public AbstractExperiment(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
@@ -69,6 +84,13 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 		results = new ResultsContainer();
 	}
 	
+    public void setMerger(MergerType mergerType) throws GraphMergerException{
+    	this.mergerType = mergerType;
+    	if (mergerType.equals(MergerType.ALL_PAIRS_MERGE))
+    		setGraphMerger(new AllPairsGraphMerger(lap, eda));
+    	else setGraphMerger(new AutomateWP2ProcedureGraphMerger(lap, eda));
+    }
+	
 	public String printResults(){
 		return results.printResults();
 	}
@@ -81,6 +103,13 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 		return results.printAvgResults();
 	}
 	
+	public String getSettingName(EdaName name, String graphType, boolean includeFragmentGraphEdges, String clusterDir){
+		String withFG = "-with-FG";
+		if (!includeFragmentGraphEdges) withFG = "-without-FG";
+			
+		return name+"-"+mergerType+" "+graphType+withFG+" "+clusterDir;
+	}
+
 	@Override
 	public String toString(){
 		return "LAP: " +this.lap.getClass().getName()+";\tEDA: "+this.eda.getClass().getName()+

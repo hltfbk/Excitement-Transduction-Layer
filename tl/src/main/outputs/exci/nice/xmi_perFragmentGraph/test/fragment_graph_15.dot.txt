@@ -1,0 +1,3 @@
+digraph rawGraph {
+"More legroom in standard class" -> "More legroom" [label=1] [color=green]
+}

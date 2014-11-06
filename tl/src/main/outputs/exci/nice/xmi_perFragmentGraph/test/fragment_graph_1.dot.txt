@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Absolutely ruins the notion of a leisurely trip" -> "ruins the notion of a leisurely trip" [label=1] [color=green]
+}
