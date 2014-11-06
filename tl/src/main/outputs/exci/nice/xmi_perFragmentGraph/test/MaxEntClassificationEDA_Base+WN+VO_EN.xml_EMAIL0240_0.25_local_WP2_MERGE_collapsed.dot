@@ -1,0 +1,14 @@
+digraph collapsedGraph {
+"seats not comfortableGenerally [2]\nseats not comfortableGenerally\nSeating could be more comfortable""Ecomony seats not very comfortableGenerally [1]""Ecomony seats not comfortableGenerally [1]\nEcomony seats not comfortableGenerally""seats not very comfortableGenerally [1]\nseats not very comfortableGenerally""Seats need to be more comfortable [1]""seats are stunningly uncomfortable [1]""seats are uncomfortable [1]\nseats are uncomfortable""Ecomony seats not very comfortableGenerally [1]" -> "Ecomony seats not comfortableGenerally [1]\nEcomony seats not comfortableGenerally" [color=blue]
+"Ecomony seats not very comfortableGenerally [1]" -> "seats not very comfortableGenerally [1]\nseats not very comfortableGenerally" [color=blue]
+"Ecomony seats not very comfortableGenerally [1]" -> "seats not comfortableGenerally [2]\nseats not comfortableGenerally\nSeating could be more comfortable" [color=blue]
+"Ecomony seats not comfortableGenerally [1]\nEcomony seats not comfortableGenerally" -> "seats not comfortableGenerally [2]\nseats not comfortableGenerally\nSeating could be more comfortable" [color=blue]
+"seats not very comfortableGenerally [1]\nseats not very comfortableGenerally" -> "seats not comfortableGenerally [2]\nseats not comfortableGenerally\nSeating could be more comfortable" [color=blue]
+"Seats need to be more comfortable [1]" -> "seats not comfortableGenerally [2]\nseats not comfortableGenerally\nSeating could be more comfortable" [color=blue]
+"seats are stunningly uncomfortable [1]" -> "seats are uncomfortable [1]\nseats are uncomfortable" [color=blue]
+"Seats need to be more comfortable [1]" -> "seats are uncomfortable [1]\nseats are uncomfortable" [color=blue]
+"Ecomony seats not very comfortableGenerally [1]" -> "seats are uncomfortable [1]\nseats are uncomfortable" [color=blue]
+"Ecomony seats not comfortableGenerally [1]\nEcomony seats not comfortableGenerally" -> "seats are uncomfortable [1]\nseats are uncomfortable" [color=blue]
+"seats not comfortableGenerally [2]\nseats not comfortableGenerally\nSeating could be more comfortable" -> "seats are uncomfortable [1]\nseats are uncomfortable" [color=blue]
+"seats not very comfortableGenerally [1]\nseats not very comfortableGenerally" -> "seats are uncomfortable [1]\nseats are uncomfortable" [color=blue]
+}

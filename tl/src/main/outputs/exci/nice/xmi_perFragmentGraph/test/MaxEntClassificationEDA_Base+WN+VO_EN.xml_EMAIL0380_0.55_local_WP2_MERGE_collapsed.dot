@@ -1,0 +1,13 @@
+digraph collapsedGraph {
+"not enough toilets [5]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\ntoilet floor dirty""Toilet tissue quality is famously bad [1]""Toilets/washrooms sometimes disappointing [1]""not enough ladies toilets at Stars Bridge [1]""not enough toilets at Stars Bridge [1]\nnot enough toilets at Stars Bridge""not enough ladies toilets [1]\nnot enough ladies toilets""toilets cleaned [1]""toilets were very dirty [1]""Toilets/washrooms sometimes disappointing [1]" -> "not enough toilets [5]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\ntoilet floor dirty" [color=blue]
+"not enough ladies toilets at Stars Bridge [1]" -> "not enough toilets at Stars Bridge [1]\nnot enough toilets at Stars Bridge" [color=blue]
+"not enough toilets at Stars Bridge [1]\nnot enough toilets at Stars Bridge" -> "not enough toilets [5]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\ntoilet floor dirty" [color=blue]
+"not enough ladies toilets at Stars Bridge [1]" -> "not enough ladies toilets [1]\nnot enough ladies toilets" [color=blue]
+"not enough ladies toilets [1]\nnot enough ladies toilets" -> "not enough toilets [5]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\ntoilet floor dirty" [color=blue]
+"not enough ladies toilets at Stars Bridge [1]" -> "not enough toilets [5]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\ntoilet floor dirty" [color=blue]
+"not enough toilets [5]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\ntoilet floor dirty" -> "toilets cleaned [1]" [color=blue]
+"Toilets/washrooms sometimes disappointing [1]" -> "toilets cleaned [1]" [color=blue]
+"Toilet tissue quality is famously bad [1]" -> "toilets were very dirty [1]" [color=blue]
+"Toilet tissue quality is famously bad [1]" -> "not enough toilets [5]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\ntoilet floor dirty" [color=blue]
+"toilets were very dirty [1]" -> "not enough toilets [5]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\ntoilet floor dirty" [color=blue]
+}

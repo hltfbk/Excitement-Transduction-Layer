@@ -1,0 +1,11 @@
+digraph collapsedGraph {
+"toilets cleaned [7]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty""Toilet tissue quality is famously bad [1]""not enough ladies toilets at Stars Bridge [1]""not enough toilets at Stars Bridge [1]\nnot enough toilets at Stars Bridge""not enough ladies toilets [1]\nnot enough ladies toilets""toilets were very dirty [1]""Toilet tissue quality is famously bad [1]" -> "toilets cleaned [7]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty" [color=blue]
+"not enough ladies toilets at Stars Bridge [1]" -> "not enough toilets at Stars Bridge [1]\nnot enough toilets at Stars Bridge" [color=blue]
+"not enough ladies toilets at Stars Bridge [1]" -> "not enough ladies toilets [1]\nnot enough ladies toilets" [color=blue]
+"Toilet tissue quality is famously bad [1]" -> "not enough ladies toilets [1]\nnot enough ladies toilets" [color=blue]
+"not enough ladies toilets at Stars Bridge [1]" -> "toilets cleaned [7]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty" [color=blue]
+"not enough toilets at Stars Bridge [1]\nnot enough toilets at Stars Bridge" -> "toilets cleaned [7]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty" [color=blue]
+"not enough ladies toilets [1]\nnot enough ladies toilets" -> "toilets cleaned [7]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty" [color=blue]
+"Toilet tissue quality is famously bad [1]" -> "toilets were very dirty [1]" [color=blue]
+"toilets were very dirty [1]" -> "toilets cleaned [7]\nToilet tissue quality is bad\nnot enough toilets\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty" [color=blue]
+}

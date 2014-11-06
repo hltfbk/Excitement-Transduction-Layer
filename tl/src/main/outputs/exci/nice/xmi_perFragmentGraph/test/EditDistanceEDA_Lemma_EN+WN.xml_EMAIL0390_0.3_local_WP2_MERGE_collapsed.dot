@@ -1,0 +1,11 @@
+digraph collapsedGraph {
+"better taxi service at the other end [2]\ntaxi service through Quasigo not available""Absolutely ruins the notion of a leisurely trip [1]""ruins the notion of a leisurely trip [1]\nruins the notion of a leisurely trip""I would like a smoking area [1]""You should have more connections into europe [1]""You should have more connections [1]\nYou should have more connections""better taxi service [1]\nbetter taxi service""simple first aid kit at Stars Bridge station [1]""first aid kit at Stars Bridge station [1]\nfirst aid kit at Stars Bridge station""first aid kit [1]\nfirst aid kit""simple first aid kit [1]\nsimple first aid kit""taxi service not available [1]\ntaxi service not available""Absolutely ruins the notion of a leisurely trip [1]" -> "ruins the notion of a leisurely trip [1]\nruins the notion of a leisurely trip" [color=blue]
+"You should have more connections into europe [1]" -> "You should have more connections [1]\nYou should have more connections" [color=blue]
+"better taxi service at the other end [2]\ntaxi service through Quasigo not available" -> "better taxi service [1]\nbetter taxi service" [color=blue]
+"simple first aid kit at Stars Bridge station [1]" -> "first aid kit at Stars Bridge station [1]\nfirst aid kit at Stars Bridge station" [color=blue]
+"first aid kit at Stars Bridge station [1]\nfirst aid kit at Stars Bridge station" -> "first aid kit [1]\nfirst aid kit" [color=blue]
+"simple first aid kit at Stars Bridge station [1]" -> "simple first aid kit [1]\nsimple first aid kit" [color=blue]
+"simple first aid kit [1]\nsimple first aid kit" -> "first aid kit [1]\nfirst aid kit" [color=blue]
+"simple first aid kit at Stars Bridge station [1]" -> "first aid kit [1]\nfirst aid kit" [color=blue]
+"better taxi service at the other end [2]\ntaxi service through Quasigo not available" -> "taxi service not available [1]\ntaxi service not available" [color=blue]
+}

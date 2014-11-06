@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="1" text="Absolutely ruins the notion of a leisurely trip">
+    <completeStatement text="Absolutely ruins the notion of a leisurely trip"/>
+    <entailmentUnitMention categoryId="" interactionId="52781.txt" level="1" text="Absolutely ruins the notion of a leisurely trip"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="           ruins the notion of a leisurely trip">
+    <completeStatement text="Absolutely ruins the notion of a leisurely trip"/>
+    <entailmentUnitMention categoryId="" interactionId="52781.txt" level="0" text="           ruins the notion of a leisurely trip"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="I would like a smoking area">
+    <completeStatement text="I would like a smoking area"/>
+    <entailmentUnitMention categoryId="" interactionId="522262.txt" level="0" text="I would like a smoking area"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="You should have more connections into europe">
+    <completeStatement text="You should have more connections into europe"/>
+    <entailmentUnitMention categoryId="" interactionId="92454.txt" level="1" text="You should have more connections into europe"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="You should have more connections            ">
+    <completeStatement text="You should have more connections into europe"/>
+    <entailmentUnitMention categoryId="" interactionId="92454.txt" level="0" text="You should have more connections            "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="better taxi service at the other end">
+    <completeStatement text="better taxi service at the other end"/>
+    <entailmentUnitMention categoryId="" interactionId="461540.txt" level="1" text="better taxi service at the other end"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="better taxi service                 ">
+    <completeStatement text="better taxi service at the other end"/>
+    <entailmentUnitMention categoryId="" interactionId="461540.txt" level="0" text="better taxi service                 "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="simple first aid kit at Stars Bridge station">
+    <completeStatement text="simple first aid kit at Stars Bridge station"/>
+    <entailmentUnitMention categoryId="" interactionId="179281.txt" level="2" text="simple first aid kit at Stars Bridge station"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="       first aid kit at Stars Bridge station">
+    <completeStatement text="simple first aid kit at Stars Bridge station"/>
+    <entailmentUnitMention categoryId="" interactionId="179281.txt" level="1" text="       first aid kit at Stars Bridge station"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="       first aid kit                        ">
+    <completeStatement text="simple first aid kit at Stars Bridge station"/>
+    <entailmentUnitMention categoryId="" interactionId="179281.txt" level="0" text="       first aid kit                        "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="simple first aid kit                        ">
+    <completeStatement text="simple first aid kit at Stars Bridge station"/>
+    <entailmentUnitMention categoryId="" interactionId="179281.txt" level="1" text="simple first aid kit                        "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="taxi service through Quasigo not available">
+    <completeStatement text="taxi service through Quasigo not available"/>
+    <entailmentUnitMention categoryId="" interactionId="193822.txt" level="1" text="taxi service through Quasigo not available"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="taxi service                 not available">
+    <completeStatement text="taxi service through Quasigo not available"/>
+    <entailmentUnitMention categoryId="" interactionId="193822.txt" level="0" text="taxi service                 not available"/>
+  </entailmentUnitNode>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Absolutely ruins the notion of a leisurely trip" target="           ruins the notion of a leisurely trip" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="You should have more connections into europe" target="You should have more connections            " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="You should have more connections            " target="You should have more connections into europe" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5261323232528128" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="I would like a smoking area" target="You should have more connections            " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections            " target="I would like a smoking area" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections            " target="           ruins the notion of a leisurely trip" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="           ruins the notion of a leisurely trip" target="You should have more connections            " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Absolutely ruins the notion of a leisurely trip" target="You should have more connections into europe" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections into europe" target="Absolutely ruins the notion of a leisurely trip" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Absolutely ruins the notion of a leisurely trip" target="You should have more connections            " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="           ruins the notion of a leisurely trip" target="I would like a smoking area" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="I would like a smoking area" target="           ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="You should have more connections into europe" target="I would like a smoking area" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="You should have more connections into europe" target="           ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Absolutely ruins the notion of a leisurely trip" target="I would like a smoking area" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="better taxi service at the other end" target="better taxi service                 " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="better taxi service                 " target="better taxi service at the other end" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections            " target="better taxi service                 " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="better taxi service                 " target="You should have more connections            " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections into europe" target="better taxi service at the other end" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="better taxi service at the other end" target="You should have more connections into europe" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="better taxi service                 " target="I would like a smoking area" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="I would like a smoking area" target="better taxi service                 " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="better taxi service                 " target="           ruins the notion of a leisurely trip" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="           ruins the notion of a leisurely trip" target="better taxi service                 " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Absolutely ruins the notion of a leisurely trip" target="better taxi service at the other end" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Absolutely ruins the notion of a leisurely trip" target="better taxi service                 " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="You should have more connections into europe" target="better taxi service                 " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="better taxi service at the other end" target="Absolutely ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="better taxi service at the other end" target="You should have more connections            " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="better taxi service at the other end" target="I would like a smoking area" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="better taxi service at the other end" target="           ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="       first aid kit at Stars Bridge station" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="       first aid kit at Stars Bridge station" target="       first aid kit                        " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="simple first aid kit                        " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="simple first aid kit                        " target="       first aid kit                        " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="       first aid kit                        " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="       first aid kit at Stars Bridge station" target="simple first aid kit at Stars Bridge station" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="       first aid kit at Stars Bridge station" target="simple first aid kit                        " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="       first aid kit                        " target="simple first aid kit at Stars Bridge station" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="       first aid kit                        " target="       first aid kit at Stars Bridge station" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="       first aid kit                        " target="simple first aid kit                        " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="simple first aid kit                        " target="simple first aid kit at Stars Bridge station" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="simple first aid kit                        " target="       first aid kit at Stars Bridge station" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections            " target="       first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="       first aid kit                        " target="You should have more connections            " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections into europe" target="simple first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections into europe" target="       first aid kit at Stars Bridge station" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="simple first aid kit                        " target="You should have more connections into europe" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6568080273115597" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="       first aid kit at Stars Bridge station" target="You should have more connections into europe" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="       first aid kit                        " target="I would like a smoking area" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="I would like a smoking area" target="       first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.6807640801631595" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="better taxi service                 " target="       first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="       first aid kit                        " target="better taxi service                 " type="EDA"/>
+  <entailmentRelationEdge confidence="0.6382932580648031" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="better taxi service at the other end" target="simple first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5363910905609169" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="better taxi service at the other end" target="       first aid kit at Stars Bridge station" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="simple first aid kit                        " target="better taxi service at the other end" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="       first aid kit                        " target="           ruins the notion of a leisurely trip" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="           ruins the notion of a leisurely trip" target="       first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Absolutely ruins the notion of a leisurely trip" target="simple first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Absolutely ruins the notion of a leisurely trip" target="       first aid kit at Stars Bridge station" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="simple first aid kit                        " target="Absolutely ruins the notion of a leisurely trip" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="       first aid kit at Stars Bridge station" target="Absolutely ruins the notion of a leisurely trip" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Absolutely ruins the notion of a leisurely trip" target="       first aid kit                        " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="You should have more connections into europe" target="       first aid kit                        " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="better taxi service at the other end" target="       first aid kit                        " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="You should have more connections into europe" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="better taxi service at the other end" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="Absolutely ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="You should have more connections            " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="I would like a smoking area" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="better taxi service                 " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="           ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="       first aid kit at Stars Bridge station" target="better taxi service at the other end" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="       first aid kit at Stars Bridge station" target="You should have more connections            " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="       first aid kit at Stars Bridge station" target="I would like a smoking area" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="       first aid kit at Stars Bridge station" target="better taxi service                 " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="       first aid kit at Stars Bridge station" target="simple first aid kit                        " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="       first aid kit at Stars Bridge station" target="           ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit                        " target="You should have more connections            " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit                        " target="I would like a smoking area" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit                        " target="better taxi service                 " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit                        " target="           ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit                        " target="       first aid kit at Stars Bridge station" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="taxi service through Quasigo not available" target="taxi service                 not available" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="taxi service                 not available" target="taxi service through Quasigo not available" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service                 not available" target="You should have more connections            " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections            " target="taxi service                 not available" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="You should have more connections into europe" target="taxi service through Quasigo not available" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service through Quasigo not available" target="You should have more connections into europe" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="I would like a smoking area" target="taxi service                 not available" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service                 not available" target="I would like a smoking area" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="       first aid kit                        " target="taxi service                 not available" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6807640801631595" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service                 not available" target="       first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="simple first aid kit                        " target="taxi service through Quasigo not available" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="       first aid kit at Stars Bridge station" target="taxi service through Quasigo not available" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6382932580648031" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service through Quasigo not available" target="simple first aid kit                        " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5804329394715224" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service through Quasigo not available" target="       first aid kit at Stars Bridge station" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6501705364252048" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service                 not available" target="better taxi service                 " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service                 not available" target="           ruins the notion of a leisurely trip" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="           ruins the notion of a leisurely trip" target="taxi service                 not available" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Absolutely ruins the notion of a leisurely trip" target="taxi service through Quasigo not available" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@28ee8a67" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="taxi service through Quasigo not available" target="Absolutely ruins the notion of a leisurely trip" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Absolutely ruins the notion of a leisurely trip" target="taxi service                 not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="You should have more connections into europe" target="taxi service                 not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="better taxi service at the other end" target="taxi service through Quasigo not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="better taxi service at the other end" target="taxi service                 not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="better taxi service                 " target="taxi service                 not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="taxi service through Quasigo not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit at Stars Bridge station" target="taxi service                 not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="       first aid kit at Stars Bridge station" target="taxi service                 not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="simple first aid kit                        " target="taxi service                 not available" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="taxi service through Quasigo not available" target="better taxi service at the other end" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="taxi service through Quasigo not available" target="You should have more connections            " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="taxi service through Quasigo not available" target="I would like a smoking area" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="taxi service through Quasigo not available" target="       first aid kit                        " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="taxi service through Quasigo not available" target="better taxi service                 " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="taxi service through Quasigo not available" target="           ruins the notion of a leisurely trip" type="TRANSITIVE_CLOSURE"/>
+</rawGraph>

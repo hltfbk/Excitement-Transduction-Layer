@@ -1,3 +1,2 @@
 digraph rawGraph {
-"Improve the space at Frowntown" -> "Improve the space" [label=1] [color=green]
 }

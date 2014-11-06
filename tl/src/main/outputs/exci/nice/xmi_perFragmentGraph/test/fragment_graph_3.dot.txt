@@ -1,2 +1,6 @@
 digraph rawGraph {
+"simple first aid kit at Stars Bridge station" -> "first aid kit at Stars Bridge station" [label=1] [color=green]
+"first aid kit at Stars Bridge station" -> "first aid kit" [label=1] [color=green]
+"simple first aid kit at Stars Bridge station" -> "simple first aid kit" [label=1] [color=green]
+"simple first aid kit" -> "first aid kit" [label=1] [color=green]
 }

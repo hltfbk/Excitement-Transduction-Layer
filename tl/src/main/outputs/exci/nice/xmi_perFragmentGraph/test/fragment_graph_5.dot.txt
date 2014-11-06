@@ -1,3 +1,3 @@
 digraph rawGraph {
-"better taxi service at the other end" -> "better taxi service" [label=1] [color=green]
+"Absolutely ruins the notion of a leisurely trip" -> "ruins the notion of a leisurely trip" [label=1] [color=green]
 }

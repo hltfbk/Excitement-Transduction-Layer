@@ -1,3 +1,6 @@
 digraph rawGraph {
-"more space seating for people having long legs" -> "more space seating" [label=1] [color=green]
+"Slightly more leg room in 2nd class" -> "more leg room in 2nd class" [label=1] [color=green]
+"more leg room in 2nd class" -> "more leg room" [label=1] [color=green]
+"Slightly more leg room in 2nd class" -> "Slightly more leg room" [label=1] [color=green]
+"Slightly more leg room" -> "more leg room" [label=1] [color=green]
 }

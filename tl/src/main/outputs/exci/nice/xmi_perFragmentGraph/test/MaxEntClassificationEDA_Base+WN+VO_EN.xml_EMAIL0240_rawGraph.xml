@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="2" text="Ecomony seats not very comfortableGenerally">
+    <completeStatement text="Ecomony seats not very comfortableGenerally"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="2" text="Ecomony seats not very comfortableGenerally"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Ecomony seats not      comfortableGenerally">
+    <completeStatement text="Ecomony seats not very comfortableGenerally"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="1" text="Ecomony seats not      comfortableGenerally"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="        seats not      comfortableGenerally">
+    <completeStatement text="Ecomony seats not very comfortableGenerally"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="0" text="        seats not      comfortableGenerally"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="        seats not very comfortableGenerally">
+    <completeStatement text="Ecomony seats not very comfortableGenerally"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="1" text="        seats not very comfortableGenerally"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Seating could be more comfortable">
+    <completeStatement text="Seating could be more comfortable"/>
+    <entailmentUnitMention categoryId="" interactionId="183009.txt" level="0" text="Seating could be more comfortable"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Seats need to be more comfortable">
+    <completeStatement text="Seats need to be more comfortable"/>
+    <entailmentUnitMention categoryId="" interactionId="411441.txt" level="0" text="Seats need to be more comfortable"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="seats are stunningly uncomfortable">
+    <completeStatement text="seats are stunningly uncomfortable"/>
+    <entailmentUnitMention categoryId="" interactionId="190617.txt" level="1" text="seats are stunningly uncomfortable"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="seats are            uncomfortable">
+    <completeStatement text="seats are stunningly uncomfortable"/>
+    <entailmentUnitMention categoryId="" interactionId="190617.txt" level="0" text="seats are            uncomfortable"/>
+  </entailmentUnitNode>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="Ecomony seats not      comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Ecomony seats not      comfortableGenerally" target="        seats not      comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="        seats not very comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="        seats not very comfortableGenerally" target="        seats not      comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="        seats not      comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.6807640801631595" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@3425261e" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Seating could be more comfortable" target="        seats not      comfortableGenerally" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@3425261e" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="        seats not      comfortableGenerally" target="Seating could be more comfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="Seating could be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Ecomony seats not      comfortableGenerally" target="Seating could be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="        seats not very comfortableGenerally" target="Seating could be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5886226507656559" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@3425261e" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Seats need to be more comfortable" target="        seats not      comfortableGenerally" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5807064092885654" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@3425261e" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Seats need to be more comfortable" target="Seating could be more comfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="seats are stunningly uncomfortable" target="seats are            uncomfortable" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="seats are            uncomfortable" target="seats are stunningly uncomfortable" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.7431356719836715" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@3425261e" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Seating could be more comfortable" target="seats are            uncomfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7920636096763745" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@3425261e" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Seats need to be more comfortable" target="seats are            uncomfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="seats are            uncomfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="Ecomony seats not      comfortableGenerally" target="seats are            uncomfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="        seats not      comfortableGenerally" target="seats are            uncomfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5" decisionLabel="Entailment" source="        seats not very comfortableGenerally" target="seats are            uncomfortable" type="TRANSITIVE_CLOSURE"/>
+</rawGraph>

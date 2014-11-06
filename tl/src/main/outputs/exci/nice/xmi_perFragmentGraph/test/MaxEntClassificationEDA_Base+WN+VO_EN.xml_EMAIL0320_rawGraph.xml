@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="0" text="Almost confortable except luggage space">
+    <completeStatement text="Almost confortable except luggage space"/>
+    <entailmentUnitMention categoryId="" interactionId="475555.txt" level="0" text="Almost confortable except luggage space"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Improve the space                                 at Frowntown">
+    <completeStatement text="Improve the space                                 at Frowntown"/>
+    <entailmentUnitMention categoryId="" interactionId="473384.txt" level="1" text="Improve the space                                 at Frowntown"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Improve the space                                             ">
+    <completeStatement text="Improve the space                                 at Frowntown"/>
+    <entailmentUnitMention categoryId="" interactionId="473384.txt" level="0" text="Improve the space                                             "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="More space                             would make a lot of difference">
+    <completeStatement text="More space                             would make a lot of difference"/>
+    <entailmentUnitMention categoryId="" interactionId="505956.txt" level="0" text="More space                             would make a lot of difference"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="More suitcase space">
+    <completeStatement text="More suitcase space"/>
+    <entailmentUnitMention categoryId="" interactionId="478371.txt" level="0" text="More suitcase space"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="The space currently is               poorly organised">
+    <completeStatement text="The space currently is               poorly organised"/>
+    <entailmentUnitMention categoryId="" interactionId="423940.txt" level="0" text="The space currently is               poorly organised"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="The space currently is too small">
+    <completeStatement text="The space currently is too small"/>
+    <entailmentUnitMention categoryId="" interactionId="423940.txt" level="0" text="The space currently is too small"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="There is not enough space for luggage">
+    <completeStatement text="There is not enough space for luggage"/>
+    <entailmentUnitMention categoryId="" interactionId="469143.txt" level="0" text="There is not enough space for luggage"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Would welcome extra luggage space">
+    <completeStatement text="Would welcome extra luggage space"/>
+    <entailmentUnitMention categoryId="" interactionId="511484.txt" level="0" text="Would welcome extra luggage space"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="limited luggage space so would not recommend if travelling with large">
+    <completeStatement text="limited luggage space so would not recommend if travelling with large"/>
+    <entailmentUnitMention categoryId="" interactionId="30.txt" level="1" text="limited luggage space so would not recommend if travelling with large"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="limited luggage space                                                ">
+    <completeStatement text="limited luggage space so would not recommend if travelling with large"/>
+    <entailmentUnitMention categoryId="" interactionId="30.txt" level="0" text="limited luggage space                                                "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="needs more large luggage space">
+    <completeStatement text="needs more large luggage space"/>
+    <entailmentUnitMention categoryId="" interactionId="415044.txt" level="0" text="needs more large luggage space"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="not enough space">
+    <completeStatement text="not enough space"/>
+    <entailmentUnitMention categoryId="" interactionId="498974.txt" level="0" text="not enough space"/>
+    <entailmentUnitMention categoryId="" interactionId="327999.txt" level="0" text="not enough space"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="too little baggage space on trains">
+    <completeStatement text="too little baggage space on trains"/>
+    <entailmentUnitMention categoryId="" interactionId="483394.txt" level="2" text="too little baggage space on trains"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="too little baggage space          ">
+    <completeStatement text="too little baggage space on trains"/>
+    <entailmentUnitMention categoryId="" interactionId="483394.txt" level="1" text="too little baggage space          "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="too little         space          ">
+    <completeStatement text="too little baggage space on trains"/>
+    <entailmentUnitMention categoryId="" interactionId="483394.txt" level="0" text="too little         space          "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="too little         space on trains">
+    <completeStatement text="too little baggage space on trains"/>
+    <entailmentUnitMention categoryId="" interactionId="483394.txt" level="1" text="too little         space on trains"/>
+  </entailmentUnitNode>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Improve the space                                 at Frowntown" target="Improve the space                                             " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Improve the space                                             " target="Improve the space                                 at Frowntown" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Almost confortable except luggage space" target="Improve the space                                             " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5219316620165436" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="Almost confortable except luggage space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6302287952678579" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="Improve the space                                             " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Almost confortable except luggage space" target="More suitcase space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7865781056053871" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="More suitcase space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5937337824782614" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is               poorly organised" target="More suitcase space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.587846940655935" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="The space currently is               poorly organised" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7955251496531305" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is               poorly organised" target="Improve the space                                             " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5937337824782614" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is too small" target="More suitcase space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.587846940655935" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="The space currently is too small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5407512371584786" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is too small" target="The space currently is               poorly organised" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5407512371584786" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is               poorly organised" target="The space currently is too small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7955251496531305" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is too small" target="Improve the space                                             " type="EDA"/>
+  <entailmentRelationEdge confidence="0.6147431814189745" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="There is not enough space for luggage" target="More suitcase space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5481931731173952" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="There is not enough space for luggage" target="Almost confortable except luggage space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5551352665742759" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="There is not enough space for luggage" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6147431814189745" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="There is not enough space for luggage" target="Improve the space                                             " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Would welcome extra luggage space" target="More suitcase space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5219316620165436" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="Would welcome extra luggage space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5481931731173952" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="There is not enough space for luggage" target="Would welcome extra luggage space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Would welcome extra luggage space" target="Improve the space                                             " type="EDA"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="limited luggage space so would not recommend if travelling with large" target="limited luggage space                                                " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="limited luggage space                                                " target="limited luggage space so would not recommend if travelling with large" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.6275226555511636" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More suitcase space" target="limited luggage space                                                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.7096411337258427" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Would welcome extra luggage space" target="limited luggage space                                                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.7096411337258427" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Almost confortable except luggage space" target="limited luggage space                                                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.6302287952678579" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="limited luggage space                                                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5937337824782614" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is               poorly organised" target="limited luggage space                                                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5937337824782614" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is too small" target="limited luggage space                                                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.7696997178244053" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="There is not enough space for luggage" target="limited luggage space                                                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More suitcase space" target="needs more large luggage space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7869234664769945" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="needs more large luggage space" target="More suitcase space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6104213973269401" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="needs more large luggage space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5106412151655575" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="needs more large luggage space" target="The space currently is               poorly organised" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7096411337258427" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="needs more large luggage space" target="limited luggage space                                                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5106412151655575" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="needs more large luggage space" target="The space currently is too small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5481931731173952" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="There is not enough space for luggage" target="needs more large luggage space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="needs more large luggage space" target="Improve the space                                             " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="Almost confortable except luggage space" target="needs more large luggage space" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="More suitcase space" target="The space currently is               poorly organised" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="More suitcase space" target="The space currently is too small" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="More suitcase space" target="Improve the space                                             " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="The space currently is               poorly organised" target="needs more large luggage space" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="The space currently is too small" target="needs more large luggage space" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5106412151655575" decisionLabel="Entailment" source="There is not enough space for luggage" target="The space currently is               poorly organised" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5106412151655575" decisionLabel="Entailment" source="There is not enough space for luggage" target="The space currently is too small" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="Would welcome extra luggage space" target="needs more large luggage space" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="Would welcome extra luggage space" target="The space currently is               poorly organised" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="Would welcome extra luggage space" target="The space currently is too small" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="Almost confortable except luggage space" target="The space currently is               poorly organised" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="Almost confortable except luggage space" target="The space currently is too small" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="needs more large luggage space" target="not enough space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Would welcome extra luggage space" target="not enough space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Almost confortable except luggage space" target="not enough space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6302287952678579" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="not enough space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5937337824782614" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is               poorly organised" target="not enough space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5937337824782614" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is too small" target="not enough space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9018513031375418" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="There is not enough space for luggage" target="not enough space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="More suitcase space" target="not enough space" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="too little baggage space on trains" target="too little baggage space          " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="too little baggage space          " target="too little         space          " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="too little baggage space on trains" target="too little         space on trains" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="too little         space on trains" target="too little         space          " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="too little baggage space on trains" target="too little         space          " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="too little baggage space          " target="too little baggage space on trains" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="too little baggage space          " target="too little         space on trains" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="too little         space          " target="too little baggage space on trains" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="too little         space          " target="too little baggage space          " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="too little         space          " target="too little         space on trains" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="too little         space on trains" target="too little baggage space on trains" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="too little         space on trains" target="too little baggage space          " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="needs more large luggage space" target="too little         space          " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Would welcome extra luggage space" target="too little         space          " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637515106949292" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Almost confortable except luggage space" target="too little         space          " type="EDA"/>
+  <entailmentRelationEdge confidence="0.6302287952678579" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="More space                             would make a lot of difference" target="too little         space          " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5937337824782614" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is               poorly organised" target="too little         space          " type="EDA"/>
+  <entailmentRelationEdge confidence="0.8621776330531429" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The space currently is too small" target="too little         space          " type="EDA"/>
+  <entailmentRelationEdge confidence="0.6147431814189745" decisionLabel="Entailment" eda="eu.excitementproject.eop.core.MaxEntClassificationEDA@61d55109" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="There is not enough space for luggage" target="too little         space          " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5082444902292459" decisionLabel="Entailment" source="More suitcase space" target="too little         space          " type="TRANSITIVE_CLOSURE"/>
+</rawGraph>

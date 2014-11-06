@@ -76,7 +76,8 @@ public class ExperimentNice extends AbstractExperiment {
 
 			return new ExperimentNice(
 //					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
-					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_EN_nice.xml",
+//					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_EN_nice.xml",
+					tlDir+"src/main/resources/exci/nice/trainedModelsAndConfigurations/edits/EditDistanceEDA_Lemma_EN+WN.xml",
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class,
 					EditDistanceEDA.class,
@@ -126,8 +127,10 @@ public class ExperimentNice extends AbstractExperiment {
 		
 		if (edaName.equals(EdaName.TIE_POS_RES)) {
 			return new ExperimentNice(
-			tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
-			dataDir, fileLimit, outDir,
+//			tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
+					tlDir+"src/main/resources/exci/nice/trainedModelsAndConfigurations/tie/MaxEntClassificationEDA_Base+WN+VO_EN.xml",
+
+					dataDir, fileLimit, outDir,
 			TreeTaggerEN.class,
 			MaxEntClassificationEDA.class,
 			mergerType
@@ -136,7 +139,8 @@ public class ExperimentNice extends AbstractExperiment {
 	
 		if (edaName.equals(EdaName.P1EDA)) {
 			return new ExperimentNice(
-					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_EN.xml",
+//					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_EN.xml",
+					tlDir+"src/main/resources/exci/nice/trainedModelsAndConfigurations/p1eda/P1EDA_Base_EN.xml",
 					dataDir, fileLimit, outDir,
 					TreeTaggerEN.class,
 					FNR_EN.class,
@@ -183,10 +187,10 @@ public class ExperimentNice extends AbstractExperiment {
 
 		// which EDA(s) to use
 //		EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
-//		EdaName[] names = {EdaName.TIE_POS_RES};	
+		EdaName[] names = {EdaName.TIE_POS_RES};	
 //		EdaName[] names = {EdaName.EDIT_DIST};	
 //		EdaName[] names = {EdaName.BIUTEE, EdaName.TIE_POS_RES};	
-		EdaName[] names = {EdaName.P1EDA};	
+//		EdaName[] names = {EdaName.P1EDA};	
 //		EdaName[] names = {EdaName.TIE_POS_RES};	
 
 		// ===== END OF SET-UP

@@ -1,0 +1,5 @@
+digraph collapsedGraph {
+"toilets were very dirty [4]\nToilet tissue quality is famously bad\nnot enough ladies toilets\nnot enough toilets at Stars Bridge""toilets cleaned [7]\nnot enough toilets\nToilet tissue quality is bad\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty""not enough ladies toilets at Stars Bridge [1]""not enough ladies toilets at Stars Bridge [1]" -> "toilets were very dirty [4]\nToilet tissue quality is famously bad\nnot enough ladies toilets\nnot enough toilets at Stars Bridge" [color=blue]
+"not enough ladies toilets at Stars Bridge [1]" -> "toilets cleaned [7]\nnot enough toilets\nToilet tissue quality is bad\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty" [color=blue]
+"toilets were very dirty [4]\nToilet tissue quality is famously bad\nnot enough ladies toilets\nnot enough toilets at Stars Bridge" -> "toilets cleaned [7]\nnot enough toilets\nToilet tissue quality is bad\ntoilet hygiene non existing\ntoilets were dirty\nToilets/washrooms sometimes disappointing\ntoilet floor dirty" [color=blue]
+}
