@@ -1,0 +1,15 @@
+digraph collapsedGraph {
+"not enough space [2]\nThere is not enough space for luggage""too little space [4]\ntoo little space\nThe space currently is poorly organised\nThe space currently is too small\nImprove the space""limited luggage space [2]\nWould welcome extra luggage space\nlimited luggage space""Almost confortable except luggage space [1]""Improve the space at Frowntown [1]\nImprove the space at Frowntown""More space would make a lot of difference [1]\nMore space would make a lot of difference""More suitcase space [1]""limited luggage space so would not recommend if travelling with large [1]""needs more large luggage space [1]""too little baggage space on trains [1]""too little baggage space [1]\ntoo little baggage space""too little space on trains [1]\ntoo little space on trains""More space would make a lot of difference [1]\nMore space would make a lot of difference" -> "More suitcase space [1]" [color=blue]
+"Improve the space at Frowntown [1]\nImprove the space at Frowntown" -> "too little space [4]\ntoo little space\nThe space currently is poorly organised\nThe space currently is too small\nImprove the space" [color=blue]
+"Almost confortable except luggage space [1]" -> "limited luggage space [2]\nWould welcome extra luggage space\nlimited luggage space" [color=blue]
+"not enough space [2]\nThere is not enough space for luggage" -> "limited luggage space [2]\nWould welcome extra luggage space\nlimited luggage space" [color=blue]
+"limited luggage space so would not recommend if travelling with large [1]" -> "limited luggage space [2]\nWould welcome extra luggage space\nlimited luggage space" [color=blue]
+"needs more large luggage space [1]" -> "More suitcase space [1]" [color=blue]
+"needs more large luggage space [1]" -> "limited luggage space [2]\nWould welcome extra luggage space\nlimited luggage space" [color=blue]
+"More space would make a lot of difference [1]\nMore space would make a lot of difference" -> "needs more large luggage space [1]" [color=blue]
+"too little baggage space on trains [1]" -> "too little baggage space [1]\ntoo little baggage space" [color=blue]
+"too little baggage space [1]\ntoo little baggage space" -> "too little space [4]\ntoo little space\nThe space currently is poorly organised\nThe space currently is too small\nImprove the space" [color=blue]
+"too little baggage space on trains [1]" -> "too little space on trains [1]\ntoo little space on trains" [color=blue]
+"too little space on trains [1]\ntoo little space on trains" -> "too little space [4]\ntoo little space\nThe space currently is poorly organised\nThe space currently is too small\nImprove the space" [color=blue]
+"too little baggage space on trains [1]" -> "too little space [4]\ntoo little space\nThe space currently is poorly organised\nThe space currently is too small\nImprove the space" [color=blue]
+}
