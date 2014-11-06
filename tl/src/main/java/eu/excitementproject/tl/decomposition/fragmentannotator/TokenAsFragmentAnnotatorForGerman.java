@@ -174,32 +174,5 @@ public class TokenAsFragmentAnnotatorForGerman extends AbstractFragmentAnnotator
 		fragLogger.info("Annotated " + num_frag + " determined fragments"); 
 	}
 
-public static void main (String [] args){
-		
-		try {
-			JCas cas = CASUtils.createNewInputCas();
-			cas.setDocumentLanguage("DE");
-			cas.setDocumentText("Fehlerhinweis");
-			CachedLAPAccess lap = new CachedLAPAccess (new LemmaLevelLapDE());
-			TokenAsFragmentAnnotatorForGerman fragAnnot = new TokenAsFragmentAnnotatorForGerman(lap, false);
-			fragAnnot.annotateFragments(cas);
-			FragmentGraphGenerator fragGenerator = new FragmentGraphGeneratorFromCAS();
-			for(FragmentGraph fg : fragGenerator.generateFragmentGraphs(cas)){
-				for(EntailmentUnitMention eum : fg.vertexSet()){
-					System.out.println(eum.getText());
-				}
-			}
-		} catch (LAPException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (FragmentAnnotatorException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (FragmentGraphGeneratorException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 }
 
