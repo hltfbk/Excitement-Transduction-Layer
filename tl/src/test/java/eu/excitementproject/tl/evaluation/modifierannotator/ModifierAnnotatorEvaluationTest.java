@@ -25,7 +25,7 @@ import eu.excitementproject.tl.laputils.LAPUtils;
 @SuppressWarnings("unused")
 public class ModifierAnnotatorEvaluationTest {
 	
-//	@Ignore
+	@Ignore
 	@Test
 	public void test() {
 	
@@ -55,7 +55,7 @@ public class ModifierAnnotatorEvaluationTest {
 					fragAnn,
 					lap,
 					
-					true   // true means it will use the gold standard fragment annotations
+					false   // true means it will use the gold standard fragment annotations
 					);
 			
 			logger.info(eval.toString());
