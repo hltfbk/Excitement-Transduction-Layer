@@ -91,7 +91,7 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 					for(EquivalenceClass entailedNode : entailedNodes){
 						double edgeConfidence = entailmentGraph.getEdge(ec, entailedNode).getConfidence();
 						double entailedNodeScore = score * edgeConfidence;
-						logger.debug("score for " + mentionToBeFound + "and " + entailedNode.getLabel() + ": " + score);		
+						logger.debug("score for " + mentionToBeFound + "and " + entailedNode.getLabel() + ": " + entailedNodeScore);		
 						perNodeScore = new PerNodeScore();
 						perNodeScore.setNode(entailedNode);
 						perNodeScore.setScore(entailedNodeScore);
