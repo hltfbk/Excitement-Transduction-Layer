@@ -877,7 +877,7 @@ public class EvaluatorCategoryAnnotator {
 				nodeMatcherWithIndex.indexGraphNodes();
 				nodeMatcherWithIndex.initializeSearch();
 			} else {
-				nodeMatcher = new NodeMatcherLongestOnly(graph);
+				nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
 			}
 			
 			if (graph.getNumberOfEquivalenceClasses() < 1) {
@@ -1031,7 +1031,7 @@ public class EvaluatorCategoryAnnotator {
 			if (LuceneSearch) {
 				matches.addAll(nodeMatcherWithIndex.findMatchingNodesInGraph(fragmentGraph));
 			} else {
-				nodeMatcher = new NodeMatcherLongestOnly(graph);
+				nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
 				matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 			}
 			logger.info("Number of matches: " + matches.size());
@@ -1340,7 +1340,7 @@ public class EvaluatorCategoryAnnotator {
 				nodeMatcherWithIndex.indexGraphNodes();
 				nodeMatcherWithIndex.initializeSearch();
 			} else {
-				nodeMatcher = new NodeMatcherLongestOnly(egc);
+				nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
 			}
 			
 			//Annotate interaction using graph
