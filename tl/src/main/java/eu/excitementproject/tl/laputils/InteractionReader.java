@@ -6,11 +6,14 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.w3c.dom.Document;
@@ -19,6 +22,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
@@ -68,6 +72,8 @@ public final class InteractionReader {
 		Document dom = null;
 		
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.InteractionReader");
+		logger.setLevel(Level.INFO);
+		
 		logger.info("Processing file " + xmlFile);
 		
 		try {
@@ -207,6 +213,7 @@ public final class InteractionReader {
 	public static void readWP2FragGraphDump(File interactionText, File graphsInXML, JCas aJCas, String languageID) throws DataReaderException, DataIntegrityFail
 	{
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.laputils"); 
+		testlogger.setLevel(Level.INFO);
 		
 		// read the interaction file whole as a string. 
 		String interactionString = ""; 
@@ -297,6 +304,12 @@ public final class InteractionReader {
 		int frag_end; 
 		CASUtils.Region[] r = null; 
 		
+		testlogger.info("File: " + interactionText.getName());
+		testlogger.info("\tcomparing: *" + interactionString + "* with text: *" + original_text + "*");
+
+		// a patch to compensate for differently tokenized sentences
+		original_text = findMatchDespiteTokenization(original_text, interactionString);
+		
 		// If this is not a simple "one-region" fragment ... 
 		if (!interactionString.contains(original_text))
 		{
@@ -312,7 +325,7 @@ public final class InteractionReader {
 				testlogger.info(original_text); 			
 				testlogger.info("Content of the interaction raw file:");
 				testlogger.info(interactionString); 			
-				throw new DataIntegrityFail("The interaction raw text does not contain fragment original text -- this can be caused by wrong tokenization (different tokenization on raw text and original text, etc), or changes in marking original_text."); 
+				throw new DataIntegrityFail("The interaction raw text does not contain fragment original text \n\tfragment: " + original_text + "\n\tinteraction: " + interactionString + "\nThis can be caused by wrong tokenization (different tokenization on raw text and original text, etc), or changes in marking original_text.\n");
 			}
 			else
 			{
@@ -379,8 +392,11 @@ public final class InteractionReader {
 			s += " ]"; 
 			testlogger.debug(s); 
 		}
+		
+		FragmentAnnotation frag = null;
+		
 		try {
-			CASUtils.annotateOneDeterminedFragment(aJCas,  r); 
+			frag = CASUtils.annotateOneDeterminedFragment(aJCas,  r); 
 		}
 		catch (LAPException e)
 		{
@@ -405,6 +421,24 @@ public final class InteractionReader {
 				// TODO : (or not?) (Known problem) note that if the fragment holds two same modifiers, this can lead to wrong match. 
 				// one solution would be using poz value... but that has its own problem. So for now, going this way. 
 				
+				// for non-contiguous fragments, the position of a modifier after the "gap" will be wrong 
+				// e.g.: 
+				// 
+				// The SOFA is
+				// "A trolley serving coffee tea and snacks would be a welcome addition to the economy section . "
+				// 
+				// The (non-contiguous) annotated fragment is
+				// "A trolley serving snacks would be a welcome addition to the economy section "
+
+				// There are two modifier annotations, one with start-end positions: 0-17, the other 53-75. 
+				// But the 53-75 position is relative to the beginning annotated fragment, without taking into account the gap.
+				// 
+				// That is why I change "original_text" to contain the gap (as spaces)
+			
+				if (frag != null)
+					original_text = (String) CASUtils.getCompleteTextFragment(frag);
+				
+				
 				int temp_begin=0;  // begin location on fragment
 				int temp_end=0;    // end location on frag 
 				int mod_begin=0;   // begin on document text 
@@ -412,6 +446,9 @@ public final class InteractionReader {
 
 				CASUtils.Region[] mod_r = null; 
 
+				// same as for the fragment string -- process the modifier to compensate for different tokenization
+				mod = findMatchDespiteTokenization(mod, original_text);
+				
 				if (!original_text.contains(mod))
 				{
 					// modifier text does not exist as it is. Try to check if it exist as 
@@ -428,7 +465,7 @@ public final class InteractionReader {
 						testlogger.info("The problematic modifier");
 						testlogger.info(mod); 			
 
-						throw new DataIntegrityFail("Something is wrong. The fragment text does not contain modifier text. "); 
+						throw new DataIntegrityFail("Something is wrong. The fragment text does not contain modifier text. \n\tfragment: " + original_text + "\n\tmodifier: " + mod); 
 					}
 					else
 					{
@@ -513,6 +550,43 @@ public final class InteractionReader {
 		
 	}
 
+	
+	/**
+++	 * Recreates the interaction string without some of the spaces to compensate 
+++	 * for the tokenization done by the tool that prepared the data for manual annotation
+++	 * 
+++	 * MORE ISSUES: discontinuous fragments and modifiers! 
+++	 * Example:
+++	 * interaction text: linea telefonica assente sia in entrata che in uscita da circa 15 minuti
+++	 * fragment        : linea telefonica assente in entrata da circa 15 minuti
+++	 * 
+++	 * 
+++	 * @param interactionString fragment from the annotated data (possibly tokenized)
+++	 * @param original_text the original interaction texts
+++	 * @return the interactionString possibly without some spaces such that it matches (if possible) the original_text
+++	 */
+	private static String findMatchDespiteTokenization(
+			String subString, String string) {
+		
+//		String pattern = StringEscapeUtils.escapeJava(subString);
+		String pattern = subString;
+		
+		// replace spaces with \s*
+		pattern = pattern.replaceAll(" ", "\\\\s*");	
+		
+		Pattern p = Pattern.compile(pattern);
+		Matcher m = p.matcher(string);
+
+//		System.out.println("\n\tstring: " + string + "\n\tsubstring: " + subString + "\n\tpattern: " + p.pattern());
+		
+		if (m.find()) {
+			subString = m.group();
+		}
+		
+		return subString;
+	}
+
+	
 	/**
 	 * A utility method. Gets two string A and B, maps tokens (WS separated from string) of B to A; report mapping of each B tokens as the locations of A.  
 	 * Mainly used for non-continuous fragment mapping 

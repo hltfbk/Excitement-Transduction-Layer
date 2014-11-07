@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="7">
+	<node implicit_focus="" focus="magazines" implicit_context="" explicit_context="152552.txt" modality="FALSE" id ="152552.txt_2_0">
+		<original_text>More magazines in the lounge</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="news papers" implicit_context="" explicit_context="217842.txt" modality="FALSE" id ="217842.txt_3_0">
+		<original_text>more news papers</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="magazines" implicit_context="" explicit_context="217842.txt" modality="FALSE" id ="217842.txt_4_0">
+		<original_text>more magazines</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="mags" implicit_context="" explicit_context="38058.txt" modality="FALSE" id ="38058.txt_4_0">
+		<original_text>poor selection of English mags</original_text>
+		<correct_text>poor selection of English magazines</correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="papers" implicit_context="" explicit_context="38058.txt" modality="FALSE" id ="38058.txt_5_0">
+		<original_text>poor selection of English papers</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="Magazines" implicit_context="" explicit_context="472607.txt" modality="FALSE" id ="472607.txt_9_0">
+		<original_text>Magazines for children</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<node implicit_focus="" focus="Magazine" implicit_context="" explicit_context="513560.txt" modality="FALSE" id ="513560.txt_5_0">
+		<original_text>Magazine selection too French</original_text>
+		<correct_text></correct_text>
+		<modifiers></modifiers>
+	</node>
+	<edge target="217842.txt_4_0" source="152552.txt_2_0" id="217842.txt_4_0-152552.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="217842.txt_4_0" source="38058.txt_4_0" id="217842.txt_4_0-38058.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="152552.txt_2_0" source="38058.txt_4_0" id="152552.txt_2_0-38058.txt_4_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="217842.txt_3_0" source="38058.txt_5_0" id="217842.txt_3_0-38058.txt_5_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="217842.txt_4_0" source="472607.txt_9_0" id="217842.txt_4_0-472607.txt_9_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

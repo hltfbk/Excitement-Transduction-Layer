@@ -1,0 +1,1104 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 6 entailment unit(s) before editing								
+	I dislike the food service	[227487.txt_1_2]						
+	Meal needs to be improved	[30724.txt_1_1]						
+	The food offering is second rate	[103691.txt_5_2]						
+	food is also bad	[106746.txt_4_5]						
+	food is very average	[178057.txt_1_0]						
+	food was very mediocre	[156303.txt_3_0]						
+								
+collapsed node #2 : 7 entailment unit(s) before editing								
+	Food is average	[423204.txt_1_0]						
+	Food mediocre	[279847.txt_1_1]						
+	Food was average	[109435.txt_1_1]						
+	Meal is average	[451113.txt_1_1]						
+	The food is mediocre	[401238.txt_1_1]						
+	food is average	"[186628.txt_2_0, 178057.txt_1_1]"						
+	food was mediocre	[156303.txt_3_1]						
+								
+collapsed node #3 : 6 entailment unit(s) before editing								
+	Food has got worse	[513560.txt_1_3]						
+	Food is getting worse	[30786.txt_1_0]						
+	Food quality has declined over time	[57576.txt_1_0]						
+	food is less impressive than it used to be	[299017.txt_1_1]						
+	food offered is not as good as before	[16005.txt_1_0]						
+	the quality of food has suffered	[453995.txt_1_1]						
+								
+collapsed node #4 : 3 entailment unit(s) before editing								
+	Have a better meal on standard magnum	[142429.txt_1_0]						
+	I dislike the standard magnum food service	[227487.txt_1_1]						
+	Meal needs to be improved in Standard Magnum	[30724.txt_1_0]						
+								
+collapsed node #5 : 1 entailment unit(s) before editing								
+	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	[103691.txt_1_0]						
+								
+collapsed node #6 : 1 entailment unit(s) before editing								
+	Food still mediocre	[279847.txt_1_0]						
+								
+collapsed node #7 : 1 entailment unit(s) before editing								
+	food is Standard Magnum is also bad	[106746.txt_4_1]						
+								
+collapsed node #8 : 1 entailment unit(s) before editing								
+	go back to the type and quality of meals you offered until about a year ago	[103691.txt_1_3]						
+								
+collapsed node #9 : 2 entailment unit(s) before editing								
+	I so dislike the standard magnum food service	[227487.txt_1_0]						
+	food is Standard Magnum is also very bad	[106746.txt_4_0]						
+								
+collapsed node #10 : 1 entailment unit(s) before editing								
+	The new food offering is second rate	[103691.txt_5_0]						
+								
+collapsed node #11 : 1 entailment unit(s) before editing								
+	not warmed up food	[186709.txt_3_1]						
+								
+collapsed node #12 : 1 entailment unit(s) before editing								
+	not warmed up food in the dining car	[186709.txt_3_0]						
+								
+collapsed node #13 : 1 entailment unit(s) before editing								
+	food is also very bad	[106746.txt_4_3]						
+								
+collapsed node #14 : 1 entailment unit(s) before editing								
+	Hot food in premier	[240903.txt_1_0]						
+								
+collapsed node #15 : 1 entailment unit(s) before editing								
+	Meal is average on standard magnum	[451113.txt_1_0]						
+								
+collapsed node #16 : 1 entailment unit(s) before editing								
+	Food on premium eco has got worse over the years	[513560.txt_1_0]						
+								
+collapsed node #17 : 1 entailment unit(s) before editing								
+	Food on premium eco has got worse	[513560.txt_1_1]						
+								
+collapsed node #18 : 1 entailment unit(s) before editing								
+	Food has got worse over the years	[513560.txt_1_2]						
+								
+collapsed node #19 : 1 entailment unit(s) before editing								
+	food is so much less impressive than it used to be	[299017.txt_1_0]						
+								
+collapsed node #20 : 1 entailment unit(s) before editing								
+	meals in Standard Magnum much below standard of Leisure Select	[127257.txt_5_0]						
+								
+collapsed node #21 : 1 entailment unit(s) before editing								
+	the quality of food has suffered since leisure select became standard magnum	[453995.txt_1_0]						
+								
+collapsed node #22 : 1 entailment unit(s) before editing								
+	Food was a bit average	[109435.txt_1_0]						
+								
+collapsed node #23 : 1 entailment unit(s) before editing								
+	The kiosk food is mediocre	[401238.txt_1_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+food is also bad	6	->	Food mediocre	7	Yes	2	1	
+Food mediocre	7	->	food is also bad	6	Yes	-2	0	
+								
+node pair #2:								
+Food has got worse	6	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	Food has got worse	6	No	0	0	
+								
+node pair #3:								
+Have a better meal on standard magnum	3	->	food is also bad	6	Yes	2	1	
+food is also bad	6	->	Have a better meal on standard magnum	3	No	-2	0	
+								
+node pair #4:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #5:								
+food is also bad	6	->	Food still mediocre	1	Yes	0	0	"was 1. now 0, bad -> mediocre, not still mediocre where still adds info"
+Food still mediocre	1	->	food is also bad	6	Yes	0	0	
+								
+node pair #6:								
+food is Standard Magnum is also bad	1	->	food is also bad	6	Yes	1	1	
+food is also bad	6	->	food is Standard Magnum is also bad	1	No	-1	0	
+								
+node pair #7:								
+go back to the type and quality of meals you offered until about a year ago	1	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #8:								
+food is Standard Magnum is also very bad	2	->	food is also bad	6	Yes	2	1	
+food is also bad	6	->	food is Standard Magnum is also very bad	2	No	-2	0	
+								
+node pair #9:								
+The new food offering is second rate	1	->	food is also bad	6	Yes	1	1	
+food is also bad	6	->	The new food offering is second rate	1	No	-1	0	
+								
+node pair #10:								
+not warmed up food	1	->	food is also bad	6	Yes	0	0	
+food is also bad	6	->	not warmed up food	1	No	0	0	
+								
+node pair #11:								
+not warmed up food in the dining car	1	->	food is also bad	6	Yes	0	0	
+food is also bad	6	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #12:								
+food is also very bad	1	->	food is also bad	6	Yes	1	1	
+food is also bad	6	->	food is also very bad	1	No	-1	0	
+								
+node pair #13:								
+Hot food in premier	1	->	food is also bad	6	Yes	0	0	
+food is also bad	6	->	Hot food in premier	1	No	0	0	
+								
+node pair #14:								
+Meal is average on standard magnum	1	->	food is also bad	6	Yes	0	0	
+food is also bad	6	->	Meal is average on standard magnum	1	No	0	0	
+								
+node pair #15:								
+Food on premium eco has got worse over the years	1	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	Food on premium eco has got worse over the years	1	No	0	0	
+								
+node pair #16:								
+Food on premium eco has got worse	1	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	Food on premium eco has got worse	1	No	0	0	
+								
+node pair #17:								
+Food has got worse over the years	1	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	Food has got worse over the years	1	No	0	0	
+								
+node pair #18:								
+food is so much less impressive than it used to be	1	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	food is so much less impressive than it used to be	1	No	0	0	
+								
+node pair #19:								
+meals in Standard Magnum much below standard of Leisure Select	1	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+								
+node pair #20:								
+the quality of food has suffered since leisure select became standard magnum	1	->	food is also bad	6	Yes	0	1	
+food is also bad	6	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #21:								
+food is also bad	6	->	Food was a bit average	1	Yes	0	0	
+Food was a bit average	1	->	food is also bad	6	Yes	0	0	
+								
+node pair #22:								
+food is also bad	6	->	The kiosk food is mediocre	1	Yes	0	0	
+The kiosk food is mediocre	1	->	food is also bad	6	Yes	0	0	
+								
+node pair #23:								
+Food mediocre	7	->	Food has got worse	6	No	0	0	
+Food has got worse	6	->	Food mediocre	7	No	0	1	
+								
+node pair #24:								
+Food mediocre	7	->	Have a better meal on standard magnum	3	No	0	0	
+Have a better meal on standard magnum	3	->	Food mediocre	7	No	0	1	
+								
+node pair #25:								
+Food mediocre	7	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Food mediocre	7	No	0	1	
+								
+node pair #26:								
+Food still mediocre	1	->	Food mediocre	7	Yes	1	1	
+Food mediocre	7	->	Food still mediocre	1	No	-1	0	
+								
+node pair #27:								
+Food mediocre	7	->	food is Standard Magnum is also bad	1	No	0	0	
+food is Standard Magnum is also bad	1	->	Food mediocre	7	No	0	1	
+								
+node pair #28:								
+Food mediocre	7	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	Food mediocre	7	No	0	1	
+								
+node pair #29:								
+Food mediocre	7	->	food is Standard Magnum is also very bad	2	No	0	0	
+food is Standard Magnum is also very bad	2	->	Food mediocre	7	No	0	1	
+								
+node pair #30:								
+Food mediocre	7	->	The new food offering is second rate	1	No	0	0	
+The new food offering is second rate	1	->	Food mediocre	7	No	0	1	
+								
+node pair #31:								
+Food mediocre	7	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	Food mediocre	7	No	0	0	
+								
+node pair #32:								
+Food mediocre	7	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	Food mediocre	7	No	0	0	
+								
+node pair #33:								
+Food mediocre	7	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	Food mediocre	7	No	0	1	
+								
+node pair #34:								
+Food mediocre	7	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	Food mediocre	7	No	0	0	
+								
+node pair #35:								
+Meal is average on standard magnum	1	->	Food mediocre	7	Yes	1	1	
+Food mediocre	7	->	Meal is average on standard magnum	1	No	-1	0	
+								
+node pair #36:								
+Food mediocre	7	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	Food mediocre	7	No	0	1	
+								
+node pair #37:								
+Food mediocre	7	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	Food mediocre	7	No	0	1	
+								
+node pair #38:								
+Food mediocre	7	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	Food mediocre	7	No	0	1	
+								
+node pair #39:								
+Food mediocre	7	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	Food mediocre	7	No	0	1	
+								
+node pair #40:								
+Food mediocre	7	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	Food mediocre	7	No	0	1	
+								
+node pair #41:								
+Food mediocre	7	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	Food mediocre	7	No	0	1	
+								
+node pair #42:								
+Food was a bit average	1	->	Food mediocre	7	Yes	1	1	
+Food mediocre	7	->	Food was a bit average	1	No	-1	0	
+								
+node pair #43:								
+The kiosk food is mediocre	1	->	Food mediocre	7	Yes	1	1	
+Food mediocre	7	->	The kiosk food is mediocre	1	No	-1	0	
+								
+node pair #44:								
+Food has got worse	6	->	Have a better meal on standard magnum	3	No	0	0	
+Have a better meal on standard magnum	3	->	Food has got worse	6	No	0	0	
+								
+node pair #45:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Food has got worse	6	Yes	0	1	
+Food has got worse	6	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #46:								
+Food has got worse	6	->	Food still mediocre	1	No	0	0	still vs. got worse
+Food still mediocre	1	->	Food has got worse	6	No	0	0	
+								
+node pair #47:								
+Food has got worse	6	->	food is Standard Magnum is also bad	1	No	0	0	
+food is Standard Magnum is also bad	1	->	Food has got worse	6	No	0	0	
+								
+node pair #48:								
+Food has got worse	6	->	go back to the type and quality of meals you offered until about a year ago	1	Yes	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	Food has got worse	6	Yes	0	1	
+								
+node pair #49:								
+Food has got worse	6	->	food is Standard Magnum is also very bad	2	No	0	0	
+food is Standard Magnum is also very bad	2	->	Food has got worse	6	No	0	0	
+								
+node pair #50:								
+Food has got worse	6	->	The new food offering is second rate	1	No	0	0	
+The new food offering is second rate	1	->	Food has got worse	6	No	0	0	
+								
+node pair #51:								
+Food has got worse	6	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	Food has got worse	6	No	0	0	
+								
+node pair #52:								
+Food has got worse	6	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	Food has got worse	6	No	0	0	
+								
+node pair #53:								
+Food has got worse	6	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	Food has got worse	6	No	0	0	
+								
+node pair #54:								
+Food has got worse	6	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	Food has got worse	6	No	0	0	
+								
+node pair #55:								
+Food has got worse	6	->	Meal is average on standard magnum	1	No	0	0	
+Meal is average on standard magnum	1	->	Food has got worse	6	No	0	0	
+								
+node pair #56:								
+Food on premium eco has got worse over the years	1	->	Food has got worse	6	Yes	1	1	
+Food has got worse	6	->	Food on premium eco has got worse over the years	1	No	-1	0	
+								
+node pair #57:								
+Food on premium eco has got worse	1	->	Food has got worse	6	Yes	1	1	
+Food has got worse	6	->	Food on premium eco has got worse	1	No	-1	0	
+								
+node pair #58:								
+Food has got worse	6	->	Food has got worse over the years	1	Yes	-1	0	
+Food has got worse over the years	1	->	Food has got worse	6	Yes	1	1	
+								
+node pair #59:								
+Food has got worse	6	->	food is so much less impressive than it used to be	1	Yes	-1	0	
+food is so much less impressive than it used to be	1	->	Food has got worse	6	Yes	1	1	
+								
+node pair #60:								
+Food has got worse	6	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	Food has got worse	6	No	0	1	
+								
+node pair #61:								
+the quality of food has suffered since leisure select became standard magnum	1	->	Food has got worse	6	Yes	1	1	
+Food has got worse	6	->	the quality of food has suffered since leisure select became standard magnum	1	No	-1	0	
+								
+node pair #62:								
+Food has got worse	6	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	Food has got worse	6	No	0	0	
+								
+node pair #63:								
+Food has got worse	6	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	Food has got worse	6	No	0	0	
+								
+node pair #64:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Have a better meal on standard magnum	3	Yes	0	1	
+Have a better meal on standard magnum	3	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #65:								
+Have a better meal on standard magnum	3	->	Food still mediocre	1	No	0	0	
+Food still mediocre	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #66:								
+food is Standard Magnum is also bad	1	->	Have a better meal on standard magnum	3	Yes	0	1	
+Have a better meal on standard magnum	3	->	food is Standard Magnum is also bad	1	No	0	1	
+								
+node pair #67:								
+Have a better meal on standard magnum	3	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #68:								
+food is Standard Magnum is also very bad	2	->	Have a better meal on standard magnum	3	Yes	1	1	
+Have a better meal on standard magnum	3	->	food is Standard Magnum is also very bad	2	No	-1	0	
+								
+node pair #69:								
+Have a better meal on standard magnum	3	->	The new food offering is second rate	1	No	0	0	
+The new food offering is second rate	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #70:								
+Have a better meal on standard magnum	3	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #71:								
+Have a better meal on standard magnum	3	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #72:								
+Have a better meal on standard magnum	3	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #73:								
+Have a better meal on standard magnum	3	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #74:								
+Meal is average on standard magnum	1	->	Have a better meal on standard magnum	3	Yes	0	0	
+Have a better meal on standard magnum	3	->	Meal is average on standard magnum	1	No	0	1	
+								
+node pair #75:								
+Have a better meal on standard magnum	3	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #76:								
+Have a better meal on standard magnum	3	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #77:								
+Have a better meal on standard magnum	3	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #78:								
+Have a better meal on standard magnum	3	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #79:								
+Have a better meal on standard magnum	3	->	meals in Standard Magnum much below standard of Leisure Select	1	Yes	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	Have a better meal on standard magnum	3	Yes	0	1	
+								
+node pair #80:								
+the quality of food has suffered since leisure select became standard magnum	1	->	Have a better meal on standard magnum	3	Yes	0	1	
+Have a better meal on standard magnum	3	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #81:								
+Have a better meal on standard magnum	3	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #82:								
+Have a better meal on standard magnum	3	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	Have a better meal on standard magnum	3	No	0	0	
+								
+node pair #83:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Food still mediocre	1	No	0	0	
+Food still mediocre	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #84:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	food is Standard Magnum is also bad	1	No	0	1	
+food is Standard Magnum is also bad	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #85:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	go back to the type and quality of meals you offered until about a year ago	1	Yes	1	1	
+go back to the type and quality of meals you offered until about a year ago	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	-1	0	
+								
+node pair #86:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	food is Standard Magnum is also very bad	2	Yes	0	0	
+food is Standard Magnum is also very bad	2	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #87:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	The new food offering is second rate	1	Yes	0	1	
+The new food offering is second rate	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #88:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #89:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #90:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #91:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #92:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Meal is average on standard magnum	1	No	0	1	
+Meal is average on standard magnum	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #93:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #94:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #95:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Food has got worse over the years	1	Yes	0	1	
+Food has got worse over the years	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #96:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	food is so much less impressive than it used to be	1	Yes	0	0	
+food is so much less impressive than it used to be	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #97:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #98:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	the quality of food has suffered since leisure select became standard magnum	1	Yes	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	Yes	0	0	leisure select vs. type/a year ago
+								
+node pair #99:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #100:								
+In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	In Standard Magnum go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #101:								
+Food still mediocre	1	->	food is Standard Magnum is also bad	1	No	0	0	standard magnum vs. still
+food is Standard Magnum is also bad	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #102:								
+Food still mediocre	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #103:								
+Food still mediocre	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+food is Standard Magnum is also very bad	2	->	Food still mediocre	1	No	0	0	
+								
+node pair #104:								
+Food still mediocre	1	->	The new food offering is second rate	1	No	0	0	
+The new food offering is second rate	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #105:								
+Food still mediocre	1	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #106:								
+Food still mediocre	1	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #107:								
+Food still mediocre	1	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #108:								
+Food still mediocre	1	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #109:								
+Meal is average on standard magnum	1	->	Food still mediocre	1	Yes	0	0	
+Food still mediocre	1	->	Meal is average on standard magnum	1	No	0	0	
+								
+node pair #110:								
+Food still mediocre	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #111:								
+Food still mediocre	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #112:								
+Food still mediocre	1	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #113:								
+Food still mediocre	1	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #114:								
+Food still mediocre	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #115:								
+Food still mediocre	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	Food still mediocre	1	No	0	0	
+								
+node pair #116:								
+Food still mediocre	1	->	Food was a bit average	1	Yes	0	0	
+Food was a bit average	1	->	Food still mediocre	1	Yes	0	0	
+								
+node pair #117:								
+Food still mediocre	1	->	The kiosk food is mediocre	1	Yes	0	0	
+The kiosk food is mediocre	1	->	Food still mediocre	1	Yes	0	0	
+								
+node pair #118:								
+food is Standard Magnum is also bad	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #119:								
+food is Standard Magnum is also bad	1	->	food is Standard Magnum is also very bad	2	Yes	-1	0	
+food is Standard Magnum is also very bad	2	->	food is Standard Magnum is also bad	1	Yes	1	1	
+								
+node pair #120:								
+food is Standard Magnum is also bad	1	->	The new food offering is second rate	1	No	0	0	standard magnum vs. new
+The new food offering is second rate	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #121:								
+food is Standard Magnum is also bad	1	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #122:								
+food is Standard Magnum is also bad	1	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #123:								
+food is Standard Magnum is also bad	1	->	food is also very bad	1	No	-1	0	
+food is also very bad	1	->	food is Standard Magnum is also bad	1	No	-1	0	
+								
+node pair #124:								
+food is Standard Magnum is also bad	1	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #125:								
+food is Standard Magnum is also bad	1	->	Meal is average on standard magnum	1	No	0	1	
+Meal is average on standard magnum	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #126:								
+food is Standard Magnum is also bad	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #127:								
+food is Standard Magnum is also bad	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #128:								
+food is Standard Magnum is also bad	1	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #129:								
+food is Standard Magnum is also bad	1	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #130:								
+food is Standard Magnum is also bad	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	food is Standard Magnum is also bad	1	No	0	1	
+								
+node pair #131:								
+food is Standard Magnum is also bad	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	food is Standard Magnum is also bad	1	No	0	1	
+								
+node pair #132:								
+food is Standard Magnum is also bad	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #133:								
+food is Standard Magnum is also bad	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	food is Standard Magnum is also bad	1	No	0	0	
+								
+node pair #134:								
+go back to the type and quality of meals you offered until about a year ago	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+food is Standard Magnum is also very bad	2	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #135:								
+go back to the type and quality of meals you offered until about a year ago	1	->	The new food offering is second rate	1	No	0	0	new in H
+The new food offering is second rate	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #136:								
+go back to the type and quality of meals you offered until about a year ago	1	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #137:								
+go back to the type and quality of meals you offered until about a year ago	1	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #138:								
+go back to the type and quality of meals you offered until about a year ago	1	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #139:								
+go back to the type and quality of meals you offered until about a year ago	1	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #140:								
+go back to the type and quality of meals you offered until about a year ago	1	->	Meal is average on standard magnum	1	No	0	0	
+Meal is average on standard magnum	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #141:								
+Food on premium eco has got worse over the years	1	->	go back to the type and quality of meals you offered until about a year ago	1	Yes	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+								
+node pair #142:								
+Food on premium eco has got worse	1	->	go back to the type and quality of meals you offered until about a year ago	1	Yes	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	Food on premium eco has got worse	1	No	0	0	
+								
+node pair #143:								
+Food has got worse over the years	1	->	go back to the type and quality of meals you offered until about a year ago	1	Yes	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	Food has got worse over the years	1	No	0	1	
+								
+node pair #144:								
+food is so much less impressive than it used to be	1	->	go back to the type and quality of meals you offered until about a year ago	1	Yes	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	food is so much less impressive than it used to be	1	No	0	0	
+								
+node pair #145:								
+go back to the type and quality of meals you offered until about a year ago	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #146:								
+the quality of food has suffered since leisure select became standard magnum	1	->	go back to the type and quality of meals you offered until about a year ago	1	Yes	0	0	
+go back to the type and quality of meals you offered until about a year ago	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #147:								
+go back to the type and quality of meals you offered until about a year ago	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #148:								
+go back to the type and quality of meals you offered until about a year ago	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	go back to the type and quality of meals you offered until about a year ago	1	No	0	0	
+								
+node pair #149:								
+food is Standard Magnum is also very bad	2	->	The new food offering is second rate	1	No	0	0	
+The new food offering is second rate	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #150:								
+food is Standard Magnum is also very bad	2	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #151:								
+food is Standard Magnum is also very bad	2	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #152:								
+food is Standard Magnum is also very bad	2	->	food is also very bad	1	Yes	1	1	
+food is also very bad	1	->	food is Standard Magnum is also very bad	2	No	-1	0	
+								
+node pair #153:								
+food is Standard Magnum is also very bad	2	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #154:								
+food is Standard Magnum is also very bad	2	->	Meal is average on standard magnum	1	No	0	1	
+Meal is average on standard magnum	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #155:								
+food is Standard Magnum is also very bad	2	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #156:								
+food is Standard Magnum is also very bad	2	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #157:								
+food is Standard Magnum is also very bad	2	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #158:								
+food is Standard Magnum is also very bad	2	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #159:								
+food is Standard Magnum is also very bad	2	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	food is Standard Magnum is also very bad	2	No	0	1	
+								
+node pair #160:								
+the quality of food has suffered since leisure select became standard magnum	1	->	food is Standard Magnum is also very bad	2	Yes	0	0	
+food is Standard Magnum is also very bad	2	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #161:								
+food is Standard Magnum is also very bad	2	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #162:								
+food is Standard Magnum is also very bad	2	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	food is Standard Magnum is also very bad	2	No	0	0	
+								
+node pair #163:								
+The new food offering is second rate	1	->	not warmed up food	1	No	0	0	
+not warmed up food	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #164:								
+The new food offering is second rate	1	->	not warmed up food in the dining car	1	No	0	0	
+not warmed up food in the dining car	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #165:								
+The new food offering is second rate	1	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #166:								
+The new food offering is second rate	1	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #167:								
+The new food offering is second rate	1	->	Meal is average on standard magnum	1	No	0	0	
+Meal is average on standard magnum	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #168:								
+The new food offering is second rate	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #169:								
+The new food offering is second rate	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #170:								
+The new food offering is second rate	1	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #171:								
+The new food offering is second rate	1	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	The new food offering is second rate	1	No	0	1	
+								
+node pair #172:								
+The new food offering is second rate	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	The new food offering is second rate	1	No	0	1	
+								
+node pair #173:								
+the quality of food has suffered since leisure select became standard magnum	1	->	The new food offering is second rate	1	Yes	0	1	
+The new food offering is second rate	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #174:								
+The new food offering is second rate	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #175:								
+The new food offering is second rate	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	The new food offering is second rate	1	No	0	0	
+								
+node pair #176:								
+not warmed up food in the dining car	1	->	not warmed up food	1	Yes	1	1	
+not warmed up food	1	->	not warmed up food in the dining car	1	No	-1	0	
+								
+node pair #177:								
+not warmed up food	1	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	not warmed up food	1	No	0	0	
+								
+node pair #178:								
+Hot food in premier	1	->	not warmed up food	1	Yes	0	1	
+not warmed up food	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #179:								
+not warmed up food	1	->	Meal is average on standard magnum	1	No	0	0	
+Meal is average on standard magnum	1	->	not warmed up food	1	No	0	0	
+								
+node pair #180:								
+not warmed up food	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	not warmed up food	1	No	0	0	
+								
+node pair #181:								
+not warmed up food	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	not warmed up food	1	No	0	0	
+								
+node pair #182:								
+not warmed up food	1	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	not warmed up food	1	No	0	0	
+								
+node pair #183:								
+not warmed up food	1	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	not warmed up food	1	No	0	0	
+								
+node pair #184:								
+not warmed up food	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	not warmed up food	1	No	0	0	
+								
+node pair #185:								
+not warmed up food	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	not warmed up food	1	No	0	0	
+								
+node pair #186:								
+not warmed up food	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	not warmed up food	1	No	0	0	
+								
+node pair #187:								
+not warmed up food	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	not warmed up food	1	No	0	0	
+								
+node pair #188:								
+not warmed up food in the dining car	1	->	food is also very bad	1	No	0	0	
+food is also very bad	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #189:								
+not warmed up food in the dining car	1	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #190:								
+not warmed up food in the dining car	1	->	Meal is average on standard magnum	1	No	0	0	
+Meal is average on standard magnum	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #191:								
+not warmed up food in the dining car	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #192:								
+not warmed up food in the dining car	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #193:								
+not warmed up food in the dining car	1	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #194:								
+not warmed up food in the dining car	1	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #195:								
+not warmed up food in the dining car	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #196:								
+not warmed up food in the dining car	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #197:								
+not warmed up food in the dining car	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #198:								
+not warmed up food in the dining car	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	not warmed up food in the dining car	1	No	0	0	
+								
+node pair #199:								
+food is also very bad	1	->	Hot food in premier	1	No	0	0	
+Hot food in premier	1	->	food is also very bad	1	No	0	0	
+								
+node pair #200:								
+food is also very bad	1	->	Meal is average on standard magnum	1	No	0	0	
+Meal is average on standard magnum	1	->	food is also very bad	1	No	0	0	
+								
+node pair #201:								
+food is also very bad	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	food is also very bad	1	No	0	0	
+								
+node pair #202:								
+food is also very bad	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	food is also very bad	1	No	0	0	
+								
+node pair #203:								
+food is also very bad	1	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	food is also very bad	1	No	0	0	
+								
+node pair #204:								
+food is also very bad	1	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	food is also very bad	1	No	0	0	
+								
+node pair #205:								
+food is also very bad	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	food is also very bad	1	No	0	1	
+								
+node pair #206:								
+food is also very bad	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	food is also very bad	1	No	0	0	
+								
+node pair #207:								
+food is also very bad	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	food is also very bad	1	No	0	0	
+								
+node pair #208:								
+food is also very bad	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	food is also very bad	1	No	0	0	
+								
+node pair #209:								
+Hot food in premier	1	->	Meal is average on standard magnum	1	No	0	0	
+Meal is average on standard magnum	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #210:								
+Hot food in premier	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #211:								
+Hot food in premier	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #212:								
+Hot food in premier	1	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #213:								
+Hot food in premier	1	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #214:								
+Hot food in premier	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #215:								
+Hot food in premier	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #216:								
+Hot food in premier	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #217:								
+Hot food in premier	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	Hot food in premier	1	No	0	0	
+								
+node pair #218:								
+Meal is average on standard magnum	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+Food on premium eco has got worse over the years	1	->	Meal is average on standard magnum	1	No	0	0	
+								
+node pair #219:								
+Meal is average on standard magnum	1	->	Food on premium eco has got worse	1	No	0	0	
+Food on premium eco has got worse	1	->	Meal is average on standard magnum	1	No	0	0	
+								
+node pair #220:								
+Meal is average on standard magnum	1	->	Food has got worse over the years	1	No	0	0	
+Food has got worse over the years	1	->	Meal is average on standard magnum	1	No	0	0	
+								
+node pair #221:								
+Meal is average on standard magnum	1	->	food is so much less impressive than it used to be	1	No	0	0	
+food is so much less impressive than it used to be	1	->	Meal is average on standard magnum	1	No	0	0	
+								
+node pair #222:								
+Meal is average on standard magnum	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	big error caused many inconsistencies
+meals in Standard Magnum much below standard of Leisure Select	1	->	Meal is average on standard magnum	1	No	0	1	
+								
+node pair #223:								
+Meal is average on standard magnum	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	big error caused many inconsistencies
+the quality of food has suffered since leisure select became standard magnum	1	->	Meal is average on standard magnum	1	No	0	1	
+								
+node pair #224:								
+Meal is average on standard magnum	1	->	Food was a bit average	1	Yes	0	0	
+Food was a bit average	1	->	Meal is average on standard magnum	1	No	0	0	
+								
+node pair #225:								
+Meal is average on standard magnum	1	->	The kiosk food is mediocre	1	Yes	0	0	
+The kiosk food is mediocre	1	->	Meal is average on standard magnum	1	No	0	0	
+								
+node pair #226:								
+Food on premium eco has got worse over the years	1	->	Food on premium eco has got worse	1	Yes	1	1	
+Food on premium eco has got worse	1	->	Food on premium eco has got worse over the years	1	No	-1	0	
+								
+node pair #227:								
+Food on premium eco has got worse over the years	1	->	Food has got worse over the years	1	Yes	1	1	
+Food has got worse over the years	1	->	Food on premium eco has got worse over the years	1	No	-1	0	
+								
+node pair #228:								
+Food on premium eco has got worse over the years	1	->	food is so much less impressive than it used to be	1	Yes	0	0	
+food is so much less impressive than it used to be	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+								
+node pair #229:								
+Food on premium eco has got worse over the years	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+								
+node pair #230:								
+Food on premium eco has got worse over the years	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+								
+node pair #231:								
+Food on premium eco has got worse over the years	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+								
+node pair #232:								
+Food on premium eco has got worse over the years	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	Food on premium eco has got worse over the years	1	No	0	0	
+								
+node pair #233:								
+Food on premium eco has got worse	1	->	Food has got worse over the years	1	Yes	-1	0	
+Food has got worse over the years	1	->	Food on premium eco has got worse	1	No	-1	0	
+								
+node pair #234:								
+Food on premium eco has got worse	1	->	food is so much less impressive than it used to be	1	Yes	0	0	
+food is so much less impressive than it used to be	1	->	Food on premium eco has got worse	1	No	0	0	
+								
+node pair #235:								
+Food on premium eco has got worse	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	Food on premium eco has got worse	1	No	0	0	
+								
+node pair #236:								
+Food on premium eco has got worse	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	Food on premium eco has got worse	1	No	0	0	
+								
+node pair #237:								
+Food on premium eco has got worse	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	Food on premium eco has got worse	1	No	0	0	
+								
+node pair #238:								
+Food on premium eco has got worse	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	Food on premium eco has got worse	1	No	0	0	
+								
+node pair #239:								
+Food has got worse over the years	1	->	food is so much less impressive than it used to be	1	Yes	0	0	so much vs. over the years
+food is so much less impressive than it used to be	1	->	Food has got worse over the years	1	Yes	0	0	
+								
+node pair #240:								
+Food has got worse over the years	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	much vs. over the years
+meals in Standard Magnum much below standard of Leisure Select	1	->	Food has got worse over the years	1	No	0	0	
+								
+node pair #241:								
+the quality of food has suffered since leisure select became standard magnum	1	->	Food has got worse over the years	1	Yes	0	0	
+Food has got worse over the years	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #242:								
+Food has got worse over the years	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	Food has got worse over the years	1	No	0	0	
+
+node pair #243:								
+Food has got worse over the years	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	Food has got worse over the years	1	No	0	0	
+								
+node pair #244:								
+food is so much less impressive than it used to be	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+meals in Standard Magnum much below standard of Leisure Select	1	->	food is so much less impressive than it used to be	1	No	0	1	
+								
+node pair #245:								
+the quality of food has suffered since leisure select became standard magnum	1	->	food is so much less impressive than it used to be	1	Yes	0	0	leisure vs. so much
+food is so much less impressive than it used to be	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #246:								
+food is so much less impressive than it used to be	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	food is so much less impressive than it used to be	1	No	0	0	
+								
+node pair #247:								
+food is so much less impressive than it used to be	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	food is so much less impressive than it used to be	1	No	0	0	
+								
+node pair #248:								
+meals in Standard Magnum much below standard of Leisure Select	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+the quality of food has suffered since leisure select became standard magnum	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	has suffered vs. much below
+								
+node pair #249:								
+meals in Standard Magnum much below standard of Leisure Select	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+								
+node pair #250:								
+meals in Standard Magnum much below standard of Leisure Select	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	meals in Standard Magnum much below standard of Leisure Select	1	No	0	0	
+								
+node pair #251:								
+the quality of food has suffered since leisure select became standard magnum	1	->	Food was a bit average	1	No	0	0	
+Food was a bit average	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #252:								
+the quality of food has suffered since leisure select became standard magnum	1	->	The kiosk food is mediocre	1	No	0	0	
+The kiosk food is mediocre	1	->	the quality of food has suffered since leisure select became standard magnum	1	No	0	0	
+								
+node pair #253:								
+Food was a bit average	1	->	The kiosk food is mediocre	1	Yes	0	0	
+The kiosk food is mediocre	1	->	Food was a bit average	1	Yes	0	0	

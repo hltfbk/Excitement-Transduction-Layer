@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entailment-corpus lang="IT">
+	<pair id="0299.txt_2_0-0299.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0187.txt_1_0-0299.txt_2_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0299.txt_2_0-0299.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0187.txt_1_0-0279.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0162.txt_1_0-0299.txt_2_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0279.txt_1_0-0299.txt_2_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0162.txt_1_0-0279.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0162.txt_1_0-0299.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0279.txt_1_0-0299.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0279.txt_1_0-0162.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0302.txt_1_0-0162.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0302.txt_1_0-0299.txt_2_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0187.txt_1_1-0299.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0279.txt_1_0-0187.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0162.txt_1_0-0299.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0187.txt_1_1-0299.txt_2_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0162.txt_1_0-0299.txt_2_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0187.txt_1_0-0162.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0187.txt_1_0-0299.txt_2_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0162.txt_1_0-0187.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0187.txt_1_1-0299.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0279.txt_1_0-0299.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0299.txt_2_1-0299.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0187.txt_1_1-0299.txt_2_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0299.txt_1_0-0299.txt_2_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0302.txt_1_0-0299.txt_2_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0187.txt_1_1-0279.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0302.txt_1_0-0279.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0302.txt_1_0-0299.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0279.txt_1_0-0299.txt_2_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0302.txt_1_0-0187.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0299.txt_1_1-0299.txt_2_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0302.txt_1_0-0299.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0187.txt_1_1-0162.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0187.txt_1_0-0299.txt_1_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0299.txt_1_0-0299.txt_2_0" entailment="ENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0187.txt_1_0-0299.txt_1_1" entailment="ENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0299.txt_2_1-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0299.txt_2_1-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0299.txt_2_1-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0299.txt_2_1-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0299.txt_2_1-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0299.txt_2_1-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0299.txt_2_1-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0299.txt_2_1-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0299.txt_2_1-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_2_1-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0299.txt_2_1-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_2_1-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_2_1-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_2_1-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0299.txt_2_1-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0299.txt_2_1-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è nemmeno competitiva</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0299.txt_1_1-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0299.txt_1_1-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0299.txt_1_1-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0299.txt_1_1-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0299.txt_1_1-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0299.txt_1_1-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0299.txt_1_1-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0299.txt_1_1-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0299.txt_1_1-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_1_1-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0299.txt_1_1-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_1_1-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_1_1-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_1_1-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0299.txt_1_1-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0299.txt_1_1-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX non è conveniente</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0279.txt_1_0-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0279.txt_1_0-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0279.txt_1_0-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0279.txt_1_0-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0279.txt_1_0-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0279.txt_1_0-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0279.txt_1_0-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0279.txt_1_0-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0279.txt_1_0-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0279.txt_1_0-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0279.txt_1_0-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0279.txt_1_0-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>TELEFONIAX è troppo cara</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0162.txt_1_0-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0162.txt_1_0-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0162.txt_1_0-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0162.txt_1_0-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0162.txt_1_0-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0162.txt_1_0-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0162.txt_1_0-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0162.txt_1_0-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0162.txt_1_0-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0162.txt_1_0-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0162.txt_1_0-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0162.txt_1_0-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>è troppo cara la TELEFONIAX</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0187.txt_1_1-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0187.txt_1_1-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0187.txt_1_1-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0187.txt_1_1-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0187.txt_1_1-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0187.txt_1_1-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0187.txt_1_1-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0187.txt_1_1-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0187.txt_1_1-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0187.txt_1_1-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0187.txt_1_1-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete prezzi alti</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0299.txt_1_0-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0299.txt_1_0-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0299.txt_1_0-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0299.txt_1_0-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0299.txt_1_0-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0299.txt_1_0-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0299.txt_1_0-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0299.txt_1_0-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_1_0-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0299.txt_1_0-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_1_0-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_1_0-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_1_0-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0299.txt_1_0-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0299.txt_1_0-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è più conveniente</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0299.txt_2_0-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0299.txt_2_0-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0299.txt_2_0-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0299.txt_2_0-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0299.txt_2_0-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0299.txt_2_0-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0299.txt_2_0-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0299.txt_2_0-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_2_0-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0299.txt_2_0-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_2_0-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_2_0-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0299.txt_2_0-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0299.txt_2_0-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0299.txt_2_0-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la TELEFONIAX ormai non è nemmeno competitiva</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0302.txt_1_0-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0302.txt_1_0-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0302.txt_1_0-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0302.txt_1_0-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0302.txt_1_0-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0302.txt_1_0-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0302.txt_1_0-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0302.txt_1_0-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0302.txt_1_0-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0302.txt_1_0-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0302.txt_1_0-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Prezzi insostenibili</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_7-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_7-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_7-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0283.txt_1_7-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0283.txt_1_7-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0283.txt_1_7-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_7-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_7-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0283.txt_1_7-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0283.txt_1_7-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_7-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_6-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_6-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_6-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0283.txt_1_6-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0283.txt_1_6-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0283.txt_1_6-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_6-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_6-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0283.txt_1_6-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0283.txt_1_6-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_6-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_3-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_3-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_3-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0283.txt_1_3-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0283.txt_1_3-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0283.txt_1_3-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_3-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_3-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0283.txt_1_3-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0283.txt_1_3-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_3-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_2-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_2-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_2-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0283.txt_1_2-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0283.txt_1_2-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0283.txt_1_2-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_2-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_2-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0283.txt_1_2-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0283.txt_1_2-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_2-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_5-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_5-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_5-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0283.txt_1_5-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0283.txt_1_5-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0283.txt_1_5-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_5-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_5-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0283.txt_1_5-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0283.txt_1_5-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_5-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_4-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_4-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_4-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0283.txt_1_4-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0283.txt_1_4-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0283.txt_1_4-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_4-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_4-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0283.txt_1_4-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0283.txt_1_4-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_4-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_1-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_1-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_1-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0283.txt_1_1-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0283.txt_1_1-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0283.txt_1_1-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_1-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_1-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0283.txt_1_1-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0283.txt_1_1-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_1-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_0-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_0-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_0-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0283.txt_1_0-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0283.txt_1_0-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0283.txt_1_0-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0283.txt_1_0-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0283.txt_1_0-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0283.txt_1_0-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0283.txt_1_0-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0283.txt_1_0-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0187.txt_1_0-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0187.txt_1_0-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0187.txt_1_0-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0187.txt_1_0-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0187.txt_1_0-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0187.txt_1_0-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0187.txt_1_0-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0187.txt_1_0-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0187.txt_1_0-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0187.txt_1_0-0286.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0187.txt_1_0-0286.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>Avete i prezzi più alti in assoluto</t>
+		<h>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</h>
+	</pair>
+	<pair id="0286.txt_1_1-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0286.txt_1_1-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0286.txt_1_1-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0286.txt_1_1-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0286.txt_1_1-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0286.txt_1_1-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0286.txt_1_1-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0286.txt_1_1-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0286.txt_1_1-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0286.txt_1_1-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0286.txt_1_1-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0286.txt_1_1-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0286.txt_1_1-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0286.txt_1_1-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0286.txt_1_1-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0286.txt_1_1-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0286.txt_1_1-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+	<pair id="0286.txt_1_0-0299.txt_2_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la TELEFONIAX non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0286.txt_1_0-0299.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la TELEFONIAX non è conveniente</h>
+	</pair>
+	<pair id="0286.txt_1_0-0279.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>TELEFONIAX è troppo cara</h>
+	</pair>
+	<pair id="0286.txt_1_0-0162.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>è troppo cara la TELEFONIAX</h>
+	</pair>
+	<pair id="0286.txt_1_0-0187.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>Avete prezzi alti</h>
+	</pair>
+	<pair id="0286.txt_1_0-0299.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la TELEFONIAX ormai non è più conveniente</h>
+	</pair>
+	<pair id="0286.txt_1_0-0299.txt_2_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la TELEFONIAX ormai non è nemmeno competitiva</h>
+	</pair>
+	<pair id="0286.txt_1_0-0302.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>Prezzi insostenibili</h>
+	</pair>
+	<pair id="0286.txt_1_0-0283.txt_1_7" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0286.txt_1_0-0283.txt_1_6" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata</h>
+	</pair>
+	<pair id="0286.txt_1_0-0283.txt_1_3" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0286.txt_1_0-0283.txt_1_2" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0286.txt_1_0-0283.txt_1_5" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la mia promozione è aumentata di 1 centesimo</h>
+	</pair>
+	<pair id="0286.txt_1_0-0283.txt_1_4" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la mia promozione è aumentata senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0286.txt_1_0-0283.txt_1_1" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0286.txt_1_0-0283.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>aspetto di sapere perchè la mia promozione è aumentata di 1 centesimo senza che comunicazione alcuna sia arrivata</h>
+	</pair>
+	<pair id="0286.txt_1_0-0187.txt_1_0" entailment="NONENTAILMENT" task="usecase1" >
+		<t>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</t>
+		<h>Avete i prezzi più alti in assoluto</h>
+	</pair>
+</entailment-corpus>

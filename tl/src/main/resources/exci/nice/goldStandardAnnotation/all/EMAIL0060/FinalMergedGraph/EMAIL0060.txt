@@ -1,0 +1,40 @@
+Node caption	Entailment Unit	EU_id					Node_check	Comments
+								
+collapsed node #1 : 1 entailment unit(s) before editing								
+	food was not delivered properly	[105536.txt_5_0]						
+								
+collapsed node #2 : 1 entailment unit(s) before editing								
+	You could improve by bringuing food closer to me	[326254.txt_1_0]						
+								
+collapsed node #3 : 1 entailment unit(s) before editing								
+	our meal was not delivered with a smile	[220190.txt_1_0]						
+								
+collapsed node #4 : 1 entailment unit(s) before editing								
+	Service food depends on who it is some better then others	[464852.txt_1_0]						
+								
+								
+Source	#EU in src	->	Target	#EU in tgt	Decision	#FG edges	Decision_new	Comments
+								
+node pair #1:								
+You could improve by bringuing food closer to me	1	->	food was not delivered properly	1	Yes	0	1	
+food was not delivered properly	1	->	You could improve by bringuing food closer to me	1	No	0	0	
+								
+node pair #2:								
+our meal was not delivered with a smile	1	->	food was not delivered properly	1	Yes	0	1	
+food was not delivered properly	1	->	our meal was not delivered with a smile	1	No	0	0	
+								
+node pair #3:								
+food was not delivered properly	1	->	Service food depends on who it is some better then others	1	No	0	0	
+Service food depends on who it is some better then others	1	->	food was not delivered properly	1	No	0	0	"Hesitate: the person looks not satisfied with how the food was served. Also ""food was not delievered properly"" means, as we agreed, that ""sometimes food is not delivered properly"", which probably can be entailed by the statement ""some better than others"" - some do it properly, some don't..."
+								
+node pair #4:								
+You could improve by bringuing food closer to me	1	->	our meal was not delivered with a smile	1	No	0	0	
+our meal was not delivered with a smile	1	->	You could improve by bringuing food closer to me	1	No	0	0	
+								
+node pair #5:								
+You could improve by bringuing food closer to me	1	->	Service food depends on who it is some better then others	1	No	0	0	
+Service food depends on who it is some better then others	1	->	You could improve by bringuing food closer to me	1	No	0	0	
+								
+node pair #6:								
+our meal was not delivered with a smile	1	->	Service food depends on who it is some better then others	1	No	0	0	
+Service food depends on who it is some better then others	1	->	our meal was not delivered with a smile	1	No	0	0	

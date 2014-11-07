@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="2">
+    <node id="0053.txt_5_0" implicit_statement="FALSE" modality="TRUE" explicit_context="0053.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>per contattarvi devo stre più di dieci minuti in attesa</original_text>
+        <correct_text>per contattarvi devo stare più di dieci minuti in attesa</correct_text>
+        <modifiers>per contattarvipoz=0 1</modifiers>
+    </node>
+    <node id="0053.txt_5_1" implicit_statement="FALSE" modality="TRUE" explicit_context="0053.txt" implicit_context="" focus="" implicit_focus="assistenza clienti">
+        <original_text>devo stre più di dieci minuti in attesa</original_text>
+        <correct_text>devo stare più di dieci minuti in attesa</correct_text>
+        <modifiers> </modifiers>
+    </node>
+    <edge id="0053.txt_5_0-0053.txt_5_1" source="0053.txt_5_0" target="0053.txt_5_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0053.txt_5_0-0053.txt_5_1" source="0053.txt_5_0" target="0053.txt_5_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

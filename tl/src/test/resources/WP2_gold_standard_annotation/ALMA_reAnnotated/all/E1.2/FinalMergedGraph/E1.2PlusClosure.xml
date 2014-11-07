@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph problem="no" nodeNum="16">
+	<node explicit_context="0254.txt" focus="telefono" id="0254.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>noi del telefono pagato non abbiamo notizie</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0254.txt" focus="telefono" id="0254.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>noi del telefono acquistato non abbiamo notizie</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0295.txt" focus="MODELLOA2" id="0295.txt_2_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>mi hanno inviato un MODELLOA2 con pixel bruciati</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0295.txt" focus="MODELLOA2" id="0295.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>mi hanno inviato un MODELLOA2 con una montagna di pixel bruciati</original_text>
+        <correct_text> </correct_text>
+        <modifiers>una montagna dipoz=6 7 8</modifiers>
+    </node>
+	<node explicit_context="0079.txt" focus="link" id="0079.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>non funziona neppure il link al servizio clienti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>neppurepoz=5;al servizio clientipoz=8 9 10</modifiers>
+    </node>
+	<node explicit_context="0144.txt" focus="Bluetooth" id="0144.txt_2_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>ho problemi con il Bluetooth</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0051.txt" focus="aspettare" id="0051.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>Fatta la SEMPLICE500 continuo ad aspettare il mio smartphone</original_text>
+        <correct_text> </correct_text>
+        <modifiers>Fatta la SEMPLICE500poz=0 1 2</modifiers>
+    </node>
+	<node explicit_context="0051.txt" focus="aspettare" id="0051.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>continuo ad aspettare il mio smartphone</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0080.txt" focus="sim" id="0080.txt_1_3" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>la sim non funziona</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0079.txt" focus="link" id="0079.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>dal mio MOBILEE non funziona neppure il link al servizio clienti</original_text>
+        <correct_text> </correct_text>
+        <modifiers>dal mio MOBILEEpoz=0 1 2</modifiers>
+    </node>
+	<node explicit_context="0144.txt" focus="Bluetooth" id="0144.txt_2_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>ho problemi con il Bluetooth del mio MOBILEG Sonic</original_text>
+        <correct_text> </correct_text>
+        <modifiers>del mio MOBILEG Sonicpoz=5 6 7 8</modifiers>
+    </node>
+	<node explicit_context="0080.txt" focus="sim" id="0080.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>la sim non funziona se la inserisco in un telefono</original_text>
+        <correct_text> </correct_text>
+        <modifiers>se la inserisco in un telefonopoz=</modifiers>
+    </node>
+	<node explicit_context="0077.txt" focus="aggiornamenti" id="0077.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>scarsissimo impegno in termini di rilascio degli aggiornamenti</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0076.txt" focus="aggiornamenti" id="0076.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>gli aggiornamenti da parte vostra NON ARRIVANO MAI</original_text>
+        <correct_text> </correct_text>
+        <modifiers/>
+    </node>
+	<node explicit_context="0295.txt" focus="MODELLOA2" id="0295.txt_1_1" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>mi hanno inviato un MODELLOA2 usato</original_text>
+        <correct_text> </correct_text>
+        <modifiers> </modifiers>
+    </node>
+	<node explicit_context="0295.txt" focus="MODELLOA2" id="0295.txt_1_0" implicit_context="" implicit_focus="" implicit_statement="FALSE" modality="FALSE">
+        <original_text>mi hanno inviato un MODELLOA2 s fondo di magazzino , usato</original_text>
+        <correct_text>mi hanno inviato un ModelloA2 di fondo di magazzino, usato</correct_text>
+        <modifiers>s fondo di magazzino ,poz=5 6 7 8 9</modifiers>
+    </node>
+	<edge target="0079.txt_1_1" source="0079.txt_1_0" id="0079.txt_1_1-0079.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0254.txt_1_0" source="0254.txt_2_0" id="0254.txt_1_0-0254.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0144.txt_2_1" source="0144.txt_2_0" id="0144.txt_2_1-0144.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0295.txt_1_1" source="0295.txt_1_0" id="0295.txt_1_1-0295.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0254.txt_2_0" source="0254.txt_1_0" id="0254.txt_2_0-0254.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0080.txt_1_3" source="0080.txt_1_0" id="0080.txt_1_3-0080.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0295.txt_2_1" source="0295.txt_2_0" id="0295.txt_2_1-0295.txt_2_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+	<edge target="0051.txt_1_1" source="0051.txt_1_0" id="0051.txt_1_1-0051.txt_1_0">
+		<entailment_mod_insensitive> </entailment_mod_insensitive>
+		<entailment type="direct">yes</entailment>
+	</edge>
+</F_entailment_graph>

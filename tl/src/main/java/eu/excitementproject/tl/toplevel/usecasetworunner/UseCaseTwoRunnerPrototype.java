@@ -49,10 +49,12 @@ public class UseCaseTwoRunnerPrototype implements UseCaseTwoRunner {
 
 	LAPAccess lap = null;
 	EDABasic<?> eda = null;
+	boolean bestNodeOnly = true;
 	
-	public UseCaseTwoRunnerPrototype(LAPAccess lap, EDABasic<?> eda) {
+	public UseCaseTwoRunnerPrototype(LAPAccess lap, EDABasic<?> eda, boolean bestNodeOnly) {
 		this.lap = lap;
 		this.eda = eda;
+		this.bestNodeOnly = bestNodeOnly;
 	}
 	
 	@Override
@@ -71,7 +73,7 @@ public class UseCaseTwoRunnerPrototype implements UseCaseTwoRunner {
 		Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(cas);
 
 		//call node matcher on each fragment graph
-		NodeMatcher nm = new NodeMatcherLongestOnly(graph);
+		NodeMatcher nm = new NodeMatcherLongestOnly(graph, bestNodeOnly);
 		CategoryAnnotator ca = new CategoryAnnotatorAllCats();
 		for (FragmentGraph fragmentGraph: fragmentGraphs) {
 			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraph);

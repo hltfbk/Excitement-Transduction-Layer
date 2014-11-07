@@ -6,14 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-//import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
@@ -30,7 +28,6 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.InvalidXMLException;
 import org.apache.uima.util.XMLInputSource;
 import org.apache.uima.util.XMLSerializer;
-import org.uimafit.util.JCasUtil;
 import org.xml.sax.SAXException;
 
 import edu.stanford.nlp.util.StringUtils;
@@ -38,6 +35,7 @@ import eu.excitement.type.tl.AssumedFragment;
 import eu.excitement.type.tl.CategoryAnnotation;
 import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.DeterminedFragment;
+import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.KeywordAnnotation;
 import eu.excitement.type.tl.Metadata;
@@ -45,6 +43,7 @@ import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitement.type.tl.ModifierPart;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.PlatformCASProber;
+//import java.util.Set;
 
 /**
  * The class holds various small utility static methods that might be 
@@ -59,7 +58,6 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
 // TODO: [#C] set typepath convention for UIMAFit based CAS generation. 
 // TODO: [#C] Check UIMAFit CASUtil, and wrap some needed things.  
 
-@SuppressWarnings("unused")
 public final class CASUtils {
 	/**
 	 * <P>
@@ -83,11 +81,11 @@ public final class CASUtils {
 		} 
 		catch (InvalidXMLException e)
 		{
-			throw new LAPException("AE descriptor is not a valid XML", e);			
+			throw new LAPException("AE descriptor is not a valid XML, or unable to find the XML file /desc/TLDummyAE.xml in the Jar! (Wrong Jar configuration?) ", e);			
 		}
 		catch (ResourceInitializationException e)
 		{
-			throw new LAPException("Unable to initialize the AE", e); 
+			throw new LAPException("Unable to initialize the AE.", e); 
 		}		
 
 		try {
@@ -95,7 +93,7 @@ public final class CASUtils {
 		}
 		catch (ResourceInitializationException e)
 		{
-			throw new LAPException("Unable to create new JCas", e); 
+			throw new LAPException("Unable to create new JCas.", e); 
 		}
 		
 		return a; 
@@ -226,7 +224,7 @@ public final class CASUtils {
 	 * @param aJCas
 	 * @param r
 	 */
-	static public void annotateOneAssumedFragment(JCas aJCas, Region[] r ) throws LAPException
+	static public FragmentAnnotation annotateOneAssumedFragment(JCas aJCas, Region[] r ) throws LAPException
 	{
 		// we will blindly follow the given region and add annotation. 
 		
@@ -256,6 +254,7 @@ public final class CASUtils {
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 		l.debug("Generated an AssummedFragment annotation. Fragment text is: " + fragText); 
 		
+		return af;
 	}
 	
 	/**
@@ -270,11 +269,11 @@ public final class CASUtils {
 	 * @param aJCas
 	 * @param r
 	 */
-	static public void annotateOneDeterminedFragment(JCas aJCas, Region[] r ) throws LAPException
+	static public FragmentAnnotation annotateOneDeterminedFragment(JCas aJCas, Region[] r ) throws LAPException
 	{
 		// we will blindly follow the given region and add annotation. 		
-		int leftmost = r[0].getBegin(); 
-		int rightmost = r[(r.length -1)].getEnd(); 
+		int leftmost = getMinBegin(r); 
+		int rightmost = getMaxEnd(r); 
 
 		DeterminedFragment df = new DeterminedFragment(aJCas); 
 		df.setBegin(leftmost);
@@ -299,6 +298,31 @@ public final class CASUtils {
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 		l.debug("Generated a DeterminedFragment annotation. Fragment text is: " + fragText); 
 		
+		return df;
+	}
+
+	private static int getMaxEnd(Region[] r) {
+		
+		int maxEnd = 0;
+		
+		for(int i = 0; i < r.length; i++) {
+			if (r[i].getEnd() > maxEnd)
+				maxEnd = r[i].getEnd();
+		}
+		
+		return maxEnd;
+	}
+
+	
+	private static int getMinBegin(Region[] r) {
+		int minBegin = Integer.MAX_VALUE;
+	
+		for(int i = 0; i < r.length; i++) {
+			if (r[i].getBegin() < minBegin)
+				minBegin = r[i].getBegin();
+		}
+		
+		return minBegin;
 	}
 
 	/**
@@ -347,7 +371,8 @@ public final class CASUtils {
 		ma.addToIndexes(); 
 
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
-		l.debug("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
+//		l.debug("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
+		l.info("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
 
 		// return Modifier Annotation itself, so the caller can easily make next 
 		// modifier that depends on this modifier annotation
@@ -638,9 +663,15 @@ public final class CASUtils {
 		}
 	}
 
+	/**
+	 * Add a set of keywords to the CAS object
+	 * 
+	 * @param aJCas CAS object
+	 * @param keywords an array of keywords that will be added as annotations
+	 */
 	public static void addTLKeywords(JCas aJCas, String[] keywords) {
 		
-		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.CASUtils");
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.CASUtils.addTLKeywords");
 		
 		if (keywords != null) {
 			
@@ -649,7 +680,7 @@ public final class CASUtils {
 			String text = aJCas.getDocumentText();
 			for (int i = 0; i < keywords.length; i++) {
 				
-//				Pattern p = Pattern.compile("\\b" + keywords[i] + "\\b"); // did not work because of tokenization (e.g. "File-Optionen" which in the context does not refer to the compound
+//				Pattern p = Pattern.compile("\\b" + keywords[i] + "\\b",Pattern.CASE_INSENSITIVE); // did not work because of tokenization (e.g. "File-Optionen" which in the context does not refer to the compound
 				Pattern p = Pattern.compile(keywords[i],Pattern.CASE_INSENSITIVE);
 				Matcher m = p.matcher(text);
 				while (m.find()) {
@@ -658,4 +689,40 @@ public final class CASUtils {
 			}
 		}
 	}
+
+	
+	/**
+	 * Builds the text fragment -- when the fragment is made up of fragment parts, the in-between pieces
+	 * 							   will be blank spaces to allow for proper position computations later on
+	 * 							   (when removing modifiers for example)
+	 * @param frag -- a fragment annotation
+	 * @return the text (including spaces for missing non-contiguous pieces with respect to the full interaction text)
+	 */
+	public static CharSequence getCompleteTextFragment(FragmentAnnotation frag) {
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.CASUtils.getCompleteTextFragment");		
+
+		if (frag.getFragParts() == null || frag.getFragParts().size() == 0) {
+			return frag.getText();
+		}
+
+//		logger.info("Processing FragmentAnnotation for :" + frag.getCoveredText());
+		
+		String text = "";
+		FragmentPart f, prev = null;
+		for(int i = 0; i < frag.getFragParts().size(); i++) {
+			f = frag.getFragParts(i);
+			
+			if (prev != null) {
+				text += org.apache.commons.lang.StringUtils.rightPad(" ", f.getBegin() - prev.getEnd());
+			} 
+			text += f.getCoveredText();
+			prev = f;
+		}
+		
+		logger.info("Fragment text: " + frag.getText() + "\nWith spaces: " + text);
+
+		return text;
+	}
+	
 }

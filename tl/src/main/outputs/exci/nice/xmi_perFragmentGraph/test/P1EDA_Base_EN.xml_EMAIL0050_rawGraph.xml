@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="0" text="Cheaper catering needed">
+    <completeStatement text="Cheaper catering needed"/>
+    <entailmentUnitMention categoryId="" interactionId="142421.txt" level="0" text="Cheaper catering needed"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Cheaper snack prices">
+    <completeStatement text="Cheaper snack prices"/>
+    <entailmentUnitMention categoryId="" interactionId="209734.txt" level="0" text="Cheaper snack prices"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Expensive on-board snack items">
+    <completeStatement text="Expensive on-board snack items"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="1" text="Expensive on-board snack items"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Expensive          snack items">
+    <completeStatement text="Expensive on-board snack items"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="0" text="Expensive          snack items"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Price are going up">
+    <completeStatement text="Price are going up"/>
+    <entailmentUnitMention categoryId="" interactionId="30786.txt" level="0" text="Price are going up"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Prices are quite high on             food">
+    <completeStatement text="Prices are quite high on             food"/>
+    <entailmentUnitMention categoryId="" interactionId="387881.txt" level="1" text="Prices are quite high on             food"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Prices are       high on             food">
+    <completeStatement text="Prices are quite high on             food"/>
+    <entailmentUnitMention categoryId="" interactionId="387881.txt" level="0" text="Prices are       high on             food"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="Prices at the food bar are a bit expensive">
+    <completeStatement text="Prices at the food bar are a bit expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="8262.txt" level="2" text="Prices at the food bar are a bit expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Prices at the food bar are       expensive">
+    <completeStatement text="Prices at the food bar are a bit expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="8262.txt" level="1" text="Prices at the food bar are       expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Prices                 are       expensive">
+    <completeStatement text="Prices at the food bar are a bit expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="8262.txt" level="0" text="Prices                 are       expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Prices                 are a bit expensive">
+    <completeStatement text="Prices at the food bar are a bit expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="8262.txt" level="1" text="Prices                 are a bit expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="The food Is outrageously expensive">
+    <completeStatement text="The food Is outrageously expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="455758.txt" level="1" text="The food Is outrageously expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="The food Is              expensive">
+    <completeStatement text="The food Is outrageously expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="455758.txt" level="0" text="The food Is              expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="The kiosk food is              overpriced">
+    <completeStatement text="The kiosk food is              overpriced"/>
+    <entailmentUnitMention categoryId="" interactionId="401238.txt" level="1" text="The kiosk food is              overpriced"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="The       food is              overpriced">
+    <completeStatement text="The kiosk food is              overpriced"/>
+    <entailmentUnitMention categoryId="" interactionId="401238.txt" level="0" text="The       food is              overpriced"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="cheaper food on the train needed">
+    <completeStatement text="cheaper food on the train needed"/>
+    <entailmentUnitMention categoryId="" interactionId="313632.txt" level="1" text="cheaper food on the train needed"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="cheaper food              needed">
+    <completeStatement text="cheaper food on the train needed"/>
+    <entailmentUnitMention categoryId="" interactionId="313632.txt" level="0" text="cheaper food              needed"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="drinks          are just too expensive">
+    <completeStatement text="drinks          are just too expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="522262.txt" level="1" text="drinks          are just too expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="drinks          are          expensive">
+    <completeStatement text="drinks          are just too expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="522262.txt" level="0" text="drinks          are          expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="food are just too expensive">
+    <completeStatement text="food are just too expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="522262.txt" level="1" text="food are just too expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="food are          expensive">
+    <completeStatement text="food are just too expensive"/>
+    <entailmentUnitMention categoryId="" interactionId="522262.txt" level="0" text="food are          expensive"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="on board food is                 overpriced for what it is">
+    <completeStatement text="on board food is                 overpriced for what it is"/>
+    <entailmentUnitMention categoryId="" interactionId="149639.txt" level="0" text="on board food is                 overpriced for what it is"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="price of snacks in the bar-car">
+    <completeStatement text="price of snacks in the bar-car"/>
+    <entailmentUnitMention categoryId="" interactionId="340247.txt" level="1" text="price of snacks in the bar-car"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="price of snacks               ">
+    <completeStatement text="price of snacks in the bar-car"/>
+    <entailmentUnitMention categoryId="" interactionId="340247.txt" level="0" text="price of snacks               "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="prices for food/drink on board were excessive">
+    <completeStatement text="prices for food/drink on board were excessive"/>
+    <entailmentUnitMention categoryId="" interactionId="142421.txt" level="0" text="prices for food/drink on board were excessive"/>
+  </entailmentUnitNode>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Cheaper snack prices" target="Cheaper catering needed" type="EDA"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Expensive on-board snack items" target="Expensive          snack items" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Expensive          snack items" target="Expensive on-board snack items" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Cheaper snack prices" target="Price are going up" type="EDA"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Prices are quite high on             food" target="Prices are       high on             food" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Prices are       high on             food" target="Prices are quite high on             food" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are       high on             food" target="Price are going up" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" source="Prices are quite high on             food" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="Prices at the food bar are       expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="Prices                 are       expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="Prices                 are a bit expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="Prices                 are       expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="Prices                 are       expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Prices at the food bar are       expensive" target="Prices at the food bar are a bit expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Prices at the food bar are       expensive" target="Prices                 are a bit expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Prices                 are       expensive" target="Prices at the food bar are a bit expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Prices                 are       expensive" target="Prices at the food bar are       expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Prices                 are       expensive" target="Prices                 are a bit expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Prices                 are a bit expensive" target="Prices at the food bar are a bit expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Prices                 are a bit expensive" target="Prices at the food bar are       expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Expensive          snack items" target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are       high on             food" target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices                 are       expensive" target="Prices are       high on             food" type="EDA"/>
+  <entailmentRelationEdge confidence="0.564230551407009" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices                 are a bit expensive" target="Prices are quite high on             food" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6885212437385639" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices at the food bar are       expensive" target="Prices are quite high on             food" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Price are going up" target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices                 are       expensive" target="Price are going up" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Cheaper snack prices" target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="Cheaper snack prices" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" source="Expensive on-board snack items" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="Expensive          snack items" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" source="Expensive          snack items" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="Price are going up" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" source="Prices are quite high on             food" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.564230551407009" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="Prices are quite high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="Expensive on-board snack items" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" source="Expensive on-board snack items" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="The food Is outrageously expensive" target="The food Is              expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="The food Is              expensive" target="The food Is outrageously expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Expensive          snack items" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Cheaper catering needed" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices                 are       expensive" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is              expensive" target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.8373710093657707" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices at the food bar are       expensive" target="The food Is outrageously expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6588250717573141" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is outrageously expensive" target="Prices at the food bar are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are       high on             food" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is              expensive" target="Prices are       high on             food" type="EDA"/>
+  <entailmentRelationEdge confidence="0.564230551407009" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is outrageously expensive" target="Prices are quite high on             food" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper catering needed" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper catering needed" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper snack prices" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive on-board snack items" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Price are going up" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices are quite high on             food" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.8373710093657707" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="The food Is outrageously expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.8373710093657707" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" source="The food Is outrageously expensive" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="The food Is outrageously expensive" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="The food Is outrageously expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="The food Is              expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper catering needed" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="The       food is              overpriced" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="The       food is              overpriced" target="The kiosk food is              overpriced" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.8672101400741974" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is              expensive" target="The       food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.8212362842904765" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The       food is              overpriced" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is outrageously expensive" target="The kiosk food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Cheaper catering needed" target="The       food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are       high on             food" target="The       food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are quite high on             food" target="The kiosk food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper snack prices" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive on-board snack items" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive          snack items" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Price are going up" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="Prices are quite high on             food" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="The kiosk food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.8373710093657707" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="The kiosk food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices                 are       expensive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="The kiosk food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="The food Is outrageously expensive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.8212362842904765" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" source="The       food is              overpriced" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="The       food is              overpriced" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="The       food is              overpriced" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="cheaper food on the train needed" target="cheaper food              needed" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="cheaper food              needed" target="cheaper food on the train needed" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="cheaper food              needed" target="The       food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The       food is              overpriced" target="cheaper food              needed" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="cheaper food              needed" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is              expensive" target="cheaper food              needed" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="cheaper food              needed" target="Cheaper catering needed" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9055732971773194" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Cheaper catering needed" target="cheaper food              needed" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are       high on             food" target="cheaper food              needed" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Cheaper snack prices" target="cheaper food              needed" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive on-board snack items" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive          snack items" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Price are going up" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="Prices are quite high on             food" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices are       high on             food" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices                 are       expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices                 are       expensive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="The food Is outrageously expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="The food Is outrageously expensive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="The food Is              expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="The       food is              overpriced" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food on the train needed" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food on the train needed" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food on the train needed" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food              needed" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food              needed" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food              needed" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive on-board snack items" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive          snack items" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Price are going up" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices are quite high on             food" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food on the train needed" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food on the train needed" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food on the train needed" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="drinks          are just too expensive" target="drinks          are          expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="drinks          are          expensive" target="drinks          are just too expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Expensive          snack items" target="drinks          are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Expensive on-board snack items" target="drinks          are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="drinks          are          expensive" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is              expensive" target="drinks          are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is outrageously expensive" target="drinks          are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices                 are       expensive" target="drinks          are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="drinks          are          expensive" target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6938005752247165" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices                 are a bit expensive" target="drinks          are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices at the food bar are       expensive" target="drinks          are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper catering needed" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper snack prices" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive on-board snack items" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Price are going up" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices are quite high on             food" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices are       high on             food" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="drinks          are just too expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="The food Is outrageously expensive" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="The       food is              overpriced" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food on the train needed" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food              needed" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="drinks          are just too expensive" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="drinks          are just too expensive" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="drinks          are          expensive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="drinks          are          expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="drinks          are          expensive" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="drinks          are          expensive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="drinks          are          expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="drinks          are just too expensive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="drinks          are just too expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="drinks          are just too expensive" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="drinks          are just too expensive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="drinks          are just too expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="food are just too expensive" target="food are          expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="food are          expensive" target="food are just too expensive" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are          expensive" target="The       food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The       food is              overpriced" target="food are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The kiosk food is              overpriced" target="food are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are just too expensive" target="The kiosk food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Expensive          snack items" target="food are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Expensive on-board snack items" target="food are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7030258364320199" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are          expensive" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9055732971773194" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is              expensive" target="food are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6938005752247165" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The food Is outrageously expensive" target="food are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are just too expensive" target="The food Is outrageously expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are          expensive" target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices                 are       expensive" target="food are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6938005752247165" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices                 are a bit expensive" target="food are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6938005752247165" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices at the food bar are       expensive" target="food are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are          expensive" target="cheaper food              needed" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="cheaper food              needed" target="food are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="cheaper food on the train needed" target="food are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6270540182147709" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are          expensive" target="Prices are       high on             food" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are       high on             food" target="food are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are quite high on             food" target="food are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.564230551407009" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are just too expensive" target="Prices are quite high on             food" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are          expensive" target="drinks          are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="drinks          are          expensive" target="food are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.8233696529432177" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="drinks          are just too expensive" target="food are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.8233696529432177" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="food are just too expensive" target="drinks          are just too expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper catering needed" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Cheaper snack prices" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="Expensive on-board snack items" target="The kiosk food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="Expensive on-board snack items" target="The food Is outrageously expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Expensive on-board snack items" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="Expensive on-board snack items" target="Prices are quite high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Price are going up" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="Prices are quite high on             food" target="The food Is outrageously expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="Prices are quite high on             food" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="Prices are quite high on             food" target="drinks          are just too expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="food are just too expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="The food Is outrageously expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="The food Is outrageously expensive" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="The food Is outrageously expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="Prices are quite high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="drinks          are just too expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="cheaper food on the train needed" target="The kiosk food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="cheaper food on the train needed" target="The food Is outrageously expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="cheaper food on the train needed" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="cheaper food on the train needed" target="Prices are quite high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="cheaper food on the train needed" target="drinks          are just too expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="drinks          are just too expensive" target="The kiosk food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="drinks          are just too expensive" target="The food Is outrageously expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="drinks          are just too expensive" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="drinks          are just too expensive" target="Prices are quite high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="food are just too expensive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="food are just too expensive" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="food are just too expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="food are just too expensive" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="food are just too expensive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5620332525319744" decisionLabel="Entailment" source="food are just too expensive" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="food are just too expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="food are just too expensive" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="food are just too expensive" target="Prices at the food bar are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="food are          expensive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="food are          expensive" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="Expensive on-board snack items" target="Prices at the food bar are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="Prices are quite high on             food" target="Prices at the food bar are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="Prices at the food bar are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="Prices at the food bar are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5196614995388736" decisionLabel="Entailment" source="cheaper food on the train needed" target="Prices at the food bar are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5241187117661781" decisionLabel="Entailment" source="drinks          are just too expensive" target="Prices at the food bar are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="The       food is              overpriced" target="on board food is                 overpriced for what it is" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7030258364320199" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="on board food is                 overpriced for what it is" target="The       food is              overpriced" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="on board food is                 overpriced for what it is" target="food are          expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="on board food is                 overpriced for what it is" target="The food Is              expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="on board food is                 overpriced for what it is" target="cheaper food              needed" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Cheaper catering needed" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Cheaper snack prices" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Expensive on-board snack items" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Expensive          snack items" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Price are going up" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices are quite high on             food" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices are       high on             food" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices                 are       expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="The food Is outrageously expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="The food Is              expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="cheaper food on the train needed" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="cheaper food              needed" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="drinks          are just too expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="drinks          are          expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="food are just too expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="food are          expensive" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="on board food is                 overpriced for what it is" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="on board food is                 overpriced for what it is" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="on board food is                 overpriced for what it is" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="on board food is                 overpriced for what it is" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="on board food is                 overpriced for what it is" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="price of snacks in the bar-car" target="price of snacks               " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="price of snacks               " target="price of snacks in the bar-car" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="price of snacks               " target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="price of snacks               " target="Cheaper snack prices" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5975859428266765" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Cheaper snack prices" target="price of snacks               " type="EDA"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="price of snacks               " target="Price are going up" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6363643084736725" decisionLabel="Entailment" source="price of snacks in the bar-car" target="Prices                 are       expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="price of snacks in the bar-car" target="Cheaper snack prices" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5233047899269279" decisionLabel="Entailment" source="price of snacks in the bar-car" target="Price are going up" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="price of snacks               " target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks               " target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks               " target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks               " target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks               " target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks               " target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks               " target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks               " target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="price of snacks in the bar-car" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks in the bar-car" target="on board food is                 overpriced for what it is" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks in the bar-car" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks in the bar-car" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks in the bar-car" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks in the bar-car" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks in the bar-car" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks in the bar-car" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5637597386419513" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="on board food is                 overpriced for what it is" target="prices for food/drink on board were excessive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6278357856421971" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="prices for food/drink on board were excessive" target="on board food is                 overpriced for what it is" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5637597386419513" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="Prices are       high on             food" target="prices for food/drink on board were excessive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.7423873456226487" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="prices for food/drink on board were excessive" target="Prices                 are       expensive" type="EDA"/>
+  <entailmentRelationEdge confidence="0.6171615271809556" decisionLabel="Entailment" eda="eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_EN@45fca16c" lap="eu.excitementproject.eop.lap.dkpro.TreeTaggerEN" source="prices for food/drink on board were excessive" target="Price are going up" type="EDA"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Cheaper catering needed" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Cheaper snack prices" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Expensive on-board snack items" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Expensive          snack items" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Price are going up" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices are quite high on             food" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices at the food bar are a bit expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices at the food bar are       expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices                 are       expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="Prices                 are a bit expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="The food Is outrageously expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="The food Is              expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="The kiosk food is              overpriced" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="The       food is              overpriced" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="cheaper food on the train needed" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="cheaper food              needed" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="drinks          are just too expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="drinks          are          expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="food are just too expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="food are          expensive" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks in the bar-car" target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="price of snacks               " target="prices for food/drink on board were excessive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.6278357856421971" decisionLabel="Entailment" source="prices for food/drink on board were excessive" target="The       food is              overpriced" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="prices for food/drink on board were excessive" target="food are          expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.531396173156478" decisionLabel="Entailment" source="prices for food/drink on board were excessive" target="The food Is              expensive" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="prices for food/drink on board were excessive" target="Cheaper catering needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="prices for food/drink on board were excessive" target="cheaper food              needed" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="prices for food/drink on board were excessive" target="Prices are       high on             food" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.5010725046036905" decisionLabel="Entailment" source="prices for food/drink on board were excessive" target="drinks          are          expensive" type="TRANSITIVE_CLOSURE"/>
+</rawGraph>

@@ -19,10 +19,12 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
- * This graph merger automates the WP2 manual procedure. 
- * Note that in this implementation only "entailment" edges are added during the merge, while "non-entailment" edges are not added. 
- * I.e. absence of an edge in the merged graph should be interpreted as "no entailment"  
-
+ * This graph merger automates the WP2 manual procedure. As part of the procedure, all transitive closure edges are added to the graph.
+ * Note that in this implementation both "entailment" and "non-entailment" edges are added during the merge. 
+ * Yet, absence of an edge in the merged graph should be interpreted as "no entailment"  
+ *
+ * Note that the resulting graph may contain conflicts, i.e. both an entailing and a non-entailing edge between the same source and target nodes.
+ *
  * @author Lili Kotlerman
  *
  */
@@ -43,6 +45,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		for (FragmentGraph fragmentGraph : fg){
 			workGraph=mergeGraphs(fragmentGraph, workGraph);
 		}
+		workGraph.applyTransitiveClosure();
 		return workGraph;
 	}
 
@@ -54,11 +57,11 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
 		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph, false);
-		if (workGraph.isEmpty()) return new EntailmentGraphRaw(fragmentGraph, false);
+		if (workGraph.isEmpty()) return new EntailmentGraphRaw(fragmentGraph, false, workGraph.hasLemmatizedLabel());
 		
 		 
 		// else - Implement the WP2 flow		
-		workGraph.copyFragmentGraphNodesAndEntailingEdges(fragmentGraph);
+		workGraph.copyFragmentGraphNodesAndAllEdges(fragmentGraph);
 		
 		// find the node corresponding to the fragment graph's base statement in the work graph
 		EntailmentUnit newBaseStatement = workGraph.getVertexWithText(fragmentGraph.getBaseStatement().getText());
@@ -92,6 +95,7 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 				workGraph = mergeFragmentGraphs(workGraph, newFragmentGraphNodes, oldFragmentGraphNodes, newBaseStatement, workGraphBaseStatement);				
 			}
 		}			
+		workGraph.applyTransitiveClosure();
 		return workGraph;		
 	}
 	

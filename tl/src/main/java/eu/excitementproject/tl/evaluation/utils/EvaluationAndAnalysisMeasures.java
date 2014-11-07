@@ -16,11 +16,11 @@ public class EvaluationAndAnalysisMeasures extends EvaluationMeasures{
 	Integer overallEdges;		
 
 	public void init(){
-		this.violations = null;
-		this.extraFGedges = null;
-		this.missingFGedges = null;
-		this.edaCalls = null;
-		this.overallEdges=null;
+		this.violations = 0;
+		this.extraFGedges = 0;
+		this.missingFGedges = 0;
+		this.edaCalls = 0;
+		this.overallEdges=0;
 	}
 	
 	public EvaluationAndAnalysisMeasures() {
@@ -30,19 +30,19 @@ public class EvaluationAndAnalysisMeasures extends EvaluationMeasures{
 
 	
 
+	public EvaluationAndAnalysisMeasures(int tp, int recallDenominator,
+			int precisionDenominator) {
+		super(tp, recallDenominator, precisionDenominator);
+		init();
+	}
+
 	public EvaluationAndAnalysisMeasures(int tp, int fp, int tn, int fn) {
 		super(tp, fp, tn, fn);
 		init();
 	}
 
     public EvaluationAndAnalysisMeasures (EvaluationMeasures eval){
-    	super();
-    	super.falseNegatives=eval.falseNegatives;
-    	super.falsePositives = eval.falsePositives;
-    	super.trueNegatives = eval.trueNegatives;
-    	super.truePositives = eval.truePositives;
-    	super.precision = eval.precision;
-    	super.recall = eval.recall;
+    	super(eval);
     	init();
     }
 

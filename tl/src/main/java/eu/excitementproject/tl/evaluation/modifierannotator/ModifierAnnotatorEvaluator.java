@@ -13,30 +13,65 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
+import eu.excitement.type.tl.DeterminedFragment;
+import eu.excitement.type.tl.KeywordAnnotation;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentannotator.AbstractFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.modifierannotator.AbstractModifierAnnotator;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
+import eu.excitementproject.tl.evaluation.utils.EvaluationMeasuresMacro;
 import eu.excitementproject.tl.evaluation.utils.FragmentAndModifierMatchCounter;
+import eu.excitementproject.tl.laputils.AnnotationUtils;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.LAPUtils;
 import eu.excitementproject.tl.structures.Interaction;
 
 public class ModifierAnnotatorEvaluator {
 
-	public static EvaluationMeasures evaluateModifiers(String xmiDir, String modifierAnnotator, String language) 
-			throws LAPException, ModifierAnnotatorException, IOException{
+	public static EvaluationMeasures evaluateModifiers(String xmiDir, String modifierAnnotator, String fragmentAnnotator, String language, boolean useGSfragAnnot) 
+			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException{
 		
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator");
 		logger.setLevel(Level.INFO);
 		
-		logger.info("Starting processing : \n\tdir: " + xmiDir + "\n\tmodifier annotator: " + modifierAnnotator + "\n\tlanguage: " + language);
+		logger.info("Starting processing : \n\tdir: " + xmiDir + "\n\tmodifier annotator: " + modifierAnnotator +  "\n\tfragment annotator: " + fragmentAnnotator  + "\n\tlanguage: " + language);
 		
-		LAPAccess lap = initializeLAP(language);
-		AbstractModifierAnnotator modAnnot = initializeAnnotator(modifierAnnotator, lap);
+		LAPAccess lap = LAPUtils.initializeLAP(language);
+		
+		FragmentAnnotator fragAnn = initializeFragmentAnnotator(fragmentAnnotator, lap);
+		
+		AbstractModifierAnnotator modAnn = initializeModifierAnnotator(modifierAnnotator, fragAnn, lap);
+		
+		return processXMIs(lap, fragAnn, modAnn, xmiDir, useGSfragAnnot);
+	}
+		
+	
+	public static EvaluationMeasures evaluateModifiers(String xmiDir, AbstractModifierAnnotator modAnn, FragmentAnnotator fragAnn, LAPAccess lap, boolean useGSfragAnnot) 
+			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException {
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator");
+		logger.setLevel(Level.INFO);
+		
+		logger.info("Starting processing : \n\tdir: " + xmiDir + "\n\tmodifier annotator: " + modAnn.getClass() +  "\n\tfragment annotator: " + fragAnn.getClass()  + "\n\tLAP: " + lap.getClass());
+				
+		return processXMIs(lap, fragAnn, modAnn, xmiDir, useGSfragAnnot);		
+	}
+	
+	
+	public static EvaluationMeasures processXMIs(LAPAccess lap, FragmentAnnotator fragAnn, AbstractModifierAnnotator modAnn, String xmiDir, boolean useGSfragAnnot) 
+			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException{
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator:processXMIs");
+		logger.setLevel(Level.INFO);
+		
 		List<Integer> counts = new ArrayList<Integer>(Arrays.asList(0,0,0,0)); // TP, FP, TN, FN
+		EvaluationMeasuresMacro emm = new EvaluationMeasuresMacro();
 		
-		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, false)) {
+		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, true)) {
 			
 			logger.info("Processing " + xmiIn.getName());
 			// 1st. load the gold annotations from the xmi
@@ -50,6 +85,7 @@ public class ModifierAnnotatorEvaluator {
 					goldJCas.getDocumentText() != null && 
 					! goldJCas.getDocumentText().isEmpty() && 
 					goldJCas.getDocumentText().length() > 0) {
+				
 				lap.addAnnotationOn(goldJCas);
 			
 				// 2nd. prepare a system output, by making a interaction ...
@@ -57,13 +93,24 @@ public class ModifierAnnotatorEvaluator {
 				String interactionLang = goldJCas.getDocumentLanguage();
 				Interaction in = new Interaction(interactionText, interactionLang);  
 				JCas sysJCas = in.createAndFillInputCAS();
-				modAnnot.annotateModifiers(sysJCas); 
+								
+				if (useGSfragAnnot) {
+					AnnotationUtils.transferAnnotations(goldJCas, sysJCas, DeterminedFragment.class);
+					modAnn.setFragmentAnnotator(null);
+				} else {
+					AnnotationUtils.transferAnnotations(goldJCas, sysJCas, KeywordAnnotation.class);	
+				}
+					
+				modAnn.annotateModifiers(sysJCas);
 			
-				counts = addScores(counts, FragmentAndModifierMatchCounter.countModifierCounts(sysJCas, goldJCas));
+				List<Integer> modCounts =  FragmentAndModifierMatchCounter.countModifierCounts(sysJCas, goldJCas);
+				counts = addScores(counts,modCounts);
+				emm.addScores(new EvaluationMeasures(modCounts));
 			}
 		}
 		
 		logger.info("Final counts: " + counts.toString());
+		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n" + "Number of instances: " + emm.getNrOfInstances());
 		
 		return new EvaluationMeasures(counts);
 	}
@@ -78,8 +125,8 @@ public class ModifierAnnotatorEvaluator {
 	}
 
 
-	private static AbstractModifierAnnotator initializeAnnotator(
-			String modifierAnnotator, LAPAccess lap) {
+	public static AbstractModifierAnnotator initializeModifierAnnotator(
+			String modifierAnnotator, FragmentAnnotator fragAnn, LAPAccess lap) {
 		AbstractModifierAnnotator modAnnot = null;
 		
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator:initializeModifierAnnotator");
@@ -87,8 +134,8 @@ public class ModifierAnnotatorEvaluator {
 		
 		try {
 			Class<?> modAnnotClass = Class.forName(modifierAnnotator);
-			Constructor<?> modAnnotClassConstructor = modAnnotClass.getConstructor(LAPAccess.class);
-			modAnnot = (AbstractModifierAnnotator) modAnnotClassConstructor.newInstance(lap);
+			Constructor<?> modAnnotClassConstructor = modAnnotClass.getConstructor(LAPAccess.class, FragmentAnnotator.class);
+			modAnnot = (AbstractModifierAnnotator) modAnnotClassConstructor.newInstance(lap, fragAnn);
 			
 			logger.info("Modifier instantiated from class: " + modifierAnnotator);
 			
@@ -101,27 +148,26 @@ public class ModifierAnnotatorEvaluator {
 	}
 
 	
-	
-	protected static LAPAccess initializeLAP(String language){
+	public static AbstractFragmentAnnotator initializeFragmentAnnotator(
+			String fragmentAnnotator, LAPAccess lap) {
+		AbstractFragmentAnnotator fragAnnot = null;
 		
-		String lapClassName = "eu.excitementproject.tl.laputils.LemmaLevelLap" + language.toUpperCase();
-		LAPAccess lap = null;
-		
-		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator:initializeLAP");
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator.ModifierAnnotatorEvaluator:initializeFragmentAnnotator");
 		logger.setLevel(Level.INFO);
 		
 		try {
-			Class<?> lapClass = Class.forName(lapClassName);
-			Constructor<?> lapClassConstructor = lapClass.getConstructor();
-			lap = (LAPAccess) lapClassConstructor.newInstance();
+			Class<?> fragAnnotClass = Class.forName(fragmentAnnotator);
+			Constructor<?> fragAnnotClassConstructor = fragAnnotClass.getConstructor(LAPAccess.class);
+			fragAnnot = (AbstractFragmentAnnotator) fragAnnotClassConstructor.newInstance(lap);
 			
-			logger.info("LAP initialized from class : " + lapClassName);
+			logger.info("Modifier instantiated from class: " + fragmentAnnotator);
 			
 		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			logger.error("Error initializing LAP : " + e.getClass());
+			logger.error("Error initializing modifier annotator : " + e.getClass());
 			e.printStackTrace();
-		}
+		}	
 		
-		return lap;
+		return fragAnnot;
 	}
+	
 }

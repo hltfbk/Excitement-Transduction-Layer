@@ -27,8 +27,9 @@ import eu.excitementproject.tl.structures.search.PerNodeScore;
  * if not, it tries to match the strings on the next level of the fragment graph, i.e. the strings
  * where one modifier is missing. Again, if a match is found, the node (or nodes) is (are) returned, 
  * if not, it keeps going like this until it reaches the base statement (all modifiers removed). 
+ * If the longest match is found, then its entailed nodes can be added to the set of the matched nodes. 
  * 
- * @author Kathrin Eichler
+ * @author Kathrin Eichler & Aleksandra Gabryszak
  *
  */
 public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
@@ -36,9 +37,11 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	static Logger logger = Logger.getLogger(NodeMatcherLongestOnly.class.getName());
 	
 	private EntailmentGraphCollapsed entailmentGraph;
+	private boolean bestNodeOnly;
 	
-	public NodeMatcherLongestOnly(EntailmentGraphCollapsed graph) {
+	public NodeMatcherLongestOnly(EntailmentGraphCollapsed graph, boolean bestNodeOnly) {
 		entailmentGraph = graph;
+		this.bestNodeOnly = bestNodeOnly;
 	}
 	
 	@Override
@@ -83,6 +86,18 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 				perNodeScore.setNode(ec);
 				perNodeScore.setScore(score);
 				scores.add(perNodeScore);
+				if(!bestNodeOnly){
+					Set<EquivalenceClass> entailedNodes = entailmentGraph.getEntailedNodes(ec);
+					for(EquivalenceClass entailedNode : entailedNodes){
+						double edgeConfidence = entailmentGraph.getEdge(ec, entailedNode).getConfidence();
+						double entailedNodeScore = score * edgeConfidence;
+						logger.debug("score for " + mentionToBeFound + "and " + entailedNode.getLabel() + ": " + entailedNodeScore);		
+						perNodeScore = new PerNodeScore();
+						perNodeScore.setNode(entailedNode);
+						perNodeScore.setScore(entailedNodeScore);
+						scores.add(perNodeScore);
+					}
+				}
 			}
 		}
 		if (scores.size() > 0) { //a list one match found

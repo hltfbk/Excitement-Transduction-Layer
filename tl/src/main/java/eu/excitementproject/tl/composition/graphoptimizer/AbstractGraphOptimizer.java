@@ -28,15 +28,15 @@ public abstract class AbstractGraphOptimizer implements GraphOptimizer{
 
 	
 	/**
-	 * @param workGrap
+	 * @param workGraph
 	 * @return the average of the confidence scores of entailment edges.
 	 * If there are no edges in the graph that express entailment, the method returns null. 
 	 */
-	public Double getAverageConfidenceOfEntailment(EntailmentGraphRaw workGrap){
+	public static Double getAverageConfidenceOfEntailment(EntailmentGraphRaw workGraph){
 		double sum = 0.0;
 		double n = 0.0;
 		
-		for (EntailmentRelation edge : workGrap.edgeSet()){
+		for (EntailmentRelation edge : workGraph.edgeSet()){
 			if (edge.getLabel().is(DecisionLabel.Entailment)){
 				sum+=edge.getConfidence();
 				n++;
@@ -44,7 +44,7 @@ public abstract class AbstractGraphOptimizer implements GraphOptimizer{
 		}
 		
 		if (n>0) return sum/n;
-		return null;		
+		return 0.0;		
 	}	
 	
 	/** Returns the equivalence class from the imput set, which includes the input entailment unit

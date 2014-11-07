@@ -21,11 +21,13 @@ import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
+@SuppressWarnings("unused")
 public class GlobalGraphOptimizerTest {
 	
 	private final Logger logger = Logger.getLogger(this.getClass());
@@ -61,7 +63,7 @@ public class GlobalGraphOptimizerTest {
 						logger.info(rawGraph.toString());
 						rawGraph.toDOT("./src/test/outputs/sampleRawGraph.txt");
 						logger.info("**** Optimizing the the sample graph ****");
-						finalGraph = collapser.optimizeGraph(rawGraph, 0.2);
+						finalGraph = collapser.optimizeGraph(rawGraph, 0.0);
 						logger.info("Done:\n"+finalGraph.toString());
 						finalGraph.toDOT("./src/test/outputs/collapsedGraphFromSample.txt");						
 					} catch (ConfigurationException | EDAException | ComponentException |

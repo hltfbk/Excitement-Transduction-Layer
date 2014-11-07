@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="16">
+    <node id="0286.txt_1_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0286.txt" implicit_context="" focus="PROMOZIONE" implicit_focus="">
+        <original_text>IERI NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</original_text>
+        <correct_text> </correct_text>
+        <modifiers>IERIpoz=0</modifiers>
+    </node>
+    <node id="0286.txt_1_1" implicit_statement="FALSE" modality="FALSE" explicit_context="0286.txt" implicit_context="" focus="PROMOZIONE" implicit_focus="">
+        <original_text>NON C'è STATA NESSUNA OFFERTA PROMOZIONE O CHICCHESSIA GRATIS DEDICATA A ME</original_text>
+        <correct_text> </correct_text>
+        <modifiers>OFFERTApoz=5;DEDICATA A MEpoz=10 11 12;O CHICCHESSIApoz=7 8</modifiers>
+    </node>
+    <edge id="0286.txt_1_0-0286.txt_1_1" source="0286.txt_1_0" target="0286.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+    <edge id="0286.txt_1_0-0286.txt_1_1" source="0286.txt_1_0" target="0286.txt_1_1">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+</F_entailment_graph>

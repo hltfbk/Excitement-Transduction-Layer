@@ -1,0 +1,5103 @@
+  1 This software and database is being provided to you, the LICENSEE, by  
+  2 Princeton University under the following license.  By obtaining, using  
+  3 and/or copying this software and database, you agree that you have  
+  4 read, understood, and will comply with these terms and conditions.:  
+  5   
+  6 Permission to use, copy, modify and distribute this software and  
+  7 database and its documentation for any purpose and without fee or  
+  8 royalty is hereby granted, provided that you agree to comply with  
+  9 the following copyright notice and statements, including the disclaimer,  
+  10 and that the same appear on ALL copies of the software, database and  
+  11 documentation, including modifications that you make for internal  
+  12 use or for distribution.  
+  13   
+  14 WordNet 3.0 Copyright 2006 by Princeton University.  All rights reserved.  
+  15   
+  16 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
+  17 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
+  18 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
+  19 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
+  20 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
+  21 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
+  22 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
+  23 OTHER RIGHTS.  
+  24   
+  25 The name of Princeton University or Princeton may not be used in  
+  26 advertising or publicity pertaining to distribution of the software  
+  27 and/or database.  Title to copyright in this software, database and  
+  28 any associated documentation shall at all times remain with  
+  29 Princeton University and LICENSEE agrees to preserve same.  
+1 a 1 0 1 1 00147497  
+10 a 1 0 1 1 00148012  
+100 a 1 0 1 1 00149287  
+11 a 1 0 1 1 00148069  
+12 a 1 0 1 1 00148127  
+13 a 1 0 1 1 00148185  
+14 a 1 0 1 1 00148244  
+15 a 1 0 1 1 00148307  
+16 a 1 0 1 1 00148367  
+17 a 1 0 1 1 00149731  
+18 a 1 0 1 1 00148474  
+2 a 1 0 1 1 00147569  
+20 a 1 0 1 1 00148591  
+22 a 1 0 1 1 00148648  
+24 a 1 0 1 1 00148697  
+25 a 1 0 1 1 00148746  
+26 a 1 0 1 1 00148809  
+27 a 1 0 1 1 00148858  
+28 a 1 0 1 1 00148907  
+3 a 1 0 1 1 00147623  
+30 a 1 0 1 1 00148956  
+4 a 1 0 1 1 00147677  
+40 a 1 0 1 1 00149014  
+5 a 1 0 1 1 00147735  
+50 a 1 0 1 1 00149074  
+6 a 1 0 1 1 00147792  
+60 a 1 0 1 1 00149135  
+7 a 1 0 1 1 00147846  
+70 a 1 0 1 1 00149184  
+8 a 1 0 1 1 00147902  
+9 a 1 0 1 1 00147957  
+abbacchiato a 1 0 1 1 00164967  
+abbattuto a 1 0 1 1 00047171  
+abbaziale a 1 0 1 1 00171710  
+abbondante a 2 0 2 2 00003309 00095160  
+abbordabile a 1 0 1 1 00011831  
+abbottonato a 1 0 1 1 00020718  
+abbronzato a 1 0 1 1 00111831  
+abducente a 1 0 1 1 00001899  
+abile a 1 0 1 1 00001740  
+abiogenetico a 1 0 1 1 00171748  
+abitato a 1 0 1 1 00085610  
+abituale a 1 0 1 1 00031678  
+ablativo a 1 0 1 1 00215104  
+aborigeno a 1 0 1 1 00068528  
+abranchiato a 1 0 1 1 00073791  
+absidale a 1 0 1 1 00175039  
+abusivo a 1 0 1 1 00014246  
+accademico a 1 0 1 1 00171789  
+accalorato a 1 0 1 1 00060592  
+accanito a 1 0 1 1 00154968  
+accentato a 1 0 1 1 00154486  
+acceso a 1 0 1 1 00030770  
+accessibile a 2 0 2 2 00011831 00003720  
+accessorio a 1 0 1 1 00126119  
+accettabile a 1 0 1 1 00003448  
+accettevole a 1 0 1 1 00168564  
+accidentato a 1 0 1 1 00060055  
+accluso a 1 0 1 1 00111582  
+accogliente a 1 0 1 1 00122538  
+accomodante a 1 0 1 1 00003849  
+accomodativo a 1 0 1 1 00003849  
+accomodato a 2 0 2 2 00024576 00082336  
+accondiscendente a 1 0 1 1 00046336  
+accorto a 1 0 1 1 00128992  
+accostabile a 1 0 1 1 00011831  
+accostato a 1 0 1 1 00111281  
+accurato a 2 0 2 2 00021621 00003925  
+accusativo a 1 0 1 1 00192906  
+acerbo a 2 0 2 2 00098156 00171919  
+acetico a 1 0 1 1 00214956  
+acetoso a 1 0 1 1 00157982  
+acido a 1 0 1 1 00157922  
+aciniforme a 1 0 1 1 00171844  
+acinoso a 1 0 1 1 00171883  
+aclamidato a 1 0 1 1 00025636  
+aclamide a 1 0 1 1 00025636  
+aconfessionale a 1 0 1 1 00142114  
+acqueo a 1 0 1 1 00175076  
+acquifero a 1 0 1 1 00175111  
+acre a 1 0 1 1 00129357  
+acrimonioso a 1 0 1 1 00010206  
+actinomorfo a 1 0 1 1 00158289  
+aculeato a 1 0 1 1 00172127  
+acustico a 1 0 1 1 00193586  
+acuto a 7 0 7 7 00118862 00005638 00053867 00081214 00123729 00043460 00123890  
+adattabile a 1 0 1 1 00068210  
+adatto a 3 0 3 3 00007406 00128129 00075373  
+addebitabile a 1 0 1 1 00226730  
+addizionale a 1 0 1 1 00005867  
+addolorato a 1 0 1 1 00059886  
+addominale a 1 0 1 1 00201625  
+adduttore a 1 0 1 1 00001937  
+adeguabile a 1 0 1 1 00032621  
+adeguato a 3 0 3 3 00006201 00007406 00006280  
+aderente_come_una_seconda_pelle a 1 0 1 1 00095319  
+adesivo a 1 0 1 1 00006522  
+adiabatico a 1 0 1 1 00049733  
+adiatermano a 1 0 1 1 00049733  
+adolescente a 1 0 1 1 00110705  
+adolescenziale a 2 0 2 2 00171919 00097615  
+adornato a 1 0 1 1 00006673  
+adottabile a 1 0 1 1 00006634  
+adottante a 1 0 1 1 00068359  
+adottato a 1 0 1 1 00068359  
+adottivo a 1 0 1 1 00068359  
+adrenergico a 1 0 1 1 00172206  
+adulatore a 1 0 1 1 00059636  
+adulatorio a 1 0 1 1 00059636  
+adulterante a 1 0 1 1 00143861  
+adulteratore a 1 0 1 1 00143861  
+ad_alta_risoluzione a 1 0 1 1 00081402  
+ad_alta_tensione a 1 0 1 1 00025090  
+ad_alto_livello a 1 0 1 1 00080087  
+ad_angolo_retto a 1 0 1 1 00137572  
+ad_azione_ritardata a 1 0 1 1 00061963  
+ad_interim a 1 0 1 1 00119990  
+aereo a 2 0 2 2 00164281 00089962  
+aerodinamico a 1 0 1 1 00208181  
+aeronautico a 1 0 1 1 00172360  
+affabile a 1 0 1 1 00095953  
+affamato a 1 0 1 1 00083375  
+affannato a 2 0 2 2 00078096 00162820  
+affascinante a 2 0 2 2 00087383 00013509  
+affaticato a 1 0 1 1 00061361  
+afferente a 1 0 1 1 00022782  
+affermativo a 1 0 1 1 00008260  
+affermato a 1 0 1 1 00109121  
+affettato a 2 0 2 2 00125790 00007945  
+affetto a 1 0 1 1 00168833  
+affettuoso a 1 0 1 1 00095953  
+affezionato_alla_casa a 1 0 1 1 00068858  
+affidabile a 1 0 1 1 00048725  
+affilato a 1 0 1 1 00053757  
+affittabile a 1 0 1 1 00132855  
+afflitto a 1 0 1 1 00059886  
+affollato a 1 0 1 1 00036999  
+affranto a 1 0 1 1 00059886  
+affrettato a 1 0 1 1 00083449  
+affusolato a 1 0 1 1 00123851  
+afgano a 1 0 1 1 00210758  
+afghano a 1 0 1 1 00210758  
+aforistico a 1 0 1 1 00176027  
+africano a 1 0 1 1 00202524  
+afroasiatico a 1 0 1 1 00202561  
+afrodisiaco a 1 0 1 1 00144746  
+agamico a 1 0 1 1 00144631  
+aggettivale a 1 0 1 1 00201867  
+aggiudicativo a 1 0 1 1 00172164  
+aggiuntivo a 1 0 1 1 00005867  
+aggiunto a 1 0 1 1 00111582  
+aggravato a 1 0 1 1 00017075  
+aggraziato a 1 0 1 1 00076083  
+aggregato a 1 0 1 1 00111582  
+aggressivo a 1 0 1 1 00008551  
+aggrovigliato a 1 0 1 1 00028540  
+agitato a 2 0 2 2 00131591 00060592  
+aglioso a 1 0 1 1 00129438  
+agnostico a 1 0 1 1 00085313  
+agrario a 1 0 1 1 00185863  
+agreste a 1 0 1 1 00185863  
+agricolo a 1 0 1 1 00185863  
+agronomico a 1 0 1 1 00172400  
+aguzzo a 1 0 1 1 00123729  
+aitante a 1 0 1 1 00137016  
+alabastrino a 1 0 1 1 00172439  
+alato a 1 0 1 1 00170088  
+albanese a 1 0 1 1 00172479  
+albuminoso a 1 0 1 1 00172529  
+alcalino a 1 0 1 1 00004135  
+alchilico a 1 0 1 1 00172689  
+alchimistico a 2 0 2 2 00172609 00172568  
+alcolico a 1 0 1 1 00077398  
+alcolista a 1 0 1 1 00077398  
+alcolizzato a 1 0 1 1 00077398  
+alcoolico a 1 0 1 1 00077398  
+alcoolizzato a 1 0 1 1 00077398  
+alcuni a 4 0 4 4 00047018 00103299 00072922 00152121  
+alcuno a 1 0 1 1 00152332  
+alessandrino a 1 0 1 1 00214014  
+alfanumerico a 1 0 1 1 00172858  
+algebrico a 1 0 1 1 00192171  
+algerino a 1 0 1 1 00207864  
+algonchino a 1 0 1 1 00172650  
+algoritmico a 1 0 1 1 00008988  
+alienabile a 1 0 1 1 00009028  
+alienato a 1 0 1 1 00140442  
+all'aperto a 1 0 1 1 00115083  
+all'aria_aperta a 1 0 1 1 00220543  
+allarmante a 1 0 1 1 00015045  
+allarmato a 1 0 1 1 00162820  
+allattato_al_seno a 1 0 1 1 00019133  
+allattato_artificialmente a 1 0 1 1 00019179  
+alla_coque a 1 0 1 1 00040536  
+alla_deriva a 1 0 1 1 00130211  
+alla_moda a 1 0 1 1 00065198  
+allegato a 1 0 1 1 00111582  
+allegro a 2 0 2 2 00089041 00025376  
+allelico a 1 0 1 1 00172727  
+allelomorfo a 1 0 1 1 00172727  
+allettante a 1 0 1 1 00013509  
+allettevole a 1 0 1 1 00013509  
+alle_stelle a 1 0 1 1 00081024  
+alloctono a 1 0 1 1 00014366  
+allomorfico a 1 0 1 1 00172778  
+allotropico a 1 0 1 1 00172818  
+allo_stato_liquido a 1 0 1 1 00099645  
+alluviale a 1 0 1 1 00211124  
+alluvionale a 1 0 1 1 00211124  
+alpestre a 1 0 1 1 00213598  
+alpino a 2 0 2 2 00213563 00213598  
+alsaziano a 1 0 1 1 00207101  
+alterabile a 1 0 1 1 00024393  
+alterato a 1 0 1 1 00045131  
+alternativo a 1 0 1 1 00126189  
+alternato a 3 0 3 3 00044967 00112406 00051078  
+alterno a 1 0 1 1 00112406  
+altero a 1 0 1 1 00128579  
+altezzoso a 1 0 1 1 00128695  
+alto a 5 0 5 5 00079910 00080538 00158735 00081214 00080149  
+altolocato a 1 0 1 1 00124882  
+altro a 12 0 12 12 00139748 00103654 00005867 00029298 00005990 00103578 00139890 00117816 00005956 00006024 00140017 00139965  
+altruista a 1 0 1 1 00009441  
+altruistico a 1 0 1 1 00009441  
+al_caramello a 1 0 1 1 00025992  
+al_cioccolato a 1 0 1 1 00178641  
+al_di_sotto_delle_aspettative a 1 0 1 1 00141093  
+al_piano_di_sopra a 1 0 1 1 00165007  
+al_piano_di_sotto a 1 0 1 1 00165053  
+al_vetriolo a 1 0 1 1 00123009  
+amabile a 1 0 1 1 00122538  
+amarico a 1 0 1 1 00172976  
+amaro a 1 0 1 1 00162128  
+amato a 2 0 2 2 00095613 00095705  
+amatorio a 1 0 1 1 00144746  
+ambidestro a 1 0 1 1 00136549  
+ambientalista a 1 0 1 1 00202773  
+ambiguo a 1 0 1 1 00059103  
+ambizioso a 2 0 2 2 00049963 00009617  
+ambulacrale a 1 0 1 1 00172899  
+ameboide a 1 0 1 1 00172939  
+ameno a 2 0 2 2 00008733 00037085  
+americano a 1 0 1 1 00200865  
+amichevole a 1 0 1 1 00071527  
+amico a 2 0 2 2 00229979 00230106  
+amidaceo a 1 0 1 1 00154034  
+amilaceo a 1 0 1 1 00154034  
+ammalato a 1 0 1 1 00168833  
+ammassato a 1 0 1 1 00035485  
+amministrativo a 1 0 1 1 00197831  
+ammirevole a 1 0 1 1 00165740  
+ammissibile a 2 0 2 2 00120289 00003448  
+ammoniacale a 1 0 1 1 00173012  
+ammorbante a 1 0 1 1 00069623  
+ammuffito a 1 0 1 1 00071129  
+amnesico a 1 0 1 1 00173052  
+amniotico a 1 0 1 1 00173089  
+amorale a 1 0 1 1 00102870  
+amorevole a 1 0 1 1 00095953  
+amorfo a 1 0 1 1 00144923  
+amoroso a 1 0 1 1 00095953  
+amovibile a 1 0 1 1 00009096  
+ampio a 5 0 5 5 00009766 00034688 00169615 00073112 00090654  
+ampolloso a 1 0 1 1 00135890  
+anabatico a 1 0 1 1 00010053  
+anabbagliante a 1 0 1 1 00019920  
+anabiotico a 1 0 1 1 00173164  
+anafilattico a 1 0 1 1 00224714  
+anagliptico a 1 0 1 1 00173203  
+anaglittico a 1 0 1 1 00173203  
+anagogico a 1 0 1 1 00173257  
+anagrammatico a 1 0 1 1 00173295  
+analfabeta a 1 0 1 1 00093910  
+analitico a 1 0 1 1 00010129  
+analogico a 1 0 1 1 00010091  
+analogo a 1 0 1 1 00140337  
+anarchico a 1 0 1 1 00173337  
+anastigmatico a 1 0 1 1 00173375  
+anatomico a 2 0 2 2 00197013 00196975  
+anchilosante a 1 0 1 1 00173598  
+ancora_esistente a 1 0 1 1 00061700  
+andaluso a 1 0 1 1 00173443  
+andato_a_male a 3 0 3 3 00158036 00070658 00045131  
+andino a 1 0 1 1 00213644  
+andorrano a 1 0 1 1 00207901  
+androgino a 1 0 1 1 00096898  
+aneddotico a 1 0 1 1 00215337  
+anemico a 1 0 1 1 00215068  
+anemofilo a 1 0 1 1 00015536  
+anemografico a 1 0 1 1 00173480  
+aneroide a 1 0 1 1 00215141  
+aneurismatico a 1 0 1 1 00211082  
+anfibio a 1 0 1 1 00011071  
+anforico a 1 0 1 1 00173127  
+anfotero a 1 0 1 1 00004172  
+angelicale a 1 0 1 1 00193911  
+angelico a 1 0 1 1 00193911  
+anglicano a 1 0 1 1 00204097  
+anglofobo a 1 0 1 1 00173521  
+angloindiano a 1 0 1 1 00200222  
+anglosassone a 1 0 1 1 00222533  
+angolano a 1 0 1 1 00215178  
+angosciato a 1 0 1 1 00088930  
+angustiato a 1 0 1 1 00059886  
+anidro a 1 0 1 1 00169459  
+animale a 1 0 1 1 00009969  
+animatissimo a 1 0 1 1 00005074  
+animato a 2 0 2 2 00010407 00010571  
+animistico a 1 0 1 1 00173559  
+animoso a 1 0 1 1 00018894  
+anionico a 1 0 1 1 00200944  
+anisotropo a 1 0 1 1 00088515  
+annalistico a 1 0 1 1 00173639  
+annesso a 1 0 1 1 00111582  
+annuale a 1 0 1 1 00173679  
+annullabile a 1 0 1 1 00120140  
+annuo a 1 0 1 1 00173679  
+annuvolato a 1 0 1 1 00029851  
+anomalo a 1 0 1 1 00064889  
+anonimo a 1 0 1 1 00010607  
+anorettale a 1 0 1 1 00174343  
+ansante a 1 0 1 1 00078096  
+ansimante a 1 0 1 1 00078096  
+ansiolitico a 1 0 1 1 00174719  
+ansioso a 2 0 2 2 00054919 00162820  
+antagonista a 1 0 1 1 00050986  
+antagonistico a 1 0 1 1 00050986  
+antebellico a 1 0 1 1 00011580  
+antecedente a 1 0 1 1 00010643  
+anteguerra a 1 0 1 1 00011580  
+anteriore a 2 0 2 2 00010643 00015672  
+ante_litteram a 1 0 1 1 00229706  
+anti-trust a 1 0 1 1 00064142  
+antiaereo a 1 0 1 1 00108962  
+antibatterico a 1 0 1 1 00189766  
+antibiotico a 1 0 1 1 00174519  
+anticiclonico a 1 0 1 1 00174559  
+antico a 4 0 4 4 00109693 00117130 00109415 00110413  
+anticoncorrenziale a 1 0 1 1 00225671  
+anticonformista a 1 0 1 1 00040054  
+anticonformistico a 1 0 1 1 00040054  
+anticostituzionale a 1 0 1 1 00014300  
+anticrittogamico a 1 0 1 1 00189620  
+antidemocratico a 1 0 1 1 00048371  
+antidiluviano a 1 0 1 1 00191395  
+antifebbrile a 1 0 1 1 00077901  
+antigiuridico a 1 0 1 1 00091837  
+antiinflativo a 1 0 1 1 00225817  
+antimagnetico a 1 0 1 1 00096391  
+antimoniale a 1 0 1 1 00174601  
+antimonopolio a 2 0 2 2 00064142 00225755  
+antimonopolista a 1 0 1 1 00064142  
+antimonopolistico a 2 0 2 2 00064142 00225755  
+antinflativo a 1 0 1 1 00225817  
+antinflattivo a 1 0 1 1 00225817  
+antinomistico a 1 0 1 1 00174641  
+antiorario a 1 0 1 1 00028887  
+antipatico a 1 0 1 1 00122852  
+antipiretico a 1 0 1 1 00077901  
+antisemita a 1 0 1 1 00215259  
+antisettico a 1 0 1 1 00143821  
+antistante a 1 0 1 1 00112322  
+antitrust a 1 0 1 1 00064142  
+antracitico a 1 0 1 1 00174382  
+antropico a 1 0 1 1 00174422  
+antropocentrico a 1 0 1 1 00224373  
+antropologico a 1 0 1 1 00198353  
+antropometrico a 1 0 1 1 00174460  
+anurico a 1 0 1 1 00174683  
+anziano a 2 0 2 2 00110236 00109949  
+aperto a 4 0 4 4 00115517 00111228 00111409 00126751  
+aperto_a_tutti a 1 0 1 1 00126751  
+apetalo a 1 0 1 1 00121310  
+apistico a 1 0 1 1 00174805  
+apnoico a 1 0 1 1 00174842  
+apocalittico a 1 0 1 1 00174878  
+apologetico a 1 0 1 1 00216318  
+apoplettico a 1 0 1 1 00174919  
+apostolico a 1 0 1 1 00192521  
+appalachiano a 1 0 1 1 00174959  
+appassionante a 1 0 1 1 00060711  
+appassionato a 2 0 2 2 00116728 00116578  
+appellabile a 1 0 1 1 00011725  
+appellante a 1 0 1 1 00215298  
+appetibile a 2 0 2 2 00011765 00013509  
+appetitivo a 1 0 1 1 00210021  
+appetitoso a 1 0 1 1 00011765  
+appiccicoso a 1 0 1 1 00006576  
+appositivo a 1 0 1 1 00175000  
+apprezzabile a 1 0 1 1 00040831  
+apprezzato a 1 0 1 1 00168564  
+appropriato a 2 0 2 2 00012018 00007406  
+approssimativo a 1 0 1 1 00003989  
+appuntito a 1 0 1 1 00123729  
+aprioristico a 1 0 1 1 00012222  
+arabico a 1 0 1 1 00215376  
+arabo a 1 0 1 1 00215376  
+araldico a 1 0 1 1 00209415  
+aramaico a 1 0 1 1 00175149  
+arbitrale a 1 0 1 1 00175186  
+arbitrario a 1 0 1 1 00048415  
+arcadico a 1 0 1 1 00138032  
+arcaico a 1 0 1 1 00054750  
+arcaistico a 1 0 1 1 00175224  
+arcano a 1 0 1 1 00062709  
+arcato a 1 0 1 1 00175263  
+archiepiscopale a 1 0 1 1 00175347  
+architettonico a 1 0 1 1 00197051  
+arciducale a 1 0 1 1 00175308  
+arcuato a 2 0 2 2 00175263 00154396  
+ardente a 2 0 2 2 00116728 00116578  
+ardito a 1 0 1 1 00018894  
+arduo a 1 0 1 1 00049823  
+argentino a 1 0 1 1 00206155  
+argilloso a 1 0 1 1 00012320  
+argivo a 1 0 1 1 00212558  
+arguto a 1 0 1 1 00123487  
+ariano a 1 0 1 1 00218350  
+aritmetico a 1 0 1 1 00215420  
+armato a 1 0 1 1 00012358  
+armillare a 1 0 1 1 00175391  
+armonico a 1 0 1 1 00077689  
+armonioso a 3 0 3 3 00076083 00099520 00077689  
+aromatico a 1 0 1 1 00069551  
+arrabbiato a 1 0 1 1 00010167  
+arrendevole a 1 0 1 1 00046336  
+arrivato a 1 0 1 1 00109121  
+arrogante a 1 0 1 1 00042683  
+arrotondato a 1 0 1 1 00137616  
+arsenicale a 1 0 1 1 00175429  
+arsenioso a 1 0 1 1 00175468  
+arso a 1 0 1 1 00224922  
+artico a 1 0 1 1 00107507  
+articolare a 1 0 1 1 00175579  
+articolato a 1 0 1 1 00012902  
+artistico a 2 0 2 2 00007907 00209264  
+arturiano a 1 0 1 1 00175541  
+ascetico a 2 0 2 2 00002180 00175618  
+asciutto a 1 0 1 1 00035743  
+asciutto_e_muscoloso a 1 0 1 1 00066149  
+asessuale a 1 0 1 1 00144631  
+asessuato a 1 0 1 1 00144631  
+asiatico a 1 0 1 1 00206448  
+asimmetrico a 1 0 1 1 00158249  
+asociale a 1 0 1 1 00151570  
+aspro a 2 0 2 2 00157922 00129357  
+assediato a 1 0 1 1 00111698  
+assegnabile a 1 0 1 1 00030402  
+assennato a 1 0 1 1 00022391  
+assente a 1 0 1 1 00125682  
+assenziente a 1 0 1 1 00046336  
+assertivo a 1 0 1 1 00012991  
+assetato a 1 0 1 1 00083412  
+assicurato a 1 0 1 1 00142527  
+assiduo a 1 0 1 1 00039181  
+assimilabile a 1 0 1 1 00078585  
+assiso a 1 0 1 1 00082336  
+assodato a 1 0 1 1 00048527  
+assolutistico a 1 0 1 1 00224658  
+assoluto a 2 0 2 2 00002011 00036628  
+assorbente a 1 0 1 1 00002085  
+assurdo a 1 0 1 1 00094277  
+astinente a 1 0 1 1 00002142  
+astioso a 1 0 1 1 00010206  
+astrale a 1 0 1 1 00186683  
+astratto a 1 0 1 1 00003199  
+astringente a 1 0 1 1 00014835  
+astrologico a 1 0 1 1 00198877  
+astronautico a 1 0 1 1 00175655  
+astronomico a 1 0 1 1 00175711  
+atassico a 1 0 1 1 00175751  
+ateistico a 1 0 1 1 00188593  
+ateniese a 1 0 1 1 00207139  
+ateo a 1 0 1 1 00188593  
+atipico a 1 0 1 1 00164180  
+atlantico a 1 0 1 1 00203106  
+atletico a 1 0 1 1 00198438  
+atmosferico a 1 0 1 1 00189506  
+atomico a 2 0 2 2 00040164 00195596  
+atomistico a 1 0 1 1 00114156  
+atonale a 1 0 1 1 00162219  
+atono a 1 0 1 1 00154594  
+atrofico a 1 0 1 1 00211646  
+attendibile a 3 0 3 3 00043103 00163572 00048725  
+attento a 2 0 2 2 00079337 00021621  
+attico a 1 0 1 1 00212523  
+attinente a 1 0 1 1 00133375  
+attinico a 1 0 1 1 00214992  
+attinometrico a 1 0 1 1 00172085  
+attinomorfo a 1 0 1 1 00158289  
+attivo a 4 0 4 4 00111934 00004936 00127339 00005178  
+attraente a 1 0 1 1 00013509  
+attuabile a 1 0 1 1 00124405  
+attuale a 3 0 3 3 00187621 00117868 00044183  
+attuariale a 1 0 1 1 00202231  
+audace a 2 0 2 2 00018429 00018341  
+audiometrico a 1 0 1 1 00175788  
+audiovisivo a 1 0 1 1 00175829  
+auditivo a 1 0 1 1 00193623  
+augusteo a 1 0 1 1 00215459  
+aulico a 1 0 1 1 00050380  
+austero a 1 0 1 1 00002180  
+australe a 1 0 1 1 00107587  
+australiano a 1 0 1 1 00215496  
+austriaco a 1 0 1 1 00205213  
+autentico a 2 0 2 2 00074333 00163657  
+autoctono a 1 0 1 1 00068528  
+autogeno a 1 0 1 1 00014440  
+autografico a 1 0 1 1 00175869  
+autoico a 1 0 1 1 00014404  
+autolitico a 1 0 1 1 00175909  
+automatico a 1 0 1 1 00014477  
+automobilistico a 1 0 1 1 00195343  
+autonomo a 1 0 1 1 00167152  
+autorevole a 1 0 1 1 00124882  
+autoritario a 1 0 1 1 00224658  
+autotipico a 1 0 1 1 00175988  
+autotrofico a 1 0 1 1 00175948  
+autunnale a 1 0 1 1 00082744  
+avanzato a 2 0 2 2 00190115 00054586  
+avariato a 2 0 2 2 00070658 00045131  
+avaro a 1 0 1 1 00074120  
+avido a 1 0 1 1 00004536  
+avveduto a 1 0 1 1 00128992  
+avvenente a 1 0 1 1 00013509  
+avventato a 1 0 1 1 00128884  
+avventizio a 1 0 1 1 00119755  
+avventuroso a 1 0 1 1 00007366  
+avverbiale a 1 0 1 1 00201907  
+avvertito a 1 0 1 1 00128992  
+avvicinabile a 1 0 1 1 00011831  
+avvilente a 1 0 1 1 00057475  
+avvilito a 1 0 1 1 00047171  
+avvinazzato a 1 0 1 1 00053593  
+avvincente a 1 0 1 1 00060711  
+avvizzito a 1 0 1 1 00071030  
+avvolgente a 1 0 1 1 00060711  
+azzeccato a 1 0 1 1 00007406  
+azzurro a 1 0 1 1 00025906  
+a_bassa_quota a 1 0 1 1 00080300  
+a_bassa_risoluzione a 1 0 1 1 00081477  
+a_basso_contenuto_tecnologico a 1 0 1 1 00080473  
+a_basso_livello a 2 0 2 2 00081152 00080360  
+a_basso_prezzo a 1 0 1 1 00062164  
+a_breve_termine a 1 0 1 1 00229455  
+a_capo_scoperto a 1 0 1 1 00029648  
+a_carica_automatica a 1 0 1 1 00014534  
+a_caro_prezzo a 1 0 1 1 00062011  
+a_chiusura_ermetica a 1 0 1 1 00091615  
+a_corto_di_personale a 1 0 1 1 00006432  
+a_cupola a 1 0 1 1 00137768  
+a_domicilio a 1 0 1 1 00034769  
+a_doppia_canna a 1 0 1 1 00053141  
+a_doppio_senso a 1 0 1 1 00017295  
+a_doppio_taglio a 1 0 1 1 00009573  
+a_due_pezzi a 1 0 1 1 00110996  
+a_due_spioventi a 1 0 1 1 00081525  
+a_fin_di_bene a 1 0 1 1 00086847  
+a_fondo_piatto a 1 0 1 1 00162511  
+a_forma_di_cuneo a 1 0 1 1 00146030  
+a_gambe_scoperte a 1 0 1 1 00029692  
+a_gittata_corta a 1 0 1 1 00094693  
+a_grana_grossa a 1 0 1 1 00150674  
+a_grande_scala a 1 0 1 1 00090732  
+a_lungo_termine a 1 0 1 1 00229368  
+a_mano_libera a 1 0 1 1 00114416  
+a_medio_termine a 1 0 1 1 00229541  
+a_metà_settimana a 1 0 1 1 00174141  
+a_mezzaluna a 1 0 1 1 00137710  
+a_parte a 1 0 1 1 00143518  
+a_priori a 1 0 1 1 00012222  
+a_prova_di_proiettile a 1 0 1 1 00012448  
+a_quattro_strati a 1 0 1 1 00160462  
+a_raffiche a 1 0 1 1 00021420  
+a_sangue_caldo a 1 0 1 1 00167958  
+a_tariffa_ridotta a 1 0 1 1 00098742  
+a_tempo_parziale a 1 0 1 1 00072343  
+a_tempo_pieno a 1 0 1 1 00072301  
+a_timpano a 1 0 1 1 00081525  
+a_tre_gambe a 1 0 1 1 00094130  
+a_tre_strati a 1 0 1 1 00160532  
+a_tutta_velocità a 1 0 1 1 00083551  
+a_volta a 1 0 1 1 00137768  
+à_la_page a 1 0 1 1 00065198  
+bacillare a 1 0 1 1 00189716  
+baggiano a 1 0 1 1 00043319  
+bagnato a 1 0 1 1 00169001  
+bagnato_fradicio a 1 0 1 1 00169309  
+balistico a 1 0 1 1 00176066  
+balordo a 1 0 1 1 00028756  
+banale a 2 0 2 2 00113064 00114607  
+bancario a 1 0 1 1 00225890  
+bardito a 1 0 1 1 00215576  
+barografico a 1 0 1 1 00176104  
+barometrico a 1 0 1 1 00176144  
+base a 3 0 3 3 00126247 00126342 00153857  
+basilare a 1 0 1 1 00126247  
+basso a 4 0 4 4 00095438 00080212 00081082 00162465  
+bastante a 1 0 1 1 00155757  
+bastardo a 1 0 1 1 00129635  
+battagliero a 1 0 1 1 00008551  
+batterico a 1 0 1 1 00189716  
+batteriologico a 1 0 1 1 00199556  
+battesimale a 1 0 1 1 00215536  
+battista a 1 0 1 1 00204135  
+bavarese a 1 0 1 1 00206675  
+becero a 1 0 1 1 00042683  
+beffardo a 1 0 1 1 00134912  
+behaviouristico a 1 0 1 1 00176184  
+belga a 1 0 1 1 00205094  
+bell'e_pronto a 1 0 1 1 00044727  
+bellicoso a 1 0 1 1 00118690  
+bellissimo a 1 0 1 1 00013509  
+bello a 5 0 5 5 00040831 00074977 00016159 00016303 00105923  
+bello_e_buono a 1 0 1 1 00034480  
+benaccetto a 1 0 1 1 00168564  
+benarrivato a 1 0 1 1 00168564  
+bene a 1 0 1 1 00056537  
+beneaccetto a 1 0 1 1 00168564  
+benedetto a 2 0 2 2 00044454 00138354  
+beneficiario a 1 0 1 1 00176228  
+benefico a 1 0 1 1 00007221  
+benevolente a 1 0 1 1 00176269  
+benevolo a 1 0 1 1 00095953  
+bengalese a 1 0 1 1 00215612  
+benigno a 1 0 1 1 00089225  
+bentonico a 1 0 1 1 00176322  
+benvenuto a 1 0 1 1 00168564  
+benvolente a 1 0 1 1 00176269  
+benvoluto a 1 0 1 1 00095613  
+benzoico a 1 0 1 1 00176360  
+ben_arrivato a 1 0 1 1 00168564  
+ben_informato a 1 0 1 1 00085504  
+ben_intenzionato a 1 0 1 1 00086847  
+ben_venuto a 1 0 1 1 00168564  
+bestiale a 2 0 2 2 00083090 00009969  
+bevibile a 1 0 1 1 00053318  
+bianco a 2 0 2 2 00017942 00026550  
+biatomico a 1 0 1 1 00195632  
+biaurale a 1 0 1 1 00017692  
+biauricolare a 1 0 1 1 00017692  
+biblico a 1 0 1 1 00192209  
+bibliografico a 1 0 1 1 00176397  
+bicentenario a 1 0 1 1 00210223  
+bidirezionale a 1 0 1 1 00017235  
+biennale a 1 0 1 1 00045023  
+bilabiale a 1 0 1 1 00215650  
+bilanciato a 1 0 1 1 00058998  
+bilaterale a 1 0 1 1 00017532  
+bilatero a 1 0 1 1 00017532  
+bimestrale a 2 0 2 2 00173838 00094851  
+bimetallico a 1 0 1 1 00176439  
+binario a 1 0 1 1 00176479  
+binaurale a 1 0 1 1 00017692  
+binoculare a 1 0 1 1 00194147  
+binucleare a 1 0 1 1 00017795  
+biochimico a 1 0 1 1 00176525  
+bioclimatico a 1 0 1 1 00176564  
+bioculare a 1 0 1 1 00194147  
+biogeno a 1 0 1 1 00176605  
+biografico a 1 0 1 1 00215688  
+biomedico a 1 0 1 1 00183859  
+biondo a 1 0 1 1 00017977  
+bionico a 1 0 1 1 00176727  
+bipede a 1 0 1 1 00017834  
+bipolare a 1 0 1 1 00164551  
+biquadratico a 1 0 1 1 00221975  
+birifrangente a 1 0 1 1 00190298  
+birmano a 1 0 1 1 00215880  
+bisessuale a 1 0 1 1 00079796  
+bisex a 1 0 1 1 00079796  
+bismarckiano a 1 0 1 1 00214055  
+bitorzoluto a 1 0 1 1 00060185  
+bituminoso a 1 0 1 1 00215727  
+bivalente a 1 0 1 1 00215766  
+bivalve a 1 0 1 1 00164733  
+bizonale a 1 0 1 1 00224225  
+bizzarro a 1 0 1 1 00064889  
+blando a 1 0 1 1 00129503  
+bloccato_dalla_neve a 1 0 1 1 00036808  
+bloccato_dal_ghiaccio a 1 0 1 1 00071714  
+bloccato_dal_maltempo a 1 0 1 1 00036884  
+blu a 1 0 1 1 00025906  
+blu_zaffiro a 1 0 1 1 00026230  
+boliviano a 1 0 1 1 00206299  
+bollato a 1 0 1 1 00097089  
+bolscevico a 1 0 1 1 00194541  
+bonario a 1 0 1 1 00095953  
+booleano a 1 0 1 1 00176801  
+boreale a 1 0 1 1 00107507  
+borghese a 1 0 1 1 00018723  
+borioso a 1 0 1 1 00128695  
+borsistico a 1 0 1 1 00225927  
+boschivo a 1 0 1 1 00170349  
+boscoso a 1 0 1 1 00170349  
+bosniaco a 1 0 1 1 00205713  
+botanico a 1 0 1 1 00176838  
+bovino a 1 0 1 1 00190858  
+brachiale a 1 0 1 1 00176875  
+brachicefalico a 1 0 1 1 00018851  
+branchiale a 1 0 1 1 00176989  
+branchifero a 1 0 1 1 00073751  
+brasiliano a 1 0 1 1 00206116  
+bratteale a 1 0 1 1 00176913  
+bratteato a 1 0 1 1 00176951  
+bravo a 3 0 3 3 00074977 00018894 00133793  
+breve a 7 0 7 7 00119755 00095126 00090916 00035953 00094997 00095074 00094615  
+breviloquente a 1 0 1 1 00035743  
+brillante a 3 0 3 3 00086649 00156613 00123487  
+brioso a 1 0 1 1 00123487  
+britannico a 1 0 1 1 00213036  
+bromico a 1 0 1 1 00177028  
+bronchiale a 1 0 1 1 00203366  
+bronzato a 1 0 1 1 00111831  
+bronzeo a 1 0 1 1 00111831  
+bruciato a 1 0 1 1 00224922  
+brutale a 1 0 1 1 00083090  
+brutto a 2 0 2 2 00016402 00075426  
+bucolico a 1 0 1 1 00138032  
+buddhistico a 1 0 1 1 00200499  
+buddista a 1 0 1 1 00200499  
+buddistico a 1 0 1 1 00200499  
+budgetario a 1 0 1 1 00213075  
+buffo a 2 0 2 2 00207325 00131012  
+buggettario a 1 0 1 1 00213075  
+bugiardo a 1 0 1 1 00163325  
+buio a 1 0 1 1 00019509  
+bulgaro a 1 0 1 1 00215804  
+buono a 8 0 8 8 00041839 00075569 00089225 00074977 00009836 00122538 00041579 00133793  
+burbero a 1 0 1 1 00075798  
+burlesco a 1 0 1 1 00194299  
+burocratico a 1 0 1 1 00215840  
+burrascoso a 1 0 1 1 00021335  
+butirrico a 1 0 1 1 00177064  
+buttato_alla_rinfusa a 1 0 1 1 00161256  
+cacofonico a 1 0 1 1 00020932  
+cadenzato a 1 0 1 1 00136067  
+cadetto a 1 0 1 1 00017190  
+caduco a 1 0 1 1 00060305  
+calante a 1 0 1 1 00168192  
+calceolato a 1 0 1 1 00177140  
+calcico a 1 0 1 1 00177179  
+calcifero a 1 0 1 1 00177215  
+calcolabile a 1 0 1 1 00020995  
+calcoloso a 1 0 1 1 00177253  
+caldo a 2 0 2 2 00082446 00167485  
+calibrato a 1 0 1 1 00058998  
+calicino a 1 0 1 1 00177333  
+californiano a 1 0 1 1 00215916  
+calligrafico a 1 0 1 1 00198673  
+calmo a 3 0 3 3 00021218 00034941 00118638  
+calorimetrico a 1 0 1 1 00177291  
+caloroso a 1 0 1 1 00058465  
+calvinista a 1 0 1 1 00203891  
+cambiabile a 1 0 1 1 00024312  
+cambogiano a 1 0 1 1 00206485  
+campaniforme a 1 0 1 1 00177370  
+campato_in_aria a 1 0 1 1 00056968  
+campestre a 1 0 1 1 00185863  
+camuffato a 1 0 1 1 00141745  
+canadese a 1 0 1 1 00208384  
+cancerogeno a 1 0 1 1 00177523  
+canceroso a 1 0 1 1 00208421  
+candido a 2 0 2 2 00086194 00085564  
+canforato a 1 0 1 1 00021477  
+canforico a 1 0 1 1 00177411  
+canino a 1 0 1 1 00177449  
+cannibalesco a 1 0 1 1 00215957  
+cantonale a 1 0 1 1 00215998  
+canzonatorio a 1 0 1 1 00134912  
+capace a 3 0 3 3 00001740 00021586 00021515  
+capace_di_tutto a 1 0 1 1 00138959  
+caparbio a 1 0 1 1 00154968  
+capitalista a 2 0 2 2 00020797 00210300  
+capitalistico a 2 0 2 2 00020797 00210300  
+capitolare a 1 0 1 1 00177484  
+capo a 1 0 1 1 00084090  
+capriccioso a 1 0 1 1 00048415  
+caprino a 1 0 1 1 00182480  
+caratteristico a 2 0 2 2 00024952 00164023  
+carbonico a 1 0 1 1 00193200  
+carbonifero a 1 0 1 1 00216036  
+carburante a 1 0 1 1 00030610  
+carcinomatoso a 1 0 1 1 00177574  
+cardiaco a 1 0 1 1 00191054  
+cardinale a 1 0 1 1 00146716  
+cardiovascolare a 1 0 1 1 00194374  
+carente_di_personale a 1 0 1 1 00006432  
+carico a 2 0 2 2 00094021 00025019  
+carico_d'emozione a 1 0 1 1 00056833  
+carino a 2 0 2 2 00016303 00105923  
+carmelita a 1 0 1 1 00216076  
+carmelitano a 1 0 1 1 00216076  
+carnale a 1 0 1 1 00207707  
+carnoso a 1 0 1 1 00181762  
+caro a 2 0 2 2 00062011 00095705  
+carpale a 1 0 1 1 00216128  
+carpellare a 1 0 1 1 00177616  
+cartaginese a 1 0 1 1 00221858  
+cartesiano a 1 0 1 1 00213766  
+cartografico a 1 0 1 1 00177655  
+casa_per_casa a 1 0 1 1 00034769  
+casistico a 2 0 2 2 00216164 00216202  
+castigato a 2 0 2 2 00024717 00025278  
+casto a 1 0 1 1 00025278  
+castrato a 1 0 1 1 00144709  
+catalettico a 2 0 2 2 00216240 00022117  
+catarrale a 1 0 1 1 00177696  
+catarroso a 1 0 1 1 00177696  
+catastale a 1 0 1 1 00177102  
+catastrofico a 2 0 2 2 00077589 00112506  
+catechistico a 1 0 1 1 00208343  
+categorico a 1 0 1 1 00177746  
+catoptrico a 1 0 1 1 00177785  
+catottrico a 1 0 1 1 00177785  
+cattivo a 2 0 2 2 00075621 00075426  
+cattolico a 2 0 2 2 00200263 00200184  
+caucasico a 1 0 1 1 00191127  
+caudale a 1 0 1 1 00191091  
+caudato a 1 0 1 1 00022217  
+causale a 1 0 1 1 00022262  
+caustico a 3 0 3 3 00123009 00140926 00038559  
+cauto a 2 0 2 2 00128992 00022391  
+cecale a 1 0 1 1 00177837  
+ceco a 2 0 2 2 00145415 00205355  
+cedevole a 1 0 1 1 00153595  
+cedibile a 1 0 1 1 00009028  
+cefalico a 1 0 1 1 00191165  
+ceko a 1 0 1 1 00205355  
+celebrativo a 2 0 2 2 00177882 00216318  
+celebre a 2 0 2 2 00109121 00089382  
+celeste a 2 0 2 2 00177990 00177922  
+celestiale a 2 0 2 2 00177990 00177922  
+celiaco a 1 0 1 1 00211554  
+celibe a 1 0 1 1 00097161  
+cellulare a 1 0 1 1 00178058  
+celtico a 1 0 1 1 00204627  
+cenobitico a 1 0 1 1 00178198  
+censoriale a 1 0 1 1 00178334  
+centenario a 1 0 1 1 00210160  
+centennale a 1 0 1 1 00210160  
+centenne a 1 0 1 1 00210160  
+centigrado a 1 0 1 1 00022668  
+cento a 1 0 1 1 00149287  
+centrale a 3 0 3 3 00022707 00084141 00073831  
+centro-occidentale a 1 0 1 1 00055433  
+centroamericano a 1 0 1 1 00210803  
+ceramico a 1 0 1 1 00212233  
+cerato a 1 0 1 1 00168119  
+cereale a 1 0 1 1 00178373  
+cereo a 1 0 1 1 00210964  
+cerimonioso a 1 0 1 1 00134784  
+certificato a 1 0 1 1 00024016  
+certo a 4 0 4 4 00047018 00023725 00023001 00152121  
+ceruminoso a 1 0 1 1 00178409  
+cesariano a 1 0 1 1 00214096  
+charter a 1 0 1 1 00025242  
+chemioterapico a 1 0 1 1 00178560  
+che_adora_i_cavalli a 1 0 1 1 00103067  
+che_alza_spesso_il_gomito a 1 0 1 1 00053593  
+che_attira_l'attenzione a 1 0 1 1 00037945  
+che_batte_tutti_i_record a 1 0 1 1 00016808  
+che_contribuisce a 1 0 1 1 00022298  
+che_dà_assuefazione a 1 0 1 1 00006066  
+che_dà_le_vertigini a 1 0 1 1 00168927  
+che_fa_accapponare_la_pelle a 1 0 1 1 00015444  
+che_fa_acqua a 1 0 1 1 00141704  
+che_fa_epoca a 1 0 1 1 00145777  
+che_fa_male a 1 0 1 1 00115784  
+che_fa_paura a 1 0 1 1 00015372  
+che_ha_esperienza a 1 0 1 1 00062225  
+che_ha_sangue_freddo a 1 0 1 1 00035054  
+che_ha_spirito_d'osservazione a 1 0 1 1 00013307  
+che_lascia_a_desiderare a 1 0 1 1 00141093  
+che_lascia_il_segno a 1 0 1 1 00077641  
+che_lascia_indifferente a 1 0 1 1 00084790  
+che_lascia_perplesso a 1 0 1 1 00028144  
+che_lotta_per_affermarsi a 1 0 1 1 00163086  
+che_non_dà_tregua a 1 0 1 1 00038951  
+che_non_fa_discriminazioni a 1 0 1 1 00051994  
+che_non_fa_distinzioni a 1 0 1 1 00052074  
+che_non_ha_successo a 1 0 1 1 00155595  
+che_non_regge a 1 0 1 1 00165676  
+che_non_si_lamenta a 1 0 1 1 00033752  
+che_non_si_stira a 1 0 1 1 00168056  
+che_non_soddisfa a 1 0 1 1 00141241  
+che_non_sospetta_nulla a 1 0 1 1 00014951  
+che_non_vacilla a 1 0 1 1 00045831  
+che_parla_bene a 1 0 1 1 00012793  
+che_può_essere_mantenuto a 1 0 1 1 00187018  
+che_rallegra a 1 0 1 1 00060973  
+che_reagisce_bene a 1 0 1 1 00157807  
+che_s'interessa a 1 0 1 1 00087074  
+che_salva_la_faccia a 1 0 1 1 00079479  
+che_sa_di_frutta a 1 0 1 1 00159215  
+che_sa_di_stantio a 1 0 1 1 00069729  
+che_sa_leggere_e_scrivere a 1 0 1 1 00093838  
+che_sfugge a 1 0 1 1 00012609  
+che_si_è_fatto_da_sé a 1 0 1 1 00155464  
+che_si_dà_un_sacco_di_arie a 1 0 1 1 00128695  
+che_si_dimena a 1 0 1 1 00103973  
+che_si_esprime_bene a 1 0 1 1 00012655  
+che_si_fa_notare a 1 0 1 1 00037791  
+che_soffre_di_coliche a 1 0 1 1 00078289  
+che_spacca_le_pietre a 1 0 1 1 00082516  
+che_trascura a 1 0 1 1 00050664  
+che_vale_la_pena a 1 0 1 1 00171429  
+che_vale_la_pena_pubblicare a 1 0 1 1 00087499  
+che_va_al_sodo a 1 0 1 1 00051281  
+che_va_a_gonfie_vele a 1 0 1 1 00155357  
+che_viene_dal_nordest a 1 0 1 1 00106971  
+che_viene_da_nordovest a 1 0 1 1 00107126  
+chiaro a 12 0 12 12 00129777 00134442 00028242 00027996 00026954 00028505 00019313 00146354 00089382 00108714 00029737 00227284  
+chiassoso a 1 0 1 1 00131491  
+chiave a 1 0 1 1 00084141  
+chic a 1 0 1 1 00056537  
+chilifero a 1 0 1 1 00191880  
+chimerico a 1 0 1 1 00178603  
+chimico a 2 0 2 2 00178448 00178524  
+chiuso a 4 0 4 4 00111444 00111537 00111364 00032586  
+chiuso_in_se_stesso a 1 0 1 1 00134040  
+cibernetico a 1 0 1 1 00216745  
+ciclico a 1 0 1 1 00044895  
+ciecale a 1 0 1 1 00177837  
+cieco a 1 0 1 1 00145415  
+cigliato a 2 0 2 2 00191321 00191358  
+cile a 1 0 1 1 00003849  
+cileno a 1 0 1 1 00205952  
+cilindrico a 1 0 1 1 00179922  
+cinematico a 1 0 1 1 00228743  
+cinese a 1 0 1 1 00205750  
+cinestetico a 1 0 1 1 00193871  
+cinetico a 1 0 1 1 00196400  
+cinquanta a 1 0 1 1 00149074  
+cinque a 1 0 1 1 00147735  
+cinquecento a 1 0 1 1 00149345  
+cinto_da_mura a 1 0 1 1 00167271  
+cipriota a 1 0 1 1 00216785  
+cipriotto a 1 0 1 1 00216785  
+circadiale a 1 0 1 1 00207977  
+circadiano a 1 0 1 1 00207977  
+circolare a 1 0 1 1 00137516  
+circonflesso a 1 0 1 1 00154396  
+circoscritto a 1 0 1 1 00093350  
+circospetto a 1 0 1 1 00022391  
+circostante a 1 0 1 1 00029415  
+cirillico a 1 0 1 1 00216834  
+cismontano a 1 0 1 1 00027280  
+citogenetico a 1 0 1 1 00179961  
+citologico a 1 0 1 1 00180002  
+citotossico a 1 0 1 1 00180041  
+citramontano a 1 0 1 1 00027280  
+citrullo a 1 0 1 1 00028756  
+cittadinesco a 1 0 1 1 00063709  
+cittadino a 1 0 1 1 00063709  
+civico a 2 0 2 2 00178699 00178734  
+civile a 4 0 4 4 00100408 00042610 00027334 00100461  
+civilizzato a 1 0 1 1 00027334  
+clamoroso a 1 0 1 1 00131491  
+clandestino a 1 0 1 1 00102995  
+classicistico a 1 0 1 1 00200030  
+classico a 2 0 2 2 00027383 00027438  
+clemente a 1 0 1 1 00028656  
+climatico a 1 0 1 1 00216280  
+climatizzato a 1 0 1 1 00167653  
+clinico a 1 0 1 1 00195721  
+clonico a 1 0 1 1 00187585  
+cocciuto a 1 0 1 1 00154968  
+cocente a 1 0 1 1 00082516  
+cocleare a 1 0 1 1 00212160  
+codardo a 1 0 1 1 00019007  
+codato a 1 0 1 1 00022217  
+coerente a 2 0 2 2 00030111 00037652  
+cofto a 1 0 1 1 00216599  
+cognitivo a 1 0 1 1 00197136  
+coinvolgente a 1 0 1 1 00060711  
+coinvolto a 1 0 1 1 00100370  
+colinergico a 1 0 1 1 00007146  
+collegato a 2 0 2 2 00133319 00133281  
+collegato_ad_un_sistema_di_allarme a 1 0 1 1 00170122  
+collegiale a 1 0 1 1 00030291  
+collerico a 1 0 1 1 00075747  
+collettivo a 2 0 2 2 00143675 00030291  
+colloidale a 1 0 1 1 00197792  
+colombiano a 1 0 1 1 00206337  
+coloniale a 1 0 1 1 00178793  
+colorato a 1 0 1 1 00026603  
+colorimetrico a 1 0 1 1 00178831  
+colpevole a 1 0 1 1 00086242  
+colpito a 1 0 1 1 00168833  
+comatoso a 1 0 1 1 00191249  
+combattente a 1 0 1 1 00111934  
+combustibile a 1 0 1 1 00030610  
+combusto a 1 0 1 1 00224922  
+come_batuffoli a 1 0 1 1 00077111  
+comico a 1 0 1 1 00207325  
+commemorativo a 1 0 1 1 00216318  
+commensurabile a 1 0 1 1 00032621  
+commerciabile a 1 0 1 1 00139021  
+commerciale a 1 0 1 1 00031100  
+commestibile a 1 0 1 1 00055597  
+commosso a 1 0 1 1 00162561  
+commutabile a 1 0 1 1 00024312  
+comodo a 5 0 5 5 00228331 00030879 00095160 00039679 00228203  
+comparabile a 1 0 1 1 00032621  
+comparativo a 1 0 1 1 00209212  
+comparato a 1 0 1 1 00209212  
+compassato a 1 0 1 1 00034825  
+compassionevole a 1 0 1 1 00033030  
+compatibile a 3 0 3 3 00033114 00033074 00116139  
+compendioso a 1 0 1 1 00035743  
+competente a 1 0 1 1 00033370  
+competitivo a 1 0 1 1 00033616  
+compiacente a 2 0 2 2 00003849 00042197  
+compito a 1 0 1 1 00095953  
+complessivo a 1 0 1 1 00126913  
+complesso a 1 0 1 1 00146210  
+completo a 4 0 4 4 00034371 00034633 00036628 00034039  
+complicato a 1 0 1 1 00146297  
+comportamentale a 1 0 1 1 00202480  
+composito a 1 0 1 1 00178873  
+composto a 4 0 4 4 00086535 00146082 00050380 00034825  
+comprabile a 1 0 1 1 00139021  
+comprensibile a 2 0 2 2 00115981 00035128  
+compreso a 1 0 1 1 00126913  
+compressibile a 1 0 1 1 00033806  
+comprimibile a 1 0 1 1 00033806  
+compromettente a 1 0 1 1 00068114  
+compulsivo a 1 0 1 1 00105884  
+computazionale a 1 0 1 1 00198395  
+comunale a 1 0 1 1 00178734  
+comune a 6 0 6 6 00031343 00032098 00113064 00144958 00113299 00065127  
+comunicativo a 1 0 1 1 00095953  
+comunista a 1 0 1 1 00194453  
+concatenato a 1 0 1 1 00037193  
+concavo a 1 0 1 1 00035400  
+concentrato a 2 0 2 2 00035485 00036200  
+concentrico a 1 0 1 1 00035585  
+concepibile a 2 0 2 2 00124572 00003448  
+concettuale a 1 0 1 1 00056968  
+conciliante a 1 0 1 1 00050864  
+conciliativo a 1 0 1 1 00050864  
+conciliatore a 1 0 1 1 00050864  
+conciso a 1 0 1 1 00035743  
+concitato a 1 0 1 1 00060592  
+concludente a 1 0 1 1 00036076  
+conclusivo a 2 0 2 2 00067231 00036076  
+concorrenziale a 2 0 2 2 00020871 00033616  
+concreto a 1 0 1 1 00003254  
+condiscendente a 1 0 1 1 00046336  
+condizionale a 1 0 1 1 00036511  
+condonabile a 2 0 2 2 00115981 00116139  
+conduttivo a 1 0 1 1 00036716  
+confessabile a 1 0 1 1 00003448  
+confezionato a 1 0 1 1 00044727  
+confidente a 1 0 1 1 00163473  
+confinato_in_casa a 1 0 1 1 00036755  
+conforme a 1 0 1 1 00007406  
+conformistico a 1 0 1 1 00040012  
+confortante a 1 0 1 1 00057344  
+confortevole a 1 0 1 1 00122538  
+confrontabile a 1 0 1 1 00032621  
+confuciano a 1 0 1 1 00200641  
+confuso a 4 0 4 4 00161256 00030237 00120591 00028540  
+confutabile a 1 0 1 1 00130716  
+congestivo a 1 0 1 1 00211425  
+congestizio a 1 0 1 1 00211425  
+congiuntivo a 1 0 1 1 00220370  
+congolese a 1 0 1 1 00216481  
+congratulatorio a 1 0 1 1 00066681  
+congregazionalista a 1 0 1 1 00204172  
+congressuale a 1 0 1 1 00208302  
+congruo a 2 0 2 2 00006201 00030111  
+conico a 1 0 1 1 00191286  
+coniugale a 2 0 2 2 00192043 00194109  
+connesso a 1 0 1 1 00037193  
+connotativo a 1 0 1 1 00048685  
+conoscitivo a 1 0 1 1 00197136  
+conosciuto a 1 0 1 1 00089318  
+conquistabile a 1 0 1 1 00037340  
+consacrato a 1 0 1 1 00037504  
+consacrato_dal_tempo a 1 0 1 1 00081699  
+consapevole a 3 0 3 3 00014893 00086807 00085351  
+conscienzioso a 1 0 1 1 00141634  
+consecutivo a 1 0 1 1 00015734  
+conseguente a 1 0 1 1 00010824  
+consenziente a 1 0 1 1 00046336  
+conservatore a 1 0 1 1 00037552  
+conservato_in_vaso a 1 0 1 1 00071375  
+considerato a 1 0 1 1 00022391  
+considerevole a 1 0 1 1 00040831  
+consigliabile a 1 0 1 1 00007406  
+consistente a 1 0 1 1 00040831  
+consolabile a 1 0 1 1 00081972  
+consolante a 1 0 1 1 00057344  
+consolare a 1 0 1 1 00216519  
+consonantico a 1 0 1 1 00153461  
+consono a 1 0 1 1 00007406  
+consostanziale a 1 0 1 1 00179030  
+consueto a 2 0 2 2 00031678 00031775  
+consumato a 1 0 1 1 00170755  
+consunto a 1 0 1 1 00170755  
+consustanziale a 1 0 1 1 00179030  
+contagioso a 1 0 1 1 00085170  
+contegnoso a 1 0 1 1 00050380  
+contemporaneo a 2 0 2 2 00044284 00101837  
+contento a 2 0 2 2 00123145 00088554  
+contestabile a 1 0 1 1 00130716  
+contestuale a 1 0 1 1 00210506  
+continuato a 2 0 2 2 00119541 00039181  
+continuo a 4 0 4 4 00039540 00038823 00039488 00039181  
+contraddittorio a 1 0 1 1 00037689  
+contradittorio a 1 0 1 1 00037689  
+contraffatto a 1 0 1 1 00074569  
+contrariato a 1 0 1 1 00076743  
+contrario a 2 0 2 2 00112322 00139459  
+contrario_all'etica_professionale a 1 0 1 1 00059567  
+contrassegnato a 1 0 1 1 00097018  
+contratto a 1 0 1 1 00036240  
+contrattuale a 1 0 1 1 00179090  
+contrindicato a 1 0 1 1 00107921  
+contrito a 1 0 1 1 00118749  
+controindicato a 1 0 1 1 00107921  
+controllato a 1 0 1 1 00039577  
+controproducente a 1 0 1 1 00107921  
+controverso a 1 0 1 1 00039617  
+convalescente a 1 0 1 1 00216557  
+conveniente a 2 0 2 2 00127339 00039679  
+convenzionale a 1 0 1 1 00039835  
+convergente a 1 0 1 1 00040252  
+convesso a 1 0 1 1 00035436  
+convincente a 1 0 1 1 00040410  
+convinto a 2 0 2 2 00023211 00023338  
+convulso a 1 0 1 1 00181608  
+con_aria_condizionata a 1 0 1 1 00167653  
+con_gli_occhi_sbarrati a 2 0 2 2 00157388 00111479  
+con_la_montatura_di_tartaruga a 1 0 1 1 00136448  
+con_le_frange a 1 0 1 1 00006973  
+con_le_spalle_curve a 1 0 1 1 00082281  
+con_pizzi_e_merletti a 1 0 1 1 00006899  
+con_scarsa_libido a 1 0 1 1 00144578  
+con_tutti_i_mezzi_a_disposizione a 1 0 1 1 00034547  
+con_una_calvizie_incipiente a 1 0 1 1 00016014  
+con_un_braccio_solo a 1 0 1 1 00012553  
+con_un_occhio_solo a 1 0 1 1 00063971  
+cooperativo a 1 0 1 1 00040575  
+coperto a 2 0 2 2 00115157 00029928  
+coperto_di_lacrime a 1 0 1 1 00164356  
+coperto_di_neve a 1 0 1 1 00115229  
+coperto_di_spine a 1 0 1 1 00012498  
+coprente a 1 0 1 1 00028442  
+copto a 1 0 1 1 00216599  
+copulatore a 1 0 1 1 00195830  
+coraggioso a 1 0 1 1 00018894  
+corale a 1 0 1 1 00194418  
+cordiale a 1 0 1 1 00095953  
+coreano a 1 0 1 1 00206376  
+coreografico a 1 0 1 1 00202118  
+corneale a 1 0 1 1 00179312  
+cornuto a 1 0 1 1 00136733  
+coronario a 1 0 1 1 00208580  
+corporale a 1 0 1 1 00176763  
+corporativo a 1 0 1 1 00208618  
+corpuscolare a 1 0 1 1 00208658  
+correggibile a 1 0 1 1 00041891  
+corrente a 2 0 2 2 00113064 00044183  
+correspettivo a 1 0 1 1 00007406  
+corretto a 1 0 1 1 00041579  
+corridore a 1 0 1 1 00171599  
+corrispettivo a 1 0 1 1 00007406  
+corrispondente a 1 0 1 1 00007406  
+corrivo a 1 0 1 1 00046336  
+corroborante a 1 0 1 1 00225330  
+corrosivo a 1 0 1 1 00038559  
+corrotto a 1 0 1 1 00040671  
+corsivo a 1 0 1 1 00218562  
+corso a 1 0 1 1 00213469  
+cortese a 1 0 1 1 00042197  
+corticale a 1 0 1 1 00207502  
+corticosurrenale a 1 0 1 1 00172246  
+cortigianesco a 1 0 1 1 00059636  
+corto a 2 0 2 2 00158893 00094615  
+così a 1 0 1 1 00163273  
+coscienzioso a 1 0 1 1 00141634  
+cosiddetto a 1 0 1 1 00130902  
+cosmico a 1 0 1 1 00179143  
+cosmogonico a 1 0 1 1 00179219  
+cosmologico a 2 0 2 2 00179219 00179179  
+cosmonautico a 1 0 1 1 00175655  
+cospicuo a 1 0 1 1 00040831  
+costale a 1 0 1 1 00179349  
+costante a 3 0 3 3 00024615 00038896 00166244  
+costaricano a 1 0 1 1 00216641  
+costaricense a 1 0 1 1 00216641  
+costipato a 1 0 1 1 00042098  
+costituzionale a 1 0 1 1 00178987  
+costoso a 1 0 1 1 00062011  
+costruito_appositamente a 1 0 1 1 00130152  
+costruttivo a 1 0 1 1 00038347  
+covalente a 1 0 1 1 00179426  
+craniale a 1 0 1 1 00191202  
+cranico a 1 0 1 1 00191202  
+crapulone a 1 0 1 1 00002562  
+creativo a 1 0 1 1 00042938  
+creatore a 1 0 1 1 00042938  
+credibile a 1 0 1 1 00043103  
+creditizio a 1 0 1 1 00225966  
+credulo a 1 0 1 1 00043319  
+credulone a 1 0 1 1 00043319  
+crescente a 5 0 5 5 00168228 00168358 00168154 00168302 00217936  
+cretino a 1 0 1 1 00216696  
+criminale a 1 0 1 1 00179654  
+criminoso a 1 0 1 1 00179654  
+criogenico a 1 0 1 1 00179525  
+criogeno a 1 0 1 1 00179525  
+cristallino a 1 0 1 1 00019273  
+cristiano a 1 0 1 1 00203813  
+critico a 2 0 2 2 00043424 00043722  
+crittogamico a 1 0 1 1 00179575  
+croato a 1 0 1 1 00205642  
+cromatografico a 1 0 1 1 00208870  
+cromosomico a 1 0 1 1 00204416  
+cronico a 1 0 1 1 00005793  
+cronologico a 1 0 1 1 00204456  
+cronometrico a 1 0 1 1 00119272  
+cruciale a 1 0 1 1 00043810  
+crudele a 1 0 1 1 00077344  
+crurale a 1 0 1 1 00179489  
+cubano a 1 0 1 1 00206640  
+cubista a 1 0 1 1 00212921  
+cucinario a 1 0 1 1 00179757  
+culinario a 1 0 1 1 00179757  
+culturale a 2 0 2 2 00197266 00151178  
+cumulativo a 2 0 2 2 00006122 00126913  
+cuneiforme a 1 0 1 1 00179807  
+cupo a 1 0 1 1 00075864  
+cuprico a 1 0 1 1 00179846  
+curabile a 1 0 1 1 00066374  
+curativo a 1 0 1 1 00199467  
+curioso a 4 0 4 4 00058095 00064889 00065064 00044133  
+curricolare a 1 0 1 1 00179882  
+curvato a 1 0 1 1 00154396  
+curvo a 1 0 1 1 00154396  
+d'alto_mare a 2 0 2 2 00089782 00089822  
+d'apertura a 1 0 1 1 00067122  
+d'appoggio a 1 0 1 1 00157207  
+d'approvazione a 1 0 1 1 00066556  
+d'argento a 1 0 1 1 00101182  
+d'attualità a 1 0 1 1 00187621  
+d'avanguardia a 1 0 1 1 00114356  
+d'esplorazione a 1 0 1 1 00057962  
+d'italia a 1 0 1 1 00204496  
+d'italiano a 1 0 1 1 00204496  
+d'oltremare a 1 0 1 1 00089915  
+dagli_occhi_azzurri a 1 0 1 1 00063916  
+dagli_occhi_di_falco a 1 0 1 1 00145321  
+dagli_occhi_di_lince a 1 0 1 1 00145167  
+dagli_occhi_infossati a 1 0 1 1 00065882  
+dai_colori_vivaci a 1 0 1 1 00026883  
+dalla_faccia_tonda a 1 0 1 1 00017478  
+dalla_pistola_facile a 1 0 1 1 00135114  
+dalla_vista_acuta a 1 0 1 1 00145321  
+dalla_voce_carezzevole a 1 0 1 1 00095472  
+dalle_gambe_lunghe a 1 0 1 1 00158821  
+dalle_orecchie_pendenti a 1 0 1 1 00054394  
+dalmata a 1 0 1 1 00216910  
+daltonico a 1 0 1 1 00145481  
+dal_naso_rincagnato a 1 0 1 1 00107755  
+damaschino a 1 0 1 1 00216946  
+danese a 1 0 1 1 00205059  
+danneggiato a 1 0 1 1 00045131  
+dannoso a 1 0 1 1 00107921  
+dappoco a 1 0 1 1 00145893  
+darviniano a 1 0 1 1 00211996  
+darwiniano a 1 0 1 1 00211996  
+databile a 1 0 1 1 00045356  
+dato a 2 0 2 2 00072694 00004250  
+dattilico a 1 0 1 1 00216872  
+davanti a 1 0 1 1 00015672  
+da_adolescente a 1 0 1 1 00171919  
+da_bruto a 1 0 1 1 00083090  
+da_burino a 1 0 1 1 00138298  
+da_cherubino a 1 0 1 1 00095530  
+da_cretino a 1 0 1 1 00216696  
+da_fame a 1 0 1 1 00136321  
+da_finire a 1 0 1 1 00066984  
+da_folle a 1 0 1 1 00140648  
+da_gentiluomo a 1 0 1 1 00132457  
+da_pagare a 1 0 1 1 00115644  
+da_persona_colta a 1 0 1 1 00132405  
+da_poco a 1 0 1 1 00145893  
+da_ragazza a 1 0 1 1 00110840  
+da_sballo a 1 0 1 1 00100187  
+da_sotto_in_su a 1 0 1 1 00164228  
+da_uomo_a_uomo a 1 0 1 1 00051220  
+debilitante a 1 0 1 1 00088186  
+debilitato a 1 0 1 1 00061361  
+debitorio a 1 0 1 1 00226005  
+debole a 3 0 3 3 00154803 00061361 00154696  
+decentrato a 1 0 1 1 00073903  
+deciduo a 1 0 1 1 00060305  
+decisivo a 1 0 1 1 00045628  
+deciso a 3 0 3 3 00134279 00134375 00107850  
+decorato a 1 0 1 1 00006673  
+decoroso a 2 0 2 2 00045966 00050380  
+deducibile a 1 0 1 1 00046085  
+deferente a 1 0 1 1 00134784  
+definitivo a 1 0 1 1 00105288  
+definito a 1 0 1 1 00046963  
+deflativo a 1 0 1 1 00168458  
+deflatorio a 1 0 1 1 00168458  
+deflazionistico a 1 0 1 1 00168458  
+degli_elfi a 1 0 1 1 00181062  
+degno a 2 0 2 2 00050380 00171356  
+deiscente a 1 0 1 1 00047093  
+deistico a 1 0 1 1 00201210  
+dei_genitori a 1 0 1 1 00116246  
+dei_pesi_leggeri a 1 0 1 1 00079038  
+dei_pesi_medi a 1 0 1 1 00078749  
+dei_pesi_piuma a 1 0 1 1 00078917  
+dei_quartieri_residenziali a 1 0 1 1 00165106  
+dei_sensi a 1 0 1 1 00121417  
+dei_sordomuti a 1 0 1 1 00045445  
+deleterio a 1 0 1 1 00107921  
+delfico a 1 0 1 1 00217023  
+deliberato a 1 0 1 1 00122484  
+delicato a 4 0 4 4 00047663 00079337 00150619 00047401  
+delinquenziale a 1 0 1 1 00179654  
+delirante a 2 0 2 2 00008660 00140442  
+delittuoso a 1 0 1 1 00179654  
+delizioso a 2 0 2 2 00123391 00013509  
+dell'alta_borghesia a 1 0 1 1 00018778  
+dell'età_di a 1 0 1 1 00110290  
+dell'isola_di_man a 1 0 1 1 00219593  
+dell'ultimo_minuto a 1 0 1 1 00044344  
+della_marina a 1 0 1 1 00184403  
+deluso a 1 0 1 1 00057267  
+del_giorno_prima a 1 0 1 1 00070860  
+del_mare a 1 0 1 1 00195869  
+demenziale a 1 0 1 1 00140442  
+democratico a 2 0 2 2 00180117 00048258  
+demodé a 1 0 1 1 00065322  
+demografico a 1 0 1 1 00198263  
+demolitore a 1 0 1 1 00038387  
+demoralizzante a 1 0 1 1 00057475  
+demoralizzato a 1 0 1 1 00112684  
+denso a 1 0 1 1 00160652  
+denso_di_significato a 1 0 1 1 00099006  
+deperibile a 1 0 1 1 00119486  
+depresso a 1 0 1 1 00047171  
+deprimente a 1 0 1 1 00057475  
+derisorio a 1 0 1 1 00134912  
+derivato a 2 0 2 2 00046889 00046663  
+dermatologico a 1 0 1 1 00199674  
+derogabile a 1 0 1 1 00024193  
+deserto a 1 0 1 1 00085719  
+desiderabile a 1 0 1 1 00049306  
+desiderato a 1 0 1 1 00049365  
+desolante a 1 0 1 1 00057475  
+desolato a 1 0 1 1 00059886  
+despotico a 2 0 2 2 00187911 00180157  
+destinato_a_finire_male a 1 0 1 1 00023904  
+destro a 2 0 2 2 00136625 00007186  
+destrorso a 1 0 1 1 00028849  
+deteriorabile a 1 0 1 1 00119486  
+deteriorato a 1 0 1 1 00170755  
+determinato a 4 0 4 4 00047018 00134279 00134375 00107850  
+detonante a 1 0 1 1 00030707  
+detraibile a 1 0 1 1 00046085  
+dettagliato a 1 0 1 1 00021695  
+deturpatore a 1 0 1 1 00038387  
+devastatore a 1 0 1 1 00038387  
+devoto a 2 0 2 2 00121814 00034336  
+diabetico a 1 0 1 1 00217059  
+diadico a 1 0 1 1 00176479  
+diaforetico a 1 0 1 1 00180287  
+diagnostico a 1 0 1 1 00207580  
+dialettale a 1 0 1 1 00210886  
+dialettico a 1 0 1 1 00213253  
+diamagnetico a 1 0 1 1 00180207  
+diametrale a 1 0 1 1 00180248  
+diatomico a 1 0 1 1 00195632  
+diatonico a 1 0 1 1 00027242  
+dichiarativo a 1 0 1 1 00045882  
+diciannove a 1 0 1 1 00148534  
+diciannovesimo a 1 0 1 1 00149821  
+diciassette a 1 0 1 1 00148416  
+diciassettesimo a 1 0 1 1 00149731  
+dicibile a 1 0 1 1 00063275  
+diciottesimo a 1 0 1 1 00149780  
+diciotto a 1 0 1 1 00148474  
+dicotile a 1 0 1 1 00050507  
+dicotiledone a 1 0 1 1 00050507  
+dieci a 1 0 1 1 00148012  
+difensivo a 1 0 1 1 00108906  
+difettoso a 1 0 1 1 00119342  
+differente a 2 0 2 2 00139268 00139890  
+differenziabile a 1 0 1 1 00180394  
+difficile a 2 0 2 2 00049823 00093268  
+difficoltoso a 1 0 1 1 00049823  
+difforme a 3 0 3 3 00092890 00092783 00092736  
+diffuso a 1 0 1 1 00073283  
+digeribile a 1 0 1 1 00078585  
+digestivo a 1 0 1 1 00216985  
+digitale a 1 0 1 1 00184534  
+digitigrado a 1 0 1 1 00050300  
+dignitoso a 1 0 1 1 00050380  
+dilaniato a 1 0 1 1 00086138  
+dilettevole a 1 0 1 1 00123487  
+diligente a 1 0 1 1 00050559  
+dimensionale a 1 0 1 1 00208711  
+dimestichevole a 1 0 1 1 00095953  
+dinamico a 1 0 1 1 00054209  
+dinastico a 1 0 1 1 00180519  
+diocesano a 1 0 1 1 00194033  
+dipendente a 1 0 1 1 00155150  
+dipolare a 1 0 1 1 00204060  
+direttivo a 1 0 1 1 00197874  
+diretto a 3 0 3 3 00051130 00051518 00051042  
+diretto_a_est a 1 0 1 1 00054992  
+diretto_a_nord a 1 0 1 1 00106852  
+diretto_a_ovest a 1 0 1 1 00055175  
+diretto_a_sud a 1 0 1 1 00107306  
+dirigente a 1 0 1 1 00197874  
+dirigenziale a 1 0 1 1 00197874  
+dirimpetto a 1 0 1 1 00112322  
+diritto a 2 0 2 2 00164769 00082210  
+dirompente a 1 0 1 1 00030707  
+disabile a 1 0 1 1 00067837  
+disabitato a 1 0 1 1 00085719  
+disadattato a 1 0 1 1 00024473  
+disadorno a 1 0 1 1 00007108  
+disameno a 1 0 1 1 00122852  
+disarmonico a 1 0 1 1 00020932  
+disastroso a 1 0 1 1 00107921  
+disattento a 1 0 1 1 00013372  
+disavveduto a 1 0 1 1 00128884  
+disciplinato a 1 0 1 1 00108189  
+disconoscente a 1 0 1 1 00076393  
+discordante a 1 0 1 1 00036147  
+discreto a 1 0 1 1 00051662  
+discriminatorio a 1 0 1 1 00019962  
+discusso a 1 0 1 1 00039617  
+discutibile a 1 0 1 1 00130716  
+disdicevole a 1 0 1 1 00046003  
+diseducato a 1 0 1 1 00042683  
+diseguale a 2 0 2 2 00058921 00060055  
+disfatto a 1 0 1 1 00096345  
+disfrenato a 1 0 1 1 00135219  
+disgenetico a 1 0 1 1 00180557  
+disgiuntivo a 1 0 1 1 00037153  
+disgraziato a 1 0 1 1 00059886  
+disilluso a 1 0 1 1 00057267  
+disincantato a 1 0 1 1 00057267  
+disingannato a 1 0 1 1 00057267  
+disinibito a 1 0 1 1 00085869  
+disinvolto a 1 0 1 1 00025545  
+dislessico a 1 0 1 1 00215029  
+disobbediente a 1 0 1 1 00108274  
+disoccupato a 1 0 1 1 00057110  
+disonesto a 1 0 1 1 00042683  
+disonorante a 1 0 1 1 00081755  
+disordinato a 3 0 3 3 00161256 00161180 00112795  
+disorganizzato a 1 0 1 1 00112909  
+dispendioso a 1 0 1 1 00062011  
+disperato a 2 0 2 2 00081813 00081869  
+dispersivo a 1 0 1 1 00112909  
+disperso a 1 0 1 1 00035548  
+dispiaciuto a 1 0 1 1 00076743  
+displasico a 1 0 1 1 00180597  
+displastico a 1 0 1 1 00180597  
+disponibile a 1 0 1 1 00014607  
+disposto a 2 0 2 2 00082163 00170005  
+dispotico a 2 0 2 2 00187911 00180157  
+disprezzabile a 1 0 1 1 00059493  
+disputabile a 1 0 1 1 00130716  
+dissennato a 1 0 1 1 00170227  
+dissestato a 1 0 1 1 00060055  
+dissimigliante a 1 0 1 1 00003989  
+dissimulato a 1 0 1 1 00141745  
+dissolvitore a 1 0 1 1 00038387  
+dissomigliante a 1 0 1 1 00003989  
+dissonante a 1 0 1 1 00036147  
+dissuasivo a 1 0 1 1 00120996  
+distaccato a 3 0 3 3 00133943 00035704 00013153  
+disteso a 1 0 1 1 00160147  
+distinguibile a 1 0 1 1 00038128  
+distinto a 1 0 1 1 00052191  
+distorto a 1 0 1 1 00048415  
+distratto a 1 0 1 1 00013372  
+distributivo a 1 0 1 1 00030343  
+distribuzionale a 1 0 1 1 00180438  
+distruttibile a 1 0 1 1 00049474  
+distruttivo a 1 0 1 1 00038387  
+distrutto a 1 0 1 1 00061361  
+distruttore a 1 0 1 1 00038387  
+disubbidiente a 1 0 1 1 00108274  
+disuguale a 2 0 2 2 00058921 00060055  
+disunito a 1 0 1 1 00164696  
+disusato a 1 0 1 1 00064889  
+dittatoriale a 1 0 1 1 00180340  
+dittatorio a 1 0 1 1 00180340  
+diurno a 1 0 1 1 00045096  
+divergente a 1 0 1 1 00040292  
+diverso a 6 0 6 6 00152266 00139268 00092890 00092783 00139890 00092736  
+divertente a 3 0 3 3 00123487 00083223 00123672  
+divino a 3 0 3 3 00078422 00177990 00177922  
+divisibile a 1 0 1 1 00052470  
+divulgabile a 1 0 1 1 00030541  
+di_aglio a 1 0 1 1 00129438  
+di_alto_livello a 1 0 1 1 00156240  
+di_alto_rango a 1 0 1 1 00156240  
+di_bassa_stagione a 1 0 1 1 00098813  
+di_campagna a 1 0 1 1 00138240  
+di_carnagione_scura a 1 0 1 1 00018030  
+di_cattivo_gusto a 1 0 1 1 00159152  
+di_cera a 1 0 1 1 00210964  
+di_cioccolato a 1 0 1 1 00178641  
+di_commiato a 1 0 1 1 00188237  
+di_congratulazioni a 1 0 1 1 00066681  
+di_contea a 1 0 1 1 00179616  
+di_erbe a 1 0 1 1 00196280  
+di_ferro a 1 0 1 1 00137300  
+di_fiducia a 1 0 1 1 00229845  
+di_ghiaia a 1 0 1 1 00118440  
+di_grado_superiore a 1 0 1 1 00142860  
+di_grammatica a 1 0 1 1 00195087  
+di_gran_classe a 1 0 1 1 00056682  
+di_idee_ristrette a 1 0 1 1 00020137  
+di_lingua_inglese a 1 0 1 1 00032433  
+di_magistrato a 1 0 1 1 00189457  
+di_malaugurio a 1 0 1 1 00014179  
+di_manchester a 1 0 1 1 00219551  
+di_mare a 1 0 1 1 00010985  
+di_marea a 1 0 1 1 00187506  
+di_mentalità_ristretta a 1 0 1 1 00041975  
+di_merda a 1 0 1 1 00075514  
+di_mezza_età a 1 0 1 1 00110519  
+di_moda a 1 0 1 1 00065198  
+di_nordest a 1 0 1 1 00106971  
+di_nordovest a 1 0 1 1 00055511  
+di_notevole_imponenza a 1 0 1 1 00084487  
+di_pesi_mosca a 1 0 1 1 00078978  
+di_pizzo a 1 0 1 1 00122352  
+di_poco_conto a 1 0 1 1 00084445  
+di_prima_qualità a 1 0 1 1 00156741  
+di_prima_scelta a 1 0 1 1 00156679  
+di_qualità_inferiore a 1 0 1 1 00156975  
+di_qualità_scadente a 1 0 1 1 00153978  
+di_rilievo a 1 0 1 1 00040831  
+di_saldi_principi_morali a 1 0 1 1 00102705  
+di_sale a 1 0 1 1 00071482  
+di_scarso_acume a 1 0 1 1 00051611  
+di_scarso_aiuto a 1 0 1 1 00079552  
+di_sei_mesi a 1 0 1 1 00229173  
+di_sesso_femminile a 1 0 1 1 00097227  
+di_sola_andata a 1 0 1 1 00017417  
+di_solletico a 1 0 1 1 00061039  
+di_spicco a 1 0 1 1 00040831  
+di_terracotta a 1 0 1 1 00198085  
+di_una_volta a 1 0 1 1 00101950  
+di_valore_inestimabile a 1 0 1 1 00165943  
+docile a 1 0 1 1 00155104  
+documentario a 1 0 1 1 00196857  
+documentato a 2 0 2 2 00052592 00074414  
+dodecafonico a 1 0 1 1 00162219  
+dodici a 1 0 1 1 00148127  
+doglioso a 1 0 1 1 00059886  
+dogmatico a 1 0 1 1 00211215  
+dolce a 1 0 1 1 00122538  
+dolente a 1 0 1 1 00088867  
+doloroso a 1 0 1 1 00115784  
+domato a 1 0 1 1 00159031  
+domestico a 1 0 1 1 00068724  
+domiciliare a 1 0 1 1 00217163  
+dominante a 1 0 1 1 00052922  
+dommatico a 1 0 1 1 00211215  
+donnesco a 1 0 1 1 00097274  
+doppio a 1 0 1 1 00150283  
+dorato a 1 0 1 1 00025871  
+dotato a 1 0 1 1 00072564  
+dotato_di_aria_condizionata a 1 0 1 1 00167653  
+dotto a 1 0 1 1 00109325  
+dottorale a 1 0 1 1 00196323  
+dottrinale a 1 0 1 1 00211176  
+dovuto a 1 0 1 1 00012114  
+draconiano a 1 0 1 1 00214134  
+drammatico a 2 0 2 2 00053222 00084662  
+drupaceo a 1 0 1 1 00180482  
+dualistico a 1 0 1 1 00203225  
+dubbio a 3 0 3 3 00130716 00130959 00023981  
+dubbioso a 1 0 1 1 00134539  
+ducale a 1 0 1 1 00217203  
+due a 1 0 1 1 00147569  
+duecento a 1 0 1 1 00228824  
+duodenale a 1 0 1 1 00198635  
+duraturo a 2 0 2 2 00061207 00119647  
+durevole a 1 0 1 1 00061207  
+duro a 6 0 6 6 00162608 00154968 00049823 00076872 00077253 00050078  
+duttile a 1 0 1 1 00068210  
+ebbro a 1 0 1 1 00053420  
+ebdomadario a 1 0 1 1 00174073  
+ebraico a 1 0 1 1 00200313  
+ebreo a 1 0 1 1 00200313  
+ebro a 1 0 1 1 00053420  
+eccedente a 1 0 1 1 00190115  
+eccellente a 2 0 2 2 00165740 00156741  
+eccentrico a 1 0 1 1 00035625  
+eccepibile a 1 0 1 1 00130716  
+eccezionale a 2 0 2 2 00113544 00032785  
+eccitabile a 1 0 1 1 00060543  
+eccitante a 2 0 2 2 00060711 00154278  
+eccitato a 1 0 1 1 00060592  
+ecclesiastico a 1 0 1 1 00197350  
+ecclettico a 1 0 1 1 00178873  
+eclatante a 1 0 1 1 00113364  
+eclettico a 1 0 1 1 00178873  
+econometrico a 1 0 1 1 00199989  
+economicamente_indipendente a 1 0 1 1 00049112  
+economico a 4 0 4 4 00062108 00180778 00180740 00056162  
+economo a 1 0 1 1 00160979  
+eddomadario a 1 0 1 1 00174073  
+edificante a 1 0 1 1 00086358  
+edito a 1 0 1 1 00030460  
+edoardiano a 1 0 1 1 00217238  
+edotto a 1 0 1 1 00085351  
+educativo a 1 0 1 1 00086358  
+educato a 1 0 1 1 00042610  
+edule a 1 0 1 1 00055597  
+edulo a 1 0 1 1 00055597  
+efferente a 1 0 1 1 00022820  
+effervescente a 1 0 1 1 00152908  
+effettivo a 3 0 3 3 00197304 00055870 00005433  
+effettuabile a 1 0 1 1 00124405  
+efficace a 3 0 3 3 00056068 00055947 00033427  
+efficiente a 1 0 1 1 00056105  
+effimero a 1 0 1 1 00119755  
+effrenato a 1 0 1 1 00135219  
+efimero a 1 0 1 1 00119755  
+egheliano a 1 0 1 1 00214332  
+egiziano a 1 0 1 1 00206949  
+egoista a 2 0 2 2 00142675 00009493  
+egoistico a 2 0 2 2 00142675 00009493  
+egregio a 1 0 1 1 00165740  
+eguale a 1 0 1 1 00020376  
+einsteiniano a 1 0 1 1 00214173  
+elaborato a 1 0 1 1 00122314  
+elastico a 1 0 1 1 00056356  
+elegante a 1 0 1 1 00056537  
+elegiaco a 1 0 1 1 00180986  
+elementare a 2 0 2 2 00104393 00181023  
+elettivo a 1 0 1 1 00056393  
+eletto a 1 0 1 1 00056393  
+elettorale a 1 0 1 1 00180859  
+elettrico a 2 0 2 2 00188690 00188652  
+elettrizzante a 1 0 1 1 00060711  
+elettromagnetico a 1 0 1 1 00200717  
+elettromeccanico a 1 0 1 1 00180898  
+elettrostatico a 1 0 1 1 00180943  
+elevato a 1 0 1 1 00080538  
+eliaco a 1 0 1 1 00182257  
+eliocentrico a 1 0 1 1 00074823  
+elisabettiano a 1 0 1 1 00214214  
+ellenico a 1 0 1 1 00212304  
+ellittico a 1 0 1 1 00181108  
+elocutorio a 1 0 1 1 00217277  
+elogiativo a 1 0 1 1 00216318  
+eloquente a 1 0 1 1 00040831  
+eludibile a 1 0 1 1 00024193  
+elvetico a 1 0 1 1 00205165  
+emale a 1 0 1 1 00191736  
+emarginato a 1 0 1 1 00086460  
+ematico a 1 0 1 1 00191770  
+emblematico a 1 0 1 1 00133735  
+embrionale a 1 0 1 1 00196190  
+embrionario a 1 0 1 1 00196190  
+emergente a 1 0 1 1 00224989  
+eminente a 1 0 1 1 00038022  
+emisferico a 1 0 1 1 00201723  
+emolitico a 1 0 1 1 00211478  
+emorragico a 1 0 1 1 00182292  
+emotivo a 3 0 3 3 00056833 00131664 00060543  
+emozionante a 1 0 1 1 00060711  
+empio a 1 0 1 1 00121873  
+empireo a 1 0 1 1 00181146  
+empirico a 1 0 1 1 00056931  
+enclitico a 1 0 1 1 00183934  
+encomiastico a 1 0 1 1 00216318  
+endocellulare a 1 0 1 1 00178139  
+endocrino a 1 0 1 1 00199599  
+endogeno a 1 0 1 1 00057764  
+endomorfo a 1 0 1 1 00055559  
+endomuscolare a 1 0 1 1 00195425  
+endoteliale a 1 0 1 1 00212633  
+endotermico a 1 0 1 1 00057685  
+endovenoso a 1 0 1 1 00196102  
+energico a 1 0 1 1 00057801  
+enfisematico a 1 0 1 1 00211590  
+enfisematoso a 1 0 1 1 00211590  
+enorme a 2 0 2 2 00090487 00090654  
+entomofilo a 1 0 1 1 00015574  
+entomologico a 1 0 1 1 00217316  
+entrobordo a 1 0 1 1 00084888  
+entusiasmante a 1 0 1 1 00060711  
+entusiasta a 1 0 1 1 00058465  
+entusiastico a 1 0 1 1 00058465  
+enzimatico a 1 0 1 1 00211008  
+eolico a 1 0 1 1 00172325  
+eolio a 1 0 1 1 00172291  
+epatico a 1 0 1 1 00182331  
+epicicloidale a 1 0 1 1 00202315  
+epico a 1 0 1 1 00212270  
+epidemico a 1 0 1 1 00094092  
+epidemiologico a 1 0 1 1 00207781  
+epilettico a 1 0 1 1 00202988  
+episcopale a 1 0 1 1 00181182  
+episcopaliano a 1 0 1 1 00204219  
+epiteliale a 1 0 1 1 00201287  
+epocale a 1 0 1 1 00145777  
+eponimo a 1 0 1 1 00214804  
+equanime a 2 0 2 2 00020006 00116331  
+equilibrato a 1 0 1 1 00058998  
+equiparabile a 1 0 1 1 00032621  
+equipollente a 1 0 1 1 00007406  
+equivalente a 2 0 2 2 00007406 00058806  
+equivoco a 1 0 1 1 00059103  
+equo a 1 0 1 1 00064547  
+erasmiano a 1 0 1 1 00214256  
+erbivoro a 1 0 1 1 00021904  
+erboso a 1 0 1 1 00015926  
+ereditabile a 1 0 1 1 00085793  
+eremitico a 1 0 1 1 00178237  
+eretto a 1 0 1 1 00082210  
+ergonomico a 1 0 1 1 00181247  
+eritreo a 1 0 1 1 00217413  
+ermafrodita a 1 0 1 1 00079796  
+ermafrodito a 1 0 1 1 00079796  
+ermeneutico a 1 0 1 1 00181355  
+eroico a 2 0 2 2 00090540 00182367  
+erotico a 2 0 2 2 00144746 00144460  
+errante a 1 0 1 1 00040671  
+errato a 1 0 1 1 00041731  
+erroneo a 1 0 1 1 00041731  
+erudito a 3 0 3 3 00141365 00109325 00141311  
+esacerbato a 1 0 1 1 00123252  
+esadecimale a 1 0 1 1 00182402  
+esagonale a 1 0 1 1 00182442  
+esaltante a 1 0 1 1 00060711  
+esaltatorio a 1 0 1 1 00216318  
+esasperante a 1 0 1 1 00123447  
+esasperato a 1 0 1 1 00123252  
+esatto a 6 0 6 6 00041678 00041839 00060350 00021621 00003925 00041579  
+esauribile a 1 0 1 1 00061168  
+esaurito a 1 0 1 1 00061361  
+esausto a 1 0 1 1 00061361  
+eschileo a 1 0 1 1 00213977  
+esclusivo a 2 0 2 2 00144993 00126875  
+esegetico a 1 0 1 1 00181355  
+eseguibile a 1 0 1 1 00124405  
+esemplare a 1 0 1 1 00086358  
+esigente a 1 0 1 1 00047919  
+esilarante a 1 0 1 1 00123487  
+esistente a 2 0 2 2 00117969 00061644  
+esistenzialista a 1 0 1 1 00181424  
+esistenzialistico a 1 0 1 1 00181424  
+esitante a 1 0 1 1 00134539  
+esiziale a 1 0 1 1 00107921  
+esocrino a 1 0 1 1 00199637  
+esoterico a 1 0 1 1 00059233  
+esotermico a 1 0 1 1 00057725  
+espansivo a 1 0 1 1 00063551  
+esperto a 3 0 3 3 00062225 00150438 00150336  
+espiatore a 1 0 1 1 00202398  
+espiatorio a 1 0 1 1 00202398  
+esplicabile a 1 0 1 1 00062656  
+esplicito a 1 0 1 1 00062918  
+esplorativo a 1 0 1 1 00057962  
+esplosivo a 1 0 1 1 00030707  
+esponenziale a 1 0 1 1 00205836  
+esportabile a 1 0 1 1 00057922  
+esposto_a_sud a 1 0 1 1 00107373  
+espressionista a 1 0 1 1 00190012  
+espressionistico a 1 0 1 1 00190012  
+espressivo a 1 0 1 1 00040831  
+espresso a 1 0 1 1 00073714  
+esprimibile a 1 0 1 1 00063275  
+essenziale a 4 0 4 4 00105539 00146716 00084033 00059271  
+essiccato_al_sole a 1 0 1 1 00071429  
+estenuante a 1 0 1 1 00088186  
+estenuato a 1 0 1 1 00061361  
+esteriore a 1 0 1 1 00063784  
+esterno a 3 0 3 3 00063673 00063880 00087818  
+estero a 1 0 1 1 00068598  
+estetico a 1 0 1 1 00209302  
+estinguibile a 1 0 1 1 00063589  
+estinto a 1 0 1 1 00061752  
+estirpabile a 1 0 1 1 00059193  
+estone a 1 0 1 1 00205501  
+estraibile a 1 0 1 1 00101046  
+estraneo a 1 0 1 1 00024473  
+estremamente_agitato a 1 0 1 1 00008604  
+estremo a 1 0 1 1 00100264  
+estrinseco a 1 0 1 1 00087761  
+estroso a 1 0 1 1 00042938  
+estroverso a 1 0 1 1 00095953  
+estrusivo a 1 0 1 1 00088093  
+esuberante a 1 0 1 1 00153108  
+esulcerato a 1 0 1 1 00123252  
+etereo a 1 0 1 1 00193998  
+eterno a 2 0 2 2 00039181 00119702  
+eterogeneo a 1 0 1 1 00178873  
+eterosessuale a 1 0 1 1 00079643  
+etico a 1 0 1 1 00181286  
+etilista a 1 0 1 1 00077398  
+etimologico a 1 0 1 1 00212996  
+etiope a 1 0 1 1 00217449  
+etiopico a 1 0 1 1 00217449  
+etnico a 2 0 2 2 00151178 00181320  
+etnocentrico a 1 0 1 1 00224417  
+etnografico a 1 0 1 1 00217495  
+etnologico a 1 0 1 1 00217535  
+eucaristico a 1 0 1 1 00180650  
+eudemonistico a 1 0 1 1 00192599  
+eufemistico a 1 0 1 1 00059809  
+eufonico a 1 0 1 1 00203684  
+euforico a 1 0 1 1 00059849  
+eugenetico a 1 0 1 1 00180690  
+eugenico a 1 0 1 1 00180690  
+eurasiano a 1 0 1 1 00213326  
+eurasiatico a 1 0 1 1 00213326  
+euristico a 1 0 1 1 00191806  
+euroasiatico a 1 0 1 1 00213326  
+eurobbligazionario a 1 0 1 1 00226043  
+europeo a 1 0 1 1 00206412  
+evaporativo a 1 0 1 1 00200601  
+evidente a 3 0 3 3 00037791 00108620 00108714  
+evitabile a 1 0 1 1 00024193  
+evolutivo a 1 0 1 1 00210393  
+evoluto a 1 0 1 1 00049636  
+extra a 1 0 1 1 00006024  
+extragalattico a 1 0 1 1 00191614  
+extralinguistico a 1 0 1 1 00194870  
+extrasensoriale a 1 0 1 1 00143357  
+extraterrestre a 1 0 1 1 00185160  
+extraterritoriale a 1 0 1 1 00160233  
+extraurbano a 1 0 1 1 00186867  
+facciale a 1 0 1 1 00194660  
+faceto a 1 0 1 1 00123487  
+faciale a 1 0 1 1 00194660  
+facile a 1 0 1 1 00050129  
+facilmente_reperibile a 1 0 1 1 00014714  
+facoltativo a 1 0 1 1 00056476  
+facondo a 1 0 1 1 00012739  
+fallace a 1 0 1 1 00163325  
+fallico a 1 0 1 1 00190419  
+fallimentare a 1 0 1 1 00226090  
+fallito a 1 0 1 1 00155595  
+falsificato a 1 0 1 1 00074569  
+falso a 3 0 3 3 00074668 00163325 00074569  
+famigerato a 1 0 1 1 00109121  
+famigliare a 1 0 1 1 00015834  
+familiare a 3 0 3 3 00064798 00015834 00085448  
+famoso a 2 0 2 2 00109121 00089382  
+fangoso a 1 0 1 1 00169135  
+fantastico a 2 0 2 2 00113602 00041378  
+faringeo a 1 0 1 1 00209948  
+farinoso a 1 0 1 1 00150887  
+farmaceutico a 1 0 1 1 00221115  
+farmacologico a 1 0 1 1 00199183  
+farraginoso a 1 0 1 1 00028540  
+fascinoso a 1 0 1 1 00013509  
+fascista a 1 0 1 1 00200147  
+fastidioso a 1 0 1 1 00008791  
+fasto a 1 0 1 1 00014057  
+fasullo a 2 0 2 2 00074668 00163325  
+fatale a 3 0 3 3 00134151 00066339 00024068  
+fatato a 1 0 1 1 00057209  
+faticoso a 1 0 1 1 00088186  
+fatiscente a 1 0 1 1 00045256  
+fattibile a 1 0 1 1 00124405  
+fatto a 2 0 2 2 00096311 00044802  
+fatto_a_mano a 1 0 1 1 00044854  
+fatto_con_la_forza a 1 0 1 1 00056259  
+fatto_di_sfuggita a 1 0 1 1 00021833  
+fatto_in_fretta a 1 0 1 1 00083449  
+fatto_su_misura a 1 0 1 1 00044584  
+fatto_su_ordinazione a 2 0 2 2 00044492 00044653  
+faustiano a 1 0 1 1 00224299  
+fausto a 1 0 1 1 00014057  
+favoloso a 1 0 1 1 00043196  
+favorevole a 1 0 1 1 00014057  
+favorito a 1 0 1 1 00016704  
+fazioso a 1 0 1 1 00049193  
+febbricitante a 1 0 1 1 00181608  
+febbricoso a 1 0 1 1 00181608  
+febbrifugo a 1 0 1 1 00077901  
+febbrile a 1 0 1 1 00181608  
+fecondo a 2 0 2 2 00066794 00071789  
+fededegno a 1 0 1 1 00043103  
+fedele a 2 0 2 2 00064697 00064589  
+federale a 2 0 2 2 00073624 00107642  
+felice a 2 0 2 2 00088635 00076476  
+felino a 1 0 1 1 00195308  
+femmina a 1 0 1 1 00096832  
+femmineo a 1 0 1 1 00097274  
+femminile a 2 0 2 2 00096832 00097274  
+femminista a 1 0 1 1 00190495  
+femministico a 1 0 1 1 00190495  
+femorale a 1 0 1 1 00181488  
+fenomenico a 1 0 1 1 00192560  
+fenotipico a 1 0 1 1 00202602  
+ferito a 1 0 1 1 00086085  
+fermo a 2 0 2 2 00134442 00104022  
+ferrigno a 1 0 1 1 00181525  
+ferromagnetico a 1 0 1 1 00210641  
+ferroso a 1 0 1 1 00181525  
+fertile a 1 0 1 1 00066794  
+fervido a 1 0 1 1 00058465  
+festoso a 1 0 1 1 00088831  
+fetale a 1 0 1 1 00196155  
+fetido a 1 0 1 1 00069623  
+feudale a 1 0 1 1 00181572  
+feudatario a 1 0 1 1 00217574  
+fiabesco a 1 0 1 1 00041378  
+fiaccato a 1 0 1 1 00061361  
+fiacco a 2 0 2 2 00056313 00161677  
+fiammingo a 1 0 1 1 00217651  
+fibrinoso a 1 0 1 1 00181685  
+fico a 1 0 1 1 00075117  
+fidato a 2 0 2 2 00163572 00048725  
+fidente a 1 0 1 1 00163473  
+fiduciario a 1 0 1 1 00191501  
+fiducioso a 1 0 1 1 00163473  
+fiero a 1 0 1 1 00128579  
+figo a 1 0 1 1 00075117  
+figurato a 2 0 2 2 00093790 00083672  
+filantropico a 1 0 1 1 00211308  
+filarmonico a 1 0 1 1 00221156  
+filatelico a 1 0 1 1 00211349  
+filato a 1 0 1 1 00039181  
+filetico a 1 0 1 1 00202721  
+filettato a 1 0 1 1 00006673  
+filippino a 1 0 1 1 00217613  
+filogenetico a 1 0 1 1 00202721  
+filologico a 1 0 1 1 00212805  
+filosofico a 1 0 1 1 00192482  
+finale a 3 0 3 3 00105363 00067288 00105288  
+finanziario a 1 0 1 1 00191451  
+fine a 1 0 1 1 00150744  
+finito a 2 0 2 2 00066914 00066949  
+finlandese a 1 0 1 1 00204907  
+fino_al_ginocchio a 1 0 1 1 00046149  
+fiorentino a 1 0 1 1 00198046  
+firmato a 1 0 1 1 00145564  
+fiscale a 1 0 1 1 00191451  
+fisico a 1 0 1 1 00121346  
+fisiologico a 1 0 1 1 00203495  
+fissato a 1 0 1 1 00069948  
+fissile a 1 0 1 1 00067801  
+fisso a 2 0 2 2 00069948 00049602  
+flessibile a 1 0 1 1 00068210  
+flessile a 1 0 1 1 00067980  
+flessivo a 1 0 1 1 00046926  
+flessuoso a 1 0 1 1 00076083  
+florido a 1 0 1 1 00155357  
+focale a 1 0 1 1 00195183  
+focoso a 1 0 1 1 00116728  
+folgorante a 1 0 1 1 00076183  
+folle a 1 0 1 1 00140442  
+follicolare a 1 0 1 1 00212765  
+fondamentale a 4 0 4 4 00084141 00126247 00126393 00153857  
+fondamentalista a 1 0 1 1 00203930  
+fondato a 1 0 1 1 00165510  
+fonematico a 1 0 1 1 00192443  
+fonologico a 1 0 1 1 00184883  
+formale a 1 0 1 1 00069104  
+formalistico a 1 0 1 1 00181808  
+formativo a 1 0 1 1 00181862  
+formoso a 1 0 1 1 00144807  
+fornito a 1 0 1 1 00072564  
+forsennato a 1 0 1 1 00140442  
+forte a 8 0 8 8 00040831 00095386 00080538 00100318 00080963 00124688 00154644 00154542  
+fortificante a 1 0 1 1 00088131  
+fortunato a 2 0 2 2 00069293 00069237  
+fortunoso a 1 0 1 1 00054104  
+forzato a 1 0 1 1 00225027  
+fosforico a 1 0 1 1 00221196  
+fosforoso a 1 0 1 1 00221196  
+fossilifero a 1 0 1 1 00181900  
+fotochimico a 1 0 1 1 00178484  
+fotoconduttivo a 1 0 1 1 00188766  
+fotoelettrico a 1 0 1 1 00188850  
+fotografico a 1 0 1 1 00190340  
+fotomeccanico a 1 0 1 1 00184922  
+fotovoltaico a 1 0 1 1 00188809  
+fragile a 3 0 3 3 00137362 00100797 00047663  
+fragrante a 1 0 1 1 00069551  
+frammentario a 1 0 1 1 00034228  
+franabile a 1 0 1 1 00153595  
+francescano a 1 0 1 1 00217689  
+francese a 1 0 1 1 00204673  
+franco a 1 0 1 1 00146354  
+franoso a 1 0 1 1 00153595  
+fraterno a 1 0 1 1 00020302  
+frazionabile a 1 0 1 1 00052470  
+freddo a 3 0 3 3 00082970 00082605 00167537  
+freddo_e_umido a 1 0 1 1 00169189  
+fremente a 1 0 1 1 00060592  
+frenetico a 1 0 1 1 00008660  
+frenico a 1 0 1 1 00209985  
+frequente a 1 0 1 1 00070129  
+fresco a 2 0 2 2 00070290 00167537  
+frettoloso a 1 0 1 1 00083449  
+freudiano a 1 0 1 1 00214294  
+friabile a 1 0 1 1 00121117  
+frivolo a 1 0 1 1 00144037  
+frizzante a 1 0 1 1 00152908  
+frontale a 1 0 1 1 00196593  
+frusto a 2 0 2 2 00114607 00170755  
+fruttifero a 1 0 1 1 00127339  
+fruttuoso a 1 0 1 1 00127339  
+fugace a 1 0 1 1 00083761  
+fulmineo a 1 0 1 1 00061797  
+fumettistico a 1 0 1 1 00207325  
+fumoso a 1 0 1 1 00150954  
+funesto a 1 0 1 1 00107921  
+fungicida a 1 0 1 1 00189620  
+fungoso a 1 0 1 1 00189584  
+funzionale a 1 0 1 1 00122538  
+fuorilegge a 1 0 1 1 00091837  
+fuori_di_sé a 1 0 1 1 00008660  
+fuori_elenco a 1 0 1 1 00093693  
+fuori_fuoco a 1 0 1 1 00052369  
+fuori_linea a 1 0 1 1 00111152  
+fuori_mano a 1 0 1 1 00032004  
+furbo a 1 0 1 1 00028722  
+futurista a 1 0 1 1 00209339  
+futuro a 3 0 3 3 00118081 00010882 00128318  
+gabonese a 1 0 1 1 00217729  
+gaelico a 1 0 1 1 00204627  
+gagliardo a 1 0 1 1 00137016  
+gaio a 1 0 1 1 00025376  
+galante a 1 0 1 1 00185774  
+galattico a 1 0 1 1 00191576  
+gallese a 1 0 1 1 00224042  
+gallico a 1 0 1 1 00217766  
+gallo a 1 0 1 1 00217766  
+galoppante a 1 0 1 1 00225179  
+galvanico a 1 0 1 1 00188728  
+gap! a 288 0 288 288 00019639 00087074 00019454 00195869 00050229 00042525 00036884 00162511 00037945 00107373 00118167 00087499 00066746 00004283 00116806 00063208 00153684 00161126 00062225 00051611 00051994 00066149 00089862 00156975 00056833 00063025 00052691 00061098 00115644 00115015 00156042 00115298 00022298 00098742 00018257 00121417 00090398 00153147 00029554 00103973 00159416 00069729 00121236 00030036 00059757 00153978 00018778 00082281 00170436 00052296 00157807 00049685 00174294 00012793 00037382 00144578 00078289 00002717 00055511 00065882 00132405 00197600 00099645 00224575 00146030 00155464 00084927 00115892 00026883 00071429 00093069 00118531 00155689 00161828 00181062 00115466 00014534 00012609 00157153 00159561 00095819 00087580 00016014 00055175 00021833 00036808 00106852 00116246 00043032 00007040 00039895 00171429 00072643 00016583 00057150 00085221 00040488 00162327 00052074 00090310 00140860 00045748 00044584 00023904 00058410 00162270 00107059 00196280 00120464 00163086 00006066 00098249 00067874 00086011 00098813 00107126 00079479 00051281 00163901 00091383 00132457 00112611 00143773 00067926 00107755 00130007 00156117 00070953 00142808 00167271 00050812 00044492 00050730 00035054 00013307 00020649 00014179 00080473 00170582 00166499 00091615 00049112 00095530 00040615 00090849 00166566 00151413 00044344 00095319 00017478 00161030 00127541 00198085 00144109 00169568 00077041 00059567 00018030 00165053 00045445 00133119 00074051 00084790 00056259 00045831 00004588 00085083 00002994 00103067 00158821 00127286 00157388 00131737 00107440 00028144 00055302 00006899 00110290 00058540 00054394 00102137 00065957 00115229 00160532 00044653 00119416 00137169 00009277 00111479 00016808 00122436 00093614 00169189 00145321 00057617 00141093 00006973 00070860 00008604 00032479 00014951 00166082 00159267 00157103 00135437 00122352 00038646 00061700 00187018 00189457 00081699 00100960 00142157 00106971 00063141 00187506 00129216 00152773 00022527 00107306 00072183 00142741 00063916 00128492 00036755 00089915 00130152 00145167 00013101 00171250 00068858 00055041 00058609 00167811 00019720 00110840 00160462 00140648 00167435 00005115 00003125 00036941 00145086 00049422 00130428 00170122 00137300 00012393 00130377 00091762 00033535 00071375 00038951 00164453 00167884 00165676 00098089 00010499 00111754 00132189 00009691 00169953 00088354 00054992 00151346 00046149 00071714 00050664 00159215 00168927 00080360 00005007 00004463 00034547 00033752 00118218 00135349 00136448 00115720 00095882 00159486 00027493 00095472 00142459 00060973 00047525 00103906 00141241  
+garantito a 1 0 1 1 00048527  
+garbato a 2 0 2 2 00089225 00042197  
+garoso a 1 0 1 1 00010206  
+gasato a 1 0 1 1 00060592  
+gasoso a 1 0 1 1 00151860  
+gassoso a 1 0 1 1 00151860  
+gastrico a 1 0 1 1 00181940  
+gastrointestinale a 1 0 1 1 00207620  
+gastronomico a 1 0 1 1 00207666  
+gaussiano a 1 0 1 1 00213939  
+gelato a 1 0 1 1 00071619  
+genealogico a 1 0 1 1 00217810  
+generale a 3 0 3 3 00052433 00072985 00073228  
+generalmente_accettato a 1 0 1 1 00039895  
+generativo a 1 0 1 1 00127116  
+generatore a 1 0 1 1 00127116  
+generico a 2 0 2 2 00181977 00125182  
+generoso a 2 0 2 2 00073978 00074296  
+genetico a 1 0 1 1 00182014  
+genico a 1 0 1 1 00182014  
+genitale a 1 0 1 1 00195218  
+genitivo a 1 0 1 1 00192945  
+genitourinario a 1 0 1 1 00195265  
+genotipico a 1 0 1 1 00202641  
+genovese a 1 0 1 1 00207252  
+gentile a 4 0 4 4 00134730 00089225 00042197 00042610  
+genuino a 2 0 2 2 00008005 00146354  
+geocentrico a 1 0 1 1 00074783  
+geodetico a 1 0 1 1 00209377  
+geofisico a 1 0 1 1 00198557  
+geografico a 1 0 1 1 00212957  
+geologico a 1 0 1 1 00198134  
+geometrico a 1 0 1 1 00182060  
+geopolitico a 1 0 1 1 00198475  
+georgico a 1 0 1 1 00185863  
+gerarchico a 1 0 1 1 00079871  
+gestionale a 1 0 1 1 00226131  
+gesuita a 1 0 1 1 00218713  
+gesuitico a 1 0 1 1 00218713  
+ghiacciato a 1 0 1 1 00071619  
+ghiandolare a 1 0 1 1 00217850  
+ghiottone a 1 0 1 1 00002331  
+giacente a 1 0 1 1 00151704  
+giacobino a 1 0 1 1 00218598  
+giallo a 1 0 1 1 00026393  
+giallo_bruno a 1 0 1 1 00026309  
+giamaicano a 1 0 1 1 00218636  
+giambico a 1 0 1 1 00196898  
+giapponese a 1 0 1 1 00205785  
+giavanese a 1 0 1 1 00218675  
+già_affrancato a 1 0 1 1 00115588  
+ginecologico a 1 0 1 1 00199716  
+giocondo a 1 0 1 1 00025376  
+giocoso a 1 0 1 1 00144173  
+gioioso a 1 0 1 1 00088987  
+giordano a 1 0 1 1 00218761  
+giornaliero a 1 0 1 1 00174206  
+giornalistico a 1 0 1 1 00218798  
+giovane a 1 0 1 1 00110579  
+giovevole a 1 0 1 1 00007221  
+giroscopico a 1 0 1 1 00218052  
+giudaico a 1 0 1 1 00200313  
+giudeo a 1 0 1 1 00200313  
+giudiziale a 1 0 1 1 00183394  
+giudiziario a 1 0 1 1 00183394  
+giudizioso a 1 0 1 1 00128992  
+giugulare a 1 0 1 1 00191994  
+giuliano a 1 0 1 1 00218840  
+giurato a 1 0 1 1 00158174  
+giuridico a 1 0 1 1 00183493  
+giurisprudenziale a 1 0 1 1 00183447  
+giustificabile a 1 0 1 1 00115981  
+giustificato a 1 0 1 1 00165510  
+giusto a 10 0 10 10 00127987 00041839 00089151 00064547 00041579 00075117 00116331 00128076 00136769 00064071  
+glabro a 1 0 1 1 00015961  
+glandolare a 1 0 1 1 00217850  
+globale a 1 0 1 1 00126913  
+globulare a 1 0 1 1 00208658  
+glorioso a 1 0 1 1 00074901  
+gnomico a 1 0 1 1 00191700  
+goffo a 1 0 1 1 00056743  
+gonfiato a 1 0 1 1 00036387  
+gonfio a 7 0 7 7 00072063 00080702 00036387 00227577 00078174 00036278 00135890  
+gonzo a 1 0 1 1 00043319  
+goto a 1 0 1 1 00217903  
+governativo a 1 0 1 1 00190455  
+gradevole a 3 0 3 3 00008733 00037085 00122538  
+gradito a 1 0 1 1 00168564  
+graduale a 1 0 1 1 00076146  
+gram-negativo a 1 0 1 1 00076260  
+grammaticale a 1 0 1 1 00195087  
+grande a 13 0 13 13 00113685 00090593 00090310 00089996 00096586 00090246 00169615 00080963 00090654 00096433 00158735 00084288 00145724  
+grandissimo a 1 0 1 1 00036628  
+granelloso a 1 0 1 1 00025686  
+granulare a 1 0 1 1 00025686  
+granulomatoso a 1 0 1 1 00182099  
+granuloso a 1 0 1 1 00025686  
+grasso a 2 0 2 2 00066223 00065630  
+gratificante a 1 0 1 1 00141024  
+grato a 1 0 1 1 00076344  
+gratuito a 1 0 1 1 00048813  
+gravabile a 1 0 1 1 00159317  
+grave a 1 0 1 1 00043680  
+gravido a 1 0 1 1 00013821  
+gravitazionale a 1 0 1 1 00182141  
+gravoso a 1 0 1 1 00088186  
+grazioso a 1 0 1 1 00089225  
+greco a 1 0 1 1 00212381  
+gregario a 1 0 1 1 00151309  
+greggio a 3 0 3 3 00044097 00132506 00111898  
+gretto a 3 0 3 3 00074120 00020137 00041975  
+grigio a 3 0 3 3 00182184 00110466 00026428  
+grosso a 3 0 3 3 00150674 00160364 00089996  
+grottesco a 1 0 1 1 00016364  
+grullo a 1 0 1 1 00028756  
+grumoso a 1 0 1 1 00144843  
+guardingo a 1 0 1 1 00022391  
+guaribile a 1 0 1 1 00066374  
+guarnito a 1 0 1 1 00006673  
+guastatore a 1 0 1 1 00038387  
+guasto a 1 0 1 1 00045131  
+guatemalteco a 1 0 1 1 00217974  
+guineano a 1 0 1 1 00218015  
+gustativo a 1 0 1 1 00193670  
+gustatorio a 1 0 1 1 00193670  
+gustoso a 1 0 1 1 00037085  
+gutturale a 1 0 1 1 00182219  
+haitiano a 1 0 1 1 00218092  
+hegeliano a 1 0 1 1 00214332  
+honduregno a 1 0 1 1 00206560  
+iberico a 1 0 1 1 00204747  
+ibseniano a 1 0 1 1 00214382  
+icoroso a 1 0 1 1 00191918  
+icosaedrico a 1 0 1 1 00191954  
+ideale a 2 0 2 2 00165457 00182802  
+idealistico a 1 0 1 1 00182802  
+identico a 2 0 2 2 00139674 00139213  
+identificabile a 1 0 1 1 00083629  
+ideografico a 1 0 1 1 00182851  
+idilliaco a 1 0 1 1 00122703  
+idillico a 1 0 1 1 00122703  
+idiomatico a 1 0 1 1 00210847  
+idolatra a 1 0 1 1 00201095  
+idoneo a 2 0 2 2 00056798 00007406  
+idrocefalico a 1 0 1 1 00182721  
+idrocinetico a 1 0 1 1 00188974  
+idrodinamico a 1 0 1 1 00208140  
+idroelettrico a 1 0 1 1 00188892  
+idrofilo a 1 0 1 1 00032061  
+idrografico a 1 0 1 1 00182762  
+idrostatico a 1 0 1 1 00188934  
+igienico-sanitario a 1 0 1 1 00143714  
+ignorante a 1 0 1 1 00166629  
+ignoto a 1 0 1 1 00089560  
+ilare a 1 0 1 1 00025376  
+iliaco a 1 0 1 1 00201555  
+illativo a 1 0 1 1 00183196  
+illecito a 1 0 1 1 00102995  
+illegale a 2 0 2 2 00091837 00091459  
+illeggibile a 1 0 1 1 00091941  
+illegittimo a 1 0 1 1 00092456  
+illetterato a 1 0 1 1 00093910  
+illimitato a 1 0 1 1 00093486  
+illogico a 1 0 1 1 00094205  
+illuminante a 1 0 1 1 00085273  
+illuminato a 2 0 2 2 00058328 00055777  
+illuminato_dalla_luna a 1 0 1 1 00019720  
+illuminato_dal_sole a 1 0 1 1 00019454  
+illusorio a 1 0 1 1 00041378  
+illustrato a 1 0 1 1 00083672  
+illustre a 1 0 1 1 00038022  
+il_peggiore a 1 0 1 1 00016886  
+il_più_a_sud a 1 0 1 1 00107440  
+il_più_grande a 1 0 1 1 00090310  
+il_più_occidentale a 1 0 1 1 00055302  
+imalaiano a 1 0 1 1 00205914  
+imbarazzante a 1 0 1 1 00050019  
+imbattibile a 1 0 1 1 00032785  
+imbevibile a 1 0 1 1 00053366  
+imbiancato_di_calce a 1 0 1 1 00115892  
+imbronciato a 1 0 1 1 00075967  
+imeneale a 1 0 1 1 00224497  
+imitativo a 1 0 1 1 00081364  
+immaginabile a 1 0 1 1 00003448  
+immaginario a 2 0 2 2 00131927 00041378  
+immane a 1 0 1 1 00088186  
+immangiabile a 1 0 1 1 00055681  
+immateriale a 1 0 1 1 00041526  
+immaturo a 3 0 3 3 00097416 00098156 00098383  
+immediato a 3 0 3 3 00029359 00118025 00051444  
+immedicabile a 1 0 1 1 00132937  
+immemore a 1 0 1 1 00133538  
+immeritato a 1 0 1 1 00089186  
+immeritevole a 1 0 1 1 00171499  
+immiscibile a 1 0 1 1 00033330  
+immobile a 1 0 1 1 00104022  
+immobiliare a 1 0 1 1 00226170  
+immodificato a 1 0 1 1 00024615  
+immorale a 2 0 2 2 00136878 00102802  
+immortale a 1 0 1 1 00103757  
+immotivato a 1 0 1 1 00103832  
+immunologico a 1 0 1 1 00182891  
+immunosoppressivo a 1 0 1 1 00182932  
+immutabile a 1 0 1 1 00024913  
+immutato a 2 0 2 2 00024615 00024755  
+impagabile a 1 0 1 1 00021035  
+imparabile a 1 0 1 1 00153502  
+imparagonabile a 1 0 1 1 00032785  
+impareggiabile a 1 0 1 1 00032785  
+impari a 1 0 1 1 00058921  
+imparziale a 2 0 2 2 00020006 00116331  
+impavido a 1 0 1 1 00008470  
+impaziente a 2 0 2 2 00054355 00118306  
+impedito a 1 0 1 1 00108858  
+impegnativo a 1 0 1 1 00047919  
+impegnato a 1 0 1 1 00020506  
+impellente a 1 0 1 1 00221642  
+impenetrabile a 1 0 1 1 00121075  
+impenitente a 1 0 1 1 00118808  
+impensabile a 1 0 1 1 00160776  
+impensato a 1 0 1 1 00061797  
+impensierito a 1 0 1 1 00162820  
+impercettibile a 1 0 1 1 00119229  
+imperdonabile a 1 0 1 1 00116080  
+imperfetto a 1 0 1 1 00003989  
+imperialista a 1 0 1 1 00218292  
+imperialistico a 1 0 1 1 00218292  
+imperituro a 1 0 1 1 00061207  
+impermeabile a 1 0 1 1 00121177  
+imperscrutabile a 1 0 1 1 00062709  
+impersonale a 1 0 1 1 00120906  
+impervio a 1 0 1 1 00003778  
+impiegatizio a 1 0 1 1 00169494  
+impietoso a 1 0 1 1 00099797  
+implacabile a 1 0 1 1 00122041  
+implicito a 1 0 1 1 00062956  
+implorante a 1 0 1 1 00048178  
+implume a 1 0 1 1 00066645  
+impolitico a 1 0 1 1 00124025  
+imponderabile a 1 0 1 1 00124141  
+imponente a 1 0 1 1 00084487  
+imponibile a 1 0 1 1 00159317  
+impopolare a 1 0 1 1 00124238  
+importante a 5 0 5 5 00038022 00083850 00145600 00096433 00096505  
+importuno a 1 0 1 1 00112284  
+impossibile a 2 0 2 2 00160850 00124630  
+impraticabile a 2 0 2 2 00116515 00064029  
+imprecisabile a 1 0 1 1 00049560  
+impreciso a 2 0 2 2 00125182 00003989  
+imprenditoriale a 1 0 1 1 00217357  
+imprescrittibile a 1 0 1 1 00046257  
+impressionabile a 1 0 1 1 00157878  
+impressionante a 1 0 1 1 00015045  
+impressionista a 1 0 1 1 00182978  
+impressionistico a 1 0 1 1 00182978  
+imprevedibile a 2 0 2 2 00061797 00125448  
+impreveduto a 1 0 1 1 00061797  
+imprevidente a 1 0 1 1 00128884  
+imprevisto a 1 0 1 1 00061797  
+improbabile a 1 0 1 1 00093268  
+improduttivo a 1 0 1 1 00071902  
+impronunciabile a 1 0 1 1 00127925  
+impronunziabile a 1 0 1 1 00127925  
+improprio a 1 0 1 1 00003989  
+improvviso a 2 0 2 2 00061797 00076183  
+imprudente a 1 0 1 1 00129149  
+impunito a 1 0 1 1 00129538  
+inabbordabile a 1 0 1 1 00011927  
+inabitato a 1 0 1 1 00085719  
+inaccessibile a 4 0 4 4 00035170 00003778 00066500 00011927  
+inaccettabile a 1 0 1 1 00003659  
+inaccostabile a 1 0 1 1 00011927  
+inacidito a 1 0 1 1 00075864  
+inadattabile a 1 0 1 1 00068272  
+inadatto a 1 0 1 1 00006335  
+inadeguato a 1 0 1 1 00006335  
+inadoperabile a 1 0 1 1 00165247  
+inaffidabile a 1 0 1 1 00048813  
+inaffondabile a 1 0 1 1 00149902  
+inalante a 1 0 1 1 00183233  
+inalienabile a 1 0 1 1 00009167  
+inalterabile a 1 0 1 1 00038231  
+inalterato a 1 0 1 1 00024615  
+inamabile a 1 0 1 1 00122852  
+inameno a 1 0 1 1 00122852  
+inammissibile a 2 0 2 2 00120347 00162036  
+inanimato a 2 0 2 2 00010369 00037440  
+inappagabile a 1 0 1 1 00140770  
+inappellabile a 1 0 1 1 00120195  
+inapprezzabile a 1 0 1 1 00021035  
+inarcato a 1 0 1 1 00154396  
+inarrestabile a 1 0 1 1 00120082  
+inarrivabile a 1 0 1 1 00032785  
+inarticolato a 1 0 1 1 00012861  
+inaspettato a 1 0 1 1 00061797  
+inasprito a 1 0 1 1 00075864  
+inattendibile a 2 0 2 2 00163841 00048813  
+inattento a 1 0 1 1 00013372  
+inatteso a 1 0 1 1 00061797  
+inattivo a 3 0 3 3 00005310 00005360 00005231  
+inaudito a 1 0 1 1 00011398  
+inaugurale a 1 0 1 1 00084849  
+inavveduto a 1 0 1 1 00086958  
+inavvertito a 1 0 1 1 00107810  
+inavvicinabile a 1 0 1 1 00011927  
+incalcolabile a 1 0 1 1 00021035  
+incallito a 1 0 1 1 00100589  
+incancellabile a 2 0 2 2 00116080 00068915  
+incantato a 1 0 1 1 00057209  
+incantevole a 1 0 1 1 00013509  
+incapace a 1 0 1 1 00001844  
+incauto a 1 0 1 1 00129149  
+incendiario a 1 0 1 1 00183040  
+incensatorio a 1 0 1 1 00059636  
+incerto a 2 0 2 2 00023266 00134539  
+incessabile a 1 0 1 1 00039181  
+incessante a 1 0 1 1 00039388  
+incidentale a 1 0 1 1 00126521  
+incidente a 1 0 1 1 00220731  
+incinta a 1 0 1 1 00013821  
+incivile a 2 0 2 2 00042683 00042395  
+incluso a 1 0 1 1 00126913  
+incoerente a 2 0 2 2 00037689 00030168  
+incognito a 1 0 1 1 00089560  
+incollato a 1 0 1 1 00013192  
+incolto a 2 0 2 2 00055834 00124984  
+incombustibile a 1 0 1 1 00030664  
+incommensurabile a 2 0 2 2 00099388 00021035  
+incomparabile a 1 0 1 1 00032785  
+incompatibile a 1 0 1 1 00033154  
+incomprensibile a 1 0 1 1 00035170  
+incompressibile a 1 0 1 1 00033863  
+incomprimibile a 1 0 1 1 00033863  
+inconcepibile a 2 0 2 2 00160850 00160776  
+incondizionato a 1 0 1 1 00036628  
+inconfutabile a 1 0 1 1 00131075  
+incongruente a 1 0 1 1 00037689  
+inconscio a 1 0 1 1 00037440  
+inconsiderato a 1 0 1 1 00079247  
+inconsistente a 1 0 1 1 00056968  
+inconsolabile a 1 0 1 1 00082012  
+inconsueto a 1 0 1 1 00031830  
+inconsumabile a 1 0 1 1 00061207  
+inconsunto a 1 0 1 1 00061207  
+incontaminabile a 1 0 1 1 00166747  
+incontaminato a 1 0 1 1 00130110  
+incontentabile a 1 0 1 1 00140770  
+incontestabile a 1 0 1 1 00131075  
+incontrovertibile a 1 0 1 1 00131075  
+inconvertibile a 1 0 1 1 00060482  
+incoraggiante a 1 0 1 1 00057344  
+incorporeo a 1 0 1 1 00041526  
+incorreggibile a 1 0 1 1 00041932  
+incorrotto a 1 0 1 1 00040752  
+incosciente a 2 0 2 2 00160924 00037440  
+incostante a 2 0 2 2 00037689 00038290  
+incostituzionale a 1 0 1 1 00014300  
+incredibile a 1 0 1 1 00043196  
+incredulo a 1 0 1 1 00043386  
+increscioso a 1 0 1 1 00122852  
+incurabile a 1 0 1 1 00066447  
+incuriosito a 1 0 1 1 00044133  
+indagatore a 1 0 1 1 00058095  
+indù a 1 0 1 1 00200465  
+indebito a 1 0 1 1 00091459  
+indebolito a 1 0 1 1 00061361  
+indecente a 1 0 1 1 00045559  
+indecifrabile a 2 0 2 2 00035170 00091941  
+indeciso a 1 0 1 1 00052228  
+indecoroso a 1 0 1 1 00046003  
+indefinibile a 1 0 1 1 00063394  
+indefinito a 1 0 1 1 00046511  
+indegno a 1 0 1 1 00171499  
+indeiscente a 1 0 1 1 00047131  
+indelebile a 1 0 1 1 00061207  
+indelicato a 1 0 1 1 00042285  
+indescrivibile a 1 0 1 1 00063394  
+indeterminato a 2 0 2 2 00046511 00072862  
+indicativo a 1 0 1 1 00220410  
+indicato a 1 0 1 1 00007406  
+indicatore a 1 0 1 1 00141966  
+indicibile a 1 0 1 1 00063394  
+indifferente a 2 0 2 2 00087198 00087139  
+indigeno a 1 0 1 1 00068528  
+indigesto a 1 0 1 1 00078639  
+indimenticabile a 1 0 1 1 00068915  
+indimostrato a 1 0 1 1 00128843  
+indipendente a 1 0 1 1 00048963  
+indiretto a 1 0 1 1 00093538  
+indiscernibile a 1 0 1 1 00038170  
+indisciplinato a 1 0 1 1 00155189  
+indiscreto a 1 0 1 1 00051912  
+indiscriminato a 1 0 1 1 00051951  
+indiscusso a 1 0 1 1 00048527  
+indiscutibile a 1 0 1 1 00131075  
+indispensabile a 2 0 2 2 00059366 00105416  
+indisputabile a 1 0 1 1 00131075  
+indistinguibile a 1 0 1 1 00038170  
+indistinto a 2 0 2 2 00046511 00052228  
+indistruttibile a 1 0 1 1 00049516  
+individuale a 1 0 1 1 00032206  
+indivisibile a 1 0 1 1 00052551  
+indiziato a 1 0 1 1 00158078  
+indocile a 1 0 1 1 00108274  
+indolente a 1 0 1 1 00020555  
+indolore a 1 0 1 1 00115844  
+indoloro a 1 0 1 1 00115844  
+indomato a 1 0 1 1 00159066  
+indomito a 1 0 1 1 00159066  
+indonesiano a 1 0 1 1 00207061  
+indoor a 1 0 1 1 00115122  
+indostano a 1 0 1 1 00206986  
+indovinato a 1 0 1 1 00007406  
+indubbio a 1 0 1 1 00048527  
+indubitabile a 1 0 1 1 00048527  
+indubitato a 1 0 1 1 00048527  
+indulgente a 1 0 1 1 00085026  
+industriale a 1 0 1 1 00183080  
+inebriante a 1 0 1 1 00060711  
+inebriato a 1 0 1 1 00053420  
+inedito a 1 0 1 1 00030505  
+ineducato a 1 0 1 1 00042395  
+ineffabile a 1 0 1 1 00063394  
+inefficace a 1 0 1 1 00056011  
+inefficiente a 1 0 1 1 00056218  
+ineguagliabile a 1 0 1 1 00032785  
+ineguale a 1 0 1 1 00060055  
+inelegante a 1 0 1 1 00056743  
+ineluttabile a 1 0 1 1 00132937  
+inenarrabile a 1 0 1 1 00063394  
+inequivocabile a 1 0 1 1 00059150  
+inerente a 1 0 1 1 00133375  
+inerziale a 1 0 1 1 00183120  
+inesatto a 2 0 2 2 00060406 00041731  
+inesauribile a 1 0 1 1 00061207  
+inesausto a 1 0 1 1 00061207  
+inescusabile a 1 0 1 1 00116205  
+inesperto a 1 0 1 1 00062510  
+inesplicabile a 1 0 1 1 00062709  
+inesplorato a 1 0 1 1 00089639  
+inesprimibile a 1 0 1 1 00063394  
+inestensibile a 1 0 1 1 00063509  
+inestimabile a 2 0 2 2 00021035 00165943  
+inestinguibile a 1 0 1 1 00063630  
+inetto a 1 0 1 1 00033482  
+inevitabile a 2 0 2 2 00024135 00024068  
+infallibile a 1 0 1 1 00064758  
+infame a 2 0 2 2 00075621 00105966  
+infangato a 1 0 1 1 00027900  
+infantile a 2 0 2 2 00183158 00097765  
+infastidito a 1 0 1 1 00076743  
+infausto a 1 0 1 1 00014124  
+infecondo a 1 0 1 1 00066858  
+infedele a 1 0 1 1 00064642  
+infelice a 2 0 2 2 00076582 00069349  
+infelice_in_amore a 1 0 1 1 00095882  
+inferiore a 2 0 2 2 00162465 00156883  
+infermo a 1 0 1 1 00168833  
+infervorato a 1 0 1 1 00060592  
+infesto a 1 0 1 1 00107921  
+infettivo a 1 0 1 1 00085170  
+infetto a 1 0 1 1 00130074  
+infinitivale a 1 0 1 1 00201998  
+infinitivo a 1 0 1 1 00208101  
+infinito a 2 0 2 2 00067085 00061207  
+inflativo a 1 0 1 1 00226210  
+inflattivo a 1 0 1 1 00226210  
+inflazionistico a 2 0 2 2 00168414 00226210  
+influente a 1 0 1 1 00124882  
+infocato a 1 0 1 1 00116578  
+infondato a 1 0 1 1 00048813  
+informato a 1 0 1 1 00085351  
+infortunato a 1 0 1 1 00085908  
+infossato a 1 0 1 1 00008300  
+infrangibile a 1 0 1 1 00047878  
+infrasettimanale a 1 0 1 1 00174141  
+infrequente a 1 0 1 1 00070167  
+infruttuoso a 1 0 1 1 00071902  
+infuocato a 1 0 1 1 00116578  
+ingannatore a 1 0 1 1 00163325  
+ingannevole a 1 0 1 1 00163325  
+ingarbugliato a 2 0 2 2 00018669 00028540  
+ingemmato a 1 0 1 1 00006828  
+ingente a 1 0 1 1 00040831  
+ingenuo a 2 0 2 2 00152586 00085564  
+ingioiellato a 1 0 1 1 00006828  
+ingiustificabile a 1 0 1 1 00003659  
+ingiustificato a 1 0 1 1 00103832  
+inglese a 1 0 1 1 00210684  
+inglorioso a 1 0 1 1 00074938  
+ingombro a 1 0 1 1 00115406  
+ingordo a 1 0 1 1 00002883  
+ingrato a 1 0 1 1 00076393  
+inguaribile a 1 0 1 1 00066447  
+inibito a 1 0 1 1 00085833  
+inidoneo a 1 0 1 1 00006335  
+inimitabile a 1 0 1 1 00032785  
+inintelligibile a 1 0 1 1 00086763  
+ininterrotto a 2 0 2 2 00039488 00039181  
+iniziale a 2 0 2 2 00054453 00067438  
+innato a 1 0 1 1 00109380  
+innaturale a 1 0 1 1 00104511  
+innegabile a 1 0 1 1 00048527  
+innocente a 2 0 2 2 00108127 00086194  
+innocuo a 2 0 2 2 00108127 00077539  
+innumerevole a 1 0 1 1 00021159  
+inobliabile a 1 0 1 1 00068915  
+inodore a 2 0 2 2 00069902 00069800  
+inodoro a 2 0 2 2 00069902 00069800  
+inoffensivo a 2 0 2 2 00108127 00077539  
+inondato_dal_sole a 1 0 1 1 00115298  
+inoperabile a 1 0 1 1 00077824  
+inoperante a 1 0 1 1 00055908  
+inopinato a 1 0 1 1 00061797  
+inopportuno a 1 0 1 1 00046003  
+inoppugnabile a 1 0 1 1 00131075  
+inorganico a 1 0 1 1 00113942  
+inorgoglito a 1 0 1 1 00128579  
+inqueto a 1 0 1 1 00162820  
+inquietante a 1 0 1 1 00015045  
+inquieto a 2 0 2 2 00131627 00162820  
+inquisitore a 1 0 1 1 00058095  
+insalubre a 1 0 1 1 00107921  
+insanabile a 1 0 1 1 00132776  
+insano a 1 0 1 1 00140442  
+insaziabile a 1 0 1 1 00140770  
+inseminato a 1 0 1 1 00085719  
+insepolto a 1 0 1 1 00020468  
+inservibile a 1 0 1 1 00165247  
+insettivoro a 1 0 1 1 00021978  
+insicuro a 2 0 2 2 00134539 00023688  
+insigne a 1 0 1 1 00038022  
+insignificante a 1 0 1 1 00145893  
+insincero a 1 0 1 1 00146587  
+insindacabile a 1 0 1 1 00131075  
+insistente a 1 0 1 1 00039181  
+insocievole a 1 0 1 1 00151570  
+insoddisfacente a 1 0 1 1 00141093  
+insoddisfatto a 1 0 1 1 00038781  
+insofferente a 1 0 1 1 00118306  
+insolito a 2 0 2 2 00031830 00064889  
+insolubile a 1 0 1 1 00151997  
+insoluto a 1 0 1 1 00152072  
+insolvente a 1 0 1 1 00136395  
+insolvibile a 1 0 1 1 00136395  
+insondabile a 1 0 1 1 00066500  
+insormontabile a 1 0 1 1 00157246  
+insospettabile a 1 0 1 1 00158116  
+insospettato a 1 0 1 1 00158116  
+insostenibile a 1 0 1 1 00162036  
+insostituibile a 1 0 1 1 00133630  
+insperato a 1 0 1 1 00061797  
+inspiegabile a 1 0 1 1 00062709  
+inspiratorio a 1 0 1 1 00222232  
+instabile a 2 0 2 2 00154154 00153595  
+instancabile a 1 0 1 1 00039181  
+insubordinato a 1 0 1 1 00155189  
+insuperabile a 1 0 1 1 00157246  
+insurrezionale a 1 0 1 1 00199921  
+insussistente a 1 0 1 1 00048813  
+intagliato a 1 0 1 1 00022056  
+intangibile a 1 0 1 1 00166747  
+intasato a 1 0 1 1 00115406  
+intellegibile a 1 0 1 1 00086705  
+intellettuale a 1 0 1 1 00197224  
+intelligente a 2 0 2 2 00086572 00001740  
+intelligibile a 1 0 1 1 00086705  
+intemerato a 1 0 1 1 00018085  
+intenso a 1 0 1 1 00099999  
+intenzionale a 3 0 3 3 00125490 00086908 00122484  
+interattivo a 1 0 1 1 00040791  
+intercellulare a 1 0 1 1 00178096  
+intercontinentale a 1 0 1 1 00104067  
+intercostale a 1 0 1 1 00179385  
+interdetto a 1 0 1 1 00091459  
+interdipendente a 1 0 1 1 00048919  
+interdisciplinare a 1 0 1 1 00217097  
+interessante a 1 0 1 1 00087257  
+interessato a 2 0 2 2 00087074 00035664  
+intergalattico a 1 0 1 1 00191657  
+interinale a 1 0 1 1 00119755  
+interiore a 1 0 1 1 00063822  
+interlineare a 1 0 1 1 00183312  
+interlineato a 1 0 1 1 00091574  
+interlocutorio a 1 0 1 1 00189015  
+intermedio a 1 0 1 1 00067654  
+intermolecolare a 1 0 1 1 00197431  
+internazionale a 2 0 2 2 00104151 00068663  
+interno a 3 0 3 3 00029982 00063709 00068724  
+intero a 3 0 3 3 00034175 00033924 00034039  
+interplanetario a 1 0 1 1 00185081  
+interpolato a 1 0 1 1 00051078  
+interpretativo a 1 0 1 1 00181355  
+interrato a 1 0 1 1 00020420  
+interrogativo a 1 0 1 1 00058095  
+interrogatorio a 1 0 1 1 00045923  
+intersiderale a 1 0 1 1 00186730  
+interstellare a 1 0 1 1 00186730  
+interstiziale a 1 0 1 1 00189058  
+inteso a 1 0 1 1 00089697  
+intestinale a 1 0 1 1 00201827  
+intestino a 1 0 1 1 00063709  
+intimo a 1 0 1 1 00063822  
+intoccabile a 1 0 1 1 00166747  
+intollerabile a 1 0 1 1 00162036  
+intonato a 1 0 1 1 00099520  
+intossicato a 1 0 1 1 00040671  
+intracellulare a 1 0 1 1 00178139  
+intracranico a 1 0 1 1 00183353  
+intradermico a 1 0 1 1 00194619  
+intraducibile a 1 0 1 1 00164925  
+intramuscolare a 1 0 1 1 00195425  
+intransigente a 1 0 1 1 00068072  
+intransitivo a 1 0 1 1 00164844  
+intraprendente a 2 0 2 2 00018341 00058367  
+intrattabile a 1 0 1 1 00162688  
+intrauterino a 1 0 1 1 00201438  
+intravenoso a 1 0 1 1 00196102  
+intrepido a 1 0 1 1 00008470  
+intricato a 1 0 1 1 00018669  
+intrigante a 1 0 1 1 00087442  
+intrinseco a 1 0 1 1 00087722  
+introspettivo a 1 0 1 1 00087872  
+introverso a 2 0 2 2 00134040 00087872  
+introvertito a 1 0 1 1 00087936  
+intrusivo a 1 0 1 1 00087995  
+intuibile a 1 0 1 1 00119162  
+inuguagliabile a 1 0 1 1 00032785  
+inuguale a 1 0 1 1 00060055  
+inulto a 1 0 1 1 00129538  
+inurbano a 2 0 2 2 00042683 00042395  
+inusato a 1 0 1 1 00064889  
+inusitato a 1 0 1 1 00031830  
+inusuale a 1 0 1 1 00064889  
+inutile a 3 0 3 3 00079552 00105665 00165247  
+inutilizzabile a 1 0 1 1 00165247  
+invalicabile a 1 0 1 1 00157246  
+invariabile a 1 0 1 1 00166186  
+invariato a 2 0 2 2 00024615 00024755  
+invendibile a 1 0 1 1 00139102  
+invendicato a 1 0 1 1 00129538  
+invenduto a 1 0 1 1 00151704  
+inventato a 1 0 1 1 00041378  
+inverisimile a 1 0 1 1 00093268  
+invernale a 1 0 1 1 00082914  
+inverosimile a 1 0 1 1 00093268  
+inverso a 2 0 2 2 00112322 00051408  
+invertebrato a 1 0 1 1 00166706  
+invertito a 1 0 1 1 00079703  
+investigatore a 1 0 1 1 00058095  
+invidioso a 1 0 1 1 00010206  
+invincibile a 1 0 1 1 00157246  
+inviolabile a 1 0 1 1 00166747  
+invitante a 1 0 1 1 00088403  
+invogliato a 1 0 1 1 00058678  
+involontario a 1 0 1 1 00086958  
+invulnerabile a 1 0 1 1 00167229  
+in_buono_stato a 1 0 1 1 00045313  
+in_cancrena a 1 0 1 1 00078364  
+in_carne_e_ossa a 1 0 1 1 00120719  
+in_concorrenza a 1 0 1 1 00033691  
+in_difficoltà a 1 0 1 1 00142459  
+in_fiamme a 1 0 1 1 00030823  
+in_formato_ellettronico a 1 0 1 1 00197600  
+in_grado_di_sopravvivere a 1 0 1 1 00009277  
+in_linea a 1 0 1 1 00111036  
+in_parallelo a 1 0 1 1 00158419  
+in_perfetto_ordine a 1 0 1 1 00161126  
+in_persona a 1 0 1 1 00120719  
+in_piedi a 1 0 1 1 00034120  
+in_piena a 1 0 1 1 00080702  
+in_rapida_ascesa a 1 0 1 1 00155357  
+in_ritardo a 1 0 1 1 00129318  
+in_scala_ridotta a 1 0 1 1 00091151  
+in_senso_antiorario a 1 0 1 1 00028887  
+in_sospeso a 1 0 1 1 00066984  
+in_via_di_sviluppo a 1 0 1 1 00225132  
+in_vitro a 1 0 1 1 00088441  
+in_voga a 1 0 1 1 00065198  
+iodato a 1 0 1 1 00211047  
+iperbolico a 1 0 1 1 00209527  
+ipercatalettico a 1 0 1 1 00022157  
+ipercataletto a 1 0 1 1 00022157  
+ipersonico a 1 0 1 1 00013968  
+ipertecnologico a 1 0 1 1 00080429  
+ipodermico a 1 0 1 1 00194580  
+ipofisario a 1 0 1 1 00211871  
+ipoteso a 1 0 1 1 00106675  
+ipotetico a 1 0 1 1 00056968  
+ipotizzabile a 1 0 1 1 00003448  
+ippocratico a 1 0 1 1 00218175  
+iracheno a 1 0 1 1 00218479  
+irakeno a 1 0 1 1 00218479  
+iraniano a 1 0 1 1 00218421  
+iranico a 1 0 1 1 00218421  
+irascibile a 1 0 1 1 00075747  
+ircino a 1 0 1 1 00182480  
+irlandese a 1 0 1 1 00210720  
+ironico a 1 0 1 1 00083280  
+irragionevole a 1 0 1 1 00132289  
+irrazionale a 1 0 1 1 00013372  
+irreale a 1 0 1 1 00041378  
+irrecuperabile a 1 0 1 1 00165247  
+irrecusabile a 1 0 1 1 00131075  
+irrefragabile a 1 0 1 1 00131075  
+irrefutabile a 1 0 1 1 00131075  
+irregolare a 1 0 1 1 00060055  
+irreligioso a 1 0 1 1 00121963  
+irreparabile a 1 0 1 1 00132937  
+irrepetibile a 1 0 1 1 00133024  
+irrepugnabile a 1 0 1 1 00131075  
+irresistibile a 1 0 1 1 00134151  
+irresolubile a 1 0 1 1 00062709  
+irresoluto a 1 0 1 1 00134539  
+irresponsabile a 1 0 1 1 00135035  
+irrestringibile a 1 0 1 1 00145223  
+irreversibile a 1 0 1 1 00120082  
+irrevocabile a 1 0 1 1 00120195  
+irriconoscente a 1 0 1 1 00076393  
+irricuperabile a 1 0 1 1 00165247  
+irricusabile a 1 0 1 1 00131075  
+irriducibile a 1 0 1 1 00058287  
+irriflessivo a 1 0 1 1 00160924  
+irriguardoso a 1 0 1 1 00042285  
+irrilevante a 1 0 1 1 00145893  
+irrimediabile a 1 0 1 1 00132937  
+irrinunciabile a 1 0 1 1 00166747  
+irrinunziabile a 1 0 1 1 00166747  
+irripetibile a 1 0 1 1 00133024  
+irrisolto a 1 0 1 1 00152072  
+irrisoluto a 1 0 1 1 00134539  
+irrisorio a 1 0 1 1 00098508  
+irrispettoso a 1 0 1 1 00042285  
+irritante a 1 0 1 1 00008791  
+irritato a 1 0 1 1 00076743  
+irriverente a 1 0 1 1 00135850  
+irsuto a 1 0 1 1 00016095  
+islamico a 1 0 1 1 00200403  
+islandese a 1 0 1 1 00218254  
+isolabile a 1 0 1 1 00013230  
+isolato a 3 0 3 3 00143621 00039127 00086460  
+isolato_dalla_neve a 1 0 1 1 00036808  
+isolazionistico a 1 0 1 1 00213172  
+isomero a 1 0 1 1 00189100  
+isomorfico a 1 0 1 1 00189136  
+isomorfo a 1 0 1 1 00189136  
+isotopico a 1 0 1 1 00197703  
+isotopo a 1 0 1 1 00197703  
+isotropo a 1 0 1 1 00088478  
+ispanico a 1 0 1 1 00218129  
+ispano a 1 0 1 1 00218129  
+ispido a 1 0 1 1 00161533  
+ispiratore a 1 0 1 1 00086280  
+israeliano a 1 0 1 1 00207213  
+israelita a 1 0 1 1 00200313  
+israelitico a 1 0 1 1 00200313  
+istantaneo a 1 0 1 1 00076183  
+isterilito a 1 0 1 1 00127077  
+istituzionale a 1 0 1 1 00183270  
+istituzionalizzato a 1 0 1 1 00081925  
+istoriato a 1 0 1 1 00006673  
+istruito a 1 0 1 1 00055722  
+istruttivo a 2 0 2 2 00086319 00086421  
+italiano a 1 0 1 1 00204496  
+italico a 1 0 1 1 00218526  
+iugoslavo a 1 0 1 1 00205395  
+iugulare a 1 0 1 1 00191994  
+jugoslavo a 1 0 1 1 00205395  
+junghiano a 1 0 1 1 00214496  
+kafkiano a 1 0 1 1 00224262  
+kantiano a 1 0 1 1 00214534  
+keniota a 1 0 1 1 00218877  
+lacrimale a 1 0 1 1 00194747  
+ladronesco a 1 0 1 1 00091459  
+lagrimale a 1 0 1 1 00194747  
+laico a 1 0 1 1 00138623  
+lampante a 1 0 1 1 00048527  
+lanciato a 1 0 1 1 00109121  
+laniero a 1 0 1 1 00224078  
+lanoso a 1 0 1 1 00077111  
+laotiano a 1 0 1 1 00218913  
+laoziano a 1 0 1 1 00218913  
+lapidario a 1 0 1 1 00189186  
+lardoso a 1 0 1 1 00066223  
+largo a 1 0 1 1 00169615  
+largo_di_spalle a 1 0 1 1 00137238  
+larvale a 1 0 1 1 00212048  
+larvato a 1 0 1 1 00141745  
+lassativo a 1 0 1 1 00042047  
+latente a 1 0 1 1 00005584  
+latino a 1 0 1 1 00218961  
+latino-americano a 1 0 1 1 00183540  
+latinoamericano a 1 0 1 1 00183540  
+latino_americano a 1 0 1 1 00183540  
+latitudinale a 1 0 1 1 00197989  
+latitudinario a 1 0 1 1 00197989  
+lattante a 1 0 1 1 00168527  
+lattico a 1 0 1 1 00191540  
+lattifero a 1 0 1 1 00219839  
+laudatorio a 1 0 1 1 00216318  
+lavabile a 1 0 1 1 00168001  
+lavorato a 2 0 2 2 00022056 00067048  
+lavorato_a_maglia a 1 0 1 1 00170709  
+leale a 1 0 1 1 00064697  
+lebbroso a 1 0 1 1 00189264  
+lecchino a 1 0 1 1 00059636  
+lecito a 1 0 1 1 00091312  
+legale a 2 0 2 2 00091709 00183493  
+leggermente_sfocato a 1 0 1 1 00052296  
+leggero a 5 0 5 5 00103524 00079175 00078809 00098508 00079211  
+leggibile a 1 0 1 1 00091903  
+leggiero a 1 0 1 1 00098508  
+legislativo a 1 0 1 1 00189224  
+legittimo a 1 0 1 1 00092418  
+legnoso a 1 0 1 1 00170508  
+lento a 1 0 1 1 00065578  
+leonardesco a 1 0 1 1 00214571  
+leonino a 1 0 1 1 00183622  
+lessicografico a 1 0 1 1 00198714  
+letterale a 1 0 1 1 00093752  
+letterario a 1 0 1 1 00189343  
+lettone a 1 0 1 1 00205536  
+levantino a 1 0 1 1 00219055  
+levigato a 1 0 1 1 00123988  
+lezioso a 1 0 1 1 00125790  
+libanese a 1 0 1 1 00219018  
+liberale a 2 0 2 2 00136588 00020100  
+liberiano a 1 0 1 1 00219093  
+libero a 2 0 2 2 00070004 00056476  
+libico a 1 0 1 1 00219131  
+lieto a 1 0 1 1 00088554  
+lieve a 1 0 1 1 00098508  
+lievissimo a 1 0 1 1 00098508  
+lillipuziano a 1 0 1 1 00219166  
+limitativo a 1 0 1 1 00135568  
+limitato a 2 0 2 2 00135513 00093350  
+lindo a 1 0 1 1 00027628  
+lineare a 2 0 2 2 00030111 00043915  
+linfatico a 1 0 1 1 00189382  
+linfoide a 1 0 1 1 00189420  
+linguistico a 2 0 2 2 00190893 00190978  
+liquido a 1 0 1 1 00151806  
+lirico a 1 0 1 1 00192245  
+liso a 1 0 1 1 00170755  
+litografico a 1 0 1 1 00219207  
+lituano a 1 0 1 1 00205572  
+liturgico a 1 0 1 1 00209566  
+live a 1 0 1 1 00093981  
+livido a 1 0 1 1 00010206  
+livoroso a 1 0 1 1 00010206  
+lobare a 1 0 1 1 00201590  
+locale a 3 0 3 3 00073679 00073868 00068493  
+locomotivo a 1 0 1 1 00209604  
+locomotore a 1 0 1 1 00209604  
+locomotorio a 1 0 1 1 00209604  
+lodativo a 1 0 1 1 00216318  
+logaritmico a 1 0 1 1 00209670  
+logico a 2 0 2 2 00094170 00165623  
+logistico a 1 0 1 1 00208792  
+logorante a 1 0 1 1 00088186  
+logorato a 1 0 1 1 00170755  
+logorato_dalle_intemperie a 1 0 1 1 00171250  
+logoro a 2 0 2 2 00061361 00170755  
+lombare a 1 0 1 1 00212197  
+longitudinale a 1 0 1 1 00189301  
+lontano a 4 0 4 4 00094561 00028948 00046511 00029137  
+lordo a 2 0 2 2 00027729 00105779  
+lubricante a 1 0 1 1 00042047  
+luccicante a 1 0 1 1 00019863  
+lucente a 1 0 1 1 00151044  
+lucido a 1 0 1 1 00151044  
+lucrativo a 1 0 1 1 00127339  
+lucroso a 1 0 1 1 00127339  
+luculliano a 1 0 1 1 00136241  
+luminoso a 2 0 2 2 00019313 00019777  
+lunare a 1 0 1 1 00183658  
+lungimirante a 1 0 1 1 00128992  
+lungo a 4 0 4 4 00094491 00094755 00158735 00094945  
+lunisolare a 1 0 1 1 00183731  
+lusco a 1 0 1 1 00043776  
+lusingatore a 1 0 1 1 00059636  
+macaronico a 1 0 1 1 00183770  
+maccheronico a 1 0 1 1 00183770  
+macchinoso a 1 0 1 1 00028540  
+macedone a 1 0 1 1 00219247  
+macedonico a 1 0 1 1 00219247  
+macero a 1 0 1 1 00061361  
+machiavellico a 1 0 1 1 00219297  
+macrobiotico a 1 0 1 1 00208497  
+macrocefalo a 1 0 1 1 00197475  
+macroeconomico a 1 0 1 1 00226279  
+macromolecolare a 1 0 1 1 00197659  
+macroscopico a 1 0 1 1 00096270  
+maggiore a 7 0 7 7 00090310 00080538 00017153 00090246 00096433 00096505 00091214  
+magiaro a 1 0 1 1 00205287  
+magico a 1 0 1 1 00013509  
+magistrale a 1 0 1 1 00165740  
+magnifico a 2 0 2 2 00013509 00084734  
+magro a 2 0 2 2 00065665 00009888  
+malaccetto a 1 0 1 1 00168742  
+malaccolto a 1 0 1 1 00168742  
+malaccorto a 1 0 1 1 00021753  
+maladattato a 1 0 1 1 00024473  
+malagevole a 1 0 1 1 00064889  
+malarico a 1 0 1 1 00219377  
+malato a 1 0 1 1 00168833  
+malato_d'amore a 1 0 1 1 00076682  
+malaugurato a 1 0 1 1 00096189  
+malavveduto a 1 0 1 1 00022593  
+malavvezzo a 1 0 1 1 00042683  
+malaysiano a 1 0 1 1 00219414  
+malcelato a 1 0 1 1 00141915  
+malconsigliato a 1 0 1 1 00007864  
+maldestro a 1 0 1 1 00062510  
+maldisposto a 1 0 1 1 00016473  
+maleadattato a 1 0 1 1 00024473  
+maledetto a 1 0 1 1 00044416  
+maleducato a 1 0 1 1 00042683  
+malefico a 1 0 1 1 00075621  
+maleodorante a 1 0 1 1 00069623  
+malese a 1 0 1 1 00219414  
+malevolo a 1 0 1 1 00016473  
+male_avezzo a 1 0 1 1 00042683  
+male_organizzato a 1 0 1 1 00112909  
+malfidato a 1 0 1 1 00163534  
+malfido a 1 0 1 1 00048813  
+malgascio a 1 0 1 1 00219339  
+maliardo a 1 0 1 1 00142566  
+maligno a 1 0 1 1 00010206  
+malinconico a 1 0 1 1 00088688  
+malioso a 1 0 1 1 00142566  
+malizioso a 1 0 1 1 00016666  
+malleabile a 1 0 1 1 00046336  
+malo a 1 0 1 1 00075426  
+malriuscito a 1 0 1 1 00003989  
+malsano a 1 0 1 1 00077970  
+malsicuro a 1 0 1 1 00142376  
+maltese a 1 0 1 1 00219462  
+malthusiano a 1 0 1 1 00219498  
+maltusiano a 1 0 1 1 00219498  
+malvagio a 1 0 1 1 00075621  
+mal_accetto a 1 0 1 1 00168742  
+mal_accolto a 1 0 1 1 00168742  
+mal_augurato a 1 0 1 1 00096189  
+mal_celato a 1 0 1 1 00141915  
+mal_educato a 1 0 1 1 00042683  
+mal_sicuro a 1 0 1 1 00142376  
+mamillare a 1 0 1 1 00196437  
+mammario a 1 0 1 1 00196437  
+mammifero a 1 0 1 1 00189546  
+mammillare a 1 0 1 1 00196437  
+manageriale a 1 0 1 1 00197874  
+mancese a 1 0 1 1 00206524  
+manchevole a 1 0 1 1 00155915  
+mancino a 1 0 1 1 00136513  
+mandibolare a 1 0 1 1 00194707  
+maneggevole a 1 0 1 1 00046336  
+mangereccio a 1 0 1 1 00055597  
+mangiabile a 1 0 1 1 00055597  
+manierato a 1 0 1 1 00007945  
+manifesto a 1 0 1 1 00037791  
+mansueto a 1 0 1 1 00155104  
+maomettano a 1 0 1 1 00214611  
+marcio a 1 0 1 1 00045131  
+marginale a 2 0 2 2 00226771 00022744  
+marino a 1 0 1 1 00195964  
+marittimo a 1 0 1 1 00195964  
+marocchino a 1 0 1 1 00213393  
+marrone a 1 0 1 1 00025948  
+marrone_chiaro a 1 0 1 1 00026350  
+marrone_rossiccio a 1 0 1 1 00026174  
+marxista a 1 0 1 1 00194491  
+marxistico a 1 0 1 1 00194491  
+marziano a 1 0 1 1 00202194  
+mascherato a 1 0 1 1 00141745  
+maschile a 1 0 1 1 00096746  
+maschio a 1 0 1 1 00096746  
+mascolino a 1 0 1 1 00096746  
+masochista a 1 0 1 1 00138710  
+masochistico a 1 0 1 1 00138710  
+massacrante a 1 0 1 1 00088186  
+massiccio a 2 0 2 2 00090793 00158963  
+massimale a 1 0 1 1 00098442  
+massimo a 1 0 1 1 00098442  
+massonico a 1 0 1 1 00196709  
+mastoideo a 1 0 1 1 00192096  
+matematico a 1 0 1 1 00202079  
+materiale a 2 0 2 2 00041488 00170544  
+materno a 1 0 1 1 00095953  
+matriarcale a 1 0 1 1 00118400  
+matrimoniale a 1 0 1 1 00192043  
+matto a 1 0 1 1 00140588  
+maturo a 3 0 3 3 00097803 00112039 00097453  
+mazdaico a 1 0 1 1 00200762  
+meccanico a 1 0 1 1 00099482  
+medianico a 1 0 1 1 00143357  
+mediano a 1 0 1 1 00106421  
+mediatore a 1 0 1 1 00050864  
+medicamentoso a 1 0 1 1 00199467  
+medicinale a 1 0 1 1 00199467  
+medico a 3 0 3 3 00077789 00183824 00199467  
+medievale a 1 0 1 1 00209082  
+medio a 3 0 3 3 00031432 00106369 00101476  
+medioevale a 1 0 1 1 00209082  
+meditato a 1 0 1 1 00125490  
+mediterraneo a 1 0 1 1 00219639  
+mefitico a 1 0 1 1 00185547  
+megalitico a 1 0 1 1 00219680  
+meglio a 3 0 3 3 00017029 00016937 00007709  
+melodioso a 1 0 1 1 00099520  
+memorabile a 2 0 2 2 00069047 00068915  
+memorando a 1 0 1 1 00068915  
+memorativo a 1 0 1 1 00216318  
+mendace a 1 0 1 1 00163325  
+mendeliano a 1 0 1 1 00219719  
+meningeo a 1 0 1 1 00183897  
+meno a 2 0 2 2 00103688 00103612  
+mensile a 2 0 2 2 00173723 00228913  
+mentale a 3 0 3 3 00121535 00121607 00197188  
+menzognero a 1 0 1 1 00163325  
+meraviglioso a 2 0 2 2 00113602 00013509  
+mercantile a 1 0 1 1 00209747  
+merceologico a 1 0 1 1 00226322  
+mercurico a 1 0 1 1 00183986  
+meridionale a 1 0 1 1 00107679  
+meschino a 3 0 3 3 00020137 00009888 00041975  
+mescolabile a 1 0 1 1 00033278  
+mescolato a 1 0 1 1 00161256  
+mesenteriale a 1 0 1 1 00211683  
+mesenterico a 1 0 1 1 00211683  
+meseraico a 1 0 1 1 00211683  
+mesonico a 1 0 1 1 00209710  
+messicano a 1 0 1 1 00213805  
+mesto a 1 0 1 1 00088688  
+mestruale a 1 0 1 1 00194797  
+metacarpale a 1 0 1 1 00219758  
+metafisico a 1 0 1 1 00193510  
+metallico a 1 0 1 1 00101111  
+metallizzato a 1 0 1 1 00101111  
+metallurgico a 1 0 1 1 00219798  
+metastatico a 1 0 1 1 00207540  
+meteorico a 1 0 1 1 00193430  
+meteorologico a 1 0 1 1 00193468  
+meticoloso a 1 0 1 1 00047919  
+metodista a 1 0 1 1 00204261  
+metodologico a 1 0 1 1 00202815  
+metrico a 1 0 1 1 00209786  
+metropolitano a 1 0 1 1 00193388  
+mezzo a 1 0 1 1 00034269  
+mialgico a 1 0 1 1 00184264  
+miceneo a 1 0 1 1 00212487  
+micragnoso a 1 0 1 1 00074120  
+microbico a 1 0 1 1 00212122  
+microcefalo a 1 0 1 1 00197515  
+microcosmico a 1 0 1 1 00197751  
+microelettronico a 1 0 1 1 00197555  
+migliore a 3 0 3 3 00017029 00016704 00016937  
+migragnoso a 1 0 1 1 00074120  
+milanese a 1 0 1 1 00206764  
+militare a 2 0 2 2 00100514 00184024  
+mille a 1 0 1 1 00149403  
+millenario a 1 0 1 1 00193349  
+minaccioso a 1 0 1 1 00015045  
+mini a 1 0 1 1 00094458  
+minimale a 1 0 1 1 00098508  
+minimo a 1 0 1 1 00098508  
+ministeriale a 1 0 1 1 00184102  
+minoico a 1 0 1 1 00212451  
+minore a 5 0 5 5 00017190 00096639 00091277 00091098 00103612  
+minorile a 1 0 1 1 00196243  
+minuscolo a 1 0 1 1 00091042  
+minuzioso a 1 0 1 1 00047919  
+mirabile a 1 0 1 1 00165740  
+miracoloso a 1 0 1 1 00113848  
+mirifico a 1 0 1 1 00165740  
+miscibile a 1 0 1 1 00033278  
+miscredente a 1 0 1 1 00188593  
+misericordioso a 1 0 1 1 00099717  
+misterioso a 2 0 2 2 00062861 00062709  
+mistico a 2 0 2 2 00193164 00193128  
+misurabile a 1 0 1 1 00099331  
+misurato a 2 0 2 2 00099445 00022391  
+mite a 1 0 1 1 00095953  
+mitologico a 2 0 2 2 00131888 00209822  
+mitralico a 1 0 1 1 00212727  
+mnemonico a 1 0 1 1 00196747  
+mobile a 1 0 1 1 00100925  
+moderato a 2 0 2 2 00101238 00098508  
+modernistico a 1 0 1 1 00190074  
+moderno a 3 0 3 3 00101747 00127813 00065162  
+modesto a 7 0 7 7 00102205 00106106 00156318 00101238 00101991 00125850 00051741  
+modico a 1 0 1 1 00101238  
+modificabile a 1 0 1 1 00024432  
+mogio a 1 0 1 1 00047171  
+molecolare a 1 0 1 1 00197392  
+molle a 2 0 2 2 00056313 00077181  
+molteplice a 1 0 1 1 00146210  
+moltiforme a 1 0 1 1 00178873  
+moltilingue a 1 0 1 1 00102571  
+molto a 4 0 4 4 00090593 00103362 00103122 00094755  
+molto_in_vista a 1 0 1 1 00038022  
+momentaneo a 1 0 1 1 00119755  
+monarchico a 1 0 1 1 00201018  
+monastico a 1 0 1 1 00170653  
+monco a 1 0 1 1 00012553  
+mondano a 2 0 2 2 00078521 00078457  
+monegasco a 1 0 1 1 00207939  
+monetario a 1 0 1 1 00184832  
+mongolico a 1 0 1 1 00219877  
+mongolo a 1 0 1 1 00219877  
+monistico a 1 0 1 1 00203187  
+monoaurale a 1 0 1 1 00017756  
+monocarpo a 1 0 1 1 00214879  
+monoclino a 2 0 2 2 00025749 00102420  
+monoclonale a 1 0 1 1 00184143  
+monocolo a 1 0 1 1 00063971  
+monocromatico a 1 0 1 1 00025787  
+monogamo a 1 0 1 1 00102458  
+monolingue a 1 0 1 1 00102532  
+monopetto a 1 0 1 1 00053184  
+monopezzo a 1 0 1 1 00110958  
+monopolistico a 1 0 1 1 00226363  
+monoteistico a 1 0 1 1 00121719  
+monotipico a 1 0 1 1 00184183  
+monovalente a 1 0 1 1 00102625  
+monumentale a 1 0 1 1 00193273  
+morale a 2 0 2 2 00193238 00102705  
+moralmente_inaccettabile a 1 0 1 1 00136878  
+morbido a 2 0 2 2 00076923 00077181  
+morbido_e_peloso a 1 0 1 1 00077041  
+mordace a 1 0 1 1 00140926  
+mordente a 1 0 1 1 00129357  
+moresco a 1 0 1 1 00219925  
+morfematico a 1 0 1 1 00201946  
+morfemico a 1 0 1 1 00201946  
+mormonico a 1 0 1 1 00204299  
+moro a 1 0 1 1 00219925  
+mortale a 2 0 2 2 00099871 00103721  
+mortificato a 1 0 1 1 00088688  
+morto a 2 0 2 2 00009407 00009355  
+mosaico a 1 0 1 1 00214650  
+moscio a 1 0 1 1 00047171  
+moscovita a 1 0 1 1 00219968  
+mosso a 1 0 1 1 00010407  
+mostruoso a 1 0 1 1 00064889  
+motivato a 1 0 1 1 00103795  
+motivazionale a 1 0 1 1 00184222  
+movimentato a 2 0 2 2 00054104 00010407  
+mozartiano a 1 0 1 1 00214686  
+mozzafiato a 1 0 1 1 00060711  
+mozzo a 1 0 1 1 00225098  
+muliebre a 1 0 1 1 00097274  
+multidimensionale a 1 0 1 1 00044031  
+multidisciplinare a 1 0 1 1 00217097  
+multiforme a 1 0 1 1 00178873  
+multilaterale a 1 0 1 1 00017634  
+multilingue a 1 0 1 1 00102571  
+multiplo a 1 0 1 1 00150218  
+municipale a 1 0 1 1 00178734  
+munito a 1 0 1 1 00072564  
+murale a 1 0 1 1 00194835  
+muscolare a 1 0 1 1 00195387  
+musicale a 2 0 2 2 00099520 00193549  
+mussulmano a 1 0 1 1 00200403  
+musulmano a 1 0 1 1 00200403  
+mutevole a 2 0 2 2 00119755 00054264  
+muto a 1 0 1 1 00158669  
+mutuo a 1 0 1 1 00132331  
+napoleonico a 1 0 1 1 00214725  
+napoletano a 1 0 1 1 00206712  
+narcisistico a 1 0 1 1 00009493  
+narcotico a 1 0 1 1 00193090  
+narrabile a 1 0 1 1 00063275  
+nasale a 1 0 1 1 00208029  
+nascosto a 2 0 2 2 00167002 00102995  
+nativo a 1 0 1 1 00068528  
+nato a 1 0 1 1 00118134  
+nato_sotto_una_cattiva_stella a 1 0 1 1 00069475  
+naturale a 12 0 12 12 00106475 00008135 00091997 00104194 00008005 00092514 00104814 00113981 00105193 00104568 00226809 00208951  
+navale a 1 0 1 1 00184403  
+nazionale a 5 0 5 5 00208913 00073568 00104113 00068724 00068802  
+nazista a 1 0 1 1 00210264  
+neandertaliano a 1 0 1 1 00220006  
+nebulare a 1 0 1 1 00220049  
+nebuloso a 1 0 1 1 00046511  
+necessario a 3 0 3 3 00105596 00059366 00105416  
+necrotico a 1 0 1 1 00208459  
+nefasto a 1 0 1 1 00014021  
+nefritico a 1 0 1 1 00195484  
+negabile a 1 0 1 1 00048490  
+negativo a 1 0 1 1 00124350  
+negligente a 2 0 2 2 00050607 00021753  
+negoziabile a 1 0 1 1 00068017  
+negoziale a 1 0 1 1 00179090  
+negro a 1 0 1 1 00017908  
+negromantico a 1 0 1 1 00198958  
+nemico a 1 0 1 1 00071584  
+neolatino a 1 0 1 1 00218961  
+neolitico a 1 0 1 1 00220086  
+neonatale a 1 0 1 1 00184301  
+neoplasico a 1 0 1 1 00184339  
+neoplastico a 1 0 1 1 00184339  
+nepalese a 1 0 1 1 00207024  
+nero a 2 0 2 2 00111831 00026499  
+nervoso a 2 0 2 2 00160093 00197953  
+netto a 3 0 3 3 00027628 00105745 00036005  
+neurastenico a 1 0 1 1 00220124  
+neurobiologico a 1 0 1 1 00176684  
+neurolettico a 1 0 1 1 00174719  
+neurologico a 1 0 1 1 00199795  
+neuroplegico a 1 0 1 1 00174719  
+neutrale a 2 0 2 2 00108452 00020006  
+neutro a 2 0 2 2 00097345 00102942  
+nevrastenico a 1 0 1 1 00220124  
+nevrotico a 1 0 1 1 00207743  
+newtoniano a 1 0 1 1 00214765  
+nicaraguegno a 1 0 1 1 00220180  
+nicaraguense a 1 0 1 1 00220180  
+nicaraguese a 1 0 1 1 00220180  
+nichilista a 1 0 1 1 00199052  
+niente_di_speciale a 1 0 1 1 00113209  
+nipponico a 1 0 1 1 00205785  
+nitido a 2 0 2 2 00036005 00046628  
+nitrico a 1 0 1 1 00220250  
+nitroso a 1 0 1 1 00220250  
+no-profit a 1 0 1 1 00031140  
+nobile a 1 0 1 1 00081664  
+nocivo a 1 0 1 1 00107921  
+nodale a 1 0 1 1 00043810  
+nodulare a 1 0 1 1 00220296  
+noioso a 1 0 1 1 00087669  
+nominabile a 1 0 1 1 00063275  
+nominale a 1 0 1 1 00132042  
+nominalistico a 1 0 1 1 00184453  
+nominativo a 1 0 1 1 00184495  
+nomotetico a 1 0 1 1 00049242  
+non-inflazionistico a 1 0 1 1 00226405  
+non-profit a 1 0 1 1 00031140  
+non-stop a 1 0 1 1 00039181  
+nonconformista a 1 0 1 1 00040054  
+nono a 1 0 1 1 00149698  
+non_accentato a 1 0 1 1 00154594  
+non_all'altezza a 1 0 1 1 00006335  
+non_alla_moda a 1 0 1 1 00065322  
+non_allettante a 1 0 1 1 00057617  
+non_amato a 1 0 1 1 00095819  
+non_ammobiliato a 1 0 1 1 00072643  
+non_ancora_nato a 1 0 1 1 00118167  
+non_appagato a 1 0 1 1 00140860  
+non_artificioso a 1 0 1 1 00008005  
+non_attraversabile a 1 0 1 1 00116515  
+non_a_fuoco a 1 0 1 1 00052369  
+non_ben_sviluppato a 1 0 1 1 00067926  
+non_compatibile a 1 0 1 1 00033154  
+non_conformista a 1 0 1 1 00040054  
+non_costante a 1 0 1 1 00166133  
+non_definito a 1 0 1 1 00049685  
+non_degno a 1 0 1 1 00171499  
+non_desiderato a 1 0 1 1 00167435  
+non_detto a 1 0 1 1 00063025  
+non_diluito a 1 0 1 1 00050730  
+non_dimostrato a 1 0 1 1 00157103  
+non_espresso a 1 0 1 1 00063025  
+non_finito a 1 0 1 1 00066984  
+non_genuino a 1 0 1 1 00169568  
+non_igienico a 1 0 1 1 00143773  
+non_illuminato a 1 0 1 1 00019639  
+non_imponibile a 1 0 1 1 00159561  
+non_inflazionistico a 1 0 1 1 00226405  
+non_inquinato a 1 0 1 1 00130007  
+non_letto a 1 0 1 1 00131737  
+non_mangiato a 1 0 1 1 00038646  
+non_movibile a 1 0 1 1 00100960  
+non_pagato a 2 0 2 2 00115644 00115720  
+non_pentito a 1 0 1 1 00118808  
+non_più_fresco a 1 0 1 1 00070750  
+non_potabile a 1 0 1 1 00053366  
+non_previsto a 1 0 1 1 00122436  
+non_protetto a 1 0 1 1 00128492  
+non_provocato a 1 0 1 1 00103906  
+non_pubblicabile a 1 0 1 1 00133119  
+non_qualificato a 1 0 1 1 00130377  
+non_rasato a 1 0 1 1 00145086  
+non_realistico a 1 0 1 1 00132189  
+non_realizzato a 1 0 1 1 00155689  
+non_redditizio a 1 0 1 1 00127541  
+non_richiesto a 1 0 1 1 00088354  
+non_sfruttato a 2 0 2 2 00063208 00063141  
+non_specializzato a 1 0 1 1 00127286  
+non_stagionato a 1 0 1 1 00159267  
+non_temperato a 1 0 1 1 00100638  
+non_temprato a 1 0 1 1 00100638  
+non_ventilato a 1 0 1 1 00166499  
+non_zuccherato a 1 0 1 1 00156117  
+nord a 2 0 2 2 00106711 00106920  
+normale a 2 0 2 2 00106243 00031678  
+normativo a 1 0 1 1 00049242  
+norvegese a 1 0 1 1 00204982  
+notabile a 1 0 1 1 00040831  
+notevole a 2 0 2 2 00113738 00040831  
+noto a 1 0 1 1 00089318  
+novanta a 1 0 1 1 00149233  
+nove a 1 0 1 1 00147957  
+novellino a 1 0 1 1 00062510  
+no_global a 1 0 1 1 00229600  
+nubile a 1 0 1 1 00097161  
+nucleare a 2 0 2 2 00040164 00193015  
+nudista a 1 0 1 1 00209046  
+nudo a 1 0 1 1 00029615  
+nudo_e_crudo a 1 0 1 1 00051349  
+nullista a 1 0 1 1 00199052  
+numerale a 1 0 1 1 00184534  
+numerico a 2 0 2 2 00184534 00130600  
+numeroso a 2 0 2 2 00103122 00103193  
+nuovo a 4 0 4 4 00011453 00109746 00062604 00114476  
+nutritivo a 1 0 1 1 00210546  
+nutrizionale a 1 0 1 1 00210546  
+nuvolo a 1 0 1 1 00029851  
+nuvoloso a 1 0 1 1 00029851  
+nuziale a 1 0 1 1 00191018  
+obbediente a 1 0 1 1 00108189  
+obbiettivo a 1 0 1 1 00108371  
+obbligato a 1 0 1 1 00069948  
+obbligazionario a 1 0 1 1 00226475  
+obiettivo a 1 0 1 1 00108371  
+obliquo a 1 0 1 1 00164228  
+occasionale a 2 0 2 2 00119755 00070232  
+occidentale a 2 0 2 2 00055244 00055375  
+occlusivo a 1 0 1 1 00203535  
+occorrente a 1 0 1 1 00105416  
+occulto a 1 0 1 1 00141745  
+occupato a 2 0 2 2 00020506 00074864  
+occupazionale a 2 0 2 2 00226519 00196499  
+oceanico a 1 0 1 1 00196023  
+oculato a 2 0 2 2 00128992 00022391  
+oculistico a 1 0 1 1 00195913  
+odioso a 2 0 2 2 00122852 00095578  
+odoroso a 1 0 1 1 00069551  
+offeso a 1 0 1 1 00085908  
+oftalmico a 1 0 1 1 00195913  
+oggettivo a 1 0 1 1 00108371  
+ogni a 3 0 3 3 00152495 00152444 00152367  
+ogni_mezz'ora a 1 0 1 1 00174294  
+olandese a 1 0 1 1 00205128  
+olezzante a 1 0 1 1 00069623  
+oligarchico a 1 0 1 1 00184593  
+olimpico a 1 0 1 1 00220333  
+olistico a 1 0 1 1 00114119  
+olofitico a 1 0 1 1 00022018  
+olografo a 1 0 1 1 00210431  
+ombelicale a 1 0 1 1 00190706  
+ombrellifero a 1 0 1 1 00187983  
+omeopatico a 1 0 1 1 00218215  
+omeopolare a 1 0 1 1 00179426  
+omoerotico a 1 0 1 1 00079703  
+omofilo a 1 0 1 1 00079703  
+omofono a 1 0 1 1 00209491  
+omogeneo a 2 0 2 2 00079606 00077689  
+omopolare a 1 0 1 1 00179426  
+omosessuale a 1 0 1 1 00079703  
+on-line a 1 0 1 1 00111036  
+onciale a 1 0 1 1 00188024  
+oncogeno a 1 0 1 1 00177523  
+oncologico a 1 0 1 1 00199308  
+oneroso a 1 0 1 1 00079139  
+onesto a 5 0 5 5 00166919 00146534 00102705 00081581 00025278  
+onnivoro a 1 0 1 1 00021941  
+onomatopeico a 1 0 1 1 00224534  
+onorevole a 1 0 1 1 00171356  
+ontogenetico a 1 0 1 1 00202680  
+on_line a 1 0 1 1 00111036  
+opaco a 1 0 1 1 00028442  
+operabile a 1 0 1 1 00124405  
+operativo a 2 0 2 2 00144279 00212084  
+opercolato a 1 0 1 1 00207423  
+opinabile a 1 0 1 1 00130716  
+opportuno a 1 0 1 1 00111983  
+opposto a 4 0 4 4 00139567 00112322 00140123 00140069  
+oppresso a 1 0 1 1 00171562  
+opzionale a 1 0 1 1 00056476  
+orale a 1 0 1 1 00153305  
+orario a 1 0 1 1 00174259  
+orbo a 1 0 1 1 00145415  
+orchestrale a 1 0 1 1 00204376  
+ordinario a 4 0 4 4 00113064 00113209 00113299 00031678  
+ordinato a 4 0 4 4 00112872 00161080 00112758 00112835  
+orfano_di_padre a 1 0 1 1 00118218  
+organico a 1 0 1 1 00113905  
+organizzativo a 1 0 1 1 00197094  
+organizzato a 1 0 1 1 00112984  
+orgoglioso a 1 0 1 1 00128579  
+orientativo a 1 0 1 1 00220410  
+orientato a 1 0 1 1 00114195  
+originale a 2 0 2 2 00114251 00067493  
+originario a 2 0 2 2 00114251 00067493  
+orizzontale a 1 0 1 1 00082067  
+ormonale a 1 0 1 1 00201675  
+ormonico a 1 0 1 1 00201675  
+ornitologico a 1 0 1 1 00220463  
+orrendo a 1 0 1 1 00105966  
+orribile a 1 0 1 1 00105966  
+orticolo a 1 0 1 1 00200828  
+ortodosso a 2 0 2 2 00114882 00203974  
+ortogonale a 1 0 1 1 00082107  
+ortografico a 1 0 1 1 00198757  
+ortopedico a 1 0 1 1 00220504  
+oscuro a 1 0 1 1 00028200  
+osmotico a 1 0 1 1 00210356  
+ospitale a 1 0 1 1 00122538  
+ossequente a 1 0 1 1 00134784  
+ossequioso a 1 0 1 1 00134784  
+ossifero a 1 0 1 1 00224621  
+ostetrico a 1 0 1 1 00199757  
+ostile a 2 0 2 2 00010206 00082393  
+ostinato a 2 0 2 2 00154968 00107850  
+ottagonale a 1 0 1 1 00189959  
+ottale a 1 0 1 1 00193757  
+ottangolare a 1 0 1 1 00189959  
+ottavo a 1 0 1 1 00149663  
+ottico a 2 0 2 2 00193792 00193836  
+ottimista a 1 0 1 1 00112454  
+ottimistico a 1 0 1 1 00112454  
+ottimo a 1 0 1 1 00156741  
+otto a 1 0 1 1 00147902  
+ottuso a 1 0 1 1 00123953  
+ovale a 1 0 1 1 00137891  
+ovarico a 1 0 1 1 00201366  
+ovest a 1 0 1 1 00055087  
+oviparo a 1 0 1 1 00167076  
+ovoviviparo a 1 0 1 1 00167112  
+ovvio a 3 0 3 3 00037791 00108620 00115947  
+pachistano a 1 0 1 1 00220587  
+pacificativo a 1 0 1 1 00050864  
+pacificatore a 1 0 1 1 00050864  
+pacifico a 2 0 2 2 00037791 00118583  
+pacioso a 1 0 1 1 00050864  
+padronale a 1 0 1 1 00217357  
+padrone_di_sé a 1 0 1 1 00034993  
+pagabile a 1 0 1 1 00012167  
+pakistano a 1 0 1 1 00220587  
+palatale a 1 0 1 1 00209861  
+palatino a 1 0 1 1 00209861  
+paleontologico a 1 0 1 1 00184633  
+palestinese a 1 0 1 1 00207462  
+palingenesiaco a 1 0 1 1 00178275  
+palingenetico a 1 0 1 1 00178275  
+pallido a 2 0 2 2 00027065 00154914  
+palmare a 3 0 3 3 00184676 00037791 00108620  
+palmato a 1 0 1 1 00171637  
+palpitante a 1 0 1 1 00060592  
+panamense a 1 0 1 1 00206025  
+pancreatico a 1 0 1 1 00201326  
+panellenico a 1 0 1 1 00212341  
+panteistico a 1 0 1 1 00201247  
+papale a 1 0 1 1 00194915  
+papalino a 1 0 1 1 00194915  
+papistico a 1 0 1 1 00200263  
+papua a 1 0 1 1 00220638  
+papuano a 1 0 1 1 00220638  
+papuaso a 1 0 1 1 00220638  
+parabolico a 1 0 1 1 00209909  
+paradisiaco a 1 0 1 1 00013509  
+paragonabile a 1 0 1 1 00032621  
+paraguaiano a 1 0 1 1 00206193  
+paraguayano a 1 0 1 1 00206193  
+paralitico a 1 0 1 1 00220692  
+paralizzato_da_uno_sciopero a 1 0 1 1 00005115  
+parallelo a 1 0 1 1 00158419  
+paramagnetico a 1 0 1 1 00210599  
+paramilitare a 1 0 1 1 00184061  
+paranormale a 1 0 1 1 00143357  
+parasimpatico a 1 0 1 1 00211829  
+parecchio a 1 0 1 1 00152266  
+pareggiabile a 1 0 1 1 00032621  
+parentale a 1 0 1 1 00195522  
+parentetico a 1 0 1 1 00220731  
+pari a 1 0 1 1 00092848  
+parigino a 1 0 1 1 00213216  
+parlamentare a 1 0 1 1 00184712  
+parlante a 1 0 1 1 00131340  
+parlato a 1 0 1 1 00153251  
+parossistico a 2 0 2 2 00166867 00184791  
+parotideo a 1 0 1 1 00184753  
+parsimonioso a 1 0 1 1 00160979  
+part-time a 1 0 1 1 00072343  
+partenopeo a 1 0 1 1 00206712  
+particellare a 1 0 1 1 00116404  
+participiale a 1 0 1 1 00220783  
+particolare a 5 0 5 5 00073510 00031830 00031594 00032310 00073429  
+particolarista a 1 0 1 1 00192805  
+particolaristico a 1 0 1 1 00192805  
+partigiano a 1 0 1 1 00049193  
+part_time a 1 0 1 1 00072343  
+parziale a 1 0 1 1 00116294  
+parzialmente_cosciente a 1 0 1 1 00037382  
+passabile a 1 0 1 1 00141024  
+passato a 2 0 2 2 00220824 00116874  
+passeggero a 1 0 1 1 00083761  
+passeggiero a 1 0 1 1 00083761  
+passibile a 1 0 1 1 00157751  
+passionale a 1 0 1 1 00116578  
+passivo a 1 0 1 1 00005397  
+pastorale a 2 0 2 2 00196630 00192690  
+pastoso a 1 0 1 1 00077181  
+patente a 2 0 2 2 00037791 00108620  
+paterno a 1 0 1 1 00095953  
+patologico a 1 0 1 1 00192867  
+patriarcale a 1 0 1 1 00118360  
+patriotico a 1 0 1 1 00118478  
+patriottico a 1 0 1 1 00118478  
+patristico a 1 0 1 1 00212844  
+patronimico a 1 0 1 1 00220880  
+pauroso a 2 0 2 2 00018518 00105966  
+paziente a 1 0 1 1 00118269  
+pazzesco a 1 0 1 1 00043196  
+pazzo a 2 0 2 2 00008660 00140588  
+peccaminoso a 1 0 1 1 00075621  
+pectico a 1 0 1 1 00220920  
+peculiare a 2 0 2 2 00024952 00073429  
+pecuniario a 1 0 1 1 00184832  
+pedagogico a 1 0 1 1 00203027  
+pedante a 1 0 1 1 00047919  
+pedantesco a 1 0 1 1 00181808  
+pediatrico a 1 0 1 1 00196361  
+peggio a 1 0 1 1 00016983  
+peggiore a 2 0 2 2 00016983 00016886  
+peloponnesiaco a 1 0 1 1 00194974  
+peloso a 1 0 1 1 00016095  
+pelvico a 1 0 1 1 00196557  
+penale a 2 0 2 2 00179654 00185125  
+penalistico a 1 0 1 1 00179654  
+penetrabile a 1 0 1 1 00121035  
+penetrante a 1 0 1 1 00118862  
+peninsulare a 1 0 1 1 00220993  
+penitente a 1 0 1 1 00118749  
+penitenziale a 1 0 1 1 00221033  
+pennato a 1 0 1 1 00066599  
+pennuto a 1 0 1 1 00066599  
+penoso a 1 0 1 1 00115784  
+pensabile a 1 0 1 1 00003448  
+pentagonale a 1 0 1 1 00189919  
+pentavalente a 1 0 1 1 00221074  
+pentito a 1 0 1 1 00118749  
+perbene a 1 0 1 1 00045512  
+percepibile a 1 0 1 1 00119162  
+percettibile a 1 0 1 1 00119162  
+percorribile a 1 0 1 1 00116445  
+percussivo a 1 0 1 1 00210925  
+perdonabile a 1 0 1 1 00115981  
+perenne a 1 0 1 1 00045060  
+perentorio a 1 0 1 1 00048036  
+perfetto a 1 0 1 1 00119272  
+pericardico a 1 0 1 1 00192280  
+pericolante a 1 0 1 1 00142376  
+pericoloso a 1 0 1 1 00138902  
+periferico a 1 0 1 1 00186867  
+perineale a 1 0 1 1 00192320  
+periodico a 1 0 1 1 00133243  
+peritoso a 1 0 1 1 00134539  
+perlato a 1 0 1 1 00026463  
+permanente a 2 0 2 2 00119541 00061207  
+permeabile a 1 0 1 1 00121117  
+permissibile a 1 0 1 1 00003448  
+permissivo a 1 0 1 1 00046336  
+permutabile a 1 0 1 1 00024312  
+pernicioso a 1 0 1 1 00107921  
+peroneo a 1 0 1 1 00192358  
+peroniero a 1 0 1 1 00192358  
+perpendicolare a 1 0 1 1 00082107  
+perpetuo a 1 0 1 1 00039181  
+perplesso a 1 0 1 1 00120535  
+persiano a 1 0 1 1 00218421  
+persistente a 2 0 2 2 00039181 00038951  
+personale a 2 0 2 2 00120645 00108564  
+personalistico a 1 0 1 1 00009493  
+perspicace a 1 0 1 1 00051572  
+persuasibile a 1 0 1 1 00040410  
+persuasivo a 1 0 1 1 00120946  
+persuaso a 1 0 1 1 00023338  
+pertinace a 1 0 1 1 00154968  
+pertinente a 2 0 2 2 00133375 00133488  
+peruviano a 1 0 1 1 00205987  
+perverso a 1 0 1 1 00016473  
+pervicace a 1 0 1 1 00154968  
+per_bambini a 1 0 1 1 00110782  
+per_bene a 1 0 1 1 00045512  
+per_tutti_gli_usi a 1 0 1 1 00073164  
+pesante a 3 0 3 3 00160722 00088186 00078677  
+pessimista a 1 0 1 1 00112506  
+pessimistico a 1 0 1 1 00112506  
+pestifero a 1 0 1 1 00107921  
+pestilenziale a 1 0 1 1 00107921  
+pettinato a 1 0 1 1 00161602  
+pettorale a 1 0 1 1 00192641  
+piacente a 1 0 1 1 00013509  
+piacevole a 4 0 4 4 00008733 00123335 00037085 00122538  
+piaggiatore a 1 0 1 1 00059636  
+piangente a 1 0 1 1 00164356  
+piano a 1 0 1 1 00035743  
+piatto a 1 0 1 1 00060020  
+più_amato a 1 0 1 1 00016704  
+più_a_est a 1 0 1 1 00055041  
+più_che_sufficiente a 1 0 1 1 00169904  
+più_giovane a 1 0 1 1 00228592  
+più_grande a 1 0 1 1 00091214  
+più_vecchio a 1 0 1 1 00228435  
+piccante a 2 0 2 2 00144514 00089095  
+piccino a 1 0 1 1 00090916  
+piccolissimo a 1 0 1 1 00098508  
+piccolo a 4 0 4 4 00090916 00096692 00110904 00093432  
+piccoso a 1 0 1 1 00154968  
+pidocchioso a 1 0 1 1 00074120  
+pieno a 3 0 3 3 00072063 00071957 00034039  
+pieno_di_curiosità a 1 0 1 1 00058095  
+pieno_di_difetti a 1 0 1 1 00119416  
+pieno_di_gente a 1 0 1 1 00036999  
+pieno_di_grumi a 1 0 1 1 00144843  
+pieno_di_vitalità a 1 0 1 1 00010499  
+pietistico a 1 0 1 1 00200108  
+pietoso a 1 0 1 1 00099717  
+piezoelettrico a 1 0 1 1 00208222  
+pignolo a 1 0 1 1 00047919  
+pilorico a 1 0 1 1 00221898  
+pio a 1 0 1 1 00121814  
+piratesco a 1 0 1 1 00091459  
+piretico a 1 0 1 1 00077864  
+pirotecnico a 1 0 1 1 00221935  
+pitagorico a 1 0 1 1 00214840  
+pitocco a 1 0 1 1 00074120  
+pittografico a 1 0 1 1 00184964  
+pituitario a 1 0 1 1 00221246  
+piuttosto_grande a 1 0 1 1 00090398  
+piuttosto_grosso a 1 0 1 1 00090398  
+placabile a 1 0 1 1 00122003  
+placido a 1 0 1 1 00021218  
+planare a 1 0 1 1 00043951  
+planetario a 1 0 1 1 00185005  
+plantare a 1 0 1 1 00185044  
+plantigrado a 1 0 1 1 00050340  
+plausibile a 1 0 1 1 00093155  
+plebeo a 1 0 1 1 00106032  
+pleurale a 1 0 1 1 00203318  
+pleurico a 1 0 1 1 00203318  
+plurale a 1 0 1 1 00146680  
+pluralista a 1 0 1 1 00203264  
+pluralistico a 1 0 1 1 00203264  
+pluridimensionale a 1 0 1 1 00044031  
+plurilaterale a 1 0 1 1 00017634  
+plurimo a 1 0 1 1 00150218  
+plutocratico a 1 0 1 1 00185203  
+pneumatico a 1 0 1 1 00190380  
+pneumonico a 1 0 1 1 00201776  
+poco a 3 0 3 3 00103473 00103248 00094997  
+poco_diplomatico a 1 0 1 1 00050812  
+poco_economico a 1 0 1 1 00161030  
+poco_emozionante a 1 0 1 1 00061098  
+poco_entusiasta a 2 0 2 2 00058540 00058609  
+poco_fondato a 1 0 1 1 00165676  
+poco_generoso a 1 0 1 1 00142741  
+poco_intraprendente a 1 0 1 1 00058410  
+poco_invidiabile a 1 0 1 1 00049422  
+poco_lucrativo a 1 0 1 1 00127541  
+poco_lusinghiero a 1 0 1 1 00059757  
+poco_maneggevole a 1 0 1 1 00169953  
+poco_materialista a 1 0 1 1 00170582  
+poco_ortodosso a 1 0 1 1 00115015  
+poco_patriottico a 1 0 1 1 00118531  
+poco_plausibile a 1 0 1 1 00093069  
+poco_pratico a 1 0 1 1 00066746  
+poco_saggio a 1 0 1 1 00129216  
+poco_serio a 1 0 1 1 00144109  
+poco_sicuro a 1 0 1 1 00152773  
+poco_socievole a 1 0 1 1 00151570  
+poco_soddisfacente a 1 0 1 1 00141093  
+poco_solido a 2 0 2 2 00154856 00152773  
+poderoso a 1 0 1 1 00124785  
+polacco a 1 0 1 1 00205251  
+polare a 1 0 1 1 00025153  
+polemico a 1 0 1 1 00039617  
+policromatico a 1 0 1 1 00025829  
+poliedrico a 1 0 1 1 00185244  
+poligamo a 1 0 1 1 00102495  
+poligonale a 1 0 1 1 00221285  
+polimerico a 1 0 1 1 00185283  
+polimero a 1 0 1 1 00185283  
+polinomiale a 1 0 1 1 00221324  
+politeista a 1 0 1 1 00121760  
+politeistico a 1 0 1 1 00121760  
+politico a 2 0 2 2 00124064 00192406  
+polivalente a 1 0 1 1 00102665  
+polmonare a 1 0 1 1 00201776  
+polposo a 1 0 1 1 00181762  
+polveroso a 2 0 2 2 00150887 00027844  
+ponderabile a 1 0 1 1 00124101  
+ponderato a 1 0 1 1 00125490  
+ponderoso a 1 0 1 1 00079101  
+pontificio a 1 0 1 1 00194915  
+popolare a 3 0 3 3 00031484 00124183 00048316  
+popoloso a 1 0 1 1 00085664  
+porfirico a 1 0 1 1 00221364  
+poroso a 1 0 1 1 00022633  
+portafortuna a 1 0 1 1 00096148  
+portatile a 1 0 1 1 00101008  
+portato a 1 0 1 1 00082163  
+portentoso a 1 0 1 1 00013509  
+portoghese a 1 0 1 1 00204783  
+posato a 1 0 1 1 00154119  
+positivistico a 1 0 1 1 00185373  
+positivo a 1 0 1 1 00124295  
+posizionale a 1 0 1 1 00185333  
+pospositivo a 1 0 1 1 00183934  
+possente a 1 0 1 1 00124785  
+possessivo a 2 0 2 2 00192945 00053024  
+possibile a 2 0 2 2 00124405 00005497  
+postale a 1 0 1 1 00195757  
+postbellico a 1 0 1 1 00011646  
+posteriore a 2 0 2 2 00015734 00011686  
+posticcio a 1 0 1 1 00119755  
+potabile a 1 0 1 1 00053318  
+potente a 2 0 2 2 00124785 00124688  
+potenziale a 2 0 2 2 00128279 00005497  
+povero a 2 0 2 2 00069422 00136188  
+pragmatico a 1 0 1 1 00185415  
+prammatico a 1 0 1 1 00185415  
+praticabile a 1 0 1 1 00116445  
+pratico a 1 0 1 1 00125020  
+prebellico a 1 0 1 1 00011580  
+precario a 2 0 2 2 00119755 00054955  
+precedente a 3 0 3 3 00117404 00010643 00011107  
+precettivo a 1 0 1 1 00049242  
+precipitoso a 2 0 2 2 00083551 00083449  
+preciso a 2 0 2 2 00036005 00125074  
+precoce a 2 0 2 2 00125231 00098383  
+preconcetto a 1 0 1 1 00225253  
+predatorio a 1 0 1 1 00004661  
+predicativo a 1 0 1 1 00013781  
+prediletto a 1 0 1 1 00016704  
+predisposto a 1 0 1 1 00122396  
+predisposto_agli_incidenti a 1 0 1 1 00084927  
+predominante a 1 0 1 1 00052922  
+preesistente a 1 0 1 1 00010643  
+preferito a 1 0 1 1 00016704  
+pregevole a 1 0 1 1 00165740  
+pregiato a 1 0 1 1 00165740  
+pregiudizievole a 1 0 1 1 00068114  
+pregna a 1 0 1 1 00013821  
+pregnante a 1 0 1 1 00099006  
+pregresso a 1 0 1 1 00010643  
+preistorico a 2 0 2 2 00191395 00203066  
+preliminare a 1 0 1 1 00058037  
+prematrimoniale a 1 0 1 1 00215215  
+prematuro a 1 0 1 1 00098383  
+premeditato a 1 0 1 1 00125490  
+premuroso a 2 0 2 2 00079337 00042146  
+prenatale a 1 0 1 1 00011542  
+prensile a 1 0 1 1 00011505  
+preoccupante a 1 0 1 1 00015045  
+preoccupato a 2 0 2 2 00162820 00163028  
+prepagato a 1 0 1 1 00115588  
+preparato a 2 0 2 2 00125580 00131782  
+prepositivo a 1 0 1 1 00221482  
+prepotente a 1 0 1 1 00052832  
+preraffaellita a 1 0 1 1 00221439  
+presentabile a 1 0 1 1 00003448  
+presente a 2 0 2 2 00117868 00125627  
+presidenziale a 1 0 1 1 00208538  
+prestante a 1 0 1 1 00137016  
+prestigioso a 1 0 1 1 00109121  
+presumibile a 1 0 1 1 00003448  
+pretensioso a 1 0 1 1 00125736  
+pretenzioso a 1 0 1 1 00125736  
+preterintenzionale a 1 0 1 1 00086958  
+pretorio a 1 0 1 1 00221402  
+prevedibile a 1 0 1 1 00125408  
+preventivo a 1 0 1 1 00120407  
+prevenuto a 1 0 1 1 00016473  
+previdente a 1 0 1 1 00128992  
+prezioso a 3 0 3 3 00095764 00166027 00165740  
+primario a 3 0 3 3 00046700 00126082 00084220  
+primitivo a 5 0 5 5 00054750 00046821 00054863 00104393 00046737  
+primo a 7 0 7 7 00054453 00149455 00069158 00117352 00067179 00067350 00054680  
+principale a 6 0 6 6 00052922 00067562 00146716 00096433 00096505 00084220  
+priori a 1 0 1 1 00012222  
+prismatico a 1 0 1 1 00221522  
+privato a 1 0 1 1 00126561  
+privilegiato a 2 0 2 2 00126997 00225630  
+privo_d'interesse a 1 0 1 1 00087580  
+privo_di_documentazione a 1 0 1 1 00052691  
+privo_di_valore a 1 0 1 1 00166082  
+probabile a 2 0 2 2 00092937 00093155  
+probante a 1 0 1 1 00040410  
+probativo a 1 0 1 1 00040410  
+problematico a 1 0 1 1 00130716  
+procedurale a 1 0 1 1 00221561  
+proconsolare a 1 0 1 1 00221601  
+prode a 1 0 1 1 00018894  
+prodigioso a 1 0 1 1 00064889  
+producente a 1 0 1 1 00127339  
+producibile a 1 0 1 1 00124405  
+produttivo a 2 0 2 2 00127038 00226561  
+produttore a 1 0 1 1 00127116  
+profano a 1 0 1 1 00138569  
+proferibile a 1 0 1 1 00063275  
+professionale a 4 0 4 4 00190549 00196499 00127244 00190627  
+professorale a 1 0 1 1 00185467  
+profetico a 1 0 1 1 00128241  
+proficuo a 1 0 1 1 00127339  
+profittevole a 1 0 1 1 00007221  
+profondamente_radicato a 1 0 1 1 00109256  
+profondo a 6 0 6 6 00046202 00127663 00100132 00081327 00063822 00127608  
+profumato a 2 0 2 2 00069864 00069551  
+prognato a 1 0 1 1 00127718  
+progressista a 1 0 1 1 00037611  
+progressivo a 1 0 1 1 00127755  
+proibito a 2 0 2 2 00120252 00091459  
+proletario a 1 0 1 1 00106067  
+prolisso a 1 0 1 1 00028540  
+promettente a 2 0 2 2 00057344 00093011  
+prono a 1 0 1 1 00046336  
+pronominale a 1 0 1 1 00202039  
+pronto a 3 0 3 3 00125580 00131782 00014782  
+pronunciabile a 1 0 1 1 00127867  
+pronunciato a 1 0 1 1 00097018  
+pronunziabile a 2 0 2 2 00063275 00127867  
+pronunziato a 1 0 1 1 00097018  
+propagabile a 1 0 1 1 00030541  
+propagandistico a 1 0 1 1 00213128  
+propiziatorio a 1 0 1 1 00202398  
+propizio a 1 0 1 1 00014057  
+proponibile a 1 0 1 1 00003448  
+proporzionato a 1 0 1 1 00007406  
+proprio a 4 0 4 4 00120843 00139674 00125128 00133375  
+propulsivo a 1 0 1 1 00221642  
+propulsorio a 1 0 1 1 00221642  
+prospero a 1 0 1 1 00155357  
+prossimo a 3 0 3 3 00011337 00084989 00029002  
+prostatico a 1 0 1 1 00185508  
+prostrato a 1 0 1 1 00061361  
+protestante a 1 0 1 1 00203851  
+protettivo a 1 0 1 1 00128540  
+protetto a 1 0 1 1 00225718  
+provato a 1 0 1 1 00048527  
+proverbiale a 1 0 1 1 00209133  
+provocante a 1 0 1 1 00142566  
+provocatore a 1 0 1 1 00127116  
+provocatorio a 1 0 1 1 00128951  
+provveduto a 1 0 1 1 00072564  
+provvidenziale a 1 0 1 1 00211265  
+provvido a 1 0 1 1 00128992  
+provvisorio a 2 0 2 2 00119755 00036570  
+provvisto a 1 0 1 1 00072564  
+prudente a 2 0 2 2 00128992 00022391  
+prussiano a 1 0 1 1 00221708  
+pseudo a 1 0 1 1 00074730  
+pseudogap! a 5 0 5 5 00082782 00082857 00210060 00037262 00047606  
+psicanalitico a 1 0 1 1 00199347  
+psichiatrico a 1 0 1 1 00199267  
+psichico a 1 0 1 1 00198172  
+psicoanalitico a 1 0 1 1 00199347  
+psicolinguistico a 1 0 1 1 00202270  
+psicologico a 2 0 2 2 00121661 00198172  
+psicoterapeutico a 1 0 1 1 00199406  
+psicoterapico a 1 0 1 1 00199406  
+pubblicabile a 1 0 1 1 00030541  
+pubblico a 2 0 2 2 00032151 00126678  
+puberale a 1 0 1 1 00171919  
+pubico a 1 0 1 1 00195017  
+pudendo a 1 0 1 1 00221746  
+puerile a 2 0 2 2 00097615 00221782  
+puerperale a 1 0 1 1 00214917  
+pugilistico a 1 0 1 1 00221818  
+pulitissimo a 1 0 1 1 00027628  
+pulito a 2 0 2 2 00161080 00027557  
+pulito_come_uno_specchio a 1 0 1 1 00027628  
+pungente a 1 0 1 1 00129357  
+punitivo a 1 0 1 1 00129598  
+punitore a 1 0 1 1 00225293  
+puntiglioso a 1 0 1 1 00154968  
+puntuale a 1 0 1 1 00129281  
+puramente_formale a 1 0 1 1 00057064  
+purificatore a 1 0 1 1 00202398  
+puro a 3 0 3 3 00034480 00129672 00025278  
+pusillanime a 1 0 1 1 00019007  
+putrefatto a 1 0 1 1 00185547  
+putrido a 1 0 1 1 00185547  
+puzzolente a 1 0 1 1 00069623  
+quadrangolare a 1 0 1 1 00189808  
+quadrangolo a 1 0 1 1 00189808  
+quadrilatero a 1 0 1 1 00189808  
+quadrupede a 1 0 1 1 00017869  
+qualche a 3 0 3 3 00103299 00072922 00152121  
+qualificato a 1 0 1 1 00150336  
+qualitativo a 2 0 2 2 00207824 00130483  
+qualsiasi a 2 0 2 2 00113064 00152210  
+qualunque a 1 0 1 1 00113064  
+quantificabile a 1 0 1 1 00130655  
+quantitativo a 1 0 1 1 00130523  
+quaranta a 1 0 1 1 00149014  
+quartato a 1 0 1 1 00137016  
+quarto a 1 0 1 1 00149559  
+quasi_pari a 1 0 1 1 00058864  
+quattordici a 1 0 1 1 00148244  
+quattro a 1 0 1 1 00147677  
+quello a 1 0 1 1 00072802  
+questo a 2 0 2 2 00072802 00147497  
+quiescente a 1 0 1 1 00005310  
+quieto a 1 0 1 1 00021218  
+quindici a 1 0 1 1 00148307  
+quindicinale a 1 0 1 1 00173921  
+quinto a 1 0 1 1 00149594  
+quotidiano a 3 0 3 3 00174206 00113209 00132666  
+rabbinico a 1 0 1 1 00201057  
+rabelaisiano a 1 0 1 1 00222016  
+rabelesiano a 1 0 1 1 00222016  
+raccapricciante a 1 0 1 1 00015444  
+raccomandabile a 1 0 1 1 00007406  
+raccomandato a 1 0 1 1 00007762  
+raddrizzabile a 1 0 1 1 00132895  
+radicale a 1 0 1 1 00101692  
+radio a 1 0 1 1 00204012  
+radioattivo a 1 0 1 1 00027956  
+radiocomandato a 1 0 1 1 00096954  
+radiofonico a 1 0 1 1 00204012  
+radiotelecomandato a 1 0 1 1 00096954  
+radiotelefonico a 1 0 1 1 00185607  
+rado a 1 0 1 1 00070167  
+radunato a 1 0 1 1 00035485  
+raffinato a 1 0 1 1 00156827  
+rafforzativo a 1 0 1 1 00087033  
+raffreddato_ad_acqua a 1 0 1 1 00167884  
+raffreddato_ad_aria a 1 0 1 1 00167811  
+raffrontabile a 1 0 1 1 00032621  
+raggiratore a 1 0 1 1 00163325  
+ragguagliabile a 1 0 1 1 00032621  
+ragguardevole a 1 0 1 1 00040831  
+ragionato a 1 0 1 1 00125490  
+ragionevole a 2 0 2 2 00101528 00132239  
+rallegrante a 1 0 1 1 00057344  
+ramificato a 1 0 1 1 00040331  
+rammaricato a 1 0 1 1 00076743  
+ramoluto a 1 0 1 1 00040331  
+ramoruto a 1 0 1 1 00040331  
+ramoso a 1 0 1 1 00040331  
+ramuto a 1 0 1 1 00040331  
+rancido a 1 0 1 1 00071219  
+rancoroso a 1 0 1 1 00010206  
+rapace a 1 0 1 1 00004742  
+rapato a 1 0 1 1 00145031  
+rapido a 2 0 2 2 00065525 00065374  
+rapito a 1 0 1 1 00225218  
+rappresentativo a 3 0 3 3 00164118 00164023 00133673  
+raro a 2 0 2 2 00031645 00039052  
+rasato a 2 0 2 2 00162747 00145031  
+rasserenante a 1 0 1 1 00057344  
+rassicurante a 1 0 1 1 00015613  
+rattristato a 1 0 1 1 00076743  
+razionalistico a 1 0 1 1 00185651  
+reale a 6 0 6 6 00185829 00197304 00005433 00131967 00132008 00131829  
+realistico a 1 0 1 1 00132079  
+realizzabile a 1 0 1 1 00124405  
+reattivo a 1 0 1 1 00131700  
+recente a 2 0 2 2 00117523 00109834  
+recessivo a 1 0 1 1 00053103  
+recettivo a 1 0 1 1 00133850  
+reciproco a 1 0 1 1 00132331  
+recitabile a 1 0 1 1 00053279  
+recondito a 1 0 1 1 00062709  
+redditivo a 1 0 1 1 00127339  
+redditizio a 1 0 1 1 00127339  
+reddituale a 1 0 1 1 00226600  
+reddituario a 1 0 1 1 00226600  
+redimibile a 1 0 1 1 00060443  
+reggimentale a 1 0 1 1 00222071  
+regionale a 2 0 2 2 00194071 00160195  
+regolare a 1 0 1 1 00132593  
+reintegrativo a 1 0 1 1 00225330  
+relativistico a 1 0 1 1 00190221  
+relativo a 3 0 3 3 00002048 00133375 00133488  
+religioso a 4 0 4 4 00138500 00203762 00121925 00138426  
+remissivo a 2 0 2 2 00052871 00046336  
+remoto a 1 0 1 1 00093120  
+removibile a 1 0 1 1 00101046  
+remunerativo a 1 0 1 1 00127339  
+repentino a 1 0 1 1 00061797  
+reperibile a 1 0 1 1 00014607  
+reprobo a 1 0 1 1 00075621  
+repubblicano a 1 0 1 1 00185733  
+reputato a 1 0 1 1 00168564  
+rescindibile a 1 0 1 1 00120140  
+residenziale a 1 0 1 1 00222112  
+residuale a 1 0 1 1 00190115  
+residuato a 1 0 1 1 00190115  
+residuo a 1 0 1 1 00190115  
+resistente_all'acqua a 1 0 1 1 00121236  
+resistivo a 1 0 1 1 00222153  
+respiratorio a 1 0 1 1 00222191  
+responsabile a 2 0 2 2 00022350 00134976  
+restante a 1 0 1 1 00190115  
+restio_a_collaborare a 1 0 1 1 00040615  
+restituibile a 1 0 1 1 00052150  
+restitutivo a 1 0 1 1 00225330  
+restrittivo a 1 0 1 1 00135568  
+reticolare a 1 0 1 1 00135671  
+retinico a 1 0 1 1 00208064  
+retrattile a 1 0 1 1 00135710  
+retrorso a 1 0 1 1 00010948  
+retrospettivo a 1 0 1 1 00128353  
+rettale a 1 0 1 1 00201519  
+retto a 1 0 1 1 00102705  
+reverente a 2 0 2 2 00135800 00134784  
+ribelle a 1 0 1 1 00108274  
+riccio a 1 0 1 1 00068313  
+ricciuto a 1 0 1 1 00068313  
+ricco a 2 0 2 2 00136136 00040831  
+ricco_d'inventiva a 1 0 1 1 00043032  
+ricco_di_foglie a 1 0 1 1 00115466  
+ricco_di_notizie a 1 0 1 1 00085221  
+ricco_di_significato a 1 0 1 1 00099006  
+ricercato a 2 0 2 2 00125790 00165740  
+ricettivo a 1 0 1 1 00133850  
+richiesto a 2 0 2 2 00168564 00105596  
+riconciliabile a 1 0 1 1 00133900  
+riconoscente a 1 0 1 1 00076344  
+riconosciuto a 1 0 1 1 00004209  
+ricoperto a 1 0 1 1 00115406  
+ricoperto_di_zucchero a 1 0 1 1 00156042  
+ricordativo a 1 0 1 1 00216318  
+ricordevole a 1 0 1 1 00068915  
+ricostituente a 1 0 1 1 00225330  
+ricreativo a 1 0 1 1 00185694  
+ricuperabile a 1 0 1 1 00132552  
+ricurvo a 1 0 1 1 00154396  
+ridanciano a 1 0 1 1 00123487  
+ridicolo a 3 0 3 3 00123487 00170294 00050470  
+ridotto a 2 0 2 2 00058212 00001975  
+riducibile a 1 0 1 1 00058248  
+riduttivo a 1 0 1 1 00135568  
+rientrabile a 1 0 1 1 00135710  
+riferibile a 1 0 1 1 00063275  
+riflesso a 1 0 1 1 00135763  
+rigenerante a 1 0 1 1 00225330  
+rigenerativo a 1 0 1 1 00225330  
+rigido a 1 0 1 1 00068175  
+rigoroso a 1 0 1 1 00060350  
+riguardoso a 3 0 3 3 00079337 00134784 00042146  
+rilassato a 1 0 1 1 00160147  
+rilevante a 1 0 1 1 00040831  
+rimanente a 1 0 1 1 00190115  
+rimarchevole a 1 0 1 1 00040831  
+rimato a 1 0 1 1 00133171  
+rimediabile a 1 0 1 1 00132723  
+rimovibile a 1 0 1 1 00101046  
+rimunerativo a 1 0 1 1 00127339  
+rinforzante a 1 0 1 1 00225330  
+rinnovabile a 1 0 1 1 00132815  
+rinomato a 1 0 1 1 00109121  
+riparabile a 1 0 1 1 00132723  
+ripartibile a 1 0 1 1 00052470  
+ripetitivo a 1 0 1 1 00166425  
+riposato a 1 0 1 1 00161958  
+riposto a 1 0 1 1 00062709  
+riputato a 1 0 1 1 00168564  
+risanabile a 1 0 1 1 00066374  
+rischioso a 1 0 1 1 00152852  
+risentito a 1 0 1 1 00010206  
+riserbato a 3 0 3 3 00018583 00051662 00134101  
+riservato a 3 0 3 3 00018583 00051662 00134101  
+risolto a 1 0 1 1 00152036  
+risolutivo a 1 0 1 1 00045628  
+risoluto a 2 0 2 2 00134279 00107850  
+rispettabile a 3 0 3 3 00134671 00040831 00133793  
+rispettivo a 1 0 1 1 00032368  
+rispettoso a 1 0 1 1 00134784  
+rispettoso_delle_leggi a 1 0 1 1 00091383  
+rispondente a 1 0 1 1 00007406  
+ristorativo a 1 0 1 1 00225330  
+ristretto a 2 0 2 2 00093350 00020137  
+ristrutturante a 1 0 1 1 00225330  
+ritardato a 1 0 1 1 00125267  
+ritmato a 1 0 1 1 00136067  
+ritmico a 1 0 1 1 00136067  
+ritto a 1 0 1 1 00082210  
+riuscito a 1 0 1 1 00155248  
+rivelatore a 1 0 1 1 00141966  
+riverente a 2 0 2 2 00135800 00134784  
+rivestito_d'acciaio a 1 0 1 1 00012393  
+rivestito_di_legno a 1 0 1 1 00170436  
+rivoluzionario a 1 0 1 1 00109888  
+robusto a 2 0 2 2 00124785 00137016  
+rocambolesco a 1 0 1 1 00043196  
+romantico a 1 0 1 1 00185774  
+romanzesco a 1 0 1 1 00181723  
+romanzo a 1 0 1 1 00218961  
+rombico a 1 0 1 1 00203405  
+romboidale a 1 0 1 1 00222273  
+romeno a 1 0 1 1 00205457  
+rosa a 2 0 2 2 00026107 00185774  
+rosso a 4 0 4 4 00026814 00026694 00026140 00026762  
+rosso_in_viso a 1 0 1 1 00026694  
+rotatorio a 1 0 1 1 00210122  
+rotondo a 1 0 1 1 00137516  
+rotto a 1 0 1 1 00020215  
+rovinato a 1 0 1 1 00045131  
+rovinoso a 1 0 1 1 00077589  
+rozzo a 1 0 1 1 00056743  
+rude a 1 0 1 1 00047456  
+ruggine a 1 0 1 1 00026174  
+rumeno a 1 0 1 1 00205457  
+rumoroso a 1 0 1 1 00131491  
+runico a 1 0 1 1 00202159  
+rupestre a 1 0 1 1 00222437  
+rupicolo a 1 0 1 1 00222437  
+rurale a 3 0 3 3 00185863 00185964 00137943  
+russo a 1 0 1 1 00204557  
+rusticano a 1 0 1 1 00185863  
+rustico a 1 0 1 1 00132506  
+ruvido a 1 0 1 1 00151089  
+sabatico a 1 0 1 1 00222312  
+sabbatico a 1 0 1 1 00222312  
+sabbioso a 1 0 1 1 00012283  
+sacerdotale a 1 0 1 1 00181182  
+sacrale a 1 0 1 1 00138426  
+sacramentale a 1 0 1 1 00201132  
+sacrificale a 1 0 1 1 00222361  
+sacro a 2 0 2 2 00138354 00138426  
+sadico a 1 0 1 1 00138675  
+sagace a 1 0 1 1 00128992  
+saggio a 1 0 1 1 00170192  
+salace a 2 0 2 2 00140926 00144514  
+salato a 2 0 2 2 00062011 00071482  
+saliente a 1 0 1 1 00171673  
+salivale a 1 0 1 1 00211910  
+salivare a 1 0 1 1 00211910  
+saltuario a 1 0 1 1 00039052  
+salutare a 1 0 1 1 00007221  
+salutevole a 1 0 1 1 00127339  
+salvadoregno a 1 0 1 1 00206599  
+samoano a 1 0 1 1 00222401  
+sanabile a 1 0 1 1 00066374  
+sanguinante a 1 0 1 1 00018199  
+sanguinoso a 1 0 1 1 00018124  
+sanitario a 1 0 1 1 00143714  
+sano a 1 0 1 1 00169535  
+santo a 1 0 1 1 00138354  
+sapiente a 1 0 1 1 00109325  
+saponaceo a 1 0 1 1 00213679  
+saponoso a 1 0 1 1 00213679  
+saprofita a 1 0 1 1 00212883  
+sarcastico a 1 0 1 1 00140926  
+sardagnolo a 1 0 1 1 00213503  
+sardegnolo a 1 0 1 1 00213503  
+sardo a 1 0 1 1 00213503  
+sassicolo a 1 0 1 1 00222437  
+sassone a 1 0 1 1 00222497  
+satanico a 1 0 1 1 00200981  
+saturo a 1 0 1 1 00050777  
+savio a 1 0 1 1 00128992  
+sbadato a 1 0 1 1 00013372  
+sbagliato a 4 0 4 4 00136804 00012076 00136960 00041731  
+sbalorditivo a 1 0 1 1 00084603  
+sbarbato a 1 0 1 1 00145031  
+sbarrato a 1 0 1 1 00108858  
+sbattuto a 2 0 2 2 00047171 00224885  
+sbottonato a 1 0 1 1 00020758  
+sbracciato a 1 0 1 1 00151475  
+sbronzo a 1 0 1 1 00053593  
+scabroso a 1 0 1 1 00045559  
+scalabile a 1 0 1 1 00046085  
+scalare a 1 0 1 1 00224337  
+scalcagnato a 1 0 1 1 00170755  
+scalognato a 1 0 1 1 00096189  
+scambiabile a 1 0 1 1 00024312  
+scambievole a 1 0 1 1 00132331  
+scandinavo a 1 0 1 1 00205020  
+scandito a 1 0 1 1 00136067  
+scapolare a 1 0 1 1 00185999  
+scapolo a 1 0 1 1 00097161  
+scarico a 2 0 2 2 00025206 00094056  
+scarno a 2 0 2 2 00065798 00009888  
+scarso a 2 0 2 2 00157050 00009888  
+scellerato a 1 0 1 1 00075621  
+scelto a 1 0 1 1 00165740  
+scespiriano a 1 0 1 1 00213843  
+schematico a 1 0 1 1 00035743  
+scherzoso a 1 0 1 1 00144173  
+schiacciante a 2 0 2 2 00131075 00134220  
+schipetaro a 1 0 1 1 00172479  
+schiumoso a 1 0 1 1 00151941  
+schivo a 2 0 2 2 00018583 00087872  
+schivo_e_modesto a 1 0 1 1 00013101  
+schizofrenico a 2 0 2 2 00140710 00222613  
+schizoide a 1 0 1 1 00222613  
+sciagurato a 1 0 1 1 00075621  
+sciamanico a 1 0 1 1 00224458  
+sciatto a 2 0 2 2 00161359 00021753  
+sciente a 1 0 1 1 00015009  
+scientifico a 2 0 2 2 00186037 00141419  
+scindibile a 1 0 1 1 00013230  
+sciocco a 2 0 2 2 00170227 00028756  
+scismatico a 1 0 1 1 00222574  
+sciupato a 2 0 2 2 00065798 00170755  
+scivoloso a 1 0 1 1 00150989  
+scolpito a 1 0 1 1 00022056  
+scomodo a 1 0 1 1 00039799  
+sconcertante a 1 0 1 1 00015045  
+sconciatore a 1 0 1 1 00038387  
+sconcio a 2 0 2 2 00045559 00042683  
+sconclusionato a 1 0 1 1 00094205  
+scondito a 1 0 1 1 00098346  
+sconfinato a 1 0 1 1 00093486  
+sconfortante a 1 0 1 1 00057475  
+sconfortato a 1 0 1 1 00047171  
+sconnesso a 2 0 2 2 00030168 00153754  
+sconoscente a 1 0 1 1 00076393  
+sconosciuto a 1 0 1 1 00089560  
+sconquassatore a 1 0 1 1 00038387  
+sconsiderato a 1 0 1 1 00079247  
+sconsigliabile a 1 0 1 1 00007821  
+sconsigliato a 1 0 1 1 00079247  
+sconsolante a 1 0 1 1 00057475  
+sconsolato a 1 0 1 1 00082012  
+scontato a 1 0 1 1 00048527  
+scontento a 1 0 1 1 00123196  
+sconvenevole a 1 0 1 1 00046003  
+sconveniente a 2 0 2 2 00128182 00007310  
+sconvolto a 1 0 1 1 00162820  
+scoperto a 1 0 1 1 00115369  
+scoraggiante a 1 0 1 1 00057475  
+scoraggiato a 2 0 2 2 00047171 00112684  
+scorato a 1 0 1 1 00047171  
+scorretto a 4 0 4 4 00042683 00064482 00042395 00041731  
+scorso a 1 0 1 1 00117461  
+scortese a 3 0 3 3 00042683 00042285 00042395  
+scostumato a 1 0 1 1 00102802  
+scottante a 1 0 1 1 00082516  
+scozzese a 1 0 1 1 00213432  
+screanzato a 1 0 1 1 00042683  
+scritto a 1 0 1 1 00153357  
+scrotale a 1 0 1 1 00220956  
+scrupoloso a 2 0 2 2 00141553 00141634  
+scultorio a 1 0 1 1 00200563  
+scuro a 5 0 5 5 00035264 00027119 00019509 00025948 00075864  
+scusabile a 2 0 2 2 00115981 00116139  
+sdentato a 1 0 1 1 00162390  
+sdrucciolevole a 1 0 1 1 00150989  
+sdrucito a 1 0 1 1 00171099  
+seccante a 1 0 1 1 00008791  
+seccato a 1 0 1 1 00076743  
+secco a 1 0 1 1 00169425  
+secondario a 1 0 1 1 00126119  
+secondo a 4 0 4 4 00067765 00069192 00149489 00067711  
+sedimentario a 1 0 1 1 00203721  
+sedizioso a 1 0 1 1 00199921  
+seducente a 1 0 1 1 00142566  
+seduto a 1 0 1 1 00082336  
+seduttivo a 1 0 1 1 00142566  
+seduttore a 1 0 1 1 00142566  
+seduttorio a 1 0 1 1 00142566  
+segnato_dalle_intemperie a 1 0 1 1 00171250  
+segregato a 1 0 1 1 00086460  
+segretariale a 1 0 1 1 00186077  
+segreto a 3 0 3 3 00115552 00102995 00141861  
+seguente a 3 0 3 3 00011300 00011337 00015734  
+sei a 1 0 1 1 00147792  
+selettivo a 1 0 1 1 00126615  
+selezionato a 1 0 1 1 00144239  
+selvaggio a 1 0 1 1 00159114  
+selvatico a 1 0 1 1 00151570  
+selvoso a 1 0 1 1 00170349  
+semantico a 1 0 1 1 00190820  
+semestrale a 2 0 2 2 00173962 00229173  
+semi a 2 0 2 2 00034303 00140391  
+seminale a 1 0 1 1 00186510  
+seminifero a 1 0 1 1 00186118  
+semisferico a 1 0 1 1 00201723  
+semplice a 11 0 11 11 00146119 00227119 00050129 00125323 00129925 00122081 00152640 00122240 00072727 00125850 00226963  
+sempreverde a 1 0 1 1 00060265  
+senatoriale a 1 0 1 1 00186157  
+senegalese a 1 0 1 1 00222667  
+senescente a 1 0 1 1 00110356  
+sensato a 1 0 1 1 00132239  
+sensazionale a 1 0 1 1 00143166  
+sensibile a 1 0 1 1 00143207  
+sensibilizzante a 1 0 1 1 00143245  
+sensitivo a 1 0 1 1 00157659  
+sensoriale a 1 0 1 1 00143307  
+sensorio a 1 0 1 1 00143307  
+sentenzioso a 1 0 1 1 00035743  
+sentito a 1 0 1 1 00146354  
+senz'aria a 1 0 1 1 00166566  
+senza_camera_d'aria a 1 0 1 1 00163975  
+senza_cucitura a 1 0 1 1 00151346  
+senza_cuciture a 1 0 1 1 00151346  
+senza_cuore a 1 0 1 1 00077286  
+senza_direzione a 1 0 1 1 00130211  
+senza_documenti a 1 0 1 1 00052691  
+senza_fiato a 1 0 1 1 00019233  
+senza_filo a 1 0 1 1 00179273  
+senza_fini_di_lucro a 1 0 1 1 00031140  
+senza_impedimenti a 1 0 1 1 00135349  
+senza_i_requisiti_necessari a 1 0 1 1 00033535  
+senza_luce a 1 0 1 1 00019639  
+senza_meta a 1 0 1 1 00130211  
+senza_nessun_aiuto a 1 0 1 1 00157153  
+senza_ostacoli a 1 0 1 1 00135349  
+senza_pregiudizi a 1 0 1 1 00020006  
+senza_sbocco_sul_mare a 1 0 1 1 00030036  
+senza_scopo_di_lucro a 1 0 1 1 00031140  
+senza_tregua a 1 0 1 1 00038951  
+senza_zucchero a 1 0 1 1 00156117  
+separabile a 1 0 1 1 00013230  
+separato a 1 0 1 1 00143427  
+sepolcrale a 1 0 1 1 00186197  
+sepolto a 1 0 1 1 00020420  
+sequestrato a 1 0 1 1 00086460  
+serafico a 1 0 1 1 00193961  
+serbo a 1 0 1 1 00205608  
+sereno a 1 0 1 1 00021218  
+seriale a 1 0 1 1 00158496  
+sericolo a 1 0 1 1 00222706  
+serio a 4 0 4 4 00143916 00084341 00048725 00043680  
+serrato a 2 0 2 2 00111537 00111364  
+servile a 1 0 1 1 00193313  
+sessuale a 1 0 1 1 00195793  
+sesto a 1 0 1 1 00149629  
+sette a 1 0 1 1 00147846  
+settentrionale a 1 0 1 1 00107507  
+settimanale a 1 0 1 1 00174073  
+severo a 1 0 1 1 00047919  
+sexy a 1 0 1 1 00144391  
+sfacciato a 1 0 1 1 00012941  
+sfatto a 2 0 2 2 00096345 00099592  
+sferico a 1 0 1 1 00186560  
+sferzante a 1 0 1 1 00154358  
+sfiancato a 1 0 1 1 00061361  
+sfibrante a 1 0 1 1 00088186  
+sfibrato a 1 0 1 1 00061361  
+sfiduciato a 1 0 1 1 00047171  
+sfinito a 1 0 1 1 00061361  
+sfocato a 2 0 2 2 00046511 00052369  
+sfoderato a 1 0 1 1 00093576  
+sfortunato a 1 0 1 1 00096189  
+sforzato a 1 0 1 1 00048415  
+sfrenato a 1 0 1 1 00135219  
+sfrontato a 2 0 2 2 00012941 00042285  
+sfruttato a 1 0 1 1 00063103  
+sfuocato a 1 0 1 1 00046511  
+sgarbato a 2 0 2 2 00042683 00042395  
+sgradevole a 2 0 2 2 00016402 00122852  
+sgradevole_a_vedersi a 1 0 1 1 00016402  
+sgradito a 1 0 1 1 00168742  
+sgrammaticato a 1 0 1 1 00076302  
+sguarnito a 1 0 1 1 00162782  
+shakespeariano a 1 0 1 1 00213843  
+siberiano a 1 0 1 1 00222779  
+siciliano a 1 0 1 1 00204822  
+siculo a 1 0 1 1 00204822  
+sicuro a 10 0 10 10 00227413 00163713 00023725 00138764 00023386 00023001 00142207 00022858 00150438 00128395  
+sicuro_di_sé a 1 0 1 1 00023628  
+siderale a 1 0 1 1 00186236  
+sidereo a 1 0 1 1 00186236  
+sierologico a 1 0 1 1 00208830  
+sieroso a 1 0 1 1 00222743  
+sifilitico a 1 0 1 1 00223129  
+sigmoideo a 1 0 1 1 00190782  
+significante a 1 0 1 1 00145600  
+significativo a 5 0 5 5 00145988 00041095 00145600 00141966 00098884  
+silenzioso a 3 0 3 3 00158669 00131434 00131377  
+siliceo a 1 0 1 1 00186283  
+sillabico a 1 0 1 1 00187079  
+sillogistico a 1 0 1 1 00198917  
+silvestre a 1 0 1 1 00170349  
+simile a 4 0 4 4 00140177 00072802 00140284 00092701  
+simmetrico a 1 0 1 1 00158210  
+simpatico a 2 0 2 2 00158381 00211516  
+sincero a 2 0 2 2 00146354 00081616  
+sindacale a 1 0 1 1 00164415  
+sindetico a 1 0 1 1 00158554  
+sinfonico a 1 0 1 1 00210468  
+singolare a 1 0 1 1 00164180  
+singolo a 3 0 3 3 00149944 00049058 00032206  
+sinistro a 2 0 2 2 00136678 00015317  
+sinonimo a 1 0 1 1 00158592  
+sinottico a 1 0 1 1 00187157  
+sinoviale a 1 0 1 1 00187195  
+sintattico a 1 0 1 1 00195144  
+sintetico a 2 0 2 2 00035743 00104776  
+sintomatico a 1 0 1 1 00187117  
+siriano a 1 0 1 1 00212415  
+sismologico a 1 0 1 1 00198595  
+sistematico a 1 0 1 1 00158629  
+slavo a 1 0 1 1 00222856  
+sleale a 1 0 1 1 00064482  
+slegato a 1 0 1 1 00153754  
+slombato a 1 0 1 1 00061361  
+sloveno a 1 0 1 1 00205677  
+smagrito a 1 0 1 1 00065798  
+smanierato a 1 0 1 1 00042683  
+smemorato a 1 0 1 1 00135633  
+smerciabile a 1 0 1 1 00139021  
+smidollato a 1 0 1 1 00019094  
+smilzo a 1 0 1 1 00065665  
+smisurato a 1 0 1 1 00099388  
+smontato a 1 0 1 1 00047171  
+smunto a 1 0 1 1 00065798  
+snello a 2 0 2 2 00035743 00066035  
+snervante a 1 0 1 1 00088186  
+snervato a 1 0 1 1 00061361  
+snob a 1 0 1 1 00126615  
+sobrio a 1 0 1 1 00053722  
+socchiuso a 1 0 1 1 00111281  
+sociale a 2 0 2 2 00151124 00186319  
+socievole a 1 0 1 1 00151514  
+sociobiologico a 1 0 1 1 00176641  
+socioculturale a 1 0 1 1 00194198  
+socioeconomico a 1 0 1 1 00180816  
+sociolinguistico a 1 0 1 1 00190933  
+sociologico a 1 0 1 1 00198223  
+socratico a 1 0 1 1 00214458  
+soddisfacente a 2 0 2 2 00075260 00141024  
+soddisfatto a 2 0 2 2 00123145 00038741  
+soddisfatto_di_sé a 1 0 1 1 00038694  
+sofferto a 1 0 1 1 00059886  
+soffice a 2 0 2 2 00076923 00121117  
+sofisticato a 1 0 1 1 00152546  
+sofistico a 1 0 1 1 00047919  
+soggettivo a 2 0 2 2 00083722 00108507  
+soggetto_a_dazio a 1 0 1 1 00159416  
+soggetto_a_restrizioni a 1 0 1 1 00135437  
+soggetto_a_tassazione a 1 0 1 1 00159486  
+solare a 1 0 1 1 00186355  
+solerte a 1 0 1 1 00050559  
+solforico a 1 0 1 1 00223091  
+solido a 5 0 5 5 00134442 00151753 00075320 00020267 00152738  
+solito a 1 0 1 1 00031678  
+sollazzevole a 1 0 1 1 00123487  
+solleticante a 2 0 2 2 00060711 00154278  
+sollevato a 1 0 1 1 00100551  
+solo a 8 0 8 8 00149944 00150049 00047350 00150100 00150159 00147497 00151276 00151243  
+solvibile a 1 0 1 1 00136357  
+somalo a 1 0 1 1 00222890  
+somatico a 1 0 1 1 00121480  
+somatometrico a 1 0 1 1 00174460  
+sommergibile a 1 0 1 1 00164315  
+sommo a 1 0 1 1 00098442  
+soperchiante a 1 0 1 1 00131075  
+soperchievole a 1 0 1 1 00101586  
+sopportabile a 1 0 1 1 00161995  
+soprannaturale a 1 0 1 1 00105062  
+sordido a 1 0 1 1 00004868  
+sordo a 3 0 3 3 00153427 00045393 00153393  
+sororale a 1 0 1 1 00020339  
+sorprendente a 3 0 3 3 00157464 00157541 00157600  
+sorpreso a 1 0 1 1 00157333  
+sospeso a 1 0 1 1 00111192  
+sospetto a 1 0 1 1 00131012  
+sostantivale a 1 0 1 1 00223013  
+sostanziale a 2 0 2 2 00041095 00041338  
+sostenuto a 1 0 1 1 00034825  
+sostituibile a 1 0 1 1 00133575  
+sottile a 4 0 4 4 00118862 00150744 00160598 00169764  
+sottinteso a 1 0 1 1 00062956  
+sottomesso a 1 0 1 1 00052871  
+sottotono a 1 0 1 1 00135181  
+sottovento a 1 0 1 1 00091670  
+sottrattivo a 1 0 1 1 00006161  
+soverchiante a 1 0 1 1 00131075  
+soverchievole a 1 0 1 1 00101586  
+soverchio a 1 0 1 1 00101586  
+sovietico a 1 0 1 1 00204869  
+sovrannaturale a 1 0 1 1 00105062  
+sovrano a 1 0 1 1 00070075  
+sovraumano a 1 0 1 1 00083039  
+sovrumano a 1 0 1 1 00083039  
+sovversivo a 1 0 1 1 00199921  
+sozzo a 1 0 1 1 00027729  
+spagnolo a 1 0 1 1 00204710  
+spaiato a 1 0 1 1 00097380  
+sparagnino a 1 0 1 1 00074120  
+spartano a 2 0 2 2 00002180 00207176  
+spartibile a 1 0 1 1 00052470  
+spasmodico a 1 0 1 1 00222925  
+spassionato a 2 0 2 2 00020006 00116331  
+spassoso a 1 0 1 1 00123487  
+spastico a 1 0 1 1 00222925  
+spavaldo a 1 0 1 1 00040054  
+spaventato a 2 0 2 2 00008338 00008413  
+spaventoso a 3 0 3 3 00043196 00015248 00015372  
+spaziale a 1 0 1 1 00190745  
+speciale a 5 0 5 5 00113793 00146643 00031594 00153053 00073429  
+specialistico a 1 0 1 1 00152977  
+specializzato a 2 0 2 2 00152977 00150336  
+specifico a 3 0 3 3 00072764 00024952 00073337  
+spendereccio a 1 0 1 1 00062011  
+spensierato a 1 0 1 1 00163164  
+spento a 1 0 1 1 00061752  
+spericolato a 1 0 1 1 00008470  
+sperimentale a 1 0 1 1 00202357  
+spermatico a 1 0 1 1 00186510  
+spermicida a 1 0 1 1 00186471  
+spesso a 1 0 1 1 00160364  
+spettacolare a 1 0 1 1 00084662  
+spettacoloso a 1 0 1 1 00043196  
+spettante a 1 0 1 1 00133375  
+spettrale a 1 0 1 1 00186390  
+spettrografico a 1 0 1 1 00186428  
+spettrometrico a 1 0 1 1 00199835  
+spettroscopico a 1 0 1 1 00199878  
+spiacente a 1 0 1 1 00076743  
+spiacevole a 1 0 1 1 00122852  
+spiegabile a 1 0 1 1 00062656  
+spietato a 1 0 1 1 00099944  
+spilorcio a 1 0 1 1 00074120  
+spinale a 1 0 1 1 00195560  
+spinoso a 1 0 1 1 00012498  
+spiritico a 1 0 1 1 00199102  
+spiritoso a 1 0 1 1 00123487  
+spirituale a 2 0 2 2 00138500 00203762  
+splendente a 1 0 1 1 00019777  
+splendido a 2 0 2 2 00016247 00041378  
+splenetico a 1 0 1 1 00186596  
+splenico a 1 0 1 1 00186596  
+spondaico a 1 0 1 1 00222975  
+spontaneo a 3 0 3 3 00008005 00124946 00153213  
+sporadico a 1 0 1 1 00039052  
+sporco a 3 0 3 3 00027729 00026848 00066286  
+sporgente a 1 0 1 1 00035436  
+sportivo a 1 0 1 1 00186646  
+sposato a 1 0 1 1 00097125  
+spossante a 1 0 1 1 00088186  
+spossato a 1 0 1 1 00061361  
+spostato a 1 0 1 1 00024473  
+spray-dried a 1 0 1 1 00225491  
+spregevole a 1 0 1 1 00059493  
+spregiudicato a 1 0 1 1 00141592  
+sproporzionato a 1 0 1 1 00031057  
+sprovveduto a 1 0 1 1 00062510  
+spumeggiante a 1 0 1 1 00152908  
+squallido a 1 0 1 1 00171154  
+squilibrato a 1 0 1 1 00059063  
+sradicato a 1 0 1 1 00024473  
+srilankese a 1 0 1 1 00222817  
+stabile a 1 0 1 1 00153541  
+stabilito_dalla_legge a 1 0 1 1 00091762  
+staccabile a 1 0 1 1 00013230  
+stagionale a 1 0 1 1 00098210  
+stagionato a 1 0 1 1 00098307  
+stampabile a 1 0 1 1 00133080  
+stampato a 1 0 1 1 00030460  
+stanco a 2 0 2 2 00161677 00161775  
+stanco_della_vita a 1 0 1 1 00161828  
+stanco_morto a 1 0 1 1 00161899  
+standard a 3 0 3 3 00031539 00153802 00153923  
+standardizzato a 1 0 1 1 00114528  
+stantio a 2 0 2 2 00070343 00114695  
+stanziale a 1 0 1 1 00144353  
+statale a 1 0 1 1 00126821  
+statico a 1 0 1 1 00054319  
+statistico a 1 0 1 1 00199013  
+stazionario a 1 0 1 1 00024615  
+stearico a 1 0 1 1 00192134  
+stellare a 1 0 1 1 00186683  
+stellato a 1 0 1 1 00154082  
+stenografico a 1 0 1 1 00186788  
+stereotipato a 1 0 1 1 00039971  
+sternale a 1 0 1 1 00211388  
+stesso a 6 0 6 6 00120843 00139674 00024822 00139142 00092848 00139621  
+stigmatico a 1 0 1 1 00173375  
+stimato a 1 0 1 1 00095613  
+stimmatico a 1 0 1 1 00173375  
+stimolante a 1 0 1 1 00154278  
+stitico a 1 0 1 1 00042098  
+stizzoso a 1 0 1 1 00010206  
+stoico a 1 0 1 1 00056896  
+stolto a 1 0 1 1 00028756  
+stonato a 1 0 1 1 00020932  
+stordito a 1 0 1 1 00013372  
+storico a 2 0 2 2 00203573 00200072  
+stracco a 1 0 1 1 00061361  
+strambo a 1 0 1 1 00064889  
+straniero a 2 0 2 2 00068598 00068419  
+strano a 6 0 6 6 00064854 00031830 00064889 00031951 00065064 00105140  
+straordinario a 2 0 2 2 00119755 00113364  
+strategico a 1 0 1 1 00203609  
+stratificato a 1 0 1 1 00015885  
+stregato a 1 0 1 1 00057209  
+stregonesco a 1 0 1 1 00198958  
+stremato a 1 0 1 1 00061361  
+strenuo a 1 0 1 1 00018894  
+stressante a 1 0 1 1 00088186  
+stretto a 3 0 3 3 00169692 00060350 00029473  
+stringato a 1 0 1 1 00035743  
+stroncato a 1 0 1 1 00061361  
+strumentale a 1 0 1 1 00188515  
+strutturale a 1 0 1 1 00196935  
+strutturato a 1 0 1 1 00113024  
+stupefacente a 1 0 1 1 00165740  
+stupendo a 1 0 1 1 00013509  
+stupido a 1 0 1 1 00028756  
+stuzzicante a 2 0 2 2 00011765 00154278  
+suadente a 1 0 1 1 00120946  
+subartico a 1 0 1 1 00186829  
+subatomico a 1 0 1 1 00195682  
+subitaneo a 1 0 1 1 00076183  
+sublunare a 1 0 1 1 00183693  
+subsonico a 1 0 1 1 00013930  
+subtropicale a 1 0 1 1 00200903  
+suburbano a 1 0 1 1 00186867  
+successivo a 4 0 4 4 00010735 00011337 00010882 00015734  
+successivo_alla_laurea a 1 0 1 1 00080894  
+succinto a 1 0 1 1 00035743  
+succoso a 1 0 1 1 00089095  
+sud a 1 0 1 1 00107202  
+sudanese a 1 0 1 1 00223054  
+sudato a 1 0 1 1 00169372  
+sudicio a 2 0 2 2 00045559 00027729  
+sudorifero a 1 0 1 1 00180287  
+sufficente a 1 0 1 1 00155757  
+sufficiente a 3 0 3 3 00006201 00155857 00155757  
+suggestivo a 2 0 2 2 00013509 00087257  
+sugoso a 1 0 1 1 00089095  
+sul_davanti a 1 0 1 1 00015672  
+sumerico a 1 0 1 1 00186932  
+sumero a 1 0 1 1 00186932  
+superalcolico a 1 0 1 1 00077398  
+superbo a 2 0 2 2 00128579 00156613  
+supercongelato a 1 0 1 1 00071619  
+superficie-aria a 1 0 1 1 00008886  
+superfluo a 2 0 2 2 00059328 00105665  
+superiore a 6 0 6 6 00156184 00080538 00156485 00162427 00080149 00091214  
+superno a 2 0 2 2 00177990 00177922  
+supersonico a 1 0 1 1 00013968  
+supplementare a 1 0 1 1 00005867  
+supplicante a 1 0 1 1 00048178  
+supplice a 1 0 1 1 00048178  
+supplichevole a 1 0 1 1 00048178  
+supponibile a 1 0 1 1 00003448  
+suppurativo a 1 0 1 1 00186978  
+supremo a 1 0 1 1 00098442  
+surgelato a 1 0 1 1 00071619  
+surrogabile a 1 0 1 1 00133575  
+suscitatore a 1 0 1 1 00127116  
+susseguente a 1 0 1 1 00010735  
+sussistente a 1 0 1 1 00165510  
+svagato a 1 0 1 1 00013372  
+svantaggioso a 1 0 1 1 00007310  
+svedese a 1 0 1 1 00204946  
+sveglio a 1 0 1 1 00008943  
+sventato a 1 0 1 1 00013372  
+svettante a 1 0 1 1 00080015  
+sviato a 1 0 1 1 00040671  
+svigorito a 1 0 1 1 00061361  
+sviluppato a 1 0 1 1 00049636  
+sviscerato a 1 0 1 1 00116578  
+svizzero a 1 0 1 1 00205165  
+taccagno a 1 0 1 1 00074120  
+taciturno a 1 0 1 1 00158669  
+tagliente a 2 0 2 2 00054045 00053757  
+talassico a 1 0 1 1 00195964  
+tale a 2 0 2 2 00072802 00103422  
+tamilico a 1 0 1 1 00223168  
+tangibile a 1 0 1 1 00048527  
+tannico a 1 0 1 1 00223205  
+tanto a 2 0 2 2 00103362 00103122  
+tanto_sospirato a 1 0 1 1 00167373  
+tanzaniano a 1 0 1 1 00223241  
+tarchiato a 1 0 1 1 00158963  
+tardo a 1 0 1 1 00054516  
+tariffario a 1 0 1 1 00226653  
+tarsale a 1 0 1 1 00223280  
+tartarico a 1 0 1 1 00223316  
+tassabile a 1 0 1 1 00159317  
+tassinomico a 1 0 1 1 00212673  
+tassonomico a 1 0 1 1 00212673  
+tattico a 1 0 1 1 00203648  
+tattile a 1 0 1 1 00193721  
+tecnico a 2 0 2 2 00073942 00187233  
+tecnologico a 2 0 2 2 00141495 00187269  
+tedesco a 1 0 1 1 00204591  
+teistico a 1 0 1 1 00201173  
+telegrafico a 1 0 1 1 00198797  
+temperato a 1 0 1 1 00159611  
+tempestoso a 1 0 1 1 00021335  
+temporalesco a 1 0 1 1 00021335  
+temporaneo a 1 0 1 1 00119755  
+temprato a 1 0 1 1 00100589  
+tenace a 1 0 1 1 00120047  
+tendente_al_ribasso a 1 0 1 1 00112611  
+tenero a 1 0 1 1 00095953  
+tentacolare a 1 0 1 1 00187309  
+tentennante a 1 0 1 1 00134539  
+teocratico a 1 0 1 1 00209173  
+teologale a 1 0 1 1 00198303  
+teologico a 1 0 1 1 00198303  
+teorico a 1 0 1 1 00056968  
+terapeutico a 2 0 2 2 00199467 00077749  
+termico a 1 0 1 1 00187391  
+termodinamico a 1 0 1 1 00198515  
+termoelettrico a 1 0 1 1 00187427  
+termoindurente a 1 0 1 1 00160321  
+termoionico a 1 0 1 1 00223466  
+termometrico a 1 0 1 1 00223506  
+termoplastico a 1 0 1 1 00160279  
+termostatico a 1 0 1 1 00223547  
+terra-aria a 1 0 1 1 00008886  
+terreno a 2 0 2 2 00078521 00078457  
+terrestre a 2 0 2 2 00089732 00011021  
+terribile a 1 0 1 1 00015248  
+terricolo a 1 0 1 1 00011021  
+terzo a 1 0 1 1 00149525  
+teso a 6 0 6 6 00227760 00159912 00159649 00159966 00227933 00094331  
+tessile a 1 0 1 1 00223430  
+testamentario a 1 0 1 1 00187349  
+testardo a 1 0 1 1 00154968  
+testicolare a 1 0 1 1 00201479  
+testuale a 1 0 1 1 00200680  
+tetragonale a 1 0 1 1 00189879  
+tetravalente a 1 0 1 1 00223354  
+tetro a 1 0 1 1 00025602  
+texano a 1 0 1 1 00223395  
+tibetano a 1 0 1 1 00205877  
+tibiale a 1 0 1 1 00187470  
+tignoso a 1 0 1 1 00074120  
+timido a 1 0 1 1 00018583  
+timoroso a 1 0 1 1 00018518  
+timpanico a 1 0 1 1 00202950  
+tipico a 1 0 1 1 00164023  
+tipo a 1 0 1 1 00164023  
+tipografico a 1 0 1 1 00198837  
+tirannico a 1 0 1 1 00187911  
+tiranno a 1 0 1 1 00187911  
+tirato a 3 0 3 3 00074120 00159859 00225063  
+tirchio a 1 0 1 1 00074120  
+tiroideo a 1 0 1 1 00208265  
+tirolese a 1 0 1 1 00206875  
+tisico a 2 0 2 2 00137362 00127209  
+titolare a 1 0 1 1 00056439  
+titolato a 1 0 1 1 00161640  
+titubante a 1 0 1 1 00134539  
+toccato a 1 0 1 1 00162561  
+tolemaico a 1 0 1 1 00214420  
+tollerabile a 1 0 1 1 00003448  
+tollerante a 1 0 1 1 00162180  
+tonale a 1 0 1 1 00187550  
+tondo a 1 0 1 1 00137516  
+tonificante a 1 0 1 1 00088131  
+tonto a 1 0 1 1 00028756  
+topico a 1 0 1 1 00043810  
+topografico a 1 0 1 1 00212593  
+toracico a 1 0 1 1 00192641  
+tormentato a 1 0 1 1 00059886  
+toroidale a 1 0 1 1 00187672  
+torrentizio a 1 0 1 1 00187710  
+tosato a 1 0 1 1 00145132  
+toscano a 1 0 1 1 00206801  
+tossico a 1 0 1 1 00162641  
+tossicologico a 1 0 1 1 00199225  
+totale a 3 0 3 3 00105831 00036628 00034039  
+totalitario a 1 0 1 1 00187750  
+tracheale a 1 0 1 1 00202856  
+tradizionale a 2 0 2 2 00040211 00114956  
+traducibile a 1 0 1 1 00164885  
+trafelato a 1 0 1 1 00061361  
+trafficabile a 1 0 1 1 00068017  
+tragico a 2 0 2 2 00088777 00207289  
+tragicomico a 1 0 1 1 00207383  
+tralasciabile a 1 0 1 1 00098508  
+tranquillante a 1 0 1 1 00174719  
+tranquillizzante a 1 0 1 1 00057344  
+tranquillo a 2 0 2 2 00131552 00021218  
+transatlantico a 1 0 1 1 00203144  
+transeunte a 1 0 1 1 00083761  
+transitabile a 1 0 1 1 00116445  
+transitivo a 1 0 1 1 00164805  
+transitorio a 2 0 2 2 00119755 00083761  
+transoceanico a 1 0 1 1 00196060  
+trapezoidale a 1 0 1 1 00203441  
+trapezoide a 1 0 1 1 00203441  
+trasandato a 1 0 1 1 00161359  
+trascendentale a 1 0 1 1 00194241  
+trascendente a 1 0 1 1 00194241  
+trascinante a 1 0 1 1 00060711  
+trascurabile a 2 0 2 2 00098683 00098508  
+trasferibile a 1 0 1 1 00009096  
+traslato a 1 0 1 1 00093790  
+trasparente a 1 0 1 1 00028384  
+trattabile a 1 0 1 1 00011831  
+traumatico a 1 0 1 1 00202894  
+traumatizzante a 1 0 1 1 00202894  
+travagliato a 1 0 1 1 00162820  
+travaglioso a 1 0 1 1 00162820  
+travestito a 1 0 1 1 00141745  
+traviato a 1 0 1 1 00040671  
+travolgente a 1 0 1 1 00116578  
+tre a 1 0 1 1 00147623  
+tredici a 1 0 1 1 00148185  
+tremante a 2 0 2 2 00082676 00154223  
+tremebondo a 1 0 1 1 00082676  
+tremendo a 1 0 1 1 00113602  
+trendy a 1 0 1 1 00065198  
+trenta a 1 0 1 1 00148956  
+tribale a 1 0 1 1 00218385  
+tribolato a 1 0 1 1 00162820  
+trigonometrico a 1 0 1 1 00199140  
+trimestrale a 2 0 2 2 00229095 00228988  
+trionfale a 1 0 1 1 00211958  
+triste a 3 0 3 3 00076582 00088688 00088867  
+tristo a 1 0 1 1 00075621  
+trito a 1 0 1 1 00114607  
+trito_e_ritrito a 1 0 1 1 00114607  
+trivalente a 1 0 1 1 00223588  
+trocaico a 1 0 1 1 00223627  
+trocheo a 1 0 1 1 00223627  
+troiano a 1 0 1 1 00223674  
+tronfio a 1 0 1 1 00013047  
+troppo_ansioso a 1 0 1 1 00142157  
+troppo_attivo a 1 0 1 1 00005007  
+troppo_cauto a 1 0 1 1 00022527  
+troppo_cotto a 1 0 1 1 00040488  
+troppo_generoso a 1 0 1 1 00074051  
+troppo_grande a 1 0 1 1 00090849  
+troppo_ingordo a 1 0 1 1 00002994  
+troppo_intraprendente a 1 0 1 1 00009691  
+troppo_maturo a 1 0 1 1 00098089  
+troppo_pieno a 1 0 1 1 00072183  
+troppo_rigoglioso a 1 0 1 1 00003384  
+troppo_zelante a 1 0 1 1 00116806  
+truccato a 1 0 1 1 00072527  
+tubarico a 1 0 1 1 00196785  
+tubercoloide a 1 0 1 1 00187870  
+tubercoloso a 2 0 2 2 00187830 00187790  
+tumorale a 1 0 1 1 00184339  
+turbato a 1 0 1 1 00162820  
+turco a 1 0 1 1 00213292  
+tutt'osso a 1 0 1 1 00020593  
+tutto a 2 0 2 2 00152367 00033924  
+ubbidiente a 1 0 1 1 00108189  
+ubbriaco a 2 0 2 2 00053593 00053420  
+ubicato a 1 0 1 1 00144317  
+ubriaco a 2 0 2 2 00053593 00053420  
+ubriacone a 2 0 2 2 00053593 00077398  
+ubriaco_fradicio a 1 0 1 1 00053530  
+udibile a 1 0 1 1 00013876  
+uditivo a 1 0 1 1 00193623  
+ufficiale a 1 0 1 1 00109045  
+ufficioso a 1 0 1 1 00109083  
+ugandese a 1 0 1 1 00223710  
+uguale a 2 0 2 2 00058717 00020376  
+ulcerativo a 1 0 1 1 00224755  
+ulnare a 1 0 1 1 00190263  
+ulteriore a 2 0 2 2 00015734 00005867  
+ultimo a 6 0 6 6 00067619 00117461 00069192 00101897 00067288 00105288  
+umanista a 1 0 1 1 00182593  
+umanistico a 3 0 3 3 00182593 00182682 00182643  
+umanitario a 1 0 1 1 00209452  
+umano a 3 0 3 3 00182525 00083005 00182559  
+umbellato a 1 0 1 1 00213728  
+umido a 2 0 2 2 00169257 00169001  
+umile a 2 0 2 2 00156318 00128791  
+umiliato a 1 0 1 1 00047171  
+umorale a 1 0 1 1 00191844  
+umoristico a 1 0 1 1 00083148  
+undici a 1 0 1 1 00148069  
+ungarico a 1 0 1 1 00205287  
+ungaro a 1 0 1 1 00205287  
+ungherese a 1 0 1 1 00205287  
+ungueale a 1 0 1 1 00190669  
+unicamerale a 1 0 1 1 00017113  
+unicellulare a 1 0 1 1 00188060  
+unicellulato a 1 0 1 1 00188060  
+unico a 6 0 6 6 00149944 00150100 00150159 00032785 00147497 00032978  
+unidimensionale a 1 0 1 1 00043987  
+unidirezionale a 1 0 1 1 00017356  
+unificato a 1 0 1 1 00164640  
+uniforme a 2 0 2 2 00133206 00049786  
+unilaterale a 1 0 1 1 00017582  
+unilatero a 1 0 1 1 00017582  
+uniparo a 1 0 1 1 00164515  
+unitariano a 1 0 1 1 00204337  
+unito a 1 0 1 1 00164588  
+universale a 1 0 1 1 00034730  
+universitario a 1 0 1 1 00171789  
+urbanistico a 1 0 1 1 00188116  
+urbano a 1 0 1 1 00188116  
+uretrale a 1 0 1 1 00188165  
+urgente a 1 0 1 1 00048142  
+urico a 1 0 1 1 00223747  
+uruguaiano a 1 0 1 1 00206247  
+uruguayano a 1 0 1 1 00206247  
+usato a 1 0 1 1 00165161  
+ustionato a 1 0 1 1 00224922  
+uterino a 1 0 1 1 00201402  
+utile a 3 0 3 3 00079427 00084393 00165195  
+utopistico a 1 0 1 1 00165382  
+uvulare a 1 0 1 1 00223781  
+vacillante a 1 0 1 1 00154154  
+vademecum a 1 0 1 1 00024016  
+vagale a 1 0 1 1 00188202  
+vagantivo a 1 0 1 1 00097161  
+vaginale a 1 0 1 1 00223817  
+vago a 2 0 2 2 00046511 00028200  
+valente a 1 0 1 1 00001740  
+valetudinario a 1 0 1 1 00188277  
+valevole a 1 0 1 1 00165510  
+valido a 3 0 3 3 00055947 00165510 00171356  
+valoroso a 1 0 1 1 00018894  
+valutario a 1 0 1 1 00226692  
+valvolare a 1 0 1 1 00223854  
+vantaggioso a 2 0 2 2 00127339 00007221  
+variabile a 4 0 4 4 00024256 00024875 00166369 00166133  
+variegato a 1 0 1 1 00178873  
+vario a 4 0 4 4 00139515 00166299 00032368 00139407  
+vascolare a 1 0 1 1 00194336  
+vasomotore a 1 0 1 1 00224794  
+vasto a 4 0 4 4 00089996 00034688 00169615 00090654  
+vecchio a 10 0 10 10 00142943 00109415 00070750 00011107 00114695 00109949 00097961 00117577 00170755 00062324  
+vecchio_di_un_giorno a 1 0 1 1 00070860  
+vedente a 1 0 1 1 00145267  
+vedico a 1 0 1 1 00188319  
+vegetale a 1 0 1 1 00010016  
+vegetativo a 1 0 1 1 00189677  
+veicolare a 1 0 1 1 00223892  
+velare a 1 0 1 1 00196822  
+velato a 1 0 1 1 00166464  
+velenoso a 1 0 1 1 00140926  
+velloso a 1 0 1 1 00016095  
+veloce a 2 0 2 2 00065374 00065472  
+vendibile a 1 0 1 1 00139021  
+venduto a 1 0 1 1 00151668  
+venefico a 1 0 1 1 00162641  
+venereo a 1 0 1 1 00195218  
+veneto a 1 0 1 1 00229305  
+veneziano a 1 0 1 1 00206837  
+venezolano a 1 0 1 1 00206063  
+venezuelano a 1 0 1 1 00206063  
+veniente a 1 0 1 1 00015734  
+venoso a 1 0 1 1 00175506  
+ventesimo a 1 0 1 1 00149864  
+venti a 1 0 1 1 00148591  
+venticinque a 1 0 1 1 00148746  
+ventrale a 1 0 1 1 00201625  
+ventricolare a 1 0 1 1 00188354  
+verbale a 1 0 1 1 00032550  
+verboso a 1 0 1 1 00028540  
+verde a 2 0 2 2 00026033 00098156  
+verdeggiante a 1 0 1 1 00071843  
+verde_giada a 1 0 1 1 00026067  
+verde_mare a 1 0 1 1 00026270  
+verginale a 1 0 1 1 00188395  
+veridico a 1 0 1 1 00043103  
+verisimigliante a 1 0 1 1 00093155  
+verisimile a 1 0 1 1 00093155  
+veritiero a 1 0 1 1 00081616  
+vero a 6 0 6 6 00163204 00131967 00143986 00074333 00131829 00074518  
+verosimigliante a 1 0 1 1 00093155  
+verosimile a 1 0 1 1 00093155  
+verso_nordest a 1 0 1 1 00107059  
+vertebrale a 1 0 1 1 00211790  
+vertebrato a 1 0 1 1 00166667  
+vescicale a 1 0 1 1 00224833  
+vescicolare a 2 0 2 2 00211750 00224833  
+vescovile a 1 0 1 1 00181182  
+vestito a 1 0 1 1 00029518  
+veterano a 1 0 1 1 00062455  
+veterinario a 1 0 1 1 00223930  
+vezzoso a 1 0 1 1 00007945  
+via_terra a 1 0 1 1 00089732  
+vicendevole a 1 0 1 1 00132331  
+vicino a 5 0 5 5 00029191 00029084 00029298 00029002 00029473  
+vicino_alla_costa a 1 0 1 1 00089862  
+viennese a 1 0 1 1 00206912  
+vigente a 1 0 1 1 00165510  
+vigile a 1 0 1 1 00008943  
+vigliacco a 2 0 2 2 00059493 00019007  
+vigoroso a 3 0 3 3 00057801 00124785 00057867  
+vile a 2 0 2 2 00059493 00019007  
+villano a 1 0 1 1 00042683  
+villoso a 1 0 1 1 00016095  
+vincente a 1 0 1 1 00155540  
+vinolento a 1 0 1 1 00077398  
+vinto a 1 0 1 1 00046302  
+violento a 1 0 1 1 00166867  
+virale a 1 0 1 1 00195052  
+virginale a 1 0 1 1 00188395  
+virile a 2 0 2 2 00096746 00124750  
+virtuoso a 1 0 1 1 00166919  
+virulento a 1 0 1 1 00005829  
+viscerale a 1 0 1 1 00193052  
+visibile a 3 0 3 3 00166965 00037791 00108620  
+visivo a 1 0 1 1 00193792  
+vitale a 2 0 2 2 00223970 00059440  
+vittoriano a 1 0 1 1 00213900  
+vivace a 3 0 3 3 00054156 00010407 00025492  
+vivido a 1 0 1 1 00132136  
+viviparo a 1 0 1 1 00167039  
+vivo a 4 0 4 4 00009208 00093981 00099999 00010407  
+vizioso a 1 0 1 1 00041731  
+vizzo a 1 0 1 1 00071030  
+vocale a 2 0 2 2 00188445 00188480  
+vocativo a 1 0 1 1 00224005  
+volenteroso a 1 0 1 1 00170005  
+volonteroso a 1 0 1 1 00170005  
+volumetrico a 1 0 1 1 00208752  
+voluto a 2 0 2 2 00167320 00086908  
+voluttuario a 1 0 1 1 00105665  
+vorace a 1 0 1 1 00002768  
+votato a 1 0 1 1 00037504  
+vulcanico a 1 0 1 1 00188555  
+vulnerabile a 1 0 1 1 00167189  
+vulvare a 1 0 1 1 00190591  
+vuoto a 2 0 2 2 00072249 00099297  
+yemenita a 1 0 1 1 00224114  
+yugoslavo a 1 0 1 1 00205395  
+zambiano a 1 0 1 1 00224151  
+zarista a 1 0 1 1 00180081  
+zenitale a 1 0 1 1 00224188  
+zero a 1 0 1 1 00147446  
+zigomorfo a 1 0 1 1 00158343  
+zitto a 1 0 1 1 00158669  
+zoroastriano a 1 0 1 1 00200762  
+zoroastrico a 1 0 1 1 00200762  
+zotico a 1 0 1 1 00042683  
+zuccherino a 1 0 1 1 00155972  
+zuccheroso a 1 0 1 1 00155972  

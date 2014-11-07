@@ -147,6 +147,11 @@ public class FragmentAndModifierMatchCounter {
 		
 		Logger log = Logger.getLogger(FragmentAndModifierMatchCounter.class.getName()); 
 
+		log.info("Counting fragments in: \n");
+		log.info("\tgold -- " + gold.getDocumentText() + " (" + JCasUtil.select(gold, Token.class).size() + " tokens)" );
+		log.info("\tsysOut -- " + sysOut.getDocumentText() + " (" + JCasUtil.select(sysOut, Token.class).size() + " tokens)" );
+		
+		
 		int truePos=0; 
 		int falsePos=0; 
 		int trueNeg=0; 

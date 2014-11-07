@@ -1,0 +1,2 @@
+created 6.10.14 after removing redundant edges
+updated 3.11.14 after verifying no removal of FG edges (changes to clusters EMAIL0010 and EMAIL0130) and fixing the annotation of clusters EMAIL0310 and EMAIL0130

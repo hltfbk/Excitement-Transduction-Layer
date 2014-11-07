@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.junit.Ignore;
 //import org.junit.Ignore;
 import org.junit.Test;
 
@@ -11,20 +12,28 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 
+//@SuppressWarnings("unused")
 public class FragmentAnnotatorEvaluationTest {
-	
+
+	@Ignore
 	@Test
 	public void test() {
 	
-		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.modifierannotator: test");
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.fragmentannotator: test");
 		logger.setLevel(Level.INFO);
 		
 		try {
 			EvaluationMeasures eval = FragmentAnnotatorEvaluator.evaluateFragments(
-//					"src/test/resources/WP2_public_data_CAS_XMI/nice_email_3", 
-					"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media", 
-					"eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator", 
+					
+					"src/main/resources/exci/alma/xmi_perFragmentGraph/",
+//					"src/main/resources/exci/nice/xmi_perFragmentGraph/all/",
+					
+//					"eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator",
+//					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator",
+					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator", 
+
 					"IT");
+//					"EN");
 			
 			logger.info(eval.toString());
 			
@@ -32,7 +41,7 @@ public class FragmentAnnotatorEvaluationTest {
 			logger.error("Error creating the LAP object");
 			e.printStackTrace();
 		} catch (FragmentAnnotatorException e) {
-			logger.error("Error creating modifier annotator object");
+			logger.error("Error creating fragment annotator object");
 			e.printStackTrace();
 		} catch (IOException e) {
 			logger.error("I/O error");

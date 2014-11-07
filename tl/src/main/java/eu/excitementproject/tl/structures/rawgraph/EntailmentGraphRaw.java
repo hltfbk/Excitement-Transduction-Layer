@@ -31,19 +31,19 @@ import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.edautils.TEDecisionByScore;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionByScore;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman
+ * @author vivi@fbk & Lili Kotlerman & Aleksandra
  * 
  * The graph structure for the work graph. We call it EntailmentGraphRaw.
  * This graph grows by adding to it FragmentGraph-s by "merging"
@@ -68,6 +68,8 @@ public class EntailmentGraphRaw extends
 
 	
 	private static final long serialVersionUID = -3274655854206417667L;
+	
+	private boolean addLemmatizedLabel;
 	/*
 	 * To build the work graph we need to know the configuration,
 	 * and in particular the EDA and LAP to use (and possibly other stuff)
@@ -78,6 +80,15 @@ public class EntailmentGraphRaw extends
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
 
+	/**
+	 * Initialize an empty work graph, 
+	 * which will contain entailment units with lemmatized text of the mentions
+	 */
+	public EntailmentGraphRaw(boolean addLemmatizedLabel){
+		this();
+		this.addLemmatizedLabel = addLemmatizedLabel;
+	}
+	
 	public EntailmentGraphRaw(Set<EntailmentUnit> nodes, Set<EntailmentRelation> edges){
 		this();
 		for (EntailmentUnit node : nodes){
@@ -87,6 +98,7 @@ public class EntailmentGraphRaw extends
 			this.addEdge(e.getSource(), e.getTarget(), e);
 		}
 	}	
+	
 	/*
 	 * a constructor for initializing a graph from a (xml) file
 	 */
@@ -112,6 +124,10 @@ public class EntailmentGraphRaw extends
 
 				Element euElement = (Element) eu;
 				String text = euElement.getAttribute("text");
+				String lemmaLabel = euElement.getAttribute("lemmaLabel");
+				if(!lemmaLabel.isEmpty()){
+					this.addLemmatizedLabel = true;
+				}
 				Integer level = Integer.valueOf(euElement.getAttribute("level"));
 
 				Set<String> completeStatementTexts = new HashSet<String>();
@@ -135,8 +151,12 @@ public class EntailmentGraphRaw extends
 		       		}
 				}
 
-							       
-			    this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, level));
+				if(this.addLemmatizedLabel){			       
+					this.addVertex(new EntailmentUnit(text, lemmaLabel, completeStatementTexts, mentions, level));
+				}
+				else{
+					this.addVertex(new EntailmentUnit(text, completeStatementTexts, mentions, level));
+				}
 			}
 			
 			
@@ -177,6 +197,14 @@ public class EntailmentGraphRaw extends
 		else copyFragmentGraphNodesAndEntailingEdges(fg);
 	}
 	
+	public EntailmentGraphRaw(FragmentGraph fg, boolean includeNonEntailingEdges, boolean addLemmatizedLabel) {
+		super(EntailmentRelation.class);
+		this.addLemmatizedLabel = addLemmatizedLabel;
+		if (includeNonEntailingEdges) copyFragmentGraphNodesAndAllEdges(fg);
+		else copyFragmentGraphNodesAndEntailingEdges(fg);
+	}
+	
+	
 	/**
 	 * Initialize an empty work graph
 	 */
@@ -202,6 +230,10 @@ public class EntailmentGraphRaw extends
 			if (node.isBaseStatement()) baseStatements.add(node);
 		}
 		return baseStatements;
+	}
+	
+	public boolean hasLemmatizedLabel(){
+		return this.addLemmatizedLabel;
 	}
 	
 	
@@ -347,11 +379,15 @@ public class EntailmentGraphRaw extends
 	public void addEntailmentUnitMention(EntailmentUnitMention mention, String completeStatementText){
 		EntailmentUnit node = this.getVertexWithText(mention.getText());
 		if (node==null) {
-			EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText);
+			EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText, this.addLemmatizedLabel);
 			this.addVertex(newNode);
 		}
 		else{
-			node.addMention(mention, completeStatementText);
+			//Commented out: Tmp patch to have same text on separate nodes
+			//EntailmentUnit newNode = new EntailmentUnit(mention, completeStatementText);
+			//this.addVertex(newNode);			
+			
+			node.addMention(mention, completeStatementText);  
 		}
 	}
 	
@@ -539,6 +575,7 @@ public class EntailmentGraphRaw extends
 		// now create and add the edge
 		EntailmentRelation edge = new EntailmentRelation(this.getVertexWithText(fragmentGraphEdge.getSource().getText()), this.getVertexWithText(fragmentGraphEdge.getTarget().getText()), new TEDecisionByScore(fragmentGraphEdge.getWeight()), EdgeType.FRAGMENT_GRAPH);
 		this.addEdge(this.getVertexWithText(fragmentGraphEdge.getSource().getText()), this.getVertexWithText(fragmentGraphEdge.getTarget().getText()), edge);
+//		logger.info("Added FG edge "+edge.toString());
 		return edge;
 	}
 	
@@ -586,6 +623,8 @@ public class EntailmentGraphRaw extends
 		return null;
 	}
 	
+
+	
 	
 	/**
 	 * @return true if the graph has no vertices (i.e. the graph is empty) 
@@ -622,7 +661,7 @@ public class EntailmentGraphRaw extends
 	public String toDOT(){
 		String s = "digraph rawGraph {\n";
 		for (EntailmentUnit node : this.vertexSet()){
-			s+="\""+node.getText()+"\";";
+			s+="\""+node.toDOT()+"\";";
 		}
 		for (EntailmentRelation edge : this.edgeSet()){
 			s+=edge.toDOT();
@@ -660,6 +699,10 @@ public class EntailmentGraphRaw extends
  
 						// set text attribute to eu element
 						entailmentUnitNode.setAttribute("text",eu.getText());
+						// set lemmaLabel attribute to eu element
+						if(eu.getLemmatizedText() != null){
+							entailmentUnitNode.setAttribute("lemmaLabel",eu.getLemmatizedText());
+						}
 						// set level attribute to eu element
 						entailmentUnitNode.setAttribute("level",String.valueOf(eu.getLevel()));
  
@@ -798,7 +841,7 @@ public class EntailmentGraphRaw extends
 	 *  
 	 * @param changeTypeOfExistingEdges - if true, existing transitive closure edges will change their type to "TRANSITIVE_CLOSURE" 
 	 */
-	public void applyTransitiveClosure(boolean changeTypeOfExistingEdges){    
+	public void applyTransitiveClosure(/*boolean changeTypeOfExistingEdges*/){    
 		Map<EntailmentUnit,Double> newEdgeTargets = new HashMap<EntailmentUnit,Double>();
 
         // At every iteration of the outer loop, we add a path of length 1
@@ -831,17 +874,13 @@ public class EntailmentGraphRaw extends
                             continue;
                         }
 
-                        EntailmentRelation e = this.getEdge(v1, v3);
-                        if (e != null) {
-                            // There is already an edge from v1 ---> v3
-                        	
-                        	// Check if it's an entailment edge
-                        	if (this.isEntailmentOnly(v1, v3)){
-                            	if (!changeTypeOfExistingEdges)	{
-                            		continue; 
-                            	}
-                            	
-                            	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) { // if it's a closure edge already
+                    	if (this.isEntailment(v1, v3)){
+                    		// don't add duplicate entailing edges
+     //                   	if (!changeTypeOfExistingEdges)	{
+                        		continue; 
+     //                   	}
+                        		
+/*                            	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) { // if it's a closure edge already
                             		if (e.getConfidence()>=confidence) continue; // and its confidence is >= current - skip
                             		// if its confidence is lower than current, we want to update the edge with the current confidence, since we have a more confident transitive path from v1 to v3 now 
                             	}
@@ -849,13 +888,9 @@ public class EntailmentGraphRaw extends
                                    	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
                                 	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type                        		
                             	}                        		
-                        	}
-                        	
-                        	// else - if there is an edge, but it's a non-entailment edge, add a "conflicting" closure edge
-                        	// add it as an edge with EdgeType="TRANSITIVE_CLOSURE" and current confidence, no need to change anything, just proceed with the code
-                        		
-                        }
-                        
+*/                        		
+                    	}
+                            	
                         newEdgeTargets.put(v3,confidence);
                         
 /*                        //debugging part
@@ -883,11 +918,11 @@ public class EntailmentGraphRaw extends
                 }
 
                 for (EntailmentUnit v3 : newEdgeTargets.keySet()) {
-                    EntailmentRelation e = this.getEdge(v1, v3);
+/*                    EntailmentRelation e = this.getEdge(v1, v3);
                 	if (e!=null){
                     	this.removePositiveEdges(v1, v3);       // only remove "entailing" edges, leave "non-entailing" to allow detecting conflicts             	
                     }
-                	double confidence = newEdgeTargets.get(v3);
+*/                	double confidence = newEdgeTargets.get(v3);
                 	EntailmentRelation closureEdge = new EntailmentRelation(v1, v3, new TEDecisionWithConfidence(confidence, DecisionLabel.Entailment), EdgeType.TRANSITIVE_CLOSURE);
                 	this.addEdge(v1, v3, closureEdge);
                 	logger.info("Added transitive closure edge: "+closureEdge.toString());
@@ -901,7 +936,7 @@ public class EntailmentGraphRaw extends
      * @param src
      * @param tgt
      */
-    private void removePositiveEdges(EntailmentUnit src, EntailmentUnit tgt) {
+/*    private void removePositiveEdges(EntailmentUnit src, EntailmentUnit tgt) {
 		Set<EntailmentRelation> alledges = new HashSet<EntailmentRelation>(this.getAllEdges(src, tgt));
 		for (EntailmentRelation e : alledges){
 			if (e.getLabel().is(DecisionLabel.Entailment)){
@@ -913,7 +948,7 @@ public class EntailmentGraphRaw extends
 			}
 		}
 	}
-    
+*/    
     
 	/**
 	 *  Removes all transitive closure edges from the graph.
@@ -981,6 +1016,20 @@ public class EntailmentGraphRaw extends
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/
 	
+	/**
+	 * Return the vertex (EntailmentUnit) with text equal to the given text, if it is found in the graph. 
+	 * Otherwise return null.
+	 * The case of the text is not ignored
+	 * @param text the text of the EntailmentUnit to be found
+	 * @return
+	 */
+	public EntailmentUnit getVertexWithExactText(String text){
+		for (EntailmentUnit eu : this.vertexSet()){
+			if (eu.getText().equals(text)) return eu;
+		}
+		return null;
+	}
+
 	/** Create an edge from sourceVertex to targetVertex using the random EDA 
 	 * No LAP is specified, which is not the case is real settings when EDA is always paired with its required LAP 
 	 * @param sourceVertex

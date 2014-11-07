@@ -31,7 +31,7 @@ public class ConvertWP2PublicData {
 	 * 
 	 * @param args no arguments will be processed 
 	 * 
-	 * @author Gil 
+	 * @author Gil / Vivi@fbk / LiliKotlerman
 	 */
 	public static void main(String[] args) {
 
@@ -52,19 +52,19 @@ public class ConvertWP2PublicData {
 		// DIR prepare:  
 		// File names will be determined by "interaction name" (processWP2Data()), or 
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
-//		dir = Paths.get("./src/test/resources/WP2_public_data/alma_social_media/");
 		
-		String cluster="train/EMAIL0410";
-		dir = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/FragmentGraphs");
-		dirInteractions = Paths.get("./src/test/resources/WP2_gold_standard_annotation/NICE_open_trainTest_byClusterSplit_reAnnotated/"+cluster+"/Interactions");
+		String cluster="Test/EMAIL0330";
+		dir = Paths.get("./src/test/resources/NICE/EMAIL-DATASET/"+cluster+"/FragmentGraphs");
+		dirInteractions = Paths.get("./src/test/resources/NICE/EMAIL-DATASET/"+cluster+"/Interactions");
+		
 
 		logger.info(dir.toFile().getAbsolutePath());
 //		outputdir = Paths.get("./target/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag");
 //		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media"); 
 	//	outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_byFrag"); 
 
-		outputdir = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open/"+cluster);
-		outputdirPerFrag = Paths.get("./src/test/resources/WP2_public_data_CAS_XMI/NICE_open_perFrag/"+cluster);
+		outputdir = Paths.get("./src/test/outputs/NICE_open/"+cluster);
+		outputdirPerFrag = Paths.get("./src/test/outputs/NICE_open_perFrag/"+cluster);
 		
 		// Actual call: use this for "per-fragment" XMI saving 
 		totalcount += processWP2DataPerFragment(dir, dirInteractions, outputdirPerFrag, "EN"); 
@@ -192,7 +192,8 @@ public class ConvertWP2PublicData {
 	}
 
 	/**
-	 * @param from Directory Path, that holds WP2 public data .txt and XML (They have to be in one directory) 
+	 * @param fromFGs Directory Path, that holds WP2 public data XML files  
+	 * @param fromInteractions Directory Path, that holds WP2 public data TXT files  
 	 * @param to Directory Path, where the new XMI files will be generated. 
 	 * @param langID language ID. WP2 frag-dump data does not have language ID. Thus we need this. 
 	 */
@@ -354,7 +355,8 @@ public class ConvertWP2PublicData {
 	/**
 	 * This method is roughly equal to processWP2Data() method, however, this version 
 	 * saves XMI files per-fragment, instead of per-interaction 
-	 * @param from Directory Path, that holds WP2 public data .txt and XML (They have to be in one directory) 
+	 * @param fromFGs Directory Path, that holds WP2 public data XML files  
+	 * @param fromInteractions Directory Path, that holds WP2 public data TXT files  
 	 * @param to Directory Path, where the new XMI files will be generated. 
 	 * @param langID language ID. WP2 frag-dump data does not have language ID. Thus we need this. 
 	 */

@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.evaluation.graphmerger.EvaluatorGraphMerger;
 import eu.excitementproject.tl.evaluation.utils.ExtendedEvaluationMeasures;
 import eu.excitementproject.tl.evaluation.utils.TLClusteringResultsEvaluator;
@@ -18,7 +19,6 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 /**
  * This class contains methods for evaluating graph optimizer results.
@@ -54,12 +54,18 @@ public class EvaluatorGraphOptimizer {
 			for (EntailmentUnit nodeUnitA : collapsedNode.getEntailmentUnits()){
 				for (EntailmentUnit nodeUnitB : collapsedNode.getEntailmentUnits()){
 					if (nodeUnitA.equals(nodeUnitB)) continue;
-					// add "entailment" edge between nodeUnitA and nodeUnitB in both directions
+					// need to add "entailment" edge between nodeUnitA and nodeUnitB in both directions
 					// since we don't know the confidences of relations within the collapsedNode, we use 1.0 confidence 
 					// we specify EdgeType.UNKNOWN, since we don't know the origins of relations within the collapsedNode (potentially, not only EDA edges, but also fragment graph edges can be collapsed under one collapsed node)
+					
+					// so, add nodeUnitA -> nodeUnitB
 					decollapsedGraphEdges.add(new EntailmentRelation(nodeUnitA, nodeUnitB, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment),EdgeType.UNKNOWN));										
-					decollapsedGraphEdges.add(new EntailmentRelation(nodeUnitB, nodeUnitA, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment),EdgeType.UNKNOWN));
-					// TODO currently EvaluatorGraphMerger works only with "entailment" edges. Otherwise, "paraphrase" edge can be added here instead
+
+					// the edge for nodeUnitA -> nodeUnitB (see below) should not be added, since there is a corresponding iteration of the double cycle over EntailmentUnits for this node
+					// adding it here will cause duplicate edges
+					// decollapsedGraphEdges.add(new EntailmentRelation(nodeUnitB, nodeUnitA, new TEDecisionWithConfidence(1.0, DecisionLabel.Entailment),EdgeType.UNKNOWN));
+					
+					// TODO currently EvaluatorGraphMerger works only with "entailment" edges. Otherwise, "paraphrase" edge can be added here instead, but need to keep closed-list or smth not to create duplicates 
 				}
 			}
 		}

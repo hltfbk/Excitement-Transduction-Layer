@@ -1,20 +1,26 @@
 package eu.excitementproject.tl.experiments;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import javax.xml.transform.TransformerException;
+
+import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.exception.ComponentException;
+import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -23,135 +29,184 @@ import eu.excitementproject.tl.evaluation.graphmerger.EvaluatorGraphMerger;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
+import eu.excitementproject.tl.laputils.DataUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
+import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
 /**
  * Class with methods for running experiments & evaluations
  * @author Lili Kotlerman
  *
  */
-public abstract class AbstractExperiment extends UseCaseOneForExperiments {
+public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 
 	public GoldStandardEdgesLoader gsloader = null;
 	public EntailmentGraphRaw m_rawGraph = null;
-	public EntailmentGraphRaw m_rawGraph_plusClosure = null;
 	public GraphOptimizer m_optimizer = null;
 	public EntailmentGraphRaw m_rfg = null;
 	
-	public List<Double> confidenceThresholds;
-	public Map<String,Map<Double,EvaluationAndAnalysisMeasures>> results;
+	public ResultsContainer results;
+	public MergerType mergerType = null;		
+	public List<JCas> docs;
+	public EntailmentGraphCollapsed graph;
+		
+	public enum EdaName{
+		RANDOM,
+		PROBABILISTIC,
+		TIE_POS,
+		TIE_POS_RES,
+		TIE_PARSE_RES,
+		BIUTEE,
+		EDIT_DIST,
+		P1EDA
+	}
 	
-	public static final boolean includeFragmentGraphEdges = true;
-	
-	private final Logger logger = Logger.getLogger(this.getClass());
+	public enum MergerType{
+		ALL_PAIRS_MERGE,
+		WP2_MERGE
+	}
 
-	
 	public AbstractExperiment(String configFileName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
-			Class<?> edaClass) {
+			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
 		
-		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
-				edaClass);
+		super(configFileName, outputFolder, lapClass, edaClass);
 		
+		docs = DataUtils.loadData(dataDir, fileNumberLimit);
+		graph = this.buildCollapsedGraph(docs);		
 		// Logger.getRootLogger().setLevel(Level.ERROR); 
-		
-		confidenceThresholds= new LinkedList<Double>();
-		for (double confidenceThreshold=0.5; confidenceThreshold<1.01; confidenceThreshold+=0.05){
-			confidenceThresholds.add(confidenceThreshold);
-		}
-		
-		results = new HashMap<String, Map<Double,EvaluationAndAnalysisMeasures>>();
+				
+		results = new ResultsContainer();
 	}
+	
+    public void setMerger(MergerType mergerType) throws GraphMergerException{
+    	this.mergerType = mergerType;
+    	if (mergerType.equals(MergerType.ALL_PAIRS_MERGE))
+    		setGraphMerger(new AllPairsGraphMerger(lap, eda));
+    	else setGraphMerger(new AutomateWP2ProcedureGraphMerger(lap, eda));
+    }
 	
 	public String printResults(){
-		String s = "";
-		for (String setting : results.keySet()){
-			logger.info("");
-			for (Double threshold : confidenceThresholds){
-				if (results.get(setting).containsKey(threshold)){
-					EvaluationAndAnalysisMeasures res = results.get(setting).get(threshold);
-					s += setting+"\t"+threshold.toString()+"\t"+res.getRecall().toString()+"\t"+res.getPrecision().toString()+"\t"+res.getF1().toString()+"\t"+res.getOverallEdges().toString()+"\t"+res.getViolations().toString()+"\t"+res.getExtraFGedges().toString()+"\t"+res.getMissingFGedges().toString()+"\t"+res.getEdaCalls().toString()+"\n";
-					logger.info(s);	
-				}
-			}
-		}
-		return s;
+		return results.printResults();
 	}
 	
+	public String printErrorExamples(int limit){
+		return results.printErrorExamples(limit);
+	}	
+
+	public String printAvgResults(){
+		return results.printAvgResults();
+	}
+	
+	public String getSettingName(EdaName name, String graphType, boolean includeFragmentGraphEdges, String clusterDir){
+		String withFG = "-with-FG";
+		if (!includeFragmentGraphEdges) withFG = "-without-FG";
+			
+		return name+"-"+mergerType+" "+graphType+withFG+" "+clusterDir;
+	}
+
 	@Override
 	public String toString(){
 		return "LAP: " +this.lap.getClass().getName()+";\tEDA: "+this.eda.getClass().getName()+
-				";\tMerger: "+this.useOne.getGraphMerger().getClass().getName()+
+				";\tMerger: "+this.getGraphMerger().getClass().getName()+
 				";\tOptimizer: "+this.m_optimizer.getClass().getName();
 	}
 	
 	public void addResult(String setting, double threshold, EvaluationAndAnalysisMeasures res){
-		Map<Double,EvaluationAndAnalysisMeasures> resultsForSetting = new HashMap<Double,EvaluationAndAnalysisMeasures>();
-		if(results.containsKey(setting)) resultsForSetting = results.get(setting);
-		resultsForSetting.put(threshold, res);
-		results.put(setting, resultsForSetting);
+		results.addResult(setting, threshold, res);
 	}
 	
 	/**
 	 * @param confidenceThresholds the confidenceThresholds to set
 	 */
 	public void setConfidenceThresholds(List<Double> confidenceThresholds) {
-		this.confidenceThresholds = confidenceThresholds;
+		this.results.setConfidenceThresholds(confidenceThresholds);
 	}
 
+	public EntailmentGraphRaw getPlusClosureGraph(EntailmentGraphRaw graph){
+		// create a copy of the evaluated graph to remove the edges and do the evaluations without affecting the original graph
+		EntailmentGraphRaw graphPlusClosure = new EntailmentGraphRaw(graph.vertexSet(), graph.edgeSet());
+		graphPlusClosure.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
+		for (EntailmentRelation e : graphPlusClosure.edgeSet()){
+			if (!e.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)) e.setEdgeType(EdgeType.UNKNOWN);
+		}
+		return graphPlusClosure;
+	}
 
-
-	public void buildRawGraph() {
+	
+	
+	
+	/** Creates raw graph for the given experiment + the corresponding graph with only FG edges in it 
+	 * @return the created raw graph or null if graph creation failed for any reason
+	 */
+	public EntailmentGraphRaw buildRawGraph() {
 		try {
-			m_rawGraph = this.useOne.buildRawGraph(this.docs);
-			m_rawGraph_plusClosure = new EntailmentGraphRaw(m_rawGraph.vertexSet(), m_rawGraph.edgeSet());
-			m_rawGraph_plusClosure.applyTransitiveClosure(false);
-			for (EntailmentRelation e : m_rawGraph_plusClosure.edgeSet()){
-				e.setEdgeType(EdgeType.UNKNOWN);
-			}
+			m_rawGraph = this.buildRawGraph(this.docs);
 			m_rfg = getFragmetGraphsInRawGraph();
+			return m_rawGraph;
 		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
 				ModifierAnnotatorException | IOException e) {
 			e.printStackTrace();	
 		}
+		return null;
 	}
 
-	public void buildRawGraph(double confidenceThreshold) {
+	/** Creates raw graph for the given experiment & threshold + the corresponding graph with only FG edges in it 
+	 * @return the created raw graph or null if graph creation failed for any reason
+	 */
+	public EntailmentGraphRaw buildRawGraph(double confidenceThreshold) {
 		try {
-			m_rawGraph = this.useOne.buildRawGraph(this.docs, confidenceThreshold);
-			m_rawGraph_plusClosure = new EntailmentGraphRaw(m_rawGraph.vertexSet(), m_rawGraph.edgeSet());
-			m_rawGraph_plusClosure.applyTransitiveClosure(false);
-			m_rfg = getFragmetGraphsInRawGraph();			
+			m_rawGraph = this.buildRawGraph(this.docs, confidenceThreshold);
+			m_rfg = getFragmetGraphsInRawGraph();
+			return m_rawGraph;
 		} catch (LAPException | GraphMergerException | FragmentGraphGeneratorException | FragmentAnnotatorException | 
 				ModifierAnnotatorException | IOException e) {
 			e.printStackTrace();	
 		}
+		return null;
 	}
 	
-	public EntailmentGraphCollapsed collapseGraph() {
+	public EntailmentGraphCollapsed collapseGraph(EntailmentGraphRaw graph) {
 		try {
-			return m_optimizer.optimizeGraph(m_rawGraph);
+			return m_optimizer.optimizeGraph(graph);
 		} catch (GraphOptimizerException e) {
 			e.printStackTrace();	
 			return null;
 		}
 	}
 	
-	public EntailmentGraphCollapsed collapseGraph(Double threshold, boolean withClosure) {
+	public EntailmentGraphCollapsed collapseGraph(EntailmentGraphRaw graph, Double threshold) {
 		try {
-			if (withClosure) return m_optimizer.optimizeGraph(m_rawGraph_plusClosure, threshold);
-			return m_optimizer.optimizeGraph(m_rawGraph, threshold);
+			return m_optimizer.optimizeGraph(graph, threshold);
 		} catch (GraphOptimizerException e) {
 			e.printStackTrace();	
 			return null;
 		}
 	}
 
+	public EntailmentGraphCollapsed collapseGraph(EntailmentGraphRaw graph, GraphOptimizer optimizer) {
+		try {
+			return optimizer.optimizeGraph(graph);
+		} catch (GraphOptimizerException e) {
+			e.printStackTrace();	
+			return null;
+		}
+	}
+	
+	public EntailmentGraphCollapsed collapseGraph(EntailmentGraphRaw graph, Double threshold, GraphOptimizer optimizer) {
+		try {
+			return optimizer.optimizeGraph(graph, threshold);
+		} catch (GraphOptimizerException e) {
+			e.printStackTrace();	
+			return null;
+		}
+	}
+	
 	/** 
 	 * @param graph
 	 * @param gsAnnotationsDir
@@ -191,57 +246,48 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 	}	
 	
 	public EvaluationAndAnalysisMeasures evaluateRawGraph(EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
-		if (isSingleClusterGS) loadGSCluster(graph, gsAnnotationsDir); 
-		else loadGSAll(graph, gsAnnotationsDir);
+		
+		EntailmentGraphRaw evaluatedGraph = new EntailmentGraphRaw(graph.vertexSet(), graph.edgeSet());
+		
+		if (isSingleClusterGS) loadGSCluster(evaluatedGraph, gsAnnotationsDir); 
+		else loadGSAll(evaluatedGraph, gsAnnotationsDir);
 		
 		// Preliminary cleaning to run the evaluations over the same set of nodes.
 		// Part of it is done by gold standard edges loader, when loading only nodes of interest. 
 		// Yet, nodes of interest might contain unrelated nodes (due to using input, which has some blind-set fragments as well, or due to using a limited number of input files)  
 		Set<EntailmentUnit> nodesToRemove = new HashSet<EntailmentUnit>();
 		Set<String> gsNodeTexts = gsloader.getNodes();		
-		for (EntailmentUnit node : graph.vertexSet()){
+		for (EntailmentUnit node : evaluatedGraph.vertexSet()){
 			if (!gsNodeTexts.contains(node.getTextWithoutDoubleSpaces())) nodesToRemove.add(node);
 		}
-		graph.removeAllVertices(nodesToRemove);	
-		EvaluationAndAnalysisMeasures eval = new EvaluationAndAnalysisMeasures(EvaluatorGraphMerger.evaluate(gsloader.getEdges(), graph.edgeSet(), includeFragmentGraphEdges));
-		eval.setOverallEdges(graph.edgeSet().size());
+		evaluatedGraph.removeAllVertices(nodesToRemove);	
+		EvaluationAndAnalysisMeasures eval = new EvaluationAndAnalysisMeasures(EvaluatorGraphMerger.evaluate(gsloader.getEdges(), evaluatedGraph.edgeSet(), includeFragmentGraphEdges));
+		eval.setOverallEdges(evaluatedGraph.edgeSet().size());
 		return eval;
 	}
 	
-	/** Excluding fragment graph edges is not available - for collapsed graph we don't keep track of the edges' origin, also logically it's not relevant for collapsed graph evaluation
-	 * @param graph
-	 * @param gsAnnotationsDir
-	 * @return
-	 */
-	public EvaluationAndAnalysisMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean isSingleClusterGS){			
+	public EvaluationAndAnalysisMeasures evaluateCollapsedGraph(EntailmentGraphCollapsed graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
 		// de-collapse the graph into the corresponding raw graph
-		EntailmentGraphRaw rawGraph = new EntailmentGraphRaw();
-		for (EntailmentRelation e : EvaluatorGraphOptimizer.getAllEntailmentRelations(graph)){
-			if (!rawGraph.containsVertex(e.getSource())) rawGraph.addVertex(e.getSource());
-			if (!rawGraph.containsVertex(e.getTarget())) rawGraph.addVertex(e.getTarget());
-			rawGraph.addEdge(e.getSource(), e.getTarget(), e);
-		}		
-		return evaluateRawGraph(rawGraph, gsAnnotationsDir, true, isSingleClusterGS);
+		EntailmentGraphRaw rawGraph = EvaluatorGraphOptimizer.getDecollapsedGraph(graph);
+		if (!includeFragmentGraphEdges){
+			if (m_rfg!=null){
+				for (EntailmentRelation fgEdge : m_rfg.edgeSet()){
+					rawGraph.removeAllEdges(fgEdge.getSource(), fgEdge.getTarget());
+					rawGraph.addEdge(fgEdge.getSource(), fgEdge.getTarget(), fgEdge); // add edge with type FRAGMENT_GRAPH
+				}
+			}
+		}
+		return evaluateRawGraph(rawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);
 	}
 	
-/*	public EvaluationAndAnalysisMeasures evaluateCollapsedGraph(EntailmentGraphRaw rawGraph, EntailmentGraphCollapsed collapsedGraph, String gsAnnotationsDir, boolean includeFragmentGraphEdges){		
-		loadGS(rawGraph, gsAnnotationsDir);
-		//TODO Here preliminary cleaning will also be needed, unless we fix the inconsistency 		
-		return EvaluatorGraphOptimizer.evaluateDecollapsedGraph(gsloader.getEdges(), collapsedGraph, includeFragmentGraphEdges);
-	}*/
-
-	/** Evaluate raw graph, where only edges with confidence > threshold are left
-	 * @param confidenceThreshold
-	 * @param graph
-	 * @param gsAnnotationsDir
-	 * @param includeFragmentGraphEdges - if true, the evaluation will consider all the edges in the raw graph; if false - fragment graph edges will be excluded from the evaluation 
-	 * @return
-	 */
-	public EvaluationAndAnalysisMeasures evaluateRawGraph(double confidenceThreshold, EntailmentGraphRaw graph, String gsAnnotationsDir, boolean includeFragmentGraphEdges, boolean isSingleClusterGS){			
+	public EntailmentGraphRaw applyThreshold(EntailmentGraphRaw graph, double confidenceThreshold){			
+		EntailmentGraphRaw graphWithThreshold = new EntailmentGraphRaw(graph.vertexSet(), graph.edgeSet());
 		// remove edges with confidence < threshold
 		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
-		for (EntailmentRelation workEdge : graph.edgeSet()){
+		for (EntailmentRelation workEdge : graphWithThreshold.edgeSet()){
 			if (workEdge.getEdgeType().is(EdgeType.FRAGMENT_GRAPH)) continue; // don't touch FG edges
+
+/*			// want to only retain entailment edges
 			if (!workEdge.getLabel().is(DecisionLabel.Entailment)){
 				workEdgesToRemove.add(workEdge);
 			}
@@ -250,14 +296,19 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 					workEdgesToRemove.add(workEdge);
 				}
 			}
+*/
+			// if we want to retain all types of edges
+			if(workEdge.getConfidence()<confidenceThreshold) {
+				workEdgesToRemove.add(workEdge);
+			}
+		
 		}
-		graph.removeAllEdges(workEdgesToRemove);
-		// evaluate the resulting graph
-		return evaluateRawGraph(graph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);
+		graphWithThreshold.removeAllEdges(workEdgesToRemove);
+		return graphWithThreshold;
 	}
 	
 	public int getEdaCallsNumber(){
-		return this.useOne.getEdaCallsNumber();
+		return super.getEdaCallsNumber();
 	}
 	
 	/**
@@ -274,25 +325,22 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		// make a copy, since testing for violations requires adding closure edges to the evaluated graph
 		EntailmentGraphCollapsed evaluatedCollapsedGraph = new EntailmentGraphCollapsed(graph.vertexSet(), graph.edgeSet());
 		
-		
-		boolean isConsistent = true;
 		// consistency check for edges - all transitive closure edges should be explicitly present in the graph
 		// if not - smth is wrong
-		int violations = 0;
+		Set<String> violations = new HashSet<String>();
 		int addedEdges = evaluatedCollapsedGraph.edgeSet().size();
 		System.out.print("Checking edges for consistency:");
 		evaluatedCollapsedGraph.applyTransitiveClosure(false);
 		if (evaluatedCollapsedGraph.edgeSet().size() != addedEdges){
 			for (EntailmentRelationCollapsed edge : evaluatedCollapsedGraph.edgeSet()){
 				if (edge.getEdgeType().equals(EdgeType.TRANSITIVE_CLOSURE)) {
+					System.out.println(" **** COLL CLOSURE ADDED **** "+ edge);
 					System.err.println("\nInconsistent edge: "+ edge);
-					isConsistent = false;
-					violations++;
+					violations.add(edge.getSource()+"->"+edge.getTarget());
 				}
 			}
 		}
-		if(isConsistent) logger.info("  No transitivity violations in collapsed graph's edges"); 
-		eval.setViolations(violations);
+		eval.setViolations(violations.size());
 		
 /*		// Now check if added edges into fragment graphs
 		// First, load raw graph with FGs in it, if not loaded earlier
@@ -359,20 +407,24 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		// Now check for transitivity violations
 		// consistency check for edges - all transitive closure edges should be explicitly present in the graph
 		// if not - smth is wrong
-		int violations = 0;
+		Set<String> violations = new HashSet<String>();
 		System.out.print("Checking edges for consistency:");
-		evaluatedRawGraph.applyTransitiveClosure(false);
+		evaluatedRawGraph.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		for (EntailmentRelation edge : evaluatedRawGraph.edgeSet()){
-			if (evaluatedRawGraph.isConflict(edge.getSource(), edge.getTarget())) violations++; // if there is a non-entailing and an entailing edge between the same src and tct
+			if (evaluatedRawGraph.isConflict(edge.getSource(), edge.getTarget())) {
+				System.out.println("****"+violations.size()+" IS CONFLICT **** "+edge);
+				//violations.add(edge.getSource()+"->"+edge.getTarget()); // if there is a non-entailing and an entailing edge between the same src and tgt
+			}
 			else{
 				if (edge.getEdgeType().equals(EdgeType.TRANSITIVE_CLOSURE)) { // if this edge is a transitive closure edge, which was added in place of no edge in the evaluated graph
+					System.out.println("****"+violations.size()+" CLOSURE ADDED ****: "+edge);
 					System.err.println("\nInconsistent edge: "+ edge);
-					violations++;
+					violations.add(edge.getSource()+"->"+edge.getTarget());
 				}				
 			}
 		}
 			
-		eval.setViolations(violations);
+		eval.setViolations(violations.size());
 		return eval;
 	}
 
@@ -381,7 +433,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 		GoldStandardEdgesLoader gsFGloader = new GoldStandardEdgesLoader(false); //load the original data only		
 		if (gsDir.isDirectory()){
 			String warnings = gsFGloader.loadFGsRawGraph(gsDir.getAbsolutePath()); //load only FGs\
-			if (!warnings.isEmpty()) logger.info("Problems with cluster "+gsDir.getName()+":\n"+warnings);
+			if (!warnings.isEmpty()) System.out.println("Problems with cluster "+gsDir.getName()+":\n"+warnings);
 		}
 		rfg = gsFGloader.getRawGraph();
 	}*/
@@ -420,7 +472,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 				if (fge.isSameSourceAndTarget(e)) {
 					if (!e.getEdgeType().equals(EdgeType.FRAGMENT_GRAPH)){
 						if (!graph.isFragmentGraphEdge(e.getSource(), e.getTarget())){
-							logger.info("Not marked FG edge: "+e);
+							System.out.println("Not marked FG edge: "+e);
 							try {
 								System.in.read();
 							} catch (IOException e1) {
@@ -429,7 +481,7 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 							}														
 						}	
 						else if (!e.getEdgeType().equals(EdgeType.TRANSITIVE_CLOSURE)){
-							logger.info("Decision obtained, though there is a FG edge: "+e);
+							System.out.println("Decision obtained, though there is a FG edge: "+e);
 							try {
 								System.in.read();
 							} catch (IOException e1) {
@@ -466,6 +518,30 @@ public abstract class AbstractExperiment extends UseCaseOneForExperiments {
 			if (!e.getEdgeType().is(EdgeType.FRAGMENT_GRAPH)) rfg.removeEdge(e);
 		}
 		return rfg;
+	}
+
+	
+	public List<Double> getConfidenceThresholds(){
+		return this.results.confidenceThresholds;
+	}
+
+	protected static void compareClosureAndDecollapsed(Set<EntailmentRelation> closure, Set<EntailmentRelation> decollapsed){
+		Set<EntailmentRelation> gs = new HashSet<EntailmentRelation>(decollapsed);
+		for (EntailmentRelation e : decollapsed){
+			if (!e.getLabel().is(DecisionLabel.Entailment)){
+				gs.remove(e);
+			}
+		}
+		Set<EntailmentRelation> eval = new HashSet<EntailmentRelation>(closure); // it should play the role of the eval, since it contains FG edge type
+		for (EntailmentRelation e : closure){
+			if (!e.getLabel().is(DecisionLabel.Entailment)){
+				eval.remove(e);
+			}
+		}
+		
+		System.out.println("COMPARE CLOSURE TO DECOLLAPSED WITH FG ::"+EvaluatorGraphMerger.evaluate(gs, eval, true));
+		System.out.println("COMPARE CLOSURE TO DECOLLAPSED WITHOUT FG ::"+EvaluatorGraphMerger.evaluate(gs, eval, false));
+		
 	}
 
 }

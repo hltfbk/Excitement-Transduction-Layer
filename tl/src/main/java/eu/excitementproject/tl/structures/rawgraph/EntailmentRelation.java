@@ -2,9 +2,20 @@ package eu.excitementproject.tl.structures.rawgraph;
 
 
 
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.jgrapht.graph.DefaultEdge;
+
+
+
+
+
 
 
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -14,10 +25,10 @@ import eu.excitementproject.eop.common.TEDecision;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.edautils.RandomEDA;
+import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
-import eu.excitementproject.tl.structures.rawgraph.utils.TEDecisionWithConfidence;
 
 
 /**
@@ -135,7 +146,7 @@ public class EntailmentRelation extends DefaultEdge {
 	 * 
 	 * @return -- the confidence part of the TEdecision object
 	 */
-	public double getConfidence() {
+	public Double getConfidence() {
 		return edge.getConfidence();
 	}
 	
@@ -178,20 +189,30 @@ public class EntailmentRelation extends DefaultEdge {
 	 * @throws EntailmentGraphRawException 
 	 */
 	protected void computeTEdecision() throws EntailmentGraphRawException {	
-		JCas pairCAS = generateTHPairCAS();
+		JCas pairCAS;
 		try {
-			edge = eda.process(pairCAS);
-			if (edge.getConfidence() > 0.5) {
-				logger.info("EDA says : " +  edge.getDecision() + "(" + edge.getConfidence() + ")");
+			pairCAS = generateTHPairCAS();
+			try {
+				edge = eda.process(pairCAS);
+//				if (edge.getConfidence() > 0.5) {
+					logger.info("EDA says : " +  edge.getDecision() + "(" + edge.getConfidence() + ")");
+//				}
+			} catch (EDAException | ComponentException e) {
+				throw new EntailmentGraphRawException(e.getMessage());
+			} catch (RuntimeException rune) {
+				logger.error("Cannot obtain EDA decision for edge: " + source.getText() + " -> " + target.getText() +"\n"+rune.getMessage());
+				edge = new TEDecisionWithConfidence(0.0, DecisionLabel.Unknown);
 			}
-		} catch (EDAException | ComponentException e) {
-			throw new EntailmentGraphRawException(e.getMessage());
-		} catch (RuntimeException rune) {
-			logger.error("Cannot obtain EDA decision for edge: " + source.getText() + " -> " + target.getText() +"\n"+rune.getMessage());
+		} catch (RuntimeException rune1) {
+			logger.error("Cannot generate THPairCAS for edge: " + source.getText() + " -> " + target.getText() +"\n"+rune1.getMessage());
 			edge = new TEDecisionWithConfidence(0.0, DecisionLabel.Unknown);
 		}
 	}
 
+
+	
+	
+	
 	/**
 	 * 
 	 * @return -- a JCas object representing the text and hypothesis pair, 
@@ -231,6 +252,21 @@ public class EntailmentRelation extends DefaultEdge {
 	}
 
 	/******************************************************************************************
+	 * COMPARATORS
+	 * ****************************************************************************************/
+
+	/**
+	 * Comparator to sort equivalence classes in descending order by their number of interactions
+	 */
+	public static class DescendingConfidenceComparator implements Comparator<EntailmentRelation> {
+	    @Override
+	    public int compare(EntailmentRelation edgeA, EntailmentRelation edgeB) {
+	        return -1*edgeA.getConfidence().compareTo(edgeB.getConfidence());
+	    }
+	}
+	
+	
+	/******************************************************************************************
 	 * PRINT
 	 * ****************************************************************************************/
 	@Override 
@@ -241,11 +277,12 @@ public class EntailmentRelation extends DefaultEdge {
 	/** Returns a string with the edge in DOT format for outputting the graph
 	 * @return the generated string
 	 */	public String toDOT(){
-		String s = "\""+this.getSource().getTextWithoutDoubleSpaces()+"\" -> \""+this.getTarget().getTextWithoutDoubleSpaces()+"\"";
+		String s = "\""+this.getSource().toDOT()+"\" -> \""+this.getTarget().toDOT()+"\"";
 		s+= " [label="+this.getConfidence()+"]";
 		String color = "red";
 		if (this.getLabel().is(DecisionLabel.Entailment)) color="blue";
 		if (this.edgeType.is(EdgeType.FRAGMENT_GRAPH)) color = "green";		
+		if (this.getLabel().is(DecisionLabel.NonEntailment)) color = "red";		
 		s+= " [color="+color+"]";
 		return s+"\n";
 	}
@@ -264,7 +301,45 @@ public class EntailmentRelation extends DefaultEdge {
 		 return false;
 	 }
 	 
+	protected void computeCosineDecision() throws EntailmentGraphRawException {			
+		String[] src = source.text.split(" ");
+		String[] tgt = target.text.split(" ");
+		Map<String,Double> srcVec = new HashMap<String, Double>();
+		Map<String,Double> tgtVec = new HashMap<String, Double>();
+		for (String s : src){
+			srcVec.put(s, 1.0);
+		}
+		for (String t : tgt){
+			tgtVec.put(t, 1.0);
+		}
+		double cos = cosineSimilarity(srcVec, tgtVec);
+		if (cos >= 0.3) 	edge = new TEDecisionWithConfidence(cos, DecisionLabel.Entailment);
+		else 	edge = new TEDecisionWithConfidence(1-cos, DecisionLabel.NonEntailment);
+	}
 	 
+	private static double cosineSimilarity(Map<String, Double> vectorA, Map<String, Double> vectorB){
+		double similarity = 0.0;
+		Set<String> commonKeys = new HashSet<String>(vectorA.keySet());
+		commonKeys.retainAll(vectorB.keySet());
+		if (commonKeys.isEmpty()) return 0.0; 
+		
+		for (String key : commonKeys){
+			similarity+=(vectorA.get(key)*vectorB.get(key));
+		}
+						
+		double cos = similarity/(magnitude(vectorA)*magnitude(vectorB));
+		if (cos>1) return 1.0; // detected results like 1.00000000002, which make LingPipe crazy
+		return cos;
+	}
+
+	private static double magnitude(Map<String, Double> vector){
+		double magnitude = 0.0;
+		for (String key : vector.keySet()){
+			magnitude+=Math.pow(vector.get(key),2);
+		}
+		return Math.sqrt(magnitude);
+	}
+
 	/******************************************************************************************
 	 * METHODS FOR INTERNAL TESTING PURPOSES
 	 * ****************************************************************************************/

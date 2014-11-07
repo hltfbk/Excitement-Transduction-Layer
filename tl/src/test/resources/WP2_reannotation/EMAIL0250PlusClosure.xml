@@ -30,7 +30,7 @@
         <correct_text> </correct_text>
         <modifiers>at Stars Bridgepoz=3 4 5</modifiers>
     </node>
-	<edge target="9.txt_2_1" source="9.txt_2_0" id="9.txt_2_1-9.txt_2_0">
+	<edge target="483394.txt_4_1" source="498974.txt_3_0" id="483394.txt_4_1-498974.txt_3_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
@@ -38,7 +38,7 @@
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>
-	<edge target="483394.txt_4_1" source="498974.txt_3_0" id="483394.txt_4_1-498974.txt_3_0">
+	<edge target="9.txt_2_1" source="9.txt_2_0" id="9.txt_2_1-9.txt_2_0">
 		<entailment_mod_insensitive> </entailment_mod_insensitive>
 		<entailment type="direct">yes</entailment>
 	</edge>

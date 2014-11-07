@@ -12,10 +12,10 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
+import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 public class AutomateWP2ProcedureGraphMergerTest {
 	
@@ -28,7 +28,7 @@ public class AutomateWP2ProcedureGraphMergerTest {
 			CachedLAPAccess lap = new CachedLAPAccess(new TreeTaggerEN());
 			EDABasic<?> eda = new RandomEDA();
 			
-			GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,eda); 
+			GraphMerger merger = new LegacyAutomateWP2ProcedureGraphMerger(lap,eda); 
 			
 			Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
 			logger.info("**** Merging the following fragment graphs with  RandomEDA (complete statements printed) ****");			
