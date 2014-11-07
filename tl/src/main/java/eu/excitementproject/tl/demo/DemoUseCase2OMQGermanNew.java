@@ -330,7 +330,7 @@ public class DemoUseCase2OMQGermanNew {
 			FragmentGraphGeneratorException, NodeMatcherException,
 			CategoryAnnotatorException, LAPException {
 		NodeMatcher nodeMatcher;
-		nodeMatcher = new NodeMatcherLongestOnly(finalCollapsedGraph);			
+		nodeMatcher = new NodeMatcherLongestOnly(finalCollapsedGraph, bestNodeOnly);			
 		logger.info("annotating interaction " + doc.getInteractionId());
 		doc.fillInputCAS(cas);
 		fragAnotCombined.annotateFragments(cas);
