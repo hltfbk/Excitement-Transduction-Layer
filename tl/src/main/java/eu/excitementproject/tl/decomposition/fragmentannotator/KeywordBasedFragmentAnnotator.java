@@ -54,26 +54,25 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 			fragLogger.info("The CAS already has " + frgIndex.size() + " determined fragment annotation. Won't process this CAS."); 
 			return; 
 		}
+
+		try {
+			this.getLap().addAnnotationOn(aJCas);
+		} catch (LAPException e) {
+			throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
+		}
 		
 		// check for keyword annotations
 		Collection<KeywordAnnotation> keywords = JCasUtil.select(aJCas, KeywordAnnotation.class);
-				
+//		Collection<KeywordAnnotation> keywords = (Collection<KeywordAnnotation>) AnnotationUtils.collectAnnotations(aJCas, KeywordAnnotation.class);
+
+		
 		if (keywords != null && keywords.size() > 0) {
 		
 			fragLogger.info("The text has " + keywords.size() + " keywords: " + getCoveredText(keywords));
 			
 			Collection<Dependency> dependencies = JCasUtil.select(aJCas, Dependency.class);
-			
-			// if there are no dependency annotations, call the LAP to make some
-			if (dependencies == null || dependencies.size() == 0) {
-				try {
-					this.getLap().addAnnotationOn(aJCas);
-				} catch (LAPException e) {
-					throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
-				}
-			}
-			
-			// if there are dependencies now, then make fragments
+					
+			// if there are dependencies, make fragments
 			if (dependencies != null && dependencies.size() > 0) {
 
 				fragLogger.info("Annotating determined fragments on CAS using keywords. CAS Text is: \"" + aJCas.getDocumentText() + "\"."); 
@@ -220,6 +219,10 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 		if (isNorV(aJCas, k) && AnnotationUtils.isGovernorInDeps(aJCas, k)) {
 //		if (isNorV(aJCas, k) || (! isGovernorInDeps(aJCas, k))) {  // if it is noun or verb, or if the word does not have a governor, then expand it instead of trying to go up) 
 			frags = AnnotationUtils.getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
+		} else {
+			if (! AnnotationUtils.isGovernorInDeps(aJCas, k)) {
+				frags = AnnotationUtils.getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
+			}
 		}
 
 		// start generating the fragment from one level up
