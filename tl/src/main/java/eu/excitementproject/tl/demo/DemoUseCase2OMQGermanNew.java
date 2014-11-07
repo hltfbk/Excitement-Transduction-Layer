@@ -114,7 +114,6 @@ public class DemoUseCase2OMQGermanNew {
 	static GermaNet germanet;
 	static Set<String> GermaNetLexicon; 
 	static GermanWordSplitter splitter;
-	static int derivSteps = 2;
 	static boolean addLemmaLabel;
 	
 	static boolean keywordsProvided = true; //if true: input dataset contains keyword metadata
@@ -128,6 +127,13 @@ public class DemoUseCase2OMQGermanNew {
 
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGermanNew.class.getName());
 
+	//configurations relating to lexical resources in SEDA
+	static int derivSteps = 2;
+	static boolean useSynonymRelation = true;
+	static boolean useHypernymRelation = true;
+	static boolean useEntailsRelation = true;
+	static boolean useCausesRelation = true;
+	
 	//determine POS tags to be used for fragment annotation
     static List<String> tokenPosFilter = Arrays.asList(
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP",  "CARD"}); //"ADV" = adverb, "FM" = foreign language material
@@ -365,7 +371,8 @@ public class DemoUseCase2OMQGermanNew {
 			//TODO: use KeywordBasedFragmentAnnotator if keywords are available!
  		modAnot = new AdvAsModifierAnnotator(lapLemma); 		
 		//initialize EDAs (Simple EDA and alignment EDA)
-		seda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet);
+		seda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet, 
+				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 		alignmenteda = new FNR_DEvar1(); 
 		configFile = new File(configFilename);
 		alignmenteda.initialize(configFile);

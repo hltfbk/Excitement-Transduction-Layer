@@ -163,7 +163,9 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 		boolean isSingleClusterGS = true;
 		String ress = "";
 		File gsDir = new File(gsAnnotationsDir);
-
+		
+		boolean includeFragmentGraphEdges = true; // whether to include FG edges in the evaluations
+		
 //	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
 		EdaName[] names = {EdaName.P1EDA};
 //		EdaName[] names = {EdaName.TIE_POS};	

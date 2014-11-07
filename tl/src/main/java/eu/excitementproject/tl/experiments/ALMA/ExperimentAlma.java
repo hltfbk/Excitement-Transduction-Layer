@@ -1,183 +1,329 @@
 package eu.excitementproject.tl.experiments.ALMA;
 
-
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import javax.xml.transform.TransformerException;
 
-//import javax.xml.transform.TransformerException;
-
-
+import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_IT;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
-//import eu.excitementproject.eop.common.DecisionLabel;
-//import eu.excitementproject.eop.core.EditDistanceEDA;
+import eu.excitementproject.eop.core.EditDistanceEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
-//import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
+import eu.excitementproject.tl.edautils.ProbabilisticEDA;
+import eu.excitementproject.tl.edautils.RandomEDA;
+import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
+import eu.excitementproject.tl.experiments.ResultsContainer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+//import javax.xml.transform.TransformerException;
+//import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
+//import eu.excitementproject.eop.core.EditDistanceEDA;
+//import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
+//import eu.excitementproject.eop.core.MaxEntClassificationEDA;
+//import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
+//import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
+//import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+//import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
-/**
+/** 
  * Class to load ALMA data, build the graphs and evaluate them
  * @author Lili Kotlerman
- *
+ * 
  */
 public class ExperimentAlma extends AbstractExperiment {
-
+	
+	public String configFileFullName = "";
 	public String configFileName = "";
 	
-	public ExperimentAlma(String configFileName, String dataDir,
+	public ExperimentAlma(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
-			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
-		super(configFileName, dataDir, fileNumberLimit, outputFolder, lapClass,
+			Class<?> edaClass, MergerType mergerType) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 		
-		this.configFileName = configFileName;
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+
 		m_optimizer = new SimpleGraphOptimizer();
+		setMerger(mergerType);
 	}
 
+	public static ExperimentAlma initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
+		
+		if (edaName.equals(EdaName.EDIT_DIST)) {
+			return new ExperimentAlma(
+					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
+//					tlDir+"src/test/resources/EOP_configurations/EditDistanceEDA_IT_WordNet.xml",
+					dataDir, fileLimit, outDir,
+					TreeTaggerIT.class,
+					EditDistanceEDA.class,
+					mergerType
+					);					
+		}
+
+		if (edaName.equals(EdaName.PROBABILISTIC)) {
+			return 	new ExperimentAlma(
+					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+					dataDir, fileLimit, outDir,
+					TreeTaggerIT.class, //not used, just some available LAP
+					ProbabilisticEDA.class, // to assign desired probability go to the EDA code (hard-coded in the beginning)
+					mergerType
+					);
+		}
+
+		if (edaName.equals(EdaName.RANDOM)) {
+			return new ExperimentAlma(
+					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
+					dataDir, fileLimit, outDir,
+					TreeTaggerIT.class, //not used, just some available LAP
+					RandomEDA.class,
+					mergerType
+					);
+		}
+
+		
+		if (edaName.equals(EdaName.TIE_POS)) {
+			return new ExperimentAlma(
+					tlDir+"src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_IT.xml",
+					dataDir, fileLimit, outDir,
+					TreeTaggerIT.class,
+					MaxEntClassificationEDA.class,
+					mergerType
+					);
+		}
+		
+		if (edaName.equals(EdaName.P1EDA)) {
+			return new ExperimentAlma(
+					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_IT.xml",
+					dataDir, fileLimit, outDir,
+					TreeTaggerIT.class,
+					FNR_IT.class,
+					mergerType
+					);
+		}
+		
+		return null;
+	}
+	
 	/**
 	 * @param args
 	 */
-//	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 
-//		String tlDir = "D:/LiliGit/Excitement-Transduction-Layer/tl/";
+		// ============= SET UP THE EXPERIMENT CONFIGURATION ============
 		String tlDir = "./";
-
-		String dataDir = tlDir+"src/test/resources/XMIs";
-
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_perFrag/";
-//		String dataDir = tlDir+"src/test/resources/WP2_public_data_CAS_XMI/ALMA_social_media_split/test/";
-//		String dataDir = tlDir+"target/ALMA_toy_test/data/";
-
-
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/ALMA_Social_media_mergedGs_byClusterSplit/test/";
-//		String gsAnnotationsDir = tlDir+"src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/Dev";
-//		String gsAnnotationsDir = tlDir+"target/ALMA_toy_test/gold_standard/";		
-		String gsAnnotationsDir = tlDir+"src/test/resources/ALMA/ITA-DATASET-11.09.14/Test";
-		
-		int fileLimit = 1000;
+		String dataDir = tlDir+"src/main/resources/exci/alma/xmi_perFragmentGraph/test";
+		String gsAnnotationsDir = tlDir+"src/main/resources/exci/alma/goldStandardAnnotation/test";
+		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
+
+		MergerType mergerType = MergerType.WP2_MERGE; // which merger to use
+		boolean includeFragmentGraphEdges = true; // whether to include FG edges in the evaluations
 		
-		File outputDir = new File(outDir);
-		if (! outputDir.exists()) {
+		// which EDA(s) to use
+		//	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
+		EdaName[] names = {EdaName.P1EDA};
+		//		EdaName[] names = {EdaName.TIE_POS};	
+		
+		// ===== END OF SET-UP
+
+		ResultsContainer combinedExperimet = new ResultsContainer(); 
+		System.out.println(tlDir);
+	//	System.out.println(System.getProperties());
+		GraphOptimizer globalOptimizer = new GlobalGraphOptimizer();
+		boolean isSingleClusterGS = true;
+		String ress = "";
+		File gsDir = new File(gsAnnotationsDir);
+
+	for(EdaName name : names)	
+		for (String clusterDir : gsDir.list()){
+			String gsClusterDir = gsAnnotationsDir;
+			if (isSingleClusterGS) gsClusterDir = gsAnnotationsDir+"/"+clusterDir;
+			if (!isSingleClusterGS) clusterDir="";
+			File clustGS = new File(gsClusterDir);
+			if (!clustGS.isDirectory()) continue;
+			System.out.println(gsClusterDir);
+				
+			ExperimentAlma e = null;
+			EntailmentGraphRaw rawGraph = null;
 			try {
-				Files.createDirectories(Paths.get(outDir));
-			} catch (IOException e2) {
+				e = initExperiment(name, mergerType, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir);
+				e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
+				rawGraph = e.buildRawGraph();
+
+				e.m_rawGraph.toXML(outDir+"/"+e.configFileName +"_rawGraph.xml");
+				e.m_rawGraph.toDOT(outDir+"/"+e.configFileName +"_rawGraph.dot");
+
+				
+			} catch (ConfigurationException | NoSuchMethodException
+					| SecurityException | InstantiationException
+					| IllegalAccessException | IllegalArgumentException
+					| InvocationTargetException | EDAException
+					| ComponentException | FragmentAnnotatorException
+					| ModifierAnnotatorException | GraphMergerException
+					| GraphOptimizerException | FragmentGraphGeneratorException
+					| IOException | EntailmentGraphRawException
+					| TransformerException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
-			}
-		}
-		
-		String conf = tlDir+"src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_IT.xml";
-//		String conf = tlDir+"src/test/resources/EOP_configurations/EditDistanceEDA_NonLexRes_IT.xml";
-		
-//		Class<?> edaClass = EditDistanceEDA.class;
-		Class<?> edaClass = MaxEntClassificationEDA.class;
-//		Class<?> edaClass = FakeEDA.class;
-
-		Class<?> lapClass = TreeTaggerIT.class;
-		
-		
-		ExperimentAlma e = null;
-		EntailmentGraphRaw rawGraph = null;
-		try {
-			e = new ExperimentAlma(conf, dataDir, fileLimit, outDir, lapClass, edaClass);
-			e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
-			rawGraph = e.buildRawGraph();
-
-//	 		for the FakeEDA only -- set the returned decision to what we want
-//			((FakeEDA) e.eda).initialize(DecisionLabel.Unknown);
-
-			e.m_rawGraph.toXML(outDir+"/"+e.configFileName +"_rawGraph.xml");
-
-		
-		} catch (ConfigurationException | NoSuchMethodException
-				| SecurityException | InstantiationException
-				| IllegalAccessException | IllegalArgumentException
-				| InvocationTargetException | EDAException | ComponentException
-				| FragmentAnnotatorException | ModifierAnnotatorException
-				| GraphMergerException | GraphOptimizerException
-				| FragmentGraphGeneratorException | IOException
-				| EntailmentGraphRawException | TransformerException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-		
+			} 
 				
-		boolean isSingleClusterGS = false;
+			// changed by Lili 6.11.14 to evaluate the same configurations as in NICE experiments
+			for (Double confidenceThreshold : e.getConfidenceThresholds()){
+				// apply threshold - this is the "local" graph for all-pairs merging
+				EntailmentGraphRaw rawGraphWithThreshold = e.applyThreshold(rawGraph, confidenceThreshold);
+				EntailmentGraphCollapsed rawGraphWithThresholdCollapsed = e.collapseGraph(rawGraphWithThreshold);
 
-		for (double confidenceThreshold : e.getConfidenceThresholds()){
-			EntailmentGraphRaw rawGraphWithThreshold = e.applyThreshold(rawGraph, confidenceThreshold);
+				String setting = e.getSettingName(name, "local", includeFragmentGraphEdges, gsClusterDir); 
+				try {
+					rawGraphWithThreshold.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_allPair.dot");
+					rawGraphWithThresholdCollapsed.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_allPair_collapsed.dot");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				System.out.println("### "+ setting+ "###");
+				System.out.println(rawGraphWithThreshold.toString());
+				EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(rawGraphWithThreshold, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				try {
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(rawGraphWithThreshold);
+					res.setViolations(consistencyCheck.getViolations());
+					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
+					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
+					res.setEdaCalls(e.getEdaCallsNumber());
 
-			String setting = "raw without FG";
-			EvaluationAndAnalysisMeasures res = e.evaluateRawGraph(rawGraphWithThreshold, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
-			
-			setting = "raw with FG";
-			res = e.evaluateRawGraph(rawGraphWithThreshold, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
-			
-			setting = "collapsed";
-			EntailmentGraphCollapsed cgr = e.collapseGraph(rawGraphWithThreshold);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
+				} catch (GraphEvaluatorException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				e.addResult(setting, confidenceThreshold, res);
+				combinedExperimet.addResult(setting, confidenceThreshold, res);
 
-			setting = "collapsed+closure";
-			cgr.applyTransitiveClosure(false);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
+				// now get plusClosure graph for current rawGraphWithThreshold  - this is the "localClosure" graph for wp2 merging
+				setting = e.getSettingName(name, "localClosure", includeFragmentGraphEdges, gsClusterDir); 
+				EntailmentGraphRaw plusClosureRawGraph = e.getPlusClosureGraph(rawGraphWithThreshold);
+				EntailmentGraphCollapsed plusClosureCollapsedGraph = e.collapseGraph(plusClosureRawGraph);
+				try {
+					plusClosureRawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_allPairs.dot");
+					plusClosureCollapsedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_allPairs_collapsed.dot");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				System.out.println("### "+ setting+ "###");
+				System.out.println(plusClosureRawGraph.toString());
+				res = e.evaluateRawGraph(plusClosureRawGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);		
+				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				try {
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(plusClosureRawGraph);
+					res.setViolations(consistencyCheck.getViolations());
+					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
+					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
+					res.setEdaCalls(e.getEdaCallsNumber());
 
+				} catch (GraphEvaluatorException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				e.addResult(setting, confidenceThreshold, res);
+				combinedExperimet.addResult(setting, confidenceThreshold, res);
+				
+				
+				// now optimize the local graph with global optimizer
+				setting = e.getSettingName(name, "local+global", includeFragmentGraphEdges, gsClusterDir);
+				EntailmentGraphCollapsed localGloballyOptimizedGraph = e.collapseGraph(rawGraphWithThreshold, globalOptimizer);
+				
+				try {
+					localGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local+global_allPairs_collapsed.dot");
+				} catch (IOException  e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}								
+				
+				System.out.println("### "+ setting+ "###");
+				res = e.evaluateCollapsedGraph(localGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
+				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				try {
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(localGloballyOptimizedGraph);
+					res.setViolations(consistencyCheck.getViolations());
+					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
+					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
+					res.setEdaCalls(e.getEdaCallsNumber());
+				} catch (GraphEvaluatorException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
+				e.addResult(setting, confidenceThreshold, res);
+				combinedExperimet.addResult(setting, confidenceThreshold, res);
 
-			EntailmentGraphRaw plusClosureRawGraph = e.getPlusClosureGraph(rawGraphWithThreshold);
 			
-			setting = "plusClosure raw without FG";
-			res = e.evaluateRawGraph(plusClosureRawGraph, gsAnnotationsDir, !includeFragmentGraphEdges, isSingleClusterGS);		
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
+				// now optimize the localClosure graph with global optimizer
+				setting = e.getSettingName(name, "localClosure+global", includeFragmentGraphEdges, gsClusterDir);				EntailmentGraphCollapsed localClosureGloballyOptimizedGraph = e.collapseGraph(plusClosureRawGraph, globalOptimizer);
+				
+				try {
+					localClosureGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure+global_allPairs_collapsed.dot");
+				} catch (IOException  e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}								
+				
+				System.out.println("### "+ setting+ "###");
+				res = e.evaluateCollapsedGraph(localClosureGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
+				System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
+				try {
+					EvaluationAndAnalysisMeasures consistencyCheck = e.checkGraphConsistency(localClosureGloballyOptimizedGraph);
+					res.setViolations(consistencyCheck.getViolations());
+					res.setExtraFGedges(consistencyCheck.getExtraFGedges());
+					res.setMissingFGedges(consistencyCheck.getMissingFGedges());
+					res.setEdaCalls(e.getEdaCallsNumber());
+				} catch (GraphEvaluatorException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
+				e.addResult(setting, confidenceThreshold, res);
+				combinedExperimet.addResult(setting, confidenceThreshold, res);
 			
-			setting = "plusClosure raw with FG";
-			res = e.evaluateRawGraph(plusClosureRawGraph, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);		
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
+			}
+
 			
-			setting = "plusClosure collapsed";
-			cgr = e.collapseGraph(plusClosureRawGraph);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, includeFragmentGraphEdges, isSingleClusterGS);
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
+			ress+=e.printResults()+"\n";
 			
-			setting = "plusClosure collapsed+closure";
-			cgr.applyTransitiveClosure(false);
-			res = e.evaluateCollapsedGraph(cgr, gsAnnotationsDir, includeFragmentGraphEdges,  isSingleClusterGS);
-			System.out.println(setting+"\t"+confidenceThreshold+"\t"+res.getRecall()+"\t"+res.getPrecision()+"\t"+res.getF1());
-			e.addResult(setting, confidenceThreshold, res);
+			System.out.println("Done");
+			
+			if (!isSingleClusterGS) break; // if not by cluster - break after the first run
+		}
+		try {
+			BufferedWriter outWriter = new BufferedWriter(new FileWriter(outDir+"/_NICE_experiment_results.txt"));
+			outWriter.write(ress);
+			System.out.println("======= AVG =======");
+			outWriter.write(combinedExperimet.printAvgResults());
+			outWriter.close();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		
-		
-		e.printResults();
-		System.out.println("Done");
 	}
 
 }

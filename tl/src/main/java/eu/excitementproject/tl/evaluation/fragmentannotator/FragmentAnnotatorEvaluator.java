@@ -30,6 +30,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasuresMacro;
 import eu.excitementproject.tl.evaluation.utils.FragmentAndModifierMatchCounter;
 import eu.excitementproject.tl.laputils.AnnotationUtils;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.LAPUtils;
 import eu.excitementproject.tl.structures.Interaction;
 
 @SuppressWarnings("unused")
@@ -43,12 +44,12 @@ public class FragmentAnnotatorEvaluator {
 		
 		logger.info("Starting processing : \n\tdir: " + xmiDir + "\n\tfragment annotator: " + fragmentAnnotator + "\n\tlanguage: " + language);
 		
-		LAPAccess lap = initializeLAP(language);
+		LAPAccess lap = LAPUtils.initializeLAP(language);
 		AbstractFragmentAnnotator fragAnnot = initializeAnnotator(fragmentAnnotator, lap);
 		List<Integer> counts = new ArrayList<Integer>(Arrays.asList(0,0,0,0)); // TP, FP, TN, FN
 		EvaluationMeasuresMacro emm = new EvaluationMeasuresMacro();
 		
-		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, false)) {
+		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, true)) {
 			
 			logger.info("Processing " + xmiIn.getName());
 			// 1st. load the gold annotations from the xmi
@@ -127,29 +128,4 @@ public class FragmentAnnotatorEvaluator {
 		return fragAnnot;
 	}
 
-	
-	
-	protected static LAPAccess initializeLAP(String language){
-		
-		String lapClassName = "eu.excitementproject.tl.laputils.LemmaLevelLap" + language.toUpperCase();
-//		String lapClassName = "eu.excitementproject.tl.laputils.DependencyLevelLap" + language.toUpperCase();
-		LAPAccess lap = null;
-		
-		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.fragmentannotator.FragmentAnnotatorEvaluator:initializeLAP");
-		logger.setLevel(Level.INFO);
-		
-		try {
-			Class<?> lapClass = Class.forName(lapClassName);
-			Constructor<?> lapClassConstructor = lapClass.getConstructor();
-			lap = (LAPAccess) lapClassConstructor.newInstance();
-			
-			logger.info("LAP initialized from class : " + lapClassName);
-			
-		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			logger.error("Error initializing LAP : " + e.getClass());
-			e.printStackTrace();
-		}
-		
-		return lap;
-	}
 }

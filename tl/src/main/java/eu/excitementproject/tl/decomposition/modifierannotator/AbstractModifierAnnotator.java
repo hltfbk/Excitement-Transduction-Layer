@@ -55,4 +55,8 @@ clearly exposed in the Constructor.
 	public FragmentAnnotator getFragmentAnnotator() {
 		return this.fragAnn;
 	}
+	
+	public void setFragmentAnnotator(FragmentAnnotator fragAnn) {
+		this.fragAnn = fragAnn;
+	}
 }
