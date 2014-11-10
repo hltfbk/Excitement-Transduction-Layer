@@ -177,7 +177,8 @@ public class EvaluatorCategoryAnnotator {
 	//static String method = "bayes_log"; //Naive Bayes with logarithm
 	
 	static int topN = 1; //evaluate accuracy considerung the topN best categories returned by the system
-	
+	private boolean lengthBoost = true; //if set to true: boost fragments according to number of contained tokens
+
     static boolean LuceneSearch = false;
    
 	static int derivSteps = 2;
@@ -194,7 +195,7 @@ public class EvaluatorCategoryAnnotator {
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
     
-    static int setup = 104;
+    static int setup = 0;
     static String fragmentTypeNameGraph = "TF"; //for setup >= 110 this variable will be overwritten!
 //  static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
  //   static String fragmentTypeName = "DF"; // DF = dpendency fragment
@@ -203,7 +204,7 @@ public class EvaluatorCategoryAnnotator {
   	static String fragmentTypeNameEval; //set automatically!
   	
     static boolean readGraphFromFile = true;
-    static boolean readMergedGraphFromFile = true;
+    static boolean readMergedGraphFromFile = false;
     static String inputMergedGraphFileName;
     static File inputMergedGraphFile;
     
@@ -670,7 +671,7 @@ public class EvaluatorCategoryAnnotator {
 					logger.debug("Number of fragment graphs: " + fragmentGraphs.size());
 					Set<NodeMatch> matches = getMatches(graph, fragmentGraphs);	
 					//add category annotation to CAS
-					categoryAnnotator.addCategoryAnnotation(cas, matches);
+					categoryAnnotator.addCategoryAnnotation(cas, matches, lengthBoost);
 					logger.debug("_________________________________________________________");
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
 					logger.debug("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
@@ -945,10 +946,8 @@ public class EvaluatorCategoryAnnotator {
 					}
 
 					//add category annotation to CAS
-					categoryAnnotator.addCategoryAnnotation(casInteraction, matches);
+					categoryAnnotator.addCategoryAnnotation(casInteraction, matches, lengthBoost);
 					
-					
-
 					//print CAS category
 					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
@@ -1382,7 +1381,7 @@ public class EvaluatorCategoryAnnotator {
 			}
 			
 			//add category annotation to CAS
-			categoryAnnotator.addCategoryAnnotation(cas, matches);
+			categoryAnnotator.addCategoryAnnotation(cas, matches, lengthBoost);
 
 	    	//Compare automatic to manual annotation
 			writer.println(cas.getDocumentText() + "");

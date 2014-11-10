@@ -37,5 +37,15 @@ public interface CategoryAnnotator {
 	 */
 	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches) 
 			throws CategoryAnnotatorException, LAPException;
+	
+	/**
+	 * @param cas - input CAS ({@link JCas})
+	 * @param matches - set of matching nodes ({@link MatchingNode})
+	 * @param lengthBoost - boost matches based on fragment length
+	 * @throws CategoryAnnotatorException if category annotation fails
+	 * @throws LAPException 
+	 */
+	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches, boolean lengthBoost) 
+			throws CategoryAnnotatorException, LAPException;
 
 }
