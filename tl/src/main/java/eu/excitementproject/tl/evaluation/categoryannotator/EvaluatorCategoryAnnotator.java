@@ -176,7 +176,6 @@ public class EvaluatorCategoryAnnotator {
 	//static String method = "bayes"; //Naive Bayes 
 	//static String method = "bayes_log"; //Naive Bayes with logarithm
 	
-	static int topN = 1; //evaluate accuracy considerung the topN best categories returned by the system
 	private boolean lengthBoost = true; //if set to true: boost fragments according to number of contained tokens
 
     static boolean LuceneSearch = false;
@@ -195,7 +194,10 @@ public class EvaluatorCategoryAnnotator {
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
     
-    static int setup = 0;
+    static int setup;
+    static int[] setupArray = {0};
+    static int topN; //set in topNArray
+    static int[] topNArray = {1}; //evaluate accuracy considerung the topN best categories returned by the system
     static String fragmentTypeNameGraph = "TF"; //for setup >= 110 this variable will be overwritten!
 //  static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
  //   static String fragmentTypeName = "DF"; // DF = dpendency fragment
