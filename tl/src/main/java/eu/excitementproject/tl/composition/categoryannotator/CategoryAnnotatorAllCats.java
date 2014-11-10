@@ -62,7 +62,7 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 	}
 	
 	@Override
-	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches)
+	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches, boolean lengthBoost)
 			throws CategoryAnnotatorException, LAPException {
 		
 		for (NodeMatch match : matches) { //for each matching mention (Bayes: for each w in D)
@@ -77,6 +77,7 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 			
 			for (PerNodeScore score : scores) { //for each matching EG node for this mention
 				EquivalenceClass E = score.getNode();
+				int labelLength = E.getLabel().split("\\s+").length;
 				double C = score.getScore(); //score telling us how well this node matches the mentionInCAS
 				logger.info("E: " + E.getLabel());
 				logger.info("C: " + C);
@@ -90,7 +91,8 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 						if (categoryConfidencesPerCategory.containsKey(category)) {
 							sumCategory = categoryConfidencesPerCategory.get(category); //read sum in case we've stored a sum from a previous node
 						}
-						sumCategory += confidence * C;
+						if (lengthBoost) sumCategory += confidence * C * labelLength; //multiply with length of the label
+						else sumCategory += confidence * C;
 						categoryConfidencesPerCategory.put(category, sumCategory);
 						sumCategoryMentions ++;
 					}
@@ -107,5 +109,11 @@ public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 			//add annotation to CAS (per matching mention)
 			CASUtils.annotateCategories(cas, region, mentionInCAS.getText(), decisions);
 		}
+	}
+
+	@Override
+	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches)
+			throws CategoryAnnotatorException, LAPException {
+		addCategoryAnnotation(cas, matches, false);
 	}
 }
