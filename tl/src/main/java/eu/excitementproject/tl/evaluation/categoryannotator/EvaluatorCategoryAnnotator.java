@@ -153,7 +153,7 @@ public class EvaluatorCategoryAnnotator {
 	static char normalizationQuery = 'n'; // n (none), c (cosine)
 	// Document (category) weighting: --> relevant when building the graph
 	static char termFrequencyDocument = 'n'; // n (natural), l (logarithm)
-	static char documentFrequencyDocument = 'n'; // n (no), t (idf)
+	static char documentFrequencyDocument = 't'; // n (no), t (idf)
 	static char normalizationDocument = 'n'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
 	
 	//INFO: Evaluating different TFIDF-configurations (with no EDA): bd[nc].n[nt]n
@@ -194,7 +194,7 @@ public class EvaluatorCategoryAnnotator {
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
     
-    static int setup = 0;
+    static int setup = 104;
     static String fragmentTypeNameGraph = "TF"; //for setup >= 110 this variable will be overwritten!
 //  static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
  //   static String fragmentTypeName = "DF"; // DF = dpendency fragment
@@ -202,8 +202,8 @@ public class EvaluatorCategoryAnnotator {
 //  static String fragmentTypeName = "SF"; //SF = sentence fragment
   	static String fragmentTypeNameEval; //set automatically!
   	
-    static boolean readGraphFromFile = false;
-    static boolean readMergedGraphFromFile = false;
+    static boolean readGraphFromFile = true;
+    static boolean readMergedGraphFromFile = true;
     static String inputMergedGraphFileName;
     static File inputMergedGraphFile;
     
@@ -792,18 +792,31 @@ public class EvaluatorCategoryAnnotator {
     		File graphFile = new File(outputGraphFoldername + "omq_public_"+i+"_collapsed_graph_"+setup + "_" + minTokenOccurrence + "_"
     				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
     		File mergedGraphFile = new File(outputGraphFoldername + "omq_public_"+i+"_merged_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeNameEval + "_" + method + "_" + edaName + ".xml");
+    				+ fragmentTypeNameEval + "_" + edaName + ".xml");
     		
     		//DEBUGGING
     		//graphFile = new File(outputGraphFoldername + "omq_public_1_collapsed_graph_112_1_TDF_tfidf_nnn_SEDA_BACKUP.xml");
-    		
+    		EntailmentGraphRaw egr;
     		String mostProbableCat;
 	    	if (readGraphFromFile) { // read graph
-	    		logger.info("Reading graph from " + graphFile.getAbsolutePath());
-	    		graph = new EntailmentGraphCollapsed(graphFile);
-	    		//graph = new EntailmentGraphCollapsed(new File("src/main/resources/exci/omq/graphs/omq_public_1_collapse_graph_6_1_tfidf_nnn_TDF_SEDA_LEMMA+DB2+GERMANET+SDEKOMPO+NEGATION+PARTIKEL.xml"));
-	    		//TODO: REMOVE; DEBUGGING ONLY
-				mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(graph);
+	    		if(readMergedGraphFromFile){
+	    			// build collapsed graph from an existing raw graph
+	    			// useful to build a new entailment graph with new method
+	    			logger.info("Building collapsed graph from raw graph");
+	    			logger.info("Reading raw graph from " + mergedGraphFile.getAbsolutePath());
+	    			egr = new EntailmentGraphRaw(mergedGraphFile);
+	    			graph = this.buildCollapsedGraphWithCategoryInfo(egr);
+	    			System.out.println("Number of nodes in collapsed graph: " + graph.vertexSet().size());
+	    			System.out.println("Number of edges in collapsed graph: " + graph.edgeSet().size());
+		    		XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
+		    		logger.info("Wrote graph to : " + graphFile.getAbsolutePath());
+	    		} else {
+	    			logger.info("Reading graph from " + graphFile.getAbsolutePath());
+		    		graph = new EntailmentGraphCollapsed(graphFile);
+		    		//graph = new EntailmentGraphCollapsed(new File("src/main/resources/exci/omq/graphs/omq_public_1_collapse_graph_6_1_tfidf_nnn_TDF_SEDA_LEMMA+DB2+GERMANET+SDEKOMPO+NEGATION+PARTIKEL.xml"));
+		    		//TODO: REMOVE; DEBUGGING ONLY
+	    		}
+	    		mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(graph);
 				logger.info("Most frequent category in graph: " + mostProbableCat);
 	    	} else { // build graph
 	    		String graphDocumentsFilename = inputDataFoldername + "omq_public_"+j+"_emails.xml";
@@ -837,7 +850,7 @@ public class EvaluatorCategoryAnnotator {
 				}
 				//graphDocs = graphDocs.subList(1, 2); //TODO: REMOVE for real test!
 				logger.info("Graph set of fold "+i+" now contains " + emailDocs.size() + " documents");
-				EntailmentGraphRaw egr;
+				
 				if (readMergedGraphFromFile) { //Read in a previously built merged graph
 					inputMergedGraphFile = new File(inputMergedGraphFileName.replaceAll("FOLD", ""+i));
 					logger.info("Reading merged graph from inputMergedGraphFile: "+ inputMergedGraphFile.getAbsolutePath());
@@ -1316,7 +1329,7 @@ public class EvaluatorCategoryAnnotator {
 		graphDocs.addAll(CategoryReader.readCategoryXML(new File(categoriesFilename)));
 		logger.info("added " + graphDocs.size() + " categories");
 		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + "_"
-				+ fragmentTypeNameEval + "_" + method + "_" + edaName + ".xml");	
+				+ fragmentTypeNameEval + "_" + edaName + ".xml");	
 		EntailmentGraphRaw egr = buildRawGraph(graphDocs, mergedGraphFile, new EntailmentGraphRaw(addLemmaLabel), minTokenOccurrenceInCategories);
 		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
 		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
@@ -1407,7 +1420,7 @@ public class EvaluatorCategoryAnnotator {
 			}
 			egc = buildCollapsedGraphWithCategoryInfo(egr);			
 			mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeNameEval + "_" + method + "_" + edaName + ".xml");	
+    				+ fragmentTypeNameEval + "_" + edaName + ".xml");	
 			graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_"+setup + "_" + minTokenOccurrence + "_"
     				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
 			XMLFileWriter.write(egr.toXML(), mergedGraphFile.getAbsolutePath());			
