@@ -177,7 +177,8 @@ public class EvaluatorCategoryAnnotator {
 	//static String method = "bayes_log"; //Naive Bayes with logarithm
 	
 	static int topN = 1; //evaluate accuracy considerung the topN best categories returned by the system
-	
+	private boolean lengthBoost = true; //if set to true: boost fragments according to number of contained tokens
+
     static boolean LuceneSearch = false;
    
 	static int derivSteps = 2;
@@ -194,7 +195,7 @@ public class EvaluatorCategoryAnnotator {
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
     
-    static int setup = 104;
+    static int setup = 0;
     static String fragmentTypeNameGraph = "TF"; //for setup >= 110 this variable will be overwritten!
 //  static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
  //   static String fragmentTypeName = "DF"; // DF = dpendency fragment
@@ -243,7 +244,7 @@ public class EvaluatorCategoryAnnotator {
 	*/	
 		
                 int[] topNArray = {1};
-                int[] setupArray = {0,1};
+                int[] setupArray = {0};
                 
                 boolean tmpReadGraphFromFile = readGraphFromFile;
                 boolean tmpReadMergedGraphFromFile = readMergedGraphFromFile;
@@ -693,7 +694,7 @@ public class EvaluatorCategoryAnnotator {
 					logger.debug("Number of fragment graphs: " + fragmentGraphs.size());
 					Set<NodeMatch> matches = getMatches(graph, fragmentGraphs);	
 					//add category annotation to CAS
-					categoryAnnotator.addCategoryAnnotation(cas, matches);
+					categoryAnnotator.addCategoryAnnotation(cas, matches, lengthBoost);
 					logger.debug("_________________________________________________________");
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
 					logger.debug("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
@@ -971,7 +972,7 @@ public class EvaluatorCategoryAnnotator {
 					}
 
 					//add category annotation to CAS
-					categoryAnnotator.addCategoryAnnotation(casInteraction, matches);
+					categoryAnnotator.addCategoryAnnotation(casInteraction, matches, lengthBoost);
 					
 					
 
@@ -1403,96 +1404,96 @@ public class EvaluatorCategoryAnnotator {
 				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
 		XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
 
-                    //Iterate through interactions, annotate each using existing graph and then add interaction to graph 
-                    for (Interaction doc : docs) {	
-                            logger.info("Processing doument " + run + " out of " + docs.size());
-                            //if (run > 50) break; //TODO: Remove (debugging only)
-                            //Annotate document and compare to manual annotation
-                            logger.info("graph contains " + egc.vertexSet().size() + " nodes ");
-                            mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(egc); //compute most frequent category in graph
-                    //indexing graph nodes and initializing search
-                            if (LuceneSearch) {
-                                    nodeMatcherWithIndex = new NodeMatcherLuceneSimple(egc, "./src/test/resources/Lucene_index/incremental/", new GermanAnalyzer(Version.LUCENE_44));
-                                    nodeMatcherWithIndex.indexGraphNodes();
-                                    nodeMatcherWithIndex.initializeSearch();
-                            } else {
-                                    nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
-                            }
+		//Iterate through interactions, annotate each using existing graph and then add interaction to graph 
+		for (Interaction doc : docs) {	
+			logger.info("Processing doument " + run + " out of " + docs.size());
+			//if (run > 50) break; //TODO: Remove (debugging only)
+			//Annotate document and compare to manual annotation
+			logger.info("graph contains " + egc.vertexSet().size() + " nodes ");
+			mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(egc); //compute most frequent category in graph
+	    	//indexing graph nodes and initializing search
+			if (LuceneSearch) {
+				nodeMatcherWithIndex = new NodeMatcherLuceneSimple(egc, "./src/test/resources/Lucene_index/incremental/", new GermanAnalyzer(Version.LUCENE_44));
+				nodeMatcherWithIndex.indexGraphNodes();
+				nodeMatcherWithIndex.initializeSearch();
+			} else {
+				nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
+			}
+			
+			//Annotate interaction using graph
+			logger.info("annotating interaction " + doc.getInteractionId());
+			cas = doc.createAndFillInputCAS();
+			fragmentAnnotatorForNewInput.annotateFragments(cas);
+			if(cas.getAnnotationIndex(DeterminedFragment.type).size() > 0){
+				modifierAnnotator.annotateModifiers(cas);
+			}
+			//logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
+			Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
+			
+			allFgs.addAll(fragmentGraphs);
+			tokenOccurrences = computeTokenOccurrences(allFgs);
+			writer.println("fragmentGraphs: " + fragmentGraphs.iterator().next().getCompleteStatement());
+			
+			//logger.info("Number of fragment graphs: " + fragmentGraphs.size());
+			writer.println(doc.getInteractionId() + " : ");
+			writer.println(fragmentGraphs.size() + " fragment graphs ");
+			Set<NodeMatch> matches = getMatches(egc, fragmentGraphs);	
+			writer.println(egc.vertexSet().size() + " nodes in graph");
+			writer.println(matches.size() + " matches");
+			for (NodeMatch nm : matches) {
+				writer.println("... " + nm.getMention());
+				writer.println("... " + nm.getScores().size());
+			}
+			
+			//add category annotation to CAS
+			categoryAnnotator.addCategoryAnnotation(cas, matches, lengthBoost);
 
-                            //Annotate interaction using graph
-                            logger.info("annotating interaction " + doc.getInteractionId());
-                            cas = doc.createAndFillInputCAS();
-                            fragmentAnnotatorForNewInput.annotateFragments(cas);
-                            if(cas.getAnnotationIndex(DeterminedFragment.type).size() > 0){
-                                    modifierAnnotator.annotateModifiers(cas);
-                            }
-                            //logger.info("Adding fragment graphs for text: " + cas.getDocumentText());
-                            Set<FragmentGraph> fragmentGraphs = fragmentGraphGenerator.generateFragmentGraphs(cas);
-
-                            allFgs.addAll(fragmentGraphs);
-                            tokenOccurrences = computeTokenOccurrences(allFgs);
-                            writer.println("fragmentGraphs: " + fragmentGraphs.iterator().next().getCompleteStatement());
-
-                            //logger.info("Number of fragment graphs: " + fragmentGraphs.size());
-                            writer.println(doc.getInteractionId() + " : ");
-                            writer.println(fragmentGraphs.size() + " fragment graphs ");
-                            Set<NodeMatch> matches = getMatches(egc, fragmentGraphs);	
-                            writer.println(egc.vertexSet().size() + " nodes in graph");
-                            writer.println(matches.size() + " matches");
-                            for (NodeMatch nm : matches) {
-                                    writer.println("... " + nm.getMention());
-                                    writer.println("... " + nm.getScores().size());
-                            }
-
-                            //add category annotation to CAS
-                            categoryAnnotator.addCategoryAnnotation(cas, matches);
-
-                    //Compare automatic to manual annotation
-                            writer.println(cas.getDocumentText() + "");
-                            writer.println(CASUtils.getCategoryAnnotationsInCAS(cas).size() + " category annotations");
-
-                            Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
-                            writer.println(decisions.size() + " decisions ");
-
-                            countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
-                                            doc, decisions, mostProbableCat, egc, matches, topN, 
-                                            method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery);
-
-                            writer.println(doc.getInteractionId() + " : " + countPositive);
-
-                            double accuracy = (double) countPositive / (double) run;
-                            logger.info("Accuracy in run " + run + ": " + accuracy);
-                            accuracyPerRun.add(accuracy);
-                            run++;
-
-                            //Add document to existing graph
-                            if (setup == 0) {
-                                    for (FragmentGraph fg : fragmentGraphs) { //just add the statement, no EDA call
-                                            egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
-                                    }
-                            } else {
-                                    for (FragmentGraph fg : fragmentGraphs) { //if token occurrence is above threshold, merge it into graph
-                                            if (tokenOccurrences.get(fg.getCompleteStatement().getTextWithoutDoubleSpaces().toLowerCase()) >= minTokenOccurrence) {
-                                                    logger.info("Merging " + fg.getCompleteStatement());
-                                                    egr = graphMerger.mergeGraphs(fg, egr); 
-                                            } else { //if it's below the threshold, just add it
-                                                    logger.info("Adding " + fg.getCompleteStatement());
-                                                    egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
-                                            }
-                                    }
-                            }
-                            egc = buildCollapsedGraphWithCategoryInfo(egr);			
-                            mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_"+setup + "_" + minTokenOccurrence + "_"
-                                    + fragmentTypeNameEval + "_" + edaName + ".xml");	
-                            graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_"+setup + "_" + minTokenOccurrence + "_"
-                                    + fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
-                            XMLFileWriter.write(egr.toXML(), mergedGraphFile.getAbsolutePath());			
-                            XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
-                    }
-                    for (int i=1; i<accuracyPerRun.size(); i++) {
-                            logger.info(accuracyPerRun.get(i));
-                    }
-                }
+	    	//Compare automatic to manual annotation
+			writer.println(cas.getDocumentText() + "");
+			writer.println(CASUtils.getCategoryAnnotationsInCAS(cas).size() + " category annotations");
+			
+			Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
+			writer.println(decisions.size() + " decisions ");
+			
+			countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
+					doc, decisions, mostProbableCat, egc, matches, topN, 
+					method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery);
+			
+			writer.println(doc.getInteractionId() + " : " + countPositive);
+			
+			double accuracy = (double) countPositive / (double) run;
+			logger.info("Accuracy in run " + run + ": " + accuracy);
+			accuracyPerRun.add(accuracy);
+			run++;
+			
+			//Add document to existing graph
+			if (setup == 0) {
+				for (FragmentGraph fg : fragmentGraphs) { //just add the statement, no EDA call
+					egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
+				}
+			} else {
+				for (FragmentGraph fg : fragmentGraphs) { //if token occurrence is above threshold, merge it into graph
+					if (tokenOccurrences.get(fg.getCompleteStatement().getTextWithoutDoubleSpaces().toLowerCase()) >= minTokenOccurrence) {
+						logger.info("Merging " + fg.getCompleteStatement());
+						egr = graphMerger.mergeGraphs(fg, egr); 
+					} else { //if it's below the threshold, just add it
+						logger.info("Adding " + fg.getCompleteStatement());
+						egr.addEntailmentUnitMention(fg.getCompleteStatement(), fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
+					}
+				}
+			}
+			egc = buildCollapsedGraphWithCategoryInfo(egr);			
+			mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_"+setup + "_" + minTokenOccurrence + "_"
+    				+ fragmentTypeNameEval + "_" + edaName + ".xml");	
+			graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_"+setup + "_" + minTokenOccurrence + "_"
+    				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_" + edaName + ".xml");
+			XMLFileWriter.write(egr.toXML(), mergedGraphFile.getAbsolutePath());			
+			XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
+		}
+		for (int i=1; i<accuracyPerRun.size(); i++) {
+			logger.info(accuracyPerRun.get(i));
+		}
+	}
 	
 	/**
 	 * This method initializes CachedLapAccess and FragmentAnnotator
