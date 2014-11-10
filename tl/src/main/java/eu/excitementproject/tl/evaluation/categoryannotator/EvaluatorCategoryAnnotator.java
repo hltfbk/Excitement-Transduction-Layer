@@ -245,12 +245,31 @@ public class EvaluatorCategoryAnnotator {
 		}	
 	*/	
 		
-		try {
-			eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
-			//eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+                boolean tmpReadGraphFromFile = readGraphFromFile;
+                boolean tmpReadMergedGraphFromFile = readMergedGraphFromFile;
+
+                for (int setupN : setupArray){
+                    setup = setupN;
+                    EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setup);
+                    
+                    for (int i = 0; i<topNArray.length;i++){
+                        topN = topNArray[i];
+                        if (i > 0){
+                            readGraphFromFile = true;
+                            readMergedGraphFromFile = true;
+                        }
+
+                        try {
+                                eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+                                //eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+                        } catch (Exception e) {
+                                e.printStackTrace();
+                        }
+                    }
+                    
+                    readGraphFromFile = tmpReadGraphFromFile;
+                    readMergedGraphFromFile = tmpReadMergedGraphFromFile;
+                }
 		writer.close();
 		writerResult.close();
 		logger.info("Finished evaluation");
