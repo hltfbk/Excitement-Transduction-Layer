@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.composition.confidencecalculator;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -38,13 +39,32 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 	static char termFrequencyDocument = 'n'; //= 'l'; // n (natural), l (logarithm)
 	static char documentFrequencyDocument = 'n';  //= 't'; // n (no), t (idf)
 	static char normalizationDocument = 'n'; // = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
-
+	private int categoryBoost;
 	String method = "tfidf"; // = "tfidf" or "bayes"
 	
 	public ConfidenceCalculatorCategoricalFrequencyDistribution() {
+		this.categoryBoost = 0;
 	}
-
+	
+	public ConfidenceCalculatorCategoricalFrequencyDistribution(int categoryBoost) {
+		this.categoryBoost = categoryBoost;
+	}
+	
 	public ConfidenceCalculatorCategoricalFrequencyDistribution(char[] methodTfIdf) {
+		this.categoryBoost = 0;
+		method = "tfidf";
+		if (methodTfIdf.length != 3) {
+			logger.error("SMART notation not complete!");
+			System.exit(1);	
+		} else {
+			termFrequencyDocument = methodTfIdf[0];
+			documentFrequencyDocument = methodTfIdf[1];
+			normalizationDocument = methodTfIdf[2];
+		}
+	}
+	
+	public ConfidenceCalculatorCategoricalFrequencyDistribution(char[] methodTfIdf, int categoryBoost) {
+		this.categoryBoost = categoryBoost;
 		method = "tfidf";
 		if (methodTfIdf.length != 3) {
 			logger.error("SMART notation not complete!");
@@ -75,11 +95,17 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			//map collecting the different categories and how often their occur on this node
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode 
 				= new HashMap<String, Integer>();
+			Set<String> categoriesToBoost = new HashSet<String>(); 
 			Set<EntailmentUnit> eus = node.getEntailmentUnits();			
 			for (EntailmentUnit eu : eus) {	//for each entailment unit in the node		
 				for (EntailmentUnitMention mentionOnNode : eu.getMentions()) { 
 					//for each mention associated to the entailment unit
 					String categoryMention = mentionOnNode.getCategoryId();
+					if(categoryBoost > 0){
+						if(mentionOnNode.getInteractionId().startsWith("c_")){
+							categoriesToBoost.add(categoryMention);
+						}
+					}
 					int tf = 0; //how often does the "term" occur in the "document" --> how often does category occur on the node
 					if (categoryFrequencyDistributionOnNode.containsKey(categoryMention)) {
 						tf = categoryFrequencyDistributionOnNode.get(categoryMention);
@@ -106,6 +132,9 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 					count(w,c) --> how often does category appear in node
 					count(c) --> how often does category appear in graph */
 					score = (tf+smoothingParameter) / (graphStatistics.getNumberOfMentionsPerCategory().get(category) + graphStatistics.getTotalNumberOfMentions());
+					if(categoryBoost > 0 && categoriesToBoost.contains(category)){
+						score += categoryBoost;
+					}
 					logger.info("Bayes score for category " + category + " : " + score);
 					logger.info("tf: " + tf);
 					categoryConfidences.put(category, score);
@@ -124,6 +153,9 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 						//estimate log likelihoods
 						//logLikelihood = Math.log((count+1.0)/(featureOccurrencesInCategory.get(category)+knowledgeBase.d)); --> Implementation by Vasilis Vryniotis 
 						double loglikelihood = Math.log((tf+smoothingParameter) / (graphStatistics.getNumberOfMentionsPerCategory().get(category) + graphStatistics.getTotalNumberOfNodes()));
+						if(categoryBoost > 0 && categoriesToBoost.contains(category)){
+							loglikelihood += categoryBoost;
+						}
 						categoryConfidences.put(category, loglikelihood);
 					}	
 					logger.debug("categoryConfidences: " + categoryConfidences);
@@ -158,6 +190,9 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 					}
 					
 					score = termFrequency * documentFrequency; 
+					if(categoryBoost > 0 && categoriesToBoost.contains(category)){
+						score += categoryBoost;
+					}
 					
 //					} else if (method.equals("simple")) {
 //						score = tf / (double) sumMentions;
