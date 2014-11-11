@@ -5492,6 +5492,5 @@
   <entailmentUnitNode lemmaLabel="hochsegmentierten" level="0" text="hochsegmentierten">
     <completeStatement text="hochsegmentierten"/>
     <entailmentUnitMention categoryId="71" interactionId="c_71" level="0" text="hochsegmentierten"/>
->>>>>>> refs/remotes/upstream/master
   </entailmentUnitNode>
 </rawGraph>
