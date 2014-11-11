@@ -372,7 +372,7 @@ public final class CASUtils {
 
 		Logger l = Logger.getLogger("eu.excitementproject.tl.laputils"); 
 //		l.debug("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
-		l.info("Generated an ModifierAnnotation annotation. Modifier text is: " + modText); 
+		l.info("Generated a ModifierAnnotation annotation. Modifier text is: *" + modText + "*"); 
 
 		// return Modifier Annotation itself, so the caller can easily make next 
 		// modifier that depends on this modifier annotation

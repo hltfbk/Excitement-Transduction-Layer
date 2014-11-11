@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
@@ -11,7 +12,18 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.uima.cas.CAS;
+import org.apache.uima.cas.FSIterator;
+import org.apache.uima.cas.Feature;
+import org.apache.uima.cas.FeatureStructure;
+import org.apache.uima.cas.FloatArrayFS;
+import org.apache.uima.cas.IntArrayFS;
+import org.apache.uima.cas.StringArrayFS;
+import org.apache.uima.cas.Type;
+import org.apache.uima.cas.text.AnnotationFS;
+import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.tcas.Annotation;
@@ -19,6 +31,7 @@ import org.uimafit.util.JCasUtil;
 
 import com.aliasi.util.Collections;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import eu.excitement.type.tl.DeterminedFragment;
@@ -147,12 +160,10 @@ public final class AnnotationUtils {
 	 * @throws ModifierAnnotatorException
 	 */
 	public static void annotatePhraseModifier(JCas aJCas, Set<Region> frag) {
-
+		
 		if (frag != null && frag.size() > 0) {
 			// compress the spans (by concatenating adjacent portions) before generating the fragment annotation
-			
-			System.out.println("Annotating phrase modifier, but first compress the regions");
-			
+						
 			frag = RegionUtils.compressRegions(frag);
 
 			CASUtils.Region[] r = new CASUtils.Region[frag.size()];
@@ -161,8 +172,6 @@ public final class AnnotationUtils {
 				r[i++] = new CASUtils.Region(s.getBegin(), s.getEnd());
 			}
 			
-			System.out.println("Now calling CASUtils to actually add the modifier");
-
 			try {
 				CASUtils.annotateOneModifier(aJCas, r);
 			} catch (LAPException e) {
@@ -171,55 +180,7 @@ public final class AnnotationUtils {
 			}
 		}
 	}
-	
-	/**
-	 * Adds modifier annotations to a CAS object for a given fragment. These modifiers must have the given POS. 
-	 * 
-	 * @param aJCas a CAS object
-	 * @param frag a fragment annotation in the given CAS object
-	 * @param negationPos the position of the negation in the fragment (-1 if there is none)
-	 * @param modClass the POS class of the modifiers to be annotated
-	 * @throws ModifierAnnotatorException 
-	 */
-	public static void addModifiers(JCas aJCas, FragmentAnnotation frag, int negationPos, Class<? extends Annotation> modClass) throws ModifierAnnotatorException {
-
-		Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator:addModifiers");
-		
-		List<? extends Annotation> listMods = JCasUtil.selectCovered(aJCas, modClass, frag);
-		int num_mods = 0;
-		
-		if (listMods != null && ! listMods.isEmpty()) {
-			for (Annotation a: listMods) {
-
-				int begin = a.getBegin(); 
-				int end = a.getEnd(); 
-
-//				if (! isNegation(a.getCoveredText()) &&
-//					! inNegationScope(begin, frag, negationPos)) {
-				if ( negationPos < 0 ||
-						( ! isNegation(a.getCoveredText()) &&
-						  ! inNegationScope(begin, frag, negationPos)) 
-					) {
-					
-					CASUtils.Region[] r = new CASUtils.Region[1]; 
-					r[0] = new CASUtils.Region(begin,  end); 
-	
-					modLogger.info("Annotating the following as a modifier: " + a.getCoveredText());
-				
-					try {
-						CASUtils.annotateOneModifier(aJCas, r); 
-					} catch (LAPException e) {
-						throw new ModifierAnnotatorException("CASUtils reported exception while annotating Modifier, on sentence (" + begin + ","+ end, e );
-					}
-					num_mods++;
-				} else {
-					modLogger.info("Potential modifier is or is in scope of a negation: " + a.getCoveredText());
-				}
-			}
-		}
-		modLogger.info("Annotated " + num_mods + " for fragment " + frag.getCoveredText());
-		num_mods = 0;
-	}			
+			
 
 	
 	/**
@@ -247,15 +208,15 @@ public final class AnnotationUtils {
 	 * @param a the given annotation from which the phrase is being generated 
 	 * @return
 	 */
-	public static Set<Region> getPhraseRegion(JCas aJCas, Annotation a){
+	public static Set<Region> getPhraseRegion(JCas aJCas, Annotation boundingAnnotation, Annotation a){
 
-		Set<Region> frags = null;
+		Set<Region> regions = null;
 			
 		if (isGovernorInDeps(aJCas, a)) {
-			frags = getFragment(a.getCoveredText(), a.getBegin(), a.getEnd(), aJCas);
+			regions = getRegions(a.getCoveredText(), a.getBegin(), a.getEnd(), aJCas, boundingAnnotation, "get governed");
 		}
 			
-		return frags;
+		return regions;
 	}
 		
 
@@ -266,16 +227,17 @@ public final class AnnotationUtils {
 	 * @param begin -- beginning position of the word
 	 * @param end -- end position of the word
 	 * @param aJCas -- CAS object
+	 * @param string 
 	 * @return a set of spans corresponding to the fragment. Maybe we could compress this by merging adjacent fragments
 	 */
-	public static Set<Region> getFragment(String word, int begin, int end, JCas aJCas) {
+	public static Set<Region> getRegions(String word, int begin, int end, JCas aJCas, Annotation boundingAnnotation, String dependencyType) {
 	
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.AnnotationUtils.getFragment");
 
-		logger.info("\tbuildling fragment around " + word + " (" + begin + "," + end + ")");
+		logger.info("\tbuilding fragment around " + word + " (" + begin + "," + end + ")");
 	
 		//	List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, begin, end);
-		List<Dependency> deps = getRelevantDependencies(aJCas, begin, end);
+		List<Dependency> deps = getRelevantDependencies(aJCas, boundingAnnotation, begin, end, dependencyType);
 	
 		// create the spans sorted by their location in the text, so they can be properly concatenated
 		SortedSet<Region> spans = new TreeSet<Region>(new Comparator<Region>() {
@@ -297,7 +259,7 @@ public final class AnnotationUtils {
 				//	if (d.getGovernor().getCoveredText().matches(word)) {
 				if (d.getGovernor().getCoveredText().equals(word)) {
 					Token t = d.getDependent();
-					Set<Region> newSpans = getFragment(t.getCoveredText(), t.getBegin(), t.getEnd(), aJCas);
+					Set<Region> newSpans = getRegions(t.getCoveredText(), t.getBegin(), t.getEnd(), aJCas, boundingAnnotation, dependencyType);
 					if (newSpans != null && newSpans.size() > 0) {
 						spans.addAll(newSpans);
 					}
@@ -314,6 +276,7 @@ public final class AnnotationUtils {
 	}
 
 	
+	
 	// necessary because the begin/end of each dependency is the entire text, so we get all the dependencies 
 	// in the text using selectCovering(...) while selectCovered(...) is too restrictive
 	/**
@@ -322,23 +285,32 @@ public final class AnnotationUtils {
 	 * @param aJCas the CAS object
 	 * @param begin the start position of the governor
 	 * @param end the end position of the governor
+	 * @param dependencyType 
 	 * @return a list of dependencies for which the governor is indeed the governor
 	 */
-	public static List<Dependency> getRelevantDependencies(JCas aJCas, int begin, int end) {
+	public static List<Dependency> getRelevantDependencies(JCas aJCas, Annotation boundingAnnotation, int begin, int end, String dependencyType) {
 		
 		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, begin, end);
 		List<Dependency> relevantDeps = new ArrayList<Dependency>();
 		
 		for (Dependency d: deps) {
-			if ( ( ! d.getGovernor().getCoveredText().equals(d.getDependent().getCoveredText())) // this test is because of a strange dependency noted while using OMQ with MaltParser (im,im) => MNR
+			
+			if ( isInBounds(d, boundingAnnotation)
+					&&
+				 ( ! d.getGovernor().getCoveredText().equals(d.getDependent().getCoveredText())) // this test is because of a strange dependency noted while using OMQ with MaltParser (im,im) => MNR
 					&&
 				 ( d.getDependent().getCoveredText().matches("\\w.*")) // avoid punctuation (at least starts with letter)
-					&&
-				 ( (d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end)
-				     || 
-				   (d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end))
-				) {
-				relevantDeps.add(d);
+			) {
+
+				if ((dependencyType.equals("get governed") &&  (d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end))
+					 ||
+					 (dependencyType.equals("get governor") && (d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end))
+					 ||
+					 (dependencyType.equals("any") && ((d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end) 
+							 									|| 
+							 							(d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end)))) {	
+					relevantDeps.add(d);
+				}
 			}
 		}
 		
@@ -346,7 +318,19 @@ public final class AnnotationUtils {
 	}
 
 	
+	// a bit approximated -- for non-contiguous fragments this could be problematic
+	private static boolean isInBounds(Dependency d,
+			Annotation boundingAnnotation) {
+		return (covers(boundingAnnotation, d.getDependent()) && covers(boundingAnnotation, d.getGovernor()));
+	}
+
 	
+
+	private static boolean covers(Annotation boundingAnnotation, Token token) {
+		return (boundingAnnotation.getBegin() < token.getBegin() && boundingAnnotation.getEnd() > token.getEnd());
+	}
+
+
 	/**
 	 * Check if a given word (passed as an Annotation parameter) appears as governor in some dependency relation
 	 * (used to avoid having unigram fragments)
@@ -480,8 +464,147 @@ public final class AnnotationUtils {
 		
 		return new CASUtils.Region(frag_start, frag_end);
 	}
-	
 
+
+	
+	public static void printAnnotations(JCas aJCas, Class<? extends Annotation> cls) {
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.AnnotationUtils");
+		logger.setLevel(Level.INFO);
+		
+		AnnotationIndex<Annotation> posIndex = aJCas.getAnnotationIndex(POS.type);
+		
+		for(Annotation a: posIndex) {
+			logger.info("\t" + a.getCoveredText() + " (" + a.getBegin() + "," + a.getEnd() + ") -> " + a.getClass().getSimpleName());
+		}
+	}
+	
+	
+	public static void probeCAS(JCas aJCas) {
+			
+	    FSIterator<Annotation> iter = aJCas.getAnnotationIndex().iterator();
+
+	    // iterate
+	    while (iter.isValid()) {
+	      FeatureStructure fs = iter.get();
+	      printFS(fs, aJCas, 0);
+	      iter.moveToNext();
+	    }
+	}
+	
+	// borrowed from PlatformCASProber
+	public static void printFS(FeatureStructure aFS, JCas aCAS, int aNestingLevel) {
+		  
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.AnnotationUtils.probeCAS");
+		  
+		Type stringType = aCAS.getTypeSystem().getType(CAS.TYPE_NAME_STRING);
+
+		   logger.info(aFS.getType().getName());
+
+		    // if it's an annotation, print the first 64 chars of its covered text
+		    if (aFS instanceof Annotation) {
+		      Annotation annot = (Annotation) aFS;
+		      String coveredText = annot.getCoveredText();
+		      logger.info("\"");
+		      if (coveredText.length() <= 64) {
+		        logger.info(coveredText);
+		      } else {
+		        logger.info(coveredText.substring(0, 64) + "...");
+		      }
+		      logger.info("\"");
+		    }
+
+		    // print all features
+		    List<Feature> aFeatures = aFS.getType().getFeatures();
+		    Iterator<Feature> iter = aFeatures.iterator();
+		    while (iter.hasNext()) {
+		      Feature feat = (Feature) iter.next();
+		      // print feature name
+		      logger.info(feat.getShortName());
+		      logger.info(" = ");
+		      // prnt feature value (how we get this depends on feature's range type)
+		      String rangeTypeName = feat.getRange().getName();
+		      if (aCAS.getTypeSystem().subsumes(stringType, feat.getRange())) // must check for subtypes of
+		                                                                      // string
+		      {
+		        String str = aFS.getStringValue(feat);
+		        if (str == null) {
+		          logger.info("null");
+		        } else {
+		          logger.info("\"");
+		          if (str.length() > 64) {
+		            str = str.substring(0, 64) + "...";
+		          }
+		          logger.info(str);
+		          logger.info("\"");
+		        }
+		      } else if (CAS.TYPE_NAME_INTEGER.equals(rangeTypeName)) {
+		        logger.info(aFS.getIntValue(feat));
+		      } else if (CAS.TYPE_NAME_FLOAT.equals(rangeTypeName)) {
+		        logger.info(aFS.getFloatValue(feat));
+		      } else if (CAS.TYPE_NAME_STRING_ARRAY.equals(rangeTypeName)) {
+		        StringArrayFS arrayFS = (StringArrayFS) aFS.getFeatureValue(feat);
+		        if (arrayFS == null) {
+		          logger.info("null");
+		        } else {
+		          String[] vals = arrayFS.toArray();
+		          logger.info("[");
+		          for (int i = 0; i < vals.length - 1; i++) {
+		            logger.info(vals[i]);
+		            logger.info(',');
+		          }
+		          if (vals.length > 0) {
+		            logger.info(vals[vals.length - 1]);
+		          }
+		          logger.info("]\"");
+		        }
+		      } else if (CAS.TYPE_NAME_INTEGER_ARRAY.equals(rangeTypeName)) {
+		        IntArrayFS arrayFS = (IntArrayFS) aFS.getFeatureValue(feat);
+		        if (arrayFS == null) {
+		          logger.info("null");
+		        } else {
+		          int[] vals = arrayFS.toArray();
+		          logger.info("[");
+		          for (int i = 0; i < vals.length - 1; i++) {
+		            logger.info(vals[i]);
+		            logger.info(',');
+		          }
+		          if (vals.length > 0) {
+		            logger.info(vals[vals.length - 1]);
+		          }
+		          logger.info("]\"");
+		        }
+		      } else if (CAS.TYPE_NAME_FLOAT_ARRAY.equals(rangeTypeName)) {
+		        FloatArrayFS arrayFS = (FloatArrayFS) aFS.getFeatureValue(feat);
+		        if (arrayFS == null) {
+		         logger.info("null");
+		        } else {
+		          float[] vals = arrayFS.toArray();
+		          logger.info("[");
+		          for (int i = 0; i < vals.length - 1; i++) {
+		            logger.info(vals[i]);
+		            logger.info(',');
+		          }
+		          if (vals.length > 0) {
+		            logger.info(vals[vals.length - 1]);
+		          }
+		          logger.info("]\"");
+		        }
+		      } else // non-primitive type
+		      {
+		        FeatureStructure val = aFS.getFeatureValue(feat);
+		        if (val == null) {
+		          logger.info("null");
+		        } else {
+		          printFS(val, aCAS, aNestingLevel + 1);
+		        }
+		      }
+		    }
+		  }
+		  
+
+	
+	
 	/**
 	 * Collects the annotations and filters out the empty ones (it happens with the keywords sometimes)
 	 * 

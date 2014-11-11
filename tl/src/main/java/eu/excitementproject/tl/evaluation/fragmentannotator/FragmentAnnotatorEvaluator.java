@@ -15,6 +15,8 @@ import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
+
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
@@ -83,15 +85,19 @@ public class FragmentAnnotatorEvaluator {
 				AnnotationUtils.transferAnnotations(goldJCas, sysJCas, KeywordAnnotation.class);
 								
 				fragAnnot.annotateFragments(sysJCas); 
+				
+				AnnotationUtils.printAnnotations(sysJCas, POS.class);
 			
 				List<Integer> fragCounts =  FragmentAndModifierMatchCounter.countFragmentCounts(sysJCas, goldJCas);
+//				List<Integer> fragCounts =  FragmentAndModifierMatchCounter.countFragmentCountsRelativeToBaseStatements(sysJCas, goldJCas);
+
 				counts = addScores(counts,fragCounts);
 				emm.addScores(new EvaluationMeasures(fragCounts));
 			}
 		}
 		
-		logger.info("Final counts: " + counts.toString());
-		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n");
+		logger.info("Final counts: " + counts.toString() + " / " + FragmentAndModifierMatchCounter.getClassDetails(counts));
+		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n" + "Number of instances: " + emm.getNrOfInstances());
 		
 		return new EvaluationMeasures(counts);
 	}

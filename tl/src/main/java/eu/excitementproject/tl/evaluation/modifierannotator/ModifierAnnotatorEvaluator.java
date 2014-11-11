@@ -11,12 +11,16 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.uima.cas.CAS;
 import org.apache.uima.jcas.JCas;
+
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.KeywordAnnotation;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.eop.lap.PlatformCASProber;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -70,6 +74,8 @@ public class ModifierAnnotatorEvaluator {
 		
 		List<Integer> counts = new ArrayList<Integer>(Arrays.asList(0,0,0,0)); // TP, FP, TN, FN
 		EvaluationMeasuresMacro emm = new EvaluationMeasuresMacro();
+
+		int modAnnotationsCount = 0;
 		
 		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, true)) {
 			
@@ -100,17 +106,20 @@ public class ModifierAnnotatorEvaluator {
 				} else {
 					AnnotationUtils.transferAnnotations(goldJCas, sysJCas, KeywordAnnotation.class);	
 				}
-					
-				modAnn.annotateModifiers(sysJCas);
+				
+				AnnotationUtils.printAnnotations(sysJCas,POS.class);
+				
+				modAnnotationsCount += modAnn.annotateModifiers(sysJCas);
 			
+				
 				List<Integer> modCounts =  FragmentAndModifierMatchCounter.countModifierCounts(sysJCas, goldJCas);
 				counts = addScores(counts,modCounts);
 				emm.addScores(new EvaluationMeasures(modCounts));
 			}
 		}
 		
-		logger.info("Final counts: " + counts.toString());
-		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n" + "Number of instances: " + emm.getNrOfInstances());
+		logger.info("Final counts: " + counts.toString() + " / " + FragmentAndModifierMatchCounter.getClassDetails(counts));
+		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n" + "Number of instances: " + modAnnotationsCount);
 		
 		return new EvaluationMeasures(counts);
 	}

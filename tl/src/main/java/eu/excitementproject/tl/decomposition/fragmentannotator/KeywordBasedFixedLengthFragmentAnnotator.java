@@ -65,6 +65,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
 		if (tokens == null || tokens.size() == 0) {
 			try {
+				logger.info("Annotating CAS object with LAP " + this.getLap().getClass() );
 				this.getLap().addAnnotationOn(aJCas);
 			} catch (LAPException e) {
 				throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														

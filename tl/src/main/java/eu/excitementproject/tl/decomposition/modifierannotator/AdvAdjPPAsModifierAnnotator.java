@@ -67,10 +67,12 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 	
 	
 	@Override
-	protected void addModifierAnnotations(Iterator<Annotation> fragItr, JCas aJCas, boolean checkNegation, Set<Class<? extends POS>> POSclasses) throws ModifierAnnotatorException {
+	protected int addModifierAnnotations(Iterator<Annotation> fragItr, JCas aJCas, boolean checkNegation, Set<Class<? extends POS>> POSclasses) throws ModifierAnnotatorException {
 			
-		modLogger.info("Annotating TLmodifier annotations on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
+		modLogger.info("Annotating TLmodifier annotations of class on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
 		Integer negationPosition = -1;
+		
+		int num_mods = 0;
 		
 		while(fragItr.hasNext()) {
 			FragmentAnnotation frag = (FragmentAnnotation) fragItr.next();
@@ -78,17 +80,20 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 			if (POSclasses != null) {
 				for(Class<? extends POS> cls: POSclasses) {
 					
+					modLogger.info("\tchecking for " + cls.getSimpleName());
+					
 					if (checkNegation) {
 						negationPosition = AnnotationUtils.checkNegation(frag);
 					}
 			
 					if (cls.equals(PP.class))
-						addPPModifiers(aJCas, frag, negationPosition);
+						num_mods += addPPModifiers(aJCas, frag, negationPosition);
 					else
-						AnnotationUtils.addModifiers(aJCas, frag, negationPosition, cls);
+						num_mods += addModifiers(aJCas, frag, negationPosition, cls);
 				}
 			}
 		}			
+		return num_mods;
 	}		
 	
 	
@@ -101,9 +106,12 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 	 * @param negationPos the position of the negation in the fragment (-1 if there is none)
 	 * @throws ModifierAnnotatorException 
 	 */
-	public void addPPModifiers(JCas aJCas, FragmentAnnotation frag, int negationPos) throws ModifierAnnotatorException {
+	public int addPPModifiers(JCas aJCas, FragmentAnnotation frag, int negationPos) throws ModifierAnnotatorException {
 		Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator:addPPModifiers");
-
+		int all_mods = 0;
+		
+		modLogger.info("Adding PP modifiers for fragment: *" + frag.getCoveredText() + "*");
+		
 		Collection<Dependency> dependencies = JCasUtil.select(aJCas, Dependency.class);
 		if (dependencies != null && !dependencies.isEmpty()) {
 			
@@ -111,31 +119,34 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 			int num_mods = 0;
 		
 			if (listMods != null && ! listMods.isEmpty()) {
-				modLogger.info("PPs found!");
+				modLogger.info( listMods.size() + " PPs found!");
 
 				for (Annotation a: listMods) {
 
-					modLogger.info("Adding phrase for PP " + a.getCoveredText());
+					modLogger.info("Checking phrase for PP *" + a.getCoveredText() + "* (" + a.getBegin() + "," + a.getEnd() + ")");
+					
 					if (negationPos < 0 || ! AnnotationUtils.inNegationScope(a.getBegin(), frag, negationPos)) {
 
-						annotatePPModifier(aJCas, a);
+						annotatePPModifier(aJCas, frag, a);
 						num_mods++;
 					} else {
-						modLogger.info("Potential modifier is or is in scope of a negation: " + a.getCoveredText());
+						modLogger.info("Potential modifier *" + a.getCoveredText() + "* is (or is in scope of) a negation: " + a.getCoveredText());
 					}
 				}
 			}
-			modLogger.info("Annotated " + num_mods + " PP modifiers for fragment " + frag.getCoveredText());
+			modLogger.info("Annotated " + num_mods + " PP modifiers for fragment *" + frag.getCoveredText() + "*");
+			all_mods += num_mods;
 			num_mods = 0;
 		}
+		return all_mods;
 	}
 	
 	
-	private void annotatePPModifier(JCas aJCas, Annotation a) {
+	private void annotatePPModifier(JCas aJCas, FragmentAnnotation frag, Annotation a) {
 		
-		System.out.println("Adding one PP modifier for " + a.getCoveredText());
+//		System.out.println("Adding one PP modifier for " + a.getCoveredText());
 		
-		Set<Region> pp = AnnotationUtils.getPhraseRegion(aJCas, a);
+		Set<Region> pp = AnnotationUtils.getPhraseRegion(aJCas, frag, a);
 		
 		if (pp != null && pp.size() > 0) {
 			AnnotationUtils.annotatePhraseModifier(aJCas, pp);

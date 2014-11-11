@@ -11,6 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import eu.excitement.type.tl.DeterminedFragment;
@@ -54,11 +55,15 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 			fragLogger.info("The CAS already has " + frgIndex.size() + " determined fragment annotation. Won't process this CAS."); 
 			return; 
 		}
-
-		try {
-			this.getLap().addAnnotationOn(aJCas);
-		} catch (LAPException e) {
-			throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
+		
+		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
+		if (tokens == null || tokens.size() == 0) {
+			try {
+				fragLogger.info("Annotating CAS object with LAP " + this.getLap().getClass());
+				this.getLap().addAnnotationOn(aJCas);
+			} catch (LAPException e) {
+				throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
+			}
 		}
 		
 		// check for keyword annotations
@@ -212,16 +217,17 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	private Set<Region> makeOneFragment(JCas aJCas, Annotation k, int step) {
 
 		Set<Region> frags = null;
+		Sentence coveringSentence = (Sentence) JCasUtil.selectCovering(aJCas, Sentence.class, k.getBegin(), k.getEnd()).get(0);
 		
 		if (step > 2) 
 			return frags;
 		
 		if (isNorV(aJCas, k) && AnnotationUtils.isGovernorInDeps(aJCas, k)) {
-//		if (isNorV(aJCas, k) || (! isGovernorInDeps(aJCas, k))) {  // if it is noun or verb, or if the word does not have a governor, then expand it instead of trying to go up) 
-			frags = AnnotationUtils.getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
+//		if (isNorV(aJCas, k) || (! isGovernorInDeps(aJCas, k))) {  // if it is noun or verb, or if the word does not have a governor, then expand it instead of trying to go up)
+			frags = AnnotationUtils.getRegions(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas, coveringSentence, "any");
 		} else {
 			if (! AnnotationUtils.isGovernorInDeps(aJCas, k)) {
-				frags = AnnotationUtils.getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
+				frags = AnnotationUtils.getRegions(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas, coveringSentence, "any");
 			}
 		}
 
