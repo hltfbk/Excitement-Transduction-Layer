@@ -550,7 +550,8 @@ public class EvaluatorCategoryAnnotator {
 	 * @throws IOException 
 	 */
 	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, 
-			String configFilename, int setup) throws IOException {
+			String configFilename, int setup, int topN, String method, boolean bestNodeOnly, 
+			char documentFrequencyQuery, char termFrequencyQuery) throws IOException {
 		
 		setup(setup);		
 		UseCaseOneRunnerPrototype use1;
@@ -701,7 +702,9 @@ public class EvaluatorCategoryAnnotator {
 					CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
 					countPositive = compareDecisionsForInteraction(countPositive,
-							doc, decisions, graph, matches);				
+							doc, decisions, graph, matches, topN, method, bestNodeOnly, 
+							documentFrequencyQuery, termFrequencyQuery);
+
 				}
 				/*
 //				JCas cas;
@@ -752,6 +755,21 @@ public class EvaluatorCategoryAnnotator {
 	}
 	
 
+	/**
+	 * Compare automatic to manual annotation on interaction level (with no "most probable" category)
+	 * 
+	 * @param countPositive
+	 * @param doc
+	 * @param decisions
+	 * @return
+	 */
+	private int compareDecisionsForInteraction(int countPositive,
+			Interaction doc, Set<CategoryDecision> decisions, EntailmentGraphCollapsed graph, 
+			Set<NodeMatch> matches, int topN, String method, boolean bestNodeOnly, 
+			char documentFrequencyQuery, char termFrequencyQuery) {
+		return EvaluatorUtils.compareDecisionsForInteraction(countPositive, doc, decisions, "N/A", 
+				graph, matches, topN, method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery);
+	}
 	
 	/**
 	 * Runs three-fold cross-validation on the files found in the input directory. This directory must contain
