@@ -153,7 +153,7 @@ public class EvaluatorCategoryAnnotator {
 	static char normalizationQuery = 'n'; // n (none), c (cosine)
 	// Document (category) weighting: --> relevant when building the graph
 	static char termFrequencyDocument = 'n'; // n (natural), l (logarithm)
-	static char documentFrequencyDocument = 't'; // n (no), t (idf)
+	static char documentFrequencyDocument = 'n'; // n (no), t (idf)
 	static char normalizationDocument = 'n'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
 	
 	//INFO: Evaluating different TFIDF-configurations (with no EDA): bd[nc].n[nt]n
@@ -176,12 +176,12 @@ public class EvaluatorCategoryAnnotator {
 	//static String method = "bayes"; //Naive Bayes 
 	//static String method = "bayes_log"; //Naive Bayes with logarithm
 	
-	private boolean lengthBoost = true; //if set to true: boost fragments according to number of contained tokens
-	private int categoryBoost = 2; //if categoryBoost > 0: if EC has fragments from a category text, then boost the weight of these categories in raw graph (add categoryBoost)
+	private boolean lengthBoost = false; //if set to true: boost fragments according to number of contained tokens
+	private int categoryBoost = 0; //if categoryBoost > 0: if EC has fragments from a category text, then boost the weight of these categories in raw graph (add categoryBoost)
 	
     static boolean LuceneSearch = false;
    
-	static int derivSteps = 2;
+	static int derivSteps; //set in the setup(i)
 	static boolean useSynonymRelation = true;
 	static boolean useHypernymRelation = true;
 	static boolean useEntailsRelation = true;
@@ -195,17 +195,15 @@ public class EvaluatorCategoryAnnotator {
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
     
-    static int setup;
-    static int[] setupArray = {0};
-    static int topN; //set in topNArray
-    static int[] topNArray = {1}; //evaluate accuracy considerung the topN best categories returned by the system
-    static String fragmentTypeNameGraph = "TF"; //for setup >= 110 this variable will be overwritten!
-//  static String fragmentTypeName = "TF"; // token fragment, TDF = , SF, KBF
- //   static String fragmentTypeName = "DF"; // DF = dpendency fragment
-//    static String fragmentTypeName = "TDF"; // TDF = token + dependency fragment
-//  static String fragmentTypeName = "SF"; //SF = sentence fragment
+    private int setup; //use setupArray to set the parameter
+    static int topN; //use topNArray to set the parameter
+    static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
   	static String fragmentTypeNameEval; //set automatically!
   	
+    static int[] setupArray = {0};
+    static int[] topNArray = {1}; //evaluate accuracy considerung the topN best categories returned by the system
+    static String[] fragmentTypeNameGraphArray = {"TF"}; //for setup >= 110 this variable will be overwritten!
+//    static String[] fragmentTypeNameGraphArray = {"TF", "DF", "SF", "TDF"};
     static boolean readGraphFromFile = false;
     static boolean readMergedGraphFromFile = false;
     static String inputMergedGraphFileName;
@@ -246,33 +244,43 @@ public class EvaluatorCategoryAnnotator {
 		}	
 	*/	
 		
-                boolean tmpReadGraphFromFile = readGraphFromFile;
-                boolean tmpReadMergedGraphFromFile = readMergedGraphFromFile;
-
-                for (int setupN : setupArray){
-                    setup = setupN;
-                    EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setup);
-                    
-                    for (int i = 0; i<topNArray.length;i++){
-                        topN = topNArray[i];
-                        if (i > 0){
-                            readGraphFromFile = true;
-                            readMergedGraphFromFile = true;
-                        }
-
-                        try {
-                                eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
-                                //eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
-                        } catch (Exception e) {
-                                e.printStackTrace();
-                        }
-                    }
-                    
-                    readGraphFromFile = tmpReadGraphFromFile;
-                    readMergedGraphFromFile = tmpReadMergedGraphFromFile;
+		
+        boolean tmpReadGraphFromFile = readGraphFromFile;
+        boolean tmpReadMergedGraphFromFile = readMergedGraphFromFile;
+        
+        for (String tempFragmentTypeNameGraph : fragmentTypeNameGraphArray){
+        	fragmentTypeNameGraph = tempFragmentTypeNameGraph;
+            
+        	for (int setupN : setupArray){
+                EvaluatorCategoryAnnotator eca = new EvaluatorCategoryAnnotator(setupN);
+                
+                if(skipEval){
+                	topNArray = new int [] {1};
                 }
-		writer.close();
-		writerResult.close();
+                
+                for (int i = 0; i<topNArray.length;i++){
+                    topN = topNArray[i]; 
+                    
+                    if (i > 0){
+                        readGraphFromFile = true;
+                        readMergedGraphFromFile = true;
+                    }
+
+                    try {
+                            eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+                            //eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+                    } catch (Exception e) {
+                            e.printStackTrace();
+                    }
+                }
+                
+                readGraphFromFile = tmpReadGraphFromFile;
+                readMergedGraphFromFile = tmpReadMergedGraphFromFile;
+                writer.close();
+        		writerResult.close();
+            }
+        }
+		
 		logger.info("Finished evaluation");
 	}
 
@@ -298,6 +306,7 @@ public class EvaluatorCategoryAnnotator {
 
 	EvaluatorCategoryAnnotator() {
                 this.setup = 1;
+                this.fragmentTypeNameGraph = "TF";
 		setup(1);		
 		try {
 			 temp = File.createTempFile("debugging"+System.currentTimeMillis(), ".tmp");
@@ -546,8 +555,14 @@ public class EvaluatorCategoryAnnotator {
 	 * @param inputFilename
 	 * @param outputDirname
 	 * @param configFilename
+	 * @param setup
+	 * @param topN
+	 * @param method
+	 * @param bestNodeOnly
+	 * @param documentFrequencyQuery
+	 * @param termFrequencyQuery
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public double runEvaluationOnTrainTestDataset(String inputFilename, String outputDirname, 
 			String configFilename, int setup, int topN, String method, boolean bestNodeOnly, 
@@ -812,11 +827,11 @@ public class EvaluatorCategoryAnnotator {
 		List<Interaction> graphDocs = new ArrayList<Interaction>();
 		String edaTrainingFilename;
 		
-            double sumAccuracies = 0;
-            int sumCountPositive = 0;
+        double sumAccuracies = 0;
+        int sumCountPositive = 0;
 	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
 //	    for (int i=2; i<=2; i++) { //Create one fold only
-	        logger.info("Creating fold " + i);
+	        System.out.println("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
     		int k=j+1;
@@ -1010,23 +1025,20 @@ public class EvaluatorCategoryAnnotator {
 				}
 		    	logger.info("Count positive: " + countPositive);
 		    	double countTotal = countTotalNumberOfCategories(testDocs);
-                        double accuracyInThisFold = ((double)countPositive / countTotal);
-                        foldAccuracies.put(i, accuracyInThisFold);
-                        foldCountPositive.put(i, countPositive);
-
-                    
-
-                        sumAccuracies = 0;
-                        sumCountPositive = 0;
-                        double accuracy;
-                        for (int fold : foldAccuracies.keySet()) {
-                            accuracy = foldAccuracies.get(fold);
-                            countPositive = foldCountPositive.get(fold);
-                            sumAccuracies += accuracy;
-                            sumCountPositive += countPositive;
-                        }
-                        printResult(topN, numberOfFolds, foldAccuracies, foldCountPositive);
-                } // if skipEval	
+                double accuracyInThisFold = ((double)countPositive / countTotal);
+                foldAccuracies.put(i, accuracyInThisFold);
+                foldCountPositive.put(i, countPositive);
+                sumAccuracies = 0;
+                sumCountPositive = 0;
+                double accuracy;
+                for (int fold : foldAccuracies.keySet()) {
+                    accuracy = foldAccuracies.get(fold);
+                    countPositive = foldCountPositive.get(fold);
+                    sumAccuracies += accuracy;
+                    sumCountPositive += countPositive;
+                 }
+                printResult(topN, numberOfFolds, foldAccuracies, foldCountPositive);
+	    	} // if skipEval	
 	    } // for folds
 	}
 
@@ -1074,22 +1086,24 @@ public class EvaluatorCategoryAnnotator {
                 sumCountPositive += countPositive;
             }
             
-            logger.info("");
-            logger.info("Setup: " + setup);
-            logger.info("topN: " + topN);
-            logger.info("method: "+ method);
-            logger.info("methodDocument: " + termFrequencyQuery+documentFrequencyQuery+normalizationQuery + "." + String.valueOf(methodDocument));
-            for (int fold : foldAccuracy.keySet()) {
-                logger.info("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
-            }
-            logger.info("");
-
-            // just display the overall accuracy if all folds are there
-            if (foldAccuracy.keySet().size() >= numberOfFolds){
-                logger.info("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds));
-                logger.info("");
-            }
-
+//            if(foldAccuracy.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
+	            System.out.println("");
+	            System.out.println("Setup: " + setup + "/ topN: " + topN);
+	            System.out.println("method: "+ method + " " + termFrequencyQuery+documentFrequencyQuery+normalizationQuery + "." + String.valueOf(methodDocument));
+	            System.out.println("categoryBoost: " + categoryBoost);
+	            System.out.println("bestNodeOnly: " + bestNodeOnly);
+	            System.out.println("lengthBoost: " + lengthBoost);
+	            for (int fold : foldAccuracy.keySet()) {
+	            	System.out.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
+	            }
+	            System.out.println("");
+	
+	            // just display the overall accuracy if all folds are there
+	            if (foldAccuracy.keySet().size() >= numberOfFolds){
+	            	System.out.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds));
+	            	System.out.println("");
+	            }
+//            }
 	}
 	
 
