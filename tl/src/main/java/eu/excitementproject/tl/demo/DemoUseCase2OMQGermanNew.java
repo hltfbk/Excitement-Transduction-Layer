@@ -262,13 +262,13 @@ public class DemoUseCase2OMQGermanNew {
 								}
 							}
 						}
-						/** Step3b: Build fragments for two-token dependency graph (calling SEDA) */
+						/** Step3b: Build fragments for two-token dependency graph */
 						casGraph.reset();
 						doc.fillInputCAS(casGraph);
 						fragAnotDependency.annotateFragments(casGraph);
 						fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
 						fragmentGraphsAllDependencies.addAll(fragmentGraphs);
-						/** Step3c: Build fragments for sentence graph (calling alignment EDA) */
+						/** Step3c: Build fragments for sentence graph */
 						casGraph.reset();
 						doc.fillInputCAS(casGraph);
 						fragAnotSentence.annotateFragments(casGraph);
