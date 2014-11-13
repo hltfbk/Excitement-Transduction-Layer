@@ -18,6 +18,7 @@ import org.jgrapht.graph.DefaultEdge;
 
 
 
+
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
@@ -27,6 +28,7 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
+import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
@@ -223,7 +225,10 @@ public class EntailmentRelation extends DefaultEdge {
 		// extract annotations from "from" and "to" to form the JCas object that is used as input to the EDA
 		logger.info("Generating a cass for the pair: \n \tTEXT: " + source.getText() + "\n \tHYPOTHESIS: " + target.getText());
 		try {
-			lap.annotateSingleTHPairCAS(source.getTextWithoutDoubleSpaces(), target.getTextWithoutDoubleSpaces(), lap.workJCas);
+//			lap.annotateSingleTHPairCAS(source.getTextWithoutDoubleSpaces(), target.getTextWithoutDoubleSpaces(), lap.workJCas);
+			// modified by Gil, 13th Nov for thread-safe CachedLAP
+			lap.annotateSingleTHPairCAS(source.getTextWithoutDoubleSpaces(), target.getTextWithoutDoubleSpaces(), getWorkJCas());
+			
 
 /*			// some printouts trying to understand why BIUTEE LAP fails
 			logger.info("generateTHPairCAS:   "+lap.workJCas.getDocumentLanguage());
@@ -245,7 +250,11 @@ public class EntailmentRelation extends DefaultEdge {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-*/			return lap.workJCas;
+*/
+//			return lap.workJCas;
+			// modified by Gil, 13th Nov for thread-safe CachedLAP
+			return getWorkJCas();
+
 		} catch (LAPException e) {
 			throw new EntailmentGraphRawException("Cannot generate THPairCAS for edge: " + source.getText() + " -> " + target.getText() +"\n"+e.getMessage());
 		}
@@ -376,6 +385,28 @@ public class EntailmentRelation extends DefaultEdge {
 		TEDecision edge = eda.process(null);
 		return edge;
 	}	
+	
+	/** 
+	 * returns a common JCas that is designed to be reused by 
+	 * (without creating a new JCas everytime) CachedLAP calls for this class. 
+	 */
+	protected JCas getWorkJCas() throws EntailmentGraphRawException
+	{
+		if (this.workJCas == null) // if this the first time for workJCas ... 
+		{
+			try {
+				workJCas = CASUtils.createNewInputCas(); 
+			}
+			catch (LAPException le)
+			{
+				throw new EntailmentGraphRawException("Unable to prepare workJCas needed for cachedLAP access"); 
+			}
+		}
+		
+		return workJCas; 
+	}
+	
+	private JCas workJCas = null; 
 	
 	
 }

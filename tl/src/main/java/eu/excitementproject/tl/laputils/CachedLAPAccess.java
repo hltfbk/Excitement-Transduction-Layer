@@ -41,7 +41,7 @@ import org.apache.uima.util.XMLInputSource;
  * 
  * The class is designed to provide faster performance when you are expected to 
  * call the same Text or Hypothesis string multiple times to generate T-H pairs 
- * via LAPAccess. (e.g. Builidng Entailment graph) 
+ * via LAPAccess. (e.g. Building Entailment graph) 
  * 
  * The class gets one initialized LAPAccess implementation, and behaves as if the 
  * wrapper itself is a LAPAccess. It first lookup its hash that any cached results 
@@ -103,6 +103,7 @@ public class CachedLAPAccess implements LAPAccess {
 			throw new LAPException("Unable to get language ID from underlying LAP annotation result!"); 			
 		}
 	
+		// we have removed workJCas for thread safe access 
 		// Common JCas that is provided for easy access from graph generating process. 
 		// workJCas = CASUtils.createNewInputCas(); 
 	}
@@ -314,25 +315,16 @@ public class CachedLAPAccess implements LAPAccess {
 		return actualCall; 
 	}
 
+	
+	//
+	// private data 
+
 	// workJCas method that we have used is generally unsafe for threads. 
 	// I am removing workJCas and instead, put some local JCases on the calling side 
 	// (which will be reused in those calling sides). 
 	// Gil (13th Nov) 
-	
-//	/**
-//	 *  Use this method to get, say, a "handy" JCas to save creation time for JCas creation. 
-//	 *  
-//	 * @return
-//	 */
-//	public synchronized JCas getWorkJCas()
-//	{
-//		return workJCas; 
-//	}
-//	
-//	
-//	//
-//	// private data 
-//	private final JCas workJCas; 
+
+	// private final JCas workJCas; 
 	
 	private final LAPAccess underlyingLAP; 	
 	private final ConcurrentHashMap<String, JCas> textviewCache; 
