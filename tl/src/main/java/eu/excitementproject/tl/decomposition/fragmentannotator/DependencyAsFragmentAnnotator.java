@@ -31,13 +31,16 @@ import eu.excitementproject.tl.laputils.CASUtils;
 
 public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	
-	private List<String> dependencyTypeFilter;
-	private List<String> governorPOSFilter;
-	private List<String> dependentPOSFilter;
+	private final List<String> dependencyTypeFilter;
+	private final List<String> governorPOSFilter;
+	private final List<String> dependentPOSFilter;
 
 	public DependencyAsFragmentAnnotator(LAPAccess lap) throws FragmentAnnotatorException
 	{
-		super(lap);  
+		super(lap);
+		dependencyTypeFilter = null;
+		governorPOSFilter = null;
+		dependentPOSFilter = null;
 	}
 	
 	/**

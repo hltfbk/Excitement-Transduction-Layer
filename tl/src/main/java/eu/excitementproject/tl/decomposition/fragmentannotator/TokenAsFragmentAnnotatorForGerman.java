@@ -36,7 +36,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
  */
 public class TokenAsFragmentAnnotatorForGerman extends AbstractFragmentAnnotator {
 
-	private List<String> tokenPOSFilter;
+	private final List<String> tokenPOSFilter;
 	private GermanWordSplitter splitter;
 	
 	/**
@@ -48,6 +48,7 @@ public class TokenAsFragmentAnnotatorForGerman extends AbstractFragmentAnnotator
 	public TokenAsFragmentAnnotatorForGerman(LAPAccess l, boolean decompoundWords) throws FragmentAnnotatorException
 	{
 		super(l);
+		tokenPOSFilter = null;
 		if(decompoundWords){
 			try {
 				splitter = new GermanWordSplitter();
