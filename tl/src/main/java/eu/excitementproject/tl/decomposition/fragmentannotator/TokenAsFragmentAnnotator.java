@@ -25,11 +25,12 @@ import eu.excitementproject.tl.laputils.CASUtils;
  */
 public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
 
-	private List<String> tokenPOSFilter;
+	private final List<String> tokenPOSFilter;
 	
 	public TokenAsFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
 	{
 		super(l); 
+		tokenPOSFilter = null;
 	}
 	
 	/**
