@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -364,6 +365,11 @@ public class DemoUseCase2OMQGermanNew {
 			//TODO: use KeywordBasedFragmentAnnotator if keywords are available!
  		modAnot = new AdvAsModifierAnnotator(lapLemma); 		
 		//initialize EDAs (Simple EDA and alignment EDA)
+ 		try {
+			splitter = new GermanWordSplitter();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		seda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet, 
 				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 		alignmenteda = new FNR_DEvar1(); 

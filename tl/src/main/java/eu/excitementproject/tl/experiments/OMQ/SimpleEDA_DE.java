@@ -79,12 +79,7 @@ public class SimpleEDA_DE implements EDABasic<ClassificationTEDecision> {
 	 */
 	
 	public SimpleEDA_DE(GermanWordSplitter splitter){
-		try {
-			this.splitter = new GermanWordSplitter();
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
-		}
+		this.splitter = splitter;
 	}
 	
 	/**
