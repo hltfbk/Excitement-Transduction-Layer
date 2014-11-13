@@ -21,9 +21,11 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.implbase.LAP_ImplBase;
 import eu.excitementproject.tl.laputils.CASUtils; 
-import java.util.HashMap;
+
+//import java.util.HashMap;
 //import java.util.Iterator;
-import java.util.Map;
+//import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
@@ -55,8 +57,6 @@ import org.apache.uima.util.XMLInputSource;
  *
  */
 public class CachedLAPAccess implements LAPAccess {
-
-	public JCas workJCas;
 	
 	public CachedLAPAccess(LAPAccess underlyingLAP) throws LAPException 
 	{
@@ -80,15 +80,15 @@ public class CachedLAPAccess implements LAPAccess {
         
 		// setting basic 
 		this.underlyingLAP = underlyingLAP; 
-		this.textviewCache = new HashMap<String, JCas>(); 
-		this.hypoviewCache = new HashMap<String, JCas>(); 
+		this.textviewCache = new ConcurrentHashMap<String, JCas>(); 
+		this.hypoviewCache = new ConcurrentHashMap<String, JCas>(); 
 		this.receivedCall = 0; 
 		this.actualCall = 0; 
 		theLogger = Logger.getLogger("eu.excitementproject.tl.laputils.CachedLAPAccess"); 
 		
 		// make a call and get language ID (loading models also...) 
 		JCas test = underlyingLAP.generateSingleTHPairCAS("This is a text.", "This is a hypothesis."); 
-		actualCall++; 
+		increaseNumberOfActualCalls(); 
 		
 		try {
 			this.languageId = test.getView(LAP_ImplBase.TEXTVIEW).getDocumentLanguage(); 
@@ -102,10 +102,9 @@ public class CachedLAPAccess implements LAPAccess {
 		{
 			throw new LAPException("Unable to get language ID from underlying LAP annotation result!"); 			
 		}
-		
-		// initialize our working CAS
-		workJCas = CASUtils.createNewInputCas(); 
-		
+	
+		// Common JCas that is provided for easy access from graph generating process. 
+		// workJCas = CASUtils.createNewInputCas(); 
 	}
 
 	//
@@ -146,7 +145,7 @@ public class CachedLAPAccess implements LAPAccess {
 		// reset the CAS (clears all) 
 		aJCas.reset(); 
 		
-		receivedCall ++; // for checking number of saved calls to underlying LAP 
+		increaseNumberOfReceivedCalls(); 
 		
 		// if we don't have the cache for text input and/or hypothesis input
 		// First we fill the cache with them. 
@@ -169,26 +168,7 @@ public class CachedLAPAccess implements LAPAccess {
 			textviewCache.put(hypothesis,  aCacheJCas); 
 			hypoviewCache.put(hypothesis,  aCacheJCas); 			
 		}
-		
-//		// note that we simply put both text/string on both cache. 
-//		// assuming that text will be used as hypothesis on some other cases 
-//		// (e.g. mainly designed for entailment graphs) 
-//		if ( (!textviewCache.containsKey(text)) || (!hypoviewCache.containsKey(hypothesis)) )
-//		{
-//			// requires adding of caching element on (at least) one of the side. 
-//			JCas thJCas = underlyingLAP.generateSingleTHPairCAS(text, hypothesis); 
-//			actualCall ++; // for checking number of saved calls to underlying LAP 
-//			
-//			if (!textviewCache.containsKey(text))
-//			{
-//				textviewCache.put(text,  thJCas); 
-//			}
-//			if (!hypoviewCache.containsKey(hypothesis))
-//			{
-//				hypoviewCache.put(hypothesis,  thJCas); 
-//			}
-//		}
-		
+				
 		// Okay. we are fully sure that each annotated view exist in the cache. 
 		// make up CAS by using the cache value 
 		
@@ -245,7 +225,7 @@ public class CachedLAPAccess implements LAPAccess {
 		
 		// DONE! 
 		// now the aJCas has "annotated" views and Entailment Pair annotation. 		
-		theLogger.info("Number of actual call / received call: " + Integer.toString(actualCall) + " / " + Integer.toString(receivedCall) ); 
+		theLogger.info("Number of actual call / received call: " + Integer.toString(getNumberOfActualCalls()) + " / " + Integer.toString(getNumberOfReceivedCalls()) ); 
 		
 	}
 	//
@@ -277,7 +257,9 @@ public class CachedLAPAccess implements LAPAccess {
 	
 	//
 	// private methods 
-	private void prepareCacheContent(JCas aJCas, String input) throws LAPException {
+	// this code actually calls the underlying LAP module --- which is *not* thread-safe. 
+	// that's the main reason why the method is synchronized. 
+	private synchronized void prepareCacheContent(JCas aJCas, String input) throws LAPException {
 		
 		// generate views and set SOFA 
 		JCas textView = null; JCas hypoView = null; 
@@ -309,18 +291,56 @@ public class CachedLAPAccess implements LAPAccess {
 		underlyingLAP.addAnnotationOn(aJCas, LAP_ImplBase.HYPOTHESISVIEW);
 		
 		// done. aJCas is updated to be used for cache. 
-		actualCall ++; 
+		increaseNumberOfActualCalls(); 
 	}
 	
-	//
-	// private data 
-	private LAPAccess underlyingLAP; 	
-	private Map<String, JCas> textviewCache; 
-	private Map<String, JCas> hypoviewCache; 
-	private AnalysisEngine typeAE;
+	private synchronized void increaseNumberOfReceivedCalls()
+	{
+		receivedCall++; 
+	}
+	
+	private synchronized void increaseNumberOfActualCalls()
+	{
+		actualCall++; 
+	}
+
+	private synchronized int getNumberOfReceivedCalls()
+	{
+		return receivedCall; 
+	}
+	
+	private synchronized int getNumberOfActualCalls()
+	{
+		return actualCall; 
+	}
+
+	// workJCas method that we have used is generally unsafe for threads. 
+	// I am removing workJCas and instead, put some local JCases on the calling side 
+	// (which will be reused in those calling sides). 
+	// Gil (13th Nov) 
+	
+//	/**
+//	 *  Use this method to get, say, a "handy" JCas to save creation time for JCas creation. 
+//	 *  
+//	 * @return
+//	 */
+//	public synchronized JCas getWorkJCas()
+//	{
+//		return workJCas; 
+//	}
+//	
+//	
+//	//
+//	// private data 
+//	private final JCas workJCas; 
+	
+	private final LAPAccess underlyingLAP; 	
+	private final ConcurrentHashMap<String, JCas> textviewCache; 
+	private final ConcurrentHashMap<String, JCas> hypoviewCache; 
+	private final AnalysisEngine typeAE;
 
 	private int receivedCall; 
 	private int actualCall; 
-	private String languageId; 
-	Logger theLogger; 
+	private final String languageId; 
+	private final Logger theLogger; 
 }
