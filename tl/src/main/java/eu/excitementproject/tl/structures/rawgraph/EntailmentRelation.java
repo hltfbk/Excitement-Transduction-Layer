@@ -392,7 +392,7 @@ public class EntailmentRelation extends DefaultEdge {
 	 */
 	protected JCas getWorkJCas() throws EntailmentGraphRawException
 	{
-		if (this.workJCas == null) // if this the first time for workJCas ... 
+		if (workJCas == null) // if this the first time for workJCas ... 
 		{
 			try {
 				workJCas = CASUtils.createNewInputCas(); 
@@ -406,7 +406,16 @@ public class EntailmentRelation extends DefaultEdge {
 		return workJCas; 
 	}
 	
-	private JCas workJCas = null; 
-	
-	
+	/*
+	 * This is a "reusable" JCas that saves time (creation time of JCas is severe). 
+	 * (e.g. if you do not need to save JCas result, but only decision of EDA, we pass
+	 * this already existing JCas to LAP and get annotation and pass to EDA for decision.)
+	 * 
+	 * previously this one copy of "workJCas" was kept within each instance of 
+	 * CachedLAPAccess. However, due to the need for making CachedLAPAccess for thread-safe, 
+	 * we moved the "global JCas for saving time" here where it is actually needed. 
+	 * 
+	 * Gil 14th, Nov. 
+	 */
+	private static JCas workJCas = null; 
 }
