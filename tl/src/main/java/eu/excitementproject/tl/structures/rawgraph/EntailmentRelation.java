@@ -372,5 +372,4 @@ public class EntailmentRelation extends DefaultEdge {
 		TEDecision edge = eda.process(null);
 		return edge;
 	}	
-		
 }
