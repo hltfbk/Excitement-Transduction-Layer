@@ -1,3 +1,0 @@
-digraph rawGraph {
-"problemi nel configurare la rete wii-fii con la TELEFONIAX CONSOLLE con il mio MOBILE-E" -> "problemi nel configurare la rete wii-fii" [label=1] [color=green]
-}

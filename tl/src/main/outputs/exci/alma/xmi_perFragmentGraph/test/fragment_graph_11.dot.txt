@@ -1,3 +1,0 @@
-digraph rawGraph {
-"non riesco ad accedere al forum di TELEFONIAX LABORATORIO" -> "non riesco ad accedere al forum" [label=1] [color=green]
-}

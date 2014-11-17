@@ -1,3 +1,0 @@
-digraph rawGraph {
-"tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" -> "al sito ci sono problemi di connessione" [label=1] [color=green]
-}

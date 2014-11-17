@@ -1,3 +1,0 @@
-digraph rawGraph {
-"Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it" -> "Non si riesce ad accedere al sito di TELEFONIAX.it" [label=1] [color=green]
-}

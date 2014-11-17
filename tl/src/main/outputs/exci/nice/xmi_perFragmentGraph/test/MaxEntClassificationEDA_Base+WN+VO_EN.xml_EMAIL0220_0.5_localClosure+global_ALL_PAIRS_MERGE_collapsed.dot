@@ -1,5 +1,0 @@
-digraph collapsedGraph {
-"Seating is very cramped [3]\nservice would improve with more seating space\nSpaces between seats are very narrow""seats are small [2]\nmake space in seats\nseats are small""Seating is cramped [4]\nseats are too small\nSpaces between seats are narrow\nSeating is cramped\nmake some space in seats""Seating is very cramped [3]\nservice would improve with more seating space\nSpaces between seats are very narrow" -> "seats are small [2]\nmake space in seats\nseats are small" [color=blue]
-"Seating is very cramped [3]\nservice would improve with more seating space\nSpaces between seats are very narrow" -> "Seating is cramped [4]\nseats are too small\nSpaces between seats are narrow\nSeating is cramped\nmake some space in seats" [color=blue]
-"Seating is cramped [4]\nseats are too small\nSpaces between seats are narrow\nSeating is cramped\nmake some space in seats" -> "seats are small [2]\nmake space in seats\nseats are small" [color=blue]
-}

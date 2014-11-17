@@ -1,3 +1,0 @@
-digraph rawGraph {
-"only comment I can make is the legroom in the train" -> "only comment I can make is the legroom" [label=1] [color=green]
-}

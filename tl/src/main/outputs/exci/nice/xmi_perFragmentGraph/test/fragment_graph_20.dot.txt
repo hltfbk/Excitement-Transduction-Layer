@@ -1,6 +1,0 @@
-digraph rawGraph {
-"leg room in standard class was quite poor" -> "leg room in standard class was poor" [label=1] [color=green]
-"leg room in standard class was poor" -> "leg room was poor" [label=1] [color=green]
-"leg room in standard class was quite poor" -> "leg room was quite poor" [label=1] [color=green]
-"leg room was quite poor" -> "leg room was poor" [label=1] [color=green]
-}

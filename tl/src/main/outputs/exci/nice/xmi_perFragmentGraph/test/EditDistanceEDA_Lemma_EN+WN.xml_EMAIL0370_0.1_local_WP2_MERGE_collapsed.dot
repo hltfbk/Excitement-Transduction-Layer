@@ -1,4 +1,0 @@
-digraph collapsedGraph {
-"micro announcements from the train manager much too long [2]\nmicro announcements from the train manager much too loud""less announcements [4]\nshorter announcements\nless announcements\nmore targeted announcements\nquieter announcements""micro announcements from the train manager too loud [2]\nmicro announcements from the train manager too loud\nmicro announcements from the train manager too long""less announcements during the train ride [1]""micro announcements from the train manager much too long [2]\nmicro announcements from the train manager much too loud" -> "micro announcements from the train manager too loud [2]\nmicro announcements from the train manager too loud\nmicro announcements from the train manager too long" [color=blue]
-"less announcements during the train ride [1]" -> "less announcements [4]\nshorter announcements\nless announcements\nmore targeted announcements\nquieter announcements" [color=blue]
-}

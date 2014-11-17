@@ -1,3 +1,0 @@
-digraph rawGraph {
-"could do with more legroom on the train" -> "could do with more legroom" [label=1] [color=green]
-}

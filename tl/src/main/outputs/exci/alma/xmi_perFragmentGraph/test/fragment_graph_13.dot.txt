@@ -1,3 +1,0 @@
-digraph rawGraph {
-"il sito TELEFONIAX.it ha dei grossi problemi" -> "il sito TELEFONIAX.it ha dei problemi" [label=1] [color=green]
-}

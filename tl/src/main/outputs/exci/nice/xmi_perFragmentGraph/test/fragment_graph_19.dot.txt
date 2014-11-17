@@ -1,3 +1,0 @@
-digraph rawGraph {
-"Disappointed with the amount of legroom compared with other trains" -> "Disappointed with the amount of legroom" [label=1] [color=green]
-}

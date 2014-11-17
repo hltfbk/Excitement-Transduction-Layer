@@ -1,3 +1,0 @@
-digraph rawGraph {
-"mi ha mandato la TELEFONIAX CONSOLLE che non ho mai chiesto" -> "mi ha mandato la TELEFONIAX CONSOLLE che non ho chiesto" [label=1] [color=green]
-}
