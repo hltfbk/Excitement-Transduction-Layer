@@ -543,13 +543,13 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 						entailmentUnit.appendChild(eumention);						
 					}
 
-					/*	protected Set<String> interactionIds = null;										*/
+					/*	protected Set<String> interactionIds = null;	
 					for (String interactionId : eu.getInteractionIds()){
 						// completeStatementText elements
 						Element interaction = doc.createElement("interactionId");
 						interaction.setAttribute("id",interactionId);
 						entailmentUnit.appendChild(interaction);						
-					}					
+					}*/					
 					equivalenceClassNode.appendChild(entailmentUnit);						
 				}
 			}

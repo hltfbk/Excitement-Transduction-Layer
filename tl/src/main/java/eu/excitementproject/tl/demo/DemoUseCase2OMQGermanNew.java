@@ -25,7 +25,9 @@ import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
+import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
+import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
@@ -123,7 +125,8 @@ public class DemoUseCase2OMQGermanNew {
 	static String xmlDataFoldername = "src/test/resources/OMQ/test/";
 	static String xmlDataFilename = "omq_public_1_emails.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
-	static String configFilename = "./src/test/resources/EOP_models/omq/fnr_de_1.model";
+	static String configFilenameAlignment = "./src/test/resources/EOP_models/omq/fnr_de_1.model";
+	static String configFilenameTIE = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
 	static File configFile;
 
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGermanNew.class.getName());
@@ -151,6 +154,7 @@ public class DemoUseCase2OMQGermanNew {
 	static char termFrequencyQuery = 'n';
 	
 	static double confidenceThresholdAlignment = 0.9;
+	static double confidenceThresholdTIE = 0.9;
 	static double confidenceThresholdSEDA = 0.9;
 
 	public static void main(String[] args) {
@@ -158,8 +162,8 @@ public class DemoUseCase2OMQGermanNew {
 		/** Step 0: Initialization */
 		try {
 			configureSetup();
-		} catch (LAPException | ConfigurationException
-				| FragmentAnnotatorException | ModifierAnnotatorException | EDAException e) {
+		} catch (ConfigurationException
+				| FragmentAnnotatorException | ModifierAnnotatorException | EDAException | ComponentException e) {
 			e.printStackTrace();
 			System.exit(1);
 		}
@@ -186,7 +190,7 @@ public class DemoUseCase2OMQGermanNew {
 		EntailmentGraphCollapsed twoTokenCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed sentenceCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed finalCollapsedGraph = new EntailmentGraphCollapsed();
-		int blockSize = 50;
+		int blockSize = 1; 
 		JCas cas = null;
 		try {
 			cas = CASUtils.createNewInputCas();
@@ -262,13 +266,13 @@ public class DemoUseCase2OMQGermanNew {
 								}
 							}
 						}
-						/** Step3b: Build fragments for two-token dependency graph (calling SEDA) */
+						/** Step3b: Build fragments for two-token dependency graph */
 						casGraph.reset();
 						doc.fillInputCAS(casGraph);
 						fragAnotDependency.annotateFragments(casGraph);
 						fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
 						fragmentGraphsAllDependencies.addAll(fragmentGraphs);
-						/** Step3c: Build fragments for sentence graph (calling alignment EDA) */
+						/** Step3c: Build fragments for sentence graph */
 						casGraph.reset();
 						doc.fillInputCAS(casGraph);
 						fragAnotSentence.annotateFragments(casGraph);
@@ -285,10 +289,18 @@ public class DemoUseCase2OMQGermanNew {
 				graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, seda);
 				graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdSEDA);
 				twoTokenGraph = graphMerger.mergeGraphs(fragmentGraphsAllDependencies, twoTokenGraph);
-				/** Step3e: Merge fragments into sentence graph (calling alignment EDA) */					
+				/** Step3e: Merge fragments into sentence graph (calling alignment EDA) */		
+				
+				/*
 				graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, alignmenteda); 
 				graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdAlignment);
 				sentenceGraph = graphMerger.mergeGraphs(fragmentGraphsAllSentences, sentenceGraph);	
+				/** Step3e: Merge fragments into sentence graph (calling TIE EDA) */					
+				/*
+				graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, tie); 
+				graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdTIE);
+				sentenceGraph = graphMerger.mergeGraphs(fragmentGraphsAllSentences, sentenceGraph);	
+				*/
 				
 				/** Step3f: Optimize all graphs and add tokens to final graph */					
 				finalCollapsedGraph = new EntailmentGraphCollapsed();
@@ -353,8 +365,8 @@ public class DemoUseCase2OMQGermanNew {
 	}
 
 	private static void configureSetup() throws ConfigurationException,
-			LAPException, FragmentAnnotatorException,
-			ModifierAnnotatorException, EDAException {
+			FragmentAnnotatorException,
+			ModifierAnnotatorException, EDAException, ComponentException {
 		addLemmaLabel = true;
 		lapLemma = new CachedLAPAccess(new LemmaLevelLapDE());
 		lapDependency = new CachedLAPAccess(new MaltParserDE());
@@ -373,8 +385,8 @@ public class DemoUseCase2OMQGermanNew {
 		seda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet, 
 				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 		alignmenteda = new FNR_DEvar1(); 
-		configFile = new File(configFilename);
-		alignmenteda.initialize(configFile);
+		alignmenteda.initialize(new File(configFilenameAlignment));
+		tie.initialize(new ImplCommonConfig(new File(configFilenameTIE)));
 		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphOptimizer = new SimpleGraphOptimizer();
 		cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
