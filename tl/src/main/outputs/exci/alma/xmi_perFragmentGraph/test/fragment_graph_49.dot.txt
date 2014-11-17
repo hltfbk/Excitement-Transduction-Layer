@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Se non ho campo non posso usare internet" -> "non posso usare internet" [label=1] [color=green]
+}

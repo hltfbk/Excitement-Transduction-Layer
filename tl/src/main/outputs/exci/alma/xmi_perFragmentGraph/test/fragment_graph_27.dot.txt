@@ -1,0 +1,3 @@
+digraph rawGraph {
+"cosa aspettiamo a sistemare i problemi di ricezione nelcomune di Noventa padovana" -> "cosa aspettiamo a sistemare i problemi di ricezione" [label=1] [color=green]
+}

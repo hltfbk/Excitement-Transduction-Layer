@@ -3,7 +3,6 @@ digraph rawGraph {
 "Improve the space" -> "Improve the space at Frowntown" [label=1.0] [color=red]
 "limited luggage space so would not recommend if travelling with large" -> "limited luggage space" [label=1.0] [color=green]
 "limited luggage space" -> "limited luggage space so would not recommend if travelling with large" [label=1.0] [color=red]
-"There is not enough space for luggage" -> "not enough space" [label=0.9055732971773194] [color=blue]
 "too little baggage space on trains" -> "too little baggage space" [label=1.0] [color=green]
 "too little baggage space" -> "too little space" [label=1.0] [color=green]
 "too little baggage space on trains" -> "too little space on trains" [label=1.0] [color=green]

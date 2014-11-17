@@ -1,0 +1,3 @@
+digraph rawGraph {
+"ho riattivato la vostra scheda dati.... connessione lentissima" -> "vostra connessione lentissima" [label=1] [color=green]
+}

@@ -1,0 +1,3 @@
+digraph rawGraph {
+"ogni 3 4 giorni internet non funziona" -> "internet non funziona" [label=1] [color=green]
+}

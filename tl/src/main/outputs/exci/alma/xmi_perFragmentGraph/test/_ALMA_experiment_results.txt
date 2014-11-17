@@ -1,0 +1,777 @@
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.0	0.0	1.0	0.0	0.9601139601139601	0.021283393412331902	993	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.05	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.1	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.15	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.2	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.25	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.3	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.35	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.4	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.45	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.5	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.55	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.6	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.65	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.7	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.75	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.8	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.85	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.9	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.95	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	1.0	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.0	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.05	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.1	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.15	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.2	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.25	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.3	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.35	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.4	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.45	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.5	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.55	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.6	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.65	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.7	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.75	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.8	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.85	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.9	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.95	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	1.0	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.0	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.05	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.1	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.15	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.2	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.25	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.3	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.35	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.4	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.45	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.5	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.55	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.6	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.65	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.7	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.75	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.8	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.85	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.9	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.95	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	1.0	0.0	1.0	0.0	0.9601139601139601	0.0	22	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.0	0.0	1.0	0.0	0.9601139601139601	0.021283393412331902	993	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.05	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.1	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.15	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.2	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.25	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.3	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.35	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.4	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.45	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.5	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.55	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.6	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.65	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.7	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.75	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.8	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.85	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.9	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.95	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	1.0	0.0	1.0	0.0	0.9601139601139601	0.0	23	0	0	0	1166
+
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.0	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.05	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.1	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.15	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.2	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.25	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.3	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.35	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.4	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.45	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.5	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.55	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.6	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.65	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.7	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.75	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.8	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.85	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.9	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.95	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	1.0	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.0	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.05	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.1	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.15	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.2	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.25	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.3	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.35	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.4	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.45	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.5	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.55	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.6	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.65	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.7	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.75	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.8	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.85	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.9	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.95	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	1.0	0.0	1.0	0.0	0.9727272727272728	0.0	10	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.0	0.0	1.0	0.0	0.9727272727272728	0.0462962962962963	133	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.05	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.1	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.15	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.2	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.25	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.3	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.35	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.4	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.45	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.5	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.55	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.6	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.65	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.7	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.75	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.8	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.85	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.9	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.95	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	1.0	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.0	0.0	1.0	0.0	0.9727272727272728	0.0462962962962963	133	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.05	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.1	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.15	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.2	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.25	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.3	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.35	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.4	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.45	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.5	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.55	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.6	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.65	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.7	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.75	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.8	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.85	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.9	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.95	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	1.0	0.0	1.0	0.0	0.9727272727272728	0.0	11	0	0	0	122
+
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.0	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.05	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.1	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.15	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.2	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.25	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.3	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.35	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.4	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.45	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.5	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.55	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.6	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.65	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.7	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.75	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.8	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.85	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.9	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.95	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	1.0	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.0	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.05	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.1	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.15	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.2	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.25	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.3	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.35	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.4	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.45	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.5	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.55	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.6	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.65	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.7	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.75	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.8	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.85	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.9	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.95	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	1.0	0.0	1.0	0.0	0.7628205128205128	0.0	10	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.0	0.0	1.0	0.0	0.7628205128205128	0.18720265294861663	157	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.05	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.1	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.15	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.2	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.25	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.3	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.35	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.4	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.45	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.5	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.55	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.6	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.65	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.7	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.75	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.8	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.85	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.9	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.95	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	1.0	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.0	0.0	1.0	0.0	0.7628205128205128	0.18720265294861663	157	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.05	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.1	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.15	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.2	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.25	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.3	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.35	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.4	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.45	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.5	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.55	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.6	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.65	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.7	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.75	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.8	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.85	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.9	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.95	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	1.0	0.0	1.0	0.0	0.7628205128205128	0.0	11	0	0	0	146
+
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.0	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.05	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.1	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.15	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.2	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.25	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.3	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.35	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.4	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.45	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.5	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.55	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.6	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.65	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.7	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.75	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.8	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.85	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.9	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.95	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	1.0	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.0	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.05	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.1	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.15	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.2	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.25	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.3	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.35	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.4	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.45	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.5	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.55	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.6	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.65	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.7	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.75	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.8	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.85	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.9	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.95	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	1.0	0.0	1.0	0.0	0.9379084967320261	0.0	14	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.0	0.0	1.0	0.0	0.9379084967320261	0.11051925453263312	381	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.05	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.1	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.15	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.2	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.25	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.3	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.35	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.4	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.45	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.5	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.55	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.6	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.65	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.7	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.75	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.8	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.85	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.9	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.95	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	1.0	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.0	0.0	1.0	0.0	0.9379084967320261	0.11051925453263312	381	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.05	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.1	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.15	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.2	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.25	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.3	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.35	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.4	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.45	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.5	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.55	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.6	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.65	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.7	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.75	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.8	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.85	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.9	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.95	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	1.0	0.0	1.0	0.0	0.9379084967320261	0.0	15	0	0	0	404
+
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.0	1.0	1.0	1.0	1.0	0.0	56	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.05	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.1	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.15	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.2	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.25	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.3	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.35	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.4	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.45	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.5	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.55	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.6	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.65	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.7	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.75	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.8	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.85	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.9	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.95	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	1.0	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.0	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.05	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.1	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.15	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.2	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.25	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.3	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.35	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.4	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.45	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.5	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.55	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.6	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.65	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.7	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.75	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.8	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.85	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.9	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.95	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	1.0	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.0	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.05	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.1	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.15	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.2	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.25	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.3	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.35	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.4	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.45	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.5	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.55	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.6	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.65	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.7	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.75	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.8	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.85	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.9	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.95	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	1.0	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.0	1.0	1.0	1.0	1.0	0.0	56	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.05	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.1	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.15	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.2	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.25	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.3	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.35	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.4	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.45	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.5	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.55	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.6	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.65	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.7	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.75	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.8	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.85	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.9	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.95	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	1.0	1.0	1.0	1.0	1.0	0.0	4	0	0	0	52
+
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.0	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.05	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.1	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.15	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.2	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.25	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.3	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.35	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.4	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.45	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.5	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.55	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.6	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.65	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.7	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.75	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.8	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.85	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.9	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.95	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	1.0	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.0	0.0	1.0	0.0	0.9670175438596491	0.026596366384640285	5853	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.05	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.1	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.15	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.2	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.25	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.3	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.35	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.4	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.45	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.5	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.55	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.6	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.65	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.7	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.75	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.8	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.85	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.9	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.95	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	1.0	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.0	0.0	1.0	0.0	0.9670175438596491	0.026596366384640285	5853	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.05	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.1	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.15	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.2	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.25	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.3	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.35	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.4	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.45	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.5	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.55	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.6	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.65	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.7	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.75	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.8	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.85	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.9	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.95	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	1.0	0.0	1.0	0.0	0.9670175438596491	0.0	65	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.0	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.05	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.1	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.15	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.2	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.25	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.3	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.35	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.4	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.45	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.5	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.55	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.6	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.65	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.7	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.75	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.8	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.85	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.9	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.95	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	1.0	0.0	1.0	0.0	0.9670175438596491	0.0	64	0	0	0	8112
+
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.0	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.05	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.1	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.15	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.2	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.25	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.3	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.35	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.4	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.45	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.5	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.55	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.6	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.65	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.7	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.75	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.8	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.85	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.9	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.95	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	1.0	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.0	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.05	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.1	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.15	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.2	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.25	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.3	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.35	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.4	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.45	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.5	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.55	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.6	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.65	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.7	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.75	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.8	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.85	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.9	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.95	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	1.0	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.0	0.0	1.0	0.0	0.9301075268817204	0.06400382297377703	992	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.05	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.1	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.15	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.2	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.25	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.3	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.35	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.4	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.45	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.5	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.55	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.6	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.65	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.7	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.75	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.8	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.85	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.9	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.95	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	1.0	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.0	0.0	1.0	0.0	0.9301075268817204	0.06400382297377703	992	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.05	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.1	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.15	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.2	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.25	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.3	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.35	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.4	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.45	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.5	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.55	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.6	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.65	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.7	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.75	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.8	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.85	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.9	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.95	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	1.0	0.0	1.0	0.0	0.9301075268817204	0.0	20	0	0	0	1382
+
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.0	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.05	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.1	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.15	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.2	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.25	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.3	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.35	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.4	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.45	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.5	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.55	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.6	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.65	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.7	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.75	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.8	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.85	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.9	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	0.95	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	1.0	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.0	0.14285714285714285	1.0	0.25	0.9329564733050201	0.06512882664975647	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.05	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.1	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.15	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.2	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.25	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.3	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.35	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.4	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.45	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.5	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.55	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.6	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.65	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.7	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.75	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.8	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.85	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.9	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	0.95	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	1.0	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.0	0.14285714285714285	1.0	0.25	0.9329564733050201	0.06512882664975647	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.05	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.1	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.15	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.2	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.25	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.3	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.35	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.4	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.45	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.5	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.55	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.6	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.65	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.7	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.75	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.8	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.85	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.9	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	0.95	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	1.0	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.0	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.05	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.1	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.15	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.2	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.25	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.3	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.35	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.4	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.45	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.5	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.55	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.6	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.65	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.7	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.75	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.8	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.85	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.9	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	0.95	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	1.0	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.0	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.05	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.1	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.15	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.2	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.25	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.3	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.35	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.4	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.45	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.5	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.55	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.6	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.65	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.7	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.75	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.8	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.85	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.9	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	0.95	0.14285714285714285	1.0	0.25	0.9329564733050202	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	1.0	0.14285714285714285	1.0	0.25	0.9329564733050201	0.0	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.0	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.05	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.1	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.15	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.2	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.25	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.3	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.35	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.4	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.45	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.5	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.55	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.6	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.65	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.7	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.75	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.8	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.85	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.9	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	0.95	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG	1.0	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.0	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.05	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.1	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.15	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.2	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.25	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.3	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.35	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.4	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.45	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.5	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.55	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.6	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.65	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.7	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.75	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.8	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.85	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.9	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	0.95	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	1.0	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.0	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.05	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.1	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.15	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.2	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.25	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.3	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.35	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.4	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.45	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.5	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.55	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.6	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.65	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.7	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.75	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.8	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.85	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.9	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	0.95	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	1.0	0.0	1.0	0.0	0.9570490146538656	NaN	11384
+
+Recall-Precision curves:
+Recall	FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MACRO AVG	FAKE_EDA-ALL_PAIRS_MERGE local+global-with-FG MICRO AVG	FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MACRO AVG	FAKE_EDA-ALL_PAIRS_MERGE local-with-FG MICRO AVG	FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MACRO AVG	FAKE_EDA-ALL_PAIRS_MERGE localClosure+global-with-FG MICRO AVG	FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MACRO AVG	FAKE_EDA-ALL_PAIRS_MERGE localClosure-with-FG MICRO AVG
+0.0	1.000	0.000	1.000	0.000	1.000	0.000	1.000	0.000
+0.1	1.000	0.000	1.000	0.000	1.000	0.000	1.000	0.000
+0.2	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+0.3	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+0.4	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+0.5	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+0.6	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+0.7	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+0.8	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+0.9	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000
+1.0	0.000	0.000	0.000	0.000	0.000	0.000	0.000	0.000

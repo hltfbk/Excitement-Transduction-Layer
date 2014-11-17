@@ -1,6 +1,2 @@
 digraph rawGraph {
-"too little baggage space on trains" -> "too little baggage space" [label=1] [color=green]
-"too little baggage space" -> "too little space" [label=1] [color=green]
-"too little baggage space on trains" -> "too little space on trains" [label=1] [color=green]
-"too little space on trains" -> "too little space" [label=1] [color=green]
 }

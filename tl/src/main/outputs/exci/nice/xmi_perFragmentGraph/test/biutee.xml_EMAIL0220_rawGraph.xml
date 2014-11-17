@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="1" text="Seating is very cramped">
+    <completeStatement text="Seating is very cramped"/>
+    <entailmentUnitMention categoryId="" interactionId="317673.txt" level="1" text="Seating is very cramped"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Seating is      cramped">
+    <completeStatement text="Seating is very cramped"/>
+    <entailmentUnitMention categoryId="" interactionId="317673.txt" level="0" text="Seating is      cramped"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Spaces between seats are very narrow">
+    <completeStatement text="Spaces between seats are very narrow"/>
+    <entailmentUnitMention categoryId="" interactionId="443092.txt" level="1" text="Spaces between seats are very narrow"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Spaces between seats are      narrow">
+    <completeStatement text="Spaces between seats are very narrow"/>
+    <entailmentUnitMention categoryId="" interactionId="443092.txt" level="0" text="Spaces between seats are      narrow"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="make some space in seats">
+    <completeStatement text="make some space in seats"/>
+    <entailmentUnitMention categoryId="" interactionId="72187.txt" level="1" text="make some space in seats"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="make      space in seats">
+    <completeStatement text="make some space in seats"/>
+    <entailmentUnitMention categoryId="" interactionId="72187.txt" level="0" text="make      space in seats"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="seats are too small">
+    <completeStatement text="seats are too small"/>
+    <entailmentUnitMention categoryId="" interactionId="327999.txt" level="1" text="seats are too small"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="seats are     small">
+    <completeStatement text="seats are too small"/>
+    <entailmentUnitMention categoryId="" interactionId="327999.txt" level="0" text="seats are     small"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="service                                    would improve with more seating space">
+    <completeStatement text="service                                    would improve with more seating space"/>
+    <entailmentUnitMention categoryId="" interactionId="317673.txt" level="0" text="service                                    would improve with more seating space"/>
+  </entailmentUnitNode>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Seating is very cramped" target="Seating is      cramped" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Spaces between seats are very narrow" target="Spaces between seats are      narrow" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Spaces between seats are      narrow" target="Spaces between seats are very narrow" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.9999999999999574" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Spaces between seats are      narrow" target="Seating is      cramped" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9924579943795517" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating is      cramped" target="Spaces between seats are      narrow" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9939340200619068" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating is very cramped" target="Spaces between seats are very narrow" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999998762721691" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Spaces between seats are very narrow" target="Seating is very cramped" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9939340200619068" decisionLabel="Entailment" source="Seating is very cramped" target="Spaces between seats are      narrow" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999999999999574" decisionLabel="Entailment" source="Spaces between seats are very narrow" target="Seating is      cramped" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="make some space in seats" target="make      space in seats" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="make      space in seats" target="make some space in seats" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.9999030782328123" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="make      space in seats" target="Spaces between seats are      narrow" type="EDA"/>
+  <entailmentRelationEdge confidence="0.999999999999964" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Spaces between seats are      narrow" target="make      space in seats" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999992244" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Spaces between seats are very narrow" target="make some space in seats" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9704460354930627" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="make some space in seats" target="Spaces between seats are very narrow" type="EDA"/>
+  <entailmentRelationEdge confidence="0.999999999920884" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating is      cramped" target="make      space in seats" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999994018" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="make      space in seats" target="Seating is      cramped" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999982965586" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating is very cramped" target="make some space in seats" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9993200266473709" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="make some space in seats" target="Seating is very cramped" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9939340200619068" decisionLabel="Entailment" source="Seating is very cramped" target="make      space in seats" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.999999999999964" decisionLabel="Entailment" source="Spaces between seats are very narrow" target="make      space in seats" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999030782328123" decisionLabel="Entailment" source="make some space in seats" target="Spaces between seats are      narrow" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999030782328123" decisionLabel="Entailment" source="make some space in seats" target="Seating is      cramped" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="seats are too small" target="seats are     small" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="seats are     small" target="seats are too small" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.9999999999228375" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are     small" target="make      space in seats" type="EDA"/>
+  <entailmentRelationEdge confidence="0.999999959684219" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="make      space in seats" target="seats are     small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.999975544771054" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="make some space in seats" target="seats are too small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999983386167" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are too small" target="make some space in seats" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9926428371640421" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are     small" target="Spaces between seats are      narrow" type="EDA"/>
+  <entailmentRelationEdge confidence="0.999999997132077" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Spaces between seats are      narrow" target="seats are     small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999982603014924" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Spaces between seats are very narrow" target="seats are too small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999970749109" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating is      cramped" target="seats are     small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999576" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are     small" target="Seating is      cramped" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999982256243152" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating is very cramped" target="seats are too small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999518525795673" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are too small" target="Seating is very cramped" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999982256243152" decisionLabel="Entailment" source="Seating is very cramped" target="seats are     small" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999982603014924" decisionLabel="Entailment" source="Spaces between seats are very narrow" target="seats are     small" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.999975544771054" decisionLabel="Entailment" source="make some space in seats" target="seats are     small" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9926428371640421" decisionLabel="Entailment" source="seats are too small" target="make      space in seats" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9926428371640421" decisionLabel="Entailment" source="seats are too small" target="Spaces between seats are      narrow" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9704460354930627" decisionLabel="Entailment" source="seats are too small" target="Spaces between seats are very narrow" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9926428371640421" decisionLabel="Entailment" source="seats are too small" target="Seating is      cramped" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999999999945881" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="service                                    would improve with more seating space" target="make      space in seats" type="EDA"/>
+  <entailmentRelationEdge confidence="0.999995230490251" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="make      space in seats" target="service                                    would improve with more seating space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999951097501272" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Spaces between seats are      narrow" target="service                                    would improve with more seating space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9852890618406973" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="service                                    would improve with more seating space" target="Spaces between seats are      narrow" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999302806323335" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are     small" target="service                                    would improve with more seating space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.99999995866362" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="service                                    would improve with more seating space" target="seats are     small" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999320018926042" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating is      cramped" target="service                                    would improve with more seating space" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999994167" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@682adea" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="service                                    would improve with more seating space" target="Seating is      cramped" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9939340200619068" decisionLabel="Entailment" source="Seating is very cramped" target="service                                    would improve with more seating space" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999030782328123" decisionLabel="Entailment" source="Spaces between seats are very narrow" target="service                                    would improve with more seating space" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999030782328123" decisionLabel="Entailment" source="make some space in seats" target="service                                    would improve with more seating space" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9926428371640421" decisionLabel="Entailment" source="seats are too small" target="service                                    would improve with more seating space" type="TRANSITIVE_CLOSURE"/>
+</rawGraph>

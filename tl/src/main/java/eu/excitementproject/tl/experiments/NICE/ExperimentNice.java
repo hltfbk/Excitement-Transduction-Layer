@@ -18,6 +18,7 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
+import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
@@ -32,6 +33,7 @@ import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
+import eu.excitementproject.tl.experiments.FakeEDA;
 import eu.excitementproject.tl.experiments.ResultsContainer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -148,6 +150,16 @@ public class ExperimentNice extends AbstractExperiment {
 					);
 		}
 		
+		if (edaName.equals(EdaName.FAKE_EDA)) {
+			 return new ExperimentNice(
+					tlDir+"src/main/resources/exci/nice/trainedModelsAndConfigurations/p1eda/P1EDA_Base_EN.xml",
+					dataDir, fileLimit, outDir,
+					TreeTaggerIT.class,
+					FakeEDA.class,
+					mergerType
+					); 
+		}
+
 		
 		return null;
 	}
@@ -182,17 +194,18 @@ public class ExperimentNice extends AbstractExperiment {
 		int fileLimit = Integer.MAX_VALUE;
 		String outDir = dataDir.replace("resources", "outputs");
 
-		MergerType mergerType = MergerType.WP2_MERGE; // which merger to use
-		boolean includeFragmentGraphEdges = false; // whether to include FG edges in the evaluations
+		MergerType mergerType = MergerType.ALL_PAIRS_MERGE; // which merger to use
+		boolean includeFragmentGraphEdges = true; // whether to include FG edges in the evaluations
 
 		// which EDA(s) to use
 //		EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
-		EdaName[] names = {EdaName.TIE_POS_RES};	
-//		EdaName[] names = {EdaName.EDIT_DIST};	
+//		EdaName[] names = {EdaName.TIE_POS_RES};	
+		EdaName[] names = {EdaName.EDIT_DIST};	
 //		EdaName[] names = {EdaName.BIUTEE, EdaName.TIE_POS_RES};	
 //		EdaName[] names = {EdaName.P1EDA};	
-//		EdaName[] names = {EdaName.TIE_POS_RES};	
+//		EdaName[] names = {EdaName.BIUTEE};	
 
+		Double initialThreshold = 0.0;
 		// ===== END OF SET-UP
 		
 		ResultsContainer combinedExperimet = new ResultsContainer(); 
@@ -214,7 +227,7 @@ public class ExperimentNice extends AbstractExperiment {
 				
 
 			ExperimentNice e = initExperiment(name, mergerType, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
-			EntailmentGraphRaw rawGraph = e.buildRawGraph();
+			EntailmentGraphRaw rawGraph = e.buildRawGraph(initialThreshold);
 				
 /*				Set<Pair<String, String>> entailings = new HashSet<Pair<String, String>>();
 				Set<Pair<String, String>> nonentailings = new HashSet<Pair<String, String>>();

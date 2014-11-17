@@ -1,0 +1,17 @@
+digraph collapsedGraph {
+"Seating is very cramped [2]\nmake some space in seats""Seating is cramped [1]\nSeating is cramped""Spaces between seats are very narrow [1]""Spaces between seats are narrow [1]\nSpaces between seats are narrow""make space in seats [1]\nmake space in seats""seats are too small [1]""seats are small [1]\nseats are small""service would improve with more seating space [1]\nservice would improve with more seating space""service would improve with more seating space [1]\nservice would improve with more seating space" -> "Spaces between seats are narrow [1]\nSpaces between seats are narrow" [color=blue]
+"Seating is cramped [1]\nSeating is cramped" -> "make space in seats [1]\nmake space in seats" [color=blue]
+"Spaces between seats are very narrow [1]" -> "make space in seats [1]\nmake space in seats" [color=blue]
+"Seating is very cramped [2]\nmake some space in seats" -> "seats are small [1]\nseats are small" [color=blue]
+"Seating is very cramped [2]\nmake some space in seats" -> "make space in seats [1]\nmake space in seats" [color=blue]
+"make space in seats [1]\nmake space in seats" -> "seats are small [1]\nseats are small" [color=blue]
+"Seating is very cramped [2]\nmake some space in seats" -> "Seating is cramped [1]\nSeating is cramped" [color=blue]
+"Spaces between seats are narrow [1]\nSpaces between seats are narrow" -> "seats are small [1]\nseats are small" [color=blue]
+"Spaces between seats are very narrow [1]" -> "seats are small [1]\nseats are small" [color=blue]
+"Spaces between seats are narrow [1]\nSpaces between seats are narrow" -> "make space in seats [1]\nmake space in seats" [color=blue]
+"service would improve with more seating space [1]\nservice would improve with more seating space" -> "make space in seats [1]\nmake space in seats" [color=blue]
+"service would improve with more seating space [1]\nservice would improve with more seating space" -> "seats are small [1]\nseats are small" [color=blue]
+"Seating is cramped [1]\nSeating is cramped" -> "seats are small [1]\nseats are small" [color=blue]
+"Spaces between seats are very narrow [1]" -> "Spaces between seats are narrow [1]\nSpaces between seats are narrow" [color=blue]
+"seats are too small [1]" -> "seats are small [1]\nseats are small" [color=blue]
+}

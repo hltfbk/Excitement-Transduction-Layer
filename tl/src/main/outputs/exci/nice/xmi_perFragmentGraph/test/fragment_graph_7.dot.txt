@@ -1,6 +1,2 @@
 digraph rawGraph {
-"not enough ladies toilets at Stars Bridge" -> "not enough toilets at Stars Bridge" [label=1] [color=green]
-"not enough toilets at Stars Bridge" -> "not enough toilets" [label=1] [color=green]
-"not enough ladies toilets at Stars Bridge" -> "not enough ladies toilets" [label=1] [color=green]
-"not enough ladies toilets" -> "not enough toilets" [label=1] [color=green]
 }

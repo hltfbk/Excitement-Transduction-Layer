@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="2" text="Ecomony seats not very comfortableGenerally">
+    <completeStatement text="Ecomony seats not very comfortableGenerally"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="2" text="Ecomony seats not very comfortableGenerally"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Ecomony seats not      comfortableGenerally">
+    <completeStatement text="Ecomony seats not very comfortableGenerally"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="1" text="Ecomony seats not      comfortableGenerally"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="        seats not      comfortableGenerally">
+    <completeStatement text="Ecomony seats not very comfortableGenerally"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="0" text="        seats not      comfortableGenerally"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="        seats not very comfortableGenerally">
+    <completeStatement text="Ecomony seats not very comfortableGenerally"/>
+    <entailmentUnitMention categoryId="" interactionId="212549.txt" level="1" text="        seats not very comfortableGenerally"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Seating could be more comfortable">
+    <completeStatement text="Seating could be more comfortable"/>
+    <entailmentUnitMention categoryId="" interactionId="183009.txt" level="0" text="Seating could be more comfortable"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Seats need to be more comfortable">
+    <completeStatement text="Seats need to be more comfortable"/>
+    <entailmentUnitMention categoryId="" interactionId="411441.txt" level="0" text="Seats need to be more comfortable"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="seats are stunningly uncomfortable">
+    <completeStatement text="seats are stunningly uncomfortable"/>
+    <entailmentUnitMention categoryId="" interactionId="190617.txt" level="1" text="seats are stunningly uncomfortable"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="seats are            uncomfortable">
+    <completeStatement text="seats are stunningly uncomfortable"/>
+    <entailmentUnitMention categoryId="" interactionId="190617.txt" level="0" text="seats are            uncomfortable"/>
+  </entailmentUnitNode>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="Ecomony seats not      comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Ecomony seats not      comfortableGenerally" target="        seats not      comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="        seats not very comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="        seats not very comfortableGenerally" target="        seats not      comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="        seats not      comfortableGenerally" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.9999999639128949" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="        seats not      comfortableGenerally" target="Seating could be more comfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9989997236391114" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating could be more comfortable" target="        seats not      comfortableGenerally" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999639128949" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="Seating could be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999999639128949" decisionLabel="Entailment" source="Ecomony seats not      comfortableGenerally" target="Seating could be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999999639128949" decisionLabel="Entailment" source="        seats not very comfortableGenerally" target="Seating could be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9990243964560636" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seats need to be more comfortable" target="        seats not      comfortableGenerally" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999997884227226" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="        seats not      comfortableGenerally" target="Seats need to be more comfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999967" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seats need to be more comfortable" target="Seating could be more comfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999807" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating could be more comfortable" target="Seats need to be more comfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999997884227226" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="Seats need to be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999997884227226" decisionLabel="Entailment" source="Ecomony seats not      comfortableGenerally" target="Seats need to be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999997884227226" decisionLabel="Entailment" source="        seats not very comfortableGenerally" target="Seats need to be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="seats are stunningly uncomfortable" target="seats are            uncomfortable" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="seats are            uncomfortable" target="seats are stunningly uncomfortable" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.9990243964560636" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are            uncomfortable" target="        seats not      comfortableGenerally" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999990030333811" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="        seats not      comfortableGenerally" target="seats are            uncomfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999974261258" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are            uncomfortable" target="Seating could be more comfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.999999927092257" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seating could be more comfortable" target="seats are            uncomfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999848697096" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="seats are            uncomfortable" target="Seats need to be more comfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999287049839" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@405a31c1" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Seats need to be more comfortable" target="seats are            uncomfortable" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999990030333811" decisionLabel="Entailment" source="Ecomony seats not very comfortableGenerally" target="seats are            uncomfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999990030333811" decisionLabel="Entailment" source="Ecomony seats not      comfortableGenerally" target="seats are            uncomfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999990030333811" decisionLabel="Entailment" source="        seats not very comfortableGenerally" target="seats are            uncomfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9990243964560636" decisionLabel="Entailment" source="seats are stunningly uncomfortable" target="        seats not      comfortableGenerally" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9990243964560636" decisionLabel="Entailment" source="seats are stunningly uncomfortable" target="Seating could be more comfortable" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9990243964560636" decisionLabel="Entailment" source="seats are stunningly uncomfortable" target="Seats need to be more comfortable" type="TRANSITIVE_CLOSURE"/>
+</rawGraph>

@@ -1,0 +1,17 @@
+digraph rawGraph {
+"Seating is very cramped";"Seating is cramped";"Spaces between seats are very narrow";"Spaces between seats are narrow";"make some space in seats";"make space in seats";"seats are too small";"seats are small";"service would improve with more seating space";"Seating is very cramped" -> "Seating is cramped" [label=1.0] [color=green]
+"Seating is very cramped" -> "Seating is cramped" [label=1.0] [color=green]
+"Seating is cramped" -> "Seating is very cramped" [label=1.0] [color=red]
+"Spaces between seats are very narrow" -> "Spaces between seats are narrow" [label=1.0] [color=green]
+"Spaces between seats are narrow" -> "Spaces between seats are very narrow" [label=1.0] [color=red]
+"make some space in seats" -> "make space in seats" [label=1.0] [color=green]
+"make space in seats" -> "make some space in seats" [label=1.0] [color=red]
+"seats are too small" -> "seats are small" [label=1.0] [color=green]
+"seats are small" -> "seats are too small" [label=1.0] [color=red]
+"Seating is very cramped" -> "seats are small" [label=0.7276013543923998] [color=blue]
+"Seating is cramped" -> "seats are small" [label=0.7004440994508759] [color=blue]
+"Spaces between seats are very narrow" -> "seats are small" [label=0.7457761487435207] [color=blue]
+"Spaces between seats are narrow" -> "seats are small" [label=0.7096411337258427] [color=blue]
+"make some space in seats" -> "seats are small" [label=0.7337410778504494] [color=blue]
+"seats are small" -> "Spaces between seats are very narrow" [label=0.7478630903473801] [color=red]
+}

@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Il sito TELEFONIAX e' veramente un grande SCHIFO" -> "Il sito TELEFONIAX e' un SCHIFO" [label=1] [color=green]
+}

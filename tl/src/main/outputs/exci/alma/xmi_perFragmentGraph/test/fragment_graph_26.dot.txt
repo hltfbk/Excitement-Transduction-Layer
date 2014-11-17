@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" -> "provo ad registrarmi ma mi da errore" [label=1] [color=green]
+}

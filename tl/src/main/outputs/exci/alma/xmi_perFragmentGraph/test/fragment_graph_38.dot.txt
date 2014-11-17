@@ -1,0 +1,3 @@
+digraph rawGraph {
+"la linea mi è arrivata 5 giorni fà... e nemmeno funziona" -> "la linea ... e nemmeno funziona" [label=1] [color=green]
+}

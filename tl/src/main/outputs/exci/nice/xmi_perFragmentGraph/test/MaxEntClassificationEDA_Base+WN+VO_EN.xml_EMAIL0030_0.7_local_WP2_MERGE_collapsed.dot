@@ -28,6 +28,7 @@ digraph collapsedGraph {
 "Food in resto seems to have gone downhill [1]" -> "Better food [1]" [color=blue]
 "Food is more or less the same every journey [1]\nFood is more or less the same every journey" -> "Food is more or less the same [1]\nFood is more or less the same" [color=blue]
 "Food is more or less the same [1]\nFood is more or less the same" -> "Food is poor [3]\nPoor food\nfood was awful\nFood is poor" [color=blue]
+"Food seems to have gone downhill [1]\nFood seems to have gone downhill" -> "Food is really poor [1]\nFood is really poor" [color=blue]
 "Food is very poor now [1]" -> "Food is poor now [1]\nFood is poor now" [color=blue]
 "Food seems to have gone downhill [1]\nFood seems to have gone downhill" -> "Food is poor now [1]\nFood is poor now" [color=blue]
 "Food is very poor now [1]" -> "Food is really poor [1]\nFood is really poor" [color=blue]

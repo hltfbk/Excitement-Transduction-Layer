@@ -1,0 +1,3 @@
+digraph rawGraph {
+"la connessione dal cellulare non funziona" -> "la connessione non funziona" [label=1] [color=green]
+}

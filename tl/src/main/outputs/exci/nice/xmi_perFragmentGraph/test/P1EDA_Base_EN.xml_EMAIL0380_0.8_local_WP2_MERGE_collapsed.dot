@@ -6,5 +6,4 @@ digraph collapsedGraph {
 "not enough ladies toilets [1]\nnot enough ladies toilets" -> "not enough toilets [1]\nnot enough toilets" [color=blue]
 "not enough ladies toilets at Stars Bridge [1]" -> "not enough toilets [1]\nnot enough toilets" [color=blue]
 "toilets were very dirty [1]" -> "toilets were dirty [1]\ntoilets were dirty" [color=blue]
-"toilet floor dirty [1]" -> "toilets were dirty [1]\ntoilets were dirty" [color=blue]
 }

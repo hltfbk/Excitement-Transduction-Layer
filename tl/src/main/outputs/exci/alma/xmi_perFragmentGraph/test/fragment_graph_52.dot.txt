@@ -1,0 +1,3 @@
+digraph rawGraph {
+"promettete connessioni con le offerte nuove tramite 3G che sono pietose" -> "promettete connessioni che sono pietose" [label=1] [color=green]
+}

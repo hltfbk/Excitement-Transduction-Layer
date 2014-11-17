@@ -1,3 +1,2 @@
 digraph rawGraph {
-"You should have more connections into europe" -> "You should have more connections" [label=1] [color=green]
 }

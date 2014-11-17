@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="1" text="Toilet tissue quality is famously bad">
+    <completeStatement text="Toilet tissue quality is famously bad"/>
+    <entailmentUnitMention categoryId="" interactionId="16005.txt" level="1" text="Toilet tissue quality is famously bad"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Toilet tissue quality is          bad">
+    <completeStatement text="Toilet tissue quality is famously bad"/>
+    <entailmentUnitMention categoryId="" interactionId="16005.txt" level="0" text="Toilet tissue quality is          bad"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Toilets/washrooms sometimes disappointing">
+    <completeStatement text="Toilets/washrooms sometimes disappointing"/>
+    <entailmentUnitMention categoryId="" interactionId="127257.txt" level="0" text="Toilets/washrooms sometimes disappointing"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="not enough ladies toilets at Stars Bridge">
+    <completeStatement text="not enough ladies toilets at Stars Bridge"/>
+    <entailmentUnitMention categoryId="" interactionId="483394.txt" level="2" text="not enough ladies toilets at Stars Bridge"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="not enough        toilets at Stars Bridge">
+    <completeStatement text="not enough ladies toilets at Stars Bridge"/>
+    <entailmentUnitMention categoryId="" interactionId="483394.txt" level="1" text="not enough        toilets at Stars Bridge"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="not enough        toilets                ">
+    <completeStatement text="not enough ladies toilets at Stars Bridge"/>
+    <entailmentUnitMention categoryId="" interactionId="483394.txt" level="0" text="not enough        toilets                "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="not enough ladies toilets                ">
+    <completeStatement text="not enough ladies toilets at Stars Bridge"/>
+    <entailmentUnitMention categoryId="" interactionId="483394.txt" level="1" text="not enough ladies toilets                "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="toilet floor dirty">
+    <completeStatement text="toilet floor dirty"/>
+    <entailmentUnitMention categoryId="" interactionId="457080.txt" level="0" text="toilet floor dirty"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="toilet hygiene non existing">
+    <completeStatement text="toilet hygiene non existing"/>
+    <entailmentUnitMention categoryId="" interactionId="330688.txt" level="0" text="toilet hygiene non existing"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="toilets cleaned">
+    <completeStatement text="toilets cleaned"/>
+    <entailmentUnitMention categoryId="" interactionId="187987.txt" level="0" text="toilets cleaned"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="toilets were very dirty">
+    <completeStatement text="toilets were very dirty"/>
+    <entailmentUnitMention categoryId="" interactionId="327783.txt" level="1" text="toilets were very dirty"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="toilets were      dirty">
+    <completeStatement text="toilets were very dirty"/>
+    <entailmentUnitMention categoryId="" interactionId="327783.txt" level="0" text="toilets were      dirty"/>
+  </entailmentUnitNode>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Toilet tissue quality is famously bad" target="Toilet tissue quality is          bad" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.9999495768678864" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilet tissue quality is          bad" target="Toilets/washrooms sometimes disappointing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999495768678864" decisionLabel="Entailment" source="Toilet tissue quality is famously bad" target="Toilets/washrooms sometimes disappointing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="not enough        toilets at Stars Bridge" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="not enough        toilets at Stars Bridge" target="not enough        toilets                " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="not enough ladies toilets                " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="not enough ladies toilets                " target="not enough        toilets                " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="not enough        toilets                " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="not enough        toilets at Stars Bridge" target="not enough ladies toilets at Stars Bridge" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="not enough        toilets at Stars Bridge" target="not enough ladies toilets                " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="not enough        toilets                " target="not enough ladies toilets at Stars Bridge" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="not enough        toilets                " target="not enough        toilets at Stars Bridge" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="not enough        toilets                " target="not enough ladies toilets                " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="not enough ladies toilets                " target="not enough ladies toilets at Stars Bridge" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="not enough ladies toilets                " target="not enough        toilets at Stars Bridge" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.9999996104620611" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilet tissue quality is          bad" target="not enough        toilets                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.994879257884877" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilet tissue quality is famously bad" target="not enough ladies toilets                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999996026974429" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilets/washrooms sometimes disappointing" target="not enough        toilets                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999499733581781" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="not enough        toilets                " target="Toilets/washrooms sometimes disappointing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.994879257884877" decisionLabel="Entailment" source="Toilet tissue quality is famously bad" target="not enough        toilets                " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999499733581781" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="Toilets/washrooms sometimes disappointing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999499733581781" decisionLabel="Entailment" source="not enough        toilets at Stars Bridge" target="Toilets/washrooms sometimes disappointing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999499733581781" decisionLabel="Entailment" source="not enough ladies toilets                " target="Toilets/washrooms sometimes disappointing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.999999611485813" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet floor dirty" target="not enough        toilets                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999074397714357" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="not enough        toilets                " target="toilet floor dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999067062091318" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilet tissue quality is          bad" target="toilet floor dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999497093792328" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet floor dirty" target="Toilets/washrooms sometimes disappointing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999048467701539" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilets/washrooms sometimes disappointing" target="toilet floor dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.994879257884877" decisionLabel="Entailment" source="Toilet tissue quality is famously bad" target="toilet floor dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999074397714357" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="toilet floor dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999074397714357" decisionLabel="Entailment" source="not enough        toilets at Stars Bridge" target="toilet floor dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999074397714357" decisionLabel="Entailment" source="not enough ladies toilets                " target="toilet floor dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999944611948648" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="not enough        toilets                " target="toilet hygiene non existing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999996104620611" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet hygiene non existing" target="not enough        toilets                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999944172946374" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilet tissue quality is          bad" target="toilet hygiene non existing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999495768678864" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet hygiene non existing" target="Toilets/washrooms sometimes disappointing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999943060157561" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilets/washrooms sometimes disappointing" target="toilet hygiene non existing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999944319665721" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet floor dirty" target="toilet hygiene non existing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999067062091318" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet hygiene non existing" target="toilet floor dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.994879257884877" decisionLabel="Entailment" source="Toilet tissue quality is famously bad" target="toilet hygiene non existing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999944611948648" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="toilet hygiene non existing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999944611948648" decisionLabel="Entailment" source="not enough        toilets at Stars Bridge" target="toilet hygiene non existing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999944611948648" decisionLabel="Entailment" source="not enough ladies toilets                " target="toilet hygiene non existing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999996125068742" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets cleaned" target="not enough        toilets                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999831" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="not enough        toilets                " target="toilets cleaned" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999829" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilet tissue quality is          bad" target="toilets cleaned" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999944465999473" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets cleaned" target="toilet hygiene non existing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999829" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet hygiene non existing" target="toilets cleaned" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999498415423583" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets cleaned" target="Toilets/washrooms sometimes disappointing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999827" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilets/washrooms sometimes disappointing" target="toilets cleaned" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999829" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet floor dirty" target="toilets cleaned" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999071958937411" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets cleaned" target="toilet floor dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.994879257884877" decisionLabel="Entailment" source="Toilet tissue quality is famously bad" target="toilets cleaned" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999074397714357" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="toilets cleaned" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999074397714357" decisionLabel="Entailment" source="not enough        toilets at Stars Bridge" target="toilets cleaned" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999074397714357" decisionLabel="Entailment" source="not enough ladies toilets                " target="toilets cleaned" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="toilets were very dirty" target="toilets were      dirty" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="toilets were      dirty" target="toilets were very dirty" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="0.9999993956229056" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="not enough        toilets                " target="toilets were      dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999996125068742" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets were      dirty" target="not enough        toilets                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.9998101516882139" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="not enough ladies toilets                " target="toilets were very dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9998101516882139" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="not enough        toilets at Stars Bridge" target="toilets were very dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets were very dirty" target="not enough ladies toilets                " type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999566659507" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilet tissue quality is          bad" target="toilets were      dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999863854178156" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilet tissue quality is famously bad" target="toilets were very dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999944465999473" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets were      dirty" target="toilet hygiene non existing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999993908326261" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet hygiene non existing" target="toilets were      dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999993786901605" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="Toilets/washrooms sometimes disappointing" target="toilets were      dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999498415423583" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets were      dirty" target="Toilets/washrooms sometimes disappointing" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999511671" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilet floor dirty" target="toilets were      dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999925402018" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets were      dirty" target="toilet floor dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999999999999829" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets were      dirty" target="toilets cleaned" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9999993940303459" decisionLabel="Entailment" eda="eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA@494cd06b" lap="eu.excitementproject.eop.lap.biu.uima.BIUFullLAP" source="toilets cleaned" target="toilets were      dirty" type="EDA"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="Toilet tissue quality is famously bad" target="toilets were      dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9998101516882139" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="toilets were very dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9999944611948648" decisionLabel="Entailment" source="not enough ladies toilets at Stars Bridge" target="toilets were      dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="not enough        toilets at Stars Bridge" target="not enough ladies toilets                " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="not enough        toilets at Stars Bridge" target="toilets were      dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="not enough ladies toilets                " target="toilets were      dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="toilets were very dirty" target="not enough        toilets                " type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="toilets were very dirty" target="toilet hygiene non existing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="toilets were very dirty" target="Toilets/washrooms sometimes disappointing" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="toilets were very dirty" target="toilet floor dirty" type="TRANSITIVE_CLOSURE"/>
+  <entailmentRelationEdge confidence="0.9949060014299292" decisionLabel="Entailment" source="toilets were very dirty" target="toilets cleaned" type="TRANSITIVE_CLOSURE"/>
+</rawGraph>

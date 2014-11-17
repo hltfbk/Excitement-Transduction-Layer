@@ -7,7 +7,6 @@ digraph collapsedGraph {
 "Prices are a bit expensive [1]\nPrices are a bit expensive" -> "Prices are expensive [1]\nPrices are expensive" [color=blue]
 "Prices at the food bar are a bit expensive [1]" -> "Prices are expensive [1]\nPrices are expensive" [color=blue]
 "The food Is outrageously expensive [1]" -> "The food Is expensive [1]\nThe food Is expensive" [color=blue]
-"Prices at the food bar are expensive [1]\nPrices at the food bar are expensive" -> "The food Is outrageously expensive [1]" [color=blue]
 "The kiosk food is overpriced [1]\nThe kiosk food is overpriced" -> "The food is overpriced [1]\nThe food is overpriced" [color=blue]
 "cheaper food on the train needed [1]" -> "cheaper food needed [1]\ncheaper food needed" [color=blue]
 "drinks are just too expensive [1]\ndrinks are just too expensive" -> "drinks are expensive [1]\ndrinks are expensive" [color=blue]

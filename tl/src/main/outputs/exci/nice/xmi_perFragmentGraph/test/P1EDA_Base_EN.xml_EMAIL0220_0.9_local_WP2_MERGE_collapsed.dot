@@ -3,5 +3,4 @@ digraph collapsedGraph {
 "Spaces between seats are very narrow [1]" -> "Spaces between seats are narrow [1]\nSpaces between seats are narrow" [color=blue]
 "make some space in seats [1]" -> "make space in seats [1]\nmake space in seats" [color=blue]
 "seats are too small [1]" -> "seats are small [1]\nseats are small" [color=blue]
-"Spaces between seats are narrow [1]\nSpaces between seats are narrow" -> "seats are small [1]\nseats are small" [color=blue]
 }

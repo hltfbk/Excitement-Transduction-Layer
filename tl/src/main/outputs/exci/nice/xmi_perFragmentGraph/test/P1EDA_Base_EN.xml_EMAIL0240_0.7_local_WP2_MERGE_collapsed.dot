@@ -4,7 +4,5 @@ digraph collapsedGraph {
 "Ecomony seats not very comfortableGenerally [1]" -> "seats not very comfortableGenerally [1]\nseats not very comfortableGenerally" [color=blue]
 "seats not very comfortableGenerally [1]\nseats not very comfortableGenerally" -> "seats not comfortableGenerally [1]\nseats not comfortableGenerally" [color=blue]
 "Ecomony seats not very comfortableGenerally [1]" -> "seats not comfortableGenerally [1]\nseats not comfortableGenerally" [color=blue]
-"Seats need to be more comfortable [1]" -> "Seating could be more comfortable [1]" [color=blue]
 "seats are stunningly uncomfortable [1]" -> "seats are uncomfortable [1]\nseats are uncomfortable" [color=blue]
-"Seats need to be more comfortable [1]" -> "seats are uncomfortable [1]\nseats are uncomfortable" [color=blue]
 }

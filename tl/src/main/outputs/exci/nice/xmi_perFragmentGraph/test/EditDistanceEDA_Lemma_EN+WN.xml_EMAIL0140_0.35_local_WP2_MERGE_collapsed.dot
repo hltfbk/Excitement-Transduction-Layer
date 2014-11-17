@@ -29,4 +29,9 @@ digraph collapsedGraph {
 "possibility to close the lights morning [1]\npossibility to close the lights morning" -> "train is often late [1]\ntrain is often late" [color=blue]
 "possibility to close the lights morning [1]\npossibility to close the lights morning" -> "train is very late [1]\ntrain is very late" [color=blue]
 "possibility to close the lights in the morning train [1]" -> "train is often very late [1]" [color=blue]
+"possibility to close the lights in the morning train [1]" -> "train is often late [1]\ntrain is often late" [color=blue]
+"possibility to close the lights in the morning train [1]" -> "train is very late [1]\ntrain is very late" [color=blue]
+"possibility to close the lights in the morning train [1]" -> "train is late [1]\ntrain is late" [color=blue]
+"possibility to close the lights in the train [1]\npossibility to close the lights in the train" -> "train is late [1]\ntrain is late" [color=blue]
+"possibility to close the lights morning [1]\npossibility to close the lights morning" -> "train is late [1]\ntrain is late" [color=blue]
 }

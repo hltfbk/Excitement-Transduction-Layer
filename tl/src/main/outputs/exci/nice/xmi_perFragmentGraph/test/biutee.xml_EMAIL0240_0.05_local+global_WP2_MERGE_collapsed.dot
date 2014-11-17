@@ -1,0 +1,8 @@
+digraph collapsedGraph {
+"seats are uncomfortable [4]\nseats are uncomfortable\nseats not comfortableGenerally\nSeating could be more comfortable\nSeats need to be more comfortable""Ecomony seats not very comfortableGenerally [1]""Ecomony seats not comfortableGenerally [1]\nEcomony seats not comfortableGenerally""seats not very comfortableGenerally [1]\nseats not very comfortableGenerally""seats are stunningly uncomfortable [1]""Ecomony seats not very comfortableGenerally [1]" -> "seats are uncomfortable [4]\nseats are uncomfortable\nseats not comfortableGenerally\nSeating could be more comfortable\nSeats need to be more comfortable" [color=blue]
+"seats are stunningly uncomfortable [1]" -> "seats are uncomfortable [4]\nseats are uncomfortable\nseats not comfortableGenerally\nSeating could be more comfortable\nSeats need to be more comfortable" [color=blue]
+"Ecomony seats not comfortableGenerally [1]\nEcomony seats not comfortableGenerally" -> "seats are uncomfortable [4]\nseats are uncomfortable\nseats not comfortableGenerally\nSeating could be more comfortable\nSeats need to be more comfortable" [color=blue]
+"seats not very comfortableGenerally [1]\nseats not very comfortableGenerally" -> "seats are uncomfortable [4]\nseats are uncomfortable\nseats not comfortableGenerally\nSeating could be more comfortable\nSeats need to be more comfortable" [color=blue]
+"Ecomony seats not very comfortableGenerally [1]" -> "Ecomony seats not comfortableGenerally [1]\nEcomony seats not comfortableGenerally" [color=blue]
+"Ecomony seats not very comfortableGenerally [1]" -> "seats not very comfortableGenerally [1]\nseats not very comfortableGenerally" [color=blue]
+}

@@ -21,13 +21,10 @@ digraph rawGraph {
 "The food is overpriced" -> "The kiosk food is overpriced" [label=1.0] [color=red]
 "cheaper food on the train needed" -> "cheaper food needed" [label=1.0] [color=green]
 "cheaper food needed" -> "cheaper food on the train needed" [label=1.0] [color=red]
-"Cheaper catering needed" -> "cheaper food needed" [label=0.9055732971773194] [color=blue]
 "drinks are just too expensive" -> "drinks are expensive" [label=1.0] [color=green]
 "drinks are expensive" -> "drinks are just too expensive" [label=1.0] [color=red]
 "food are just too expensive" -> "food are expensive" [label=1.0] [color=green]
 "food are expensive" -> "food are just too expensive" [label=1.0] [color=red]
-"The food Is expensive" -> "food are expensive" [label=0.9055732971773194] [color=blue]
 "price of snacks in the bar-car" -> "price of snacks" [label=1.0] [color=green]
 "price of snacks" -> "price of snacks in the bar-car" [label=1.0] [color=red]
-"The food Is outrageously expensive" -> "food are expensive" [label=0.9055732971773194] [color=blue]
 }

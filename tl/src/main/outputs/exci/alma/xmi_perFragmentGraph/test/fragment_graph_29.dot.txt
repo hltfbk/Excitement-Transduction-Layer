@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Dopo circa un mese ho ricevuto la TELEFONIAX CONSOLLE ma ancora oggi aspetto che il servizio mi venga attivato" -> "ancora oggi aspetto che il servizio mi venga attivato" [label=1] [color=green]
+}

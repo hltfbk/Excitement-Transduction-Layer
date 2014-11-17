@@ -6,9 +6,4 @@ digraph rawGraph {
 "make space in seats" -> "make some space in seats" [label=1.0] [color=red]
 "seats are too small" -> "seats are small" [label=1.0] [color=green]
 "seats are small" -> "seats are too small" [label=1.0] [color=red]
-"Spaces between seats are narrow" -> "seats are small" [label=0.9055732971773194] [color=blue]
-"Spaces between seats are very narrow" -> "seats are too small" [label=0.7955965695312761] [color=blue]
-"Seating is cramped" -> "seats are small" [label=0.7423873456226487] [color=blue]
-"Spaces between seats are very narrow" -> "seats are small" [label=0.7955965695312761] [color=blue]
-"Seating is very cramped" -> "seats are small" [label=0.7423873456226487] [color=blue]
 }
