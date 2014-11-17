@@ -83,4 +83,8 @@ public class EvaluationMeasuresMacro {
 		
 		fscore = (2 * precision * recall) / (precision + recall);		
 	}
+	
+	public int getNrOfInstances() {
+		return perInstanceEvals.size();
+	}
 }

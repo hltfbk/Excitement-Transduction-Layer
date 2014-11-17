@@ -272,8 +272,8 @@ public final class CASUtils {
 	static public FragmentAnnotation annotateOneDeterminedFragment(JCas aJCas, Region[] r ) throws LAPException
 	{
 		// we will blindly follow the given region and add annotation. 		
-		int leftmost = r[0].getBegin(); 
-		int rightmost = r[(r.length -1)].getEnd(); 
+		int leftmost = getMinBegin(r); 
+		int rightmost = getMaxEnd(r); 
 
 		DeterminedFragment df = new DeterminedFragment(aJCas); 
 		df.setBegin(leftmost);
@@ -299,6 +299,30 @@ public final class CASUtils {
 		l.debug("Generated a DeterminedFragment annotation. Fragment text is: " + fragText); 
 		
 		return df;
+	}
+
+	private static int getMaxEnd(Region[] r) {
+		
+		int maxEnd = 0;
+		
+		for(int i = 0; i < r.length; i++) {
+			if (r[i].getEnd() > maxEnd)
+				maxEnd = r[i].getEnd();
+		}
+		
+		return maxEnd;
+	}
+
+	
+	private static int getMinBegin(Region[] r) {
+		int minBegin = Integer.MAX_VALUE;
+	
+		for(int i = 0; i < r.length; i++) {
+			if (r[i].getBegin() < minBegin)
+				minBegin = r[i].getBegin();
+		}
+		
+		return minBegin;
 	}
 
 	/**

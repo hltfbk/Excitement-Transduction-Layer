@@ -3,6 +3,9 @@ package eu.excitementproject.tl.laputils;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -57,4 +60,29 @@ public class LAPUtils {
 		return lap;
 	}
 
+	
+	public static LAPAccess initializeLAP(String language){
+		
+//		String lapClassName = "eu.excitementproject.tl.laputils.LemmaLevelLap" + language.toUpperCase();
+		String lapClassName = "eu.excitementproject.tl.laputils.DependencyLevelLap" + language.toUpperCase();
+		LAPAccess lap = null;
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.evaluation.fragmentannotator.FragmentAnnotatorEvaluator:initializeLAP");
+		logger.setLevel(Level.INFO);
+		
+		try {
+			Class<?> lapClass = Class.forName(lapClassName);
+			Constructor<?> lapClassConstructor = lapClass.getConstructor();
+			lap = (LAPAccess) lapClassConstructor.newInstance();
+			
+			logger.info("LAP initialized from class : " + lapClassName);
+			
+		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			logger.error("Error initializing LAP : " + e.getClass());
+			e.printStackTrace();
+		}
+		
+		return lap;
+	}
+	
 }

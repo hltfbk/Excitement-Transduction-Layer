@@ -30,14 +30,18 @@ import eu.excitementproject.tl.laputils.CASUtils;
 
 public class TokenAndDependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 
-	private List<String> tokenPOSFilter;
-	private List<String> dependencyTypeFilter;
-	private List<String> governorPOSFilter;
-	private List<String> dependentPOSFilter;
+	private final List<String> tokenPOSFilter;
+	private final List<String> dependencyTypeFilter;
+	private final List<String> governorPOSFilter;
+	private final List<String> dependentPOSFilter;
 	
 	public TokenAndDependencyAsFragmentAnnotator(LAPAccess lap)
 			throws FragmentAnnotatorException {
 		super(lap);
+		tokenPOSFilter = null;
+		dependencyTypeFilter = null;
+		governorPOSFilter = null;
+		dependentPOSFilter = null;
 	}
 	/**
 	 * 

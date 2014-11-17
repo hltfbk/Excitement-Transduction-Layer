@@ -3,6 +3,7 @@ package  eu.excitementproject.tl.laputils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
@@ -12,12 +13,18 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
+import com.aliasi.util.Collections;
+
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentAnnotation;
+import eu.excitement.type.tl.FragmentPart;
+import eu.excitement.type.tl.KeywordAnnotation;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -32,6 +39,7 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
  */
 
 
+@SuppressWarnings("unused")
 public final class AnnotationUtils {
 	
 	
@@ -57,15 +65,48 @@ public final class AnnotationUtils {
 			
 			for (Annotation a: annotations) {
 
-				String text = a.getCoveredText();
-				int frag_start = interactionText.indexOf(text); 
-				int frag_end = frag_start + text.length(); 
+				// check if the annotation is legit -- for modifiers it happens that it has 0 span
+				if (a.getEnd() - a.getBegin() > 0) {
 				
-				CASUtils.Region keyw_r = new CASUtils.Region(frag_start, frag_end);
+					if (AnnotationClass.equals(KeywordAnnotation.class)) {
+									
+						CASUtils.Region r = makeRegion(a, interactionText); 
+						CASUtils.annotateOneKeyword(aJCas, r);
+						
+					} else if (AnnotationClass.equals(DeterminedFragment.class)) {
+						
+//						Collection<FragmentPart> fps = JCasUtil.selectCovered(goldJCas, FragmentPart.class, a);
+						FSArray fps = ((DeterminedFragment) a).getFragParts();
+						
+						CASUtils.Region[] rs;
+						
+						if (fps.size() > 0) {
+							rs = new CASUtils.Region[fps.size()];
+
+							int i = 0;
+							for (FragmentPart fp: JCasUtil.select(fps, FragmentPart.class)) {
+								rs[i++] = makeRegion(fp, interactionText);
+								logger.info("Added region: " + rs[i-1].getBegin() + " -- " + rs[i-1].getEnd() + " of type " + fp.getClass());
+							}
+						} else {
+							rs = new CASUtils.Region[1];
+							rs[0] = makeRegion(a, interactionText);
+						}
+						
+						
+						try {
+							CASUtils.annotateOneDeterminedFragment(aJCas, rs);
+						} catch (LAPException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
 				
-				CASUtils.annotateOneKeyword(aJCas, keyw_r);
-				
-				logger.info("Added annotation: " + text + " ( " + frag_start +", " + frag_end + ")");
+					logger.info("Added annotation: " + a.getCoveredText() );
+					
+				} else {
+					logger.info("Skipping erroneous annotation: " + a.getBegin() + " - " + a.getEnd());
+				}
 			}
 		}
 	}		
@@ -322,7 +363,8 @@ public final class AnnotationUtils {
 			System.out.println("Dependencies found!");
 			for (Dependency d: deps) {
 				System.out.println("Dep: " + d.getGovernor().getCoveredText() + " -> " + d.getDependent().getCoveredText());
-				if (d.getGovernor().getCoveredText().matches(k.getCoveredText())) 
+//				if (d.getGovernor().getCoveredText().matches(k.getCoveredText()))
+				if (d.getGovernor().getCoveredText().contentEquals(k.getCoveredText()))
 					return true;
 			}
 		}
@@ -427,5 +469,42 @@ public final class AnnotationUtils {
 		
 		return negationPos;
 	}
+
+	
+	
+	public static CASUtils.Region makeRegion(Annotation a, String text) {
+		
+		String a_text = a.getCoveredText();
+		int frag_start = text.indexOf(a_text); 
+		int frag_end = frag_start + a_text.length(); 
+		
+		return new CASUtils.Region(frag_start, frag_end);
+	}
+	
+
+	/**
+	 * Collects the annotations and filters out the empty ones (it happens with the keywords sometimes)
+	 * 
+	 * @param aJCas
+	 * @param class1
+	 * @return
+	 */
+/*	public static Collection<? extends Annotation> collectAnnotations(JCas aJCas,
+			Class<? extends Annotation> type) {
+		
+		Collection<? extends Annotation> anns = JCasUtil.select(aJCas, type);
+		anns.removeAll(anns);
+		
+		for(Annotation a: JCasUtil.select(aJCas, type)) {
+			if (a.getEnd() - a.getBegin() > 0) {
+				anns.add(type.cast(a));
+			}
+		}
+		
+		return anns;
+	}
+*/
+
+
 	
 }

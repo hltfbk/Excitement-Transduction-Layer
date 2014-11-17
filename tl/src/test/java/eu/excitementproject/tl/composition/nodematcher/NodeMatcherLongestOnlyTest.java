@@ -57,13 +57,13 @@ public class NodeMatcherLongestOnlyTest {
 			testlogger.info("Creating fragment graph from CAS."); 			
 			FragmentGraphGenerator fgg = new FragmentGraphGeneratorFromCAS();
 			Set<FragmentGraph> fragmentGraphs = fgg.generateFragmentGraphs(jcas);
-			testlogger.info("Calling node matcher on the fragment graph."); 			
-			NodeMatcher nm = new NodeMatcherLongestOnly(entailmentGraph); 
+			testlogger.info("Calling node matcher on the fragment graph."); 	
+			NodeMatcher nm = new NodeMatcherLongestOnly(entailmentGraph, true); 
 			Set<NodeMatch> matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next());
 			Assert.assertEquals(1, matches.size()); //should return a single match
 			for (NodeMatch nodeMatch : matches) {
 				Assert.assertEquals("Disappointed with the amount of legroom compared with other trains", nodeMatch.getMention().getText().trim());
-				testlogger.info("Matching node: 'Disappointed with the amount of legroom compared with other trains'"); 			
+				testlogger.info("Matching node: 'Disappointed with the amount of legroom compared with other trains'"); 
 				for (PerNodeScore score : nodeMatch.getScores()) {
 					testlogger.info("Associated score: 1.0'"); 			
 					Assert.assertEquals(1.0, score.getScore());
@@ -111,7 +111,38 @@ public class NodeMatcherLongestOnlyTest {
 			testlogger.info("Calling node matcher on the fragment graph."); 			
 			matches = nm.findMatchingNodesInGraph(fragmentGraphs.iterator().next());
 			Assert.assertEquals(0, matches.size()); 
-			testlogger.info("NodeMatcher does not match a node."); 			
+			testlogger.info("NodeMatcher does not match a node."); 		
+			
+			/************* TEST 4 ***************/
+			testlogger.info("Creating fragment graph for sentence 'Disappointed with the amount of legroom compared with other trains'."); 			
+			JCas jcas4 = CASUtils.createNewInputCas();			
+			String text4 = "Disappointed with the amount of legroom compared with other trains";
+			jcas4.setDocumentText(text4);
+			fragmentRegions = new Region[1];
+			fragmentRegions[0] = new Region(0,text4.length());
+			CASUtils.annotateOneDeterminedFragment(jcas4, fragmentRegions);
+			testlogger.info("Adding two modifiers: 'the amount of' and 'compared with other trains'."); 			
+			modifierRegions = new Region[2];
+			modifierRegions[0] = new Region(18,31);
+			modifierRegions[1] = new Region(40,text4.length());
+			CASUtils.annotateOneModifier(jcas4, modifierRegions);
+			testlogger.info("Creating fragment graph from CAS."); 			
+			fgg = new FragmentGraphGeneratorFromCAS();
+			fragmentGraphs = fgg.generateFragmentGraphs(jcas4);
+			testlogger.info("Calling node matcher on the fragment graph."); 	
+			NodeMatcher nm1 = new NodeMatcherLongestOnly(entailmentGraph, false); 
+			matches = nm1.findMatchingNodesInGraph(fragmentGraphs.iterator().next());
+			Assert.assertEquals(1, matches.size()); //should return a single match
+			for (NodeMatch nodeMatch : matches) {
+				Assert.assertEquals("Disappointed with the amount of legroom compared with other trains", nodeMatch.getMention().getText().trim());
+				testlogger.info("Matching node: 'Disappointed with the amount of legroom compared with other trains'"); 
+				Assert.assertEquals(3, nodeMatch.getScores().size());
+				for (PerNodeScore score : nodeMatch.getScores()) {
+					testlogger.info("Matched node: " + score.getNode().getLabel());
+					testlogger.info("Associated score: 1.0'"); 			
+					Assert.assertEquals(1.0, score.getScore());
+				}
+			}
 
 			testlogger.info("No problem observed on the test cases"); 
 			

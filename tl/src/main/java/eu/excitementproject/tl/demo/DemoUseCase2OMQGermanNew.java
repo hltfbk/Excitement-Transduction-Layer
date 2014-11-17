@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.demo;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -24,7 +25,9 @@ import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
+import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
+import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
@@ -122,7 +125,8 @@ public class DemoUseCase2OMQGermanNew {
 	static String xmlDataFoldername = "src/test/resources/OMQ/test/";
 	static String xmlDataFilename = "omq_public_1_emails.xml";
 	static String xmlGraphFoldername = "src/test/resources/sample_graphs/";
-	static String configFilename = "./src/test/resources/EOP_models/omq/fnr_de_1.model";
+	static String configFilenameAlignment = "./src/test/resources/EOP_models/omq/fnr_de_1.model";
+	static String configFilenameTIE = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE_OMQ.xml";
 	static File configFile;
 
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGermanNew.class.getName());
@@ -133,7 +137,7 @@ public class DemoUseCase2OMQGermanNew {
 	static boolean useHypernymRelation = true;
 	static boolean useEntailsRelation = true;
 	static boolean useCausesRelation = true;
-	
+
 	//determine POS tags to be used for fragment annotation
     static List<String> tokenPosFilter = Arrays.asList(
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP",  "CARD"}); //"ADV" = adverb, "FM" = foreign language material
@@ -150,6 +154,7 @@ public class DemoUseCase2OMQGermanNew {
 	static char termFrequencyQuery = 'n';
 	
 	static double confidenceThresholdAlignment = 0.9;
+	static double confidenceThresholdTIE = 0.9;
 	static double confidenceThresholdSEDA = 0.9;
 
 	public static void main(String[] args) {
@@ -157,8 +162,8 @@ public class DemoUseCase2OMQGermanNew {
 		/** Step 0: Initialization */
 		try {
 			configureSetup();
-		} catch (LAPException | ConfigurationException
-				| FragmentAnnotatorException | ModifierAnnotatorException | EDAException e) {
+		} catch (ConfigurationException
+				| FragmentAnnotatorException | ModifierAnnotatorException | EDAException | ComponentException e) {
 			e.printStackTrace();
 			System.exit(1);
 		}
@@ -166,7 +171,7 @@ public class DemoUseCase2OMQGermanNew {
 		/** Step 1: Read in data from XML file */
 		String[] files = {xmlDataFoldername+xmlDataFilename,};
 		File f;
-		Set<Interaction> docs = new HashSet<Interaction>();
+		List<Interaction> docs = new ArrayList<Interaction>();
 		for (String name: files) {
 			f = new File(name);
 			try {
@@ -185,7 +190,7 @@ public class DemoUseCase2OMQGermanNew {
 		EntailmentGraphCollapsed twoTokenCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed sentenceCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed finalCollapsedGraph = new EntailmentGraphCollapsed();
-		int blockSize = 2;
+		int blockSize = 1; 
 		JCas cas = null;
 		try {
 			cas = CASUtils.createNewInputCas();
@@ -193,29 +198,24 @@ public class DemoUseCase2OMQGermanNew {
 			e1.printStackTrace();
 			System.exit(1);
 		}
-		List<Interaction> interactionList = new ArrayList<Interaction>();
-		for (Interaction doc : docs) { //for each interaction
-			interactionList.add(doc);
-			if (interactionList.size() > 4) break; //TODO: Remove (Debugging!)
-		}
-		logger.info("Number of documents: " + interactionList.size());
+		logger.info("Number of documents: " + docs.size());
 		int countFrags = 0;
 		int countDocs = 0;
 		int countBlocks = 0;
 		Map<Integer,Double> accuracyPerBlock = new HashMap<Integer,Double>();
 
-		for (int i=0; i<interactionList.size(); i+=blockSize) { //for each block
+		for (int i=0; i<docs.size(); i+=blockSize) { //for each block
 			countBlocks++;
 			/** Step 2: Annotate documents in current block based on existing graph (starting with second block) */
 			if (countBlocks>1) {
 				int countPositive = 0;
 				int countProcessed = 0;
 				String mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(finalCollapsedGraph);
-				for (int j=i; j<(countBlocks*blockSize) && j<interactionList.size(); j++) { //for each interaction in the current block
+				for (int j=i; j<(countBlocks*blockSize) && j<docs.size(); j++) { //for each interaction in the current block
 					countDocs++;
 					countProcessed++;
 					try {
-						Interaction doc = interactionList.get(j);
+						Interaction doc = docs.get(j);
 						Set<NodeMatch> matches = addCategoryAnnotation(finalCollapsedGraph, cas, doc);
 						logger.info("number of matches: " + matches.size());
 						Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
@@ -238,8 +238,8 @@ public class DemoUseCase2OMQGermanNew {
 			/** Step 3: Extend graph with documents in current block */
 			Set<FragmentGraph> fragmentGraphsAllDependencies = new HashSet<FragmentGraph>();
 			Set<FragmentGraph> fragmentGraphsAllSentences = new HashSet<FragmentGraph>();
-			for (int j=i; j<(countBlocks*blockSize) && j<interactionList.size(); j++) { //for each interaction in the current block
-				Interaction doc = interactionList.get(j);
+			for (int j=i; j<(countBlocks*blockSize) && j<docs.size(); j++) { //for each interaction in the current block
+				Interaction doc = docs.get(j);
 				/** Step 3a: Build token graph */
 				try {
 					//doc.fillInputCAS(cas);
@@ -266,13 +266,13 @@ public class DemoUseCase2OMQGermanNew {
 								}
 							}
 						}
-						/** Step3b: Build fragments for two-token dependency graph (calling SEDA) */
+						/** Step3b: Build fragments for two-token dependency graph */
 						casGraph.reset();
 						doc.fillInputCAS(casGraph);
 						fragAnotDependency.annotateFragments(casGraph);
 						fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
 						fragmentGraphsAllDependencies.addAll(fragmentGraphs);
-						/** Step3c: Build fragments for sentence graph (calling alignment EDA) */
+						/** Step3c: Build fragments for sentence graph */
 						casGraph.reset();
 						doc.fillInputCAS(casGraph);
 						fragAnotSentence.annotateFragments(casGraph);
@@ -283,20 +283,26 @@ public class DemoUseCase2OMQGermanNew {
 					e.printStackTrace();
 					System.exit(1);
 				}
-				try {
-					/** Step3d: Merge fragments into two-token dependency graph (calling SEDA) */					
-					graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, seda);
-					graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdSEDA);
-					twoTokenGraph = graphMerger.mergeGraphs(fragmentGraphsAllDependencies, twoTokenGraph);
-					/** Step3e: Merge fragments into sentence graph (calling alignment EDA) */					
-					graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, alignmenteda); 
-					graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdAlignment);
-					sentenceGraph = graphMerger.mergeGraphs(fragmentGraphsAllSentences, sentenceGraph);					
-				} catch (GraphMergerException | LAPException e) {
-					e.printStackTrace();
-				} 
 			}
 			try {
+				/** Step3d: Merge fragments into two-token dependency graph (calling SEDA) */					
+				graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, seda);
+				graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdSEDA);
+				twoTokenGraph = graphMerger.mergeGraphs(fragmentGraphsAllDependencies, twoTokenGraph);
+				/** Step3e: Merge fragments into sentence graph (calling alignment EDA) */		
+				
+				/*
+				graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, alignmenteda); 
+				graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdAlignment);
+				sentenceGraph = graphMerger.mergeGraphs(fragmentGraphsAllSentences, sentenceGraph);	
+				/** Step3e: Merge fragments into sentence graph (calling TIE EDA) */					
+				/*
+				graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, tie); 
+				graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdTIE);
+				sentenceGraph = graphMerger.mergeGraphs(fragmentGraphsAllSentences, sentenceGraph);	
+				*/
+				
+				/** Step3f: Optimize all graphs and add tokens to final graph */					
 				finalCollapsedGraph = new EntailmentGraphCollapsed();
 				singleTokenCollapsedGraph = graphOptimizer.optimizeGraph(singleTokenGraph);
 				for (EquivalenceClass ec : singleTokenCollapsedGraph.vertexSet()) {
@@ -320,7 +326,7 @@ public class DemoUseCase2OMQGermanNew {
 							+ xmlDataFilename.substring(0,xmlDataFilename.length()-4) 
 							+ "_blockSize" + blockSize + "_block" + i +  "_collapsedgraph.xml";
 				XMLFileWriter.write(finalCollapsedGraph.toXML(), xmlGraphFilename);			
-			} catch (GraphOptimizerException | ConfidenceCalculatorException | TransformerException | EntailmentGraphCollapsedException e) {
+			} catch (GraphOptimizerException | ConfidenceCalculatorException | TransformerException | EntailmentGraphCollapsedException | GraphMergerException | LAPException e) {
 				e.printStackTrace();
 				System.exit(1);
 			}			
@@ -337,7 +343,7 @@ public class DemoUseCase2OMQGermanNew {
 			FragmentGraphGeneratorException, NodeMatcherException,
 			CategoryAnnotatorException, LAPException {
 		NodeMatcher nodeMatcher;
-		nodeMatcher = new NodeMatcherLongestOnly(finalCollapsedGraph);			
+		nodeMatcher = new NodeMatcherLongestOnly(finalCollapsedGraph, bestNodeOnly);			
 		logger.info("annotating interaction " + doc.getInteractionId());
 		doc.fillInputCAS(cas);
 		fragAnotCombined.annotateFragments(cas);
@@ -359,8 +365,8 @@ public class DemoUseCase2OMQGermanNew {
 	}
 
 	private static void configureSetup() throws ConfigurationException,
-			LAPException, FragmentAnnotatorException,
-			ModifierAnnotatorException, EDAException {
+			FragmentAnnotatorException,
+			ModifierAnnotatorException, EDAException, ComponentException {
 		addLemmaLabel = true;
 		lapLemma = new CachedLAPAccess(new LemmaLevelLapDE());
 		lapDependency = new CachedLAPAccess(new MaltParserDE());
@@ -371,14 +377,20 @@ public class DemoUseCase2OMQGermanNew {
 			//TODO: use KeywordBasedFragmentAnnotator if keywords are available!
  		modAnot = new AdvAsModifierAnnotator(lapLemma); 		
 		//initialize EDAs (Simple EDA and alignment EDA)
+ 		try {
+			splitter = new GermanWordSplitter();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		seda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet, 
 				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 		alignmenteda = new FNR_DEvar1(); 
-		configFile = new File(configFilename);
-		alignmenteda.initialize(configFile);
+		alignmenteda.initialize(new File(configFilenameAlignment));
+		tie.initialize(new ImplCommonConfig(new File(configFilenameTIE)));
 		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphOptimizer = new SimpleGraphOptimizer();
 		cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
 		catAnot = new CategoryAnnotatorAllCats();
 	}
 }
+
