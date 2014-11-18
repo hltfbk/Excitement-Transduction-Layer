@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.evaluation.categoryannotator;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Arrays;
@@ -13,10 +14,13 @@ import java.util.TreeMap;
 import org.apache.log4j.Logger;
 
 import eu.excitement.type.tl.CategoryDecision;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
@@ -386,6 +390,67 @@ public class EvaluatorUtils {
 		// writer.println("bestNode for match "+match.getMention().getTextWithoutDoubleSpaces()
 		//		+": " + bestNode.getLabel());		
 		return bestNode;
+	}
+	
+	/**
+	 * read two raw graphs from file and then join Set<EntailmentUnit> and Set<EntailmentRelation> 
+	 * of these raw graphs into an empty raw graph  
+	 * @param rawGraphFile1
+	 * @param rawGraphFile2
+	 * @param copyEdgesFromRawGraph1
+	 * @param copyEdgesFromRawGraph2
+	 * @return
+	 */
+	private EntailmentGraphRaw joinRawGraphs(File rawGraphFile1, File rawGraphFile2, 
+			boolean copyEdgesFromRawGraph1, boolean copyEdgesFromRawGraph2){
+		EntailmentGraphRaw resultRawGraph = new EntailmentGraphRaw();
+		try {
+			EntailmentGraphRaw egr1 = new EntailmentGraphRaw(rawGraphFile1);
+			EntailmentGraphRaw egr2 = new EntailmentGraphRaw(rawGraphFile2);
+			resultRawGraph = this.joinRawGraphs(egr1, egr2, copyEdgesFromRawGraph1, copyEdgesFromRawGraph2);
+		} catch (EntailmentGraphRawException e) {
+			e.printStackTrace();
+		}
+		return resultRawGraph;
+	}
+	
+	/**
+	 * copy Set<EntailmentUnit> and Set<EntailmentRelation> of two raw graphs into an empty raw graph  
+	 * @param rawGraph1
+	 * @param rawGraph2
+	 * @param copyEdgesFromRawGraph1
+	 * @param copyEdgesFromRawGraph2
+	 * @return
+	 */
+	private EntailmentGraphRaw joinRawGraphs(EntailmentGraphRaw rawGraph1, EntailmentGraphRaw rawGraph2,
+			boolean copyEdgesFromRawGraph1, boolean copyEdgesFromRawGraph2){
+		EntailmentGraphRaw resultRawGraph = new EntailmentGraphRaw();
+		copyRawGraph(rawGraph1, resultRawGraph, copyEdgesFromRawGraph1);
+		copyRawGraph(rawGraph2, resultRawGraph, copyEdgesFromRawGraph2);
+		return resultRawGraph;
+	}
+	
+	/**
+	 * copy Set<EntailmentUnit> and Set<EntailmentRelation> of a source raw graph
+	 * into the target raw graph
+	 * @param source 
+	 * @param target 
+	 * @param boolean copyEdges
+	 */
+	private void copyRawGraph(EntailmentGraphRaw source, EntailmentGraphRaw target, boolean copyEdges){
+		//copy nodes from source graph to target graph
+		for(EntailmentUnit node : source.vertexSet()){
+			target.addVertex(node);
+		}
+		
+		//copy edges from source graph to target graph
+		if(copyEdges){
+			for(EntailmentRelation edge : source.edgeSet()){
+				EntailmentUnit entailingNode = source.getVertexWithText(edge.getSource().getTextWithoutDoubleSpaces());
+				EntailmentUnit entailedNode = source.getVertexWithText(edge.getTarget().getTextWithoutDoubleSpaces());
+				target.addEdge(entailingNode, entailedNode, edge);
+			}
+		}
 	}
 		
 
