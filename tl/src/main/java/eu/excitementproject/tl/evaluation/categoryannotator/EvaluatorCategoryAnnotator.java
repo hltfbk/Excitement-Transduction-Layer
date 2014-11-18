@@ -263,7 +263,7 @@ public class EvaluatorCategoryAnnotator {
                     
                     if (i > 0){
                         readGraphFromFile = true;
-                        readMergedGraphFromFile = true;
+                        readMergedGraphFromFile = false;
                     }
 
                     try {
