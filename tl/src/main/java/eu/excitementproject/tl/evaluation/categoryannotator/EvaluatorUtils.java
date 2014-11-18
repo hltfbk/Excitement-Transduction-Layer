@@ -81,11 +81,13 @@ public class EvaluatorUtils {
 	public static int compareDecisionsForInteraction(int countPositive,
 			Interaction doc, Set<CategoryDecision> decisions, String mostProbableCat, 
 			EntailmentGraphCollapsed graph, Set<NodeMatch> matches, int topN, String method, 
-			boolean bestNodeOnly, char documentFrequencyQuery, char termFrequencyQuery) {
+			boolean bestNodeOnly, char documentFrequencyQuery, char termFrequencyQuery, 
+			boolean lengthBoost) {
 		String[] bestCats = new String[topN];
 		logger.info("Number of decisions for interaction "+doc.getInteractionId()+": " + decisions.size());
 		bestCats = computeBestCats(decisions, mostProbableCat, doc.getCategories(), graph, 
-				matches, method, bestNodeOnly, topN, documentFrequencyQuery, termFrequencyQuery);
+				matches, method, bestNodeOnly, topN, documentFrequencyQuery, termFrequencyQuery, 
+				lengthBoost);
 		logger.info("Correct category: " + doc.getCategoryString());
 		Set<String> docCats = new HashSet<String>(Arrays.asList(doc.getCategories()));
 		logger.info("docCats: " + docCats);
@@ -112,7 +114,7 @@ public class EvaluatorUtils {
 	public static String[] computeBestCats(Set<CategoryDecision> decisions, String mostProbableCat, 
 			String[] correctCats, EntailmentGraphCollapsed graph, Set<NodeMatch> matches, 
 			String method, boolean bestNodeOnly, int topN, char documentFrequencyQuery, 
-			char termFrequencyQuery) {
+			char termFrequencyQuery, boolean lengthBoost) {
 		logger.debug("Computing best category");
 		logger.debug("Number of decisions: " + decisions.size());
 		HashMap<String,BigDecimal> categoryScoresBigDecimal = new HashMap<String,BigDecimal>();
@@ -245,6 +247,10 @@ public class EvaluatorUtils {
 						//compute sums for computing cosine similarity of the query to each of the categories
 						Double[] queryCosineValues;				
 						double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 
+						
+						//length boost
+						double length = match.getMention().getTextWithoutDoubleSpaces().split("\\s+").length;
+						
 						countDecisions += (tfForQuery*df);
 						if (termFrequencyQuery == 'l') { //logarithm
 							tfForQuery = 1 + Math.log(tfForQuery); // = "wf-idf"
@@ -257,6 +263,7 @@ public class EvaluatorUtils {
 	
 						//OBS! Slight change of original TF-IDF formular: We integrate the score associated to the node (representing the confidence of the match)
 						double scoreForQuery = nodeScore*tfForQuery*idfForQuery;
+						if (lengthBoost) scoreForQuery *= length;
 						
 						//VECTOR SPACE MODEL		
 						if (method.endsWith("_vsm")) { //TODO: check implementation again

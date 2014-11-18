@@ -22,9 +22,4 @@ public abstract class AbstractCategoryAnnotator implements CategoryAnnotator {
 			LAPException {
 	}
 	
-	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches,
-			boolean lengthBoost) throws CategoryAnnotatorException,
-			LAPException {
-	}
-
 }
