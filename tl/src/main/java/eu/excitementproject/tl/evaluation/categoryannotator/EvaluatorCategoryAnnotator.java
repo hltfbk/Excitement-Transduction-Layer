@@ -263,7 +263,7 @@ public class EvaluatorCategoryAnnotator {
                     
                     if (i > 0){
                         readGraphFromFile = true;
-                        readMergedGraphFromFile = true;
+                        readMergedGraphFromFile = false;
                     }
 
                     try {
@@ -538,6 +538,70 @@ public class EvaluatorCategoryAnnotator {
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
+		    	
+			    	/** setups for joined graphs **/
+			    	//only evaluating of existing graphs TF + DF for now
+			    	//TODO: creating and evaluating of joined graphs with all possible fragment combinations
+		        	case 101101: //SimpleEDA_DE: Read joined graphs 101_TF + 101_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101102: //SimpleEDA_DE: Read joined graphs 101_TF + 102_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101103: //SimpleEDA_DE: Read joined graphs 101_TF + 103_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101104: //SimpleEDA_DE: Read joined graphs 101_TF + 104_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101105: //SimpleEDA_DE: Read joined graphs 101_TF + 105_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101106: //SimpleEDA_DE: Read joined graphs 101_TF + 106_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
 			}
 		} catch (ModifierAnnotatorException | ConfigurationException e) {
 			e.printStackTrace();
