@@ -102,10 +102,9 @@ public class CachedLAPAccess implements LAPAccess {
 		{
 			throw new LAPException("Unable to get language ID from underlying LAP annotation result!"); 			
 		}
-	
-		// we have removed workJCas for thread safe access 
+
 		// Common JCas that is provided for easy access from graph generating process. 
-		// workJCas = CASUtils.createNewInputCas(); 
+		workJCas = CASUtils.createNewInputCas(); 
 	}
 
 	//
@@ -315,17 +314,20 @@ public class CachedLAPAccess implements LAPAccess {
 		return actualCall; 
 	}
 
+
+	/**
+	 * This is an instance of JCas that is compatibel to TL's JCas type system. 
+	 * This one instance is provided for "faster" temporary access of JCas object 
+	 * that you can pass to "annotateSingleTHPairCAS" without generating a new one. 
+	 * 
+	 * However, using this work JCas will make your code not thread-safe. This is 
+	 * only provided for EntailmentRelation class for its special (faster) usage. 
+	 * 
+	 * Don't use this public variable unless you know what you do. 
+	 */
+	public final JCas workJCas; 
 	
-	//
 	// private data 
-
-	// workJCas method that we have used is generally unsafe for threads. 
-	// I am removing workJCas and instead, put some local JCases on the calling side 
-	// (which will be reused in those calling sides). 
-	// Gil (13th Nov) 
-
-	// private final JCas workJCas; 
-	
 	private final LAPAccess underlyingLAP; 	
 	private final ConcurrentHashMap<String, JCas> textviewCache; 
 	private final ConcurrentHashMap<String, JCas> hypoviewCache; 
