@@ -28,6 +28,7 @@ import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
+import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
@@ -153,6 +154,8 @@ public class DemoUseCase2OMQGermanNew {
 	static char documentFrequencyQuery = 'd';
 	static char termFrequencyQuery = 'n';
 	
+	static boolean lengthBoost = true;
+	
 	static double confidenceThresholdAlignment = 0.9;
 	static double confidenceThresholdTIE = 0.9;
 	static double confidenceThresholdSEDA = 0.9;
@@ -221,7 +224,8 @@ public class DemoUseCase2OMQGermanNew {
 						Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
 						countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
 								doc, decisions, mostProbableCat, finalCollapsedGraph, matches, topN,
-								method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery);
+								method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
+								lengthBoost);
 						logger.info("countPositive: " + countPositive);
 					} catch (LAPException | FragmentAnnotatorException
 							| ModifierAnnotatorException
@@ -386,6 +390,7 @@ public class DemoUseCase2OMQGermanNew {
 				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
 		alignmenteda = new FNR_DEvar1(); 
 		alignmenteda.initialize(new File(configFilenameAlignment));
+		tie = new MaxEntClassificationEDA();	
 		tie.initialize(new ImplCommonConfig(new File(configFilenameTIE)));
 		fragGen = new FragmentGraphLiteGeneratorFromCAS();
 		graphOptimizer = new SimpleGraphOptimizer();
