@@ -263,7 +263,7 @@ public class EvaluatorCategoryAnnotator {
                     
                     if (i > 0){
                         readGraphFromFile = true;
-                        readMergedGraphFromFile = true;
+                        readMergedGraphFromFile = false;
                     }
 
                     try {
@@ -306,7 +306,7 @@ public class EvaluatorCategoryAnnotator {
 
 	EvaluatorCategoryAnnotator() {
                 this.setup = 1;
-                this.fragmentTypeNameGraph = "TF";
+                fragmentTypeNameGraph = "TF";
 		setup(1);		
 		try {
 			 temp = File.createTempFile("debugging"+System.currentTimeMillis(), ".tmp");
@@ -538,6 +538,70 @@ public class EvaluatorCategoryAnnotator {
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
+		    	
+			    	/** setups for joined graphs **/
+			    	//only evaluating of existing graphs TF + DF for now
+			    	//TODO: creating and evaluating of joined graphs with all possible fragment combinations
+		        	case 101101: //SimpleEDA_DE: Read joined graphs 101_TF + 101_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101102: //SimpleEDA_DE: Read joined graphs 101_TF + 102_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101103: //SimpleEDA_DE: Read joined graphs 101_TF + 103_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101104: //SimpleEDA_DE: Read joined graphs 101_TF + 104_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101105: //SimpleEDA_DE: Read joined graphs 101_TF + 105_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
+		        	case 101106: //SimpleEDA_DE: Read joined graphs 101_TF + 106_DF
+		        		readMergedGraphFromFile = false;
+		        		readGraphFromFile = true;
+		        		fragmentTypeNameGraph = "TDF";
+		        		edaName = "SEDA";
+		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+			    		categoryAnnotator = new CategoryAnnotatorAllCats();
+			    		break;
 			}
 		} catch (ModifierAnnotatorException | ConfigurationException e) {
 			e.printStackTrace();
@@ -710,7 +774,7 @@ public class EvaluatorCategoryAnnotator {
 					logger.debug("Number of fragment graphs: " + fragmentGraphs.size());
 					Set<NodeMatch> matches = getMatches(graph, fragmentGraphs);	
 					//add category annotation to CAS
-					categoryAnnotator.addCategoryAnnotation(cas, matches, lengthBoost);
+					categoryAnnotator.addCategoryAnnotation(cas, matches);
 					logger.debug("_________________________________________________________");
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(cas);
 					logger.debug("Found " + decisions.size() + " decisions in CAS for interaction " + doc.getInteractionId());
@@ -764,26 +828,12 @@ public class EvaluatorCategoryAnnotator {
 	 * @return
 	 */
 	private int compareDecisionsForInteraction(int countPositive,
-			Interaction doc, Set<CategoryDecision> decisions, EntailmentGraphCollapsed graph, Set<NodeMatch> matches) {
-		return EvaluatorUtils.compareDecisionsForInteraction(countPositive, doc, decisions, "N/A", 
-				graph, matches, topN, method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery);
-	}
-	
-
-	/**
-	 * Compare automatic to manual annotation on interaction level (with no "most probable" category)
-	 * 
-	 * @param countPositive
-	 * @param doc
-	 * @param decisions
-	 * @return
-	 */
-	private int compareDecisionsForInteraction(int countPositive,
 			Interaction doc, Set<CategoryDecision> decisions, EntailmentGraphCollapsed graph, 
 			Set<NodeMatch> matches, int topN, String method, boolean bestNodeOnly, 
 			char documentFrequencyQuery, char termFrequencyQuery) {
 		return EvaluatorUtils.compareDecisionsForInteraction(countPositive, doc, decisions, "N/A", 
-				graph, matches, topN, method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery);
+				graph, matches, topN, method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
+				lengthBoost);
 	}
 	
 	/**
@@ -827,8 +877,8 @@ public class EvaluatorCategoryAnnotator {
 		List<Interaction> graphDocs = new ArrayList<Interaction>();
 		String edaTrainingFilename;
 		
-        double sumAccuracies = 0;
-        int sumCountPositive = 0;
+        //double sumAccuracies;
+        //int sumCountPositive;
 	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
 //	    for (int i=2; i<=2; i++) { //Create one fold only
 	        System.out.println("Creating fold " + i);
@@ -1005,7 +1055,7 @@ public class EvaluatorCategoryAnnotator {
 					}
 
 					//add category annotation to CAS
-					categoryAnnotator.addCategoryAnnotation(casInteraction, matches, lengthBoost);
+					categoryAnnotator.addCategoryAnnotation(casInteraction, matches);
 					
 					
 
@@ -1021,21 +1071,22 @@ public class EvaluatorCategoryAnnotator {
 										
 					countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
 							interaction, decisions, mostProbableCat, graph, matches, topN, 
-							method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery);				
+							method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
+							lengthBoost);				
 				}
 		    	logger.info("Count positive: " + countPositive);
 		    	double countTotal = countTotalNumberOfCategories(testDocs);
                 double accuracyInThisFold = ((double)countPositive / countTotal);
                 foldAccuracies.put(i, accuracyInThisFold);
                 foldCountPositive.put(i, countPositive);
-                sumAccuracies = 0;
-                sumCountPositive = 0;
-                double accuracy;
+                //sumAccuracies = 0;
+                //sumCountPositive = 0;
+                //double accuracy;
                 for (int fold : foldAccuracies.keySet()) {
-                    accuracy = foldAccuracies.get(fold);
+                    //accuracy = foldAccuracies.get(fold);
                     countPositive = foldCountPositive.get(fold);
-                    sumAccuracies += accuracy;
-                    sumCountPositive += countPositive;
+                    //sumAccuracies += accuracy;
+                    //sumCountPositive += countPositive;
                  }
                 printResult(topN, numberOfFolds, foldAccuracies, foldCountPositive);
 	    	} // if skipEval	
@@ -1478,7 +1529,7 @@ public class EvaluatorCategoryAnnotator {
 			}
 			
 			//add category annotation to CAS
-			categoryAnnotator.addCategoryAnnotation(cas, matches, lengthBoost);
+			categoryAnnotator.addCategoryAnnotation(cas, matches);
 
 	    	//Compare automatic to manual annotation
 			writer.println(cas.getDocumentText() + "");
@@ -1489,7 +1540,8 @@ public class EvaluatorCategoryAnnotator {
 			
 			countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
 					doc, decisions, mostProbableCat, egc, matches, topN, 
-					method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery);
+					method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
+					lengthBoost);
 			
 			writer.println(doc.getInteractionId() + " : " + countPositive);
 			
