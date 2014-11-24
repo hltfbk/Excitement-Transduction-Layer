@@ -15,15 +15,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
-import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
-import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.laputils.CASUtils;
-import eu.excitementproject.tl.laputils.CachedLAPAccess;
-import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
-import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
-import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 
 /**
  * This class implements a simple "fragment annotator": token + compound part 
