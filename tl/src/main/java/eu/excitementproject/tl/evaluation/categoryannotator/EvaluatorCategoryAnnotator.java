@@ -1387,74 +1387,6 @@ public class EvaluatorCategoryAnnotator {
 		return egr; 
 	}
 
-	/**
-	 * Builds raw graph from a list of interactions in three steps: 
-	 * 
-	 * Step 1) Build a lemma token graph
-	 * Step 2) Integrate the dependency-fragments (edges created using SEDA)
-	 * Step 3) Integrate the sentence fragments (edges created calling a sentence EDA, e.g., TIE)
-	 * 
-	 * @param graphDocs
-	 * @param mergedGraphFile
-	 * @param egr
-	 * @param minOccurrence
-	 * @return
-	 * @throws FragmentAnnotatorException
-	 * @throws ModifierAnnotatorException
-	 * @throws FragmentGraphGeneratorException
-	 * @throws ConfigurationException
-	 * @throws EDAException
-	 * @throws ComponentException
-	 * @throws GraphMergerException
-	 * @throws LAPException
-	 * @throws TransformerException
-	 * @throws EntailmentGraphRawException
-	 */	
-	private EntailmentGraphRaw buildRawGraphInThreeSteps(List<Interaction> graphDocs,
-			File mergedGraphFile, EntailmentGraphRaw egr, int minOccurrence, 
-			boolean relevantTextProvided, SimpleEDA_DE seda, EDABasic<?> eda)
-			throws FragmentAnnotatorException, ModifierAnnotatorException,
-			FragmentGraphGeneratorException, ConfigurationException,
-			EDAException, ComponentException, GraphMergerException,
-			LAPException, TransformerException, EntailmentGraphRawException {
-		
-		//build token fragment graphs
-		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, relevantTextProvided, 
-				new TokenAsFragmentAnnotator(new CachedLAPAccess(new LemmaLevelLapDE()), 
-						tokenPosFilter), 
-				new AdvAsModifierAnnotator(new CachedLAPAccess(new LemmaLevelLapDE())), 
-				new FragmentGraphLiteGeneratorFromCAS()
-				);
-		buildTokenLemmaGraph(egr, fgs);
-			
-		//create graph from dependency fragments and add it to token graph
-		fgs = buildFragmentGraphs(graphDocs, relevantTextProvided, 
-				new DependencyAsFragmentAnnotator(lapDependency, 
-						dependencyTypeFilter, governorPosFilter, dependentPosFilter),								
-				new AdvAsModifierAnnotator(new CachedLAPAccess(new LemmaLevelLapDE())), 
-				new FragmentGraphLiteGeneratorFromCAS()
-				);
-		GraphMerger graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, seda);
-		graphMerger.setEntailmentConfidenceThreshold(thresholdForSEDA);
-		EntailmentGraphRaw twoTokenGraph = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-		//TODO: maybe replace by new call based on Aleksandras latest changes
-		egr.copyRawGraphNodesAndAllEdges(twoTokenGraph); //TODO: check if this works properly!
-			
-		//create graph from sentence fragments
-		fgs = buildFragmentGraphs(graphDocs, relevantTextProvided, 
-				new SentenceAsFragmentAnnotator(lapDependency),								
-				new AdvAsModifierAnnotator(lapLemma), 
-				new FragmentGraphLiteGeneratorFromCAS()
-				);
-		graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, eda);
-		eda.initialize(config);
-		graphMerger.setEntailmentConfidenceThreshold(thresholdForEDA);
-		EntailmentGraphRaw sentenceGraph = graphMerger.mergeGraphs(fgs, new EntailmentGraphRaw());
-		egr.copyRawGraphNodesAndAllEdges(sentenceGraph); //TODO: check if this works properly!
-
-		return egr; 
-	}
-
 	private void buildTokenLemmaGraph(EntailmentGraphRaw egr,
 			Set<FragmentGraph> fgs) {
 		for (FragmentGraph fg : fgs) {
@@ -1584,10 +1516,6 @@ public class EvaluatorCategoryAnnotator {
 		logger.info("Added " + graphDocs.size() + " categories");
 		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + "_"
 				+ fragmentTypeNameEval + "_" + edaName + ".xml");	
-//		EntailmentGraphRaw egr = buildRawGraphInThreeSteps(graphDocs, mergedGraphFile, 
-//				new EntailmentGraphRaw(addLemmaLabel), minTokenOccurrenceInCategories, 
-//				relevantTextProvided, getSEDA(), getEDA());
-		
 		FragmentAnnotator faTokens = new TokenAsFragmentAnnotator(lapLemma, 
 				tokenPosFilter); 
 		FragmentAnnotator faDeps = new DependencyAsFragmentAnnotator(lapDependency, 
