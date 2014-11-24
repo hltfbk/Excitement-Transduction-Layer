@@ -28,17 +28,17 @@
 			<property name="useFirstSenseOnlyLeft">false</property>
 			<property name="useFirstSenseOnlyRight">false</property>
 			<!-- Please update the file path to WordNet -->
-			<property name="wordNetFilesPath">eop-resources-1.1.3/ontologies/EnglishWordNet-dict/</property>
+			<property name="wordNetFilesPath">C:/eop-resources-1.1.3/ontologies/EnglishWordNet-dict/</property>
 	</section>
 	
 	<section name="VerbOceanLexicalResource">
 			<property name="isCollapsed">true</property>
 			<!-- Please update the file path to VerbOcean -->
-			<property name="verbOceanFilePath">eop-resources-1.1.3/VerbOcean/verbocean.unrefined.2004-05-20.txt</property>
+			<property name="verbOceanFilePath">C:/eop-resources-1.1.3/VerbOcean/verbocean.unrefined.2004-05-20.txt</property>
 	</section>
 	
 	<section name="eu.excitementproject.eop.core.MaxEntClassificationEDA">
-		<property name="modelFile">eop-resources-1.1.3/model/MaxEntClassificationEDAModel_Base+WN+VO_EN_nice</property>
+		<property name="modelFile">C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/src/main/resources/exci/nice/trainedModelsAndConfigurations/tie/MaxEntClassificationEDAModel_Base+WN+VO_EN</property>
 		<property name="trainDir">C:/tmp/EN/dev/tie/</property>
 		<property name="testDir">/tmp/EN/test/</property>
 		<property name="classifier">10000,1</property>

@@ -30,6 +30,7 @@ import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
+import eu.excitementproject.tl.experiments.FakeEDA;
 import eu.excitementproject.tl.experiments.ResultsContainer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -120,6 +121,16 @@ public class ExperimentAlma extends AbstractExperiment {
 					);
 		}
 		
+		if (edaName.equals(EdaName.FAKE_EDA)) {
+			 return new ExperimentAlma(
+					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_IT.xml",
+					dataDir, fileLimit, outDir,
+					TreeTaggerIT.class,
+					FakeEDA.class,
+					mergerType
+					); 
+		}
+
 		return null;
 	}
 	
@@ -135,12 +146,12 @@ public class ExperimentAlma extends AbstractExperiment {
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 
-		MergerType mergerType = MergerType.WP2_MERGE; // which merger to use
+		MergerType mergerType = MergerType.ALL_PAIRS_MERGE; // which merger to use
 		boolean includeFragmentGraphEdges = true; // whether to include FG edges in the evaluations
 		
 		// which EDA(s) to use
 		//	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
-		EdaName[] names = {EdaName.P1EDA};
+		EdaName[] names = {EdaName.FAKE_EDA};
 		//		EdaName[] names = {EdaName.TIE_POS};	
 		
 		// ===== END OF SET-UP
