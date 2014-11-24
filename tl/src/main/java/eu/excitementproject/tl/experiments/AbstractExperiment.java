@@ -63,7 +63,8 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 		TIE_PARSE_RES,
 		BIUTEE,
 		EDIT_DIST,
-		P1EDA
+		P1EDA,
+		FAKE_EDA
 	}
 	
 	public enum MergerType{
