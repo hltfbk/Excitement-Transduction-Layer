@@ -401,13 +401,13 @@ public class EvaluatorUtils {
 	 * @param copyEdgesFromRawGraph2
 	 * @return
 	 */
-	public EntailmentGraphRaw joinRawGraphs(File rawGraphFile1, File rawGraphFile2, 
+	public static EntailmentGraphRaw joinRawGraphs(File rawGraphFile1, File rawGraphFile2, 
 			boolean copyEdgesFromRawGraph1, boolean copyEdgesFromRawGraph2){
 		EntailmentGraphRaw resultRawGraph = new EntailmentGraphRaw();
 		try {
 			EntailmentGraphRaw egr1 = new EntailmentGraphRaw(rawGraphFile1);
 			EntailmentGraphRaw egr2 = new EntailmentGraphRaw(rawGraphFile2);
-			resultRawGraph = this.joinRawGraphs(egr1, egr2, copyEdgesFromRawGraph1, copyEdgesFromRawGraph2);
+			resultRawGraph = joinRawGraphs(egr1, egr2, copyEdgesFromRawGraph1, copyEdgesFromRawGraph2);
 		} catch (EntailmentGraphRawException e) {
 			e.printStackTrace();
 		}
@@ -422,7 +422,7 @@ public class EvaluatorUtils {
 	 * @param copyEdgesFromRawGraph2
 	 * @return
 	 */
-	public EntailmentGraphRaw joinRawGraphs(EntailmentGraphRaw rawGraph1, EntailmentGraphRaw rawGraph2,
+	public static EntailmentGraphRaw joinRawGraphs(EntailmentGraphRaw rawGraph1, EntailmentGraphRaw rawGraph2,
 			boolean copyEdgesFromRawGraph1, boolean copyEdgesFromRawGraph2){
 		EntailmentGraphRaw resultRawGraph = new EntailmentGraphRaw();
 		copyRawGraph(rawGraph1, resultRawGraph, copyEdgesFromRawGraph1);
@@ -437,7 +437,7 @@ public class EvaluatorUtils {
 	 * @param target 
 	 * @param boolean copyEdges
 	 */
-	public void copyRawGraph(EntailmentGraphRaw source, EntailmentGraphRaw target, boolean copyEdges){
+	public static void copyRawGraph(EntailmentGraphRaw source, EntailmentGraphRaw target, boolean copyEdges){
 		//copy nodes from source graph to target graph
 		for(EntailmentUnit node : source.vertexSet()){
 			target.addVertex(node);
