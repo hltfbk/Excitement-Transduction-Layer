@@ -185,8 +185,6 @@ public class Interaction implements Comparable<Interaction> {
 			for (int i=0; i<this.relevantTexts.size(); i++) { //dealing with multiple relevant texts in the same interaction
 				RelevantText relevantText = relevantTexts.get(i);
 				String[] categories = relevantText.getGoldCategory().split(",");
-				if (categories.length > 2) {
-				}
 				logger.info("Number of categories assigned to relevant text: " + categories.length);
 				for (int j=0; j<categories.length; j++) { //dealing with multiple categories assigned to the same relevant text
 					JCas aJCas = CASUtils.createNewInputCas(); 
@@ -198,8 +196,7 @@ public class Interaction implements Comparable<Interaction> {
 				}
 			}
 		} else {
-			JCas aJCas = CASUtils.createNewInputCas(); 
-			this.fillInputCAS(aJCas);
+			JCas aJCas = this.createAndFillInputCAS();
 			cases.add(aJCas);
 		}
 		return cases;
