@@ -3,22 +3,40 @@ package eu.excitementproject.tl.evaluation.categoryannotator;
 import java.io.File;
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
 import org.apache.log4j.Logger;
+import org.apache.uima.jcas.JCas;
 
+import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
 import eu.excitement.type.tl.CategoryDecision;
+import eu.excitementproject.eop.common.DecisionLabel;
+import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalResourceException;
+import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalRule;
+import eu.excitementproject.eop.core.component.lexicalknowledge.derivbase.DerivBaseResource;
+import eu.excitementproject.eop.core.component.lexicalknowledge.germanet.GermaNetRelation;
+import eu.excitementproject.eop.core.component.lexicalknowledge.germanet.GermaNetWrapper;
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
+import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
+import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
+import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
@@ -453,5 +471,492 @@ public class EvaluatorUtils {
 		}
 	}
 		
+	/**
+	 * build Set<FragmentGraph>
+	 *  
+	 * @param interactionList
+	 * @param relevantTextProvided
+	 * @param fragmentAnnotator
+	 * @param fragGenerator
+	 * @return
+	 * @throws LAPException
+	 * @throws FragmentAnnotatorException
+	 * @throws FragmentGraphGeneratorException
+	 */
+	public static Set<FragmentGraph> buildFragmentGraphs(List<Interaction> interactionList, boolean relevantTextProvided, 
+			FragmentAnnotator fragmentAnnotator, FragmentGraphGenerator fragGenerator) 
+					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException{
+		
+		Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
+		for(Interaction interaction : interactionList){
+			fragmentGraphs.addAll(buildFragmentGraphs(interaction, relevantTextProvided, fragmentAnnotator, fragGenerator));
+		}
+		return fragmentGraphs;
+	}
+	
+	
+	/**
+	 * @throws LAPException 
+	 * @throws FragmentAnnotatorException 
+	 * @throws FragmentGraphGeneratorException 
+	 * 
+	 */
+	public static Set<FragmentGraph> buildFragmentGraphs(Interaction interaction, boolean relevantTextProvided, 
+			FragmentAnnotator fragmentAnnotator, FragmentGraphGenerator fragGenerator) 
+					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException{
+		
+		List<JCas> docCases = interaction.createAndFillInputCASes(relevantTextProvided);
+		Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
+		for(JCas cas : docCases) {
+			fragmentAnnotator.annotateFragments(cas);
+			fragmentGraphs.addAll(fragGenerator.generateFragmentGraphs(cas));
+		}
+		return fragmentGraphs;
+	}
+	
+	
+	
+	/***************************************************************************************************
+	 *  METHODS TO BUILD LEMMA TOKEN GRAPH AND DEPENDENCY GRAPH WITHOUT EDA AND GRAPH MERGER          **
+	 * *************************************************************************************************
+	 */
+	
+	/**
+	 * merge Set<FragmentGraph> into single token EntailmentGraphRaw
+	 * @param singleTokenGraph
+	 * @param fgs
+	 * @throws LexicalResourceException 
+	 */
+	public static void mergeIntoLemmaTokenGraph(
+			EntailmentGraphRaw singleTokenRawGraph, Set<FragmentGraph> fgs) throws LexicalResourceException{
+		
+		List<FragmentGraph> fgList = new LinkedList<FragmentGraph>(fgs);
+		Collections.sort(fgList, new FragmentGraph.CompleteStatementComparator());
+		
+		for(FragmentGraph fg : fgList) {
+			mergeIntoLemmaTokenGraph(singleTokenRawGraph, fg);
+		}
+	}
+	
+	
+	/**
+	 * merge one FragmentGraph into single token EntailmentGraphRaw with only lemma related edges
+	 *  
+	 * @param singleTokenGraph
+	 * @param fg
+	 * @throws LexicalResourceException 
+	 */
+	public static void mergeIntoLemmaTokenGraph(
+			EntailmentGraphRaw singleTokenRawGraph, FragmentGraph fg) throws LexicalResourceException {
+		
+		for(EntailmentUnitMention eum : fg.vertexSet()){
+			singleTokenRawGraph.addEntailmentUnitMention(eum, fg.getCompleteStatement().getText());
+			EntailmentUnit newStatement = singleTokenRawGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
+			
+			String lemmatized = newStatement.getLemmatizedText();
+			Set<EntailmentUnit> graphStatementSet = EvaluatorUtils.getLemmatizedVertex(singleTokenRawGraph, lemmatized, true);
+			for(EntailmentUnit graphStatement : graphStatementSet)
+			{
+				if(!newStatement.getTextWithoutDoubleSpaces().equals(graphStatement.getTextWithoutDoubleSpaces()))
+				{
+					addBidirectionalEdges(singleTokenRawGraph, newStatement, null, null, null, null);
+				}
+			}
+		}
+	}
+	
+	/**
+	 * merge Set<FragmentGraph> into two token EntailmentGraphRaw
+	 * @param twoTokenGraph
+	 * @param fgs
+	 * @throws LexicalResourceException 
+	 */
+	public static void mergeIntoDependencyGraph(
+			EntailmentGraphRaw twoTokenRawGraph, Set<FragmentGraph> fgs, DerivBaseResource derivBaseResource, 
+			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter)  
+					throws LexicalResourceException{
+		
+		List<FragmentGraph> fgList = new LinkedList<FragmentGraph>(fgs);
+		Collections.sort(fgList, new FragmentGraph.CompleteStatementComparator());
+		for(FragmentGraph fg : fgList) {
+			mergeIntoDependencyGraph(twoTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+		}
+	}
+	
+	
+	/**
+	 * merge one FragmentGraph into two token EntailmentGraphRaw
+	 * @param twoTokenGraph2
+	 * @param fg
+	 * @throws LexicalResourceException 
+	 */
+	public static void mergeIntoDependencyGraph(
+			EntailmentGraphRaw twoTokenRawGraph, FragmentGraph fg, DerivBaseResource derivBaseResource, 
+			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter) 
+					throws LexicalResourceException {
+		
+		for(EntailmentUnitMention eum : fg.vertexSet()) {
+			twoTokenRawGraph.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
+			EntailmentUnit newStatement = twoTokenRawGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
+			//direction new statement <--> graph statement
+			addBidirectionalEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			//direction new statement --> graph statement 
+			addOneDirectionalEntailedEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			//direction graph statement --> new statement
+			addOneDirectionalEntailingEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+		}
+	}
+	
+	/**
+	 * 
+	 * @param egr
+	 * @param inputEntailmentUnit
+	 * @param dbr
+	 * @param gnw
+	 * @param germanetRelations
+	 * @param splitter
+	 * @throws LexicalResourceException
+	 */
+	private static void addBidirectionalEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource dbr, 
+			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter)
+					throws LexicalResourceException {
+		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation> ();
+		if(germanetRelations != null){
+			germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
+			if(germanetRelationsModified.size() > 0){
+				germanetRelationsModified.remove(GermaNetRelation.has_hyponym);
+				germanetRelationsModified.remove(GermaNetRelation.has_hypernym);
+				germanetRelationsModified.remove(GermaNetRelation.causes);
+				germanetRelationsModified.remove(GermaNetRelation.has_antonym);
+				germanetRelationsModified.remove(GermaNetRelation.entails);
+			}
+		}
+		
+		addTEEdges(egr, inputEntailmentUnit, dbr, gnw, germanetRelationsModified, null, "both");
+	}
 
+	/**
+	 * 
+	 * @param egr
+	 * @param inputEntailmentUnit
+	 * @param dbr
+	 * @param gnw
+	 * @param germanetRelations
+	 * @param splitter
+	 * @throws LexicalResourceException
+	 */
+	private static void addOneDirectionalEntailedEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource dbr, 
+			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter)
+					throws LexicalResourceException {
+		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
+		if(germanetRelations != null){
+			if(germanetRelationsModified.size() > 0){
+				germanetRelationsModified.remove(GermaNetRelation.has_hyponym);
+				germanetRelationsModified.remove(GermaNetRelation.has_antonym);
+			}
+		}
+		addTEEdges(egr, inputEntailmentUnit, dbr, gnw, germanetRelationsModified, splitter, "inputToGraph");
+	}
+	
+	/**
+	 * 
+	 * @param egr
+	 * @param inputEntailmentUnit
+	 * @param derivBaseResource
+	 * @param gnw
+	 * @param germanetRelations
+	 * @param splitter
+	 * @throws LexicalResourceException
+	 */
+	private static void addOneDirectionalEntailingEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource derivBaseResource, 
+			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter)
+					throws LexicalResourceException {
+		List<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>();
+		germanetRelationsModified.add(GermaNetRelation.has_hyponym);
+		germanetRelationsModified.add(GermaNetRelation.has_synonym);
+		addTEEdges(egr, inputEntailmentUnit, derivBaseResource, germaNetWrapper, germanetRelationsModified, null, "graphToInput");
+	}
+	
+	/**
+	 * 
+	 * @param egr
+	 * @param inputEntailmentUnit
+	 * @param dbr
+	 * @param gnw
+	 * @param germanetRelations
+	 * @param splitter
+	 * @param direction
+	 * @throws LexicalResourceException
+	 */
+	private static void addTEEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, 
+			DerivBaseResource dbr, GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, String direction) 
+							throws LexicalResourceException {
+		
+		Set<String> permutatedTextSet = getRelatedText(inputEntailmentUnit.getTextWithoutDoubleSpaces(), inputEntailmentUnit.getLemmatizedText(), 
+				dbr, gnw, germanetRelations, splitter);
+		
+		Set<EntailmentUnit> graphEUSet = EvaluatorUtils.getLemmatizedVertex(egr, permutatedTextSet, true);
+		for(EntailmentUnit graphEU : graphEUSet){
+			if(!inputEntailmentUnit.getTextWithoutDoubleSpaces().equals(graphEU.getTextWithoutDoubleSpaces()))
+			{ 
+				if(direction.equalsIgnoreCase("both")){
+					if(!egr.containsEdge(inputEntailmentUnit, graphEU)){
+						egr.addEdgeByInduction(inputEntailmentUnit, graphEU, DecisionLabel.Entailment, 0.91);
+					}
+					if(!egr.containsEdge(graphEU, inputEntailmentUnit)){
+						egr.addEdgeByInduction(graphEU, inputEntailmentUnit, DecisionLabel.Entailment, 0.91);
+					}
+				}
+				
+				else if(direction.equalsIgnoreCase("inputToGraph")){
+					if(!egr.containsEdge(inputEntailmentUnit, graphEU)){
+						egr.addEdgeByInduction(inputEntailmentUnit, graphEU, DecisionLabel.Entailment, 0.91);
+					}
+				}
+				
+				else if(direction.equalsIgnoreCase("graphToInput")){
+					if(!egr.containsEdge(graphEU, inputEntailmentUnit)){
+						egr.addEdgeByInduction(graphEU, inputEntailmentUnit, DecisionLabel.Entailment, 0.91);
+					}
+				}
+			}
+		}
+	}
+	
+	
+	/**
+	 * get related text for single and two token text
+	 * @param text
+	 * @param lemmatizedText
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @return
+	 * @throws LexicalResourceException
+	 */
+	private static Set<String> getRelatedText(String text, String lemmatizedText, DerivBaseResource derivBaseResource, 
+			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter) throws LexicalResourceException{
+		
+		Set<String> permutations = new HashSet<String>();
+		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
+		List<String> textLemmas = Arrays.asList(lemmatizedText.split("\\s+"));
+		
+		if(textLemmas.size() == 1) {
+			permutations.addAll(textTokens);
+			permutations.addAll(textLemmas);
+		}
+		
+		else if(textTokens.size() == 2 && textLemmas.size() == 2) {
+			Set<String> extendedToken_1 = new HashSet<String>();
+			Set<String> extendedToken_2 = new HashSet<String>();
+
+			for (int i=0; i < textLemmas.size(); i++){
+				//extend first and second token of dependency relation by related lemmas
+				String [] lemmas = getLemmas(textLemmas.get(i));
+				for(String lemma : lemmas){
+					if(i==0){
+						extendedToken_1.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter));
+						extendedToken_1.add(textTokens.get(0).toLowerCase());
+					}
+					else if(i==1){
+						extendedToken_2.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter));
+						extendedToken_2.add(textTokens.get(1).toLowerCase());
+					}
+				}
+			}
+			
+			permutations = getPermutations(extendedToken_1, extendedToken_2, true);
+		}
+		
+		return permutations;
+	}
+	
+	
+	/**
+	 * 
+	 * @param lemma
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param crossLexicalResource
+	 * @return
+	 * @throws LexicalResourceException
+	 */
+	private static Set<String> getRelatedLemmas(String lemma, DerivBaseResource derivBaseResource, 
+			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
+			GermanWordSplitter splitter) throws LexicalResourceException{
+		
+		Set<String> lemmas = new HashSet<String>();
+		lemmas.add(lemma);
+		lemmas.addAll(getRelatedLemmas(lemma, splitter));
+		
+		Set<String> relatedLemmas = new HashSet<String>();	
+		for(String tempLemma : lemmas){
+			relatedLemmas.add(tempLemma);
+			relatedLemmas.addAll(getRelatedLemmas(tempLemma, germaNetWrapper, germaNetRelations));
+			relatedLemmas.addAll(getRelatedLemmas(tempLemma, derivBaseResource));
+		}
+
+		return relatedLemmas;
+	}
+	
+	/**
+	 * given the DerivBase resource get lemmas related to an input lemma 
+	 * @param lemma
+	 * @param derivBaseResource
+	 * @return
+	 * @throws LexicalResourceException
+	 */
+	private static Set<String> getRelatedLemmas(String lemma, DerivBaseResource derivBaseResource) throws LexicalResourceException{
+		Set<String> relatedLemmas = new HashSet<String>();
+		if(derivBaseResource != null){
+			for(LexicalRule<?> rule : derivBaseResource.getRulesForLeft(lemma, null)){
+				relatedLemmas.add(rule.getRLemma());
+			}
+		}
+		return relatedLemmas;
+	}
+	
+	/**
+	 * given the GermanWordSplitter resource get lemmas related to an input lemma 
+	 * @param lemma
+	 * @param splitter
+	 * @return
+	 */
+	private static Set<String> getRelatedLemmas(String lemma, GermanWordSplitter splitter){
+		Set<String> splits = new HashSet<String>();
+		splits.add(lemma);
+		if(splitter != null){
+			for(String hyphenSplit : lemma.split("[-]")){ //to deal with compounds "XML-Daten", where the strict method of GermanWordSplitter fails
+				splits.add(hyphenSplit);
+				for(String split : splitter.splitWord(hyphenSplit)){
+					Character ch = split.charAt(0);
+					if(Character.isLetter(ch)){
+						Character firstLetterUpperCase = Character.toUpperCase(ch);
+						String splitFirstLetterUpperCase = split.replaceFirst(ch.toString(), firstLetterUpperCase.toString());
+						splits.add(splitFirstLetterUpperCase);
+					}
+				}
+			}
+		}
+		return splits;
+	}
+	
+	/**
+	 * given the GermaNetResource resource get lemmas related to an input lemma 
+	 * @param lemma
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @return
+	 * @throws LexicalResourceException
+	 */
+	private static Set<String> getRelatedLemmas(String lemma, GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations) 
+			throws LexicalResourceException{
+		
+		Set<String> relatedLemmas = new HashSet<String>();
+		if(germaNetWrapper != null) {
+			for(GermaNetRelation gnRelation : germaNetRelations){
+				if(gnRelation.toGermaNetString().equals("has_hyponym")){
+					for(LexicalRule<?> rule : germaNetWrapper.getRulesForRight(lemma, null, gnRelation)){
+						relatedLemmas.add(rule.getLLemma());
+					}
+				}
+				else {
+					for(LexicalRule<?> rule : germaNetWrapper.getRulesForLeft(lemma, null, gnRelation)){ 
+						relatedLemmas.add(rule.getRLemma());
+					}
+				}
+			}
+		}
+		return relatedLemmas;
+	}
+	
+	/**
+	 * Splits the lemma string around matches of the regular expression \\|
+	 * Deal with lemma of type: lemma|lemma, which is sometimes return by TreeTagger.
+	 * @param token
+	 * @return
+	 */
+	private static String [] getLemmas(String lemma) {
+		return lemma.split("\\|");
+	}
+	
+	/**
+	 * get Set<EntailmentUnit> with a given lemmatized text
+	 * @param egr
+	 * @param lemmatizedText
+	 * @param ignoreCase
+	 * @return
+	 */
+	private static Set<EntailmentUnit> getLemmatizedVertex(EntailmentGraphRaw egr, String lemmatizedText, boolean ignoreCase) {
+		Set<EntailmentUnit> resultSet = new HashSet<EntailmentUnit>();
+		if(egr.hasLemmatizedLabel()){
+			for(EntailmentUnit eu : egr.vertexSet()){
+				if(ignoreCase){
+					if(eu.getLemmatizedText().equalsIgnoreCase(lemmatizedText)){
+						resultSet.add(eu);
+					}
+				} else {
+					if (eu.getLemmatizedText().equals(lemmatizedText)){
+						resultSet.add(eu);
+					}
+				}
+			}
+		}
+		return  resultSet;
+	}
+	
+	/**
+	 * get Set<EntailmentUnit> with given lemmatized text from a Set<String> lemmatizedTextSet
+	 * @param egr
+	 * @param lemmatizedTextSet
+	 * @param ignoreCase
+	 * @return
+	 */
+	private static Set<EntailmentUnit> getLemmatizedVertex(EntailmentGraphRaw egr, Set<String> lemmatizedTextSet, boolean ignoreCase) {
+		Set<EntailmentUnit> resultSet = new HashSet<EntailmentUnit>();
+		Set<String> textsToFind = lemmatizedTextSet;
+		
+		if(ignoreCase){
+			for(String lemmatizedText : lemmatizedTextSet){
+				textsToFind.add(lemmatizedText.toLowerCase());
+			}
+		}
+		
+		if(egr.hasLemmatizedLabel()){
+			for(EntailmentUnit eu : egr.vertexSet()){
+				if(textsToFind.contains(eu.getLemmatizedText().toLowerCase())){
+					resultSet.add(eu);
+				}
+			}
+		}
+		return  resultSet;
+	}
+	
+	/**
+	 * Given two lists A and B, combine every element of A and B to a string "a b" and "b a"
+	 * Return a list of all combinations.
+	 * @param alist
+	 * @param blist
+	 * @return
+	 */
+	private static Set<String> getPermutations(Set<String> aSet, Set<String> bSet, boolean useLowerCase){
+		Set<String> permutations = new HashSet<String>();
+		for(String a : aSet){
+			for(String b : bSet){
+				if(useLowerCase){
+					permutations.add(a.toLowerCase() + " " + b.toLowerCase());
+					permutations.add(b.toLowerCase() + " " + a.toLowerCase());
+				}
+				else {
+					permutations.add(a + " " + b);
+					permutations.add(b + " " + a);
+				}
+			}
+		}
+		return permutations;
+	}
+	
 }
