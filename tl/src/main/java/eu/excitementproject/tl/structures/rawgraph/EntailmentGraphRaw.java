@@ -372,6 +372,30 @@ public class EntailmentGraphRaw extends
 		
 	}
 
+	/** Copies all nodes and all edges from the input raw graph to the raw entailment graph
+	 * @param egr - the input raw graph
+	 * @author Kathrin Eichler
+	 */
+	public void copyRawGraphNodesAndAllEdges(EntailmentGraphRaw egr){
+		// first add transitive closure to the EGR
+		egr.applyTransitiveClosure();
+		
+		// copy nodes (add if new, update mentions and complete statements if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
+		for (EntailmentUnit rawGraphNode : egr.vertexSet()) {
+			for(EntailmentUnitMention mention : rawGraphNode.getMentions()){
+				this.addEntailmentUnitMention(mention, mention.getTextWithoutDoubleSpaces());
+			}
+		}
+		
+		// copy edges
+		for (EntailmentRelation rawGraphEdge : egr.edgeSet()){
+			EntailmentUnit sourceVertex = rawGraphEdge.getSource();
+			EntailmentUnit targetVertex = rawGraphEdge.getTarget();
+			this.addEdge(sourceVertex, targetVertex, rawGraphEdge);
+		}
+		
+	}
+
 	/** The method gets an EntailmentUnitMention and either adds a new EntailmentUnit node or, if a relevant EntailmentUnit already exists in the graph, updates the list of its mentions  
 	 * @param mention - the EntailmentUnitMention to be added to the graph
 	 * @param completeStatementText - the text of the mention's complete statement
