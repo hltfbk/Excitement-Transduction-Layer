@@ -217,7 +217,7 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 				Map<String,Double> categoryConfidencesNormalized = new HashMap<String,Double>();
 				for (String category : categoryConfidences.keySet()) {
 					double confidence = categoryConfidences.get(category);
-					double confidenceNormalized = confidence * Math.sqrt(sumOfSquaredScoresPerCategory.get(category));
+					double confidenceNormalized = confidence / Math.sqrt(sumOfSquaredScoresPerCategory.get(category));
 					categoryConfidencesNormalized.put(category, confidenceNormalized);
 				}
 				node.setCategoryConfidences(categoryConfidencesNormalized);
