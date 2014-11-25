@@ -142,7 +142,20 @@ public class EvaluatorGraphOptimizer {
 		TLClusteringResultsEvaluator clustEval = new TLClusteringResultsEvaluator(); 
 		clustEval.calculatePurityAndBestFitGoldClusters(goldStandardClusters, evaluatedClusters);
 		eval.setPurity(clustEval.getPurity());
+		System.out.println("Purity of nodes: "+eval.getPurity());
 		bestFitLabelsMap = clustEval.getBestFitLabelsMap();
+		
+		int noMatch = 0;
+		for(String bestFitKey : bestFitLabelsMap.keySet()){
+			String bestFitLabel = bestFitLabelsMap.get(bestFitKey);
+			if (bestFitLabel.equals("NO_MATCH")) noMatch++;
+			else System.out.println("Node with match: <<"+bestFitKey +">> to <<"+ bestFitLabel+">>");
+
+		}
+		System.out.println("\nNodes with no match in GS: "+ noMatch+ " out of total evaluated nodes:" +bestFitLabelsMap.size());
+		double percent = noMatch*100.0/bestFitLabelsMap.size();
+		System.out.println("I.e. "+ percent+ "% of nodes without match");
+
 		
 		if (includeAllMeasures){
 			// Create a set with ids of all entailment units
@@ -173,6 +186,11 @@ public class EvaluatorGraphOptimizer {
 		eval.setPrecision(correctlyAddedEdges/evaluatedGraphEdges.size());
 		eval.setRecall(correctlyAddedEdges/goldStandardEdges.size());
 		
+		System.out.println("\nEdges evaluation: ");
+		System.out.println("GS edges: "+goldStandardEdges.size()+"; Correct edges: "+correctlyAddedEdges+"; Evaluated edges: "+evaluatedGraphEdges.size());
+		System.out.println("R: "+eval.getRecall());
+		System.out.println("P: "+eval.getPrecision());
+		System.out.println("F1: "+eval.getF1());
 		return eval;
 	}
 	
