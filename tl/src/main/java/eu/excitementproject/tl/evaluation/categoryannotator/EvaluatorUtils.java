@@ -3,7 +3,6 @@ package eu.excitementproject.tl.evaluation.categoryannotator;
 import java.io.File;
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,6 +19,7 @@ import org.apache.uima.jcas.JCas;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
 import eu.excitement.type.tl.CategoryDecision;
+import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalResourceException;
 import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalRule;
@@ -30,8 +30,10 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
+import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
+import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -473,42 +475,58 @@ public class EvaluatorUtils {
 		
 	/**
 	 * build Set<FragmentGraph>
-	 *  
+	 * 
 	 * @param interactionList
 	 * @param relevantTextProvided
 	 * @param fragmentAnnotator
+	 * @param modifierAnnotator
 	 * @param fragGenerator
 	 * @return
 	 * @throws LAPException
 	 * @throws FragmentAnnotatorException
 	 * @throws FragmentGraphGeneratorException
+	 * @throws ModifierAnnotatorException
 	 */
 	public static Set<FragmentGraph> buildFragmentGraphs(List<Interaction> interactionList, boolean relevantTextProvided, 
-			FragmentAnnotator fragmentAnnotator, FragmentGraphGenerator fragGenerator) 
-					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException{
+			FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator, FragmentGraphGenerator fragGenerator) 
+					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException, ModifierAnnotatorException{
 		
 		Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
 		for(Interaction interaction : interactionList){
-			fragmentGraphs.addAll(buildFragmentGraphs(interaction, relevantTextProvided, fragmentAnnotator, fragGenerator));
+			fragmentGraphs.addAll(buildFragmentGraphs(interaction, relevantTextProvided, fragmentAnnotator, 
+					modifierAnnotator, fragGenerator));
 		}
 		return fragmentGraphs;
 	}
 	
 	
 	/**
-	 * @throws LAPException 
-	 * @throws FragmentAnnotatorException 
-	 * @throws FragmentGraphGeneratorException 
+	 * build Set<FragmentGraph>
 	 * 
+	 * @param interaction
+	 * @param relevantTextProvided
+	 * @param fragmentAnnotator
+	 * @param modifierAnnotator
+	 * @param fragGenerator
+	 * @return
+	 * @throws LAPException
+	 * @throws FragmentAnnotatorException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws ModifierAnnotatorException
 	 */
 	public static Set<FragmentGraph> buildFragmentGraphs(Interaction interaction, boolean relevantTextProvided, 
-			FragmentAnnotator fragmentAnnotator, FragmentGraphGenerator fragGenerator) 
-					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException{
+			FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator, FragmentGraphGenerator fragGenerator) 
+					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException, ModifierAnnotatorException{
 		
 		List<JCas> docCases = interaction.createAndFillInputCASes(relevantTextProvided);
 		Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
 		for(JCas cas : docCases) {
 			fragmentAnnotator.annotateFragments(cas);
+			if(modifierAnnotator != null) {
+				if(cas.getAnnotationIndex(DeterminedFragment.type).size() > 0){
+					modifierAnnotator.annotateModifiers(cas);
+				}
+			}
 			fragmentGraphs.addAll(fragGenerator.generateFragmentGraphs(cas));
 		}
 		return fragmentGraphs;
