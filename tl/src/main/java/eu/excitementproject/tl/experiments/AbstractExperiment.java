@@ -20,7 +20,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawExceptio
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.StructureBasedGraphMerger;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -98,7 +98,7 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
     	this.mergerType = mergerType;
     	if (mergerType.equals(MergerType.ALL_PAIRS_MERGE))
     		setGraphMerger(new AllPairsGraphMerger(lap, eda));
-    	else setGraphMerger(new AutomateWP2ProcedureGraphMerger(lap, eda));
+    	else setGraphMerger(new StructureBasedGraphMerger(lap, eda));
     }
 	
 	public String printResults(){

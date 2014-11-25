@@ -16,7 +16,7 @@ import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.StructureBasedGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -92,7 +92,7 @@ public class ExperimentAlmaFullPipeline extends AbstractExperimentNotAnnotXMIs {
 		try {
 //			super.setGraphMerger(new AllPairsGraphMerger(super.lap, super.eda));
 //			super.setGraphMerger(new AllPairsGraphMergerWithNonEntailments(super.lap, super.eda));
-			super.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
+			super.setGraphMerger(new StructureBasedGraphMerger(super.lap, super.eda));
 //			super.setGraphMerger(new NoEdaGraphMerger(super.lap, super.eda));
 			
 		} catch (GraphMergerException e) {
@@ -143,7 +143,7 @@ public class ExperimentAlmaFullPipeline extends AbstractExperimentNotAnnotXMIs {
 		try {
 //			super.setGraphMerger(new AllPairsGraphMerger(super.lap, super.eda));
 //			super.setGraphMerger(new AllPairsGraphMergerWithNonEntailments(super.lap, super.eda));
-			super.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
+			super.setGraphMerger(new StructureBasedGraphMerger(super.lap, super.eda));
 //			super.setGraphMerger(new NoEdaGraphMerger(super.lap, super.eda));
 			
 		} catch (GraphMergerException e) {
