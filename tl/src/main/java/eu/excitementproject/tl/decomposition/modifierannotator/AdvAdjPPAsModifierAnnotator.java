@@ -36,14 +36,26 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
  */
 public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 	
-	
+	/**
+	 * Constructor with LAP, default negation check, adds as classes adverbs (ADV), adjectives (ADJ) and prepositional phrases (based on the preposition PP)
+	 * 
+	 * @param lap -- the Linguistic Annotation Pipeline for annotation
+	 * @throws ModifierAnnotatorException
+	 */
 	@SuppressWarnings("unchecked")
 	public AdvAdjPPAsModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
 	{
 		super(lap);
 		addPOSClasses(ADV.class, ADJ.class, PP.class);
 	}
-
+	
+	/**
+	 * Constructor with LAP and negation check, adds as classes adverbs (ADV), adjectives (ADJ) and prepositional phrases (based on the preposition PP)
+	 * 
+	 * @param lap -- the Linguistic Annotation Pipeline for annotation
+	 * @param checkNegation -- check/not whether the modifier candidate is in the scope of a negation
+	 * @throws ModifierAnnotatorException
+	 */
 	@SuppressWarnings("unchecked")
 	public AdvAdjPPAsModifierAnnotator(LAPAccess lap, boolean checkNegation) throws ModifierAnnotatorException
 	{
@@ -51,6 +63,13 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 		addPOSClasses(ADV.class, ADJ.class, PP.class);
 	}
 	
+	/**
+	 * Constructor with LAP and fragment annotator, default negation check, adds as classes adverbs (ADV), adjectives (ADJ) and prepositional phrases (based on the preposition PP)
+	 * 
+	 * @param lap -- the Linguistic Annotation Pipeline for annotation
+	 * @param fragAnn -- fragment annotator
+	 * @throws ModifierAnnotatorException
+	 */
 	@SuppressWarnings("unchecked")
 	public AdvAdjPPAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
 	{
@@ -58,6 +77,15 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 		addPOSClasses(ADV.class, ADJ.class, PP.class);
 	}
 	
+	
+	/**
+	 * Constructor with LAP, fragment annotator and negation check, adds as classes adverbs (ADV), adjectives (ADJ) and prepositional phrases (based on the preposition PP)
+	 * 
+	 * @param lap -- the Linguistic Annotation Pipeline for annotation
+	 * @param fragAnn -- fragment annotator
+	 * @param checkNegation -- check/not whether the modifier candidate is in the scope of a negation
+	 * @throws ModifierAnnotatorException
+	 */	
 	@SuppressWarnings("unchecked")
 	public AdvAdjPPAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn, boolean checkNegation) throws ModifierAnnotatorException
 	{
@@ -66,29 +94,41 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 	}
 	
 	
+	/**
+	 * Implementation of the method for adding modifier annotations 
+	 * 
+	 * @param fragItr -- iterator over the fragment annotations in the given CAS object
+	 * @param aJCas -- the CAS object
+	 */
 	@Override
-	protected void addModifierAnnotations(Iterator<Annotation> fragItr, JCas aJCas, boolean checkNegation, Set<Class<? extends POS>> POSclasses) throws ModifierAnnotatorException {
+	protected int addModifierAnnotations(Iterator<Annotation> fragItr, JCas aJCas) throws ModifierAnnotatorException {
 			
-		modLogger.info("Annotating TLmodifier annotations on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
+		modLogger.info("Annotating TLmodifier annotations of class on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
 		Integer negationPosition = -1;
+		
+		int num_mods = 0;
 		
 		while(fragItr.hasNext()) {
 			FragmentAnnotation frag = (FragmentAnnotation) fragItr.next();
 					
-			if (POSclasses != null) {
-				for(Class<? extends POS> cls: POSclasses) {
+			if (wantedClasses != null) {
+				
+				if (checkNegation) {
+					negationPosition = AnnotationUtils.checkNegation(frag);
+				}
+				
+				for(Class<? extends POS> cls: wantedClasses) {
 					
-					if (checkNegation) {
-						negationPosition = AnnotationUtils.checkNegation(frag);
-					}
-			
+					modLogger.info("\tchecking for " + cls.getSimpleName());
+								
 					if (cls.equals(PP.class))
-						addPPModifiers(aJCas, frag, negationPosition);
+						num_mods += addPPModifiers(aJCas, frag, negationPosition);
 					else
-						AnnotationUtils.addModifiers(aJCas, frag, negationPosition, cls);
+						num_mods += addModifiers(aJCas, frag, negationPosition, cls);
 				}
 			}
 		}			
+		return num_mods;
 	}		
 	
 	
@@ -101,45 +141,61 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 	 * @param negationPos the position of the negation in the fragment (-1 if there is none)
 	 * @throws ModifierAnnotatorException 
 	 */
-	public void addPPModifiers(JCas aJCas, FragmentAnnotation frag, int negationPos) throws ModifierAnnotatorException {
+	public int addPPModifiers(JCas aJCas, FragmentAnnotation frag, int negationPos) throws ModifierAnnotatorException {
 		Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator:addPPModifiers");
-
+		int all_mods = 0;
+		
+		modLogger.info("Adding PP modifiers for fragment: *" + frag.getCoveredText() + "*");
+		
 		Collection<Dependency> dependencies = JCasUtil.select(aJCas, Dependency.class);
 		if (dependencies != null && !dependencies.isEmpty()) {
 			
-			List<? extends Annotation> listMods = JCasUtil.selectCovered(aJCas, PP.class, frag);
+//			List<? extends Annotation> listMods = JCasUtil.selectCovered(aJCas, PP.class, frag);
+			List<? extends Annotation> listMods = AnnotationUtils.selectByPOS(aJCas, frag, PP.class);			
+			
 			int num_mods = 0;
 		
 			if (listMods != null && ! listMods.isEmpty()) {
-				modLogger.info("PPs found!");
+				modLogger.info( listMods.size() + " PPs found!");
 
 				for (Annotation a: listMods) {
 
-					modLogger.info("Adding phrase for PP " + a.getCoveredText());
+					modLogger.info("Checking phrase for PP *" + a.getCoveredText() + "* (" + a.getBegin() + "," + a.getEnd() + ")");
+					
 					if (negationPos < 0 || ! AnnotationUtils.inNegationScope(a.getBegin(), frag, negationPos)) {
 
-						annotatePPModifier(aJCas, a);
-						num_mods++;
+						num_mods += annotatePPModifier(aJCas, frag, a);
 					} else {
-						modLogger.info("Potential modifier is or is in scope of a negation: " + a.getCoveredText());
+						modLogger.info("Potential modifier *" + a.getCoveredText() + "* is (or is in scope of) a negation: " + a.getCoveredText());
 					}
 				}
 			}
-			modLogger.info("Annotated " + num_mods + " PP modifiers for fragment " + frag.getCoveredText());
+			modLogger.info("Annotated " + num_mods + " PP modifiers for fragment *" + frag.getCoveredText() + "*");
+			all_mods += num_mods;
 			num_mods = 0;
 		}
+		return all_mods;
 	}
 	
 	
-	private void annotatePPModifier(JCas aJCas, Annotation a) {
-		
-		System.out.println("Adding one PP modifier for " + a.getCoveredText());
-		
-		Set<Region> pp = AnnotationUtils.getPhraseRegion(aJCas, a);
+	/**
+	 * Annotator for one prepositional phrase
+	 * 
+	 * @param aJCas -- CAS object
+	 * @param frag -- fragment annotation that contains the prepositional phrase
+	 * @param a -- annotation object corresponding to the preposition
+	 * 
+	 * @return -- the number of annotated PP modifiers
+	 */
+	private int annotatePPModifier(JCas aJCas, FragmentAnnotation frag, Annotation a) {
+				
+		Set<Region> pp = AnnotationUtils.getPhraseRegion(aJCas, frag, a);
 		
 		if (pp != null && pp.size() > 0) {
 			AnnotationUtils.annotatePhraseModifier(aJCas, pp);
-		}
+			return 1;
+		} 
+		return 0;
 	}
 	
 }

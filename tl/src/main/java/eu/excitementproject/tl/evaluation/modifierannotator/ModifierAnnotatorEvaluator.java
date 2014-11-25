@@ -15,6 +15,7 @@ import org.apache.uima.jcas.JCas;
 
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.KeywordAnnotation;
+import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
@@ -30,8 +31,29 @@ import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.LAPUtils;
 import eu.excitementproject.tl.structures.Interaction;
 
+/**
+ * Collection of static methods for evaluating the modifier annotations
+ * 
+ * @author vivi@fbk and gil@heidelberg
+ *
+ */
 public class ModifierAnnotatorEvaluator {
 
+	/**
+	 * Evaluates the modifier annotations (token by token)
+	 * 
+	 * @param xmiDir -- directory with gold standard XMIs
+	 * @param modifierAnnotator -- modifier annotator
+	 * @param fragmentAnnotator -- fragment annotator (if specified it will annotate first fragments and the modifiers inside these fragments)
+	 * @param language
+	 * @param useGSfragAnnot -- whether to use the gold-standard fragment annotations, or not (then it makes fragments using the fragment annotator)
+	 * @return an EvaluationMeasures object that contains the counts (TP, FP, TN, FN)
+	 * 
+	 * @throws LAPException
+	 * @throws ModifierAnnotatorException
+	 * @throws FragmentAnnotatorException
+	 * @throws IOException
+	 */
 	public static EvaluationMeasures evaluateModifiers(String xmiDir, String modifierAnnotator, String fragmentAnnotator, String language, boolean useGSfragAnnot) 
 			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException{
 		
@@ -49,7 +71,21 @@ public class ModifierAnnotatorEvaluator {
 		return processXMIs(lap, fragAnn, modAnn, xmiDir, useGSfragAnnot);
 	}
 		
-	
+	/**
+	 * Evaluates the modifier annotations (token by token)
+	 * 
+	 * @param xmiDir -- directory with gold-standard annotations
+	 * @param modAnn -- modifier annotator (object)
+	 * @param fragAnn -- fragment annotator (object)
+	 * @param lap -- the Linguistic Analysis Pipeline (for both the fragment and modifier annotators)
+	 * @param useGSfragAnnot -- whether to use the gold-standard annotations or not (then it makes fragments using the given fragment annotator)
+	 * @return an EvaluationMeasures object that contains the counts (TP, FP, TN, FN)
+	 * 
+	 * @throws LAPException
+	 * @throws ModifierAnnotatorException
+	 * @throws FragmentAnnotatorException
+	 * @throws IOException
+	 */
 	public static EvaluationMeasures evaluateModifiers(String xmiDir, AbstractModifierAnnotator modAnn, FragmentAnnotator fragAnn, LAPAccess lap, boolean useGSfragAnnot) 
 			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException {
 		
@@ -61,7 +97,21 @@ public class ModifierAnnotatorEvaluator {
 		return processXMIs(lap, fragAnn, modAnn, xmiDir, useGSfragAnnot);		
 	}
 	
-	
+	/**
+	 * Processes the XMIs, and evaluates the annotations (token by token)
+	 * 
+	 * @param lap -- LAP for the annotators
+	 * @param fragAnn -- fragment annotator
+	 * @param modAnn -- modifier annotator
+	 * @param xmiDir -- directory with input XMIs
+	 * @param useGSfragAnnot -- whether to use the gold-standard fragment annotations or not (then it makes fragments using the given fragment annotator)
+	 * @return an EvaluationMeasures object that contains the counts (TP, FP, TN, FN)
+	 * 
+	 * @throws LAPException
+	 * @throws ModifierAnnotatorException
+	 * @throws FragmentAnnotatorException
+	 * @throws IOException
+	 */
 	public static EvaluationMeasures processXMIs(LAPAccess lap, FragmentAnnotator fragAnn, AbstractModifierAnnotator modAnn, String xmiDir, boolean useGSfragAnnot) 
 			throws LAPException, ModifierAnnotatorException, FragmentAnnotatorException, IOException{
 		
@@ -70,6 +120,10 @@ public class ModifierAnnotatorEvaluator {
 		
 		List<Integer> counts = new ArrayList<Integer>(Arrays.asList(0,0,0,0)); // TP, FP, TN, FN
 		EvaluationMeasuresMacro emm = new EvaluationMeasuresMacro();
+
+		int modAnnotationsCount = 0;
+		int modCountGS = 0;
+		int modTokenCountGS = 0;
 		
 		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, true)) {
 			
@@ -100,22 +154,33 @@ public class ModifierAnnotatorEvaluator {
 				} else {
 					AnnotationUtils.transferAnnotations(goldJCas, sysJCas, KeywordAnnotation.class);	
 				}
-					
-				modAnn.annotateModifiers(sysJCas);
-			
+								
+				modAnnotationsCount += modAnn.annotateModifiers(sysJCas);
+							
 				List<Integer> modCounts =  FragmentAndModifierMatchCounter.countModifierCounts(sysJCas, goldJCas);
 				counts = addScores(counts,modCounts);
 				emm.addScores(new EvaluationMeasures(modCounts));
+				
+				modCountGS += AnnotationUtils.countAnnotations(goldJCas, ModifierAnnotation.class);
+				modTokenCountGS += AnnotationUtils.countAnnotationTokens(goldJCas, ModifierAnnotation.class);
 			}
 		}
 		
-		logger.info("Final counts: " + counts.toString());
-		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n" + "Number of instances: " + emm.getNrOfInstances());
+		logger.info("Final counts: " + counts.toString() + " / " + FragmentAndModifierMatchCounter.getClassDetails(counts));
+		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n" + "Number of instances: " + modAnnotationsCount);
+		logger.info("Gold standard information: " + modCountGS + " instances / " + modTokenCountGS + " tokens");
 		
 		return new EvaluationMeasures(counts);
 	}
 	
 	
+	/**
+	 * Adds counts from the currently processed modifiers to the overall counts
+	 * 
+	 * @param counts
+	 * @param modCounts
+	 * @return
+	 */
 	private static List<Integer> addScores(List<Integer> counts, List<Integer> modCounts) {
 				
 		return new ArrayList<Integer>(Arrays.asList(counts.get(0) + modCounts.get(0),
@@ -125,6 +190,14 @@ public class ModifierAnnotatorEvaluator {
 	}
 
 
+	/**
+	 * It initializes the modifier annotator from the given class, the given fragment annotator and LAP
+	 * 
+	 * @param modifierAnnotator
+	 * @param fragAnn
+	 * @param lap
+	 * @return a ModifierAnnotator object
+	 */
 	public static AbstractModifierAnnotator initializeModifierAnnotator(
 			String modifierAnnotator, FragmentAnnotator fragAnn, LAPAccess lap) {
 		AbstractModifierAnnotator modAnnot = null;
@@ -148,6 +221,13 @@ public class ModifierAnnotatorEvaluator {
 	}
 
 	
+	/**
+	 * Initializes the fragment annotator from the given class and LAP
+	 * 
+	 * @param fragmentAnnotator
+	 * @param lap
+	 * @return a FragmentAnnotator object
+	 */
 	public static AbstractFragmentAnnotator initializeFragmentAnnotator(
 			String fragmentAnnotator, LAPAccess lap) {
 		AbstractFragmentAnnotator fragAnnot = null;

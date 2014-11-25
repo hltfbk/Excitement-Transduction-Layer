@@ -49,15 +49,27 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 
+/**
+ * An implementation of the UseCaseOneRunner interface
+ * 
+ * @author vivi@fbk
+ *
+ */
 //@SuppressWarnings("unused")
 public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	
-	
+	// the LAP necessary for all annotations
 	protected CachedLAPAccess lap = null;
+	
+	// the EDA necessary for merging fragment graphs
 	protected EDABasic<?> eda = null;
 		
+	// the fragment annotator -- must be specifically given (to avoid annotating fragments in manually annotated interactions that don't actually have fragments)
 	FragmentAnnotator fragAnot = null;
+	
+	// the modifier annotator
 	ModifierAnnotator modAnot = null;
+	
 	FragmentGraphGenerator fragGen;
 	GraphMerger graphMerger;
 	GraphOptimizer collapseGraph;
@@ -70,6 +82,19 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	// output path used for outputting graphs to files
 	private String outputPath = ".";
 	
+	/**
+	 * Constructor from the given LAP and EDA objects. 
+	 * No default fragment and modifier annotators, such that they will only be instantiated and used when explicitly given
+	 * Default fragment graph generator, graph merger and optimizer
+	 * 
+	 * @param lap -- a LAP object
+	 * @param eda -- an EDA object
+	 * 
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws IOException
+	 */
 	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
 		this.lap = lap;
 		this.eda = eda;
@@ -77,7 +102,19 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		initInterfaces();
 	}
 	
-	
+	/**
+	 * Constructor from the given LAP and EDA objects, and output folder 
+	 * No default fragment and modifier annotators, such that they will only be instantiated and used when explicitly given
+	 * 
+	 * @param lap -- a LAP object
+	 * @param eda -- an EDA object
+	 * @param outputPath
+	 * 
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws IOException
+	 */
 	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda, String outputPath) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
 		this.lap = lap;
 		this.eda = eda;
@@ -87,6 +124,20 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 	
 	
+	/**
+	 * Constructor from the given LAP and EDA objects, and output folder, and "default" setting for fragment and modifier annotators 
+	 * Default fragment graph generator, graph merger and optimizer
+	 * 
+	 * @param lap -- a LAP object
+	 * @param eda -- an EDA object
+	 * @param outputPath
+	 * @param setting -- for now only "default" to set up the default fragment (keyword-based fixed length) and modifier (adv&adj) annotators 
+	 * 
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws IOException
+	 */
 	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda, String outputPath, String setting) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
 		this.lap = lap;
 		this.eda = eda;
@@ -97,6 +148,28 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		}		
 	}
 
+	/**
+	 * Constructor from (EDA) configuration file , output folder, LAP and EDA classes
+	 * No default fragment and modifier annotators, such that they will only be instantiated and used when explicitly given
+	 * 
+	 * @param configFileName -- configuration file for the EDA
+	 * @param outputPath 
+	 * @param lapClass -- class for the LAP
+	 * @param edaClass -- class for the EDA
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 */
 	public UseCaseOneRunnerPrototype(String configFileName, String outputPath, Class<?> lapClass, Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
 	
 		File configFile = new File(configFileName);
@@ -110,6 +183,29 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 
 	
+	/**
+	 * Constructor from the (EDA) configuration file, output folder, LAP and EDA classes, and "default" setting for fragment and modifier annotators
+	 * Default fragment graph generator, graph merger and optimizer
+	 * 
+	 * @param configFileName -- configuration file for the EDA
+	 * @param outputPath 
+	 * @param lapClass -- class for the LAP
+	 * @param edaClass -- class for the EDA
+	 * @param setting -- for now only "default", to initialize the default fragment (keyword-based fixed length) and modifier (adv&adj) annotators
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 */
 	public UseCaseOneRunnerPrototype(String configFileName, String outputPath, Class<?> lapClass, Class<?> edaClass, String setting) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
 		
 		File configFile = new File(configFileName);
@@ -123,7 +219,30 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 	
 	
-	
+	/**
+	 * Constructor from the (EDA) configuration file, output folder, LAP and EDA classes, fragment and modifier annotators
+	 * Default fragment graph generator, graph merger and optimizer
+	 * 
+	 * @param configFileName -- configuration file for the EDA
+	 * @param outputPath 
+	 * @param lapClass -- class for the LAP
+	 * @param edaClass -- class for the EDA
+ 	 * @param fragmentAnnotator 
+	 * @param modifierAnnotator
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 */
 	public UseCaseOneRunnerPrototype(String configFileName, String outputPath, Class<?> lapClass, Class<?> edaClass, FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
 		
 		File configFile = new File(configFileName);
@@ -139,10 +258,28 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		initInterfaces();
 	}
 	
+	
+	/**
+	 * Constructor from LAP and EDA objects, fragment and modifier annotators, fragment graph generator, graph merger and graph optimizer
+	 * 
+	 * @param lap
+	 * @param eda
+	 * @param fragmentAnnotator
+	 * @param modifierAnnotator
+	 * @param fragmentGraphGenerator
+	 * @param graphMerger
+	 * @param graphOptimizer
+	 * 
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws IOException
+	 */
 	public UseCaseOneRunnerPrototype(CachedLAPAccess lap, EDABasic<?> eda, 
 			FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator, 
 			FragmentGraphGenerator fragmentGraphGenerator, 
 			GraphMerger graphMerger, GraphOptimizer graphOptimizer) throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, IOException{
+		
 		this.lap = lap;
 		this.eda = eda;
 
@@ -153,8 +290,90 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		collapseGraph = graphOptimizer;
 	}
 
-	/*
+	/**
+	 * Constructor from (EDA's) configuration file, output folder, default fragment and modifier annotators
+	 * Default fragment graph generator, graph merger and optimizer
+	 * 
+	 * @param configFileName -- configuration file for the EDA. The EDA and LAP classes are taken from the file. 
+	 * @param outputFolder
+	 * 
+	 * @throws ConfigurationException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws ClassNotFoundException
+	 */
+	public UseCaseOneRunnerPrototype(String configFileName,
+			String outputFolder) throws ConfigurationException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, ClassNotFoundException {
+		
+		File configFile = new File(configFileName);
+		CommonConfig config = new ImplCommonConfig(configFile);		
+				
+		this.lap = LAPUtils.initializeLap(config);
+		this.eda = EDAUtils.initializeEDA(config);
+		this.outputPath = outputFolder;
+
+		initDefaultInterfaces();		
+	}
+
+	
+	/**
+	 * Constructor from (EDA's) configuration file, output folder, fragment and modifier annotators.
+	 * Default fragment graph generator, graph merger and optimizer
+	 * 
+	 * @param configFileName -- configuration file for the EDA. The EDA and LAP classes are taken from this file.
+	 * @param outputPath
+	 * @param fragmentAnnotator
+	 * @param modifierAnnotator
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws ClassNotFoundException
+	 */
+	public UseCaseOneRunnerPrototype(String configFileName, String outputPath, FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, ClassNotFoundException {
+		
+		File configFile = new File(configFileName);
+		CommonConfig config = new ImplCommonConfig(configFile);
+		
+		this.lap = LAPUtils.initializeLap(config);
+		this.eda = EDAUtils.initializeEDA(config);
+		this.outputPath = outputPath;
+
+		this.fragAnot = fragmentAnnotator;
+		this.modAnot = modifierAnnotator;
+		
+		initInterfaces();
+	}
+	
+	
+	
+	 
+	/**
+	 * Default fragment graph generator, graph merger and optimizer 
+	 * 
 	 * No default fragment and modifier annotators, such that they should be used only when really wanted
+	 *  
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
 	 */
 	private void initInterfaces() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
 
@@ -166,9 +385,15 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		prepareOutputFolder();
 	}
 	
-	
-	/*
-	 * Initialize default fragment and modifier annotators
+
+	/**
+	 * 
+	 * Default fragment (keyword-based fixed length) and modifier (adv&adj) annotators
+	 * Default fragment graph generator, graph merger and optimizer 
+	 * 
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
 	 */
 	private void initDefaultInterfaces() throws FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException {
 
@@ -493,6 +718,14 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 	}
 
 
+	/**
+	 * Annotates the CAS with fragments and modifiers (if the annotators are not null)
+	 * 
+	 * @param aJCas
+	 * 
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 */
 	protected void annotateCAS(JCas aJCas) throws FragmentAnnotatorException, ModifierAnnotatorException {
 				
 		count += Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size());

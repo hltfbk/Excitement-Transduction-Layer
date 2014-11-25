@@ -11,6 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import eu.excitement.type.tl.DeterminedFragment;
@@ -34,11 +35,23 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator");
 
+	/**
+	 * Constructor with LAP
+	 * 
+	 * @param l -- Linguistic Analysis Pipeline for annotation -- must include a dependency parser 
+	 * @throws FragmentAnnotatorException
+	 */
 	public KeywordBasedFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
 	{
 		super(l); 
 	}
 	
+	
+	/**
+	 * Adds fragment annotations based on keywords and their surrounding dependency relations
+	 * 
+	 * @param aJCas
+	 */
 	@Override
 	public void annotateFragments(JCas aJCas) throws FragmentAnnotatorException {
 
@@ -54,11 +67,15 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 			fragLogger.info("The CAS already has " + frgIndex.size() + " determined fragment annotation. Won't process this CAS."); 
 			return; 
 		}
-
-		try {
-			this.getLap().addAnnotationOn(aJCas);
-		} catch (LAPException e) {
-			throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
+		
+		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
+		if (tokens == null || tokens.size() == 0) {
+			try {
+				fragLogger.info("Annotating CAS object with LAP " + this.getLap().getClass());
+				this.getLap().addAnnotationOn(aJCas);
+			} catch (LAPException e) {
+				throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
+			}
 		}
 		
 		// check for keyword annotations
@@ -110,6 +127,12 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 
 
+	/**
+	 * Gathers and returns the text covering a collection of (possibly non-contiguous) annotations
+	 * 
+	 * @param annotations
+	 * @return text corresponding to the given annotations
+	 */
 	private String getCoveredText(Collection<?> annotations) {
 		String s = "";
 		for(Object a: annotations) {
@@ -137,15 +160,7 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 			change = false;
 			Set<Set<Region>> _newFrags = new HashSet<Set<Region>>(newFrags);
 			for (Set<Region> f: _newFrags) {
-				// if they overlap
-/*				Set<Region> union = new HashSet<Region>(f);
-				union.addAll(frag);
-				if (frag.size() + f.size() > union.size()) {
-						newFrags.remove(f);
-						newFrags.add(union);
-						change = true;
-				}
-*/
+
 				// if one Region includes the other
 				
 				logger.info("Comparing fragments: \n\t\tfrag: " + getCoveredSpan(frag) + "\n\t\tf: " + getCoveredSpan(f));
@@ -165,20 +180,23 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 				
 				}
 			}
-			if (! change) {
-//				logger.info("\tADDED frag");
+			if (! change) 
 				newFrags.add(frag);
-			}
 		}
 
-		if (change) {
+		if (change) 
 			return filterFragments(newFrags);
-		}
 		
 		return newFrags;
 	}
 
-	
+
+	/**
+	 * Gathers and returns information about a set of Regions that make up a fragment
+	 * 
+	 * @param frag
+	 * @return
+	 */
 	private String getCoveredSpan(Set<Region> frag) {
 		String str = "";
 		for(Region s: frag) {
@@ -212,16 +230,17 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	private Set<Region> makeOneFragment(JCas aJCas, Annotation k, int step) {
 
 		Set<Region> frags = null;
+		Sentence coveringSentence = (Sentence) JCasUtil.selectCovering(aJCas, Sentence.class, k.getBegin(), k.getEnd()).get(0);
 		
 		if (step > 2) 
 			return frags;
 		
 		if (isNorV(aJCas, k) && AnnotationUtils.isGovernorInDeps(aJCas, k)) {
-//		if (isNorV(aJCas, k) || (! isGovernorInDeps(aJCas, k))) {  // if it is noun or verb, or if the word does not have a governor, then expand it instead of trying to go up) 
-			frags = AnnotationUtils.getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
+//		if (isNorV(aJCas, k) || (! isGovernorInDeps(aJCas, k))) {  // if it is noun or verb, or if the word does not have a governor, then expand it instead of trying to go up)
+			frags = AnnotationUtils.getRegions(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas, coveringSentence, "any");
 		} else {
 			if (! AnnotationUtils.isGovernorInDeps(aJCas, k)) {
-				frags = AnnotationUtils.getFragment(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas);
+				frags = AnnotationUtils.getRegions(k.getCoveredText(), k.getBegin(), k.getEnd(), aJCas, coveringSentence, "any");
 			}
 		}
 

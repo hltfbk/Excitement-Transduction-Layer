@@ -7,10 +7,16 @@ import java.util.TreeSet;
 
 import eu.excitementproject.tl.laputils.CASUtils.Region;
 
+/**
+ * A collection of static methods for manipulating Region-s
+ * 
+ * @author vivi@fbk
+ *
+ */
 public class RegionUtils {
 
 	/**
-	 * Compresses the previously generated spans by aggregating adjacent ones
+	 * Compresses (previously generated) spans by aggregating adjacent ones
 	 * We know it contains more than one Region
 	 * 
 	 * @param spans

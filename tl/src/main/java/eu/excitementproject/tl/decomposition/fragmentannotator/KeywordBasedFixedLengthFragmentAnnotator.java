@@ -23,7 +23,8 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
 
 /**
  * This class implements the keyword-based "fragment annotator". 
- * For each annotated keyword, we extract a fragment based on its dependency relations
+ * For each annotated keyword, we extract a fixed-length fragment surrounding the given keyword(s)
+ * Fragments do not cross sentence boundaries
  * 
  * Based on the SentenceAsFragmentAnnotator
  * 
@@ -34,19 +35,40 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 	
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator");
 
+	// (proper) tokens before and after the given keyword
 	int windowSize = 6;
 	
+	/**
+	 * Constructor with default window size
+	 * 
+	 * @param l -- Linguistic Analysis Pipeline for annotation
+	 * @throws FragmentAnnotatorException
+	 */
 	public KeywordBasedFixedLengthFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
 	{
 		super(l); 
 	}
 	
+	/**
+	 * Constructor with LAP and window size
+	 * 
+	 * @param l -- Linguistic Analysis Pipeline for annotation
+	 * @param windowSize -- number of (proper -- i.e., not punctuation) before and after the keyword 
+	 * 
+	 * @throws FragmentAnnotatorException
+	 */
 	public KeywordBasedFixedLengthFragmentAnnotator(LAPAccess l, int windowSize) throws FragmentAnnotatorException
 	{
 		super(l); 
 		this.windowSize = windowSize;
 	}
 	
+	/**
+	 * For each keyword, take the "windowSize" tokens before and after the keyword to form the fragment.
+	 * If the window size jumps sentence boundaries, truncate at the sentence boundary.
+	 * 
+	 * @param aJCas -- the CAS object with interaction text and keyword annotations
+	 */
 	@Override
 	public void annotateFragments(JCas aJCas) throws FragmentAnnotatorException {
 
@@ -65,6 +87,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
 		if (tokens == null || tokens.size() == 0) {
 			try {
+				logger.info("Annotating CAS object with LAP " + this.getLap().getClass() );
 				this.getLap().addAnnotationOn(aJCas);
 			} catch (LAPException e) {
 				throw new FragmentAnnotatorException("CASUtils reported exception while trying to add annotations on CAS " + aJCas.getDocumentText(), e );														
@@ -116,6 +139,7 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 
 	/** 
 	 * To generate fragments centered on given keywords with adjustable window size
+	 * In case windowSize was not specified in the constructor, or if it needs to be different
 	 * 
 	 * @param aJCas
 	 * @param winSize
@@ -169,7 +193,6 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 				}
 			}
 			if (! change) {
-//				logger.info("\tADDED frag");
 				newFrags.add(frag);
 			}
 		}
@@ -182,6 +205,14 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 	}
 
 
+	/**
+	 * Checks if two regions intersect or overlap one another. It is used to combine overlapping fragments
+	 * 
+	 * @param a -- a region 
+	 * @param b -- a region
+	 * 
+	 * @return -- true if the regions have some span in common
+	 */
 	private boolean regionsIntersect(Region a, Region b) {
 		
 		return (
@@ -224,10 +255,11 @@ public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAn
 
 	
 	/**
-	 * return the text covered by an array of regions
+	 * return the text covered by an array of (possibly non-contiguous) regions
 	 * 
 	 * @param aJCas
-	 * @param r
+	 * @param r -- a set of Regions
+	 * 
 	 * @return
 	 */
 	private String getCoveredText(JCas aJCas, Region[] r) {

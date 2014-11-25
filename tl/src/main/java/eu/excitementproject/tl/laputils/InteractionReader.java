@@ -171,6 +171,13 @@ public final class InteractionReader {
 		return interactionList; 
 	}
 	
+	/**
+	 * Get the keywords from the input XML file
+	 * 
+	 * @param oneInteraction -- an input interaction (read from an XML file)
+	 * 
+	 * @return the string of (comma separated) keywords 
+	 */
 	private static String getKeywords(Element oneInteraction) {
 
 		String keywords = null;

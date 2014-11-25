@@ -16,7 +16,12 @@ public class FragmentGraphGeneratorFromCAS extends
 		AbstractFragmentGraphGenerator {
 
 	private final static Logger logger = Logger.getLogger(FragmentGraphGeneratorFromCAS.class.getName());
-	
+
+	/**
+	 * Fragment graph generator from each fragment annotation in a CAS object
+	 * 
+	 * @param text -- a CAS object
+	 */
 	@Override
 	public Set<FragmentGraph> generateFragmentGraphs(JCas text)
 			throws FragmentGraphGeneratorException {
@@ -24,9 +29,7 @@ public class FragmentGraphGeneratorFromCAS extends
 				
 		for(Annotation a : text.getAnnotationIndex(DeterminedFragment.type)) {
 			logger.info("Processing fragment: " + a.getCoveredText());
-//			if (!(a.getCoveredText().contains("Moonport") && a.getCoveredText().contains("Quasigo terminal"))) {
-				fgs.add(new FragmentGraph(text,(DeterminedFragment) a));
-//			}
+			fgs.add(new FragmentGraph(text,(DeterminedFragment) a));
 		}
 		
 		return fgs;
