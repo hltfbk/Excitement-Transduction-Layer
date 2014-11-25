@@ -6,33 +6,49 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.util.FileUtils;
 
 import eu.excitement.type.tl.KeywordAnnotation;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.structures.Interaction;
 
+/**
+ * collection of static methods for loading various types of data (full XMIs, XMIs without (fragment/modifier annotations), XMLs)
+ * 
+ * @author vivi@fbk
+ *
+ */
 public class DataUtils {
 
 	
+	/**
+	 * Load the given number of XMI files from the given input directory 
+	 * 
+	 * @param dataDir -- directory with input XMI files (with annotations)
+	 * @param fileNumberLimit
+	 * 
+	 * @return a list of CAS objects corresponding to the input data
+	 */
 	public static List<JCas> loadData(String dataDir, int fileNumberLimit) {
 		
 		System.out.println("Loading data from " + dataDir);
 		
 		List<JCas> docs = new ArrayList<JCas>();
 		File dir = new File(dataDir);
-	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constructor
 
-		//File f;
 		JCas aJCas;
 
 		try {
 			int i =0;
-			for (File f : dir.listFiles()) {
+			for (File f : FileUtils.getFiles(dir,true)) {
 				System.out.println("processing file " + f.getName());
 				i++; 
 				if (i>fileNumberLimit) break;
-				//		f = new File(name); 
+
 				aJCas = CASUtils.createNewInputCas(); 
 				CASUtils.deserializeFromXmi(aJCas, f); 
 				docs.add(aJCas);
@@ -47,22 +63,25 @@ public class DataUtils {
 	/**
 	 * Create a CAS with only the text and keyword annotations (if any exist)
 	 * 
-	 * @param dataDir
+	 * @param dataDir -- directory with input XMI files
 	 * @param fileNumberLimit
-	 * @return
+	 * 
+	 * @return the list of CAS object corresponding to the input data, 
+	 *  containing only the interaction text and possibly keyword annotations (no fragments, no modifiers)
 	 */
 	
 	public static List<JCas> loadDataNoAnnot(String dataDir, int fileNumberLimit) {
 		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.DataUtils:loadDataNoAnnot");
+		logger.setLevel(Level.INFO);
+		
 		List<JCas> docs = new ArrayList<JCas>();
 		File dir = new File(dataDir);
-	//	int fileNumberLimit = 4; //commented by Lili 30.06 - now exposed in the constructor
-
-		//File f;
 
 		try {
 			int i =0;
-			for (File f : dir.listFiles()) {
+			for (File f : FileUtils.getFiles(dir, true)) {
+				logger.info("Processing file " + f.getName());
 				i++; 
 				if (i>fileNumberLimit) break;
 				
@@ -85,13 +104,20 @@ public class DataUtils {
 	}
 	
 	
-	
+
+	/**
+	 * Load XML-style data (used mostly for OMQ data)
+	 * 
+	 * @param dataDir -- directory with input XML files
+	 *  
+	 * @return a set of Interactions corresponding to the input files
+	 */
 	public static Set<Interaction> loadXMLData(String dataDir) {
 
 		Set<Interaction> docs = new HashSet<Interaction>();
 		File dir = new File(dataDir);
 		
-		for (File f: dir.listFiles() ) {
+		for (File f: FileUtils.getFiles(dir,true) ) {
 			try {
 				docs.addAll(InteractionReader.readInteractionXML(f));
 			} catch (DataReaderException e) {
@@ -104,6 +130,13 @@ public class DataUtils {
 	}
 
 	
+	/**
+	 * Load XML-style data
+	 * 
+	 * @param files -- an array of input XML files
+	 * 
+	 * @return a set of Interactions corresponding to the input files
+	 */
 	public static Set<Interaction> loadXMLData(String[] files) {
 
 		Set<Interaction> docs = new HashSet<Interaction>();	

@@ -50,7 +50,7 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
  * useful in handling CASes: Like getting a new CAS, serialize, deserialize, 
  * adding some annotations of TL inputCAS, etc. 
  * 
- * @author Gil 
+ * @author Gil and vivi@fbk
  */
 
 // Things to be considered as future improvements 
@@ -301,6 +301,13 @@ public final class CASUtils {
 		return df;
 	}
 
+	/**
+	 * Get the upper bound for the end position from an array of Region-s
+	 *  
+	 * @param r -- an array of Region-s
+	 * 
+	 * @return the maximum end position from all given Region-s
+	 */
 	private static int getMaxEnd(Region[] r) {
 		
 		int maxEnd = 0;
@@ -314,6 +321,13 @@ public final class CASUtils {
 	}
 
 	
+	/** 
+	 * Get the lower bound for the start position from an array of Region-s
+	 * 
+	 * @param r -- an array of Region-s
+	 * 
+	 * @return the minimum start position from all the given Region-s 
+	 */
 	private static int getMinBegin(Region[] r) {
 		int minBegin = Integer.MAX_VALUE;
 	

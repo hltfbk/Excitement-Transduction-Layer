@@ -11,6 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -23,7 +25,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
 
 /**
  * This class implements a simple "modifier annotator" implementation solely based on 
- * POS tags. It will simply annotate any continuous tokens that are ADV as modifiers. 
+ * POS tags. It will simply annotate any continuous tokens that have the specified POS as modifiers. 
  * 
  * <P> 
  * Note that, to really do the Modifier annotation, we will need dependency parsing + some more knowledge.  
@@ -36,22 +38,46 @@ import eu.excitementproject.tl.laputils.CASUtils;
 public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifierAnnotator {
 	
 	protected Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator"); 
-	
+
+	// the set of POS classes that should be marked as modifiers
 	protected Set<Class<? extends POS>> wantedClasses;
+	
+	// if true, accept a candidate as modifier if it is not in the scope of a negation
 	protected boolean checkNegation = false;
 	
+	/**
+	 * Constructor with LAP
+	 * 
+	 * @param lap
+	 * @throws ModifierAnnotatorException
+	 */
 	public AbstractPOSbasedModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
 	{
 		super(lap); 
 	}
 	
+	/**
+	 * Constructor with LAP and fragment annotator
+	 * 
+	 * @param lap
+	 * @param fragAnn
+	 * @throws ModifierAnnotatorException
+	 */
 	public AbstractPOSbasedModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
 	{
 		super(lap, fragAnn); 
 	}
 	
+	/**
+	 * The class to be implemented by the variations we want (use ADV as modifiers, or use ADJ, or PPs, or any combination
+	 */
 	protected abstract void addPOSClasses();
 	
+	/**
+	 * Annotate as modifiers the tokens whose POS fits the specified classes
+	 * 
+	 * @param aJCas
+	 */
 	@Override
 	public int annotateModifiers(JCas aJCas) throws ModifierAnnotatorException, FragmentAnnotatorException {
 		
@@ -93,9 +119,7 @@ public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifier
 				throw new ModifierAnnotatorException("Calling on LAPAccess " + this.getLap().getClass().getName() + " didn't add POS annotations. Cannot proceed."); 
 			}
 		}
-		
-		AnnotationUtils.printAnnotations(aJCas, POS.class);
-		
+				
 		// check Fragment annotations (only annotate modifiers inside fragments)
 		AnnotationIndex<Annotation> fragIndex = aJCas.getAnnotationIndex(FragmentAnnotation.type);
 		Iterator<Annotation> fragItr = fragIndex.iterator();
@@ -125,11 +149,19 @@ public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifier
 			}
 		}
 		
-		return addModifierAnnotations(fragItr, aJCas, checkNegation, wantedClasses);
+		return addModifierAnnotations(fragItr, aJCas);
 	}
 	
 	
-	protected int addModifierAnnotations(Iterator<Annotation> fragItr, JCas aJCas, boolean checkNegation, Set<Class<? extends POS>> POSclasses) throws ModifierAnnotatorException {
+	/**
+	 * Iterates through all the annotated fragments to add modifier annotators
+	 * 
+	 * @param fragItr -- iterator over the fragment annotations in the given CAS object
+	 * @param aJCas -- CAS object with annotations
+	 * @return
+	 * @throws ModifierAnnotatorException
+	 */
+	protected int addModifierAnnotations(Iterator<Annotation> fragItr, JCas aJCas) throws ModifierAnnotatorException {
 		
 		modLogger.info("Annotating TLmodifier annotations on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
 		Integer negationPosition = -1;
@@ -139,12 +171,13 @@ public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifier
 		while(fragItr.hasNext()) {
 			FragmentAnnotation frag = (FragmentAnnotation) fragItr.next();
 					
-			if (POSclasses != null) {
-				for(Class<? extends POS> cls: POSclasses) {
-					
-					if (checkNegation) {
-						negationPosition = AnnotationUtils.checkNegation(frag);
-					}
+			if (wantedClasses != null) {
+				
+				if (checkNegation) {
+					negationPosition = AnnotationUtils.checkNegation(frag);
+				}
+				
+				for(Class<? extends POS> cls: wantedClasses) {
 					
 					modAnnotCount += addModifiers(aJCas, frag, negationPosition, cls);
 				}
@@ -166,43 +199,68 @@ public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifier
 
 		Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator:addModifiers");
 		
-		List<? extends Annotation> listMods = JCasUtil.selectCovered(aJCas, modClass, frag);
+//		List<? extends Annotation> listMods = JCasUtil.selectCovered(aJCas, modClass, frag);
+// Work around, because for English we have double POS annotations
+		
+		List<? extends Annotation> listMods = AnnotationUtils.selectByPOS(aJCas, frag, modClass);
 		int num_mods = 0;
 		
 		if (listMods != null && ! listMods.isEmpty()) {
 			
-			modLogger.info("Found " + listMods.size() + " potential modifiers");
+			modLogger.info("Found " + listMods.size() + " potential modifiers. Negation position: " + negationPos);
 			
 			for (Annotation a: listMods) {
 
-				int begin = a.getBegin(); 
-				int end = a.getEnd(); 
-
-//				if (! isNegation(a.getCoveredText()) &&
-//					! inNegationScope(begin, frag, negationPos)) {
-				if ( negationPos < 0 ||
-						( ! AnnotationUtils.isNegation(a.getCoveredText()) &&
-						  ! AnnotationUtils.inNegationScope(begin, frag, negationPos)) 
-					) {
+				if (isModifier(aJCas, a,frag)) {
 					
-					CASUtils.Region[] r = new CASUtils.Region[1]; 
-					r[0] = new CASUtils.Region(begin,  end); 
+					int begin = a.getBegin(); 
+					int end = a.getEnd(); 
+
+					if ( negationPos < 0 ||
+							( ! AnnotationUtils.isNegation(a.getCoveredText()) &&
+									! AnnotationUtils.inNegationScope(begin, frag, negationPos)) 
+							) {
+					
+						CASUtils.Region[] r = new CASUtils.Region[1]; 
+						r[0] = new CASUtils.Region(begin,  end); 
 	
-					modLogger.info("Annotating the following as a modifier: " + a.getCoveredText() + " (" + modClass.getSimpleName() + ")");
-				
-					try {
-						CASUtils.annotateOneModifier(aJCas, r); 
-					} catch (LAPException e) {
-						throw new ModifierAnnotatorException("CASUtils reported exception while annotating Modifier, on sentence (" + begin + ","+ end, e );
+						modLogger.info("Annotating the following as a modifier: " + a.getCoveredText() + " (" + modClass.getSimpleName() + ")");
+						
+						try {
+							CASUtils.annotateOneModifier(aJCas, r); 
+						} catch (LAPException e) {
+							throw new ModifierAnnotatorException("CASUtils reported exception while annotating Modifier, on sentence (" + begin + ","+ end, e );
+						}
+						num_mods++;
+					} else {
+						modLogger.info("Potential modifier is (or is in the scope of) a negation: " + a.getCoveredText());
 					}
-					num_mods++;
-				} else {
-					modLogger.info("Potential modifier is (or is in the scope of) a negation: " + a.getCoveredText());
 				}
 			}
 		}
 		modLogger.info("Annotated " + num_mods + " for fragment " + frag.getCoveredText());
 		return num_mods;
+	}
+
+	/**
+	 * Check if this a "proper" modifier -- i.e. not in predicative position, 
+	 * Simple check: if it is not preceeded by a verb (e.g. "is pretty" ...) then it's OK. make this better
+	 * 
+	 * @param a
+	 * @param frag
+	 * @return
+	 */
+	private static boolean isModifier(JCas aJCas, Annotation a, FragmentAnnotation frag) {
+		
+		List<Token> anns = JCasUtil.selectPreceding(aJCas, Token.class, a, 1);
+		if (anns != null && anns.size() > 0) {
+			
+			System.out.println("Checking POS: " + anns.get(0).getPos().getClass());
+			
+			return (! anns.get(0).getPos().equals(V.class));
+		}
+		
+		return true;
 	}			
 	
 }

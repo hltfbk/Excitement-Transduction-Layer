@@ -41,6 +41,10 @@ public abstract class AbstractFragmentAnnotator implements FragmentAnnotator{
 		return this.lap;
 	}
 	
-	
+	/**
+	 * The method all classes in the hierarchy should implement
+	 * 
+	 * @param aJCas -- the CAS object that should have the interaction text (at least, possibly also keywords)
+	 */
 	public abstract void annotateFragments(JCas aJCas) throws FragmentAnnotatorException ;
 }

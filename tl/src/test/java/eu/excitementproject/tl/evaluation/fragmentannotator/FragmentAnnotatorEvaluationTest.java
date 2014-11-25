@@ -15,7 +15,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationMeasures;
 //@SuppressWarnings("unused")
 public class FragmentAnnotatorEvaluationTest {
 
-//	@Ignore
+	@Ignore
 	@Test
 	public void test() {
 	

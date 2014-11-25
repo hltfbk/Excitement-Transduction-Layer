@@ -34,8 +34,8 @@ public class ModifierAnnotatorEvaluationTest {
 		
 		try {
 			
-//			String lang = "IT";
-			String lang = "EN";			
+			String lang = "IT";
+//			String lang = "EN";			
 			
 			LAPAccess lap = LAPUtils.initializeLAP(lang);
 			
@@ -44,18 +44,18 @@ public class ModifierAnnotatorEvaluationTest {
 			
 			EvaluationMeasures eval = ModifierAnnotatorEvaluator.evaluateModifiers(
 			
-//					"src/main/resources/exci/alma/xmi_perFragmentGraph",
-					"src/main/resources/exci/nice/xmi_perFragmentGraph/all",
+					"src/main/resources/exci/alma/xmi_perFragmentGraph",
+//					"src/main/resources/exci/nice/xmi_perFragmentGraph/all",
 
-//					new AdvAsModifierAnnotator(lap, fragAnn, false),
+					new AdvAsModifierAnnotator(lap, fragAnn, false),
 //					new AdvAdjAsModifierAnnotator(lap, fragAnn, false),
 //					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, false),
-					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, true),
+//					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, true),
 					
 					fragAnn,
 					lap,
 					
-					false   // true means it will use the gold standard fragment annotations
+					true   // true means it will use the gold standard fragment annotations
 					);
 			
 			logger.info(eval.toString());

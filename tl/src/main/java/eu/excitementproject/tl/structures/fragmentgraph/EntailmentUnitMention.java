@@ -101,7 +101,15 @@ public class EntailmentUnitMention {
 	}
 
 	
-
+	/**
+	 * Makes a list of SimpleModifier-s based on the given text and the given set of modifiers
+	 * This list of modifiers is used to generate nodes (it will be the text - (minus) the given list of modifiers)
+	 * 
+	 * @param textFragment 
+	 * @param mods -- a set of modifiers (as strings)
+	 * 
+	 * @return a set of SimpleModifier objects (that have not only text but also position relative to the "textFragment")
+	 */
 	private Set<SimpleModifier> addModifiers(String textFragment,
 			Set<String> mods) {
 		Set<SimpleModifier> sms = new HashSet<SimpleModifier>();
@@ -115,6 +123,7 @@ public class EntailmentUnitMention {
 		return sms;
 	}
 	
+	
 	private String getCategoryId(JCas aJCas) {
 		
 		if (CASUtils.getTLMetaData(aJCas) != null)
@@ -123,20 +132,6 @@ public class EntailmentUnitMention {
 		} else 	{
 			return null; 
 		}
-		
-/*	AnnotationIndex<Annotation> catIndex = aJCas.getAnnotationIndex(CategoryAnnotation.type);
-
-		if (catIndex != null && catIndex.size() > 0) {
-			Iterator<Annotation> catIt = catIndex.iterator(); 
-		
-			CategoryAnnotation cat = (CategoryAnnotation) catIt.next(); 
-
-			// do a loop over all category decision, in real case. 
-			CategoryDecision d = cat.getCategories(0);
-			return d.getCategoryId();
-		}
-		return "N/A";
-*/
 	}
 	
 	
@@ -150,29 +145,32 @@ public class EntailmentUnitMention {
 		{
 			return null; 
 		}
-
-/*		Set<CategoryAnnotation> cas = FragmentGraph.getFragmentCategories(aJCas, frag);
-		if (cas != null && !cas.isEmpty()) {
-			for (CategoryAnnotation cat: cas) {
-				// assume one category annotation per fragment (or document, makes no difference here)
-				if (cat != null && cat.getCategories().size() > 0) {
-					return cat.getCategories(0).getCategoryId();
-				}
-			}
-		}
-		return "N/A";
-*/
 	}
+
+
+	public String getCategoryId(){
+		return categoryId;
+	}
+
 	
+	/**
+	 * Get the CAS underlying the current EUM
+	 * 
+	 * @return the CAS object
+	 */
 	public JCas getJCas(){
 		return cas;
 	}
 	
-	public String getCategoryId(){
-		return categoryId;
-	}
 	
 	
+	/**
+	 * Get the id of the interaction this EUM "belongs" to from the CAS
+	 * 
+	 * @param aJCas -- the CAS
+	 * 
+	 * @return the interaction Id
+	 */
 	private String getInteractionId(JCas aJCas) {
 
 		if (CASUtils.getTLMetaData(aJCas) != null)
@@ -183,6 +181,11 @@ public class EntailmentUnitMention {
 		}
 	}
 	
+	/**
+	 * Get the id of the interaction this EUM "belongs" to
+	 * 
+	 * @return the interaction id
+	 */
 	public String getInteractionId() {
 		return interactionId;
 	}
@@ -289,9 +292,16 @@ public class EntailmentUnitMention {
 	public int getEnd() {
 		return end;
 	}
-	
+
+	/**
+	 * Equality text for an EUM -- same text that comes from the same interaction
+	 * Used to avoid creating duplicate objects
+	 * 
+	 * @param eum -- the EUM to compare to this
+	 * 
+	 * @return true if the text is the same, and the two EUMs come from the same interaction
+	 */
 	public boolean equals(EntailmentUnitMention eum) {
-//		return eum.getText().matches(text);
 		return (eum.getText().equals(text) && ((eum.getInteractionId() == null) || (interactionId == null) || (eum.getInteractionId().equals(interactionId))));
 	}
 
@@ -300,6 +310,11 @@ public class EntailmentUnitMention {
 	}
 
 	
+	/**
+	 * Return "clean" nodes text, without the extra spaces (which we inserted to replace deleted modifiers)
+	 * 
+	 * @return the clean text of the node
+	 */
 	public String getTextWithoutDoubleSpaces(){
 		return this.getText().trim().replaceAll(" +", " ");
 	}

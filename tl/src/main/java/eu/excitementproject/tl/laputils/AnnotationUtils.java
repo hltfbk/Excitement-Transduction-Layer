@@ -27,6 +27,7 @@ import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.apache.uima.jcas.tcas.DocumentAnnotation;
 import org.uimafit.util.JCasUtil;
 
 import com.aliasi.util.Collections;
@@ -38,6 +39,7 @@ import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.KeywordAnnotation;
+import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -293,7 +295,11 @@ public final class AnnotationUtils {
 		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, begin, end);
 		List<Dependency> relevantDeps = new ArrayList<Dependency>();
 		
+//		System.out.println("Getting dependencies for string at position (" + begin + "," + end + ") --> " + dependencyType + " in bounds (" + boundingAnnotation.getBegin() + "," + boundingAnnotation.getEnd() + ")");
+		
 		for (Dependency d: deps) {
+			
+//			System.out.println("checking dependency " + writeDependency(d));
 			
 			if ( isInBounds(d, boundingAnnotation)
 					&&
@@ -301,14 +307,14 @@ public final class AnnotationUtils {
 					&&
 				 ( d.getDependent().getCoveredText().matches("\\w.*")) // avoid punctuation (at least starts with letter)
 			) {
-
+				
 				if ((dependencyType.equals("get governed") &&  (d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end))
 					 ||
 					 (dependencyType.equals("get governor") && (d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end))
 					 ||
 					 (dependencyType.equals("any") && ((d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end) 
 							 									|| 
-							 							(d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end)))) {	
+							 							(d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end)))) {
 					relevantDeps.add(d);
 				}
 			}
@@ -318,16 +324,36 @@ public final class AnnotationUtils {
 	}
 
 	
-	// a bit approximated -- for non-contiguous fragments this could be problematic
+	private static String writeDependency(Dependency d) {
+		return d.getGovernor().getCoveredText() + " (" + d.getGovernor().getBegin() + "," + d.getGovernor().getEnd() + ") <== " 
+				+ d.getDependent().getCoveredText() + " (" + d.getDependent().getBegin() + "," + d.getDependent().getEnd() + ")";
+	}
+
+
+	/**
+	 * Verifies if a given dependency is within the bound of the given annotation
+	 * (Issues: when the annotation is not continuous, but made up of smaller parts)
+	 * 
+	 * @param d -- a Dependency annotation 
+	 * @param boundingAnnotation -- an annotation (e.g. fragment)
+	 * @return true of both arguments of the dependency d are covered by the given annotation
+	 */
 	private static boolean isInBounds(Dependency d,
 			Annotation boundingAnnotation) {
 		return (covers(boundingAnnotation, d.getDependent()) && covers(boundingAnnotation, d.getGovernor()));
 	}
 
 	
-
+	/**
+	 * Verifies if a given annotation covers the given token
+	 * (Issues: when the annotation is not continuous, but made up of smaller parts)
+	 * 
+	 * @param boundingAnnotation
+	 * @param token
+	 * @return true if token is within the span of the annotation
+	 */
 	private static boolean covers(Annotation boundingAnnotation, Token token) {
-		return (boundingAnnotation.getBegin() < token.getBegin() && boundingAnnotation.getEnd() > token.getEnd());
+		return (boundingAnnotation.getBegin() <= token.getBegin() && boundingAnnotation.getEnd() >= token.getEnd());
 	}
 
 
@@ -422,8 +448,9 @@ public final class AnnotationUtils {
 	 */
 	public static boolean inNegationScope(int m_begin, FragmentAnnotation f, int negationPos) {
 
+		System.out.println("checking negation scope: " + negationPos + " mod begins at " + m_begin);
 		// we could check here only relative to the fragment parts ...
-		if (negationPos > 0 && (m_begin - f.getBegin() >= negationPos)) {
+		if (negationPos > 0 && (negationPos < m_begin) && ! phraseChange(f, m_begin, negationPos)) {
 			return true;
 		}
 		
@@ -432,6 +459,42 @@ public final class AnnotationUtils {
 	
 	
 
+
+	/**
+	 * Very rudimentary check if there has been a phrase change between the position of the negation and the position of the modifier
+	 * -- return true if there are open POS or punctuation marks between the negation position and the position of the modifier
+	 * 
+	 * @param f
+	 * @param m_begin
+	 * @param negationPos
+	 * @return
+	 */
+	private static boolean phraseChange(FragmentAnnotation frag, int m_begin,
+			int negationPos) {
+
+		System.out.println("Checking if there is a phrase break between negation and modifier");
+		
+		List<Token> tokens = JCasUtil.selectCovered(Token.class, frag);
+		
+		if (tokens != null && tokens.size() > 0) {
+			for (Token t : tokens) {
+				if (t.getBegin() > negationPos && t.getBegin() < m_begin && ! isOpenClass(t.getPos().getPosValue())) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+
+	
+	
+
+	private static boolean isOpenClass(String pos) {
+		Pattern openClassPOS = Pattern.compile("^(n|adv|adj|v)", Pattern.CASE_INSENSITIVE);
+		Matcher m = openClassPOS.matcher(pos);
+		return m.find();
+	}
 
 
 	/** 
@@ -455,7 +518,13 @@ public final class AnnotationUtils {
 	}
 
 	
-	
+	/**
+	 * Makes a Region that covers the given "text" within the given annotation ("text" must be a substring of the string covered by "a") 
+	 * 
+	 * @param a -- an annotation (e.g. a fragment)
+	 * @param text -- a string (e.g. a modifier within the fragment)
+	 * @return
+	 */
 	public static CASUtils.Region makeRegion(Annotation a, String text) {
 		
 		String a_text = a.getCoveredText();
@@ -479,155 +548,82 @@ public final class AnnotationUtils {
 		}
 	}
 	
-	
-	public static void probeCAS(JCas aJCas) {
-			
-	    FSIterator<Annotation> iter = aJCas.getAnnotationIndex().iterator();
 
-	    // iterate
-	    while (iter.isValid()) {
-	      FeatureStructure fs = iter.get();
-	      printFS(fs, aJCas, 0);
-	      iter.moveToNext();
-	    }
-	}
-	
-	// borrowed from PlatformCASProber
-	public static void printFS(FeatureStructure aFS, JCas aCAS, int aNestingLevel) {
-		  
-		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.AnnotationUtils.probeCAS");
-		  
-		Type stringType = aCAS.getTypeSystem().getType(CAS.TYPE_NAME_STRING);
 
-		   logger.info(aFS.getType().getName());
-
-		    // if it's an annotation, print the first 64 chars of its covered text
-		    if (aFS instanceof Annotation) {
-		      Annotation annot = (Annotation) aFS;
-		      String coveredText = annot.getCoveredText();
-		      logger.info("\"");
-		      if (coveredText.length() <= 64) {
-		        logger.info(coveredText);
-		      } else {
-		        logger.info(coveredText.substring(0, 64) + "...");
-		      }
-		      logger.info("\"");
-		    }
-
-		    // print all features
-		    List<Feature> aFeatures = aFS.getType().getFeatures();
-		    Iterator<Feature> iter = aFeatures.iterator();
-		    while (iter.hasNext()) {
-		      Feature feat = (Feature) iter.next();
-		      // print feature name
-		      logger.info(feat.getShortName());
-		      logger.info(" = ");
-		      // prnt feature value (how we get this depends on feature's range type)
-		      String rangeTypeName = feat.getRange().getName();
-		      if (aCAS.getTypeSystem().subsumes(stringType, feat.getRange())) // must check for subtypes of
-		                                                                      // string
-		      {
-		        String str = aFS.getStringValue(feat);
-		        if (str == null) {
-		          logger.info("null");
-		        } else {
-		          logger.info("\"");
-		          if (str.length() > 64) {
-		            str = str.substring(0, 64) + "...";
-		          }
-		          logger.info(str);
-		          logger.info("\"");
-		        }
-		      } else if (CAS.TYPE_NAME_INTEGER.equals(rangeTypeName)) {
-		        logger.info(aFS.getIntValue(feat));
-		      } else if (CAS.TYPE_NAME_FLOAT.equals(rangeTypeName)) {
-		        logger.info(aFS.getFloatValue(feat));
-		      } else if (CAS.TYPE_NAME_STRING_ARRAY.equals(rangeTypeName)) {
-		        StringArrayFS arrayFS = (StringArrayFS) aFS.getFeatureValue(feat);
-		        if (arrayFS == null) {
-		          logger.info("null");
-		        } else {
-		          String[] vals = arrayFS.toArray();
-		          logger.info("[");
-		          for (int i = 0; i < vals.length - 1; i++) {
-		            logger.info(vals[i]);
-		            logger.info(',');
-		          }
-		          if (vals.length > 0) {
-		            logger.info(vals[vals.length - 1]);
-		          }
-		          logger.info("]\"");
-		        }
-		      } else if (CAS.TYPE_NAME_INTEGER_ARRAY.equals(rangeTypeName)) {
-		        IntArrayFS arrayFS = (IntArrayFS) aFS.getFeatureValue(feat);
-		        if (arrayFS == null) {
-		          logger.info("null");
-		        } else {
-		          int[] vals = arrayFS.toArray();
-		          logger.info("[");
-		          for (int i = 0; i < vals.length - 1; i++) {
-		            logger.info(vals[i]);
-		            logger.info(',');
-		          }
-		          if (vals.length > 0) {
-		            logger.info(vals[vals.length - 1]);
-		          }
-		          logger.info("]\"");
-		        }
-		      } else if (CAS.TYPE_NAME_FLOAT_ARRAY.equals(rangeTypeName)) {
-		        FloatArrayFS arrayFS = (FloatArrayFS) aFS.getFeatureValue(feat);
-		        if (arrayFS == null) {
-		         logger.info("null");
-		        } else {
-		          float[] vals = arrayFS.toArray();
-		          logger.info("[");
-		          for (int i = 0; i < vals.length - 1; i++) {
-		            logger.info(vals[i]);
-		            logger.info(',');
-		          }
-		          if (vals.length > 0) {
-		            logger.info(vals[vals.length - 1]);
-		          }
-		          logger.info("]\"");
-		        }
-		      } else // non-primitive type
-		      {
-		        FeatureStructure val = aFS.getFeatureValue(feat);
-		        if (val == null) {
-		          logger.info("null");
-		        } else {
-		          printFS(val, aCAS, aNestingLevel + 1);
-		        }
-		      }
-		    }
-		  }
-		  
-
-	
-	
 	/**
-	 * Collects the annotations and filters out the empty ones (it happens with the keywords sometimes)
+	 * Gather and return the Token-s that have the specified POS
 	 * 
-	 * @param aJCas
-	 * @param class1
-	 * @return
+	 * @param aJCas -- the CAS object
+	 * @param frag -- the fragment annotation
+	 * @param modClass -- the (POS) class of the modifier candidates
+	 * 
+	 * @return the list of tokens that have the specified POS class
 	 */
-/*	public static Collection<? extends Annotation> collectAnnotations(JCas aJCas,
-			Class<? extends Annotation> type) {
+	@SuppressWarnings("unchecked")
+	public static <T> List<T> selectByPOS(JCas aJCas,
+			FragmentAnnotation frag, Class<T> modClass) {
 		
-		Collection<? extends Annotation> anns = JCasUtil.select(aJCas, type);
-		anns.removeAll(anns);
+		List<Token> tokens = JCasUtil.selectCovered(aJCas, Token.class, frag);
+		List<T> list = new ArrayList<T>();
 		
-		for(Annotation a: JCasUtil.select(aJCas, type)) {
-			if (a.getEnd() - a.getBegin() > 0) {
-				anns.add(type.cast(a));
+		for(Token t: tokens) {
+			if (t.getPos().getClass().equals(modClass)) {
+				list.add((T) t.getPos());
 			}
 		}
 		
-		return anns;
+		return list;
 	}
-*/
 
 
+	/**
+	 * Count the annotations that have the given class inside the given CAS object
+	 * 
+	 * @param aJCas -- a CAS object
+	 * @param cls -- the class of Annotation type to be counted
+	 * 
+	 * @return the number of annotations of the given type in the CAS
+	 */
+	public static int countAnnotations(JCas aJCas,
+			Class<? extends Annotation> cls) {
+		
+		DocumentAnnotation da = JCasUtil.selectSingle(aJCas, DocumentAnnotation.class);
+		
+		List<? extends Annotation> anns = JCasUtil.selectCovered(aJCas, cls, da);
+		
+		if (anns != null)
+			return anns.size();
+		
+		return 0;	
+	}
+
+
+	/**
+	 * Count the number of tokens covered by the given annotation class inside the given CAS object
+	 * 
+	 * @param aJCas -- a CAS object
+	 * @param cls -- a class for the wanted Annotation type
+	 * 
+	 * @return the number of tokens covered by the specified annotation class 
+	 */
+	public static int countAnnotationTokens(JCas aJCas,
+			Class<? extends Annotation> cls) {
+		
+		int nr_tokens = 0;
+		
+		DocumentAnnotation da = JCasUtil.selectSingle(aJCas, DocumentAnnotation.class);
+			
+		List<? extends Annotation> anns = JCasUtil.selectCovered(aJCas, cls, da);
+			
+		if (anns != null) {
+			for (Annotation a: anns) {
+				List<Token> tokens = JCasUtil.selectCovered(aJCas, Token.class, a);
+				nr_tokens += tokens.size();
+			}
+		}
+			
+		return nr_tokens;
+	}
+	
 	
 }

@@ -35,11 +35,23 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator");
 
+	/**
+	 * Constructor with LAP
+	 * 
+	 * @param l -- Linguistic Analysis Pipeline for annotation -- must include a dependency parser 
+	 * @throws FragmentAnnotatorException
+	 */
 	public KeywordBasedFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
 	{
 		super(l); 
 	}
 	
+	
+	/**
+	 * Adds fragment annotations based on keywords and their surrounding dependency relations
+	 * 
+	 * @param aJCas
+	 */
 	@Override
 	public void annotateFragments(JCas aJCas) throws FragmentAnnotatorException {
 
@@ -115,6 +127,12 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 
 
+	/**
+	 * Gathers and returns the text covering a collection of (possibly non-contiguous) annotations
+	 * 
+	 * @param annotations
+	 * @return text corresponding to the given annotations
+	 */
 	private String getCoveredText(Collection<?> annotations) {
 		String s = "";
 		for(Object a: annotations) {
@@ -142,15 +160,7 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 			change = false;
 			Set<Set<Region>> _newFrags = new HashSet<Set<Region>>(newFrags);
 			for (Set<Region> f: _newFrags) {
-				// if they overlap
-/*				Set<Region> union = new HashSet<Region>(f);
-				union.addAll(frag);
-				if (frag.size() + f.size() > union.size()) {
-						newFrags.remove(f);
-						newFrags.add(union);
-						change = true;
-				}
-*/
+
 				// if one Region includes the other
 				
 				logger.info("Comparing fragments: \n\t\tfrag: " + getCoveredSpan(frag) + "\n\t\tf: " + getCoveredSpan(f));
@@ -170,20 +180,23 @@ public class KeywordBasedFragmentAnnotator extends AbstractFragmentAnnotator {
 				
 				}
 			}
-			if (! change) {
-//				logger.info("\tADDED frag");
+			if (! change) 
 				newFrags.add(frag);
-			}
 		}
 
-		if (change) {
+		if (change) 
 			return filterFragments(newFrags);
-		}
 		
 		return newFrags;
 	}
 
-	
+
+	/**
+	 * Gathers and returns information about a set of Regions that make up a fragment
+	 * 
+	 * @param frag
+	 * @return
+	 */
 	private String getCoveredSpan(Set<Region> frag) {
 		String str = "";
 		for(Region s: frag) {
