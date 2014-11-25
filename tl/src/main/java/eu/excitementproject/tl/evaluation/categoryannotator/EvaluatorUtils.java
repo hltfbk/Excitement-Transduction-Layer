@@ -540,7 +540,8 @@ public class EvaluatorUtils {
 	 */
 	
 	/**
-	 * merge Set<FragmentGraph> into single token EntailmentGraphRaw
+	 * merge Set<FragmentGraph> into a single token EntailmentGraphRaw
+	 * 
 	 * @param singleTokenGraph
 	 * @param fgs
 	 * @throws LexicalResourceException 
@@ -558,7 +559,7 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * merge one FragmentGraph into single token EntailmentGraphRaw with only lemma related edges
+	 * merge one FragmentGraph into a single token EntailmentGraphRaw with only lemma related edges
 	 *  
 	 * @param singleTokenGraph
 	 * @param fg
@@ -584,7 +585,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * merge Set<FragmentGraph> into two token EntailmentGraphRaw
+	 * merge Set<FragmentGraph> into a two token EntailmentGraphRaw
 	 *  
 	 * @param twoTokenRawGraph
 	 * @param fgs
@@ -609,7 +610,7 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * merge one FragmentGraph into two token EntailmentGraphRaw
+	 * merge one FragmentGraph into a two token EntailmentGraphRaw
 	 * 
 	 * @param twoTokenRawGraph
 	 * @param fg
@@ -640,7 +641,8 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * 
+	 * add bidirectional entailment edges going from and to the input EntailmentUnit
+	 *  
 	 * @param egr
 	 * @param inputEntailmentUnit
 	 * @param dbr
@@ -668,6 +670,7 @@ public class EvaluatorUtils {
 	}
 
 	/**
+	 * add entailment edges going from the input EntailmentUnit
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
@@ -691,11 +694,12 @@ public class EvaluatorUtils {
 	}
 	
 	/**
+	 * add entailment edges going to the input EntailmentUnit
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
 	 * @param derivBaseResource
-	 * @param gnw
+	 * @param germaNetWrapper
 	 * @param germanetRelations
 	 * @param splitter
 	 * @throws LexicalResourceException
@@ -710,6 +714,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
+	 * add edges going from or to the input EntailmentUnit depending on the given direction
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
@@ -717,7 +722,7 @@ public class EvaluatorUtils {
 	 * @param gnw
 	 * @param germanetRelations
 	 * @param splitter
-	 * @param direction
+	 * @param direction -- allowed values "both", "inputToGraph", "graphToInput"
 	 * @throws LexicalResourceException
 	 */
 	private static void addTEEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, 
@@ -757,7 +762,9 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * get related text for single and two token text
+	 * get related text for a single or a two token text given the lexical resource
+	 * DerivBaseResource, GermaNet or GermanWordSplitter
+	 * 
 	 * @param text
 	 * @param lemmatizedText
 	 * @param derivBaseResource
@@ -806,13 +813,14 @@ public class EvaluatorUtils {
 	
 	
 	/**
+	 * get set of related lemma given the lexical resource
+	 * DerivBaseResource, GermaNet or GermanWordSplitter
 	 * 
 	 * @param lemma
 	 * @param derivBaseResource
 	 * @param germaNetWrapper
 	 * @param germaNetRelations
 	 * @param splitter
-	 * @param crossLexicalResource
 	 * @return
 	 * @throws LexicalResourceException
 	 */
@@ -835,7 +843,8 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * given the DerivBase resource get lemmas related to an input lemma 
+	 * get set of related lemma given the lexical resource DerivBaseResource
+	 * 
 	 * @param lemma
 	 * @param derivBaseResource
 	 * @return
@@ -852,7 +861,8 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * given the GermanWordSplitter resource get lemmas related to an input lemma 
+	 * get set of related lemma given the resource GermanWordSplitter
+	 * 
 	 * @param lemma
 	 * @param splitter
 	 * @return
@@ -877,7 +887,8 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * given the GermaNetResource resource get lemmas related to an input lemma 
+	 * get set of related lemma given the lexical resource GermaNet
+	 * 
 	 * @param lemma
 	 * @param germaNetWrapper
 	 * @param germaNetRelations
@@ -906,9 +917,10 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * Splits the lemma string around matches of the regular expression \\|
-	 * Deal with lemma of type: lemma|lemma, which is sometimes return by TreeTagger.
-	 * @param token
+	 * Split the lemma string around matches of the regular expression \\|
+	 * (to deal with lemma type: lemma|lemma, which is sometimes return by TreeTagger).
+	 * 
+	 * @param lemma
 	 * @return
 	 */
 	private static String [] getLemmas(String lemma) {
@@ -917,6 +929,7 @@ public class EvaluatorUtils {
 	
 	/**
 	 * get Set<EntailmentUnit> with a given lemmatized text
+	 * 
 	 * @param egr
 	 * @param lemmatizedText
 	 * @param ignoreCase
@@ -942,6 +955,7 @@ public class EvaluatorUtils {
 	
 	/**
 	 * get Set<EntailmentUnit> with given lemmatized text from a Set<String> lemmatizedTextSet
+	 * 
 	 * @param egr
 	 * @param lemmatizedTextSet
 	 * @param ignoreCase
@@ -974,10 +988,12 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * Given two lists A and B, combine every element of A and B to a string "a b" and "b a"
+	 * Given two sets A and B, combine every element of A and B to a string "a b" and "b a"
 	 * Return a list of all combinations.
-	 * @param alist
-	 * @param blist
+	 * 
+	 * @param aSet
+	 * @param bSet
+	 * @param useLowerCase
 	 * @return
 	 */
 	private static Set<String> getPermutations(Set<String> aSet, Set<String> bSet, boolean useLowerCase){
