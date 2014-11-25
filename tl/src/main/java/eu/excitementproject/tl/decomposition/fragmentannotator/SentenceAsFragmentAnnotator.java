@@ -28,6 +28,11 @@ public class SentenceAsFragmentAnnotator extends AbstractFragmentAnnotator {
 		super(l); 
 	}
 	
+	/**
+	 * Annotate each sentence as a fragment
+	 * 
+	 * @param aJCas
+	 */
 	@Override
 	public void annotateFragments(JCas aJCas) throws FragmentAnnotatorException {
 

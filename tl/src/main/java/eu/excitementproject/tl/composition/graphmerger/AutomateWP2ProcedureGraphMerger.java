@@ -192,14 +192,16 @@ public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 			Set<EntailmentUnit> currentLevelCandidateEntailingNodes = candidateEntailingFragmentGraphNodes.get(level);
 			Set<EntailmentUnit> currentLevelCandidateEntailedNodes = candidateEntailedFragmentGraphNodes.get(level);
 			// now examine each pair of candidates (entailing -> entailed)
-			for (EntailmentUnit candidateEntailingNode : currentLevelCandidateEntailingNodes){
-				for (EntailmentUnit candidateEntailedNode : currentLevelCandidateEntailedNodes){
-					// if such edge (candidateEntailingNode -> candidateEntailedNode) does not yet exist
-					if (!workGraph.isEntailment(candidateEntailingNode, candidateEntailedNode)){
-						// check whether we can induce such edge from lower-level entailments (get confidence >0) 
-						Double confidence = induceEntailment(workGraph, candidateEntailingNode, candidateEntailedNode);
-						if (confidence>0){
-							workGraph.addEdgeByInduction(candidateEntailingNode, candidateEntailedNode, DecisionLabel.Entailment, confidence);
+			if (currentLevelCandidateEntailingNodes != null && currentLevelCandidateEntailedNodes != null) {
+				for (EntailmentUnit candidateEntailingNode : currentLevelCandidateEntailingNodes){
+					for (EntailmentUnit candidateEntailedNode : currentLevelCandidateEntailedNodes){
+						// if such edge (candidateEntailingNode -> candidateEntailedNode) does not yet exist
+						if (!workGraph.isEntailment(candidateEntailingNode, candidateEntailedNode)){
+							// check whether we can induce such edge from lower-level entailments (get confidence >0) 
+							Double confidence = induceEntailment(workGraph, candidateEntailingNode, candidateEntailedNode);
+							if (confidence>0){
+								workGraph.addEdgeByInduction(candidateEntailingNode, candidateEntailedNode, DecisionLabel.Entailment, confidence);
+							}
 						}
 					}
 				}

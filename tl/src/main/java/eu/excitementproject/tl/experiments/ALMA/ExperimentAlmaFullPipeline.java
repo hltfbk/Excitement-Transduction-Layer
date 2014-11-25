@@ -8,12 +8,9 @@ import java.lang.reflect.InvocationTargetException;
 
 import javax.xml.transform.TransformerException;
 
-import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_IT;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
-import eu.excitementproject.eop.core.EditDistanceEDA;
-import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
@@ -31,7 +28,7 @@ import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphoptimizer.EvaluatorGraphOptimizer;
 import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
-import eu.excitementproject.tl.experiments.AbstractExperiment;
+import eu.excitementproject.tl.experiments.AbstractExperimentNotAnnotXMIs;
 import eu.excitementproject.tl.experiments.ResultsContainer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationCollapsed;
@@ -41,18 +38,49 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 
 /** 
- * Class to load ALMA data, build the graphs and evaluate them
- * @author Lili Kotlerman
+ * Full pipeline experiment for ALMA (starting from XMIs with only the interaction text and possibly keyword annotations)
+ * 
+ * @author vivi@fbk -- very very little edited copy of Lili's ExperimentAlma class
  * 
  */
-public class ExperimentAlmaPerCluster extends AbstractExperiment {
+public class ExperimentAlmaFullPipeline extends AbstractExperimentNotAnnotXMIs {
 	
 	public String configFileFullName = "";
 	public String configFileName = "";
 	
-	public ExperimentAlmaPerCluster(String configFileFullName, String dataDir,
+	/**
+	 * Constructor for the Experiment class based on the configuration file, the input data directory, file number limit for processing, output folder, the LAP and EDA classes
+	 * 
+	 * @param configFileFullName -- the full path for the configuration file for the EDA
+	 * @param dataDir -- data with input XMIs
+	 * @param fileNumberLimit -- limit on the number of files to process
+	 * @param outputFolder
+	 * @param lapClass -- LAP class (will override the one specified in the EDA's configuration file)
+	 * @param edaClass -- EDA class (will override the one specified in the EDA's configuration file)
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws GraphOptimizerException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws IOException
+	 * @throws EntailmentGraphRawException
+	 * @throws TransformerException
+	 * @throws ClassNotFoundException 
+	 */
+	public ExperimentAlmaFullPipeline(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
-			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		
 		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 		
@@ -72,6 +100,58 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	/**
+	 * Constructor for the Experiment class based on the configuration file, input data directory, limit on the number of files to process, and outout folder
+	 * 
+	 * @param configFileFullName -- configuration file for the EDA. The EDA and LAP classes will be taken from the file
+	 * @param dataDir -- directory with input XMIs
+	 * @param fileNumberLimit
+	 * @param outputFolder
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws GraphOptimizerException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws IOException
+	 * @throws EntailmentGraphRawException
+	 * @throws TransformerException
+	 * @throws ClassNotFoundException 
+	 */
+	public ExperimentAlmaFullPipeline(String configFileFullName, String dataDir,
+			int fileNumberLimit, String outputFolder) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder);
+		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+
+		m_optimizer = new SimpleGraphOptimizer();
+		
+		try {
+//			super.setGraphMerger(new AllPairsGraphMerger(super.lap, super.eda));
+//			super.setGraphMerger(new AllPairsGraphMergerWithNonEntailments(super.lap, super.eda));
+			super.setGraphMerger(new AutomateWP2ProcedureGraphMerger(super.lap, super.eda));
+//			super.setGraphMerger(new NoEdaGraphMerger(super.lap, super.eda));
+			
+		} catch (GraphMergerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 
 	public enum EdaName{
 		RANDOM,
@@ -81,20 +161,17 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 		P1EDA
 	}
 	
-	public static ExperimentAlmaPerCluster initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
+	public static ExperimentAlmaFullPipeline initExperiment(EdaName edaName, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException{
 		
 		if (edaName.equals(EdaName.EDIT_DIST)) {
-			return new ExperimentAlmaPerCluster(
+			return new ExperimentAlmaFullPipeline(
 					tlDir+"src/test/resources/NICE_experiments/EditDistanceEDA_NonLexRes_EN.xml",
 //					tlDir+"src/test/resources/EOP_configurations/EditDistanceEDA_IT_WordNet.xml",
-					dataDir, fileLimit, outDir,
-					TreeTaggerIT.class,
-					EditDistanceEDA.class
-					);					
+					dataDir, fileLimit, outDir);					
 		}
 
 		if (edaName.equals(EdaName.PROBABILISTIC)) {
-			return 	new ExperimentAlmaPerCluster(
+			return 	new ExperimentAlmaFullPipeline(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 					dataDir, fileLimit, outDir,
 					TreeTaggerIT.class, //not used, just some available LAP
@@ -103,7 +180,7 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 		}
 
 		if (edaName.equals(EdaName.RANDOM)) {
-			return new ExperimentAlmaPerCluster(
+			return new ExperimentAlmaFullPipeline(
 					tlDir+"src/test/resources/NICE_experiments/MaxEntClassificationEDA_Base_EN.xml", //not used, just some existing conf file
 					dataDir, fileLimit, outDir,
 					TreeTaggerIT.class, //not used, just some available LAP
@@ -113,21 +190,15 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 
 		
 		if (edaName.equals(EdaName.TIE_POS)) {
-			return new ExperimentAlmaPerCluster(
+			return new ExperimentAlmaFullPipeline(
 					tlDir+"src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_IT.xml",
-					dataDir, fileLimit, outDir,
-					TreeTaggerIT.class,
-					MaxEntClassificationEDA.class
-					);
+					dataDir, fileLimit, outDir);
 		}
 		
 		if (edaName.equals(EdaName.P1EDA)) {
-			return new ExperimentAlmaPerCluster(
+			return new ExperimentAlmaFullPipeline(
 					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_IT.xml",
-					dataDir, fileLimit, outDir,
-					TreeTaggerIT.class,
-					FNR_IT.class
-					);
+					dataDir, fileLimit, outDir);
 		}
 		
 		return null;
@@ -139,10 +210,10 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 	public static void main(String[] args) {
 
 		String tlDir = "./";
-		String dataDir = tlDir+"src/main/resources/exci/alma/xmi_perFragmentGraph/";
-		String gsAnnotationsDir = tlDir+"src/main/resources/exci/alma/goldStandardAnnotation/Test/";
+		String dataDir = tlDir+"src/main/resources/exci/alma/xmi_perInteraction/test";
+		String gsAnnotationsDir = tlDir+"src/main/resources/exci/alma/goldStandardAnnotation/test/";
 		
-		int fileLimit = 1000000;
+		int fileLimit = 3;
 		String outDir = dataDir.replace("resources", "outputs");
 
 		ResultsContainer combinedExperimet = new ResultsContainer(); 
@@ -171,7 +242,7 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 				
-			ExperimentAlmaPerCluster e = null;
+			ExperimentAlmaFullPipeline e = null;
 			EntailmentGraphRaw rawGraph = null;
 			try {
 				e = initExperiment(name, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir);
@@ -190,7 +261,7 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 					| ModifierAnnotatorException | GraphMergerException
 					| GraphOptimizerException | FragmentGraphGeneratorException
 					| IOException | EntailmentGraphRawException
-					| TransformerException e2) {
+					| TransformerException | ClassNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			} 
