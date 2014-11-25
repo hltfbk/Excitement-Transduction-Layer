@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
@@ -11,20 +12,34 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.uima.cas.CAS;
+import org.apache.uima.cas.FSIterator;
+import org.apache.uima.cas.Feature;
+import org.apache.uima.cas.FeatureStructure;
+import org.apache.uima.cas.FloatArrayFS;
+import org.apache.uima.cas.IntArrayFS;
+import org.apache.uima.cas.StringArrayFS;
+import org.apache.uima.cas.Type;
+import org.apache.uima.cas.text.AnnotationFS;
+import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.apache.uima.jcas.tcas.DocumentAnnotation;
 import org.uimafit.util.JCasUtil;
 
 import com.aliasi.util.Collections;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
 import eu.excitement.type.tl.KeywordAnnotation;
+import eu.excitement.type.tl.ModifierAnnotation;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -147,12 +162,10 @@ public final class AnnotationUtils {
 	 * @throws ModifierAnnotatorException
 	 */
 	public static void annotatePhraseModifier(JCas aJCas, Set<Region> frag) {
-
+		
 		if (frag != null && frag.size() > 0) {
 			// compress the spans (by concatenating adjacent portions) before generating the fragment annotation
-			
-			System.out.println("Annotating phrase modifier, but first compress the regions");
-			
+						
 			frag = RegionUtils.compressRegions(frag);
 
 			CASUtils.Region[] r = new CASUtils.Region[frag.size()];
@@ -161,8 +174,6 @@ public final class AnnotationUtils {
 				r[i++] = new CASUtils.Region(s.getBegin(), s.getEnd());
 			}
 			
-			System.out.println("Now calling CASUtils to actually add the modifier");
-
 			try {
 				CASUtils.annotateOneModifier(aJCas, r);
 			} catch (LAPException e) {
@@ -171,55 +182,7 @@ public final class AnnotationUtils {
 			}
 		}
 	}
-	
-	/**
-	 * Adds modifier annotations to a CAS object for a given fragment. These modifiers must have the given POS. 
-	 * 
-	 * @param aJCas a CAS object
-	 * @param frag a fragment annotation in the given CAS object
-	 * @param negationPos the position of the negation in the fragment (-1 if there is none)
-	 * @param modClass the POS class of the modifiers to be annotated
-	 * @throws ModifierAnnotatorException 
-	 */
-	public static void addModifiers(JCas aJCas, FragmentAnnotation frag, int negationPos, Class<? extends Annotation> modClass) throws ModifierAnnotatorException {
-
-		Logger modLogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator:addModifiers");
-		
-		List<? extends Annotation> listMods = JCasUtil.selectCovered(aJCas, modClass, frag);
-		int num_mods = 0;
-		
-		if (listMods != null && ! listMods.isEmpty()) {
-			for (Annotation a: listMods) {
-
-				int begin = a.getBegin(); 
-				int end = a.getEnd(); 
-
-//				if (! isNegation(a.getCoveredText()) &&
-//					! inNegationScope(begin, frag, negationPos)) {
-				if ( negationPos < 0 ||
-						( ! isNegation(a.getCoveredText()) &&
-						  ! inNegationScope(begin, frag, negationPos)) 
-					) {
-					
-					CASUtils.Region[] r = new CASUtils.Region[1]; 
-					r[0] = new CASUtils.Region(begin,  end); 
-	
-					modLogger.info("Annotating the following as a modifier: " + a.getCoveredText());
-				
-					try {
-						CASUtils.annotateOneModifier(aJCas, r); 
-					} catch (LAPException e) {
-						throw new ModifierAnnotatorException("CASUtils reported exception while annotating Modifier, on sentence (" + begin + ","+ end, e );
-					}
-					num_mods++;
-				} else {
-					modLogger.info("Potential modifier is or is in scope of a negation: " + a.getCoveredText());
-				}
-			}
-		}
-		modLogger.info("Annotated " + num_mods + " for fragment " + frag.getCoveredText());
-		num_mods = 0;
-	}			
+			
 
 	
 	/**
@@ -247,15 +210,15 @@ public final class AnnotationUtils {
 	 * @param a the given annotation from which the phrase is being generated 
 	 * @return
 	 */
-	public static Set<Region> getPhraseRegion(JCas aJCas, Annotation a){
+	public static Set<Region> getPhraseRegion(JCas aJCas, Annotation boundingAnnotation, Annotation a){
 
-		Set<Region> frags = null;
+		Set<Region> regions = null;
 			
 		if (isGovernorInDeps(aJCas, a)) {
-			frags = getFragment(a.getCoveredText(), a.getBegin(), a.getEnd(), aJCas);
+			regions = getRegions(a.getCoveredText(), a.getBegin(), a.getEnd(), aJCas, boundingAnnotation, "get governed");
 		}
 			
-		return frags;
+		return regions;
 	}
 		
 
@@ -266,16 +229,17 @@ public final class AnnotationUtils {
 	 * @param begin -- beginning position of the word
 	 * @param end -- end position of the word
 	 * @param aJCas -- CAS object
+	 * @param string 
 	 * @return a set of spans corresponding to the fragment. Maybe we could compress this by merging adjacent fragments
 	 */
-	public static Set<Region> getFragment(String word, int begin, int end, JCas aJCas) {
+	public static Set<Region> getRegions(String word, int begin, int end, JCas aJCas, Annotation boundingAnnotation, String dependencyType) {
 	
 		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.AnnotationUtils.getFragment");
 
-		logger.info("\tbuildling fragment around " + word + " (" + begin + "," + end + ")");
+		logger.info("\tbuilding fragment around " + word + " (" + begin + "," + end + ")");
 	
 		//	List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, begin, end);
-		List<Dependency> deps = getRelevantDependencies(aJCas, begin, end);
+		List<Dependency> deps = getRelevantDependencies(aJCas, boundingAnnotation, begin, end, dependencyType);
 	
 		// create the spans sorted by their location in the text, so they can be properly concatenated
 		SortedSet<Region> spans = new TreeSet<Region>(new Comparator<Region>() {
@@ -297,7 +261,7 @@ public final class AnnotationUtils {
 				//	if (d.getGovernor().getCoveredText().matches(word)) {
 				if (d.getGovernor().getCoveredText().equals(word)) {
 					Token t = d.getDependent();
-					Set<Region> newSpans = getFragment(t.getCoveredText(), t.getBegin(), t.getEnd(), aJCas);
+					Set<Region> newSpans = getRegions(t.getCoveredText(), t.getBegin(), t.getEnd(), aJCas, boundingAnnotation, dependencyType);
 					if (newSpans != null && newSpans.size() > 0) {
 						spans.addAll(newSpans);
 					}
@@ -314,6 +278,7 @@ public final class AnnotationUtils {
 	}
 
 	
+	
 	// necessary because the begin/end of each dependency is the entire text, so we get all the dependencies 
 	// in the text using selectCovering(...) while selectCovered(...) is too restrictive
 	/**
@@ -322,23 +287,36 @@ public final class AnnotationUtils {
 	 * @param aJCas the CAS object
 	 * @param begin the start position of the governor
 	 * @param end the end position of the governor
+	 * @param dependencyType 
 	 * @return a list of dependencies for which the governor is indeed the governor
 	 */
-	public static List<Dependency> getRelevantDependencies(JCas aJCas, int begin, int end) {
+	public static List<Dependency> getRelevantDependencies(JCas aJCas, Annotation boundingAnnotation, int begin, int end, String dependencyType) {
 		
 		List<Dependency> deps = JCasUtil.selectCovering(aJCas, Dependency.class, begin, end);
 		List<Dependency> relevantDeps = new ArrayList<Dependency>();
 		
+//		System.out.println("Getting dependencies for string at position (" + begin + "," + end + ") --> " + dependencyType + " in bounds (" + boundingAnnotation.getBegin() + "," + boundingAnnotation.getEnd() + ")");
+		
 		for (Dependency d: deps) {
-			if ( ( ! d.getGovernor().getCoveredText().equals(d.getDependent().getCoveredText())) // this test is because of a strange dependency noted while using OMQ with MaltParser (im,im) => MNR
+			
+//			System.out.println("checking dependency " + writeDependency(d));
+			
+			if ( isInBounds(d, boundingAnnotation)
+					&&
+				 ( ! d.getGovernor().getCoveredText().equals(d.getDependent().getCoveredText())) // this test is because of a strange dependency noted while using OMQ with MaltParser (im,im) => MNR
 					&&
 				 ( d.getDependent().getCoveredText().matches("\\w.*")) // avoid punctuation (at least starts with letter)
-					&&
-				 ( (d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end)
-				     || 
-				   (d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end))
-				) {
-				relevantDeps.add(d);
+			) {
+				
+				if ((dependencyType.equals("get governed") &&  (d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end))
+					 ||
+					 (dependencyType.equals("get governor") && (d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end))
+					 ||
+					 (dependencyType.equals("any") && ((d.getGovernor().getBegin() == begin && d.getGovernor().getEnd() == end) 
+							 									|| 
+							 							(d.getDependent().getBegin() == begin && d.getDependent().getEnd() == end)))) {
+					relevantDeps.add(d);
+				}
 			}
 		}
 		
@@ -346,7 +324,39 @@ public final class AnnotationUtils {
 	}
 
 	
+	private static String writeDependency(Dependency d) {
+		return d.getGovernor().getCoveredText() + " (" + d.getGovernor().getBegin() + "," + d.getGovernor().getEnd() + ") <== " 
+				+ d.getDependent().getCoveredText() + " (" + d.getDependent().getBegin() + "," + d.getDependent().getEnd() + ")";
+	}
+
+
+	/**
+	 * Verifies if a given dependency is within the bound of the given annotation
+	 * (Issues: when the annotation is not continuous, but made up of smaller parts)
+	 * 
+	 * @param d -- a Dependency annotation 
+	 * @param boundingAnnotation -- an annotation (e.g. fragment)
+	 * @return true of both arguments of the dependency d are covered by the given annotation
+	 */
+	private static boolean isInBounds(Dependency d,
+			Annotation boundingAnnotation) {
+		return (covers(boundingAnnotation, d.getDependent()) && covers(boundingAnnotation, d.getGovernor()));
+	}
+
 	
+	/**
+	 * Verifies if a given annotation covers the given token
+	 * (Issues: when the annotation is not continuous, but made up of smaller parts)
+	 * 
+	 * @param boundingAnnotation
+	 * @param token
+	 * @return true if token is within the span of the annotation
+	 */
+	private static boolean covers(Annotation boundingAnnotation, Token token) {
+		return (boundingAnnotation.getBegin() <= token.getBegin() && boundingAnnotation.getEnd() >= token.getEnd());
+	}
+
+
 	/**
 	 * Check if a given word (passed as an Annotation parameter) appears as governor in some dependency relation
 	 * (used to avoid having unigram fragments)
@@ -438,8 +448,9 @@ public final class AnnotationUtils {
 	 */
 	public static boolean inNegationScope(int m_begin, FragmentAnnotation f, int negationPos) {
 
+		System.out.println("checking negation scope: " + negationPos + " mod begins at " + m_begin);
 		// we could check here only relative to the fragment parts ...
-		if (negationPos > 0 && (m_begin - f.getBegin() >= negationPos)) {
+		if (negationPos > 0 && (negationPos < m_begin) && ! phraseChange(f, m_begin, negationPos)) {
 			return true;
 		}
 		
@@ -448,6 +459,42 @@ public final class AnnotationUtils {
 	
 	
 
+
+	/**
+	 * Very rudimentary check if there has been a phrase change between the position of the negation and the position of the modifier
+	 * -- return true if there are open POS or punctuation marks between the negation position and the position of the modifier
+	 * 
+	 * @param f
+	 * @param m_begin
+	 * @param negationPos
+	 * @return
+	 */
+	private static boolean phraseChange(FragmentAnnotation frag, int m_begin,
+			int negationPos) {
+
+		System.out.println("Checking if there is a phrase break between negation and modifier");
+		
+		List<Token> tokens = JCasUtil.selectCovered(Token.class, frag);
+		
+		if (tokens != null && tokens.size() > 0) {
+			for (Token t : tokens) {
+				if (t.getBegin() > negationPos && t.getBegin() < m_begin && ! isOpenClass(t.getPos().getPosValue())) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+
+	
+	
+
+	private static boolean isOpenClass(String pos) {
+		Pattern openClassPOS = Pattern.compile("^(n|adv|adj|v)", Pattern.CASE_INSENSITIVE);
+		Matcher m = openClassPOS.matcher(pos);
+		return m.find();
+	}
 
 
 	/** 
@@ -471,7 +518,13 @@ public final class AnnotationUtils {
 	}
 
 	
-	
+	/**
+	 * Makes a Region that covers the given "text" within the given annotation ("text" must be a substring of the string covered by "a") 
+	 * 
+	 * @param a -- an annotation (e.g. a fragment)
+	 * @param text -- a string (e.g. a modifier within the fragment)
+	 * @return
+	 */
 	public static CASUtils.Region makeRegion(Annotation a, String text) {
 		
 		String a_text = a.getCoveredText();
@@ -480,31 +533,97 @@ public final class AnnotationUtils {
 		
 		return new CASUtils.Region(frag_start, frag_end);
 	}
+
+
+	
+	public static void printAnnotations(JCas aJCas, Class<? extends Annotation> cls) {
+		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.AnnotationUtils");
+		logger.setLevel(Level.INFO);
+		
+		AnnotationIndex<Annotation> posIndex = aJCas.getAnnotationIndex(POS.type);
+		
+		for(Annotation a: posIndex) {
+			logger.info("\t" + a.getCoveredText() + " (" + a.getBegin() + "," + a.getEnd() + ") -> " + a.getClass().getSimpleName());
+		}
+	}
 	
 
+
 	/**
-	 * Collects the annotations and filters out the empty ones (it happens with the keywords sometimes)
+	 * Gather and return the Token-s that have the specified POS
 	 * 
-	 * @param aJCas
-	 * @param class1
-	 * @return
+	 * @param aJCas -- the CAS object
+	 * @param frag -- the fragment annotation
+	 * @param modClass -- the (POS) class of the modifier candidates
+	 * 
+	 * @return the list of tokens that have the specified POS class
 	 */
-/*	public static Collection<? extends Annotation> collectAnnotations(JCas aJCas,
-			Class<? extends Annotation> type) {
+	@SuppressWarnings("unchecked")
+	public static <T> List<T> selectByPOS(JCas aJCas,
+			FragmentAnnotation frag, Class<T> modClass) {
 		
-		Collection<? extends Annotation> anns = JCasUtil.select(aJCas, type);
-		anns.removeAll(anns);
+		List<Token> tokens = JCasUtil.selectCovered(aJCas, Token.class, frag);
+		List<T> list = new ArrayList<T>();
 		
-		for(Annotation a: JCasUtil.select(aJCas, type)) {
-			if (a.getEnd() - a.getBegin() > 0) {
-				anns.add(type.cast(a));
+		for(Token t: tokens) {
+			if (t.getPos().getClass().equals(modClass)) {
+				list.add((T) t.getPos());
 			}
 		}
 		
-		return anns;
+		return list;
 	}
-*/
 
 
+	/**
+	 * Count the annotations that have the given class inside the given CAS object
+	 * 
+	 * @param aJCas -- a CAS object
+	 * @param cls -- the class of Annotation type to be counted
+	 * 
+	 * @return the number of annotations of the given type in the CAS
+	 */
+	public static int countAnnotations(JCas aJCas,
+			Class<? extends Annotation> cls) {
+		
+		DocumentAnnotation da = JCasUtil.selectSingle(aJCas, DocumentAnnotation.class);
+		
+		List<? extends Annotation> anns = JCasUtil.selectCovered(aJCas, cls, da);
+		
+		if (anns != null)
+			return anns.size();
+		
+		return 0;	
+	}
+
+
+	/**
+	 * Count the number of tokens covered by the given annotation class inside the given CAS object
+	 * 
+	 * @param aJCas -- a CAS object
+	 * @param cls -- a class for the wanted Annotation type
+	 * 
+	 * @return the number of tokens covered by the specified annotation class 
+	 */
+	public static int countAnnotationTokens(JCas aJCas,
+			Class<? extends Annotation> cls) {
+		
+		int nr_tokens = 0;
+		
+		DocumentAnnotation da = JCasUtil.selectSingle(aJCas, DocumentAnnotation.class);
+			
+		List<? extends Annotation> anns = JCasUtil.selectCovered(aJCas, cls, da);
+			
+		if (anns != null) {
+			for (Annotation a: anns) {
+				List<Token> tokens = JCasUtil.selectCovered(aJCas, Token.class, a);
+				nr_tokens += tokens.size();
+			}
+		}
+			
+		return nr_tokens;
+	}
+	
 	
 }

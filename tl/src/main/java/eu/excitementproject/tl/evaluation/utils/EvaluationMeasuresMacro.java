@@ -3,12 +3,20 @@ package eu.excitementproject.tl.evaluation.utils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for macro-evaluation. Gathers the evaluation measures per instance, and computes macro precision, recall and f1score 
+ * 
+ * @author vivi@fbk
+ *
+ */
 public class EvaluationMeasuresMacro {
 	
+	// macro measures
 	Double recall = null;
 	Double precision = null;
 	Double fscore = null;
 	
+	// the list of per-instance evaluation measures
 	List<EvaluationMeasures> perInstanceEvals;
 	
 	public EvaluationMeasuresMacro() {

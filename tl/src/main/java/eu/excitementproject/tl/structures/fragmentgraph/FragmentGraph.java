@@ -302,6 +302,13 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	}
 	
 	
+	/**
+	 * Returns the EUM whose text matches the given text
+	 * 
+	 * @param eumText -- a text fragment
+	 *  
+	 * @return the EUM that has the given eumText as text
+	 */
 	private EntailmentUnitMention getVertex(String eumText) {
 		for(EntailmentUnitMention e: this.vertexSet()) {
 			if (e.getText().matches(eumText)) {
@@ -348,6 +355,9 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return depth;
 	}
 
+	/**
+	 * @return true if this fragment graph contains the given EUM object
+	 */
 	@Override
 	public boolean containsVertex(EntailmentUnitMention eum) {
 		for(EntailmentUnitMention e: this.vertexSet()) {
@@ -375,7 +385,11 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		return nodes;
 	}
 
-	
+
+	/**
+	 * 
+	 * @return the interaction id from which this fragment graph was built
+	 */
 	public String getInteractionId(){
 		if (document == null) {
 			return "N/A";

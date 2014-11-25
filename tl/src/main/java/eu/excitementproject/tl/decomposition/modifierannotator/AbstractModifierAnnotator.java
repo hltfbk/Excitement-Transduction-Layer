@@ -32,9 +32,10 @@ clearly exposed in the Constructor.
 		this.lap=lap;
 	}
 
-	/** May need to call LAP and the fragment annotator. The needed LAP should be passed via Constructor. Also, any additional
-configurable parameters of this module implementation should be
-clearly exposed in the Constructor.
+	/** May need to call LAP and the fragment annotator. Modifiers are only annotated inside fragments. 
+	 * 
+	 * The needed LAP and any additional configurable parameters of this module implementation should be
+	 * clearly exposed in the Constructor.
 	 *
 	 * Vivi@fbk
 	 * 
@@ -48,14 +49,26 @@ clearly exposed in the Constructor.
 	}
 
 	
+	/**
+	 * 
+	 * @return the LAP associated with the modifier annotator
+	 */
 	public LAPAccess getLap() {
 		return this.lap;
 	}
 	
+	/**
+	 * 
+	 * @return the fragment annotator associated with the modifier annotator
+	 */
 	public FragmentAnnotator getFragmentAnnotator() {
 		return this.fragAnn;
 	}
 	
+	/**
+	 * 
+	 * @param fragAnn -- the fragment annotator to be used for this modifier annotation
+	 */
 	public void setFragmentAnnotator(FragmentAnnotator fragAnn) {
 		this.fragAnn = fragAnn;
 	}

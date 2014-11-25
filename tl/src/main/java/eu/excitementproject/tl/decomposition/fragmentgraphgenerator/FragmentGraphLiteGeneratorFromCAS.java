@@ -18,6 +18,15 @@ public class FragmentGraphLiteGeneratorFromCAS extends
 
 	private final static Logger logger = Logger.getLogger(FragmentGraphLiteGeneratorFromCAS.class.getName());
 	
+	/**
+	 * generates "lite" fragment graphs from each fragment annotation in a CAS object
+	 * "lite" fragment graph means the graph will have at most 2 nodes, corresponding to the top statement (full fragment text)
+	 * and to the base statement (the fragment without any of the identified modifiers). 
+	 * 
+	 * This was necessary because ALMA data had numerous modifiers which gave rise to huge fragment graphs
+	 * 
+	 * @param text -- a CAS object with fragment annotations
+	 */
 	@Override
 	public Set<FragmentGraph> generateFragmentGraphs(JCas text)
 			throws FragmentGraphGeneratorException {
@@ -25,9 +34,7 @@ public class FragmentGraphLiteGeneratorFromCAS extends
 				
 		for(Annotation a : text.getAnnotationIndex(DeterminedFragment.type)) {
 			logger.info("Processing fragment: " + a.getCoveredText());
-//			if (!(a.getCoveredText().contains("Moonport") && a.getCoveredText().contains("Quasigo terminal"))) {
-				fgs.add(new FragmentGraphLite(text,(DeterminedFragment) a));
-//			}
+			fgs.add(new FragmentGraphLite(text,(DeterminedFragment) a));
 		}
 		return fgs;
 	}

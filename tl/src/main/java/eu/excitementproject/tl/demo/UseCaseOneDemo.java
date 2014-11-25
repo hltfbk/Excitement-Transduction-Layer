@@ -43,6 +43,12 @@ import eu.excitementproject.tl.laputils.LAPUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
 
+/**
+ * Demo class for use case one (ALMA and NICE). 
+ * 
+ * @author vivi@fbk
+ *
+ */
 @SuppressWarnings("unused")
 public class UseCaseOneDemo {
 
@@ -50,8 +56,8 @@ public class UseCaseOneDemo {
 	public static void main(String[] argv) {
 		
 		String configFileName = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_EN.xml";
-		String dataDir = "./src/test/resources/NICE/XMIs/EMAIL0001";
-		String outputFolder = "./src/test/outputs/"+dataDir.replace(".\\src\\test\\resources\\","").replace("\\","/");
+		String dataDir = "./src/main/resources/exci/nice/xmi_perFragmentGraph/all/EMAIL0001";
+		String outputFolder = "./src/test/outputs/"+dataDir.replace(".\\src\\main\\resources\\exci\\","").replace("\\","/");
 		int fileNumberLimit = 4;
 		
 		Logger logger = Logger.getLogger(UseCaseOneDemo.class);
@@ -64,8 +70,8 @@ public class UseCaseOneDemo {
 			
 		UseCaseOneRunnerPrototype useOne;
 		try {
-			useOne = new UseCaseOneRunnerPrototype(configFileName, outputFolder, TreeTaggerEN.class, MaxEntClassificationEDA.class);
-			
+
+			useOne = new UseCaseOneRunnerPrototype(configFileName, outputFolder);			
 			
 			List<JCas> docs = DataUtils.loadData(dataDir, fileNumberLimit);
 
@@ -73,12 +79,15 @@ public class UseCaseOneDemo {
 			EntailmentGraphCollapsed graph = useOne.buildCollapsedGraph(docs);
 			useOne.inspectGraph(graph);
 
-		} catch (ConfigurationException | NoSuchMethodException
-				| SecurityException | InstantiationException
-				| IllegalAccessException | IllegalArgumentException
-				| InvocationTargetException | EDAException | ComponentException
+		} catch (ConfigurationException 
+				| SecurityException 
+				| IllegalArgumentException
+				| ComponentException
 				| FragmentAnnotatorException | ModifierAnnotatorException
-				| GraphMergerException | GraphOptimizerException | FragmentGraphGeneratorException | IOException | EntailmentGraphRawException | TransformerException e) {
+				| GraphMergerException | GraphOptimizerException | FragmentGraphGeneratorException | IOException | EntailmentGraphRawException | TransformerException 
+				| NoSuchMethodException | InstantiationException
+				| IllegalAccessException | InvocationTargetException
+				| EDAException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (EntailmentGraphCollapsedException e) {

@@ -14,11 +14,17 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
  * Finding so called "Modifier", is not that easy task: it is actually picking out non-essential components in terms of predicate structure. (or something like that) 
  * Anyway, this simple implementation does not care about dependOn, or non-continuous regions. 
  * 
- * @author Gil
+ * @author Gil, vivi@fbk
  * 
  */
 public class AdvAsModifierAnnotator extends POSbasedModifierAnnotator {
-
+	
+	/**
+	 * Constructor with LAP, default negation check, adds as classes adverbs (ADV)
+	 * 
+	 * @param lap -- the Linguistic Annotation Pipeline for annotation
+	 * @throws ModifierAnnotatorException
+	 */	
 	@SuppressWarnings("unchecked")
 	public AdvAsModifierAnnotator(LAPAccess lap) throws ModifierAnnotatorException
 	{
@@ -26,6 +32,13 @@ public class AdvAsModifierAnnotator extends POSbasedModifierAnnotator {
 		addPOSClasses(ADV.class);
 	}
 
+	/**
+	 * Constructor with LAP and negation check, adds as classes adverbs (ADV)
+	 * 
+	 * @param lap -- the Linguistic Annotation Pipeline for annotation
+	 * @param checkNegation -- check/not whether the modifier candidate is in the scope of a negation
+	 * @throws ModifierAnnotatorException
+	 */
 	@SuppressWarnings("unchecked")
 	public AdvAsModifierAnnotator(LAPAccess lap, boolean checkNegation) throws ModifierAnnotatorException
 	{
@@ -33,6 +46,13 @@ public class AdvAsModifierAnnotator extends POSbasedModifierAnnotator {
 		addPOSClasses(ADV.class);
 	}
 
+	/**
+	 * Constructor with LAP and fragment annotator, default negation check, adds as classes adverbs (ADV)
+	 * 
+	 * @param lap -- the Linguistic Annotation Pipeline for annotation
+	 * @param fragAnn -- fragment annotator
+	 * @throws ModifierAnnotatorException
+	 */
 	@SuppressWarnings("unchecked")
 	public AdvAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn) throws ModifierAnnotatorException
 	{
@@ -40,6 +60,14 @@ public class AdvAsModifierAnnotator extends POSbasedModifierAnnotator {
 		addPOSClasses(ADV.class);
 	}
 
+	/**
+	 * Constructor with LAP, fragment annotator and negation check, adds as classes adverbs (ADV) and adjectives (ADJ)
+	 * 
+	 * @param lap -- the Linguistic Annotation Pipeline for annotation
+	 * @param fragAnn -- fragment annotator
+	 * @param checkNegation -- check/not whether the modifier candidate is in the scope of a negation
+	 * @throws ModifierAnnotatorException
+	 */		
 	@SuppressWarnings("unchecked")
 	public AdvAsModifierAnnotator(LAPAccess lap, FragmentAnnotator fragAnn, boolean checkNegation) throws ModifierAnnotatorException
 	{
