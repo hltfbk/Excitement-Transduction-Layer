@@ -3,7 +3,6 @@ package eu.excitementproject.tl.evaluation.categoryannotator;
 import java.io.File;
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,6 +19,7 @@ import org.apache.uima.jcas.JCas;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
 import eu.excitement.type.tl.CategoryDecision;
+import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalResourceException;
 import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalRule;
@@ -30,8 +30,10 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
+import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
+import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -473,42 +475,58 @@ public class EvaluatorUtils {
 		
 	/**
 	 * build Set<FragmentGraph>
-	 *  
+	 * 
 	 * @param interactionList
 	 * @param relevantTextProvided
 	 * @param fragmentAnnotator
+	 * @param modifierAnnotator
 	 * @param fragGenerator
 	 * @return
 	 * @throws LAPException
 	 * @throws FragmentAnnotatorException
 	 * @throws FragmentGraphGeneratorException
+	 * @throws ModifierAnnotatorException
 	 */
 	public static Set<FragmentGraph> buildFragmentGraphs(List<Interaction> interactionList, boolean relevantTextProvided, 
-			FragmentAnnotator fragmentAnnotator, FragmentGraphGenerator fragGenerator) 
-					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException{
+			FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator, FragmentGraphGenerator fragGenerator) 
+					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException, ModifierAnnotatorException{
 		
 		Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
 		for(Interaction interaction : interactionList){
-			fragmentGraphs.addAll(buildFragmentGraphs(interaction, relevantTextProvided, fragmentAnnotator, fragGenerator));
+			fragmentGraphs.addAll(buildFragmentGraphs(interaction, relevantTextProvided, fragmentAnnotator, 
+					modifierAnnotator, fragGenerator));
 		}
 		return fragmentGraphs;
 	}
 	
 	
 	/**
-	 * @throws LAPException 
-	 * @throws FragmentAnnotatorException 
-	 * @throws FragmentGraphGeneratorException 
+	 * build Set<FragmentGraph>
 	 * 
+	 * @param interaction
+	 * @param relevantTextProvided
+	 * @param fragmentAnnotator
+	 * @param modifierAnnotator
+	 * @param fragGenerator
+	 * @return
+	 * @throws LAPException
+	 * @throws FragmentAnnotatorException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws ModifierAnnotatorException
 	 */
 	public static Set<FragmentGraph> buildFragmentGraphs(Interaction interaction, boolean relevantTextProvided, 
-			FragmentAnnotator fragmentAnnotator, FragmentGraphGenerator fragGenerator) 
-					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException{
+			FragmentAnnotator fragmentAnnotator, ModifierAnnotator modifierAnnotator, FragmentGraphGenerator fragGenerator) 
+					throws LAPException, FragmentAnnotatorException, FragmentGraphGeneratorException, ModifierAnnotatorException{
 		
 		List<JCas> docCases = interaction.createAndFillInputCASes(relevantTextProvided);
 		Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
 		for(JCas cas : docCases) {
 			fragmentAnnotator.annotateFragments(cas);
+			if(modifierAnnotator != null) {
+				if(cas.getAnnotationIndex(DeterminedFragment.type).size() > 0){
+					modifierAnnotator.annotateModifiers(cas);
+				}
+			}
 			fragmentGraphs.addAll(fragGenerator.generateFragmentGraphs(cas));
 		}
 		return fragmentGraphs;
@@ -522,7 +540,8 @@ public class EvaluatorUtils {
 	 */
 	
 	/**
-	 * merge Set<FragmentGraph> into single token EntailmentGraphRaw
+	 * merge Set<FragmentGraph> into a single token EntailmentGraphRaw
+	 * 
 	 * @param singleTokenGraph
 	 * @param fgs
 	 * @throws LexicalResourceException 
@@ -540,7 +559,7 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * merge one FragmentGraph into single token EntailmentGraphRaw with only lemma related edges
+	 * merge one FragmentGraph into a single token EntailmentGraphRaw with only lemma related edges
 	 *  
 	 * @param singleTokenGraph
 	 * @param fg
@@ -566,33 +585,45 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * merge Set<FragmentGraph> into two token EntailmentGraphRaw
-	 * @param twoTokenGraph
+	 * merge Set<FragmentGraph> into a two token EntailmentGraphRaw
+	 *  
+	 * @param twoTokenRawGraph
 	 * @param fgs
-	 * @throws LexicalResourceException 
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param onlyBidirectionalEdges
+	 * @throws LexicalResourceException
 	 */
-	public static void mergeIntoDependencyGraph(
-			EntailmentGraphRaw twoTokenRawGraph, Set<FragmentGraph> fgs, DerivBaseResource derivBaseResource, 
-			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter)  
+	public static void mergeIntoDependencyGraph(EntailmentGraphRaw twoTokenRawGraph, Set<FragmentGraph> fgs, 
+			DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
+			GermanWordSplitter splitter, boolean onlyBidirectionalEdges)  
 					throws LexicalResourceException{
 		
 		List<FragmentGraph> fgList = new LinkedList<FragmentGraph>(fgs);
 		Collections.sort(fgList, new FragmentGraph.CompleteStatementComparator());
 		for(FragmentGraph fg : fgList) {
-			mergeIntoDependencyGraph(twoTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			mergeIntoDependencyGraph(twoTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, onlyBidirectionalEdges);
 		}
 	}
 	
 	
 	/**
-	 * merge one FragmentGraph into two token EntailmentGraphRaw
-	 * @param twoTokenGraph2
+	 * merge one FragmentGraph into a two token EntailmentGraphRaw
+	 * 
+	 * @param twoTokenRawGraph
 	 * @param fg
-	 * @throws LexicalResourceException 
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param onlyBidirectionalEdges
+	 * @throws LexicalResourceException
 	 */
-	public static void mergeIntoDependencyGraph(
-			EntailmentGraphRaw twoTokenRawGraph, FragmentGraph fg, DerivBaseResource derivBaseResource, 
-			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter) 
+	public static void mergeIntoDependencyGraph(EntailmentGraphRaw twoTokenRawGraph, FragmentGraph fg, 
+			DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
+			GermanWordSplitter splitter, boolean onlyBidirectionalEdges) 
 					throws LexicalResourceException {
 		
 		for(EntailmentUnitMention eum : fg.vertexSet()) {
@@ -600,15 +631,18 @@ public class EvaluatorUtils {
 			EntailmentUnit newStatement = twoTokenRawGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
 			//direction new statement <--> graph statement
 			addBidirectionalEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
-			//direction new statement --> graph statement 
-			addOneDirectionalEntailedEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
-			//direction graph statement --> new statement
-			addOneDirectionalEntailingEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			if(!onlyBidirectionalEdges) {
+				//direction new statement --> graph statement 
+				addOneDirectionalEntailedEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+				//direction graph statement --> new statement
+				addOneDirectionalEntailingEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			}
 		}
 	}
 	
 	/**
-	 * 
+	 * add bidirectional entailment edges going from and to the input EntailmentUnit
+	 *  
 	 * @param egr
 	 * @param inputEntailmentUnit
 	 * @param dbr
@@ -636,6 +670,7 @@ public class EvaluatorUtils {
 	}
 
 	/**
+	 * add entailment edges going from the input EntailmentUnit
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
@@ -659,11 +694,12 @@ public class EvaluatorUtils {
 	}
 	
 	/**
+	 * add entailment edges going to the input EntailmentUnit
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
 	 * @param derivBaseResource
-	 * @param gnw
+	 * @param germaNetWrapper
 	 * @param germanetRelations
 	 * @param splitter
 	 * @throws LexicalResourceException
@@ -678,6 +714,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
+	 * add edges going from or to the input EntailmentUnit depending on the given direction
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
@@ -685,7 +722,7 @@ public class EvaluatorUtils {
 	 * @param gnw
 	 * @param germanetRelations
 	 * @param splitter
-	 * @param direction
+	 * @param direction -- allowed values "both", "inputToGraph", "graphToInput"
 	 * @throws LexicalResourceException
 	 */
 	private static void addTEEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, 
@@ -725,7 +762,9 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * get related text for single and two token text
+	 * get related text for a single or a two token text given the lexical resource
+	 * DerivBaseResource, GermaNet or GermanWordSplitter
+	 * 
 	 * @param text
 	 * @param lemmatizedText
 	 * @param derivBaseResource
@@ -774,13 +813,14 @@ public class EvaluatorUtils {
 	
 	
 	/**
+	 * get set of related lemma given the lexical resource
+	 * DerivBaseResource, GermaNet or GermanWordSplitter
 	 * 
 	 * @param lemma
 	 * @param derivBaseResource
 	 * @param germaNetWrapper
 	 * @param germaNetRelations
 	 * @param splitter
-	 * @param crossLexicalResource
 	 * @return
 	 * @throws LexicalResourceException
 	 */
@@ -803,7 +843,8 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * given the DerivBase resource get lemmas related to an input lemma 
+	 * get set of related lemma given the lexical resource DerivBaseResource
+	 * 
 	 * @param lemma
 	 * @param derivBaseResource
 	 * @return
@@ -820,7 +861,8 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * given the GermanWordSplitter resource get lemmas related to an input lemma 
+	 * get set of related lemma given the resource GermanWordSplitter
+	 * 
 	 * @param lemma
 	 * @param splitter
 	 * @return
@@ -845,7 +887,8 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * given the GermaNetResource resource get lemmas related to an input lemma 
+	 * get set of related lemma given the lexical resource GermaNet
+	 * 
 	 * @param lemma
 	 * @param germaNetWrapper
 	 * @param germaNetRelations
@@ -874,9 +917,10 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * Splits the lemma string around matches of the regular expression \\|
-	 * Deal with lemma of type: lemma|lemma, which is sometimes return by TreeTagger.
-	 * @param token
+	 * Split the lemma string around matches of the regular expression \\|
+	 * (to deal with lemma type: lemma|lemma, which is sometimes return by TreeTagger).
+	 * 
+	 * @param lemma
 	 * @return
 	 */
 	private static String [] getLemmas(String lemma) {
@@ -885,6 +929,7 @@ public class EvaluatorUtils {
 	
 	/**
 	 * get Set<EntailmentUnit> with a given lemmatized text
+	 * 
 	 * @param egr
 	 * @param lemmatizedText
 	 * @param ignoreCase
@@ -892,42 +937,18 @@ public class EvaluatorUtils {
 	 */
 	private static Set<EntailmentUnit> getLemmatizedVertex(EntailmentGraphRaw egr, String lemmatizedText, boolean ignoreCase) {
 		Set<EntailmentUnit> resultSet = new HashSet<EntailmentUnit>();
+		if(ignoreCase) {
+			lemmatizedText = lemmatizedText.toLowerCase();
+		}
 		if(egr.hasLemmatizedLabel()){
 			for(EntailmentUnit eu : egr.vertexSet()){
+				
+				String euLemmatizedText = eu.getLemmatizedText();
 				if(ignoreCase){
-					if(eu.getLemmatizedText().equalsIgnoreCase(lemmatizedText)){
-						resultSet.add(eu);
-					}
-				} else {
-					if (eu.getLemmatizedText().equals(lemmatizedText)){
-						resultSet.add(eu);
-					}
+					euLemmatizedText = euLemmatizedText.toLowerCase();
 				}
-			}
-		}
-		return  resultSet;
-	}
-	
-	/**
-	 * get Set<EntailmentUnit> with given lemmatized text from a Set<String> lemmatizedTextSet
-	 * @param egr
-	 * @param lemmatizedTextSet
-	 * @param ignoreCase
-	 * @return
-	 */
-	private static Set<EntailmentUnit> getLemmatizedVertex(EntailmentGraphRaw egr, Set<String> lemmatizedTextSet, boolean ignoreCase) {
-		Set<EntailmentUnit> resultSet = new HashSet<EntailmentUnit>();
-		Set<String> textsToFind = lemmatizedTextSet;
-		
-		if(ignoreCase){
-			for(String lemmatizedText : lemmatizedTextSet){
-				textsToFind.add(lemmatizedText.toLowerCase());
-			}
-		}
-		
-		if(egr.hasLemmatizedLabel()){
-			for(EntailmentUnit eu : egr.vertexSet()){
-				if(textsToFind.contains(eu.getLemmatizedText().toLowerCase())){
+				
+				if (euLemmatizedText.equals(lemmatizedText)){
 					resultSet.add(eu);
 				}
 			}
@@ -936,10 +957,46 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * Given two lists A and B, combine every element of A and B to a string "a b" and "b a"
+	 * get Set<EntailmentUnit> with given lemmatized text from a Set<String> lemmatizedTextSet
+	 * 
+	 * @param egr
+	 * @param lemmatizedTextSet
+	 * @param ignoreCase
+	 * @return
+	 */
+	private static Set<EntailmentUnit> getLemmatizedVertex(EntailmentGraphRaw egr, Set<String> lemmatizedTextSet, boolean ignoreCase) {
+		Set<EntailmentUnit> resultSet = new HashSet<EntailmentUnit>();
+		Set<String> textsToFind = new HashSet<String>();
+		
+		if(ignoreCase){
+			for(String lemmatizedText : lemmatizedTextSet){
+				textsToFind.add(lemmatizedText.toLowerCase());
+			}
+		}else {
+			textsToFind = lemmatizedTextSet;
+		}
+		
+		if(egr.hasLemmatizedLabel()){
+			for(EntailmentUnit eu : egr.vertexSet()){
+				String lemmatizedText = eu.getLemmatizedText();
+				if(ignoreCase){
+					lemmatizedText = lemmatizedText.toLowerCase();
+				}
+				if(textsToFind.contains(lemmatizedText)){
+					resultSet.add(eu);
+				}
+			}
+		}
+		return  resultSet;
+	}
+	
+	/**
+	 * Given two sets A and B, combine every element of A and B to a string "a b" and "b a"
 	 * Return a list of all combinations.
-	 * @param alist
-	 * @param blist
+	 * 
+	 * @param aSet
+	 * @param bSet
+	 * @param useLowerCase
 	 * @return
 	 */
 	private static Set<String> getPermutations(Set<String> aSet, Set<String> bSet, boolean useLowerCase){
