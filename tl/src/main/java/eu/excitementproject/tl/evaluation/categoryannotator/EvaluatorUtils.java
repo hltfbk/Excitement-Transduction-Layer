@@ -937,16 +937,19 @@ public class EvaluatorUtils {
 	 */
 	private static Set<EntailmentUnit> getLemmatizedVertex(EntailmentGraphRaw egr, String lemmatizedText, boolean ignoreCase) {
 		Set<EntailmentUnit> resultSet = new HashSet<EntailmentUnit>();
+		if(ignoreCase) {
+			lemmatizedText = lemmatizedText.toLowerCase();
+		}
 		if(egr.hasLemmatizedLabel()){
 			for(EntailmentUnit eu : egr.vertexSet()){
+				
+				String euLemmatizedText = eu.getLemmatizedText();
 				if(ignoreCase){
-					if(eu.getLemmatizedText().equalsIgnoreCase(lemmatizedText)){
-						resultSet.add(eu);
-					}
-				} else {
-					if (eu.getLemmatizedText().equals(lemmatizedText)){
-						resultSet.add(eu);
-					}
+					euLemmatizedText = euLemmatizedText.toLowerCase();
+				}
+				
+				if (euLemmatizedText.equals(lemmatizedText)){
+					resultSet.add(eu);
 				}
 			}
 		}
