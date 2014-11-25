@@ -15,6 +15,8 @@ import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
+
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.FragmentPart;
@@ -33,9 +35,27 @@ import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.LAPUtils;
 import eu.excitementproject.tl.structures.Interaction;
 
+/**
+ * Collection of static methods for evaluating the fragment annotations
+ * 
+ * @author vivi@fbk and gil@heidelberg
+ *
+ */
 @SuppressWarnings("unused")
 public class FragmentAnnotatorEvaluator {
 
+	/**
+	 * Evaluates the fragment annotations (token by token)
+	 * 
+	 * @param xmiDir -- directory with gold-standard XMIs
+	 * @param fragmentAnnotator -- fragment annotator 
+	 * @param language
+	 * @return an EvaluationMeasures object that contains the counts (TP, FP, TN, FN)
+	 * 
+	 * @throws LAPException
+	 * @throws FragmentAnnotatorException
+	 * @throws IOException
+	 */
 	public static EvaluationMeasures evaluateFragments(String xmiDir, String fragmentAnnotator, String language) 
 			throws LAPException, FragmentAnnotatorException, IOException{
 		
@@ -83,29 +103,47 @@ public class FragmentAnnotatorEvaluator {
 				AnnotationUtils.transferAnnotations(goldJCas, sysJCas, KeywordAnnotation.class);
 								
 				fragAnnot.annotateFragments(sysJCas); 
+				
+				AnnotationUtils.printAnnotations(sysJCas, POS.class);
 			
 				List<Integer> fragCounts =  FragmentAndModifierMatchCounter.countFragmentCounts(sysJCas, goldJCas);
+//				List<Integer> fragCounts =  FragmentAndModifierMatchCounter.countFragmentCountsRelativeToBaseStatements(sysJCas, goldJCas);
+
 				counts = addScores(counts,fragCounts);
 				emm.addScores(new EvaluationMeasures(fragCounts));
 			}
 		}
 		
-		logger.info("Final counts: " + counts.toString());
-		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n");
+		logger.info("Final counts: " + counts.toString() + " / " + FragmentAndModifierMatchCounter.getClassDetails(counts));
+		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n" + "Number of instances: " + emm.getNrOfInstances());
 		
 		return new EvaluationMeasures(counts);
 	}
 	
 	
-	private static List<Integer> addScores(List<Integer> counts, List<Integer> modCounts) {
+	/**
+	 * Add counts for the current fragment/interaction to the existing counts
+	 * 
+	 * @param counts
+	 * @param fragCounts
+	 * @return
+	 */
+	private static List<Integer> addScores(List<Integer> counts, List<Integer> fragCounts) {
 				
-		return new ArrayList<Integer>(Arrays.asList(counts.get(0) + modCounts.get(0),
-													counts.get(1) + modCounts.get(1),
-													counts.get(2) + modCounts.get(2),
-													counts.get(3) + modCounts.get(3)));
+		return new ArrayList<Integer>(Arrays.asList(counts.get(0) + fragCounts.get(0),
+													counts.get(1) + fragCounts.get(1),
+													counts.get(2) + fragCounts.get(2),
+													counts.get(3) + fragCounts.get(3)));
 	}
 
 
+	/**
+	 * Initializes the fragment annotator using the given class and LAP
+	 * 
+	 * @param fragmentAnnotator 
+	 * @param lap -- the Linguistic Analysis Pipeline for the given fragment annotator
+	 * @return
+	 */
 	private static AbstractFragmentAnnotator initializeAnnotator(
 			String fragmentAnnotator, LAPAccess lap) {
 		AbstractFragmentAnnotator fragAnnot = null;

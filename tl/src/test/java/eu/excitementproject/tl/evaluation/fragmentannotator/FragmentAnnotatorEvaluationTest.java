@@ -25,15 +25,15 @@ public class FragmentAnnotatorEvaluationTest {
 		try {
 			EvaluationMeasures eval = FragmentAnnotatorEvaluator.evaluateFragments(
 					
-					"src/main/resources/exci/alma/xmi_perFragmentGraph/",
-//					"src/main/resources/exci/nice/xmi_perFragmentGraph/all/",
+//					"src/main/resources/exci/alma/xmi_perFragmentGraph/",
+					"src/main/resources/exci/nice/xmi_perFragmentGraph/all/",
 					
-//					"eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator",
+					"eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator",
 //					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator",
-					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator", 
+//					"eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator", 
 
-					"IT");
-//					"EN");
+//					"IT");
+					"EN");
 			
 			logger.info(eval.toString());
 			

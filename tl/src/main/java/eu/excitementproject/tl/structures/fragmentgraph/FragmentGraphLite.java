@@ -8,21 +8,32 @@ import org.jgrapht.graph.ClassBasedEdgeFactory;
 import eu.excitement.type.tl.FragmentAnnotation;
 import eu.excitement.type.tl.ModifierAnnotation;
 
-/*
- * The "lite" version of the fragment graphs, with only top (complete) and bottom (base) nodes (statements)
+/**
+ * Class for the "lite" version of the fragment graphs, with only top (complete) and bottom (base) nodes (statements)
+ * 
+ * @author vivi@fbk
+ *
  */
 public class FragmentGraphLite extends FragmentGraph {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -518117209342716390L;
-	
+
+	/**
+	 * Basic constructor from edge class
+	 * 
+	 * @param edgeClass
+	 */
 	public FragmentGraphLite(Class<? extends FragmentGraphEdge> edgeClass) {
 		super(edgeClass);
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Constructor from edge factory
+	 * 
+	 * @param classBasedEdgeFactory
+	 */
 	public FragmentGraphLite(
 			ClassBasedEdgeFactory<EntailmentUnitMention, FragmentGraphEdge> classBasedEdgeFactory) {
 		super(classBasedEdgeFactory);
