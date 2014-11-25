@@ -234,6 +234,18 @@ public class GoldStandardEdgesLoader {
 	
 	
 	
+	/**
+	 * Adds the edges from a given xml file with annotations to {@link edges} map. 
+	 * 
+	 * If {@link nodesOfInterest} is not null, only edges between the nodes of interest will be added, other edges will be discarded.
+	 * If {@link nodesOfInterest} is null, all the edges will be added.
+	 * 
+	 * If {@link excludeSelfLoops} is true, no edges between nodes with the same text will be added.
+	 * 
+	 * @param xmlAnnotationFilename
+	 * @param isFragmentGraphAnnotation
+	 * @throws GraphEvaluatorException
+	 */
 	public void addAnnotationsFromFile(String xmlAnnotationFilename, boolean isFragmentGraphAnnotation) throws GraphEvaluatorException{		
 		// read all the nodes from xml annotation file and add them to the index 
 	   		try {
@@ -246,6 +258,7 @@ public class GoldStandardEdgesLoader {
 					NodeList nodes = doc.getElementsByTagName("node");
 					
 	   				int discardedNodes = 0;
+	   				int validNodes = 0;
 					// add nodes to the dictionary nodeTextById
 					for (int temp = 0; temp < nodes.getLength(); temp++) {    
 						Node xmlNode = nodes.item(temp); 
@@ -262,6 +275,7 @@ public class GoldStandardEdgesLoader {
 				       					discardedNodes++;
 				       					continue; // don't add nodes which are not of interest, if nodesOfInterest is not null
 				       				}
+				       				else validNodes++;
 				       			}
 							   	nodeTextById.put(id, text);	
 							   	nodeContentById.put(id, "\t"+nodeToString(xmlNode));
@@ -270,7 +284,10 @@ public class GoldStandardEdgesLoader {
 				       		}
 				       	}
 					}   										
-					if (nodesOfInterest!=null) logger.info("Discarded "+discardedNodes+" GS nodes as not of interest");
+					if (nodesOfInterest!=null) {
+						logger.info("Discarded "+discardedNodes+" GS nodes as not of interest");
+						logger.info("Retained "+validNodes+" valid GS nodes of interest");
+					}
 					// load all the edges
 					NodeList entailmentRelationList = doc.getElementsByTagName("edge");
 					for (int temp = 0; temp < entailmentRelationList.getLength(); temp++) {    

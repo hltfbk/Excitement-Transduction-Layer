@@ -195,7 +195,7 @@ public class ExperimentNice extends AbstractExperiment {
 		String outDir = dataDir.replace("resources", "outputs");
 
 		MergerType mergerType = MergerType.ALL_PAIRS_MERGE; // which merger to use
-		boolean includeFragmentGraphEdges = true; // whether to include FG edges in the evaluations
+		boolean includeFragmentGraphEdges = false; // whether to include FG edges in the evaluations
 
 		// which EDA(s) to use
 //		EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	

@@ -2,8 +2,6 @@ package eu.excitementproject.tl.experiments;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.xml.transform.TransformerException;
 
@@ -21,13 +19,11 @@ import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.laputils.DataUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
  * Full-pipeline experiment -- which means starting with CAS objects that have only the given interaction text and possibly the keyword annotations
  * 
- * @author vivi@fbk
+ * @author vivi@fbk  & Lili Kotlerman
  *
  */
 public class AbstractExperimentNotAnnotXMIs extends AbstractExperiment {
@@ -146,5 +142,4 @@ public class AbstractExperimentNotAnnotXMIs extends AbstractExperiment {
 			return null;
 		}	
 	}	
-	
 }
