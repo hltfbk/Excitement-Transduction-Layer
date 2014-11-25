@@ -28,9 +28,9 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  * @author Lili Kotlerman
  *
  */
-public class AutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
+public class StructureBasedGraphMerger extends AbstractGraphMerger {
 	
-	public AutomateWP2ProcedureGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
+	public StructureBasedGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
 	}

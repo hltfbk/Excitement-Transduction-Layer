@@ -20,7 +20,7 @@ import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.StructureBasedGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2ProcedureGraphMerger;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -44,7 +44,7 @@ public class GlobalGraphOptimizerTest {
 						config = new ImplCommonConfig(configFile);
 						MaxEntClassificationEDA meceda = new MaxEntClassificationEDA();	
 						meceda.initialize(config);  
-						GraphMerger merger = new AutomateWP2ProcedureGraphMerger(lap,meceda); 
+						GraphMerger merger = new StructureBasedGraphMerger(lap,meceda); 
 						
 						Set<FragmentGraph> fragmentGraphs = FragmentGraph.getSampleOutput();
 						logger.info("Merged raw graph:");			

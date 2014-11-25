@@ -27,7 +27,7 @@ import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
-import eu.excitementproject.tl.composition.graphmerger.AutomateWP2ProcedureGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.StructureBasedGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
@@ -379,7 +379,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 
 		fragGen = new FragmentGraphGeneratorFromCAS();
 
-		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
+		graphMerger = new StructureBasedGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
 		collapseGraph = new GlobalGraphOptimizer();
 		
 		prepareOutputFolder();
@@ -404,7 +404,7 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		
 		fragGen = new FragmentGraphGeneratorFromCAS();
 
-		graphMerger = new AutomateWP2ProcedureGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
+		graphMerger = new StructureBasedGraphMerger(lap, eda); //new AllPairsGraphMerger(lap, eda);
 		collapseGraph = new GlobalGraphOptimizer();
 		
 		prepareOutputFolder();
