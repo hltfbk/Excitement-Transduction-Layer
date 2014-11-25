@@ -917,17 +917,23 @@ public class EvaluatorUtils {
 	 */
 	private static Set<EntailmentUnit> getLemmatizedVertex(EntailmentGraphRaw egr, Set<String> lemmatizedTextSet, boolean ignoreCase) {
 		Set<EntailmentUnit> resultSet = new HashSet<EntailmentUnit>();
-		Set<String> textsToFind = lemmatizedTextSet;
+		Set<String> textsToFind = new HashSet<String>();
 		
 		if(ignoreCase){
 			for(String lemmatizedText : lemmatizedTextSet){
 				textsToFind.add(lemmatizedText.toLowerCase());
 			}
+		}else {
+			textsToFind = lemmatizedTextSet;
 		}
 		
 		if(egr.hasLemmatizedLabel()){
 			for(EntailmentUnit eu : egr.vertexSet()){
-				if(textsToFind.contains(eu.getLemmatizedText().toLowerCase())){
+				String lemmatizedText = eu.getLemmatizedText();
+				if(ignoreCase){
+					lemmatizedText = lemmatizedText.toLowerCase();
+				}
+				if(textsToFind.contains(lemmatizedText)){
 					resultSet.add(eu);
 				}
 			}
