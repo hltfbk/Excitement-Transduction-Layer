@@ -585,32 +585,44 @@ public class EvaluatorUtils {
 	
 	/**
 	 * merge Set<FragmentGraph> into two token EntailmentGraphRaw
-	 * @param twoTokenGraph
+	 *  
+	 * @param twoTokenRawGraph
 	 * @param fgs
-	 * @throws LexicalResourceException 
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param onlyBidirectionalEdges
+	 * @throws LexicalResourceException
 	 */
-	public static void mergeIntoDependencyGraph(
-			EntailmentGraphRaw twoTokenRawGraph, Set<FragmentGraph> fgs, DerivBaseResource derivBaseResource, 
-			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter)  
+	public static void mergeIntoDependencyGraph(EntailmentGraphRaw twoTokenRawGraph, Set<FragmentGraph> fgs, 
+			DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
+			GermanWordSplitter splitter, boolean onlyBidirectionalEdges)  
 					throws LexicalResourceException{
 		
 		List<FragmentGraph> fgList = new LinkedList<FragmentGraph>(fgs);
 		Collections.sort(fgList, new FragmentGraph.CompleteStatementComparator());
 		for(FragmentGraph fg : fgList) {
-			mergeIntoDependencyGraph(twoTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			mergeIntoDependencyGraph(twoTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, onlyBidirectionalEdges);
 		}
 	}
 	
 	
 	/**
 	 * merge one FragmentGraph into two token EntailmentGraphRaw
-	 * @param twoTokenGraph2
+	 * 
+	 * @param twoTokenRawGraph
 	 * @param fg
-	 * @throws LexicalResourceException 
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param onlyBidirectionalEdges
+	 * @throws LexicalResourceException
 	 */
-	public static void mergeIntoDependencyGraph(
-			EntailmentGraphRaw twoTokenRawGraph, FragmentGraph fg, DerivBaseResource derivBaseResource, 
-			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter) 
+	public static void mergeIntoDependencyGraph(EntailmentGraphRaw twoTokenRawGraph, FragmentGraph fg, 
+			DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
+			GermanWordSplitter splitter, boolean onlyBidirectionalEdges) 
 					throws LexicalResourceException {
 		
 		for(EntailmentUnitMention eum : fg.vertexSet()) {
@@ -618,10 +630,12 @@ public class EvaluatorUtils {
 			EntailmentUnit newStatement = twoTokenRawGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
 			//direction new statement <--> graph statement
 			addBidirectionalEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
-			//direction new statement --> graph statement 
-			addOneDirectionalEntailedEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
-			//direction graph statement --> new statement
-			addOneDirectionalEntailingEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			if(!onlyBidirectionalEdges) {
+				//direction new statement --> graph statement 
+				addOneDirectionalEntailedEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+				//direction graph statement --> new statement
+				addOneDirectionalEntailingEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			}
 		}
 	}
 	
