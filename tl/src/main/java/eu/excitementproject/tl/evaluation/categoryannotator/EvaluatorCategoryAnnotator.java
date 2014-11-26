@@ -35,6 +35,7 @@ import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_DE;
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalResourceException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
@@ -1352,7 +1353,13 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}			
 		}  else if (buildTokenLemmaGraph) {
-			buildTokenLemmaGraph(egr, fgs);
+			try {
+				EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
+//				buildTokenLemmaGraph(egr, fgs); //TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
+			} catch (LexicalResourceException e) {
+				e.printStackTrace();
+			}
+			
 		} else { //merge graph --> takes a really long time and uses too much memory: TODO reduce number of fgs
 			if (setup == 11) alignmenteda.initialize(configFile);
 			else eda.initialize(config);
@@ -1387,6 +1394,8 @@ public class EvaluatorCategoryAnnotator {
 		return egr; 
 	}
 
+	//TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
+	/*
 	private void buildTokenLemmaGraph(EntailmentGraphRaw egr,
 			Set<FragmentGraph> fgs) {
 		for (FragmentGraph fg : fgs) {
@@ -1407,7 +1416,8 @@ public class EvaluatorCategoryAnnotator {
 			}
 		}
 	}
-
+	*/
+	
 	private Set<FragmentGraph> buildFragmentGraphs(List<Interaction> graphDocs, 
 			boolean relevantTextProvided, FragmentAnnotator fragmentAnnotator, 
 			ModifierAnnotator modifierAnnotator, FragmentGraphGenerator fragmentGraphGenerator
@@ -1536,7 +1546,8 @@ public class EvaluatorCategoryAnnotator {
 		singleTokenGraph = new EntailmentGraphRaw(true); //addLemmaLabel must be true!
 		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, relevantTextProvided, 
 				faTokens, maAdv, fgg);
-		buildTokenLemmaGraph(singleTokenGraph, fgs);
+		//buildTokenLemmaGraph(singleTokenGraph, fgs);//TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
+		EvaluatorUtils.mergeIntoLemmaTokenGraph(singleTokenGraph, fgs);
 		egr.copyRawGraphNodesAndAllEdges(singleTokenGraph); //TODO: check if this works properly!
 			
 		//Step 2: Create graph from dependency fragments and add it to graph
@@ -1592,7 +1603,8 @@ public class EvaluatorCategoryAnnotator {
 			faTokens.annotateFragments(cas);
 			Set<FragmentGraph> fgTokens = fgg.generateFragmentGraphs(cas);
 			fgAll.addAll(fgTokens);
-			buildTokenLemmaGraph(singleTokenGraph, fgTokens);
+//			buildTokenLemmaGraph(singleTokenGraph, fgTokens);//TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
+			EvaluatorUtils.mergeIntoLemmaTokenGraph(singleTokenGraph, fgTokens);
 			cas.reset();
 			doc.fillInputCAS(cas);
 			faDeps.annotateFragments(cas);
