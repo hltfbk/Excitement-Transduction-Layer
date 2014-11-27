@@ -12,7 +12,7 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 
 /**
  * EDA, which generates random entailment decisions ({@link RandomTEDecision})
- * @author LiliKotlerman
+ * @author Lili Kotlerman
  *
  */
 public class RandomEDA implements EDABasic<ProbabilisticTEDecision>{

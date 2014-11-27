@@ -5,7 +5,7 @@ import eu.excitementproject.eop.common.TEDecision;
 
 /**
  * A {@link TEDecision} with a random confidence score and a corresponding {@link DecisionLabel}, based on a simple score heuristic
- * @author LiliKotlerman
+ * @author Lili Kotlerman
  *
  */
 public class RandomTEDecision implements TEDecision{

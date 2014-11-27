@@ -60,6 +60,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	private static final long serialVersionUID = 5957243707939421299L;
 		
 	Set<String> textualInputs = null; //the textual inputs (complete statements), on which the entailment graph was built.
+	
 	int numberOfEntailmentUnits; //the number of entailment units contained in the graph. This number is not necessarily the same as the number of nodes in the graph, since each equivalence class node corresponds to one or more entailment unit(s).
 
 	GraphStatistics graphStatistics = null;
