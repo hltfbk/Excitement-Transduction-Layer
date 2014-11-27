@@ -445,33 +445,11 @@ public class EvaluatorUtils {
 	public static EntailmentGraphRaw joinRawGraphs(EntailmentGraphRaw rawGraph1, EntailmentGraphRaw rawGraph2,
 			boolean copyEdgesFromRawGraph1, boolean copyEdgesFromRawGraph2){
 		EntailmentGraphRaw resultRawGraph = new EntailmentGraphRaw();
-		copyRawGraph(rawGraph1, resultRawGraph, copyEdgesFromRawGraph1);
-		copyRawGraph(rawGraph2, resultRawGraph, copyEdgesFromRawGraph2);
+		resultRawGraph.copyRawGraphNodesAndAllEdges(rawGraph1);
+		resultRawGraph.copyRawGraphNodesAndAllEdges(rawGraph2);
 		return resultRawGraph;
 	}
 	
-	/**
-	 * copy Set<EntailmentUnit> and Set<EntailmentRelation> of a source raw graph
-	 * into the target raw graph
-	 * @param source 
-	 * @param target 
-	 * @param boolean copyEdges
-	 */
-	public static void copyRawGraph(EntailmentGraphRaw source, EntailmentGraphRaw target, boolean copyEdges){
-		//copy nodes from source graph to target graph
-		for(EntailmentUnit node : source.vertexSet()){
-			target.addVertex(node);
-		}
-		
-		//copy edges from source graph to target graph
-		if(copyEdges){
-			for(EntailmentRelation edge : source.edgeSet()){
-				EntailmentUnit entailingNode = source.getVertexWithText(edge.getSource().getTextWithoutDoubleSpaces());
-				EntailmentUnit entailedNode = source.getVertexWithText(edge.getTarget().getTextWithoutDoubleSpaces());
-				target.addEdge(entailingNode, entailedNode, edge);
-			}
-		}
-	}
 		
 	/**
 	 * build Set<FragmentGraph>
