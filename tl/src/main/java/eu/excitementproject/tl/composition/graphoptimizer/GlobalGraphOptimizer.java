@@ -19,6 +19,7 @@ import eu.excitementproject.eop.globalgraphoptimizer.graph.DirectedOneMappingOnt
 import eu.excitementproject.eop.globalgraphoptimizer.graph.DirectedOntologyGraph;
 import eu.excitementproject.eop.globalgraphoptimizer.graph.RelationNode;
 import eu.excitementproject.eop.globalgraphoptimizer.graph.RuleEdge;
+import eu.excitementproject.tl.composition.api.GraphOptimizer;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -28,13 +29,11 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
+ * This implementation of {@link GraphOptimizer} interface performs global graph optimization as described in Berant, Jonathan, Ido Dagan, and Jacob Goldberger. 2012. Learning entailment relations by global
+graph structure optimization. Computational Linguistics, 38(1):73–111.
+<p> The implementation is a wrapper of the corresponding algorithm implemented in the EOP.
+
  * @author Meni Adler & Lili Kotlerman
- * @since Oct 29, 2013
- *
- * This implementation of GraphOptimizer interface performs global graph optimization as described in Berant et.al (TODO find the exact reference!)
- * ATTENTION: this implementation is under development, please use SimpleGraphOptimizer for now.
- * 
- * TODO: Verify whether the algorithm involves randomization. It seems that the output may differ for the same input.
  */
 public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 
@@ -43,6 +42,10 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 	protected final static double DEFAULT_EDGE_COST = 0.5;
 	protected final static double DEFAULT_UNKNOWN_SCORE = 0;
 	
+	/******************************************************************************************
+	 * CONSTRUCTORS
+	 * ****************************************************************************************/
+
 	public GlobalGraphOptimizer() {
 		this(DEFAULT_EDGE_COST, DEFAULT_UNKNOWN_SCORE, new HashSet<Pair<String,String>>(), new HashSet<Pair<String,String>>());
 	}
@@ -62,6 +65,9 @@ public class GlobalGraphOptimizer extends AbstractGraphOptimizer {
 	}
 
 
+	/******************************************************************************************
+	 * IMPLEMENTATION OF THE INTERFACE METHODS
+	 * ****************************************************************************************/
 
 	@Override
 	public EntailmentGraphCollapsed optimizeGraph(EntailmentGraphRaw workGraph) throws GraphOptimizerException {

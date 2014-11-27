@@ -171,7 +171,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+"NA"+"\t"+String.valueOf(withClosureRawEdges)+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+"NA"+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
 //					resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+String.valueOf(noClosureRawEdges)+"\t"+String.valueOf(withClosureRawEdges)+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+String.valueOf(noClosureCollapsedEdges)+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
 	//				resSting +=f.getName().toUpperCase()+"\t"+String.valueOf(origRawNodes)+"\t"+String.valueOf(origRawEdges)+"\t"+"---"+"\t"+"---"+"\t"+String.valueOf(origCollapsedNodes)+"\t"+String.valueOf(origCollapsedEdges)+"\t"+String.valueOf(noClosureCollapsedEdges)+"\t"+String.valueOf(withClosureCollapsedEdges)+"\n";
-				} catch (GraphEvaluatorException | GraphOptimizerException | IOException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
+				} catch (GraphEvaluatorException | GraphOptimizerException | EntailmentGraphCollapsedException | TransformerException | EntailmentGraphRawException e) {
 
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -198,7 +198,7 @@ public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 */			
 			EntailmentGraphCollapsed gc = anal.getCollapsedGraph();
 			gc.toDOT("./src/test/resources/WP2_gold_standard_annotation/NICE_open/collapsedCS.dot");
-		} catch (IOException | GraphOptimizerException | GraphEvaluatorException e) {						
+		} catch (GraphOptimizerException | GraphEvaluatorException | EntailmentGraphRawException | EntailmentGraphCollapsedException e) {						
 			e.printStackTrace();
 		}				
 	}

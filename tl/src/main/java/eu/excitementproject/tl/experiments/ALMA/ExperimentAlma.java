@@ -16,6 +16,7 @@ import eu.excitementproject.eop.core.EditDistanceEDA;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -208,7 +209,7 @@ public class ExperimentAlma extends AbstractExperiment {
 				try {
 					rawGraphWithThreshold.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_"+mergerType+".dot");
 					rawGraphWithThresholdCollapsed.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_"+mergerType+"_collapsed.dot");
-				} catch (IOException e1) {
+				} catch (EntailmentGraphCollapsedException | EntailmentGraphRawException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -239,7 +240,7 @@ public class ExperimentAlma extends AbstractExperiment {
 					try {
 						plusClosureRawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_"+mergerType+".dot");
 						plusClosureCollapsedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_"+mergerType+"_collapsed.dot");
-					} catch (IOException e1) {
+					} catch (EntailmentGraphCollapsedException | EntailmentGraphRawException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
@@ -266,10 +267,10 @@ public class ExperimentAlma extends AbstractExperiment {
 					setting = e.getSettingName(name, "localClosure+global", includeFragmentGraphEdges, gsClusterDir);				EntailmentGraphCollapsed localClosureGloballyOptimizedGraph = e.collapseGraph(plusClosureRawGraph, globalOptimizer);					
 					try {
 						localClosureGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure+global_"+mergerType+"_collapsed.dot");
-					} catch (IOException  e1) {
+					} catch (EntailmentGraphCollapsedException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
-					}								
+					}
 					
 					System.out.println("### "+ setting+ "###");
 					res = e.evaluateCollapsedGraph(localClosureGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
@@ -296,10 +297,10 @@ public class ExperimentAlma extends AbstractExperiment {
 				
 				try {
 					localGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local+global_"+mergerType+"_collapsed.dot");
-				} catch (IOException  e1) {
+				} catch (EntailmentGraphCollapsedException  e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}								
+				}
 				
 				System.out.println("### "+ setting+ "###");
 				res = e.evaluateCollapsedGraph(localGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);

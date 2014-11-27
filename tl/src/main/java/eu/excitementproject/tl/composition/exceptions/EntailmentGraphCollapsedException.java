@@ -3,9 +3,10 @@
  */
 package  eu.excitementproject.tl.composition.exceptions;
 
-/** Exception thrown by GraphMerger if the implementation can't merge the graphs for some
-	  reason
- * @author Lili
+import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+
+/** Exception thrown by {@link EntailmentGraphCollapsed} methods
+ * @author Lili Kotlerman
  *
  */
 public class EntailmentGraphCollapsedException extends Exception {
@@ -15,12 +16,11 @@ public class EntailmentGraphCollapsedException extends Exception {
 	 */
 	private static final long serialVersionUID = -9027781615803218442L;
 
-	/** Exception thrown by EntailmentGraphRaw 
+	/** Exception thrown by {@link EntailmentGraphCollapsed} methods 
 	 * @param message
 	 */
 	public EntailmentGraphCollapsedException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
 	

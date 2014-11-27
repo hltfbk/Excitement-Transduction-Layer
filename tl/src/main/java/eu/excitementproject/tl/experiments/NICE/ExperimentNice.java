@@ -20,6 +20,7 @@ import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerIT;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -247,8 +248,7 @@ public class ExperimentNice extends AbstractExperiment {
 			try {
 				e.m_rawGraph.toXML(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.xml");
 				e.m_rawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.dot");
-			} catch (IOException | EntailmentGraphRawException e1) {
-				// TODO Auto-generated catch block
+			} catch (EntailmentGraphRawException e1) {
 				e1.printStackTrace();
 			}
 			
@@ -262,8 +262,7 @@ public class ExperimentNice extends AbstractExperiment {
 				try {
 					rawGraphWithThreshold.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_"+mergerType+".dot");
 					rawGraphWithThresholdCollapsed.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_"+mergerType+"_collapsed.dot");
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
+				} catch (EntailmentGraphCollapsedException | EntailmentGraphRawException e1) {
 					e1.printStackTrace();
 				}
 				
@@ -293,8 +292,7 @@ public class ExperimentNice extends AbstractExperiment {
 					try {
 						plusClosureRawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_"+mergerType+".dot");
 						plusClosureCollapsedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_"+mergerType+"_collapsed.dot");
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
+					} catch (EntailmentGraphCollapsedException | EntailmentGraphRawException e1) {
 						e1.printStackTrace();
 					}
 					
@@ -320,10 +318,9 @@ public class ExperimentNice extends AbstractExperiment {
 					setting = e.getSettingName(name, "localClosure+global", includeFragmentGraphEdges, gsClusterDir);				EntailmentGraphCollapsed localClosureGloballyOptimizedGraph = e.collapseGraph(plusClosureRawGraph, globalOptimizer);					
 					try {
 						localClosureGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure+global_"+mergerType+"_collapsed.dot");
-					} catch (IOException  e1) {
-						// TODO Auto-generated catch block
+					} catch (EntailmentGraphCollapsedException e1) {
 						e1.printStackTrace();
-					}								
+					}
 					
 					System.out.println("### "+ setting+ "###");
 					res = e.evaluateCollapsedGraph(localClosureGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
@@ -350,10 +347,9 @@ public class ExperimentNice extends AbstractExperiment {
 				
 				try {
 					localGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local+global_"+mergerType+"_collapsed.dot");
-				} catch (IOException  e1) {
-					// TODO Auto-generated catch block
+				} catch (EntailmentGraphCollapsedException  e1) {
 					e1.printStackTrace();
-				}								
+				}
 				
 				System.out.println("### "+ setting+ "###");
 				res = e.evaluateCollapsedGraph(localGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);

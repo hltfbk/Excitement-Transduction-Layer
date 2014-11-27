@@ -10,7 +10,6 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
@@ -23,20 +22,26 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
  * This graph merger performs the merge by comparing all possible node pairs. 
  * Note that in this implementation only "entailment" edges are added during the merge, while "non-entailment" edges are not added. 
  * I.e. absence of an edge in the merged graph should be interpreted as "no entailment"  
-
- * This is now a legacy class, it produces a valid raw graph, but the graph may not be processed properly by a GraphOptimizer
+ * <p><b>Attention: This is now a legacy class, it produces a valid raw graph, but the graph may not be processed properly by a GraphOptimizer
+ * </b>
+ * 
  * @author Lili Kotlerman
  *
  */public class LegacyAllPairsGraphMerger extends AbstractGraphMerger {
+	
+	 /** Constructor, which calls the constructor of {@link AbstractGraphMerger} for the given LAP and EDA configurations.
+	 * @param lap
+	 * @param eda
+	 * @throws GraphMergerException
+	 */
 	public LegacyAllPairsGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		
 		Logger mergeLogger = Logger.getLogger("eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger"); 
 		
@@ -55,7 +60,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
 		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph, false);
