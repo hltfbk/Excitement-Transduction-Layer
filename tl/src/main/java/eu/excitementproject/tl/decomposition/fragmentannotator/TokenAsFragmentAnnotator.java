@@ -93,7 +93,7 @@ public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	 * @param aJCas
 	 * @throws FragmentAnnotatorException
 	 */
-	private void addLAPTokenAnnotation(JCas aJCas) throws FragmentAnnotatorException{
+	protected void addLAPTokenAnnotation(JCas aJCas) throws FragmentAnnotatorException{
 		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
 		if (tokenIndex.size() == 0)
 		{
@@ -121,7 +121,7 @@ public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	 * @param posFilter
 	 * @return
 	 */
-	private boolean isAllowed(Token token, List<String> posFilter){
+	protected boolean isAllowed(Token token, List<String> posFilter){
 		if(!(token.getPos() instanceof PUNC)) {
 			if(posFilter == null 
 					|| posFilter.isEmpty()
