@@ -19,7 +19,6 @@ import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
-import eu.excitementproject.tl.laputils.LemmaLevelLapEN;
 
 public class TokenAsFragmentAnnotatorForGermanTest {
 	
