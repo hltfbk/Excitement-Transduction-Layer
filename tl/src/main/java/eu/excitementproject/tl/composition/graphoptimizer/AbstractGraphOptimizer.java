@@ -16,7 +16,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
 Abstract implementation of the {@link GraphOptimizer} interface.
-The class contains methods that are likely to be shared by the actual implementations.
+The class contains attributes and methods that are likely to be shared by the actual implementations.
  * @author Lili Kotlerman
  */
 public abstract class AbstractGraphOptimizer implements GraphOptimizer{
