@@ -30,7 +30,6 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.LAPException;
-import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 import eu.excitementproject.tl.composition.api.GraphMerger;
@@ -64,6 +63,7 @@ import eu.excitementproject.tl.evaluation.categoryannotator.EvaluatorUtils;
 import eu.excitementproject.tl.experiments.OMQ.SimpleEDA_DE;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
+import eu.excitementproject.tl.laputils.DependencyLevelLapDE;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.structures.Interaction;
@@ -373,7 +373,7 @@ public class DemoUseCase2OMQGermanNew {
 			ModifierAnnotatorException, EDAException, ComponentException {
 		addLemmaLabel = true;
 		lapLemma = new CachedLAPAccess(new LemmaLevelLapDE());
-		lapDependency = new CachedLAPAccess(new MaltParserDE());
+		lapDependency = new CachedLAPAccess(new DependencyLevelLapDE());
 		fragAnotLemma = new TokenAsFragmentAnnotator(lapLemma, tokenPosFilter);
 		fragAnotDependency = new DependencyAsFragmentAnnotator(lapDependency, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
 		fragAnotCombined = new TokenAndDependencyAsFragmentAnnotator(lapDependency, tokenPosFilter, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
