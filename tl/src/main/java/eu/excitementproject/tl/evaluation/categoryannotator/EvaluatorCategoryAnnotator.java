@@ -89,7 +89,6 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototype;
-//import ag.simple.eda.SimpleEDA;
 
 /**
  * 
@@ -1273,25 +1272,6 @@ public class EvaluatorCategoryAnnotator {
 	    	}
 	    }
 		return fileIndex;
-	}
-
-	/**
-	 * Build collapsed graph from interactions, including category information.
-	 * 
-	 * @param graphDocs
-	 * @return
-	 * @throws Exception 
-	 */
-	@SuppressWarnings("unused")
-	private EntailmentGraphCollapsed buildGraph(List<Interaction> graphDocs, File mergedGraphFile, int minOccurrence) throws Exception {
-		EntailmentGraphRaw egr = new EntailmentGraphRaw(addLemmaLabel);
-		if (readMergedGraphFromFile) {
-			egr = new EntailmentGraphRaw(mergedGraphFile);
-		} else { //build fragment graphs from input data and merge them
-			buildRawGraph(graphDocs, mergedGraphFile, egr, minOccurrence);			
-		}		
-		EntailmentGraphCollapsed graph = buildCollapsedGraphWithCategoryInfo(egr);		
-		return graph;
 	}
 
 	private EntailmentGraphCollapsed buildCollapsedGraphWithCategoryInfo(
