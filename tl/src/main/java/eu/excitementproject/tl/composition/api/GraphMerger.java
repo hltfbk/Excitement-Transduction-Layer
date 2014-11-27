@@ -37,13 +37,13 @@ public interface GraphMerger {
 	
 	/** input-case0: a set of FragmentGraphs ({@link FragmentGraph})
 		 * @param fragmentGraphs
-		 * @return a work graph (EntailmentGraphRaw) is created and enriched by the given set of fragments
+		 * @return a work graph ({@link EntailmentGraphRaw}) is created and enriched by the given set of fragments
 		 * @throws GraphMergerException if the implementation can't merge the graphs for some
 	  reason
 	 * @throws LAPException 
 		 */
 		public EntailmentGraphRaw mergeGraphs(
-			Set<FragmentGraph> fragmentGraphs) throws GraphMergerException, LAPException;
+			Set<FragmentGraph> fragmentGraphs) throws GraphMergerException;
 
 	
 	/** input-case1: a set of FragmentGraphs ({@link FragmentGraph}), and one work
@@ -53,11 +53,10 @@ public interface GraphMerger {
 	 * @return the work graph (EntailmentGraphRaw) enriched by the given set of fragments
 	 * @throws GraphMergerException if the implementation can't merge the graphs for some
   reason
-	 * @throws LAPException 
 	 */
 	public EntailmentGraphRaw mergeGraphs(
 		Set<FragmentGraph> fragmentGraphs,
-		EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException;
+		EntailmentGraphRaw workGraph) throws GraphMergerException;
 
 	/** input-case2: a single FragmentGraph ({@link FragmentGraph}), and a work
 	  graph ({@link EntailmentGraphRaw}).

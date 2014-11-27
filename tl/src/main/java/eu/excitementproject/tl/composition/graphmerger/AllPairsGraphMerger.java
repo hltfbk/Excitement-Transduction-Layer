@@ -8,7 +8,6 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
@@ -32,7 +31,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		
 		Logger mergeLogger = Logger.getLogger("eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMergerWithNonEntailments"); 
 		
@@ -51,7 +50,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
 		if (workGraph==null) workGraph = new EntailmentGraphRaw(fragmentGraph, true);

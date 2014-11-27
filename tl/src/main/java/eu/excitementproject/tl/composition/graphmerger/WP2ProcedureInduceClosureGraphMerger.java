@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
@@ -22,7 +21,7 @@ public class WP2ProcedureInduceClosureGraphMerger extends
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {		
+			EntailmentGraphRaw workGraph) throws GraphMergerException {		
 		workGraph = super.mergeGraphs(fragmentGraph, workGraph);
 		workGraph.applyTransitiveClosure(); //legacy argument: changeTypeOfExistingEdges was false
 		return workGraph;		

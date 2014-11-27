@@ -9,7 +9,6 @@ import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
@@ -37,7 +36,7 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 
 		List<FragmentGraph> fg = new LinkedList<FragmentGraph>(fragmentGraphs);
 		Collections.sort(fg, new FragmentGraph.CompleteStatementComparator());
@@ -51,7 +50,7 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		
 		logger.info("Adding fragment graph:\n"+fragmentGraph.toString());
 		

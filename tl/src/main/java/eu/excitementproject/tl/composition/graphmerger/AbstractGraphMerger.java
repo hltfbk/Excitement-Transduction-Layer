@@ -58,7 +58,7 @@ should be clearly exposed in the Constructor.
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs)
-			throws GraphMergerException, LAPException {
+			throws GraphMergerException {
 		
 		return mergeGraphs(fragmentGraphs, null);
 	}	

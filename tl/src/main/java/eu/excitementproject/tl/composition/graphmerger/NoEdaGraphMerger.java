@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
@@ -28,7 +27,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		List<FragmentGraph> fg = new LinkedList<FragmentGraph>(fragmentGraphs);
 		Collections.sort(fg, new FragmentGraph.CompleteStatementComparator());
 		// Iterate over the list of fragment graphs and merge them one by one
@@ -40,7 +39,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		
 		// If the work graph is empty or null - just copy the fragment graph nodes/edges (there's nothing else to merge) and return the resulting graph
 		if (workGraph==null) return new EntailmentGraphRaw(fragmentGraph, true);
