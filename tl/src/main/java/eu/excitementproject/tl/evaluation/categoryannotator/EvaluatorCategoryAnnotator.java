@@ -994,7 +994,7 @@ public class EvaluatorCategoryAnnotator {
 
 	    		//Add category texts
 	    		logger.info("Adding " + categoryDocs.size() + " categories");
-    			egr = buildRawGraph(categoryDocs, false, mergedGraphFile, egr, minTokenOccurrenceInCategories);
+    			egr = buildRawGraph(categoryDocs, false, mergedGraphFile, egr, minTokenOccurrenceInCategories);//TODO: set category text als relevantText in XML
 	    		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
 	    		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
 	    		graph = buildCollapsedGraphWithCategoryInfo(egr);
@@ -1333,7 +1333,6 @@ public class EvaluatorCategoryAnnotator {
 		}  else if (buildTokenLemmaGraph) {
 			try {
 				EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
-//				buildTokenLemmaGraph(egr, fgs); //TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
 			} catch (LexicalResourceException e) {
 				e.printStackTrace();
 			}
@@ -1372,30 +1371,6 @@ public class EvaluatorCategoryAnnotator {
 		return egr; 
 	}
 
-	//TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
-	/*
-	private void buildTokenLemmaGraph(EntailmentGraphRaw egr,
-			Set<FragmentGraph> fgs) {
-		for (FragmentGraph fg : fgs) {
-			for(EntailmentUnitMention eum: fg.vertexSet()){
-				//add mention to raw graph
-				egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
-				EntailmentUnit aEU = egr.getVertexWithText(eum.getTextWithoutDoubleSpaces());
-				for(EntailmentUnit bEU : egr.vertexSet()){
-					if(!egr.isEntailmentInAnyDirection(aEU, bEU)){
-						if(!bEU.getTextWithoutDoubleSpaces().equalsIgnoreCase(aEU.getTextWithoutDoubleSpaces()) 
-								&& bEU.getLemmatizedText().equalsIgnoreCase(aEU.getLemmatizedText())){
-							egr.addEdgeByInduction(aEU, bEU, DecisionLabel.Entailment, 0.98);
-							egr.addEdgeByInduction(bEU, aEU, DecisionLabel.Entailment, 0.98);
-							break;
-						}
-					}
-				}
-			}
-		}
-	}
-	*/
-	
 	private Set<FragmentGraph> buildFragmentGraphs(List<Interaction> graphDocs, 
 			boolean relevantTextProvided, FragmentAnnotator fragmentAnnotator, 
 			ModifierAnnotator modifierAnnotator, FragmentGraphGenerator fragmentGraphGenerator
@@ -1523,7 +1498,6 @@ public class EvaluatorCategoryAnnotator {
 		//Step 1: Create graph from token fragments and add it to graph
 		singleTokenGraph = new EntailmentGraphRaw(true); //addLemmaLabel must be true!
 		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, false, faTokens, maAdv, fgg); //TODO: set category text als relevantText in XML 
-		//buildTokenLemmaGraph(singleTokenGraph, fgs);//TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
 		EvaluatorUtils.mergeIntoLemmaTokenGraph(singleTokenGraph, fgs);
 		egr.copyRawGraphNodesAndAllEdges(singleTokenGraph); //TODO: check if this works properly!
 			
@@ -1580,7 +1554,6 @@ public class EvaluatorCategoryAnnotator {
 			faTokens.annotateFragments(cas);
 			Set<FragmentGraph> fgTokens = fgg.generateFragmentGraphs(cas);
 			fgAll.addAll(fgTokens);
-//			buildTokenLemmaGraph(singleTokenGraph, fgTokens);//TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
 			EvaluatorUtils.mergeIntoLemmaTokenGraph(singleTokenGraph, fgTokens);
 			cas.reset();
 			doc.fillInputCAS(cas);
