@@ -11,7 +11,7 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 
 /**
- * EDA, which generates random entailment decisions (RandomTEDecision)
+ * EDA, which generates random entailment decisions ({@link RandomTEDecision})
  * @author LiliKotlerman
  *
  */
@@ -19,42 +19,37 @@ public class RandomEDA implements EDABasic<ProbabilisticTEDecision>{
 
 	private Random generator;
 	
+	/**
+	 *  Constructor, which will initialize the EDA
+	 */
 	public RandomEDA() {
 		try {
 			initialize(null);
-		} catch (ConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (EDAException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ComponentException e) {
-			// TODO Auto-generated catch block
+		} catch (ConfigurationException | EDAException | ComponentException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	@Override
 	public void initialize(CommonConfig config) throws ConfigurationException,
 			EDAException, ComponentException {
-		
+		// init new generator of random numbers
 		generator = new Random(); 
 		
 	}
 
+	@Override
 	public ProbabilisticTEDecision process(JCas aCas) {
-		
 		return new ProbabilisticTEDecision(generator.nextDouble());
 	}
 
+	@Override
 	public void shutdown() {
-		// TODO Auto-generated method stub
-		
 	}
 
+	@Override
 	public void startTraining(CommonConfig c) throws ConfigurationException,
 			EDAException, ComponentException {
-		// TODO Auto-generated method stub
-		
 	}
 
 	
