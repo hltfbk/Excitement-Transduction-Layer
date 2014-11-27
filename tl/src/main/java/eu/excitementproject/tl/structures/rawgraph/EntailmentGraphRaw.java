@@ -378,7 +378,7 @@ public class EntailmentGraphRaw extends
 	 */
 	public void copyRawGraphNodesAndAllEdges(EntailmentGraphRaw egr){
 		// first add transitive closure to the EGR
-		egr.applyTransitiveClosure();
+//		egr.applyTransitiveClosure(); //TODO: check if needed! if transitive closure is applied is decided in GraphMerger
 		
 		// copy nodes (add if new, update mentions and complete statements if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
 		for (EntailmentUnit rawGraphNode : egr.vertexSet()) {
