@@ -57,6 +57,18 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 7);
 			
+			
+			// annotate all tokens + compound parts of words with hyphen
+			testlogger.info("Annotating all tokens except punctuation + compound parts in German sentence... ");
+			cas.reset();
+			cas = CASUtils.createNewInputCas();
+			cas.setDocumentLanguage("DE"); 
+			cas.setDocumentText("Fehlermeldung in der XML-Datei");
+			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, true, true);
+			fragAnnotator.annotateFragments(cas);
+			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
+			Assert.assertEquals(frgIndex.size(), 6);
+			
 			//annotate only nouns, but no compound parts
 			testlogger.info("Annotating only nouns in German sentence... "); 
 			cas.reset();
