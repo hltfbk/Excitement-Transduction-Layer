@@ -13,6 +13,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -22,7 +23,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
 
 /**
  * This class implements a simple "fragment annotator": token + compound part 
- * Namely, each token except the punctuation is considered as a possible (continuous) fragment. 
+ * Namely, each token except the punctuation is considered as a possible (continuous) fragment. Excluded are also one character words except numbers. 
  * If a filter for parts of speech is passed to the constructor, then only tokens are annotated, which match the filter.
  * If a token is a compound word, then the compound parts can be also annotated.
  * 
@@ -151,8 +152,10 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 			//annotate each token except punctuation as one fragment, if it matches the filter 
 			Token tk = (Token) tokenItr.next(); 
 			try {
-				if(tk.getCoveredText().length()>1){
 					if(isAllowed(tk, tokenPOSFilter)){
+						if(tk.getCoveredText().length()==1 && !(tk.getPos() instanceof CARD)){
+							continue;
+						}
 						CASUtils.Region[] r = new CASUtils.Region[1];
 						r[0] = new CASUtils.Region(tk.getBegin(),  tk.getEnd()); 
 						fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
@@ -163,6 +166,12 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 							Collection<String> compoundParts = decompoundWord(tokenText, splitter, useOnlyHyphenDecomposition);
 							if(compoundParts.size() > 1){
 								for(String compoundPart : compoundParts){
+									if(compoundPart.length() == 1){
+										Character ch = compoundPart.charAt(0);
+										if(!Character.isDigit(ch)){
+											continue;
+										}
+									}
 									if(compoundPart.length()>1){
 										if(!compoundPart.equals(tk.getCoveredText())) {
 											int index = tokenText.indexOf(compoundPart);
@@ -170,6 +179,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 											int compoundPartEnd = compoundPartBegin + compoundPart.length();
 											index = compoundPartEnd + 1;
 											r[0] = new CASUtils.Region(compoundPartBegin,  compoundPartEnd);
+											System.out.println("Annotating the following as a fragment: " + tokenText + " " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
 											fragLogger.info("Annotating the following as a fragment: " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
 											CASUtils.annotateOneDeterminedFragment(aJCas, r);
 											num_frag++;
@@ -179,7 +189,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 							}
 						}
 					}
-				}
+//				}
 			} 
 			
 			catch (LAPException e)
