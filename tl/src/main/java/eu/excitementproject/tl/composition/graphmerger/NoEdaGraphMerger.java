@@ -8,21 +8,30 @@ import java.util.Set;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
+import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
- * This graph merger performs the merge by only copying all fragment graphs into one raw graph (with unification of EU mentions under one EU). 
- * Note that absence of an edge in the merged graph should be interpreted as "don't know", but can also be understood as "no entailment"  
+ * This graph merger performs the merge by only copying all fragment graphs into one raw graph 
+ * (with unification of relevent {@link EntailmentUnitMention}s under one {@link EntailmentUnit} node). 
+ * <p>Note that absence of an edge in the merged graph should be interpreted as "don't know", but can also be understood as "no entailment"  
 
  * @author Lili Kotlerman
  *
- */public class NoEdaGraphMerger extends AbstractGraphMerger {
+ */
 
+public class NoEdaGraphMerger extends AbstractGraphMerger {
+
+	/** Constructor, which calls the constructor of {@link AbstractGraphMerger} for the given LAP and EDA configurations.
+	 * @param lap
+	 * @param eda
+	 * @throws GraphMergerException
+	 */
 	public NoEdaGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
