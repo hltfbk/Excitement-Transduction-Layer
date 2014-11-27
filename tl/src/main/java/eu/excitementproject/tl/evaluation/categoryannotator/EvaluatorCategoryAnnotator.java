@@ -198,7 +198,7 @@ public class EvaluatorCategoryAnnotator {
     static List<String> dependencyTypeFilter = null;
     
     private int setup; //use setupArray to set the parameter
-    static int[] setupArray = {1};
+    static int[] setupArray = {1}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
     private int setupSEDA = 101; //configure SEDA (for incremental evaluation)
     private int setupEDA = 1; //configure EDA (for incremental evaluation)
     static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
@@ -209,8 +209,8 @@ public class EvaluatorCategoryAnnotator {
     /* begin OBS: The following parameters do NOT affect incremental evaluation: */
     static int topN; //use topNArray to set the parameter
     static int[] topNArray = {1}; //evaluate accuracy considerung the topN best categories returned by the system
-    static boolean readGraphFromFile = true;
-    static boolean readMergedGraphFromFile = true;
+    static boolean readGraphFromFile = false;
+    static boolean readMergedGraphFromFile = false;
     static String inputMergedGraphFileName;
     static File inputMergedGraphFile;
     
@@ -281,10 +281,9 @@ public class EvaluatorCategoryAnnotator {
                     }
 
                     try {
-                            //eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+                            eca.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
                           
-                            
-                            eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+//                            eca.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
                     } catch (Exception e) {
                             e.printStackTrace();
                     }
@@ -390,7 +389,7 @@ public class EvaluatorCategoryAnnotator {
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
 	        	case 2: //TIE with base configuration + GermaNet 
-	    			configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN_DE.xml";;
+	    			configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN_DE.xml";
 	        		configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
 	        		eda = new MaxEntClassificationEDA();
@@ -401,6 +400,70 @@ public class EvaluatorCategoryAnnotator {
 		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer();// new GlobalGraphOptimizer(); --> don't use
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 21: //TIE ADAPTED BASE (no mapping @CARD@ --> @CARD@)
+	        		//CHANGE IN POM EOP CORE VERSION TO 1.1.3_ADAPTED (only available for Kathrin, Aleksandra, Florian)
+		    		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+	        		edaName = "TIE_ADAPTED";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 22:  //TIE ADAPTED BASE (no mapping @CARD@ --> @CARD@) + GERMANET (NE --> NP) 
+	        		//CHANGE IN POM EOP CORE VERSION TO 1.1.3_ADAPTED (only available for Kathrin, Aleksandra, Florian)
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+	        		edaName = "TIE_ADAPTED";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer();// new GlobalGraphOptimizer(); --> don't use
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 23:  //TIE ADAPTED BASE (no mapping @CARD@ --> @CARD@) + DERIVBASE (no POS restriction, derivSteps2)
+	        		//CHANGE IN POM EOP CORE VERSION TO 1.1.3_ADAPTED (only available for Kathrin, Aleksandra, Florian)
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+DB2_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+	        		edaName = "TIE_ADAPTED";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 24:  //TIE ADAPTED BASE (no mapping @CARD@ --> @CARD@) + DERIVBASE (no POS restriction, derivSteps2) + GERMANET (NE --> NP)
+	        		//CHANGE IN POM EOP CORE VERSION TO 1.1.3_ADAPTED (only available for Kathrin, Aleksandra, Florian)
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN+DB2_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+	        		edaName = "TIE_ADAPTED";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
@@ -895,8 +958,8 @@ public class EvaluatorCategoryAnnotator {
 		
         //double sumAccuracies;
         //int sumCountPositive;
-	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
-//	    for (int i=2; i<=2; i++) { //Create one fold only
+//	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
+	    for (int i=2; i<=2; i++) { //Create one fold only
 	        System.out.println("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
