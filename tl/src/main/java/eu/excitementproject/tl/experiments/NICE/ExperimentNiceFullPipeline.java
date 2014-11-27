@@ -19,6 +19,7 @@ import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
@@ -236,7 +237,7 @@ public class ExperimentNiceFullPipeline extends AbstractExperimentNotAnnotXMIs {
 			try {
 				e.m_rawGraph.toXML(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.xml");
 				e.m_rawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.dot");
-			} catch (IOException | EntailmentGraphRawException e1) {
+			} catch (EntailmentGraphRawException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
@@ -250,8 +251,7 @@ public class ExperimentNiceFullPipeline extends AbstractExperimentNotAnnotXMIs {
 				try {
 					rawGraphWithThreshold.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_allPair.dot");
 					rawGraphWithThresholdCollapsed.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local_allPair_collapsed.dot");
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
+				} catch (EntailmentGraphCollapsedException | EntailmentGraphRawException e1) {
 					e1.printStackTrace();
 				}
 				
@@ -281,8 +281,7 @@ public class ExperimentNiceFullPipeline extends AbstractExperimentNotAnnotXMIs {
 					try {
 						plusClosureRawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_allPairs.dot");
 						plusClosureCollapsedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure_allPairs_collapsed.dot");
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
+					} catch (EntailmentGraphCollapsedException | EntailmentGraphRawException e1) {
 						e1.printStackTrace();
 					}
 					
@@ -310,10 +309,9 @@ public class ExperimentNiceFullPipeline extends AbstractExperimentNotAnnotXMIs {
 					
 					try {
 						localClosureGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_localClosure+global_allPairs_collapsed.dot");
-					} catch (IOException  e1) {
-						// TODO Auto-generated catch block
+					} catch (EntailmentGraphCollapsedException  e1) {
 						e1.printStackTrace();
-					}								
+					}
 					
 					System.out.println("### "+ setting+ "###");
 					res = e.evaluateCollapsedGraph(localClosureGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
@@ -338,10 +336,9 @@ public class ExperimentNiceFullPipeline extends AbstractExperimentNotAnnotXMIs {
 				
 				try {
 					localGloballyOptimizedGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_"+confidenceThreshold.toString()+"_local+global_allPairs_collapsed.dot");
-				} catch (IOException  e1) {
-					// TODO Auto-generated catch block
+				} catch (EntailmentGraphCollapsedException  e1) {
 					e1.printStackTrace();
-				}								
+				}
 				
 				System.out.println("### "+ setting+ "###");
 				res = e.evaluateCollapsedGraph(localGloballyOptimizedGraph, gsClusterDir, !includeFragmentGraphEdges, isSingleClusterGS);
