@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
@@ -51,6 +50,7 @@ public class DataUtils {
 
 				aJCas = CASUtils.createNewInputCas(); 
 				CASUtils.deserializeFromXmi(aJCas, f); 
+								
 				docs.add(aJCas);
 			}
 		} catch (Exception e) {

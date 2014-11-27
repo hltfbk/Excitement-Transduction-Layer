@@ -53,6 +53,7 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 	public ExperimentAlmaPerCluster(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+		
 		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, lapClass,
 				edaClass);
 		
@@ -139,8 +140,8 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 	public static void main(String[] args) {
 
 		String tlDir = "./";
-		String dataDir = tlDir+"src/main/resources/exci/alma/xmi_perFragmentGraph/";
-		String gsAnnotationsDir = tlDir+"src/main/resources/exci/alma/goldStandardAnnotation/Test/";
+		String dataDir = tlDir+"src/main/resources/exci/alma/xmi_perFragmentGraph/test/";
+		String gsAnnotationsDir = tlDir+"src/main/resources/exci/alma/goldStandardAnnotation/test/";
 		
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
