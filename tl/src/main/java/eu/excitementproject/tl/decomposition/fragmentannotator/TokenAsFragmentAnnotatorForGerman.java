@@ -151,35 +151,35 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 			//annotate each token except punctuation as one fragment, if it matches the filter 
 			Token tk = (Token) tokenItr.next(); 
 			try {
-//				if(tk.getCoveredText(). length()>1){ //TODO: length restriction?
-				if(isAllowed(tk, tokenPOSFilter)){
-					CASUtils.Region[] r = new CASUtils.Region[1];
-					r[0] = new CASUtils.Region(tk.getBegin(),  tk.getEnd()); 
-					fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
-					CASUtils.annotateOneDeterminedFragment(aJCas, r);
-					num_frag++;
-					if(splitter != null){
-						String tokenText = tk.getCoveredText();
-						Collection<String> compoundParts = decompoundWord(tokenText, splitter, useOnlyHyphenDecomposition);
-						if(compoundParts.size() > 1){
-							for(String compoundPart : compoundParts){
-//								if(compoundPart.length()>1){ //TODO: length restriction?
-								if(!compoundPart.equals(tk.getCoveredText())) {
-									int index = tokenText.indexOf(compoundPart);
-									int compoundPartBegin = tk.getBegin() + index;
-									int compoundPartEnd = compoundPartBegin + compoundPart.length();
-									index = compoundPartEnd + 1;
-									r[0] = new CASUtils.Region(compoundPartBegin,  compoundPartEnd);
-									fragLogger.info("Annotating the following as a fragment: " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
-									CASUtils.annotateOneDeterminedFragment(aJCas, r);
-									num_frag++;
+				if(tk.getCoveredText().length()>1){
+					if(isAllowed(tk, tokenPOSFilter)){
+						CASUtils.Region[] r = new CASUtils.Region[1];
+						r[0] = new CASUtils.Region(tk.getBegin(),  tk.getEnd()); 
+						fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
+						CASUtils.annotateOneDeterminedFragment(aJCas, r);
+						num_frag++;
+						if(splitter != null){
+							String tokenText = tk.getCoveredText();
+							Collection<String> compoundParts = decompoundWord(tokenText, splitter, useOnlyHyphenDecomposition);
+							if(compoundParts.size() > 1){
+								for(String compoundPart : compoundParts){
+									if(compoundPart.length()>1){
+										if(!compoundPart.equals(tk.getCoveredText())) {
+											int index = tokenText.indexOf(compoundPart);
+											int compoundPartBegin = tk.getBegin() + index;
+											int compoundPartEnd = compoundPartBegin + compoundPart.length();
+											index = compoundPartEnd + 1;
+											r[0] = new CASUtils.Region(compoundPartBegin,  compoundPartEnd);
+											fragLogger.info("Annotating the following as a fragment: " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
+											CASUtils.annotateOneDeterminedFragment(aJCas, r);
+											num_frag++;
+										}
+									} 
 								}
-//								} //end of if(compoundPart.length()>1)
 							}
 						}
 					}
 				}
-//				} //end of if(tk.getCoveredText(). length()>1)
 			} 
 			
 			catch (LAPException e)
