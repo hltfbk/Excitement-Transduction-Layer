@@ -15,21 +15,16 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 
 /**
-An implementation of the {@link GraphOptimizer} interface:
-We do not foresee any external EOP component dependency for this
-module. But this is not definite. The first prototype will shed some
-light for us. Like other modules, if it needs any arguments or
-configurable values, they will be exposed in the implementation
-constructor.
-
+Abstract implementation of the {@link GraphOptimizer} interface.
+The class contains attributes and methods that are likely to be shared by the actual implementations.
  * @author Lili Kotlerman
  */
 public abstract class AbstractGraphOptimizer implements GraphOptimizer{
 
 	
-	/**
+	/** 
 	 * @param workGraph
-	 * @return the average of the confidence scores of entailment edges.
+	 * @return the average of the confidence scores of (positive) entailment edges.
 	 * If there are no edges in the graph that express entailment, the method returns null. 
 	 */
 	public static Double getAverageConfidenceOfEntailment(EntailmentGraphRaw workGraph){

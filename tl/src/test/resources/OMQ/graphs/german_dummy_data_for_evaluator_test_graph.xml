@@ -4,9 +4,9 @@
     <categoryConfidence category="100" confidence="3.0"/>
     <entailmentUnit level="0" text="Fenster">
       <completeStatement text="Fenster"/>
+      <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="Fenster"/>
       <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="Fenster"/>
       <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="Fenster"/>
-      <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="Fenster"/>
     </entailmentUnit>
   </equivalenceClassNode>
   <equivalenceClassNode label="Gruß" numeu="1">
@@ -34,9 +34,9 @@
     <categoryConfidence category="100" confidence="3.0"/>
     <entailmentUnit level="0" text="erscheint">
       <completeStatement text="erscheint"/>
-      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="erscheint"/>
       <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="erscheint"/>
       <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="erscheint"/>
+      <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="erscheint"/>
     </entailmentUnit>
   </equivalenceClassNode>
   <equivalenceClassNode label="gehe" numeu="1">

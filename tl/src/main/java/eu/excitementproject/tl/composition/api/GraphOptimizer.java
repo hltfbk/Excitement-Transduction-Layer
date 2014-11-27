@@ -6,44 +6,36 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 
 /**
- *** Convert Graph Module
-- input: one entailment graph (=EntailmentGraphRaw=).
-- output: one collapsed entailment graph
-  (=EntailmentGraphCollapsed=).
-- failues: if the implementation can't convert the graph for some
-  reason, it will raise an exception. (We will define an exception
-  for this module type).
-- interface:
-We can express the above mentioned contract with an interface with
-a few methods. For the prototype, we are expecting to share one
-implementation, but this can be expanded in the future.
-- dependency:
-We do not foresee any external EOP component dependency for this
-module. But this is not definite. The first prototype will shed some
-light for us. Like other modules, if it needs any arguments or
-configurable values, they will be exposed in the implementation
+ Graph Optimizer Module Interface 
+ 
+<p> <b>Input:</b> One raw entailment graph {@link EntailmentGraphRaw}.
+<p>	<b>Output:</b> One collapsed entailment graph {@link EntailmentGraphCollapsed}.
+<p>	<b>Failures:</b>  If the implementation cannot produce the collapsed graph for some
+  reason, it will raise a {@link GraphOptimizerException}.
+<p>	<b>Dependency:</b> We do not foresee any external EOP component dependency for this
+module. Still, like other modules, if it needs any arguments or
+configurable values, they should be exposed in the implementation
 constructor.
 
-** OMQ usecase composition-flow "Matcher"
-(Gil: I will update this part after finishing use-case 2 documentation)
-
-** OMQ usecase composition-flow "Annotator"
-(Gil: I will update this part after finishing use-case 2 documentation)
-
- * @author Lili
+ * @author Lili Kotlerman
 
  */
 public interface GraphOptimizer {
 
 	/**
-	 * @param workGraph - one entailment graph ({@link EntailmentGraphRaw})
-	 * @return one collapsed entailment graph ({@link EntailmentGraphCollapsed})
-	 * @throws GraphOptimizerException if the implementation can't convert the graph for some
-  reason
+	 * @param workGraph - the input raw entailment graph ({@link EntailmentGraphRaw})
+	 * @return collapsed entailment graph ({@link EntailmentGraphCollapsed})
+	 * @throws GraphOptimizerException if the implementation cannot produce the collapsed graph for some reason
 	 */
 	public EntailmentGraphCollapsed optimizeGraph(EntailmentGraphRaw workGraph) 
 			throws GraphOptimizerException;
 
+	/**
+	 * @param workGraph - the input raw entailment graph ({@link EntailmentGraphRaw})
+	 * @param confidenceThreshold - threshold value on entailment confidence. All (positive) entailment edges in the raw graph with confidence lower than this threshold will be considered non-entailing.
+	 * @return collapsed entailment graph ({@link EntailmentGraphCollapsed})
+	 * @throws GraphOptimizerException if the implementation cannot produce the collapsed graph for some reason
+	 */
 	public EntailmentGraphCollapsed optimizeGraph(EntailmentGraphRaw workGraph, Double confidenceThreshold) 
 			throws GraphOptimizerException;
 }
