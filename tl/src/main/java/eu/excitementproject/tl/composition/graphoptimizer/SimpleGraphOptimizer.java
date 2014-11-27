@@ -17,9 +17,10 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
- * Naive implementation of {@link GraphOptimizer} interface. 
- * Assumption: only entailment edges are present in the graph (no non-entailing edges)
- * Removes all edges with confidence < threshold and collapses each cycles into a single {@link EquivalenceClass} node 
+ * Simple implementation of {@link GraphOptimizer} interface. 
+ * Removes all non-entailment edges and entailment edges with confidence < threshold, and then collapses each cycle into a single {@link EquivalenceClass} node 
+ * 
+ * <p> This optimizer can be used to create a collapsed version ({@link EntailmentGraphCollapsed}) of a consistent (with no transitivity violations) raw graph. 
  * @author Lili Kotlerman
  *
  */
@@ -44,9 +45,7 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 		
 		// Step 1 - clean up the work graph
 		
-		//-  Only retain "entailment" edges. 
-		//   (note: AutomateWP2ProcedureGraphMerger only generates "entailment" edges)		
-		// - Remove all "entailment" edges with confidence < confidenceThreshold
+		// -  Only retain "entailment" edges and remove all "entailment" edges with confidence < confidenceThreshold
 		
 		Set<EntailmentRelation> workEdgesToRemove = new HashSet<EntailmentRelation>();
 		for (EntailmentRelation workEdge : workGraph.edgeSet()){
@@ -80,31 +79,6 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 			}
 		}
 		
-/*		// - Copy edges (in case of multiple edges assign max confidence)
-		for (EntailmentRelation workGraphEdge : workGraph.edgeSet()){
-			EquivalenceClass source = collapsedGraph.getVertex(workGraphEdge.getSource());
-			if (source==null) throw new CollapsedGraphGeneratorException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getSource());
-			EquivalenceClass target = collapsedGraph.getVertex(workGraphEdge.getTarget());
-			if (target==null) throw new CollapsedGraphGeneratorException("Adding edges to the collapsed graph. Cannot find the equivalence class node, which includes the entailment unit "+workGraphEdge.getTarget());
-			
-			if (source.equals(target)) continue; // if source and target of the work graph edge are both mapped to the same equivalence class - don't add this edge (this will be a loop)  
-			
-			double maxConfidence = 0.0; 
-			for (EntailmentRelationCollapsed existingEdge : collapsedGraph.getAllEdges(source, target)){
-				// actually, if this set of existing edges is not empty, there should be a single edge in this set, since we do not allow multiple edges between the same pair of (source,target) for the collapsed graph
-				if (existingEdge.getConfidence()>maxConfidence){
-					maxConfidence = existingEdge.getConfidence(); // update max confidence
-				}
-			}
-			// now if the candidate edge from the work graph has a higher confidence
-			// remove previous edge source->target (if exists) and add a new one with updated confidence
-			if (workGraphEdge.getConfidence()>maxConfidence){
-				collapsedGraph.removeAllEdges(source, target);
-				EntailmentRelationCollapsed newEdge = new EntailmentRelationCollapsed(source, target, workGraphEdge.getConfidence());
-				collapsedGraph.addEdge(source, target, newEdge);
-			}
-		}
-*/		
 
 		// - Copy edges (in case of multiple edges assign min confidence)
 		for (EntailmentRelation workGraphEdge : workGraph.edgeSet()){
@@ -131,14 +105,14 @@ public class SimpleGraphOptimizer extends AbstractGraphOptimizer{
 			}
 		}
 		
-		// Step 3 - resolve transitivity violations
-		// WE CAN HAVE "a -> b" and "b -> c", but the edge "a -> c" missing, denoting "no entailment", and then it's a violation! Can resolve by adding this missing edge
-		// If we have no-entailment edges, we can have explicit violations like this
-		
 		return collapsedGraph;
 	}
 	
 	
+	/** Detect all cycles and turn each of them to an {@link EquivalenceClass} node  
+	 * @param workGraph
+	 * @return set of {@link EquivalenceClass} nodes
+	 */
 	public Set<EquivalenceClass> findEquivalenceClassesAsCycles(EntailmentGraphRaw workGraph){
 		
 		if (workGraph==null) return null;

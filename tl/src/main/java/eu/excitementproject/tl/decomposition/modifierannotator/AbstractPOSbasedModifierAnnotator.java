@@ -79,7 +79,7 @@ public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifier
 	 * @param aJCas
 	 */
 	@Override
-	public int annotateModifiers(JCas aJCas) throws ModifierAnnotatorException, FragmentAnnotatorException {
+	public int annotateModifiers(JCas aJCas) throws ModifierAnnotatorException {
 		
 		// check if it already has modifier annotations. If it is so, 
 		// we don't process this CAS and pass. 

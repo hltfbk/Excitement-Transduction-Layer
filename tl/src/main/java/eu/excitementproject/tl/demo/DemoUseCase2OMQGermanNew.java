@@ -330,7 +330,7 @@ public class DemoUseCase2OMQGermanNew {
 							+ xmlDataFilename.substring(0,xmlDataFilename.length()-4) 
 							+ "_blockSize" + blockSize + "_block" + i +  "_collapsedgraph.xml";
 				XMLFileWriter.write(finalCollapsedGraph.toXML(), xmlGraphFilename);			
-			} catch (GraphOptimizerException | ConfidenceCalculatorException | TransformerException | EntailmentGraphCollapsedException | GraphMergerException | LAPException e) {
+			} catch (GraphOptimizerException | ConfidenceCalculatorException | TransformerException | EntailmentGraphCollapsedException | GraphMergerException  e) {
 				e.printStackTrace();
 				System.exit(1);
 			}			
