@@ -71,6 +71,7 @@ import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragm
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAndDependencyAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.experiments.OMQ.SimpleEDA_DE;
@@ -196,6 +197,8 @@ public class EvaluatorCategoryAnnotator {
     static List<String> dependentPosFilter = Arrays.asList(
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
+    static boolean useDecompounder = true;
+    static boolean useOnlyHyphenSplit = true;
     
     private int setup; //use setupArray to set the parameter
     static int[] setupArray = {1}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
@@ -1765,7 +1768,7 @@ public class EvaluatorCategoryAnnotator {
 		try{
 			if(fragmentTypeNameGraph.equalsIgnoreCase("TF")){
 				lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE());//TreeTaggerDE()
-	    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotator(lapForFragments, tokenPosFilter);
+	    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments, tokenPosFilter, useDecompounder, useOnlyHyphenSplit);
 			} else if(fragmentTypeNameGraph.equalsIgnoreCase("DF")){
 				lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotator(lapForFragments, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
@@ -1778,7 +1781,7 @@ public class EvaluatorCategoryAnnotator {
         	}
 			if(fragmentTypeNameEval.equalsIgnoreCase("TF")){
 				lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//TreeTaggerDE()
-				fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotator(lapForDecisions, tokenPosFilter);
+				fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForDecisions, tokenPosFilter, useDecompounder, useOnlyHyphenSplit);
 			} else if(fragmentTypeNameEval.equalsIgnoreCase("DF")){
         		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForNewInput = new DependencyAsFragmentAnnotator(lapForDecisions, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
