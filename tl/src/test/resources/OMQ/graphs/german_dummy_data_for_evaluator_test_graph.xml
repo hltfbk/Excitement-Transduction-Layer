@@ -35,8 +35,8 @@
     <entailmentUnit level="0" text="erscheint">
       <completeStatement text="erscheint"/>
       <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="erscheint"/>
-      <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="erscheint"/>
       <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="erscheint"/>
+      <entailmentUnitMention categoryId="100" interactionId="2" level="0" text="erscheint"/>
     </entailmentUnit>
   </equivalenceClassNode>
   <equivalenceClassNode label="gehe" numeu="1">
@@ -50,8 +50,8 @@
     <categoryConfidence category="100" confidence="2.0"/>
     <entailmentUnit level="0" text="großes">
       <completeStatement text="großes"/>
-      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="großes"/>
       <entailmentUnitMention categoryId="100" interactionId="4" level="0" text="großes"/>
+      <entailmentUnitMention categoryId="100" interactionId="413" level="0" text="großes"/>
     </entailmentUnit>
   </equivalenceClassNode>
   <equivalenceClassNode label="lösen" numeu="1">
