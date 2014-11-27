@@ -232,7 +232,7 @@ public class LegacyAutomateWP2ProcedureGraphMerger extends AbstractGraphMerger {
 		return workGraph;
 	}
 	
-	/** Add entailment edges induced from the structure of FragmentGraphs and previously made entailment decisions
+	/** Decide on entailment edges induced from the structure of FragmentGraphs and previously made entailment decisions
 	 * @param workGraph
 	 * @param candidateEntailingNode
 	 * @param candidateEntailedNode

@@ -23,7 +23,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 /**
  * 
 Abstract implementation of the {@link GraphMerger} interface. 
-The class contains methods that are likely to be shared by the actual implementations, including
+The class contains attributes and methods that are likely to be shared by the actual implementations, including
 constructors with LAP and EDA configurations.
 
  * @author Lili Kotlerman
@@ -94,7 +94,6 @@ public abstract class AbstractGraphMerger implements GraphMerger{
 	public void setEntailmentConfidenceThreshold(Double entailmentConfidenceThreshold) {
 		this.entailmentConfidenceThreshold = entailmentConfidenceThreshold;
 	}
-
 	/******************************************************************************************
 	 * ACCESS TO ATTRIBUTES
 	 * ****************************************************************************************/
