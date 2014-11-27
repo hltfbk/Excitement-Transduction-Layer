@@ -957,11 +957,13 @@ public class EvaluatorUtils {
 		if(egr.hasLemmatizedLabel()){
 			for(EntailmentUnit eu : egr.vertexSet()){
 				String lemmatizedText = eu.getLemmatizedText();
-				if(ignoreCase){
-					lemmatizedText = lemmatizedText.toLowerCase();
-				}
-				if(textsToFind.contains(lemmatizedText)){
-					resultSet.add(eu);
+				if(!lemmatizedText.isEmpty()){
+					if(ignoreCase){
+						lemmatizedText = lemmatizedText.toLowerCase();
+					}
+					if(textsToFind.contains(lemmatizedText)){
+						resultSet.add(eu);
+					}
 				}
 			}
 		}
