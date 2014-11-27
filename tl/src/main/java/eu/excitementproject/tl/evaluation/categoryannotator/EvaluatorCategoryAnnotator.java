@@ -989,12 +989,12 @@ public class EvaluatorCategoryAnnotator {
 			
 				//Add email texts
 				logger.info("Nummber of nodes: " + egr.vertexSet().size());
-				egr = buildRawGraph(emailDocs, mergedGraphFile, egr, minTokenOccurrence);
+				egr = buildRawGraph(emailDocs, relevantTextProvided, mergedGraphFile, egr, minTokenOccurrence);
 				logger.info("Nummber of nodes: " + egr.vertexSet().size());
 
 	    		//Add category texts
 	    		logger.info("Adding " + categoryDocs.size() + " categories");
-    			egr = buildRawGraph(categoryDocs, mergedGraphFile, egr, minTokenOccurrenceInCategories);
+    			egr = buildRawGraph(categoryDocs, false, mergedGraphFile, egr, minTokenOccurrenceInCategories);
 	    		logger.info("Number of nodes in raw graph: " + egr.vertexSet().size());
 	    		logger.info("Number of edges in raw graph: " + egr.edgeSet().size());
 	    		graph = buildCollapsedGraphWithCategoryInfo(egr);
@@ -1310,7 +1310,7 @@ public class EvaluatorCategoryAnnotator {
 	 * @throws TransformerException
 	 * @throws EntailmentGraphRawException
 	 */	
-	private EntailmentGraphRaw buildRawGraph(List<Interaction> graphDocs,
+	private EntailmentGraphRaw buildRawGraph(List<Interaction> graphDocs, boolean relevantTextProvided, 
 			File mergedGraphFile, EntailmentGraphRaw egr, int minOccurrence)
 			throws FragmentAnnotatorException, ModifierAnnotatorException,
 			FragmentGraphGeneratorException, ConfigurationException,
@@ -1522,8 +1522,7 @@ public class EvaluatorCategoryAnnotator {
 		
 		//Step 1: Create graph from token fragments and add it to graph
 		singleTokenGraph = new EntailmentGraphRaw(true); //addLemmaLabel must be true!
-		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, relevantTextProvided, 
-				faTokens, maAdv, fgg);
+		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, false, faTokens, maAdv, fgg); //TODO: set category text als relevantText in XML 
 		//buildTokenLemmaGraph(singleTokenGraph, fgs);//TODO: REMOVE! replaced by EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs)
 		EvaluatorUtils.mergeIntoLemmaTokenGraph(singleTokenGraph, fgs);
 		egr.copyRawGraphNodesAndAllEdges(singleTokenGraph); //TODO: check if this works properly!
