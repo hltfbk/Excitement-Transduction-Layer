@@ -17,9 +17,10 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
- * Naive implementation of {@link GraphOptimizer} interface. 
- * Assumption: only entailment edges are present in the graph (no non-entailing edges)
- * Removes all edges with confidence < threshold and collapses each cycles into a single {@link EquivalenceClass} node 
+ * Simple implementation of {@link GraphOptimizer} interface. 
+ * Removes all non-entailment edges and entailment edges with confidence < threshold, and then collapses each cycle into a single {@link EquivalenceClass} node 
+ * 
+ * <p> This optimizer can be used to create a collapsed version ({@link EntailmentGraphCollapsed}) of a consistent (with no transitivity violations) raw graph. 
  * @author Lili Kotlerman
  *
  */
