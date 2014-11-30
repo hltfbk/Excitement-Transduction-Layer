@@ -35,7 +35,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  *  The class extends {@link DefaultEdge}:
  *  http://jgrapht.org/javadoc/org/jgrapht/graph/DefaultEdge.html
  *
- * @author Lili Kotlerman & vivi@fbk
+ * @author vivi@fbk & Lili Kotlerman
  */
 public class EntailmentRelation extends DefaultEdge {
 	
