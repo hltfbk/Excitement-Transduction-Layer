@@ -29,8 +29,9 @@ import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.TEDecision;
-import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
+import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.edautils.TEDecisionByScore;
 import eu.excitementproject.tl.edautils.TEDecisionWithConfidence;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
@@ -43,38 +44,28 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman & Aleksandra
+ * @author vivi@fbk & Lili Kotlerman & Aleksandra & Kathrin Eichler
  * 
  * The graph structure for the work graph. We call it EntailmentGraphRaw.
  * This graph grows by adding to it FragmentGraph-s by "merging"
- * The merging is done through an interface. 
- * The nodes are entailment units, and the edges (entailment relation) are generated
- * based on decisions from the EDAs. As such there can be several edges between the same
+ * The merging is done through {@link GraphMerger} interface. 
+ * The nodes are entailment units ({@link EntailmentUnit}), and the edges ({@link EntailmentRelation}) 
+ * are generated based on decisions from the EDAs. As such there can be several edges between the same
  * two nodes, each corresponding to one EDA query.  
  * 
- *  This graph extends DirectedMultigraph, to allow for multiple directed edges between
+ *  This graph extends {@link DirectedMultigraph}, to allow for multiple directed edges between
  *  the same two nodes. The JavaDoc for the {@link DirectedMultigraph} for information about
  *  inherited methods is here:
  *  http://jgrapht.org/javadoc/org/jgrapht/graph/DirectedMultigraph.html
  */
 public class EntailmentGraphRaw extends
 		DirectedMultigraph<EntailmentUnit,EntailmentRelation> {
-	
-	
-	/**
-	 * 
-	 */
-	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw");
 
-	
+	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw");
 	private static final long serialVersionUID = -3274655854206417667L;
 	
 	private boolean addLemmatizedLabel;
-	/*
-	 * To build the work graph we need to know the configuration,
-	 * and in particular the EDA and LAP to use (and possibly other stuff)
-	 */
-	
+
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS
@@ -89,6 +80,11 @@ public class EntailmentGraphRaw extends
 		this.addLemmatizedLabel = addLemmatizedLabel;
 	}
 	
+	/**
+	 * Create an entailment graph with the given nodes and edges
+	 * @param nodes
+	 * @param edges
+	 */
 	public EntailmentGraphRaw(Set<EntailmentUnit> nodes, Set<EntailmentRelation> edges){
 		this();
 		for (EntailmentUnit node : nodes){
@@ -99,11 +95,8 @@ public class EntailmentGraphRaw extends
 		}
 	}	
 	
-	/*
-	 * a constructor for initializing a graph from a (xml) file
-	 */
 	/**
-	 * 
+	 * Initialize a graph from an xml file
 	 * @param xmlFile -- an xml file from which to load a previously produced graph
 	 */
 	public EntailmentGraphRaw(File xmlFile) throws EntailmentGraphRawException{
@@ -189,7 +182,8 @@ public class EntailmentGraphRaw extends
 	
 	/**
 	 * Initialize a work graph from a fragment graph
-	 * @param fg -- a fragment graph object
+	 * @param fg -- a fragment graph
+	 * @param includeNonEntailingEdges -- whether to include negative (non-entailing) edges from the given fragment graph. If set to false, only positive edges will be added. 
 	 */
 	public EntailmentGraphRaw(FragmentGraph fg, boolean includeNonEntailingEdges) {
 		super(EntailmentRelation.class);
@@ -197,6 +191,12 @@ public class EntailmentGraphRaw extends
 		else copyFragmentGraphNodesAndEntailingEdges(fg);
 	}
 	
+	/**
+	 * Initialize a work graph from a fragment graph
+	 * @param fg -- a fragment graph
+	 * @param includeNonEntailingEdges -- whether to include negative (non-entailing) edges from the given fragment graph. If set to false, only positive edges will be added. 
+	 * @param addLemmatizedLabel
+	 */
 	public EntailmentGraphRaw(FragmentGraph fg, boolean includeNonEntailingEdges, boolean addLemmatizedLabel) {
 		super(EntailmentRelation.class);
 		this.addLemmatizedLabel = addLemmatizedLabel;
@@ -232,6 +232,9 @@ public class EntailmentGraphRaw extends
 		return baseStatements;
 	}
 	
+	/**
+	 * @return
+	 */
 	public boolean hasLemmatizedLabel(){
 		return this.addLemmatizedLabel;
 	}
@@ -242,6 +245,13 @@ public class EntailmentGraphRaw extends
 	 * OTHER AUXILIARY METHODS
 	 * ****************************************************************************************/
 
+	/**
+	 * Return true if an edge entailingNode->entailedNode is present in the graph and originates from a fragment graph (as specified by its {@link EdgeType}).
+	 * Otherwise return false.
+	 * @param entailingNode
+	 * @param entailedNode
+	 * @return true/false
+	 */
 	public boolean isFragmentGraphEdge(EntailmentUnit entailingNode, EntailmentUnit entailedNode){
 		Set<EntailmentRelation> se = getAllEdges(entailingNode, entailedNode);
 		if (se==null) return false;
@@ -252,6 +262,7 @@ public class EntailmentGraphRaw extends
 	}
 
 	/**
+	 * Detect if there is a conflict for entailingNode->entailedNode
 	 * @param entailingNode
 	 * @param entailedNode
 	 * @return true if there is at least one entailing edge from entailingNode to entailedNode, and at least one non-entailing edge from entailingNode to entailedNode
@@ -272,6 +283,7 @@ public class EntailmentGraphRaw extends
 	
 	
 	/**
+	 * Detect if there is entailment for for entailingNode->entailedNode
 	 * @param entailingNode
 	 * @param entailedNode
 	 * @return true if there is at least one entailing edge from entailingNode to entailedNode
@@ -287,6 +299,7 @@ public class EntailmentGraphRaw extends
 	}
 	
     /**
+     * Detect if there is entailment without conflicts for entailingNode->entailedNode
      * @param entailingNode
      * @param entailedNode
      * @return true if there are only entailing edge(s) from entailingNode to entailedNode, and no non-entailing ones
@@ -301,12 +314,25 @@ public class EntailmentGraphRaw extends
 	}
 
 
+	/**
+	 * Detect if there is a positive entailment decision between nodeA and nodeB in any direction. 
+	 * @param nodeA
+	 * @param nodeB
+	 * @return true if there is entailment for either nodeA->nodeB, nodeB->nodeA or both. Does not take conflicts into consideration.
+	 */
 	public boolean isEntailmentInAnyDirection(EntailmentUnit nodeA, EntailmentUnit nodeB){
 		if (nodeA.equals(nodeB)) return true; // if both nodes are the same
 		if (isEntailment(nodeA, nodeB)||(isEntailment(nodeB, nodeA))) return true;
 		return false;
 	}
 
+	/**
+	 * Detect if there is a positive entailment decision between nodeA and nodeB in a single direction only. 
+	 * @param nodeA
+	 * @param nodeB
+	 * @return true if there is entailment for either (1) nodeA->nodeB, but not nodeB->nodeA or (2) nodeB->nodeA, but not nodeA->nodeB.
+	 *  Does not take conflicts into consideration.
+	 */
 	public boolean isEntailmentInSingleDirectionOnly(EntailmentUnit nodeA, EntailmentUnit nodeB){
 		if (nodeA.equals(nodeB)) return false; // if both nodes are the same - this is bidirectional, not single direction
 		if (isEntailment(nodeA, nodeB)) {
@@ -318,13 +344,12 @@ public class EntailmentGraphRaw extends
 		return false;
 	}
 
-	/** Copies all nodes and entailing edges (incl. transitive closure) from the input fragment graph to the raw entailment graph
+	/** Copies all nodes and entailing edges (including transitive closure) from the input fragment graph to the raw entailment graph
 	 * @param fg - the input fragment graph
 	 */
 	public void copyFragmentGraphNodesAndEntailingEdges(FragmentGraph fg){
 		// first add transitive closure to the FG
 		fg.applyTransitiveClosure();
-		
 		
 		// copy nodes (add if new, update mentions and complete statements if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
 		for(EntailmentUnitMention fragmentGraphNode : fg.vertexSet()){
@@ -336,7 +361,7 @@ public class EntailmentGraphRaw extends
 		}
 	}
 	
-	/** Copies all nodes and all edges (entailing, incl. transitive closure, and non-entailing) from the input fragment graph to the raw entailment graph
+	/** Copies all nodes and all edges (entailing, inclu transitive closure, and non-entailing) from the input fragment graph to the raw entailment graph
 	 * @param fg - the input fragment graph
 	 */
 	public void copyFragmentGraphNodesAndAllEdges(FragmentGraph fg){
@@ -372,9 +397,8 @@ public class EntailmentGraphRaw extends
 		
 	}
 
-	/** Copies all nodes and all edges from the input raw graph to the raw entailment graph
+	/** Copies all nodes and all edges (including transitive closure) from the input raw graph to the raw entailment graph
 	 * @param egr - the input raw graph
-	 * @author Kathrin Eichler
 	 */
 	public void copyRawGraphNodesAndAllEdges(EntailmentGraphRaw egr){
 		// first add transitive closure to the EGR
@@ -419,7 +443,7 @@ public class EntailmentGraphRaw extends
 	 * (fragment graph can be defined by its complete statement, while the same base statement can be part of different fragment graphs)  
 	 * @param baseStatementNode
 	 * @param completeStatementText
-	 * @return Hashtable where keys (int) are levels and values (Set<EntailmentUnit>) are sets of entailment unit nodes found at the corresponding level.
+	 * @return Hashtable where keys (int) are levels and values (Set<{@link EntailmentUnit}>) are sets of entailment unit nodes found at the corresponding level.
 	 * If the input base statement was not produced from the input complete statement, empty Hashtable will be returned  
 	 * @throws EntailmentGraphRawException
 	 */
@@ -455,7 +479,7 @@ public class EntailmentGraphRaw extends
 	 * @param sourceNode
 	 * @param targetNode
 	 * @param nodesToReturn
-	 * @return
+	 * @return updated nodesToReturn set
 	 */
 	public Set<EntailmentUnit> getAllNodes(EntailmentUnit sourceNode, EntailmentUnit targetNode, Set<EntailmentUnit> nodesToReturn){
 		if (nodesToReturn==null) nodesToReturn = new HashSet<EntailmentUnit>();
@@ -475,7 +499,7 @@ public class EntailmentGraphRaw extends
 	
 	/** Returns the set of nodes, which entail the given node
 	 * @param node whose entailing nodes are returned
-	 * @return Set<EntailmentUnit> with all the entailing nodes of the given node
+	 * @return Set<{@link EntailmentUnit}> with all the entailing nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node){
 		if (!this.containsVertex(node)) return null;
@@ -490,9 +514,9 @@ public class EntailmentGraphRaw extends
 	}
 	
 	/** Returns the set of nodes, which entail the given node and have the specified level (number of modifiers)
-	 * @param node whose entailing nodes are returned
-	 * @param level - number of modifiers
-	 * @return Set<EntailmentUnit> with the entailing nodes of the given node
+	 * @param node - node whose entailing nodes are returned
+	 * @param level - number of modifiers in the returned nodes
+	 * @return Set<{@link EntailmentUnit}> with the entailing nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailingNodes(EntailmentUnit node, int level){
 		if (!this.containsVertex(node)) return null;
@@ -509,7 +533,7 @@ public class EntailmentGraphRaw extends
 	
 	/** Returns the set of nodes, entailed by the given node
 	 * @param node whose entailed nodes are returned
-	 * @return Set<EntailmentUnit> with all the entailed nodes of the given node
+	 * @return Set<{@link EntailmentUnit}> with all the entailed nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailedNodes(EntailmentUnit node){
 		if (!this.containsVertex(node)) return null;
@@ -526,7 +550,7 @@ public class EntailmentGraphRaw extends
 	/** Returns the set of nodes, which are entailed by the given node and have the specified level (number of modifiers)
 	 * @param node whose entailed nodes are returned
 	 * @param level - number of modifiers
-	 * @return Set<EntailmentUnit> with all the entailed nodes of the given node
+	 * @return Set<{@link EntailmentUnit}> with all the entailed nodes of the given node
 	 */
 	public Set<EntailmentUnit> getEntailedNodes(EntailmentUnit node, int level){
 		if (!this.containsVertex(node)) return null;
@@ -544,9 +568,10 @@ public class EntailmentGraphRaw extends
 	}
 	
 
-	/** Get entailed nodes what belong to the same fragment graph and have the specified nummber of modifiers (level)
-	 * @param node
-	 * @return
+	/** Get nodes entailed by a given node, which belong to the same fragment graph with the given node and have the specified number of modifiers (level)
+	 * @param node whose entailed nodes are returned
+	 * @param level - number of modifiers
+	 * @return Set<{@link EntailmentUnit}>
 	 */
 	public Set<EntailmentUnit> getEntailedNodesFromSameFragmentGraph(EntailmentUnit node, int level){
 		if (!this.containsVertex(node)) return null;
@@ -568,14 +593,13 @@ public class EntailmentGraphRaw extends
 	}	
 
 	/**
-	 * (vivi@fbk: added the lap parameter)
-	 * 
-	 * Create an edge from sourceVertex to targetVertex using the specified eda 
+	 * Create an edge from sourceVertex to targetVertex using the specified eda and lap 
 	 * @param sourceVertex
 	 * @param targetVertex
 	 * @param eda
+	 * @param lap
 	 * @return the edge, which was added to the graph
-	 * @throws LAPException 
+	 * @throws EntailmentGraphRawException 
 	 */
 	public EntailmentRelation addEdgeFromEDA(EntailmentUnit sourceVertex, EntailmentUnit targetVertex, EDABasic<?> eda, CachedLAPAccess lap) throws EntailmentGraphRawException{
 		EntailmentRelation edge = new EntailmentRelation(sourceVertex, targetVertex, eda, lap);
@@ -585,11 +609,12 @@ public class EntailmentGraphRaw extends
 	
 	/**
 	 * Copy an edge from a FragmentGraph. 
-	 * Although the method is called from copyFragmentGraphNodesAndEdges(), where nodes are added before adding edges, for generality if vertices do not exist - add them, and if a vertex exists - add the corresponding new entailment unit mention.
-	 * Since the mentions, their complete statements and interaction ids are sets, there will be no duplicate mentions etc. added 
+	 * <p>If vertices do not exist - add them, and if a vertex exists - add the corresponding new entailment unit mention.
+	 * Since the mentions, their complete statements and interaction ids are sets, there will be no duplicate mentions etc. added to the graph nodes
+	 * <p>Currently the original weight of the edges is not changed when copying.
 	 * @param fragmentGraphEdge -- the edge to copy into the graph
+	 * @param fg -- the fragment graph, from which the edge is copied
 	 * @return the edge, which was added to the graph
-	 * TODO: how to deal with the original edge weight? Currently copied as is (=1 for everyone).
 	 */
 	public EntailmentRelation addEdgeFromFragmentGraph(FragmentGraphEdge fragmentGraphEdge, FragmentGraph fg){
 		// take care of the source and target vertices 
@@ -620,25 +645,11 @@ public class EntailmentGraphRaw extends
 	}
 	
 	/**
-	 * Return the vertex (EntailmentUnit) with the corresponding text, if it is found in the graph. 
+	 * Return the vertex ({@link EntailmentUnit}), which has the given text at one of its mentions, if it is found in the graph. 
 	 * Otherwise return null.
+	 * The case of the text and extra spaces are ignored to unify texts regardless to their case/spacing differences.
 	 * @param text the text of the EntailmentUnit to be found
-	 * @return
-	 */
-/*	public EntailmentUnit getVertex(String text){
-		for (EntailmentUnit eu : this.vertexSet()){
-			if (eu.getText().equals(text)) return eu;
-		}
-		return null;
-	}*/
-	
-	
-	/**
-	 * Return the vertex (EntailmentUnit), which has the given text at one of its mentions, if it is found in the graph. 
-	 * Otherwise return null.
-	 * The case of the text is ignored (to unify texts regardless to their case)
-	 * @param text the text of the EntailmentUnit to be found
-	 * @return
+	 * @return the vertex, if found.
 	 */
 	public EntailmentUnit getVertexWithText(String text){
 		for (EntailmentUnit eu : this.vertexSet()){
@@ -710,6 +721,11 @@ public class EntailmentGraphRaw extends
 	}	
 	
 	
+	/**
+	 * Translate the graph to xml format
+	 * @return contents of the graph in {@link DOMSource} format
+	 * @throws EntailmentGraphRawException
+	 */
 	public DOMSource toXML() throws EntailmentGraphRawException{
 				try {
 					DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -793,6 +809,10 @@ public class EntailmentGraphRaw extends
 				}		 
 		  }
 	
+	/** Save the graph to an xml file
+	 * @param filename -- the name of the file to be saved
+	 * @throws EntailmentGraphRawException
+	 */
 	public void toXML(String filename) throws EntailmentGraphRawException{
 		
 		try {
@@ -802,42 +822,16 @@ public class EntailmentGraphRaw extends
 		}
 		
 	}
-	
-	public String toStringDetailed(){
-		String s = "";
-		s+="\nNODES:";
-		for (EntailmentUnit v: this.vertexSet()){
-			s+="\n\t"+v.toString();
-		}
 		
-		s+="\n\nBASE STATEMENT NODES:";
-		for (EntailmentUnit v: this.getBaseStatements()){
-			s+="\n\t"+v.toString();
-		}
-
-		s+="\n\nENTAILMENTS";
-		for (EntailmentRelation e: this.edgeSet()){
-			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
-				s+="\n\t"+e.toString();
-			}
-		}
-
-		s+="\n\nALL EDGES:";
-		for (EntailmentRelation e: this.edgeSet()){
-			s+="\n\t"+e.toString();
-		}
-		
-		return s;
-	}
-	
 	/******************************************************************************************
 	 * TRANSITIVE CLOSURE
 	 * ****************************************************************************************/
-	   /**
+
+	/**
      * Computes floor(log_2(n)) + 1
      */
-    private int computeBinaryLog(int n)
-    {
+     private int computeBinaryLog(int n)
+     {
         assert n >= 0;
 
         int result = 0;
@@ -850,6 +844,7 @@ public class EntailmentGraphRaw extends
     }
     
     /** 
+     * Find the best confidence of source -> target within the graph
      * @param source
      * @param target
      * @return the highest confidence of source -> target
@@ -864,13 +859,11 @@ public class EntailmentGraphRaw extends
     }
     
     /**
-	 *  Adds transitive closure edges to the graph. Only consider "entailment" edges!!! (currently we don't propagate non-entailment relation)
-	 *  Can add conflicts to the graph, if non-entailment decisions are present in it
-	 *  Based on org.jgrapht.alg.TransitiveClosure
-	 *  
-	 * @param changeTypeOfExistingEdges - if true, existing transitive closure edges will change their type to "TRANSITIVE_CLOSURE" 
+	 *  Add transitive closure edges to the graph. 
+	 *  <p> Only considers "entailment" edges, i.e. can add conflicts to the graph if non-entailment decisions are present in it
+	 *  <p> Based on the algorithm from {@link org.jgrapht.alg.TransitiveClosure}
 	 */
-	public void applyTransitiveClosure(/*boolean changeTypeOfExistingEdges*/){    
+	public void applyTransitiveClosure(){    
 		Map<EntailmentUnit,Double> newEdgeTargets = new HashMap<EntailmentUnit,Double>();
 
         // At every iteration of the outer loop, we add a path of length 1
@@ -905,19 +898,7 @@ public class EntailmentGraphRaw extends
 
                     	if (this.isEntailment(v1, v3)){
                     		// don't add duplicate entailing edges
-     //                   	if (!changeTypeOfExistingEdges)	{
                         		continue; 
-     //                   	}
-                        		
-/*                            	if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) { // if it's a closure edge already
-                            		if (e.getConfidence()>=confidence) continue; // and its confidence is >= current - skip
-                            		// if its confidence is lower than current, we want to update the edge with the current confidence, since we have a more confident transitive path from v1 to v3 now 
-                            	}
-                            	else{
-                                   	// if it's not a closure edge, add it as an edge with EdgeType="TRANSITIVE_CLOSURE"
-                                	confidence = e.getConfidence(); // if we had this edge before, we want to keep its confidence, we only change its type                        		
-                            	}                        		
-*/                        		
                     	}
                             	
                         newEdgeTargets.put(v3,confidence);
@@ -947,11 +928,7 @@ public class EntailmentGraphRaw extends
                 }
 
                 for (EntailmentUnit v3 : newEdgeTargets.keySet()) {
-/*                    EntailmentRelation e = this.getEdge(v1, v3);
-                	if (e!=null){
-                    	this.removePositiveEdges(v1, v3);       // only remove "entailing" edges, leave "non-entailing" to allow detecting conflicts             	
-                    }
-*/                	double confidence = newEdgeTargets.get(v3);
+                	double confidence = newEdgeTargets.get(v3);
                 	EntailmentRelation closureEdge = new EntailmentRelation(v1, v3, new TEDecisionWithConfidence(confidence, DecisionLabel.Entailment), EdgeType.TRANSITIVE_CLOSURE);
                 	this.addEdge(v1, v3, closureEdge);
                 	logger.info("Added transitive closure edge: "+closureEdge.toString());
@@ -959,72 +936,11 @@ public class EntailmentGraphRaw extends
             }
         }
 	}	
-	
+		
 	/**
-     * Remove all positive (entailing) edges src --> tgt, but leave non-entailing src -/-> tgt
-     * @param src
-     * @param tgt
-     */
-/*    private void removePositiveEdges(EntailmentUnit src, EntailmentUnit tgt) {
-		Set<EntailmentRelation> alledges = new HashSet<EntailmentRelation>(this.getAllEdges(src, tgt));
-		for (EntailmentRelation e : alledges){
-			if (e.getLabel().is(DecisionLabel.Entailment)){
-        		logger.info("Removed \"direct\" edge: "+ e.toString()+" to add a corresponding transitive closure edge");
-				this.removeEdge(e);
-			}
-			else {
-				logger.info("Did not remove non-entailing \"direct\" edge: "+ e.toString()+", but a corresponding \"entailing\" transitive closure edge will be added");
-			}
-		}
-	}
-*/    
-    
-	/**
-	 *  Removes all transitive closure edges from the graph.
-	 *  Expected use - for internal testing purposes only
-	 */
-/*	public void removeTransitiveClosure(){    
-		Set<EntailmentRelation> edgesToRemove = new HashSet<EntailmentRelation>();
-
-        // At every iteration of the outer loop, we find if there is a path of length 1
-        // between nodes that also have a path of length 2. In the worst
-        // case, we need to make floor(log |V|) + 1 iterations. We stop earlier
-        // if there is no change to the output graph.
-
-        int bound = computeBinaryLog(this.vertexSet().size());
-        boolean done = false;
-        for (int i = 0; !done && (i < bound); ++i) {
-            done = true;
-            for (EntailmentUnit v1 : this.vertexSet()) {
-            	edgesToRemove.clear();
-
-                for (EntailmentUnit v2 : this.getEntailedNodes(v1)) {
-                    for (EntailmentUnit v3 : this.getEntailedNodes(v2)) {
-                        Set<EntailmentRelation> e = this.getAllEdges(v1, v3);
-                        if (!e.isEmpty()) {
-                        	edgesToRemove.addAll(e);
-                        	logger.info("Remove transitive closure edges: "+ e.toString());
-                            done = false;
-                        }
-                    }
-                }
-
-                this.removeAllEdges(edgesToRemove);
-            }
-        }
-	}*/
-	
-	public void removeTransitiveClosure(){   
-		Set<EntailmentRelation> edgesToRemove = new HashSet<EntailmentRelation>();
-		for(EntailmentRelation e : this.edgeSet()){
-			if (e.getEdgeType().is(EdgeType.TRANSITIVE_CLOSURE)) edgesToRemove.add(e); 
-		}
-		removeAllEdges(edgesToRemove);
-	}
-	
-	/**
+	 * Returns the transitive reduction of the graph. Does not change the graph itself.
+	 * <p><b>Not tested yet!</b>
 	 * @return transitive reduction of the graph
-	 * Not tested yet!
 	 */
 	public EntailmentGraphRaw getTransitiveReduction(){   
 		EntailmentGraphRaw reduction = new EntailmentGraphRaw(this.vertexSet(), this.edgeSet());
@@ -1046,10 +962,40 @@ public class EntailmentGraphRaw extends
 	 * ****************************************************************************************/
 	
 	/**
-	 * Return the vertex (EntailmentUnit) with text equal to the given text, if it is found in the graph. 
+	 * @return detailed representation of the graph as {@link String}
+	 */
+	public String toStringDetailed(){
+		String s = "";
+		s+="\nNODES:";
+		for (EntailmentUnit v: this.vertexSet()){
+			s+="\n\t"+v.toString();
+		}
+		
+		s+="\n\nBASE STATEMENT NODES:";
+		for (EntailmentUnit v: this.getBaseStatements()){
+			s+="\n\t"+v.toString();
+		}
+
+		s+="\n\nENTAILMENTS";
+		for (EntailmentRelation e: this.edgeSet()){
+			if ((e.getLabel().is(DecisionLabel.Entailment)) || (e.getLabel().is(DecisionLabel.Paraphrase))) {
+				s+="\n\t"+e.toString();
+			}
+		}
+
+		s+="\n\nALL EDGES:";
+		for (EntailmentRelation e: this.edgeSet()){
+			s+="\n\t"+e.toString();
+		}
+		
+		return s;
+	}
+
+	/**
+	 * Return the vertex ({@link EntailmentUnit}) with text equal to the given text, if it is found in the graph. 
 	 * Otherwise return null.
-	 * The case of the text is not ignored
-	 * @param text the text of the EntailmentUnit to be found
+	 * The case/spacing of the text is not ignored
+	 * @param text - the text of the EntailmentUnit to be found
 	 * @return
 	 */
 	public EntailmentUnit getVertexWithExactText(String text){
@@ -1059,13 +1005,10 @@ public class EntailmentGraphRaw extends
 		return null;
 	}
 
-	/** Create an edge from sourceVertex to targetVertex using the random EDA 
-	 * No LAP is specified, which is not the case is real settings when EDA is always paired with its required LAP 
+	/** Create an edge from sourceVertex to targetVertex with a random decision using {@link RandomEDA}. 
 	 * @param sourceVertex
 	 * @param targetVertex
-	 * @param eda
 	 * @return the edge, which was added to the graph
-	 * @throws LAPException 
 	 */
 	public EntailmentRelation addEdgeWithRandomDecision(EntailmentUnit sourceVertex, EntailmentUnit targetVertex) {
 		EntailmentRelation edge = EntailmentRelation.generateRandomEntailmentRelation(sourceVertex, targetVertex);
@@ -1075,18 +1018,19 @@ public class EntailmentGraphRaw extends
 	
 	/**
 	 * Get a sample EntailmentGraphRaw
-	 * @param randomEdges - True for random edges, False for 'correct' edges
-	 * Nodes: (bs - base statement)
-	 * 		A "Food was really bad." (modifier: really)
-		bs	B "Food was bad."
-		bs	C "I didn't like the food."
-			D "a little more leg room would have been perfect" (modifier: "a little")
-		bs	E "more leg room would have been perfect"
-			F "Disappointed with the amount of legroom compared with other trains" (modifiers: "the amount of", "compared with other trains")
-			G "Disappointed with legroom compared with other trains" (modifier: "compared with other trains")
-			H "Disappointed with the amount of legroom" (modifier: "the amount of")
-		bs	I "Disappointed with legroom"
-			
+	 * <p>
+	 * Nodes: (bs - base statement):
+	 	<li> A - "Food was really bad." (modifier: really)
+		<li> B (bs) - "Food was bad."
+		<li> C (bs) - "I didn't like the food."
+		<li> D - "a little more leg room would have been perfect" (modifier: "a little")
+		<li> E (bs) - "more leg room would have been perfect"
+		<li> F - "Disappointed with the amount of legroom compared with other trains" (modifiers: "the amount of", "compared with other trains")
+		<li> G - "Disappointed with legroom compared with other trains" (modifier: "compared with other trains")
+		<li> H - "Disappointed with the amount of legroom" (modifier: "the amount of")
+		<li> I (bs) - "Disappointed with legroom"
+
+	 * @param randomEdges -true for random edges, false for 'correct' edges
 	 */
 		
 	public static EntailmentGraphRaw getSampleOuput(boolean randomEdges) {
@@ -1176,6 +1120,11 @@ public class EntailmentGraphRaw extends
 		return sampleRawGraph;
 	}
 	
+	/** The same as {@link EntailmentGraphRaw#getSampleOuput} with additional information
+	 * on categories for use-case-2.
+	 * @param randomEdges
+	 * @return
+	 */
 	public static EntailmentGraphRaw getSampleOuputWithCategories(boolean randomEdges){
 		
 		// create the to-be graph nodes
@@ -1262,25 +1211,4 @@ public class EntailmentGraphRaw extends
 
 		return sampleRawGraph;
 	}
-
-	/******************************************************************************************
-	 * LEGACY
-	 * ****************************************************************************************/
-	/*	*//**
-	 * 
-	 * @param arg0 -- the class for the edges (in our case this would be FragmentGraphEdge.class)
-	 *//*
-	public EntailmentGraphRaw(Class<? extends EntailmentRelation> arg0) {		
-		super(arg0);
-	}
-	
-	*//**
-	 * 
-	 * @param arg0 -- edge factory
-	 *//*
-	public EntailmentGraphRaw(EdgeFactory<EntailmentUnit,EntailmentRelation> arg0) {
-		super(arg0);		
-	}
-*/
-	
 }
