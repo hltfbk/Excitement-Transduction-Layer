@@ -27,16 +27,15 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman
  *
- * Edge type for the work graph (EntailmentGraphRaw)
- * The edge "value" is a textual entailment decision (TEdecision) obtained from
- * the EDA.
- * 
- *  The class extends DefaultEdge:
+ * Directed edge for the work graph ({@link EntailmentGraphRaw}).
+ * The edge "value" is a textual entailment decision ({@link TEDecision}) obtained from
+ * an EDA or other type of knowledge (e.g. fragment graph).
+ * <p>
+ *  The class extends {@link DefaultEdge}:
  *  http://jgrapht.org/javadoc/org/jgrapht/graph/DefaultEdge.html
  *
- * @param <V>
+ * @author Lili Kotlerman & vivi@fbk
  */
 public class EntailmentRelation extends DefaultEdge {
 	
@@ -44,25 +43,36 @@ public class EntailmentRelation extends DefaultEdge {
 
 	private static final Logger logger = Logger.getLogger(EntailmentRelation.class.toString());
 	
+	/**
+	 * The source node of the directed edge 
+	 */
 	EntailmentUnit source;
+	
+	/**
+	 * The target node of the directed edge 
+	 */
 	EntailmentUnit target;
 	
+	/**
+	 * The type of the edge ({@link EdgeType})
+	 */
 	EdgeType edgeType; 	
 	
-	/*
-	 * The TEdecision object is produced by the EDA, and contains the label, confidence score, ...
-	 */
+	/**
+	 * The {@link TEdecision} for the edge.
+	 * Can be produced by an EDA or derived from some other source. 
+	 * <p>Specifies the entailment decision ({@link DecisionLabel}), confidence score etc.
+	 **/
 	TEDecision edge = null;
 	
-	/*
-	 * we might decide to have on each edge information about the configuration 
-	 * (EDA, lexical resource, ...) that was used to produce this edge 
-	 */
+	/**
+	 * EDA, which was used to produce the edge (can be null).
+	 **/
 	EDABasic<?> eda;
 	
-	/*
-	 * EOP lap
-	 */
+	/**
+	 * LAP, which was used to produce the edge (can be null).
+	 **/
 	CachedLAPAccess lap;
 	
 	
@@ -70,7 +80,7 @@ public class EntailmentRelation extends DefaultEdge {
 	 * CONSTRUCTORS
 	 * ****************************************************************************************/
 	
-	/** Create an entailment relation by computing TEdecision from the input EDA
+	/** Create an entailment relation by computing TEdecision using the input EDA and LAP
 	 * @param source
 	 * @param target
 	 * @param eda
@@ -100,6 +110,14 @@ public class EntailmentRelation extends DefaultEdge {
 	 * SETTERS/GERRETS
 	 * ****************************************************************************************/
 
+	/**
+	 * Set source, target, edgeType, eda and lap attributes of the class
+	 * @param source
+	 * @param target
+	 * @param edgeType
+	 * @param eda
+	 * @param lap
+	 */
 	private void setAttributes(EntailmentUnit source, EntailmentUnit target, EdgeType edgeType, EDABasic<?> eda, CachedLAPAccess lap){
 		this.source = source;
 		this.target = target;	
@@ -125,6 +143,10 @@ public class EntailmentRelation extends DefaultEdge {
 	}
 
 
+	/**
+	 * Set the edgeType
+	 * @param edgeType
+	 */
 	public void setEdgeType(EdgeType edgeType) {
 		this.edgeType = edgeType;
 	}
@@ -137,7 +159,7 @@ public class EntailmentRelation extends DefaultEdge {
 	}
 	
 	/**
-	 * 
+	 * Get the confidence of the edge
 	 * @return -- the confidence part of the TEdecision object
 	 */
 	public Double getConfidence() {
@@ -155,8 +177,8 @@ public class EntailmentRelation extends DefaultEdge {
 	}
 
 	/**
-	 * 
-	 * @return -- the decision label from the TEdecision object
+	 * Get the entailment decision of the edge
+	 * @return -- the {@link DecisionLabel} from the TEdecision object
 	 */
 	public DecisionLabel getLabel() {
 		if (edge != null)
@@ -180,7 +202,7 @@ public class EntailmentRelation extends DefaultEdge {
 	/**
 	 * Computes TEdecision using this entailment relation's eda.
 	 * For this JCAS representing the text and hypothesis pair is generated using the entailment relation's lap.   
-	 * @throws EntailmentGraphRawException 
+	 * @throws EntailmentGraphRawException
 	 */
 	protected void computeTEdecision() throws EntailmentGraphRawException {	
 		JCas pairCAS;
@@ -203,15 +225,11 @@ public class EntailmentRelation extends DefaultEdge {
 		}
 	}
 
-
-	
-	
-	
 	/**
-	 * 
-	 * @return -- a JCas object representing the text and hypothesis pair, 
-	 *            obtained by extracting the necessary annotations from "from" and "to"
-	 * @throws EntailmentGraphRawException 
+	 * Prepare a {@link JCas} object representing the text (source) and hypothesis (target) pair
+	 * @return a {@link JCas} object representing the text and hypothesis pair, 
+	 *            obtained by extracting the necessary annotations from source and target
+	 * @throws EntailmentGraphRawException
 	 */
 	protected JCas generateTHPairCAS() throws EntailmentGraphRawException{
 		// extract annotations from "from" and "to" to form the JCas object that is used as input to the EDA
@@ -252,7 +270,7 @@ public class EntailmentRelation extends DefaultEdge {
 	 * ****************************************************************************************/
 
 	/**
-	 * Comparator to sort equivalence classes in descending order by their number of interactions
+	 * Comparator to sort edges in descending order by confidence
 	 */
 	public static class DescendingConfidenceComparator implements Comparator<EntailmentRelation> {
 	    @Override
@@ -272,7 +290,8 @@ public class EntailmentRelation extends DefaultEdge {
 	
 	/** Returns a string with the edge in DOT format for outputting the graph
 	 * @return the generated string
-	 */	public String toDOT(){
+	 */	
+	public String toDOT(){
 		String s = "\""+this.getSource().toDOT()+"\" -> \""+this.getTarget().toDOT()+"\"";
 		s+= " [label="+this.getConfidence()+"]";
 		String color = "red";
@@ -297,6 +316,15 @@ public class EntailmentRelation extends DefaultEdge {
 		 return false;
 	 }
 	 
+
+	/******************************************************************************************
+	 * METHODS FOR INTERNAL TESTING PURPOSES
+	 * ****************************************************************************************/
+
+	/**
+	 * Generate a {@link TEDecision} based on the very naive cosine similarity between source and target texts
+	 * @throws EntailmentGraphRawException
+	 */
 	protected void computeCosineDecision() throws EntailmentGraphRawException {			
 		String[] src = source.text.split(" ");
 		String[] tgt = target.text.split(" ");
@@ -313,6 +341,12 @@ public class EntailmentRelation extends DefaultEdge {
 		else 	edge = new TEDecisionWithConfidence(1-cos, DecisionLabel.NonEntailment);
 	}
 	 
+	/**
+	 * Compute cosine similarity between two vectors
+	 * @param vectorA
+	 * @param vectorB
+	 * @return
+	 */
 	private static double cosineSimilarity(Map<String, Double> vectorA, Map<String, Double> vectorB){
 		double similarity = 0.0;
 		Set<String> commonKeys = new HashSet<String>(vectorA.keySet());
@@ -328,6 +362,11 @@ public class EntailmentRelation extends DefaultEdge {
 		return cos;
 	}
 
+	/**
+	 * Compute magnitude for normalizing cosine similarity
+	 * @param vector
+	 * @return
+	 */
 	private static double magnitude(Map<String, Double> vector){
 		double magnitude = 0.0;
 		for (String key : vector.keySet()){
@@ -336,11 +375,8 @@ public class EntailmentRelation extends DefaultEdge {
 		return Math.sqrt(magnitude);
 	}
 
-	/******************************************************************************************
-	 * METHODS FOR INTERNAL TESTING PURPOSES
-	 * ****************************************************************************************/
-
-	/** Creates and returns an entailment relation between the given source and target nodes by producing a random entailment decision
+	/** Creates and returns an entailment relation between the given source and target 
+	 * nodes by producing a random entailment decision with {@link RandomEDA}
 	 * @param source
 	 * @param target
 	 * @return the generated "random" entailment relation
@@ -351,6 +387,14 @@ public class EntailmentRelation extends DefaultEdge {
 		return edge;
 	}
 	
+	/**
+	 * Generates a dummy random entailment decision for this EntailmentReation 
+	 */	
+	protected static TEDecision computeRandomTEdecision(RandomEDA eda){		
+		TEDecision edge = eda.process(null);
+		return edge;
+	}	
+
 	/**
 	 * This constructor is only used for internal testing purposes
 	 * Create an entailment relation in cases when TEDecision is known (don't specify the EDA) but edge type is not known
@@ -363,13 +407,4 @@ public class EntailmentRelation extends DefaultEdge {
 		this.edge = edge;
 	}	
 
-
-	/**
-	 * Generates a dummy random entailment decision for this EntailmentReation 
-	 * @throws LAPException 
-	 */	
-	protected static TEDecision computeRandomTEdecision(RandomEDA eda){		
-		TEDecision edge = eda.process(null);
-		return edge;
-	}	
 }

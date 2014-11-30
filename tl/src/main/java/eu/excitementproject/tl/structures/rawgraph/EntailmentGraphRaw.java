@@ -44,19 +44,19 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman & Aleksandra & Kathrin Eichler
  * 
- * The graph structure for the work graph. We call it EntailmentGraphRaw.
- * This graph grows by adding to it FragmentGraph-s by "merging"
- * The merging is done through {@link GraphMerger} interface. 
- * The nodes are entailment units ({@link EntailmentUnit}), and the edges ({@link EntailmentRelation}) 
- * are generated based on decisions from the EDAs. As such there can be several edges between the same
- * two nodes, each corresponding to one EDA query.  
+ * The graph structure for the work graph - EntailmentGraphRaw.
+ * <p> The graph grows by adding to it FragmentGraph-s by "merging", which is done through {@link GraphMerger} interface. 
+ * <p>The nodes are entailment units ({@link EntailmentUnit}), and the edges ({@link EntailmentRelation}) 
+ * are generated based on decisions from the EDAs. 
+ * As such there can be several edges between the same two nodes, each corresponding to one EDA query.  
  * 
  *  This graph extends {@link DirectedMultigraph}, to allow for multiple directed edges between
  *  the same two nodes. The JavaDoc for the {@link DirectedMultigraph} for information about
- *  inherited methods is here:
+ *  inherited methods can be found here:
  *  http://jgrapht.org/javadoc/org/jgrapht/graph/DirectedMultigraph.html
+
+ * @author Lili Kotlerman & vivi@fbk & Aleksandra & Kathrin Eichler
  */
 public class EntailmentGraphRaw extends
 		DirectedMultigraph<EntailmentUnit,EntailmentRelation> {
