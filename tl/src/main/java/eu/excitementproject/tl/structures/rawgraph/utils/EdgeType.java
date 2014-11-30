@@ -7,7 +7,7 @@ package eu.excitementproject.tl.structures.rawgraph.utils;
  */
 public enum EdgeType { // note that the types are not mutually exclusive, choice of edge type depends on the type of the graph, and the context in which it is used
 
-	EDA, //e.g. EDA can be called for direct edges, as well as for edges that could have been induced by transitive closure
+	EDA, 
 	FRAGMENT_GRAPH,
 	INDUCED, 
 	MANUAL_ANNOTATION,
@@ -19,11 +19,21 @@ public enum EdgeType { // note that the types are not mutually exclusive, choice
 	;
 	
 
+	/**
+	 * Detect whether current edge type corresponds to the edgeType given as input 
+	 * @param edgeType
+	 * @return
+	 */
 	public boolean is(EdgeType edgeType){
 		if (this.equals(edgeType)) return true;
 		return false;
 	}
 	
+	/**
+	 * Convert String to edgeType
+	 * @param str
+	 * @return
+	 */
 	public static EdgeType convert(String str){
 		if (str.equals("EDA")) return EDA;
 		if (str.equals("FRAGMENT_GRAPH")) return FRAGMENT_GRAPH;
