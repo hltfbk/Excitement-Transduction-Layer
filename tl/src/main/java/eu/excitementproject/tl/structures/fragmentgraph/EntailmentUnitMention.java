@@ -21,17 +21,13 @@ import eu.excitementproject.tl.laputils.CASUtils;
 
 
 /**
- * @author vivi@fbk & Aleksandra
+ * @author vivi@fbk & Lili Kotlerman & Aleksandra
  * 
  * Vertex class for the FragmentGraph, we call it EntailmentUnitMention
  * 
  * Each such vertex consists of a base statement + a number of modifiers.
  * 
  * 
- */
-/**
- * @author Lili
- *
  */
 @SuppressWarnings("unused")
 public class EntailmentUnitMention {
