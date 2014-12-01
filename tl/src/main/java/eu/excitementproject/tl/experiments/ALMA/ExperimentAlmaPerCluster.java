@@ -219,7 +219,6 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 //			super.setGraphMerger(new NoEdaGraphMerger(super.lap, super.eda));
 			
 		} catch (GraphMergerException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
