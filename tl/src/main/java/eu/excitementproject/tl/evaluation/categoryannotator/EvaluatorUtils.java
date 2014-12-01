@@ -556,7 +556,7 @@ public class EvaluatorUtils {
 			{
 				if(!newStatement.getTextWithoutDoubleSpaces().equals(graphStatement.getTextWithoutDoubleSpaces()))
 				{
-					addBidirectionalEdges(singleTokenRawGraph, newStatement, null, null, null, null);
+					addBidirectionalEdges(singleTokenRawGraph, newStatement, null, null, null, null, false);
 				}
 			}
 		}
@@ -564,25 +564,26 @@ public class EvaluatorUtils {
 	
 	/**
 	 * merge Set<FragmentGraph> into a two token EntailmentGraphRaw
-	 *  
+	 * 
 	 * @param twoTokenRawGraph
 	 * @param fgs
 	 * @param derivBaseResource
 	 * @param germaNetWrapper
 	 * @param germaNetRelations
 	 * @param splitter
+	 * @param mapNegation
 	 * @param onlyBidirectionalEdges
 	 * @throws LexicalResourceException
 	 */
 	public static void mergeIntoDependencyGraph(EntailmentGraphRaw twoTokenRawGraph, Set<FragmentGraph> fgs, 
 			DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
-			GermanWordSplitter splitter, boolean onlyBidirectionalEdges)  
+			GermanWordSplitter splitter, boolean mapNegation, boolean onlyBidirectionalEdges)  
 					throws LexicalResourceException{
 		
 		List<FragmentGraph> fgList = new LinkedList<FragmentGraph>(fgs);
 		Collections.sort(fgList, new FragmentGraph.CompleteStatementComparator());
 		for(FragmentGraph fg : fgList) {
-			mergeIntoDependencyGraph(twoTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, onlyBidirectionalEdges);
+			mergeIntoDependencyGraph(twoTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, onlyBidirectionalEdges, mapNegation);
 		}
 	}
 	
@@ -596,41 +597,43 @@ public class EvaluatorUtils {
 	 * @param germaNetWrapper
 	 * @param germaNetRelations
 	 * @param splitter
+	 * @param mapNegation
 	 * @param onlyBidirectionalEdges
 	 * @throws LexicalResourceException
 	 */
 	public static void mergeIntoDependencyGraph(EntailmentGraphRaw twoTokenRawGraph, FragmentGraph fg, 
 			DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
-			GermanWordSplitter splitter, boolean onlyBidirectionalEdges) 
+			GermanWordSplitter splitter, boolean mapNegation, boolean onlyBidirectionalEdges) 
 					throws LexicalResourceException {
 		
 		for(EntailmentUnitMention eum : fg.vertexSet()) {
 			twoTokenRawGraph.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
 			EntailmentUnit newStatement = twoTokenRawGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
 			//direction new statement <--> graph statement
-			addBidirectionalEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+			addBidirectionalEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
 			if(!onlyBidirectionalEdges) {
 				//direction new statement --> graph statement 
-				addOneDirectionalEntailedEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+				addOneDirectionalEntailedEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
 				//direction graph statement --> new statement
-				addOneDirectionalEntailingEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter);
+				addOneDirectionalEntailingEdges(twoTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
 			}
 		}
 	}
 	
 	/**
 	 * add bidirectional entailment edges going from and to the input EntailmentUnit
-	 *  
+	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
 	 * @param dbr
 	 * @param gnw
 	 * @param germanetRelations
 	 * @param splitter
+	 * @param mapNegation
 	 * @throws LexicalResourceException
 	 */
 	private static void addBidirectionalEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource dbr, 
-			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter)
+			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, boolean mapNegation)
 					throws LexicalResourceException {
 		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation> ();
 		if(germanetRelations != null){
@@ -644,7 +647,7 @@ public class EvaluatorUtils {
 			}
 		}
 		
-		addTEEdges(egr, inputEntailmentUnit, dbr, gnw, germanetRelationsModified, null, "both");
+		addTEEdges(egr, inputEntailmentUnit, dbr, gnw, germanetRelationsModified, null, mapNegation, "both");
 	}
 
 	/**
@@ -656,10 +659,11 @@ public class EvaluatorUtils {
 	 * @param gnw
 	 * @param germanetRelations
 	 * @param splitter
+	 * @param mapNegation
 	 * @throws LexicalResourceException
 	 */
 	private static void addOneDirectionalEntailedEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource dbr, 
-			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter)
+			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, boolean mapNegation)
 					throws LexicalResourceException {
 		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
 		if(germanetRelations != null){
@@ -668,7 +672,7 @@ public class EvaluatorUtils {
 				germanetRelationsModified.remove(GermaNetRelation.has_antonym);
 			}
 		}
-		addTEEdges(egr, inputEntailmentUnit, dbr, gnw, germanetRelationsModified, splitter, "inputToGraph");
+		addTEEdges(egr, inputEntailmentUnit, dbr, gnw, germanetRelationsModified, splitter, mapNegation, "inputToGraph");
 	}
 	
 	/**
@@ -680,15 +684,16 @@ public class EvaluatorUtils {
 	 * @param germaNetWrapper
 	 * @param germanetRelations
 	 * @param splitter
+	 * @param mapNegation
 	 * @throws LexicalResourceException
 	 */
 	private static void addOneDirectionalEntailingEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource derivBaseResource, 
-			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter)
+			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, boolean mapNegation)
 					throws LexicalResourceException {
 		List<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>();
 		germanetRelationsModified.add(GermaNetRelation.has_hyponym);
 		germanetRelationsModified.add(GermaNetRelation.has_synonym);
-		addTEEdges(egr, inputEntailmentUnit, derivBaseResource, germaNetWrapper, germanetRelationsModified, null, "graphToInput");
+		addTEEdges(egr, inputEntailmentUnit, derivBaseResource, germaNetWrapper, germanetRelationsModified, null, mapNegation, "graphToInput");
 	}
 	
 	/**
@@ -700,15 +705,16 @@ public class EvaluatorUtils {
 	 * @param gnw
 	 * @param germanetRelations
 	 * @param splitter
-	 * @param direction -- allowed values "both", "inputToGraph", "graphToInput"
+	 * @param mapNegation
+	 * @param direction
 	 * @throws LexicalResourceException
 	 */
 	private static void addTEEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, 
-			DerivBaseResource dbr, GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, String direction) 
+			DerivBaseResource dbr, GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, boolean mapNegation, String direction) 
 							throws LexicalResourceException {
 		
 		Set<String> permutatedTextSet = getRelatedText(inputEntailmentUnit.getTextWithoutDoubleSpaces(), inputEntailmentUnit.getLemmatizedText(), 
-				dbr, gnw, germanetRelations, splitter);
+				dbr, gnw, germanetRelations, splitter, mapNegation);
 		
 		Set<EntailmentUnit> graphEUSet = EvaluatorUtils.getLemmatizedVertex(egr, permutatedTextSet, true);
 		for(EntailmentUnit graphEU : graphEUSet){
@@ -741,7 +747,7 @@ public class EvaluatorUtils {
 	
 	/**
 	 * get related text for a single or a two token text given the lexical resource
-	 * DerivBaseResource, GermaNet or GermanWordSplitter
+	 * DerivBaseResource, GermaNet, GermanWordSplitter or negation maper.
 	 * 
 	 * @param text
 	 * @param lemmatizedText
@@ -749,11 +755,12 @@ public class EvaluatorUtils {
 	 * @param germaNetWrapper
 	 * @param germaNetRelations
 	 * @param splitter
+	 * @param mapNegation
 	 * @return
 	 * @throws LexicalResourceException
 	 */
 	private static Set<String> getRelatedText(String text, String lemmatizedText, DerivBaseResource derivBaseResource, 
-			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter) throws LexicalResourceException{
+			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter, boolean mapNegation) throws LexicalResourceException{
 		
 		Set<String> permutations = new HashSet<String>();
 		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
@@ -773,11 +780,11 @@ public class EvaluatorUtils {
 				String [] lemmas = getLemmas(textLemmas.get(i));
 				for(String lemma : lemmas){
 					if(i==0){
-						extendedToken_1.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter));
+						extendedToken_1.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
 						extendedToken_1.add(textTokens.get(0).toLowerCase());
 					}
 					else if(i==1){
-						extendedToken_2.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter));
+						extendedToken_2.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
 						extendedToken_2.add(textTokens.get(1).toLowerCase());
 					}
 				}
@@ -791,20 +798,21 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * get set of related lemma given the lexical resource
-	 * DerivBaseResource, GermaNet or GermanWordSplitter
+	 *  get set of related lemma given the lexical resource
+	 * DerivBaseResource, GermaNet or GermanWordSplitter or negation maper.
 	 * 
 	 * @param lemma
 	 * @param derivBaseResource
 	 * @param germaNetWrapper
 	 * @param germaNetRelations
 	 * @param splitter
+	 * @param mapNegation
 	 * @return
 	 * @throws LexicalResourceException
 	 */
 	private static Set<String> getRelatedLemmas(String lemma, DerivBaseResource derivBaseResource, 
 			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
-			GermanWordSplitter splitter) throws LexicalResourceException{
+			GermanWordSplitter splitter, boolean mapNegation) throws LexicalResourceException{
 		
 		Set<String> lemmas = new HashSet<String>();
 		lemmas.add(lemma);
@@ -817,6 +825,10 @@ public class EvaluatorUtils {
 			relatedLemmas.addAll(getRelatedLemmas(tempLemma, derivBaseResource));
 		}
 
+		if(mapNegation && isNegationWordDE(lemma)){
+			relatedLemmas.addAll(Arrays.asList(getNegationLemmasDE()));
+		}
+		
 		return relatedLemmas;
 	}
 	
@@ -836,6 +848,25 @@ public class EvaluatorUtils {
 			}
 		}
 		return relatedLemmas;
+	}
+	
+	/**
+	 * get lemmas of German negation words
+	 * @return --  {"keine", "nicht", "nichts", "ohne"}
+	 */
+	private static String [] getNegationLemmasDE(){
+		String [] negationLemmas = {"keine", "keinerlei", "nicht", "nichts", "ohne"};
+		return negationLemmas;
+	}
+	
+	/**
+	 * check if the input word is a German negation word
+	 * @param word
+	 * @return
+	 */
+	private static boolean isNegationWordDE(String word){
+		List<String> negationWords = Arrays.asList(new String [] {"kein", "keins", "keine", "keinem", "keinem", "keiner", "keins", "keinerlei", "nicht", "nichts", "ohne"});
+		return negationWords.contains(word);
 	}
 	
 	/**
