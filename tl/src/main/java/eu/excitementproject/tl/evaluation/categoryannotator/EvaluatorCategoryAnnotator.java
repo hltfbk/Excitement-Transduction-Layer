@@ -964,8 +964,8 @@ public class EvaluatorCategoryAnnotator {
 		
         //double sumAccuracies;
         //int sumCountPositive;
-//	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
-	    for (int i=2; i<=2; i++) { //Create one fold only
+	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
+//	    for (int i=2; i<=2; i++) { //Create one fold only
 	        System.out.println("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
