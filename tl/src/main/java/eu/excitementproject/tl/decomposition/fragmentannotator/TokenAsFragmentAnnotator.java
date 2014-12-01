@@ -8,6 +8,7 @@ import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -52,75 +53,82 @@ public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
 
 		// first of all, check determined fragmentation is there or not. 
 		// If it is there, we don't run and pass 
-		// check the annotated data
 		AnnotationIndex<Annotation> frgIndex = aJCas.getAnnotationIndex(DeterminedFragment.type);
 		
-		if (frgIndex.size() > 0)
-		{
+		if (frgIndex.size() > 0) {
 			fragLogger.info("The CAS already has " + frgIndex.size() + " determined fragment annotation. Won't process this CAS."); 
 			return; 
 		}
 		
-		// check if token annotation is there or not 
+		//add lap annotation
+		addLAPTokenAnnotation(aJCas);
+
+		//add determined fragment annotation
+		fragLogger.info("Annotating determined fragments on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
+		int num_frag = 0; 
 		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
-		Iterator<Annotation> tokenItr = tokenIndex.iterator(); 		
-		
-		if (!tokenItr.hasNext())
+		Iterator<Annotation> tokenItr = tokenIndex.iterator();
+		while(tokenItr.hasNext()) {
+			//annotate each token except punctuation as one fragment, if it matches the filter 
+			Token tk = (Token) tokenItr.next(); 
+			try {
+				if(isAllowed(tk, tokenPOSFilter)){
+					CASUtils.Region[] r = new CASUtils.Region[1];
+					r[0] = new CASUtils.Region(tk.getBegin(),  tk.getEnd()); 
+					fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
+					CASUtils.annotateOneDeterminedFragment(aJCas, r);
+					num_frag++;
+				}
+			} 
+			
+			catch (LAPException e) {
+				throw new FragmentAnnotatorException("CASUtils reported exception while annotating Fragment, on token (" + tk.getBegin() + ","+ tk.getEnd(), e );
+			}
+		}
+		fragLogger.info("Annotated " + num_frag + " determined fragments"); 
+	}
+	
+	/**
+	 * 
+	 * @param aJCas
+	 * @throws FragmentAnnotatorException
+	 */
+	protected void addLAPTokenAnnotation(JCas aJCas) throws FragmentAnnotatorException{
+		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
+		if (tokenIndex.size() == 0)
 		{
-			// It seems that there are no tokens in the CAS. 
-			// Run LAP on it. 
-			fragLogger.info("No token annotation found: calling the given LAP"); 
-			try 
-			{
+			// It seems that there are no tokens in the CAS. Run LAP on it. 
+			try {
 				this.getLap().addAnnotationOn(aJCas); 
 			}
 			catch (LAPException e)
 			{
 				throw new FragmentAnnotatorException("Unable to run LAP on the inputCAS: LAP raised an exception", e); 
 			}
-			// all right. LAP annotated. Try once again 
-			tokenIndex = aJCas.getAnnotationIndex(Token.type);
-			tokenItr = tokenIndex.iterator(); 		
-			
-			// throw exception, if still no tokens found
-			if (!tokenItr.hasNext())
-			{
-				throw new FragmentAnnotatorException("Calling on LAPAccess " + this.getLap().getClass().getName() + " didn't added token annotation. Cannot proceed."); 
-			}
 
-		}
-
-		fragLogger.info("Annotating determined fragments on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
-		
-		int num_frag = 0; 
-		
-		while(tokenItr.hasNext())
-		{
-			//annotate each token except punctuation as one fragment, if it matches the filter 
-			Token tk = (Token) tokenItr.next(); 
-			int begin = tk.getBegin(); 
-			int	end = tk.getEnd(); 
-			CASUtils.Region[] r = new CASUtils.Region[1];
-			r[0] = new CASUtils.Region(begin,  end); 
-			
-			try {
-				if(tk.getPos()!= null){
-					if(!tk.getPos().getType().getShortName().equals("PUNC")){ // no punctuation
-						if (tokenPOSFilter == null || tokenPOSFilter.isEmpty() || tokenPOSFilter.contains(tk.getPos().getPosValue())){
-							fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
-							CASUtils.annotateOneDeterminedFragment(aJCas, r);
-							num_frag++;
-						}
-					}
-				}
+			// check token annotation and throw exception, if still no tokens found
+			tokenIndex = aJCas.getAnnotationIndex(Token.type);		
+			if (tokenIndex.size() == 0){
+				throw new FragmentAnnotatorException("Calling on LAPAccess " + this.getLap().getClass().getName() + 
+						" didn't added token annotation. Cannot proceed."); 
 			}
-			
-			catch (LAPException e)
-			{
-				throw new FragmentAnnotatorException("CASUtils reported exception while annotating Fragment, on token (" + begin + ","+ end, e );
-			}
-			 
 		}
-		fragLogger.info("Annotated " + num_frag + " determined fragments"); 
+	}
+	
+	/**
+	 * check if the token type is allowed
+	 * @param token
+	 * @param posFilter
+	 * @return
+	 */
+	protected boolean isAllowed(Token token, List<String> posFilter){
+		if(!(token.getPos() instanceof PUNC)) {
+			if(posFilter == null 
+					|| posFilter.isEmpty()
+					|| posFilter.contains(token.getPos().getPosValue())) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

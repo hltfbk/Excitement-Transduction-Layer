@@ -11,41 +11,43 @@ import org.apache.uima.jcas.tcas.Annotation;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
-/*
- * I implemented this structure according to my proposal that 
- * the nodes of the WorkGraph are in fact equivalence classes.
- * I think this would make the implementation more flexible 
- * (as I said in our discussions, you could initialize the work graph 
- * from either a Fragment-style graph (with singleton nodes), or from
- * a collapsed graph). If you want the nodes to be singletons, from 
- * an implementation point of view nothing would change, the equivalence class 
- * can contain only one node.
- * 
- * If we extend the EntailmentUnitMention, the JCas attribute could be the "canonical"
- * JCas object for this node -- that means, when merging edges that connect EntailmentUnit-s,
- * we do not iterate over each of the nodes in the equivalence class, but just use the "canonical"
- * one. 
- * 
- */
 /**
- * 
+ * Node for the work graph ({@link EntailmentGraphRaw}).
+ * The text of the node is its unique identifier within a graph.
+
  * @author vivi@fbk & Lili Kotlerman & Kathrin & Aleksandra
- * 
- * The node for the work graph is an EntailmentUnit
- *
  */
 public class EntailmentUnit{
 
+	/**
+	 * The text of the node
+	 */
 	protected String text;
 	
+	/**
+	 * 
+	 */
 	protected String lemmatizedText;
 	
+	/**
+	 * Set of all complete statements of the fragment graphs, in which the current text occurred
+	 */
 	protected Set<String> completeStatementTexts;
 	
+	/**
+	 * Set of all the mentions of the current text in fragment graphs
+	 */
 	protected Set<EntailmentUnitMention> mentions = null;
 	
-	protected int level = -1; // negative value means "unknown"
-	
+	/**
+	 * Constant value denoting unknown number of modifiers in a text 
+	 */
+	private final int UNKNOWN_LEVEL = -1; // negative value means "unknown"
+
+	/**
+	 * The number of modifiers
+	 */
+	protected int level = UNKNOWN_LEVEL;
 	
 	
 	/******************************************************************************************
@@ -138,6 +140,7 @@ public class EntailmentUnit{
 	}
 	
 	/**
+	 * Get interaction ids from all the mentions of the node
 	 * @return the interactionIds
 	 */
 	public Set<String> getInteractionIds() {
@@ -159,7 +162,7 @@ public class EntailmentUnit{
 
 	/**
 	 * 
-	 * @return -- the "canonical" text fragment of the node
+	 * @return the "canonical" text of the node
 	 */
 	public String getText() {
 		return text;
@@ -167,7 +170,7 @@ public class EntailmentUnit{
 	
 	/**
 	 * 
-	 * @return -- the lemmatized text of the mentions if lemmas were set, otherwise return null
+	 * @return the lemmatized text of the mentions if lemmas were set, otherwise return null
 	 */
 
 	public String getLemmatizedText(){
@@ -176,7 +179,7 @@ public class EntailmentUnit{
 	
 	/**
 	 * 
-	 * @return -- the set of entailment unit mentions associated to this node
+	 * @return the set of {@link EntailmentUnitMention}s associated to this node
 	 */
 	public Set<EntailmentUnitMention> getMentions() {
 		return mentions;
@@ -184,7 +187,7 @@ public class EntailmentUnit{
 
 	
 	/**
-	 * @return -- a set of text fragments corresponding to all the entailment unit mentions covered by this node
+	 * @return a set of text fragments corresponding to all the {@link EntailmentUnitMention}s covered by this node
 	 */
 	public Set<String> getMentionTexts() {
 		Set<String> texts = new HashSet<String>();
@@ -197,7 +200,7 @@ public class EntailmentUnit{
 	}
 
 	/** The method returns the size of the set of completeStatementTexts,
-	 * i.e. the number of fragment graphs, in which the entailmet unit was seen.
+	 * i.e. the number of different fragment graphs, in which the entailmet unit was seen.
 	 * @return the number of complete statements (fragment graphs), in which the entailmet unit was seen.
 	 */
 	public int getNumberOfCompleteStatements() {
@@ -235,7 +238,7 @@ public class EntailmentUnit{
 	 * Currently the 2nd is achieved by using "ignore case" for comparison of the texts.
 	 * As soon as if we have better unification of statements (e.g. "I didn't like the food" == "we didn't like the food" etc == "I do not like your food" etc), it should be done within this method						 
 	 * @param text
-	 * @return
+	 * @return true/false
 	 */
 	public boolean isTextIncludedOrRelevant(String text){		
 		String cleanText = getTextWithoutDoubleSpaces(text);
@@ -250,7 +253,7 @@ public class EntailmentUnit{
 	 * Otherwise returns false
 	 * @param node
 	 * @param completeStatementText
-	 * @return
+	 * @return true/false
 	 */
 	public boolean isPartOfFragmentGraph(String completeStatementText){
 		if (completeStatementTexts.contains(completeStatementText)) return true;
@@ -282,8 +285,6 @@ public class EntailmentUnit{
 		return lemmatizedText.trim();
 	}
 	
-	
-
 	
 	/******************************************************************************************
 	 * Override hashCode() and equals(). 
@@ -321,10 +322,18 @@ public class EntailmentUnit{
 		return true;
 	}
 
+	/**
+	 * @return the text of the node with double spaces reduced to single space
+	 */
 	public String getTextWithoutDoubleSpaces(){
 		return this.getText().trim().replaceAll(" +", " ");
 	}
 	
+	/**
+	 * Get the given text with double spaces reduced to single space
+	 * @param text
+	 * @return the given text with double spaces reduced to single space
+	 */
 	public String getTextWithoutDoubleSpaces(String text){
 		return text.trim().replaceAll(" +", " ");
 	}
@@ -389,6 +398,10 @@ public class EntailmentUnit{
 	}
 
 
+	/**
+	 * Create representation of the node in DOT format
+	 * @return String with DOT-formatted node
+	 */
 	public String toDOT() {
 		return this.getTextWithoutDoubleSpaces();
 	}

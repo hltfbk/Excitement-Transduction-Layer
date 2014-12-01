@@ -12,9 +12,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.FileUtils;
 
 import eu.excitement.type.tl.KeywordAnnotation;
-import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
-import eu.excitementproject.tl.decomposition.modifierannotator.AbstractModifierAnnotator;
 import eu.excitementproject.tl.structures.Interaction;
 
 /**
@@ -53,10 +51,6 @@ public class DataUtils {
 				aJCas = CASUtils.createNewInputCas(); 
 				CASUtils.deserializeFromXmi(aJCas, f); 
 				
-/*				System.out.println("Adding dependency annotations");
-				LAPAccess mylap = new DependencyLevelLapIT();
-				AbstractModifierAnnotator.addDependencies(aJCas, mylap);
-*/				
 				docs.add(aJCas);
 			}
 		} catch (Exception e) {

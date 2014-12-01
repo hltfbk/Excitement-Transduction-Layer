@@ -325,8 +325,8 @@ public class ExperimentAlmaPerCluster extends AbstractExperiment {
 			EntailmentGraphRaw rawGraph = null;
 			try {
 				e = initExperiment(name, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir);
-//				e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
-				e.setFragmentGraphGenerator(new FragmentGraphGeneratorFromCAS());
+				e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
+//				e.setFragmentGraphGenerator(new FragmentGraphGeneratorFromCAS());
 
 				rawGraph = e.buildRawGraph();
 

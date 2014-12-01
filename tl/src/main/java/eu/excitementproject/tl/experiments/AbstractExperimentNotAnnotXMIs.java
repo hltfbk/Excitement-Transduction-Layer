@@ -71,7 +71,7 @@ public class AbstractExperimentNotAnnotXMIs extends AbstractExperiment {
 		super(configFileName, outputFolder);
 		
 		docs = DataUtils.loadDataNoAnnot(dataDir, fileNumberLimit);
-		
+
 		results = new ResultsContainer();
 	}
 
@@ -118,7 +118,7 @@ public class AbstractExperimentNotAnnotXMIs extends AbstractExperiment {
 		super(configFileName, outputFolder);
 		
 		docs = DataUtils.loadDataNoAnnot(dataDir, fileNumberLimit);
-		
+
 		results = new ResultsContainer();
 	}
 	

@@ -2,8 +2,10 @@ package eu.excitementproject.tl.decomposition.fragmentannotator;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.cas.text.AnnotationIndex;
@@ -27,7 +29,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * @author Aleksandra (November 2014)
  *
  */
-public class TokenAsFragmentAnnotatorForGerman extends AbstractFragmentAnnotator {
+public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator {
 
 	private final List<String> tokenPOSFilter;
 	private GermanWordSplitter splitter;
@@ -88,84 +90,63 @@ public class TokenAsFragmentAnnotatorForGerman extends AbstractFragmentAnnotator
 			return; 
 		}
 		
-		// check if token annotation is there or not 
-		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
-		Iterator<Annotation> tokenItr = tokenIndex.iterator(); 		
-		
-		if (!tokenItr.hasNext())
-		{
-			// It seems that there are no tokens in the CAS. 
-			// Run LAP on it. 
-			fragLogger.info("No token annotation found: calling the given LAP"); 
-			try 
-			{
-				this.getLap().addAnnotationOn(aJCas); 
-			}
-			catch (LAPException e)
-			{
-				throw new FragmentAnnotatorException("Unable to run LAP on the inputCAS: LAP raised an exception", e); 
-			}
-			// all right. LAP annotated. Try once again 
-			tokenIndex = aJCas.getAnnotationIndex(Token.type);
-			tokenItr = tokenIndex.iterator(); 		
-			
-			// throw exception, if still no tokens found
-			if (!tokenItr.hasNext())
-			{
-				throw new FragmentAnnotatorException("Calling on LAPAccess " + this.getLap().getClass().getName() + " didn't added token annotation. Cannot proceed."); 
-			}
+		//add lap annotation
+		addLAPTokenAnnotation(aJCas);
 
-		}
-
+		//add determined fragment annotation
 		fragLogger.info("Annotating determined fragments on CAS. CAS Text has: \"" + aJCas.getDocumentText() + "\"."); 
-		
 		int num_frag = 0; 
+		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
+		Iterator<Annotation> tokenItr = tokenIndex.iterator();
 		
-		while(tokenItr.hasNext())
-		{
+		while(tokenItr.hasNext()) {
 			//annotate each token except punctuation as one fragment, if it matches the filter 
 			Token tk = (Token) tokenItr.next(); 
-			int begin = tk.getBegin(); 
-			int	end = tk.getEnd(); 
-			CASUtils.Region[] r = new CASUtils.Region[1];
-			r[0] = new CASUtils.Region(begin,  end); 
-			
 			try {
-				if(tk.getPos()!= null){
-					if(!tk.getPos().getType().getShortName().equals("PUNC")){ // no punctuation
-						if (tokenPOSFilter == null || tokenPOSFilter.isEmpty() || tokenPOSFilter.contains(tk.getPos().getPosValue())){
-							fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
-							CASUtils.annotateOneDeterminedFragment(aJCas, r);
-							num_frag++;
-							
-							if(splitter != null){
-								String tokenText = tk.getCoveredText();
-								Collection<String> tokenTextParts = splitter.splitWord(tokenText);
-								if(tokenTextParts.size() > 1){
-									for(String tokenTextPart : tokenTextParts){
-										int index = tokenText.indexOf(tokenTextPart);
-										begin = tk.getBegin() + index;
-										end = begin + tokenTextPart.length();
-										r[0] = new CASUtils.Region(begin,  end);
-										fragLogger.info("Annotating the following as a fragment: " + aJCas.getDocumentText().substring(begin, end));
-										CASUtils.annotateOneDeterminedFragment(aJCas, r);
-										num_frag++;
-										index = end + 1;
-									}
-								}
+				if(isAllowed(tk, tokenPOSFilter)){
+					CASUtils.Region[] r = new CASUtils.Region[1];
+					r[0] = new CASUtils.Region(tk.getBegin(),  tk.getEnd()); 
+					fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
+					CASUtils.annotateOneDeterminedFragment(aJCas, r);
+					num_frag++;
+					if(splitter != null){
+						String tokenText = tk.getCoveredText();
+						Collection<String> compoundParts = decompoundWord(tokenText, splitter);
+						if(compoundParts.size() > 1){
+							for(String compoundPart : compoundParts){
+								int index = tokenText.indexOf(compoundPart);
+								int compoundPartBegin = tk.getBegin() + index;
+								int compoundPartEnd = compoundPartBegin + compoundPart.length();
+								index = compoundPartEnd + 1;
+								r[0] = new CASUtils.Region(compoundPartBegin,  compoundPartEnd);
+								fragLogger.info("Annotating the following as a fragment: " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
+								CASUtils.annotateOneDeterminedFragment(aJCas, r);
+								num_frag++;
 							}
 						}
 					}
 				}
-			}
+			} 
 			
 			catch (LAPException e)
 			{
-				throw new FragmentAnnotatorException("CASUtils reported exception while annotating Fragment, on token (" + begin + ","+ end, e );
+				throw new FragmentAnnotatorException("CASUtils reported exception while annotating Fragment, on token (" + tk.getBegin() + ","+ tk.getEnd(), e );
 			}
 			 
 		}
 		fragLogger.info("Annotated " + num_frag + " determined fragments"); 
+	}
+	
+	/**
+	 * 
+	 * @param word
+	 * @param splitter
+	 * @return
+	 */
+	private Set<String> decompoundWord(String word, GermanWordSplitter splitter){
+		Set<String> splits = new HashSet<String>();
+		splits.addAll(splitter.splitWord(word));
+		return splits ;
 	}
 
 }

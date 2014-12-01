@@ -51,10 +51,11 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 	public GraphOptimizer m_optimizer = null;
 	public EntailmentGraphRaw m_rfg = null;
 	
+	public EntailmentGraphCollapsed graph = null;
+	
 	public ResultsContainer results;
 	public MergerType mergerType = null;		
 	public List<JCas> docs;
-	public EntailmentGraphCollapsed graph;
 		
 	public enum EdaName{
 		RANDOM,
@@ -76,10 +77,8 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 
 	// to be used when using the not-annotated XMIs, to skip the docs initialization and the graph construction
 	public AbstractExperiment(String configFileName, String outputFolder) throws ConfigurationException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, ClassNotFoundException {
-		
 		super(configFileName, outputFolder);
 		docs = null;
-		graph = null;
 	}
 	
 	public AbstractExperiment(String configFileName, String dataDir,

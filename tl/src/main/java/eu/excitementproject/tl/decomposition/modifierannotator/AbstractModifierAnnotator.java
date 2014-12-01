@@ -23,21 +23,25 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
 
 
 /**
- *
- *An implementation of the {@link ModifierAnnotator} interface.
- May need to call LAP. The needed LAP should be passed via Constructor. Also, any additional
-configurable parameters of this module implementation should be
-clearly exposed in the Constructor.
- * @author Lili
+Abstract implementation of the {@link ModifierAnnotator} interface.
+The class contains attributes and methods that are likely to be shared by the actual implementations, including
+constructors with LAP configuration and {@link FragmentAnnotator} to use.
+
+ * @author Lili Kotlerman & Vivi@fbk
  */
 public abstract class AbstractModifierAnnotator implements ModifierAnnotator{
 	
+	/**
+	 * The LAP to be used by the annotator
+	 */
 	protected final LAPAccess lap;
+	
+	/**
+	 * The {@link FragmentAnnotator} to be used 
+	 */
 	protected FragmentAnnotator fragAnn = null;
 	
-	/** May need to call LAP. The needed LAP should be passed via Constructor. Also, any additional
-configurable parameters of this module implementation should be
-clearly exposed in the Constructor.
+	/** Constructor with a specific LAP.
 	 * @param lap
 	 * @throws ModifierAnnotatorException
 	 */
@@ -45,13 +49,8 @@ clearly exposed in the Constructor.
 		this.lap=lap;
 	}
 
-	/** May need to call LAP and the fragment annotator. Modifiers are only annotated inside fragments. 
-	 * 
-	 * The needed LAP and any additional configurable parameters of this module implementation should be
-	 * clearly exposed in the Constructor.
-	 *
-	 * Vivi@fbk
-	 * 
+	/** Constructor with a specific LAP
+	 * and {@link FragmentAnnotator} (modifiers are only annotated inside fragments).
 	 * @param lap
 	 * @param fragAnn
 	 * @throws ModifierAnnotatorException
@@ -60,7 +59,6 @@ clearly exposed in the Constructor.
 		this.lap=lap;
 		this.fragAnn = fragAnn;
 	}
-
 	
 	/**
 	 * 
@@ -72,7 +70,7 @@ clearly exposed in the Constructor.
 	
 	/**
 	 * 
-	 * @return the fragment annotator associated with the modifier annotator
+	 * @return the {@link FragmentAnnotator} associated with the modifier annotator
 	 */
 	public FragmentAnnotator getFragmentAnnotator() {
 		return this.fragAnn;
@@ -80,7 +78,7 @@ clearly exposed in the Constructor.
 	
 	/**
 	 * 
-	 * @param fragAnn -- the fragment annotator to be used for this modifier annotation
+	 * @param fragAnn -- the {@link FragmentAnnotator} to be used for this modifier annotation
 	 */
 	public void setFragmentAnnotator(FragmentAnnotator fragAnn) {
 		this.fragAnn = fragAnn;
