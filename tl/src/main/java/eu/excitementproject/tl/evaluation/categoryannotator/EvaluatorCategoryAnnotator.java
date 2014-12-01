@@ -204,7 +204,7 @@ public class EvaluatorCategoryAnnotator {
     
     
     private int setup; //use setupArray to set the parameter
-    static int[] setupArray = {0}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
+    static int[] setupArray = {3}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
     private int setupSEDA = 101; //configure SEDA (for incremental evaluation)
     private int setupEDA = 1; //configure EDA (for incremental evaluation)
     static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
@@ -221,8 +221,8 @@ public class EvaluatorCategoryAnnotator {
     static File inputMergedGraphFile;
     
     //Training parameters
-    static boolean trainEDA = false;
-    static boolean processTrainingData = false;
+    static boolean trainEDA = true;
+    static boolean processTrainingData = true;
     static File xmiDir;
     static File modelBaseName;
     /* end OBS */
@@ -406,6 +406,36 @@ public class EvaluatorCategoryAnnotator {
 		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
 		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
 		    		graphOptimizer = new SimpleGraphOptimizer();// new GlobalGraphOptimizer(); --> don't use
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 3: //TIE with base configuration + DERIVBASE (POS restriction, derivSteps = 2)
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+DBPos2_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+	        		edaName = "TIE";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 4:  //TIE with base configuration + GermaNet (POS restriction) + DERIVBASE (POS restriction, derivSteps = 2)
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GNPos+DBPos2_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+	        		edaName = "TIE";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
