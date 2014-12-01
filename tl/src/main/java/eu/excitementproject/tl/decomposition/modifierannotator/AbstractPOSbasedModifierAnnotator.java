@@ -182,10 +182,13 @@ public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifier
 					modAnnotCount += addModifiers(aJCas, frag, negationPosition, cls);
 				}
 			}
+			modLogger.info("Checking for modifier dependencies ... ");
+			addDependencies(aJCas, frag);
 		}			
 		return modAnnotCount;
 	}
 	
+
 	/**
 	 * Adds modifier annotations to a CAS object for a given fragment. These modifiers must have the given POS. 
 	 * 
