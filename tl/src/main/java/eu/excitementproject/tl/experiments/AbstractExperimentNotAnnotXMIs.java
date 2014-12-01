@@ -71,7 +71,6 @@ public class AbstractExperimentNotAnnotXMIs extends AbstractExperiment {
 		super(configFileName, outputFolder);
 		
 		docs = DataUtils.loadDataNoAnnot(dataDir, fileNumberLimit);
-		graph = this.buildCollapsedGraph(docs);
 		
 		results = new ResultsContainer();
 	}
@@ -119,7 +118,6 @@ public class AbstractExperimentNotAnnotXMIs extends AbstractExperiment {
 		super(configFileName, outputFolder);
 		
 		docs = DataUtils.loadDataNoAnnot(dataDir, fileNumberLimit);
-		graph = this.buildCollapsedGraph(docs);
 		
 		results = new ResultsContainer();
 	}

@@ -3,6 +3,7 @@ package eu.excitementproject.tl.decomposition.modifierannotator;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPAccess;
+import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -26,7 +27,13 @@ public class ModifierDependencyAnnotator extends AbstractModifierAnnotator {
 	public int annotateModifiers(JCas text) throws ModifierAnnotatorException,
 			FragmentAnnotatorException {
 		
-		addDependencies(text);
+		try {
+			lap.addAnnotationOn(text);
+			addDependencies(text);
+		} catch (LAPException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return 0;
 	}

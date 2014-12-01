@@ -6,6 +6,8 @@ package eu.excitementproject.tl.decomposition.modifierannotator;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.jcas.tcas.DocumentAnnotation;
@@ -30,7 +32,7 @@ clearly exposed in the Constructor.
  */
 public abstract class AbstractModifierAnnotator implements ModifierAnnotator{
 	
-	private final LAPAccess lap;
+	protected final LAPAccess lap;
 	protected FragmentAnnotator fragAnn = null;
 	
 	/** May need to call LAP. The needed LAP should be passed via Constructor. Also, any additional
@@ -121,12 +123,17 @@ clearly exposed in the Constructor.
 	 */
 	public static void addDependencies(JCas aJCas, Annotation annot) {
 
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator.AbstractModifierAnnotator:addDependencies");
+		logger.setLevel(Level.INFO);
+		
 		Collection<ModifierAnnotation> modifiers = JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, annot);
 		if (modifiers != null) {
 			for (ModifierAnnotation ma: modifiers) {
+				logger.info("checking modifier: " + ma.getCoveredText());
 				ModifierAnnotation dependsOn = findGovernor(aJCas, ma);
 				if (dependsOn != null) {
 					ma.setDependsOn(dependsOn);
+					logger.info("Modifier dependency found! " + ma.getCoveredText() + " --depsOn--> " + dependsOn.getCoveredText() ); 
 				}
 			}
 		}
@@ -143,6 +150,8 @@ clearly exposed in the Constructor.
 	 */
 	public static ModifierAnnotation findGovernor(JCas aJCas, ModifierAnnotation ma) {
 		
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator.AbstractModifierAnnotator:findGovernor");
+		logger.setLevel(Level.INFO);
 	
 		ModifierAnnotation dependsOn = null;
 		
@@ -150,13 +159,36 @@ clearly exposed in the Constructor.
 		
 		if (ma_dependencies != null) {
 			for (Dependency dep: ma_dependencies) {
-				Collection<ModifierAnnotation> deps_annots = JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, dep.getDependent());
+				logger.info("Processing dependency: (" + dep.getGovernor().getCoveredText() + " <-- " + dep.getDependent().getCoveredText() + ")");
+//				Collection<ModifierAnnotation> deps_annots = JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, dep.getDependent());
+				Collection<ModifierAnnotation> deps_annots = JCasUtil.selectCovering(aJCas, ModifierAnnotation.class, dep.getDependent().getBegin(), dep.getDependent().getEnd());
+
 				if (deps_annots != null && deps_annots.contains(ma)) {
-					deps_annots = JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, dep.getGovernor());
+//					deps_annots = JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, dep.getGovernor());
+					deps_annots = JCasUtil.selectCovering(aJCas, ModifierAnnotation.class, dep.getGovernor().getBegin(), dep.getGovernor().getEnd());
+					
 					if (deps_annots != null) {
 						// there should be at most one, actually
 						for (ModifierAnnotation m_gov: deps_annots) {
-							return m_gov;
+							if (! m_gov.equals(ma) && 
+									(m_gov.getDependsOn() == null || !m_gov.getDependsOn().equals(ma))) { 
+							// funny check, but automatic dependencies have shown this last test to be necessary: 
+							//	example from ALMA data :
+							/*	Processing fragment: è da stamattina che non ho linea internet sul cell
+							    checking modifier: è da stamattina che
+								Processing dependency: (cell <-- da)
+								Modifier dependency found! è da stamattina che --depsOn--> sul cell
+								checking modifier: sul cell
+								Processing dependency: (cell <-- da)
+								Processing dependency: (cell <-- ho)
+								Processing dependency: (cell <-- linea)
+								Processing dependency: (cell <-- sul)
+								Processing dependency: (è <-- cell)
+								Modifier dependency found! sul cell --depsOn--> è da stamattina che
+								*/
+
+								return m_gov;
+							}
 						}
 					}
 				}

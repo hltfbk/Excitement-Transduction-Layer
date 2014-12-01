@@ -733,11 +733,15 @@ public class UseCaseOneRunnerPrototype implements UseCaseOneRunner {
 		logger.info("INFO:NR_OF_NODES = " + Math.pow(2, aJCas.getAnnotationIndex(ModifierAnnotation.type).size())); 
 		logger.info("INFO:NR_OF_NODES_CUMULATIVE = " + count); 
 		
-		if (fragAnot != null)
+		if (fragAnot != null) {
+			logger.info("Annotating fragments with " + fragAnot.getClass());
 			fragAnot.annotateFragments(aJCas);
+		}
 		
-		if (modAnot != null)
+		if (modAnot != null) {
+			logger.info("Annotating modifiers with " + modAnot.getClass());
 			modAnot.annotateModifiers(aJCas);
+		}
 	}
 	
 	public int getEdaCallsNumber(){
