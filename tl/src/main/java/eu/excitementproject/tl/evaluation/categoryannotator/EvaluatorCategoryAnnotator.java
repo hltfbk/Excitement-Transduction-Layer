@@ -81,6 +81,7 @@ import eu.excitementproject.tl.laputils.CategoryReader;
 import eu.excitementproject.tl.laputils.DependencyLevelLapDE;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
+import eu.excitementproject.tl.laputils.WordDecompositionType;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
@@ -197,11 +198,13 @@ public class EvaluatorCategoryAnnotator {
     static List<String> dependentPosFilter = Arrays.asList(
     		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
     static List<String> dependencyTypeFilter = null;
-    static boolean useDecompounder = true;
-    static boolean useOnlyHyphenSplit = true;
+    static WordDecompositionType decompositionType = WordDecompositionType.ONLY_HYPHEN;
+//    static WordDecompositionType decompositionType = WordDecompositionType.NO_RESTRICTION;
+//    static WordDecompositionType decompositionType = WordDecompositionType.NONE;
+    
     
     private int setup; //use setupArray to set the parameter
-    static int[] setupArray = {1}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
+    static int[] setupArray = {0}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
     private int setupSEDA = 101; //configure SEDA (for incremental evaluation)
     private int setupEDA = 1; //configure EDA (for incremental evaluation)
     static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
@@ -982,9 +985,10 @@ public class EvaluatorCategoryAnnotator {
 			//For each fold, read entailment graph EG or generate it from training set
 	    	EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed();
     		File graphFile = new File(outputGraphFoldername + "omq_public_"+i+"_collapsed_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_cb" + categoryBoost + "_" + edaName + ".xml");
-    		File mergedGraphFile = new File(outputGraphFoldername + "omq_public_"+i+"_merged_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeNameEval + "_" + edaName + ".xml");
+    				+ fragmentTypeNameEval + "_" + decompositionType + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument 
+    				+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + ".xml");
+    		File mergedGraphFile = new File(outputGraphFoldername + "omq_public_"+i+"_merged_graph_" + setup + "_" + minTokenOccurrence 
+    				+ "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + ".xml");
     		
     		//DEBUGGING
     		//graphFile = new File(outputGraphFoldername + "omq_public_1_collapsed_graph_112_1_TDF_tfidf_nnn_SEDA_BACKUP.xml");
@@ -1543,8 +1547,8 @@ public class EvaluatorCategoryAnnotator {
 		List<Interaction> graphDocs = new ArrayList<Interaction>(); 
 		graphDocs.addAll(CategoryReader.readCategoryXML(new File(categoriesFilename)));
 		logger.info("Added " + graphDocs.size() + " categories");
-		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + "_"
-				+ fragmentTypeNameEval + "_" + edaName + ".xml");	
+		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"  + setup + "_" 
+		+ minTokenOccurrenceInCategories + "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + ".xml");	
 		FragmentAnnotator faTokens = new TokenAsFragmentAnnotator(lapLemma, 
 				tokenPosFilter); 
 		FragmentAnnotator faDeps = new DependencyAsFragmentAnnotator(lapDependency, 
@@ -1592,7 +1596,8 @@ public class EvaluatorCategoryAnnotator {
 		logger.info("Number of nodes in (category) collapsed graph: " + egc.vertexSet().size());
 		logger.info("Number of edges in (category) collapsed graph: " + egc.edgeSet().size());
 		File graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_categories_"+setup + "_" + minTokenOccurrenceInCategories + "_"
-				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_cb" + categoryBoost + "_" + edaName + ".xml");
+				+ fragmentTypeNameEval + "_" + decompositionType + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument 
+				+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + ".xml");
 		XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
 
 		//Iterate through interactions, annotate each using existing graph and then add interaction to graph 
@@ -1686,10 +1691,11 @@ public class EvaluatorCategoryAnnotator {
 			
 			// Build collapsed graph from extended raw graph
 			egc = buildCollapsedGraphWithCategoryInfo(egr);			
-			mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeNameEval + "_" + edaName + ".xml");	
+			mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_"+setup + "_" 
+					+ minTokenOccurrence + "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + ".xml");	
 			graphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_graph_"+setup + "_" + minTokenOccurrence + "_"
-    				+ fragmentTypeNameEval + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument + "_cb" + categoryBoost + "_" + edaName + ".xml");
+					+ fragmentTypeNameEval + "_" + decompositionType + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument 
+					+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + ".xml");
 			XMLFileWriter.write(egr.toXML(), mergedGraphFile.getAbsolutePath());			
 			XMLFileWriter.write(egc.toXML(), graphFile.getAbsolutePath());			
 		}
@@ -1768,7 +1774,7 @@ public class EvaluatorCategoryAnnotator {
 		try{
 			if(fragmentTypeNameGraph.equalsIgnoreCase("TF")){
 				lapForFragments = new CachedLAPAccess(new LemmaLevelLapDE());//TreeTaggerDE()
-	    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments, tokenPosFilter, useDecompounder, useOnlyHyphenSplit);
+	    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments, tokenPosFilter, decompositionType);
 			} else if(fragmentTypeNameGraph.equalsIgnoreCase("DF")){
 				lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotator(lapForFragments, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
@@ -1781,7 +1787,7 @@ public class EvaluatorCategoryAnnotator {
         	}
 			if(fragmentTypeNameEval.equalsIgnoreCase("TF")){
 				lapForDecisions = new CachedLAPAccess(new LemmaLevelLapDE());//TreeTaggerDE()
-				fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForDecisions, tokenPosFilter, useDecompounder, useOnlyHyphenSplit);
+				fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForDecisions, tokenPosFilter, decompositionType);
 			} else if(fragmentTypeNameEval.equalsIgnoreCase("DF")){
         		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForNewInput = new DependencyAsFragmentAnnotator(lapForDecisions, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
