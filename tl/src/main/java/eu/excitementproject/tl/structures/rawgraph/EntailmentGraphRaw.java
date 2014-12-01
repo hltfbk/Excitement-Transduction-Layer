@@ -397,7 +397,7 @@ public class EntailmentGraphRaw extends
 		
 	}
 
-	/** Copies all nodes and all edges (including transitive closure) from the input raw graph to the raw entailment graph
+	/** Copies all nodes and all edges from the input raw graph to the raw entailment graph
 	 * @param egr - the input raw graph
 	 */
 	public void copyRawGraphNodesAndAllEdges(EntailmentGraphRaw egr){
