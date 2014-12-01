@@ -138,11 +138,18 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		
 		document = aJCas;
 		fragment = frag;
+		
 		baseStatement = new EntailmentUnitMention(aJCas, frag, new HashSet<ModifierAnnotation>());
-		topStatement = new EntailmentUnitMention(aJCas, frag, FragmentGraph.getFragmentModifiers(aJCas, frag));
+		addVertex(baseStatement);
 		
 		Set<ModifierAnnotation> mods = getFragmentModifiers(aJCas,frag);		
-		buildGraph(aJCas, frag, mods, null);
+		if (mods == null || mods.isEmpty()) {
+			topStatement = baseStatement;
+		} else {
+
+//			topStatement = new EntailmentUnitMention(aJCas, frag, mods);
+			buildGraph(aJCas, frag, mods, null);
+		}
 	}
 		
 
@@ -156,29 +163,32 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 * @param parent -- parent node (that has one extra modifier compared to the current node)
 	 */
 	protected void buildGraph(JCas aJCas, FragmentAnnotation frag, Set<ModifierAnnotation> modifiers, EntailmentUnitMention parent) {
-		
-		EntailmentUnitMention eum = new EntailmentUnitMention(aJCas, frag, modifiers);
-		
-		logger.info("Generated node (EUM) for string: " + eum.getText());
-//		eum = addNode(eum);
-		if (! this.containsVertex(eum)) { // double check that this test does what it should
-			addVertex(eum);
-			logger.info("Vertex added: " + eum.text);
-		} else {
-			eum = getVertex(eum);
-			logger.info("Matching vertex retrieved from graph: " + eum.text);
-		}
-		
-		if (parent != null) {
-			this.addEdge(parent, eum); // double check the direction of the added edges
-		}
 
-		Set<ModifierAnnotation> sma;
-		for(ModifierAnnotation m: modifiers) {
-			sma = new HashSet<ModifierAnnotation>(modifiers);
-			sma.remove(m);
-			if (consistentModifiers(sma)) {
-				buildGraph(aJCas, frag, sma, eum);
+		if (modifiers != null && !modifiers.isEmpty()) {
+			EntailmentUnitMention eum = new EntailmentUnitMention(aJCas, frag, modifiers);
+		
+			logger.info("Generated node (EUM) for string: " + eum.getText());
+			if (! this.containsVertex(eum)) { // double check that this test does what it should
+				addVertex(eum);
+				logger.info("Vertex added: " + eum.text);
+			} else {
+				eum = getVertex(eum);
+				logger.info("Matching vertex retrieved from graph: " + eum.text);
+			}
+		
+			if (parent != null) {
+				this.addEdge(parent, eum); // double check the direction of the added edges
+			} else {
+				topStatement = eum; // if the parent is null, it means it is the top node
+			}
+
+			Set<ModifierAnnotation> sma;
+			for(ModifierAnnotation m: modifiers) {
+				sma = new HashSet<ModifierAnnotation>(modifiers);
+				sma.remove(m);
+				if (consistentModifiers(sma)) {
+					buildGraph(aJCas, frag, sma, eum);
+				}
 			}
 		}
 	}

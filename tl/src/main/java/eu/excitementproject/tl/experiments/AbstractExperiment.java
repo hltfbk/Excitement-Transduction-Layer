@@ -21,6 +21,7 @@ import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.StructureBasedGraphMerger;
+import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
@@ -49,6 +50,8 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 	public EntailmentGraphRaw m_rawGraph = null;
 	public GraphOptimizer m_optimizer = null;
 	public EntailmentGraphRaw m_rfg = null;
+	
+	public EntailmentGraphCollapsed graph = null;
 	
 	public ResultsContainer results;
 	public MergerType mergerType = null;		
@@ -84,8 +87,146 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 		
 		super(configFileName, outputFolder, lapClass, edaClass);
 		
-		docs = DataUtils.loadData(dataDir, fileNumberLimit);				
+		docs = DataUtils.loadData(dataDir, fileNumberLimit);
+				
 		results = new ResultsContainer();
+	}
+	
+	
+	/**
+	 * Constructor for the epxeriment. The EDA and LAP classes will be read from the configuration file
+	 * 
+	 * @param configFileName -- EDA's configuration file. LAP and EDA classes will be read from there
+	 * @param dataDir -- directory with XMIs
+	 * @param fileNumberLimit
+	 * @param outputFolder
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws GraphOptimizerException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws IOException
+	 * @throws EntailmentGraphRawException
+	 * @throws TransformerException
+	 * @throws ClassNotFoundException 
+	 */
+	public AbstractExperiment(String configFileName, String dataDir,
+			int fileNumberLimit, String outputFolder) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		
+		super(configFileName, outputFolder);
+		
+		docs = DataUtils.loadData(dataDir, fileNumberLimit);
+				
+		results = new ResultsContainer();
+	}
+	
+
+	/**
+	 * Constructor with exposed ModifierAnnotator, useful especially when processing gold standard data without the "dependsOn" relation. ModifierDependencyAnnotator will add that.
+	 *  
+	 * @param configFileName -- configuration file for the EDA
+	 * @param dataDir -- directory with XMIs
+	 * @param fileNumberLimit
+	 * @param outputFolder
+	 * @param modAnn -- modifier annotator
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws GraphOptimizerException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws IOException
+	 * @throws EntailmentGraphRawException
+	 * @throws TransformerException
+	 * @throws ClassNotFoundException
+	 */
+	public AbstractExperiment(String configFileName, String dataDir,
+			int fileNumberLimit, String outputFolder, ModifierAnnotator modAnot) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		
+		super(configFileName, outputFolder);
+		this.setModifierAnnotator(modAnot);
+		
+		docs = DataUtils.loadData(dataDir, fileNumberLimit);
+						
+		results = new ResultsContainer();
+	}
+
+	/**
+	 * Constructor with added ModifierAnnotator parameter, useful mostly when processing gold standard data without the "dependsOn" relation between modifiers (ModifierDependencyAnnotator will add that)
+	 * 
+	 * @param configFileName
+	 * @param dataDir
+	 * @param fileNumberLimit
+	 * @param outputFolder
+	 * @param lapClass
+	 * @param edaClass
+	 * @param modAnot
+	 * 
+	 * @throws ConfigurationException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 * @throws EDAException
+	 * @throws ComponentException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws GraphMergerException
+	 * @throws GraphOptimizerException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws IOException
+	 * @throws EntailmentGraphRawException
+	 * @throws TransformerException
+	 */
+	public AbstractExperiment(String configFileName, String dataDir,
+			int fileNumberLimit, String outputFolder, Class<?> lapClass,
+			Class<?> edaClass, ModifierAnnotator modAnot) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+		
+		super(configFileName, outputFolder, lapClass, edaClass);
+		this.setModifierAnnotator(modAnot);
+		
+		docs = DataUtils.loadData(dataDir, fileNumberLimit);
+				
+		results = new ResultsContainer();
+	}
+	
+
+	/**
+	 * Separate method for processing, to make it easy for descendants to use the parent's constructor, while specializing only the processing
+	 * 
+	 * @throws LAPException
+	 * @throws GraphOptimizerException
+	 * @throws GraphMergerException
+	 * @throws FragmentGraphGeneratorException
+	 * @throws FragmentAnnotatorException
+	 * @throws ModifierAnnotatorException
+	 * @throws IOException
+	 * @throws EntailmentGraphRawException
+	 * @throws TransformerException
+	 */
+	public void process() throws LAPException, GraphOptimizerException, GraphMergerException, FragmentGraphGeneratorException, FragmentAnnotatorException, ModifierAnnotatorException, IOException, EntailmentGraphRawException, TransformerException {
+		graph = this.buildCollapsedGraph(docs);				
 	}
 	
     public void setMerger(MergerType mergerType) throws GraphMergerException{

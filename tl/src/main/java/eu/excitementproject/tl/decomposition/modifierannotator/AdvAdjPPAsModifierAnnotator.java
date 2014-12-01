@@ -127,6 +127,8 @@ public class AdvAdjPPAsModifierAnnotator extends POSbasedModifierAnnotator {
 						num_mods += addModifiers(aJCas, frag, negationPosition, cls);
 				}
 			}
+			modLogger.info("Checking for modifier dependencies ... ");
+			addDependencies(aJCas, frag);
 		}			
 		return num_mods;
 	}		

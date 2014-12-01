@@ -2,6 +2,7 @@ package eu.excitementproject.tl.decomposition.api;
 
 import org.apache.uima.jcas.JCas;
 
+import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 
 /**
@@ -27,7 +28,8 @@ public interface ModifierAnnotator {
 	 * @param text - {@link JCas} with text, metadata, and (real) fragment annotation.
 	 * @return the input CAS enriched with modifier annotations
 	 * @throws ModifierAnnotatorException if any of the needed data is missing in the input CAS or if couldn't annotate the modifiers
+	 * @throws FragmentAnnotatorException 
 	 */
-	public int annotateModifiers(JCas text) throws ModifierAnnotatorException;
+	public int annotateModifiers(JCas text) throws ModifierAnnotatorException, FragmentAnnotatorException;
 		
 }
