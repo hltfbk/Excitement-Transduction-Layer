@@ -29,6 +29,7 @@ import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.modifierannotator.ModifierDependencyAnnotator;
 import eu.excitementproject.tl.edautils.ProbabilisticEDA;
 import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
@@ -36,6 +37,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.experiments.FakeEDA;
 import eu.excitementproject.tl.experiments.ResultsContainer;
+import eu.excitementproject.tl.laputils.DependencyLevelLapEN;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
@@ -52,8 +54,9 @@ public class ExperimentNice extends AbstractExperiment {
 	public ExperimentNice(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
 			Class<?> edaClass, MergerType mergerType) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+		
 		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, lapClass,
-				edaClass);
+				edaClass, new ModifierDependencyAnnotator(new DependencyLevelLapEN()));
 		
 		this.configFileFullName = configFileFullName;
 		this.configFileName = (new File(configFileFullName)).getName();
@@ -62,8 +65,7 @@ public class ExperimentNice extends AbstractExperiment {
 		setMerger(mergerType);
 	}
 	
-	public static ExperimentNice initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
-		
+	public static ExperimentNice initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{		
 		if (edaName.equals(EdaName.BIUTEE)) {
 			return new ExperimentNice(
 			tlDir+"src/test/resources/NICE_experiments/biutee.xml",
@@ -193,17 +195,17 @@ public class ExperimentNice extends AbstractExperiment {
 		String dataDir = tlDir+"src/main/resources/exci/nice/xmi_perFragmentGraph/test";
 		String gsAnnotationsDir = tlDir+"src/main/resources/exci/nice/goldStandardAnnotation/test";
 		int fileLimit = Integer.MAX_VALUE;
-		String outDir = dataDir.replace("resources", "outputs");
+		String outDir = dataDir.replace("resources", "outputs").replace("main","test");
 
-		MergerType mergerType = MergerType.ALL_PAIRS_MERGE; // which merger to use
+		MergerType mergerType = MergerType.WP2_MERGE; // which merger to use
 		boolean includeFragmentGraphEdges = false; // whether to include FG edges in the evaluations
 
 		// which EDA(s) to use
 //		EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
 //		EdaName[] names = {EdaName.TIE_POS_RES};	
-		EdaName[] names = {EdaName.EDIT_DIST};	
+//		EdaName[] names = {EdaName.EDIT_DIST};	
 //		EdaName[] names = {EdaName.BIUTEE, EdaName.TIE_POS_RES};	
-//		EdaName[] names = {EdaName.P1EDA};	
+		EdaName[] names = {EdaName.P1EDA};	
 //		EdaName[] names = {EdaName.BIUTEE};	
 
 		Double initialThreshold = 0.0;
