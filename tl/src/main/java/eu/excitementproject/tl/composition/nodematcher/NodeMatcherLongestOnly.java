@@ -123,11 +123,16 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 			EquivalenceClass ec) {		
 		Set<EntailmentUnit> eus = ec.getEntailmentUnits();
 		for (EntailmentUnit eu : eus) { //compare mentionToBeFound with text and lemma of the entailment unit
-			String unitText = eu.getTextWithoutDoubleSpaces().trim().toLowerCase();
-			String unitTextLemmatized = eu.getLemmatizedText().trim().toLowerCase();
 			String mentionToBeFoundText = mentionToBeFound.getText().replaceAll("\\s+", " ").trim().toLowerCase();	
-			if (unitText.equals(mentionToBeFoundText) || unitTextLemmatized.equals(mentionToBeFoundText)) {
+			String unitText = eu.getTextWithoutDoubleSpaces().trim().toLowerCase();
+			if (unitText.equals(mentionToBeFoundText)) {
 				return 1;
+			}
+			if (null != eu.getLemmatizedText()) {
+				String unitTextLemmatized = eu.getLemmatizedText().trim().toLowerCase();
+				if (unitTextLemmatized.equals(mentionToBeFoundText)) {
+					return 1;
+				}
 			}
 			/*Set<EntailmentUnitMention> mentions = eu.getMentions();
 			for (EntailmentUnitMention mention : mentions) { //for each mention associated to this node	
