@@ -112,7 +112,8 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	/**
 	 * Compute a score expressing how well the mention matches the entailment graph node.
 	 * 
-	 * Simple implementation: If mention exactly matches one of the mentions associated to the node, return 1, if not return 0.
+	 * Simple implementation: If mention to be found exactly matches one of the mentions 
+	 * the text or lemma associated to the node return 1, if not return 0.
 	 *  
 	 * @param mentionToBeFound
 	 * @param eu
@@ -121,8 +122,14 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	private double getNodeScore(EntailmentUnitMention mentionToBeFound,
 			EquivalenceClass ec) {		
 		Set<EntailmentUnit> eus = ec.getEntailmentUnits();
-		for (EntailmentUnit eu : eus) {
-			Set<EntailmentUnitMention> mentions = eu.getMentions();
+		for (EntailmentUnit eu : eus) { //compare mentionToBeFound with text and lemma of the entailment unit
+			String unitText = eu.getTextWithoutDoubleSpaces().trim().toLowerCase();
+			String unitTextLemmatized = eu.getLemmatizedText().trim().toLowerCase();
+			String mentionToBeFoundText = mentionToBeFound.getText().replaceAll("\\s+", " ").trim().toLowerCase();	
+			if (unitText.equals(mentionToBeFoundText) || unitTextLemmatized.equals(mentionToBeFoundText)) {
+				return 1;
+			}
+			/*Set<EntailmentUnitMention> mentions = eu.getMentions();
 			for (EntailmentUnitMention mention : mentions) { //for each mention associated to this node	
 				String mentionText = mention.getText().replaceAll("\\s+", " ").trim();
 				String mentionToBeFoundText = mentionToBeFound.getText().replaceAll("\\s+", " ").trim();	
@@ -130,7 +137,7 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 			//	if (mentionText.equals(mentionToBeFoundText)) { //compare to mention to be found
 						return 1;
 				}
-			}
+			}*/
 		}
 		return 0;
 	}
