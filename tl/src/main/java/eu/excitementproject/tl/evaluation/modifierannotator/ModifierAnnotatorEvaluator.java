@@ -12,6 +12,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.DocumentAnnotation;
+import org.uimafit.util.JCasUtil;
 
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitement.type.tl.KeywordAnnotation;
@@ -124,6 +126,7 @@ public class ModifierAnnotatorEvaluator {
 		int modAnnotationsCount = 0;
 		int modCountGS = 0;
 		int modTokenCountGS = 0;
+		int dependsOnCount = 0;
 		
 		for(File xmiIn: FileUtils.listFiles(new File(xmiDir), new String[]{"xmi"}, true)) {
 			
@@ -163,17 +166,37 @@ public class ModifierAnnotatorEvaluator {
 				
 				modCountGS += AnnotationUtils.countAnnotations(goldJCas, ModifierAnnotation.class);
 				modTokenCountGS += AnnotationUtils.countAnnotationTokens(goldJCas, ModifierAnnotation.class);
+				
+				dependsOnCount += countDependents(sysJCas);
 			}
 		}
 		
 		logger.info("Final counts: " + counts.toString() + " / " + FragmentAndModifierMatchCounter.getClassDetails(counts));
 		logger.info("\nMacro-scores: Recall=" + emm.getRecall() + ";   Precision=" + emm.getPrecision() + ";   Fscore=" + emm.getFscore() + "\n" + "Number of instances: " + modAnnotationsCount);
 		logger.info("Gold standard information: " + modCountGS + " instances / " + modTokenCountGS + " tokens");
+		logger.info("Number of dependent modifiers: " + dependsOnCount);
 		
 		return new EvaluationMeasures(counts);
 	}
 	
 	
+	private static int countDependents(JCas aJCas) {
+		int count = 0;
+		
+		DocumentAnnotation da = JCasUtil.selectSingle(aJCas, DocumentAnnotation.class);		
+		List<ModifierAnnotation> mas = JCasUtil.selectCovered(aJCas, ModifierAnnotation.class, da);
+		
+		if (mas != null) {
+			for(ModifierAnnotation ma : mas) {
+				if (ma.getDependsOn() != null) {
+					count++;
+				}
+			}
+		}
+		
+		return count;
+	}
+
 	/**
 	 * Adds counts from the currently processed modifiers to the overall counts
 	 * 

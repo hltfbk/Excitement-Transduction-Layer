@@ -52,7 +52,7 @@ public class TLClusteringResultsEvaluator extends ClusteringResultsEvaluator{
 		for (String clustName : evaluatedClusters.keySet()){
 			denominator += evaluatedClusters.get(clustName).size(); //the number of reasons in the cluster
 			double maxNominator = 0.0;
-			String bestFitLabel = "";
+			String bestFitLabel = "NO_MATCH";
 			for (String gsCluster : goldStandardClusters.keySet()){
 				LinkedList<Integer> tmpGScluster = new LinkedList<Integer>();
 				for (Integer x: goldStandardClusters.get(gsCluster)){
@@ -61,10 +61,12 @@ public class TLClusteringResultsEvaluator extends ClusteringResultsEvaluator{
 				//System.out.print(clustName+" "+gsCluster+" : "+tmpGScluster.size()+ " ");
 				tmpGScluster.retainAll(evaluatedClusters.get(clustName));
 				//logger.info(tmpGScluster.size());
-				double candidateNominator = tmpGScluster.size();
-				if (maxNominator<candidateNominator) {
-					maxNominator=candidateNominator;
-					bestFitLabel = gsCluster; // candidate to be the best gold-standard cluster to fit the evaluated cluster
+				if (!tmpGScluster.isEmpty()){
+					double candidateNominator = tmpGScluster.size();
+					if (maxNominator<candidateNominator) {
+						maxNominator=candidateNominator;
+						bestFitLabel = gsCluster; // candidate to be the best gold-standard cluster to fit the evaluated cluster
+					}					
 				}
 			}
 			purity += maxNominator;

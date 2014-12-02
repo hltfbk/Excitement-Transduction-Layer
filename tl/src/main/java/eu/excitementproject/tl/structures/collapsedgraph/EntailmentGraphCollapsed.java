@@ -60,6 +60,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	private static final long serialVersionUID = 5957243707939421299L;
 		
 	Set<String> textualInputs = null; //the textual inputs (complete statements), on which the entailment graph was built.
+	
 	int numberOfEntailmentUnits; //the number of entailment units contained in the graph. This number is not necessarily the same as the number of nodes in the graph, since each equivalence class node corresponds to one or more entailment unit(s).
 
 	GraphStatistics graphStatistics = null;
@@ -471,10 +472,14 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 * @param filename - the name of the file to save the graph
 	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
 	 */
-	public void toDOT(String filename) throws IOException{
-			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
-			out.write(this.toDOT());
-			out.close();
+	public void toDOT(String filename) throws EntailmentGraphCollapsedException{
+			try {
+				BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+				out.write(this.toDOT());
+				out.close();
+			} catch (IOException e) {
+				throw new EntailmentGraphCollapsedException("Could not save the file in DOT format to "+filename+"\n"+e.getMessage());
+			}
 	}	
 	
 	public DOMSource toXML() throws EntailmentGraphCollapsedException{
@@ -570,7 +575,6 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			
 			return new DOMSource(doc);
 		} catch (DOMException | ParserConfigurationException e) {
-			// TODO Auto-generated catch block
 			throw new EntailmentGraphCollapsedException(e.getMessage());
 		}		 
   }
@@ -687,10 +691,14 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	 * @param filename - the name of the file to save the graph
 	 * @throws EntailmentGraphRawException if the method did not manage to save the graph (e.g. if the folder specified in the filename does not exist)
 	 */
-	public void toDOT(String filename, Map<String,String> nodeTextById) throws IOException{
-			BufferedWriter out = new BufferedWriter(new FileWriter(filename));
-			out.write(this.toDOT(nodeTextById));
-			out.close();
+	public void toDOT(String filename, Map<String,String> nodeTextById) throws EntailmentGraphCollapsedException{
+			try {
+				BufferedWriter out = new BufferedWriter(new FileWriter(filename));
+				out.write(this.toDOT(nodeTextById));
+				out.close();
+			} catch (IOException e) {
+				throw new EntailmentGraphCollapsedException("Could not save the file in DOT format to "+filename+"\n"+e.getMessage());
+			}
 	}	
 
 	/******************************************************************************************

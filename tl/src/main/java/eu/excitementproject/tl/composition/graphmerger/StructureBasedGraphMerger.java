@@ -9,7 +9,6 @@ import java.util.Set;
 
 import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
-import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
@@ -19,17 +18,23 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
- * This graph merger automates the WP2 manual procedure. As part of the procedure, all transitive closure edges are added to the graph.
- * Note that in this implementation both "entailment" and "non-entailment" edges are added during the merge. 
+ * This graph merger implements a merger based on the WP2 manual procedure. 
+ * As part of the merging, all transitive closure edges are added to the graph.
+ * <p>Note that in this implementation both "entailment" and "non-entailment" edges are added during the merge. 
  * Yet, absence of an edge in the merged graph should be interpreted as "no entailment"  
  *
- * Note that the resulting graph may contain conflicts, i.e. both an entailing and a non-entailing edge between the same source and target nodes.
+ * <p>Note that the resulting graph may contain conflicts, i.e. both an entailing and a non-entailing edge between the same source and target nodes.
  *
  * @author Lili Kotlerman
  *
  */
 public class StructureBasedGraphMerger extends AbstractGraphMerger {
 	
+	/** Constructor, which calls the constructor of {@link AbstractGraphMerger} for the given LAP and EDA configurations.
+	 * @param lap
+	 * @param eda
+	 * @throws GraphMergerException
+	 */
 	public StructureBasedGraphMerger(CachedLAPAccess lap, EDABasic<?> eda)
 			throws GraphMergerException {
 		super(lap, eda);
@@ -37,7 +42,7 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(Set<FragmentGraph> fragmentGraphs,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 
 		List<FragmentGraph> fg = new LinkedList<FragmentGraph>(fragmentGraphs);
 		Collections.sort(fg, new FragmentGraph.CompleteStatementComparator());
@@ -51,7 +56,7 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 
 	@Override
 	public EntailmentGraphRaw mergeGraphs(FragmentGraph fragmentGraph,
-			EntailmentGraphRaw workGraph) throws GraphMergerException, LAPException {
+			EntailmentGraphRaw workGraph) throws GraphMergerException {
 		
 		logger.info("Adding fragment graph:\n"+fragmentGraph.toString());
 		
@@ -99,7 +104,15 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 		return workGraph;		
 	}
 	
-	
+	/** Perform the actual merge of two FragmentGraphs within a given work graph
+	 * @param workGraph
+	 * @param newFragmentGraphNodes
+	 * @param oldFragmentGraphNodes
+	 * @param newBaseStatement
+	 * @param workGraphBaseStatement
+	 * @return updated work graph
+	 * @throws GraphMergerException
+	 */	
 	private EntailmentGraphRaw mergeFragmentGraphs(EntailmentGraphRaw workGraph, Hashtable<Integer, Set<EntailmentUnit>> newFragmentGraphNodes, Hashtable<Integer, Set<EntailmentUnit>> oldFragmentGraphNodes, EntailmentUnit newBaseStatement,  EntailmentUnit workGraphBaseStatement) throws GraphMergerException{
 		//Check if there is entailment between the two base statements
 		Set<EntailmentRelation> edgesToAdd = mergeBaseStatements(workGraph, newBaseStatement, workGraphBaseStatement);
@@ -141,6 +154,13 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 	}
 	
 
+	/** Check if base statements of two Fragment Graphs are entailing in any direcion
+	 * @param workGraph
+	 * @param newBaseStatement
+	 * @param workGraphBaseStatement
+	 * @return set of the corresponding entailment relations 
+	 * @throws GraphMergerException
+	 */
 	protected Set<EntailmentRelation> mergeBaseStatements(EntailmentGraphRaw workGraph, EntailmentUnit newBaseStatement, EntailmentUnit workGraphBaseStatement) throws GraphMergerException{
 		//Check if there is entailment between the two base statements
 		// There might be an existing entailment edge because the two base statements were present in the work graph before
@@ -181,6 +201,13 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 	}
 	
 
+	/**
+	 * Performs the merge of upper-level FragmentGraph nodes, after first-level nodes were merged
+	 * @param workGraph
+	 * @param candidateEntailingFragmentGraphNodes
+	 * @param candidateEntailedFragmentGraphNodes
+	 * @return the updated work graph
+	 */
 	private EntailmentGraphRaw mergeUpperLevels(EntailmentGraphRaw workGraph, Hashtable<Integer, Set<EntailmentUnit>> candidateEntailingFragmentGraphNodes, Hashtable<Integer, Set<EntailmentUnit>> candidateEntailedFragmentGraphNodes){
 		// detect the highest common level (up to this level we need to propagate)
 		int highestCommonLevel = Collections.max(candidateEntailingFragmentGraphNodes.keySet());
@@ -210,6 +237,12 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 		return workGraph;
 	}
 	
+	/** Decide on entailment edges induced from the structure of FragmentGraphs and previously made entailment decisions
+	 * @param workGraph
+	 * @param candidateEntailingNode
+	 * @param candidateEntailedNode
+	 * @return confidence of the induced decision
+	 */
 	private double induceEntailment(EntailmentGraphRaw workGraph, EntailmentUnit candidateEntailingNode, EntailmentUnit candidateEntailedNode){
 		double confidence = 100.0;
 		int childLevel = candidateEntailingNode.getLevel()-1;

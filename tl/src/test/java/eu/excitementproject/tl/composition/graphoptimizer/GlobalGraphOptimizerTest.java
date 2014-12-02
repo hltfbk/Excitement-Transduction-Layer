@@ -18,6 +18,8 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.TreeTaggerEN;
 import eu.excitementproject.tl.composition.api.GraphMerger;
 import eu.excitementproject.tl.composition.api.GraphOptimizer;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.StructureBasedGraphMerger;
@@ -67,7 +69,7 @@ public class GlobalGraphOptimizerTest {
 						logger.info("Done:\n"+finalGraph.toString());
 						finalGraph.toDOT("./src/test/outputs/collapsedGraphFromSample.txt");						
 					} catch (ConfigurationException | EDAException | ComponentException |
-							GraphMergerException | IOException | GraphOptimizerException e) {
+							GraphMergerException | GraphOptimizerException | EntailmentGraphRawException | EntailmentGraphCollapsedException e) {
 						e.printStackTrace();
 						fail(e.getMessage());
 					}

@@ -44,11 +44,11 @@ public class ModifierAnnotatorEvaluationTest {
 			
 			EvaluationMeasures eval = ModifierAnnotatorEvaluator.evaluateModifiers(
 			
-					"src/main/resources/exci/alma/xmi_perFragmentGraph",
+					"src/main/resources/exci/alma/xmi_perFragmentGraph/test",
 //					"src/main/resources/exci/nice/xmi_perFragmentGraph/all",
 
-					new AdvAsModifierAnnotator(lap, fragAnn, false),
-//					new AdvAdjAsModifierAnnotator(lap, fragAnn, false),
+//					new AdvAsModifierAnnotator(lap, fragAnn, false),
+					new AdvAdjAsModifierAnnotator(lap, fragAnn, false),
 //					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, false),
 //					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, true),
 					

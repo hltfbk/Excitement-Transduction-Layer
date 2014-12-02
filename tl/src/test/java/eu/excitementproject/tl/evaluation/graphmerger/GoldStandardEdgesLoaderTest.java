@@ -13,6 +13,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
+import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -45,7 +47,7 @@ public class GoldStandardEdgesLoaderTest {
 				gr.toDOT(annotationFilename+".dot");
 				EntailmentGraphCollapsed gc = loader.getCollapsedGraph();
 				gc.toDOT(annotationFilename+".collapsed.dot");
-			} catch (ParserConfigurationException | SAXException | IOException | GraphOptimizerException e) {							
+			} catch (ParserConfigurationException | SAXException | IOException | GraphOptimizerException | EntailmentGraphCollapsedException | EntailmentGraphRawException e) {							
 				e.printStackTrace();
 			}			
 	

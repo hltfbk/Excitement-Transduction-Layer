@@ -19,7 +19,7 @@ import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
-import eu.excitementproject.tl.laputils.LemmaLevelLapEN;
+import eu.excitementproject.tl.laputils.WordDecompositionType;
 
 public class TokenAsFragmentAnnotatorForGermanTest {
 	
@@ -42,7 +42,7 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 			cas = CASUtils.createNewInputCas();
 			cas.setDocumentLanguage("DE"); 
 			cas.setDocumentText("Das Programm brachte eine Fehlermeldung .");
-			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, false);
+			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, WordDecompositionType.NONE);
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 5);
@@ -53,10 +53,22 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 			cas = CASUtils.createNewInputCas();
 			cas.setDocumentLanguage("DE"); 
 			cas.setDocumentText("Das Programm brachte eine Fehlermeldung .");
-			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, true);
+			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, WordDecompositionType.NO_RESTRICTION);
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 7);
+			
+			
+			// annotate all tokens + compound parts of words with hyphen
+			testlogger.info("Annotating all tokens except punctuation + compound parts in German sentence... ");
+			cas.reset();
+			cas = CASUtils.createNewInputCas();
+			cas.setDocumentLanguage("DE"); 
+			cas.setDocumentText("Fehlermeldung in der XML-Datei");
+			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, WordDecompositionType.ONLY_HYPHEN);
+			fragAnnotator.annotateFragments(cas);
+			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
+			Assert.assertEquals(frgIndex.size(), 6);
 			
 			//annotate only nouns, but no compound parts
 			testlogger.info("Annotating only nouns in German sentence... "); 
@@ -64,7 +76,7 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 			cas.setDocumentLanguage("DE"); 
 			cas.setDocumentText("Das Programm brachte eine Fehlermeldung .");
 			tokenPOSFilter = Arrays.asList(new String []{"NN"}); 
-			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, tokenPOSFilter, false);
+			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, tokenPOSFilter, WordDecompositionType.NONE);
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 2);
@@ -75,7 +87,7 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 			cas.setDocumentLanguage("DE"); 
 			cas.setDocumentText("Das Programm brachte eine Fehlermeldung .");
 			tokenPOSFilter = Arrays.asList(new String []{"NN", "NE"}); 
-			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, tokenPOSFilter, true);
+			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, tokenPOSFilter, WordDecompositionType.NO_RESTRICTION);
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 4);
