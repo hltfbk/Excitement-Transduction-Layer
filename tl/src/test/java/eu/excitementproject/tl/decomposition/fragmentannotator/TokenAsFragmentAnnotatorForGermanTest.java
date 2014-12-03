@@ -119,5 +119,4 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 			e.printStackTrace();
 		}
 	}
-
 }
