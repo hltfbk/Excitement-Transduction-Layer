@@ -356,7 +356,8 @@ public class DemoUseCase2OMQGermanNew {
 			lapLemma = new CachedLAPAccess(new LemmaLevelLapDE());
 			lapDependency = new CachedLAPAccess(new DependencyLevelLapDE());
 			fragAnotLemma = new TokenAsFragmentAnnotatorForGerman(lapLemma, tokenPosFilter, WordDecompositionType.ONLY_HYPHEN);
-			fragAnotDependency = new DependencyAsFragmentAnnotatorForGerman(lapDependency, governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter);
+			fragAnotDependency = new DependencyAsFragmentAnnotatorForGerman(lapDependency, governorPosFilter, governorWordFilter, 
+					dependentPosFilter, dependentWordFilter, WordDecompositionType.NO_RESTRICTION);
 			fragAnotSentence = new SentenceAsFragmentAnnotator(lapDependency);
 				//TODO: use KeywordBasedFragmentAnnotator if keywords are available!
 	 		modAnot = new AdvAsModifierAnnotator(lapLemma); 		

@@ -766,7 +766,7 @@ public class EvaluatorUtils {
 		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
 		List<String> textLemmas = Arrays.asList(lemmatizedText.split("\\s+"));
 		
-		if(textLemmas.size() == 1) {
+		if(textTokens.size() == 1 && textLemmas.size() == 1) {
 			permutations.addAll(textTokens);
 			permutations.addAll(textLemmas);
 		}
