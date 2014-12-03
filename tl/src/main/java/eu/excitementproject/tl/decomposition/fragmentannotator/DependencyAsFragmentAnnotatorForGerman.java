@@ -18,7 +18,6 @@ import org.uimafit.util.JCasUtil;
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
-import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.NUM_Type;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
@@ -300,34 +299,17 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 			}
 		return false;
 	}
-
 	
-	private boolean annotateDependency(JCas aJCas, String governorText, int governorBegin, int governorEnd, String dependentText, int dependentBegin, int dependentEnd){
-		Logger fragLogger = Logger.getLogger(this.getClass().getName()); 
-		boolean isAnnotated = false;
-		CASUtils.Region[] r = new CASUtils.Region[2];
-		if(governorBegin < dependentBegin){
-			r[0] = new CASUtils.Region(governorBegin,  governorEnd); 
-			r[1] = new CASUtils.Region(dependentBegin, dependentEnd);
-			fragLogger.info("Annotating the following text as fragment: " +   governorText +  " " + dependentText);
-		}
-		else {
-			r[0] = new CASUtils.Region(dependentBegin, dependentEnd);
-			r[1] = new CASUtils.Region(governorBegin,  governorEnd); 
-			fragLogger.info("Annotating the following text as fragment: " +   governorText +  " " + dependentText);
-		}
-			
-		try {
-			CASUtils.annotateOneDeterminedFragment(aJCas, r);
-			isAnnotated = true;
-		} catch (LAPException e) {
-			e.printStackTrace();
-		}
-		return isAnnotated;
-	}
-	
+	/**
+	 * annotates dependency with given input parameters
+	 * 
+	 * @param aJCas
+	 * @param governor
+	 * @param dependent
+	 * @param wordDecompositionType
+	 * @return
+	 */
 	private int annotateDependency(JCas aJCas, Token governor, Token dependent,  WordDecompositionType wordDecompositionType){
-		Logger fragLogger = Logger.getLogger(this.getClass().getName()); 
 		int frag_num = 0;
 		
 		String governorText = governor.getCoveredText();
@@ -386,7 +368,42 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 			return frag_num;
 	}
 	
-	
+
+	/**
+	 * annotates dependency with given input parameters
+	 * 
+	 * @param aJCas
+	 * @param governorText
+	 * @param governorBegin
+	 * @param governorEnd
+	 * @param dependentText
+	 * @param dependentBegin
+	 * @param dependentEnd
+	 * @return
+	 */
+	private boolean annotateDependency(JCas aJCas, String governorText, int governorBegin, int governorEnd, String dependentText, int dependentBegin, int dependentEnd){
+		Logger fragLogger = Logger.getLogger(this.getClass().getName()); 
+		boolean isAnnotated = false;
+		CASUtils.Region[] r = new CASUtils.Region[2];
+		if(governorBegin < dependentBegin){
+			r[0] = new CASUtils.Region(governorBegin,  governorEnd); 
+			r[1] = new CASUtils.Region(dependentBegin, dependentEnd);
+			fragLogger.info("Annotating the following text as fragment: " +   governorText +  " " + dependentText);
+		}
+		else {
+			r[0] = new CASUtils.Region(dependentBegin, dependentEnd);
+			r[1] = new CASUtils.Region(governorBegin,  governorEnd); 
+			fragLogger.info("Annotating the following text as fragment: " +   governorText +  " " + dependentText);
+		}
+			
+		try {
+			CASUtils.annotateOneDeterminedFragment(aJCas, r);
+			isAnnotated = true;
+		} catch (LAPException e) {
+			e.printStackTrace();
+		}
+		return isAnnotated;
+	}
 	
 	
 	/**
