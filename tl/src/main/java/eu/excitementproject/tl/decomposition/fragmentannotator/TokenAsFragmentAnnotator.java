@@ -24,6 +24,11 @@ import eu.excitementproject.tl.laputils.CASUtils;
  */
 public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	
+	/**
+	 * 
+	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
+	 * @throws FragmentAnnotatorException
+	 */
 	public TokenAsFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
 	{
 		super(l); 

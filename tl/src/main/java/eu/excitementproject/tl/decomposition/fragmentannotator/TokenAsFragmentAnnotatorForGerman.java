@@ -26,8 +26,9 @@ import eu.excitementproject.tl.laputils.WordDecompositionType;
 
 /**
  * This class implements a simple "fragment annotator": token + compound part 
- * Namely, each token except the punctuation is considered as a possible (continuous) fragment. Excluded are also one character words except numbers. 
- * If a filter for parts of speech is passed to the constructor, then only tokens are annotated, which match the filter.
+ * Namely, each token  is considered as a possible (continuous) fragment. 
+ * Excluded are also punctuation tokens, one character words except numbers. 
+ * If filters are passed via constructor, then only tokens, which match the filter, are annotated
  * If a token is a compound word, then the compound parts can be also annotated.
  * 
  * @author Aleksandra (November 2014)
@@ -60,6 +61,13 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 		}
 	}
 	
+	/**
+	 * 
+	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
+	 * @param tokenPOSFilter - types of part of speech (POS), which are allowed to be a POS the token
+	 * @param decompositionType - WordDecompositionType.NONE or WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
+	 * @throws FragmentAnnotatorException
+	 */
 	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, List<POSTag_DE> tokenPOSFilter, WordDecompositionType decompositionType)
 			throws FragmentAnnotatorException {
 		super(lap); 

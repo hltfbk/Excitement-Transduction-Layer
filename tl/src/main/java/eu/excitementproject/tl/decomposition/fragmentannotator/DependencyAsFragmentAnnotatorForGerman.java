@@ -23,9 +23,9 @@ import eu.excitementproject.tl.laputils.POSTag_DE;
 
 /**
  * This class implements the dependency-based fragment annotator. 
- * Each dependency (except when dependent is punctuation token) is considered as a possible (continuous) fragment.
- * If filters for a type of dependencies, part of speech of governor and part of speech of dependent are passed to the constructor 
- * then only dependencies are annotated, which match the filter.
+ * Each dependency (except when dependent is punctuation token or dependent and governor are identical words) 
+ * is considered as a possible fragment. If filters are passed via constructor, then then only dependencies 
+ * are annotated, which match the filter.
  * 
  * @author Aleksandra
  *
@@ -76,8 +76,9 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	/**
 	 * 
 	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
-	 * @param governorPOSFilter -  types of part of speech of governor tokens, which should be annotated
-	 * @param dependentPOSFilter - types of part of speech of dependent tokens, which should be annotated
+	 * @param dependencyTypeFilter - types of dependencies, which should be annotated
+	 * @param governorPOSFilter    - types of part of speech (POS), which are allowed to be a POS of governor token
+	 * @param dependentPOSFilter  - types of part of speech (POS), which are allowed to be a POS of dependent token
 	 * @throws FragmentAnnotatorException
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<POSTag_DE> governorPOSFilter, 
@@ -92,6 +93,15 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.dependentWordFilter = new ArrayList<String>();
 	}
 	
+	/**
+	 * 
+	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
+	 * @param governorPOSFilter    - types of part of speech (POS), which are allowed to be a POS of governor token
+	 * @param governorWordFilter   - words or lemmas, that are allowed to be a governor token
+	 * @param dependentPOSFilter  - types of part of speech (POS), which are allowed to be a POS of dependent token
+	 * @param dependentWordFilter  - words or lemmas, that are allowed to be a dependent token
+	 * @throws FragmentAnnotatorException
+	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, 
 			List<POSTag_DE> governorPOSFilter, List<String> governorWordFilter,
 			List<POSTag_DE> dependentPOSFilter, List<String> dependentWordFilter) throws FragmentAnnotatorException
@@ -109,8 +119,8 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * 
 	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
 	 * @param dependencyTypeFilter - types of dependencies, which should be annotated
-	 * @param governorPOSFilter -  types of part of speech of governor tokens, which should be annotated
-	 * @param dependentPOSFilter - types of part of speech of dependent tokens, which should be annotated
+	 * @param governorPOSFilter    - types of part of speech (POS), which are allowed to be a POS of governor token
+	 * @param dependentPOSFilter  - types of part of speech (POS), which are allowed to be a POS of dependent token
 	 * @throws FragmentAnnotatorException
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> dependencyTypeFilter, List<POSTag_DE> governorPOSFilter, 
@@ -130,8 +140,10 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * 
 	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
 	 * @param dependencyTypeFilter - types of dependencies, which should be annotated
-	 * @param governorPOSFilter -  types of part of speech of governor tokens, which should be annotated
-	 * @param dependentPOSFilter - types of part of speech of dependent tokens, which should be annotated
+	 * @param governorPOSFilter    - types of part of speech (POS), which are allowed to be a POS of governor token
+	 * @param governorWordFilter   - words or lemmas, that are allowed to be a governor token
+	 * @param dependentPOSFilter  - types of part of speech (POS), which are allowed to be a POS of dependent token
+	 * @param dependentWordFilter  - words or lemmas, that are allowed to be a dependent token
 	 * @throws FragmentAnnotatorException
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> dependencyTypeFilter, 
