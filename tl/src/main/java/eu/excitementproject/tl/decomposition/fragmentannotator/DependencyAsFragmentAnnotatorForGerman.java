@@ -125,7 +125,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		if (dependencyIndex.size() > 0) {
 			Collection<Dependency> deps = JCasUtil.select(aJCas, Dependency.class);
 			for(Dependency d : deps){
-				if(isAllowed(d, governorPOSFilter, dependentPOSFilter)){
+				if(isAllowed(d, restrictDependencyType, governorPOSFilter, dependentPOSFilter)){
 					Token governor = d.getGovernor();
 					Token dependent = d.getDependent();
 					CASUtils.Region[] r = new CASUtils.Region[2];
@@ -183,7 +183,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * @param dependency
 	 * @return
 	 */
-	private boolean isAllowed(Dependency dependency, List<POSTag_DE> governorPosFilter, List<POSTag_DE> dependentFilter){
+	private boolean isAllowed(Dependency dependency, boolean restrictDependencyType, List<POSTag_DE> governorPosFilter, List<POSTag_DE> dependentFilter){
 		if(isAllowed(dependency.getDependencyType())) {
 			Token governor = dependency.getGovernor();
 			Token dependent = dependency.getDependent();
@@ -197,6 +197,17 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		return false;
 	}
 	
+	/**
+	 * check if dependency type is allowed
+	 * @param dependencyType
+	 * @return
+	 */
+	private boolean isAllowed(String dependencyType){
+		if(!restrictDependencyType || dependencyTypeFilter.contains(dependencyType)) {
+			return true;
+		}
+		return false;
+	}
 	
 	/**
 	 * check if the token type is allowed

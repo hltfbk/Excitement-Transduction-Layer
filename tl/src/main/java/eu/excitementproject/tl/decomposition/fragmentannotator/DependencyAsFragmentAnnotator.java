@@ -157,7 +157,7 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	 * @param dependencyType
 	 * @return
 	 */
-	protected boolean isAllowed(String dependencyType){
+	private boolean isAllowed(String dependencyType){
 		if(!restrictDependencyType || dependencyTypeFilter.contains(dependencyType)) {
 			return true;
 		}
