@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,8 +26,9 @@ import eu.excitementproject.eop.lap.dkpro.MaltParserDE;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.POSTag_DE;
 
-public class DependencyAsFragmentAnnotatorTest {
+public class DependencyAsFragmentAnnotatorForGermanTest {
 	
 	@Test
 	public void test() {
@@ -34,6 +36,10 @@ public class DependencyAsFragmentAnnotatorTest {
 		LAPAccess lap;
 		FragmentAnnotator fragAnnotator;
 		List<String> dependencyFilter;
+		List<POSTag_DE> governorPOSFilter;
+		List<String> governorWordFilter;
+		List<POSTag_DE> dependentPOSFilter;
+		List<String> dependentWordFilter;
 		AnnotationIndex<Annotation> frgIndex;
 		
 		try {
@@ -41,7 +47,7 @@ public class DependencyAsFragmentAnnotatorTest {
 			lap = new CachedLAPAccess(new MaltParserDE());
 			
 			// annotate all dependencies 
-			fragAnnotator = new DependencyAsFragmentAnnotator(lap);
+			fragAnnotator = new DependencyAsFragmentAnnotatorForGerman(lap);
 			testlogger.info("Annotating all dependencies in a sentence... "); 
 			JCas cas = CASUtils.createNewInputCas();
 			cas.setDocumentLanguage("DE"); 
@@ -56,10 +62,35 @@ public class DependencyAsFragmentAnnotatorTest {
 			cas.setDocumentLanguage("DE"); 
 			cas.setDocumentText("Meine Frau besucht heute ihren älteren Bruder.");
 			dependencyFilter = Arrays.asList(new String [] {"OA"});
-			fragAnnotator = new DependencyAsFragmentAnnotator(lap, dependencyFilter);
+			fragAnnotator = new DependencyAsFragmentAnnotatorForGerman(lap, dependencyFilter);
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 1);
+			
+			//annotate only dependencies, in which governor is a noun
+			cas.reset();
+			testlogger.info("Annotating only dependencies, where governor ia a noun and dependent is an adjective..."); 
+			cas.setDocumentLanguage("DE"); 
+			cas.setDocumentText("Meine Frau besucht heute ihren älteren Bruder.");
+			governorPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.NN, POSTag_DE.NE});
+			dependentPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD});
+			fragAnnotator = new DependencyAsFragmentAnnotatorForGerman(lap, governorPOSFilter, dependentPOSFilter);
+			fragAnnotator.annotateFragments(cas);
+			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
+			Assert.assertEquals(frgIndex.size(), 1);
+			
+			cas.reset();
+			testlogger.info("Annotating only dependencies, where governor ia a noun and dependent is an adjective or lemma of dependent is 'keine'"); 
+			cas.setDocumentLanguage("DE"); 
+			cas.setDocumentText("Der gute Peter hatte keinen Blumen gekauft.");
+			governorPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.NN, POSTag_DE.NE});
+			dependentPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD});
+			dependentWordFilter = Arrays.asList(new String []{"keine"});
+			fragAnnotator = new DependencyAsFragmentAnnotatorForGerman(lap, governorPOSFilter, 
+					new ArrayList<String>(), dependentPOSFilter, dependentWordFilter);
+			fragAnnotator.annotateFragments(cas);
+			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
+			Assert.assertEquals(frgIndex.size(), 2);
 			
 		} catch (LAPException | FragmentAnnotatorException e) {
 			e.printStackTrace();

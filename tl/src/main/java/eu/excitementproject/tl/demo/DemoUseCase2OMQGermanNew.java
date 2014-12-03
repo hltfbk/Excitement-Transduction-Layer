@@ -18,17 +18,19 @@ import org.apache.uima.jcas.JCas;
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
 import de.tuebingen.uni.sfs.germanet.api.GermaNet;
 import eu.excitement.type.tl.CategoryDecision;
-import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.alignmentedas.p1eda.P1EDATemplate;
 import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_DEvar1;
-import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
+import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalResourceException;
 import eu.excitementproject.eop.common.configuration.CommonConfig;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
+import eu.excitementproject.eop.core.component.lexicalknowledge.derivbase.DerivBaseResource;
+import eu.excitementproject.eop.core.component.lexicalknowledge.germanet.GermaNetRelation;
+import eu.excitementproject.eop.core.component.lexicalknowledge.germanet.GermaNetWrapper;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
@@ -53,10 +55,9 @@ import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAndDependencyAsFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.evaluation.categoryannotator.EvaluatorUtils;
@@ -66,13 +67,13 @@ import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.DependencyLevelLapDE;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
+import eu.excitementproject.tl.laputils.POSTag_DE;
+import eu.excitementproject.tl.laputils.WordDecompositionType;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
-import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
@@ -114,10 +115,14 @@ public class DemoUseCase2OMQGermanNew {
 	static ConfidenceCalculator cc; 
 	static CategoryAnnotator catAnot;
 	static int topN = 1;
-    static String pathToGermaNet = "D:/DFKI/EXCITEMENT/Linguistic Analysis/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML";
-	static GermaNet germanet;
-	static Set<String> GermaNetLexicon; 
+//    static String pathToGermaNet = "D:/DFKI/EXCITEMENT/Linguistic Analysis/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML";
+    static String pathToGermaNet = "C:/germanet/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML";
+	static DerivBaseResource dbr;
+	static int derivSteps;
+	static GermaNetWrapper gnw;
+	static List <GermaNetRelation> germaNetRelations; 
 	static GermanWordSplitter splitter;
+	static boolean mapNegation;
 	static boolean addLemmaLabel;
 	
 	static boolean keywordsProvided = true; //if true: input dataset contains keyword metadata
@@ -131,22 +136,17 @@ public class DemoUseCase2OMQGermanNew {
 	static File configFile;
 
 	private final static Logger logger = Logger.getLogger(DemoUseCase2OMQGermanNew.class.getName());
-
-	//configurations relating to lexical resources in SEDA
-	static int derivSteps = 2;
-	static boolean useSynonymRelation = true;
-	static boolean useHypernymRelation = true;
-	static boolean useEntailsRelation = true;
-	static boolean useCausesRelation = true;
-
+	
 	//determine POS tags to be used for fragment annotation
-    static List<String> tokenPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP",  "CARD"}); //"ADV" = adverb, "FM" = foreign language material
-    static List<String> governorPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
-    static List<String> dependentPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
-    static List<String> dependencyTypeFilter = null;
+	 static List<POSTag_DE> tokenPosFilter = Arrays.asList(
+	    		new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NE, POSTag_DE.CARD,
+	    						 POSTag_DE.VVFIN, POSTag_DE.VVINF, POSTag_DE.VVIZU, POSTag_DE.VVIMP, POSTag_DE.VVPP}); //"ADV" = adverb, "FM" = foreign language material
+	 static List<POSTag_DE> governorPosFilter = Arrays.asList(
+	    		new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NN, POSTag_DE.CARD,
+	    						 POSTag_DE.VVFIN, POSTag_DE.VVINF, POSTag_DE.VVIZU, POSTag_DE.VVIMP, POSTag_DE.VVPP, POSTag_DE.PTKNEG, POSTag_DE.PTKVZ}); //"ADV" = adverb, "FM" = foreign language material
+	static List<POSTag_DE> dependentPosFilter = governorPosFilter;
+	private static List<String> governorWordFilter = Arrays.asList(new String []{"ohne"});
+	private static List<String> dependentWordFilter = Arrays.asList(new String []{"keine", "keinerlei", "nicht", "nichts"});
 
     //some configurations relating to evaluation
     static String method = "tfidf";
@@ -187,13 +187,13 @@ public class DemoUseCase2OMQGermanNew {
 
 		/** Steps 2&3: Graph building and category annotation */
 		EntailmentGraphRaw singleTokenGraph = new EntailmentGraphRaw(addLemmaLabel);
-		EntailmentGraphRaw twoTokenGraph = new EntailmentGraphRaw();
+		EntailmentGraphRaw twoTokenGraph = new EntailmentGraphRaw(addLemmaLabel);
 		EntailmentGraphRaw sentenceGraph = new EntailmentGraphRaw();
 		EntailmentGraphCollapsed singleTokenCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed twoTokenCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed sentenceCollapsedGraph = new EntailmentGraphCollapsed();
 		EntailmentGraphCollapsed finalCollapsedGraph = new EntailmentGraphCollapsed();
-		int blockSize = 1; 
+		int blockSize = 20; 
 		JCas cas = null;
 		try {
 			cas = CASUtils.createNewInputCas();
@@ -240,55 +240,33 @@ public class DemoUseCase2OMQGermanNew {
 				accuracyPerBlock.put(countBlocks, new Double(accuracy));
 			}
 			/** Step 3: Extend graph with documents in current block */
+			Set<FragmentGraph> fragmentGraphsAllTokens = new HashSet<FragmentGraph>();
 			Set<FragmentGraph> fragmentGraphsAllDependencies = new HashSet<FragmentGraph>();
 			Set<FragmentGraph> fragmentGraphsAllSentences = new HashSet<FragmentGraph>();
 			for (int j=i; j<(countBlocks*blockSize) && j<docs.size(); j++) { //for each interaction in the current block
 				Interaction doc = docs.get(j);
-				/** Step 3a: Build token graph */
 				try {
-					//doc.fillInputCAS(cas);
-					List<JCas> cases = doc.createAndFillInputCASes(relevantTextProvided);
-					for (JCas casGraph : cases) {
-						fragAnotLemma.annotateFragments(casGraph);
-						Set<FragmentGraph> fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
-						for (FragmentGraph fg : fragmentGraphs) {
-							countFrags++;
-							logger.info("Merging " + fg.getCompleteStatement());
-							for(EntailmentUnitMention eum: fg.vertexSet()){
-								//add mention to raw graph
-								singleTokenGraph.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
-								EntailmentUnit aEU = singleTokenGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
-								for(EntailmentUnit bEU : singleTokenGraph.vertexSet()){
-									if(!singleTokenGraph.isEntailmentInAnyDirection(aEU, bEU)){
-										if(!bEU.getTextWithoutDoubleSpaces().equalsIgnoreCase(aEU.getTextWithoutDoubleSpaces()) 
-												&& bEU.getLemmatizedText().equalsIgnoreCase(aEU.getLemmatizedText())){
-											singleTokenGraph.addEdgeByInduction(aEU, bEU, DecisionLabel.Entailment, 0.98);
-											singleTokenGraph.addEdgeByInduction(bEU, aEU, DecisionLabel.Entailment, 0.98);
-											break;
-										}
-									}
-								}
-							}
-						}
-						/** Step3b: Build fragments for two-token dependency graph */
-						casGraph.reset();
-						doc.fillInputCAS(casGraph);
-						fragAnotDependency.annotateFragments(casGraph);
-						fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
-						fragmentGraphsAllDependencies.addAll(fragmentGraphs);
-						/** Step3c: Build fragments for sentence graph */
-						casGraph.reset();
-						doc.fillInputCAS(casGraph);
-						fragAnotSentence.annotateFragments(casGraph);
-						fragmentGraphs = fragGen.generateFragmentGraphs(casGraph);
-						fragmentGraphsAllSentences.addAll(fragmentGraphs);
-					}
-				} catch (FragmentAnnotatorException | FragmentGraphGeneratorException | LAPException e) {
+					/** Step 3a: build fragments for single token graph*/
+					fragmentGraphsAllTokens.addAll(EvaluatorUtils.buildFragmentGraphs(doc, relevantTextProvided, fragAnotLemma, null, fragGen));
+					/** Step 3b: fragments for two token graph*/
+					fragmentGraphsAllDependencies.addAll(EvaluatorUtils.buildFragmentGraphs(doc, relevantTextProvided, fragAnotDependency, null, fragGen));
+					/** Step 3c: fragments for sentence graph*/
+//					fragmentGraphsAllSentences.addAll(EvaluatorUtils.buildFragmentGraphs(doc, relevantTextProvided, fragAnotSentence, modAnot, fragGen));
+				} catch (FragmentAnnotatorException | FragmentGraphGeneratorException | LAPException | ModifierAnnotatorException e) {
 					e.printStackTrace();
 					System.exit(1);
 				}
 			}
 			try {
+				try {
+					/** Step3d: merge fragments into single token graph */	
+					EvaluatorUtils.mergeIntoLemmaTokenGraph(singleTokenGraph, fragmentGraphsAllTokens);
+					/** Step3e: Merge fragments into two-token dependency graph without calling SEDA or GraphMerger */	
+					EvaluatorUtils.mergeIntoDependencyGraph(twoTokenGraph, fragmentGraphsAllDependencies, dbr, gnw, germaNetRelations, splitter, mapNegation, true);
+				} catch (LexicalResourceException e) {
+					e.printStackTrace();
+				}
+				
 				/** Step3d: Merge fragments into two-token dependency graph (calling SEDA) */					
 				graphMerger = new LegacyAutomateWP2ProcedureGraphMerger(lapDependency, seda);
 				graphMerger.setEntailmentConfidenceThreshold(confidenceThresholdSEDA);
@@ -349,21 +327,23 @@ public class DemoUseCase2OMQGermanNew {
 		NodeMatcher nodeMatcher;
 		nodeMatcher = new NodeMatcherLongestOnly(finalCollapsedGraph, bestNodeOnly);			
 		logger.info("annotating interaction " + doc.getInteractionId());
-		doc.fillInputCAS(cas);
-		fragAnotCombined.annotateFragments(cas);
-		if(cas.getAnnotationIndex(DeterminedFragment.type).size() > 0){
-			modAnot.annotateModifiers(cas);
-		}
-		Set<FragmentGraph> fragmentGraphs = fragGen.generateFragmentGraphs(cas);
+		
+		//build fragment graphs
+		Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
+		fragmentGraphs.addAll(EvaluatorUtils.buildFragmentGraphs(doc, false, fragAnotLemma, null, fragGen));
+		fragmentGraphs.addAll(EvaluatorUtils.buildFragmentGraphs(doc, false, fragAnotDependency, null, fragGen));
+//		fragmentGraphs.addAll(EvaluatorUtils.buildFragmentGraphs(doc, false, fragAnotSentence, modAnot, fragGen));
 		Set<NodeMatch> matches = new HashSet<NodeMatch>();
 		List<FragmentGraph> fgList = new ArrayList<FragmentGraph>();
 		for (FragmentGraph fg : fragmentGraphs) {
 			fgList.add(fg);
 		}
+		//find matchings 
 		for (FragmentGraph fragmentGraph: fgList) {
 			matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 		}
 		logger.info("Number of matches: " + matches.size());
+		//annotate interaction
 		catAnot.addCategoryAnnotation(cas, matches);
 		return matches;
 	}
@@ -371,31 +351,44 @@ public class DemoUseCase2OMQGermanNew {
 	private static void configureSetup() throws ConfigurationException,
 			FragmentAnnotatorException,
 			ModifierAnnotatorException, EDAException, ComponentException {
-		addLemmaLabel = true;
-		lapLemma = new CachedLAPAccess(new LemmaLevelLapDE());
-		lapDependency = new CachedLAPAccess(new DependencyLevelLapDE());
-		fragAnotLemma = new TokenAsFragmentAnnotator(lapLemma, tokenPosFilter);
-		fragAnotDependency = new DependencyAsFragmentAnnotator(lapDependency, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
-		fragAnotCombined = new TokenAndDependencyAsFragmentAnnotator(lapDependency, tokenPosFilter, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
-		fragAnotSentence = new SentenceAsFragmentAnnotator(lapDependency);
-			//TODO: use KeywordBasedFragmentAnnotator if keywords are available!
- 		modAnot = new AdvAsModifierAnnotator(lapLemma); 		
-		//initialize EDAs (Simple EDA and alignment EDA)
- 		try {
+		try{
+			addLemmaLabel = true;
+			lapLemma = new CachedLAPAccess(new LemmaLevelLapDE());
+			lapDependency = new CachedLAPAccess(new DependencyLevelLapDE());
+			fragAnotLemma = new TokenAsFragmentAnnotatorForGerman(lapLemma, tokenPosFilter, WordDecompositionType.ONLY_HYPHEN);
+			fragAnotDependency = new DependencyAsFragmentAnnotatorForGerman(lapDependency, governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter);
+			fragAnotSentence = new SentenceAsFragmentAnnotator(lapDependency);
+				//TODO: use KeywordBasedFragmentAnnotator if keywords are available!
+	 		modAnot = new AdvAsModifierAnnotator(lapLemma); 		
+			//initialize EDAs (Simple EDA and alignment EDA)
+			
+	 		/*
+			seda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet, 
+					useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
+					*/
+	 		//initialize resources for building dependency graph
+	 		splitter = new GermanWordSplitter();
+			splitter.setStrictMode(true);
+			gnw = new GermaNetWrapper(pathToGermaNet);
+			GermaNetRelation [] relations = {GermaNetRelation.has_synonym, GermaNetRelation.has_hypernym, GermaNetRelation.causes, 
+				GermaNetRelation.entails, GermaNetRelation.has_hyponym};
+			germaNetRelations =  Arrays.asList(relations); 
+			derivSteps = 2;
+			dbr = new DerivBaseResource(true, derivSteps);
 			splitter = new GermanWordSplitter();
+			mapNegation = true;
+			
+			alignmenteda = new FNR_DEvar1(); 
+			alignmenteda.initialize(new File(configFilenameAlignment));
+			tie = new MaxEntClassificationEDA();	
+			tie.initialize(new ImplCommonConfig(new File(configFilenameTIE)));
+			fragGen = new FragmentGraphLiteGeneratorFromCAS();
+			graphOptimizer = new SimpleGraphOptimizer();
+			cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
+			catAnot = new CategoryAnnotatorAllCats();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		seda = new SimpleEDA_DE(splitter, derivSteps, pathToGermaNet, 
-				useSynonymRelation, useHypernymRelation, useEntailsRelation, useCausesRelation);
-		alignmenteda = new FNR_DEvar1(); 
-		alignmenteda.initialize(new File(configFilenameAlignment));
-		tie = new MaxEntClassificationEDA();	
-		tie.initialize(new ImplCommonConfig(new File(configFilenameTIE)));
-		fragGen = new FragmentGraphLiteGeneratorFromCAS();
-		graphOptimizer = new SimpleGraphOptimizer();
-		cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();
-		catAnot = new CategoryAnnotatorAllCats();
 	}
 }
 
