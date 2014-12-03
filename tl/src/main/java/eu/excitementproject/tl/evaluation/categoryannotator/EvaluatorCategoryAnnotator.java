@@ -40,6 +40,7 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
+import eu.excitementproject.eop.core.component.lexicalknowledge.derivbase.DerivBaseResource;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
@@ -205,7 +206,7 @@ public class EvaluatorCategoryAnnotator {
     
     
     private int setup; //use setupArray to set the parameter
-    static int[] setupArray = {0}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
+    static int[] setupArray = {103}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
     private int setupSEDA = 101; //configure SEDA (for incremental evaluation)
     private int setupEDA = 1; //configure EDA (for incremental evaluation)
     static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
@@ -232,6 +233,7 @@ public class EvaluatorCategoryAnnotator {
     
     static boolean bestNodeOnly = true;
     static boolean buildTokenLemmaGraph = false;
+//    static boolean buildDependencyLemmaGraph = true; //for now only as example for testing
     static boolean addLemmaLabel = true;
     static boolean skipEval = false;
     
@@ -1430,8 +1432,17 @@ public class EvaluatorCategoryAnnotator {
 				}
 			}			
 		}  else if (buildTokenLemmaGraph) {
+//		}  else if (buildTokenLemmaGraph || buildDependencyLemmaGraph) {
 			try {
-				EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
+				if(buildTokenLemmaGraph) {
+					EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
+				}
+				/*
+				if( buildDependencyLemmaGraph) {
+					DerivBaseResource dbr = new DerivBaseResource(true, 2);
+					EvaluatorUtils.mergeIntoDependencyGraph(egr, fgs, dbr, null, null, null, true, true);
+				}
+				*/
 			} catch (LexicalResourceException e) {
 				e.printStackTrace();
 			}
