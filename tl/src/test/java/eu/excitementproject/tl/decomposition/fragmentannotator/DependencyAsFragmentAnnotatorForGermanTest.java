@@ -1,11 +1,10 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import junit.framework.Assert;
-
-
 
 /**
  * This small unit test tests DependencyAsFragmentAnnotator
@@ -38,7 +37,9 @@ public class DependencyAsFragmentAnnotatorForGermanTest {
 		FragmentAnnotator fragAnnotator;
 		List<String> dependencyFilter;
 		List<POSTag_DE> governorPOSFilter;
+		List<String> governorWordFilter;
 		List<POSTag_DE> dependentPOSFilter;
+		List<String> dependentWordFilter;
 		AnnotationIndex<Annotation> frgIndex;
 		
 		try {
@@ -77,6 +78,19 @@ public class DependencyAsFragmentAnnotatorForGermanTest {
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 1);
+			
+			cas.reset();
+			testlogger.info("Annotating only dependencies, where governor ia a noun and dependent is an adjective or lemma of dependent is 'keine'"); 
+			cas.setDocumentLanguage("DE"); 
+			cas.setDocumentText("Der gute Peter hatte keinen Blumen gekauft.");
+			governorPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.NN, POSTag_DE.NE});
+			dependentPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD});
+			dependentWordFilter = Arrays.asList(new String []{"keine"});
+			fragAnnotator = new DependencyAsFragmentAnnotatorForGerman(lap, governorPOSFilter, 
+					new ArrayList<String>(), dependentPOSFilter, dependentWordFilter);
+			fragAnnotator.annotateFragments(cas);
+			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
+			Assert.assertEquals(frgIndex.size(), 2);
 			
 		} catch (LAPException | FragmentAnnotatorException e) {
 			e.printStackTrace();

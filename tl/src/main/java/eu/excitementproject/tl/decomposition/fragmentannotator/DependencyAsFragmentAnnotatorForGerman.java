@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -11,7 +12,6 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import eu.excitement.type.tl.DeterminedFragment;
@@ -35,9 +35,14 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	
 	private final List<POSTag_DE> governorPOSFilter;
 	private final List<POSTag_DE> dependentPOSFilter;
+	
 	private final List<String> dependencyTypeFilter;
 	private final boolean restrictDependencyType;
-
+	
+	private final List<String> governorWordFilter;
+	private final List<String> dependentWordFilter;
+	private final boolean restrictWordList;
+	
 	/**
 	 * @param lap
 	 * @throws FragmentAnnotatorException
@@ -48,6 +53,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.restrictDependencyType = false; this.dependencyTypeFilter = null;
 		this.governorPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
 		this.dependentPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
+		this.restrictWordList = false; this.governorWordFilter = null; this.dependentWordFilter = null;
 	}
 	
 	
@@ -64,6 +70,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.dependencyTypeFilter = dependencyTypeFilter;
 		this.governorPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
 		this.dependentPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
+		this.restrictWordList = false; this.governorWordFilter = null; this.dependentWordFilter = null;
 	}
 	
 	/**
@@ -80,6 +87,22 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.restrictDependencyType = false; this.dependencyTypeFilter = null;
 		this.governorPOSFilter = governorPOSFilter;
 		this.dependentPOSFilter = dependentPOSFilter;
+		this.restrictWordList = true; 
+		this.governorWordFilter = new ArrayList<String>(); 
+		this.dependentWordFilter = new ArrayList<String>();
+	}
+	
+	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, 
+			List<POSTag_DE> governorPOSFilter, List<String> governorWordFilter,
+			List<POSTag_DE> dependentPOSFilter, List<String> dependentWordFilter) throws FragmentAnnotatorException
+	{
+		super(lap); 
+		this.restrictDependencyType = false; this.dependencyTypeFilter = null;
+		this.governorPOSFilter = governorPOSFilter;
+		this.dependentPOSFilter = dependentPOSFilter;
+		this.restrictWordList = true; 
+		this.governorWordFilter = governorWordFilter; 
+		this.dependentWordFilter = dependentWordFilter;
 	}
 	
 	/**
@@ -98,6 +121,31 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.dependencyTypeFilter = dependencyTypeFilter;
 		this.governorPOSFilter = governorPOSFilter;
 		this.dependentPOSFilter = dependentPOSFilter;
+		this.restrictWordList = true; 
+		this.governorWordFilter = new ArrayList<String>(); 
+		this.dependentWordFilter = new ArrayList<String>();
+	}
+	
+	/**
+	 * 
+	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
+	 * @param dependencyTypeFilter - types of dependencies, which should be annotated
+	 * @param governorPOSFilter -  types of part of speech of governor tokens, which should be annotated
+	 * @param dependentPOSFilter - types of part of speech of dependent tokens, which should be annotated
+	 * @throws FragmentAnnotatorException
+	 */
+	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> dependencyTypeFilter, 
+			List<POSTag_DE> governorPOSFilter, List<String> governorWordFilter,
+			List<POSTag_DE> dependentPOSFilter, List<String> dependentWordFilter) throws FragmentAnnotatorException
+	{
+		super(lap); 
+		this.restrictDependencyType = true;
+		this.dependencyTypeFilter = dependencyTypeFilter;
+		this.governorPOSFilter = governorPOSFilter;
+		this.dependentPOSFilter = dependentPOSFilter;
+		this.restrictWordList = true; 
+		this.governorWordFilter = governorWordFilter; 
+		this.dependentWordFilter = dependentWordFilter;
 	}
 	
 	@Override
@@ -188,8 +236,8 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 			Token governor = dependency.getGovernor();
 			Token dependent = dependency.getDependent();
 			if (!governor.getCoveredText().equalsIgnoreCase(dependent.getCoveredText()) 
-				&& isAllowed(governor, governorPosFilter)
-				&& isAllowed(dependent, dependentFilter)) {
+				&& isAllowed(governor, governorPosFilter, governorWordFilter)
+				&& isAllowed(dependent, dependentFilter, dependentWordFilter)) {
 				return true;
 			}
 				
@@ -216,14 +264,35 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * @param posFilter - List <POSTag_DE>
 	 * @return
 	 */
-	private boolean isAllowed(Token token, List<POSTag_DE> posFilter){
+	private boolean isAllowed(Token token, List<POSTag_DE> posFilter, List<String> wordFilter){
 		POSTag_DE posTagDE = POSTag_DE.mapToPOStag_DE(token.getPos().getPosValue());
 			if(posTagDE != POSTag_DE.COMMA 
 				&& posTagDE != POSTag_DE.SENTENCE_ENDING_PUNCTUATION 
 				&& posTagDE!= POSTag_DE.OTHERS
-				&& posFilter.contains(posTagDE)){
+				&& (posFilter.contains(posTagDE) 
+						|| (restrictWordList && wordFilter!= null && wordFilter.contains(token.getCoveredText())) 
+						|| (restrictWordList && wordFilter!= null && containsLemma(token.getLemma().getValue(), wordFilter)))){
 				return true;
 			}
+		return false;
+	}
+
+	/**
+	 * Check if the input word filter contain the input lemma. 
+	 * To deal with lemma type: lemma1|lemma2, which is sometimes returned by the TreeTagger, 
+	 * the lemma is splitted around matches of the regular expression \\|
+	 * Return true if word filter contain at least one of the splits.
+	 * 
+	 * @param wordFilter
+	 * @param lemma
+	 * @return
+	 */
+	private boolean containsLemma(String lemma, List<String> wordFilter) {
+		for(String tempLemma : lemma.split("\\|")){
+			if(wordFilter.contains(tempLemma)){
+				return true;
+			}
+		}
 		return false;
 	}
 }

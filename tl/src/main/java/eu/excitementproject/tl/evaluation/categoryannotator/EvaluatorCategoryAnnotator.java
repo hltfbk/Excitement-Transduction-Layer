@@ -197,6 +197,8 @@ public class EvaluatorCategoryAnnotator {
     		new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NN, POSTag_DE.CARD,
     						 POSTag_DE.VVFIN, POSTag_DE.VVINF, POSTag_DE.VVIZU, POSTag_DE.VVIMP, POSTag_DE.VVPP, POSTag_DE.PTKNEG, POSTag_DE.PTKVZ}); //"ADV" = adverb, "FM" = foreign language material
 	static List<POSTag_DE> dependentPosFilter = governorPosFilter;
+	private List<String> governorWordFilter = Arrays.asList(new String []{"ohne"});
+	private List<String> dependentWordFilter = Arrays.asList(new String []{"keine", "keinerlei", "nicht", "nichts"});
 //    static WordDecompositionType decompositionType = WordDecompositionType.ONLY_HYPHEN;
 //    static WordDecompositionType decompositionType = WordDecompositionType.NO_RESTRICTION;
     static WordDecompositionType decompositionType = WordDecompositionType.NONE;
@@ -1802,7 +1804,8 @@ public class EvaluatorCategoryAnnotator {
 	    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments, tokenPosFilter, decompositionType);
 			} else if(fragmentTypeNameGraph.equalsIgnoreCase("DF")){
 				lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-        		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotatorForGerman(lapForFragments, governorPosFilter, dependentPosFilter);
+        		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotatorForGerman(lapForFragments, 
+        				governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter);
         	} else if(fragmentTypeNameGraph.equalsIgnoreCase("SF")){
 		    	lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lapForFragments);
@@ -1812,7 +1815,8 @@ public class EvaluatorCategoryAnnotator {
 				fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForDecisions, tokenPosFilter, decompositionType);
 			} else if(fragmentTypeNameEval.equalsIgnoreCase("DF")){
         		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-        		fragmentAnnotatorForNewInput = new DependencyAsFragmentAnnotatorForGerman(lapForFragments, governorPosFilter, dependentPosFilter);
+        		fragmentAnnotatorForNewInput = new DependencyAsFragmentAnnotatorForGerman(lapForFragments, 
+        				governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter);
 		    } else if(fragmentTypeNameEval.equalsIgnoreCase("SF")){
         		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForNewInput = new SentenceAsFragmentAnnotator(lapForDecisions);
