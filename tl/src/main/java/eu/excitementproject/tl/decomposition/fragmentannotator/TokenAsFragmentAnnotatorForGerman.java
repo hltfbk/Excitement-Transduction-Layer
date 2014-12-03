@@ -114,7 +114,8 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 			Token tk = (Token) tokenItr.next(); 
 			try {
 				if(isAllowed(tk, tokenPOSFilter)){
-					if(tk.getCoveredText().length()==1 && !(tk.getPos() instanceof CARD)){
+					String tokenText = tk.getCoveredText();
+					if(tokenText.length()==1 && !isDigit(tokenText)){
 						continue;
 					}
 					CASUtils.Region[] r = new CASUtils.Region[1];
@@ -123,18 +124,14 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 					CASUtils.annotateOneDeterminedFragment(aJCas, r);
 					num_frag++;
 					if(splitter != null){
-						String tokenText = tk.getCoveredText();
 						Collection<String> compoundParts = decompoundWord(tokenText, decompositionType);
 						if(compoundParts.size() > 1){
 							for(String compoundPart : compoundParts){
-								if(compoundPart.length() == 1){
-									Character ch = compoundPart.charAt(0);
-									if(!Character.isDigit(ch)){
+								if(compoundPart.length() == 1 && !isDigit(compoundPart)){
 										continue;
-									}
 								}
-								if(compoundPart.length()>1){
-									if(!compoundPart.equals(tk.getCoveredText())) {
+//								if(compoundPart.length()>1){
+									if(!compoundPart.equals(tokenText)) {
 										int index = tokenText.indexOf(compoundPart);
 										int compoundPartBegin = tk.getBegin() + index;
 										int compoundPartEnd = compoundPartBegin + compoundPart.length();
@@ -145,7 +142,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 										CASUtils.annotateOneDeterminedFragment(aJCas, r);
 										num_frag++;
 									}
-								} 
+//								} 
 							}
 						}
 					}
@@ -199,6 +196,19 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 				&& posTagDE!= POSTag_DE.OTHERS
 				&& posFilter.contains(posTagDE))
 				return true;
+		return false;
+	}
+	
+	/**
+	 * check if a String is a digit
+	 * @param word
+	 * @return
+	 */
+	private boolean isDigit(String word){
+		if(word.length() == 1){
+			Character ch = word.charAt(0);
+			return Character.isDigit(ch);
+		}
 		return false;
 	}
 }
