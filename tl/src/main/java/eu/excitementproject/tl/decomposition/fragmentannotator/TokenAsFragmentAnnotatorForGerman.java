@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -20,6 +21,7 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.POSTag_DE;
 import eu.excitementproject.tl.laputils.WordDecompositionType;
 
 /**
@@ -33,11 +35,9 @@ import eu.excitementproject.tl.laputils.WordDecompositionType;
  */
 public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator {
 
-	private final List<String> tokenPOSFilter;
+	private final List<POSTag_DE> tokenPOSFilter;
 	private final WordDecompositionType decompositionType;
 	private GermanWordSplitter splitter;
-	
-	
 	
 	/**
 	 * 
@@ -48,7 +48,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, WordDecompositionType decompositionType) 
 			throws FragmentAnnotatorException {
 		super(lap);
-		tokenPOSFilter = null;
+		tokenPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
 		this.decompositionType = decompositionType;
 		if(!decompositionType.equals(WordDecompositionType.NONE)){
 			try {
@@ -60,14 +60,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 		}
 	}
 	
-	/**
-	 * 
-	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
-	 * @param tokenPOSFilter - types of parts of speeches of tokens, which which should be annotated 
-	 * @param decompositionType - WordDecompositionType.NONE or WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
-	 * @throws FragmentAnnotatorException
-	 */
-	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> tokenPOSFilter, WordDecompositionType decompositionType)
+	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, List<POSTag_DE> tokenPOSFilter, WordDecompositionType decompositionType)
 			throws FragmentAnnotatorException {
 		super(lap); 
 		this.tokenPOSFilter = tokenPOSFilter;
@@ -139,7 +132,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 										int compoundPartEnd = compoundPartBegin + compoundPart.length();
 										index = compoundPartEnd + 1;
 										r[0] = new CASUtils.Region(compoundPartBegin,  compoundPartEnd);
-										System.out.println("Annotating the following as a fragment: " + tokenText + " " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
+//										System.out.println("Annotating the following as a fragment: " + tokenText + " " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
 										fragLogger.info("Annotating the following as a fragment: " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
 										CASUtils.annotateOneDeterminedFragment(aJCas, r);
 										num_frag++;
@@ -184,5 +177,21 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 		return splits ;
 	}
 	
+	/**
+	 * check if the token type is allowed
+	 * return true
+	 * @param token -- Token
+	 * @param posFilter - List <POSTag_DE>
+	 * @return
+	 */
+	protected boolean isAllowed(Token token, List<POSTag_DE> posFilter){
+		POSTag_DE posTagDE = POSTag_DE.mapToPOStag_DE(token.getPos().getPosValue());
+			if(posTagDE != POSTag_DE.COMMA 
+				&& posTagDE != POSTag_DE.SENTENCE_ENDING_PUNCTUATION 
+				&& posTagDE!= POSTag_DE.OTHERS
+				&& posFilter.contains(posTagDE))
+				return true;
+		return false;
+	}
 }
 

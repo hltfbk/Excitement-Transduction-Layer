@@ -1,5 +1,6 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
+import eu.excitementproject.tl.laputils.POSTag_DE;
 import eu.excitementproject.tl.laputils.WordDecompositionType;
 
 public class TokenAsFragmentAnnotatorForGermanTest {
@@ -28,7 +30,7 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 		Logger testlogger = Logger.getLogger(this.getClass().getName()); 
 		LAPAccess lap;
 		FragmentAnnotator fragAnnotator;
-		List<String> tokenPOSFilter;
+		List<POSTag_DE> tokenPOSFilter;
 		AnnotationIndex<Annotation> frgIndex;
 		
 		try {
@@ -75,7 +77,7 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 			cas.reset();
 			cas.setDocumentLanguage("DE"); 
 			cas.setDocumentText("Das Programm brachte eine Fehlermeldung .");
-			tokenPOSFilter = Arrays.asList(new String []{"NN"}); 
+			tokenPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.NN}); 
 			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, tokenPOSFilter, WordDecompositionType.NONE);
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
@@ -86,11 +88,32 @@ public class TokenAsFragmentAnnotatorForGermanTest {
 			cas.reset();
 			cas.setDocumentLanguage("DE"); 
 			cas.setDocumentText("Das Programm brachte eine Fehlermeldung .");
-			tokenPOSFilter = Arrays.asList(new String []{"NN", "NE"}); 
+			tokenPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.NN, POSTag_DE.NE}); 
 			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, tokenPOSFilter, WordDecompositionType.NO_RESTRICTION);
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 4);
+			
+			//don't annotate any tokens
+			testlogger.info("Annotating only nouns in German sentence... "); 
+			cas.reset();
+			cas.setDocumentLanguage("DE"); 
+			cas.setDocumentText("Das Programm brachte eine Fehlermeldung .");
+			tokenPOSFilter = Arrays.asList(new POSTag_DE []{POSTag_DE.ADV}); 
+			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, tokenPOSFilter, WordDecompositionType.NONE);
+			fragAnnotator.annotateFragments(cas);
+			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
+			Assert.assertEquals(frgIndex.size(), 0);
+			
+			//don't annotate any tokens
+			testlogger.info("Annotating only nouns in German sentence... "); 
+			cas.reset();
+			cas.setDocumentLanguage("DE"); 
+			cas.setDocumentText("Das Programm brachte eine Fehlermeldung .");
+			fragAnnotator = new TokenAsFragmentAnnotatorForGerman(lap, new ArrayList<POSTag_DE>(), WordDecompositionType.NONE);
+			fragAnnotator.annotateFragments(cas);
+			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
+			Assert.assertEquals(frgIndex.size(), 0);
 			
 		} catch (LAPException | FragmentAnnotatorException e) {
 			e.printStackTrace();

@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,31 +19,37 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.POSTag_DE;
 
 /**
  * This class implements the dependency-based fragment annotator. 
- * Each dependency (except when dependent is punctuation token or dependent and governor are identical words) 
- * is considered as a possible fragment.
+ * Each dependency (except when dependent is punctuation token) is considered as a possible (continuous) fragment.
+ * If filters for a type of dependencies, part of speech of governor and part of speech of dependent are passed to the constructor 
+ * then only dependencies are annotated, which match the filter.
  * 
  * @author Aleksandra
  *
  */
 
-public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
+public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragmentAnnotator {
 	
+	private final List<POSTag_DE> governorPOSFilter;
+	private final List<POSTag_DE> dependentPOSFilter;
 	private final List<String> dependencyTypeFilter;
 	private final boolean restrictDependencyType;
 
 	/**
-	 * 
-	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
+	 * @param lap
 	 * @throws FragmentAnnotatorException
 	 */
-	public DependencyAsFragmentAnnotator(LAPAccess lap) throws FragmentAnnotatorException
+	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap) throws FragmentAnnotatorException
 	{
 		super(lap);
 		this.restrictDependencyType = false; this.dependencyTypeFilter = null;
+		this.governorPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
+		this.dependentPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
 	}
+	
 	
 	/**
 	 * 
@@ -50,11 +57,47 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	 * @param dependencyTypeFilter - types of dependencies, which should be annotated
 	 * @throws FragmentAnnotatorException
 	 */
-	public DependencyAsFragmentAnnotator(LAPAccess lap, List<String> dependencyTypeFilter) throws FragmentAnnotatorException
+	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> dependencyTypeFilter) throws FragmentAnnotatorException
 	{
 		super(lap); 
 		this.restrictDependencyType = true;
 		this.dependencyTypeFilter = dependencyTypeFilter;
+		this.governorPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
+		this.dependentPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
+	}
+	
+	/**
+	 * 
+	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
+	 * @param governorPOSFilter -  types of part of speech of governor tokens, which should be annotated
+	 * @param dependentPOSFilter - types of part of speech of dependent tokens, which should be annotated
+	 * @throws FragmentAnnotatorException
+	 */
+	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<POSTag_DE> governorPOSFilter, 
+			List<POSTag_DE> dependentPOSFilter) throws FragmentAnnotatorException
+	{
+		super(lap); 
+		this.restrictDependencyType = false; this.dependencyTypeFilter = null;
+		this.governorPOSFilter = governorPOSFilter;
+		this.dependentPOSFilter = dependentPOSFilter;
+	}
+	
+	/**
+	 * 
+	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
+	 * @param dependencyTypeFilter - types of dependencies, which should be annotated
+	 * @param governorPOSFilter -  types of part of speech of governor tokens, which should be annotated
+	 * @param dependentPOSFilter - types of part of speech of dependent tokens, which should be annotated
+	 * @throws FragmentAnnotatorException
+	 */
+	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> dependencyTypeFilter, List<POSTag_DE> governorPOSFilter, 
+			List<POSTag_DE> dependentPOSFilter) throws FragmentAnnotatorException
+	{
+		super(lap); 
+		this.restrictDependencyType = true;
+		this.dependencyTypeFilter = dependencyTypeFilter;
+		this.governorPOSFilter = governorPOSFilter;
+		this.dependentPOSFilter = dependentPOSFilter;
 	}
 	
 	@Override
@@ -82,7 +125,7 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 		if (dependencyIndex.size() > 0) {
 			Collection<Dependency> deps = JCasUtil.select(aJCas, Dependency.class);
 			for(Dependency d : deps){
-				if(isAllowed(d)){
+				if(isAllowed(d, governorPOSFilter, dependentPOSFilter)){
 					Token governor = d.getGovernor();
 					Token dependent = d.getDependent();
 					CASUtils.Region[] r = new CASUtils.Region[2];
@@ -133,48 +176,43 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 			}
 		}
 	}
-	
+
 	/**
 	 * check if dependency is allowed to be annotated
+	 * 
 	 * @param dependency
 	 * @return
 	 */
-	private boolean isAllowed(Dependency dependency){
-		if(isAllowed(dependency.getDependencyType())){
+	private boolean isAllowed(Dependency dependency, List<POSTag_DE> governorPosFilter, List<POSTag_DE> dependentFilter){
+		if(isAllowed(dependency.getDependencyType())) {
 			Token governor = dependency.getGovernor();
 			Token dependent = dependency.getDependent();
 			if (!governor.getCoveredText().equalsIgnoreCase(dependent.getCoveredText()) 
-				&& isALlowed(dependency.getDependent())
-				&& isALlowed(dependency.getDependent())){
+				&& isAllowed(governor, governorPosFilter)
+				&& isAllowed(dependent, dependentFilter)) {
 				return true;
 			}
+				
 		}
 		return false;
 	}
 	
-	/**
-	 * check if dependency type is allowed
-	 * @param dependencyType
-	 * @return
-	 */
-	protected boolean isAllowed(String dependencyType){
-		if(!restrictDependencyType || dependencyTypeFilter.contains(dependencyType)) {
-			return true;
-		}
-		return false;
-	}
 	
 	/**
-	 * check if the token type is allowed to be annotated as fragment
-	 * return true only if token is no punctuation and no other symbol like ()[]-|>< etc;
+	 * check if the token type is allowed
+	 * 
 	 * @param token -- Token
 	 * @param posFilter - List <POSTag_DE>
 	 * @return
 	 */
-	private boolean isALlowed(Token token) {
-		if(!(token.getPos() instanceof PUNC)){
-			return true;
-		}
+	private boolean isAllowed(Token token, List<POSTag_DE> posFilter){
+		POSTag_DE posTagDE = POSTag_DE.mapToPOStag_DE(token.getPos().getPosValue());
+			if(posTagDE != POSTag_DE.COMMA 
+				&& posTagDE != POSTag_DE.SENTENCE_ENDING_PUNCTUATION 
+				&& posTagDE!= POSTag_DE.OTHERS
+				&& posFilter.contains(posTagDE)){
+				return true;
+			}
 		return false;
 	}
 }

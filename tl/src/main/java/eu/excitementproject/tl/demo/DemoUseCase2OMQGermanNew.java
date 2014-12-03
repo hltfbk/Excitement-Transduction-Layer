@@ -18,7 +18,6 @@ import org.apache.uima.jcas.JCas;
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
 import de.tuebingen.uni.sfs.germanet.api.GermaNet;
 import eu.excitement.type.tl.CategoryDecision;
-import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.alignmentedas.p1eda.P1EDATemplate;
 import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_DEvar1;
 import eu.excitementproject.eop.common.DecisionLabel;
@@ -53,10 +52,9 @@ import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAndDependencyAsFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.evaluation.categoryannotator.EvaluatorUtils;
@@ -66,6 +64,8 @@ import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.DependencyLevelLapDE;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
+import eu.excitementproject.tl.laputils.POSTag_DE;
+import eu.excitementproject.tl.laputils.WordDecompositionType;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -140,13 +140,13 @@ public class DemoUseCase2OMQGermanNew {
 	static boolean useCausesRelation = true;
 
 	//determine POS tags to be used for fragment annotation
-    static List<String> tokenPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP",  "CARD"}); //"ADV" = adverb, "FM" = foreign language material
-    static List<String> governorPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
-    static List<String> dependentPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
-    static List<String> dependencyTypeFilter = null;
+	 static List<POSTag_DE> tokenPosFilter = Arrays.asList(
+	    		new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NE, POSTag_DE.CARD,
+	    						 POSTag_DE.VVFIN, POSTag_DE.VVINF, POSTag_DE.VVIZU, POSTag_DE.VVIMP, POSTag_DE.VVPP}); //"ADV" = adverb, "FM" = foreign language material
+	 static List<POSTag_DE> governorPosFilter = Arrays.asList(
+	    		new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NE, POSTag_DE.CARD,
+	    						 POSTag_DE.VVFIN, POSTag_DE.VVINF, POSTag_DE.VVIZU, POSTag_DE.VVIMP, POSTag_DE.VVPP, POSTag_DE.PTKNEG, POSTag_DE.PTKVZ}); //"ADV" = adverb, "FM" = foreign language material
+	static List<POSTag_DE> dependentPosFilter = governorPosFilter;
 
     //some configurations relating to evaluation
     static String method = "tfidf";
@@ -349,21 +349,23 @@ public class DemoUseCase2OMQGermanNew {
 		NodeMatcher nodeMatcher;
 		nodeMatcher = new NodeMatcherLongestOnly(finalCollapsedGraph, bestNodeOnly);			
 		logger.info("annotating interaction " + doc.getInteractionId());
-		doc.fillInputCAS(cas);
-		fragAnotCombined.annotateFragments(cas);
-		if(cas.getAnnotationIndex(DeterminedFragment.type).size() > 0){
-			modAnot.annotateModifiers(cas);
-		}
-		Set<FragmentGraph> fragmentGraphs = fragGen.generateFragmentGraphs(cas);
+		
+		//build fragment graphs
+		Set<FragmentGraph> fragmentGraphs = new HashSet<FragmentGraph>();
+		fragmentGraphs.addAll(EvaluatorUtils.buildFragmentGraphs(doc, false, fragAnotLemma, null, fragGen));
+		fragmentGraphs.addAll(EvaluatorUtils.buildFragmentGraphs(doc, false, fragAnotDependency, null, fragGen));
+		fragmentGraphs.addAll(EvaluatorUtils.buildFragmentGraphs(doc, false, fragAnotSentence, modAnot, fragGen));
 		Set<NodeMatch> matches = new HashSet<NodeMatch>();
 		List<FragmentGraph> fgList = new ArrayList<FragmentGraph>();
 		for (FragmentGraph fg : fragmentGraphs) {
 			fgList.add(fg);
 		}
+		//find matchings 
 		for (FragmentGraph fragmentGraph: fgList) {
 			matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 		}
 		logger.info("Number of matches: " + matches.size());
+		//annotate interaction
 		catAnot.addCategoryAnnotation(cas, matches);
 		return matches;
 	}
@@ -374,9 +376,8 @@ public class DemoUseCase2OMQGermanNew {
 		addLemmaLabel = true;
 		lapLemma = new CachedLAPAccess(new LemmaLevelLapDE());
 		lapDependency = new CachedLAPAccess(new DependencyLevelLapDE());
-		fragAnotLemma = new TokenAsFragmentAnnotator(lapLemma, tokenPosFilter);
-		fragAnotDependency = new DependencyAsFragmentAnnotator(lapDependency, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
-		fragAnotCombined = new TokenAndDependencyAsFragmentAnnotator(lapDependency, tokenPosFilter, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
+		fragAnotLemma = new TokenAsFragmentAnnotatorForGerman(lapLemma, tokenPosFilter, WordDecompositionType.ONLY_HYPHEN);
+		fragAnotDependency = new DependencyAsFragmentAnnotatorForGerman(lapDependency, governorPosFilter, dependentPosFilter);
 		fragAnotSentence = new SentenceAsFragmentAnnotator(lapDependency);
 			//TODO: use KeywordBasedFragmentAnnotator if keywords are available!
  		modAnot = new AdvAsModifierAnnotator(lapLemma); 		
