@@ -206,11 +206,11 @@ public class EvaluatorCategoryAnnotator {
     
     
     private int setup; //use setupArray to set the parameter
-    static int[] setupArray = {103}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
+    static int[] setupArray = {0}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
     private int setupSEDA = 101; //configure SEDA (for incremental evaluation)
     private int setupEDA = 1; //configure EDA (for incremental evaluation)
     static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
-  	static String[] fragmentTypeNameGraphArray = {"DF"}; //for setup >= 110 this variable will be overwritten!
+  	static String[] fragmentTypeNameGraphArray = {"TF"}; //for setup >= 110 this variable will be overwritten!
 //    static String[] fragmentTypeNameGraphArray = {"TF", "DF", "SF"};
   	static String fragmentTypeNameEval; //set automatically!
   	
@@ -233,7 +233,7 @@ public class EvaluatorCategoryAnnotator {
     
     static boolean bestNodeOnly = true;
     static boolean buildTokenLemmaGraph = false;
-//    static boolean buildDependencyLemmaGraph = true; //for now only as example for testing
+    static boolean buildDependencyLemmaGraph = false; //for now only as example for testing
     static boolean addLemmaLabel = true;
     static boolean skipEval = false;
     
@@ -1431,18 +1431,18 @@ public class EvaluatorCategoryAnnotator {
 					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
 				}
 			}			
-		}  else if (buildTokenLemmaGraph) {
-//		}  else if (buildTokenLemmaGraph || buildDependencyLemmaGraph) {
+//		}  else if (buildTokenLemmaGraph) {
+		}  else if (buildTokenLemmaGraph || buildDependencyLemmaGraph) {
 			try {
 				if(buildTokenLemmaGraph) {
 					EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
 				}
-				/*
+				
 				if( buildDependencyLemmaGraph) {
 					DerivBaseResource dbr = new DerivBaseResource(true, 2);
 					EvaluatorUtils.mergeIntoDependencyGraph(egr, fgs, dbr, null, null, null, true, true);
 				}
-				*/
+				
 			} catch (LexicalResourceException e) {
 				e.printStackTrace();
 			}
@@ -1590,7 +1590,7 @@ public class EvaluatorCategoryAnnotator {
 		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"  + setup + "_" 
 		+ minTokenOccurrenceInCategories + "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + ".xml");	
 		FragmentAnnotator faTokens = new TokenAsFragmentAnnotatorForGerman(lapLemma, tokenPosFilter, decompositionType); 
-		FragmentAnnotator faDeps = new DependencyAsFragmentAnnotatorForGerman(lapDependency, governorPosFilter, dependentPosFilter);
+		FragmentAnnotator faDeps = new DependencyAsFragmentAnnotatorForGerman(lapDependency, governorPosFilter, dependentPosFilter, decompositionType);
 		FragmentAnnotator faSents = new SentenceAsFragmentAnnotator(lapDependency);
 		ModifierAnnotator maAdv = new AdvAsModifierAnnotator(lapLemma);
 		FragmentGraphGenerator fgg = new FragmentGraphLiteGeneratorFromCAS();
@@ -1816,7 +1816,7 @@ public class EvaluatorCategoryAnnotator {
 			} else if(fragmentTypeNameGraph.equalsIgnoreCase("DF")){
 				lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotatorForGerman(lapForFragments, 
-        				governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter);
+        				governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter, decompositionType);
         	} else if(fragmentTypeNameGraph.equalsIgnoreCase("SF")){
 		    	lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lapForFragments);
@@ -1827,7 +1827,7 @@ public class EvaluatorCategoryAnnotator {
 			} else if(fragmentTypeNameEval.equalsIgnoreCase("DF")){
         		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForNewInput = new DependencyAsFragmentAnnotatorForGerman(lapForFragments, 
-        				governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter);
+        				governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter, decompositionType);
 		    } else if(fragmentTypeNameEval.equalsIgnoreCase("SF")){
         		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForNewInput = new SentenceAsFragmentAnnotator(lapForDecisions);

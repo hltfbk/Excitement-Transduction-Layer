@@ -128,12 +128,13 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 			if (unitText.equals(mentionToBeFoundText)) {
 				return 1;
 			}
-			if (null != eu.getLemmatizedText()) {
+			if (null != eu.getLemmatizedText() && !eu.getLemmatizedText().isEmpty()) { 
 				String unitTextLemmatized = eu.getLemmatizedText().trim().toLowerCase();
 				if (unitTextLemmatized.equals(mentionToBeFoundText)) {
 					return 1;
 				}
 			}
+			
 			/*Set<EntailmentUnitMention> mentions = eu.getMentions();
 			for (EntailmentUnitMention mention : mentions) { //for each mention associated to this node	
 				String mentionText = mention.getText().replaceAll("\\s+", " ").trim();
