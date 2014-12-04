@@ -21,6 +21,7 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFixedLengthFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.laputils.AnnotationUtils;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.DependencyLevelLapEN;
@@ -60,10 +61,11 @@ public class ModifierAnnotatorTest {
 		Logger testlogger = Logger.getLogger("eu.excitementproject.tl.decomposition.modifierannotator.test"); 
 		
 		try {
-//			LAPAccess lap = new DependencyLevelLapIT(); 			
-			LAPAccess lap = new DependencyLevelLapEN(); 			
+			LAPAccess lap = new DependencyLevelLapIT(); 			
+//			LAPAccess lap = new DependencyLevelLapEN(); 			
 
-			FragmentAnnotator frAnnot = new KeywordBasedFixedLengthFragmentAnnotator(lap); 
+			FragmentAnnotator frAnnot = new SentenceAsFragmentAnnotator(lap);
+//			FragmentAnnotator frAnnot = new KeywordBasedFixedLengthFragmentAnnotator(lap); 
 
 //			ModifierAnnotator modAnnot = new AdvAsModifierAnnotator(lap);
 //			ModifierAnnotator modAnnot = new AdvAdjAsModifierAnnotator(lap, true);

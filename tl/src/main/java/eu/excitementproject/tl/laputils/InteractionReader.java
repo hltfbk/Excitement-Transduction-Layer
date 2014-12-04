@@ -580,6 +580,8 @@ public final class InteractionReader {
 		
 		// replace spaces with \s*
 		pattern = pattern.replaceAll(" ", "\\\\s*");	
+//		pattern = pattern.replaceAll(" ", "\\\\s*.*?");  // to match discontinuous fragments	
+
 		
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(string);

@@ -164,7 +164,9 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 	 */
 	protected void buildGraph(JCas aJCas, FragmentAnnotation frag, Set<ModifierAnnotation> modifiers, EntailmentUnitMention parent) {
 
-		if (modifiers != null && !modifiers.isEmpty()) {
+//		if (modifiers != null && !modifiers.isEmpty()) {
+		if (modifiers != null) {
+
 			EntailmentUnitMention eum = new EntailmentUnitMention(aJCas, frag, modifiers);
 		
 			logger.info("Generated node (EUM) for string: " + eum.getText());

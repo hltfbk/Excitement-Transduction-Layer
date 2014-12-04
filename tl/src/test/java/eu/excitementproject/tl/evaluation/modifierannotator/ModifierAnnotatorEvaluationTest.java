@@ -25,7 +25,7 @@ import eu.excitementproject.tl.laputils.LAPUtils;
 @SuppressWarnings("unused")
 public class ModifierAnnotatorEvaluationTest {
 	
-//	@Ignore
+	@Ignore
 	@Test
 	public void test() {
 	
@@ -44,18 +44,18 @@ public class ModifierAnnotatorEvaluationTest {
 			
 			EvaluationMeasures eval = ModifierAnnotatorEvaluator.evaluateModifiers(
 			
-					"src/main/resources/exci/alma/xmi_perFragmentGraph/test",
-//					"src/main/resources/exci/nice/xmi_perFragmentGraph/all",
+//					"src/main/resources/exci/alma/modifierEvaluation/xmi_perFrag/",
+					"src/main/resources/exci/nice/modifierEvaluation/xmi_perFrag/",
 
 //					new AdvAsModifierAnnotator(lap, fragAnn, false),
-					new AdvAdjAsModifierAnnotator(lap, fragAnn, false),
+//					new AdvAdjAsModifierAnnotator(lap, fragAnn, false),
 //					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, false),
-//					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, true),
+					new AdvAdjPPAsModifierAnnotator(lap, fragAnn, true),
 					
 					fragAnn,
 					lap,
 					
-					true   // true means it will use the gold standard fragment annotations
+					true   // true means it will use the gold standard fragment annotations, so the fragment annotator istantiation above does not matter
 					);
 			
 			logger.info(eval.toString());
