@@ -135,7 +135,8 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 	
 	/**
-	 * check if dependency is allowed to be annotated
+	 * check if dependency is allowed to be annotated as fragment
+	 * 
 	 * @param dependency
 	 * @return
 	 */
@@ -153,7 +154,8 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 	
 	/**
-	 * check if dependency type is allowed
+	 * check if dependency type is allowed to be annotated as fragment
+	 * 
 	 * @param dependencyType
 	 * @return
 	 */
@@ -166,9 +168,9 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	
 	/**
 	 * check if the token type is allowed to be annotated as fragment
-	 * return true only if token is no punctuation and no other symbol like ()[]-|>< etc;
+	 * return true only if token is no punctuation token.
+	 * 
 	 * @param token -- Token
-	 * @param posFilter - List <POSTag_DE>
 	 * @return
 	 */
 	private boolean isALlowed(Token token) {

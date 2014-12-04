@@ -108,8 +108,8 @@ public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	/**
 	 * check if the token type is allowed to be annotated as fragment
 	 * return true only if token is no punctuation and no other symbol like ()[]-|>< etc;
+	 * 
 	 * @param token -- Token
-	 * @param posFilter - List <POSTag_DE>
 	 * @return
 	 */
 	protected boolean isALlowed(Token token) {

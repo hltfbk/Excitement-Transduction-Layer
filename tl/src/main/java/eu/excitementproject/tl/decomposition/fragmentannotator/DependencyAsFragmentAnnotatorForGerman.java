@@ -428,7 +428,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	/**
 	 * 
 	 * @param word
-	 * @param splitter
+	 * @param decompositionType
 	 * @return
 	 */
 	private Set<String> decompoundWord(String word, WordDecompositionType decompositionType){

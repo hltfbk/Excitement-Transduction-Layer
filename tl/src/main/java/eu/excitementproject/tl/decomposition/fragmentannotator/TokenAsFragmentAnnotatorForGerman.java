@@ -14,7 +14,6 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -161,7 +160,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 	/**
 	 * 
 	 * @param word
-	 * @param splitter
+	 * @param decompositionType
 	 * @return
 	 */
 	private Set<String> decompoundWord(String word, WordDecompositionType decompositionType){
@@ -183,7 +182,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 	}
 	
 	/**
-	 * check if the token type is allowed
+	 * check if the token type is allowed to be annotated
 	 * return true
 	 * @param token -- Token
 	 * @param posFilter - List <POSTag_DE>
