@@ -16,7 +16,6 @@ import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
-import de.tuebingen.uni.sfs.germanet.api.GermaNet;
 import eu.excitement.type.tl.CategoryDecision;
 import eu.excitementproject.eop.alignmentedas.p1eda.P1EDATemplate;
 import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_DEvar1;
@@ -61,7 +60,6 @@ import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAn
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
 import eu.excitementproject.tl.evaluation.categoryannotator.EvaluatorUtils;
-import eu.excitementproject.tl.experiments.OMQ.SimpleEDA_DE;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.DependencyLevelLapDE;

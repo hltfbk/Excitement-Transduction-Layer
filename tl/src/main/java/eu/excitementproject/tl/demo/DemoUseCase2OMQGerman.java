@@ -53,7 +53,6 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorExcepti
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 import eu.excitementproject.tl.decomposition.fragmentannotator.KeywordBasedFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 //import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
