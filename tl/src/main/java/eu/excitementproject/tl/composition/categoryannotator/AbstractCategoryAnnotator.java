@@ -11,7 +11,8 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
 
 
 /**
- An implementation of the {@link CategoryAnnotator} interface
+ * An implementation of the {@link CategoryAnnotator} interface
+ * 
  * @author Kathrin Eichler
  * 
  */

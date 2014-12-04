@@ -1,7 +1,6 @@
 package eu.excitementproject.tl.composition.categoryannotator;
 
 import java.util.HashMap;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -10,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -19,18 +19,19 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 
 /**
- * The CategoryAnnotator adds category annotation to an input CAS, based on an input set of 
- * NodeMatch-es. This requires the combination of category information in the NodeMatch-es
+ * The {@link CategoryAnnotator} adds category annotation to an input CAS based on an input set of 
+ * {@link NodeMatch}es. This requires the combination of category information in the {@link NodeMatch}es
  * to final category confidence scores. 
  * 
- * Each NodeMatch in the input set of NodeMatch-es holds exactly one EntailmentUnitMention M
- * (found in the input CAS), which is associated to a list of PerNodeScore-s P. 
+ * Each {@link NodeMatch} in the input set holds exactly one {@link EntailmentUnitMention} M
+ * (found in the input CAS), which is associated to a list of {@link PerNodeScore}s P. 
  * 
- * PerNodeScore-s refer to tuples of an EquivalenceClass E (a node in a collapsed entailment 
- * graph) and a confidence score C denoting the confidence of M matching E. 
+ * {@link PerNodeScore}s refer to tuples of an {@link EquivalenceClass} E 
+ * (a node in a collapsed entailment graph) and a confidence score C denoting the confidence 
+ * of M matching E. 
  * 
- * In this implementation of the CategoryAnnotator module, category confidence scores for 
- * a particular M are computed by going through all the per node scores found for M, 
+ * In this implementation of the {@link CategoryAnnotator} module, category confidence scores 
+ * for a particular M are computed by going through all the {@link PerNodeScore}s found for M, 
  * reading the category confidence scores associated to each node, and multiplying each 
  * category confidence with the confidence of the match. All combined confidences are summed
  * up per category and divided by the total number of category mentions to compute the final score
