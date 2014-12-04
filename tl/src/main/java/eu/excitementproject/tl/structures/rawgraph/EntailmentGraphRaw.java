@@ -72,8 +72,8 @@ public class EntailmentGraphRaw extends
 	 * ****************************************************************************************/
 
 	/**
-	 * Initialize an empty work graph, 
-	 * which will contain entailment units with lemmatized text of the mentions
+	 * Initialize an empty work graph. 
+	 * @param addLemmatizedLabel add lemmatized text of each entailment unit text as lemmatizedText
 	 */
 	public EntailmentGraphRaw(boolean addLemmatizedLabel){
 		this();

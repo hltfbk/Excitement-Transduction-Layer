@@ -25,7 +25,7 @@ public class EntailmentUnit{
 	protected String text;
 	
 	/**
-	 * 
+	 * The lemmatized text of the node
 	 */
 	protected String lemmatizedText;
 	
@@ -172,7 +172,6 @@ public class EntailmentUnit{
 	 * 
 	 * @return the lemmatized text of the mentions if lemmas were set, otherwise return null
 	 */
-
 	public String getLemmatizedText(){
 		return lemmatizedText;
 	}
