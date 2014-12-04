@@ -108,7 +108,7 @@ public class ExperimentNice extends AbstractExperiment {
 			MergerType mergerType,
 			ModifierDependencyAnnotator modAnot) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, ClassNotFoundException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
 
-		super(configFileFullName, dataDir, fileNumberLimit, outputFolder); //, modAnot);
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, modAnot);
 		
 		this.configFileFullName = configFileFullName;
 		this.configFileName = (new File(configFileFullName)).getName();
@@ -204,8 +204,7 @@ public class ExperimentNice extends AbstractExperiment {
 //					TreeTaggerEN.class,
 //					FNR_EN.class,
 					mergerType
-//					new ModifierDependencyAnnotator(new DependencyLevelLapEN())
-//					null
+					,new ModifierDependencyAnnotator(new DependencyLevelLapEN())
 					);
 		}
 		

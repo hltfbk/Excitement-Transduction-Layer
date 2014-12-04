@@ -45,12 +45,15 @@ public class ConvertWP2PublicDataByCluster extends ConvertWP2PublicData{
 		// File names will be determined by "interaction name" (processWP2Data()), or 
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 		
-		String clustersDirName = "./src/main/resources/exci/alma/goldStandardAnnotation/dev";
+//		String clustersDirName = "./src/main/resources/exci/alma/modifierEvaluation/goldStandardAnnotation/";
+		String clustersDirName = "./src/main/resources/exci/nice/modifierEvaluation/goldStandardAnnotation/";
 		
-		String outputDirName = "./src/test/outputs/alma/goldStandardAnnotation/dev";
+//		String outputDirName = "./src/main/resources/exci/alma/modifierEvaluation/xmi";
+		String outputDirName = "./src/main/resources/exci/nice/modifierEvaluation/xmi";
+
 		File clustersDir = new File(clustersDirName);
 		
-		String language = "EN"; 
+		String language = "IT"; 
 		
 		for(String cluster: clustersDir.list()) {
 			
