@@ -40,7 +40,6 @@ import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
@@ -766,7 +765,7 @@ public class EvaluatorUtils {
 		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
 		List<String> textLemmas = Arrays.asList(lemmatizedText.split("\\s+"));
 		
-		if(textLemmas.size() == 1) {
+		if(textTokens.size() == 1 && textLemmas.size() <= 1) {
 			permutations.addAll(textTokens);
 			permutations.addAll(textLemmas);
 		}

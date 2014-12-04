@@ -1,15 +1,14 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
 import java.util.Iterator;
-import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PUNC;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
@@ -19,32 +18,22 @@ import eu.excitementproject.tl.laputils.CASUtils;
 /**
  * This class implements the simplest baseline "fragment annotator". 
  * Namely, each token except the punctuation is considered as a possible (continuous) fragment.
- * If a filter for parts of speech is passed to the constructor, then only tokens are annotated, which match the filter.
  * 
  * @author Aleksandra
  *
  */
 public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
-
-	private final List<String> tokenPOSFilter;
-	
-	public TokenAsFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
-	{
-		super(l); 
-		tokenPOSFilter = null;
-	}
 	
 	/**
 	 * 
 	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
-	 * @param tokenPOSFilter - types of parts of speeches of tokens, which which should be annotated 
 	 * @throws FragmentAnnotatorException
 	 */
-	public TokenAsFragmentAnnotator(LAPAccess l, List<String> tokenPOSFilter) throws FragmentAnnotatorException
+	public TokenAsFragmentAnnotator(LAPAccess l) throws FragmentAnnotatorException
 	{
 		super(l); 
-		this.tokenPOSFilter = tokenPOSFilter;
 	}
+	
 	
 	@Override
 	public void annotateFragments(JCas aJCas) throws FragmentAnnotatorException {
@@ -69,25 +58,26 @@ public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
 		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
 		Iterator<Annotation> tokenItr = tokenIndex.iterator();
 		while(tokenItr.hasNext()) {
-			//annotate each token except punctuation as one fragment, if it matches the filter 
+			//annotate each token except punctuation as one fragment, if it matches the filter
 			Token tk = (Token) tokenItr.next(); 
-			try {
-				if(isAllowed(tk, tokenPOSFilter)){
+			if(isALlowed(tk)) {
+				try {
 					CASUtils.Region[] r = new CASUtils.Region[1];
 					r[0] = new CASUtils.Region(tk.getBegin(),  tk.getEnd()); 
 					fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
 					CASUtils.annotateOneDeterminedFragment(aJCas, r);
 					num_frag++;
+				} 
+				
+				catch (LAPException e) {
+					throw new FragmentAnnotatorException("CASUtils reported exception while annotating Fragment, on token (" + tk.getBegin() + ","+ tk.getEnd(), e );
 				}
-			} 
-			
-			catch (LAPException e) {
-				throw new FragmentAnnotatorException("CASUtils reported exception while annotating Fragment, on token (" + tk.getBegin() + ","+ tk.getEnd(), e );
 			}
 		}
 		fragLogger.info("Annotated " + num_frag + " determined fragments"); 
 	}
 	
+
 	/**
 	 * 
 	 * @param aJCas
@@ -116,19 +106,17 @@ public class TokenAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 	
 	/**
-	 * check if the token type is allowed
-	 * @param token
-	 * @param posFilter
+	 * check if the token type is allowed to be annotated as fragment
+	 * return true only if token is no punctuation and no other symbol like ()[]-|>< etc;
+	 * 
+	 * @param token -- Token
 	 * @return
 	 */
-	protected boolean isAllowed(Token token, List<String> posFilter){
-		if(!(token.getPos() instanceof PUNC)) {
-			if(posFilter == null 
-					|| posFilter.isEmpty()
-					|| posFilter.contains(token.getPos().getPosValue())) {
-				return true;
-			}
+	protected boolean isALlowed(Token token) {
+		if(!(token.getPos() instanceof PUNC)){
+			return true;
 		}
 		return false;
 	}
+	
 }

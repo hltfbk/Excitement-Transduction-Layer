@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.decomposition.fragmentannotator;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -13,19 +14,20 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.CARD;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
+import eu.excitementproject.tl.laputils.POSTag_DE;
 import eu.excitementproject.tl.laputils.WordDecompositionType;
 
 /**
  * This class implements a simple "fragment annotator": token + compound part 
- * Namely, each token except the punctuation is considered as a possible (continuous) fragment. Excluded are also one character words except numbers. 
- * If a filter for parts of speech is passed to the constructor, then only tokens are annotated, which match the filter.
+ * Namely, each token  is considered as a possible (continuous) fragment. 
+ * Excluded are also punctuation tokens, one character words except numbers. 
+ * If filters are passed via constructor, then only tokens, which match the filter, are annotated
  * If a token is a compound word, then the compound parts can be also annotated.
  * 
  * @author Aleksandra (November 2014)
@@ -33,11 +35,9 @@ import eu.excitementproject.tl.laputils.WordDecompositionType;
  */
 public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator {
 
-	private final List<String> tokenPOSFilter;
+	private final List<POSTag_DE> tokenPOSFilter;
 	private final WordDecompositionType decompositionType;
 	private GermanWordSplitter splitter;
-	
-	
 	
 	/**
 	 * 
@@ -48,38 +48,24 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, WordDecompositionType decompositionType) 
 			throws FragmentAnnotatorException {
 		super(lap);
-		tokenPOSFilter = null;
+		tokenPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
 		this.decompositionType = decompositionType;
-		if(!decompositionType.equals(WordDecompositionType.NONE)){
-			try {
-				splitter = new GermanWordSplitter();
-				splitter.setStrictMode(true);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		this.setDecompounderDE(decompositionType);
 	}
 	
 	/**
 	 * 
 	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
-	 * @param tokenPOSFilter - types of parts of speeches of tokens, which which should be annotated 
+	 * @param tokenPOSFilter - types of part of speech (POS), which are allowed to be a POS the token
 	 * @param decompositionType - WordDecompositionType.NONE or WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @throws FragmentAnnotatorException
 	 */
-	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> tokenPOSFilter, WordDecompositionType decompositionType)
+	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, List<POSTag_DE> tokenPOSFilter, WordDecompositionType decompositionType)
 			throws FragmentAnnotatorException {
 		super(lap); 
 		this.tokenPOSFilter = tokenPOSFilter;
 		this.decompositionType = decompositionType;
-		if(!decompositionType.equals(WordDecompositionType.NONE)){
-			try {
-				splitter = new GermanWordSplitter();
-				splitter.setStrictMode(true);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		this.setDecompounderDE(decompositionType);
 	}
 	
 	
@@ -113,7 +99,8 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 			Token tk = (Token) tokenItr.next(); 
 			try {
 				if(isAllowed(tk, tokenPOSFilter)){
-					if(tk.getCoveredText().length()==1 && !(tk.getPos() instanceof CARD)){
+					String tokenText = tk.getCoveredText();
+					if(tokenText.length()==1 && !isDigit(tokenText)){
 						continue;
 					}
 					CASUtils.Region[] r = new CASUtils.Region[1];
@@ -122,29 +109,25 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 					CASUtils.annotateOneDeterminedFragment(aJCas, r);
 					num_frag++;
 					if(splitter != null){
-						String tokenText = tk.getCoveredText();
 						Collection<String> compoundParts = decompoundWord(tokenText, decompositionType);
 						if(compoundParts.size() > 1){
 							for(String compoundPart : compoundParts){
-								if(compoundPart.length() == 1){
-									Character ch = compoundPart.charAt(0);
-									if(!Character.isDigit(ch)){
+								if(compoundPart.length() == 1 && !isDigit(compoundPart)){
 										continue;
-									}
 								}
-								if(compoundPart.length()>1){
-									if(!compoundPart.equals(tk.getCoveredText())) {
+//								if(compoundPart.length()>1){
+									if(!compoundPart.equals(tokenText)) {
 										int index = tokenText.indexOf(compoundPart);
 										int compoundPartBegin = tk.getBegin() + index;
 										int compoundPartEnd = compoundPartBegin + compoundPart.length();
 										index = compoundPartEnd + 1;
 										r[0] = new CASUtils.Region(compoundPartBegin,  compoundPartEnd);
-										System.out.println("Annotating the following as a fragment: " + tokenText + " " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
+//										System.out.println("Annotating the following as a fragment: " + tokenText + " " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
 										fragLogger.info("Annotating the following as a fragment: " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
 										CASUtils.annotateOneDeterminedFragment(aJCas, r);
 										num_frag++;
 									}
-								} 
+//								} 
 							}
 						}
 					}
@@ -163,7 +146,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 	/**
 	 * 
 	 * @param word
-	 * @param splitter
+	 * @param decompositionType
 	 * @return
 	 */
 	private Set<String> decompoundWord(String word, WordDecompositionType decompositionType){
@@ -184,5 +167,49 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 		return splits ;
 	}
 	
+	/**
+	 * check if the token type is allowed to be annotated
+	 * return true
+	 * @param token -- Token
+	 * @param posFilter - List <POSTag_DE>
+	 * @return
+	 */
+	protected boolean isAllowed(Token token, List<POSTag_DE> posFilter){
+		POSTag_DE posTagDE = POSTag_DE.mapToPOStag_DE(token.getPos().getPosValue());
+			if(posTagDE != POSTag_DE.COMMA 
+				&& posTagDE != POSTag_DE.SENTENCE_ENDING_PUNCTUATION 
+				&& posTagDE!= POSTag_DE.OTHERS
+				&& posFilter.contains(posTagDE))
+				return true;
+		return false;
+	}
+	
+	/**
+	 * check if a String is a digit
+	 * @param word
+	 * @return
+	 */
+	private boolean isDigit(String word){
+		if(word.length() == 1){
+			Character ch = word.charAt(0);
+			return Character.isDigit(ch);
+		}
+		return false;
+	}
+	
+	/**
+	 * 
+	 * @param wordDecompositionType
+	 */
+	private void setDecompounderDE(WordDecompositionType wordDecompositionType){
+		if(!wordDecompositionType.equals(WordDecompositionType.NONE)){
+			try {
+				splitter = new GermanWordSplitter();
+				splitter.setStrictMode(true);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
 
