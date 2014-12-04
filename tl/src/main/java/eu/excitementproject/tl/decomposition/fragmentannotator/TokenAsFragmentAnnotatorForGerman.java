@@ -50,14 +50,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 		super(lap);
 		tokenPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
 		this.decompositionType = decompositionType;
-		if(!decompositionType.equals(WordDecompositionType.NONE)){
-			try {
-				splitter = new GermanWordSplitter();
-				splitter.setStrictMode(true);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		this.setDecompounderDE(decompositionType);
 	}
 	
 	/**
@@ -72,14 +65,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 		super(lap); 
 		this.tokenPOSFilter = tokenPOSFilter;
 		this.decompositionType = decompositionType;
-		if(!decompositionType.equals(WordDecompositionType.NONE)){
-			try {
-				splitter = new GermanWordSplitter();
-				splitter.setStrictMode(true);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		this.setDecompounderDE(decompositionType);
 	}
 	
 	
@@ -209,6 +195,21 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 			return Character.isDigit(ch);
 		}
 		return false;
+	}
+	
+	/**
+	 * 
+	 * @param wordDecompositionType
+	 */
+	private void setDecompounderDE(WordDecompositionType wordDecompositionType){
+		if(!wordDecompositionType.equals(WordDecompositionType.NONE)){
+			try {
+				splitter = new GermanWordSplitter();
+				splitter.setStrictMode(true);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
 
