@@ -56,7 +56,7 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
  *  inherited methods can be found here:
  *  http://jgrapht.org/javadoc/org/jgrapht/graph/DirectedMultigraph.html
 
- * @author Lili Kotlerman & vivi@fbk & Aleksandra & Kathrin Eichler
+ * @author Lili Kotlerman & Vivi Nastase & Aleksandra Gabryszak & Kathrin Eichler
  */
 public class EntailmentGraphRaw extends
 		DirectedMultigraph<EntailmentUnit,EntailmentRelation> {

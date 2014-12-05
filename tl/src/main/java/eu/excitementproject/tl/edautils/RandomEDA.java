@@ -12,6 +12,7 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 
 /**
  * EDA, which generates random entailment decisions ({@link RandomTEDecision})
+ * 
  * @author Lili Kotlerman
  *
  */

@@ -22,6 +22,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
  * This class contains methods for evaluating graph optimizer results.
+ * 
  * @author Lili Kotlerman
  *
  */

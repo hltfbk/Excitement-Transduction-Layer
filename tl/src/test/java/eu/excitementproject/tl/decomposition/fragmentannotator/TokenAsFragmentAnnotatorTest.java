@@ -21,10 +21,9 @@ import eu.excitementproject.tl.laputils.LemmaLevelLapEN;
 /**
  * This small unit test tests TokenAsFragmentAnnotator 
  * 
- * @author Aleksandra
+ * @author Aleksandra Gabryszak
  *
  */
-
 public class TokenAsFragmentAnnotatorTest {
 
 	@Test

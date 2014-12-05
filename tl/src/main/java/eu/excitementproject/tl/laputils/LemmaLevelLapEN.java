@@ -17,7 +17,7 @@ import eu.excitementproject.eop.lap.implbase.LAP_ImplBaseAE;
  * tokenizer (open nlp tokenizer) makes several problems and we use our own TL 
  * version to counter that... 
  *  
- * @author Gil
+ * @author Tae-Gil Noh
  *
  */
 public class LemmaLevelLapEN extends LAP_ImplBaseAE implements LAPAccess 

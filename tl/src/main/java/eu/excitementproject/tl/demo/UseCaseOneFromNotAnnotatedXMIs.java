@@ -27,7 +27,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 /**
  * Use case one runner from not-annotated XMIs -- use only the text of the interaction, and possibly the keyword annotations (if any)
  * 
- * @author nastase
+ * @author Vivi Nastase
  *
  */
 public class UseCaseOneFromNotAnnotatedXMIs extends UseCaseOneRunnerPrototype {

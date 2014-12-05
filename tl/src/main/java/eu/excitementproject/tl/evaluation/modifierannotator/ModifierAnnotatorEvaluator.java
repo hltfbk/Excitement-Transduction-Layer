@@ -36,7 +36,7 @@ import eu.excitementproject.tl.structures.Interaction;
 /**
  * Collection of static methods for evaluating the modifier annotations
  * 
- * @author vivi@fbk and gil@heidelberg
+ * @author Vivi Nastase and Tae-Gil Noh
  *
  */
 public class ModifierAnnotatorEvaluator {

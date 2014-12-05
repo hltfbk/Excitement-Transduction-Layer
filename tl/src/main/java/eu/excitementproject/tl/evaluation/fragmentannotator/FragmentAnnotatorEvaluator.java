@@ -38,7 +38,7 @@ import eu.excitementproject.tl.structures.Interaction;
 /**
  * Collection of static methods for evaluating the fragment annotations
  * 
- * @author vivi@fbk and gil@heidelberg
+ * @author Vivi Nastase and Tae-Gil Noh
  *
  */
 @SuppressWarnings("unused")

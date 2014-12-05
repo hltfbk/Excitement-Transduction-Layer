@@ -36,7 +36,6 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman & Aleksandra
  *
  * The structure of the collapsed graph (cleaned up edges, clustered nodes in equivalence classes)
  * 
@@ -47,6 +46,7 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
  * It extends DefaultDirectedWeightedGraph, for inherited methods see the JavaDoc:
  * http://jgrapht.org/javadoc/org/jgrapht/graph/DefaultDirectedWeightedGraph.html
  * 
+ * @author Vivi Nastase & Lili Kotlerman & Aleksandra Gabryszak
  */
 
 public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<EquivalenceClass,EntailmentRelationCollapsed>{

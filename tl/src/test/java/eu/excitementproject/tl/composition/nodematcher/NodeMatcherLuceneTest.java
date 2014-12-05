@@ -22,6 +22,11 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class NodeMatcherLuceneTest {
 
 	@Test

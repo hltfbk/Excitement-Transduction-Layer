@@ -36,9 +36,10 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 
 /** 
- * Full pipeline experiment for ALMA (starting from XMIs with only the interaction text and possibly keyword annotations)
+ * Full pipeline experiment for ALMA (starting from XMIs with only the interaction text and possibly 
+ * keyword annotations)
  * 
- * @author vivi@fbk & Lili Kotlerman -- very very little edited copy of Lili's ExperimentAlma class
+ * @author Vivi Nastase & Lili Kotlerman -- very very little edited copy of Lili's ExperimentAlma class
  * 
  */
 public class ExperimentAlmaFullPipeline extends AbstractExperimentNotAnnotXMIs {

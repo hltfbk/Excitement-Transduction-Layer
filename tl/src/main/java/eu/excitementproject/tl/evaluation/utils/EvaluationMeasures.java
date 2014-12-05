@@ -6,6 +6,7 @@ import java.util.Set;
 
 /**
  * This class is a container for the values of Recall, Precision and F1 calculated by different evaluators
+ * 
  * @author Lili Kotlerman 
  */
 public class EvaluationMeasures {

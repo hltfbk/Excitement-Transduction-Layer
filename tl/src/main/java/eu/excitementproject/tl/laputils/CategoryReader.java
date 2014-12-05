@@ -31,7 +31,7 @@ import eu.excitementproject.tl.structures.RelevantText;
  * 
  * This class provides a simple reader for OMQ categories.
  * 
- * @author Kathrin
+ * @author Kathrin Eichler
  *
  */
 public final class CategoryReader {

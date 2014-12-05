@@ -122,8 +122,8 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	private double getNodeScore(EntailmentUnitMention mentionToBeFound,
 			EquivalenceClass ec) {		
 		Set<EntailmentUnit> eus = ec.getEntailmentUnits();
+		String mentionToBeFoundText = mentionToBeFound.getText().replaceAll("\\s+", " ").trim().toLowerCase();	
 		for (EntailmentUnit eu : eus) { //compare mentionToBeFound with text and lemma of the entailment unit
-			String mentionToBeFoundText = mentionToBeFound.getText().replaceAll("\\s+", " ").trim().toLowerCase();	
 			String unitText = eu.getTextWithoutDoubleSpaces().trim().toLowerCase();
 			if (unitText.equals(mentionToBeFoundText)) {
 				return 1;
@@ -147,5 +147,4 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 		}
 		return 0;
 	}
-
 }

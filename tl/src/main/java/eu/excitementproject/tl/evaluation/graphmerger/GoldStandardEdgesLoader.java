@@ -38,6 +38,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
  * This is the class responsible for loading gold standard edges from manually annotated data
+ * 
  * @author Lili Kotlerman
  *
  */

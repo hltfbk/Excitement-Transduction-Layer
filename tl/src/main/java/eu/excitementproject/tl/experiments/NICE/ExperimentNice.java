@@ -43,6 +43,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
 /** 
  * Class to load NICE data, build the graphs with WP2 merge procedure and evaluate them
+ * 
  * @author Lili Kotlerman
  * 
  */

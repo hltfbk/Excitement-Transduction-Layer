@@ -34,7 +34,11 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 
-
+/**
+ * 
+ * @author Kathrin Eichler
+ *
+ */
 public class CategoryAnnotatorAllCatsTest {
 
 	@Test

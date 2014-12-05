@@ -36,7 +36,7 @@ import eu.excitementproject.tl.structures.Interaction;
  * 
  * <P>
  * 
- * @author vivi@fbk 
+ * @author Vivi Nastase
  *
  */
 @SuppressWarnings("unused")

@@ -4,7 +4,9 @@ import java.util.List;
 
 /**
  * Recall-Precision curve generated using the following rule: 
- * for each standard recall value <code>r</code> from 0.0 to 1.0 with 0.1 increments, take the maximum precision obtained at any actual recall value greater or equal to <code>r</code>
+ * for each standard recall value <code>r</code> from 0.0 to 1.0 with 0.1 increments, 
+ * take the maximum precision obtained at any actual recall value greater or equal to <code>r</code>
+ * 
  * @author Lili Kotlerman
  *
  */

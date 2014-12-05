@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * This class is a container for the values of evaluation measures calculated by different evaluators
+ * 
  * @author Lili Kotlerman 
  */
 public class ExtendedEvaluationMeasures extends EvaluationMeasures{

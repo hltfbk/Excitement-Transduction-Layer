@@ -16,10 +16,10 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.core.EditDistanceTEDecision;
 
 /**
+ * Fake EDA to be able to test performance without EDA decisions. 
+ * This one will always return the same answer (now negative).
  * 
- * @author vivi@fbk
- * 
- * Fake EDA to be able to test performance without EDA decisions. This one will always return the same answer (now negative).
+ * @author Vivi Nastase
  *
  * @param <T>
  */

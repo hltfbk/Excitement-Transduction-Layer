@@ -6,6 +6,7 @@ import eu.excitementproject.eop.common.TEDecision;
 /**
  * A {@link TEDecision}, which gets a confidence score as input 
  * and defines the corresponding {@link DecisionLabel}, based on a simple score heuristic
+ * 
  * @author Lili Kotlerman
  *
  */

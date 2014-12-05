@@ -2,6 +2,7 @@ package eu.excitementproject.tl.demo;
 
 import java.io.File;
 
+
 import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
@@ -13,6 +14,12 @@ import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.lap.dkpro.OpenNLPTaggerDE;
 import eu.excitementproject.tl.laputils.CASUtils;
 
+/**
+ * Sample class for using the EOP for German.
+ * 
+ * @author Tae-Gil Noh
+ *
+ */
 public class EOPUsageExampleDE {
 	
 	private static final Logger logger = Logger.getLogger(EOPUsageExampleDE.class);

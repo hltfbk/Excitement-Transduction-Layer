@@ -15,6 +15,11 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class SimpleEDA_DETest {
 
 	Logger testlogger = Logger.getLogger("eu.excitementproject.tl.experiments.OMQ.SimpleEDA_DETest"); 

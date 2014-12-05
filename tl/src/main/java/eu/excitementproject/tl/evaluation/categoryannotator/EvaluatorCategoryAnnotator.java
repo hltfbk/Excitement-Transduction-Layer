@@ -94,8 +94,6 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 
 /**
  * 
- * @author Kathrin
- *
  * This class evaluates the category annotation on an incoming email (use case 2). 
  * 
  * It first reads in a dataset of emails associated to categories and splits it into a training and test set. 
@@ -107,6 +105,9 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
  * entailment unit mention, we first calculate a combined score for each automatically assigned category
  * by summing up all confidences per category to get the "best" category (the one with the highest sum). 
  * This best category is then compared to the manually assigned one. 
+
+ * @author Kathrin Eichler
+ *
  */
 
 public class EvaluatorCategoryAnnotator { 

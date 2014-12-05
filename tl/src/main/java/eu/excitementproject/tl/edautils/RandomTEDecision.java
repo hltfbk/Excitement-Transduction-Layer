@@ -4,7 +4,9 @@ import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.TEDecision;
 
 /**
- * A {@link TEDecision} with a random confidence score and a corresponding {@link DecisionLabel}, based on a simple score heuristic
+ * A {@link TEDecision} with a random confidence score and a corresponding {@link DecisionLabel}, 
+ * based on a simple score heuristic
+ * 
  * @author Lili Kotlerman
  *
  */

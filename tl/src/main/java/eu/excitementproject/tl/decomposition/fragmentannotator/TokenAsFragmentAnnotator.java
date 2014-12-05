@@ -16,7 +16,8 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorExcepti
 import eu.excitementproject.tl.laputils.CASUtils;
 
 /**
- * This class implements the simplest baseline "fragment annotator". 
+ * This class implements the a simple token-based {@link FragmentAnnotator}. 
+ * 
  * Namely, each token except the punctuation is considered as a possible (continuous) fragment.
  * 
  * @author Aleksandra

@@ -27,18 +27,30 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 
 	static char termFrequencyDocument = 'n'; //= 'l'; // n (natural), l (logarithm)
 	static char documentFrequencyDocument = 'n';  //= 't'; // n (no), t (idf)
-	static char normalizationDocument = 'n'; // = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
-	private int categoryBoost;
+	static char normalizationDocument = 'n'; // = 'c'; // n (none), c (cosine) 
+	private int categoryBoost; //score used to boost categories associated to fragments appearing in the 
+		//description of the category
 	String method = "tfidf"; // = "tfidf" or "bayes"
 	
+	/**
+	 * If no categoryBoost is passed explicitly, it's set to 0.
+	 */
 	public ConfidenceCalculatorCategoricalFrequencyDistribution() {
 		this.categoryBoost = 0;
 	}
 	
+	/**
+	 * @param categoryBoost - score used to boost categories associated to fragments appearing in the 
+	 * description of the category
+	 */
 	public ConfidenceCalculatorCategoricalFrequencyDistribution(int categoryBoost) {
 		this.categoryBoost = categoryBoost;
 	}
 	
+	/**
+	 * @param methodTfIdf - TF-IDF variant; based on SMART notation; the three characters refer to the 
+	 * three document-related parameters of the SMART variant
+	 */
 	public ConfidenceCalculatorCategoricalFrequencyDistribution(char[] methodTfIdf) {
 		this.categoryBoost = 0;
 		method = "tfidf";
@@ -51,7 +63,14 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			normalizationDocument = methodTfIdf[2];
 		}
 	}
-	
+
+	/**
+	 * @param methodTfIdf - TF-IDF variant; based on SMART notation; the three characters refer to the 
+	 * three document-related parameters of the SMART variant
+	 * 
+	 * @param categoryBoost - score used to boost categories associated to fragments appearing in the 
+	 * description of the category
+	 */
 	public ConfidenceCalculatorCategoricalFrequencyDistribution(char[] methodTfIdf, int categoryBoost) {
 		this.categoryBoost = categoryBoost;
 		method = "tfidf";
@@ -65,10 +84,16 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		}
 	}
 	
+	/**
+	 * @param method - method used for computing the combined category scores 
+	 */	
 	public ConfidenceCalculatorCategoricalFrequencyDistribution(String method) {
 		this.method = method;
 	}
 
+	/**
+	 * Compute category confidence scores and add them to the graph
+	 */
 	@Override
 	public void computeCategoryConfidences(EntailmentGraphCollapsed graph)
 			throws ConfidenceCalculatorException {
@@ -117,6 +142,12 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		}
 	}
 
+	/**
+	 * Perform cosine normalization on the score
+	 * 
+	 * @param nodes
+	 * @param sumOfSquaredScoresPerCategory
+	 */
 	private void doCosineNormalization(Set<EquivalenceClass> nodes,
 			HashMap<String, Double> sumOfSquaredScoresPerCategory) {
 		for (EquivalenceClass node : nodes) { //for each node in the graph
@@ -131,15 +162,17 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		}
 	}
 
-	/** To compute the final confidence for each category, we divide the sum calculated for this category
-	* by the number of mentions associated to the node. 
-	* 
-	* It also includes a TFIDF-based implementation, where 
-	*   tf = number of occurrences of the category on this node
-	*   idf = Math.log(N/n)
-	*   N = total number of different categories
-	*   n = number of different categories associated to this particular node
-	*/
+	/** Compute confidence scores using TF-IDF	 
+	 *  
+ 	 * To compute the final confidence for each category, we divide the sum calculated for this category
+ 	 * by the number of mentions associated to the node. 
+	 * 
+	 * It also includes a TFIDF-based implementation, where 
+	 *   tf = number of occurrences of the category on this node
+	 *   idf = Math.log(N/n)
+	 *   N = total number of different categories
+	 *   n = number of different categories associated to this particular node
+	 */
 	private void computeConfidenceUsingTfidf(
 			HashMap<String, Double> sumOfSquaredScoresPerCategory,
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode,
@@ -193,6 +226,14 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		}
 	}
 
+	/**
+	 * Compute confidence scores using Naive Bayes with logarithm
+	 * 
+	 * @param graphStatistics
+	 * @param categoryFrequencyDistributionOnNode
+	 * @param categoriesToBoost
+	 * @param categoryConfidences
+	 */
 	private void computeConfidenceUsingBayesLog(
 			GraphStatistics graphStatistics,
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode,
@@ -219,6 +260,14 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		logger.debug("categoryConfidences: " + categoryConfidences);
 	}
 
+	/**
+	 * Compute confidence using Naive Bayes
+	 * 
+	 * @param graphStatistics
+	 * @param categoryFrequencyDistributionOnNode
+	 * @param categoriesToBoost
+	 * @param categoryConfidences
+	 */
 	private void computeConfidenceUsingBayes(GraphStatistics graphStatistics,
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode,
 			Set<String> categoriesToBoost,
@@ -244,6 +293,13 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		}
 	}
 
+	/**
+	 * 
+	 * 
+	 * @param node
+	 * @param categoryFrequencyDistributionOnNode
+	 * @param categoriesToBoost
+	 */
 	private void collectFrequencyDistributionPerNode(EquivalenceClass node,
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode,
 			Set<String> categoriesToBoost) {
@@ -252,12 +308,14 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			for (EntailmentUnitMention mentionOnNode : eu.getMentions()) { 
 				//for each mention associated to the entailment unit
 				String categoryMention = mentionOnNode.getCategoryId();
-				if(categoryBoost > 0){
+				if(categoryBoost > 0){ //collect the categories to boost 
+					//(each category for which the node text appears in the description of the category)
 					if(mentionOnNode.getInteractionId().startsWith("c_")){
 						categoriesToBoost.add(categoryMention);
 					}
 				}
-				int tf = 0; //how often does the "term" occur in the "document" --> how often does category occur on the node
+				int tf = 0; //how often does the "term" occur in the "document" 
+				//--> how often does category occur on the node
 				if (categoryFrequencyDistributionOnNode.containsKey(categoryMention)) {
 					tf = categoryFrequencyDistributionOnNode.get(categoryMention);
 				}
@@ -267,6 +325,12 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 		}
 	}
 
+	/**
+	 * Compute some graph statistics needed for computing the confidence scores. 
+	 * 
+	 * @param graph - the graph for which the statistics are computed
+	 * @return
+	 */
 	private GraphStatistics computeGraphStatistics(
 			EntailmentGraphCollapsed graph) {
 		//compute number of mentions per category (for graph statistics)

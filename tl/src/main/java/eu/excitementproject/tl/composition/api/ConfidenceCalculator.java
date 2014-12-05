@@ -14,7 +14,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
  * Input: one collapsed graph (=EntailmentGraphCollapsed=)
  * Output: the input collapsed graph with added category confidences per node (=EquivalenceClass=)
  * 
- *  @author Kathrin
+ *  @author Kathrin Eichler
  */
 
 public interface ConfidenceCalculator {

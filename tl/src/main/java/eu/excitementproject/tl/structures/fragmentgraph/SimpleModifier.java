@@ -5,7 +5,7 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
 /**
  * A class for a simple kind of modifier (text and span)
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class SimpleModifier extends Region {

@@ -28,6 +28,11 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 @SuppressWarnings("all")
+/**
+ * 
+ * @author ??
+ *
+ */
 public class GoldStandardReannotation {
 		
 	private enum Relation{

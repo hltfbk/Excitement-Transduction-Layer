@@ -18,6 +18,10 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
  */
 public abstract class AbstractCategoryAnnotator implements CategoryAnnotator {
 
+	/**
+	 * @param cas - the cas to which the category annotation will be added
+	 * @param matches - the set of node matches from which the category annotation will be produced
+	 */
 	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches) 
 			throws CategoryAnnotatorException,
 			LAPException {

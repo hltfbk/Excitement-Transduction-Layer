@@ -16,7 +16,7 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
  * 
  * All classes that implement a specific POS-based modifier annotator will extend this class
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class POSbasedModifierAnnotator extends

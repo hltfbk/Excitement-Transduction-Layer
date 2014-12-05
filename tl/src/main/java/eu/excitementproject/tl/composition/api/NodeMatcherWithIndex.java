@@ -29,8 +29,14 @@ public interface NodeMatcherWithIndex {
 	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph) 
 			throws NodeMatcherException;
 
+	/**
+	 * Convert the graph into an index
+	 */
 	public void indexGraphNodes();
 
+	/**
+	 * Initialize the search on the graph index
+	 */
 	public void initializeSearch();
 
 }
