@@ -25,7 +25,7 @@ import eu.excitementproject.tl.laputils.LAPUtils;
 @SuppressWarnings("unused")
 public class ModifierAnnotatorEvaluationTest {
 	
-	@Ignore
+//	@Ignore
 	@Test
 	public void test() {
 	
@@ -34,8 +34,8 @@ public class ModifierAnnotatorEvaluationTest {
 		
 		try {
 			
-			String lang = "IT";
-//			String lang = "EN";			
+//			String lang = "IT";
+			String lang = "EN";			
 			
 			LAPAccess lap = LAPUtils.initializeLAP(lang);
 			
