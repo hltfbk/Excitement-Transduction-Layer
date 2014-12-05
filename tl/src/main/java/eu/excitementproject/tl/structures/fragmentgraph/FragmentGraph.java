@@ -51,8 +51,6 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
- * 
- * @author vivi@fbk & Lili Kotlerman
  *
  *	Graph structure for a text fragment.
  *	We assume a text fragment is composed of a base statement (BS) plus a number of modifiers (M).
@@ -68,6 +66,8 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  *
  * @param <V> Vertex class
  * @param <E> Edge class
+ * 
+ * @author Vivi Nastase & Lili Kotlerman
  */
 @SuppressWarnings("unused")
 public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMention,FragmentGraphEdge> {

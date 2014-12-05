@@ -4,6 +4,7 @@
 package eu.excitementproject.tl.evaluation.exceptions;
 
 /** Exception caused by graph evaluation process
+ * 
  * @author Lili Kotlerman
  *
  */

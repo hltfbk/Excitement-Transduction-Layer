@@ -42,7 +42,7 @@ import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
  * SimpleEDA_DE was written for UseCase2 evaluations with single-token and two-token fragments as TH pairs.
  * This EDA is not suitable for sentence fragments as TH pairs.
  * 
- * @author Aleksandra, October 2014
+ * @author Aleksandra Gabryszak, October 2014
  *
  */
 public class SimpleEDA_DE implements EDABasic<ClassificationTEDecision> {
@@ -452,5 +452,4 @@ public class SimpleEDA_DE implements EDABasic<ClassificationTEDecision> {
 		}
 		
 	}
-	
 }

@@ -22,6 +22,11 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class GoldStandardAnalyzer extends GoldStandardEdgesLoader {
 
 	private static final Logger logger = Logger.getLogger(GoldStandardAnalyzer.class);

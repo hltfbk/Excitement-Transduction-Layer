@@ -16,7 +16,7 @@ import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
 /**
  * A collection of static methods to initialize and manipulate a LAP object
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class LAPUtils {

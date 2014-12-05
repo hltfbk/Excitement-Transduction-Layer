@@ -27,7 +27,8 @@ import eu.excitementproject.tl.laputils.POSTag_DE;
 import eu.excitementproject.tl.laputils.WordDecompositionType;
 
 /**
- * This class implements the dependency-based fragment annotator. 
+ * This class extends the {@link DependencyAsFragmentAnnotator} to deal with German-language text. 
+ * 
  * Each dependency (except when dependent is punctuation token or dependent and governor are identical words) 
  * is considered as a possible fragment. If filters are passed via constructor, then then only dependencies 
  * are annotated, which match the filter.
@@ -52,7 +53,10 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	private GermanWordSplitter splitter;
 	
 	/**
-	 * @param lap
+	 * 
+	 * @param lap - Linguistic analysis pipeline for processing the text
+	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
+	 * 
 	 * @throws FragmentAnnotatorException
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException
@@ -65,7 +69,6 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.wordDecompositionType = wordDecompositionType;
 		this.setDecompounderDE(wordDecompositionType);
 	}
-	
 	
 	/**
 	 * 
@@ -224,7 +227,8 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	}
 	
 	/**
-	 * add dependency annotation on JCas
+	 * Add dependency annotation on JCas
+	 * 
 	 * @param aJCas
 	 * @throws FragmentAnnotatorException
 	 */
@@ -249,7 +253,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	}
 
 	/**
-	 * check if dependency is allowed to be annotated
+	 * Check if dependency is allowed to be annotated
 	 * 
 	 * @param dependency
 	 * @return
@@ -269,7 +273,8 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	}
 	
 	/**
-	 * check if dependency type is allowed
+	 * Check if dependency type is allowed
+	 * 
 	 * @param dependencyType
 	 * @return
 	 */
@@ -281,7 +286,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	}
 	
 	/**
-	 * check if the token type is allowed
+	 * Check if the token type is allowed
 	 * 
 	 * @param token -- Token
 	 * @param posFilter - List <POSTag_DE>
@@ -301,12 +306,12 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	}
 	
 	/**
-	 * annotates dependency with given input parameters
+	 * Annotates dependency with given input parameters
 	 * 
 	 * @param aJCas
 	 * @param governor
 	 * @param dependent
-	 * @param wordDecompositionType
+	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @return
 	 */
 	private int annotateDependency(JCas aJCas, Token governor, Token dependent,  WordDecompositionType wordDecompositionType){
@@ -370,7 +375,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	
 
 	/**
-	 * annotates dependency with given input parameters
+	 * Annotates dependency with given input parameters
 	 * 
 	 * @param aJCas
 	 * @param governorText
@@ -428,7 +433,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	/**
 	 * 
 	 * @param word
-	 * @param decompositionType
+	 * @param decompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @return
 	 */
 	private Set<String> decompoundWord(String word, WordDecompositionType decompositionType){
@@ -450,7 +455,8 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	}
 	
 	/**
-	 * check if a String is a digit
+	 * Check if a String is a digit
+	 * 
 	 * @param word
 	 * @return
 	 */
@@ -464,7 +470,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	
 	/**
 	 * 
-	 * @param wordDecompositionType
+	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 */
 	private void setDecompounderDE(WordDecompositionType wordDecompositionType){
 		if(!wordDecompositionType.equals(WordDecompositionType.NONE)){

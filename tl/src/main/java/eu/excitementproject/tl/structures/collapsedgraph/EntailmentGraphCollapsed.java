@@ -36,7 +36,6 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman & Aleksandra
  *
  * The structure of the collapsed graph (cleaned up edges, clustered nodes in equivalence classes)
  * 
@@ -47,15 +46,12 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
  * It extends DefaultDirectedWeightedGraph, for inherited methods see the JavaDoc:
  * http://jgrapht.org/javadoc/org/jgrapht/graph/DefaultDirectedWeightedGraph.html
  * 
+ * @author Vivi Nastase & Lili Kotlerman & Aleksandra Gabryszak
  */
 
 public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<EquivalenceClass,EntailmentRelationCollapsed>{
 	
-	/**
-	 * 
-	 */
 	Logger logger = Logger.getLogger("eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed");
-
 	
 	private static final long serialVersionUID = 5957243707939421299L;
 		
@@ -63,7 +59,7 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 	
 	int numberOfEntailmentUnits; //the number of entailment units contained in the graph. This number is not necessarily the same as the number of nodes in the graph, since each equivalence class node corresponds to one or more entailment unit(s).
 
-	GraphStatistics graphStatistics = null;
+	GraphStatistics graphStatistics = null; //statistics computed for this graph that are relevant for computing category confidence scores for use case 2
 	
 	/******************************************************************************************
 	 * CONSTRUCTORS

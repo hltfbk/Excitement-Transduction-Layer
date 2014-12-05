@@ -15,10 +15,11 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorExcepti
 import eu.excitementproject.tl.laputils.CASUtils;
 
 /**
- * This class implements the simplest baseline "fragment annotator". 
+ * This class implements the simplest baseline {@link FragmentAnnotator}. 
+ * 
  * Namely, each sentence is considered as a (continuous) fragment. 
  * 
- * @author Gil
+ * @author Tae-Gil Noh
  *
  */
 public class SentenceAsFragmentAnnotator extends AbstractFragmentAnnotator {

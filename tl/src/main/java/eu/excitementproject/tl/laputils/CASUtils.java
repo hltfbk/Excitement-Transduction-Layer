@@ -50,7 +50,7 @@ import eu.excitementproject.eop.lap.PlatformCASProber;
  * useful in handling CASes: Like getting a new CAS, serialize, deserialize, 
  * adding some annotations of TL inputCAS, etc. 
  * 
- * @author Gil and vivi@fbk
+ * @author Tae-Gil Noh and Vivi Nastase
  */
 
 // Things to be considered as future improvements 

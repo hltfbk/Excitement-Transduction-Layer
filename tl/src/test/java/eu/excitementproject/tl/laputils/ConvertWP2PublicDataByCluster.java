@@ -8,6 +8,11 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class ConvertWP2PublicDataByCluster extends ConvertWP2PublicData{
 
 	private static final Logger logger = Logger.getLogger(ConvertWP2PublicDataByCluster.class);

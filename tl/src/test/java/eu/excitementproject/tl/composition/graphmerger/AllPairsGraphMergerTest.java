@@ -17,6 +17,11 @@ import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class AllPairsGraphMergerTest {
 	private final Logger logger = Logger.getLogger(this.getClass());
 

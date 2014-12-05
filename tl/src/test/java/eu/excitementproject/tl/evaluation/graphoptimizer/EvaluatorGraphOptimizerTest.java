@@ -12,6 +12,11 @@ import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class EvaluatorGraphOptimizerTest {
 	
 	private final Logger logger = Logger.getLogger(this.getClass());

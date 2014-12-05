@@ -56,7 +56,7 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
  *  inherited methods can be found here:
  *  http://jgrapht.org/javadoc/org/jgrapht/graph/DirectedMultigraph.html
 
- * @author Lili Kotlerman & vivi@fbk & Aleksandra & Kathrin Eichler
+ * @author Lili Kotlerman & Vivi Nastase & Aleksandra Gabryszak & Kathrin Eichler
  */
 public class EntailmentGraphRaw extends
 		DirectedMultigraph<EntailmentUnit,EntailmentRelation> {
@@ -72,8 +72,8 @@ public class EntailmentGraphRaw extends
 	 * ****************************************************************************************/
 
 	/**
-	 * Initialize an empty work graph, 
-	 * which will contain entailment units with lemmatized text of the mentions
+	 * Initialize an empty work graph. 
+	 * @param addLemmatizedLabel add lemmatized text of each entailment unit text as lemmatizedText
 	 */
 	public EntailmentGraphRaw(boolean addLemmatizedLabel){
 		this();

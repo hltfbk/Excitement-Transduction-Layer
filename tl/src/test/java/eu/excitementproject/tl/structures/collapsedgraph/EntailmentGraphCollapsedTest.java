@@ -9,6 +9,11 @@ import org.junit.Test;
 
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedException;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class EntailmentGraphCollapsedTest {
 
 	private static final Logger logger = Logger.getLogger(EntailmentGraphCollapsedTest.class);

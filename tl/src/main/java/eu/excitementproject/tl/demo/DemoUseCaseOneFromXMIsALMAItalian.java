@@ -16,9 +16,10 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorEx
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 
 /**
- * Demo class for building entailment graphs from ALMA data using all annotations from the gold-standard fragment XMIs
+ * Demo class for building entailment graphs from ALMA data using all annotations from the gold-standard 
+ * fragment XMIs
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class DemoUseCaseOneFromXMIsALMAItalian {

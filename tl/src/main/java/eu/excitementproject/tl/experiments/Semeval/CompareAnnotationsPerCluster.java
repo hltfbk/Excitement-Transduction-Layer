@@ -8,6 +8,11 @@ import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.evaluation.graphmerger.GoldStandardEdgesLoader;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class CompareAnnotationsPerCluster {
 
 	public static void main(String[] args) {

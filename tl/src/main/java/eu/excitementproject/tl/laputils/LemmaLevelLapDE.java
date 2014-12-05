@@ -9,7 +9,7 @@ import eu.excitementproject.eop.lap.LAPException;
  * Note that this one is 30 times faster than TreeTaggerEN of EOP 0.8.3 
  * (EOP 0.8.4 and later has this improved TreeTagger LAPAccess... but WP6 prototype uses 0.8.3 so. ) 
  *  
- * @author Gil
+ * @author Tae-Gil Noh
  *
  */
 public class LemmaLevelLapDE extends LemmaLevelLapEN implements LAPAccess {

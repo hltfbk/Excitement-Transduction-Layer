@@ -24,9 +24,9 @@ import eu.excitementproject.tl.laputils.POSTag_DE;
 import eu.excitementproject.tl.laputils.WordDecompositionType;
 
 /**
- * This class implements a simple "fragment annotator": token + compound part 
- * Namely, each token  is considered as a possible (continuous) fragment. 
- * Excluded are also punctuation tokens, one character words except numbers. 
+ * This class implements a token-based {@link FragmentAnnotator} for German: token + compound part 
+ * Each token is considered as a possible (continuous) fragment. 
+ * Excluded are punctuation tokens, one character words except numbers. 
  * If filters are passed via constructor, then only tokens, which match the filter, are annotated
  * If a token is a compound word, then the compound parts can be also annotated.
  * 
@@ -68,7 +68,10 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 		this.setDecompounderDE(decompositionType);
 	}
 	
-	
+	/**
+	 * Annotate each token except punctuation as one fragment, if it matches the filter.
+	 * Component parts of a compound are annotated separately. 
+	 */
 	@Override
 	public void annotateFragments(JCas aJCas) throws FragmentAnnotatorException {
 		

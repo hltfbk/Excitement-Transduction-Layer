@@ -13,12 +13,12 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman & Kathrin
- * 
  * The node of the collapsed entailment graph is an equivalence class. 
  * This type of node will contain all text fragments that are equivalent from
  * the point of view of textual entailment.
- *
+ * 
+ * @author Vivi Nastase & Lili Kotlerman & Kathrin Eichler
+ * 
  */
 public class EquivalenceClass {
 		

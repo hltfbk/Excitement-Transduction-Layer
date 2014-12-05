@@ -21,7 +21,7 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
  * 
  * It reads the EDA and LAP to use from the configuration file.
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class DemoUseCase1NICEEnglish {

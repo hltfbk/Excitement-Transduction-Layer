@@ -14,6 +14,11 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawExceptio
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class EntailmentGraphRawTest {
 	
 	private final Logger logger = Logger.getLogger(this.getClass());

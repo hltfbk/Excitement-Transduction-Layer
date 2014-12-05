@@ -19,6 +19,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 /**
  * This class contains methods for evaluating graph merger results.
  * Currently the evaluation accepts ONLY edges with "entailment" decision label
+ * 
  * @author Lili Kotlerman
 */
 public class EvaluatorGraphMerger {

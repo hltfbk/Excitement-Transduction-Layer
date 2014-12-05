@@ -81,6 +81,8 @@ import eu.excitementproject.tl.structures.utils.XMLFileWriter;
 * @throws NodeMatcherException
 * @throws CategoryAnnotatorException
 * @throws LAPException
+* 
+* @author Kathrin Eichler
 */
 public class DemoUseCase2OMQGerman {
 	

@@ -19,6 +19,11 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
+/**
+ * 
+ * @author Kathrin Eichler
+ *
+ */
 public class ConfidenceCalculatorCategoricalFrequencyDistributionTest {
 
 	@Test

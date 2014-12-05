@@ -50,13 +50,10 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
  * useful in handling CASes: Like getting a new CAS, serialize, deserialize, 
  * adding some annotations of TL inputCAS, etc. 
  * 
- * @author vivi@fbk 
+ * @author Vivi Nastase
  */
-
-
 @SuppressWarnings("unused")
 public final class AnnotationUtils {
-	
 	
 	/**
 	 * Add a set of annotations of a given class to a new CAS object (used for transfering keyword annotation, in particular, 

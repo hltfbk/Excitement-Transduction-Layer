@@ -16,9 +16,9 @@ import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.structures.Interaction;
 
 /**
- * collection of static methods for loading various types of data (full XMIs, XMIs without (fragment/modifier annotations), XMLs)
+ * Collection of static methods for loading various types of data (full XMIs, XMIs without (fragment/modifier annotations), XMLs)
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class DataUtils {
