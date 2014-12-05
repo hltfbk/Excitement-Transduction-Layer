@@ -258,7 +258,7 @@ public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifier
 		List<Token> anns = JCasUtil.selectPreceding(aJCas, Token.class, a, 1);
 		if (anns != null && anns.size() > 0) {
 			
-			System.out.println("Checking POS: " + anns.get(0).getPos().getClass());
+			//System.out.println("Checking POS: " + anns.get(0).getPos().getClass());
 			
 			return (! anns.get(0).getPos().equals(V.class));
 		}
