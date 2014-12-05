@@ -1000,7 +1000,7 @@ public class EvaluatorCategoryAnnotator {
         //int sumCountPositive;
 	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
 //	    for (int i=2; i<=2; i++) { //Create one fold only
-	        System.out.println("Creating fold " + i);
+	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
     		int k=j+1;
@@ -1036,8 +1036,8 @@ public class EvaluatorCategoryAnnotator {
 	    			logger.info("Reading raw graph from " + mergedGraphFile.getAbsolutePath());
 	    			egr = new EntailmentGraphRaw(mergedGraphFile);
 	    			graph = this.buildCollapsedGraphWithCategoryInfo(egr);
-	    			System.out.println("Number of nodes in collapsed graph: " + graph.vertexSet().size());
-	    			System.out.println("Number of edges in collapsed graph: " + graph.edgeSet().size());
+	    			logger.info("Number of nodes in collapsed graph: " + graph.vertexSet().size());
+	    			logger.info("Number of edges in collapsed graph: " + graph.edgeSet().size());
 		    		XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
 		    		logger.info("Wrote graph to : " + graphFile.getAbsolutePath());
 	    		} else {
