@@ -46,23 +46,30 @@ public class ConvertWP2PublicDataByCluster extends ConvertWP2PublicData{
 		// "fragment XML name" (processWP2DataPerFramgnet()) 
 		
 //		String clustersDirName = "./src/main/resources/exci/alma/modifierEvaluation/goldStandardAnnotation/";
-		String clustersDirName = "./src/main/resources/exci/nice/modifierEvaluation/goldStandardAnnotation/";
+		String clustersDirName = "./src/main/resources/exci/alma/goldStandardAnnotation/";
+//		String clustersDirName = "./src/main/resources/exci/nice/modifierEvaluation/goldStandardAnnotation/";
 		
 //		String outputDirName = "./src/main/resources/exci/alma/modifierEvaluation/xmi";
-		String outputDirName = "./src/main/resources/exci/nice/modifierEvaluation/xmi";
+		String outputDirName = "./src/main/resources/exci/alma/xmi";
+//		String outputDirName = "./src/main/resources/exci/nice/modifierEvaluation/xmi";
 
-		File clustersDir = new File(clustersDirName);
+		String suffix = "/dev";
 		
-		String language = "IT"; 
+		File clustersDir = new File(clustersDirName+suffix);
 		
+		String language = "EN";
+		if (clustersDirName.contains("/alma/")) { language = "IT"; }
+		
+		System.out.println("LANGUAGE: " + language);
+				
 		for(String cluster: clustersDir.list()) {
 			
-			dirFragmentGraphs = Paths.get(clustersDirName + "/" + cluster + "/FragmentGraphs");
-			dirInteractions = Paths.get(clustersDirName + "/" + cluster + "/Interactions");
+			dirFragmentGraphs = Paths.get(clustersDirName + suffix + "/" + cluster + "/FragmentGraphs");
+			dirInteractions = Paths.get(clustersDirName + suffix + "/" + cluster + "/Interactions");
 		
 			logger.info(dirFragmentGraphs.toFile().getAbsolutePath());
-			outputdir = Paths.get(outputDirName+"_perInteraction/"+cluster);
-			outputdirPerFrag = Paths.get(outputDirName + "_perFrag/" + cluster);
+			outputdir = Paths.get(outputDirName+"_perInteraction/"+ suffix + "/" + cluster);
+			outputdirPerFrag = Paths.get(outputDirName + "_perFragmentGraph/" + suffix + "/" + cluster);
 		
 			// Actual call: use this for "per-fragment" XMI saving 
 			totalcount += processWP2DataPerFragment(dirFragmentGraphs, dirInteractions, outputdirPerFrag, language); 
