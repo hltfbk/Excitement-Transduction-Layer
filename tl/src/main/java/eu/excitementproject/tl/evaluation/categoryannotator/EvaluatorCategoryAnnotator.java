@@ -152,12 +152,12 @@ public class EvaluatorCategoryAnnotator {
     
 	/* SMART notation for tf-idf variants, as in Manning et al., chapter 6, p.128 */
 	// Query (email) weighting: --> relevant when categorizing new emails
-	static char termFrequencyQuery = 'b'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
-	static char documentFrequencyQuery = 'd'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
+	static char termFrequencyQuery = 'n'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
+	static char documentFrequencyQuery = 't'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
 	static char normalizationQuery = 'n'; // n (none), c (cosine)
 	// Document (category) weighting: --> relevant when building the graph
 	static char termFrequencyDocument = 'n'; // n (natural), l (logarithm)
-	static char documentFrequencyDocument = 'n'; // n (no), t (idf)
+	static char documentFrequencyDocument = 't'; // n (no), t (idf)
 	static char normalizationDocument = 'n'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
 	
 	//INFO: Evaluating different TFIDF-configurations (with no EDA): bd[nc].n[nt]n
@@ -522,7 +522,7 @@ public class EvaluatorCategoryAnnotator {
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
-	        	case 25: 
+	        	case 25: //TIE with base configuration + GN+DS+DB+TP+TPPos+TS_DE.xml
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN+DS+DB+TP+TPPos+TS_DE.xml";
 	        		configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
