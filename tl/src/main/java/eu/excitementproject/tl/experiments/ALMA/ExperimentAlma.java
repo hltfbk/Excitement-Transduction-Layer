@@ -8,7 +8,6 @@ import java.lang.reflect.InvocationTargetException;
 
 import javax.xml.transform.TransformerException;
 
-import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_IT;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
@@ -59,8 +58,21 @@ public class ExperimentAlma extends AbstractExperiment {
 		m_optimizer = new SimpleGraphOptimizer();
 		setMerger(mergerType);
 	}
+	
+	
+	public ExperimentAlma(String configFileFullName, String dataDir,
+			int fileNumberLimit, String outputFolder, MergerType mergerType) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder);
+		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
 
-	public static ExperimentAlma initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
+		m_optimizer = new SimpleGraphOptimizer();
+		setMerger(mergerType);
+	}
+	
+
+	public static ExperimentAlma initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException{
 		
 		if (edaName.equals(EdaName.EDIT_DIST)) {
 			return new ExperimentAlma(
@@ -108,8 +120,8 @@ public class ExperimentAlma extends AbstractExperiment {
 			return new ExperimentAlma(
 					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_IT.xml",
 					dataDir, fileLimit, outDir,
-					TreeTaggerIT.class,
-					FNR_IT.class,
+//					TreeTaggerIT.class,
+//					FNR_IT.class,
 					mergerType
 					);
 		}
@@ -139,12 +151,14 @@ public class ExperimentAlma extends AbstractExperiment {
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 
-		MergerType mergerType = MergerType.ALL_PAIRS_MERGE; // which merger to use
+//		MergerType mergerType = MergerType.ALL_PAIRS_MERGE; // which merger to use
+		MergerType mergerType = MergerType.WP2_MERGE; // which merger to use
+
 		boolean includeFragmentGraphEdges = true; // whether to include FG edges in the evaluations
 		
 		// which EDA(s) to use
 		//	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
-		EdaName[] names = {EdaName.FAKE_EDA};
+		EdaName[] names = {EdaName.P1EDA};
 		//		EdaName[] names = {EdaName.TIE_POS};	
 		
 		// ===== END OF SET-UP
@@ -185,7 +199,7 @@ public class ExperimentAlma extends AbstractExperiment {
 					| ModifierAnnotatorException | GraphMergerException
 					| GraphOptimizerException | FragmentGraphGeneratorException
 					| IOException | EntailmentGraphRawException
-					| TransformerException e2) {
+					| TransformerException | ClassNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			} 

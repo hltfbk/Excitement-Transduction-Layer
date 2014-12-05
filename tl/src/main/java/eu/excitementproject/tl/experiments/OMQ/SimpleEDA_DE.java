@@ -452,5 +452,4 @@ public class SimpleEDA_DE implements EDABasic<ClassificationTEDecision> {
 		}
 		
 	}
-	
 }

@@ -78,8 +78,11 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 
 	// to be used when using the not-annotated XMIs, to skip the docs initialization and the graph construction
 	public AbstractExperiment(String configFileName, String outputFolder) throws ConfigurationException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, ClassNotFoundException {
-		super(configFileName, outputFolder);
-		docs = null;
+		
+		super(configFileName, outputFolder);		
+		this.setModifierAnnotator(null);
+		
+		docs = null;		
 	}
 	
 	public AbstractExperiment(String configFileName, String dataDir,
@@ -87,9 +90,10 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 			Class<?> edaClass) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
 		
 		super(configFileName, outputFolder, lapClass, edaClass);
+		this.setModifierAnnotator(null);
 		
 		docs = DataUtils.loadData(dataDir, fileNumberLimit);
-				
+		
 		results = new ResultsContainer();
 	}
 	
@@ -125,9 +129,10 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 			int fileNumberLimit, String outputFolder) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
 		
 		super(configFileName, outputFolder);
+		this.setModifierAnnotator(null);
 		
 		docs = DataUtils.loadData(dataDir, fileNumberLimit);
-				
+		
 		results = new ResultsContainer();
 	}
 	
@@ -167,7 +172,7 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 		this.setModifierAnnotator(modAnot);
 		
 		docs = DataUtils.loadData(dataDir, fileNumberLimit);
-						
+		
 		results = new ResultsContainer();
 	}
 
@@ -208,7 +213,7 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
 		this.setModifierAnnotator(modAnot);
 		
 		docs = DataUtils.loadData(dataDir, fileNumberLimit);
-				
+		
 		results = new ResultsContainer();
 	}
 	

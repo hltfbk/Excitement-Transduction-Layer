@@ -24,6 +24,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphCollapsedEx
 import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawException;
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
+import eu.excitementproject.tl.composition.graphmerger.StructureBasedGraphMerger;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -37,6 +38,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.experiments.FakeEDA;
 import eu.excitementproject.tl.experiments.ResultsContainer;
+import eu.excitementproject.tl.experiments.ALMA.ExperimentAlmaPerCluster;
 import eu.excitementproject.tl.laputils.DependencyLevelLapEN;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
@@ -47,6 +49,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
  * @author Lili Kotlerman
  * 
  */
+@SuppressWarnings("unused")
 public class ExperimentNice extends AbstractExperiment {
 	
 	public String configFileFullName = "";
@@ -66,7 +69,58 @@ public class ExperimentNice extends AbstractExperiment {
 		setMerger(mergerType);
 	}
 	
-	public static ExperimentNice initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{		
+	
+	public ExperimentNice(String configFileFullName, String dataDir,
+			int fileNumberLimit, String outputFolder, MergerType mergerType) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder);
+		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+
+		m_optimizer = new SimpleGraphOptimizer();
+		setMerger(mergerType);
+	}
+	
+	public ExperimentNice(String configFileFullName, String dataDir, int fileNumberLimit,
+			String outputFolder,
+			ModifierDependencyAnnotator modAnot) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, ClassNotFoundException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, modAnot);
+		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+
+		m_optimizer = new SimpleGraphOptimizer();
+		
+		try {
+			super.setGraphMerger(new StructureBasedGraphMerger(super.lap, super.eda));
+			
+		} catch (GraphMergerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
+	
+	
+	public ExperimentNice(String configFileFullName, String dataDir, int fileNumberLimit,
+			String outputFolder,
+			MergerType mergerType,
+			ModifierDependencyAnnotator modAnot) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, ClassNotFoundException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, modAnot);
+		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+
+		m_optimizer = new SimpleGraphOptimizer();
+		
+		setMerger(mergerType);
+	}
+
+	
+	public static ExperimentNice initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException{		
 		if (edaName.equals(EdaName.BIUTEE)) {
 			return new ExperimentNice(
 			tlDir+"src/test/resources/NICE_experiments/biutee.xml",
@@ -145,12 +199,13 @@ public class ExperimentNice extends AbstractExperiment {
 	
 		if (edaName.equals(EdaName.P1EDA)) {
 			return new ExperimentNice(
-//					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_EN.xml",
-					tlDir+"src/main/resources/exci/nice/trainedModelsAndConfigurations/p1eda/P1EDA_Base_EN.xml",
+					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_EN.xml",
+//					tlDir+"src/main/resources/exci/nice/trainedModelsAndConfigurations/p1eda/P1EDA_Base_EN.xml",
 					dataDir, fileLimit, outDir,
-					TreeTaggerEN.class,
-					FNR_EN.class,
+//					TreeTaggerEN.class,
+//					FNR_EN.class,
 					mergerType
+					,new ModifierDependencyAnnotator(new DependencyLevelLapEN())
 					);
 		}
 		
@@ -188,11 +243,13 @@ public class ExperimentNice extends AbstractExperiment {
 	 * @throws SecurityException 
 	 * @throws NoSuchMethodException 
 	 * @throws ConfigurationException 
+	 * @throws ClassNotFoundException 
 	 */
-	public static void main(String[] args) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException {
+	public static void main(String[] args) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
 
 		// ============= SET UP THE EXPERIMENT CONFIGURATION ============
-		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+		String tlDir = "./";
 		String dataDir = tlDir+"src/main/resources/exci/nice/xmi_perFragmentGraph/test";
 		String gsAnnotationsDir = tlDir+"src/main/resources/exci/nice/goldStandardAnnotation/test";
 		int fileLimit = Integer.MAX_VALUE;
@@ -229,9 +286,11 @@ public class ExperimentNice extends AbstractExperiment {
 			if (!clustGS.isDirectory()) continue;
 			System.out.println(gsClusterDir);
 				
-
-			ExperimentNice e = initExperiment(name, mergerType, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
-			EntailmentGraphRaw rawGraph = e.buildRawGraph(initialThreshold);
+			ExperimentNice e = null;
+			EntailmentGraphRaw rawGraph = null;
+			try {
+				e = initExperiment(name, mergerType, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir); 
+				rawGraph = e.buildRawGraph(initialThreshold);
 				
 /*				Set<Pair<String, String>> entailings = new HashSet<Pair<String, String>>();
 				Set<Pair<String, String>> nonentailings = new HashSet<Pair<String, String>>();
@@ -247,8 +306,7 @@ public class ExperimentNice extends AbstractExperiment {
 				System.out.print(entailings);
 				System.out.print(nonentailings);
 */
-				
-			try {
+
 				e.m_rawGraph.toXML(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.xml");
 				e.m_rawGraph.toDOT(outDir+"/"+e.configFileName+"_"+clusterDir+"_rawGraph.dot");
 			} catch (EntailmentGraphRawException e1) {

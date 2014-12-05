@@ -580,6 +580,7 @@ public final class InteractionReader {
 		
 		// replace spaces with \s*
 		pattern = pattern.replaceAll(" ", "\\\\s*");	
+
 		
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(string);
