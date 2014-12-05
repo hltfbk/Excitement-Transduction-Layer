@@ -4,6 +4,12 @@ import java.math.BigDecimal;
 import java.util.Comparator;
 import java.util.Map;
 
+/**
+ * Value comparator for sorting a Map<String, BigDecimal> based on the big decimal value (descending order).  
+ * 
+ * @author Kathrin Eichler
+ *
+ */
 public class ValueComparatorBigDecimal implements Comparator<String> {
 
     Map<String, BigDecimal> base;

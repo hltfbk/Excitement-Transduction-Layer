@@ -16,6 +16,11 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class ConvertWP2PublicData {
 
 	private static final Logger logger = Logger.getLogger(ConvertWP2PublicData.class);

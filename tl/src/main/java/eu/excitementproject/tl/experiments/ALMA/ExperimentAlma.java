@@ -34,18 +34,10 @@ import eu.excitementproject.tl.experiments.FakeEDA;
 import eu.excitementproject.tl.experiments.ResultsContainer;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-//import javax.xml.transform.TransformerException;
-//import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
-//import eu.excitementproject.eop.core.EditDistanceEDA;
-//import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
-//import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-//import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
-//import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
-//import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-//import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load ALMA data, build the graphs and evaluate them
+ * 
  * @author Lili Kotlerman
  * 
  */

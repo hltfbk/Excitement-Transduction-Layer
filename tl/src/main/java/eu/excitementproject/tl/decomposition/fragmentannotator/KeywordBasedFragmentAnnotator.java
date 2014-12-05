@@ -23,10 +23,10 @@ import eu.excitementproject.tl.laputils.AnnotationUtils;
 import eu.excitementproject.tl.laputils.CASUtils.Region;
 
 /**
- * This class implements the keyword-based "fragment annotator". 
+ * This class implements the keyword-based {@link FragmentAnnotator}. 
  * For each annotated keyword, we extract a fragment based on its dependency relations
  * 
- * Based on the SentenceAsFragmentAnnotator
+ * Based on the {@link SentenceAsFragmentAnnotator}
  * 
  * @author vivi@fbk
  *

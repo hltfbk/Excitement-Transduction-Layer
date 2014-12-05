@@ -19,6 +19,12 @@ import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
 import eu.excitementproject.tl.laputils.LemmaLevelLapEN;
 import eu.excitementproject.tl.laputils.LemmaLevelLapIT;
 
+/**
+ * Sample class for using the EOP.
+ * 
+ * @author Tae-Gil Noh
+ *
+ */
 public class EOPUsageExample {
 
 	private static final Logger logger = Logger.getLogger(EOPUsageExample.class);

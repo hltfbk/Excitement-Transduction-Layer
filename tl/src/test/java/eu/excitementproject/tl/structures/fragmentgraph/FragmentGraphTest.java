@@ -15,6 +15,11 @@ import org.junit.Test;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.laputils.CASUtils;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class FragmentGraphTest {
 
 	private final Logger logger = Logger.getLogger(this.getClass());

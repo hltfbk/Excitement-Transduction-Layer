@@ -1,6 +1,5 @@
 package eu.excitementproject.tl.composition.api;
 
-//import java.util.List;
 import java.util.Set;
 
 import eu.excitementproject.tl.composition.exceptions.NodeMatcherException;
@@ -8,9 +7,9 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 
 /**
- * OMQ usecase composition-flow "NodeMatcher"
+ * Use case 2 composition module "NodeMatcherWithIndex"
  * 
- * The module matches a given fragment graph against an entailment graph. 
+ * This module matches a given fragment graph against an entailment graph. 
  * It returns a set of node matches (matching nodes in the entailment graph
  * associated to match confidence scores) as the result.
  * 
@@ -30,8 +29,14 @@ public interface NodeMatcherWithIndex {
 	public Set<NodeMatch> findMatchingNodesInGraph(FragmentGraph fragmentGraph) 
 			throws NodeMatcherException;
 
+	/**
+	 * Convert the graph into an index
+	 */
 	public void indexGraphNodes();
 
+	/**
+	 * Initialize the search on the graph index
+	 */
 	public void initializeSearch();
 
 }

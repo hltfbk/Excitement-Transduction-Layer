@@ -7,11 +7,12 @@ import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 
 /**
- * Use case 2 composition "NodeMatcher"
-The module matches the given fragment graph to an entailment graph. 
-It returns a set of node matches (matching nodes in the entailment graph
-associated to match confidence scores) as the result. 
-  
+ * Use case 2 composition module "NodeMatcher"
+ * 
+ * This module matches the given fragment graph to an entailment graph. 
+ * It returns a set of node matches (matching nodes in the entailment graph 
+ * associated to match confidence scores) as the result. 
+ *  
  * @author Kathrin Eichler
  *
  */

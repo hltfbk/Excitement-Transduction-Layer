@@ -46,7 +46,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 /**
  * Demo class for use case one (ALMA and NICE). 
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 @SuppressWarnings("unused")

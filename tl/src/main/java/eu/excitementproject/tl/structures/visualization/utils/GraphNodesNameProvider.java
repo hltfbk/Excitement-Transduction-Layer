@@ -6,6 +6,11 @@ import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 @SuppressWarnings({ "rawtypes", "unused" })
 public class GraphNodesNameProvider implements VertexNameProvider {
 

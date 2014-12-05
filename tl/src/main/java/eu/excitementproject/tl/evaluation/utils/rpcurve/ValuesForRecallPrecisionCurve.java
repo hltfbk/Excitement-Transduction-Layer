@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Stores Recall-Precision values of different runs of a system, as well as MAP if given 
+ * 
  * @author Lili Kotlerman
  *
  */

@@ -24,7 +24,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * Each dependency (except when dependent is punctuation token or dependent and governor are identical words) 
  * is considered as a possible fragment.
  * 
- * @author Aleksandra
+ * @author Aleksandra Gabryszak
  *
  */
 
@@ -57,6 +57,13 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 		this.dependencyTypeFilter = dependencyTypeFilter;
 	}
 	
+	/**
+	 * Annotate two (content word) tokens as fragments if, in the input sentence, they are linked via 
+	 * a dependency matching the filters specified in the constructor 
+	 * 
+	 * @param aJCas - the cas to which fragment annotation is added
+	 * @throws FragmentAnnotatorException
+	 */
 	@Override
 	public void annotateFragments(JCas aJCas) throws FragmentAnnotatorException {
 
@@ -110,7 +117,8 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 	
 	/**
-	 * add dependency annotation on JCas
+	 * Add dependency annotation on JCas
+	 * 
 	 * @param aJCas
 	 * @throws FragmentAnnotatorException
 	 */
@@ -135,7 +143,7 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 	
 	/**
-	 * check if dependency is allowed to be annotated as fragment
+	 * Check if dependency is allowed to be annotated as fragment
 	 * 
 	 * @param dependency
 	 * @return
@@ -154,7 +162,7 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 	
 	/**
-	 * check if dependency type is allowed to be annotated as fragment
+	 * Check if dependency type is allowed to be annotated as fragment
 	 * 
 	 * @param dependencyType
 	 * @return
@@ -167,7 +175,7 @@ public class DependencyAsFragmentAnnotator extends AbstractFragmentAnnotator {
 	}
 	
 	/**
-	 * check if the token type is allowed to be annotated as fragment
+	 * Check if the token type is allowed to be annotated as fragment
 	 * return true only if token is no punctuation token.
 	 * 
 	 * @param token -- Token

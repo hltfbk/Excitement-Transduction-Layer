@@ -26,6 +26,11 @@ import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class DependencyAsFragmentAnnotatorTest {
 	
 	@Test

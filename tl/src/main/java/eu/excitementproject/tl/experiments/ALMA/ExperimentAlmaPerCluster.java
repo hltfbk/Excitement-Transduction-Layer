@@ -45,6 +45,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /** 
  * Class to load ALMA data, build the graphs and evaluate them
+ * 
  * @author Lili Kotlerman
  * 
  */

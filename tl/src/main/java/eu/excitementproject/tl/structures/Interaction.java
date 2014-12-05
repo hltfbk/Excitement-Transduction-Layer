@@ -15,12 +15,8 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * Also note that internally in WP6, the standard notion of interaction representation is the InputCAS, as defined in the dataflow document.   
  * 
  * <P> This class is provided mainly to be used as one of "top level" argument, from WP7. See TopLevel API document for more detail. 
- * @author Gil
- *
- */
-
-/**
- * @author Gil (modified by Kathrin to include relevantText and to allow several categories)
+ * 
+ * @author Tae-Gil Noh (modified by Kathrin to include relevantText and to allow several categories)
  *
  */
 public class Interaction implements Comparable<Interaction> {

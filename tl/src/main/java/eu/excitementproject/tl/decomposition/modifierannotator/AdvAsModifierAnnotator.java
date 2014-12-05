@@ -14,7 +14,7 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
  * Finding so called "Modifier", is not that easy task: it is actually picking out non-essential components in terms of predicate structure. (or something like that) 
  * Anyway, this simple implementation does not care about dependOn, or non-continuous regions. 
  * 
- * @author Gil, vivi@fbk
+ * @author Tae-Gil Noh, Vivi Nastase
  * 
  */
 public class AdvAsModifierAnnotator extends POSbasedModifierAnnotator {

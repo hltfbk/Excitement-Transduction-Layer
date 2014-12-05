@@ -33,7 +33,7 @@ import eu.excitementproject.tl.structures.Interaction;
  * 
  * <P>
  * 
- * @author vivi@fbk 
+ * @author Vivi Nastase
  *
  */
 public class KeywordBasedFragmentAnnotatorTest {

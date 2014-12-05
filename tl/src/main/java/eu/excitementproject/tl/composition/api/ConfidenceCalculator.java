@@ -2,9 +2,8 @@ package eu.excitementproject.tl.composition.api;
 
 import eu.excitementproject.tl.composition.exceptions.ConfidenceCalculatorException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
-
 /**
- * Confidence Calculator Module
+ * Use case 2 composition module "ConfidenceCalculator" 
  * 
  * This module reads category confidence scores stored in a collapsed graph, combines them 
  * to a final score per category per node and adds this information to the graph. 
@@ -15,7 +14,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
  * Input: one collapsed graph (=EntailmentGraphCollapsed=)
  * Output: the input collapsed graph with added category confidences per node (=EquivalenceClass=)
  * 
- *  @author Kathrin
+ *  @author Kathrin Eichler
  */
 
 public interface ConfidenceCalculator {

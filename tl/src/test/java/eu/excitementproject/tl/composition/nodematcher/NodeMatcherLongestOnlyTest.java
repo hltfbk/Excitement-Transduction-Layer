@@ -25,6 +25,11 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 
+/**
+ * 
+ * @author Kathrin Eichler
+ *
+ */
 public class NodeMatcherLongestOnlyTest {
 
 	@Test

@@ -6,6 +6,11 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentRelationColla
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraphEdge;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 @SuppressWarnings({ "rawtypes", "unused" })
 public class GraphEdgeNameProvider implements EdgeNameProvider {
 

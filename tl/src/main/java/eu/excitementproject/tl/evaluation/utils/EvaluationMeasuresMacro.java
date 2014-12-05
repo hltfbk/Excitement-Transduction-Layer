@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Class for macro-evaluation. Gathers the evaluation measures per instance, and computes macro precision, recall and f1score 
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class EvaluationMeasuresMacro {

@@ -10,6 +10,12 @@ import org.apache.uima.jcas.JCas;
 // See the descriptor XML (/desc/type/TLDummyAE.xml); 
 // it imports both EOP and TL type system definitions. 
 
+/**
+ * 
+ * 
+ * @author Tae-Gil Noh
+ *
+ */
 public class DummyAE extends JCasAnnotator_ImplBase {
 	@Override
 	public void process(JCas arg0) throws AnalysisEngineProcessException {

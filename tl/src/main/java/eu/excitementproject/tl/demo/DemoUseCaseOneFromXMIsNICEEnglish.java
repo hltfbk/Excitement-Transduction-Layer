@@ -19,7 +19,7 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
 /**
  * Demo class for building entailment graphs from NICE data using all annotations from the gold-standard fragment XMIs
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class DemoUseCaseOneFromXMIsNICEEnglish {

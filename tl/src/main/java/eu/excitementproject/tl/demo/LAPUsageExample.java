@@ -17,7 +17,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * Use case example for LAP; mainly to show how to access dependency parser results. 
  * Please see EOPUsageExample first, which holds basic LAPAccess and EDABasic usages. 
  * 
- * @author Gil
+ * @author Tae-Gil Noh
  *
  */
 public class LAPUsageExample {

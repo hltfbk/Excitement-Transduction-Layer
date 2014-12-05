@@ -20,6 +20,11 @@ import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class GoldStandardEdgesLoaderTest {
 
 	@Ignore @Test

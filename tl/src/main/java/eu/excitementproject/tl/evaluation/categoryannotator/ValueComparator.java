@@ -3,6 +3,12 @@ package eu.excitementproject.tl.evaluation.categoryannotator;
 import java.util.Comparator;
 import java.util.Map;
 
+/**
+ * Value comparator for sorting a Map<String, Float> based on the float value (descending order).  
+ * 
+ * @author Kathrin Eichler
+ *
+ */
 public class ValueComparator implements Comparator<String> {
 
     Map<String, Float> base;

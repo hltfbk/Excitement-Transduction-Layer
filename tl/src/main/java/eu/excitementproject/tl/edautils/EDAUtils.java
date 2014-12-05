@@ -13,7 +13,7 @@ import eu.excitementproject.tl.laputils.LAPUtils;
 /**
  * A collection of static methods to help with the initialization and usage of EDAs
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class EDAUtils {

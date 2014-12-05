@@ -3,7 +3,7 @@ package eu.excitementproject.tl.laputils;
 /**
  * Representation of STTS tag set
  * 
- * @author Aleksandra
+ * @author Aleksandra Gabryszak
  *
  */
 

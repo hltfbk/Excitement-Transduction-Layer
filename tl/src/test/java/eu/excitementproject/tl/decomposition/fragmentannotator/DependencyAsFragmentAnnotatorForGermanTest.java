@@ -30,6 +30,11 @@ import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.POSTag_DE;
 import eu.excitementproject.tl.laputils.WordDecompositionType;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class DependencyAsFragmentAnnotatorForGermanTest {
 	
 	@Test
