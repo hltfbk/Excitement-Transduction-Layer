@@ -31,6 +31,11 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 //import eu.excitementproject.eop.common.EDABasic;
 //import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class SimpleGraphOptimizerTest {
 	
 	private final Logger logger = Logger.getLogger(this.getClass());

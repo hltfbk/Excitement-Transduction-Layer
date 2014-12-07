@@ -31,7 +31,7 @@ import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnno
  * 
  * <P>
  * 
- * @author Gil 
+ * @author Tae-Gil Noh 
  *
  */
 @SuppressWarnings("unused")

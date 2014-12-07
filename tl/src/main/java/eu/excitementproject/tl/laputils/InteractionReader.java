@@ -34,7 +34,7 @@ import eu.excitementproject.tl.structures.RelevantText;
  * This class provides a simple reader for WP2 defined Interaction XML file.
  * Also, the class provides a not-so-simple reader of WP2 fragment graph annotation dump. 
  * 
- * @author Gil (modified by Kathrin to include relevantTexts)
+ * @author Tae-Gil Noh (modified by Kathrin to include relevantTexts)
  *
  */
 public final class InteractionReader {
@@ -580,6 +580,7 @@ public final class InteractionReader {
 		
 		// replace spaces with \s*
 		pattern = pattern.replaceAll(" ", "\\\\s*");	
+
 		
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(string);

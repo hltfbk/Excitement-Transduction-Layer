@@ -27,7 +27,7 @@ Abstract implementation of the {@link ModifierAnnotator} interface.
 The class contains attributes and methods that are likely to be shared by the actual implementations, including
 constructors with LAP configuration and {@link FragmentAnnotator} to use.
 
- * @author Lili Kotlerman & Vivi@fbk
+ * @author Lili Kotlerman & Vivi Nastase
  */
 public abstract class AbstractModifierAnnotator implements ModifierAnnotator{
 	

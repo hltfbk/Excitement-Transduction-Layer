@@ -16,6 +16,11 @@ import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.decomposition.exceptions.DataIntegrityFail;
 import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class ConvertWP2PublicData {
 
 	private static final Logger logger = Logger.getLogger(ConvertWP2PublicData.class);
@@ -233,21 +238,25 @@ public class ConvertWP2PublicData {
 			        logger.info(entry.getFileName()); 
 			        try (DirectoryStream<Path> xmlstream = Files.newDirectoryStream(fromFGs, entry.getFileName() + "_" + "*.xml"))
 			        {
-			        	aJCas.reset(); 
+			        	aJCas.reset();
+			        	int count = 0; // this is to double check, otherwise we get CASes with NULL values for interactions that don't have fragments (happens for the "special" modifier evaluation
 			        	for (Path xmlfile : xmlstream)
 			        	{			
 			        		// call the reader. Note that it loads multiple XML files (multiple fragments) with same interaction  
 			        		logger.info("\t" + xmlfile.getFileName()) ;
-			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas, languageID); 			        		
+			        		InteractionReader.readWP2FragGraphDump(entry.toFile(), xmlfile.toFile(), aJCas, languageID);
+			        		count++;
 			        	}			        	
 			        	// Now the JCAS has one or more fragment annotations, and associated modifier annotations.  
 			        	// (each XML = one fragment)
-			        	// lets store it. 
-			        	String outPathString = outputdir.toString() + "/" + entry.getFileName() + ".xmi";
-			        	Path xmiPath = Paths.get(outPathString); 
-			        	CASUtils.serializeToXmi(aJCas, xmiPath.toFile()); 		
-			        	logger.info(xmiPath.toString() + " generated." );
-			        	generated++; 
+			        	// lets store it.
+			        	if (count > 0) {
+			        		String outPathString = outputdir.toString() + "/" + entry.getFileName() + ".xmi";
+			        		Path xmiPath = Paths.get(outPathString); 
+			        		CASUtils.serializeToXmi(aJCas, xmiPath.toFile()); 		
+			        		logger.info(xmiPath.toString() + " generated." );
+			        		generated++;
+			        	}
 			        }
 			        catch (DataIntegrityFail x)
 			        {
@@ -392,7 +401,7 @@ public class ConvertWP2PublicData {
 		// Outer loop access Interaction Text file (.txt) 
 		// while inner loop accesses associated "fragment (fragment graphs) XML"
 		try (DirectoryStream<Path> stream =
-			     Files.newDirectoryStream(fromInteractions, "*.txt")) {
+			    Files.newDirectoryStream(fromInteractions, "*.txt")) {
 			    for (Path entry: stream) {
 			        logger.info(entry.getFileName()); 
 			        try (DirectoryStream<Path> xmlstream = Files.newDirectoryStream(fromFGs, entry.getFileName() + "_" + "*.xml"))

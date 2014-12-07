@@ -5,6 +5,7 @@ import eu.excitementproject.eop.common.TEDecision;
 
 /**
  * A {@link TEDecision}, which gets a confidence value and a {@link DecisionLabel} as input
+ * 
  * @author Lili Kotlerman
  *
  */

@@ -24,7 +24,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 /**
  * Use case one, loading the data from XML files
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class UseCaseOneFromXMLs extends UseCaseOneRunnerPrototype {

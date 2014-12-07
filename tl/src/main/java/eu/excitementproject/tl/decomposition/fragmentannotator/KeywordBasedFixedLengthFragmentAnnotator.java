@@ -22,13 +22,13 @@ import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CASUtils.Region;
 
 /**
- * This class implements the keyword-based "fragment annotator". 
+ * This class implements the keyword-based {@link FragmentAnnotator}. 
  * For each annotated keyword, we extract a fixed-length fragment surrounding the given keyword(s)
  * Fragments do not cross sentence boundaries
  * 
- * Based on the SentenceAsFragmentAnnotator
+ * Based on the {@link SentenceAsFragmentAnnotator}
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class KeywordBasedFixedLengthFragmentAnnotator extends AbstractFragmentAnnotator {

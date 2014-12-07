@@ -52,7 +52,7 @@ import eu.excitementproject.tl.toplevel.api.UseCaseOneRunner;
 /**
  * An implementation of the UseCaseOneRunner interface
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 //@SuppressWarnings("unused")

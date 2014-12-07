@@ -14,7 +14,11 @@ import org.junit.Test;
 import eu.excitement.type.tl.Metadata;
 import eu.excitementproject.tl.structures.Interaction;
 
-//@Ignore
+/**
+ * 
+ * @author ??
+ *
+ */
 public class InteractionReaderTest {
 	
 	@Test

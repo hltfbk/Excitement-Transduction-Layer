@@ -8,7 +8,6 @@ import java.lang.reflect.InvocationTargetException;
 
 import javax.xml.transform.TransformerException;
 
-import eu.excitementproject.eop.alignmentedas.p1eda.sandbox.FNR_IT;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
@@ -22,10 +21,13 @@ import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
+import eu.excitementproject.tl.decomposition.modifierannotator.ModifierDependencyAnnotator;
 import eu.excitementproject.tl.edautils.ProbabilisticEDA;
 import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
@@ -33,20 +35,13 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.experiments.FakeEDA;
 import eu.excitementproject.tl.experiments.ResultsContainer;
+import eu.excitementproject.tl.laputils.DependencyLevelLapIT;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-//import javax.xml.transform.TransformerException;
-//import eu.excitementproject.eop.biutee.rteflow.systems.excitement.BiuteeEDA;
-//import eu.excitementproject.eop.core.EditDistanceEDA;
-//import eu.excitementproject.eop.core.DKProSimilaritySimpleEDA;
-//import eu.excitementproject.eop.core.MaxEntClassificationEDA;
-//import eu.excitementproject.eop.lap.biu.uima.BIUFullLAP;
-//import eu.excitementproject.eop.lap.dkpro.MaltParserEN;
-//import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-//import eu.excitementproject.tl.structures.rawgraph.utils.RandomEDA;
 
 /** 
  * Class to load ALMA data, build the graphs and evaluate them
+ * 
  * @author Lili Kotlerman
  * 
  */
@@ -67,8 +62,32 @@ public class ExperimentAlma extends AbstractExperiment {
 		m_optimizer = new SimpleGraphOptimizer();
 		setMerger(mergerType);
 	}
+	
+	
+	public ExperimentAlma(String configFileFullName, String dataDir,
+			int fileNumberLimit, String outputFolder, MergerType mergerType) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder);
+		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
 
-	public static ExperimentAlma initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException{
+		m_optimizer = new SimpleGraphOptimizer();
+		setMerger(mergerType);
+	}
+	
+	
+	public ExperimentAlma(String configFileFullName, String dataDir,
+			int fileNumberLimit, String outputFolder, MergerType mergerType, ModifierAnnotator modAnot) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, modAnot);
+		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+
+		m_optimizer = new SimpleGraphOptimizer();
+		setMerger(mergerType);
+	}
+
+	public static ExperimentAlma initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException{
 		
 		if (edaName.equals(EdaName.EDIT_DIST)) {
 			return new ExperimentAlma(
@@ -116,9 +135,11 @@ public class ExperimentAlma extends AbstractExperiment {
 			return new ExperimentAlma(
 					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_IT.xml",
 					dataDir, fileLimit, outDir,
-					TreeTaggerIT.class,
-					FNR_IT.class,
+//					TreeTaggerIT.class,
+//					FNR_IT.class,
 					mergerType
+//					,
+//					new ModifierDependencyAnnotator(new DependencyLevelLapIT())
 					);
 		}
 		
@@ -147,12 +168,14 @@ public class ExperimentAlma extends AbstractExperiment {
 		int fileLimit = 1000000;
 		String outDir = dataDir.replace("resources", "outputs");
 
-		MergerType mergerType = MergerType.ALL_PAIRS_MERGE; // which merger to use
+//		MergerType mergerType = MergerType.ALL_PAIRS_MERGE; // which merger to use
+		MergerType mergerType = MergerType.WP2_MERGE; // which merger to use
+
 		boolean includeFragmentGraphEdges = true; // whether to include FG edges in the evaluations
 		
 		// which EDA(s) to use
 		//	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
-		EdaName[] names = {EdaName.FAKE_EDA};
+		EdaName[] names = {EdaName.P1EDA};
 		//		EdaName[] names = {EdaName.TIE_POS};	
 		
 		// ===== END OF SET-UP
@@ -178,7 +201,8 @@ public class ExperimentAlma extends AbstractExperiment {
 			EntailmentGraphRaw rawGraph = null;
 			try {
 				e = initExperiment(name, mergerType, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir);
-				e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
+//				e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
+				e.setFragmentGraphGenerator(new FragmentGraphGeneratorFromCAS());
 				rawGraph = e.buildRawGraph();
 
 				e.m_rawGraph.toXML(outDir+"/"+e.configFileName +"_rawGraph.xml");
@@ -193,7 +217,7 @@ public class ExperimentAlma extends AbstractExperiment {
 					| ModifierAnnotatorException | GraphMergerException
 					| GraphOptimizerException | FragmentGraphGeneratorException
 					| IOException | EntailmentGraphRawException
-					| TransformerException e2) {
+					| TransformerException | ClassNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			} 

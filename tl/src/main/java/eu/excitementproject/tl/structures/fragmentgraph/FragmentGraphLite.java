@@ -11,7 +11,7 @@ import eu.excitement.type.tl.ModifierAnnotation;
 /**
  * Class for the "lite" version of the fragment graphs, with only top (complete) and bottom (base) nodes (statements)
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class FragmentGraphLite extends FragmentGraph {

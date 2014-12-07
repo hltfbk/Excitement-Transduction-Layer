@@ -4,6 +4,7 @@
 package eu.excitementproject.tl.composition.nodematcher;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -59,10 +60,19 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene implement
 	
 	static Logger logger = Logger.getLogger(NodeMatcherLuceneSimple.class.getName());
 	
+	/**
+	 * @param myEntailmentGraph - the graph for which the node matcher is constructed
+	 */
+	
 	public NodeMatcherLuceneSimple(EntailmentGraphCollapsed myEntailmentGraph) {
 		super(myEntailmentGraph);
 	}
 
+	/**
+	 * @param myEntailmentGraph - the graph for which the node matcher is constructed
+	 * @param myIndexPath - the path to the directory in which the index is created
+	 * @param myAnalyzer - the Lucene Analyzer used for analyzing the text
+	 */
 	public NodeMatcherLuceneSimple(EntailmentGraphCollapsed myEntailmentGraph, 
 			String myIndexPath, Analyzer myAnalyzer) {
 		super(myEntailmentGraph, myIndexPath, myAnalyzer);
@@ -190,7 +200,7 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene implement
 	}
 	
 	/**
-	 * Index all entailment graph nodes. 
+	 * Index all entailment graph nodes to directory specified in the constructor. 
 	 * 
 	 * @throws IOException
 	 */
@@ -253,6 +263,15 @@ public class NodeMatcherLuceneSimple extends AbstractNodeMatcherLucene implement
 		}
     }
 		
+	/**
+	 * Method for testing the class
+	 * 
+	 * @param args
+	 * @throws IOException
+	 * @throws ParseException
+	 * @throws EntailmentGraphCollapsedException
+	 * @throws ConfidenceCalculatorException
+	 */
 	public static void main(String[] args) throws IOException, ParseException, EntailmentGraphCollapsedException, ConfidenceCalculatorException {
 		EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed(new File("src/test/resources/sample_graphs/german_dummy_data_for_evaluator_test_graph.xml"));
 		ConfidenceCalculator cc = new ConfidenceCalculatorCategoricalFrequencyDistribution();

@@ -18,6 +18,11 @@ import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorExcepti
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
 
+/**
+ * 
+ * @author Vivi Nastase
+ *
+ */
 public class UseCaseOneFromXMLTest {
 
 	public static void main(String[] argv){

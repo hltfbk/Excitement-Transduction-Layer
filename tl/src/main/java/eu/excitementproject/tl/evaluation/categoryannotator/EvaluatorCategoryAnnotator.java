@@ -40,6 +40,7 @@ import eu.excitementproject.eop.common.exception.ComponentException;
 import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
+import eu.excitementproject.eop.core.component.lexicalknowledge.derivbase.DerivBaseResource;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
@@ -67,10 +68,8 @@ import eu.excitementproject.tl.decomposition.exceptions.DataReaderException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
-import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragmentAnnotator;
+import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAndDependencyAsFragmentAnnotator;
-import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAsModifierAnnotator;
@@ -81,6 +80,7 @@ import eu.excitementproject.tl.laputils.CategoryReader;
 import eu.excitementproject.tl.laputils.DependencyLevelLapDE;
 import eu.excitementproject.tl.laputils.InteractionReader;
 import eu.excitementproject.tl.laputils.LemmaLevelLapDE;
+import eu.excitementproject.tl.laputils.POSTag_DE;
 import eu.excitementproject.tl.laputils.WordDecompositionType;
 import eu.excitementproject.tl.structures.Interaction;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
@@ -94,8 +94,6 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 
 /**
  * 
- * @author Kathrin
- *
  * This class evaluates the category annotation on an incoming email (use case 2). 
  * 
  * It first reads in a dataset of emails associated to categories and splits it into a training and test set. 
@@ -107,6 +105,9 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
  * entailment unit mention, we first calculate a combined score for each automatically assigned category
  * by summing up all confidences per category to get the "best" category (the one with the highest sum). 
  * This best category is then compared to the manually assigned one. 
+
+ * @author Kathrin Eichler
+ *
  */
 
 public class EvaluatorCategoryAnnotator { 
@@ -152,12 +153,12 @@ public class EvaluatorCategoryAnnotator {
     
 	/* SMART notation for tf-idf variants, as in Manning et al., chapter 6, p.128 */
 	// Query (email) weighting: --> relevant when categorizing new emails
-	static char termFrequencyQuery = 'b'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
-	static char documentFrequencyQuery = 'd'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
+	static char termFrequencyQuery = 'n'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
+	static char documentFrequencyQuery = 't'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
 	static char normalizationQuery = 'n'; // n (none), c (cosine)
 	// Document (category) weighting: --> relevant when building the graph
 	static char termFrequencyDocument = 'n'; // n (natural), l (logarithm)
-	static char documentFrequencyDocument = 'n'; // n (no), t (idf)
+	static char documentFrequencyDocument = 't'; // n (no), t (idf)
 	static char normalizationDocument = 'n'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
 	
 	//INFO: Evaluating different TFIDF-configurations (with no EDA): bd[nc].n[nt]n
@@ -191,25 +192,28 @@ public class EvaluatorCategoryAnnotator {
 	static boolean useEntailsRelation = true;
 	static boolean useCausesRelation = true;
     
-    static List<String> tokenPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP",  "CARD"}); //"ADV" = adverb, "FM" = foreign language material
-    static List<String> governorPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
-    static List<String> dependentPosFilter = Arrays.asList(
-    		new String []{"ADJA", "ADJD", "NN", "NE", "VVFIN", "VVINF", "VVIZU", "VVIMP", "VVPP", "CARD", "PTKNEG", "PTKVZ"}); //"VVIMP", CARD
-    static List<String> dependencyTypeFilter = null;
-    static WordDecompositionType decompositionType = WordDecompositionType.ONLY_HYPHEN;
+	static List<POSTag_DE> tokenPosFilter = Arrays.asList(
+	    		new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NN, POSTag_DE.CARD, 
+	    				POSTag_DE.VVFIN, POSTag_DE.VVINF, POSTag_DE.VVIZU, POSTag_DE.VVIMP, POSTag_DE.VVPP}); //"ADV" = adverb, "FM" = foreign language material
+	static List<POSTag_DE> governorPosFilter = Arrays.asList(
+    		new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NN, POSTag_DE.CARD,
+    						 POSTag_DE.VVFIN, POSTag_DE.VVINF, POSTag_DE.VVIZU, POSTag_DE.VVIMP, POSTag_DE.VVPP, POSTag_DE.PTKNEG, POSTag_DE.PTKVZ}); //"ADV" = adverb, "FM" = foreign language material
+	static List<POSTag_DE> dependentPosFilter = governorPosFilter;
+	private List<String> governorWordFilter = Arrays.asList(new String []{"ohne"});
+	private List<String> dependentWordFilter = Arrays.asList(new String []{"keine", "keinerlei", "nicht", "nichts"});
+//    static WordDecompositionType decompositionType = WordDecompositionType.ONLY_HYPHEN;
 //    static WordDecompositionType decompositionType = WordDecompositionType.NO_RESTRICTION;
-//    static WordDecompositionType decompositionType = WordDecompositionType.NONE;
+    static WordDecompositionType decompositionType = WordDecompositionType.NONE;
     
     
     private int setup; //use setupArray to set the parameter
-    static int[] setupArray = {3}; //if setup 21 - 24 the change in POM EOP CORE VERSION TO 1.1.3_ADAPTED
+    //use setup 5 and 25 only for sentences
+    static int[] setupArray = {0}; //if setup 21 - 24 change in POM EOP DEPENDECIES  TO 1.1.3_ADAPTED
     private int setupSEDA = 101; //configure SEDA (for incremental evaluation)
     private int setupEDA = 1; //configure EDA (for incremental evaluation)
     static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
-  	static String[] fragmentTypeNameGraphArray = {"TF"}; //for setup >= 110 this variable will be overwritten!
-//    static String[] fragmentTypeNameGraphArray = {"TF", "DF", "SF", "TDF"};
+  	static String[] fragmentTypeNameGraphArray = {"SF"}; //for setup >= 110 this variable will be overwritten!
+//    static String[] fragmentTypeNameGraphArray = {"TF", "DF", "SF"};
   	static String fragmentTypeNameEval; //set automatically!
   	
     /* begin OBS: The following parameters do NOT affect incremental evaluation: */
@@ -221,8 +225,8 @@ public class EvaluatorCategoryAnnotator {
     static File inputMergedGraphFile;
     
     //Training parameters
-    static boolean trainEDA = true;
-    static boolean processTrainingData = true;
+    static boolean trainEDA = false;
+    static boolean processTrainingData = false;
     static File xmiDir;
     static File modelBaseName;
     /* end OBS */
@@ -231,6 +235,7 @@ public class EvaluatorCategoryAnnotator {
     
     static boolean bestNodeOnly = true;
     static boolean buildTokenLemmaGraph = false;
+    static boolean buildDependencyLemmaGraph = false; //for now only as example for testing
     static boolean addLemmaLabel = true;
     static boolean skipEval = false;
     
@@ -439,6 +444,21 @@ public class EvaluatorCategoryAnnotator {
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
+	        	case 5:  //TIE with base configuration + GNPos+DS+DBPos+TP+TPPos+TS_DE.xml
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GNPos+DS+DBPos+TP+TPPos+TS_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+	        		edaName = "TIE";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
 	        	case 21: //TIE ADAPTED BASE (no mapping @CARD@ --> @CARD@)
 	        		//CHANGE IN POM EOP CORE VERSION TO 1.1.3_ADAPTED (only available for Kathrin, Aleksandra, Florian)
 		    		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base_DE.xml";
@@ -490,6 +510,21 @@ public class EvaluatorCategoryAnnotator {
 	        	case 24:  //TIE ADAPTED BASE (no mapping @CARD@ --> @CARD@) + DERIVBASE (no POS restriction, derivSteps2) + GERMANET (NE --> NP)
 	        		//CHANGE IN POM EOP CORE VERSION TO 1.1.3_ADAPTED (only available for Kathrin, Aleksandra, Florian)
 	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN+DB2_DE.xml";
+	        		configFile = new File(configFilename);
+	        		config = new ImplCommonConfig(configFile);
+	        		eda = new MaxEntClassificationEDA();
+	        		edaName = "TIE_ADAPTED";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		graphMerger =  new LegacyAutomateWP2ProcedureGraphMerger(lapForDecisions, eda);
+		    		graphMerger.setEntailmentConfidenceThreshold(thresholdForRawGraphBuilding);
+		    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 25: //TIE with base configuration + GN+DS+DB+TP+TPPos+TS_DE.xml
+	        		configFilename = "./src/test/resources/EOP_configurations/MaxEntClassificationEDA_Base+GN+DS+DB+TP+TPPos+TS_DE.xml";
 	        		configFile = new File(configFilename);
 	        		config = new ImplCommonConfig(configFile);
 	        		eda = new MaxEntClassificationEDA();
@@ -996,7 +1031,7 @@ public class EvaluatorCategoryAnnotator {
         //int sumCountPositive;
 	    for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
 //	    for (int i=2; i<=2; i++) { //Create one fold only
-	        System.out.println("Creating fold " + i);
+	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
     		int k=j+1;
@@ -1032,8 +1067,8 @@ public class EvaluatorCategoryAnnotator {
 	    			logger.info("Reading raw graph from " + mergedGraphFile.getAbsolutePath());
 	    			egr = new EntailmentGraphRaw(mergedGraphFile);
 	    			graph = this.buildCollapsedGraphWithCategoryInfo(egr);
-	    			System.out.println("Number of nodes in collapsed graph: " + graph.vertexSet().size());
-	    			System.out.println("Number of edges in collapsed graph: " + graph.edgeSet().size());
+	    			logger.info("Number of nodes in collapsed graph: " + graph.vertexSet().size());
+	    			logger.info("Number of edges in collapsed graph: " + graph.edgeSet().size());
 		    		XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
 		    		logger.info("Wrote graph to : " + graphFile.getAbsolutePath());
 	    		} else {
@@ -1068,11 +1103,9 @@ public class EvaluatorCategoryAnnotator {
 					else eda.startTraining(config); //train EDA (may take a some time)
 					logger.info("Training completed."); 
 				} else { //add documents to graph creation set --> don't, dataset will be too large for graph building!
-					/*
 					String secondGraphFilename = inputDataFoldername + "omq_public_"+k+"_emails.xml";
 	    			logger.info("Reading second graph file " + secondGraphFilename);	    			
-	    			graphDocs.addAll(InteractionReader.readInteractionXML(new File(graphDocumentsFilename)));	
-	    			*/	  
+	    			emailDocs.addAll(InteractionReader.readInteractionXML(new File(secondGraphFilename)));	
 				}
 				//graphDocs = graphDocs.subList(1, 2); //TODO: REMOVE for real test!
 				logger.info("Graph set of fold "+i+" now contains " + emailDocs.size() + " documents");
@@ -1430,9 +1463,18 @@ public class EvaluatorCategoryAnnotator {
 					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
 				}
 			}			
-		}  else if (buildTokenLemmaGraph) {
+//		}  else if (buildTokenLemmaGraph) {
+		}  else if (buildTokenLemmaGraph || buildDependencyLemmaGraph) {
 			try {
-				EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
+				if(buildTokenLemmaGraph) {
+					EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
+				}
+				
+				if( buildDependencyLemmaGraph) {
+					DerivBaseResource dbr = new DerivBaseResource(true, 2);
+					EvaluatorUtils.mergeIntoDependencyGraph(egr, fgs, dbr, null, null, null, true, true);
+				}
+				
 			} catch (LexicalResourceException e) {
 				e.printStackTrace();
 			}
@@ -1579,10 +1621,8 @@ public class EvaluatorCategoryAnnotator {
 		logger.info("Added " + graphDocs.size() + " categories");
 		File mergedGraphFile = new File(outputGraphFoldername + "/incremental/omq_public_"+run+"_merged_graph_categories_"  + setup + "_" 
 		+ minTokenOccurrenceInCategories + "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + ".xml");	
-		FragmentAnnotator faTokens = new TokenAsFragmentAnnotator(lapLemma, 
-				tokenPosFilter); 
-		FragmentAnnotator faDeps = new DependencyAsFragmentAnnotator(lapDependency, 
-				dependencyTypeFilter, governorPosFilter, dependentPosFilter);
+		FragmentAnnotator faTokens = new TokenAsFragmentAnnotatorForGerman(lapLemma, tokenPosFilter, decompositionType); 
+		FragmentAnnotator faDeps = new DependencyAsFragmentAnnotatorForGerman(lapDependency, governorPosFilter, dependentPosFilter, decompositionType);
 		FragmentAnnotator faSents = new SentenceAsFragmentAnnotator(lapDependency);
 		ModifierAnnotator maAdv = new AdvAsModifierAnnotator(lapLemma);
 		FragmentGraphGenerator fgg = new FragmentGraphLiteGeneratorFromCAS();
@@ -1807,10 +1847,8 @@ public class EvaluatorCategoryAnnotator {
 	    		fragmentAnnotatorForGraphBuilding = new TokenAsFragmentAnnotatorForGerman(lapForFragments, tokenPosFilter, decompositionType);
 			} else if(fragmentTypeNameGraph.equalsIgnoreCase("DF")){
 				lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-        		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotator(lapForFragments, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
-        	} else if(fragmentTypeNameGraph.equalsIgnoreCase("TDF")){
-	    		lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-        		fragmentAnnotatorForGraphBuilding = new TokenAndDependencyAsFragmentAnnotator(lapForFragments, tokenPosFilter, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
+        		fragmentAnnotatorForGraphBuilding = new DependencyAsFragmentAnnotatorForGerman(lapForFragments, 
+        				governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter, decompositionType);
         	} else if(fragmentTypeNameGraph.equalsIgnoreCase("SF")){
 		    	lapForFragments = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForGraphBuilding = new SentenceAsFragmentAnnotator(lapForFragments);
@@ -1820,10 +1858,8 @@ public class EvaluatorCategoryAnnotator {
 				fragmentAnnotatorForNewInput = new TokenAsFragmentAnnotatorForGerman(lapForDecisions, tokenPosFilter, decompositionType);
 			} else if(fragmentTypeNameEval.equalsIgnoreCase("DF")){
         		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-        		fragmentAnnotatorForNewInput = new DependencyAsFragmentAnnotator(lapForDecisions, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
-	    	} else if(fragmentTypeNameEval.equalsIgnoreCase("TDF")){
-        		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
-        		fragmentAnnotatorForNewInput = new TokenAndDependencyAsFragmentAnnotator(lapForDecisions, tokenPosFilter, dependencyTypeFilter, governorPosFilter, dependentPosFilter);
+        		fragmentAnnotatorForNewInput = new DependencyAsFragmentAnnotatorForGerman(lapForFragments, 
+        				governorPosFilter, governorWordFilter, dependentPosFilter, dependentWordFilter, decompositionType);
 		    } else if(fragmentTypeNameEval.equalsIgnoreCase("SF")){
         		lapForDecisions = new CachedLAPAccess(new DependencyLevelLapDE());//MaltParserDE();
         		fragmentAnnotatorForNewInput = new SentenceAsFragmentAnnotator(lapForDecisions);

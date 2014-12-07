@@ -2,7 +2,6 @@ package eu.excitementproject.tl.composition.api;
 
 import java.util.Set;
 
-
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPException;
@@ -10,19 +9,13 @@ import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException
 import eu.excitementproject.tl.structures.search.NodeMatch;
 
 /**
- * ** OMQ usecase composition-flow "CategoryAnnotator" 
-This module actually annotates category annotation of usecase-2, on
-the input CAS.
-- input: one input CAS (=JCas=), one set of Match (=Set<Match>=), 
-- output: no new data, but the input CAS is now annotated with
-  category annotation.
-- failure: any failure will be reported as an exception. We will
-  define an exception for this module type.
-- interface: We can express the above contract with an interface with
-  one method. We are expecting to have one implementation for
-  usecase-2 for the prototype, but this can be expanded in the future. 
-- dependency: no external dependency expected. 
-
+ * Use case 2 composition module "CategoryAnnotator" 
+ * 
+ * This module annotates category information on the input CAS.
+ * Input: one input CAS (=JCas=), one set of NodeMatch-es (=Set<NodeMatch>=) 
+ * Output: no new data, but the input CAS is now annotated with category information.
+ * Failure: any annotation failure is reported as an exception. 
+ * 
  * @author Kathrin Eichler
  *
  */

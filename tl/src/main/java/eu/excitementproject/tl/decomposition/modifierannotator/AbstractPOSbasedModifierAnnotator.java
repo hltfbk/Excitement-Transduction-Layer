@@ -32,7 +32,7 @@ import eu.excitementproject.tl.laputils.CASUtils;
  * Finding so called "Modifier", is not that easy task: it is actually picking out non-essential components in terms of predicate structure. (or something like that) 
  * Anyway, this simple implementation does not care about dependOn, or non-continuous regions. 
  * 
- * @author Gil
+ * @author Tae-Gil Noh
  * 
  */
 public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifierAnnotator {
@@ -258,7 +258,7 @@ public abstract class AbstractPOSbasedModifierAnnotator extends AbstractModifier
 		List<Token> anns = JCasUtil.selectPreceding(aJCas, Token.class, a, 1);
 		if (anns != null && anns.size() > 0) {
 			
-			System.out.println("Checking POS: " + anns.get(0).getPos().getClass());
+			//System.out.println("Checking POS: " + anns.get(0).getPos().getClass());
 			
 			return (! anns.get(0).getPos().equals(V.class));
 		}

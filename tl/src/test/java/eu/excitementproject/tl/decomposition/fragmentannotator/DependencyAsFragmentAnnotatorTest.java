@@ -26,6 +26,11 @@ import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class DependencyAsFragmentAnnotatorTest {
 	
 	@Test
@@ -34,8 +39,6 @@ public class DependencyAsFragmentAnnotatorTest {
 		LAPAccess lap;
 		FragmentAnnotator fragAnnotator;
 		List<String> dependencyFilter;
-		List<String> governorPOSFilter; 
-		List<String> dependentPOSFilter;
 		AnnotationIndex<Annotation> frgIndex;
 		
 		try {
@@ -58,22 +61,7 @@ public class DependencyAsFragmentAnnotatorTest {
 			cas.setDocumentLanguage("DE"); 
 			cas.setDocumentText("Meine Frau besucht heute ihren älteren Bruder.");
 			dependencyFilter = Arrays.asList(new String [] {"OA"});
-			governorPOSFilter = null; 
-			dependentPOSFilter = null;
-			fragAnnotator = new DependencyAsFragmentAnnotator(lap, dependencyFilter, governorPOSFilter, dependentPOSFilter);
-			fragAnnotator.annotateFragments(cas);
-			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
-			Assert.assertEquals(frgIndex.size(), 1);
-			
-			//annotate only dependencies, in which governor is a noun
-			cas.reset();
-			testlogger.info("Annotating only dependencies, where governor ia a noun and dependent is an adjective..."); 
-			cas.setDocumentLanguage("DE"); 
-			cas.setDocumentText("Meine Frau besucht heute ihren älteren Bruder.");
-			dependencyFilter = null;
-			governorPOSFilter = Arrays.asList(new String []{"NN", "NE"});
-			dependentPOSFilter = Arrays.asList(new String []{"ADJA", "ADJD"});
-			fragAnnotator = new DependencyAsFragmentAnnotator(lap, dependencyFilter, governorPOSFilter, dependentPOSFilter);
+			fragAnnotator = new DependencyAsFragmentAnnotator(lap, dependencyFilter);
 			fragAnnotator.annotateFragments(cas);
 			frgIndex = cas.getAnnotationIndex(DeterminedFragment.type);
 			Assert.assertEquals(frgIndex.size(), 1);

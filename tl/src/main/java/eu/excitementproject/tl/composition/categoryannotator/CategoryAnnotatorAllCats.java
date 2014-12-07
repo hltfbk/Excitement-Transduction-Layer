@@ -1,7 +1,6 @@
 package eu.excitementproject.tl.composition.categoryannotator;
 
 import java.util.HashMap;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -10,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.apache.uima.jcas.JCas;
 
 import eu.excitementproject.eop.lap.LAPException;
+import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.exceptions.CategoryAnnotatorException;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
@@ -19,49 +19,54 @@ import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 
 /**
- * The CategoryAnnotator adds category annotation to an input CAS, based on an input set of 
- * NodeMatch-es. This requires the combination of category information in the NodeMatch-es
+ * The {@link CategoryAnnotator} adds category annotation to an input CAS based on an input set of 
+ * {@link NodeMatch}es. This requires the combination of category information in the {@link NodeMatch}es
  * to final category confidence scores. 
  * 
- * Each NodeMatch in the input set of NodeMatch-es holds exactly one EntailmentUnitMention M
- * (found in the input CAS), which is associated to a list of PerNodeScore-s P. 
+ * Each {@link NodeMatch} in the input set holds exactly one {@link EntailmentUnitMention} M
+ * (found in the input CAS), which is associated to a list of {@link PerNodeScore}s P. 
  * 
- * PerNodeScore-s refer to tuples of an EquivalenceClass E (a node in a collapsed entailment 
- * graph) and a confidence score C denoting the confidence of M matching E. 
+ * {@link PerNodeScore}s refer to tuples of an {@link EquivalenceClass} E 
+ * (a node in a collapsed entailment graph) and a confidence score C denoting the confidence 
+ * of M matching E. 
  * 
- * In this implementation of the CategoryAnnotator module, category confidence scores for 
- * a particular M are computed by going through all the per node scores found for M, 
- * reading the category confidence scores associated to each node, and multiplying each 
- * category confidence with the confidence of the match. All combined confidences are summed
- * up per category and divided by the total number of category mentions to compute the final score
- * for each category.
- * 
- * The pseudocode is given in the following:
- * 
- * Init sumCAT[]; //the sum of all scores for a particular category 
- * Init sumMentions; //total # of mentions in the node scores
- * For each P[m] = <E,C> associated to M: //for each per node score / matching graph node (= equivalence class)
- *   For each CAT[n] in E[m]: //for each category in the graph node
- *  	score = CAT[n].score * C; //multiply category confidence with match confidence
- *      sumCAT[n] += score; //sum up the scores computed for this category
- *      sumCategoryMentions++; //count total # of category mentions
- * finalScore[n] = sumCAT[n] / sumCategoryMentions; //compute final score by dividing sum by # of category mentions
- *  
  * @author Kathrin Eichler
  *
  */
 public class CategoryAnnotatorAllCats extends AbstractCategoryAnnotator {
 	static Logger logger = Logger.getLogger(CategoryAnnotatorAllCats.class); 
 	
-	GraphStatistics graphStatistics = null;
+	GraphStatistics graphStatistics = null; //statistics about the graph, used for computing category confidence scores
 	
 	public CategoryAnnotatorAllCats(){
 	}
 	
+	/**
+	 * @param graphStatistics - a few statistics about the graph, used for computing category confidence scores
+	 */
 	public CategoryAnnotatorAllCats(GraphStatistics graphStatistics) {
 		this.graphStatistics = graphStatistics;
 	}
 	
+	/**
+	 * In this implementation of the {@link CategoryAnnotator} module, category confidence scores 
+	 * for a particular M are computed by going through all the {@link PerNodeScore}s found for M, 
+	 * reading the category confidence scores associated to each node, and multiplying each 
+	 * category confidence with the confidence of the match. All combined confidences are summed
+	 * up per category and divided by the total number of category mentions to compute the final score
+	 * for each category.
+	 * 
+	 * The pseudocode is given in the following:
+	 * 
+	 * Init sumCAT[]; //the sum of all scores for a particular category 
+	 * Init sumMentions; //total # of mentions in the node scores
+	 * For each P[m] = <E,C> associated to M: //for each per node score / matching graph node (= equivalence class)
+	 *   For each CAT[n] in E[m]: //for each category in the graph node
+	 *  	score = CAT[n].score * C; //multiply category confidence with match confidence
+	 *      sumCAT[n] += score; //sum up the scores computed for this category
+	 *      sumCategoryMentions++; //count total # of category mentions
+	 * finalScore[n] = sumCAT[n] / sumCategoryMentions; //compute final score by dividing sum by # of category mentions
+	 */
 	@Override
 	public void addCategoryAnnotation(JCas cas, Set<NodeMatch> matches)
 			throws CategoryAnnotatorException, LAPException {

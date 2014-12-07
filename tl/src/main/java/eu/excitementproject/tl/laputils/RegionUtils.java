@@ -10,7 +10,7 @@ import eu.excitementproject.tl.laputils.CASUtils.Region;
 /**
  * A collection of static methods for manipulating Region-s
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class RegionUtils {

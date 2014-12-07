@@ -10,8 +10,6 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 /**
  * 
- * @author vivi@fbk & Lili Kotlerman
- * 
  * The edge is obtained by collapsing multiple edges (aka decisions from different EDAs)
  * into one edge
  *
@@ -19,6 +17,9 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  * http://jgrapht.org/javadoc/org/jgrapht/graph/DefaultEdge.html
  * 
  * @param <V> -- the vertex class for the EntailmentGraphCollapsed (EquivalenceClass)
+
+ * @author Vivi Nastase & Lili Kotlerman
+ * 
  */
 public class EntailmentRelationCollapsed extends DefaultEdge {
 

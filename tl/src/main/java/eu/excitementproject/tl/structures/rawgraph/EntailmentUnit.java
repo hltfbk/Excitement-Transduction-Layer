@@ -15,7 +15,7 @@ import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
  * Node for the work graph ({@link EntailmentGraphRaw}).
  * The text of the node is its unique identifier within a graph.
 
- * @author vivi@fbk & Lili Kotlerman & Kathrin & Aleksandra
+ * @author Vivi Nastase & Lili Kotlerman & Kathrin Eichler & Aleksandra Gabryszak
  */
 public class EntailmentUnit{
 
@@ -25,7 +25,7 @@ public class EntailmentUnit{
 	protected String text;
 	
 	/**
-	 * 
+	 * The lemmatized text of the node
 	 */
 	protected String lemmatizedText;
 	
@@ -172,7 +172,6 @@ public class EntailmentUnit{
 	 * 
 	 * @return the lemmatized text of the mentions if lemmas were set, otherwise return null
 	 */
-
 	public String getLemmatizedText(){
 		return lemmatizedText;
 	}

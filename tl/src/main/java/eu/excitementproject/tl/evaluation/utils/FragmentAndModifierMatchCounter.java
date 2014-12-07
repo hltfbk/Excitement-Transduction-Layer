@@ -21,7 +21,7 @@ import eu.excitementproject.eop.lap.LAPException;
  * They counts can be used to calculate the evaluation measures (like accuracy, 
  * or F-1). 
  * 
- * @author Gil Noh 
+ * @author Tae-Gil Noh 
  *
  */
 public class FragmentAndModifierMatchCounter {

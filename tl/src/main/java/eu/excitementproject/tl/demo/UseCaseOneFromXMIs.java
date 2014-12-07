@@ -25,7 +25,7 @@ import eu.excitementproject.tl.toplevel.usecaseonerunner.UseCaseOneRunnerPrototy
 /**
  * Use case one using (gold-standard) fragment and modifier annotation from the input XMIs
  * 
- * @author vivi@fbk
+ * @author Vivi Nastase
  *
  */
 public class UseCaseOneFromXMIs extends UseCaseOneRunnerPrototype {

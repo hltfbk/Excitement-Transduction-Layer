@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<F_entailment_graph nodeNum="8">
+    <node id="0271.txt_2_0" implicit_statement="FALSE" modality="FALSE" explicit_context="0271.txt" implicit_context="" focus="messaggi" implicit_focus="">
+        <original_text>anche quando uno ha credito mandate 40 messaggi al giorno di credito insufficiente</original_text>
+        <correct_text> </correct_text>
+        <modifiers>40 al giornopoz=6 8 9</modifiers>
+    </node>
+     <node id="0271.txt_2_4" implicit_statement="FALSE" modality="FALSE" explicit_context="0271.txt" implicit_context="" focus="messaggi" implicit_focus="">
+        <original_text>anche quando uno ha credito mandate messaggi di credito insufficiente</original_text>
+        <correct_text> </correct_text>
+        <modifiers>anche quando uno ha creditopoz=0 1 2 3 4</modifiers>
+    </node>
+    <edge id="0271.txt_2_0-0271.txt_2_4" source="0271.txt_2_0" target="0271.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="clousure">yes</entailment>
+    </edge>
+    <edge id="0271.txt_2_0-0271.txt_2_4" source="0271.txt_2_0" target="0271.txt_2_4">
+        <entailment_mod_insensitive> </entailment_mod_insensitive>
+        <entailment type="direct">yes</entailment>
+    </edge>
+</F_entailment_graph>

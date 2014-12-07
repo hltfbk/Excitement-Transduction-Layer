@@ -24,7 +24,7 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 /**
  * Interface for use case one -- annotate fragments and modifiers, build fragment graphs, combine fragment graphs using an EDA, collapse the final graph
  * 
- * @author lili, vivi@fbk
+ * @author Lili Kotlerman and Vivi Nastase
  *
  */
 public abstract interface UseCaseOneRunner {

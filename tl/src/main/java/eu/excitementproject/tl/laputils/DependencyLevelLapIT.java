@@ -12,6 +12,12 @@ import eu.excitementproject.eop.lap.LAPAccess;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.eop.lap.implbase.LAP_ImplBaseAE;
 
+/**
+ * 
+ * 
+ * @author Tae-Gil Noh
+ *
+ */
 public class DependencyLevelLapIT extends LAP_ImplBaseAE implements LAPAccess {
 
 	public DependencyLevelLapIT() throws LAPException

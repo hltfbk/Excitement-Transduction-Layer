@@ -2,7 +2,8 @@ package eu.excitementproject.tl.laputils;
 
 /**
  * This enum represents different type of word decomposition 
- * @author Aleksandra
+ * 
+ * @author Aleksandra Gabryszak
  *
  */
 

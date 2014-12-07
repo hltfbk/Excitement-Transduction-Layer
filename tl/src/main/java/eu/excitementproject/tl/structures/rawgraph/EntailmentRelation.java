@@ -1,7 +1,5 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
-
-
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,8 +24,6 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
 
 /**
- * 
- *
  * Directed edge for the work graph ({@link EntailmentGraphRaw}).
  * The edge "value" is a textual entailment decision ({@link TEDecision}) obtained from
  * an EDA or other type of knowledge (e.g. fragment graph).
@@ -35,7 +31,7 @@ import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
  *  The class extends {@link DefaultEdge}:
  *  http://jgrapht.org/javadoc/org/jgrapht/graph/DefaultEdge.html
  *
- * @author vivi@fbk & Lili Kotlerman
+ * @author Vivi Nastase & Lili Kotlerman
  */
 public class EntailmentRelation extends DefaultEdge {
 	
@@ -126,8 +122,6 @@ public class EntailmentRelation extends DefaultEdge {
 		this.lap = lap;
 	}
 		
-	
-	
 	/**
 	 * @return the lap
 	 */

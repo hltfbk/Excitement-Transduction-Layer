@@ -60,7 +60,7 @@ import org.xml.sax.helpers.AttributesImpl;
  * href="http://en.wikipedia.org/wiki/GraphML">
  * http://en.wikipedia.org/wiki/GraphML</a>.</p>
  *
- * @author Trevor Harmon, edited by vivi@fbk
+ * @author Trevor Harmon, edited by Vivi Nastase
  */
 public class GraphMLExporter<V, E>
 {

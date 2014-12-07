@@ -18,6 +18,11 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.rawgraph.utils.EdgeType;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class GoldStandardToWP2FormatTranslator {
 	protected int nodeNum;
 	protected int edgeNum;

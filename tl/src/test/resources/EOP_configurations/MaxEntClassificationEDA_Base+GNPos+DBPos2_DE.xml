@@ -108,7 +108,7 @@
      "activatedEDA" -->
 	<section name="eu.excitementproject.eop.core.MaxEntClassificationEDA">
         <!-- The name of the model created during the training phase of the learner and applied during the testing phase. If only testing is performed, this model file must exist! -->
-		<property name="modelFile">./src/test/resources/EOP_models/MaxEntClassificationEDAModel_Base+GNpos+DBPos2_DE</property>
+		<property name="modelFile">./src/test/resources/EOP_models/MaxEntClassificationEDAModel_Base+GNPos+DBPos2_DE</property>
         <!-- Please update the location for storing temporary files for training -->
 		<property name="trainDir">./target/DE/dev/</property>
         <!-- Please update the location for storing temporary files for testing -->

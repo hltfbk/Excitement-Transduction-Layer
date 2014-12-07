@@ -13,6 +13,11 @@ import eu.excitementproject.tl.evaluation.utils.rpcurve.RecallMaxPrecisionCurve;
 import eu.excitementproject.tl.evaluation.utils.rpcurve.RecallPrecisionCurve;
 import eu.excitementproject.tl.evaluation.utils.rpcurve.ValuesForRecallPrecisionCurve;
 
+/**
+ * 
+ * @author ??
+ *
+ */
 public class ResultsContainer {
 	public Map<String,Map<Double,EvaluationAndAnalysisMeasures>> results;
 	public List<Double> confidenceThresholds;

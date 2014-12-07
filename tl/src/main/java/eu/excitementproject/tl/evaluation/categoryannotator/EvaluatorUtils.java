@@ -40,11 +40,16 @@ import eu.excitementproject.tl.structures.collapsedgraph.EquivalenceClass;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
-import eu.excitementproject.tl.structures.rawgraph.EntailmentRelation;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 
+/**
+ * Some util methods needed for evaluating the usage of entailment graphs for the category annotation task. 
+ * 
+ * @author Kathrin Eichler and Aleksandra Gabryszak
+ *
+ */
 public class EvaluatorUtils {
 	static Logger logger = Logger.getLogger(EvaluatorUtils.class); 
 
@@ -353,6 +358,16 @@ public class EvaluatorUtils {
 	}
 
 
+	/**
+	 * Get the to n best-matching categories 
+	 * 
+	 * @param mostProbableCat - most common category in the graph
+	 * @param correctCats - list of correct categories (for logger only!)
+	 * @param categoryScoresBigDecimal - map of categories associated to a big decimal confidence score
+	 * @param topN - number of best-matching categories to be returned
+	 * 
+	 * @return n best-matching categories ordered by their confidence score
+	 */
 	public static String[] getTopNCategories(String mostProbableCat,
 			String[] correctCats,
 			HashMap<String, BigDecimal> categoryScoresBigDecimal, int topN) {
@@ -413,7 +428,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * read two raw graphs from file and then join Set<EntailmentUnit> and Set<EntailmentRelation> 
+	 * Read two raw graphs from file and then join Set<EntailmentUnit> and Set<EntailmentRelation> 
 	 * of these raw graphs into an empty raw graph  
 	 * @param rawGraphFile1
 	 * @param rawGraphFile2
@@ -435,7 +450,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * copy Set<EntailmentUnit> and Set<EntailmentRelation> of two raw graphs into an empty raw graph  
+	 * Copy Set<EntailmentUnit> and Set<EntailmentRelation> of two raw graphs into an empty raw graph  
 	 * @param rawGraph1
 	 * @param rawGraph2
 	 * @param copyEdgesFromRawGraph1
@@ -452,7 +467,7 @@ public class EvaluatorUtils {
 	
 		
 	/**
-	 * build Set<FragmentGraph>
+	 * Build Set<FragmentGraph>
 	 * 
 	 * @param interactionList
 	 * @param relevantTextProvided
@@ -479,7 +494,7 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * build Set<FragmentGraph>
+	 * Build Set<FragmentGraph>
 	 * 
 	 * @param interaction
 	 * @param relevantTextProvided
@@ -518,7 +533,7 @@ public class EvaluatorUtils {
 	 */
 	
 	/**
-	 * merge Set<FragmentGraph> into a single token EntailmentGraphRaw
+	 * Merge Set<FragmentGraph> into a single token EntailmentGraphRaw
 	 * 
 	 * @param singleTokenGraph
 	 * @param fgs
@@ -537,7 +552,7 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * merge one FragmentGraph into a single token EntailmentGraphRaw with only lemma related edges
+	 * Merge one FragmentGraph into a single token EntailmentGraphRaw with only lemma related edges
 	 *  
 	 * @param singleTokenGraph
 	 * @param fg
@@ -563,7 +578,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * merge Set<FragmentGraph> into a two token EntailmentGraphRaw
+	 * Merge Set<FragmentGraph> into a two token EntailmentGraphRaw
 	 * 
 	 * @param twoTokenRawGraph
 	 * @param fgs
@@ -589,7 +604,7 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * merge one FragmentGraph into a two token EntailmentGraphRaw
+	 * Merge one FragmentGraph into a two token EntailmentGraphRaw
 	 * 
 	 * @param twoTokenRawGraph
 	 * @param fg
@@ -621,7 +636,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * add bidirectional entailment edges going from and to the input EntailmentUnit
+	 * Add bidirectional entailment edges going from and to the input EntailmentUnit
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
@@ -651,7 +666,7 @@ public class EvaluatorUtils {
 	}
 
 	/**
-	 * add entailment edges going from the input EntailmentUnit
+	 * Add entailment edges going from the input EntailmentUnit
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
@@ -676,7 +691,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * add entailment edges going to the input EntailmentUnit
+	 * Add entailment edges going to the input EntailmentUnit
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
@@ -697,7 +712,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * add edges going from or to the input EntailmentUnit depending on the given direction
+	 * Add edges going from or to the input EntailmentUnit depending on the given direction
 	 * 
 	 * @param egr
 	 * @param inputEntailmentUnit
@@ -746,7 +761,7 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 * get related text for a single or a two token text given the lexical resource
+	 * Get related text for a single or a two token text given the lexical resource
 	 * DerivBaseResource, GermaNet, GermanWordSplitter or negation maper.
 	 * 
 	 * @param text
@@ -766,7 +781,7 @@ public class EvaluatorUtils {
 		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
 		List<String> textLemmas = Arrays.asList(lemmatizedText.split("\\s+"));
 		
-		if(textLemmas.size() == 1) {
+		if(textTokens.size() == 1 && textLemmas.size() <= 1) {
 			permutations.addAll(textTokens);
 			permutations.addAll(textLemmas);
 		}
@@ -798,7 +813,7 @@ public class EvaluatorUtils {
 	
 	
 	/**
-	 *  get set of related lemma given the lexical resource
+	 *  Get set of related lemma given the lexical resource
 	 * DerivBaseResource, GermaNet or GermanWordSplitter or negation maper.
 	 * 
 	 * @param lemma
@@ -833,7 +848,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * get set of related lemma given the lexical resource DerivBaseResource
+	 * Get set of related lemma given the lexical resource DerivBaseResource
 	 * 
 	 * @param lemma
 	 * @param derivBaseResource
@@ -851,7 +866,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * get lemmas of German negation words
+	 * Get lemmas of German negation words
 	 * @return --  {"keine", "nicht", "nichts", "ohne"}
 	 */
 	private static String [] getNegationLemmasDE(){
@@ -860,7 +875,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * check if the input word is a German negation word
+	 * Check if the input word is a German negation word
 	 * @param word
 	 * @return
 	 */
@@ -870,7 +885,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * get set of related lemma given the resource GermanWordSplitter
+	 * Get set of related lemma given the resource GermanWordSplitter
 	 * 
 	 * @param lemma
 	 * @param splitter
@@ -896,7 +911,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * get set of related lemma given the lexical resource GermaNet
+	 * Get set of related lemma given the lexical resource GermaNet
 	 * 
 	 * @param lemma
 	 * @param germaNetWrapper
@@ -937,7 +952,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * get Set<EntailmentUnit> with a given lemmatized text
+	 * Get Set<EntailmentUnit> with a given lemmatized text
 	 * 
 	 * @param egr
 	 * @param lemmatizedText
@@ -966,7 +981,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * get Set<EntailmentUnit> with given lemmatized text from a Set<String> lemmatizedTextSet
+	 * Get Set<EntailmentUnit> with given lemmatized text from a Set<String> lemmatizedTextSet
 	 * 
 	 * @param egr
 	 * @param lemmatizedTextSet
