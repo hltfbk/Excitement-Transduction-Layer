@@ -227,7 +227,7 @@ public class EvaluatorCategoryAnnotator {
   	
     /* begin OBS: The following parameters do NOT affect incremental evaluation: */
     static int topN; //use topNArray to set the parameter
-    static int[] topNArray = {1}; //evaluate accuracy considerung the topN best categories returned by the system
+    static int[] topNArray = {1, 2, 3}; //evaluate accuracy considerung the topN best categories returned by the system
     static boolean readGraphFromFile = false;
     static boolean readMergedGraphFromFile = false;
     static String inputMergedGraphFileName;
@@ -1298,7 +1298,7 @@ public class EvaluatorCategoryAnnotator {
                 sumCountPositive += countPositive;
             }
             
-//            if(foldAccuracy.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
+            if(foldAccuracy.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
 	            System.out.println("");
 	            System.out.println("Setup: " + setup + "/ topN: " + topN);
 	            System.out.println("method: "+ method + " " + termFrequencyQuery+documentFrequencyQuery+normalizationQuery + "." + String.valueOf(methodDocument));
@@ -1315,7 +1315,7 @@ public class EvaluatorCategoryAnnotator {
 	            	System.out.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds));
 	            	System.out.println("");
 	            }
-//            }
+            }
 	}
 	
 
@@ -1475,53 +1475,56 @@ public class EvaluatorCategoryAnnotator {
 					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
 				}
 			}			
-		}  else if (!useGraphMerger) {
-			try {
-					addLemmaLabel = true;
-					//simulates SEDA setups by building graphs without GraphMerger 
-					if(setup == 101 && fragmentTypeNameGraph.equals("TF")){
-							EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
-					}
-					else {
-						if(setup == 102){
-							gnw = new GermaNetWrapper(pathToGermaNet);
-							germaNetRelations =  Arrays.asList(relations);
-							splitter = null;
-							dbr = null;
-							onlyBidirectionalEdges = false;
-							mapNegation = false;
-						}
-						else if(setup == 103){
-							dbr = new DerivBaseResource(true, 2);
-							splitter = null; 
-							gnw = null; 
-							germaNetRelations = null;
-							onlyBidirectionalEdges = true;
-							mapNegation = false;
-						}
-						else if(setup == 105){
-							dbr = new DerivBaseResource(true, 2);
-							gnw = new GermaNetWrapper(pathToGermaNet);
-							germaNetRelations =  Arrays.asList(relations);
-							splitter = null;
-							onlyBidirectionalEdges = false;
-							mapNegation = false;
-						}
-						else {
-							logger.error("Wrong setup number for building graph without graph merger");
-							System.exit(1);
-						}
-						if(fragmentTypeNameGraph.equals("TF")){
-							EvaluatorUtils.mergeIntoTokenGraph(egr, fgs, dbr, gnw, germaNetRelations, splitter, mapNegation);
-						}
-						else if(fragmentTypeNameGraph.equals("DF")){
-							EvaluatorUtils.mergeIntoDependencyGraph(egr, fgs, dbr, gnw, germaNetRelations, splitter, onlyBidirectionalEdges, mapNegation);
-						}
-						else {
-							logger.error("Wrong fragment type for building graph without graph merger");
-							System.exit(1);
-						}
-					}
+		}  else if (!useGraphMerger) {//build graphs without graph merger (use methods from EvaluatorUtils)
+			try 
+			{
+				addLemmaLabel = true;
+				if(setup == 101){
+					gnw = null;
+					germaNetRelations = null;
+					splitter = null;
+					dbr = null;
+					onlyBidirectionalEdges = true;
+					mapNegation = false;
+				}
+				else if(setup == 102){
+					gnw = new GermaNetWrapper(pathToGermaNet);
+					germaNetRelations =  Arrays.asList(relations);
+					splitter = null;
+					dbr = null;
+					onlyBidirectionalEdges = false;
+					mapNegation = false;
+				}
+				else if(setup == 103){
+					dbr = new DerivBaseResource(true, 2);
+					splitter = null; 
+					gnw = null; 
+					germaNetRelations = null;
+					onlyBidirectionalEdges = true;
+					mapNegation = false;
+				}
+				else if(setup == 105){
+					dbr = new DerivBaseResource(true, 2);
+					gnw = new GermaNetWrapper(pathToGermaNet);
+					germaNetRelations =  Arrays.asList(relations);
+					splitter = null;
+					onlyBidirectionalEdges = false;
+					mapNegation = false;
+				}
+				else {
+					logger.error("Wrong setup number for building graph without graph merger");
+					System.exit(1);
+				}
+				if(fragmentTypeNameGraph.equals("TF")){
+					EvaluatorUtils.mergeIntoTokenGraph(egr, fgs, dbr, gnw, germaNetRelations, splitter, mapNegation);
+				}
+				else if(fragmentTypeNameGraph.equals("DF")){
+					EvaluatorUtils.mergeIntoDependencyGraph(egr, fgs, dbr, gnw, germaNetRelations, splitter, onlyBidirectionalEdges, mapNegation);
+				}
+				else {
+					logger.error("Wrong fragment type for building graph without graph merger");
+					System.exit(1);
+				}
 				} catch (LexicalResourceException e) {
 				e.printStackTrace();
 			}
