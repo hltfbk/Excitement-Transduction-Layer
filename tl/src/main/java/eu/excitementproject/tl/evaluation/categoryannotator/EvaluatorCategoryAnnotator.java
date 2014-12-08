@@ -235,6 +235,7 @@ public class EvaluatorCategoryAnnotator {
     
     //Training parameters
     static boolean trainEDA = false;
+    static boolean addDataSetForGraphBuilding = false;
     static boolean processTrainingData = false;
     static File xmiDir;
     static File modelBaseName;
@@ -1112,9 +1113,11 @@ public class EvaluatorCategoryAnnotator {
 					else eda.startTraining(config); //train EDA (may take a some time)
 					logger.info("Training completed."); 
 				} else { //add documents to graph creation set --> don't, dataset will be too large for graph building!
-					String secondGraphFilename = inputDataFoldername + "omq_public_"+k+"_emails.xml";
-	    			logger.info("Reading second graph file " + secondGraphFilename);	    			
-	    			emailDocs.addAll(InteractionReader.readInteractionXML(new File(secondGraphFilename)));	
+					if(addDataSetForGraphBuilding) {
+						String secondGraphFilename = inputDataFoldername + "omq_public_"+k+"_emails.xml";
+		    			logger.info("Reading second graph file " + secondGraphFilename);	    			
+		    			emailDocs.addAll(InteractionReader.readInteractionXML(new File(secondGraphFilename)));
+					}
 				}
 				//graphDocs = graphDocs.subList(1, 2); //TODO: REMOVE for real test!
 				logger.info("Graph set of fold "+i+" now contains " + emailDocs.size() + " documents");
