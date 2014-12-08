@@ -736,8 +736,9 @@ public class EvaluatorUtils {
 	private static void addOneDirectionalEntailedEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource dbr, 
 			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, boolean mapNegation)
 					throws LexicalResourceException {
-		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
+		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>();
 		if(germanetRelations != null){
+			germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
 			if(germanetRelationsModified.size() > 0){
 				germanetRelationsModified.remove(GermaNetRelation.has_hyponym);
 				germanetRelationsModified.remove(GermaNetRelation.has_antonym);
