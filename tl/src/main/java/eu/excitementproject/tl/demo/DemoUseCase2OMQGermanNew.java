@@ -258,7 +258,8 @@ public class DemoUseCase2OMQGermanNew {
 			try {
 				try {
 					/** Step3d: merge fragments into single token graph */	
-					EvaluatorUtils.mergeIntoLemmaTokenGraph(singleTokenGraph, fragmentGraphsAllTokens);
+//					EvaluatorUtils.mergeIntoLemmaTokenGraph(singleTokenGraph, fragmentGraphsAllTokens); //only lemma edges
+					EvaluatorUtils.mergeIntoTokenGraph(singleTokenGraph, fragmentGraphsAllTokens, dbr, null, null, null, true); //lemma + derivation edges
 					/** Step3e: Merge fragments into two-token dependency graph without calling SEDA or GraphMerger */	
 					EvaluatorUtils.mergeIntoDependencyGraph(twoTokenGraph, fragmentGraphsAllDependencies, dbr, gnw, germaNetRelations, splitter, mapNegation, true);
 				} catch (LexicalResourceException e) {
