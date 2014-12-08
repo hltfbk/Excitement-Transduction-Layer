@@ -41,6 +41,8 @@ import eu.excitementproject.eop.common.exception.ConfigurationException;
 import eu.excitementproject.eop.common.utilities.configuration.ImplCommonConfig;
 import eu.excitementproject.eop.core.MaxEntClassificationEDA;
 import eu.excitementproject.eop.core.component.lexicalknowledge.derivbase.DerivBaseResource;
+import eu.excitementproject.eop.core.component.lexicalknowledge.germanet.GermaNetRelation;
+import eu.excitementproject.eop.core.component.lexicalknowledge.germanet.GermaNetWrapper;
 import eu.excitementproject.eop.lap.LAPException;
 import eu.excitementproject.tl.composition.api.CategoryAnnotator;
 import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
@@ -135,8 +137,13 @@ public class EvaluatorCategoryAnnotator {
 	static CategoryAnnotator categoryAnnotator;
 	static ConfidenceCalculator confidenceCalculator;
     static File configFile;
+    static DerivBaseResource dbr;
 //  static String pathToGermaNet = "D:/DFKI/EXCITEMENT/Linguistic Analysis/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML";
     static String pathToGermaNet = "C:/germanet/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML";
+    static GermaNetRelation [] relations = {GermaNetRelation.has_synonym, GermaNetRelation.has_hypernym, GermaNetRelation.causes, 
+			GermaNetRelation.entails, GermaNetRelation.has_hyponym};
+    static List<GermaNetRelation> germaNetRelations; //set autoamatically
+    static GermaNetWrapper gnw; //set autoamtically
 	static GermaNet germanet;
 	static Set<String> GermaNetLexicon; 
 	static GermanWordSplitter splitter;
@@ -159,7 +166,7 @@ public class EvaluatorCategoryAnnotator {
 	// Document (category) weighting: --> relevant when building the graph
 	static char termFrequencyDocument = 'n'; // n (natural), l (logarithm)
 	static char documentFrequencyDocument = 't'; // n (no), t (idf)
-	static char normalizationDocument = 'n'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as 
+	static char normalizationDocument = 'n'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as
 	
 	//INFO: Evaluating different TFIDF-configurations (with no EDA): bd[nc].n[nt]n
 	//ndn.ntn --> acc. in fold 1: 0.56, 131+ (corresponds to the original "tfidf_sum" implementation!)
@@ -191,6 +198,8 @@ public class EvaluatorCategoryAnnotator {
 	static boolean useHypernymRelation = true;
 	static boolean useEntailsRelation = true;
 	static boolean useCausesRelation = true;
+	static boolean onlyBidirectionalEdges;//set automatically
+	static boolean mapNegation;//set automatically
     
 	static List<POSTag_DE> tokenPosFilter = Arrays.asList(
 	    		new POSTag_DE []{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NN, POSTag_DE.CARD, 
@@ -212,7 +221,7 @@ public class EvaluatorCategoryAnnotator {
     private int setupSEDA = 101; //configure SEDA (for incremental evaluation)
     private int setupEDA = 1; //configure EDA (for incremental evaluation)
     static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
-  	static String[] fragmentTypeNameGraphArray = {"SF"}; //for setup >= 110 this variable will be overwritten!
+  	static String[] fragmentTypeNameGraphArray = {"TF"}; //for setup >= 110 this variable will be overwritten!
 //    static String[] fragmentTypeNameGraphArray = {"TF", "DF", "SF"};
   	static String fragmentTypeNameEval; //set automatically!
   	
@@ -234,8 +243,8 @@ public class EvaluatorCategoryAnnotator {
     static boolean relevantTextProvided = true;
     
     static boolean bestNodeOnly = true;
-    static boolean buildTokenLemmaGraph = false;
-    static boolean buildDependencyLemmaGraph = false; //for now only as example for testing
+    //build graphs without graph merger class 
+    static boolean useGraphMerger = true; //not fully integrated yet, set false only if setup 101, 102, 103, 105 and fragment = TF || DF
     static boolean addLemmaLabel = true;
     static boolean skipEval = false;
     
@@ -1051,9 +1060,9 @@ public class EvaluatorCategoryAnnotator {
 	    	EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed();
     		File graphFile = new File(outputGraphFoldername + "omq_public_"+i+"_collapsed_graph_"+setup + "_" + minTokenOccurrence + "_"
     				+ fragmentTypeNameEval + "_" + decompositionType + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument 
-    				+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + ".xml");
+    				+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + "_ugm_" + useGraphMerger +".xml");
     		File mergedGraphFile = new File(outputGraphFoldername + "omq_public_"+i+"_merged_graph_" + setup + "_" + minTokenOccurrence 
-    				+ "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + ".xml");
+    				+ "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + "_ugm_" + useGraphMerger +".xml");
     		
     		//DEBUGGING
     		//graphFile = new File(outputGraphFoldername + "omq_public_1_collapsed_graph_112_1_TDF_tfidf_nnn_SEDA_BACKUP.xml");
@@ -1463,19 +1472,54 @@ public class EvaluatorCategoryAnnotator {
 					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
 				}
 			}			
-//		}  else if (buildTokenLemmaGraph) {
-		}  else if (buildTokenLemmaGraph || buildDependencyLemmaGraph) {
+		}  else if (!useGraphMerger) {
 			try {
-				if(buildTokenLemmaGraph) {
-					EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
-				}
-				
-				if( buildDependencyLemmaGraph) {
-					DerivBaseResource dbr = new DerivBaseResource(true, 2);
-					EvaluatorUtils.mergeIntoDependencyGraph(egr, fgs, dbr, null, null, null, true, true);
-				}
-				
-			} catch (LexicalResourceException e) {
+					addLemmaLabel = true;
+					//simulates SEDA setups by building graphs without GraphMerger 
+					if(setup == 101 && fragmentTypeNameGraph.equals("TF")){
+							EvaluatorUtils.mergeIntoLemmaTokenGraph(egr, fgs);
+					}
+					else {
+						if(setup == 102){
+							gnw = new GermaNetWrapper(pathToGermaNet);
+							germaNetRelations =  Arrays.asList(relations);
+							splitter = null;
+							dbr = null;
+							onlyBidirectionalEdges = false;
+							mapNegation = false;
+						}
+						else if(setup == 103){
+							dbr = new DerivBaseResource(true, 2);
+							splitter = null; 
+							gnw = null; 
+							germaNetRelations = null;
+							onlyBidirectionalEdges = true;
+							mapNegation = false;
+						}
+						else if(setup == 105){
+							dbr = new DerivBaseResource(true, 2);
+							gnw = new GermaNetWrapper(pathToGermaNet);
+							germaNetRelations =  Arrays.asList(relations);
+							splitter = null;
+							onlyBidirectionalEdges = false;
+							mapNegation = false;
+						}
+						else {
+							logger.error("Wrong setup number for building graph without graph merger");
+							System.exit(1);
+						}
+						if(fragmentTypeNameGraph.equals("TF")){
+							EvaluatorUtils.mergeIntoTokenGraph(egr, fgs, dbr, gnw, germaNetRelations, splitter, mapNegation);
+						}
+						else if(fragmentTypeNameGraph.equals("DF")){
+							EvaluatorUtils.mergeIntoDependencyGraph(egr, fgs, dbr, gnw, germaNetRelations, splitter, onlyBidirectionalEdges, mapNegation);
+						}
+						else {
+							logger.error("Wrong fragment type for building graph without graph merger");
+							System.exit(1);
+						}
+					}
+				} catch (LexicalResourceException e) {
 				e.printStackTrace();
 			}
 			
