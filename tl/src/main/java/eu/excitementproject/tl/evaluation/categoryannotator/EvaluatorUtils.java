@@ -838,15 +838,26 @@ public class EvaluatorUtils {
 		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
 		List<String> textLemmas = Arrays.asList(lemmatizedText.split("\\s+"));
 		
+		//case single token fragments
 		if(textTokens.size() == 1 && textLemmas.size() <= 1) {
-			permutations.addAll(textTokens);
-			permutations.addAll(textLemmas);
+			String tokenText = textTokens.get(0);
+			if(textLemmas.isEmpty()){
+				textLemmas.add(tokenText); //to deal with missing decomposition lemma
+			}
+			String [] lemmas = getLemmas(textLemmas.get(0));
+			for(String lemma : lemmas){
+				permutations.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
+			}
+			permutations.add(tokenText);
+			permutations.add(tokenText.toLowerCase());
 		}
 		
+		//case two token fragments
 		else if(textTokens.size() == 2 && textLemmas.size() == 2) {
+			//TODO: deal with missing decomposition lemma
 			Set<String> extendedToken_1 = new HashSet<String>();
 			Set<String> extendedToken_2 = new HashSet<String>();
-
+			
 			for (int i=0; i < textLemmas.size(); i++){
 				//extend first and second token of dependency relation by related lemmas
 				String [] lemmas = getLemmas(textLemmas.get(i));
