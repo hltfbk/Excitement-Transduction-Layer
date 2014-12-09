@@ -592,6 +592,62 @@ public class EvaluatorUtils {
 	}
 	
 	/**
+	 * Merge Set<FragmentGraph> into a single token EntailmentGraphRaw
+	 * 
+	 * @param singleTokenRawGraph
+	 * @param fg
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param onlyBidirectionalEdges
+	 * @throws LexicalResourceException
+	 */
+	public static void mergeIntoTokenGraph(
+			EntailmentGraphRaw singleTokenRawGraph, Set<FragmentGraph> fgs, DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, 
+			List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter, boolean onlyBidirectionalEdges) throws LexicalResourceException {
+		
+		List<FragmentGraph> fgList = new LinkedList<FragmentGraph>(fgs);
+		Collections.sort(fgList, new FragmentGraph.CompleteStatementComparator());
+		
+		for(FragmentGraph fg : fgList) {
+			mergeIntoTokenGraph(singleTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, onlyBidirectionalEdges);
+		}
+	}
+	
+	/**
+	 * Merge FragmentGraph into a single token EntailmentGraphRaw
+	 * 
+	 * @param singleTokenRawGraph
+	 * @param fg
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param onlyBidirectionalEdges
+	 * @throws LexicalResourceException
+	 */
+	public static void mergeIntoTokenGraph(
+			EntailmentGraphRaw singleTokenRawGraph, FragmentGraph fg, DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, 
+			List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter, boolean onlyBidirectionalEdges) throws LexicalResourceException {
+		
+		boolean mapNegation = false;
+		for(EntailmentUnitMention eum : fg.vertexSet()) {
+			singleTokenRawGraph.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
+			EntailmentUnit newStatement = singleTokenRawGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
+			//direction new statement <--> graph statement
+			addBidirectionalEdges(singleTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
+			if(!onlyBidirectionalEdges) {
+				//direction new statement --> graph statement 
+				addOneDirectionalEntailedEdges(singleTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
+				//direction graph statement --> new statement
+				addOneDirectionalEntailingEdges(singleTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
+			}
+		}
+	}
+	
+	
+	/**
 	 * Merge Set<FragmentGraph> into a two token EntailmentGraphRaw
 	 * 
 	 * @param twoTokenRawGraph
@@ -694,8 +750,9 @@ public class EvaluatorUtils {
 	private static void addOneDirectionalEntailedEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource dbr, 
 			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, boolean mapNegation)
 					throws LexicalResourceException {
-		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
+		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>();
 		if(germanetRelations != null){
+			germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
 			if(germanetRelationsModified.size() > 0){
 				germanetRelationsModified.remove(GermaNetRelation.has_hyponym);
 				germanetRelationsModified.remove(GermaNetRelation.has_antonym);
@@ -795,15 +852,26 @@ public class EvaluatorUtils {
 		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
 		List<String> textLemmas = Arrays.asList(lemmatizedText.split("\\s+"));
 		
+		//case single token fragments
 		if(textTokens.size() == 1 && textLemmas.size() <= 1) {
-			permutations.addAll(textTokens);
-			permutations.addAll(textLemmas);
+			String tokenText = textTokens.get(0);
+			if(textLemmas.isEmpty()){
+				textLemmas.add(tokenText); //to deal with missing decomposition lemma
+			}
+			String [] lemmas = getLemmas(textLemmas.get(0));
+			for(String lemma : lemmas){
+				permutations.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
+			}
+			permutations.add(tokenText);
+			permutations.add(tokenText.toLowerCase());
 		}
 		
+		//case two token fragments
 		else if(textTokens.size() == 2 && textLemmas.size() == 2) {
+			//TODO: deal with missing decomposition lemma
 			Set<String> extendedToken_1 = new HashSet<String>();
 			Set<String> extendedToken_2 = new HashSet<String>();
-
+			
 			for (int i=0; i < textLemmas.size(); i++){
 				//extend first and second token of dependency relation by related lemmas
 				String [] lemmas = getLemmas(textLemmas.get(i));

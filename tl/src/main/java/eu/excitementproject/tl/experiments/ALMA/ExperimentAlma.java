@@ -21,10 +21,13 @@ import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphoptimizer.GlobalGraphOptimizer;
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
+import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentGraphGeneratorException;
 import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorException;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
+import eu.excitementproject.tl.decomposition.modifierannotator.ModifierDependencyAnnotator;
 import eu.excitementproject.tl.edautils.ProbabilisticEDA;
 import eu.excitementproject.tl.edautils.RandomEDA;
 import eu.excitementproject.tl.evaluation.exceptions.GraphEvaluatorException;
@@ -32,6 +35,7 @@ import eu.excitementproject.tl.evaluation.utils.EvaluationAndAnalysisMeasures;
 import eu.excitementproject.tl.experiments.AbstractExperiment;
 import eu.excitementproject.tl.experiments.FakeEDA;
 import eu.excitementproject.tl.experiments.ResultsContainer;
+import eu.excitementproject.tl.laputils.DependencyLevelLapIT;
 import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
 
@@ -71,6 +75,17 @@ public class ExperimentAlma extends AbstractExperiment {
 		setMerger(mergerType);
 	}
 	
+	
+	public ExperimentAlma(String configFileFullName, String dataDir,
+			int fileNumberLimit, String outputFolder, MergerType mergerType, ModifierAnnotator modAnot) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
+		super(configFileFullName, dataDir, fileNumberLimit, outputFolder, modAnot);
+		
+		this.configFileFullName = configFileFullName;
+		this.configFileName = (new File(configFileFullName)).getName();
+
+		m_optimizer = new SimpleGraphOptimizer();
+		setMerger(mergerType);
+	}
 
 	public static ExperimentAlma initExperiment(EdaName edaName, MergerType mergerType, String tlDir, String dataDir, int fileLimit, String outDir) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException{
 		
@@ -123,6 +138,8 @@ public class ExperimentAlma extends AbstractExperiment {
 //					TreeTaggerIT.class,
 //					FNR_IT.class,
 					mergerType
+//					,
+//					new ModifierDependencyAnnotator(new DependencyLevelLapIT())
 					);
 		}
 		
@@ -184,7 +201,8 @@ public class ExperimentAlma extends AbstractExperiment {
 			EntailmentGraphRaw rawGraph = null;
 			try {
 				e = initExperiment(name, mergerType, tlDir, dataDir+"/"+clusterDir, fileLimit, outDir);
-				e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
+//				e.setFragmentGraphGenerator(new FragmentGraphLiteGeneratorFromCAS());
+				e.setFragmentGraphGenerator(new FragmentGraphGeneratorFromCAS());
 				rawGraph = e.buildRawGraph();
 
 				e.m_rawGraph.toXML(outDir+"/"+e.configFileName +"_rawGraph.xml");
