@@ -237,14 +237,13 @@ public class EvaluatorUtils {
 			//}
 			
 			//Collect query cosine values for each category
-			HashMap<String,Double[]> queryCosineValuesPerCategory = new HashMap<String,Double[]>();
+			//HashMap<String,Double[]> queryCosineValuesPerCategory = new HashMap<String,Double[]>();
 			double N = graph.getNumberOfCategories(); //overall number of categories
-			double sumQ2 = 0.0;
+			//double sumQ2 = 0.0;
 			Set<String> processedMentions = new HashSet<String>();
 			int countDecisions = 0;
 			
 			BigDecimal overallSum = new BigDecimal("0");
-			
 			BigDecimal sumScoreForMatchingMention = new BigDecimal("0");
 			
 			for (NodeMatch match : matches) { //for each matching mention	
@@ -253,8 +252,14 @@ public class EvaluatorUtils {
 					processedMentions.add(mentionText);
 					boolean exit = false;	
 					
-					HashMap<String,BigDecimal> categoryScoresBigDecimalUnnormalized = new HashMap<String,BigDecimal>();
+					HashMap<String,BigDecimal> categoryScoresBigDecimalForMention = new HashMap<String,BigDecimal>();
 					for (PerNodeScore perNodeScore : match.getScores()) { //deal with all nodes, not just the best one
+						logger.info("Number of matching nodes for mention: " + match.getScores().size());
+						if (match.getScores().size() > 1) {
+							for (PerNodeScore score : match.getScores()) 
+								logger.debug(score.getNode().getLabel());
+							//System.exit(1); //TODO: REMOVE (DEBUGGING ONLY)
+						}
 						if (exit) {
 							break;
 						}
@@ -277,7 +282,7 @@ public class EvaluatorUtils {
 						//writer.println("number of category confidences on best node: " + df);
 						//writer.println("idfForquery: " + idfForQuery);
 						//compute sums for computing cosine similarity of the query to each of the categories
-						Double[] queryCosineValues;				
+						//Double[] queryCosineValues;				
 						double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 
 						
 						//length boost
@@ -318,25 +323,30 @@ public class EvaluatorUtils {
 						} else { //SIMPLE TF_IDF */
 					
 						for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
-							numberOfAddedUpValues++;
 							double D = tfidfScoresForCategories.get(category); //category score in matching node
-							BigDecimal sumScore = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
-							overallSum = overallSum.add(sumScore);
-							if (categoryScoresBigDecimalUnnormalized.containsKey(category)) {
-								sumScore = categoryScoresBigDecimalUnnormalized.get(category).add(sumScore);
-								categoryScoresBigDecimalUnnormalized.put(category, sumScoreForMatchingMention);
+							BigDecimal scoreForMention = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
+							if (categoryScoresBigDecimalForMention.containsKey(category)) {
+								scoreForMention = categoryScoresBigDecimalForMention.get(category).add(scoreForMention);
+								categoryScoresBigDecimalForMention.put(category, sumScoreForMatchingMention);
 							}
-						}					
+							categoryScoresBigDecimalForMention.put(category, scoreForMention);
+
+						}	
+						logger.debug("for mention: " + categoryScoresBigDecimalForMention);
 						//}
 					}
-					for (String category : categoryScoresBigDecimalUnnormalized.keySet()) {
-						BigDecimal sumScoreUnnormalized = categoryScoresBigDecimalUnnormalized.get(category); 
-						BigDecimal sumScore = sumScoreUnnormalized.divide(new BigDecimal(match.getScores().size()));
+					
+					//normalize values based on returned nodes (add only a single value per mention!)
+					for (String category : categoryScoresBigDecimalForMention.keySet()) {
+						numberOfAddedUpValues++;
+						BigDecimal sumScoreForMention = categoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
+						overallSum = overallSum.add(sumScoreForMention);
 						if (categoryScoresBigDecimal.containsKey(category)) {
-							sumScore = categoryScoresBigDecimal.get(category).add(sumScore);
-							categoryScoresBigDecimal.put(category, sumScore);
+							sumScoreForMention = categoryScoresBigDecimal.get(category).add(sumScoreForMention);
 						}
+						categoryScoresBigDecimal.put(category, sumScoreForMention);
 					}
+					logger.debug("normalized: " + categoryScoresBigDecimal);
 				}
 			}
 			
