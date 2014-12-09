@@ -68,7 +68,7 @@ public final class CategoryReader {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		Document dom = null;
 		
-		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.InteractionReader");
+		Logger logger = Logger.getLogger("eu.excitementproject.tl.laputils.CategoryReader");
 		logger.info("Processing file " + xmlFile);
 		
 		try {

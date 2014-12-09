@@ -237,13 +237,14 @@ public class EvaluatorUtils {
 			//}
 			
 			//Collect query cosine values for each category
-			HashMap<String,Double[]> queryCosineValuesPerCategory = new HashMap<String,Double[]>();
+			//HashMap<String,Double[]> queryCosineValuesPerCategory = new HashMap<String,Double[]>();
 			double N = graph.getNumberOfCategories(); //overall number of categories
-			double sumQ2 = 0.0;
+			//double sumQ2 = 0.0;
 			Set<String> processedMentions = new HashSet<String>();
 			int countDecisions = 0;
 			
 			BigDecimal overallSum = new BigDecimal("0");
+			BigDecimal sumScoreForMatchingMention = new BigDecimal("0");
 			
 			for (NodeMatch match : matches) { //for each matching mention	
 				String mentionText = match.getMention().getTextWithoutDoubleSpaces();
@@ -251,7 +252,14 @@ public class EvaluatorUtils {
 					processedMentions.add(mentionText);
 					boolean exit = false;	
 					
+					HashMap<String,BigDecimal> categoryScoresBigDecimalForMention = new HashMap<String,BigDecimal>();
 					for (PerNodeScore perNodeScore : match.getScores()) { //deal with all nodes, not just the best one
+						logger.info("Number of matching nodes for mention: " + match.getScores().size());
+						if (match.getScores().size() > 1) {
+							for (PerNodeScore score : match.getScores()) 
+								logger.debug(score.getNode().getLabel());
+							//System.exit(1); //TODO: REMOVE (DEBUGGING ONLY)
+						}
 						if (exit) {
 							break;
 						}
@@ -274,7 +282,7 @@ public class EvaluatorUtils {
 						//writer.println("number of category confidences on best node: " + df);
 						//writer.println("idfForquery: " + idfForQuery);
 						//compute sums for computing cosine similarity of the query to each of the categories
-						Double[] queryCosineValues;				
+						//Double[] queryCosineValues;				
 						double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 
 						
 						//length boost
@@ -294,7 +302,8 @@ public class EvaluatorUtils {
 						double scoreForQuery = nodeScore*tfForQuery*idfForQuery;
 						if (lengthBoost) scoreForQuery *= length;
 						
-						//VECTOR SPACE MODEL		
+						//VECTOR SPACE MODEL
+						/*
 						if (method.endsWith("_vsm")) { //TODO: check implementation again
 							double Q = scoreForQuery;
 							sumQ2 += Math.pow(Q, 2); //this part does not depend on the category!
@@ -311,19 +320,33 @@ public class EvaluatorUtils {
 								queryCosineValues[1] = sumD2;
 								queryCosineValuesPerCategory.put(category, queryCosineValues);
 							}
-						} else { //SIMPLE TF_IDF
-							for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
-								numberOfAddedUpValues++;
-								double D = tfidfScoresForCategories.get(category); //category score in best-matching node
-								BigDecimal sumScore = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
-								overallSum = overallSum.add(sumScore);
-								if (categoryScoresBigDecimal.containsKey(category)) {
-									sumScore = categoryScoresBigDecimal.get(category).add(sumScore);
-								}
-								categoryScoresBigDecimal.put(category, sumScore);
-							}					
-						}
+						} else { //SIMPLE TF_IDF */
+					
+						for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
+							double D = tfidfScoresForCategories.get(category); //category score in matching node
+							BigDecimal scoreForMention = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
+							if (categoryScoresBigDecimalForMention.containsKey(category)) {
+								scoreForMention = categoryScoresBigDecimalForMention.get(category).add(scoreForMention);
+								categoryScoresBigDecimalForMention.put(category, sumScoreForMatchingMention);
+							}
+							categoryScoresBigDecimalForMention.put(category, scoreForMention);
+
+						}	
+						logger.debug("for mention: " + categoryScoresBigDecimalForMention);
+						//}
 					}
+					
+					//normalize values based on returned nodes (add only a single value per mention!)
+					for (String category : categoryScoresBigDecimalForMention.keySet()) {
+						numberOfAddedUpValues++;
+						BigDecimal sumScoreForMention = categoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
+						overallSum = overallSum.add(sumScoreForMention);
+						if (categoryScoresBigDecimal.containsKey(category)) {
+							sumScoreForMention = categoryScoresBigDecimal.get(category).add(sumScoreForMention);
+						}
+						categoryScoresBigDecimal.put(category, sumScoreForMention);
+					}
+					logger.debug("normalized: " + categoryScoresBigDecimal);
 				}
 			}
 			
@@ -334,6 +357,7 @@ public class EvaluatorUtils {
 			logger.debug("Number of category decisions: " + countDecisions);
 			logger.debug("Category scores big decimal in tfidf: " + categoryScoresBigDecimal);
 			
+			/*
 			if (method.endsWith("_vsm")) {
 				for (String category : queryCosineValuesPerCategory.keySet()) { //for each matching EG node for this mention
 					//annotate category confidences in CAS based on cosine similarity (per document, not per mention!)
@@ -347,7 +371,7 @@ public class EvaluatorUtils {
 					categoryScoresBigDecimal.put(category, cosQD);					
 					//writer.println(category + " : " + cosQD);
 				}
-			}
+			}*/
 		} else {
 			logger.error("Method for query weighting not defined:" + method );
 			System.exit(1);
