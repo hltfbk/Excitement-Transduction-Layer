@@ -1061,9 +1061,9 @@ public class EvaluatorCategoryAnnotator {
 	    	EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed();
     		File graphFile = new File(outputGraphFoldername + "omq_public_"+i+"_collapsed_graph_"+setup + "_" + minTokenOccurrence + "_"
     				+ fragmentTypeNameEval + "_" + decompositionType + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument 
-    				+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + "_ugm_" + useGraphMerger +".xml");
+    				+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + ".xml");
     		File mergedGraphFile = new File(outputGraphFoldername + "omq_public_"+i+"_merged_graph_" + setup + "_" + minTokenOccurrence 
-    				+ "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + "_ugm_" + useGraphMerger +".xml");
+    				+ "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName +".xml");
     		
     		//DEBUGGING
     		//graphFile = new File(outputGraphFoldername + "omq_public_1_collapsed_graph_112_1_TDF_tfidf_nnn_SEDA_BACKUP.xml");
@@ -1479,6 +1479,7 @@ public class EvaluatorCategoryAnnotator {
 			try 
 			{
 				addLemmaLabel = true;
+				edaName = "NGM";
 				if(setup == 101){
 					gnw = null;
 					germaNetRelations = null;
