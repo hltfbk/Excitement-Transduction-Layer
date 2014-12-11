@@ -227,7 +227,7 @@ public class EvaluatorCategoryAnnotator {
   	
     /* begin OBS: The following parameters do NOT affect incremental evaluation: */
     static int topN; //use topNArray to set the parameter
-    static int[] topNArray = {1, 2, 3}; //evaluate accuracy considerung the topN best categories returned by the system
+    static int[] topNArray = {1}; //evaluate accuracy considerung the topN best categories returned by the system
     static boolean readGraphFromFile = false;
     static boolean readMergedGraphFromFile = false;
     static String inputMergedGraphFileName;
@@ -245,8 +245,8 @@ public class EvaluatorCategoryAnnotator {
     
     static boolean bestNodeOnly = true;
     //build graphs without graph merger class 
-    static boolean useGraphMerger = true; //not fully integrated yet, set false only if setup 101, 102, 103, 105 and fragment = TF || DF
-    static boolean addLemmaLabel = true;
+    static boolean useGraphMerger = true; //overwritten to false in setup 201 - 204
+    static boolean addLemmaLabel = true; //overwritten to true in setup 201 - 204
     static boolean skipEval = false;
     
 	static File temp; 
@@ -369,10 +369,12 @@ public class EvaluatorCategoryAnnotator {
 		methodDocument[0] = termFrequencyDocument;
 		methodDocument[1] = documentFrequencyDocument;
 		methodDocument[2] = normalizationDocument;
-		try {
+		try { 
 			switch(i){
 	        	case 0: //no EDA use --> graph with non-connected nodes
 	        		edaName = "NO EDA";
+	        		trainEDA = false;
+	        		processTrainingData = false;
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
@@ -698,71 +700,120 @@ public class EvaluatorCategoryAnnotator {
 		    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
-		    	
-			    	/** setups for joined graphs **/
-			    	//only evaluating of existing graphs TF + DF for now
-			    	//TODO: creating and evaluating of joined graphs with all possible fragment combinations
-		        	case 101101: //SimpleEDA_DE: Read joined graphs 101_TF + 101_DF
-		        		readMergedGraphFromFile = false;
-		        		readGraphFromFile = true;
-		        		fragmentTypeNameGraph = "TDF";
-		        		edaName = "SEDA";
-		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
-			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-			    		categoryAnnotator = new CategoryAnnotatorAllCats();
-			    		break;
-		        	case 101102: //SimpleEDA_DE: Read joined graphs 101_TF + 102_DF
-		        		readMergedGraphFromFile = false;
-		        		readGraphFromFile = true;
-		        		fragmentTypeNameGraph = "TDF";
-		        		edaName = "SEDA";
-		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
-			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-			    		categoryAnnotator = new CategoryAnnotatorAllCats();
-			    		break;
-		        	case 101103: //SimpleEDA_DE: Read joined graphs 101_TF + 103_DF
-		        		readMergedGraphFromFile = false;
-		        		readGraphFromFile = true;
-		        		fragmentTypeNameGraph = "TDF";
-		        		edaName = "SEDA";
-		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
-			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-			    		categoryAnnotator = new CategoryAnnotatorAllCats();
-			    		break;
-		        	case 101104: //SimpleEDA_DE: Read joined graphs 101_TF + 104_DF
-		        		readMergedGraphFromFile = false;
-		        		readGraphFromFile = true;
-		        		fragmentTypeNameGraph = "TDF";
-		        		edaName = "SEDA";
-		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
-			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-			    		categoryAnnotator = new CategoryAnnotatorAllCats();
-			    		break;
-		        	case 101105: //SimpleEDA_DE: Read joined graphs 101_TF + 105_DF
-		        		readMergedGraphFromFile = false;
-		        		readGraphFromFile = true;
-		        		fragmentTypeNameGraph = "TDF";
-		        		edaName = "SEDA";
-		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
-			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-			    		categoryAnnotator = new CategoryAnnotatorAllCats();
-			    		break;
-		        	case 101106: //SimpleEDA_DE: Read joined graphs 101_TF + 106_DF
-		        		readMergedGraphFromFile = false;
-		        		readGraphFromFile = true;
-		        		fragmentTypeNameGraph = "TDF";
-		        		edaName = "SEDA";
-		        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
-			    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
-			    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
-			    		categoryAnnotator = new CategoryAnnotatorAllCats();
-			    		break;
+		    	//no stamdard graph merger uses
+	        	case 207: //Lemma+Conversion, Derivation, GermaNet, mapping negation
+					dbr = new DerivBaseResource(true, 2);
+					gnw = new GermaNetWrapper(pathToGermaNet);
+					germaNetRelations =  Arrays.asList(relations);
+					splitter = null;
+					onlyBidirectionalEdges = false;
+					mapNegation = true;
+					//lap, fragment annotator, eda name and others are set at the end of the methodss
+					break;
+	        	case 208://201 without mapNegation
+					dbr = new DerivBaseResource(true, 2);
+					gnw = new GermaNetWrapper(pathToGermaNet);
+					germaNetRelations =  Arrays.asList(relations);
+					splitter = null;
+					onlyBidirectionalEdges = false;
+					mapNegation = false;
+					//lap, fragment annotator, eda name and others are set at the end of the methods
+					break;
+	        	case 209: //201 without GermaNet
+					dbr = new DerivBaseResource(true, 2);
+					gnw = null;
+					germaNetRelations =  null;
+					splitter = null;
+					onlyBidirectionalEdges = false;
+					mapNegation = true;
+					//lap, fragment annotator, eda name and others are set at the end of the methods
+					break;
+	        	case 210: //201 without DerivBase
+	        		dbr = null;
+					gnw = new GermaNetWrapper(pathToGermaNet);
+					germaNetRelations =  Arrays.asList(relations);
+					splitter = null;
+					onlyBidirectionalEdges = false;
+					mapNegation = true;
+					//lap, fragment annotator, eda name and others are set at the end of the methods
+					break;
+					
+				/** setups for joined graphs **/
+		    	//only evaluating of existing graphs TF + DF for now
+		    	//TODO: creating and evaluating of joined graphs with all possible fragment combinations
+	        	case 101101: //SimpleEDA_DE: Read joined graphs 101_TF + 101_DF
+	        		readMergedGraphFromFile = false;
+	        		readGraphFromFile = true;
+	        		fragmentTypeNameGraph = "TDF";
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 101102: //SimpleEDA_DE: Read joined graphs 101_TF + 102_DF
+	        		readMergedGraphFromFile = false;
+	        		readGraphFromFile = true;
+	        		fragmentTypeNameGraph = "TDF";
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 101103: //SimpleEDA_DE: Read joined graphs 101_TF + 103_DF
+	        		readMergedGraphFromFile = false;
+	        		readGraphFromFile = true;
+	        		fragmentTypeNameGraph = "TDF";
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 101104: //SimpleEDA_DE: Read joined graphs 101_TF + 104_DF
+	        		readMergedGraphFromFile = false;
+	        		readGraphFromFile = true;
+	        		fragmentTypeNameGraph = "TDF";
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 101105: //SimpleEDA_DE: Read joined graphs 101_TF + 105_DF
+	        		readMergedGraphFromFile = false;
+	        		readGraphFromFile = true;
+	        		fragmentTypeNameGraph = "TDF";
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
+	        	case 101106: //SimpleEDA_DE: Read joined graphs 101_TF + 106_DF
+	        		readMergedGraphFromFile = false;
+	        		readGraphFromFile = true;
+	        		fragmentTypeNameGraph = "TDF";
+	        		edaName = "SEDA";
+	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+		    		categoryAnnotator = new CategoryAnnotatorAllCats();
+		    		break;
 			}
+			if(i >= 207 || i <= 210) {
+	    		addLemmaLabel = true;
+	    		useGraphMerger = false;
+				edaName = "NGM"; //methods of EvaluatorUtils used for merging instead of standard graph merger used
+				setLapAndFragmentAnnotator(fragmentTypeNameGraph);
+	    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
+	    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
+	    		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
+	    		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
+	    		categoryAnnotator = new CategoryAnnotatorAllCats();
+	    		//resources are 
+	    	}
 		} catch (ModifierAnnotatorException | ConfigurationException e) {
 			e.printStackTrace();
 		} catch (GraphMergerException e) {
@@ -770,6 +821,9 @@ public class EvaluatorCategoryAnnotator {
 		} catch (EDAException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ComponentException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 			
 	}
@@ -1061,9 +1115,9 @@ public class EvaluatorCategoryAnnotator {
 	    	EntailmentGraphCollapsed graph = new EntailmentGraphCollapsed();
     		File graphFile = new File(outputGraphFoldername + "omq_public_"+i+"_collapsed_graph_"+setup + "_" + minTokenOccurrence + "_"
     				+ fragmentTypeNameEval + "_" + decompositionType + "_" + method + "_" + termFrequencyDocument + documentFrequencyDocument + normalizationDocument 
-    				+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + "_ugm_" + useGraphMerger +".xml");
+    				+ "_cb" + categoryBoost + "_" + thresholdForOptimizing + "_" + edaName + ".xml");
     		File mergedGraphFile = new File(outputGraphFoldername + "omq_public_"+i+"_merged_graph_" + setup + "_" + minTokenOccurrence 
-    				+ "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName + "_ugm_" + useGraphMerger +".xml");
+    				+ "_" + fragmentTypeNameEval + "_" + decompositionType + "_" + thresholdForRawGraphBuilding + "_" + edaName +".xml");
     		
     		//DEBUGGING
     		//graphFile = new File(outputGraphFoldername + "omq_public_1_collapsed_graph_112_1_TDF_tfidf_nnn_SEDA_BACKUP.xml");
@@ -1454,13 +1508,14 @@ public class EvaluatorCategoryAnnotator {
 	 * @throws LAPException
 	 * @throws TransformerException
 	 * @throws EntailmentGraphRawException
+	 * @throws LexicalResourceException 
 	 */	
 	private EntailmentGraphRaw buildRawGraph(List<Interaction> graphDocs, boolean relevantTextProvided, 
 			File mergedGraphFile, EntailmentGraphRaw egr, int minOccurrence)
 			throws FragmentAnnotatorException, ModifierAnnotatorException,
 			FragmentGraphGeneratorException, ConfigurationException,
 			EDAException, ComponentException, GraphMergerException,
-			LAPException, TransformerException, EntailmentGraphRawException {
+			LAPException, TransformerException, EntailmentGraphRawException, LexicalResourceException {
 		logger.info("Initialized config.");
 		
 		Set<FragmentGraph> fgs = buildFragmentGraphs(graphDocs, relevantTextProvided, 
@@ -1475,43 +1530,8 @@ public class EvaluatorCategoryAnnotator {
 					egr.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());					
 				}
 			}			
-		}  else if (!useGraphMerger) {//build graphs without graph merger (use methods from EvaluatorUtils)
-			try 
-			{
-				addLemmaLabel = true;
-				if(setup == 101){
-					gnw = null;
-					germaNetRelations = null;
-					splitter = null;
-					dbr = null;
-					onlyBidirectionalEdges = true;
-					mapNegation = false;
-				}
-				else if(setup == 102){
-					gnw = new GermaNetWrapper(pathToGermaNet);
-					germaNetRelations =  Arrays.asList(relations);
-					splitter = null;
-					dbr = null;
-					onlyBidirectionalEdges = false;
-					mapNegation = false;
-				}
-				else if(setup == 103){
-					dbr = new DerivBaseResource(true, 2);
-					splitter = null; 
-					gnw = null; 
-					germaNetRelations = null;
-					onlyBidirectionalEdges = true;
-					mapNegation = false;
-				}
-				else if(setup == 105){
-					dbr = new DerivBaseResource(true, 2);
-					gnw = new GermaNetWrapper(pathToGermaNet);
-					germaNetRelations =  Arrays.asList(relations);
-					splitter = null;
-					onlyBidirectionalEdges = false;
-					mapNegation = false;
-				}
-				else {
+		}  else if (!useGraphMerger) { //build graphs without graph merger (use methods from EvaluatorUtils)
+				if(!(setup >=207 && setup <= 210)) {
 					logger.error("Wrong setup number for building graph without graph merger");
 					System.exit(1);
 				}
@@ -1525,9 +1545,6 @@ public class EvaluatorCategoryAnnotator {
 					logger.error("Wrong fragment type for building graph without graph merger");
 					System.exit(1);
 				}
-				} catch (LexicalResourceException e) {
-				e.printStackTrace();
-			}
 			
 		} else { //merge graph --> takes a really long time and uses too much memory: TODO reduce number of fgs
 			if (setup == 11) alignmenteda.initialize(configFile);
