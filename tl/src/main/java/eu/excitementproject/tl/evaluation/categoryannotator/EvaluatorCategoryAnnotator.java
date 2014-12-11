@@ -327,7 +327,8 @@ public class EvaluatorCategoryAnnotator {
 			 temp = File.createTempFile("debugging"+System.currentTimeMillis(), ".tmp");
 			 logger.info("Created file at " + temp.getAbsolutePath());
 			 writer = new PrintWriter(temp, "UTF-8");
-			 writerResult = new PrintWriter(temp.getAbsolutePath().replace("debugging", "result"), "UTF-8");
+			 writerResult = new PrintWriter(temp.getAbsolutePath().replace("debugging", "result"
+					 ), "UTF-8");
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -802,7 +803,7 @@ public class EvaluatorCategoryAnnotator {
 		    		categoryAnnotator = new CategoryAnnotatorAllCats();
 		    		break;
 			}
-			if(i >= 207 || i <= 210) {
+			if(i >= 207 && i <= 210) {
 	    		addLemmaLabel = true;
 	    		useGraphMerger = false;
 				edaName = "NGM"; //methods of EvaluatorUtils used for merging instead of standard graph merger used
