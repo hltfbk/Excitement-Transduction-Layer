@@ -217,11 +217,11 @@ public class EvaluatorCategoryAnnotator {
     
     private int setup; //use setupArray to set the parameter
     //use setup 5 and 25 only for sentences
-    static int[] setupArray = {207, 208, 209, 210}; //if setup 21 - 24 change in POM EOP DEPENDECIES  TO 1.1.3_ADAPTED
+    static int[] setupArray = {0}; //if setup 21 - 24 change in POM EOP DEPENDECIES  TO 1.1.3_ADAPTED
     private int setupSEDA = 101; //configure SEDA (for incremental evaluation)
     private int setupEDA = 1; //configure EDA (for incremental evaluation)
     static String fragmentTypeNameGraph; //use fragmentTypeNameGraphArray to set the parameter 
-  	static String[] fragmentTypeNameGraphArray = {"DF"}; //for setup >= 110 this variable will be overwritten!
+  	static String[] fragmentTypeNameGraphArray = {"TF"}; //for setup >= 110 this variable will be overwritten!
 //    static String[] fragmentTypeNameGraphArray = {"TF", "DF", "SF"};
   	static String fragmentTypeNameEval; //set automatically!
   	
@@ -373,6 +373,8 @@ public class EvaluatorCategoryAnnotator {
 			switch(i){
 	        	case 0: //no EDA use --> graph with non-connected nodes
 	        		edaName = "NO EDA";
+	        		trainEDA = false;
+	        		processTrainingData = false;
 	        		setLapAndFragmentAnnotator(fragmentTypeNameGraph);
 		    		modifierAnnotator = new AdvAsModifierAnnotator(lapForFragments); 		
 		    		fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS();
