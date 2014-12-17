@@ -1,6 +1,6 @@
 package eu.excitementproject.tl.composition.exceptions;
 
-import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapsed;
+import eu.excitementproject.tl.composition.api.ConfidenceCalculator;
 
 /** 
  * Exception thrown by {@link ConfidenceCalculator} methods
