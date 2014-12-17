@@ -100,7 +100,7 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 				}
 			}
 		}
-		if (scores.size() > 0) { //a list one match found
+		if (scores.size() > 0) { //at least one match found
 			NodeMatch nodeMatch = new NodeMatch();
 			nodeMatch.setMention(mentionToBeFound);
 			nodeMatch.setScores(scores);

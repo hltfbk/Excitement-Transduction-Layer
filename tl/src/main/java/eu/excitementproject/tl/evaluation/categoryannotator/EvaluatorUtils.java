@@ -237,13 +237,14 @@ public class EvaluatorUtils {
 			//}
 			
 			//Collect query cosine values for each category
-			HashMap<String,Double[]> queryCosineValuesPerCategory = new HashMap<String,Double[]>();
+			//HashMap<String,Double[]> queryCosineValuesPerCategory = new HashMap<String,Double[]>();
 			double N = graph.getNumberOfCategories(); //overall number of categories
-			double sumQ2 = 0.0;
+			//double sumQ2 = 0.0;
 			Set<String> processedMentions = new HashSet<String>();
 			int countDecisions = 0;
 			
 			BigDecimal overallSum = new BigDecimal("0");
+			BigDecimal sumScoreForMatchingMention = new BigDecimal("0");
 			
 			for (NodeMatch match : matches) { //for each matching mention	
 				String mentionText = match.getMention().getTextWithoutDoubleSpaces();
@@ -251,7 +252,14 @@ public class EvaluatorUtils {
 					processedMentions.add(mentionText);
 					boolean exit = false;	
 					
+					HashMap<String,BigDecimal> categoryScoresBigDecimalForMention = new HashMap<String,BigDecimal>();
 					for (PerNodeScore perNodeScore : match.getScores()) { //deal with all nodes, not just the best one
+						logger.info("Number of matching nodes for mention: " + match.getScores().size());
+						if (match.getScores().size() > 1) {
+							for (PerNodeScore score : match.getScores()) 
+								logger.debug(score.getNode().getLabel());
+							//System.exit(1); //TODO: REMOVE (DEBUGGING ONLY)
+						}
 						if (exit) {
 							break;
 						}
@@ -274,7 +282,7 @@ public class EvaluatorUtils {
 						//writer.println("number of category confidences on best node: " + df);
 						//writer.println("idfForquery: " + idfForQuery);
 						//compute sums for computing cosine similarity of the query to each of the categories
-						Double[] queryCosineValues;				
+						//Double[] queryCosineValues;				
 						double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 
 						
 						//length boost
@@ -294,7 +302,8 @@ public class EvaluatorUtils {
 						double scoreForQuery = nodeScore*tfForQuery*idfForQuery;
 						if (lengthBoost) scoreForQuery *= length;
 						
-						//VECTOR SPACE MODEL		
+						//VECTOR SPACE MODEL
+						/*
 						if (method.endsWith("_vsm")) { //TODO: check implementation again
 							double Q = scoreForQuery;
 							sumQ2 += Math.pow(Q, 2); //this part does not depend on the category!
@@ -311,19 +320,33 @@ public class EvaluatorUtils {
 								queryCosineValues[1] = sumD2;
 								queryCosineValuesPerCategory.put(category, queryCosineValues);
 							}
-						} else { //SIMPLE TF_IDF
-							for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
-								numberOfAddedUpValues++;
-								double D = tfidfScoresForCategories.get(category); //category score in best-matching node
-								BigDecimal sumScore = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
-								overallSum = overallSum.add(sumScore);
-								if (categoryScoresBigDecimal.containsKey(category)) {
-									sumScore = categoryScoresBigDecimal.get(category).add(sumScore);
-								}
-								categoryScoresBigDecimal.put(category, sumScore);
-							}					
-						}
+						} else { //SIMPLE TF_IDF */
+					
+						for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
+							double D = tfidfScoresForCategories.get(category); //category score in matching node
+							BigDecimal scoreForMention = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
+							if (categoryScoresBigDecimalForMention.containsKey(category)) {
+								scoreForMention = categoryScoresBigDecimalForMention.get(category).add(scoreForMention);
+								categoryScoresBigDecimalForMention.put(category, sumScoreForMatchingMention);
+							}
+							categoryScoresBigDecimalForMention.put(category, scoreForMention);
+
+						}	
+						logger.debug("for mention: " + categoryScoresBigDecimalForMention);
+						//}
 					}
+					
+					//normalize values based on returned nodes (add only a single value per mention!)
+					for (String category : categoryScoresBigDecimalForMention.keySet()) {
+						numberOfAddedUpValues++;
+						BigDecimal sumScoreForMention = categoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
+						overallSum = overallSum.add(sumScoreForMention);
+						if (categoryScoresBigDecimal.containsKey(category)) {
+							sumScoreForMention = categoryScoresBigDecimal.get(category).add(sumScoreForMention);
+						}
+						categoryScoresBigDecimal.put(category, sumScoreForMention);
+					}
+					logger.debug("normalized: " + categoryScoresBigDecimal);
 				}
 			}
 			
@@ -334,6 +357,7 @@ public class EvaluatorUtils {
 			logger.debug("Number of category decisions: " + countDecisions);
 			logger.debug("Category scores big decimal in tfidf: " + categoryScoresBigDecimal);
 			
+			/*
 			if (method.endsWith("_vsm")) {
 				for (String category : queryCosineValuesPerCategory.keySet()) { //for each matching EG node for this mention
 					//annotate category confidences in CAS based on cosine similarity (per document, not per mention!)
@@ -347,7 +371,7 @@ public class EvaluatorUtils {
 					categoryScoresBigDecimal.put(category, cosQD);					
 					//writer.println(category + " : " + cosQD);
 				}
-			}
+			}*/
 		} else {
 			logger.error("Method for query weighting not defined:" + method );
 			System.exit(1);
@@ -578,6 +602,62 @@ public class EvaluatorUtils {
 	}
 	
 	/**
+	 * Merge Set<FragmentGraph> into a single token EntailmentGraphRaw
+	 * 
+	 * @param singleTokenRawGraph
+	 * @param fg
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param onlyBidirectionalEdges
+	 * @throws LexicalResourceException
+	 */
+	public static void mergeIntoTokenGraph(
+			EntailmentGraphRaw singleTokenRawGraph, Set<FragmentGraph> fgs, DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, 
+			List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter, boolean onlyBidirectionalEdges) throws LexicalResourceException {
+		
+		List<FragmentGraph> fgList = new LinkedList<FragmentGraph>(fgs);
+		Collections.sort(fgList, new FragmentGraph.CompleteStatementComparator());
+		
+		for(FragmentGraph fg : fgList) {
+			mergeIntoTokenGraph(singleTokenRawGraph, fg, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, onlyBidirectionalEdges);
+		}
+	}
+	
+	/**
+	 * Merge FragmentGraph into a single token EntailmentGraphRaw
+	 * 
+	 * @param singleTokenRawGraph
+	 * @param fg
+	 * @param derivBaseResource
+	 * @param germaNetWrapper
+	 * @param germaNetRelations
+	 * @param splitter
+	 * @param onlyBidirectionalEdges
+	 * @throws LexicalResourceException
+	 */
+	public static void mergeIntoTokenGraph(
+			EntailmentGraphRaw singleTokenRawGraph, FragmentGraph fg, DerivBaseResource derivBaseResource, GermaNetWrapper germaNetWrapper, 
+			List<GermaNetRelation> germaNetRelations, GermanWordSplitter splitter, boolean onlyBidirectionalEdges) throws LexicalResourceException {
+		
+		boolean mapNegation = false;
+		for(EntailmentUnitMention eum : fg.vertexSet()) {
+			singleTokenRawGraph.addEntailmentUnitMention(eum, fg.getCompleteStatement().getTextWithoutDoubleSpaces());
+			EntailmentUnit newStatement = singleTokenRawGraph.getVertexWithText(eum.getTextWithoutDoubleSpaces());
+			//direction new statement <--> graph statement
+			addBidirectionalEdges(singleTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
+			if(!onlyBidirectionalEdges) {
+				//direction new statement --> graph statement 
+				addOneDirectionalEntailedEdges(singleTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
+				//direction graph statement --> new statement
+				addOneDirectionalEntailingEdges(singleTokenRawGraph, newStatement, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation);
+			}
+		}
+	}
+	
+	
+	/**
 	 * Merge Set<FragmentGraph> into a two token EntailmentGraphRaw
 	 * 
 	 * @param twoTokenRawGraph
@@ -680,8 +760,9 @@ public class EvaluatorUtils {
 	private static void addOneDirectionalEntailedEdges(EntailmentGraphRaw egr, EntailmentUnit inputEntailmentUnit, DerivBaseResource dbr, 
 			GermaNetWrapper gnw, List<GermaNetRelation> germanetRelations, GermanWordSplitter splitter, boolean mapNegation)
 					throws LexicalResourceException {
-		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
+		LinkedList<GermaNetRelation> germanetRelationsModified = new LinkedList<GermaNetRelation>();
 		if(germanetRelations != null){
+			germanetRelationsModified = new LinkedList<GermaNetRelation>(germanetRelations);
 			if(germanetRelationsModified.size() > 0){
 				germanetRelationsModified.remove(GermaNetRelation.has_hyponym);
 				germanetRelationsModified.remove(GermaNetRelation.has_antonym);
@@ -781,15 +862,26 @@ public class EvaluatorUtils {
 		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
 		List<String> textLemmas = Arrays.asList(lemmatizedText.split("\\s+"));
 		
+		//case single token fragments
 		if(textTokens.size() == 1 && textLemmas.size() <= 1) {
-			permutations.addAll(textTokens);
-			permutations.addAll(textLemmas);
+			String tokenText = textTokens.get(0);
+			if(textLemmas.isEmpty()){
+				textLemmas.add(tokenText); //to deal with missing decomposition lemma
+			}
+			String [] lemmas = getLemmas(textLemmas.get(0));
+			for(String lemma : lemmas){
+				permutations.addAll(EvaluatorUtils.getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
+			}
+			permutations.add(tokenText);
+			permutations.add(tokenText.toLowerCase());
 		}
 		
+		//case two token fragments
 		else if(textTokens.size() == 2 && textLemmas.size() == 2) {
+			//TODO: deal with missing decomposition lemma
 			Set<String> extendedToken_1 = new HashSet<String>();
 			Set<String> extendedToken_2 = new HashSet<String>();
-
+			
 			for (int i=0; i < textLemmas.size(); i++){
 				//extend first and second token of dependency relation by related lemmas
 				String [] lemmas = getLemmas(textLemmas.get(i));
