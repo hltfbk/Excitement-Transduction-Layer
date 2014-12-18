@@ -263,8 +263,9 @@ public class ExperimentNice extends AbstractExperiment {
 //		EdaName[] names = {EdaName.TIE_POS_RES};	
 //		EdaName[] names = {EdaName.EDIT_DIST};	
 //		EdaName[] names = {EdaName.BIUTEE, EdaName.TIE_POS_RES};	
-		EdaName[] names = {EdaName.P1EDA};	
+//		EdaName[] names = {EdaName.P1EDA};	
 //		EdaName[] names = {EdaName.BIUTEE};	
+		EdaName[] names = {EdaName.BIUTEE};	
 
 		Double initialThreshold = 0.0;
 		// ===== END OF SET-UP
