@@ -240,7 +240,7 @@ public class DemoUseCase2OMQGermanNew {
 			/** Step 3: Extend graph with documents in current block */
 			Set<FragmentGraph> fragmentGraphsAllTokens = new HashSet<FragmentGraph>();
 			Set<FragmentGraph> fragmentGraphsAllDependencies = new HashSet<FragmentGraph>();
-			Set<FragmentGraph> fragmentGraphsAllSentences = new HashSet<FragmentGraph>();
+//			Set<FragmentGraph> fragmentGraphsAllSentences = new HashSet<FragmentGraph>();
 			for (int j=i; j<(countBlocks*blockSize) && j<docs.size(); j++) { //for each interaction in the current block
 				Interaction doc = docs.get(j);
 				try {
