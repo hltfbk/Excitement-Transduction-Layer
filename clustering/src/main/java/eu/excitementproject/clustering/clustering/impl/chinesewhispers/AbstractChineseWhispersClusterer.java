@@ -21,26 +21,53 @@ import eu.excitementproject.eop.common.utilities.configuration.ConfigurationExce
 import eu.excitementproject.eop.common.utilities.configuration.ConfigurationFile;
 
 /**
+ * Wrapper for the Chinese Whispers Clustering tool of
+ * <i> Biemann, Chris: "Chinese whispers: an efficient graph clustering algorithm and its application to natural language processing problems." Proceedings of the first workshop on graph based methods for natural language processing. Association for Computational Linguistics, 2006. </i>
+ * 
+ * <p> Returns the elements sorted (desc) by assignment score returned by the tool 
+ * 
  * @author Lili Kotlerman
- * 
- * Wrapper for Chinese Whispers Clustering tool of
- * Biemann, Chris. "Chinese whispers: an efficient graph clustering algorithm and its application to natural language processing problems." Proceedings of the first workshop on graph based methods for natural language processing. Association for Computational Linguistics, 2006.
- * 
- * Returns the elements sorted (desc) by assignment score returned by the tool 
  */
 public abstract class AbstractChineseWhispersClusterer<T> {
 
 	boolean m_useExpandedCollection;
+	
 	WeightType m_weightType;
-	double m_similarityThreshold; // similarity value, below which edge will not be added to the graph  
+	
+	/**
+	 * Similarity value, below which edge will not be added to the graph  
+	 */
+	double m_similarityThreshold;
+	
+	/**
+	 * Directory holding the executable file of the tool
+	 */
 	String m_cwExecutable_dir;
+	
+	/**
+	 * Directory in which the tool's input/output files will be saved
+	 */
 	String m_workingDirectory;
+	
 	String m_inputFilenamePrefix;
+
 	File m_resFile; // .read file with clustering results
+	
 	File m_resFileSorted; // .read file with clustering results
 	
+	/**
+	 * Mapping from String representation of the elements to the elements themselves
+	 */
 	Map<String,T> m_idsToElements;
 	
+	/**
+	 * @param useExpandedCollection
+	 * @param textCollection
+	 * @param weightType
+	 * @param configurationFilename
+	 * @param similarityThreshold
+	 * @throws ClusteringException
+	 */
 	public AbstractChineseWhispersClusterer(boolean useExpandedCollection, TextCollection textCollection, WeightType weightType, String configurationFilename, Double similarityThreshold) throws ClusteringException {
 		m_useExpandedCollection = useExpandedCollection;
 		m_weightType = weightType;
@@ -80,10 +107,15 @@ public abstract class AbstractChineseWhispersClusterer<T> {
 	 */
 	protected abstract double getSimilarity(T elementA, T elementB);
 
+	/**
+	 * @param element
+	 * @return String representing the given element
+	 */
 	protected abstract String getElementString(T element);
 	
 	/**
-	 * @param textCollection
+	 * Translate the given set of elements to the input required by the tool
+	 * @param elements
 	 * @return array with exactly 2 Strings, where the first string is the input to nodes.txt, and the 2nd - to edges.txt
 	 */
 	protected String[] prepareInput(Set<T> elements){
@@ -122,7 +154,8 @@ public abstract class AbstractChineseWhispersClusterer<T> {
 	}
 
 	/**
-	 * Create and save two files (nodes and edges), in the working directory
+	 * Create input for the tool from the given set of elements and save the corresponding two files (nodes and edges) in the working directory {@link AbstractChineseWhispersClusterer#m_workingDirectory}
+	 * @param elements
 	 */
 	protected void saveInput(Set<T> elements){
 		String[] input = prepareInput(elements);
@@ -153,8 +186,9 @@ public abstract class AbstractChineseWhispersClusterer<T> {
 	
 
 	/**
+	 * Runs the tool to cluster the given set of elements
 	 * @param elements
-	 * return map of cluster ids to lists of strings, holding the elements (nodes) as Strings, as given in nodes.txt (as provided by getElementString() method), sorted by score
+	 * @return map of cluster ids to lists of strings, holding the elements (nodes) as Strings, as given in nodes.txt (as provided by {@link AbstractChineseWhispersClusterer#getElementString(Object)} method), sorted by score
 	 * @throws ClusteringException
 	 */
 	protected Map<String, List<String>> clusterElements(Set<T> elements) throws ClusteringException{
