@@ -1,0 +1,14 @@
+digraph rawGraph {
+"due settimane senza connessione 3g a casa" -> "senza connessione 3g a casa" [label=1] [color=green]
+"senza connessione 3g a casa" -> "senza connessione 3g" [label=1] [color=green]
+"senza connessione 3g" -> "senza connessione" [label=1] [color=green]
+"senza connessione 3g a casa" -> "senza connessione a casa" [label=1] [color=green]
+"senza connessione a casa" -> "senza connessione" [label=1] [color=green]
+"due settimane senza connessione 3g a casa" -> "due settimane senza connessione 3g" [label=1] [color=green]
+"due settimane senza connessione 3g" -> "senza connessione 3g" [label=1] [color=green]
+"due settimane senza connessione 3g" -> "due settimane senza connessione" [label=1] [color=green]
+"due settimane senza connessione" -> "senza connessione" [label=1] [color=green]
+"due settimane senza connessione 3g a casa" -> "due settimane senza connessione a casa" [label=1] [color=green]
+"due settimane senza connessione a casa" -> "senza connessione a casa" [label=1] [color=green]
+"due settimane senza connessione a casa" -> "due settimane senza connessione" [label=1] [color=green]
+}

@@ -1,0 +1,399 @@
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.0	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.05	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.1	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.15	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.2	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.25	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.3	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.35	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.4	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.45	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.5	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.55	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.6	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.65	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.7	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.75	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.8	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.85	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.9	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.95	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	1.0	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.0	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.05	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.1	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.15	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.2	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.25	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.3	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.35	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.4	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.45	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.5	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.55	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.6	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.65	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.7	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.75	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.8	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.85	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.9	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	0.95	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.2.2	1.0	0.0	1.0	0.0	0.9800664451827242	0.0	120	0	0	0	552
+
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.0	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.05	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.1	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.15	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.2	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.25	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.3	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.35	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.4	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.45	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.5	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.55	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.6	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.65	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.7	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.75	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.8	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.85	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.9	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.95	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	1.0	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.0	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.05	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.1	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.15	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.2	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.25	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.3	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.35	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.4	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.45	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.5	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.55	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.6	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.65	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.7	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.75	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.8	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.85	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.9	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	0.95	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A1.4	1.0	0.0	1.0	0.0	0.967948717948718	0.0	19	0	0	0	42
+
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.0	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.05	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.1	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.15	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.2	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.25	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.3	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.35	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.4	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.45	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.5	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.55	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.6	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.65	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.7	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.75	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.8	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.85	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.9	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.95	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	1.0	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.0	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.05	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.1	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.15	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.2	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.25	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.3	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.35	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.4	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.45	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.5	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.55	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.6	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.65	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.7	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.75	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.8	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.85	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.9	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	0.95	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.3	1.0	0.0	1.0	0.0	0.8918128654970761	0.0	63	0	0	0	56
+
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.0	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.05	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.1	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.15	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.2	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.25	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.3	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.35	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.4	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.45	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.5	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.55	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.6	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.65	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.7	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.75	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.8	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.85	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.9	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.95	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	1.0	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.0	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.05	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.1	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.15	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.2	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.25	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.3	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.35	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.4	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.45	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.5	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.55	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.6	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.65	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.7	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.75	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.8	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.85	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.9	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	0.95	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/A2.1.4	1.0	0.0	1.0	0.0	0.9716748768472906	0.0	81	0	0	0	156
+
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.0	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.05	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.1	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.15	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.2	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.25	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.3	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.35	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.4	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.45	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.5	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.55	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.6	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.65	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.7	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.75	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.8	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.85	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.9	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.95	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	1.0	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.0	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.05	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.1	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.15	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.2	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.25	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.3	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.35	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.4	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.45	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.5	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.55	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.6	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.65	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.7	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.75	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.8	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.85	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.9	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	0.95	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/B1.1	1.0	1.0	1.0	1.0	1.0	0.0	14	0	0	0	30
+
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.0	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.05	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.1	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.15	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.2	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.25	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.3	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.35	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.4	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.45	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.5	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.55	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.6	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.65	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.7	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.75	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.8	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.85	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.9	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.95	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	1.0	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.0	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.05	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.1	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.15	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.2	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.25	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.3	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.35	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.4	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.45	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.5	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.55	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.6	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.65	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.7	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.75	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.8	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.85	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.9	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	0.95	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/C1.3	1.0	0.0	1.0	0.0	0.9732326698695951	0.0	179	0	0	0	2550
+
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.0	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.05	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.1	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.15	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.2	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.25	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.3	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.35	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.4	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.45	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.5	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.55	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.6	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.65	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.7	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.75	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.8	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.85	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.9	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.95	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	1.0	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.0	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.05	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.1	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.15	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.2	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.25	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.3	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.35	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.4	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.45	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.5	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.55	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.6	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.65	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.7	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.75	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.8	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.85	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.9	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	0.95	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+FAKE_EDA-WP2_MERGE local+global-with-FG ./src/main/resources/exci/alma/goldStandardAnnotation/test/D1.5	1.0	0.0	1.0	0.0	0.9487179487179487	0.0	72	0	0	0	650
+
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.0	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.05	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.1	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.15	0.14285714285714285	1.0	0.25	0.9619219320090503	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.2	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.25	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.3	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.35	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.4	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.45	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.5	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.55	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.6	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.65	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.7	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.75	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.8	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.85	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.9	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	0.95	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	1.0	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.0	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.05	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.1	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.15	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.2	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.25	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.3	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.35	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.4	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.45	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.5	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.55	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.6	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.65	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.7	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.75	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.8	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.85	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.9	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	0.95	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG	1.0	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.0	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.05	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.1	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.15	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.2	0.14285714285714285	1.0	0.25	0.9619219320090503	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.25	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.3	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.35	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.4	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.45	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.5	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.55	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.6	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.65	0.14285714285714285	1.0	0.25	0.9619219320090505	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.7	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.75	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.8	0.14285714285714285	1.0	0.25	0.9619219320090503	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.85	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.9	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	0.95	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	1.0	0.14285714285714285	1.0	0.25	0.9619219320090504	0.0	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.0	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.05	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.1	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.15	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.2	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.25	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.3	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.35	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.4	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.45	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.5	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.55	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.6	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.65	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.7	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.75	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.8	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.85	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.9	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	0.95	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	1.0	0.0	1.0	0.0	0.9691403926234384	NaN	4036
+
+Recall-Precision curves:
+Recall	FAKE_EDA-WP2_MERGE local+global-with-FG MACRO AVG	FAKE_EDA-WP2_MERGE local+global-with-FG MICRO AVG	FAKE_EDA-WP2_MERGE local-with-FG MACRO AVG	FAKE_EDA-WP2_MERGE local-with-FG MICRO AVG
+0.0	1.000	0.000	1.000	0.000
+0.1	1.000	0.000	1.000	0.000
+0.2	0.000	0.000	0.000	0.000
+0.3	0.000	0.000	0.000	0.000
+0.4	0.000	0.000	0.000	0.000
+0.5	0.000	0.000	0.000	0.000
+0.6	0.000	0.000	0.000	0.000
+0.7	0.000	0.000	0.000	0.000
+0.8	0.000	0.000	0.000	0.000
+0.9	0.000	0.000	0.000	0.000
+1.0	0.000	0.000	0.000	0.000

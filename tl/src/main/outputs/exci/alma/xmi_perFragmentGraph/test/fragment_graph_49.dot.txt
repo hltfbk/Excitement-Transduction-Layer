@@ -1,0 +1,3 @@
+digraph rawGraph {
+"zona Ferrara problemi di connessione" -> "problemi di connessione" [label=1] [color=green]
+}

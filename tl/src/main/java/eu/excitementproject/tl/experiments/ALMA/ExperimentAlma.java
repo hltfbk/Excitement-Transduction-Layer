@@ -172,7 +172,8 @@ public class ExperimentAlma extends AbstractExperiment {
 		
 		// which EDA(s) to use
 		//	EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
-		EdaName[] names = {EdaName.P1EDA};
+//		EdaName[] names = {EdaName.P1EDA};
+		EdaName[] names = {EdaName.FAKE_EDA};
 		//		EdaName[] names = {EdaName.TIE_POS};	
 		
 		// ===== END OF SET-UP

@@ -1,0 +1,6 @@
+digraph rawGraph {
+"tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" -> "al sito x poter scegliere un premio ci sono problemi di connessione" [label=1] [color=green]
+"al sito x poter scegliere un premio ci sono problemi di connessione" -> "al sito ci sono problemi di connessione" [label=1] [color=green]
+"tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" -> "tutte le volte che devo collegarmi al sito ci sono problemi di connessione" [label=1] [color=green]
+"tutte le volte che devo collegarmi al sito ci sono problemi di connessione" -> "al sito ci sono problemi di connessione" [label=1] [color=green]
+}

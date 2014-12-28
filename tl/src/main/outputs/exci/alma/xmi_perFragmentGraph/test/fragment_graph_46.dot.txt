@@ -1,0 +1,6 @@
+digraph rawGraph {
+"Ho problemi con la TELEFONIAX CONSOLLE 2.. il mio pc rileva la rete wifi ma non riesco a connettermi pur inserendo la wpa2 corretta" -> "Ho problemi con la TELEFONIAX CONSOLLE 2.. il mio pc rileva la rete wifi ma non riesco a connettermi" [label=1] [color=green]
+"Ho problemi con la TELEFONIAX CONSOLLE 2.. il mio pc rileva la rete wifi ma non riesco a connettermi" -> "Ho problemi con la TELEFONIAX CONSOLLE 2.. non riesco a connettermi" [label=1] [color=green]
+"Ho problemi con la TELEFONIAX CONSOLLE 2.. il mio pc rileva la rete wifi ma non riesco a connettermi pur inserendo la wpa2 corretta" -> "Ho problemi con la TELEFONIAX CONSOLLE 2.. non riesco a connettermi pur inserendo la wpa2 corretta" [label=1] [color=green]
+"Ho problemi con la TELEFONIAX CONSOLLE 2.. non riesco a connettermi pur inserendo la wpa2 corretta" -> "Ho problemi con la TELEFONIAX CONSOLLE 2.. non riesco a connettermi" [label=1] [color=green]
+}

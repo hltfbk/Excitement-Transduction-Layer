@@ -1,0 +1,3 @@
+digraph rawGraph {
+"Il nuovo sito TELEFONIAX è poco agevole" -> "Il sito TELEFONIAX è poco agevole" [label=1] [color=green]
+}

@@ -1,0 +1,6 @@
+digraph rawGraph {
+"non mi va internet con il 3g sul mio MOBILEE" -> "non mi va internet sul mio MOBILEE" [label=1] [color=green]
+"non mi va internet sul mio MOBILEE" -> "non mi va internet" [label=1] [color=green]
+"non mi va internet con il 3g sul mio MOBILEE" -> "non mi va internet con il 3g" [label=1] [color=green]
+"non mi va internet con il 3g" -> "non mi va internet" [label=1] [color=green]
+}

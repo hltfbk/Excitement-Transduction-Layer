@@ -1,0 +1,3 @@
+digraph rawGraph {
+"sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti" -> "sul sito della TELEFONIAX non riesco ad attivare la ABCDEF" [label=1] [color=green]
+}

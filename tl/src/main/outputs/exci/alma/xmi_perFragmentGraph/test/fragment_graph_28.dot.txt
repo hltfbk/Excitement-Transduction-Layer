@@ -1,0 +1,6 @@
+digraph rawGraph {
+"voi non mi avete mai attivato la linea in casa" -> "voi non mi avete mai attivato la linea" [label=1] [color=green]
+"voi non mi avete mai attivato la linea" -> "voi non mi avete attivato la linea" [label=1] [color=green]
+"voi non mi avete mai attivato la linea in casa" -> "voi non mi avete attivato la linea in casa" [label=1] [color=green]
+"voi non mi avete attivato la linea in casa" -> "voi non mi avete attivato la linea" [label=1] [color=green]
+}
