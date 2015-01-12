@@ -1427,9 +1427,9 @@ public class EvaluatorCategoryAnnotator {
 		Map<String, Float> categoryOccurrences = new HashMap<String, Float>();
 		for (Interaction interaction : trainingDocs) {
 			String[] cats = interaction.getCategories();
-			float occ = 1;
 			Set<String> catsSet = new HashSet<String>(Arrays.asList(cats));
 			for (String cat : catsSet) {
+				float occ = 1;
 				if (categoryOccurrences.containsKey(cat)) {
 					occ += categoryOccurrences.get(cat);
 				}
