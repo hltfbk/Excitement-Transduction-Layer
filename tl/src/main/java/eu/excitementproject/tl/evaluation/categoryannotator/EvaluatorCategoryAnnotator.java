@@ -1142,8 +1142,6 @@ public class EvaluatorCategoryAnnotator {
 		    		//graph = new EntailmentGraphCollapsed(new File("src/main/resources/exci/omq/graphs/omq_public_1_collapse_graph_6_1_tfidf_nnn_TDF_SEDA_LEMMA+DB2+GERMANET+SDEKOMPO+NEGATION+PARTIKEL.xml"));
 		    		//TODO: REMOVE; DEBUGGING ONLY
 	    		}
-	    		mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(graph);
-				logger.info("Most frequent category in graph: " + mostProbableCat);
 	    	} else { // build graph
 	    		String graphDocumentsFilename = inputDataFoldername + "omq_public_"+j+"_emails.xml";
 				logger.info("Reading documents for graph building from " + graphDocumentsFilename);	    			
@@ -1202,12 +1200,11 @@ public class EvaluatorCategoryAnnotator {
 	    		logger.info("Number of edges in collapsed graph: " + graph.edgeSet().size());
 	    		XMLFileWriter.write(graph.toXML(), graphFile.getAbsolutePath());			
 	    		logger.info("Wrote graph to : " + graphFile.getAbsolutePath());
-	    			    		
-	    		graphDocs.addAll(emailDocs);
-	    		graphDocs.addAll(categoryDocs);
-	    		mostProbableCat = computeMostFrequentCategory(graphDocs);
 	    	}
 
+	    	mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(graph);
+			logger.info("Most frequent category in graph: " + mostProbableCat);
+			
 			logger.info("Collapsed graph " + graphFile.getAbsolutePath() + " contains " + graph.vertexSet().size() + " nodes and " + graph.edgeSet().size() + " edges");
 			
 	    	//indexing graph nodes and initializing search
@@ -1427,9 +1424,9 @@ public class EvaluatorCategoryAnnotator {
 		Map<String, Float> categoryOccurrences = new HashMap<String, Float>();
 		for (Interaction interaction : trainingDocs) {
 			String[] cats = interaction.getCategories();
-			float occ = 1;
 			Set<String> catsSet = new HashSet<String>(Arrays.asList(cats));
 			for (String cat : catsSet) {
+				float occ = 1;
 				if (categoryOccurrences.containsKey(cat)) {
 					occ += categoryOccurrences.get(cat);
 				}

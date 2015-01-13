@@ -55,6 +55,7 @@ public class EvaluatorUtils {
 
 	/**
 	 * Find out what's the most frequent category stored in the graph.
+	 * (method used for assigning the most frequent category in case incoming interaction cannot be categorized).
 	 * 
 	 * @param graph
 	 * @return most frequent category
