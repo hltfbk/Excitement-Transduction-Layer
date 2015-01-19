@@ -190,7 +190,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	static int topN; //use topNArray to set the parameter
 	static int [] topNArray = {1};
 	
-	static int [][] setupArrays= {{0, 0, -1}}; //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
+	static int [][] setupArrays= {{0, -1, -1}}; //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
 	private static int setupToken = -1; //use topArrays to set the parameter, set to -1 if no token fragments should be processed
 	private static WordDecompositionType decompTypeToken = WordDecompositionType.NONE; 
 //	private static WordDecompositionType decompTypeToken = WordDecompositionType.NO_RESTRICTION; 
@@ -295,18 +295,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			System.exit(1);
 		}
 		
-		 try {
-			 temp = File.createTempFile(createCollapsedGraphFileName("debugg_" + System.currentTimeMillis()), ".tmp");
-			 writer = new PrintWriter(temp, "UTF-8");
-			 System.out.println("Created file at " + temp.getAbsolutePath());
-			 tempResult = File.createTempFile(createCollapsedGraphFileName("debugg_result_" + System.currentTimeMillis()), ".tmp");
-			 writerResult = new PrintWriter(tempResult, "UTF-8");
-			 System.out.println("Created file at " + tempResult.getAbsolutePath());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		//TODO:
 		if(setupToken < 1 || setupDependency < 1 || setupSentence < 1){
     		addLemmaLabel = false;
@@ -369,6 +357,19 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		graphOptimizer = new SimpleGraphOptimizer(); //new GlobalGraphOptimizer(); --> don't use!
 		confidenceCalculator = new ConfidenceCalculatorCategoricalFrequencyDistribution(methodDocument, categoryBoost);
 		categoryAnnotator = new CategoryAnnotatorAllCats();
+		
+		 try {
+			 temp = File.createTempFile(createCollapsedGraphFileName("debugg_" + System.currentTimeMillis()), ".tmp");
+			 writer = new PrintWriter(temp, "UTF-8");
+			 System.out.println("Created file at " + temp.getAbsolutePath());
+			 tempResult = File.createTempFile(createCollapsedGraphFileName("debugg_result_" + System.currentTimeMillis()), ".tmp");
+			 writerResult = new PrintWriter(tempResult, "UTF-8");
+			 System.out.println("Created file at " + tempResult.getAbsolutePath());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/**
@@ -1000,7 +1001,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
        //Iterate through interactions, annotate each using existing graph and then add interaction to graph 
 		for (Interaction doc : docs) {	
 			logger.info("Processing document " + run + " out of " + docs.size());
-//			if (run > 10) break; //TODO: Remove (debugging only)
+			if (run > 1) break; //TODO: Remove (debugging only)
 			
 			/** 
 			 * STEP 2: ANNOTATE INTERACTION 
