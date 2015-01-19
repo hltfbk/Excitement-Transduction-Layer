@@ -1,0 +1,4723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <provider>OMQ</provider>
+  <channel>email</channel>
+  <language>DE</language>
+  <interactions>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>65</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>56</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="56"><![CDATA[Sehr geehrtes Service-Team, mein Warehouse Produkte id IT&OFFICEKatalog 12 weigert sich eine DVD zu brennen und verlangt immer nach einer Aktiviereung für DATA3, obwohl ich die Software(G1-14543-48801-87860-012174-3051212-16607) bereits registriert habe. Angeblich wäre diese Nummer bereits mit einer anderen Email-Adresse registriert (Fehlercode -27).]]></relevantText><![CDATA[ Bitte um Ihre Unterstützung! Danke Holger Cabret
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>109</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>76</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="76"><![CDATA[Bei Programmaufruf Hinweis:
+Fehlercode: -9]]></relevantText><![CDATA[
+
+Auch bei erfolgter
+Neuinstallation gleiche Fehlermeldung
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>76</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>78</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+In meine Produkt-Preview will ich kleine Verkaufs-Prozesse einbringen, die mit einem Kartenlesegerät
+(Powerread ExtremeScan P 93)eingelesen wurden. ]]>
+<relevantText goldCategory="78"><![CDATA[Leider kann Ihr Verarbeitungsprogramm die dabei
+in Ansatz gebrachte Dateierweiterung *.PRC (Workit) nicht lesen.]]></relevantText><![CDATA[ Bitte um Mitteilung,
+ob der erforderliche Entschlüsselungsverfahren von Ihnen und wenn ja, zu welchem Preis bereitgestellt werden
+kann? Andernfalls bitte Wege aufzeigen, wie ich das Problem lösen kann.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>174</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>82</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich habe warehouse Abläufe im OFFICE Katalog 12 auf meinem neuen PC, der unter Windows7 läuft (im Febr. 11
+gekauft), installiert. 
+
+1. Prozesse mit Standard-EM-Karten über EtherNetCard wollte ich von dem Chipkartenleser auf den
+PC übertragen. Das ging überhaupt nicht - trotz Ratsuche beim Fachhändler. ]]>
+<relevantText goldCategory="82"><![CDATA[Immerzu kam
+der Hinweis "Es konnte keine Verbindung zur Hardware aufgebaut werden." und anschließend
+"Der gewählte Ordner ist schreibgeschützt. Speichern nicht möglich."]]></relevantText><![CDATA[ Irgendwie
+kannte er den Kartenleser nicht. Jetzt nach 5 Monaten Pause (wunderwunder) geht es plötzlich. 
+
+2. Dann versuchte ich analoge Kassenlisten vom Prozessscanner über einen SD-Grapper(?)
+auf den PC zu übertragen. Der PC hat den ARC bei "Hardware" erkannt. Aber auch hier kam
+immerzu der oben ausgeschriebene Hinweis. Auch das ging nach einiger Zeit (ohne daß ich
+Konfigurationen o.ä. änderte) plötzlich und unerwartet.
+
+3. Schlußendlich strebte ich eine manuelle Erstellung an. Also Prozesse bei iProcess o.ä.
+direkterstellen, damit ich sie ohne Onlinezugriff nutzen kann. Das geht nur mit den Produktdaten es werden
+keinerlei Bestellnummer erstellt. Die Meldungen habe ich unter 1. schon geschrieben.
+
+Außerdem habe ich separat den alten PC nutzbar, der unter WindowsXP läuft. Dort hatte ich
+noch die Vorgängerversion von Warehouse installiert. Folglich installierte ich das neue Warehouse
+auch dort, um die genannten drei Erstellvarianten zu testen. Alle drei funktionierten
+sofort und einwandfrei. Ich probierte daher auch am neuen PC immer weiter. Aber die
+Direkterstellung bekomme ich einfach nicht hin. Kann das an Windows7 oder den
+Systemkomponenten liegen? Und wie kann ich dieses Problem beheben?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>282</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>83</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="83"><![CDATA["Programm weiter verwenden"
+führt zum Hinweis
+"Der Freischaltcode ist nicht korrekt..."]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>462</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>31</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+ich nutze im Moment die kostenlose Version Warehouse 13.0
+und will Bekleidungsartikel mit Bildern in einer Produktpreview
+darstellen. Also einen Prozess erzeugen.
+Am Ende des Produktorganizers habe ich Probleme:
+Und zwar: Es erscheint der Button "Fertig" und im darunterliegenden Fenster steht: Ausgabe: Prozess erzeugen und betrachten. Ich klicke darauf. Dann erscheint ein Fenster:
+                Processing wird durchgeführt
+]]>
+<relevantText goldCategory="31"><![CDATA[Es erscheint das Fenster zum Brennen. Aber die gebrannte DVD lässt sich auf dem DVD-Laufwerk nicht wiedergeben.]]></relevantText><![CDATA[
+Frage: Was mache ich falsch? Gibt es eine Beschreibung für "Anfänger"
+
+MfG  A. Layen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>324</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+hallo,
+seit ich mein produkt ultimate auf meinem laptop mit windows 7 aufgespielt habe kann ich meine fertiggestellte produktpreview nicht brennen.]]>
+<relevantText goldCategory="106"><![CDATA[der rechner sagt,kein brenner vorhanden.]]></relevantText><![CDATA[
+der laptop hat einen brenner.
+mfg
+lauritz graf
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>308</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="106"><![CDATA[Meldung beim Versuch zu brennen: "Es ist kein geeigneter Brenner
+gefunden worden"]]></relevantText><![CDATA[
+SFC 18+PE erkennt meinen Brenner nicht.
+Aufforderung von der Software auf neueste Version zu aktualisieren
+um damit das Problem evt. zu beheben.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>236</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>104</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo Helpdesk-Team,
+
+]]>
+<relevantText goldCategory="104"><![CDATA[ich bekomme mein Sales firstclass 19 Ultimate unter Windows7 nicht ans laufen. Es liegt daran,
+dass nach der eigentlichen Installation das Eingabefenster für die Seriennummer nicht
+erscheint.]]></relevantText><![CDATA[ Auch eine Deinstallation mit anschließender Neuinstallation ohne aktiven
+Virenschutz und aktiver Firewall brachte keinen Erfolg. Was kann ich tun? 
+
+Ich nutze Sales firstclass 19 Ultimate hilfsweise im XPMode unter Windows7, allerdings ist das
+nicht sehr performant!
+
+Über eine rasche Hilfe würde ich mich sehr freuen. 
+
+Mit freundlichen Grüßen,
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>405</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="80"><![CDATA[bei der umwandlung des produktdatenspeichers ist ein fehler aufgetreten]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>433</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>60</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="60"><![CDATA[Ich habe mein Specificationsheet erstellt und beim Specificationsheet exportieren und Specificationsheet freischalten
+erhalte ich bei 50% die Fehlermeldung "Insufficient memory" und "nicht ausreichend Speicher".]]></relevantText><![CDATA[
+Was muss ich tun oder können Sie mir helfen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>627</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="80"><![CDATA[Beim aufspielen von PRODUKTE IM OFFICE KATALOGWH bekomme ich folgende Fehlermeldung bei der Umwandlun Ihres Produktdatenspeichers ist ein Fehler augetreten]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>54</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+]]>
+<relevantText goldCategory="32"><![CDATA[Beim Brennen einer DvD erhalte ich folgende Fehlermeldung:
+wmem reports disc project exception:411451v4]]></relevantText><![CDATA[
+
+
+Crv Dateien wurden bereits aus der Vrführung entfernt.
+Anbei die *.log Datei.
+"log" in "txt" umbenannt
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>26</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>84</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Installation Produkte im OFFICE Katalog WH firstclass - Umstieg von Produkte im IT und OFFICE Katalog 12 firstclass. Aktuell sind beide Versionen installiert. ]]>
+<relevantText goldCategory="84"><![CDATA[Unter der neuen Version 14 gelingt es nicht, Verkaufsobjekte eine Bestellnummer zu zuordnen ("normale" XLS-Statistiken in der separaten Bestellnummernzeile o.k. und unter der Version 12 sind auch die Prozessbestellnummern zu sehen)]]></relevantText><![CDATA[
+Was ist anders als in der Version 12.
+PC mit Windows 7 prof, Temtech-Scanner, die Prozesse (npf-Dateien) stammen von Solarmobile DFT-H63.
+Soeben entdeckt: Import von Salesdateien ohne Bestellnummer - PSEarch runtergeladen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>569</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="32"><![CDATA[Ich bekomme beim Brennen folgenden Fehlercode: 026416f5 (Verschlüsseln
+fehlgeschlagen) Was kann ich tun?]]></relevantText><![CDATA[ Habe den Ablauf schon etliche Male
+gebrannt
+und heute mehrere Artikel dazugemischt. Seitdem funktioniert das Brennen
+nicht mehr.
+Fuer eine kurze Info waere ich dankbar.
+Mit freundlichen
+Gruessen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>188</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>82</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="82"><![CDATA[Beim Erstellen eines Prozesses von einem XLS-Scanner habe ich das Problem, dass ich im Previewfenster zwar die Daten sehe, jedoch keine Bestellnummer zu sehen ist (Preview Prozess und Bestellnummer sind aktiviert).]]></relevantText><![CDATA[
+
+Außderm erhalte ich beim Betätigen des Erstellung-Buttons die Fehlermeldung "Es konnte keine Verbindung zur Hardware aufgebaut werden".
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>387</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>33</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+
+habe insgesamt knapp 7 Megabyte EMV Verkaufsmaterial von meinem Systech
+MTX-SR40W aufgeteilt in 385 sc2c Files. Die Bearbeitung ist trotz der
+normalerweise ausreichenden Performance des Rechners nicht praktikabel.
+Das
+konvertieren in PXA bringt da scheinbar Abhilfe. Die Files lassen sich
+sehr
+fluessig bearbeiten - ]]>
+<relevantText goldCategory="33"><![CDATA[aber an ca. 22. Stelle in der Gesamtansicht
+erscheint
+eine Fehlermeldung "Speicheranfrage ungültig".]]></relevantText><![CDATA[ Habe in diesem
+Zusammenhang auch festgestellt, dass der Arbeitsspeicher komplett
+ausgelastet ist. Gibt es hier eine Loesung um EMV Prozesse fluessig und ohne
+Datenverlust zu bearbeiten?? Moechte jetzt ungerrn wegen
+Kartenleserwechsel
+auch die Software wechseln.
+
+mfg
+Schlaemmer
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>258</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>125</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+
+]]>
+<relevantText goldCategory="125"><![CDATA[da ich mir einen Apple ,iMac Os X angeschafft habe, wollte ich fragen ob ich meine Warehouse Programme, überwiegend sales firstclass 20, auch auf diesem
+Computer von Apple iMac nutzen kann oder sind sie nicht kompatible?]]></relevantText><![CDATA[
+Auf der Packung stand nur Windows. Vielleicht gibt es doch eine Möglichkeit, von der ich nichts bekannt ist.
+Über eine Auskunft wäre ich Ihnen dankbar.
+
+Mit freundlichem Gruß
+Tyler Lothares
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>53</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+Sehr geehrte Damen und Herren,
+
+]]>
+<relevantText goldCategory="32"><![CDATA[nach der Installation von WarehousE Produkte im IT § OFFICE Katalog 12 auf meinem Laptop mit Windows Vista
+und der Aktivierung des DATA3-Code's für die CWEMVX-Ausgabe auf DVD erhielt ich nach der
+Berechnung von 6 von 7 Schritten für die Erstellung des Disc - Projects folgende
+Fehlermeldung:
+
+wmem notifies disc project 481763a7]]></relevantText><![CDATA[
+
+In dem Log-File-Bericht war am Ende folgendes angegeben: siehe Anhang.
+
+Wo liegt das Problem? Auf meinem Desktop-PC funktioniert das einwandfrei und ich bin von
+der Qualität begeistert!
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>505</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>77</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Nach dem Kauf von "Archivieren Sie Ihre Bestandslisten!" gelang es mir nach einigen
+Anlaufschwierigkeiten, den Treiber für den USB-Verwalter auf Windows 7 so zu installieren,
+dass Prozessdateien vom Prozessscanner auf die Festplatte übertragen werden konnten. Nach
+längerer Zeit wollte ich heute wieder mit dem Programm arbeiten. Das Übertragungssignal wurde
+angezeigt, bis ich die Erstellung durchrechnen wollte. Dann wurde der Previewbildschirm schwarz.
+Ich versuchte verschiedene Ausgänge und zwei verschiedene Geräte - ohne Erfolg.
+Schließlich versuchte ich eine Neuinstallation des Programms. ]]>
+<relevantText goldCategory="77"><![CDATA[Seitdem lässt sich nun auch
+der Treiber nicht mehr mit dem Programm verbinden, obwohl ich Schritt für Schritt so
+vorgegangen bin, wie auf der helpdesk-Seite beschrieben.]]></relevantText><![CDATA[ Windows meldet dennoch "Treiber
+nicht gefunden", obwohl er im Ordner steht und von der Warehouse-Download-Seite
+heruntergeladen wurde. Der USB-Verwalter war übrigens immer angeschlossen, ich versuchte es
+mit und ohne Verbindungskabel und an verschiedenen Ausgängen. Während des Downloads habe
+ich auch Virenscanner und Firewall deaktiviert und das setup als administrator ausgeführt.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>485</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>101</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="101"><![CDATA[Seit Tagen gibt es Probleme mit der Specificationsheet-Vorschau und ich kann das (neue)specificationsheet auch nicht freischalten.]]></relevantText><![CDATA[
+Mein derzeit freigeschaltetes specificationsheet kann ich seit heute auch nicht mehr aufrufen.
+Was ist passiert????
+
+Vielen Dank und liebe Grüße
+
+Amrei Tritterer
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>73</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>56</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Nach meinem computerabsturz habe ich das Programm
+Warehouse Produkte im IT u. OFFICE Katalog 13 first Class erneut installieren  üssen. Bei der Regisitrierung habe ich versehentlich eine andere Email-Adresse von mir angegeben.]]>
+<relevantText goldCategory="56"><![CDATA[Nunmehr kommt stets die Meldung Software ist bereits unter einer anderen Eamil-Adresse angemeldet.]]></relevantText><![CDATA[  In meinem persönlichen Account ist das programm aucvh nicht mehr gelistet. Die Sooftware läßt sich starten und benutzen. Ein Update kann aber nicht ddurchgeführt werden, da eine Registrierung verlangt wird, die ich dann aber nicht wieder abschließen kann, da die Fehlermeldung von neuem auftritt.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>217</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>74</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+ich besitze produkte_im_it___office_katalog_6_firstclass_e-version_11.3.8.4_de.exe und bin mit dem Programm
+zufrieden. ]]>
+<relevantText goldCategory="74"><![CDATA['Leider' stelle ich jetzt auf Windows 7 64bit um. Welche Möglichkeiten gibt es
+entweder meine jetzige Version zu nutzen oder welches ist die kostengünstigste Variante,
+wenn ich ein Programm vergleichbaren Umfangs und vergleichbarer Bedienfreundlichkeit /
+Funktionalität nutzen möchte?]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>27</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>84</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo liebe Fachleute!
+Im Rahmen eines neuen Prozess-Projekts möchte ich einen Ablauf, der bereits früher (von einer XLS-Liste) auf eine DVD überspielt worden ist und den ich in Form einer BZS.BPN-Datei auf meinem Rechner gespeichert habe, importieren. ]]>
+<relevantText goldCategory="84"><![CDATA[Das funktioniert grundsätzlich auch, es kommt aber der Prozess nur ohne Bestellnummer an; also die Bestellnummer geht bei der Operation verloren.]]></relevantText><![CDATA[
+Was ist die Ursache?
+Was kann ich tun?
+
+Mit freundlichem Gruß und Dank im Voraus
+Ernst Teufelsweib-Wander
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>145</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>110</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren
+ 
+ich habe Mitte diesen Monat die obige Software als download gekauft und installiert. ]]>
+<relevantText goldCategory="110"><![CDATA[Beim starten ist das Programm aber immer abgestürzt.]]></relevantText><![CDATA[
+Folgende Angaben sind unter den Startbild gestanden: 
+- Hardware beschleuniger wird eingerichtet
+- Produkt Pool wird geladen
+- Visualisierung ...
+- Statistikdarstellungen ...
+- Programmoberfläche wird aktualisiert
+nach dieser Einblendung ist das Fenster verschwunden.
+Heute habe ich das Programm vom Compi gelöscht und es nochmals heruntergeladen. Leider ohne Erfolg. Beim Laden des Programms, erscheint das gleiche Problem wie oben beschrieben.
+ 
+Wie kann ich das Problem lösen?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>363</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>71</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ihre Nachricht:
+Mein Programm ist: Anderes WAREHOUSE Programm oder allgemeine Anfrage
+Wie bereits telefonisch besprochen:
+]]>
+<relevantText goldCategory="71"><![CDATA[Sales Xtra L 8.8: Stocken in der Seitenansicht]]></relevantText><![CDATA[
+Fehler tritt bei hochsegmentierten (4.526 x 4.504) Material auf.
+Hier noch weitere 134 verlangte Zeichen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>366</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>71</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrtes Warehouse Team,
+ich bitte Sie um Hilfe!
+
+Ich habe mir das
+Warehouse Sales Firstclass 19 Ultimate gekauft und einen Datenscanner \"Systech MTX BT
+054 VE (CWVEMX)\"
+]]>
+<relevantText goldCategory="71"><![CDATA[Wenn ich die Abläufe im Warehouse bearbeiten moechte so
+stcken die Abläufe sehr stark so das eine Bearbeitung fast gar nicht mehr
+moeglich ist.]]></relevantText><![CDATA[
+
+Was kann ich tun um mir einen Bearbeitungs PC zu ersparen???
+(Kostet viel Geld)
+
+Danke fuer Ihre Antwort.
+Mit freundlichen Gruessen,
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>554</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>67</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo, es gelingt mit nicht mit meinem neu erworbenen "Produkte im IT&OFFICEKatalog 12" DVD´s zu
+brennen. Ich benutze WIN7 64 bit. Ich habe vor dem Starten des Brennvorgangs alle
+Einstellungen so vorgenommen, wie sie Ihr Cipheringtutorial emfiehlt.(seite 20 - 23)Das
+Verschlüsseln sollte 4:40 dauern.]]>
+<relevantText goldCategory="67"><![CDATA[Nach ca.4 min verschlüsseln erfolgt Abbruch mit folgendem
+Hinweis:Internes Problem während der Durchführung.]]></relevantText><![CDATA[Die letzten 2 Einträge im logFile lauten:
+Prepaire DVD ProcessFiles ()failed with errNr.42- cannot add menu to
+authoring String !!!MBK error in WriteProjekt 5-unknowrn failure.4x versucht mit
+gleichem Ergebnis. So nützt mir das Progamm nichts.Was kann ich tun?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>515</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>77</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Nachtrag zu d. bereits geschlossenen Ticket#: 1633443022242217:
+
+Hallo Herr Krempler,
+ 
+zuerst einmal wünsche ich Ihnen frohe Festtage gehabt zu haben und alles Gute und hauptsächlich
+Gesundheit für das neue Jahr !
+ 
+Leider muss ich mich noch einmal an Sie wenden, da ich weiterhin Probleme habe überhaupt die Abläufe zu laden.
+Ich habe mehrfach versucht, die Treiberversion gemäß Ihren Erklärungen zu laden.
+Ich habe ein Jiaoda - Notebook N 25 L - Speicherkapazität 2.048  -  Betriebssystem Windows XP
+Also:
+- zuerst abgewartet, daß Updates für die Schutzprogramme abgeschlossen waren
+- den USB - Stick ohne weitere Verlängerungskabel an der Rückseite des Notebook eingesteckt
+   (  welche Funktion hat der Knopf auf d. USB - Sick ??? ) 
+-  die Treiberversion   http://download.warehouse.net/warehouse_usb-prozessverwalter_5_(gelb_weiss)_de-4.zip
+   auf den Desktop  gespeichert.
+-  dann ins Laufwerk  C   extrahiert.
+-  dann setup.exe versucht auszuführen.
+   Und hier beginnt das Problem:  ich habe mit der rechten Mousetaste die EXE - Datei angeklickt,
+   => ausführen als  angewählt,  aber was ist mit Administrator gemeint ?
+   hier kommt immer die Frage :  welches Benutzerkonto verwendet werden soll ?
+   Ich habe  aktueller Benutzer  ( Notebook Hanfke )  angeklickt  +  OK.
+   Dann kommt immer der Hinweis:  Error saving at the current location.
+ 
+Nach einigen Versuchen die Software herunterzuladen war ich sicher, daß es funktioniert hatte, es kam keine Fehlermeldung.
+Ausserdem war es bei Systemsteuerung / Software in der Liste enthalten, also dachte ich, das jetzt alles o.k. ist.
+ 
+- jetzt habe ich probiert, ob ich vom Datenscanner ( Powerread / Mini EM `s ) einen Ablauf importieren kann.
+Also Datenscanner mit dem Verbindungskabel verbunden  siehe Abbildung 1
+ ==> Frage: was ist mit dem übriggebliebenen Stecker ?
+Jetzt im Programm Warehouse Sales firstclass WH  den blauen Button gedrückt  ==> als Erstellungsquelle oben rechts EM - Kartenleser 
+ausgewählt.  ]]>
+<relevantText goldCategory="77"><![CDATA[Jetzt kam der Hinweis , daß keine Verbindung zum Datenscanner hergestellt ist, auch wenn ich ihn vorher auf scan gestellt habe.]]></relevantText><![CDATA[
+Ich konnte vom Datenscanner nur Als Einzeldatensatz importieren.
+ 
+- Überspielen vom XLS - Prozessscanner:
+  Verbunden mit Klinkekabel  siehe Abildung 3, die Importierung klappte , nachdem ich auf d. USB - Stick den grauen Button
+   gedrückt hatte ( ich sah den Ablauf auf dem Monitor des Warehouse Sales Programms angezeigt. )
+- Als ich den Ablauf nun auf den schedulingview ziehen wollte, erschien dort nur  1 Datensatz ! Also nicht jeder einzelne Datensatz des Ablaufs.
+  Wenn bei diesen Daten auf Abrechnung drücke, wird zwar der ganze importierte Ablauf angezeigt, aber nicht in einzelnen Datensätzen.
+ 
+- die Übertragung vom Kassensystem habe ich nicht probiert.  Es ist ein ganz neues System Accountenance Art 75 LED mit internem Speicher
+  ( gekauft September 2010 )
+  Frage:  ist dafür das Kabel  siehe Abbildung 2  vorgesehen ?    
+   Eine Anschlussbuchse hat das Kassensystem dafür nicht. Oder geht es nur mit den Klinkekabel ?
+ 
+Da ich nicht wie gewünscht importieren konnte, habe ich jetzt nach Weihnachten alles deinstalliert und nochmals
+die Software Warehouse Sales Firstclass WH installiert und wollte erneut über den Download die Software für den Prozessverwalter
+installieren.  Aber jetzt klappt es mit der Software USB Prozessverwalter überhaupt nicht mehr.
+Jeder Versuch scheiterte. Ich versuchte es auch zuerst auf eigene Dateien zu speichern und dann ins Laufwerk C  extrahiert.
+Letztendlich kommt immer die Fehlermeldung  :  Error saving.......
+ 
+Noch eine Frage:  wenn ich das Sales firstclass WH Programm schließen möchte, also das  X  anklicke, konnte es bisher
+                            nie geschlossen werden ( es musste immer der Computer runtergefahren werden ).
+ 
+Ich bin einfach am verzweifeln. Ich habe einfach nicht das Computerwissen zu erkennen, wo ich welchen Fehler
+gemacht haben könnte.
+Mit Ihrer Erklärung:  Sollten sich bereits Treiber auf Ihrem PC befinden, wählen Sie zunächst die Option Uninstall bzw. Deinstallieren 
+                             und starten Sie anschließend die Installation erneut.
+komme ich nicht klar. Womöglich entferne ich Falsche Programme und richte Chaos im Computer an.
+ 
+Ich habe nicht gedacht, daß es so schwer ist, Ihr Prozessprogramm einzurichten, vielmehr die richtige Verbindung
+für die Übertragung herzustellen. Wahrscheinlich werden hier Kenntnisse vorausgesetzt, die ich nicht habe .
+Und bei dem USB - Prozessverwalter Set war auch kein Handbuch dabei.
+ 
+Ich hoffe, daß Sie mir helfen können bzw, es mir so genau Schritt für Schritt erläutern können,
+damit ich alles richtig installiert bekomme.
+ 
+Mit freundlichen Grüßen
+Ihre verzweifelte
+ 
+Daniela Hanfke, Bremerhaven
+----------------------------------------------------------------------------------------------------
+ 
+----- Original Message ----- 
+ 
+Sehr geehrter Frau Daniela Hanfke,
+
+vielen Dank, dass Sie uns kontaktiert haben.
+
+Entfernen Sie bitte vor Beginn der Erstellung alle per USB angebundenen Geräte (außer Maus und Tastatur), die während der Erstellung nicht notwendig sind, um eventuelle Konflikte zu vermeiden.
+
+Verwenden Sie dann bitte für die analoge Erstellung einen anderen USB-Anschluss an Ihrem PC. Verwenden Sie keine USB-Verteiler (Hubs). Schließen Sie den USB-Prozessverwalter bitte direkt an Ihrem PC an (ohne USB-Verlängerung). Wenn Sie bislang immer die Back-Eingänge Ihres PCs genutz haben, verbinden Sie den Prozessverwalter bitte probehalber mit einer USB-Schnittstelle an der Vorderseite Ihres PCs.
+ 
+
+Bitte installieren Sie darauffolgend die aktuelle Treiberversion Ihres USB-Prozessverwalters von hier:
+
+http://download.warehouse.net/warehouse_usb-prozessverwalter_5_(rot_weiss)_de-4.zip
+
+Laden Sie das Archiv zunächst auf Ihren PC und entpacken / extrahieren Sie das Verzeichnis komplett in einen Ordner auf Ihrem PC.
+
+Schließen Sie für die Installation alle laufenden Schutzprogramme auf Ihrem PC (Firewall, Antivirensoftware) und führen Sie anschließend die setup.exe aus oben angegebenem Verzeichnis aus. Die Treiber sollten daraufhin aufgespielt werden. Sollten sich schon Treiber auf Ihrem PC befinden, klicken Sie vorab auf die Option Uninstall bzw. Deinstallieren und beginnen Sie im Anschluss die Installation erneut.
+
+Wenden Sie die setup.exe bitte als Administrator an. Wählen Sie hierfür mit der rechten Maustaste die EXE-Datei und klicken Sie auf "Ausführen als " und dort "Administrator".
+
+Wenn die Treiber aufgespielt sind, versuchen Sie bitte mit Hilfe des USB-Gerätes und Ihrem WAREHOUSE-Programm nochmals eine Erstellung anzulegen.
+
+Sollten die Erstellungen unvollständig sein, klicken Sie bitte auf die Schaltfläche "Erweiterte Einstellungen" und schalten Sie die Option "Für ältere und leistungsschwache Computer optimieren" frei.  Wählen Sie dann unter "Erstellungsgröße" die Option "Benutzerdefiniert" und entfernen Sie in dem daraufhin auftauchenden Fenster bei den angegebenen Wert unter "Manuelle Rechenkorrektur", damit dieser bei den nächsten Erstellungen neu generiert werden kann.
+
+
+--
+Mit freundlichen Grüßen
+
+Karl Krempler
+
+******************************************************************
+* Bei verändertem Betreff kann die Mail leider nicht einsortiert *
+* werden! Verwenden Sie bitte die Antwortfunktion Ihres Mail-    *
+* programmes ohne den Betreff zu verändern.                      *
+******************************************************************
+
+WAREHOUSE Software GmbH
+Karl Krempler
+Supportmanager
+Postfach 574717
+584797 Leipzig
+
+Tel. Helpdesk Deutschland: 0800/1453784 (1,99 Euro/Min.)
+Tel. Helpdesk Österreich:  0800/765424 (1,79 Euro/Min.)
+Tel. Helpdesk Schweiz:     0800/387512 (1,80 CHF/Min.)
+
+http://www.warehouse.com
+
+BRB 787808 B | Managing Board:
+Theo Malkener | Helmut Honig | Florian Raus
+
+HINWEIS: Dies ist eine vertrauliche Nachricht und nur für den
+Adressaten vorgesehen. Es ist nicht erlaubt, diese Nachricht zu vervielfältigen
+oder Dritten zukommen zu lassen.
+
+Bitte verwenden Sie auch unsere mitgelieferten Anleitungsvideos Diese
+erklären die wichtigsten Arbeitsschritte. Sie finden Sie im Hilfemenü
+Ihres Systems aufrufbar. 
+
+Weitere Auskünfte erhalten Sie unter "Tipps und Tricks" auf unserer
+Helpdeskseite. 
+
+http://helpdesk.warehouse.net
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>351</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>65</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+ich habe Ihr Sales-Programm Warehouse Firstclass 19 Ultimate Spezialedition und wollte einen Ablauf von einem Mini EM-Datenscanner (Powerread BVT 62i - ist kompatibel mit Windows 7 64 bit)der per Ethernet angeschlossen ist aufspielen. Jedoch ist dies nicht möglich. Laut Windows 7 67 bit wird der Datenscanner ordnungsgemäß erkannt jedoch erstellt das Programm keine Daten. ]]>
+<relevantText goldCategory="65"><![CDATA[Man sieht nur ein leeres Datenfenster - der Datenscanner wird automatisch aktiviert aber die Software erstellt nichts und hängt sich dann kurze Zeit später auf.]]></relevantText><![CDATA[ Ansonsten funktioniert das Programm einwandfrei es kann Material von EMV-Datenscannern importiert werden, gebrannt werden- klappt alles. Nur über Ethernet funktioniert es nicht. Bitte teilen Sie mir mit, wie das Problem behoben werden kann. Vielen Dank! (Ethernet-Karte wurde getauscht - Problem ist weiter vorhanden.  
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>120</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>76</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="76"><![CDATA[fehlercode -9]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>34</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>84</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo und Guten Tag,
+
+]]>
+<relevantText goldCategory="84"><![CDATA[habe seit gestern Sales Firstclass 19 Spezialedition installiert-registriert und habe mir dann die Salesdateien von der Speicherkarte importiert und beim anzeigen des Ablaufs, kommt einfach keine Bestellnummer.]]></relevantText><![CDATA[
+
+Wenn ich den Ablauf vom Cardreader laufen lass, dann ist die Bestellnummer vorhanden.
+
+Können Sie mir bitte helfen, weiss nicht mehr weiter.
+
+Danke und herzliche Grüße
+Kerstin Michaelis
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>551</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>67</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag
+
+Ich arbeite zur Zeit an einem sehr grossen Projekt in complete EMV.
+Im Projekt hatte ich gegen 500 CWVEMX Dateien. Ich habe den Ablauf jedoch
+dann
+wegen der vielen Dateien in ca. 8Prozesse aufgeteilt und diese dann wieder
+in
+einem Projekt zusammengefuegt. Ich will das ganze Projekt in Complete EMV
+brennen. Ich habe dazu auf das DVD Symbol geklickt und wollte es auf
+eine
+Double Layer DVD+ R FK Disk brennen. ]]>
+<relevantText goldCategory="67"><![CDATA[Doch nach den Verschlüsselungs-Vorgaengen
+kam
+eine Fehlermeldung und das Brennen wurde abgebrochen.]]></relevantText><![CDATA[ Ich koennte Ihnen
+gegebenenfalls auch noch das Logfile des Problems als Bild schicken,
+falls
+Ihnen das helfen wuerde.
+Was empfehlen Sie mir zu tun um das Projekt in
+Complete EMV am besten auf eine Disk zu brennen? Ich habe auch schon die
+Brennvorgang 2010 gedownloaded und auch da kam dieselbe
+Fehlermeldung.
+
+Freundliche Gruesse
+
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>267</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>125</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="125"><![CDATA[Ich bin auf Apple, Mac umgestiegen und möchte Warehouse first class weiter verwenden.]]></relevantText><![CDATA[ Wie ist die Vorgangsweise, da unter Systemvoraussetzungen nichts von Apple, Mac drinsteht
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>203</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>66</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+]]>
+<relevantText goldCategory="66"><![CDATA[Bei der Gewinnanwendung in der Gewinnzieleingabe erhalte ich immer die Fehlermeldung:
+Fehler beim parsen der XSL Daten.]]></relevantText><![CDATA[
+
+PC mit WXP und auch Laptop mit W7.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>249</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>104</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag ,ich habe das Produkt Software Seriennummer
+S-44522-38327-16407-00214-83653 mehr als ein Jahr nicht gebraucht.Nun habe ich alles vergessen, Email log in usw.]]>
+<relevantText goldCategory="104"><![CDATA[Jetz habe ich mich neu regiestrieren wollen,mit wahrscheinlich anderer Mailanschrift.Als ich mit neuen Login mich einwählen wollte,wurde mir gesagt,dass das Produkt schon regiestriert sei.]]></relevantText><![CDATA[Ich komme nicht mehr weiter.Bitte setzen Sie doch bitte alle Daten zurück damit ich mit dem Programm arbeiten kann!!!!!
+Mfg
+
+Walter Jettenstadt
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>604</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>100</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+ich habe das Programm Produkt Ultimate teuer erworben und damit auch den Produktorganizer 13. Ich habe mich extra vor dem Kauf informiert, dass XDAT Dateien durch das Programm unterstützt werden und auch auf Ihrer Webseite http://www.warehouse.com/de/free-trial/produkt-organizer/ ist mein Kartenleser für XDAT dateien erwähnt. ]]>
+<relevantText goldCategory="100"><![CDATA[Leider bekomme ich immer wieder beim Laden der Daten im XDAT Format eine Fehlermeldung ,,No Global memory in whalloclocalpnt for address 33" wie mehrere andere auch http;//www.warehouse.info/de/no-global-memory.tipps.816314.html / http;//www.warehouse.info/de/produkt-organizer-13-firstclass-dateien-laden.tipps.740537.html.]]></relevantText><![CDATA[ Bitte unterstützen Sie mich dabei und erklären Sie mir was ich tun kann um dieses zu vermeiden.
+Bitte vermeiden Sie mir die Nummer des Helpdesks zu senden, diese kann ich mir alleine raussuchen, ich möchte einen Antwort per mail ! Dieses sollte für ein Unternehmen wie WAREHOUSE kein Problem sein. Ich habe für das Programm bereits viel Geld investiert und bin nicht bereit 1,99 Euro pro Min für ein Warteschleifen-Telefonat auszugeben.
+Mir freundl. Grüßen
+Walter Rebert
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>160</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>110</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="110"><![CDATA[Nach einer neuinstallation von sales firstclass lässt sich das Programm nicht mehr starten]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>539</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>67</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Seit Jahren laeuft das Programm
+einwandfrei. ]]>
+<relevantText goldCategory="67"><![CDATA[Ploetzlich der Abbruch nachdem alles vorbereitet ist
+unter: Proucessing - internes Problem- Datei nicht vorhanden.]]></relevantText><![CDATA[
+Neuinstallation
+bringt nichts. Auf meinem alten Rechner jetzt das gleiche Problem. Nichts
+geht mehr, was kann ich tun? Zur Zeit habe ich alles deinstalliert.
+Vielen
+Dank fuer Ihre Hilfe im voraus.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>224</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>74</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo Warehouse ,
+]]>
+<relevantText goldCategory="74"><![CDATA[meine version vom Warehouse Super Bill Administrator funktioniert
+leider auf meinem neuen Rechner nicht mehr , gibt es eine Moeglichkeit
+das
+Programm unter Windows 7 lauffaehig zu machen , oder eine neue Version
+?]]></relevantText><![CDATA[
+Fuer einen Tip waere ich Innen sehr dankbar , da das Programm unter XP
+einwandfrei funktioniert .
+MfG
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>264</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>125</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Habe ein Power Mac G5 gekauft. ]]>
+<relevantText goldCategory="125"><![CDATA[Möchte meine o.g. Software auf Mac laufen lassen?]]></relevantText><![CDATA[ Ist es möglich? Wenn nicht gibt es ein Upgrade für Mac, dass ich einspielen kann? Es kann ja nicht sein, daß die Software nur auf BS win xp/7 läuft.
+
+Danke
+
+mfg
+Cats61
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>613</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>100</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+ich habe mir "Produkte im OFFICE Katalog WH" von Ihnen schicken lassen und möchte EMV-Verkaufsobjekte aktiviren lassen
+Seriennr. M3-48536-73538-37766-16254-87026-86277
+Bestellnr.  23 123 787 437 727 178 WHC
+
+]]>
+<relevantText goldCategory="100"><![CDATA[zuerst zeigt es an: falsche Bestellnummer
+beim zweiten Mal  : falsche Seriennummer]]></relevantText><![CDATA[
+meine E-mail Adresse: fri_tur@hotmail.de
+- ich habe dieses Produkt bereits registriert
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>383</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>33</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+
+ich habe die Produkte im IT OFFICE Katalog 12 firstclass
+Software erworben. 
+]]>
+<relevantText goldCategory="33"><![CDATA[Jetzt habe ich leider das Problem, dass ich ein
+bereits angefangenes Projekt beim wieder oeffnen also um es z.B. Tage
+spaeter weiter zu bearbeiten zu koennen, eine Fehlermeldung
+bekomme.
+
+Eine Speicheranfrage ist ungültig. Eventuell
+ist kein Speicher mehr verfuegbar oder ein internes Problem ist
+aufgetragen.]]></relevantText><![CDATA[
+
+Dann fehlen aus dem bereits erstellten Projekt einige
+Teile.
+Was kann das sein? 
+Ist das ein Software Problem? Ich Habe die
+Hardware eigentlich geprueft und sollte ausreichend sein. 
+
+Windows 7.
+Das sollten die Datens ein.Tiffey Laptop R013-LIGHT Details: Display:
+25 cm (45,12 Zoll) EMV (1.024 x 768) 4:3 PowerBlendÂ© Matt
+IntelÂ®
+Coreâ?¢ 5 Duo Processor Q50 (5,16 GHz, 600 MHz, 5 MB) 6 GB (DDR3 /
+3GB x
+4 + 5GB x 4) Arbeitsspeicher 410 GB (7500 rpm S-ATA)
+Festplattenspeicher
+aTI Radeon R 602X Grafikkarte DVD-Brenner: Power Quatro Dual Layer
+(S-ATA) Wired Ethernet LAN (13/130 LAN), Wireless LAN (256.20bg/n)
+AnschlÃ¼sse: VGA, KopfhÃ¶rer Ausgang, Mikrofon Eingang, integriertes
+Mikrofon, 6x SD 5.6, 3-in-1 Mehrfach-Kartenleser (SD, SDHC, MMC), RJ66
+(LAN),
+Stromanschluss Betriebssystem: WindowsÂ® 7 Home Ultimate (64bit)
+Abmessungen (L x B x H): 330,0 x 287,3 x 37,1 (~ max. 44,5) mm
+Gewicht:
+3,59 kg 
+
+Mit freundlichen Gruessen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>342</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>65</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich erstelle von Chipkarte.Aber der Cardreader bzw. die Hardware wird nicht gefunden. 
+
+"WAREHOUSE Helpdesk" <mailto:helpdesk@warehouse.net> schrieb:
+
+]]>
+<relevantText goldCategory="65"><![CDATA[Seit ich Windows 7 habe kommt immer die Meldung wenn ich erstellen
+moechte,das keine Hardware gefunden wurde.]]></relevantText><![CDATA[ Ich importiere ueber ein
+Ethernetz-Kabel
+von meinem Handscan ERD-KL 847E auf.Vorher bei Salesfirstclas 18 und unter
+Vista lief es Fehlerfrei.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>19</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>84</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="84"><![CDATA[crv-Import ohne Bestellnummer]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>573</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>85</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Mitarbeiter der Firma Warehouse,
+
+das Programm Sales 19 Ultimate
+macht unter Windows 7 Home Ultimate keine Erstellung.
+]]>
+<relevantText goldCategory="85"><![CDATA[Es erscheint immer der
+Hinweis, Es konnte keine Verbindung zur Hardware aufgebaut werden.]]></relevantText><![CDATA[
+
+Ich
+besitze die Trendset Process-Box mit EtherNet Anschluss ein ca.5 Jahre
+altes
+Modell. Funktionierte bis jetzt immer mit all Ihren Versionen von Sales
+firstclass Progammen.
+
+Mit Windows Vista funktioniert die Erstellung auch mit
+Sales 19 Ultimate aber nicht mit Windows 7.
+Scheinbar wird die EtherNet
+Schnittstelle nicht erkannt.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>69</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>56</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="56"><![CDATA[Fehler 27]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>149</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>110</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="110"><![CDATA[Beim hochladen Ihres Programms hängt sich der neue Rechner auf]]></relevantText><![CDATA[
+Kein Hinweis
+Keine Ahnung
+Tritt auf wenn das Programm hochfährt !!! 
+Sehr geehrte Damen und Herren wenn Sie unausgereifte Software auf
+den Markt bringen und ich als laie anfangen muss Analysen mit Ihnen
+abzustimmen so vergeht mir weitere Lust mit Ihrer Software zu arbeiten.
+ 
+Da kommen mir doch erhebliche Zweifel hoch, ob es denn in Zukunft
+evtl öfter passiert das Ihre Software sich verabschiedet. Mit Ihrer
+anderen Software gibt es kein Problem !!!
+Ich bin innerlich schon soweit Ihr Ultimate Paket auf Ebey für´n "appl
+und ein EI " zu verkaufen.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>456</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>78</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+]]>
+<relevantText goldCategory="78"><![CDATA[Ich kann keine prc-Dateien mehr in meine Projekte importieren.]]></relevantText><![CDATA[ Bereits
+die
+Vorschau kann ich mit Sales firstclass nicht mehr anschauen, dass Programm
+reagiert dann nicht mehr. Die prc-Dateien lassen sich aber sowohl im
+Paymentreader wie auch im Workittool anschauen. Erstaunlicher Weise
+konnte ich in ein Projekt noch prc-Dateien importieren, diese funktionierten
+auch
+einwandfrei. Aktuell obiges Fehlerbild, und die bereits importierten
+Dateien haben keinene Bestellnummern mehr.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>431</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>55</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag, mit dem DVD-Brenner brenne ich regelmäßig Abläufe und bearbeite diese in Warehouse (Datenweg, etc.)]]>
+<relevantText goldCategory="55"><![CDATA[ Es kömmt des Öfteren vor, dass ein Ablauf unter WindowsBudgetCreator länger dauert als unter Warehouse.]]></relevantText><![CDATA[ Aktuelles Beispiel: Im Internet habe ich Ihnen einen Ablauf hochgeladen (ca. 300 MB). Dieser hat im BudgetCreator ca. 44 Elemente, im Warehouse nur 38 Elemente. Internet Adresse: http://www.datastore.net/gt.aspx?id=GOFOEKFOJODR Können Sie bitte untersuchen, warum Warehouse hier mehrere Elemente verschwinden lässt und mir ggf. eine Programmkorrektur zusenden? Vielen Dank im Voraus. Freundliche Grüße Clemens Hoffner
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>256</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>125</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Geschaetzter Techniker! Ich arbeitete immer mit Warehouse im IT und 
+OFFICE Katalog.Ich
+konnte einfach und rasch gute Artikelpreviews machen. Nun habe ich auf Mac
+umstellen muessen und ich moechte nun das alt bewaehrte System von
+Artikelpreviews
+weiterfuehren. ]]>
+<relevantText goldCategory="125"><![CDATA[Haben Sie eine Software, die beim Mac laeuft??]]></relevantText><![CDATA[ Gruesse
+Sie
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>346</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>65</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Mein EM Kartenleser ist über Ethernet auf einem Win7 Home Ultimate 64bit PC verbunden. In der
+Systemsteuerung ist sie auch ersichtlich. ]]>
+<relevantText goldCategory="65"><![CDATA[Bei  der Erstellung in salesfirstclass 20, kommt die
+Fehlermeldung - es konnte keine Verbindung zur Hardware aufgebaut werden.]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>101</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>63</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo Warehouse,
+
+Bei der Erstellung einer Artikelvorschau ( Produkte ) läßt sich der Endzeiger nicht platzieren.]]>
+<relevantText goldCategory="63"><![CDATA[Der Startzeiger wird angezeigt, aber bei der Vorschau beginnt die Anzeige der Daten immer vom ersten Eintrag an.]]></relevantText><![CDATA[Setzt man den Startzeiger an eine beliebige Stelle und startet die Vorschau,übernimmt er die Funktion des Endzeigers.  
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>185</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>82</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Programm Produkt im OFFICE Katalog first Class 14
+Wenn ich im Schedulingview Statistiken (XLS)auf auf meine Produktpreview ziehe, so kann ich diese Statistiken beim Ablauf der Presentation nicht sehen. ]]>
+<relevantText goldCategory="82"><![CDATA[Ich sehe zwar dass sie da ist, aber da ist keine Bestellnummer]]></relevantText><![CDATA[
+Ich kann die Statistiken im Programm von der Datei jedoch problemlos einbinden und sehen. also dürfte meine hardware vom Programm angesprochen werden
+Woran liegt das
+Ich das Datentabellen als Standardformat ausgewählt
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>92</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>63</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo, 
+
+Ich habe Daten in Verkaufsabläufe eingefügt. ]]>
+<relevantText goldCategory="63"><![CDATA[Dann versuche ich das Anzeigen von dem
+aktuell rot aktivierten Verkaufsprozess.
+
+In vielen Fällen beginnt nun aber das Anzeigen vom allerersten Prozess.]]></relevantText><![CDATA[
+
+ich habe den entstehenden Zustand vom Bildschirm"abfotografiert"..
+
+mfgbm
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>402</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>73</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="73"><![CDATA[Jetzt habe ich Sales firstclass 20 Neo erworben und kann sie wegen der Fehlermldung 9000 nicht installieren.]]></relevantText><![CDATA[ Der Software Upgrade Patch for XP KB776205 (deinstallieren) ist nicht vorhanden. Systeminformation:
+Windowsversion : Widow XP (32Bit) SP3
+Prozessor: Intel(R)Core(TM)5DuoCPU>7QuadCPU E6554 3.86GHz, Phys.Cores: 4  
+Speicher: Phys :7152MB, Page: 2048 MB
+DirectX Version: 9.12.3.1207
+Soundkarte: (4) Realtek HD Audio output
+Grafikkarte: ATI Radeon 2412 HZ on BenQ E7442HDP D-SUB with 0352x447           Fehlermeldung:
+Dateipfad: E:\addon\PCWatch_ASUS\PCWatch_de-DE_setup.ms_
+" E:\produkt\Sales_firstclass_20_Neode-DE_setup.ms
+"E:\addon\Power 0_writR_whvft\de-DE setup.ms   
+  
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>454</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>78</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+]]>
+<relevantText goldCategory="78"><![CDATA[Laden von * PRC Dateien in den Arbeitsbereich.]]></relevantText><![CDATA[ Vermutlich fehlt die
+Freischaltung des Entschlüsselungsverfahrens, jedoch machen sie es unmenschlich schwer dieses
+Entschlüsselungsverfahren freizuschalten. Trotz mehrerer Versuche bin ich gescheitert. Was
+muss
+ich wirklich tun um zum Erfolg zu kommen?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>269</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>125</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="125"><![CDATA[bin auf mac umgestiegen, funktioniert sales firstclass auf apple ?]]></relevantText><![CDATA[ oder welche programme gibt es von warehouse für apple?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>425</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>55</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich habe bereits einen Ablauf erstellt, hat muehsam funktioniert.
+]]>
+<relevantText goldCategory="55"><![CDATA[Nun beim
+zweiten Ablauf stimmt die Bestellnummer nicht mit den Daten ueberein.]]></relevantText><![CDATA[ Wie kann man
+das
+synchronisieren?
+
+Cardreader: Systech Handyscan BGH-SD43W
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>294</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>111</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrtes Helpdesk-Team,
+]]>
+<relevantText goldCategory="111"><![CDATA[aufgrund von einigen Rechner-Setups (Systemabstürze, neuer Rechner) habe ich nicht mehr die Möglichkeit, das Programm
+
+Analysity Statistics Laboratory 20 Download-Version,
+Bestellnummer:61308483000334367WHR,
+Seriennummer: T3-03038-71133-67283-56662-18207-68518,
+Registrierungsdatum: 11.03.2011
+
+frei zu schalten, da die begrenzte Anzahl von Freischaltungen erreicht ist.]]></relevantText><![CDATA[
+
+Ich bitte um erneute Zusendung eines gültigen Freischaltcodes.
+
+Vielen Dank und freundliche Grüße
+
+Eberhart Grundel
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>311</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag,
+ 
+habe mein Problem in Syscare eingegeben und außerdem eine e-mail an Herrn Joachim Meyer, dieselbe Ticket-Nr. verwendend, geschrieben. Das Problem besteht nach wie vor, auch bei einem zweiten Direktverkauf, den ich heute zu brennen versucht habe. ]]>
+<relevantText goldCategory="106"><![CDATA[Die Meldung lautet: "Brennprozess erfolgreicch abgeschlossen", ohne dass ein einziges Bit auf der BD gelandet wäre.]]></relevantText><![CDATA[
+ 
+Let´s hope the best,
+Kuno Lynch
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>114</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>76</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="76"><![CDATA[Auch beim Start von Warehouse Super Produkt Designer bekomme ich weiterhin eine Fehlermeldung. Das Programm konnte nicht ausgeführt werden.]]></relevantText><![CDATA[ Eventuell ist der Programmordner beschädigt. Eine Neuinstallation der Software könnte das Problem beheben. Sollte dieser Fehler erneut auftreten, wenden Sie sich bitte an den Helpdesk. Fehlercode:-9.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>226</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>74</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren
+
+]]>
+<relevantText goldCategory="74"><![CDATA[ich habe meinen Computer auf Win 7
+aufgeruestet und kann das Programm Sales firstclass 2009 nicht mehr
+installiern.]]></relevantText><![CDATA[ Haben Sie eine Loesung.
+
+Besten Dank und freundliche
+Gruesse
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>172</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>112</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+
+]]>
+<relevantText goldCategory="112"><![CDATA[beim Exportieren erhalte ich die Fehlermeldung ]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>482</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>101</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Problem besteht beim Exportieren des Specificationsheets bevor Es auf den Server hochgeladen werden kann. Des weiteren bestehen seit diesem auftreten Probleme mit der Darstellung des Specificationsheet im Intranet. Einige Objekte fehlen auf einmal. ]]>
+<relevantText goldCategory="101"><![CDATA[Wichtig ist das Abschalten der Fehlermeldung "nativer Fehler" am Ende des Exportiervorgangs.]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>260</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>125</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich habe das USb Keyboard K-7662 USB D3 an meinen Mac angeschlossen und über eine virtuelle Maschine (Parrs) in Windows eingebunden.
+]]>
+<relevantText goldCategory="125"><![CDATA[Leider Funktionieren weder auf der Windows noch auf der Macoberfläche die Tasten a, q, j, u, i, o, p. Woran kann das liegen?]]></relevantText><![CDATA[
+
+Die angeschlossene Mac-Tastatur hat keine Probleme diese tasten im SalesFirstclass zu nutzen.
+
+Danke für eine problemlösende Antwort
+Ch. Klipf
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>234</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="106"><![CDATA[erkennt keinen brenner wenn eine Video-DVD erstellt werden soll]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>200</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>66</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich benutze heute zum 2mal die Gewinn-Kalkulation im
+Produkt Ultimate 13,und es geht nicht. ]]>
+<relevantText goldCategory="66"><![CDATA[Beim Programm Starten
+und das Gewinnziel eigeben kommt nach Return immer:Fehler beim
+Parsen der XSL Daten.]]></relevantText><![CDATA[
+Habe dieses Programm noch nie benutzt.
+Schon ärgerlich.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>562</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+
+ich habe mal wieder ein Problem beim
+Brennen von einer DVD.
+Ich habe vorher schon mehrere Abläufe gebrannt,
+funktionierte einwandfrei.
+
+Ich habe wahrscheinlich beim Bearbeiten der
+Kategorieaufteilung etwas geloesch, weis aber nicht mehr was.
+
+Wenn ich auf
+das "Brennsymbol" gehe, kommen folgende Anzeigen:
+
+- Belegter Platz auf
+Medium: 4872/8286
+- danach faengt sofort beim Verschlüsseln der Schritt 2 an,
+Anzeige "Verschlüssele 2-4" Verschlüssele Prozesskategorien.
+
+Rufe ich einen anderen
+Ablaf auf, den ich noch nicht gebrannt habe, geht es hier von Schritt 1
+ganz
+normal los.
+]]>
+<relevantText goldCategory="32"><![CDATA[ist dieser Scritt fertig, kommt eine Fehleranzeige,
+"wmem
+reports disc project build exception: 026416f5]]></relevantText><![CDATA[
+
+Nachfolgend die, wenn ich
+moechte angezeigte Fehlermeldung.
+
+Ich hoffe das Sie mir helfen
+koennen.
+
+Vielen Dank
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>189</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>82</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Wenn ich die .pbl datei im Previewmonitor abspiele bekomme ich die Bestellnummer. ]]>
+<relevantText goldCategory="82"><![CDATA[Wenn ich die .pbl datei in das projekt ziehe habe ich im übersichts modus zwar eine zweite zeile (nehme an die Bestellnummernzeile) bekomme aber keine Bestellnummern hinein.]]></relevantText><![CDATA[ Wie bekomme ich die Bestellnummern? Übertragungseinstellungen, Bestellnummer Ein/Aus? Ich komme einfach nicht darauf.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>595</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="80"><![CDATA[Folgender Hinweis bei der Installation: Bei der Installation ihres Datenspeichers ist ein Problem vorgekommen. Sie werden diesen aus diesem Grund nicht verwenden können.]]></relevantText><![CDATA[
+
+Das Programm Warehouse Produkte im IT Katelog läauft einwandfrei.
+
+Beim Öffnen des Programms W Produkt Organizer 13 und W Online Export Center tritt eine Fehlermeldung, Code 64284712 auf
+Beide Programme laufen nicht.
+Ich benutze ein neues Notebook von Acer, Wind. 7
+
+Was kann die Ursache sein?
+Stirling@aol.com
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>220</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>74</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="74"><![CDATA[Warum ist der prozesscanner nicht mit windows 7
+Kompatibel?]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>417</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>55</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+Bei der Nutzung oben genannter Software,
+mit der ich bisher sehr zufrieden war, tritt neuerdings folgendes
+Problem
+auf.
+]]>
+<relevantText goldCategory="55"><![CDATA[Wenn ich einen mit "WinCASH-BHD 312Y" erstellten Ablauf mit "Warehouse
+Abläufe im OFFICE Katalog 11" bearbeiten moechte, gibt es 
+bei der Abrechnung des
+Ablaufs keine Synchronitaet zwischsn Daten und Bestellnummer.]]></relevantText><![CDATA[ Die Bestellnummer liegt mit 4 bis
+5
+Feldern und mehr 
+hinter der Bestellnummernanzeige. Dieser Mangel tritt
+bereits auf, wenn ich den Ablauf in der WaREHOUSE Software abspiele, 
+ohne daran
+bereits Veraenderungen durchgefuehrt zu habe. Werden gewuenschte
+Aenderungen
+durchgefuehrt und der Ablauf 
+auf DVD gebrannt, potenziert sich dieser Fehler
+beim Anzeigen auf dem IPAD-Computer. Offensichtlich handelt es sich 
+hierbei
+um einen  Softwarefehler. Eventuell um ein fehlendes Entschlüsselungsverfahren auf meinem
+PC.
+Fuer Ihre Hilfe zu Loesung des
+Problems waere ich Ihnen sehr verbunden
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>290</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>111</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich will die Zusatzprogramme von Sfc 20 ultimate installieren. ]]>
+<relevantText goldCategory="111"><![CDATA[Es kommt immer die
+Fehlermeldung "Das Installationsprogramm für "XtraGood Calculage" konnte auf dem
+Installationsmedium nicht geöffnet werden......" obwohl die DVD eingelegt ist.]]></relevantText><![CDATA[ Von DVD
+lassen sich die Programme auch nicht installieren. Wie kann ich die Zusatzprogramme
+installieren?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>233</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>74</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="74"><![CDATA[seitdem ich das Betriebssystem windows 7 auf dem Rechner habe, laesst
+sich
+der produktcreator 11 nicht mehr installieren.]]></relevantText><![CDATA[ Was kann ich als ziemlicher
+Computer-Laie tun?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>158</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>110</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+ich habe das programm ohne aktiver firewall oder virenprogramm installiert. nach dem ausführen des programms erscheint er startbildschirm. ]]>
+<relevantText goldCategory="110"><![CDATA[nach dem dort geschriegben wird, dass die prozessstruktur eingerichtet wird, bricht d]]></relevantText><![CDATA[
+
+mein system
+win xp home
+amd phantom 3050mhz
+2 gb ram
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>162</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>112</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+]]>
+<relevantText goldCategory="112"><![CDATA[seit kurzem kann ich keine Daten mehr hochladen. Kurz nach meiner Registrierung ging das
+noch problemlos. In der Fehlermeldung heißt es, es gibt ein Problem mit der OWH-Applikation.]]></relevantText><![CDATA[
+Ein weiters Problem hatte ich auch beim Upgraden. Beim absenden der Bestellung kam es zu
+einer Fehlermeldung bzw. 'Datenfehler'.
+
+Können Sie mir kurz Rückmeldung geben wie es zu diesen Prolemen kommt?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>450</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>78</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+]]>
+<relevantText goldCategory="78"><![CDATA[fehlermeldung:das Dateiformat..prc kann nicht gelesen werden,bitte vergewissern sie sich das
+das laufwerk nicht voll oder schreibgeschützt ist.]]></relevantText><![CDATA[
+diese fehlermeldung ist früher nicht aufgetreten,sie betrifft aber meine meistgenutztes
+format (prc. powerread full se 33 mb pro sek)
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>621</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>87</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="87"><![CDATA[Beim Start von XLS firstclass 20 kommt die Auskunft
+"Fehler in Warehouse Datenspeicher. Es ist möglich, dass manche Funktionen nicht verfügbar sind.]]></relevantText><![CDATA[
+Bei klick auf "Fehler beheben" habe ich PC neu gestartet, Neueste update heruntergeladen, ohne Erfolg.
+Fenster kommt erneut.
+Beim klick auf "Ignorieren" läuft das Programm weiter.
+Bei anschließendem klick auf "CD importieren" kommt die Meldung "Programm reagiert nicht"
+Wo liegt der Fehler?
+Als Sicherung verwende ich ich "F Rescue InternetSecurity" mit dem aktuellen update.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>624</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="80"><![CDATA[Nach der Installation der Software Prdukte im OFFICE Katalog WH Firstclass kam der Hinweis das derInterbase SPARQL Server nicht installiert werden kann die Umwandlung des Produktdatenspeichers nicht vollständig umgewandelt wurde, obnwohl ich mir den Interbase extra von Warehouse noch mals runtergeladen habe]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>408</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>59</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich habe mir die Download-Version von "Sales Firstclass 20 Ultimate" gekauft und inkl. der
+Zusatzsoftware installiert.
+]]>
+<relevantText goldCategory="59"><![CDATA[Wenn ich bei "AutoSortSD Ultimate Functions" die Getright-Funktion starte, öffnet sich das
+entsprechende Fenster. Dieses ist allerdings in der Höhe zu gross und ragt oben und unten
+über den Bildrand hinaus. Somit kann ich es weder oben über das Kreuz schliessen, noch
+unten über die Buttons bestätigen.]]></relevantText><![CDATA[
+Wie kann man das Fesnter kleiner machen?
+
+Vielen Dank für Ihre Hilfe!
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>230</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>74</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Kann in diesen neuen PC Sales Xtra L nicht installieren. ]]>
+<relevantText goldCategory="74"><![CDATA[Es erscheint die
+Meldung: Windows Version nicht unterstuetzt.]]></relevantText><![CDATA[ Die Warehouse Sales Xtra L
+Installation ist auf Unknown nicht moeglich. Bitte
+installieren
+Sie sich eine andere Windows Version, um mit der Warehouse Sales Xtra L
+Installation fortzufahren.
+Daraus kann ich mir keinen Reim machen.
+Mit
+freundlichen Gruessen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>509</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>77</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="77"><![CDATA[Ich habe ein Problem mit der Installation der Traiber für "Archivieren Sie Ihre Bestandlisten".]]></relevantText><![CDATA[
+Die Installation haben wir mit Windows XP nach Anleitung und Aufforderungen durchgeführt.
+Hierbei kam es schon zu ersten Überschneidunegn, da wir laut Anleitung den USB Adapter
+nicht angeschlossen haben dürfen, ihn aber nach Anweisungen der Software anschließen
+mußten.
+Nach der Fertigstellung der Installation wurde auch kein, wie in der Beschreibung
+angekündigt, Neustart durchgeführt.
+Im Gerätemanager finden wir, bei angeschlossenem Adapter ein USB-Verbundgerät. Zusätzlich
+wird uns unter andere Geräte ein Problem mit:USB 1658 Device angezeigt.
+Beim Versuch einen neuen Treiber zuzuordnen, könne wir über den Gerätemanager keinen
+Treiber auf der CD finden. Hinweis:Fortsetzumg nicht möglich, kein zu dieser Hardware
+passender Treiber verfügar.
+Beim Start des Bearbeitungsprogramms finden wir auch nicht den Adapter, und können keine
+Prozesse importieren. 
+Auch eien Neuinstallation mit aktuellstem Treiber von Ihrer Homepage war nicht
+erfolgreich.
+Bitte teilen Sie und kurzfristig mit, wie wir den Treiber des Adapters aktualisieren
+können, bzw. was wir tun können, um eine Erkennnung des Adapters in Ihrer
+Bearbeitungssoftware erreichen.
+mit freundlichem Gruß
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>377</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>71</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren, 
+Ich bin schon seit einigen Jahren Warehouse- Kunde. Meine Unzufriedenheit mit Ihren Produkten fing vor 3 Jahren an, als ich einen Solarmobile QS88 mit CompleteEMV kaufte. Die damalige Version Warehouse18 ruckelte und machte problemloses Bearbeiten und Einfügen unmöglich. Version19 brachte einige wenige Verbesserungen; Version20 merzte weitere Probleme aus; erst mit Version21 war halbwegs problemloses Arbeiten möglich, obwohl auch hier einige Anzeigen in der Vorschau nie funktionierten. Ich war so dumm, anzunehmen, dass die Version Firstclass WH einen weiteren Fortschritt bringt, da immerhin angeblich jetzt auch die Grafikkarten zur Übertragung verwendet werden. (Wurde auch Zeit). Ich fühle mich mit dieser Version zurückversetzt zu Version18 und ärgere mich über das verschwendete Geld. ]]>
+<relevantText goldCategory="71"><![CDATA[Schon einfaches Umschreiben eines Auftrags kann dazu führen, dass die Vorschau stockt und Speicherfehler erzeugt.]]></relevantText><![CDATA[ Erst recht, wenn man die Adressaten einzelner Aufträge automatisch anpassen will. Und wie gewohnt, kann man die meisten Übertragungen nicht verwenden, da danach der Computer den Eindruck macht, als sei er nicht mit 8.6GHz getaktet, sondern eingeschlafen. Es ist kein Problem der Auslastung - ein Monitor zeigt an, dass die CPU mit 30 bis höchstens 40% belastet ist, ein Drittel des Speichers ist ebenfalls noch frei. Abhilfe bringt es, nach Save das Programm auszuschalten, neu zu starten und die zuvor bearbeiteten Aufträge wieder einzuladen. Dann geht die Bearbeitung wieder problemlos (bis danach 3-4 Änderungen durchgeführt werden). Testweise gebrannte BluRay funktionieren auch einwandfrei. Aber es kann ja wohl nicht der Sinn der Sache sein, das Programm alle 8 Segmente neu zu starten. Ohne Neustart, nur mit Save und danach neuem Öffnen des bearbeiteten Auftrags, funktioniert der Trick leider nicht - dann stockt es einfach weiter. Meine Hardware: v6-240, 5Gb, Power EMV 8880, Win7 Home Ultimate 64 Bit.
+Was kann ich versuchen, um zumindest die Performance von Version21 wieder zu erreichen (ausser, gleich wieder diese Version zu benutzen)? MfG, q.brechle@jfr.net
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>18</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>84</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Mit einem meiner Kartenlesegeräte (Solarmobile ZU 13) ist es möglich, Prozesse in dem Format 
+CWVEMX Light zu erzeugen. Dieses Format kann nicht direkt in Ihr Programm Produkte im 
+IT & OFFICE Katalog 12 oder 13 geladen werden. Dazu bieten Sie ein (kostenpflichtiges) Add-On 
+an, mit dem dies möglich sein soll. Meine Erfahrung mit diesem Add-On: ]]>
+<relevantText goldCategory="84"><![CDATA[Es können zwar 
+die allgemeinen Daten, nicht jedoch die mit erstellten Bestellnummern geladen werden, s. o. ! ]]></relevantText><![CDATA[
+Ich habe mir dazu ein auf dem Markt angebotenes Programm (Sales Importer Premium 
+von Optiprise), das vom Tegril-Verlag angeboten wird, gekauft und die Importdateien in das 
+von Ihrem Programm unterstützte Workit EMV-Format konvertiert (DATA-5) und siehe 
+da, es wurden sowohl die Prozess- als auch die Statistikdaten angezeigt und daß sogar 
+mit der Version 11 firstclass, die ich noch auf meinem alten PC gespeichert habe... 
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>529</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>79</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich habe einen 3,11 Ghz Quad Intel Rechner. 
+]]>
+<relevantText goldCategory="79"><![CDATA[Beim Verarbeiten von CWVEMX Prozessen (z.B. direkte Verarbeitung) ohne voheriges Berechnen stockt die Previewanzeige in diesem Abschnitt des Ablaufs.]]></relevantText><![CDATA[ Was kann ich tun? Wann kommt ein SFC auf den Markt, bei dem das Berechnen der Previewanzeige automatisch im Hintergrund abläuft, so wie das andere Programme ganz selbstverständlich beherrschen?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>337</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>65</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Unter W7 ultimate 64bit lassen sich keine EM bzw. EMVX-Daten von Systech MTX-JK 6 bzw. MTX-JK
+12 laden. ]]>
+<relevantText goldCategory="65"><![CDATA[Nach Start mit "S" erfolgt einmaliger Zugriff auf Datenscanner mit Anzeige
+EMoutInPlug auf der Datenscanner-View und danach Fehlermeldung auf PC "Es konnte keine
+Verbindung zur Hardware aufgebaut werden".]]></relevantText><![CDATA[ Die Vorgehensweise aus der Bedingungsanleitung
+mit Kabelanschluß und Einschalten des Datenscanners wurde beachtet. Der 4000-Controller hat
+neuesten Treiber.
+
+Ich danke im Voraus für ihre Hilfe.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>299</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>111</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+ich habe folgende Probleme:]]>
+<relevantText goldCategory="111"><![CDATA[ 1.Beim öffnen von OFFICE Katalog 13 und
+WH first Clas geht anhängendes Fenster auf,da ich beide Versionen habe, aber immer nur ein Programm geöffnet habe]]></relevantText><![CDATA[
+verstehe ich die Welt nicht mehr.
+2.Das Entschlüsselungsverfahren Data3 geht so wohl bei 13 nicht wie bei WH.
+Ale meine Versuche mit der Kennungs NR,Kaufdatum sind fehlgeschlagen.Best.NR.20015055273111835WHR
+Eine Reaktivierung mit Kennungs NR ist mir nicht gelungen.
+MfG
+Friedbert Gans
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>502</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>77</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Das Problem tritt auf beim Versuch von meinem digitalen DVD-Recorder
+eine gespeicherte Erstellung auf meinen Laptop zukopieren. Die Daten
+werden in der Preview angezeigt, die Bestellnummer wird jedoch in der Preview
+nicht wiedergegeben. ]]>
+<relevantText goldCategory="77"><![CDATA[Weiter läßt sich die Erstellung nicht durchrechnen,
+es kommt die Fehlermeldung: Erstellung kann nicht berechnet werden.]]></relevantText><![CDATA[
+Das Verwaltungsgerät kann nicht gefunden werden. 
+Fehlermeldung siehe oben. Vorher kommen keine Fehlermeldungen
+Um diesen Fehler nachzustellen müssen Sie "Warehouse Abläufe im OFFICE Katalog 10"
+unter dem Betriebssystem "Windows 7" laufen lassen. Dann werden Sie
+zunächst feststellen das das Programm den Prozessverwalter nicht erkennt.
+Nach der Installation der mir von Ihnen per Mail übersandten Datei
+tritt dann das Problem auf wie oben geschrieben. 
+es tritt immer auf
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>584</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Frau Holpert,
+
+hier die Fehlermeldung beim Aufspielen der CD in den Rechner:
+
+Es wird die Komponente 4 übertragen: Interbase SPARQL Server.
+
+]]>
+<relevantText goldCategory="80"><![CDATA[Fehlermeldung: "Bei Umwandlung Ihres Produktdatenspeichers ist ein Problem aufgetreten. Sie werden Ihren Datenspeicher deswegen mit dieser Software nicht verwenden können. Bitte wenden Sie sich an den Helpdesk."]]></relevantText><![CDATA[
+
+Nachdem der Fehler bei Interbase auftritt, ist es wegen mit meiner Antivirensoftware Avira nicht einverstanden?
+
+Geben Sie bitte mein Problem an einen Techniker weiter mit der Bitte, daß er mir hilft.
+
+Meine Telefon-Nummer 41737-6183
+
+Er soll mir bitte auch seine Durchwahlnummer geben, daß ich ihn ggfls. zurückrufen kann.
+
+Besten Dank
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>424</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>55</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+]]>
+<relevantText goldCategory="55"><![CDATA[mein Problem ist, wenn ich eine ZIP Liste versuche zu
+dekomprimieren, das die Erstellung
+jedes mal asynchron ist.]]></relevantText><![CDATA[ Die ZIP oeffnet
+normal,
+bis Ende. Dann wenn ich das  Produkt ansehe, bevor ich es
+brennen will, ist es ascyncron.
+Im FAQ und auf anderen Seiten konnte ich
+keine
+Hilfe finden. Es kommt mir aber so vor, als ob
+viele Benutzer
+diesen Fehler bekommen. Programme, die im Hintergund laufen, habe ich
+vorher
+entfernt. Dieses brachte aber auch keine Abhilfe.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>93</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>63</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren!
+Schauen Sie sich Frage und Antwort auf...
+http://support4.warehouse.net/customer/de/ticket/73
+
+...an.
+Immerhin gibt es 7 von 13 Benutzern deren Ziel nicht erreicht wurde.
+(Darunter auch ich).
+Ich habe beim Durchschauen bei den anderen Kunden und durch eigene Beobachtung Folgendes
+herausgefunden:
+
+]]>
+<relevantText goldCategory="63"><![CDATA[Das Problem besteht indirekt darin, dass der Abschnitts-Endzeiger verschwunden ist!]]></relevantText><![CDATA[
+Diesen kann man aber wieder erscheinen lassen.
+
+Man verschiebe ein Objekt des Ablaufes so lange nach rechts bis der rechte Bereichszeiger
+unscheinbar aber doch zu erkennen ist. 
+
+Danach ist das Projekt wie jedes andere wieder nutzbar.
+
+Vielleicht können Ihre Entwickler jetzt den Bug besser aufspüren.
+
+Ich empfehle diesen Bug zu beheben, da ständig solche Hilferufe zu lesen sind.
+
+Freundliche Grüße
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>496</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>99</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="99"><![CDATA[Ich kann zwar meine Abläufe in xls exportieren, aber meine xls-Teamprozesse nicht einlesen/importieren.]]></relevantText><![CDATA[ Ganz sicher ist es kein Zugriffsfehler. Wie löst man das?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>419</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>55</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+]]>
+<relevantText goldCategory="55"><![CDATA[ich habe einen Ablauf von DVD (vermutlich mit
+Scanner erstellt) importiert und die Bestellnummer ist von Angang an
+asynchron.]]></relevantText><![CDATA[
+Wie kann man dieses Problem beheben?
+(Bei der Vorgaengerverion
+hatte ich das Problem erst nach dem Brennen, aber nach erneutem
+verschluesseln
+lief das Ganze)
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>399</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>73</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="73"><![CDATA[Nach dem Download von WAREHOUSE Specs Manager 9 zum Test gekingt es mir
+nicht, das Paket zu installieren. ]]></relevantText><![CDATA[
+Als Fehler erscheint 9000 mit dem Vermerk, daß ich Windows im abgesicherten
+Modus ausführe oder Windows-Installer nicht ordnungsgemäß installiert ist.
+ Ersteres trifft nicht zu und den Windows-Installer habe ich mir eigens
+dazu neu herunter geladen.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>320</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Serien-Nr.
+N5-30034-40831-58568-05007-45488-78337
+
+Sehr geehrte Damen und Herren,
+
+ich wollte heute meine bearbeiteten Produkte brennen um diese meinen Kollegen auf Arbeit zu zeigen. ]]>
+<relevantText goldCategory="106"><![CDATA[Leider finde das Programm keinen Brenner.]]></relevantText><![CDATA[
+Was muss ich tun???
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>434</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>60</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+habe viele Blätter mit Daten erstellt - Internetversand. ]]>
+<relevantText goldCategory="60"><![CDATA[Es erscheind nun immer "Nicht ausreichend Speicher" (obwohl auf Externen Speicher gespeichert ist) und immer öfter erscheint "Insufficient memory".]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>348</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>65</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="65"><![CDATA[Ich habe vor einigen Tagen das Programm Sales firstclas 20 Ultimate bei Ihnen erworben und
+Installiert dann habe ich meinen Kartenleser an der EtheNet Schnittstelle amgeschlossen und das
+Erstellungs Auswahlfenster geöffnet habe dann EM Kartenleser ausgewählt wenn ich dan den grünen
+Erstellungs Batten übertragen anwähle wird der Ablauf im Kartenleser gestartet aber das
+Vorschaufenster zeigt nur fehlerhafte zeichen und der Ablauf wird nicht übertragen.]]></relevantText><![CDATA[
+was habe ich falsch gemacht?
+Ich hoffe Sie können mir helfen
+Mit freundlichen Grüßen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>127</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>116</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="116"><![CDATA[Ich muÃ? schnell eine Abrechnungsprozess erstellen und mein Programm 2007/2008 geht nicht?,]]></relevantText><![CDATA[
+warum nicht.
+Es zeigt immer, die Smartcard Divice... kann dieses Format nicht aus fÃ¼hren.
+Die aktuell genutzte GerÃ¤tekennung ist nicht innerhalb des erlaubten Bereichs fÃ¼r Ihr
+System.
+FÃ¼r eine schnelle Anwort wÃ¤re ich sehr dankbar.
+Mit freundlichen GrÃ¼Ã?en
+
+   
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>559</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+ich habe mir über die Warehouse-Homepage die firstClass-Version 13 von Produkte im IT und OFFICE Katalog gekauft, um darüber einen Testbericht zu verfassen.
+ 
+]]>
+<relevantText goldCategory="32"><![CDATA[Leider ist es mir bisher nicht gelungen, eine DVD zu erzeugen, da das Verschlüsseln jedes Mal mit einer Fehlermeldung abgebrochen wird:
+ 
+wmem reports disc project build exception]]></relevantText><![CDATA[
+026416f5
+ 
+Auch das Anzeigen innerhalb des Brennmoduls funktioniert nicht.
+ 
+Bislang habe ich auch die im Mini-Handbuch Seite 18 angekündigte Kalkulations-Funktion ("Gewinn-Kalkulation") nicht finden können. Im Hilfeindex erscheint dazu ebenfalls kein Suchbegriff.
+ 
+ 
+Ich habe zusätzlich die Version 12 (light) und auch noch die Version 9.8 auf meiner Festplatte. Letztere stürzte etwa sechs Mal pro Stunde ab, was mich nun zu diesem Neukauf veranlasst hat.
+ 
+Ich hoffe, das war kein Fehlkauf und die Fehlfunktionen lassen sich beheben.
+ 
+Das Exportieren ins MPEG5-Format funktionierte einwandfrei. Den Kaufpreis für das Entschlüsselungsverfahren von fast 15 Euro finde ich allerdings ziemlich happig.
+Ich hatte schon für die Version 12 rund 8 Euro bezahlt, konnte dieses Entschlüsselungsverfahren aber bei der Version 13 nicht wieder verwenden.
+ 
+Ich würde mich freuen, wenn Sie mir Tipps geben könnten, wie ich mein Projekt endlich zuende führen und brennen kann
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>142</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>116</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag
+]]>
+<relevantText goldCategory="116"><![CDATA[Ich erhalte beim Auswählen einer xls-datei für die Zusatzstatistik folgende Fehlermeldung:
+
+Fehlernummer: 44044. Fehlerbeschreibung: Datei nicht gefunden.]]></relevantText><![CDATA[
+
+Die xls Dateien sind eingebunden und im Archiv verfügbar. 
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>555</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>67</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag
+
+]]>
+<relevantText goldCategory="67"><![CDATA[Das Brennen wird jedesmal mit folgendem Fehler unterbrochen:
+
+Internes Problem während der Durchführung.]]></relevantText><![CDATA[
+
+Und dies kommt jedesmal während dem Brennen. Also bis zum verschlüsseln geht's aber weiter
+nicht.
+
+Wir hatten bereits ein Ticket erstellt, wurde aber zwischenzeitlich wieder geschlossen,
+keine Ahnung warum. (siehe Ticket 0571516264812282)
+
+Freundliche Grüsse und danke für Ihre Hilfestellung.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>480</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>101</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+]]>
+<relevantText goldCategory="101"><![CDATA[Specsmanager 10 ändert bei jedem Neustart, wenn ich an einem Datenblatt weiter arbeiten möchte, die DSG Dateien
+in AppData/Local/Temp/DSG.../specs_xm_sheets !]]></relevantText><![CDATA[
+Was zu Fehlermeldungen führt bei der Specificationsheet-Vorschau und beim Specificationsheet-Export. (siehe Anlage)
+
+Mit freundlichen Grüßen,
+
+Kuno Schlepper
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>64</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>56</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Inzwischen ist die Frage der email - Adresse geklärt.
+Das Programm 11firstclass zeigt immer noch das gleiche Verhalten:
+]]>
+<relevantText goldCategory="56"><![CDATA[es wird gesagt "Software registrieren" Antwort des Systems "die Software ist unter einer
+anderen email - Adresse schon registriert".]]></relevantText><![CDATA[ Beim aktivieren von "Programm ausführen"
+verschwindet das Programm vom Bildschirm. Das Programm scheint nicht freigeschaltet oder
+aktiviert zu sein.
+Die Bildschirmfotos im Anhang bilden den Ablauf nach dem Doppelklick auf Warehouse
+11firstclass ab.Leider kann ich hier nur ein Bildschirmfoto einblenden. Es ist aber die übliche Reihenfolge
+nach dem installieren des Programms
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>110</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>76</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Nach laengerer Zeit wieder meim Sales firstclass 19 Ultimate gestartet. ]]>
+<relevantText goldCategory="76"><![CDATA[Nach
+"Prozessstruktur wird initialisiert" kommt Fehlercode 9.]]></relevantText><![CDATA[ Auch nach
+mehrmaligen de/und istallieren das gleiche Problem. Norton und Windows
+Firewall waren ausgeschaltet.
+Hilfe !!
+Danke,
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>592</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="80"><![CDATA[Bei Installation der neu erworbenen Software ist folgendes Problem aufgetreten (Fehlermeldung): "Bei der Umwandlung Ihres Produktdatenspeichers ist ein Problem aufgetreten. Sie werden Ihren Datenspeicher deswegen mit dieser Software nicht verwenden können. Bitte wenden Sie sich an den Helpdesk um Unterstützung zu bekommen".]]></relevantText><![CDATA[
+
+Nach Installation des auf der Programm-DVD ebenfalls enthaltenen Gratis-Programms Produkt Organizer 13 und dem Starten des Programms erscheint ebenfalls eine Fehlermeldung: "Fehler im WAREHOUSE Datenspeicher! Es ist möglich, dass verschiedene Funktionen nicht nutzbar sind."
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>75</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>78</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich habe das o.g. Upgrade erhalten und auf dem PC installiert. Eine mit
+dem
+ Kartenlesegerät aufgezeichneter Verkaufsprozess(PRC)laesst sich zwar in den
+Schedulingmodus ziehen.  Es erscheinen allerdings keine Daten sondern nur
+Bestellnummern.]]>
+<relevantText goldCategory="78"><![CDATA[Es erscheint folgender Hinweis: "Der Dateityp von ...PRC kann von
+Warehouse Produkte im IT & OFFICE Katalog nicht geöffnet werden."]]></relevantText><![CDATA[
+Muss hier ein
+Aktivierungscode frei geschaltet werden ?
+
+Bei der Version 12 geht dies
+problemlos.
+Es kann doch nicht sein, dass eine neue Version nicht die
+Vorteile der Vorversion bietet!
+
+Fuer eine schnelle Info waere ich Ihnen
+dankbar.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>540</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>67</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Brennen nach DirectEditing
+Processing etc. ]]>
+<relevantText goldCategory="67"><![CDATA[laeuft normal durch bis zur
+Meldung"Disc wir gebrannt". Dann kommt ein Abbruch mit "Internes
+Problem waehrend der Durchführung" und ein Zusatzvermerk "Kein Zugriffsrechte auf
+das Laufwerk.]]></relevantText><![CDATA[ Moeglicherweise ist es von einer anderen
+Anwendung
+gesperrt".  
+Was kann man hier tun?
+Wenn ich nach DirectEditing nur die
+Ablaufdarstellung aendere, dann klappt das Brennen.
+
+Das Problem hatte ich auch
+vorher schon hin und wieder bei der NEO2009-Version, aber nach
+verschiedenen Abbruechen hat es doch immer wieder geklappt. Die
+NEO2009-Version habe ich zwischenzeitlich deinstalliert.
+Beissen sich die
+beiden Programmversionen eigentlich, wenn man beide installiert laesst? 
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>542</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>67</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herre,
+
+]]>
+<relevantText goldCategory="67"><![CDATA[nach Einbau eines neuen DVD-Laufwerkes (GGD FG 25 LP56) ist es nicht mehr möglich, nach erstellten Ablauf (s. Prgramm unter Betreff) eine DVD zu brennen.]]></relevantText><![CDATA[
+
+Ich nutze DVD-Rohlinge 8,5 GB 2.4 - 8 x Speed DVD+RW von getterize Die Größe der zu brenndenden Abläufe beträgt ca. 6.900 MB.
+
+Im Anhang stelle ich die "log-Datei".
+
+Bitte teilen Sie mir mit, welches Problem das Brennen verhindert.
+
+Für Ihre Bemühungen besten Dank
+
+Mit freundlichen Grüßen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>328</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="106"><![CDATA[Ich kann keine DVD brennen.
+Man schlägt mir ein Brennprozedur-Update vor]]></relevantText><![CDATA[
+Bezeichnung: DLLAV47.DLL Version 9.5.432
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>87</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>78</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+
+]]>
+<relevantText goldCategory="78"><![CDATA[ich kann plötzlich keine Salesdateien mit der Dateiendung .prc mehr importieren.]]></relevantText><![CDATA[ Bislang
+ging es problemlos. An den Programmeinstellungen habe ich auch nichts geändert aber nun
+erhalte ich immer eine Hinweismeldung mit folgendem Wortlaut:
+
+Der Dateityp von
+C:\Users\Gigi\Pictures\2010\August\DDT_4480.PRC kann nicht geöffnet werden!
+Bitte überprüfen Sie, dass das betroffene Laufwerk über genügend Speicherplatz verfügt und nicht schreibgeschützt
+ist.
+Falls Sie nicht über ausreichende Rechte zum Lesen und Schreiben in diesem Verzeichnis verfügen,
+kontaktieren Sie bitte den Administrator.
+
+Also Administrator bin ich. Auf dem entsprechenden Laufwerk sind noch 320 GB Platz. Einen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>357</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>121</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren
+
+PC: Yangyu-Selfish Plottix
+e716
+Installation DVD-Prozessverwalter (Packung Archivieren Sie Ihre
+Bestands-Listen).
+]]>
+<relevantText goldCategory="121"><![CDATA[Waehrend der Installation erscheint der Hinweis: 1133:
+Unable to finis installation.]]></relevantText><![CDATA[
+Leider konnte ich trotz mehrerer Versuche
+das Geraet nicht zum Funktionieren bringen.
+Herzlichen Dank fuer Ihre
+Bemuehungen.
+Freundliche Gruesse
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>57</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+Hallo Warehouse-Team!
+]]>
+<relevantText goldCategory="32"><![CDATA[Ich kann ein Projekt nicht mehr brennen.]]></relevantText><![CDATA[ Die
+Fehlermeldung habe ich unten eingefuegt, auch den Eintrag in die mbk.log
+-
+Datei.
+Ich habe dieses Projekjt schon ein paar mal gebrannt, da ich
+verschiedene Aenderungen machern musste. Bei der letzten Aenderung habe
+ich
+die Anzeigedauer bei den Texten, ein paar Designelemente und die
+Startdarstellung
+veraendert.
+Diese Aenderungen habe ich vorher problemlos durchfuehren
+koennen.
+Ich habe das Projekt auch schon umbenannt, die Dateien im
+Verzeichnis Disc geloescht und den Brennvorgang neu heruntergeladen.
+Beim
+Brennen beginnt das Programm immer sofort mit Schritt drei, ohne
+nachzufragen ob die Kapiteldarstellung usw. neu gestaltet werden sollen.
+
+Die
+Fehlermeldung:
+wmem reports disc project build exception:
+411451v4.
+Verschlüsseln fehlgeschlagen.
+Verschlüsseln des Ablaufs
+fehlgeschlagen.
+
+Der Eintrag in der mbk.log -
+Datei:
+
+mfg
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>615</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80,87</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag,
+ 
+oben genannte Software habe ich käuflich über das Internet erworben.
+]]>
+<relevantText goldCategory="80,87"><![CDATA[Beim Versuch das Programm zu installieren erscheint folgende Meldung:
+ 
+Bei der Umwandlung ihres Produktdatenspeichers ist ein Problem aufgetreten. Sie werden Ihren Datenspeicher deswegen mit dieser Software nicht verwenden können. Bitte wenden Sie sich an den Helpdesk um Hilfe.]]></relevantText><![CDATA[
+ 
+Das habe ich hiermit getan und erwarte gerne Ihre Hilfe.
+ 
+Meine Bestellnummer ist : 35404311026701438WHC
+ 
+Grüße
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>390</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>33</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Mein Programm ist: Salesfirstclass2010 ultimate (7.8.6.4)
+- Einspielen von EMV- Prozessdaten, die mit einem CWVEMX-Kartenleser aufgenommen
+und in DAT umgewandelt wurden.
+- Ablauf (DAT-Dteien) wie üblich bearbeitet (Element gelöscht bzw. hinzugefügt,
+Produkte (wdt) hinzugefügt, einige Verkaufsprozesse von einer auf die
+Festplatte aufkopierten DVD eingefügt -BRG...sop-)
+- ]]>
+<relevantText goldCategory="33"><![CDATA[Beim Brennversuch erscheinen, nachdem das Verschlüsseln lt. Fortschrittsanzeige
+zu 75% erfolgt ist, die Hinweise: "Speicheranfrage ungültig"
+sowie "Fehler beim Verschlüsseln. Es konnten keine Dateien gefunden werden".]]></relevantText><![CDATA[
+Ich habe keine Dateien verschoben; alle befinden sich in ihren ursprünglichen
+Ordnern.
+- Als Alternativversuch habe ich den Ablauf unter einem anderen Namen
+gespeichert und sämtliche eingefügte Produkte sowie die eingefügten BRG*
+.sop-Dateien entfernt. Es waren somit nur noch die mit dem Kartenleser
+eingelesenen und in DAT umgewandelten  Dateien im Ablauf. Doch auch
+hier erschienen beim Brennversuch die Hinweise "Eine Speicheranfrage
+ist ungültig". "Ein internes Problem ist aufgetreten" und letztendlich
+"Verschlüsseln ungültig".
+- Versuchsweise habe ich den Ablauf auch in einer Testversion von Trendset
+Studio 17 bearbeitet. Hier erfolgte das Brennen reibungslos. Aber
+ICH MÖCHTE KEINE ANDERE BEARBEITUNGSSOFTWARE ALS WAREHOUSE BENUTZEN.
+- Nebenher habe ich auch andere Abläufe bearbeitet und gebrannt, die
+über den eingebauten EC-Datenscanner aufgenommen wurden. Funktionierte
+alles reibungslos.
+Noch eine Frage:
+Ich liebäugele mit der neuesten Version von SfC, bin aber nicht sicher
+ob mein System ausreichend ist. Können Sie mir mitteilen, ob  SfC
+19 bei mir lauffähig ist? Insbesondere sollte in Kombination mit meiner
+EC-Karte auch der integrierte Daten-Scanner funktionieren.
+
+Für Ihre Hilfe bedanke ich mich im voraus.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>143</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>116</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="116"><![CDATA[das Smartcard-Device microsoft scancreator kann diese format nicht erstellen
+die aktuell genutzte gerätekennung ist nicht innerhalb des erlaubten Bereichs für ihr system]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>295</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>111</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag !
+
+Habe Probleme mit der Freischaltung von den 
+Zusatzprogrammen von Warehouse Sales firstclass 20 Ultimate.
+Handelt sich um folgende Zusatzprogramme : 
+XtraGood Calculage 14 Kennungs NR : PDAV4-10427-63343-13860-01526-12080
+XtraGood Corporare U2  Kennungs NR : PDMEU2-73223-51824-64562-62706-84365
+AutoSortSD Ultimate Functions Kennungs NR :
+JFHDV2-56723-35837-08127-36745-28277
+
+]]>
+<relevantText goldCategory="111"><![CDATA[Wenn ich die Zusatzprogramme aktivieren will,erscheint
+die Meldung : Die Anzahl der möglichen Aktivierungen 
+wurde überschritten ! ]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>287</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>111</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Grüezi
+]]>
+<relevantText goldCategory="111"><![CDATA[Im Installer steht, ich solle xtraGOOD Calculage und Corporare sowie AutoSortSD via
+Hilfe/Zusatzprogramme installieren. Wenn ich dort aber (offline) die auf der Rückseite der
+CD-Hülle angegebenen Seriennummern eingebe, behauptet das Programm, diese seien
+ungültig...]]></relevantText><![CDATA[
+Diese sollten doch in einer firstclass 20 ultimate enthalten sein? Oder soll ich diese anders
+installieren? 
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>39</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+]]>
+<relevantText goldCategory="32"><![CDATA[Habe mehrmals versucht meine Produktpreview zu brennen bei dem Disc Image kommt jedesmal Fehler.
+Problem in Klasse "wmembank.dll" (Ladeadresse:7X0f4d0124)
+an Adresse Ox6ffcre Exception 6Xd3382563
+ACCESS_FORBIDDEN.]]></relevantText><![CDATA[ Habe Fehlerprotokoll auch gesendet.
+
+Habe das programm neu und 1. mal versucht zu brennen.
+verschlüsselung läuft ca. 2 Std.
+
+Ist mir bei meiner Vorversion Warehouse 12 nicht passiert.
+habe Produkte,Prozesse und Statistiken verwendet.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>159</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>110</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="110"><![CDATA[Das Programm Sales firstclass WH bricht nach der Anzeige com plattform wird eingerichtet ab und startet nicht. ]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>326</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+eine fertige Produktpreview kann ich nicht auf DVD brennen. ]]>
+<relevantText goldCategory="106"><![CDATA[Das Programm erkennt den Brenner nicht!]]></relevantText><![CDATA[
+Was ist zu tun, alle anderen Programme funktionieren einwanfrei.
+Mit freundlichen Grüßen 
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>276</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>83</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Wieder bekomme ich beim Produktorganizer ein grünes Häkchen, wenn ich den erhaltenen Trialcode eingebe. ]]>
+<relevantText goldCategory="83"><![CDATA[Drücke ich danach auf Programm unbegrenzt verwenden, bekomme ich weiterhin die Fehlermeldung. Der Freischaltcode ist nicht korrekt.]]></relevantText><![CDATA[ Bitte überprüfen Sie den eingegebenen Freischaltcode oder wenden Sie sich an den Warehouse Helpdesk.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>137</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>116</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="116"><![CDATA[Wenn ich ein Statstikfile importiere, lässt sich dieses nicht durchrechnen.]]></relevantText><![CDATA[ Stattdessen kommt die Fehlermeldung:
+
+Das Smartcard-Devise 'Microsoft Scancreator' kann dieses Format nicht erstellen.
+
+Grund: Unbekanntes externes Problem!
+
+Diese Fehlermeldung kommt aber nur, wenn man das File in den verschiedenen Zeilen einspielt. Wenn man das Programm nicht als neues Projekt startet, lässt sich das File einspielen und auch durchrechnen.
+
+BG
+Lanz
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>512</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>77</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="77"><![CDATA[Hallo. ich bekome den treiber nicht nei, oder weil es auf Windows 7 nicht gehet.]]></relevantText><![CDATA[  habe 64
+bit.  woran ligt es?
+
+gruß merlin
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>303</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>111</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren, ich habe Sales Xtra L7 gekauft und wollte das Programm AutoSortSD Ultimate Functions, das im Lieferumfang enthalten ist, installieren. ]]>
+<relevantText goldCategory="111"><![CDATA[Doch jedesmal, wenn ich die Serien-Nummer eingegeben habe, erschien der Hinweis: die Seriennummer ist ungültig.]]></relevantText><![CDATA[ Was ist zu tun? Meine Serien-Nummer für AutoSorSD Ultimate Functions lautet: 7366055183277672.
+
+Mit freundlichen Grüßen, Eduart Schaffeln
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>426</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>55</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="55"><![CDATA[Bei der Erstellung von Prozessen mit einem Handscanner kommt es zu Versetzung
+zwischen der Bestellnummer- und der Datenzeile!]]></relevantText><![CDATA[ Auch die mitgelieferte Funktion des
+Programmes kann das Problem nicht beheben. Auch tritt das Problem nicht
+regelmaessig, also immer, sondern nur sporadisch auf. Woran kann das
+liegen
+und wie kann man diesen Fehler beheben. Koennte es eventuell an
+unterschiedlich eingestellten Zeitzonen und daraus resultierende Reaktionen
+seitens des Handscanners liegen?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>3</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>86</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo, ich habe 3 Fragen zu "Sales firstclass WH Neo":
+1. Im Übersichts-Modus habe ich mit dem Ablaufmarker (blaue Linie mit Beginn- und Endmarkierung) einen Teil des Ablaufes markiert. Die Exportroutine exportiert aber den gesamten Ablauf, also auch das was außerhalb des Ablaufmarkers ist. Ist das ein Programmfehler (bei "Sales firstclass 2008" wird nur korrekt der Ablaufteil zwischen dem Beginn- und Endzeiger gebrannt)?
+2. ]]>
+<relevantText goldCategory="86"><![CDATA[Im Exportmodus ist die Schrift im kleinen Vorschaufenster im Filemenü immer identisch mit der Schrift der Überschriftzeile vom Untermenü.]]></relevantText><![CDATA[ Wie kann ich diese Verknüpfung lösen, oder ist das ein Programmfehler?
+3. Gibt es eine vollständige Anleitung, evtl. zum herunterladen oder zu bestellen?
+M.f.G. Miraculix
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>618</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="80"><![CDATA[Nach der Installation kommt beim ersten Programmstart die folgende Fehlermeldung: Fehler im WAREHOUSE-Datenspeicher ! Es ist möglich, dass einige Funktionen nicht verfügbar sind.]]></relevantText><![CDATA[ Error code: 03377405 Uncompleted on Request : Query input WhInstance62 failed! Cannot access DS-Directory!. LastError: 371 -------------------------------- Alle DS-Funktionen gehen nicht.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>134</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>116</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sales firstclass 19 Ultimate Spezialedition
+Ich habe meinen Verkaufs-Ablauf fast fertig bearbeitet. ]]>
+<relevantText goldCategory="116"><![CDATA[Wenn ich ihn zur Kontrolle im Programm durchrechnen will kommt folgende Meldung: "Das Smartkarten-Device 'none' kann nicht für die Abrechnung göffnet werden. Es wurde kein Treiber auf ihrem System gefunden".]]></relevantText><![CDATA[ 
+Dieser Fehler ist vor längerer Zeit schon mal aufgetreten, jedoch nach mehreren Neustarts verschwunden. 
+Ich wollte den Ablauf eigentlich meinem Chef zum 3. Jahresmeeting am 12.09.11 präsentieren. Das kann ich wohl vergessen.
+Für ihre Hilfe besten dank
+Karl Vollmilch
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>12</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>57</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Habe seit kurzen den Specssheet Creator WH firstclass.
+]]>
+<relevantText goldCategory="57"><![CDATA[Wenn ich unter "Eigene Produktpalette" Daten, Statistiken oder Prozesse hochladen will und einen neuen Ordner erstellen möchte, so öffnet sich wenn ich das Werkzeug anklicke immer nur die Auswahl]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>435</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>60</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Also ich habe mir kürzlich den Specs Manager 9 zugelegt. Nun ist mein Detailsheet fast fertig
+-24 Blätter/150 MB- es fehlen nur noch ein paar weitere Daten und dann könnte ich es
+entlich heraus geben... Leider hat sich aber nun ein Problem aufgetan das ich allein
+nicht lösen kann: ]]>
+<relevantText goldCategory="60"><![CDATA[Seit ein paar Tagen bekomme ich immer die Fehlermeldung "Nicht ausreichender
+Speicher" ich bekomme zur Zeit nicht mal mein Projekt vollständig über das Programm
+aufgerufen!!!]]></relevantText><![CDATA[ Bei der Darstellung über das Programm sind einige Daten weg und bis auf
+5-6 Blätter alle anderen auch...;o(
+Nur über die "Blätter und Ebenen Gruppenansicht" ist zu erkennen das die Blätter überhaupt noch
+vorhanden sind. Sogar der "Hilfe" Butten des Programms funktioniert nicht mehr (keine
+Rückmeldung). Auch zwei unterschiedliche Fehlermeldungen hatte ich zwischendurch:
+5583.u.sr.f Und den anderen bringe ich nicht mehr ganz zusammen: 223.??.??.tm
+
+Ich habe übrigens 2050 MB Arbeitsspeicher eine Standart VGA Grafikkarte und Vista. Müßte
+also eigendlich alles laufen...;o(
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>519</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>79</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+
+habe ueber PC Laufwerk Original Prozess(USB) importiert und wohl leider die Meldung"Transformation
+wg. Stocken/schnelle Geräte" nicht beachtet.Habe importierten Prozess bearbeitet u.
+gebrannt.]]>
+<relevantText goldCategory="79"><![CDATA[Muss jetzt beim Darstellen leider feststellen,dass die importierten
+Prozessdarstellungen stocken.]]></relevantText><![CDATA[
+Was kann ich jetzt noch aendern?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>541</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>67</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich habe in den vergangenen Monaten mehrere Abläufe vom Kartenleser
+eingelesen, bearbeitet und gebrannt. ]]>
+<relevantText goldCategory="67"><![CDATA[Jatzt kommt beim Start der
+Brennvorgang die Fehlermeldung \"Brennen wurde unterbrochen - Internes
+Problem\" und der PC ist blockiert und muss erneut hochgefahren werden.]]></relevantText><![CDATA[
+Ich habe den Brennupgrade von der Warehouse Seite gedownloaded und
+installiert,
+nichts hat sich geaendert. Bei mehreren Versuchen kam immer wieder die
+gleiche Fehlermeldung und der PC war \"platt\".
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>198</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>66</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+z.Hd. Hewrrn Gandalf Grauh,
+
+Hallo,
+
+irgendwie habe ich mit dem neuen Programm 1o kein Glück
+Spez. Gewinnkalkulation:
+Die ersten Probleme hatte ich gelöst mit der Einrichichtung von .Net und nochmaligem
+Aufspielen der DVD auf meinem Computer. Das ging einige Tage gut, jetzt habe ich ein neues
+Problem, was anscheinend andere Kunden (im Internet unter Frage u. Antwort, leider keine
+Antwort gefunden ) auch haben.
+]]>
+<relevantText goldCategory="66"><![CDATA[Nachdem ich den Monat eingeben habe, erscheint der Hinweis " Fehler beim Parsen der XSL
+Daten"]]></relevantText><![CDATA[
+
+Was bedeutet das und wie kann ich das beheben ?
+Wenn es hierfür eine Lösung gibt, bitte möglichst eine einfache Erläuterung, da ich nicht
+der grosse Computercrack bin.
+Ich habe schon alles versucht, wie z.B. das Ausgangsbudget zu ändern, jedoch ohne
+Erfolg.
+
+mit freundlichem Gruss
+Bruno Kraft
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>493</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>99</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+
+]]>
+<relevantText goldCategory="99"><![CDATA[mit der Installation von Sales FIrstclass wh wurde auch der super Export Core installiert. Wenn ich nunmehr diesen Aufrufe, erscheint folgende Fehlermeldung:
+
+"Warnung,es ist keine Codec verfügbar, die für diesen Dateityp geeignet ist."]]></relevantText><![CDATA[
+
+Übergeht man diese Meldung, erscheint Folgendes:
+
+"Warehouse konnte keine Daten in dieser XML-Datei keine Daten finden."
+
+Ich konnte für dieses Problem weder im Internet eine Lösung finden (siehe hierzu http://www.warehouse.info/de/dvd-einlage-kreieren.tipps.267543.xml) noch in den FAQs bei Warehouse.
+
+Können Sie mir sagen, wo hier das Problem liegt ?
+
+Vielen Dank für Ihre Bemühungen,
+
+mit freundlichen Grüßen
+
+C. Fildgen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>97</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>63</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="63"><![CDATA[Immer wenn ich ab einer bestimmten stelle meinen gewinn eintragen möchte, springt die erstellung zum anfang und das auch bislang erstellte datei wird ersetzt.]]></relevantText><![CDATA[ Ich habe zwar für mich eine kleine aber müheseelige lösung gefunden und zwar wenn ich diesen Blauenfeld nach vorne bewege und auf erstellung drücke startet es von dort aus dan. Nun bei version 19 war es so das die erstellung immer dort begonnen hat, wo ich auch diese gelb senrecht gehende linie platziert hatte, ich hoffe ihr wisst was ich meine.
+
+Ich finds echt ätsend bei jeder neuen erstellung immer wieder die datei in eine andere stelle zu verschieben damit sie nicht ersetzt wird und auch immer wieder diese srat und end zeiger rumbewegen muss.
+
+Kann mir jemand bitte einen ratschlag geben ?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>191</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>82</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+
+]]>
+<relevantText goldCategory="82"><![CDATA[bei der Direkterstellung ist keine Bestellnummer zu sehen, ich benutze Windows XP, wie kann ich diesen Fehler beheben ?]]></relevantText><![CDATA[
+Ich habe versucht, Erstellnungen aus der Produktbibliothek von STF und UFG zu übertragen
+Vielen Dank
+
+Thorsten Schriller
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>437</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>60</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="60"><![CDATA[Mein schon vor Monaten erstelletes Daten-Blatt lässt sich mit Super Specs Manager8 nicht mehr
+ins Programm laden. Es erscheint der Hinweis "nicht ausreichend Speicher".]]></relevantText><![CDATA[  Alle nicht
+benötigten Programme wurden beendet. Das Problem bleibt. Eine Neuinstallation brachte auch keinen Erfolg.Mein Specification Sheet besteht aus 3 Kategorien 150 Dateien und ist 55,5 MB groß
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>17</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>84</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="84"><![CDATA[Zieht man bei der Version 13 Daten und Prozesse, die mit dem selben Kartenleser eingelesen
+wurden, per Mouse in das Schedulingview, erscheinen die Prozess-Dateien entweder gar nicht
+oder ohne die Bestellnummernfelder, die mit den Daten importiert wurden. ]]></relevantText><![CDATA[
+Es ist uns erst nach mehrfachem Versuch geglückt, die Daten sowie die Prozesse mit 
+Bestellnummer in ein neues Projekt zu laden.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>466</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>31</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+dies ist eine Kopie Ihrer Anfrage an den WAREHOUSE Helpdesk.
+
+hallo
+]]>
+<relevantText goldCategory="31"><![CDATA[wie kann man eine dvd abschliesen damit die Produktpreview auf jedem DVD Laufwerk 
+läuft ?
+läuft hier auf dem Rechner aber wird von keinem externen DVD Laufwerk erkannt]]></relevantText><![CDATA[
+
+Sie können sich Ihre Anfragen und die dazu gehörigen Antworten auch unter  
+folgendem Link anschauen.
+
+https://helpdesk5.warehouse.com/customer/warehouse_getintouch/requests
+
+Ihr WAREHOUSE Team
+
+
+kann nichts öffnen bzw finden  !!
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>292</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>111</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="111"><![CDATA[Ich habe nach kompletter Neuinstallation u.a. sales firstclass Ultimate Spezialedition installiert, um updates zu erhalten, bzw xtraGOOD Calculage installiereb zu können, werde ich ständig auf die Registrierung verwiesen.]]></relevantText><![CDATA[ Nach Eingabe meiner Daten erfolgt jedoch die Meldung. Diese Nummer ist bereits refistriert und anschließend wird der Vorgang abgebrochen. Ich bitte um eine Zuweisung einer neuen Seriennummer, oder um Antwort, wie ich weiter vorgehen soll.
+
+Die vorhandenen Seriennummern lauten:
+Sales firstclass 18 Ultimate Spezialedition
+      XA-84242-24503-50682-83627-76743-33306
+Antonio de Abreu 6 Warehouse Edition
+      ADA 6-FEAZ-77385-32264
+xtraGOOD Calculage 4
+      GF52-PE5M-LKJH
+
+ober.trotten@freenet.de
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>121</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>76</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo, Ich besitze schon seit längerer Zeit das Prozessprogramm Sales firstclass 19 Ultimate und habe sehr gute Abläufe erstellen können. Um auf dem Stand der Technik zu bleiben habe ich mir einen MTX-CR558 von Systech gekauft. Der Rechner wurde für die neuen Anforderungen ebenfals ausgerüstet. Beim aufspielen des Programmes traten keinerlei Fehler auf. Ablaufübertragung wird mit hilfe von RAT Programm von Systech ausgeführt. Jetzt kommt mein Problem. ]]>
+<relevantText goldCategory="76"><![CDATA[Das Programm von sales firstclass 19 lässt sich nicht mehr starten, es wird nur kurz das Logo angezeigt und es erscheind die Fehlermeldung Fehlercode 9.]]></relevantText><![CDATA[ Ich weiß leider nicht mehr weiter und bitte um Unterstützug bei der Behebung dieses Problems. MfG Stotz , Achim
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>241</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>104</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrtes Team!.
+ 
+Nach einigen wie es scheint untauglichen Mitteln wende ich mich an Sie und hoffe, dass Sie mir behilflich sein können. Ich habe ein Update von Analysity Xtra 14 auf Xtra L gekauft. ]]>
+<relevantText goldCategory="104"><![CDATA[Beim Registrierungsversuch konnte ich in der Rubrik "Meine Produkte" keine Möglichkeit finden, meinen Upgradecode einzugeben.]]></relevantText><![CDATA[ Die Vorversion, die ich bei der Firma Springler in Deutschland kaufte scheint in dieser Rubrik "Meine Produkte" auch nicht auf und ist aber Bedingung für die Version AnaXtraL. Da aber der Testzeitraum auch bald ausläuft und ich das Programm verwenden muss, hoffe ich dass Sie mir weiterhelfen werden. Den Upgradecode kann ich Ihnen natürlich jederzeit übermitteln.
+Vielen Dank und bis bald
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>416</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>55</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+]]>
+<relevantText goldCategory="55"><![CDATA[ablaufzeile  stimmt nicht mit der bestellnummernzeile überein.]]></relevantText><![CDATA[
+das heisst, wenn ich den ablauf von meinem kartenlesegerät Systech XCD LTF-SG30 übertrage, dann stimmt
+die bestellnummernzeile nicht mehr mit der datenzeile überein. es erscheinen auch viele leere
+ablaufprozesse, weil die daten noch nicht fertig sind. ich probiere ihnen ein stück ablauf
+anzuhängen. es ist ein bischen unzusammenhängend. aber dieses produkt zeigt, dass es nicht die richtige nummer
+hat.wir haben schon mehrere male miteinander komuniziert.
+freundlich grüsst
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>284</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>111</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+]]>
+<relevantText goldCategory="111"><![CDATA[möchte gerne die Zusatzprogramme xtraGOOD Calculage 14 und xtraGOOD Corporare 5 auf meinem PC
+installieren, aber die auf dem CD Cover angegebenen Seriennummern werden nicht
+akzeptiert???]]></relevantText><![CDATA[
+Was ist zu tun um sie zu aktivieren?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>195</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>66</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="66"><![CDATA[hallo, bei der erstellung einer gewinnkalkulation kommt bei mir immer die fehlermeldung
+"fehler beim parsen der xsl dateine" ???]]></relevantText><![CDATA[ diese meldung kommt, nachdem ich unter gewinnziele
+bearbeiten einen monat eingegeben habe und auf return drücke??
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>51</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+]]>
+<relevantText goldCategory="32"><![CDATA[Was bedeutet die Fehlermeldung :
+wmem reports disk build exception
+411451v4 ?]]></relevantText><![CDATA[
+Das Projekt wurde bereits auf DVD gebrannt, es erfolgen keine Darstellungen. Ein erneutes verschlüsseln
+brachte die Fehlermeldung.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>252</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>104</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="104"><![CDATA[Sehr geehrtes Warehouse-Team, ich habe die Cd Bill Cleaner Studio verkauft, nun hat der Käufer ein Problem er kann mit dieser Software keine updates machen, da die Software immer noch auf meinen Namen (Accunt) registriert ist.]]></relevantText><![CDATA[ Es ist auch nicht möglich dieses Produkt aus meinen Account zu löschen.
+Was kann der Käufer tun um das Produkt Bill Cleaner Studio voll nutzen zu können ?
+Mit Freundlichen Gruss Emilio Fröhlich.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>549</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>67</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr gehhrter Herr
+ 
+ich benutze einen EMVX Cardreader von Powerread Typ JB84 der Bluy-ray Brenner
+ist von GGD JHG-E52L mit diesen Geräten arbeite ich von Anfang an.
+Zwischendurch zeigte sich einmal das gleiche Problem, dass ich mit einer
+totalen Neuinstallation beheben konnte. Dieses mal war es mit dem gleichen
+Versuch erfolglos. ]]>
+<relevantText goldCategory="67"><![CDATA[Nach dem Einlesen und Bearbeitung des Ablaufes erfolgt dann 
+beim Brennvorgang immer die gleiche Meldung: Internes Problem bei der Bearbeitung. ]]></relevantText><![CDATA[
+Ich bin am verzweifeln. Der Sycaretest ist einmal bei Test 23 Laufwerk D und 
+dann beim 2. Versuch bei Test 51 Laufwerk E  jeweils 30 Min und 
+länger ohne Bewegung geblieben, jetzt habe ich den Test abgebrochen.
+Wie können sie mir helfen.
+ 
+PS. Die Systemvorraussetzungen sind übrigens mehr wie ausreichend.
+ 
+Mit freunlichen Grüßen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>334</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>65</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo Helpdesk-Team,
+
+ich habe meinen Chip Kartenleser Solarmobile über ethernet mit meinem Rechner (Win 7, 64 bit)
+verbunden. ]]>
+<relevantText goldCategory="65"><![CDATA[Bei der Erstellung kann ich jedoch nicht vorwärts und rückwärts durch die Daten springen und auch
+nichts erstellen.]]></relevantText><![CDATA[ Windows erkennt den Kartenleser (hörbar am Geräusch). Haben Sie einen Ratschlag?
+
+Viele Grüße aus München
+Rudolph Weltall
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>567</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren, 
+
+leider kann ich über Ihre Internetseite die Frage nicht stellen.
+Aber ich habe doch ein Problem mit Ihrer Software "Produkt im IT&OFFICE Katalog 11firstclass".
+]]>
+<relevantText goldCategory="32"><![CDATA[Ich besitze schon eine längere Zeit Ihre Softwares, jetzt habe ich einen neuer Rechner bekommen mit Windows 7 habe dort das Programm? Produkt im IT&OFFICE Katalog 11firstclass" installiert und möchte jetzt die Artikelpreview auf eine DVD Brennen und erhalte eine Fehlermeldung" wmem  Reports disc  project build exception: 026416f5 " damit kann ich nichts anfangen, können Sie mir helfen?]]></relevantText><![CDATA[
+Es wäre schade wenn ich Ihre Software nicht mehr nutzen könnte.
+
+mit Freundlichen Grüßen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>530</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>79</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Seit der letzten Woche habe ich Sales Firstclass WH Premium Spezialedition installiert. ]]>
+<relevantText goldCategory="79"><![CDATA[Mein Problem ist nun das importierte Abläufe im Programm nur stockend angezeigt werden.]]></relevantText><![CDATA[ Exportiere ich den Ablauf in eine Datei, wird diese Datei in den anderen Programmen, z.B. Paymentreader, angezeigt, ist das Stocken auch hier zu sehen. Die Originaldatei wird sauber wiedergegeben. 
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>210</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>66</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="66"><![CDATA[Beim Arbeiten mit der Kurven-Kalkulation escheint immer der Hinweis: Fehler beim Parsen
+der XSL Daten.]]></relevantText><![CDATA[
+Ich bitte um Hilfe.
+
+mit FreundlichenGrüßen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>441</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>60</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag,
+
+ich habe am gestrigen Tag mein Projekt http://www.textilienhaus.warehouse.ne weiter berbeitet, es hat jetzt eine Größe von ca. 65 MB. Keine Bilder keine Tabellen.
+
+]]>
+<relevantText goldCategory="60"><![CDATA[Beim Freischalten erscheint jetzt ständig der Hinweis: "SpecsManager Nicht ausreichend Seicher".]]></relevantText><![CDATA[
+
+Beim Versuch, die interne SpecsManagerhilfe aufzurufen kommt die Fehlermeldung:
+"Interner Ausnahmefehler 276.u.oz.io .
+
+Ich nutze einen neuen MEDION-Laptop mit Win7 Home Ultimate.
+
+Wie kann ich mein Detailsheet im Firmennetzwerk weiter bearbeiten?
+
+Vielen Dank für Ihre Hilfe und mit besten Grüßen
+
+Kuno Wruff
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>378</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>71</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Guten Tag Warehouse Helpdesk,
+]]>
+<relevantText goldCategory="71"><![CDATA[wenn ich mit der Overlay und ved backcalculating einstellung arbeite. Dann stockt mein Prozess bei großen Eingabedaten extrem.]]></relevantText><![CDATA[ Wenn ich es direkt mit dem Prozessskanner auf dem Bildschirm anschaue, gibt es überhaupt kein einziges Stocken. Ich hab auch mit bed probiert, dabei werden die Daten des Prozesses allerdings vielfach angezeigt. Das kann man sich so vorstellen, das die Daten alle einzeln geöffnet und wieder geschlossen werden. Naturlich müsste man das ganz ganz schnell machen. Ohne backcalculating bilden sich extrem viele leere Spalten. Das waren nun alle Einstellungen die die Software zur Verfügung hat. Nun weiß ich nicht wie ich meine Prozesse ohne Stocken mit Warehouse erstellen kann...
+
+Den Prozess erstelle ich mit einem XLS Prozessskanner und einem Trendset Shizzle Salesgetter. Dazu muss ich sagen das dieser Fehler bei dem Trendset eigenem Programm überhaupt nicht auftritt. Deswegen liegt es ganz klar an meiner sales firstclass 20 Software. Allerdings möchte ich diesen Fehler beseitig bekommen, da mir sales firstclass besser als Trendst shizzle gefällt.
+
+Sowie ich in Foren gelesen habe, bin ich nicht der einzige mit diesem Fehler. Gibt es irgendwann Updates oder Abhilfen für dieses Grobe Problem?
+Danke
+
+Mit freundlichen Grüßen
+Frank Elster
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>455</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>78</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+Habe neuen PC (Intelprozessor statt AMD), aber das alte Problem und das
+muss eindeutig am Programm liegen!
+]]>
+<relevantText goldCategory="78"><![CDATA[Nach Importieren einiger (waren etwa 11
+Stueck) ganz
+kleiner *.PRC-Dateien (7 bis 18 MB) in die Bearbeitungsleiste
+kam die Meldung:
+Problembehandlung
+Im Programm ist ein schwerwiegendes
+Problem aufgetreten.
+Fehler in Datei "CenterEncoding Tools.dll"
+(Ladeadresse: 6x34874027) an Adresse 0x274c3bd3
+Exception 3x0386687
+"ACCESS FORBIDDEN".]]></relevantText><![CDATA[
+Aktuelles Projekt sichern....
+Dieses Problem haben
+offenbar auch andere WAREHOUSE-Nutzer sieht man in Community.
+Wo ist die
+Loesung ? Dringend!
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>504</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>77</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+sehr geehrte damen und herren,
+
+]]>
+<relevantText goldCategory="77"><![CDATA[nach dem kauf ihres produktes stellt sich heraus, dass der import von analogprozess über den
+usb-salesgetter von goldtop (treiber sg4512jn nfs - 43.7.29.4) nicht möglich ist und
+der vorgang verursacht einen bluescreen.]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>368</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>71</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Mein Programm ist: Salesfirstclass19 ultimate (15.3.5.17)
+]]>
+<relevantText goldCategory="71"><![CDATA[Wie bereits bei Herr Benjamin Regeler erwähnt, stockt das Programm
+beim Bearbeiten und zusammenstellen der Ablaufteile.]]></relevantText><![CDATA[
+Das Problem ist erst mit der Verwendung des "EMV AVCHD-Kartenlesers" Systech
+MTX-TZ560" aufgetreten.
+Vorher gab es keine Probleme. 
+Das Problem tritt nur beim Verarbeiteten von Verkaufsmaterial des neuen
+Kartenlesers auf.
+Mein PC ist ein HPM8687.ch und cirka eineinhalb Jahre alt.
+Freundliche Grüsse
+   
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>323</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>106</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="106"><![CDATA[Beim Versuch eine DVD zu brennen,wird kein Brenner gefunden.]]></relevantText><![CDATA[
+Es kommt der Hinweis auf ein Brennerprozedur-Update
+im Helpdesk von Warehouse. 
+DLLAV03.DLL Version 9.5.432
+
+kann ich im Helpdesk nicht finden.
+
+Mit freundlichen Grüßen
+J.Halter
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>468</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>101</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="101"><![CDATA[habe versucht beim Warehouse Specs manager xml zu generieren - das funktioniert nicht, es kommt ein Fenster von Warehouse mit Vermerk Nativer Fehler.]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>4</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>57</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="57"><![CDATA[Auf meinem Specificationsheet werden die Textbausteine nur noch als Sprechblase angezeigt, ich hätte
+heute eine Onlinepräsentation meines Specificationsheets gehabt, um einen Sponsor zu gewinnen.]]></relevantText><![CDATA[ Dieser
+ist nun abgesprungen! Danke für eine solch toll funtionierende Technik ich bin stinkesauer!
+Ich hoffe und erwarte, dass das Specificationsheet umgehend wieder einsatzfähig ist, schade bisher
+konnte ich mich auf Warehouse halbwegs verlassen! Ich bitte um eine Antwort die nicht wieder
+21 Tage dauert!
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>275</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>83</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+wenn ich meinen Freischaltcode eingebe, kommt das grüne Häckchen. ]]>
+<relevantText goldCategory="83"><![CDATA[Wenn ich dann aber auf das erleuchtete ?Programm unbegrenzt verwenden drücke? bekomme ich wieder die Fehlermeldung: Der Freischaltcode ist nicht korrekt.]]></relevantText><![CDATA[ Bitte überprüfen Sie den eingegebenen Freischaltcode oder wenden Sie sich an den WAREHOUSE Helpdesk.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>85</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>78</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+der Fehler tritt auf, wenn man eine .PRC Datei ins Warehouse ziehen will.
+ Die Fehlermeldung lautet:
+DATA-5 Aktivierung
+Freischaltcode eingeben.
+ich habe einen Aktivierungscode bestellt für 6,95 Euro. Wenn ich diesen
+Code eingebe, heißt es :
+Code ungültig. ]]>
+<relevantText goldCategory="78"><![CDATA[Drücke ich -abbrechen- so kommt der Hinweis : der Dateityp
+kann von Warehouse nicht geöffnet werden.]]></relevantText><![CDATA[ Das alles passiert bei .PRC Dateien,
+ die ich schon in einer Produktpreview ohne Probleme verwendet habe. Ich
+habe diese Dateien ins Warehouse gezogen und dann mit -Datei exportieren-
+ in .CRV umgewandelt. Jetzt kann ich aber diese Dateien nicht mal
+mehr in die Produktpreview bringen. Ich habe schon eine solche Datei zu
+Ihnen geschickt. Um mir weiterzuhelfen habe ich mit einem externen
+Converter die Datei in .CRV umgewandelt, dann kann ich sie in die
+Produktpreview bringen, jedoch stimmen dann die Bestellnummern nicht mit dem Ablauf überein.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>7</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>57</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren, 
+
+]]>
+<relevantText goldCategory="57"><![CDATA[leider kann ich ab heute nicht mehr meine Sammlungen verwalten.
+Es tut sich bei Auswahl des entsprechenden Buttons gar nichts mehr.]]></relevantText><![CDATA[
+
+Können Sie diesen Fehler beheben?
+
+Mit freundlichen Grüßen
+
+Kruksel Gueney
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>528</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>79</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+ich habe Verkaufsmaterial mit 33 Datensätzen/mb mit 81 Segmenten von einem Kartenlesegerät (ExtremeScan DC7 OD). Dieses habe ich in einem Projekt mit 81 Segmenten und 33 Datensätzen importiert und bearbeitet. ]]>
+<relevantText goldCategory="79"><![CDATA[Wnn ich dieses Projekt jetzt im NF-Format (05f) exportiere dann kommt es bei komplizierten Berechnungen zu starken Stockern, als werden hier Daten des 15f-Materials nicht korrekt umgerechnet sondern einfach weggelassen.]]></relevantText><![CDATA[ Gibt es eine Möglichkeit dieses Problem zu umgehen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>173</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>101</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+
+]]>
+<relevantText goldCategory="101"><![CDATA[beim Exportieren erhalte ich die Fehlermeldung 
+
+Interner Programmfehler 4225.u.kp.v]]></relevantText><![CDATA[
+
+Ich habe die Anwendung bereits mehrfach deinstallaiert und neu installiert.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>197</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>66</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="66"><![CDATA[Beim erstellen einer Gewinnkalkulation erscheint nach der Eingabe des Monats die
+Fehlermeldung:
+"Fehler beim Parsen der XSL Daten".]]></relevantText><![CDATA[ Wo liegt das Problem
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>492</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>99</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="99"><![CDATA[Folgende Fehlermeldung tritt auf:
+"Codec zum Import dieser Datei ist nicht verfügbar."]]></relevantText><![CDATA[
+Ich kann also weder die Datei in xm ansehen,noch diese exportieren oder via ssh uploaden
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>532</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>79</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+zu Ticketnr.: 3862674214180840. ]]>
+<relevantText goldCategory="79"><![CDATA[ist folgende ausrüstung gut genug um beim bearbeiten von cwvemx clips ohne stocken durchrechnen zu können:]]></relevantText><![CDATA[
+Intel Core T5-55748 Prozessor, 3te Gener.(3,6 GHz, 6 MB Intel Smart Cache, Intel Hyper-Threading-Technik),
+ATI Radeon GT515M Direct X 17 Angebot mit 2048 MB Speicher, 7 GB DDR6 SDRAM u.Windows 7 Home Prem. 64 Bit
+mfg  klüstera
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>214</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>74</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+im Mai 2010 kaufte ich Ihre Software Warehouse Produkt Ultimate Unknown T625DZDBFD 0500357113655.
+]]>
+<relevantText goldCategory="74"><![CDATA[Ich habe auf meinem Rechner ein Upgrade von Vista auf Windows 7 ausgeführt und kann nun das
+Warehouse Produktprogramm nicht mehr installieren.]]></relevantText><![CDATA[ Wie kann ich dieses Problem beheben ohne
+wieder ein komplett neues Programm zu erwerben.
+Mit freundlichen Grüßen
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>177</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>82</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+ich versuche, mit Xtra L7.8 eine Direkterstellung zu machen.
+]]>
+<relevantText goldCategory="82"><![CDATA[Wenn
+ich auf Datei --> Erstellung --> Direkt gehe, kommt der Hinweis:\"Auf
+Ihrem System wurde keine Erstellunghardware gefunden.\" und die Erstellung
+ist nicht moeglich.]]></relevantText><![CDATA[
+Ich benoetige fuer eine Direkterstellung doch keine
+Erstellungsgeräte.
+Wo liegt der Fehler?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>235</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>104</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo an das Warehouse -Team : ich habe folgendes Problem -
+]]>
+<relevantText goldCategory="104"><![CDATA[die Online Reg. funktioniert nicht, obwohl ich online 
+war bei Produkte im OFFICE & IT Katalog 11 deluxe.]]></relevantText><![CDATA[ Andere Software
+lies sich trotz Firewall registriern; ohne Firewall
+bin ich nie online.
+Bitte um " Gehhilfe " damit ich meine digit. Artikelpreview
+endlich abschliessen kann.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>165</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>112</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo,
+
+]]>
+<relevantText goldCategory="112"><![CDATA[ich erhalte die Fehlermeldung: 46283.
+Schwerer Fehler im OWH-Applikation.]]></relevantText><![CDATA[
+
+Können SIe helfen?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>354</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>121</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="121"><![CDATA[Beim Installieren vom DVD Treiber Warehouse DVD-Prozessverwalter 5 Gelb-Weisses
+Geraet) kommt folgende Fehlermeldung:
+1133. Unable to finish
+instullation.]]></relevantText><![CDATA[
+Der Treiber wird nicht installiet.
+Wie kann ich das Problem
+beseitigen? 
+Fuer eine schnelle Antwort, waere ich ihnen sehr
+dankbar.
+MfG
+John Quillinger
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>119</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>76</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="76"><![CDATA[Ich bekomme immer die Fehlercodmeldung 9]]></relevantText><![CDATA[
+Daraufhin habe ich mich nach Ihren Ausführungen verhalten, Programm deinstalliert und über
+den Helpdesk Ihren Download installiert, danach das Programm und erneut gestartet.
+Die Fehlermeldung kommt erneut.
+Was kann ich jetzt machen?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>598</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>100</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Sehr geehrte Damen und Herren,
+
+ich habe mir einen neuen PC mit WIN 7 Premium zugelegt. Das Programm Produkte im IT & OFFICE Katalog
+11 kann ich jedoch nicht starten. ]]>
+<relevantText goldCategory="100"><![CDATA[Beim Start kommt immer wieder das Anmeldefenster der
+Registrierung mit meiner Serien Nr.]]></relevantText><![CDATA[ Benötige ich eventuell eine neue bzw. 2. Serien Nr.?
+Wie kann ich das Problem beheben? Für Ihre Mühe im Voraus "Besten Dank"
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>48</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+]]>
+<relevantText goldCategory="32"><![CDATA[Ich habe meine Produktpreview mit 330 Dateien versucht zu brennen. Es wurde eine Fehlermeldung
+ausgegeben:
+wmem reports disc project build exception 86661f3 verschlüsseln des Ablaufs fehlgeschlagen.]]></relevantText><![CDATA[ Nachdem
+ich die empfohlene Hilfestellung ohne Ablauf-und Kapiteldarstellung zu brennen realisiert habe,
+wurde mir wieder die Mitteilung gemacht, dass das Verschlüsseln fehlgeschlagen ist. Kann es
+vielleicht sein, das die Produktpreview-Version 10 first class die auf dem gleichen Rechner
+installiert ist, die Ursache dieser Probleme sein könnte? Mitlerweile weiß ich mir keinen
+Rat mehr!!
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>457</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>31</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Habe Version Produkte im IT & OFFICE Katalog 13 firstclass Ultimate
+Beim erstellen einer Produktpreview mit Zoom und Umsatzstatistiken läuft die Preview auf dem
+Vorführungsmonitor exakt und ohne Probleme.Beim starten des Brennmodus startet der
+Brennvorgang auch ohne Probleme es erfolgt die Meldung: Brennen erfolgreich abgeschlossen.
+
+]]>
+<relevantText goldCategory="31"><![CDATA[Wenn ich dan die gebrannte DVD auf dem Computer laufen lasse kommt es zu aussetzer und
+fehlenden Bestellnummern die DVD läuft
+nicht mehr weiter ( hängt sich auf )]]></relevantText><![CDATA[ Das gleiche ist, wenn ich die DVD über DVD Player
+laufenlassen möchte. Habe mehrere DVD Anbieter ausprobiert, immer mit dem gleichen
+Regebnis,
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>388</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>33</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="33"><![CDATA[Fehler "eine speicheranfrage ist ungültig" in einigen
+programmsituationen.]]></relevantText><![CDATA[ Z.B. derzeit bei der uebernahme generierter
+overviews aus dem overviewcreator.
+habe bereits die auslagerungsdatei
+sowohl automatissch, als auch manuell eingestellt-ohne erfolg.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>380</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>33</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+Erhalte folgende Fehlermeldung:
+]]>
+<relevantText goldCategory="33"><![CDATA[Eine Speicheranfrage ist
+ungültig. Eventuell ist kein Speicher mehr verfuegbar oder ein
+internes Problem ist aufgetreten.]]></relevantText><![CDATA[
+Speicher ist auf meinem PC auf jedenfall
+noch frei.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>44</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+
+Folgende Fehlermeldung:
+
+]]>
+<relevantText goldCategory="32"><![CDATA[!!! MBK exception in CopyWorkspace: 13 - process failed !!!]]></relevantText><![CDATA[
+
+
+wie weiter??
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>606</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>100</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+sehr geehrte Damen und Herren,leider kann ich meine Registrierung nicht nutzen.Mir ist bei erster Registrierung ein Fehler unterlaufen.]]>
+<relevantText goldCategory="100"><![CDATA[ich habe eine unvollständige Mailadresse angegeben.Wenn ich mich jetzt einlogge,erscheint der Hinweis ,daß die Seriennummer schon benutzt wird.]]></relevantText><![CDATA[ Was kann ich tun ?Meine vollständige Mailadresse ist:detlev.hall2610@googlemail.com!!!!!!Bei Anmeldunghabe ich detlev.hall@googlemail.com angegeben ,das Passwort lautet:max0202 bitte um Korrektur zur Registrierung oder eine Löschung,damit ich das Produkt neu anmelden kann !Bitte Mail an :detlev.hall2610@google.com - danke !
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>596</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>80</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich versuche Sales firstclass WH auf meinem Rechner zu installieren. ]]>
+<relevantText goldCategory="80"><![CDATA[Nach der Installation der SPARQL Datenspeicher kommt beim Umwandeln des Speichers eine Fehlermeldung.]]></relevantText><![CDATA[ Ich kann zwar weiter installieren aber der Datenspeicher fehlt halt. Firewall und Virenschutz sind deaktiviert.
+Ich habe mit ihrem whuninstaller alle Reste früherer Versionen beseitigt und neu probiert. Problem bleibt
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>577</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>72</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="72"><![CDATA[Bei Prozess Dateien im DT5 Format ist die Bestellnummer komplett falsch.]]></relevantText><![CDATA[
+Betriebssystem WIN XP32 mit XP-Codec-Pack-8.8.4.
+Mit Win Payment Reader 14 wird die Bestellnummer z.B. einwandfrei eingetragen, ebenso mit
+zahlreichen anderen Prozess Readern wie CRD Paymeng Reader, ACHD Reader usw.
+Aufnahmen im 81seg Format.
+Erstellt mit Tiffey Blast Workstation.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>238</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>104</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="104"><![CDATA[xls creator 21fehlercode -4]]></relevantText><![CDATA[
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>601</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>100</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Ich habe das Produkt registriert, kann das programm aber nicht starten. Es bricht jedesmal
+ab.
+
+]]>
+<relevantText goldCategory="100"><![CDATA[Als erstes erscheint die Registrierungsabfrage. Sie wird mit bereits registriert
+angezeigt. wenn ich "starten" drücke bricht alles ab.]]></relevantText><![CDATA[
+
+Warum muß ich das produkt überhaupt registrieren, wenn ich eine gültige Seriennummer habe?
+Die dabei anzugebenden Fragen sind meine persönlichen Daten, die niemanden etzwas angehen.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>473</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>101</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="101"><![CDATA[Hallo, ich bekomme beim Versuch Tabellen zu duplizieren folgende Fehlermeldung: Nativer Programmfehler 1878. u.sp.v]]></relevantText><![CDATA[ Was muss ich tun? Ich habe das Programm gestern bereits neu gedownloaded und installiert. Lieben Gruß Nena Klübner
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>124</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>116</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Zur erstellung einer neuen USB-Präsentation habe ich das Programm
+geöffnet, einige Daten aus der Datendatei auf die Leiste gezogen.
+und auf den Startknopf gedrückt um zu testen, wie es anläuft. ]]>
+<relevantText goldCategory="116"><![CDATA[Dann
+kam eine Fehlermeldung mit "smart....".]]></relevantText><![CDATA[
+Diese habe ich im Internet nachgesehen und es hieß, er habe nicht
+das richtige Kartenformat gefunden. Ein Reboot wurde empohlen, was ich
+auch durchgeführt habe, ohne die neue Präsentation abzuspeichern.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>481</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>101</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="101"><![CDATA[Beim exportieren bzw. wenn ich die Specificationsheet-Vorschau nutzen will, zeigt mir das Programm "Nativer Fehler" an.]]></relevantText><![CDATA[ Keine weiteren Details zu diesem vermeintlichen Fehler. Ich nutze übrigens Win 7 und starte das Programm (Specs Manager 9 collector) als Administrator. Selbst unveränderte Designs können nicht exportiert werden.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>144</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>116</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+]]>
+<relevantText goldCategory="116"><![CDATA[Smartcard der Statistikdatei kann nicht angezeigt werden, Smart-header funktioniert nicht.]]></relevantText><![CDATA[ Prozess wird nicht angezeigt, Verlaufskontrolle funktioniert auch nicht.
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>116</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>76</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Besitze Warehouse Produkte im IT & OFFICE Katalog 12 deluxe. ]]>
+<relevantText goldCategory="76"><![CDATA[Habe meine
+Festplatte D: von 75 GB auf 120 GB erweiter und jetzt kommt beim Programmstart die
+Meldung, Das Programm konnte nicht ausgeführt werden, eventuell ist der
+Program-Order beschädigt. Fehlercode 9]]></relevantText><![CDATA[
+
+Was kann ich machen?
+
+    ]]>
+        </text>
+      </interaction>
+    <interaction>
+        <metadata>
+          <businessScenario>multimedia software developer</businessScenario>
+          <dataSource/>
+          <id>568</id>
+          <author/>
+          <date>2013-10-14</date>
+          <category>32</category>
+          <keyword>TODO</keyword>
+        </metadata>
+        <text><![CDATA[
+Hallo, 
+]]>
+<relevantText goldCategory="32"><![CDATA[brennen ist nicht moeglich. ]]></relevantText><![CDATA[
+Fehlerangabe:
+wmem reports disc
+project build exception: 026416f5.
+
+Ich bitte um Hilfe.
+Danke. MfG. Gpnter
+Rumpelhofer
+
+    ]]>
+        </text>
+      </interaction>
+  </interactions>
+</dataset>

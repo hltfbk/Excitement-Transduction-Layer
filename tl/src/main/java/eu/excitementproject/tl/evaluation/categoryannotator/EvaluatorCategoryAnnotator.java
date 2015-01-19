@@ -1657,7 +1657,8 @@ public class EvaluatorCategoryAnnotator {
 	public void runIncrementalEvaluation(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
 		
 		List<Double> accuracyPerRun = new ArrayList<Double>();
-		String documentsFilename = inputDataFoldername + "omq_public_1_emails.xml"; //TODO: replace 1 by "all" at some point
+		String documentsFilename = inputDataFoldername + "omq_public_1_emails_unsorted.xml"; //TODO: replace 1 by "all" at some point
+//		String documentsFilename = inputDataFoldername + "omq_public_emails_all_unsorted.xml"; 
 		JCas cas = CASUtils.createNewInputCas();
 		String mostProbableCat; 
 		int countPositive = 0;
