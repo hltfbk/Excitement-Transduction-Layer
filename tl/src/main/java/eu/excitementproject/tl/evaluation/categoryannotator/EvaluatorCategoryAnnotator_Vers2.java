@@ -190,7 +190,14 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	static int topN; //use topNArray to set the parameter
 	static int [] topNArray = {1};
 	
-	static int [][] setupArrays= {{0, -1, -1}}; //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
+	static int [][] setupArrays = {
+				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
+//				{0, 0, -1}, 
+//				{203, -1, -1},
+//				{203, 203, -1},
+//				{203, 207, -1}
+				}; 
+	
 	private static int setupToken = -1; //use topArrays to set the parameter, set to -1 if no token fragments should be processed
 	private static WordDecompositionType decompTypeToken = WordDecompositionType.NONE; 
 //	private static WordDecompositionType decompTypeToken = WordDecompositionType.NO_RESTRICTION; 
@@ -220,15 +227,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		String categoriesFilename = inputFoldername + "omq_public_categories.xml"; 
 		
 		try {
-			
-			
-//			int [][] setupArray_1 = {{203, 203, -1}, {203, 207, -1}, {203, 207, 25}};
-//			int [][] setupArray_1 = {{0, -1, -1}, {0, 0, -1}, {0, 0, 0}};
-//			int [][] setupArray_1 = {{0, 0, -1}};
-			
-			//TODO: top 3, mit und ohne delete tokens, 
-			//{203, 203, -1}, {203, 207, -1}, {203, 207, 25}, {0, -1, -1}, {0, 0, -1},{0, 0, 0}
-			
 			boolean tmpReadCollpasedGraphFromFile = readCollpasedGraphFromFile;
 		    boolean tmpBuildCollapsedGraphFromRawGraphFile = buildCollapsedGraphFromRawGraphFile;
 		    
@@ -296,7 +294,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		}
 		
 		//TODO:
-		if(setupToken < 1 || setupDependency < 1 || setupSentence < 1){
+		if(setupToken == 0 || setupDependency == 0 || setupSentence == 0){
     		addLemmaLabel = false;
     	}
 		
@@ -359,10 +357,10 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		categoryAnnotator = new CategoryAnnotatorAllCats();
 		
 		 try {
-			 temp = File.createTempFile(createCollapsedGraphFileName("debugg_" + System.currentTimeMillis()), ".tmp");
+			 temp = File.createTempFile(createCollapsedGraphFileName("debug_" + System.currentTimeMillis()), ".tmp");
 			 writer = new PrintWriter(temp, "UTF-8");
 			 System.out.println("Created file at " + temp.getAbsolutePath());
-			 tempResult = File.createTempFile(createCollapsedGraphFileName("debugg_result_" + System.currentTimeMillis()), ".tmp");
+			 tempResult = File.createTempFile(createCollapsedGraphFileName("debug_result_" + System.currentTimeMillis()), ".tmp");
 			 writerResult = new PrintWriter(tempResult, "UTF-8");
 			 System.out.println("Created file at " + tempResult.getAbsolutePath());
 		} catch (IOException e) {
