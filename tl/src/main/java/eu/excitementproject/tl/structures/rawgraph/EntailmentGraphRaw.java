@@ -401,10 +401,13 @@ public class EntailmentGraphRaw extends
 	 * @param egr - the input raw graph
 	 */
 	public void copyRawGraphNodesAndAllEdges(EntailmentGraphRaw egr){
-		// first add transitive closure to the EGR
-//		egr.applyTransitiveClosure(); //TODO: check if needed! if transitive closure is applied is decided in GraphMerger
 		
-		// copy nodes (add if new, update mentions and complete statements if exist) - need to do this separately from edges, since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, i.e. base statement = complete statement)
+		// first add transitive closure to the EGR
+		//egr.applyTransitiveClosure(); //TODO: check if needed! if transitive closure is applied is decided in GraphMerger
+	
+		// copy nodes (add if new, update mentions and complete statements if exist) - need to do this separately from edges, 
+		//since there might be "orphan" nodes (this should only happen when the fragment graph has a single node, 
+		//i.e. base statement = complete statement)
 		for (EntailmentUnit rawGraphNode : egr.vertexSet()) {
 			for(EntailmentUnitMention mention : rawGraphNode.getMentions()){
 				this.addEntailmentUnitMention(mention, mention.getTextWithoutDoubleSpaces());
@@ -413,13 +416,21 @@ public class EntailmentGraphRaw extends
 		
 		// copy edges
 		for (EntailmentRelation rawGraphEdge : egr.edgeSet()){
-			EntailmentUnit sourceVertex = rawGraphEdge.getSource();
-			EntailmentUnit targetVertex = rawGraphEdge.getTarget();
-			this.addEdge(sourceVertex, targetVertex, rawGraphEdge);
+			String sourceText = rawGraphEdge.getSource().getTextWithoutDoubleSpaces();
+			String targetText = rawGraphEdge.getTarget().getTextWithoutDoubleSpaces();
+			EntailmentUnit sourceVertex = this.getVertexWithText(sourceText);
+			EntailmentUnit targetVertex = this.getVertexWithText(targetText);
+			
+			//TODO: information about EDA and LAP is lost. Consider better implementation to reconstruct the EDA and LAP information
+			EntailmentRelation rel = new EntailmentRelation(sourceVertex, targetVertex, 
+					rawGraphEdge.getTEdecision(), rawGraphEdge.getEdgeType());
+			if(!this.isEntailment(sourceVertex, targetVertex)){
+				this.addEdge(sourceVertex, targetVertex, rel);
+			}
 		}
-		
 	}
 
+	
 	/** The method gets an EntailmentUnitMention and either adds a new EntailmentUnit node or, if a relevant EntailmentUnit already exists in the graph, updates the list of its mentions  
 	 * @param mention - the EntailmentUnitMention to be added to the graph
 	 * @param completeStatementText - the text of the mention's complete statement
