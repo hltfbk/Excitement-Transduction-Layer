@@ -136,7 +136,7 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 		// check the direction workGraphBaseStatement -> newBaseStatement
 		if (workGraph.isEntailment(workGraphBaseStatement, newBaseStatement)) {
 			// merge 1st-level nodes
-			workGraph= mergeFirstLevel(workGraph, oldFragmentGraphNodes.get(1), newFragmentGraphNodes.get(1));
+			workGraph= mergeFirstLevel(workGraph, oldFragmentGraphNodes, newFragmentGraphNodes);
 			// propagate to the upper levels
 			workGraph = mergeUpperLevels(workGraph, oldFragmentGraphNodes, newFragmentGraphNodes);			
 		}
@@ -145,7 +145,7 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 		// check the direction newBaseStatement -> workGraphBaseStatement
 		if (workGraph.isEntailment(newBaseStatement, workGraphBaseStatement)) {
 			// merge 1st-level nodes
-			workGraph= mergeFirstLevel(workGraph, newFragmentGraphNodes.get(1), oldFragmentGraphNodes.get(1));
+			workGraph= mergeFirstLevel(workGraph, newFragmentGraphNodes, oldFragmentGraphNodes);
 			// propagate to the upper levels
 			workGraph = mergeUpperLevels(workGraph, newFragmentGraphNodes, oldFragmentGraphNodes);			
 		}
@@ -186,14 +186,16 @@ public class StructureBasedGraphMerger extends AbstractGraphMerger {
 	 * @return set of EntailmentRelation-s that were detected 
 	 * @throws LAPException 
 	 */
-	private EntailmentGraphRaw mergeFirstLevel(EntailmentGraphRaw workGraph, Set<EntailmentUnit> candidateEntailingtNodes, Set<EntailmentUnit> candidateEntailedNodes) throws GraphMergerException{
+	protected EntailmentGraphRaw mergeFirstLevel(EntailmentGraphRaw workGraph, Hashtable<Integer, Set<EntailmentUnit>> candidateEntailingFragmentGraphNodes, Hashtable<Integer, Set<EntailmentUnit>> candidateEntailedFragmentGraphNodes) throws GraphMergerException{
+		Set<EntailmentUnit> candidateEntailingNodes = candidateEntailingFragmentGraphNodes.get(1);
+		Set<EntailmentUnit> candidateEntailedNodes = candidateEntailedFragmentGraphNodes.get(1);
 		// get the candidates (1-modidier nodes, which entail each of the base statements) 
-		for (EntailmentUnit candidateEntailingtNode : candidateEntailingtNodes){
+		for (EntailmentUnit candidateEntailingNode : candidateEntailingNodes){
 			for (EntailmentUnit candidateEntailedNode : candidateEntailedNodes){
 				// check if there is already such an edge in the graph. If yes - go to the next candidate pair
-				if (workGraph.isEntailment(candidateEntailingtNode, candidateEntailedNode)) continue; 
+				if (workGraph.isEntailment(candidateEntailingNode, candidateEntailedNode)) continue; 
 				// check whether there is entailment. If yes - add to the set 
-				EntailmentRelation edge = getEntailmentRelation(candidateEntailingtNode, candidateEntailedNode);
+				EntailmentRelation edge = getEntailmentRelation(candidateEntailingNode, candidateEntailedNode);
 				if (edge!=null) workGraph.addEdge(edge.getSource(), edge.getTarget(), edge);
 			}
 		}

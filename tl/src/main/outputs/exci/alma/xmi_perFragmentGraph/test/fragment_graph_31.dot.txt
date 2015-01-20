@@ -1,0 +1,3 @@
+digraph rawGraph {
+"sono mesi che non funziona" -> "non funziona" [label=1] [color=green]
+}

@@ -1,0 +1,3 @@
+digraph rawGraph {
+"e' una settimana che continuo ad avere problemi con internet" -> "continuo ad avere problemi con internet" [label=1] [color=green]
+}

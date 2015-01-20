@@ -1,0 +1,8 @@
+digraph collapsedGraph {
+"TELEFONIAX sta cercando di truffarmi [1]""la TELEFONIAX e solo una fregatura [1]""la TELEFONIAX ke prende in giro i clieti è una catastrofe [1]\nla TELEFONIAX ke prende in giro i clieti è una catastrofe""la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe [1]""la TELEFONIAX non risolve i problemi [1]""promettete cose che non potrete mai far ottenere [1]""i servizi non funzionano [1]\ni servizi non funzionano""sono 3 mesi ke i servizi TELEFONIAX sim non funzionano [1]""sono 3 mesi ke i servizi non funzionano [1]\nsono 3 mesi ke i servizi non funzionano""i servizi TELEFONIAX sim non funzionano [1]\ni servizi TELEFONIAX sim non funzionano""la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe [1]" -> "la TELEFONIAX ke prende in giro i clieti è una catastrofe [1]\nla TELEFONIAX ke prende in giro i clieti è una catastrofe" [color=blue]
+"sono 3 mesi ke i servizi TELEFONIAX sim non funzionano [1]" -> "sono 3 mesi ke i servizi non funzionano [1]\nsono 3 mesi ke i servizi non funzionano" [color=blue]
+"sono 3 mesi ke i servizi non funzionano [1]\nsono 3 mesi ke i servizi non funzionano" -> "i servizi non funzionano [1]\ni servizi non funzionano" [color=blue]
+"sono 3 mesi ke i servizi TELEFONIAX sim non funzionano [1]" -> "i servizi TELEFONIAX sim non funzionano [1]\ni servizi TELEFONIAX sim non funzionano" [color=blue]
+"i servizi TELEFONIAX sim non funzionano [1]\ni servizi TELEFONIAX sim non funzionano" -> "i servizi non funzionano [1]\ni servizi non funzionano" [color=blue]
+"sono 3 mesi ke i servizi TELEFONIAX sim non funzionano [1]" -> "i servizi non funzionano [1]\ni servizi non funzionano" [color=blue]
+}

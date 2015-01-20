@@ -1,0 +1,3 @@
+digraph rawGraph {
+"avere una connessione UMTS e' difficile" -> "avere una connessione e' difficile" [label=1] [color=green]
+}

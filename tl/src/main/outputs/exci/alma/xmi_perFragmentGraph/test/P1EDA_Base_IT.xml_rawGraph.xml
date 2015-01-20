@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rawGraph>
+  <entailmentUnitNode level="0" text="Alcune pagine non le apre">
+    <completeStatement text="Alcune pagine non le apre"/>
+    <entailmentUnitMention categoryId="" interactionId="0202.txt" level="0" text="Alcune pagine non le apre"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="                                                           il sito non dasse qualche problema             ">
+    <completeStatement text="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile"/>
+    <entailmentUnitMention categoryId="" interactionId="0284.txt" level="0" text="                                                           il sito non dasse qualche problema             "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile">
+    <completeStatement text="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile"/>
+    <entailmentUnitMention categoryId="" interactionId="0284.txt" level="2" text="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema             ">
+    <completeStatement text="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile"/>
+    <entailmentUnitMention categoryId="" interactionId="0284.txt" level="1" text="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema             "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="                                                           il sito non dasse qualche problema inspiegabile">
+    <completeStatement text="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile"/>
+    <entailmentUnitMention categoryId="" interactionId="0284.txt" level="1" text="                                                           il sito non dasse qualche problema inspiegabile"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Il       sito TELEFONIAX è poco agevole">
+    <completeStatement text="Il nuovo sito TELEFONIAX è poco agevole"/>
+    <entailmentUnitMention categoryId="" interactionId="0033.txt" level="0" text="Il       sito TELEFONIAX è poco agevole"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Il nuovo sito TELEFONIAX è poco agevole">
+    <completeStatement text="Il nuovo sito TELEFONIAX è poco agevole"/>
+    <entailmentUnitMention categoryId="" interactionId="0033.txt" level="1" text="Il nuovo sito TELEFONIAX è poco agevole"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Il sito TELEFONIAX e'           un        SCHIFO">
+    <completeStatement text="Il sito TELEFONIAX e' veramente un grande SCHIFO"/>
+    <entailmentUnitMention categoryId="" interactionId="0024.txt" level="0" text="Il sito TELEFONIAX e'           un        SCHIFO"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="Il sito TELEFONIAX e' veramente un grande SCHIFO">
+    <completeStatement text="Il sito TELEFONIAX e' veramente un grande SCHIFO"/>
+    <entailmentUnitMention categoryId="" interactionId="0024.txt" level="2" text="Il sito TELEFONIAX e' veramente un grande SCHIFO"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Il sito TELEFONIAX e' veramente un        SCHIFO">
+    <completeStatement text="Il sito TELEFONIAX e' veramente un grande SCHIFO"/>
+    <entailmentUnitMention categoryId="" interactionId="0024.txt" level="1" text="Il sito TELEFONIAX e' veramente un        SCHIFO"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Il sito TELEFONIAX e'           un grande SCHIFO">
+    <completeStatement text="Il sito TELEFONIAX e' veramente un grande SCHIFO"/>
+    <entailmentUnitMention categoryId="" interactionId="0024.txt" level="1" text="Il sito TELEFONIAX e'           un grande SCHIFO"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Il sito è confusionale">
+    <completeStatement text="Il sito è confusionale"/>
+    <entailmentUnitMention categoryId="" interactionId="0047.txt" level="0" text="Il sito è confusionale"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Non si riesce ad accedere               al sito          di TELEFONIAX.it">
+    <completeStatement text="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it"/>
+    <entailmentUnitMention categoryId="" interactionId="0020.txt" level="0" text="Non si riesce ad accedere               al sito          di TELEFONIAX.it"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it">
+    <completeStatement text="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it"/>
+    <entailmentUnitMention categoryId="" interactionId="0020.txt" level="2" text="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Non si riesce ad accedere               al sito completo di TELEFONIAX.it">
+    <completeStatement text="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it"/>
+    <entailmentUnitMention categoryId="" interactionId="0020.txt" level="1" text="Non si riesce ad accedere               al sito completo di TELEFONIAX.it"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Non si riesce ad accedere dal cellulare al sito          di TELEFONIAX.it">
+    <completeStatement text="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it"/>
+    <entailmentUnitMention categoryId="" interactionId="0020.txt" level="1" text="Non si riesce ad accedere dal cellulare al sito          di TELEFONIAX.it"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="                    provo ad registrarmi          ma mi da errore">
+    <completeStatement text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0106.txt" level="0" text="                    provo ad registrarmi          ma mi da errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="3" text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore">
+    <completeStatement text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0106.txt" level="3" text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="Sono     giorni che provo ad registrarmi sul sito ma mi da errore">
+    <completeStatement text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0106.txt" level="2" text="Sono     giorni che provo ad registrarmi sul sito ma mi da errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="Sono     giorni che provo ad registrarmi          ma mi da errore">
+    <completeStatement text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0106.txt" level="1" text="Sono     giorni che provo ad registrarmi          ma mi da errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="                    provo ad registrarmi sul sito ma mi da errore">
+    <completeStatement text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0106.txt" level="1" text="                    provo ad registrarmi sul sito ma mi da errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="Sono tre giorni che provo ad registrarmi          ma mi da errore">
+    <completeStatement text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0106.txt" level="2" text="Sono tre giorni che provo ad registrarmi          ma mi da errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="     tre            provo ad registrarmi          ma mi da errore">
+    <completeStatement text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0106.txt" level="1" text="     tre            provo ad registrarmi          ma mi da errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="     tre            provo ad registrarmi sul sito ma mi da errore">
+    <completeStatement text="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0106.txt" level="2" text="     tre            provo ad registrarmi sul sito ma mi da errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Sul sito non si riesce ad entrare">
+    <completeStatement text="Sul sito non si riesce ad entrare"/>
+    <entailmentUnitMention categoryId="" interactionId="0018.txt" level="0" text="Sul sito non si riesce ad entrare"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="Volevo solo segnalare che ci sono dei problemi sul sito">
+    <completeStatement text="Volevo solo segnalare che ci sono dei problemi sul sito"/>
+    <entailmentUnitMention categoryId="" interactionId="0257.txt" level="0" text="Volevo solo segnalare che ci sono dei problemi sul sito"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="avete dei problemi sul sito">
+    <completeStatement text="avete dei problemi sul sito"/>
+    <entailmentUnitMention categoryId="" interactionId="0061.txt" level="0" text="avete dei problemi sul sito"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="esser lento">
+    <completeStatement text="esser lento"/>
+    <entailmentUnitMention categoryId="" interactionId="0024.txt" level="0" text="esser lento"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="il sito TELEFONIAX è lentissimo">
+    <completeStatement text="il sito TELEFONIAX è lentissimo"/>
+    <entailmentUnitMention categoryId="" interactionId="0035.txt" level="0" text="il sito TELEFONIAX è lentissimo"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="il sito TELEFONIAX.it ha dei        problemi">
+    <completeStatement text="il sito TELEFONIAX.it ha dei grossi problemi"/>
+    <entailmentUnitMention categoryId="" interactionId="0151.txt" level="0" text="il sito TELEFONIAX.it ha dei        problemi"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="il sito TELEFONIAX.it ha dei grossi problemi">
+    <completeStatement text="il sito TELEFONIAX.it ha dei grossi problemi"/>
+    <entailmentUnitMention categoryId="" interactionId="0151.txt" level="1" text="il sito TELEFONIAX.it ha dei grossi problemi"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="il vostro sito non funziona">
+    <completeStatement text="il vostro sito non funziona"/>
+    <entailmentUnitMention categoryId="" interactionId="0140.txt" level="0" text="il vostro sito non funziona"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="mi dà sempre errore">
+    <completeStatement text="mi dà sempre errore"/>
+    <entailmentUnitMention categoryId="" interactionId="0125.txt" level="0" text="mi dà sempre errore"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="non riesco ad accedere al forum                          ">
+    <completeStatement text="non riesco ad accedere al forum di TELEFONIAX LABORATORIO"/>
+    <entailmentUnitMention categoryId="" interactionId="0144.txt" level="0" text="non riesco ad accedere al forum                          "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="non riesco ad accedere al forum di TELEFONIAX LABORATORIO">
+    <completeStatement text="non riesco ad accedere al forum di TELEFONIAX LABORATORIO"/>
+    <entailmentUnitMention categoryId="" interactionId="0144.txt" level="1" text="non riesco ad accedere al forum di TELEFONIAX LABORATORIO"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="non riesco ad accedere all'area reclami                  ">
+    <completeStatement text="non riesco ad accedere all'area reclami di TELEFONIAX ABC"/>
+    <entailmentUnitMention categoryId="" interactionId="0060.txt" level="0" text="non riesco ad accedere all'area reclami                  "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="non riesco ad accedere all'area reclami di TELEFONIAX ABC">
+    <completeStatement text="non riesco ad accedere all'area reclami di TELEFONIAX ABC"/>
+    <entailmentUnitMention categoryId="" interactionId="0060.txt" level="1" text="non riesco ad accedere all'area reclami di TELEFONIAX ABC"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="non trovi     cosa stai cercando">
+    <completeStatement text="non trovi mai cosa stai cercando"/>
+    <entailmentUnitMention categoryId="" interactionId="0024.txt" level="0" text="non trovi     cosa stai cercando"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="non trovi mai cosa stai cercando">
+    <completeStatement text="non trovi mai cosa stai cercando"/>
+    <entailmentUnitMention categoryId="" interactionId="0024.txt" level="1" text="non trovi mai cosa stai cercando"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="problema           sul sito">
+    <completeStatement text="problema del login sul sito"/>
+    <entailmentUnitMention categoryId="" interactionId="0139.txt" level="0" text="problema           sul sito"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="problema del login sul sito">
+    <completeStatement text="problema del login sul sito"/>
+    <entailmentUnitMention categoryId="" interactionId="0139.txt" level="1" text="problema del login sul sito"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="problemi di           gestione sul sito di TELEFONIAX?">
+    <completeStatement text="problemi di           gestione sul sito di TELEFONIAX?"/>
+    <entailmentUnitMention categoryId="" interactionId="0202.txt" level="0" text="problemi di           gestione sul sito di TELEFONIAX?"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="problemi di accesso            sul sito di TELEFONIAX?">
+    <completeStatement text="problemi di accesso            sul sito di TELEFONIAX?"/>
+    <entailmentUnitMention categoryId="" interactionId="0202.txt" level="0" text="problemi di accesso            sul sito di TELEFONIAX?"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="si disconnette">
+    <completeStatement text="si disconnette"/>
+    <entailmentUnitMention categoryId="" interactionId="0202.txt" level="0" text="si disconnette"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="sito inaccessibile">
+    <completeStatement text="sito inaccessibile"/>
+    <entailmentUnitMention categoryId="" interactionId="0224.txt" level="0" text="sito inaccessibile"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF            ">
+    <completeStatement text="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti"/>
+    <entailmentUnitMention categoryId="" interactionId="0034.txt" level="0" text="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF            "/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti">
+    <completeStatement text="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti"/>
+    <entailmentUnitMention categoryId="" interactionId="0034.txt" level="1" text="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="                                   al sito                             ci sono problemi di connessione">
+    <completeStatement text="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione"/>
+    <entailmentUnitMention categoryId="" interactionId="0282.txt" level="0" text="                                   al sito                             ci sono problemi di connessione"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="2" text="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione">
+    <completeStatement text="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione"/>
+    <entailmentUnitMention categoryId="" interactionId="0282.txt" level="2" text="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="                                   al sito x poter scegliere un premio ci sono problemi di connessione">
+    <completeStatement text="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione"/>
+    <entailmentUnitMention categoryId="" interactionId="0282.txt" level="1" text="                                   al sito x poter scegliere un premio ci sono problemi di connessione"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="1" text="tutte le volte che devo collegarmi al sito                             ci sono problemi di connessione">
+    <completeStatement text="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione"/>
+    <entailmentUnitMention categoryId="" interactionId="0282.txt" level="1" text="tutte le volte che devo collegarmi al sito                             ci sono problemi di connessione"/>
+  </entailmentUnitNode>
+  <entailmentUnitNode level="0" text="è possibile che non funzioni mai niente">
+    <completeStatement text="è possibile che non funzioni mai niente"/>
+    <entailmentUnitMention categoryId="" interactionId="0236.txt" level="0" text="è possibile che non funzioni mai niente"/>
+  </entailmentUnitNode>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile" target="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema             " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema             " target="                                                           il sito non dasse qualche problema             " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile" target="                                                           il sito non dasse qualche problema inspiegabile" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="                                                           il sito non dasse qualche problema inspiegabile" target="                                                           il sito non dasse qualche problema             " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile" target="                                                           il sito non dasse qualche problema             " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                                           il sito non dasse qualche problema             " target="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                                           il sito non dasse qualche problema             " target="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema             " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                                           il sito non dasse qualche problema             " target="                                                           il sito non dasse qualche problema inspiegabile" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema             " target="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema             " target="                                                           il sito non dasse qualche problema inspiegabile" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                                           il sito non dasse qualche problema inspiegabile" target="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema inspiegabile" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                                           il sito non dasse qualche problema inspiegabile" target="Controllerei volentieri il mio traffico se solo ogni volta il sito non dasse qualche problema             " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Il nuovo sito TELEFONIAX è poco agevole" target="Il       sito TELEFONIAX è poco agevole" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Il       sito TELEFONIAX è poco agevole" target="Il nuovo sito TELEFONIAX è poco agevole" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Il sito TELEFONIAX e' veramente un grande SCHIFO" target="Il sito TELEFONIAX e' veramente un        SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Il sito TELEFONIAX e' veramente un        SCHIFO" target="Il sito TELEFONIAX e'           un        SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Il sito TELEFONIAX e' veramente un grande SCHIFO" target="Il sito TELEFONIAX e'           un grande SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Il sito TELEFONIAX e'           un grande SCHIFO" target="Il sito TELEFONIAX e'           un        SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Il sito TELEFONIAX e' veramente un grande SCHIFO" target="Il sito TELEFONIAX e'           un        SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Il sito TELEFONIAX e'           un        SCHIFO" target="Il sito TELEFONIAX e' veramente un grande SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Il sito TELEFONIAX e'           un        SCHIFO" target="Il sito TELEFONIAX e' veramente un        SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Il sito TELEFONIAX e'           un        SCHIFO" target="Il sito TELEFONIAX e'           un grande SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Il sito TELEFONIAX e' veramente un        SCHIFO" target="Il sito TELEFONIAX e' veramente un grande SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Il sito TELEFONIAX e' veramente un        SCHIFO" target="Il sito TELEFONIAX e'           un grande SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Il sito TELEFONIAX e'           un grande SCHIFO" target="Il sito TELEFONIAX e' veramente un grande SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Il sito TELEFONIAX e'           un grande SCHIFO" target="Il sito TELEFONIAX e' veramente un        SCHIFO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it" target="Non si riesce ad accedere               al sito completo di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Non si riesce ad accedere               al sito completo di TELEFONIAX.it" target="Non si riesce ad accedere               al sito          di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it" target="Non si riesce ad accedere dal cellulare al sito          di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Non si riesce ad accedere dal cellulare al sito          di TELEFONIAX.it" target="Non si riesce ad accedere               al sito          di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it" target="Non si riesce ad accedere               al sito          di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Non si riesce ad accedere               al sito          di TELEFONIAX.it" target="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Non si riesce ad accedere               al sito          di TELEFONIAX.it" target="Non si riesce ad accedere               al sito completo di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Non si riesce ad accedere               al sito          di TELEFONIAX.it" target="Non si riesce ad accedere dal cellulare al sito          di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Non si riesce ad accedere               al sito completo di TELEFONIAX.it" target="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Non si riesce ad accedere               al sito completo di TELEFONIAX.it" target="Non si riesce ad accedere dal cellulare al sito          di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Non si riesce ad accedere dal cellulare al sito          di TELEFONIAX.it" target="Non si riesce ad accedere dal cellulare al sito completo di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Non si riesce ad accedere dal cellulare al sito          di TELEFONIAX.it" target="Non si riesce ad accedere               al sito completo di TELEFONIAX.it" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" target="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" target="Sono     giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono     giorni che provo ad registrarmi          ma mi da errore" target="                    provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" target="                    provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="                    provo ad registrarmi sul sito ma mi da errore" target="                    provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" target="Sono tre giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi          ma mi da errore" target="Sono     giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi          ma mi da errore" target="     tre            provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="     tre            provo ad registrarmi          ma mi da errore" target="                    provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" target="     tre            provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="     tre            provo ad registrarmi sul sito ma mi da errore" target="                    provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="     tre            provo ad registrarmi sul sito ma mi da errore" target="     tre            provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" target="     tre            provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" target="Sono     giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" target="                    provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" target="                    provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi          ma mi da errore" target="                    provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="     tre            provo ad registrarmi sul sito ma mi da errore" target="                    provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" target="                    provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi          ma mi da errore" target="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi          ma mi da errore" target="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi          ma mi da errore" target="Sono     giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi          ma mi da errore" target="                    provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi          ma mi da errore" target="Sono tre giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi          ma mi da errore" target="     tre            provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi          ma mi da errore" target="     tre            provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" target="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" target="Sono tre giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" target="     tre            provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" target="     tre            provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi          ma mi da errore" target="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi          ma mi da errore" target="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi          ma mi da errore" target="                    provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi          ma mi da errore" target="Sono tre giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi          ma mi da errore" target="     tre            provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono     giorni che provo ad registrarmi          ma mi da errore" target="     tre            provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi sul sito ma mi da errore" target="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi sul sito ma mi da errore" target="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi sul sito ma mi da errore" target="Sono     giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi sul sito ma mi da errore" target="Sono tre giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi sul sito ma mi da errore" target="     tre            provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                    provo ad registrarmi sul sito ma mi da errore" target="     tre            provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono tre giorni che provo ad registrarmi          ma mi da errore" target="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono tre giorni che provo ad registrarmi          ma mi da errore" target="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono tre giorni che provo ad registrarmi          ma mi da errore" target="                    provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="Sono tre giorni che provo ad registrarmi          ma mi da errore" target="     tre            provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi          ma mi da errore" target="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi          ma mi da errore" target="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi          ma mi da errore" target="Sono     giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi          ma mi da errore" target="                    provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi          ma mi da errore" target="Sono tre giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi          ma mi da errore" target="     tre            provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi sul sito ma mi da errore" target="Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi sul sito ma mi da errore" target="Sono     giorni che provo ad registrarmi sul sito ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi sul sito ma mi da errore" target="Sono     giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="     tre            provo ad registrarmi sul sito ma mi da errore" target="Sono tre giorni che provo ad registrarmi          ma mi da errore" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="il sito TELEFONIAX.it ha dei grossi problemi" target="il sito TELEFONIAX.it ha dei        problemi" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="il sito TELEFONIAX.it ha dei        problemi" target="il sito TELEFONIAX.it ha dei grossi problemi" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="non riesco ad accedere al forum di TELEFONIAX LABORATORIO" target="non riesco ad accedere al forum                          " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="non riesco ad accedere al forum                          " target="non riesco ad accedere al forum di TELEFONIAX LABORATORIO" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="non riesco ad accedere all'area reclami di TELEFONIAX ABC" target="non riesco ad accedere all'area reclami                  " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="non riesco ad accedere all'area reclami                  " target="non riesco ad accedere all'area reclami di TELEFONIAX ABC" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="non trovi mai cosa stai cercando" target="non trovi     cosa stai cercando" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="non trovi     cosa stai cercando" target="non trovi mai cosa stai cercando" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="problema del login sul sito" target="problema           sul sito" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="problema           sul sito" target="problema del login sul sito" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti" target="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF            " type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF            " target="sul sito della TELEFONIAX non riesco ad attivare la ABCDEF con i punti" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" target="                                   al sito x poter scegliere un premio ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="                                   al sito x poter scegliere un premio ci sono problemi di connessione" target="                                   al sito                             ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" target="tutte le volte che devo collegarmi al sito                             ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="tutte le volte che devo collegarmi al sito                             ci sono problemi di connessione" target="                                   al sito                             ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="Entailment" source="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" target="                                   al sito                             ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                   al sito                             ci sono problemi di connessione" target="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                   al sito                             ci sono problemi di connessione" target="                                   al sito x poter scegliere un premio ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                   al sito                             ci sono problemi di connessione" target="tutte le volte che devo collegarmi al sito                             ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                   al sito x poter scegliere un premio ci sono problemi di connessione" target="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="                                   al sito x poter scegliere un premio ci sono problemi di connessione" target="tutte le volte che devo collegarmi al sito                             ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="tutte le volte che devo collegarmi al sito                             ci sono problemi di connessione" target="tutte le volte che devo collegarmi al sito x poter scegliere un premio ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+  <entailmentRelationEdge confidence="1.0" decisionLabel="NonEntailment" source="tutte le volte che devo collegarmi al sito                             ci sono problemi di connessione" target="                                   al sito x poter scegliere un premio ci sono problemi di connessione" type="FRAGMENT_GRAPH"/>
+</rawGraph>
