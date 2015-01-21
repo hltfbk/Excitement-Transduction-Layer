@@ -163,34 +163,34 @@ public class EvaluatorCategoryAnnotator_Vers2 {
   	private static List<String> dependentWordFilter = Arrays.asList(new String []{"keine", "keinerlei", "nicht", "nichts"});
   	
   	//training
-  	static boolean processTrainingData = false; //TODO: needed for edaToken and edaDependency???
-	static boolean trainEDAToken = false;
-	static boolean trainEDASentence = false;
-	static boolean addSecondDataSetForGraphBuilding = false;
+  	private static boolean processTrainingData = false; //TODO: needed for edaToken and edaDependency???
+  	private static boolean trainEDAToken = false;
+  	private static boolean trainEDASentence = false;
+  	private static boolean addSecondDataSetForGraphBuilding = false;
 	
 	//treshold
-	static double thresholdForOptimizing = 0.8;
-	static double thresholdForEDA = 0.8; //TODO @ALEKS: thresholdForSEDAGraphBuilder?
+  	private static double thresholdForOptimizing = 0.8;
+  	private static double thresholdForEDA = 0.8; //TODO @ALEKS: thresholdForSEDAGraphBuilder?
 
     /* SMART notation for tf-idf variants, as in Manning et al., chapter 6, p.128 */
 	// Query (email) weighting: --> relevant when categorizing new emails
-	static char termFrequencyQuery = 'l'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
-	static char documentFrequencyQuery = 't'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
-	static char normalizationQuery = 'c'; // n (none), c (cosine)
+  	private static char termFrequencyQuery = 'l'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
+  	private static char documentFrequencyQuery = 't'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
+  	private static char normalizationQuery = 'c'; // n (none), c (cosine)
 	// Document (category) weighting: --> relevant when building the graph
-	static char termFrequencyDocument = 'l'; // n (natural), l (logarithm)
-	static char documentFrequencyDocument = 't'; // n (no), t (idf)
-	static char normalizationDocument = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as
-	static String method = "tfidf";
+  	private static char termFrequencyDocument = 'l'; // n (natural), l (logarithm)
+	private static char documentFrequencyDocument = 't'; // n (no), t (idf)
+	private static char normalizationDocument = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as
+	private static String method = "tfidf";
 	
-	static int categoryBoost = 0; //boost confidence of category fragments in collapsed graph relevant when building the graph
-	static boolean lengthBoost = false; //relevant when categorizing new emails
-	static boolean bestNodeOnly = true; //if no edges are to follow while (relevant when categorizing new emails)
+	private static int categoryBoost = 0; //boost confidence of category fragments in collapsed graph relevant when building the graph
+	private static boolean lengthBoost = false; //relevant when categorizing new emails
+	private static boolean bestNodeOnly = true; //if no edges are to follow while (relevant when categorizing new emails)
 	
-	static int topN; //use topNArray to set the parameter
-	static int [] topNArray = {1};
+	private static int topN; //use topNArray to set the parameter
+	private static int [] topNArray = {1};
 	
-	static int [][] setupArrays = {
+	private static int [][] setupArrays = {
 				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
 //				{0, 0, -1}, 
 //				{203, -1, -1},
@@ -208,7 +208,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 
 	private static int setupSentence = -1;//use topArrays to set the parameter, set to -1 if no sentence fragments should be processed
 	//TODO: implement in three fold cross evaluation
-	private boolean removeTokenMatches = true; //remove tokens from the matches if a dependency or sentence match contain the tokens
+	private boolean removeTokenMatches = false; //remove tokens from the matches if a dependency or sentence match contain the tokens
 
 	private static FragmentGraphGenerator fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS(); //FragmentGraphGeneratorFromCAS()
   	private static ModifierAnnotator modAnnotatorSentence; //to set in setup (change there if needed), modifier annotator is not used for token and dependencies 
@@ -229,11 +229,16 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		try {
 			boolean tmpReadCollpasedGraphFromFile = readCollpasedGraphFromFile;
 		    boolean tmpBuildCollapsedGraphFromRawGraphFile = buildCollapsedGraphFromRawGraphFile;
+		    boolean tmpAddLemmaLabel = addLemmaLabel;
 		    
 			for(int [] setup : setupArrays){
 				setupToken = setup[0];
 				setupDependency = setup[1];
 				setupSentence = setup[2];
+				if(setupToken == 0 || setupDependency == 0 || setupSentence == 0){
+		    		addLemmaLabel = false;
+		    	}
+				
 				EvaluatorCategoryAnnotator_Vers2 evc = new EvaluatorCategoryAnnotator_Vers2(setupToken, setupDependency, setupSentence);
 				
 				if(skipEval){
@@ -250,6 +255,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				}
 				readCollpasedGraphFromFile = tmpReadCollpasedGraphFromFile;
 				buildCollapsedGraphFromRawGraphFile = tmpBuildCollapsedGraphFromRawGraphFile;
+				addLemmaLabel = tmpAddLemmaLabel;
 				writer.close();
 				writerResult.close();
 			}
@@ -292,11 +298,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			System.err.print("WRONG SETUP: no combination of setup == 0 and setup > 0 possible ");
 			System.exit(1);
 		}
-		
-		//TODO:
-		if(setupToken == 0 || setupDependency == 0 || setupSentence == 0){
-    		addLemmaLabel = false;
-    	}
 		
 		setFragmentTypeName(setupToken, setupDependency, setupSentence);
 		setLAP(setupToken, setupDependency, setupSentence);
@@ -910,9 +911,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
     	writerResult.println(setupMetaData);
 		
 		List<Double> accuracyPerRun = new ArrayList<Double>();
-		
-		String documentsFilename = inputDataFoldername + "omq_public_1_emails_unsorted.xml"; //TODO: replace 1 by "all" at some point
-//		String documentsFilename = inputDataFoldername + "omq_public_emails_all_unsorted.xml";
+		String emailFileName = "omq_public_1_emails_unsorted.xml";
+//		String emailFileName = "omq_public_emails_all_unsorted.xml";
+		String documentsFilename = inputDataFoldername + emailFileName; //TODO: replace 1 by "all" at some point
 		
 		JCas cas = CASUtils.createNewInputCas();
 		String mostProbableCat; 
@@ -942,7 +943,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
       	graphDocs.addAll(CategoryReader.readCategoryXML(new File(categoriesFilename)));
       	logger.info("Added " + graphDocs.size() + " categories");
       	
-    	String graphFolderName = outputGraphFoldername + "/incremental/" + setupToken + "_" + setupDependency + "_" + setupSentence + "_removedTokens";
+    	String graphFolderName = outputGraphFoldername + "/incremental/" + emailFileName.replace(".xml", "") 
+    			+ "_" + setupToken + "_" + setupDependency + "_" + setupSentence;
 //      	File graphFolder = new File(graphFolderName);
       
       	String collapsedGraphName = graphFolderName + "/" +  createCollapsedGraphFileName("omq_public_categories_" + run + "_collapsed_graph");
