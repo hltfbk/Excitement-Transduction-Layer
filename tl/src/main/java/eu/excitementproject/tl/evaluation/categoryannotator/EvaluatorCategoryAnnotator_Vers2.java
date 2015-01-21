@@ -193,7 +193,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	static int [][] setupArrays = {
 				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
 //				{0, 0, -1}, 
-//				{203, -1, -1},
+				{203, -1, -1},
 //				{203, 203, -1},
 //				{203, 207, -1}
 				}; 
@@ -229,11 +229,16 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		try {
 			boolean tmpReadCollpasedGraphFromFile = readCollpasedGraphFromFile;
 		    boolean tmpBuildCollapsedGraphFromRawGraphFile = buildCollapsedGraphFromRawGraphFile;
+		    boolean tmpAddLemmaLabel = addLemmaLabel;
 		    
 			for(int [] setup : setupArrays){
 				setupToken = setup[0];
 				setupDependency = setup[1];
 				setupSentence = setup[2];
+				if(setupToken == 0 || setupDependency == 0 || setupSentence == 0){
+		    		addLemmaLabel = false;
+		    	}
+				
 				EvaluatorCategoryAnnotator_Vers2 evc = new EvaluatorCategoryAnnotator_Vers2(setupToken, setupDependency, setupSentence);
 				
 				if(skipEval){
@@ -250,6 +255,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				}
 				readCollpasedGraphFromFile = tmpReadCollpasedGraphFromFile;
 				buildCollapsedGraphFromRawGraphFile = tmpBuildCollapsedGraphFromRawGraphFile;
+				addLemmaLabel = tmpAddLemmaLabel;
 				writer.close();
 				writerResult.close();
 			}
@@ -292,11 +298,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			System.err.print("WRONG SETUP: no combination of setup == 0 and setup > 0 possible ");
 			System.exit(1);
 		}
-		
-		//TODO:
-		if(setupToken == 0 || setupDependency == 0 || setupSentence == 0){
-    		addLemmaLabel = false;
-    	}
 		
 		setFragmentTypeName(setupToken, setupDependency, setupSentence);
 		setLAP(setupToken, setupDependency, setupSentence);
@@ -999,7 +1000,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
        //Iterate through interactions, annotate each using existing graph and then add interaction to graph 
 		for (Interaction doc : docs) {	
 			logger.info("Processing document " + run + " out of " + docs.size());
-//			if (run > 50) break; //TODO: Remove (debugging only)
+			if (run > 2) break; //TODO: Remove (debugging only)
 			
 			/** 
 			 * STEP 2: ANNOTATE INTERACTION 
