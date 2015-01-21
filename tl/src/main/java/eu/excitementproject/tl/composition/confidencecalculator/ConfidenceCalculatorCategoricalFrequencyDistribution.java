@@ -128,9 +128,11 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 							categoryFrequencyDistributionOnNode,
 							categoriesToBoost, categoryConfidences);
 			} else if (method.equals("tfidf")) {
+				boolean documentLengthNormalization = true; //TODO: make configurable!!
 				computeConfidenceUsingTfidf(sumOfSquaredScoresPerCategory,
 						categoryFrequencyDistributionOnNode, categoriesToBoost,
-						categoryConfidences, N);
+						categoryConfidences, N, documentLengthNormalization, 
+						graphStatistics.getNumberOfMentionsPerCategory());
 			}
 			//add confidence scores to node
 			node.setCategoryConfidences(categoryConfidences);
@@ -177,7 +179,9 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			HashMap<String, Double> sumOfSquaredScoresPerCategory,
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode,
 			Set<String> categoriesToBoost,
-			Map<String, Double> categoryConfidences, int N) {
+			Map<String, Double> categoryConfidences, int N, 
+			boolean documentLengthNormalization,
+			Map<String, Integer> categoryOccurrenceInGraph) {
 		double score;
 		double termFrequency = 0.0; 
 		double documentFrequency = 0.0;
@@ -195,6 +199,8 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 					logger.error("Method for confidence calculation not defined: " + method + " variant " + termFrequencyDocument+documentFrequencyDocument+normalizationDocument);
 					System.exit(1);
 			}
+			
+			if (documentLengthNormalization) tf = tf / (double) categoryOccurrenceInGraph.get(category);
 			
 			switch (documentFrequencyDocument) {
 			case 'n': 
