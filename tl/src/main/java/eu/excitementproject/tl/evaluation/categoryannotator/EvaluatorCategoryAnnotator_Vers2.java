@@ -1001,7 +1001,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
        //Iterate through interactions, annotate each using existing graph and then add interaction to graph 
 		for (Interaction doc : docs) {	
 			logger.info("Processing document " + run + " out of " + docs.size());
-			if (run > 2) break; //TODO: Remove (debugging only)
+//			if (run > 50) break; //TODO: Remove (debugging only)
 			
 			/** 
 			 * STEP 2: ANNOTATE INTERACTION 
