@@ -1,0 +1,3 @@
+digraph rawGraph {
+"grazie a voi per2 e mezzo non cio piu avuto internet" -> "grazie a voi non cio avuto internet" [label=1] [color=green]
+}

@@ -16,11 +16,27 @@ import eu.excitementproject.clustering.data.api.TextCollection;
 import eu.excitementproject.eop.common.datastructures.PairMap;
 
 /**
+ * Implements term clustering with Chinese Whispers
+ * 
  * @author Lili Kotlerman
  * 
  */
 public class TermsChineseWhispersClusterer extends AbstractChineseWhispersClusterer<String> implements TermClusterer {
 
+	/**
+	 * Mapping from pairs of terms to their similarity value (Double in [0,1] interval)
+	 */
+	PairMap<String,Double> m_semanticRelatednessMap;
+
+	
+	/**
+	 * @param useExpandedCollection
+	 * @param textCollection
+	 * @param weightType
+	 * @param configurationFilename
+	 * @param similarityThreshold
+	 * @throws ClusteringException
+	 */
 	public TermsChineseWhispersClusterer(boolean useExpandedCollection,
 			TextCollection textCollection, WeightType weightType,
 			String configurationFilename, Double similarityThreshold)
@@ -31,7 +47,6 @@ public class TermsChineseWhispersClusterer extends AbstractChineseWhispersCluste
 
 	}
 
-	PairMap<String,Double> m_semanticRelatednessMap;
 		
 	@Override
 	public Map<String, List<String>> clusterTerms(
@@ -57,6 +72,12 @@ public class TermsChineseWhispersClusterer extends AbstractChineseWhispersCluste
 	}
 
 
+	/**
+	 * Get the terms of a text collection, which are to be clustered.
+	 * Uses the {@link AbstractChineseWhispersClusterer#m_useExpandedCollection} attribute to define whether only the terms from the original collection will be clustered, or expansion terms will also be added to the output set of terms.
+	 * @param textCollection - the {@link TextCollection}, which terms are to be clustered
+	 * @return set of terms to be clustered
+	 */
 	protected Set<String> getTerms(TextCollection textCollection){
 		Set<String> collectionTerms = new HashSet<String>(textCollection.getDocIdsByOriginalTerm().keySet());		
 		if (m_useExpandedCollection) collectionTerms.addAll(textCollection.getDocIdsByExpansionTerm().keySet());

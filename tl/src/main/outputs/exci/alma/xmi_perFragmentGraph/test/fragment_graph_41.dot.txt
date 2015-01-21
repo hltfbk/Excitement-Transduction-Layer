@@ -1,0 +1,3 @@
+digraph rawGraph {
+"TELEFONIAX CONSOLLE non funziona mai" -> "TELEFONIAX CONSOLLE non funziona" [label=1] [color=green]
+}

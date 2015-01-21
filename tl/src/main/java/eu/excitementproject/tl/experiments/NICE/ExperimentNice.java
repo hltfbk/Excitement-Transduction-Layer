@@ -54,6 +54,7 @@ public class ExperimentNice extends AbstractExperiment {
 	
 	public String configFileFullName = "";
 	public String configFileName = "";
+	public String meteorPhraseTableResourcePath = "/meteor-1.5/data/paraphrase-en";
 	
 	public ExperimentNice(String configFileFullName, String dataDir,
 			int fileNumberLimit, String outputFolder, Class<?> lapClass,
@@ -116,7 +117,8 @@ public class ExperimentNice extends AbstractExperiment {
 
 		m_optimizer = new SimpleGraphOptimizer();
 		
-		setMerger(mergerType);
+		if (meteorPhraseTableResourcePath==null) setMerger(mergerType);
+		else setMerger(mergerType, meteorPhraseTableResourcePath);
 	}
 
 	
@@ -199,8 +201,8 @@ public class ExperimentNice extends AbstractExperiment {
 	
 		if (edaName.equals(EdaName.P1EDA)) {
 			return new ExperimentNice(
-					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_EN.xml",
-//					tlDir+"src/main/resources/exci/nice/trainedModelsAndConfigurations/p1eda/P1EDA_Base_EN.xml",
+//					tlDir+"src/test/resources/EOP_configurations/P1EDA_Base_EN.xml",
+					tlDir+"src/main/resources/exci/nice/trainedModelsAndConfigurations/p1eda/P1EDA_Base_EN.xml",
 					dataDir, fileLimit, outDir,
 //					TreeTaggerEN.class,
 //					FNR_EN.class,
@@ -248,24 +250,23 @@ public class ExperimentNice extends AbstractExperiment {
 	public static void main(String[] args) throws ConfigurationException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EDAException, ComponentException, FragmentAnnotatorException, ModifierAnnotatorException, GraphMergerException, GraphOptimizerException, FragmentGraphGeneratorException, IOException, EntailmentGraphRawException, TransformerException, ClassNotFoundException {
 
 		// ============= SET UP THE EXPERIMENT CONFIGURATION ============
-//		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
-		String tlDir = "./";
+		String tlDir = "C:/Users/Lili/Git/Excitement-Transduction-Layer/tl/";
+//		String tlDir = "./";
 		String dataDir = tlDir+"src/main/resources/exci/nice/xmi_perFragmentGraph/test";
 		String gsAnnotationsDir = tlDir+"src/main/resources/exci/nice/goldStandardAnnotation/test";
 		int fileLimit = Integer.MAX_VALUE;
 		String outDir = dataDir.replace("resources", "outputs").replace("main","test");
 
 		MergerType mergerType = MergerType.WP2_MERGE; // which merger to use
-		boolean includeFragmentGraphEdges = false; // whether to include FG edges in the evaluations
+		boolean includeFragmentGraphEdges = true; // whether to include FG edges in the evaluations
 
 		// which EDA(s) to use
 //		EdaName[] names = {EdaName.EDIT_DIST, EdaName.TIE_POS, EdaName.TIE_POS_RES, EdaName.RANDOM};	
 //		EdaName[] names = {EdaName.TIE_POS_RES};	
 //		EdaName[] names = {EdaName.EDIT_DIST};	
-//		EdaName[] names = {EdaName.BIUTEE, EdaName.TIE_POS_RES};	
-//		EdaName[] names = {EdaName.P1EDA};	
+//		EdaName[] names = {EdaName.FAKE_EDA};	
+		EdaName[] names = {EdaName.P1EDA};	
 //		EdaName[] names = {EdaName.BIUTEE};	
-		EdaName[] names = {EdaName.BIUTEE};	
 
 		Double initialThreshold = 0.0;
 		// ===== END OF SET-UP

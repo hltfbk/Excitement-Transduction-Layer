@@ -1,0 +1,3 @@
+digraph rawGraph {
+"io non ho mai potuto usare la vostra linea" -> "io non ho potuto usare la vostra linea" [label=1] [color=green]
+}

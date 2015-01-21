@@ -1,0 +1,3 @@
+digraph rawGraph {
+"la linea TELEFONIAX sta dando un sacco di problemi" -> "la linea TELEFONIAX sta dando problemi" [label=1] [color=green]
+}

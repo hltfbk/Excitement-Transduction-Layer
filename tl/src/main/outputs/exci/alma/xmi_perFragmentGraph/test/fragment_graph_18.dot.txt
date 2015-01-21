@@ -1,0 +1,14 @@
+digraph rawGraph {
+"Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" -> "Sono giorni che provo ad registrarmi sul sito ma mi da errore" [label=1] [color=green]
+"Sono giorni che provo ad registrarmi sul sito ma mi da errore" -> "Sono giorni che provo ad registrarmi ma mi da errore" [label=1] [color=green]
+"Sono giorni che provo ad registrarmi ma mi da errore" -> "provo ad registrarmi ma mi da errore" [label=1] [color=green]
+"Sono giorni che provo ad registrarmi sul sito ma mi da errore" -> "provo ad registrarmi sul sito ma mi da errore" [label=1] [color=green]
+"provo ad registrarmi sul sito ma mi da errore" -> "provo ad registrarmi ma mi da errore" [label=1] [color=green]
+"Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" -> "Sono tre giorni che provo ad registrarmi ma mi da errore" [label=1] [color=green]
+"Sono tre giorni che provo ad registrarmi ma mi da errore" -> "Sono giorni che provo ad registrarmi ma mi da errore" [label=1] [color=green]
+"Sono tre giorni che provo ad registrarmi ma mi da errore" -> "tre provo ad registrarmi ma mi da errore" [label=1] [color=green]
+"tre provo ad registrarmi ma mi da errore" -> "provo ad registrarmi ma mi da errore" [label=1] [color=green]
+"Sono tre giorni che provo ad registrarmi sul sito ma mi da errore" -> "tre provo ad registrarmi sul sito ma mi da errore" [label=1] [color=green]
+"tre provo ad registrarmi sul sito ma mi da errore" -> "provo ad registrarmi sul sito ma mi da errore" [label=1] [color=green]
+"tre provo ad registrarmi sul sito ma mi da errore" -> "tre provo ad registrarmi ma mi da errore" [label=1] [color=green]
+}

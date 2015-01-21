@@ -1,0 +1,16 @@
+digraph rawGraph {
+"TELEFONIAX sta cercando di truffarmi";"la TELEFONIAX e solo una fregatura";"la TELEFONIAX ke prende in giro i clieti è una catastrofe";"la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe";"la TELEFONIAX non risolve i problemi";"promettete cose che non potrete mai far ottenere";"i servizi non funzionano";"sono 3 mesi ke i servizi TELEFONIAX sim non funzionano";"sono 3 mesi ke i servizi non funzionano";"i servizi TELEFONIAX sim non funzionano";"la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe" -> "la TELEFONIAX ke prende in giro i clieti è una catastrofe" [label=1.0] [color=green]
+"la TELEFONIAX ke prende in giro i clieti è una catastrofe" -> "la TELEFONIAX ke prende in giro i clieti è davvero una catastrofe" [label=1.0] [color=red]
+"sono 3 mesi ke i servizi TELEFONIAX sim non funzionano" -> "sono 3 mesi ke i servizi non funzionano" [label=1.0] [color=green]
+"sono 3 mesi ke i servizi non funzionano" -> "i servizi non funzionano" [label=1.0] [color=green]
+"sono 3 mesi ke i servizi TELEFONIAX sim non funzionano" -> "i servizi TELEFONIAX sim non funzionano" [label=1.0] [color=green]
+"i servizi TELEFONIAX sim non funzionano" -> "i servizi non funzionano" [label=1.0] [color=green]
+"sono 3 mesi ke i servizi TELEFONIAX sim non funzionano" -> "i servizi non funzionano" [label=1.0] [color=green]
+"i servizi non funzionano" -> "sono 3 mesi ke i servizi TELEFONIAX sim non funzionano" [label=1.0] [color=red]
+"i servizi non funzionano" -> "sono 3 mesi ke i servizi non funzionano" [label=1.0] [color=red]
+"i servizi non funzionano" -> "i servizi TELEFONIAX sim non funzionano" [label=1.0] [color=red]
+"sono 3 mesi ke i servizi non funzionano" -> "sono 3 mesi ke i servizi TELEFONIAX sim non funzionano" [label=1.0] [color=red]
+"sono 3 mesi ke i servizi non funzionano" -> "i servizi TELEFONIAX sim non funzionano" [label=1.0] [color=red]
+"i servizi TELEFONIAX sim non funzionano" -> "sono 3 mesi ke i servizi TELEFONIAX sim non funzionano" [label=1.0] [color=red]
+"i servizi TELEFONIAX sim non funzionano" -> "sono 3 mesi ke i servizi non funzionano" [label=1.0] [color=red]
+}

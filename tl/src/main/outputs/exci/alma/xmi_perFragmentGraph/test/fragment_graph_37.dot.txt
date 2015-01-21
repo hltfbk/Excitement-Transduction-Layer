@@ -1,0 +1,3 @@
+digraph rawGraph {
+"chi paga gli abbonamenti per la connessione dati non può usufruire del servizio" -> "non può usufruire del servizio" [label=1] [color=green]
+}

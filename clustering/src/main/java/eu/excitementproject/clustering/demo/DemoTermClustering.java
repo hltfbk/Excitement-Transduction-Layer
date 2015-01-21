@@ -72,6 +72,7 @@ public class DemoTermClustering extends AbstractDemoRunner {
 		}
 		
 		//LDA term clustering with pre-trained external model (agnostic to the number of topics |T| in the model, will output N<=|T| term clusters)
+		// (this one might take a while)
 		TermClusterer tLdaExtClusterer = new TermToBestLdaTopicClusterer(m_textCollection, configurationFileName);
 		termClusters = tLdaExtClusterer.clusterTerms(m_textCollection);
 		
