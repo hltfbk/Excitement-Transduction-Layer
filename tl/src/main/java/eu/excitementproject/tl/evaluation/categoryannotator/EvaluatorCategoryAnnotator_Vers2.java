@@ -163,37 +163,37 @@ public class EvaluatorCategoryAnnotator_Vers2 {
   	private static List<String> dependentWordFilter = Arrays.asList(new String []{"keine", "keinerlei", "nicht", "nichts"});
   	
   	//training
-  	static boolean processTrainingData = false; //TODO: needed for edaToken and edaDependency???
-	static boolean trainEDAToken = false;
-	static boolean trainEDASentence = false;
-	static boolean addSecondDataSetForGraphBuilding = false;
+  	private static boolean processTrainingData = false; //TODO: needed for edaToken and edaDependency???
+  	private static boolean trainEDAToken = false;
+  	private static boolean trainEDASentence = false;
+  	private static boolean addSecondDataSetForGraphBuilding = false;
 	
 	//treshold
-	static double thresholdForOptimizing = 0.8;
-	static double thresholdForEDA = 0.8; //TODO @ALEKS: thresholdForSEDAGraphBuilder?
+  	private static double thresholdForOptimizing = 0.8;
+  	private static double thresholdForEDA = 0.8; //TODO @ALEKS: thresholdForSEDAGraphBuilder?
 
     /* SMART notation for tf-idf variants, as in Manning et al., chapter 6, p.128 */
 	// Query (email) weighting: --> relevant when categorizing new emails
-	static char termFrequencyQuery = 'l'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
-	static char documentFrequencyQuery = 't'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
-	static char normalizationQuery = 'c'; // n (none), c (cosine)
+  	private static char termFrequencyQuery = 'l'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
+  	private static char documentFrequencyQuery = 't'; // n (no), t (idf) + d (idf ohne log --> not part of SMART notation!)
+  	private static char normalizationQuery = 'c'; // n (none), c (cosine)
 	// Document (category) weighting: --> relevant when building the graph
-	static char termFrequencyDocument = 'l'; // n (natural), l (logarithm)
-	static char documentFrequencyDocument = 't'; // n (no), t (idf)
-	static char normalizationDocument = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as
-	static String method = "tfidf";
+  	private static char termFrequencyDocument = 'l'; // n (natural), l (logarithm)
+	private static char documentFrequencyDocument = 't'; // n (no), t (idf)
+	private static char normalizationDocument = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as
+	private static String method = "tfidf";
 	
-	static int categoryBoost = 0; //boost confidence of category fragments in collapsed graph relevant when building the graph
-	static boolean lengthBoost = false; //relevant when categorizing new emails
-	static boolean bestNodeOnly = true; //if no edges are to follow while (relevant when categorizing new emails)
+	private static int categoryBoost = 0; //boost confidence of category fragments in collapsed graph relevant when building the graph
+	private static boolean lengthBoost = false; //relevant when categorizing new emails
+	private static boolean bestNodeOnly = true; //if no edges are to follow while (relevant when categorizing new emails)
 	
-	static int topN; //use topNArray to set the parameter
-	static int [] topNArray = {1};
+	private static int topN; //use topNArray to set the parameter
+	private static int [] topNArray = {1};
 	
-	static int [][] setupArrays = {
+	private static int [][] setupArrays = {
 				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
 //				{0, 0, -1}, 
-				{203, -1, -1},
+//				{203, -1, -1},
 //				{203, 203, -1},
 //				{203, 207, -1}
 				}; 
@@ -208,13 +208,13 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 
 	private static int setupSentence = -1;//use topArrays to set the parameter, set to -1 if no sentence fragments should be processed
 	//TODO: implement in three fold cross evaluation
-	private boolean removeTokenMatches = true; //remove tokens from the matches if a dependency or sentence match contain the tokens
+	private boolean removeTokenMatches = false; //remove tokens from the matches if a dependency or sentence match contain the tokens
 
 	private static FragmentGraphGenerator fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS(); //FragmentGraphGeneratorFromCAS()
   	private static ModifierAnnotator modAnnotatorSentence; //to set in setup (change there if needed), modifier annotator is not used for token and dependencies 
   	
   	private static boolean relevantTextProvided = true;
-	private static boolean readCollpasedGraphFromFile = true; //read collapsed graph from raw graph file
+	private static boolean readCollpasedGraphFromFile = false; //read collapsed graph from raw graph file
 	private static boolean buildCollapsedGraphFromRawGraphFile = false; //build collapsed graph from raw graph File
 	private static boolean addLemmaLabel = true; //will be overwritten with false if setpToken or setupDependency or setupSentence < 1
 	
