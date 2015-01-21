@@ -200,7 +200,7 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 					System.exit(1);
 			}
 			
-			if (documentLengthNormalization) tf = tf / (double) categoryOccurrenceInGraph.get(category);
+			if (documentLengthNormalization) termFrequency = termFrequency / (double) categoryOccurrenceInGraph.get(category);
 			
 			switch (documentFrequencyDocument) {
 			case 'n': 
