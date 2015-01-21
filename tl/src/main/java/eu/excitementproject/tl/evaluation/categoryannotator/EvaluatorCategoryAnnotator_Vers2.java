@@ -214,7 +214,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
   	private static ModifierAnnotator modAnnotatorSentence; //to set in setup (change there if needed), modifier annotator is not used for token and dependencies 
   	
   	private static boolean relevantTextProvided = true;
-	private static boolean readCollpasedGraphFromFile = false; //read collapsed graph from raw graph file
+	private static boolean readCollpasedGraphFromFile = true; //read collapsed graph from raw graph file
 	private static boolean buildCollapsedGraphFromRawGraphFile = false; //build collapsed graph from raw graph File
 	private static boolean addLemmaLabel = true; //will be overwritten with false if setpToken or setupDependency or setupSentence < 1
 	
@@ -911,9 +911,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
     	writerResult.println(setupMetaData);
 		
 		List<Double> accuracyPerRun = new ArrayList<Double>();
-		
-		String documentsFilename = inputDataFoldername + "omq_public_1_emails_unsorted.xml"; //TODO: replace 1 by "all" at some point
-//		String documentsFilename = inputDataFoldername + "omq_public_emails_all_unsorted.xml";
+		String emailFileName = "omq_public_1_emails_unsorted.xml";
+//		String emailFileName = "omq_public_emails_all_unsorted.xml";
+		String documentsFilename = inputDataFoldername + emailFileName; //TODO: replace 1 by "all" at some point
 		
 		JCas cas = CASUtils.createNewInputCas();
 		String mostProbableCat; 
@@ -943,7 +943,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
       	graphDocs.addAll(CategoryReader.readCategoryXML(new File(categoriesFilename)));
       	logger.info("Added " + graphDocs.size() + " categories");
       	
-    	String graphFolderName = outputGraphFoldername + "/incremental/" + setupToken + "_" + setupDependency + "_" + setupSentence + "_removedTokens";
+    	String graphFolderName = outputGraphFoldername + "/incremental/" + emailFileName.replace(".xml", "") 
+    			+ "_" + setupToken + "_" + setupDependency + "_" + setupSentence;
 //      	File graphFolder = new File(graphFolderName);
       
       	String collapsedGraphName = graphFolderName + "/" +  createCollapsedGraphFileName("omq_public_categories_" + run + "_collapsed_graph");
