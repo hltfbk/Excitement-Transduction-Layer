@@ -272,36 +272,30 @@ public class EvaluatorUtils {
 						} else {
 							node = perNodeScore.getNode();
 						}
-						//retrieve tfidf for "document" (category)
-						Map<String,Double> tfidfScoresForCategories = node.getCategoryConfidences();				
-						//compute tfidf for query TODO: LOOKS WRONG! CHECK AGAIN 
+
+						//compute idf for query
 						double df = node.getCategoryConfidences().size(); //number of categories associated to the mention
-						//if category assigned to the mention is not part of the node yet, add 1:
-						//if (!bestNode.getCategoryConfidences().keySet().contains(match.getMention().getCategoryId())) n++;								
 						double idfForQuery = 1; 
 						if (documentFrequencyQuery =='d') idfForQuery = 1/df;
 						if (documentFrequencyQuery == 'l') idfForQuery = Math.log(N/df);
-						//writer.println("number of category confidences on best node: " + df);
-						//writer.println("idfForquery: " + idfForQuery);
-						//compute sums for computing cosine similarity of the query to each of the categories
-						//Double[] queryCosineValues;				
-						double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 
-						
-						//length boost
-						double length = match.getMention().getTextWithoutDoubleSpaces().split("\\s+").length;
-						
-						countDecisions += (tfForQuery*df);
+	
+						//compute tf for query
+						double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 							
 						if (termFrequencyQuery == 'l') { //logarithm
 							tfForQuery = 1 + Math.log(tfForQuery); // = "wf-idf"
 						} else if (termFrequencyQuery == 'b') { //boolean
 							if (tfForQuery > 0) tfForQuery = 1;
-							//TODO: Include non-matching terms of the query? 
 						}
+						
+						//compute node score
 						double nodeScore = 1.0;
 						if (!bestNodeOnly) nodeScore = perNodeScore.getScore();		
-	
+							
 						//OBS! Slight change of original TF-IDF formular: We integrate the score associated to the node (representing the confidence of the match)
 						double scoreForQuery = nodeScore*tfForQuery*idfForQuery;
+
+						//length boost
+						double length = match.getMention().getTextWithoutDoubleSpaces().split("\\s+").length;
 						if (lengthBoost) scoreForQuery *= length;
 						
 						//VECTOR SPACE MODEL
@@ -324,6 +318,7 @@ public class EvaluatorUtils {
 							}
 						} else { //SIMPLE TF_IDF */
 					
+						Map<String,Double> tfidfScoresForCategories = node.getCategoryConfidences(); //tfidf for "document" (category)				
 						for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
 							double D = tfidfScoresForCategories.get(category); //category score in matching node
 							BigDecimal scoreForMention = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
@@ -338,7 +333,7 @@ public class EvaluatorUtils {
 						//}
 					}
 					
-					//normalize values based on returned nodes (add only a single value per mention!)
+					//normalize values based on number of returned nodes (add only a single value per mention to avoid giving too much weight to mentions with entailed nodes)
 					for (String category : categoryScoresBigDecimalForMention.keySet()) {
 						numberOfAddedUpValues++;
 						BigDecimal sumScoreForMention = categoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
