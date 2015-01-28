@@ -209,9 +209,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 //	private static WordDecompositionType decompTypeDependency = WordDecompositionType.NO_RESTRICTION; 
 
 	private static int setupSentence = -1;//use topArrays to set the parameter, set to -1 if no sentence fragments should be processed
-	//TODO: implement in three fold cross evaluation
 	
-	private boolean removeTokenMatches = false; //remove tokens from the matches if a dependency or sentence match contain the tokens
+	//TODO: implement in three fold cross evaluation
+	private boolean removeTokenMatches = false; //remove tokens from the matches if a dependency or sentence match contain the tokens, relevant while categorizing emails
 
 	private static FragmentGraphGenerator fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS(); //FragmentGraphGeneratorFromCAS()
   	private static ModifierAnnotator modAnnotatorSentence; //to set in setup (change there if needed), modifier annotator is not used for token and dependencies 
