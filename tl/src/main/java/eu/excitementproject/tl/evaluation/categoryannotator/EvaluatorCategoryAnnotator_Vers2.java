@@ -23,6 +23,7 @@ import org.apache.uima.jcas.JCas;
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
 import eu.excitement.type.tl.CategoryDecision;
 import eu.excitement.type.tl.DeterminedFragment;
+import eu.excitementproject.eop.common.DecisionLabel;
 import eu.excitementproject.eop.common.EDABasic;
 import eu.excitementproject.eop.common.EDAException;
 import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalResourceException;
@@ -79,6 +80,7 @@ import eu.excitementproject.tl.structures.collapsedgraph.EntailmentGraphCollapse
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 import eu.excitementproject.tl.structures.fragmentgraph.FragmentGraph;
 import eu.excitementproject.tl.structures.rawgraph.EntailmentGraphRaw;
+import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 import eu.excitementproject.tl.structures.search.NodeMatch;
 import eu.excitementproject.tl.structures.search.PerNodeScore;
 import eu.excitementproject.tl.structures.utils.XMLFileWriter;
@@ -208,6 +210,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 
 	private static int setupSentence = -1;//use topArrays to set the parameter, set to -1 if no sentence fragments should be processed
 	//TODO: implement in three fold cross evaluation
+	
 	private boolean removeTokenMatches = false; //remove tokens from the matches if a dependency or sentence match contain the tokens
 
 	private static FragmentGraphGenerator fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS(); //FragmentGraphGeneratorFromCAS()
@@ -217,6 +220,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	private static boolean readCollpasedGraphFromFile = false; //read collapsed graph from raw graph file
 	private static boolean buildCollapsedGraphFromRawGraphFile = false; //build collapsed graph from raw graph File
 	private static boolean addLemmaLabel = true; //will be overwritten with false if setpToken or setupDependency or setupSentence < 1
+	
+	private static boolean addLemmaEdgesDependencyToToken = true;
 	
 	private static boolean skipEval = false;
 
@@ -816,14 +821,65 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			sentenceRawGraph = buildRawGraph(sentencefragmentGraphs, edaSentence, null, dependencyRawGraph, minOccurrence);
 			
 		}
+		
 		//copy single graphs into a big one
-		EntailmentGraphRaw egr = new EntailmentGraphRaw(addLemmaLabel);
-		egr.copyRawGraphNodesAndAllEdges(singleTokenRawGraph);
-		egr.copyRawGraphNodesAndAllEdges(dependencyRawGraph);
-		egr.copyRawGraphNodesAndAllEdges(sentenceRawGraph);
+		EntailmentGraphRaw egr;
+		if(addLemmaEdgesDependencyToToken){//case: copy and create lemma edges between dependency and token nodes
+			EntailmentGraphRaw dependAndTokenGraph = this.addLemmaEdgesDependencyToToken(dependencyRawGraph, singleTokenRawGraph);
+			egr = dependAndTokenGraph;
+			egr.copyRawGraphNodesAndAllEdges(sentenceRawGraph);
+		}
+		else{//case: no lemma edges between dependency and token nodes
+			egr = new EntailmentGraphRaw(addLemmaLabel); 
+			egr.copyRawGraphNodesAndAllEdges(singleTokenRawGraph);
+			egr.copyRawGraphNodesAndAllEdges(dependencyRawGraph);
+			egr.copyRawGraphNodesAndAllEdges(sentenceRawGraph);
+		}
 		
 //		System.out.println("Raw graph has nodes: " + egr.vertexSet().size());
 //		System.out.println("Raw graph has edges: " + egr.edgeSet().size());
+		return egr;
+	}
+	
+	/**
+	 * Copy dependency and single token graph with lemma labels 
+	 * into a new created graph and add lemma edges between dependencies and tokens
+	 * 
+	 * @param dependencyEgr
+	 * @param tokenEgr
+	 * @return
+	 */
+	private EntailmentGraphRaw addLemmaEdgesDependencyToToken(EntailmentGraphRaw dependencyEgr, EntailmentGraphRaw tokenEgr){
+		EntailmentGraphRaw egr = null;
+		
+		if(dependencyEgr.hasLemmatizedLabel() && tokenEgr.hasLemmatizedLabel()){
+			//set lemma label
+			boolean addLemmaLabel = true;
+			egr = new EntailmentGraphRaw(addLemmaLabel);
+			//copy both input graphs into the new one
+			egr.copyRawGraphNodesAndAllEdges(dependencyEgr);
+			egr.copyRawGraphNodesAndAllEdges(tokenEgr);
+			Set<EntailmentUnit> dependencyVertexSet = dependencyEgr.vertexSet();
+			Set<EntailmentUnit> tokenVertexSet = tokenEgr.vertexSet();	
+			//add edges between the dependencies and tokens
+			for(EntailmentUnit dependencyVertex : dependencyVertexSet){
+				List<String> depTextParts = Arrays.asList(dependencyVertex.getTextWithoutDoubleSpaces().split("\\s+"));
+				List<String> depLemmaParts = Arrays.asList(dependencyVertex.getLemmatizedText().split("\\s+"));
+				for(EntailmentUnit tokenVertex : tokenVertexSet){
+					if(depTextParts.size() == 2){
+						if(depTextParts.contains(tokenVertex.getTextWithoutDoubleSpaces())
+								|| depLemmaParts.contains(tokenVertex.getLemmatizedText())){
+							EntailmentUnit source = egr.getVertexWithText(dependencyVertex.getTextWithoutDoubleSpaces());
+							EntailmentUnit target = egr.getVertexWithText(tokenVertex.getTextWithoutDoubleSpaces());
+							if(!egr.isEntailment(source, target)){
+								egr.addEdgeByInduction(source, target, DecisionLabel.Entailment, 0.91);
+							}
+						}
+					}
+				}
+			}
+		}
+		
 		return egr;
 	}
 	
