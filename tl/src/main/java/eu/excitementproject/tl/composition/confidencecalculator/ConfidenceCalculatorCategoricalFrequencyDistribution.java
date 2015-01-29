@@ -31,7 +31,9 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 	private int categoryBoost; //score used to boost categories associated to fragments appearing in the 
 		//description of the category
 	String method = "tfidf"; // = "tfidf" or "bayes"
-	
+
+	boolean documentLengthNormalization = false; 
+
 	/**
 	 * If no categoryBoost is passed explicitly, it's set to 0.
 	 */
@@ -128,10 +130,9 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 							categoryFrequencyDistributionOnNode,
 							categoriesToBoost, categoryConfidences);
 			} else if (method.equals("tfidf")) {
-				boolean documentLengthNormalization = true; //TODO: make configurable!!
 				computeConfidenceUsingTfidf(sumOfSquaredScoresPerCategory,
 						categoryFrequencyDistributionOnNode, categoriesToBoost,
-						categoryConfidences, N, documentLengthNormalization, 
+						categoryConfidences, N, 
 						graphStatistics.getNumberOfMentionsPerCategory());
 			}
 			//add confidence scores to node
@@ -180,7 +181,6 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode,
 			Set<String> categoriesToBoost,
 			Map<String, Double> categoryConfidences, int N, 
-			boolean documentLengthNormalization,
 			Map<String, Integer> categoryOccurrenceInGraph) {
 		double score;
 		double termFrequency = 0.0; 
