@@ -63,6 +63,7 @@ import eu.excitementproject.tl.decomposition.exceptions.ModifierAnnotatorExcepti
 import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
+import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjPPAsModifierAnnotator;
 import eu.excitementproject.tl.experiments.OMQ.SEDAGraphBuilder;
@@ -193,11 +194,12 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	private static int [] topNArray = {1};
 	
 	private static int [][] setupArrays = {
-				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
-//				{0, 0, -1}, 
+//				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
 //				{203, -1, -1},
+//				{203, 207, -1},
 //				{203, 203, -1},
-//				{203, 207, -1}
+				{0, 0, -1}, 
+//				{203, 207, 25}
 				}; 
 	
 	private static int setupToken = -1; //use topArrays to set the parameter, set to -1 if no token fragments should be processed
@@ -213,7 +215,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	//TODO: implement in three fold cross evaluation
 	private boolean removeTokenMatches = false; //remove tokens from the matches if a dependency or sentence match contain the tokens, relevant while categorizing emails
 
-	private static FragmentGraphGenerator fragmentGraphGenerator = new FragmentGraphLiteGeneratorFromCAS(); //FragmentGraphGeneratorFromCAS()
+	private static FragmentGraphGenerator fragmentGraphGenerator = new FragmentGraphGeneratorFromCAS(); //FragmentGraphGeneratorFromCAS()FragmentGraphLiteGeneratorFromCAS()
   	private static ModifierAnnotator modAnnotatorSentence; //to set in setup (change there if needed), modifier annotator is not used for token and dependencies 
   	
   	private static boolean relevantTextProvided = true;
@@ -824,7 +826,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		
 		//copy single graphs into a big one
 		EntailmentGraphRaw egr;
-		if(addLemmaEdgesDependencyToToken){//case: copy and create lemma edges between dependency and token nodes
+		if(addLemmaEdgesDependencyToToken && setupToken > 0 && setupDependency > 0){//case: copy and create lemma edges between dependency and token nodes
 			EntailmentGraphRaw dependAndTokenGraph = this.addLemmaEdgesDependencyToToken(dependencyRawGraph, singleTokenRawGraph);
 			egr = dependAndTokenGraph;
 			egr.copyRawGraphNodesAndAllEdges(sentenceRawGraph);
