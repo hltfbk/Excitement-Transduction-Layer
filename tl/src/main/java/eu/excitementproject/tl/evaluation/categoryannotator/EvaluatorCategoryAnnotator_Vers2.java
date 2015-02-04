@@ -257,8 +257,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
                         readCollpasedGraphFromFile = true;
                         buildCollapsedGraphFromRawGraphFile = false;
                     }
-                    evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
-//	                    evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+//                    evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+	                    evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
 				}
 				readCollpasedGraphFromFile = tmpReadCollpasedGraphFromFile;
 				buildCollapsedGraphFromRawGraphFile = tmpBuildCollapsedGraphFromRawGraphFile;
@@ -1059,6 +1059,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
        //Iterate through interactions, annotate each using existing graph and then add interaction to graph 
 		for (Interaction doc : docs) {	
 			logger.info("Processing document " + run + " out of " + docs.size());
+			writer.println("Processing test interaction " + doc.getInteractionId() + " with category " + doc.getCategoryString());
 //			if (run > 50) break; //TODO: Remove (debugging only)
 			
 			/** 
@@ -1084,35 +1085,17 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			*/
 			
 			//evaluate
-			Set<NodeMatch> matches = getMatches(egc, fgsAllForEval);
-			Set<NodeMatch> matchesToEvaluate = new HashSet<NodeMatch>();
-			if(removeTokenMatches) {//TODO: remove dependency fragments
-				Set<String> tokensToRemoveStrings = new HashSet<String>();
-				for (NodeMatch nm : matches) {
-					 String[] tokensToRemove = nm.getMention().getTextWithoutDoubleSpaces().split("\\s+");
-					 if (tokensToRemove.length > 1) {
-						 tokensToRemoveStrings.addAll(Arrays.asList(tokensToRemove));
-					}
-				}
-				for (NodeMatch nm : matches) {
-					 if(!tokensToRemoveStrings.contains(nm.getMention().getTextWithoutDoubleSpaces())){
-						 matchesToEvaluate.add(nm);
-					}
-				}
-			}
-			else {
-					matchesToEvaluate = matches;
-			}
+			Set<NodeMatch> matches = getMatches(egc, fgsAllForEval,removeTokenMatches);
 			
 			writer.println(egc.vertexSet().size() + " nodes in graph");
-			writer.println(matchesToEvaluate.size() + " matches to evaluate: ");
-			for (NodeMatch nm : matchesToEvaluate) {
+			writer.println(matches.size() + " matches to evaluate: ");
+			for (NodeMatch nm : matches) {
 				writer.println("... " + nm.getMention());
 				writer.println("... " + nm.getScores().size());
 			}
 						
 			//add category annotation to CAS
-			categoryAnnotator.addCategoryAnnotation(cas, matchesToEvaluate);
+			categoryAnnotator.addCategoryAnnotation(cas, matches);
 			/*
 			writer.println(cas.getDocumentText() + "");
 			writer.println(CASUtils.getCategoryAnnotationsInCAS(cas).size() + " category annotations");
@@ -1126,7 +1109,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			logger.info("Graph contains " + egc.vertexSet().size() + " nodes ");
 			mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(egc); //compute most frequent category in graph
 			countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
-					doc, decisions, mostProbableCat, egc, matchesToEvaluate, topN, 
+					doc, decisions, mostProbableCat, egc, matches, topN, 
 					method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
 					lengthBoost);
 		
@@ -1134,11 +1117,11 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			if(counPositiveOld == countPositive) {
 				System.out.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ false +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
 				writerResult.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ false +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
-				writer.println(doc.getInteractionId() + " : " + countPositive);
+				writer.println("categorization of interaction " + doc.getInteractionId() + " was successful?: " + false);
 			} else {
 				System.out.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ true +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
 				writerResult.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ true +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
-				writer.println(doc.getInteractionId() + " : " + countPositive);
+				writer.println("categorization of interaction " + doc.getInteractionId() + " was successful?: " + true);
 			}
 				
 			accuracyPerRun.add(accuracy);
@@ -1390,7 +1373,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 					}*/
 					
 					//get matches
-					Set<NodeMatch> matches = getMatches(egc, fragmentGraphs);	
+					Set<NodeMatch> matches = getMatches(egc, fragmentGraphs,removeTokenMatches);	
 					logger.debug("Number of matches: " + matches.size());
 					
 					for (NodeMatch match : matches) {
@@ -1407,7 +1390,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
 			    	//Compare automatic to manual annotation
-					logger.info("annotating interaction " + interaction.getInteractionId());
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(casInteraction);
 										
 					countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
@@ -1463,6 +1445,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	            System.out.println("categoryBoost: " + categoryBoost);
 	            System.out.println("bestNodeOnly: " + bestNodeOnly);
 	            System.out.println("lengthBoost: " + lengthBoost);
+	            System.out.println("removeTokenMatches: " + removeTokenMatches);
 	            for (int fold : foldAccuracy.keySet()) {
 	            	System.out.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
 	            }
@@ -1476,12 +1459,11 @@ public class EvaluatorCategoryAnnotator_Vers2 {
             }
 	}
 	
-	
 	/**
-	 * Annotate interaction using entailment graph
 	 * 
 	 * @param graph
-	 * @param interaction
+	 * @param fragmentGraphs
+	 * @param removeTokenMatches for fragments of length > 1: if a matching node for the fragment is found in the graph, remove matches for tokens contained in the fragment
 	 * @return
 	 * @throws LAPException
 	 * @throws FragmentAnnotatorException
@@ -1491,7 +1473,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	 * @throws CategoryAnnotatorException
 	 */
 	private Set<NodeMatch> getMatches(EntailmentGraphCollapsed graph,
-			Set<FragmentGraph> fragmentGraphs) throws LAPException,
+			Set<FragmentGraph> fragmentGraphs, boolean removeTokenMatches) throws LAPException,
 			FragmentAnnotatorException, ModifierAnnotatorException,
 			FragmentGraphGeneratorException, NodeMatcherException,
 			CategoryAnnotatorException {		
@@ -1515,6 +1497,29 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			}
 			logger.info("Number of matches: " + matches.size());
 		}
+		
+		int removedMatchesCount = 0;
+		if(removeTokenMatches){
+			//find tokens which are already included in bigger matches
+			//and then remove them
+			Set<String> tokensToRemove = new HashSet<String>();
+			for (NodeMatch nm : matches) {
+				String[] tokens = nm.getMention().getTextWithoutDoubleSpaces().split("\\s+");
+				if (tokens.length > 1) {
+					tokensToRemove.addAll(Arrays.asList(tokens));
+				}
+			}
+			Set<NodeMatch> tmpMatches = new HashSet<>(matches);
+			for (NodeMatch nm : tmpMatches) {
+				String mentionText = nm.getMention().getTextWithoutDoubleSpaces();
+				if(tokensToRemove.contains(mentionText)){
+					matches.remove(nm);
+				}
+			}
+			removedMatchesCount  = tmpMatches.size() - matches.size();
+		}
+		
+		writer.println("Number of removed single token matches: " + removedMatchesCount);
 		for (NodeMatch match : matches) writer.println("nodematch: " + match);
 		return matches;
 	}
