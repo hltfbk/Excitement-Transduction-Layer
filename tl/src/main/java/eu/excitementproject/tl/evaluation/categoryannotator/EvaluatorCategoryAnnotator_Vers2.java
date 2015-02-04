@@ -257,8 +257,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
                         readCollpasedGraphFromFile = true;
                         buildCollapsedGraphFromRawGraphFile = false;
                     }
-                    evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
-//	                    evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+//                    evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+	                    evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
 				}
 				readCollpasedGraphFromFile = tmpReadCollpasedGraphFromFile;
 				buildCollapsedGraphFromRawGraphFile = tmpBuildCollapsedGraphFromRawGraphFile;
@@ -1059,6 +1059,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
        //Iterate through interactions, annotate each using existing graph and then add interaction to graph 
 		for (Interaction doc : docs) {	
 			logger.info("Processing document " + run + " out of " + docs.size());
+			writer.println("Processing test interaction " + doc.getInteractionId() + " with category " + doc.getCategoryString());
 //			if (run > 50) break; //TODO: Remove (debugging only)
 			
 			/** 
@@ -1116,11 +1117,11 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			if(counPositiveOld == countPositive) {
 				System.out.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ false +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
 				writerResult.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ false +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
-				writer.println(doc.getInteractionId() + " : " + countPositive);
+				writer.println("categorization of interaction " + doc.getInteractionId() + " was successful?: " + false);
 			} else {
 				System.out.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ true +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
 				writerResult.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ true +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
-				writer.println(doc.getInteractionId() + " : " + countPositive);
+				writer.println("categorization of interaction " + doc.getInteractionId() + " was successful?: " + true);
 			}
 				
 			accuracyPerRun.add(accuracy);
@@ -1389,7 +1390,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
 			    	//Compare automatic to manual annotation
-					logger.info("annotating interaction " + interaction.getInteractionId());
 					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(casInteraction);
 										
 					countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
@@ -1445,6 +1445,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	            System.out.println("categoryBoost: " + categoryBoost);
 	            System.out.println("bestNodeOnly: " + bestNodeOnly);
 	            System.out.println("lengthBoost: " + lengthBoost);
+	            System.out.println("removeTokenMatches: " + removeTokenMatches);
 	            for (int fold : foldAccuracy.keySet()) {
 	            	System.out.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
 	            }
@@ -1497,6 +1498,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			logger.info("Number of matches: " + matches.size());
 		}
 		
+		int removedMatchesCount = 0;
 		if(removeTokenMatches){
 			//find tokens which are already included in bigger matches
 			//and then remove them
@@ -1514,8 +1516,10 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 					matches.remove(nm);
 				}
 			}
+			removedMatchesCount  = tmpMatches.size() - matches.size();
 		}
 		
+		writer.println("Number of removed single token matches: " + removedMatchesCount);
 		for (NodeMatch match : matches) writer.println("nodematch: " + match);
 		return matches;
 	}
