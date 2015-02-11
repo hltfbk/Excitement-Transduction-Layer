@@ -120,7 +120,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 								}
 //								if(compoundPart.length()>1){
 									if(!compoundPart.equals(tokenText)) {
-										int index = tokenText.indexOf(compoundPart);
+										int index = tokenText.toLowerCase().indexOf(compoundPart.toLowerCase());
 										int compoundPartBegin = tk.getBegin() + index;
 										int compoundPartEnd = compoundPartBegin + compoundPart.length();
 										index = compoundPartEnd + 1;
