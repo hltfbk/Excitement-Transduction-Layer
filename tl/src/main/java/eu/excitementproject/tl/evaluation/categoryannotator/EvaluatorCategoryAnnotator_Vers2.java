@@ -225,6 +225,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	
 	private static boolean addLemmaEdgesDependencyToToken = true;
 	
+	private static boolean applyTransitiveClosure = false;
+	
 	private static boolean skipEval = false;
 
 	public static void main (String [] args) {
@@ -498,7 +500,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 202: //Lemma+Conversion, GermaNet
 			dbr = null;
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -506,7 +508,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 203: //Lemma+Conversion, Derivation 2
 			dbr = new DerivBaseResource(true, 2);
 			gnw = null;
@@ -514,7 +516,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 204: //Lemma+Conversion, Derivation, GermaNet
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -522,7 +524,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 			
     	case 207: //Lemma+Conversion, Derivation, GermaNet, mapping negation
 			dbr = new DerivBaseResource(true, 2);
@@ -531,7 +533,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = true;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
     	case 208://207 without mapNegation
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -539,7 +541,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
     	case 209: //207 without GermaNet
 			dbr = new DerivBaseResource(true, 2);
 			gnw = null;
@@ -547,7 +549,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = true;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
     	case 210: //207 without DerivBase
     		dbr = null;
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -555,7 +557,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = true;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		}
 		return null;
 	}
