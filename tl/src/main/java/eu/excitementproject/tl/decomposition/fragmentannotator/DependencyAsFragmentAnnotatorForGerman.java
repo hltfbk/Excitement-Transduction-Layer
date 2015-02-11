@@ -334,7 +334,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 					//annotate governor + splits of dependent
 					Collection<String> compoundParts = decompoundWord(dependentText, wordDecompositionType);
 					for(String compoundPart : compoundParts){
-						if(!compoundPart.equals(dependentText)) {
+						if(!compoundPart.equalsIgnoreCase(dependentText) && !compoundPart.equalsIgnoreCase(governorText)) {
 							if(compoundPart.length() == 1 && !isDigit(compoundPart)){
 									continue;
 							}
@@ -351,7 +351,7 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 					//annotate dependent + splits of governor
 					compoundParts = decompoundWord(governorText, wordDecompositionType);
 					for(String compoundPart : compoundParts){
-						if(!compoundPart.equals(governorText)) {
+						if(!compoundPart.equalsIgnoreCase(governorText) && !compoundPart.equalsIgnoreCase(dependentText)) {
 							if(compoundPart.length() == 1 && !isDigit(compoundPart)){
 									continue;
 							}
