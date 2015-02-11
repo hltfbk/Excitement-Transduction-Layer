@@ -954,19 +954,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	public void runIncrementalEvaluation(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
 
 		//some prints for debugging, don't change it to logger!!!
-    	String setupMetaData = "\n" +"Setup for token: " + setupToken + " / dectypeToken: " + decompTypeToken +"\n"
-    							+ "Setup for dependency: " + setupDependency + " / dectypeDependency: " + decompTypeDependency +"\n"
-    							+ "Setup for sentence: " + setupSentence + "\n"
-    							+ "topN: " + topN + "\n"
-    							+ "method: "+ method + " " 
-    							+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
-    							+ "." + String.valueOf(methodDocument) 
-    							+ "categoryBoost: " + categoryBoost  + "\n"
-    							+ "bestNodeOnly: " + bestNodeOnly  + "\n"
-    							+ "lengthBoost: " + lengthBoost  + "\n"
-    							+ "removeTokensFromMatches: " + removeTokenMatches  + "\n"
-    							+ "addLemmaLabel: " + addLemmaLabel + "\n";
-    	System.out.println(setupMetaData);
+		String setupMetaData = createEvaluationDescription();
+        System.out.println(setupMetaData);
+        
     	writer.println(setupMetaData);
     	writerResult.println(setupMetaData);
 		
@@ -1215,17 +1205,10 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	public void runEvaluationThreeFoldCross(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
 		Map<Integer, File> fileIndex = indexFilesinDirectory(inputDataFoldername);	    	
 
-		System.out.println("");
-        System.out.println("Setup for token: " + setupToken);
-        System.out.println("Setup for dependency: " + setupDependency);
-        System.out.println("Setup for sentence: " + setupSentence);
-        System.out.println("topN: " + topN);
-        System.out.println("method: "+ method + " " 
-        		+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
-        		+ "." + String.valueOf(methodDocument));
-        System.out.println("categoryBoost: " + categoryBoost);
-        System.out.println("bestNodeOnly: " + bestNodeOnly);
-        System.out.println("lengthBoost: " + lengthBoost);
+		String setupMetaData = createEvaluationDescription();
+        System.out.println(setupMetaData);
+        writer.println(setupMetaData);
+    	writerResult.println(setupMetaData);
 		
 	    //check if there are enough files in the dir
 	    double numberOfFolds = 3;
@@ -1436,18 +1419,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
             }
             
             if(foldAccuracy.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
-	            System.out.println("");
-	            System.out.println("Setup for token: " + setupToken);
-	            System.out.println("Setup for dependency: " + setupDependency);
-	            System.out.println("Setup for sentence: " + setupSentence);
-	            System.out.println("topN: " + topN);
-	            System.out.println("method: "+ method + " " 
-	            		+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
-	            		+ "." + String.valueOf(methodDocument));
-	            System.out.println("categoryBoost: " + categoryBoost);
-	            System.out.println("bestNodeOnly: " + bestNodeOnly);
-	            System.out.println("lengthBoost: " + lengthBoost);
-	            System.out.println("removeTokenMatches: " + removeTokenMatches);
+            	String setupMetaData = createEvaluationDescription();
+	            System.out.println(setupMetaData);
 	            for (int fold : foldAccuracy.keySet()) {
 	            	System.out.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
 	            }
@@ -1459,6 +1432,25 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	            	System.out.println("");
 	            }
             }
+	}
+	
+	private String createEvaluationDescription(){
+		String setupMetaData = "\n" +"Setup for token= " + setupToken + " " + decompTypeToken +"\n"
+				+ "Setup for dependency= " + setupDependency + " " + decompTypeDependency +"\n"
+				+ "Setup for sentence= " + setupSentence + "\n"
+				+ "topN= " + topN + "\n"
+				+ "method= "+ method + " " 
+				+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
+				+ "." + String.valueOf(methodDocument) + "\n" 
+				+ "categoryBoost=" + categoryBoost  + "\n"
+				+ "bestNodeOnly=" + bestNodeOnly  + "\n"
+				+ "lengthBoost=" + lengthBoost  + "\n"
+				+ "removeTokensFromMatches=" + removeTokenMatches  + "\n"
+				+ "applyTransitiveClosure=" + applyTransitiveClosure + "\n"
+				+ "addLemmaLabel=" + addLemmaLabel + "\n"
+				+ "dep-->token=" + addLemmaEdgesDependencyToToken + "\n"
+				+ "addSecondData=" + addSecondDataSetForGraphBuilding + "\n";
+		return setupMetaData;
 	}
 	
 	/**
