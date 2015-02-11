@@ -916,8 +916,12 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				+ setupDependency + "_DF_dec" + decompTypeDependency + "_"  
 				+ setupSentence + "_SF_" 
 				+ method + "_" +  termFrequencyDocument + documentFrequencyDocument + normalizationDocument 
-				+ "_cb_" + categoryBoost 
-				+ "_treshopt" + thresholdForOptimizing + ".xml";
+				+ "_CB_" + categoryBoost 
+				+ "_TRESHOPT_" + thresholdForOptimizing 
+				+ "_LE_" + addLemmaEdgesDependencyToToken
+				+ "_TC_" + applyTransitiveClosure
+				+ "_ADDDATA_" + addSecondDataSetForGraphBuilding
+				+ ".xml";
 		return name;
 	}
 
@@ -932,7 +936,11 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				+ setupToken + "_TF_dec" + decompTypeToken + "_" 
 				+ setupDependency + "_DF_dec" + decompTypeDependency + "_"  
 				+ setupSentence + "_SF_" 
-				+ "treshgb" + thresholdForEDA + ".xml";
+				+ "treshgb" + thresholdForEDA
+				+ "_LE" + addLemmaEdgesDependencyToToken 
+				+ "_TC_" + applyTransitiveClosure
+				+ "_ADDDATA_" + addSecondDataSetForGraphBuilding
+				+ ".xml";
 		return name;
 	}
 	
