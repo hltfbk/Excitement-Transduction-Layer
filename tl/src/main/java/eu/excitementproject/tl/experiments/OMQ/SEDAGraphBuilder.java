@@ -40,6 +40,7 @@ public class SEDAGraphBuilder {
 	private List<GermaNetRelation> germaNetRelations;
 	private boolean mapNegation;
 	private boolean onlyBidirectionalEdges;
+	private boolean applyTransitiveClosure;
 	
 	/**
 	 * 
@@ -52,13 +53,15 @@ public class SEDAGraphBuilder {
 	 */
 	public SEDAGraphBuilder (DerivBaseResource derivBaseResource, 
 			GermaNetWrapper germaNetWrapper, List<GermaNetRelation> germaNetRelations, 
-			GermanWordSplitter splitter, boolean mapNegation, boolean onlyBidirectionalEdges) {
+			GermanWordSplitter splitter, boolean mapNegation, boolean onlyBidirectionalEdges,
+			boolean applyTransitiveClosure) {
 		this.splitter = splitter;
 		this.derivBaseResource = derivBaseResource;
 		this.germaNetWrapper = germaNetWrapper;
 		this.germaNetRelations = germaNetRelations;
 		this.mapNegation = mapNegation;
 		this.onlyBidirectionalEdges = onlyBidirectionalEdges;
+		this.applyTransitiveClosure = applyTransitiveClosure;
 	}
 	
 	/**
@@ -75,6 +78,9 @@ public class SEDAGraphBuilder {
 		
 		for(FragmentGraph fg : fgList) {
 			rawGraph = mergeIntoGraph(fg, rawGraph);
+		}
+		if(applyTransitiveClosure){
+			rawGraph.applyTransitiveClosure();
 		}
 		return rawGraph;
 	}

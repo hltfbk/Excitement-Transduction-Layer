@@ -225,6 +225,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	
 	private static boolean addLemmaEdgesDependencyToToken = true;
 	
+	private static boolean applyTransitiveClosure = false;
+	
 	private static boolean skipEval = false;
 
 	public static void main (String [] args) {
@@ -498,7 +500,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 202: //Lemma+Conversion, GermaNet
 			dbr = null;
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -506,7 +508,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 203: //Lemma+Conversion, Derivation 2
 			dbr = new DerivBaseResource(true, 2);
 			gnw = null;
@@ -514,7 +516,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 204: //Lemma+Conversion, Derivation, GermaNet
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -522,7 +524,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 			
     	case 207: //Lemma+Conversion, Derivation, GermaNet, mapping negation
 			dbr = new DerivBaseResource(true, 2);
@@ -531,7 +533,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = true;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
     	case 208://207 without mapNegation
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -539,7 +541,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
     	case 209: //207 without GermaNet
 			dbr = new DerivBaseResource(true, 2);
 			gnw = null;
@@ -547,7 +549,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = true;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
     	case 210: //207 without DerivBase
     		dbr = null;
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -555,7 +557,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = true;
-			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges);
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		}
 		return null;
 	}
@@ -914,8 +916,12 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				+ setupDependency + "_DF_dec" + decompTypeDependency + "_"  
 				+ setupSentence + "_SF_" 
 				+ method + "_" +  termFrequencyDocument + documentFrequencyDocument + normalizationDocument 
-				+ "_cb_" + categoryBoost 
-				+ "_treshopt" + thresholdForOptimizing + ".xml";
+				+ "_CB_" + categoryBoost 
+				+ "_TRESHOPT_" + thresholdForOptimizing 
+				+ "_LE_" + addLemmaEdgesDependencyToToken
+				+ "_TC_" + applyTransitiveClosure
+				+ "_ADDDATA_" + addSecondDataSetForGraphBuilding
+				+ ".xml";
 		return name;
 	}
 
@@ -930,7 +936,11 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				+ setupToken + "_TF_dec" + decompTypeToken + "_" 
 				+ setupDependency + "_DF_dec" + decompTypeDependency + "_"  
 				+ setupSentence + "_SF_" 
-				+ "treshgb" + thresholdForEDA + ".xml";
+				+ "treshgb" + thresholdForEDA
+				+ "_LE" + addLemmaEdgesDependencyToToken 
+				+ "_TC_" + applyTransitiveClosure
+				+ "_ADDDATA_" + addSecondDataSetForGraphBuilding
+				+ ".xml";
 		return name;
 	}
 	
@@ -952,19 +962,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	public void runIncrementalEvaluation(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
 
 		//some prints for debugging, don't change it to logger!!!
-    	String setupMetaData = "\n" +"Setup for token: " + setupToken + " / dectypeToken: " + decompTypeToken +"\n"
-    							+ "Setup for dependency: " + setupDependency + " / dectypeDependency: " + decompTypeDependency +"\n"
-    							+ "Setup for sentence: " + setupSentence + "\n"
-    							+ "topN: " + topN + "\n"
-    							+ "method: "+ method + " " 
-    							+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
-    							+ "." + String.valueOf(methodDocument) 
-    							+ "categoryBoost: " + categoryBoost  + "\n"
-    							+ "bestNodeOnly: " + bestNodeOnly  + "\n"
-    							+ "lengthBoost: " + lengthBoost  + "\n"
-    							+ "removeTokensFromMatches: " + removeTokenMatches  + "\n"
-    							+ "addLemmaLabel: " + addLemmaLabel + "\n";
-    	System.out.println(setupMetaData);
+		String setupMetaData = createEvaluationDescription();
+        System.out.println(setupMetaData);
+        
     	writer.println(setupMetaData);
     	writerResult.println(setupMetaData);
 		
@@ -1213,17 +1213,10 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	public void runEvaluationThreeFoldCross(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
 		Map<Integer, File> fileIndex = indexFilesinDirectory(inputDataFoldername);	    	
 
-		System.out.println("");
-        System.out.println("Setup for token: " + setupToken);
-        System.out.println("Setup for dependency: " + setupDependency);
-        System.out.println("Setup for sentence: " + setupSentence);
-        System.out.println("topN: " + topN);
-        System.out.println("method: "+ method + " " 
-        		+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
-        		+ "." + String.valueOf(methodDocument));
-        System.out.println("categoryBoost: " + categoryBoost);
-        System.out.println("bestNodeOnly: " + bestNodeOnly);
-        System.out.println("lengthBoost: " + lengthBoost);
+		String setupMetaData = createEvaluationDescription();
+        System.out.println(setupMetaData);
+        writer.println(setupMetaData);
+    	writerResult.println(setupMetaData);
 		
 	    //check if there are enough files in the dir
 	    double numberOfFolds = 3;
@@ -1434,18 +1427,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
             }
             
             if(foldAccuracy.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
-	            System.out.println("");
-	            System.out.println("Setup for token: " + setupToken);
-	            System.out.println("Setup for dependency: " + setupDependency);
-	            System.out.println("Setup for sentence: " + setupSentence);
-	            System.out.println("topN: " + topN);
-	            System.out.println("method: "+ method + " " 
-	            		+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
-	            		+ "." + String.valueOf(methodDocument));
-	            System.out.println("categoryBoost: " + categoryBoost);
-	            System.out.println("bestNodeOnly: " + bestNodeOnly);
-	            System.out.println("lengthBoost: " + lengthBoost);
-	            System.out.println("removeTokenMatches: " + removeTokenMatches);
+            	String setupMetaData = createEvaluationDescription();
+	            System.out.println(setupMetaData);
 	            for (int fold : foldAccuracy.keySet()) {
 	            	System.out.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
 	            }
@@ -1457,6 +1440,25 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	            	System.out.println("");
 	            }
             }
+	}
+	
+	private String createEvaluationDescription(){
+		String setupMetaData = "\n" +"Setup for token= " + setupToken + " " + decompTypeToken +"\n"
+				+ "Setup for dependency= " + setupDependency + " " + decompTypeDependency +"\n"
+				+ "Setup for sentence= " + setupSentence + "\n"
+				+ "topN= " + topN + "\n"
+				+ "method= "+ method + " " 
+				+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
+				+ "." + String.valueOf(methodDocument) + "\n" 
+				+ "categoryBoost=" + categoryBoost  + "\n"
+				+ "bestNodeOnly=" + bestNodeOnly  + "\n"
+				+ "lengthBoost=" + lengthBoost  + "\n"
+				+ "removeTokensFromMatches=" + removeTokenMatches  + "\n"
+				+ "applyTransitiveClosure=" + applyTransitiveClosure + "\n"
+				+ "addLemmaLabel=" + addLemmaLabel + "\n"
+				+ "dep-->token=" + addLemmaEdgesDependencyToToken + "\n"
+				+ "addSecondData=" + addSecondDataSetForGraphBuilding + "\n";
+		return setupMetaData;
 	}
 	
 	/**
