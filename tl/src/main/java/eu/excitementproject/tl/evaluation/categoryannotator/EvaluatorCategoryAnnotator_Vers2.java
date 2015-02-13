@@ -145,13 +145,24 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	/**** 
 	 * SET CONFIGURATION 
 	 * ******/
+	private static FragmentGraphGenerator fragmentGraphGenerator;//to set in setup (change there if needed)
+	private static ModifierAnnotator modAnnotatorSentence; //to set in setup (change there if needed), modifier annotator is not used for token and dependencies 
     private static String pathToGermaNet = "C:/germanet/germanet-7.0/germanet-7.0/GN_V70/GN_V70_XML"; //TODO:
     
     private static boolean LuceneSearch = false;
     private static int minTokenOccurrence = 1; //minimum occurrence of an EMAIL token for the corresponding node to be merged into the graph
     private static int minTokenOccurrenceInCategories = 1; //minimum occurrence of a CATEGORY token for the corresponding node to be merged into the graph
-    
-    //filters for fragments
+  	private static double thresholdForOptimizing = 0.8;
+  	private static double thresholdForEDA = 0.8; //TODO @ALEKS: thresholdForSEDAGraphBuilder?
+  	private static boolean processTrainingData = false; //TODO: needed for edaToken and edaDependency???
+  	private static boolean trainEDAToken = false;
+  	private static boolean trainEDASentence = false;
+	private static int categoryBoost = 0; //boost confidence of category fragments in collapsed graph relevant when building the graph
+	private static boolean lengthBoost = false; //relevant when categorizing new emails
+	private static boolean addLemmaLabel = true; //will be overwritten with false if setupToken or setupDependency or setupSentence < 1
+	private static boolean relevantTextProvided = true;
+   
+	//filters for fragments
     private static List<POSTag_DE> tokenPosFilter = Arrays.asList(new POSTag_DE [] 
     		{POSTag_DE.ADJA, POSTag_DE.ADJD, POSTag_DE.NE, POSTag_DE.NN, POSTag_DE.CARD, 
     		POSTag_DE.VVFIN, POSTag_DE.VVINF, POSTag_DE.VVIZU, POSTag_DE.VVIMP, POSTag_DE.VVPP}); //"ADV" = adverb, "FM" = foreign language material
@@ -165,16 +176,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
   	private static List<String> governorWordFilter = Arrays.asList(new String []{"ohne"});
   	private static List<String> dependentWordFilter = Arrays.asList(new String []{"keine", "keinerlei", "nicht", "nichts"});
   	
-  	//training
-  	private static boolean processTrainingData = false; //TODO: needed for edaToken and edaDependency???
-  	private static boolean trainEDAToken = false;
-  	private static boolean trainEDASentence = false;
-  	private static boolean addSecondDataSetForGraphBuilding = false;
-	
-	//treshold
-  	private static double thresholdForOptimizing = 0.8;
-  	private static double thresholdForEDA = 0.8; //TODO @ALEKS: thresholdForSEDAGraphBuilder?
-
     /* SMART notation for tf-idf variants, as in Manning et al., chapter 6, p.128 */
 	// Query (email) weighting: --> relevant when categorizing new emails
   	private static char termFrequencyQuery = 'l'; // n (natural), b (boolean: 1 if tf > 0), l (logarithm, sublinear tf scaling, as described by Manning et al. (2008), p. 126f.) 
@@ -186,49 +187,43 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	private static char normalizationDocument = 'c'; // n (none), c (cosine) //TODO: Implement? Don't think it's needed, as
 	private static String method = "tfidf";
 	
-	private static int categoryBoost = 0; //boost confidence of category fragments in collapsed graph relevant when building the graph
-	private static boolean lengthBoost = false; //relevant when categorizing new emails
-	private static boolean bestNodeOnly = true; //if no edges are to follow while (relevant when categorizing new emails)
+	private static int setupToken = -1; //use topArrays to set the parameter, set to -1 if no token fragments should be processed
+	private static int setupDependency = -1; //use topArrays to set the parameter, set to -1 if no dependency fragments should be processed
+	private static int setupSentence = -1;//use topArrays to set the parameter, set to -1 if no sentence fragments should be processed
 	
+	private static int [][] setupArrays = {
+				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
+				/*
+				{203, -1, -1},
+				{203, 207, -1},
+				{203, 203, -1},
+				{0, 0, -1}, 
+				{203, 207, 25}
+				*/
+				}; 
 	private static int topN; //use topNArray to set the parameter
 	private static int [] topNArray = {1};
 	
-	private static int [][] setupArrays = {
-//				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
-//				{203, -1, -1},
-//				{203, 207, -1},
-//				{203, 203, -1},
-				{0, 0, -1}, 
-//				{203, 207, 25}
-				}; 
-	
-	private static int setupToken = -1; //use topArrays to set the parameter, set to -1 if no token fragments should be processed
 	private static WordDecompositionType decompTypeToken = WordDecompositionType.NONE; 
-//	private static WordDecompositionType decompTypeToken = WordDecompositionType.NO_RESTRICTION; 
-	
-	private static int setupDependency = -1; //use topArrays to set the parameter, set to -1 if no dependency fragments should be processed
 	private static WordDecompositionType decompTypeDependency = WordDecompositionType.NONE; 
-//	private static WordDecompositionType decompTypeDependency = WordDecompositionType.NO_RESTRICTION; 
-
-	private static int setupSentence = -1;//use topArrays to set the parameter, set to -1 if no sentence fragments should be processed
+	/*
+	private static WordDecompositionType decompTypeToken = WordDecompositionType.NO_RESTRICTION; 	
+	private static WordDecompositionType decompTypeDependency = WordDecompositionType.NO_RESTRICTION; 
+	*/
 	
-	//TODO: implement in three fold cross evaluation
-	private boolean removeTokenMatches = false; //remove tokens from the matches if a dependency or sentence match contain the tokens, relevant while categorizing emails
-
-	private static FragmentGraphGenerator fragmentGraphGenerator = new FragmentGraphGeneratorFromCAS(); //FragmentGraphGeneratorFromCAS()FragmentGraphLiteGeneratorFromCAS()
-  	private static ModifierAnnotator modAnnotatorSentence; //to set in setup (change there if needed), modifier annotator is not used for token and dependencies 
-  	
-  	private static boolean relevantTextProvided = true;
-	private static boolean readCollpasedGraphFromFile = false; //read collapsed graph from raw graph file
-	private static boolean buildCollapsedGraphFromRawGraphFile = false; //build collapsed graph from raw graph File
-	private static boolean addLemmaLabel = true; //will be overwritten with false if setpToken or setupDependency or setupSentence < 1
-	
-	private static boolean addLemmaEdgesDependencyToToken = true;
+	private static boolean addLemmaEdgesDependencyToToken = false;
+	private boolean removeTokenMatches = false; //set to true only if addLemmaEdgesDependencyToToken = true
 	
 	private static boolean applyTransitiveClosure = false;
 	
+	private static boolean addSecondDataSetForGraphBuilding = false; 
+	
+	private static boolean bestNodeOnly = true; //if no edges are to follow while (relevant when categorizing new emails)
+	
 	private static boolean skipEval = false;
-
+	private static boolean readCollpasedGraphFromFile = false; //read collapsed graph from raw graph file
+	private static boolean buildCollapsedGraphFromRawGraphFile = false; //build collapsed graph from raw graph File
+	
 	public static void main (String [] args) {
 		
 		String inputFoldername = "src/main/resources/exci/omq/emails/"; //dataset to be evaluated
@@ -311,7 +306,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		setFragmentTypeName(setupToken, setupDependency, setupSentence);
 		setLAP(setupToken, setupDependency, setupSentence);
 		
-		
+		fragmentGraphGenerator = new FragmentGraphGeneratorFromCAS(); //FragmentGraphGeneratorFromCAS()FragmentGraphLiteGeneratorFromCAS();
 		//setup for token fragments and graphs
 		if(setupToken > -1){
 			fragAnnotatorToken = new TokenAsFragmentAnnotatorForGerman(lap, tokenPosFilter, decompTypeToken);
