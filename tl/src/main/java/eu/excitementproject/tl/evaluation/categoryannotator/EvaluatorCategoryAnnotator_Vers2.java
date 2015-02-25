@@ -1232,8 +1232,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		HashMap<Integer, Double> foldAccuracies = new HashMap<>();
 	   	HashMap<Integer, Integer> foldCountPositive = new HashMap<>();
 
-//	   	for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
-	    for (int i=3; i<=3; i++) { //Create one fold only
+	   	for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
+//	    for (int i=3; i<=3; i++) { //Create one fold only
 	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 
