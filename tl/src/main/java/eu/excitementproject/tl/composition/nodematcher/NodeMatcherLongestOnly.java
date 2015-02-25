@@ -38,10 +38,37 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 	
 	private EntailmentGraphCollapsed entailmentGraph;
 	private boolean bestNodeOnly;
+	private double entailedNodeScore; //only relevant if passed as parameter in constructor
+	private boolean useGraphEdgeConfidence; //is set to true if the constructor with parameter entailedNodeScore is used
 	
+	/**
+	 * Instantiates NodeMatcherLongestOnly.
+	 * If the entailed nodes are to be included in matchings, then the score value for an entailed node
+	 * is based on the score of the matched entailing node and the confidence of the edge: matched entailing node --> entailed node
+	 * 
+	 * @param graph
+	 * @param bestNodeOnly - set to true, if entailed nodes are to be included in matchings
+	 */
 	public NodeMatcherLongestOnly(EntailmentGraphCollapsed graph, boolean bestNodeOnly) {
-		entailmentGraph = graph;
+		this.entailmentGraph = graph;
 		this.bestNodeOnly = bestNodeOnly;
+		this.useGraphEdgeConfidence = true;
+	}
+	
+	/**
+	 * Instantiates NodeMatcherLongestOnly.
+	 * If the entailed nodes are to be included in matchings, then the passed value of the parameter entailedNodeScore is used
+	 * to score the entailed nodes, instead of computing the score based on the edge confidences in the collapsed graph
+	 * 
+	 * @param graph - collapsed graph
+	 * @param bestNodeOnly - set to true, if entailed nodes are to be included in matchings
+	 * @param entailedNodeScore - score for the entailed node
+	 */
+	public NodeMatcherLongestOnly(EntailmentGraphCollapsed graph, boolean bestNodeOnly, double entailedNodeScore) {
+		this.entailmentGraph = graph;
+		this.bestNodeOnly = bestNodeOnly;
+		this.useGraphEdgeConfidence = false;
+		this.entailedNodeScore = entailedNodeScore;
 	}
 	
 	@Override
@@ -89,8 +116,13 @@ public class NodeMatcherLongestOnly extends AbstractNodeMatcher {
 				if(!bestNodeOnly){
 					Set<EquivalenceClass> entailedNodes = entailmentGraph.getEntailedNodes(ec);
 					for(EquivalenceClass entailedNode : entailedNodes){
-						double edgeConfidence = entailmentGraph.getEdge(ec, entailedNode).getConfidence();
-						double entailedNodeScore = score * edgeConfidence;
+						double entailedNodeScore;
+						if(useGraphEdgeConfidence){
+							double edgeConfidence = entailmentGraph.getEdge(ec, entailedNode).getConfidence();
+							entailedNodeScore = score * edgeConfidence;
+						} else {
+							entailedNodeScore = this.entailedNodeScore;
+						}
 						logger.debug("score for " + mentionToBeFound + "and " + entailedNode.getLabel() + ": " + entailedNodeScore);		
 						perNodeScore = new PerNodeScore();
 						perNodeScore.setNode(entailedNode);

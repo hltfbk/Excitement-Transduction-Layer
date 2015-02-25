@@ -190,7 +190,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	private static int setupSentence = -1;//use topArrays to set the parameter, set to -1 if no sentence fragments should be processed
 	
 	private static int [][] setupArrays = {
-				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
+//				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
+				{201, 201, -1}
 				/*
 				{203, -1, -1},
 				{203, 207, -1},
@@ -209,17 +210,16 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	private static WordDecompositionType decompTypeDependency = WordDecompositionType.NO_RESTRICTION; 
 	*/
 	
-	private static boolean addLemmaEdgesDependencyToToken = false;
-	private boolean removeTokenMatches = false; //set to true only if addLemmaEdgesDependencyToToken = true
-	
+	private static boolean addLemmaEdgesDependencyToToken = true;
+	private boolean removeTokenMatches = true; //set to true only if addLemmaEdgesDependencyToToken = true
+	private static boolean bestNodeOnly = false; //if no edges are to follow while (relevant when categorizing new emails)
+	private static double entailedNodeScore = 1.0; //has effect on evaluation only if > 0.0: then the entailed nodes are scored with the value, else the entailed nodes are scored based on graph edge confidences 
 	private static boolean applyTransitiveClosure = false;
 	
 	private static boolean addSecondDataSetForGraphBuilding = false; 
 	
-	private static boolean bestNodeOnly = true; //if no edges are to follow while (relevant when categorizing new emails)
-	
 	private static boolean skipEval = false;
-	private static boolean readCollpasedGraphFromFile = false; //read collapsed graph from raw graph file
+	private static boolean readCollpasedGraphFromFile = true; //read collapsed graph from raw graph file
 	private static boolean buildCollapsedGraphFromRawGraphFile = false; //build collapsed graph from raw graph File
 	
 	public static void main (String [] args) {
@@ -1064,7 +1064,11 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				nodeMatcherWithIndex.indexGraphNodes();
 				nodeMatcherWithIndex.initializeSearch();
 			} else {
-				nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
+				if(entailedNodeScore > 0.0){
+					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly, entailedNodeScore);
+				} else {
+					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
+				}
 			}
 				
 			//build token fragments for evaluation (relevantTextProvided = false!) **/
@@ -1444,13 +1448,24 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				+ termFrequencyQuery + documentFrequencyQuery + normalizationQuery 
 				+ "." + String.valueOf(methodDocument) + "\n" 
 				+ "categoryBoost=" + categoryBoost  + "\n"
-				+ "bestNodeOnly=" + bestNodeOnly  + "\n"
-				+ "lengthBoost=" + lengthBoost  + "\n"
+				+ "bestNodeOnly=" + bestNodeOnly  + "\n";
+		
+		if(!bestNodeOnly){
+			if(entailedNodeScore > 0.0){
+				setupMetaData += "entailedNodeScore: " + entailedNodeScore + "\n";
+			}
+			else {
+				setupMetaData += "entailedNodeScore: " + "based on edgeConfidences" + "\n";
+			}
+		}
+		
+		setupMetaData += "lengthBoost=" + lengthBoost  + "\n"
 				+ "removeTokensFromMatches=" + removeTokenMatches  + "\n"
 				+ "applyTransitiveClosure=" + applyTransitiveClosure + "\n"
 				+ "addLemmaLabel=" + addLemmaLabel + "\n"
 				+ "dep-->token=" + addLemmaEdgesDependencyToToken + "\n"
 				+ "addSecondData=" + addSecondDataSetForGraphBuilding + "\n";
+		
 		return setupMetaData;
 	}
 	
@@ -1487,7 +1502,11 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			if (LuceneSearch) {
 				matches.addAll(nodeMatcherWithIndex.findMatchingNodesInGraph(fragmentGraph));
 			} else {
-				nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
+				if(entailedNodeScore > 0.0){
+					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly, entailedNodeScore);
+				} else {
+					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
+				}
 				matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 			}
 			logger.info("Number of matches: " + matches.size());
