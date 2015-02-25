@@ -1,14 +1,14 @@
 package eu.excitementproject.tl.structures.rawgraph;
 
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.tcas.Annotation;
+import org.uimafit.util.JCasUtil;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
 /**
@@ -265,26 +265,33 @@ public class EntailmentUnit{
 	 * @return
 	 */
 	private String lemmatize(String text){
+		
 		String lemmatizedText = "";
 		EntailmentUnitMention eum = this.getMentions().iterator().next(); //only one mention must be lemmatized, because all mentions in unit has the same text
-		JCas aJCas = eum.getJCas();
-		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
-		for(Annotation annot : tokenIndex){
-			if(annot.getBegin() >= eum.getBegin() && annot.getEnd() <= eum.getEnd()){
-				if(!eum.getText().substring(annot.getBegin() - eum.getBegin()).toString().startsWith(" ")){
-					Token token = (Token) annot;
-					String lemma = token.getLemma().getValue();
-					
-					if(lemma.equalsIgnoreCase("@card@")) //TreeTagger returns often @card@ if no proper lemma for cardinalities is given
-						lemma = token.getCoveredText();
-					lemmatizedText += lemma + " ";
+		JCas cas = eum.getJCas();
+		Collection<Lemma> casLemmas = JCasUtil.selectCovered(cas, Lemma.class, eum.getBegin(), eum.getEnd());
+		Collection<Lemma> tmpLemmas = new HashSet<Lemma>();
+		for(Lemma lemma : casLemmas){
+			int tokenBeginInMention = lemma.getBegin() - eum.getBegin();
+			int tokenEndInMention = lemma.getEnd() - eum.getBegin() ;
+			//consider only lemmas of tokens, which were not removed by modifier annotation
+			if(eum.getText().substring(tokenBeginInMention, tokenEndInMention).equals(lemma.getCoveredText())){
+				if(!tmpLemmas.contains(lemma)){//needed if decomposition was done
+					String lemmaValue = lemma.getValue();
+					if(lemmaValue.equals("@card@") || lemmaValue.equals("@ord@")){
+						lemmaValue = lemma.getCoveredText();
+					}
+					lemmatizedText += lemmaValue + " ";
+					//store lemmas of the tokens of mention text
+					//includes compound parts, if the current lemma is the lemma of the whole compound word
+					tmpLemmas.addAll(JCasUtil.selectCovered(cas, Lemma.class, lemma.getBegin(), lemma.getEnd()));
 				}
 			}
+				
 		}
-		return lemmatizedText.trim();
+	return lemmatizedText.trim();
 	}
-	
-	
+		
 	/******************************************************************************************
 	 * Override hashCode() and equals(). 
 	 * ****************************************************************************************/

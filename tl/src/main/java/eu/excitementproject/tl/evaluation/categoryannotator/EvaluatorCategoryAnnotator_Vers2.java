@@ -64,10 +64,8 @@ import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragm
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
-import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjPPAsModifierAnnotator;
 import eu.excitementproject.tl.experiments.OMQ.SEDAGraphBuilder;
-import eu.excitementproject.tl.experiments.OMQ.SimpleEDA_DE;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.CategoryReader;
@@ -1232,8 +1230,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		HashMap<Integer, Double> foldAccuracies = new HashMap<>();
 	   	HashMap<Integer, Integer> foldCountPositive = new HashMap<>();
 
-//	   	for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
-	    for (int i=3; i<=3; i++) { //Create one fold only
+	   	for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
+//	    for (int i=3; i<=3; i++) { //Create one fold only
 	        logger.info("Creating fold " + i);
 			int j=i+1;
 			if (j>3)j-=3; 

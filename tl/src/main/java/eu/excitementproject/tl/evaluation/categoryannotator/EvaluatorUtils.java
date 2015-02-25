@@ -124,7 +124,7 @@ public class EvaluatorUtils {
 		for (int i=0; i<topN; i++) { //adapted to consider top N categories
 			String cat = bestCats[i];
 			logger.info("Top " + i + " category: " + cat);
-			System.out.print("Top " + i + " category:\t" + cat + "\t");
+//			System.out.print("Top " + i + " category:\t" + cat + "\t");
 			if (docCats.contains(cat)) { //adapted to deal with multiple categories
 				countPositive++;
 			} 
@@ -397,7 +397,7 @@ public class EvaluatorUtils {
 
 		Map<String,BigDecimal> sortedMapBigDecimal = new TreeMap<String,BigDecimal>(bvc);
 		sortedMapBigDecimal.putAll(categoryScoresBigDecimal);		
-		System.out.print("best cat score: " + sortedMapBigDecimal + "\t");
+//		System.out.print("best cat score: " + sortedMapBigDecimal + "\t");
 		
 		logger.info("category scores:  " + sortedMapBigDecimal);
 		String[] bestCats = new String[topN];
