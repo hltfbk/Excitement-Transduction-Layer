@@ -5,13 +5,10 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitementproject.tl.structures.fragmentgraph.EntailmentUnitMention;
 
 /**

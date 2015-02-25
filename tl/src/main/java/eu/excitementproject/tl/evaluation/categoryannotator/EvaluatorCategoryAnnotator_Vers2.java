@@ -64,10 +64,8 @@ import eu.excitementproject.tl.decomposition.fragmentannotator.DependencyAsFragm
 import eu.excitementproject.tl.decomposition.fragmentannotator.SentenceAsFragmentAnnotator;
 import eu.excitementproject.tl.decomposition.fragmentannotator.TokenAsFragmentAnnotatorForGerman;
 import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphGeneratorFromCAS;
-import eu.excitementproject.tl.decomposition.fragmentgraphgenerator.FragmentGraphLiteGeneratorFromCAS;
 import eu.excitementproject.tl.decomposition.modifierannotator.AdvAdjPPAsModifierAnnotator;
 import eu.excitementproject.tl.experiments.OMQ.SEDAGraphBuilder;
-import eu.excitementproject.tl.experiments.OMQ.SimpleEDA_DE;
 import eu.excitementproject.tl.laputils.CASUtils;
 import eu.excitementproject.tl.laputils.CachedLAPAccess;
 import eu.excitementproject.tl.laputils.CategoryReader;
