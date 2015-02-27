@@ -277,7 +277,7 @@ public class EvaluatorUtils {
 						double df = node.getCategoryConfidences().size(); //number of categories associated to the mention
 						double idfForQuery = 1; 
 						if (documentFrequencyQuery =='d') idfForQuery = 1/df;
-						if (documentFrequencyQuery == 'l') idfForQuery = Math.log(N/df);
+						if (documentFrequencyQuery == 't') idfForQuery = Math.log(N/df);
 	
 						//compute tf for query
 						double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 							
