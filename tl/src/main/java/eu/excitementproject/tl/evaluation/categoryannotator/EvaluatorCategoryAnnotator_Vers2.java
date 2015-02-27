@@ -193,11 +193,20 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
 				
 				/*
-				{201, 201, -1}
-				{203, -1, -1},
-				{203, 207, -1},
-				{203, 203, -1},
-				{0, 0, -1}, 
+				//TOKENS
+				{201, -1, -1}, {202, -1, -1}, {212, -1, -1}, {203, -1, -1}, {204, -1, -1}, {214, -1, -1},
+				
+				//TOKEN + DEPENDENCy
+				{0,  0, -1}
+				{201,  201, -1}, {201,  202, -1}, {201,  212, -1}, {201,  203, -1}, {201,  204, -1}, {201,  214, -1}
+				{202,  201, -1}, {202,  202, -1}, {202,  212, -1}, {202,  203, -1}, {202,  204, -1}, {202,  214, -1}
+				{212,  201, -1}, {212,  202, -1}, {212,  212, -1}, {212,  203, -1}, {212,  204, -1}, {212,  214, -1}
+				{204,  201, -1}, {204,  202, -1}, {204,  212, -1}, {204,  203, -1}, {204,  204, -1}, {204,  214, -1}
+				{214,  201, -1}, {214,  202, -1}, {214,  212, -1}, {214,  203, -1}, {214,  204, -1}, {214,  214, -1}
+				{207,  201, -1}, {207,  202, -1}, {207,  212, -1}, {207,  203, -1}, {207,  204, -1}, {207,  214, -1}
+				{217,  201, -1}, {217,  202, -1}, {217,  212, -1}, {217,  203, -1}, {217,  204, -1}, {217,  214, -1}
+				
+				//TOKEN + SENTENCE
 				{203, 207, 25}
 				*/
 				}; 
@@ -495,12 +504,20 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
-		case 202: //Lemma+Conversion, GermaNet
+		case 202: //Lemma+Conversion, GermaNet (all TE relations)
 			dbr = null;
 			gnw = new GermaNetWrapper(pathToGermaNet);
 			germaNetRelations =  Arrays.asList(relations);
 			splitter = null;
 			onlyBidirectionalEdges = false;
+			mapNegation = false;
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+		case 212: //Lemma+Conversion, GermaNet (only synonyms)
+			dbr = null;
+			gnw = new GermaNetWrapper(pathToGermaNet);
+			germaNetRelations =  Arrays.asList(relations);
+			splitter = null;
+			onlyBidirectionalEdges = true;
 			mapNegation = false;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 203: //Lemma+Conversion, Derivation 2
@@ -511,7 +528,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
-		case 204: //Lemma+Conversion, Derivation, GermaNet
+		case 204: //Lemma+Conversion, Derivation,  GermaNet (all TE relations)
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
 			germaNetRelations =  Arrays.asList(relations);
@@ -519,8 +536,15 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
-			
-    	case 207: //Lemma+Conversion, Derivation, GermaNet, mapping negation
+		case 214: //Lemma+Conversion, Derivation, GermaNet (only synonyms)
+			dbr = new DerivBaseResource(true, 2);
+			gnw = new GermaNetWrapper(pathToGermaNet);
+			germaNetRelations =  Arrays.asList(relations);
+			splitter = null;
+			onlyBidirectionalEdges = true;
+			mapNegation = false;
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+    	case 207: //Lemma+Conversion, Derivation, GermaNet (all TE relations), mapping negation
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
 			germaNetRelations =  Arrays.asList(relations);
@@ -528,6 +552,15 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			onlyBidirectionalEdges = false;
 			mapNegation = true;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+    	case 217: //Lemma+Conversion, Derivation, GermaNet (only synonyms), mapping negation
+			dbr = new DerivBaseResource(true, 2);
+			gnw = new GermaNetWrapper(pathToGermaNet);
+			germaNetRelations =  Arrays.asList(relations);
+			splitter = null;
+			onlyBidirectionalEdges = true;
+			mapNegation = true;
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+    	
     	case 208://207 without mapNegation
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
