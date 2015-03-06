@@ -55,6 +55,7 @@ import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2Procedur
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
+import eu.excitementproject.tl.composition.nodematcher.SEDANodeMatcherLongestOnly;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
@@ -1111,7 +1112,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				if(entailedNodeScore > 0.0){
 					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly, entailedNodeScore);
 				} else {
-					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
+//					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
+					//TODO: integrate SEDANodeMatcher with ressources
+					nodeMatcher = new SEDANodeMatcherLongestOnly(egc, bestNodeOnly, null, null, null, null, false, entailedNodeScore);
 				}
 			}
 				
@@ -1551,7 +1554,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				if(entailedNodeScore > 0.0){
 					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly, entailedNodeScore);
 				} else {
-					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
+//					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
+					//TODO: integrate SEDANodeMatcher with ressources
+					nodeMatcher = new SEDANodeMatcherLongestOnly(graph, bestNodeOnly, null, null, null, null, false, entailedNodeScore);
 				}
 				matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 			}
