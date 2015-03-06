@@ -119,6 +119,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 					if(tokenText.length()==1 && !isDigit(tokenText)){
 						continue;
 					}
+					tmpLemmaMap.put(tokenText, tk.getLemma().getValue());
 					CASUtils.Region[] r = new CASUtils.Region[1];
 					r[0] = new CASUtils.Region(tk.getBegin(),  tk.getEnd()); 
 					fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
