@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
 import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalResourceException;
 import eu.excitementproject.eop.common.component.lexicalknowledge.LexicalRule;
@@ -24,6 +26,8 @@ import eu.excitementproject.tl.structures.rawgraph.EntailmentUnit;
 
 public class SEDAUtils {
 
+	static Logger logger = Logger.getLogger(SEDAUtils.class); 
+	
 	/**
 	 * Get related text for a single or a two token text given the lexical resource
 	 * DerivBaseResource, GermaNet, GermanWordSplitter or negation maper.
@@ -46,42 +50,47 @@ public class SEDAUtils {
 		List<String> textTokens = Arrays.asList(text.split("\\s+")); //add original text tokens  
 		List<String> textLemmas = Arrays.asList(lemmatizedText.split("\\s+"));
 		
-		//case single token fragments
-		if(textTokens.size() == 1 && textLemmas.size() <= 1) {
-			String tokenText = textTokens.get(0);
-			if(textLemmas.isEmpty()){
-				textLemmas.add(tokenText); //to deal with missing decomposition lemma
-			}
-			String [] lemmas = getLemmas(textLemmas.get(0));
-			for(String lemma : lemmas){
-				permutations.addAll(getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
-			}
-			permutations.add(tokenText);
-			permutations.add(tokenText.toLowerCase());
-		}
-		
-		//case two token fragments
-		else if(textTokens.size() == 2 && textLemmas.size() == 2) {
-			//TODO: deal with missing decomposition lemma
-			Set<String> extendedToken_1 = new HashSet<String>();
-			Set<String> extendedToken_2 = new HashSet<String>();
-			
-			for (int i=0; i < textLemmas.size(); i++){
-				//extend first and second token of dependency relation by related lemmas
-				String [] lemmas = getLemmas(textLemmas.get(i));
+		if(textTokens.size() >=1 || textTokens.size() <=2){
+			//case single token fragments
+			if(textTokens.size() == 1 && textLemmas.size() == 1) {
+				String tokenText = textTokens.get(0);
+				String [] lemmas = getLemmas(textLemmas.get(0));
 				for(String lemma : lemmas){
-					if(i==0){
-						extendedToken_1.addAll(getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
-						extendedToken_1.add(textTokens.get(0).toLowerCase());
-					}
-					else if(i==1){
-						extendedToken_2.addAll(getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
-						extendedToken_2.add(textTokens.get(1).toLowerCase());
+					permutations.addAll(getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
+				}
+				permutations.add(tokenText);
+				permutations.add(tokenText.toLowerCase());
+			}
+			
+			//case two token fragments
+			else if(textTokens.size() == 2 && textLemmas.size() == 2) {
+				//TODO: deal with missing decomposition lemma
+				Set<String> extendedToken_1 = new HashSet<String>();
+				Set<String> extendedToken_2 = new HashSet<String>();
+				
+				for (int i=0; i < textLemmas.size(); i++){
+					//extend first and second token of dependency relation by related lemmas
+					String [] lemmas = getLemmas(textLemmas.get(i));
+					for(String lemma : lemmas){
+						if(i==0){
+							extendedToken_1.addAll(getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
+							extendedToken_1.add(textTokens.get(0).toLowerCase());
+						}
+						else if(i==1){
+							extendedToken_2.addAll(getRelatedLemmas(lemma, derivBaseResource, germaNetWrapper, germaNetRelations, splitter, mapNegation));
+							extendedToken_2.add(textTokens.get(1).toLowerCase());
+						}
 					}
 				}
+				
+				permutations = getPermutations(extendedToken_1, extendedToken_2, true);
 			}
-			
-			permutations = getPermutations(extendedToken_1, extendedToken_2, true);
+			else {
+				logger.error("Can't get related text if the number of tokens in the input text differ from the number of tokens in the lemmatized form of the input");
+			}
+		}
+		else {
+			logger.error("Can't get related text for an input text having no or more than two tokens");
 		}
 		
 		return permutations;
