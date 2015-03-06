@@ -208,7 +208,7 @@ public class SEDANodeMatcherLongestOnly extends AbstractNodeMatcher {
 	 * their text are related by using resources like lemmatizer, DerivBase or GermaNet
 	 * - return 1.0 (if mentions related by exact, lemma or DerivBase matching) 
 	 * - return 0.9 (if at least one token of the mention must be matched by GermaNet)
-	 * - or , if not return 0.
+	 * - otherwise return 0.
 	 * 
 	 * @param mentionToBeFound
 	 * @param ec
@@ -247,8 +247,9 @@ public class SEDANodeMatcherLongestOnly extends AbstractNodeMatcher {
 				}
 				
 				if(relatedTextByLemmaDBGNSet.contains(unitText) || relatedTextByLemmaDBGNSet.contains(eu.getLemmatizedText())){
-					if(max < 0.9){
-						max = 0.9;
+					//Score should be the same as if the confidence of the SEDA edge would connect the ECs with the text of mentions
+					if(max < 0.91){
+						max = 0.91;
 					}
 				}
 				
