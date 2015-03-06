@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.evaluation.categoryannotator;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -110,6 +111,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	private static File tempResult;
     private static PrintWriter writer; 
     private static PrintWriter writerResult; 
+    public static PrintWriter writerFoEvalResult; 
 	
 	/** set automatically **/
 	private static NodeMatcher nodeMatcher;
@@ -191,7 +193,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	
 	private static int [][] setupArrays = {
 				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
-				
+				{201, -1, -1}
 				/*
 				//TOKENS
 				{201, -1, -1}, {202, -1, -1}, {212, -1, -1}, {203, -1, -1}, {204, -1, -1}, {214, -1, -1},
@@ -239,6 +241,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		String categoriesFilename = inputFoldername + "omq_public_categories.xml"; 
 		
 		try {
+			File tempEvalResult = File.createTempFile(("_eval_results_" + System.currentTimeMillis()), ".tmp");
+			writerFoEvalResult = new PrintWriter(new FileOutputStream(tempEvalResult), true);
+			
 			boolean tmpReadCollpasedGraphFromFile = readCollpasedGraphFromFile;
 		    boolean tmpBuildCollapsedGraphFromRawGraphFile = buildCollapsedGraphFromRawGraphFile;
 		    boolean tmpAddLemmaLabel = addLemmaLabel;
@@ -252,18 +257,23 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		    	}
 				
 				EvaluatorCategoryAnnotator_Vers2 evc = new EvaluatorCategoryAnnotator_Vers2(setupToken, setupDependency, setupSentence);
+				writerFoEvalResult.print("**************************************************" +
+						setupToken + " " + setupDependency + " " + setupSentence +
+						" *****************************************************");
 				
 				if(skipEval){
 					topNArray = new int [] {1};
 	            }
+				
 				for (int i = 0; i<topNArray.length;i++){
 					topN = topNArray[i]; 
                     if (i > 0){
                         readCollpasedGraphFromFile = true;
                         buildCollapsedGraphFromRawGraphFile = false;
                     }
-//                    evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
-	                    evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+//               	evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+                    evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+                    writerFoEvalResult.flush();
 				}
 				readCollpasedGraphFromFile = tmpReadCollpasedGraphFromFile;
 				buildCollapsedGraphFromRawGraphFile = tmpBuildCollapsedGraphFromRawGraphFile;
@@ -271,7 +281,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				writer.close();
 				writerResult.close();
 			}
-
+			writerFoEvalResult.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -1460,15 +1470,17 @@ public class EvaluatorCategoryAnnotator_Vers2 {
             if(foldAccuracy.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
             	String setupMetaData = createEvaluationDescription();
 	            System.out.println(setupMetaData);
+	            writerFoEvalResult.println(setupMetaData);
 	            for (int fold : foldAccuracy.keySet()) {
 	            	System.out.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
+	            	writerFoEvalResult.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
 	            }
 	            System.out.println("");
 	
 	            // just display the overall accuracy if all folds are there
 	            if (foldAccuracy.keySet().size() >= numberOfFolds){
-	            	System.out.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds));
-	            	System.out.println("");
+	            	System.out.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds) +"\n");
+	            	writerFoEvalResult.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds) + "\n");
 	            }
             }
 	}
