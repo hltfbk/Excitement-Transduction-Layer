@@ -1,6 +1,7 @@
 package eu.excitementproject.tl.evaluation.categoryannotator;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -54,6 +55,7 @@ import eu.excitementproject.tl.composition.graphmerger.LegacyAutomateWP2Procedur
 import eu.excitementproject.tl.composition.graphoptimizer.SimpleGraphOptimizer;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLongestOnly;
 import eu.excitementproject.tl.composition.nodematcher.NodeMatcherLuceneSimple;
+import eu.excitementproject.tl.composition.nodematcher.SEDANodeMatcherLongestOnly;
 import eu.excitementproject.tl.decomposition.api.FragmentAnnotator;
 import eu.excitementproject.tl.decomposition.api.FragmentGraphGenerator;
 import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
@@ -110,6 +112,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	private static File tempResult;
     private static PrintWriter writer; 
     private static PrintWriter writerResult; 
+    public static PrintWriter writerFoEvalResult; 
 	
 	/** set automatically **/
 	private static NodeMatcher nodeMatcher;
@@ -198,13 +201,13 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				
 				//TOKEN + DEPENDENCy
 				{0,  0, -1}
-				{201,  201, -1}, {201,  202, -1}, {201,  212, -1}, {201,  203, -1}, {201,  204, -1}, {201,  214, -1}
-				{202,  201, -1}, {202,  202, -1}, {202,  212, -1}, {202,  203, -1}, {202,  204, -1}, {202,  214, -1}
-				{212,  201, -1}, {212,  202, -1}, {212,  212, -1}, {212,  203, -1}, {212,  204, -1}, {212,  214, -1}
-				{204,  201, -1}, {204,  202, -1}, {204,  212, -1}, {204,  203, -1}, {204,  204, -1}, {204,  214, -1}
-				{214,  201, -1}, {214,  202, -1}, {214,  212, -1}, {214,  203, -1}, {214,  204, -1}, {214,  214, -1}
-				{207,  201, -1}, {207,  202, -1}, {207,  212, -1}, {207,  203, -1}, {207,  204, -1}, {207,  214, -1}
-				{217,  201, -1}, {217,  202, -1}, {217,  212, -1}, {217,  203, -1}, {217,  204, -1}, {217,  214, -1}
+				{201,  201, -1}, {201,  202, -1}, {201,  212, -1}, {201,  203, -1}, {201,  204, -1}, {201,  214, -1},
+				{202,  201, -1}, {202,  202, -1}, {202,  212, -1}, {202,  203, -1}, {202,  204, -1}, {202,  214, -1},
+				{212,  201, -1}, {212,  202, -1}, {212,  212, -1}, {212,  203, -1}, {212,  204, -1}, {212,  214, -1},
+				{204,  201, -1}, {204,  202, -1}, {204,  212, -1}, {204,  203, -1}, {204,  204, -1}, {204,  214, -1},
+				{214,  201, -1}, {214,  202, -1}, {214,  212, -1}, {214,  203, -1}, {214,  204, -1}, {214,  214, -1},
+				{207,  201, -1}, {207,  202, -1}, {207,  212, -1}, {207,  203, -1}, {207,  204, -1}, {207,  214, -1},
+				{217,  201, -1}, {217,  202, -1}, {217,  212, -1}, {217,  203, -1}, {217,  204, -1}, {217,  214, -1},
 				
 				//TOKEN + SENTENCE
 				{203, 207, 25}
@@ -239,6 +242,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		String categoriesFilename = inputFoldername + "omq_public_categories.xml"; 
 		
 		try {
+			File tempEvalResult = File.createTempFile(("_eval_results_" + System.currentTimeMillis()), ".tmp");
+			writerFoEvalResult = new PrintWriter(new FileOutputStream(tempEvalResult), true);
+			
 			boolean tmpReadCollpasedGraphFromFile = readCollpasedGraphFromFile;
 		    boolean tmpBuildCollapsedGraphFromRawGraphFile = buildCollapsedGraphFromRawGraphFile;
 		    boolean tmpAddLemmaLabel = addLemmaLabel;
@@ -252,18 +258,23 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		    	}
 				
 				EvaluatorCategoryAnnotator_Vers2 evc = new EvaluatorCategoryAnnotator_Vers2(setupToken, setupDependency, setupSentence);
+				writerFoEvalResult.print("**************************************************" +
+						setupToken + " " + setupDependency + " " + setupSentence +
+						" *****************************************************");
 				
 				if(skipEval){
 					topNArray = new int [] {1};
 	            }
+				
 				for (int i = 0; i<topNArray.length;i++){
 					topN = topNArray[i]; 
                     if (i > 0){
                         readCollpasedGraphFromFile = true;
                         buildCollapsedGraphFromRawGraphFile = false;
                     }
-//                    evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
-	                    evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+//               	evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
+                    evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+                    writerFoEvalResult.flush();
 				}
 				readCollpasedGraphFromFile = tmpReadCollpasedGraphFromFile;
 				buildCollapsedGraphFromRawGraphFile = tmpBuildCollapsedGraphFromRawGraphFile;
@@ -271,7 +282,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				writer.close();
 				writerResult.close();
 			}
-
+			writerFoEvalResult.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -1101,7 +1112,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				if(entailedNodeScore > 0.0){
 					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly, entailedNodeScore);
 				} else {
-					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
+//					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
+					//TODO: integrate SEDANodeMatcher with ressources
+					nodeMatcher = new SEDANodeMatcherLongestOnly(egc, bestNodeOnly, null, null, null, null, false, entailedNodeScore);
 				}
 			}
 				
@@ -1460,15 +1473,17 @@ public class EvaluatorCategoryAnnotator_Vers2 {
             if(foldAccuracy.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
             	String setupMetaData = createEvaluationDescription();
 	            System.out.println(setupMetaData);
+	            writerFoEvalResult.println(setupMetaData);
 	            for (int fold : foldAccuracy.keySet()) {
 	            	System.out.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
+	            	writerFoEvalResult.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
 	            }
 	            System.out.println("");
 	
 	            // just display the overall accuracy if all folds are there
 	            if (foldAccuracy.keySet().size() >= numberOfFolds){
-	            	System.out.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds));
-	            	System.out.println("");
+	            	System.out.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds) +"\n");
+	            	writerFoEvalResult.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds) + "\n");
 	            }
             }
 	}
@@ -1539,7 +1554,9 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				if(entailedNodeScore > 0.0){
 					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly, entailedNodeScore);
 				} else {
-					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
+//					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
+					//TODO: integrate SEDANodeMatcher with ressources
+					nodeMatcher = new SEDANodeMatcherLongestOnly(graph, bestNodeOnly, null, null, null, null, false, entailedNodeScore);
 				}
 				matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 			}
