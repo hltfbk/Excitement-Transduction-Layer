@@ -1,0 +1,6 @@
+digraph rawGraph {
+"I cellulari per tutto il paese non ricevono più il tuo segnale" -> "I cellulari non ricevono più il tuo segnale" [label=1] [color=green]
+"I cellulari non ricevono più il tuo segnale" -> "I cellulari non ricevono il tuo segnale" [label=1] [color=green]
+"I cellulari per tutto il paese non ricevono più il tuo segnale" -> "I cellulari per tutto il paese non ricevono il tuo segnale" [label=1] [color=green]
+"I cellulari per tutto il paese non ricevono il tuo segnale" -> "I cellulari non ricevono il tuo segnale" [label=1] [color=green]
+}

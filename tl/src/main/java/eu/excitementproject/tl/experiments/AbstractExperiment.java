@@ -20,6 +20,7 @@ import eu.excitementproject.tl.composition.exceptions.EntailmentGraphRawExceptio
 import eu.excitementproject.tl.composition.exceptions.GraphMergerException;
 import eu.excitementproject.tl.composition.exceptions.GraphOptimizerException;
 import eu.excitementproject.tl.composition.graphmerger.AllPairsGraphMerger;
+import eu.excitementproject.tl.composition.graphmerger.StructureAndParaphraseBasedGraphMerger;
 import eu.excitementproject.tl.composition.graphmerger.StructureBasedGraphMerger;
 import eu.excitementproject.tl.decomposition.api.ModifierAnnotator;
 import eu.excitementproject.tl.decomposition.exceptions.FragmentAnnotatorException;
@@ -242,7 +243,14 @@ public abstract class AbstractExperiment extends UseCaseOneRunnerPrototype {
     	else setGraphMerger(new StructureBasedGraphMerger(lap, eda));
     }
 	
-	public String printResults(){
+    public void setMerger(MergerType mergerType, String meteorPhraseTableResourcePath) throws GraphMergerException{
+    	this.mergerType = mergerType;
+    	if (mergerType.equals(MergerType.ALL_PAIRS_MERGE))
+    		setGraphMerger(new AllPairsGraphMerger(lap, eda));
+    	else setGraphMerger(new StructureAndParaphraseBasedGraphMerger(lap, eda, meteorPhraseTableResourcePath));
+    }
+
+    public String printResults(){
 		return results.printResults();
 	}
 	

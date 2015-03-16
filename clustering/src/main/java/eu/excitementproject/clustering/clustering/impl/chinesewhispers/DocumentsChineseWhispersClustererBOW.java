@@ -9,12 +9,22 @@ import eu.excitementproject.clustering.clustering.impl.util.WeightCalculator.Wei
 import eu.excitementproject.clustering.data.api.TextCollection;
 
 /**
+ * Implements document clustering with Chinese Whispers for documents represented as bag-of-words vectors
+ * 
  * @author Lili Kotlerman
  *
  */
 public class DocumentsChineseWhispersClustererBOW extends AbstractDocumentChineseWhispersClusterer {
 
 
+	/**
+	 * @param useExpandedCollection
+	 * @param textCollection
+	 * @param weightType
+	 * @param configurationFilename
+	 * @param similarityThreshold
+	 * @throws ClusteringException
+	 */
 	public DocumentsChineseWhispersClustererBOW(boolean useExpandedCollection,
 			TextCollection textCollection, WeightType weightType,
 			String configurationFilename, Double similarityThreshold)

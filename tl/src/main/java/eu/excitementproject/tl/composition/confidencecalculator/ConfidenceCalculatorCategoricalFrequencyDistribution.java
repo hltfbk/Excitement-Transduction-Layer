@@ -31,7 +31,9 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 	private int categoryBoost; //score used to boost categories associated to fragments appearing in the 
 		//description of the category
 	String method = "tfidf"; // = "tfidf" or "bayes"
-	
+
+	boolean documentLengthNormalization = false; 
+
 	/**
 	 * If no categoryBoost is passed explicitly, it's set to 0.
 	 */
@@ -130,7 +132,8 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			} else if (method.equals("tfidf")) {
 				computeConfidenceUsingTfidf(sumOfSquaredScoresPerCategory,
 						categoryFrequencyDistributionOnNode, categoriesToBoost,
-						categoryConfidences, N);
+						categoryConfidences, N, 
+						graphStatistics.getNumberOfMentionsPerCategory());
 			}
 			//add confidence scores to node
 			node.setCategoryConfidences(categoryConfidences);
@@ -177,7 +180,8 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 			HashMap<String, Double> sumOfSquaredScoresPerCategory,
 			HashMap<String, Integer> categoryFrequencyDistributionOnNode,
 			Set<String> categoriesToBoost,
-			Map<String, Double> categoryConfidences, int N) {
+			Map<String, Double> categoryConfidences, int N, 
+			Map<String, Integer> categoryOccurrenceInGraph) {
 		double score;
 		double termFrequency = 0.0; 
 		double documentFrequency = 0.0;
@@ -195,6 +199,8 @@ public class ConfidenceCalculatorCategoricalFrequencyDistribution extends Abstra
 					logger.error("Method for confidence calculation not defined: " + method + " variant " + termFrequencyDocument+documentFrequencyDocument+normalizationDocument);
 					System.exit(1);
 			}
+			
+			if (documentLengthNormalization) termFrequency = termFrequency / (double) categoryOccurrenceInGraph.get(category);
 			
 			switch (documentFrequencyDocument) {
 			case 'n': 

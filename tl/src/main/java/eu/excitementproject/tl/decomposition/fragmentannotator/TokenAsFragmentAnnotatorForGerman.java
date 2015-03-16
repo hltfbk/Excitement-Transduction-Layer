@@ -3,9 +3,11 @@ package eu.excitementproject.tl.decomposition.fragmentannotator;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -14,6 +16,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eu.excitement.type.tl.DeterminedFragment;
 import eu.excitementproject.eop.lap.LAPAccess;
@@ -38,19 +41,25 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 	private final List<POSTag_DE> tokenPOSFilter;
 	private final WordDecompositionType decompositionType;
 	private GermanWordSplitter splitter;
+	private JCas tmpCAS; //stores temporarily compound part as JCas to compute the lemma of the compound part, used only if word form not stored as key in the variable tmpLemmaMap
+	private Map<String, String> tmpLemmaMap = new HashMap<String, String>(); //maps temporarily word form onto lemma, used to get the lemma without building of JCas 
 	
 	/**
 	 * 
 	 * @param lap - The implementation may need to call LAP. The needed LAP should be passed via Constructor.
 	 * @param decompositionType - WordDecompositionType.NONE or WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @throws FragmentAnnotatorException
+	 * @throws LAPException 
 	 */
 	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, WordDecompositionType decompositionType) 
-			throws FragmentAnnotatorException {
+			throws FragmentAnnotatorException, LAPException {
 		super(lap);
 		tokenPOSFilter = Arrays.asList(POSTag_DE.class.getEnumConstants());
 		this.decompositionType = decompositionType;
 		this.setDecompounderDE(decompositionType);
+		if(splitter != null){
+			tmpCAS = CASUtils.createNewInputCas();
+		}
 	}
 	
 	/**
@@ -59,13 +68,17 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 	 * @param tokenPOSFilter - types of part of speech (POS), which are allowed to be a POS the token
 	 * @param decompositionType - WordDecompositionType.NONE or WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @throws FragmentAnnotatorException
+	 * @throws LAPException 
 	 */
 	public TokenAsFragmentAnnotatorForGerman(LAPAccess lap, List<POSTag_DE> tokenPOSFilter, WordDecompositionType decompositionType)
-			throws FragmentAnnotatorException {
+			throws FragmentAnnotatorException, LAPException {
 		super(lap); 
 		this.tokenPOSFilter = tokenPOSFilter;
 		this.decompositionType = decompositionType;
 		this.setDecompounderDE(decompositionType);
+		if(splitter != null){
+			tmpCAS = CASUtils.createNewInputCas();
+		}
 	}
 	
 	/**
@@ -96,7 +109,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 		int num_frag = 0; 
 		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
 		Iterator<Annotation> tokenItr = tokenIndex.iterator();
-		
+		Set<Lemma> lemmasToAdd = new HashSet<Lemma>();
 		while(tokenItr.hasNext()) {
 			//annotate each token except punctuation as one fragment, if it matches the filter 
 			Token tk = (Token) tokenItr.next(); 
@@ -106,6 +119,7 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 					if(tokenText.length()==1 && !isDigit(tokenText)){
 						continue;
 					}
+					tmpLemmaMap.put(tokenText, tk.getLemma().getValue());
 					CASUtils.Region[] r = new CASUtils.Region[1];
 					r[0] = new CASUtils.Region(tk.getBegin(),  tk.getEnd()); 
 					fragLogger.info("Annotating the following as a fragment: " + tk.getCoveredText());
@@ -120,11 +134,13 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 								}
 //								if(compoundPart.length()>1){
 									if(!compoundPart.equals(tokenText)) {
-										int index = tokenText.indexOf(compoundPart);
+										int index = tokenText.toLowerCase().indexOf(compoundPart.toLowerCase());
 										int compoundPartBegin = tk.getBegin() + index;
 										int compoundPartEnd = compoundPartBegin + compoundPart.length();
 										index = compoundPartEnd + 1;
 										r[0] = new CASUtils.Region(compoundPartBegin,  compoundPartEnd);
+										Lemma compoundLemma = createLemma(aJCas, compoundPart, compoundPartBegin, compoundPartEnd);
+										lemmasToAdd.add(compoundLemma);
 //										System.out.println("Annotating the following as a fragment: " + tokenText + " " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
 										fragLogger.info("Annotating the following as a fragment: " + aJCas.getDocumentText().substring(compoundPartBegin, compoundPartEnd));
 										CASUtils.annotateOneDeterminedFragment(aJCas, r);
@@ -144,6 +160,38 @@ public class TokenAsFragmentAnnotatorForGerman extends TokenAsFragmentAnnotator 
 			 
 		}
 		fragLogger.info("Annotated " + num_frag + " determined fragments"); 
+		//add lemma of compound parts to the indexes
+		for(Lemma lemma : lemmasToAdd){
+			aJCas.addFsToIndexes(lemma);
+		}
+	}
+	
+	/**
+	 * Creates Lemma for a given word form, which can be found in the inputCas at the specified begin and end index.
+	 *  
+	 * @param inputCas
+	 * @param wordForm
+	 * @param begin
+	 * @param end
+	 * @return
+	 */
+	private Lemma createLemma(JCas inputCas, String wordForm, int begin, int end) {
+		Lemma lemma = new Lemma(inputCas, begin, end);
+		try{
+			tmpCAS.reset();
+			tmpCAS.setDocumentText(wordForm);
+			tmpCAS.setDocumentLanguage("DE");
+			if(tmpLemmaMap.containsKey(wordForm)){
+				lemma.setValue(tmpLemmaMap.get(wordForm));
+			} else {
+				this.getLap().addAnnotationOn(tmpCAS);
+				Token tmpToken  = (Token) tmpCAS.getAnnotationIndex(Token.type).iterator().next();
+				lemma.setValue(tmpToken.getLemma().getValue());
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return lemma;
 	}
 	
 	/**

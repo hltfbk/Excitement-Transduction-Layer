@@ -1,8 +1,5 @@
 package eu.excitementproject.clustering.clustering.impl.chinesewhispers;
 
-
-
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -19,12 +16,22 @@ import eu.excitementproject.clustering.clustering.impl.util.WeightCalculator.Wei
 import eu.excitementproject.clustering.data.api.TextCollection;
 
 /**
+ * Extends {@link AbstractChineseWhispersClusterer} for document clustering
+ * 
  * @author Lili Kotlerman
  * 
  */
 public abstract class AbstractDocumentChineseWhispersClusterer extends AbstractChineseWhispersClusterer<VectorRepresentation> implements DocumentClusterer {
 
 		
+	/**
+	 * @param useExpandedCollection
+	 * @param textCollection
+	 * @param weightType
+	 * @param configurationFilename
+	 * @param similarityThreshold
+	 * @throws ClusteringException
+	 */
 	public AbstractDocumentChineseWhispersClusterer(boolean useExpandedCollection,
 			TextCollection textCollection, WeightType weightType,
 			String configurationFilename, Double similarityThreshold)
@@ -41,6 +48,11 @@ public abstract class AbstractDocumentChineseWhispersClusterer extends AbstractC
 		return vectorClusterer(representDocuments(textCollection));
 	}
 	
+	/** 
+	 * @param documents - set of the input documents in {@link VectorRepresentation} format  
+	 * @return Mapping of cluster names (String) to the corresponding sorted lists of document ids
+	 * @throws ClusteringException
+	 */
 	private Map<String,List<Integer>> vectorClusterer(Set<VectorRepresentation> documents) throws ClusteringException{
 		Set<Integer> clusteredDocIds = new HashSet<Integer>(); 
 		
@@ -69,9 +81,15 @@ public abstract class AbstractDocumentChineseWhispersClusterer extends AbstractC
 		return clusteringResults;
 	}	
 	
+	/**
+	 * Get the set of documents in a text collection in {@link VectorRepresentation} format  
+	 * @param textCollection - a {@link TextCollection}, the documents in which are to be represented as vectors
+	 * @return set of vector representations
+	 */
 	protected abstract Set<VectorRepresentation> representDocuments(TextCollection textCollection);
 	
 	
+	@Override
 	protected double getSimilarity(VectorRepresentation documentA, VectorRepresentation documentB){
 		return SimilarityAndRelatednessCalculator.cosineSimilarity(documentA, documentB);
 	}

@@ -1,0 +1,3 @@
+digraph rawGraph {
+"connettività adsl quasi sempre assente" -> "connettività adsl assente" [label=1] [color=green]
+}

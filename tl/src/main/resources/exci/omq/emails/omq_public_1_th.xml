@@ -39206,41 +39206,8 @@ Cwvemx Dateien stocken in Sales firstclass 20
 	    ]]></h>
         <t><![CDATA[Leider kann ich meinen Datenscanner SOLARMOBILE MB-HD700
 nicht aktivieren.]]></t>
-      </pair><pair id="65_575" entailment="NONENTAILMENT" task="IE">
-        <h><![CDATA[
-Bei der EM/EMVX Erstellung mit Windows 7, kann es teilweise nötig sein einen alternativen Treiber für Ethernetkarte im Gerätemanager zu installieren.
-	    ]]></h>
-        <t><![CDATA[Leider kann ich meinen Datenscanner SOLARMOBILE MB-HD700
-nicht aktivieren.]]></t>
-      </pair><pair id="77_575" entailment="NONENTAILMENT" task="IE">
-        <h><![CDATA[
-Treiber für den USB-Prozessverwalter konnten nicht einwandfrei installiert werden
-	    ]]></h>
-        <t><![CDATA[Leider kann ich meinen Datenscanner SOLARMOBILE MB-HD700
-nicht aktivieren.]]></t>
       </pair>
-	  <!--
-	  <pair id="85_575" entailment="NONENTAILMENT" task="IE">
-        <h><![CDATA[
-EM Kartenleser kann über USB Anschluss nicht erkannt werden
-	    ]]></h>
-        <t><![CDATA[Leider kann ich meinen Datenscanner SOLARMOBILE MB-HD700
-nicht aktivieren.]]></t>
-      </pair>
-	  -->
-	  <pair id="116_575" entailment="NONENTAILMENT" task="IE">
-        <h><![CDATA[
-Beim Öffnen des Programmes erscheint die Fehlermeldung" das smartcard device..."
-	    ]]></h>
-        <t><![CDATA[Leider kann ich meinen Datenscanner SOLARMOBILE MB-HD700
-nicht aktivieren.]]></t>
-      </pair><pair id="121_575" entailment="NONENTAILMENT" task="IE">
-        <h><![CDATA[
-Bei der Installation des Prozessverwalter Treibers, erscheitn die Fehlermeldung "1133: Unable to finish installation." 
-	    ]]></h>
-        <t><![CDATA[Leider kann ich meinen Datenscanner SOLARMOBILE MB-HD700
-nicht aktivieren.]]></t>
-      </pair><pair id="66_575" entailment="NONENTAILMENT" task="IE">
+      <pair id="66_575" entailment="NONENTAILMENT" task="IE">
         <h><![CDATA[
 Bei der Gewinnkalkulation erscheint nach Eingabe einer Zeitspanne folgende Meldung: "Fehler beim Parsen der XSL-Daten"
 	    ]]></h>

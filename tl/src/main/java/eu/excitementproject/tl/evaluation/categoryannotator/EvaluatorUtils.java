@@ -55,6 +55,7 @@ public class EvaluatorUtils {
 
 	/**
 	 * Find out what's the most frequent category stored in the graph.
+	 * (method used for assigning the most frequent category in case incoming interaction cannot be categorized).
 	 * 
 	 * @param graph
 	 * @return most frequent category
@@ -123,6 +124,7 @@ public class EvaluatorUtils {
 		for (int i=0; i<topN; i++) { //adapted to consider top N categories
 			String cat = bestCats[i];
 			logger.info("Top " + i + " category: " + cat);
+//			System.out.print("Top " + i + " category:\t" + cat + "\t");
 			if (docCats.contains(cat)) { //adapted to deal with multiple categories
 				countPositive++;
 			} 
@@ -168,6 +170,7 @@ public class EvaluatorUtils {
 			boolean bestNodeOnly, char documentFrequencyQuery,
 			char termFrequencyQuery, boolean lengthBoost,
 			HashMap<String, BigDecimal> categoryScoresBigDecimal) {
+
 		int numberOfAddedUpValues = 0;
 
 		//collect mention tf in query
@@ -183,23 +186,29 @@ public class EvaluatorUtils {
 		}
 		logger.debug("Collected tf for queries " + tfQueryMap.size());			
 		
+		
 		//Collect query cosine values for each category
 		double N = graph.getNumberOfCategories(); //overall number of categories
 		Set<String> processedMentions = new HashSet<String>();
 		int countDecisions = 0;
-		
+
 		BigDecimal overallSum = new BigDecimal("0");
-		BigDecimal sumScoreForMatchingMention = new BigDecimal("0");
+		BigDecimal sumScoreForMatchingMention = new BigDecimal("0");				
 		
 		for (NodeMatch match : matches) { //for each matching mention	
 			String mentionText = match.getMention().getTextWithoutDoubleSpaces();
 			if (!processedMentions.contains(mentionText)) { //make sure to process each mention text only once!
 				processedMentions.add(mentionText);
 				boolean exit = false;	
-				
+
 				HashMap<String,BigDecimal> sumCategoryScoresBigDecimalForMention = new HashMap<String,BigDecimal>();
 				for (PerNodeScore perNodeScore : match.getScores()) { //deal with all nodes, not just the best one
 					logger.info("Number of matching nodes for mention: " + match.getScores().size());
+					if (match.getScores().size() > 1) {
+						for (PerNodeScore score : match.getScores()) 
+							logger.debug(score.getNode().getLabel());
+						//System.exit(1); //TODO: REMOVE (DEBUGGING ONLY)
+					}
 					if (exit) {
 						break;
 					}
@@ -210,15 +219,13 @@ public class EvaluatorUtils {
 					} else {
 						node = perNodeScore.getNode();
 					}
-					//retrieve tfidf for "document" (category)
-					Map<String,Double> tfidfScoresForCategories = node.getCategoryConfidences();				
 					
 					//compute idf for "query" (incoming request)
 					double df = node.getCategoryConfidences().size(); //number of categories associated to the mention
 					//if category assigned to the mention is not part of the node yet, add 1:
 					double idfForQuery = 1; 
 					if (documentFrequencyQuery =='d') idfForQuery = 1/df;
-					if (documentFrequencyQuery == 'l') idfForQuery = Math.log(N/df);
+					if (documentFrequencyQuery == 't') idfForQuery = Math.log(N/df);
 					
 					//compute tf for "query" (incoming request)
 					double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 										
@@ -229,16 +236,20 @@ public class EvaluatorUtils {
 						if (tfForQuery > 0) tfForQuery = 1;
 					}
 					
+					//compute node score
 					double nodeScore = 1.0;
 					if (!bestNodeOnly) nodeScore = perNodeScore.getScore();		
-
+						
 					//OBS! Slight change of original TF-IDF formular: We integrate the score associated to the node (representing the confidence of the match)
-					double scoreForQuery = nodeScore*tfForQuery*idfForQuery;
+					double scoreForQuery = nodeScore*tfForQuery*idfForQuery;					
 
 					//length boost: boost longer text units based on the number of contained tokens
 					double length = match.getMention().getTextWithoutDoubleSpaces().split("\\s+").length;
 					if (lengthBoost) scoreForQuery *= length;
-										
+
+					//retrieve tfidf for "document" (category)
+					Map<String,Double> tfidfScoresForCategories = node.getCategoryConfidences();				
+					
 					for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
 						double D = tfidfScoresForCategories.get(category); //category score in matching node
 						BigDecimal scoreForMention = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
@@ -249,8 +260,9 @@ public class EvaluatorUtils {
 					}	
 					logger.debug("for mention: " + sumCategoryScoresBigDecimalForMention);
 				}
-				
-				//normalize values based on number of returned nodes (add only a single value per mention!)
+
+				//TODO: Check this part again! initialization of the scoreForMention 
+				//normalize values based on number of returned nodes (add only a single value per mention to avoid giving too much weight to mentions with entailed nodes)
 				for (String category : sumCategoryScoresBigDecimalForMention.keySet()) {
 					numberOfAddedUpValues++;
 					BigDecimal scoreForMention = sumCategoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
@@ -351,6 +363,7 @@ public class EvaluatorUtils {
 
 		Map<String,BigDecimal> sortedMapBigDecimal = new TreeMap<String,BigDecimal>(bvc);
 		sortedMapBigDecimal.putAll(categoryScoresBigDecimal);		
+//		System.out.print("best cat score: " + sortedMapBigDecimal + "\t");
 		
 		logger.info("category scores:  " + sortedMapBigDecimal);
 		String[] bestCats = new String[topN];

@@ -44,10 +44,10 @@ public class DependencyAsFragmentAnnotatorForGermanTest {
 		FragmentAnnotator fragAnnotator;
 		List<String> dependencyFilter;
 		List<POSTag_DE> governorPOSFilter;
-		List<String> governorWordFilter;
+//		List<String> governorWordFilter;
 		List<POSTag_DE> dependentPOSFilter;
 		List<String> dependentWordFilter;
-		WordDecompositionType wordDecompositionType;
+//		WordDecompositionType wordDecompositionType;
 		AnnotationIndex<Annotation> frgIndex;
 		
 		try {

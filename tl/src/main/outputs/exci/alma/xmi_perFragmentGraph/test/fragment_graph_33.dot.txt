@@ -1,0 +1,3 @@
+digraph rawGraph {
+"ho una connessione stra-stra-lenta" -> "ho una connessione -lenta" [label=1] [color=green]
+}

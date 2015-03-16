@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -16,6 +18,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.abelssoft.wordtools.jwordsplitter.impl.GermanWordSplitter;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import eu.excitement.type.tl.DeterminedFragment;
@@ -52,14 +55,18 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	private final WordDecompositionType wordDecompositionType;
 	private GermanWordSplitter splitter;
 	
+	private JCas tmpCAS; //stores temporarily compound part as JCas to compute the lemma of the compound part, used only if word form not stored as key in the variable tmpLemmaMap
+	private Map<String, String> tmpLemmaMap = new HashMap<String, String>(); //maps temporarily word form onto lemma, used to get the lemma without building of JCas
+	
 	/**
 	 * 
 	 * @param lap - Linguistic analysis pipeline for processing the text
 	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * 
 	 * @throws FragmentAnnotatorException
+	 * @throws LAPException 
 	 */
-	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException
+	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException, LAPException
 	{
 		super(lap);
 		this.restrictDependencyType = false; this.dependencyTypeFilter = null;
@@ -68,6 +75,9 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.restrictWordList = false; this.governorWordFilter = null; this.dependentWordFilter = null;
 		this.wordDecompositionType = wordDecompositionType;
 		this.setDecompounderDE(wordDecompositionType);
+		if(splitter != null){
+			tmpCAS = CASUtils.createNewInputCas();
+		}
 	}
 	
 	/**
@@ -76,9 +86,10 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * @param dependencyTypeFilter - types of dependencies, which should be annotated
 	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @throws FragmentAnnotatorException
+	 * @throws LAPException 
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> dependencyTypeFilter, 
-			WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException
+			WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException, LAPException
 	{
 		super(lap); 
 		this.restrictDependencyType = true;
@@ -88,6 +99,9 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.restrictWordList = false; this.governorWordFilter = null; this.dependentWordFilter = null;
 		this.wordDecompositionType = wordDecompositionType;
 		this.setDecompounderDE(wordDecompositionType);
+		if(splitter != null){
+			tmpCAS = CASUtils.createNewInputCas();
+		}
 	}
 	
 	/**
@@ -98,9 +112,10 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * @param dependentPOSFilter  - types of part of speech (POS), which are allowed to be a POS of dependent token
 	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @throws FragmentAnnotatorException
+	 * @throws LAPException 
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<POSTag_DE> governorPOSFilter, 
-			List<POSTag_DE> dependentPOSFilter, WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException
+			List<POSTag_DE> dependentPOSFilter, WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException, LAPException
 	{
 		super(lap); 
 		this.restrictDependencyType = false; this.dependencyTypeFilter = null;
@@ -111,6 +126,9 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.dependentWordFilter = new ArrayList<String>();
 		this.wordDecompositionType = wordDecompositionType;
 		this.setDecompounderDE(wordDecompositionType);
+		if(splitter != null){
+			tmpCAS = CASUtils.createNewInputCas();
+		}
 	}
 	
 	/**
@@ -122,11 +140,12 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * @param dependentWordFilter  - words or lemmas, that are allowed to be a dependent token
 	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @throws FragmentAnnotatorException
+	 * @throws LAPException 
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, 
 			List<POSTag_DE> governorPOSFilter, List<String> governorWordFilter,
 			List<POSTag_DE> dependentPOSFilter, List<String> dependentWordFilter, 
-			WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException
+			WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException, LAPException
 	{
 		super(lap); 
 		this.restrictDependencyType = false; this.dependencyTypeFilter = null;
@@ -137,6 +156,9 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.dependentWordFilter = dependentWordFilter;
 		this.wordDecompositionType = wordDecompositionType;
 		this.setDecompounderDE(wordDecompositionType);
+		if(splitter != null){
+			tmpCAS = CASUtils.createNewInputCas();
+		}
 	}
 	
 	/**
@@ -147,9 +169,10 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * @param dependentPOSFilter  - types of part of speech (POS), which are allowed to be a POS of dependent token
 	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @throws FragmentAnnotatorException
+	 * @throws LAPException 
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> dependencyTypeFilter, List<POSTag_DE> governorPOSFilter, 
-			List<POSTag_DE> dependentPOSFilter, WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException
+			List<POSTag_DE> dependentPOSFilter, WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException, LAPException
 	{
 		super(lap); 
 		this.restrictDependencyType = true;
@@ -161,6 +184,9 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.dependentWordFilter = new ArrayList<String>();
 		this.wordDecompositionType = wordDecompositionType;
 		this.setDecompounderDE(wordDecompositionType);
+		if(splitter != null){
+			tmpCAS = CASUtils.createNewInputCas();
+		}
 	}
 	
 	/**
@@ -173,11 +199,12 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * @param dependentWordFilter  - words or lemmas, that are allowed to be a dependent token
 	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @throws FragmentAnnotatorException
+	 * @throws LAPException 
 	 */
 	public DependencyAsFragmentAnnotatorForGerman(LAPAccess lap, List<String> dependencyTypeFilter, 
 			List<POSTag_DE> governorPOSFilter, List<String> governorWordFilter,
 			List<POSTag_DE> dependentPOSFilter, List<String> dependentWordFilter,
-			WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException
+			WordDecompositionType wordDecompositionType) throws FragmentAnnotatorException, LAPException
 	{
 		super(lap); 
 		this.restrictDependencyType = true;
@@ -189,6 +216,9 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		this.dependentWordFilter = dependentWordFilter;
 		this.wordDecompositionType = wordDecompositionType;
 		this.setDecompounderDE(wordDecompositionType);
+		if(splitter != null){
+			tmpCAS = CASUtils.createNewInputCas();
+		}
 	}
 	
 	@Override
@@ -215,11 +245,12 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 		AnnotationIndex<Annotation> dependencyIndex = aJCas.getAnnotationIndex(Dependency.type);
 		if (dependencyIndex.size() > 0) {
 			Collection<Dependency> deps = JCasUtil.select(aJCas, Dependency.class);
+			Set<String> addedLemmasIndexSet = new HashSet<String>();
 			for(Dependency d : deps){
 				if(isAllowed(d, restrictDependencyType, governorPOSFilter, dependentPOSFilter)){
 					Token governor = d.getGovernor();
 					Token dependent = d.getDependent();			
-					num_dependency_frag += annotateDependency(aJCas, governor, dependent, wordDecompositionType);
+					num_dependency_frag += annotateDependency(aJCas, governor, dependent, wordDecompositionType, addedLemmasIndexSet);
 				}
 			}
 			fragLogger.info("Annotated " + num_dependency_frag + " dependency fragments");
@@ -314,7 +345,8 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 	 * @param wordDecompositionType - WordDecompositionType.NONE, WordDecompositionType.NO_RESTRICTION, WordDecompositionType.ONLY_HYPHEN
 	 * @return
 	 */
-	private int annotateDependency(JCas aJCas, Token governor, Token dependent,  WordDecompositionType wordDecompositionType){
+	private int annotateDependency(JCas aJCas, Token governor, Token dependent,  
+			WordDecompositionType wordDecompositionType, Set<String> addedLemmasIndexSet){
 		int frag_num = 0;
 		
 		String governorText = governor.getCoveredText();
@@ -331,10 +363,12 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 					annotateDependency(aJCas, governorText, governor.getBegin(), governor.getEnd(), 
 							dependentText, dependent.getBegin(), dependent.getEnd());
 					
+					Set<Lemma> lemmasToAdd = new HashSet<Lemma>();
+					
 					//annotate governor + splits of dependent
 					Collection<String> compoundParts = decompoundWord(dependentText, wordDecompositionType);
 					for(String compoundPart : compoundParts){
-						if(!compoundPart.equals(dependentText)) {
+						if(!compoundPart.equalsIgnoreCase(dependentText) && !compoundPart.equalsIgnoreCase(governorText)) {
 							if(compoundPart.length() == 1 && !isDigit(compoundPart)){
 									continue;
 							}
@@ -345,13 +379,18 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 							annotateDependency(aJCas, governorText, governor.getBegin(), governor.getEnd(), 
 									compoundPart, compoundPartBegin, compoundPartEnd);
 							frag_num++;
+							if(!addedLemmasIndexSet.contains(compoundPartBegin + " # " + compoundPartEnd)){
+								addedLemmasIndexSet.add(compoundPartBegin + " # " + compoundPartEnd);
+								Lemma compoundPartLemma = createLemma(aJCas, compoundPart, compoundPartBegin, compoundPartEnd);
+								lemmasToAdd.add(compoundPartLemma);
+							}
 						}
 					}
 					
 					//annotate dependent + splits of governor
 					compoundParts = decompoundWord(governorText, wordDecompositionType);
 					for(String compoundPart : compoundParts){
-						if(!compoundPart.equals(governorText)) {
+						if(!compoundPart.equalsIgnoreCase(governorText) && !compoundPart.equalsIgnoreCase(dependentText)) {
 							if(compoundPart.length() == 1 && !isDigit(compoundPart)){
 									continue;
 							}
@@ -362,15 +401,26 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 							annotateDependency(aJCas, compoundPart, compoundPartBegin, compoundPartEnd, 
 									dependentText, dependent.getBegin(), dependent.getEnd());
 							frag_num++;
+							if(!addedLemmasIndexSet.contains(compoundPartBegin + " # " + compoundPartEnd)){
+								addedLemmasIndexSet.add(compoundPartBegin + " # " + compoundPartEnd);
+								Lemma compoundPartLemma = createLemma(aJCas, compoundPart, compoundPartBegin, compoundPartEnd);
+								lemmasToAdd.add(compoundPartLemma);
+							}
 						}
 					}
-				}
+					
+					//add lemma of compound parts to the indexes
+					for(Lemma lemma : lemmasToAdd){
+						aJCas.addFsToIndexes(lemma);
+					}
+					
+				}//if splitter != null
 				
-			}
+			}//wordDecompositionType != WordDecompositionType.NONE
 			
 		}
 		
-			return frag_num;
+		return frag_num;
 	}
 	
 
@@ -428,6 +478,34 @@ public class DependencyAsFragmentAnnotatorForGerman extends DependencyAsFragment
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * Creates Lemma for a given word form, which can be found in the inputCas at the specified begin and end index.
+	 *  
+	 * @param inputCas
+	 * @param wordForm
+	 * @param begin
+	 * @param end
+	 * @return
+	 */
+	private Lemma createLemma(JCas inputCas, String wordForm, int begin, int end) {
+		Lemma lemma = new Lemma(inputCas, begin, end);
+		try{
+			tmpCAS.reset();
+			tmpCAS.setDocumentText(wordForm);
+			tmpCAS.setDocumentLanguage("DE");
+			if(tmpLemmaMap.containsKey(wordForm)){
+				lemma.setValue(tmpLemmaMap.get(wordForm));
+			} else {
+				this.getLap().addAnnotationOn(tmpCAS);
+				Token tmpToken  = (Token) tmpCAS.getAnnotationIndex(Token.type).iterator().next();
+				lemma.setValue(tmpToken.getLemma().getValue());
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return lemma;
 	}
 	
 	/**

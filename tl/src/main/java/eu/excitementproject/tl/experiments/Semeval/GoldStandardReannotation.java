@@ -751,10 +751,10 @@ public class GoldStandardReannotation {
 	//	String clusterName = "EMAIL0002";		
 	//	String clusterName = "SPEECH0080";		
 
-	String[] single = {"EMAIL0120"};
+	String[] single = {"EMAIL0002"};
 
 	String stat="";
-	for (String clusterName : devsetIt){
+	for (String clusterName : single){
 //		String set = "Test";
 		 String set = "Dev";
 		
@@ -765,10 +765,10 @@ public class GoldStandardReannotation {
 		
 		
 		// ITA		
-		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
+//		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ITA-SPLIT-2014-03-14-FINAL/"+set+"/"+clusterName);
 		
 		// ENG
-//		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
+		File clusterAnnotationsDir = new File(tlDir+"/tl/src/test/resources/WP2_gold_standard_annotation/GRAPH-ENG-SPLIT-2014-03-24-FINAL/"+set+"/"+clusterName);
 		
 		if (!clusterAnnotationsDir.exists()) {
 			System.err.println("Cannot find annotation dir "+clusterAnnotationsDir.getAbsolutePath());

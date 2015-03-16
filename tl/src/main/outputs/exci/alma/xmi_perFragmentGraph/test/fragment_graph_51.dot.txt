@@ -1,0 +1,3 @@
+digraph rawGraph {
+"rimani senza linea sempre" -> "rimani senza linea" [label=1] [color=green]
+}

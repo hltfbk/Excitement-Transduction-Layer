@@ -25,13 +25,13 @@ import eu.excitementproject.eop.common.utilities.configuration.ConfigurationExce
 import eu.excitementproject.eop.common.utilities.configuration.ConfigurationFile;
 
 /**
- * @author Lili Kotlerman
- * 
  * This class is a wrapper for the co-clustering tool of Hyuk Cho (http://www.cs.utexas.edu/users/dml/Software/cocluster.html)
- * The wrapper uses the information-theoretic algorithm described in "Information Theoretic Clustering of Sparse Co-Occurrence Data", I.S. Dhillon and Y. Guan, Proceedings of The Third IEEE International Conference on Data Mining, pages 517-520, November 2003. 
+ * The wrapper uses the information-theoretic algorithm described in <i>"Information Theoretic Clustering of Sparse Co-Occurrence Data", I.S. Dhillon and Y. Guan, Proceedings of The Third IEEE International Conference on Data Mining, pages 517-520, November 2003. </i>
  *
- * The wrapper generates a dense document-term matrix, with documents as rows and terms as columns.
- * Since the tool does not provide scores/confidence values of term/document assignments to clusters, cluster members are sorted by similarity to centroid vector (for document clusterer) or by semantic relatedness to the cluster (for term clusterer) 
+ * <p>The wrapper generates a dense document-term matrix, with documents as rows and terms as columns.
+ * <p>Since the tool does not provide scores/confidence values of term/document assignments to clusters, cluster members are sorted by similarity to centroid vector (for document clusterer) or by semantic relatedness to the cluster (for term clusterer) 
+ * 
+ *  @author Lili Kotlerman
  */
 public class DhillonCoClusterer implements CoClusterer {
 

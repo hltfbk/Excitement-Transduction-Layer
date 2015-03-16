@@ -1,0 +1,11 @@
+digraph collapsedGraph {
+"NON posso ricaricare [1]\nNON posso ricaricare""NON posso da giorni ricaricare [1]""anomalie che avete sui messaggi di notifica [1]\nanomalie che avete sui messaggi di notifica""anomalie che avete sui messaggi di notifica di credito insufficiente [1]""da facebook non va [1]""ricarica vinti non li ho mai visti [1]\nricarica vinti non li ho mai visti""dei 10 € di ricarica vinti non li ho mai visti [1]\ndei 10 € di ricarica vinti non li ho mai visti""la ricarica non funziona [1]\nla ricarica non funziona""la ricarica online con paypal non funziona [1]""la ricarica con paypal non funziona [1]\nla ricarica con paypal non funziona""la ricarica online non funziona [1]\nla ricarica online non funziona""non mi è ancora stata accreditata [1]""mi fatturate una linea che non funziona [1]\nmi fatturate una linea che non funziona""è da 6 mesi che mi fatturate una linea che non funziona [1]""NON posso da giorni ricaricare [1]" -> "NON posso ricaricare [1]\nNON posso ricaricare" [color=blue]
+"anomalie che avete sui messaggi di notifica di credito insufficiente [1]" -> "anomalie che avete sui messaggi di notifica [1]\nanomalie che avete sui messaggi di notifica" [color=blue]
+"dei 10 € di ricarica vinti non li ho mai visti [1]\ndei 10 € di ricarica vinti non li ho mai visti" -> "ricarica vinti non li ho mai visti [1]\nricarica vinti non li ho mai visti" [color=blue]
+"la ricarica online con paypal non funziona [1]" -> "la ricarica con paypal non funziona [1]\nla ricarica con paypal non funziona" [color=blue]
+"la ricarica con paypal non funziona [1]\nla ricarica con paypal non funziona" -> "la ricarica non funziona [1]\nla ricarica non funziona" [color=blue]
+"la ricarica online con paypal non funziona [1]" -> "la ricarica online non funziona [1]\nla ricarica online non funziona" [color=blue]
+"la ricarica online non funziona [1]\nla ricarica online non funziona" -> "la ricarica non funziona [1]\nla ricarica non funziona" [color=blue]
+"la ricarica online con paypal non funziona [1]" -> "la ricarica non funziona [1]\nla ricarica non funziona" [color=blue]
+"è da 6 mesi che mi fatturate una linea che non funziona [1]" -> "mi fatturate una linea che non funziona [1]\nmi fatturate una linea che non funziona" [color=blue]
+}
