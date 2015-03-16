@@ -281,6 +281,7 @@ public class InteractionReaderTest {
 			List<Interaction> iList = InteractionReader.readInteractionXML(f); 
 			assertTrue(iList.get(0).getRelevantTexts().get(0).getText().startsWith("Wenn ich eine Datei durchrechnen will"));			
 			assertTrue(iList.get(0).getRelevantTexts().get(0).getText().endsWith("Ihr System.\""));
+			testlogger.info("Relevant text: " + iList.get(0).getRelevantTexts().get(0).getText());
 		}
 		catch (Exception e)
 		{

@@ -96,11 +96,11 @@ public class EvaluatorUtils {
 			logger.info("Baseline: " + (double) categoryOccurrences.get(mostFrequentCat)/ (double) processedInteractions.size());
 		}
 		return mostFrequentCat;
-
 	}
 
 	/**
-	 * Compare automatic to manual annotation on interaction level
+	 * Compare automatic to manual annotation at interaction level and 
+	 * return the number of correct decisions.
 	 * 
 	 * @param countPositive
 	 * @param doc
@@ -133,7 +133,7 @@ public class EvaluatorUtils {
 	}
 	
 	/**
-	 * Computes the best category given the set of category decisions, based on the defined method.
+	 * Compute the best category given the set of category decisions, based on the defined method.
 	 * Currently, two different methods have been implemented: TFIDF-based category ranking and
 	 * a Naive Bayes classifier. 
 	 * 
@@ -149,226 +149,13 @@ public class EvaluatorUtils {
 		logger.debug("Computing best category");
 		logger.debug("Number of decisions: " + decisions.size());
 		HashMap<String,BigDecimal> categoryScoresBigDecimal = new HashMap<String,BigDecimal>();
-		if (method.equals("tfidf_sum")) {  //corresponds to the "ndn.ntn" TFIDF-variant
-			for (CategoryDecision decision: decisions) {
-				String category = decision.getCategoryId();
-				BigDecimal sum = new BigDecimal("0"); //the sum of scores for a particular category 
-				if (categoryScoresBigDecimal.containsKey(category)) {
-					sum = categoryScoresBigDecimal.get(category);
-				}
-				//add up all scores for each category on the CAS
-				sum = sum.add(new BigDecimal(decision.getConfidence()));
-				categoryScoresBigDecimal.put(category, sum);
-			}
-			logger.info("category scores big decimal in tfidf_sum: " + categoryScoresBigDecimal);
-			
-		} else if (method.startsWith("bayes")) { //Naive Bayes; TODO: extend to more than just the "best matching" node (as with TFIDF implementation)
-			HashMap<String,BigDecimal> preliminaryCategoryScores = new HashMap<String,BigDecimal>();
-			for (NodeMatch nodeMatch : matches) { //for each matching mention in the document
-				EquivalenceClass bestNode = getBestMatchingNode(nodeMatch);
-				//category confidences on node
-				Map<String, Double> categoryConfidencesOnNode = bestNode.getCategoryConfidences();
-				logger.info("Category confidences on node: " + categoryConfidencesOnNode);
-				try { 
-					if (method.equals("bayes")) { //multiply all values P(w_j|c_i) for j = 1..V (vocabulary size)
-						for (String category : categoryConfidencesOnNode.keySet()) {	
-							BigDecimal product = new BigDecimal("1");
-							if (preliminaryCategoryScores.containsKey(category)) {
-								product = preliminaryCategoryScores.get(category); //read product in case we've stored a product from a previous node
-							}
-							product = product.multiply(new BigDecimal(categoryConfidencesOnNode.get(category)));
-							preliminaryCategoryScores.put(category, product);
-						}
-					} else if (method.equals("bayes_log")) {
-						for (String category : categoryConfidencesOnNode.keySet()) {	
-							BigDecimal log_sum = new BigDecimal("0");
-							if (preliminaryCategoryScores.containsKey(category)) {
-								log_sum = preliminaryCategoryScores.get(category); //read log sum in case we've stored it from a previous node
-							}
-							log_sum = log_sum.add(new BigDecimal(categoryConfidencesOnNode.get(category)));
-							preliminaryCategoryScores.put(category, log_sum);
-						}							
-					} else {
-						logger.error("Implementation missing for method " + method);
-						System.exit(1);							
-					}
-				} catch (NullPointerException e) {
-					logger.error("Missing category confidences. Run ConfidenceCalculator on graph!");
-					System.exit(1);
-				}					
-			}
-			logger.info("preliminaryCategoryScores: " + preliminaryCategoryScores);
-			//calculate P(c_i|W) = P(c_i) x PRODUCT_j=1..V (P(w_j|c_i)
-			//PRODUCT is already stored in preliminaryCategoryScores
-			for (String category : preliminaryCategoryScores.keySet()) {	
-				//estimate the priors from the sample: Math.log((double)count/knowledgeBase.n)
-				BigDecimal finalConfidence = null;
-				if (method.equals("bayes")) { //multiply prior with product
-					BigDecimal prior = 
-							new BigDecimal(graph.getGraphStatistics().getNumberOfMentionsPerCategory().get(category) 
-	//						/ graph.getGraphStatistics().getTotalNumberOfMentions()  //can be ignored, as it's the same value for all categories
-									);
-					finalConfidence =  prior.multiply(preliminaryCategoryScores.get(category));
-				} else if (method.equals("bayes_log")) { //sum up prior and log sum
-					BigDecimal prior = new BigDecimal(Math.log(
-						(double) graph.getGraphStatistics().getNumberOfMentionsPerCategory().get(category) 
-						/ (double) graph.getGraphStatistics().getTotalNumberOfMentions())); 
-					finalConfidence = prior.add(preliminaryCategoryScores.get(category));
-				}
-				categoryScoresBigDecimal.put(category, finalConfidence);
-			}
-			logger.info("category scores big decimal: " + categoryScoresBigDecimal);
-
+		if (method.startsWith("bayes")) { //Naive Bayes; TODO: extend to more than just the "best matching" node (as with TFIDF implementation)
+			computeBestCatsUsingNaiveBayes(graph, matches, method,
+					categoryScoresBigDecimal);
 		} else if (method.startsWith("tfidf")) { //TFIDF-based classification (query = new email; documents = categories)
-			int numberOfAddedUpValues = 0;
-			//collect mention tf in query
-			HashMap<String,Integer> tfQueryMap = new HashMap<String,Integer>();
-			int count = 0;
-			for (NodeMatch match : matches) { //for each matching mention
-				String mentionText = match.getMention().getTextWithoutDoubleSpaces();
-				count = 1;
-				if (tfQueryMap.containsKey(mentionText)) {
-					count += tfQueryMap.get(mentionText); 
-				}
-				tfQueryMap.put(mentionText, count);
-			}
-			logger.debug("Collected tf for queries " + tfQueryMap.size());			
-			//writer.println("Collected tf for queries:");
-			//for (String query : tfQueryMap.keySet()) {
-			//	writer.println(query + " : " + tfQueryMap.get(query));
-			//}
-			
-			//Collect query cosine values for each category
-			//HashMap<String,Double[]> queryCosineValuesPerCategory = new HashMap<String,Double[]>();
-			double N = graph.getNumberOfCategories(); //overall number of categories
-			//double sumQ2 = 0.0;
-			Set<String> processedMentions = new HashSet<String>();
-			int countDecisions = 0;
-			
-			BigDecimal overallSum = new BigDecimal("0");
-			BigDecimal sumScoreForMatchingMention = new BigDecimal("0");
-			
-			for (NodeMatch match : matches) { //for each matching mention	
-				String mentionText = match.getMention().getTextWithoutDoubleSpaces();
-				if (!processedMentions.contains(mentionText)) { //make sure to process each mention text only once!
-					processedMentions.add(mentionText);
-					boolean exit = false;	
-					
-					HashMap<String,BigDecimal> categoryScoresBigDecimalForMention = new HashMap<String,BigDecimal>();
-					for (PerNodeScore perNodeScore : match.getScores()) { //deal with all nodes, not just the best one
-						logger.info("Number of matching nodes for mention: " + match.getScores().size());
-						if (match.getScores().size() > 1) {
-							for (PerNodeScore score : match.getScores()) 
-								logger.debug(score.getNode().getLabel());
-							//System.exit(1); //TODO: REMOVE (DEBUGGING ONLY)
-						}
-						if (exit) {
-							break;
-						}
-						EquivalenceClass node; 
-						if (bestNodeOnly) {
-							node = getBestMatchingNode(match);	
-							exit = true;
-						} else {
-							node = perNodeScore.getNode();
-						}
-
-						//compute idf for query
-						double df = node.getCategoryConfidences().size(); //number of categories associated to the mention
-						double idfForQuery = 1; 
-						if (documentFrequencyQuery =='d') idfForQuery = 1/df;
-						if (documentFrequencyQuery == 't') idfForQuery = Math.log(N/df);
-	
-						//compute tf for query
-						double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 							
-						if (termFrequencyQuery == 'l') { //logarithm
-							tfForQuery = 1 + Math.log(tfForQuery); // = "wf-idf"
-						} else if (termFrequencyQuery == 'b') { //boolean
-							if (tfForQuery > 0) tfForQuery = 1;
-						}
-						
-						//compute node score
-						double nodeScore = 1.0;
-						if (!bestNodeOnly) nodeScore = perNodeScore.getScore();		
-							
-						//OBS! Slight change of original TF-IDF formular: We integrate the score associated to the node (representing the confidence of the match)
-						double scoreForQuery = nodeScore*tfForQuery*idfForQuery;
-
-						//length boost
-						double length = match.getMention().getTextWithoutDoubleSpaces().split("\\s+").length;
-						if (lengthBoost) scoreForQuery *= length;
-						
-						//VECTOR SPACE MODEL
-						/*
-						if (method.endsWith("_vsm")) { //TODO: check implementation again
-							double Q = scoreForQuery;
-							sumQ2 += Math.pow(Q, 2); //this part does not depend on the category!
-							for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node
-								queryCosineValues = new Double[2];
-								double D = tfidfScoresForCategories.get(category);
-								double sumQD = Q*D;
-								double sumD2 = Math.pow(D, 2);						
-								if (queryCosineValuesPerCategory.containsKey(category)) {
-									sumQD += queryCosineValuesPerCategory.get(category)[0];
-									sumD2 += queryCosineValuesPerCategory.get(category)[1];
-								}
-								queryCosineValues[0] = sumQD;
-								queryCosineValues[1] = sumD2;
-								queryCosineValuesPerCategory.put(category, queryCosineValues);
-							}
-						} else { //SIMPLE TF_IDF */
-					
-						Map<String,Double> tfidfScoresForCategories = node.getCategoryConfidences(); //tfidf for "document" (category)				
-						for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
-							double D = tfidfScoresForCategories.get(category); //category score in matching node
-							BigDecimal scoreForMention = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
-							if (categoryScoresBigDecimalForMention.containsKey(category)) {
-								scoreForMention = categoryScoresBigDecimalForMention.get(category).add(scoreForMention);
-								categoryScoresBigDecimalForMention.put(category, sumScoreForMatchingMention);
-							}
-							categoryScoresBigDecimalForMention.put(category, scoreForMention);
-
-						}	
-						logger.debug("for mention: " + categoryScoresBigDecimalForMention);
-						//}
-					}
-					
-					//normalize values based on number of returned nodes (add only a single value per mention to avoid giving too much weight to mentions with entailed nodes)
-					for (String category : categoryScoresBigDecimalForMention.keySet()) {
-						numberOfAddedUpValues++;
-						BigDecimal sumScoreForMention = categoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
-						overallSum = overallSum.add(sumScoreForMention);
-						if (categoryScoresBigDecimal.containsKey(category)) {
-							sumScoreForMention = categoryScoresBigDecimal.get(category).add(sumScoreForMention);
-						}
-						categoryScoresBigDecimal.put(category, sumScoreForMention);
-					}
-					logger.debug("normalized: " + categoryScoresBigDecimal);
-				}
-			}
-			
-			logger.debug("overallSum: " + overallSum);
-			logger.debug("Number of node matches: " + matches.size());
-			logger.debug("Number of added up Values: " + numberOfAddedUpValues);
-			logger.debug("Number of processed mentions: " + processedMentions.size());
-			logger.debug("Number of category decisions: " + countDecisions);
-			logger.debug("Category scores big decimal in tfidf: " + categoryScoresBigDecimal);
-			
-			/*
-			if (method.endsWith("_vsm")) {
-				for (String category : queryCosineValuesPerCategory.keySet()) { //for each matching EG node for this mention
-					//annotate category confidences in CAS based on cosine similarity (per document, not per mention!)
-					//cos = A x B / |A|x|B| = SUM_i=1..n[Ai x Bi] / (ROOT(SUM_i=1..n(Ai2)) x ROOT(SUM_i=1..n(Bi2)))
-					Double[] queryCosineValuesForCategory = queryCosineValuesPerCategory.get(category);
-					Double sumQD = queryCosineValuesForCategory[0];
-					Double sumD2 = queryCosineValuesForCategory[1];
-					//writer.println("cosine values for category " + category + ": " + queryCosineValuesForCategory[0] + ", " + queryCosineValuesForCategory[1] + ", " + sumQ2);
-					logger.info("cosine values for category " + category + ": " + queryCosineValuesForCategory[0] + ", " + queryCosineValuesForCategory[1] + ", " + sumQ2);
-					BigDecimal cosQD = new BigDecimal(sumQD).divide(new BigDecimal(Math.sqrt(sumD2) * Math.sqrt(sumQ2)), MathContext.DECIMAL128);
-					categoryScoresBigDecimal.put(category, cosQD);					
-					//writer.println(category + " : " + cosQD);
-				}
-			}*/
+			computeBestCatsUsingTFIDF(graph, matches, bestNodeOnly,
+					documentFrequencyQuery, termFrequencyQuery, lengthBoost,
+					categoryScoresBigDecimal);
 		} else {
 			logger.error("Method for query weighting not defined:" + method );
 			System.exit(1);
@@ -376,6 +163,185 @@ public class EvaluatorUtils {
 		return getTopNCategories(mostProbableCat, correctCats,
 				categoryScoresBigDecimal, topN);
 
+	}
+
+	private static void computeBestCatsUsingTFIDF(
+			EntailmentGraphCollapsed graph, Set<NodeMatch> matches,
+			boolean bestNodeOnly, char documentFrequencyQuery,
+			char termFrequencyQuery, boolean lengthBoost,
+			HashMap<String, BigDecimal> categoryScoresBigDecimal) {
+
+		int numberOfAddedUpValues = 0;
+
+		//collect mention tf in query
+		HashMap<String,Integer> tfQueryMap = new HashMap<String,Integer>();
+		int count = 0;
+		for (NodeMatch match : matches) { //for each matching mention
+			String mentionText = match.getMention().getTextWithoutDoubleSpaces();
+			count = 1;
+			if (tfQueryMap.containsKey(mentionText)) {
+				count += tfQueryMap.get(mentionText); 
+			}
+			tfQueryMap.put(mentionText, count);
+		}
+		logger.debug("Collected tf for queries " + tfQueryMap.size());			
+		
+		
+		//Collect query cosine values for each category
+		double N = graph.getNumberOfCategories(); //overall number of categories
+		Set<String> processedMentions = new HashSet<String>();
+		int countDecisions = 0;
+
+		BigDecimal overallSum = new BigDecimal("0");
+		BigDecimal sumScoreForMatchingMention = new BigDecimal("0");				
+		
+		for (NodeMatch match : matches) { //for each matching mention	
+			String mentionText = match.getMention().getTextWithoutDoubleSpaces();
+			if (!processedMentions.contains(mentionText)) { //make sure to process each mention text only once!
+				processedMentions.add(mentionText);
+				boolean exit = false;	
+
+				HashMap<String,BigDecimal> sumCategoryScoresBigDecimalForMention = new HashMap<String,BigDecimal>();
+				for (PerNodeScore perNodeScore : match.getScores()) { //deal with all nodes, not just the best one
+					logger.info("Number of matching nodes for mention: " + match.getScores().size());
+					if (match.getScores().size() > 1) {
+						for (PerNodeScore score : match.getScores()) 
+							logger.debug(score.getNode().getLabel());
+						//System.exit(1); //TODO: REMOVE (DEBUGGING ONLY)
+					}
+					if (exit) {
+						break;
+					}
+					EquivalenceClass node; 
+					if (bestNodeOnly) {
+						node = getBestMatchingNode(match);	
+						exit = true;
+					} else {
+						node = perNodeScore.getNode();
+					}
+					
+					//compute idf for "query" (incoming request)
+					double df = node.getCategoryConfidences().size(); //number of categories associated to the mention
+					//if category assigned to the mention is not part of the node yet, add 1:
+					double idfForQuery = 1; 
+					if (documentFrequencyQuery =='d') idfForQuery = 1/df;
+					if (documentFrequencyQuery == 't') idfForQuery = Math.log(N/df);
+					
+					//compute tf for "query" (incoming request)
+					double tfForQuery = tfQueryMap.get(match.getMention().getTextWithoutDoubleSpaces()); 										
+					countDecisions += (tfForQuery*df);
+					if (termFrequencyQuery == 'l') { //logarithm
+						tfForQuery = 1 + Math.log(tfForQuery); // = "wf-idf"
+					} else if (termFrequencyQuery == 'b') { //boolean
+						if (tfForQuery > 0) tfForQuery = 1;
+					}
+					
+					//compute node score
+					double nodeScore = 1.0;
+					if (!bestNodeOnly) nodeScore = perNodeScore.getScore();		
+						
+					//OBS! Slight change of original TF-IDF formular: We integrate the score associated to the node (representing the confidence of the match)
+					double scoreForQuery = nodeScore*tfForQuery*idfForQuery;					
+
+					//length boost: boost longer text units based on the number of contained tokens
+					double length = match.getMention().getTextWithoutDoubleSpaces().split("\\s+").length;
+					if (lengthBoost) scoreForQuery *= length;
+
+					//retrieve tfidf for "document" (category)
+					Map<String,Double> tfidfScoresForCategories = node.getCategoryConfidences();				
+					
+					for (String category : node.getCategoryConfidences().keySet()) { //for each category associated to this node (do once per mention text)
+						double D = tfidfScoresForCategories.get(category); //category score in matching node
+						BigDecimal scoreForMention = new BigDecimal(scoreForQuery*D); //multiply with scoreForQuery, e.g. simple tf
+						if (sumCategoryScoresBigDecimalForMention.containsKey(category)) {
+							scoreForMention = sumCategoryScoresBigDecimalForMention.get(category).add(scoreForMention);
+						}
+						sumCategoryScoresBigDecimalForMention.put(category, scoreForMention);
+					}	
+					logger.debug("for mention: " + sumCategoryScoresBigDecimalForMention);
+				}
+
+				//TODO: Check this part again! initialization of the scoreForMention 
+				//normalize values based on number of returned nodes (add only a single value per mention to avoid giving too much weight to mentions with entailed nodes)
+				for (String category : sumCategoryScoresBigDecimalForMention.keySet()) {
+					numberOfAddedUpValues++;
+					BigDecimal scoreForMention = sumCategoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
+					overallSum = overallSum.add(scoreForMention);
+					if (categoryScoresBigDecimal.containsKey(category)) {
+						scoreForMention = categoryScoresBigDecimal.get(category).add(scoreForMention);
+					}
+					categoryScoresBigDecimal.put(category, scoreForMention);
+				}
+				logger.debug("normalized: " + categoryScoresBigDecimal);
+			}
+		}
+		
+		logger.debug("overallSum: " + overallSum);
+		logger.debug("Number of node matches: " + matches.size());
+		logger.debug("Number of added up Values: " + numberOfAddedUpValues);
+		logger.debug("Number of processed mentions: " + processedMentions.size());
+		logger.debug("Number of category decisions: " + countDecisions);
+		logger.debug("Category scores big decimal in tfidf: " + categoryScoresBigDecimal);
+	}
+
+	private static void computeBestCatsUsingNaiveBayes(
+			EntailmentGraphCollapsed graph, Set<NodeMatch> matches,
+			String method, HashMap<String, BigDecimal> categoryScoresBigDecimal) {
+		HashMap<String,BigDecimal> preliminaryCategoryScores = new HashMap<String,BigDecimal>();
+		for (NodeMatch nodeMatch : matches) { //for each matching mention in the document
+			EquivalenceClass bestNode = getBestMatchingNode(nodeMatch);
+			//category confidences on node
+			Map<String, Double> categoryConfidencesOnNode = bestNode.getCategoryConfidences();
+			logger.info("Category confidences on node: " + categoryConfidencesOnNode);
+			try { 
+				if (method.equals("bayes")) { //multiply all values P(w_j|c_i) for j = 1..V (vocabulary size)
+					for (String category : categoryConfidencesOnNode.keySet()) {	
+						BigDecimal product = new BigDecimal("1");
+						if (preliminaryCategoryScores.containsKey(category)) {
+							product = preliminaryCategoryScores.get(category); //read product in case we've stored a product from a previous node
+						}
+						product = product.multiply(new BigDecimal(categoryConfidencesOnNode.get(category)));
+						preliminaryCategoryScores.put(category, product);
+					}
+				} else if (method.equals("bayes_log")) {
+					for (String category : categoryConfidencesOnNode.keySet()) {	
+						BigDecimal log_sum = new BigDecimal("0");
+						if (preliminaryCategoryScores.containsKey(category)) {
+							log_sum = preliminaryCategoryScores.get(category); //read log sum in case we've stored it from a previous node
+						}
+						log_sum = log_sum.add(new BigDecimal(categoryConfidencesOnNode.get(category)));
+						preliminaryCategoryScores.put(category, log_sum);
+					}							
+				} else {
+					logger.error("Implementation missing for method " + method);
+					System.exit(1);							
+				}
+			} catch (NullPointerException e) {
+				logger.error("Missing category confidences. Run ConfidenceCalculator on graph!");
+				System.exit(1);
+			}					
+		}
+		logger.info("preliminaryCategoryScores: " + preliminaryCategoryScores);
+		//calculate P(c_i|W) = P(c_i) x PRODUCT_j=1..V (P(w_j|c_i)
+		//PRODUCT is already stored in preliminaryCategoryScores
+		for (String category : preliminaryCategoryScores.keySet()) {	
+			//estimate the priors from the sample: Math.log((double)count/knowledgeBase.n)
+			BigDecimal finalConfidence = null;
+			if (method.equals("bayes")) { //multiply prior with product
+				BigDecimal prior = 
+						new BigDecimal(graph.getGraphStatistics().getNumberOfMentionsPerCategory().get(category) 
+//						/ graph.getGraphStatistics().getTotalNumberOfMentions()  //can be ignored, as it's the same value for all categories
+								);
+				finalConfidence =  prior.multiply(preliminaryCategoryScores.get(category));
+			} else if (method.equals("bayes_log")) { //sum up prior and log sum
+				BigDecimal prior = new BigDecimal(Math.log(
+					(double) graph.getGraphStatistics().getNumberOfMentionsPerCategory().get(category) 
+					/ (double) graph.getGraphStatistics().getTotalNumberOfMentions())); 
+				finalConfidence = prior.add(preliminaryCategoryScores.get(category));
+			}
+			categoryScoresBigDecimal.put(category, finalConfidence);
+		}
+		logger.info("category scores big decimal: " + categoryScoresBigDecimal);
 	}
 
 
