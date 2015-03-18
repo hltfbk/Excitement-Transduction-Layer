@@ -193,7 +193,6 @@ public class EvaluatorUtils {
 		int countDecisions = 0;
 
 		BigDecimal overallSum = new BigDecimal("0");
-		BigDecimal sumScoreForMatchingMention = new BigDecimal("0");				
 		
 		for (NodeMatch match : matches) { //for each matching mention	
 			String mentionText = match.getMention().getTextWithoutDoubleSpaces();
@@ -261,16 +260,15 @@ public class EvaluatorUtils {
 					logger.debug("for mention: " + sumCategoryScoresBigDecimalForMention);
 				}
 
-				//TODO: Check this part again! initialization of the scoreForMention 
 				//normalize values based on number of returned nodes (add only a single value per mention to avoid giving too much weight to mentions with entailed nodes)
 				for (String category : sumCategoryScoresBigDecimalForMention.keySet()) {
 					numberOfAddedUpValues++;
-					BigDecimal scoreForMention = sumCategoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
-					overallSum = overallSum.add(scoreForMention);
+					BigDecimal normalizedScoreForMention = sumCategoryScoresBigDecimalForMention.get(category).divide(new BigDecimal(match.getScores().size()), MathContext.DECIMAL128); 
+					overallSum = overallSum.add(normalizedScoreForMention);
 					if (categoryScoresBigDecimal.containsKey(category)) {
-						scoreForMention = categoryScoresBigDecimal.get(category).add(scoreForMention);
+						normalizedScoreForMention = categoryScoresBigDecimal.get(category).add(normalizedScoreForMention);
 					}
-					categoryScoresBigDecimal.put(category, scoreForMention);
+					categoryScoresBigDecimal.put(category, normalizedScoreForMention);
 				}
 				logger.debug("normalized: " + categoryScoresBigDecimal);
 			}
