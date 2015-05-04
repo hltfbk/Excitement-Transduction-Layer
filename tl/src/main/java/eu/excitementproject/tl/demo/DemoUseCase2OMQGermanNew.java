@@ -223,7 +223,7 @@ public class DemoUseCase2OMQGermanNew {
 						countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
 								doc, decisions, mostProbableCat, finalCollapsedGraph, matches, topN,
 								method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
-								lengthBoost);
+								lengthBoost, null, "", null);
 						logger.info("countPositive: " + countPositive);
 					} catch (LAPException | FragmentAnnotatorException
 							| ModifierAnnotatorException
