@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -488,8 +489,12 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			Element rootElement = doc.createElement("collapsedGraph");
 			doc.appendChild(rootElement);
  
+			// sort nodes in graph
+			List<EquivalenceClass> nodes = new LinkedList<EquivalenceClass>(this.vertexSet());
+			Collections.sort(nodes, new EntailmentGraphCollapsed.NodesComparator());
+			
 			// add nodes
-			for (EquivalenceClass ec : this.vertexSet()){
+			for (EquivalenceClass ec : nodes){
 				// staff elements
 				Element equivalenceClassNode = doc.createElement("equivalenceClassNode");
 				rootElement.appendChild(equivalenceClassNode);
@@ -878,6 +883,19 @@ public class EntailmentGraphCollapsed extends DefaultDirectedWeightedGraph<Equiv
 			e.printStackTrace();
 		}
 	}*/	
-
+	/**
+	 * Comparator to sort nodes in a collapsed graph
+	 */
+	public static class NodesComparator implements Comparator<EquivalenceClass> {
+	    @Override
+	    public int compare(EquivalenceClass nA, EquivalenceClass nB) {
+	        return (nA.getLabel().compareTo(nB.getLabel()));
+	        //return gA.getCompleteStatement().getText()
+	        //.compareTo(gB.getCompleteStatement().getText());
+	    }
+	}
 
 }
+
+
+
