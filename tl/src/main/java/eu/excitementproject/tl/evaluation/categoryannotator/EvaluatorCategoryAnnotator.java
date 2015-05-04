@@ -1048,7 +1048,7 @@ public class EvaluatorCategoryAnnotator {
 			char documentFrequencyQuery, char termFrequencyQuery) {
 		return EvaluatorUtils.compareDecisionsForInteraction(countPositive, doc, decisions, "N/A", 
 				graph, matches, topN, method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
-				lengthBoost);
+				lengthBoost, null, "", null);
 	}
 	
 	/**
@@ -1285,7 +1285,7 @@ public class EvaluatorCategoryAnnotator {
 					countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
 							interaction, decisions, mostProbableCat, graph, matches, topN, 
 							method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
-							lengthBoost);				
+							lengthBoost, null, "", null);				
 				}
 		    	logger.info("Count positive: " + countPositive);
 		    	double countTotal = countTotalNumberOfCategories(testDocs);
@@ -1816,7 +1816,7 @@ public class EvaluatorCategoryAnnotator {
 			countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
 					doc, decisions, mostProbableCat, egc, matches, topN, 
 					method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
-					lengthBoost);
+					lengthBoost, null, "", null);
 			
 			writer.println(doc.getInteractionId() + " : " + countPositive);
 			
