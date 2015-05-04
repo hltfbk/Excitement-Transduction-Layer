@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -113,7 +115,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
     private static PrintWriter writer; 
     private static PrintWriter writerResult; 
     public static PrintWriter writerFoEvalResult; 
-	
+    
 	/** set automatically **/
 	private static NodeMatcher nodeMatcher;
 	private static NodeMatcherWithIndex nodeMatcherWithIndex;
@@ -174,8 +176,15 @@ public class EvaluatorCategoryAnnotator_Vers2 {
   			POSTag_DE.PTKNEG, POSTag_DE.PTKVZ}); //"ADV" = adverb, "FM" = foreign language material
   	
     private static List<POSTag_DE> dependentPosFilter = governorPosFilter;
+//    private static List<POSTag_DE> dependentPosFilter = Arrays.asList(new POSTag_DE [] {POSTag_DE.PTKNEG}); //set this for mapping ONLY negation dependencies
   	private static List<String> governorWordFilter = Arrays.asList(new String []{"ohne"});
   	private static List<String> dependentWordFilter = Arrays.asList(new String []{"keine", "keinerlei", "nicht", "nichts"});
+  	
+// 	private static List<String> dependencyTypeFilter = Arrays.asList(new String [] {});
+	private static List<String> dependencyTypeFilter = Arrays.asList(new String [] {"SVP"}); //separable verbs
+//	private static List<String> dependencyTypeFilter = Arrays.asList(new String [] {"NK"}); //noun kernel, e.g. "internes Problem"
+//	private static List<String> dependencyTypeFilter = Arrays.asList(new String [] {"CJ"}); //conjunct
+// 	private static List<String> dependencyTypeFilter = Arrays.asList(new String [] {"NK", "CJ", "SVP"}); //beste Konfiguration (früher)
   	
     /* SMART notation for tf-idf variants, as in Manning et al., chapter 6, p.128 */
 	// Query (email) weighting: --> relevant when categorizing new emails
@@ -193,35 +202,45 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	private static int setupSentence = -1;//use topArrays to set the parameter, set to -1 if no sentence fragments should be processed
 	
 	private static int [][] setupArrays = {
-				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
+//				{0, -1, -1}, //{0, -1, -1} = setupToken = 0 (no eda), setupDependency = -1, setupSentence = -1 (no token or dependency fragments processed)
 				
-				/*
 				//TOKENS
-				{201, -1, -1}, {202, -1, -1}, {212, -1, -1}, {203, -1, -1}, {204, -1, -1}, {214, -1, -1},
+//				{201, -1, -1}, {202, -1, -1}, {212, -1, -1}, {203, -1, -1}, {204, -1, -1}, {214, -1, -1},
 				
 				//TOKEN + DEPENDENCy
-				{0,  0, -1}
-				{201,  201, -1}, {201,  202, -1}, {201,  212, -1}, {201,  203, -1}, {201,  204, -1}, {201,  214, -1},
+//				{0,  0, -1},
+//				{201, 201, -1}, {202, 202, -1}, {212, 212, -1}, {203, 203, -1}, {204, 204, -1}, {214, 214, -1},
+//				{201,  201, -1}, {201,  202, -1}, {201,  212, -1}, {201,  203, -1}, {201,  204, -1}, {201,  214, -1},
+//				{201,  217, -1}, 
+			//	{201,  2011, -1}, {201,  2021, -1}, {201,  2121, -1}, {201,  2031, -1}, {201,  2041, -1}, {201,  2141, -1},
+		//		{201,  217, -1}, 
+				{203,  201, -1}, //{203,  202, -1}, 
+				{203,  212, -1}, {203,  203, -1}, 
+				//{203,  204, -1}, 
+				{203,  214, -1},
+				{203,  217, -1},
+				/*
 				{202,  201, -1}, {202,  202, -1}, {202,  212, -1}, {202,  203, -1}, {202,  204, -1}, {202,  214, -1},
 				{212,  201, -1}, {212,  202, -1}, {212,  212, -1}, {212,  203, -1}, {212,  204, -1}, {212,  214, -1},
 				{204,  201, -1}, {204,  202, -1}, {204,  212, -1}, {204,  203, -1}, {204,  204, -1}, {204,  214, -1},
 				{214,  201, -1}, {214,  202, -1}, {214,  212, -1}, {214,  203, -1}, {214,  204, -1}, {214,  214, -1},
 				{207,  201, -1}, {207,  202, -1}, {207,  212, -1}, {207,  203, -1}, {207,  204, -1}, {207,  214, -1},
 				{217,  201, -1}, {217,  202, -1}, {217,  212, -1}, {217,  203, -1}, {217,  204, -1}, {217,  214, -1},
-				
+
 				//TOKEN + SENTENCE
 				{203, 207, 25}
 				*/
 				}; 
+	private static String setupString;
 	private static int topN; //use topNArray to set the parameter
 	private static int [] topNArray = {1};
 	
-	private static WordDecompositionType decompTypeToken = WordDecompositionType.NONE; 
+	//private static WordDecompositionType decompTypeToken = WordDecompositionType.NONE; 
+	//private static WordDecompositionType decompTypeToken = WordDecompositionType.NONE;
+	private static WordDecompositionType decompTypeToken = WordDecompositionType.ONLY_HYPHEN; 	
 	private static WordDecompositionType decompTypeDependency = WordDecompositionType.NONE; 
-	/*
-	private static WordDecompositionType decompTypeToken = WordDecompositionType.NO_RESTRICTION; 	
-	private static WordDecompositionType decompTypeDependency = WordDecompositionType.NO_RESTRICTION; 
-	*/
+	//private static WordDecompositionType decompTypeDependency = WordDecompositionType.NO_RESTRICTION; 
+	//private static WordDecompositionType decompTypeDependency = WordDecompositionType.ONLY_HYPHEN; 
 	
 	private static boolean addLemmaEdgesDependencyToToken = false;
 	private boolean removeTokenMatches = false; //set to true only if addLemmaEdgesDependencyToToken = true
@@ -253,6 +272,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				setupToken = setup[0];
 				setupDependency = setup[1];
 				setupSentence = setup[2];
+				setupString = ""+setupToken+setupDependency+setupSentence;
 				if(setupToken == 0 || setupDependency == 0 || setupSentence == 0){
 		    		addLemmaLabel = false;
 		    	}
@@ -274,6 +294,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
                     }
 //               	evc.runIncrementalEvaluation(inputFoldername, outputGraphFoldername, categoriesFilename);
                     evc.runEvaluationThreeFoldCross(inputFoldername, outputGraphFoldername, categoriesFilename);
+ //                   evc.runEvaluationOnCategoryDescriptions(inputFoldername, outputGraphFoldername, categoriesFilename);
                     writerFoEvalResult.flush();
 				}
 				readCollpasedGraphFromFile = tmpReadCollpasedGraphFromFile;
@@ -344,8 +365,13 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		
 		//setup for dependency fragments
 		if(setupDependency > -1){
-			fragAnnotatorDependency = new DependencyAsFragmentAnnotatorForGerman(lap, governorPosFilter, 
+			if (dependencyTypeFilter.size() > 0) {
+				fragAnnotatorDependency = new DependencyAsFragmentAnnotatorForGerman(lap, dependencyTypeFilter, governorPosFilter, 
 					governorWordFilter, dependentPosFilter, dependentWordFilter, decompTypeDependency);
+			} else {
+				fragAnnotatorDependency = new DependencyAsFragmentAnnotatorForGerman(lap, governorPosFilter, 
+						governorWordFilter, dependentPosFilter, dependentWordFilter, decompTypeDependency);
+			}
 			if(setupDependency > 0){
 				edaDependency = getEDA(setupDependency);
 				if(edaDependency == null){
@@ -504,7 +530,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		
 		switch(setup){
 		/** 201 - 204 are almost the same as TIE. The differences are: 
-		 * - SEDA always includes Conversion (even if DerivBase is not activ)
+		 * - SEDA always includes Conversion (even if DerivBase is not active)
 		 * - SEDA performs better if lemma has form lemma|lemma
 		 * - if decomposition is used, then there might be some errors in building edges due to not optimal lemmatizing **/
 		case 201: //Lemma+Conversion
@@ -515,6 +541,14 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+		case 2011: //Lemma+Conversion+negation mapping
+			dbr = null;
+			gnw = null;
+			germaNetRelations = null;
+			splitter = null;
+			onlyBidirectionalEdges = false;
+			mapNegation = true;
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 202: //Lemma+Conversion, GermaNet (all TE relations)
 			dbr = null;
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -522,6 +556,14 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+		case 2021: //Lemma+Conversion, GermaNet (all TE relations)+negation mapping
+			dbr = null;
+			gnw = new GermaNetWrapper(pathToGermaNet);
+			germaNetRelations =  Arrays.asList(relations);
+			splitter = null;
+			onlyBidirectionalEdges = false;
+			mapNegation = true;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 212: //Lemma+Conversion, GermaNet (only synonyms)
 			dbr = null;
@@ -531,6 +573,14 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			onlyBidirectionalEdges = true;
 			mapNegation = false;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+		case 2121: //Lemma+Conversion, GermaNet (only synonyms)+negation mapping
+			dbr = null;
+			gnw = new GermaNetWrapper(pathToGermaNet);
+			germaNetRelations =  Arrays.asList(relations);
+			splitter = null;
+			onlyBidirectionalEdges = true;
+			mapNegation = true;
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 203: //Lemma+Conversion, Derivation 2
 			dbr = new DerivBaseResource(true, 2);
 			gnw = null;
@@ -539,6 +589,14 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+		case 2031: //Lemma+Conversion, Derivation 2 + negation mapping
+			dbr = new DerivBaseResource(true, 2);
+			gnw = null;
+			germaNetRelations =  null;
+			splitter = null;
+			onlyBidirectionalEdges = false;
+			mapNegation = true;
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 204: //Lemma+Conversion, Derivation,  GermaNet (all TE relations)
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -546,6 +604,14 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			splitter = null;
 			onlyBidirectionalEdges = false;
 			mapNegation = false;
+			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
+		case 2041: //Lemma+Conversion, Derivation,  GermaNet (all TE relations) + negation mapping
+			dbr = new DerivBaseResource(true, 2);
+			gnw = new GermaNetWrapper(pathToGermaNet);
+			germaNetRelations =  Arrays.asList(relations);
+			splitter = null;
+			onlyBidirectionalEdges = false;
+			mapNegation = true;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
 		case 214: //Lemma+Conversion, Derivation, GermaNet (only synonyms)
 			dbr = new DerivBaseResource(true, 2);
@@ -571,7 +637,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			onlyBidirectionalEdges = true;
 			mapNegation = true;
 			return new SEDAGraphBuilder(dbr, gnw, germaNetRelations, splitter, mapNegation, onlyBidirectionalEdges, applyTransitiveClosure);
-    	
     	case 208://207 without mapNegation
 			dbr = new DerivBaseResource(true, 2);
 			gnw = new GermaNetWrapper(pathToGermaNet);
@@ -959,6 +1024,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				+ "_LE_" + addLemmaEdgesDependencyToToken
 				+ "_TC_" + applyTransitiveClosure
 				+ "_ADDDATA_" + addSecondDataSetForGraphBuilding
+				+ "_dependencyTypeFilter_" + dependencyTypeFilter
 				+ ".xml";
 		return name;
 	}
@@ -978,6 +1044,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				+ "_LE" + addLemmaEdgesDependencyToToken 
 				+ "_TC_" + applyTransitiveClosure
 				+ "_ADDDATA_" + addSecondDataSetForGraphBuilding
+				+ "_dependencyTypeFilter_" + dependencyTypeFilter
 				+ ".xml";
 		return name;
 	}
@@ -999,13 +1066,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	 */
 	public void runIncrementalEvaluation(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
 
-		//some prints for debugging, don't change it to logger!!!
-		String setupMetaData = createEvaluationDescription();
-        System.out.println(setupMetaData);
-        
-    	writer.println(setupMetaData);
-    	writerResult.println(setupMetaData);
-		
 		List<Double> accuracyPerRun = new ArrayList<Double>();
 		String emailFileName = "omq_public_1_emails_unsorted.xml";
 //		String emailFileName = "omq_public_emails_all_unsorted.xml";
@@ -1109,15 +1169,22 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				nodeMatcherWithIndex.indexGraphNodes();
 				nodeMatcherWithIndex.initializeSearch();
 			} else {
-				if(entailedNodeScore > 0.0){
-					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly, entailedNodeScore);
-				} else {
+//				if(entailedNodeScore > 0.0){
+//					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly, entailedNodeScore);
+//				} else {
 //					nodeMatcher = new NodeMatcherLongestOnly(egc, bestNodeOnly);
 					//TODO: integrate SEDANodeMatcher with ressources
 					nodeMatcher = new SEDANodeMatcherLongestOnly(egc, bestNodeOnly, null, null, null, null, false, entailedNodeScore);
-				}
+//				}
 			}
-				
+			
+			//some prints for debugging, don't change it to logger!!!
+			String setupMetaData = createEvaluationDescription();
+	        System.out.println(setupMetaData);
+	        
+	    	writer.println(setupMetaData);
+	    	writerResult.println(setupMetaData);
+			
 			//build token fragments for evaluation (relevantTextProvided = false!) **/
 			Set<FragmentGraph> fgsAllForEval  = buildFragmentGraphs(doc, setupToken, setupDependency, setupSentence, false); 
 			logger.info(fgsAllForEval.size() + " fragment graphs for evaluation");
@@ -1152,11 +1219,15 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			//compare annotation of interaction to manual annotation
 			logger.info("Graph contains " + egc.vertexSet().size() + " nodes ");
 			mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(egc); //compute most frequent category in graph
+			System.out.println("START COMPARISON");
+
+			File tempEvalResult = File.createTempFile(("_eval_results_" + System.currentTimeMillis()), ".tmp");
+			writerFoEvalResult = new PrintWriter(new FileOutputStream(tempEvalResult), true);
 			countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
 					doc, decisions, mostProbableCat, egc, matches, topN, 
 					method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
-					lengthBoost);
-		
+					lengthBoost, null, setupString, writer);
+			
 			double accuracy = (double) countPositive / (double) run;	
 			if(counPositiveOld == countPositive) {
 				System.out.println("Run " + run + ":\t" + accuracy + "\t " + countPositive + "\t"+ false +"\t " +  doc.getInteractionId() + "\t " +  doc.getCategoryString());
@@ -1238,6 +1309,138 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	}
 	
 	/**
+	 * Runs a single evaluation on all email files on a graph produced using the category descriptions only. 
+	 */
+	public void runEvaluationOnCategoryDescriptions(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
+		String setupMetaData = createEvaluationDescription();
+        System.out.println(setupMetaData);
+        writer.println(setupMetaData);
+    	writerResult.println(setupMetaData);
+		   
+	    //Reading categories
+	  	List<Interaction> categoryDocs = new ArrayList<Interaction>();
+	  	categoryDocs = CategoryReader.readCategoryXML(new File(categoriesFilename));
+	   	List<Interaction> emailDocs = new ArrayList<Interaction>();
+		List<Interaction> testDocs = new ArrayList<Interaction>();
+		
+		HashMap<Integer, Double> foldAccuracies = new HashMap<>();
+		HashMap<Integer, Double> foldMAPs = new HashMap<>();
+		HashMap<Integer, BigDecimal> foldMRRs = new HashMap<Integer,BigDecimal>();
+	   	HashMap<Integer, Integer> foldCountPositive = new HashMap<>();
+
+    	emailDocs.clear();
+    	testDocs.clear();
+	    	
+    	//Read entailment graph EG or generate it from category documents set
+    	EntailmentGraphCollapsed egc = new EntailmentGraphCollapsed();
+    	EntailmentGraphRaw egr;
+    	File rawGraphFile = new File(outputGraphFoldername + "/" + createRawGraphFileName("omq_public_categories_raw_graph"));
+    	File collapsedGraphFile = new File(outputGraphFoldername + "/" + createCollapsedGraphFileName("omq_public_categories_collapsed_graph"));
+	    	
+		String mostProbableCat;
+		if (readCollpasedGraphFromFile) { // read graph
+			logger.info("Reading collapsed graph from " + collapsedGraphFile.getAbsolutePath());
+    		egc = new EntailmentGraphCollapsed(collapsedGraphFile);
+    		logger.info("Collapsed graph: number of nodes / edges " + egc.vertexSet().size() + egc.edgeSet().size());
+		}
+		else if(buildCollapsedGraphFromRawGraphFile){
+			// build collapsed graph from existing raw graph
+			// useful to build a new collapsed graph with new method
+			logger.info("Reading raw graph from " + rawGraphFile.getAbsolutePath());
+			egr = new EntailmentGraphRaw(rawGraphFile);
+			logger.info("Building collapsed graph from an existing raw graph file");
+			egc = this.buildCollapsedGraphWithCategoryInfo(egr);
+			logger.info("Collapsed graph: number of nodes / edges " + egc.vertexSet().size() + egc.edgeSet().size());
+    		XMLFileWriter.write(egc.toXML(), collapsedGraphFile.getAbsolutePath());			
+    		logger.info("Wrote graph to : " + collapsedGraphFile.getAbsolutePath());
+		} 
+		else { //build raw graph from categories
+			egr = new EntailmentGraphRaw(addLemmaLabel);
+			EntailmentGraphRaw singleTokenRawGraph = new EntailmentGraphRaw(addLemmaLabel);
+			EntailmentGraphRaw dependencyRawGraph = new EntailmentGraphRaw(addLemmaLabel);
+			EntailmentGraphRaw sentenceRawGraph = new EntailmentGraphRaw(addLemmaLabel);
+			
+			egr = buildRawGraph(categoryDocs, setupToken, singleTokenRawGraph, setupDependency, dependencyRawGraph, 
+						setupSentence, sentenceRawGraph, false, minTokenOccurrence);					
+			System.out.println("Big Raw Graph has nodes: " + egr.vertexSet().size());
+			System.out.println("Big Raw Graph has edges: " + egr.edgeSet().size());
+			XMLFileWriter.write(egr.toXML(), rawGraphFile.getAbsolutePath());			
+    		logger.info("Wrote graph to : " + collapsedGraphFile.getAbsolutePath());
+    		
+    		//build collapsed graph
+    		egc = buildCollapsedGraphWithCategoryInfo(egr);
+    		System.out.println("Number of nodes in collapsed graph: number of nodes: " + egc.vertexSet().size());
+    		System.out.println("Number of nodes in collapsed graph: number of edges: " + egc.edgeSet().size());
+    		
+    		XMLFileWriter.write(egc.toXML(), collapsedGraphFile.getAbsolutePath());			
+    		logger.info("Wrote graph to : " + collapsedGraphFile.getAbsolutePath());
+		}
+    		
+		mostProbableCat = EvaluatorUtils.computeMostFrequentCategory(egc);
+		System.out.println("Most frequent category in graph: " + mostProbableCat);
+		
+		//annotate interaction and evaluate
+    	if (!skipEval) {
+    		File tempAnalysis = File.createTempFile(("analysis_"+setupString+"_"+System.currentTimeMillis()), ".csv");						
+			PrintWriter writerAnalysis = new PrintWriter(new FileOutputStream(tempAnalysis), true);
+    		for (int i=1; i<=3; i++) {
+    			File testFile = new File(inputDataFoldername + "omq_public_"+i+"_emails.xml"); 
+				logger.info("Reading test file " + testFile.getName());	    			
+				testDocs.addAll(InteractionReader.readInteractionXML(testFile));
+    		}
+			System.out.println("Test set now contains " + testDocs.size() + " documents");
+	    	//For each email E in the test set, send it to nodematcher / category annotator and have it annotated
+			int countPositive = 0;
+			JCas casInteraction = CASUtils.createNewInputCas();
+			for (Interaction interaction : testDocs) {
+				logger.info("-----------------------------------------------------");
+				logger.info("Processing test interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
+				writer.println("Processing test interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
+				
+				interaction.fillInputCAS(casInteraction);	
+				logger.info("category: " + CASUtils.getTLMetaData(casInteraction).getCategory());
+				
+				//build token fragments for evaluation
+				Set<FragmentGraph> fragmentGraphs = buildFragmentGraphs(interaction, setupToken, setupDependency, setupSentence, false);
+				logger.debug("Number of all fragment graphs for evaluation: " + fragmentGraphs.size());
+					
+				//get matches
+				Set<NodeMatch> matches = getMatches(egc, fragmentGraphs,removeTokenMatches);	
+				logger.debug("Number of matches: " + matches.size());
+				
+				for (NodeMatch match : matches) {
+					for (PerNodeScore score : match.getScores()) {
+						logger.debug("match score for "+ score.getNode().getLabel() + ": " + score.getNode().getCategoryConfidences());
+					}
+				}
+					
+				//add category annotation to CAS
+				categoryAnnotator.addCategoryAnnotation(casInteraction, matches);
+				
+				//Compare automatic to manual annotation
+                Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(casInteraction);
+                                   
+                countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
+                        interaction, decisions, mostProbableCat, egc, matches, topN,
+                        method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery,
+                        lengthBoost, writerAnalysis, setupString, writer);           
+			}
+				
+	    	logger.info("Count positive: " + countPositive);
+	    	double countTotal = countTotalNumberOfCategories(testDocs);
+            double accuracyInThisFold = ((double)countPositive / countTotal);
+            foldAccuracies.put(1, accuracyInThisFold);
+            foldCountPositive.put(1, countPositive);
+            for (int fold : foldAccuracies.keySet()) {
+                countPositive = foldCountPositive.get(fold);
+             }
+            printResult(topN, 1, foldAccuracies, foldMAPs, foldMRRs, foldCountPositive);
+                
+            writerAnalysis.close();
+    	} // if skipEval	
+	}
+	
+	/**
 	 * Runs three-fold cross-validation on the files found in the input directory. This directory must contain
 	 * exactly three email files (named "omq_public_[123]_emails.xml") plus exactly one TH pair file for each of these email
 	 * files (same file name but ending with "_th.xml"). 
@@ -1257,11 +1460,6 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	public void runEvaluationThreeFoldCross(String inputDataFoldername, String outputGraphFoldername, String categoriesFilename) throws Exception {
 		Map<Integer, File> fileIndex = indexFilesinDirectory(inputDataFoldername);	    	
 
-		String setupMetaData = createEvaluationDescription();
-        System.out.println(setupMetaData);
-        writer.println(setupMetaData);
-    	writerResult.println(setupMetaData);
-		
 	    //check if there are enough files in the dir
 	    double numberOfFolds = 3;
 	    if (processTrainingData && fileIndex.size() < 6) { //TODO: elaborate this check (is the type of file correct: three interaction and three TH pair files)
@@ -1279,6 +1477,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		List<Interaction> graphDocs = new ArrayList<Interaction>();
 		
 		HashMap<Integer, Double> foldAccuracies = new HashMap<>();
+		HashMap<Integer, Double> foldMAPs = new HashMap<>();
+		HashMap<Integer, BigDecimal> foldMRRs = new HashMap<>();
 	   	HashMap<Integer, Integer> foldCountPositive = new HashMap<>();
 
 	   	for (int i=1; i<=numberOfFolds; i++) { //Create a fold for each of the three input files
@@ -1315,7 +1515,7 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		    		XMLFileWriter.write(egc.toXML(), collapsedGraphFile.getAbsolutePath());			
 		    		logger.info("Wrote graph to : " + collapsedGraphFile.getAbsolutePath());
     		} 
-    		else { // build graph    	    		
+    		else { // build graph from scratch  	    		
 				//read interactions for graph building
 				String graphDocumentsFilename = inputDataFoldername + "omq_public_"+j+"_emails.xml";
 				logger.info("Reading documents for graph building from " + graphDocumentsFilename);	    			
@@ -1349,10 +1549,13 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				EntailmentGraphRaw singleTokenRawGraph = new EntailmentGraphRaw(addLemmaLabel);
 				EntailmentGraphRaw dependencyRawGraph = new EntailmentGraphRaw(addLemmaLabel);
 				EntailmentGraphRaw sentenceRawGraph = new EntailmentGraphRaw(addLemmaLabel);
+				
+				//build raw graph from email and category docs
 				egr = buildRawGraph(emailDocs, setupToken, singleTokenRawGraph, setupDependency, dependencyRawGraph, 
 						setupSentence, sentenceRawGraph, relevantTextProvided, minTokenOccurrenceInCategories);
 				egr = buildRawGraph(categoryDocs, setupToken, singleTokenRawGraph, setupDependency, dependencyRawGraph, 
 						setupSentence, sentenceRawGraph, false, minTokenOccurrence);
+					
 				System.out.println("Big Raw Graph has nodes: " + egr.vertexSet().size());
 				System.out.println("Big Raw Graph has edges: " + egr.edgeSet().size());
 				XMLFileWriter.write(egr.toXML(), rawGraphFile.getAbsolutePath());			
@@ -1372,6 +1575,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
     		
 			//annotate interaction and evaluate
 	    	if (!skipEval) {
+	    		File tempAnalysis = File.createTempFile(("analysis_"+setupString+"_"+System.currentTimeMillis()), ".csv");						
+				PrintWriter writerAnalysis = new PrintWriter(new FileOutputStream(tempAnalysis), true);
 	    		System.out.println("Evaluating fold: " + i);
 	    		File testFile = new File(inputDataFoldername + "omq_public_"+i+"_emails.xml"); //TODO: replace?
 				logger.info("Reading test file " + testFile.getName());	    			
@@ -1380,6 +1585,8 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 		    	//For each email E in the test set, send it to nodematcher / category annotator and have it annotated
 				int countPositive = 0;
 				JCas casInteraction = CASUtils.createNewInputCas();
+				double sumAPs = 0.0;
+				BigDecimal sumRRs = new BigDecimal("0");
 				for (Interaction interaction : testDocs) {
 					logger.info("-----------------------------------------------------");
 					logger.info("Processing test interaction " + interaction.getInteractionId() + " with category " + interaction.getCategoryString());
@@ -1426,27 +1633,54 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 					//print CAS category
 					//CASUtils.dumpAnnotationsInCAS(cas, CategoryAnnotation.type);
 					
-			    	//Compare automatic to manual annotation
-					Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(casInteraction);
-										
-					countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
-							interaction, decisions, mostProbableCat, egc, matches, topN, 
-							method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery, 
-							lengthBoost);			
+					//Compare automatic to manual annotation
+	                Set<CategoryDecision> decisions = CASUtils.getCategoryAnnotationsInCAS(casInteraction);
+	                                   
+	                countPositive = EvaluatorUtils.compareDecisionsForInteraction(countPositive,
+	                        interaction, decisions, mostProbableCat, egc, matches, topN,
+	                        method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery,
+	                        lengthBoost, writerAnalysis, setupString, writer);           
+	                double AP =
+	                        EvaluatorUtils.computeAveragePrecision(
+	                                interaction, decisions, mostProbableCat, egc, matches, topN,
+	                                method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery,
+	                                lengthBoost, writer);
+	                sumAPs += AP;
+	               
+	                BigDecimal RR = EvaluatorUtils.computeReciprocalRank(
+	                        interaction, decisions, mostProbableCat, egc, matches, topN,
+	                        method, bestNodeOnly, documentFrequencyQuery, termFrequencyQuery,
+	                        lengthBoost, writer);
+	                sumRRs = sumRRs.add(RR);
+
 				}
 				
-		    	logger.info("Count positive: " + countPositive);
-		    	double countTotal = countTotalNumberOfCategories(testDocs);
+                logger.info("Count positive: " + countPositive);
+                double countTotal = countTotalNumberOfCategories(testDocs);
                 double accuracyInThisFold = ((double)countPositive / countTotal);
                 foldAccuracies.put(i, accuracyInThisFold);
+                double MAPInThisFold = sumAPs / testDocs.size();
+                foldMAPs.put(i, MAPInThisFold);
+                BigDecimal MRRInThisFold = sumRRs.divide(new BigDecimal(testDocs.size()), MathContext.DECIMAL128);
+                foldMRRs.put(i, MRRInThisFold);
                 foldCountPositive.put(i, countPositive);
                 for (int fold : foldAccuracies.keySet()) {
                     countPositive = foldCountPositive.get(fold);
                  }
-                printResult(topN, numberOfFolds, foldAccuracies, foldCountPositive);
+                printResult(topN, numberOfFolds, foldAccuracies, foldMAPs,
+                        foldMRRs, foldCountPositive);
+
                 
 	    	} // if skipEval	
 	    }// for every fold
+		//some prints for debugging, don't change it to logger!!!
+		String setupMetaData = createEvaluationDescription();
+        System.out.println(setupMetaData);
+        
+    	writer.println(setupMetaData);
+    	writerResult.println(setupMetaData);
+		
+
 	}
 	
 	/**
@@ -1455,36 +1689,54 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 	 * @param numberOfFolds
 	 * @param foldAccuracy
 	 */
-	private void printResult(int topN, double numberOfFolds, 
-			Map<Integer, Double> foldAccuracy, Map<Integer, Integer> foldCountPositive) {
+    private void printResult(int topN, double numberOfFolds,
+            Map<Integer, Double> foldAccuracies,
+            Map<Integer, Double> foldMAPs,
+            HashMap<Integer, BigDecimal> foldMRRs, Map<Integer, Integer> foldCountPositive) {
 
             double sumAccuracies = 0;
             int sumCountPositive = 0;
             double accuracy = 0;
             int countPositive = 0;
-                
-            for (int fold : foldAccuracy.keySet()) {
-                accuracy = foldAccuracy.get(fold);
+            double sumMAPs = 0.0;
+            BigDecimal sumMRRs = new BigDecimal("0");
+               
+            for (int fold : foldAccuracies.keySet()) { //for each fold
+                accuracy = foldAccuracies.get(fold);
                 countPositive = foldCountPositive.get(fold);
                 sumAccuracies += accuracy;
                 sumCountPositive += countPositive;
+                sumMAPs += foldMAPs.get(fold);
+                sumMRRs = sumMRRs.add(foldMRRs.get(fold));
             }
-            
-            if(foldAccuracy.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
-            	String setupMetaData = createEvaluationDescription();
-	            System.out.println(setupMetaData);
-	            writerFoEvalResult.println(setupMetaData);
-	            for (int fold : foldAccuracy.keySet()) {
-	            	System.out.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
-	            	writerFoEvalResult.println("Fold_" + fold + ": " + foldCountPositive.get(fold) + " / " + foldAccuracy.get(fold));
-	            }
-	            System.out.println("");
-	
-	            // just display the overall accuracy if all folds are there
-	            if (foldAccuracy.keySet().size() >= numberOfFolds){
-	            	System.out.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds) +"\n");
-	            	writerFoEvalResult.println("ALL: " + sumCountPositive + " / " + (sumAccuracies / (double)numberOfFolds) + "\n");
-	            }
+           
+            if(foldAccuracies.size() == numberOfFolds){ //TODO: use it if all folds are evaluated to print only the end result
+                String setupMetaData = createEvaluationDescription();
+                System.out.println(setupMetaData);
+                writerFoEvalResult.println(setupMetaData);
+                for (int fold : foldAccuracies.keySet()) {
+                    System.out.println("Fold_" + fold + ": "
+                + foldCountPositive.get(fold) + " / " + foldAccuracies.get(fold)
+                + ", MAP: " + foldMAPs.get(fold)
+                + ", MRR: " + foldMRRs.get(fold));
+                writerFoEvalResult.println("Fold_" + fold + ": "
+                + foldCountPositive.get(fold) + " / " + foldAccuracies.get(fold)
+                + ", MAP: " + foldMAPs.get(fold)
+                + ", MRR: " + foldMRRs.get(fold));
+                }
+                System.out.println("");
+   
+                // just display the overall accuracy if all folds are there
+                if (foldAccuracies.keySet().size() >= numberOfFolds){
+                    System.out.println("ALL: " + sumCountPositive + " / " 
+                    	+ (sumAccuracies / (double)numberOfFolds) +"\n"
+                    	+ (sumMAPs / (double)numberOfFolds) +"\n"
+                    	+ sumMRRs.divide(new BigDecimal(numberOfFolds),MathContext.DECIMAL128) +"\n");
+                    writerFoEvalResult.println("ALL: " + sumCountPositive + " / " 
+                        	+ (sumAccuracies / (double)numberOfFolds) +"\n"
+                        	+ (sumMAPs / (double)numberOfFolds) +"\n"
+                        	+ sumMRRs.divide(new BigDecimal(numberOfFolds),MathContext.DECIMAL128) +"\n");
+                }
             }
 	}
 	
@@ -1513,7 +1765,11 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 				+ "applyTransitiveClosure=" + applyTransitiveClosure + "\n"
 				+ "addLemmaLabel=" + addLemmaLabel + "\n"
 				+ "dep-->token=" + addLemmaEdgesDependencyToToken + "\n"
-				+ "addSecondData=" + addSecondDataSetForGraphBuilding + "\n";
+				+ "addSecondData=" + addSecondDataSetForGraphBuilding + "\n"
+				+ "_dependencyTypeFilter_" + dependencyTypeFilter + "\n"
+				+ "dependentPosFilter=" + dependentPosFilter + "\n"
+				+ "_nodeMatcher_" + nodeMatcher.getClass().getSimpleName()
+;
 		
 		return setupMetaData;
 	}
@@ -1551,13 +1807,13 @@ public class EvaluatorCategoryAnnotator_Vers2 {
 			if (LuceneSearch) {
 				matches.addAll(nodeMatcherWithIndex.findMatchingNodesInGraph(fragmentGraph));
 			} else {
-				if(entailedNodeScore > 0.0){
+//				if(entailedNodeScore > 0.0){
 					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly, entailedNodeScore);
-				} else {
+//				} else {
 //					nodeMatcher = new NodeMatcherLongestOnly(graph, bestNodeOnly);
 					//TODO: integrate SEDANodeMatcher with ressources
-					nodeMatcher = new SEDANodeMatcherLongestOnly(graph, bestNodeOnly, null, null, null, null, false, entailedNodeScore);
-				}
+//					nodeMatcher = new SEDANodeMatcherLongestOnly(graph, bestNodeOnly, null, null, null, null, false, entailedNodeScore);
+//				}
 				matches.addAll(nodeMatcher.findMatchingNodesInGraph(fragmentGraph));
 			}
 			logger.info("Number of matches: " + matches.size());
