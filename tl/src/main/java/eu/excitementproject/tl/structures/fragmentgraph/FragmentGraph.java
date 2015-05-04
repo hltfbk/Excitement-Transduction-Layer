@@ -591,15 +591,27 @@ public class FragmentGraph extends DefaultDirectedWeightedGraph<EntailmentUnitMe
 		}		 
   }
 	
-	/**
-	 * Comparator to sort fragment graphs by their complete statement texts 
-	 */
-	public static class CompleteStatementComparator implements Comparator<FragmentGraph> {
-	    @Override
-	    public int compare(FragmentGraph gA, FragmentGraph gB) {
-	    	return gA.getCompleteStatement().getText().compareTo(gB.getCompleteStatement().getText());
-	    }
-	}
+    /**
+     * Comparator to sort fragment graphs by their complete statement text, interaction ID 
+     * and beginning / end of statement in the text
+     */
+    public static class CompleteStatementComparator implements Comparator<FragmentGraph> {
+        @Override
+        public int compare(FragmentGraph gA, FragmentGraph gB) {
+            return (gA.getCompleteStatement().getText()
+                    + gA.getInteractionId() + " "
+                    + gA.getCompleteStatement().getBegin() + " "
+                    + gA.getCompleteStatement().getEnd())
+                    .compareTo(gB.getCompleteStatement().getText()
+                    + gB.getInteractionId() + " "
+                    + gB.getCompleteStatement().getBegin() + " "
+                    + gB.getCompleteStatement().getEnd());
+            //return gA.getCompleteStatement().getText()
+            //.compareTo(gB.getCompleteStatement().getText());
+        }
+    }
+
+
 	
 	/******************************************************************************************
 	 * TRANSITIVE CLOSURE
